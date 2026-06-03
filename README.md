@@ -8,6 +8,12 @@ the decks descend from one another. Everything here is **CC-BY-SA-4.0** and buil
 If you are a tarot historian or collector and found this from the Tarot History Forum:
 **welcome, and please correct us.** See *Contributing* below.
 
+> **This repo is the canonical home for the tarot grammars.** Each deck lives at
+> `tarot/<slug>/grammar.json` and declares this repo as its source via `_github_url`.
+> The platform ([recursive.eco](https://recursive.eco)) indexes these files; edits and
+> pull requests here are the authoritative source. (See *Relationship to
+> recursive.eco-schemas* at the bottom.)
+
 ---
 
 ## What this is (and is not)
@@ -38,32 +44,32 @@ If you are a tarot historian or collector and found this from the Tarot History 
 
 | Grammar | Deck | Cards | Tradition / order |
 |---|---|---|---|
-| `grammars/visconti-sforza-tarot` | Visconti-Sforza | 85 | oldest near-complete (Milan, c.1451) |
-| `grammars/cary-yale-visconti-tarot` | Cary-Yale (Visconti di Modrone) | 73 | six courts + theological virtues (c.1442) |
-| `grammars/charles-vi-tarot` | "Charles VI" (Gringonneur) | 18 | Ferrarese / B-order (c.1450–80) |
-| `grammars/minchiate-florence-tarot` | Minchiate | 106 | Florentine 97-card / A-order |
-| `grammars/tarot-de-marseille-conver` | Tarot de Marseille (Conver 1760) | 83 | printed standard / C-order |
-| `grammars/oswald-wirth-tarot` | Oswald Wirth | 23 | Continental esoteric (1889/1926) |
-| `grammars/golden-dawn-book-t-tarot` | Golden Dawn (Book T) | 84 | full GD correspondences, RWS imagery |
-| `grammars/etteilla-i-livre-de-thot` | Etteilla I — Livre de Thot | 78 | first divination deck (1788) |
-| `grammars/etteilla-ii-egyptian` | Etteilla II | 78 | 1838 edition |
-| `grammars/etteilla-iii-oracle-des-dames` | Etteilla III — Oracle des Dames | 78 | 1865 edition |
-| `grammars/tree-of-tarot` | **The Tree of Tarot** (meta-grammar) | 32 | the genealogy itself |
+| `tarot/visconti-sforza-tarot` | Visconti-Sforza | 85 | oldest near-complete (Milan, c.1451) |
+| `tarot/cary-yale-visconti-tarot` | Cary-Yale (Visconti di Modrone) | 73 | six courts + theological virtues (c.1442) |
+| `tarot/charles-vi-tarot` | "Charles VI" (Gringonneur) | 18 | Ferrarese / B-order (c.1450–80) |
+| `tarot/minchiate-florence-tarot` | Minchiate | 106 | Florentine 97-card / A-order |
+| `tarot/tarot-de-marseille-conver` | Tarot de Marseille (Conver 1760) | 83 | printed standard / C-order |
+| `tarot/oswald-wirth-tarot` | Oswald Wirth | 23 | Continental esoteric (1889/1926) |
+| `tarot/golden-dawn-book-t-tarot` | Golden Dawn (Book T) | 84 | full GD correspondences, RWS imagery |
+| `tarot/etteilla-i-livre-de-thot` | Etteilla I — Livre de Thot | 78 | first divination deck (1788) |
+| `tarot/etteilla-ii-egyptian` | Etteilla II | 78 | 1838 edition |
+| `tarot/etteilla-iii-oracle-des-dames` | Etteilla III — Oracle des Dames | 78 | 1865 edition |
+| `tarot/tree-of-tarot` | **The Tree of Tarot** (meta-grammar) | 32 | the genealogy itself |
 
-Also live on the platform (not in this repo's `grammars/` as historical builds): a
-public-domain Marseille, Rider-Waite-Smith, Sola Busca, and the Bolognese-styled modern
-"Tarocchino Arlecchino."
+Also migrated into `tarot/` this round: Tarocchino di Bologna, Mantegna "Tarocchi" (to
+explain it is *not* a tarot), Court de Gébelin's plates, Besançon/Swiss 1JJ, and
+Tarocco Siciliano. Also live on the platform (not yet migrated here): a public-domain
+Marseille, Rider-Waite-Smith, Sola Busca, and the Bolognese-styled modern "Tarocchino
+Arlecchino."
 
-**Planned** (see `plan/tarot-roadmap-and-supabase-log.md` §1): the real Tarocchino di
-Bologna, Mantegna "Tarocchi" (to explain it is *not* a tarot), Court de Gébelin's plates,
-Besançon/Swiss 1JJ, Belgian/Vandenborre, Tarocco Siciliano, d'Este, the Cary/Rosenwald
-sheets.
+The full historical roadmap (fixes owed, future features, the Supabase build log) lives
+in the source repo — see *Relationship to recursive.eco-schemas* below.
 
 ---
 
 ## The genealogy (how to read the tree)
 
-`grammars/tree-of-tarot/grammar.json` is a meta-grammar whose **items are the decks**,
+`tarot/tree-of-tarot/grammar.json` is a meta-grammar whose **items are the decks**,
 built on **Michael Dummett's A/B/C trump-order** classification:
 
 ```
@@ -85,16 +91,17 @@ meta-grammar uses the platform's *reference-item* structure (see `GRAMMAR_FORMAT
 ## How it's built (for contributors)
 
 - **Format:** `GRAMMAR_FORMAT.md` is the contract. Each deck is one
-  `grammars/<slug>/grammar.json`.
-- **Generators:** decks are produced by reproducible Python scripts in `scripts/`
-  (`generate_<deck>.py`) from data tables, not hand-typed — easy to audit and re-run.
+  `tarot/<slug>/grammar.json`; the collection index is `tarot/_collection.json`.
+- **Layout:** decks live under `tarot/`, grouped into genealogical branches
+  (roots · A/B/C-order · occult · sui-generis · `_meta`) by `_collection.json`.
 - **Images:** public-domain, hot-linked from Wikimedia Commons via stable
   `Special:FilePath` URLs (filenames pulled from the Commons API, not guessed).
-- **Build logs:** `plan/build-logs/<deck>.md` record sources, decisions, and caveats.
-- **Plan / roadmap:** `plan/tarot-of-all-tarots-master-plan.md` (history + lineage) and
-  `plan/tarot-roadmap-and-supabase-log.md` (what's left, fixes owed, future features).
-- **Validate:** `python scripts/validate.py`; rebuild the index with
-  `python scripts/generate_manifest.py`.
+- **Assembly:** `python scripts/build_tarot_collection.py` (re)builds this repo from the
+  source grammars and writes the collection index; `python scripts/stamp_canonical_repo.py`
+  stamps each deck's `_github_url` home pointer.
+- **Provenance:** the original per-deck generators (`generate_<deck>.py`), build logs,
+  and the master history/roadmap docs live in the source repo,
+  **recursive.eco-schemas** — see below.
 
 > Transparency: these grammars are **AI-assisted** (drafted with Claude, reviewed by the
 > maintainer). That is exactly why outside scholarly review is wanted.
@@ -107,7 +114,8 @@ Corrections from historians are the most valuable thing this repo can receive.
 
 - **Spotted an error** (a date, an attribution, a mis-mapped archetype, a bad image)?
   Open a GitHub **issue** or a **pull request** against the relevant
-  `grammars/<slug>/grammar.json` (or its `generate_<deck>.py`).
+  `tarot/<slug>/grammar.json`. This repo is the canonical source, so a merged PR here
+  is what the platform re-indexes.
 - **Copyright:** PD sources only; paraphrase + attribute, never copy copyrighted text
   (see `CLAUDE.md` → *Copyright Boundaries*). Forum posts and modern deck art are
   copyrighted — cite, don't reproduce.
@@ -117,7 +125,28 @@ Corrections from historians are the most valuable thing this repo can receive.
 - **Post to the Tarot History Forum** as a human, with this repo link, an upfront note
   that it's AI-assisted, and an explicit invitation to correct — *not* by scraping the
   forum (it blocks bots and its posts belong to their authors).
-- **A separate, curated reference repo** (e.g. `recursive-tarot`) is under consideration
-  — a clean mirror of just the tarot grammars + docs, easier for collaborators than this
-  larger mixed `schemas` repo. Until then, **this file is the entry point.** (Logged as a
-  *later* item; not built yet.)
+
+---
+
+## Relationship to recursive.eco-schemas
+
+This repo (`recursive-tarot`) is one **topic collection** in a multi-repo model — the
+**canonical, curated home for tarot**. The broader [`recursive.eco-schemas`](https://github.com/PlayfulProcess/recursive.eco-schemas)
+repo is the **catch-all** for every other grammar family (I Ching, sequences, philosophy,
+…) and the place where these decks were originally *built* (the `generate_<deck>.py`
+generators, build logs, and the master history/roadmap docs live there).
+
+| | `recursive-tarot` (here) | `recursive.eco-schemas` |
+|---|---|---|
+| Role | Canonical home for tarot | Default catch-all + build provenance |
+| Layout | `tarot/<slug>/grammar.json` | `grammars/<slug>/grammar.json` |
+| For tarot decks | **Authoritative** (edit/PR here) | Frozen archive (being retired) |
+| Holds | Decks + collection index + viewers | Generators, build logs, roadmap, all non-tarot |
+
+How they fit the platform: recursive.eco reads grammars from **Supabase** (a fast,
+queryable read-index); a grammar's `_github_url` records which repo is its authoritative
+source. For tarot that URL points here. This is the **GitHub-as-database** model — see
+`recursive-eco/docs/GITHUB_AS_DATABASE.md` for the full architecture (the index sync,
+the publish-destination choice, and the "add your own public repo" advanced option).
+
+**This file is the entry point for the tarot collection.**
