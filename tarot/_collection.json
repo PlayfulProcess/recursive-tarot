@@ -1,0 +1,213 @@
+{
+  "collection": "tarot",
+  "name": "The Recursive Tarot",
+  "version": "1.0.0",
+  "license": "CC-BY-SA-4.0",
+  "original_creator": "f18e2415-315c-43b7-ae93-d09c8892e181",
+  "creator_name": "PlayfulProcess",
+  "meta_grammar": "tree-of-tarot",
+  "branches": [
+    {
+      "id": "roots",
+      "name": "Roots — The First Tarots (Milan, c. 1440s)",
+      "deck_slugs": [
+        "visconti-sforza-tarot",
+        "cary-yale-visconti-tarot"
+      ]
+    },
+    {
+      "id": "a-order",
+      "name": "A-Order — Bologna & Florence (the South)",
+      "deck_slugs": [
+        "minchiate-florence-tarot",
+        "tarocchino-bologna"
+      ]
+    },
+    {
+      "id": "b-order",
+      "name": "B-Order — Ferrara (the East)",
+      "deck_slugs": [
+        "charles-vi-tarot"
+      ]
+    },
+    {
+      "id": "c-order",
+      "name": "C-Order — Milan & the West → the Printed Standard",
+      "deck_slugs": [
+        "tarot-de-marseille-conver",
+        "tarot-de-besancon"
+      ]
+    },
+    {
+      "id": "occult",
+      "name": "The Occult Reframing (France → England, 1781→)",
+      "deck_slugs": [
+        "oswald-wirth-tarot",
+        "golden-dawn-book-t-tarot",
+        "court-de-gebelin-tarot",
+        "etteilla-i-livre-de-thot",
+        "etteilla-ii-egyptian",
+        "etteilla-iii-oracle-des-dames"
+      ]
+    },
+    {
+      "id": "sui-generis",
+      "name": "Sui Generis & Relatives",
+      "deck_slugs": [
+        "mantegna-tarocchi"
+      ]
+    }
+  ],
+  "grammars": [
+    {
+      "slug": "visconti-sforza-tarot",
+      "name": "Visconti-Sforza Tarot — The Oldest Tarot (Bonifacio Bembo, c. 1451)",
+      "type": "tarot",
+      "branch": "roots",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 85,
+      "path": "tarot/visconti-sforza-tarot/grammar.json"
+    },
+    {
+      "slug": "cary-yale-visconti-tarot",
+      "name": "Cary-Yale Visconti Tarot — The Lavish Outlier (c. 1442)",
+      "type": "tarot",
+      "branch": "roots",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 73,
+      "path": "tarot/cary-yale-visconti-tarot/grammar.json"
+    },
+    {
+      "slug": "charles-vi-tarot",
+      "name": "The 'Charles VI' Tarot (Gringonneur) — c. 1450–1480",
+      "type": "tarot",
+      "branch": "b-order",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 18,
+      "path": "tarot/charles-vi-tarot/grammar.json"
+    },
+    {
+      "slug": "minchiate-florence-tarot",
+      "name": "Minchiate — The 97-Card Florentine Tarot",
+      "type": "tarot",
+      "branch": "a-order",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 106,
+      "path": "tarot/minchiate-florence-tarot/grammar.json"
+    },
+    {
+      "slug": "tarocchino-bologna",
+      "name": "Tarocchino di Bologna — The Real 62-Card Bolognese Deck",
+      "type": "tarot",
+      "branch": "a-order",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 68,
+      "path": "tarot/tarocchino-bologna/grammar.json"
+    },
+    {
+      "slug": "tarot-de-marseille-conver",
+      "name": "Tarot de Marseille — Nicolas Conver 1760 (The Printed Standard)",
+      "type": "tarot",
+      "branch": "c-order",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 83,
+      "path": "tarot/tarot-de-marseille-conver/grammar.json"
+    },
+    {
+      "slug": "tarot-de-besancon",
+      "name": "Tarot de Besançon / Swiss 1JJ — The Juno & Jupiter Variant",
+      "type": "tarot",
+      "branch": "c-order",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 14,
+      "path": "tarot/tarot-de-besancon/grammar.json"
+    },
+    {
+      "slug": "oswald-wirth-tarot",
+      "name": "Oswald Wirth Tarot — The 22 Esoteric Arcana (1889 / 1926)",
+      "type": "tarot",
+      "branch": "occult",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 23,
+      "path": "tarot/oswald-wirth-tarot/grammar.json"
+    },
+    {
+      "slug": "golden-dawn-book-t-tarot",
+      "name": "Golden Dawn Tarot — Book T with Rider-Waite-Smith Imagery",
+      "type": "tarot",
+      "branch": "occult",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 84,
+      "path": "tarot/golden-dawn-book-t-tarot/grammar.json"
+    },
+    {
+      "slug": "court-de-gebelin-tarot",
+      "name": "Court de Gébelin's Tarot — The Birth of the 'Book of Thoth' (1781)",
+      "type": "tarot",
+      "branch": "occult",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 23,
+      "path": "tarot/court-de-gebelin-tarot/grammar.json"
+    },
+    {
+      "slug": "etteilla-i-livre-de-thot",
+      "name": "Etteilla I",
+      "type": "tarot",
+      "branch": "occult",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 78,
+      "path": "tarot/etteilla-i-livre-de-thot/grammar.json"
+    },
+    {
+      "slug": "etteilla-ii-egyptian",
+      "name": "Etteilla II",
+      "type": "tarot",
+      "branch": "occult",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 78,
+      "path": "tarot/etteilla-ii-egyptian/grammar.json"
+    },
+    {
+      "slug": "etteilla-iii-oracle-des-dames",
+      "name": "Grand Jeu de l'Oracle des Dames (Etteilla III)",
+      "type": "tarot",
+      "branch": "occult",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 78,
+      "path": "tarot/etteilla-iii-oracle-des-dames/grammar.json"
+    },
+    {
+      "slug": "mantegna-tarocchi",
+      "name": "The 'Mantegna Tarocchi' — A Ladder of Being (NOT a Tarot), c. 1465",
+      "type": "custom",
+      "branch": "sui-generis",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 57,
+      "path": "tarot/mantegna-tarocchi/grammar.json"
+    },
+    {
+      "slug": "tree-of-tarot",
+      "name": "The Tree of Tarot — A Grammar of Tarot Grammars",
+      "type": "custom",
+      "branch": null,
+      "is_meta": true,
+      "default_preview": "tree",
+      "items": 32,
+      "path": "tarot/tree-of-tarot/grammar.json"
+    }
+  ]
+}
