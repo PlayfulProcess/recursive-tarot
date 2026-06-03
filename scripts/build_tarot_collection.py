@@ -70,6 +70,8 @@ def migrate():
         os.makedirs(out_dir, exist_ok=True)
         json.dump(g, open(os.path.join(out_dir, "grammar.json"), "w", encoding="utf-8"),
                   indent=2, ensure_ascii=False)
+        desc = (g.get("description") or "").strip().split("\n")[0]
+        blurb = (desc[:200] + "…") if len(desc) > 200 else desc
         grammars_index.append({
             "slug": slug,
             "name": g.get("name"),
@@ -78,6 +80,8 @@ def migrate():
             "is_meta": branch == "_meta",
             "default_preview": g.get("default_preview"),
             "items": len(g.get("items", [])),
+            "cover_image_url": g.get("cover_image_url"),
+            "blurb": blurb,
             "path": f"tarot/{slug}/grammar.json",
         })
 

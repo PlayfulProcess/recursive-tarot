@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deck — The Recursive Tarot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <h1><a href="index.html">The <span class="gold">Recursive Tarot</span></a></h1>
+  <nav class="top">
+    <a href="index.html">← All decks</a>
+    <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">GitHub ↗</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <div id="root"><div class="loading">Loading deck…</div></div>
+</main>
+
+<footer class="site"><div class="wrap">
+  <span id="ghlink"></span>
+  Public-domain imagery (Wikimedia Commons). CC&#8209;BY&#8209;SA&#8209;4.0 · curated by PlayfulProcess.
+</div></footer>
+
+<script src="loader.js"></script>
+<script>
+(async function () {
+  var root = document.getElementById('root');
+  var url = RT.grammarUrl();
+  if (!url) { root.innerHTML = '<div class="loading">No deck specified. Try <code>?file=tarot/&lt;slug&gt;/grammar.json</code></div>'; return; }
+  try {
+    var g = await RT.fetchJson(url);
+    document.title = (g.name || 'Deck') + ' — The Recursive Tarot';
+    var slug = (g._community_slug) || RT.qs('file') || '';
+    var ghPath = 'tarot/' + (g._community_slug || '') + '/grammar.json';
+    document.getElementById('ghlink').innerHTML =
+      '<a href="https://github.com/PlayfulProcess/recursive-tarot/blob/main/' + RT.esc(ghPath) +
+      '" target="_blank" rel="noopener">View / contribute this deck on GitHub ↗</a> &nbsp;·&nbsp; ';
+
+    var cover = g.cover_image_url
+      ? '<div class="cover" style="background-image:url(' + "'" + g.cover_image_url.replace(/'/g,'%27') + "'" + ')"></div>'
+      : '';
+    var head = '<a class="back" href="index.html">← All decks</a>' +
+      '<div class="deckhead">' + cover +
+      '<div class="info"><h1>' + RT.esc(g.name) + '</h1>' +
+      '<div class="desc">' + RT.md(shorten(g.description, 900)) + '</div></div></div>';
+
+    var cards = '<div class="cards">';
+    (g.items || []).forEach(function (it) {
+      cards += renderCard(it);
+    });
+    cards += '</div>';
+    root.innerHTML = head + cards;
+  } catch (e) {
+    root.innerHTML = '<div class="loading">Could not load this deck.<br><span class="small">' + RT.esc(e.message) +
+      '</span><br><br><span class="small muted">Opened the file directly? Run <code>python -m http.server 8000</code> and visit it via <code>http://localhost:8000/site/deck.html?file=…</code></span></div>';
+  }
+
+  function renderCard(it) {
+    var img = it.image_url
+      ? '<div class="img" style="background-image:url(' + "'" + it.image_url.replace(/'/g,'%27') + "'" + ')"></div>'
+      : '<div class="img empty">' + (it.composite_of ? '— grouping —' : 'no image (card lost or not digitised)') + '</div>';
+    var secs = '';
+    var s = it.sections || {};
+    Object.keys(s).forEach(function (k) {
+      if (!s[k]) return;
+      secs += '<div class="sec"><span class="lab">' + RT.esc(k) + '</span><span class="val">' + RT.md(s[k]) + '</span></div>';
+    });
+    var md = it.metadata || {};
+    var tags = '';
+    if (md.archetype) tags += '<span class="tag">' + RT.esc(md.archetype) + (md.mapping_confidence ? ' · ' + md.mapping_confidence : '') + '</span>';
+    return '<div class="card">' + img + '<div class="body"><h3>' + RT.esc(it.name) + '</h3>' + secs + tags + '</div></div>';
+  }
+
+  function shorten(s, n) { s = s || ''; return s.length > n ? s.slice(0, n).replace(/\s+\S*$/, '') + '…' : s; }
+})();
+</script>
+</body>
+</html>

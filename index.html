@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Recursive Tarot — A Genealogy of the Cards</title>
+<meta name="description" content="A public-domain, scholarship-grounded genealogy of historical tarot decks — from the 1440s Italian game decks to the occult reframing — rendered as an explorable collection.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <h1><a href="index.html">The <span class="gold">Recursive Tarot</span></a></h1>
+  <nav class="top">
+    <a href="deck.html?file=tarot/tree-of-tarot/grammar.json">Genealogy tree</a>
+    <a href="course/build-a-tarot-deck-with-claude.mdx">Course</a>
+    <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">GitHub ↗</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <p class="lede">A <strong>public-domain</strong>, scholarship-grounded genealogy of the tarot —
+  fifteen historical decks from the 1440s Milanese game decks, through the printed Tarot de
+  Marseille, to the 1781 occult reframing that invented divination. Each deck is framed in its
+  <strong>own tradition</strong> (game decks are called games; meanings are never forced across
+  traditions), every image is public domain with attribution, and the whole thing is just files
+  in a public repo you can read, correct, and play. <span class="small muted">CC&#8209;BY&#8209;SA&#8209;4.0 · curated by PlayfulProcess.</span></p>
+
+  <div id="root"><div class="loading">Loading the collection…</div></div>
+</main>
+
+<footer class="site"><div class="wrap">
+  Built openly with Claude Code. Source &amp; contributions:
+  <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">github.com/PlayfulProcess/recursive-tarot</a>
+  · Scholarship consulted (facts only, no text reproduced): the Tarot History Forum.
+</div></footer>
+
+<script src="loader.js"></script>
+<script>
+(async function () {
+  var root = document.getElementById('root');
+  try {
+    var col = await RT.fetchJson(RT.collectionUrl());
+    var bySlug = {}; col.grammars.forEach(function (g) { bySlug[g.slug] = g; });
+    var html = '';
+
+    // Feature the genealogy meta-grammar first
+    var tree = col.grammars.find(function (g) { return g.is_meta; });
+    if (tree) {
+      html += '<div class="branch"><h2>The Tree of Tarot</h2>' +
+        '<p class="muted small" style="margin:10px 0 0">' + RT.esc(tree.blurb || '') + '</p>' +
+        '<div class="decks"><div class="deck"><a href="' + RT.deckHref(tree.slug) + '">' +
+        thumb(tree) + '<div class="meta"><div class="nm">' + RT.esc(tree.name) +
+        '</div><div class="ct">' + tree.items + ' nodes · the whole genealogy</div></div></a></div></div></div>';
+    }
+
+    // Then each branch
+    col.branches.forEach(function (b) {
+      var decks = b.deck_slugs.map(function (s) { return bySlug[s]; }).filter(Boolean);
+      if (!decks.length) return;
+      html += '<div class="branch"><h2>' + RT.esc(b.name) + '</h2><div class="decks">';
+      decks.forEach(function (g) {
+        html += '<div class="deck"><a href="' + RT.deckHref(g.slug) + '">' + thumb(g) +
+          '<div class="meta"><div class="nm">' + RT.esc(g.name) +
+          '</div><div class="ct">' + g.items + ' cards</div></div></a></div>';
+      });
+      html += '</div></div>';
+    });
+
+    root.innerHTML = html;
+  } catch (e) {
+    root.innerHTML = '<div class="loading">Could not load the collection.<br><span class="small">' +
+      RT.esc(e.message) + '</span><br><br><span class="small muted">If you opened this file directly, run a local server first:<br><code>python -m http.server 8000</code> then visit <code>http://localhost:8000/site/</code></span></div>';
+  }
+
+  function thumb(g) {
+    if (g.cover_image_url) {
+      return '<div class="thumb" style="background-image:url(' +
+        "'" + g.cover_image_url.replace(/'/g, '%27') + "'" + ')"></div>';
+    }
+    return '<div class="thumb"></div>';
+  }
+})();
+</script>
+</body>
+</html>
