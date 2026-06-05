@@ -267,6 +267,12 @@ def build():
              "sections": {"What it is": "Cross-suit numerology: every Ace, every Two … every King, across all suits and decks."},
              "composite_of": xr_nodes})
 
+    # render_as: the orthogonal axes become faceted filter pills in the viewer
+    # (the tree keeps the arcana->suit->rank spine). Mirrors the Library HashtagFilter.
+    for it in items:
+        if it["id"] in ("axis-deck", "axis-age", "axis-number"):
+            it["render_as"] = "pill-group"
+
     grammar = {
         "_grammar_commons": {"schema_version": "1.0", "license": "CC-BY-SA-4.0",
             "attribution": [{"name": "PlayfulProcess", "note": "Generated meta-grammar; cards from the public-domain decks in this repo."}]},

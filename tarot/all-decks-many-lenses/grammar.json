@@ -17,7 +17,7 @@
   "default_preview": "tree",
   "_generated": true,
   "_do_not_hand_edit": true,
-  "_built_at": "2026-06-05T18:46:21.545063+00:00",
+  "_built_at": "2026-06-05T19:31:00.768776+00:00",
   "_built_by": "scripts/build_meta_grammar.py",
   "items": [
     {
@@ -28260,7 +28260,8 @@
         "deck-etteillaiiioracledesdames",
         "deck-oswaldwirthtarot",
         "deck-goldendawnbookttarot"
-      ]
+      ],
+      "render_as": "pill-group"
     },
     {
       "id": "axis-age",
@@ -28281,7 +28282,8 @@
         "era-4",
         "era-5",
         "era-5"
-      ]
+      ],
+      "render_as": "pill-group"
     },
     {
       "id": "axis-number",
@@ -28306,7 +28308,8 @@
         "num-rank-12",
         "num-rank-13",
         "num-rank-14"
-      ]
+      ],
+      "render_as": "pill-group"
     }
   ]
 }
