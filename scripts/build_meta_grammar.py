@@ -199,12 +199,17 @@ def build():
             add({"id": "deck-" + slug.replace("-",""), "name": dk["label"], "level": 2, "category": "deck",
                  "sections": {"What it is": "%s — %s. Every card in this deck." % (dk["label"], dk["ed"]["date"])},
                  "composite_of": members})
-    # By Age
+    # By Age — one node per DISTINCT era label (id keyed on the full label, not
+    # era_sort, so decks that share a sort bucket but differ in wording don't
+    # collide into duplicate ids / duplicate pills). Ordered oldest-first by sort.
     eras = sorted({(c["era_sort"], c["era"]) for c in cards})
+    def era_id(es, ename):
+        slug = re.sub(r"[^a-z0-9]+", "-", ename.lower()).strip("-")
+        return "era-%d-%s" % (es, slug)
     for es, ename in eras:
-        add({"id": "era-%d" % es, "name": ename, "level": 2, "category": "era",
+        add({"id": era_id(es, ename), "name": ename, "level": 2, "category": "era",
              "sections": {"What it is": "All cards from decks of this era: %s." % ename},
-             "composite_of": ids(lambda c, es=es: c["era_sort"] == es)})
+             "composite_of": ids(lambda c, es=es, ename=ename: c["era_sort"] == es and c["era"] == ename)})
     # Within-suit ranks + suits + Minor
     suit_nodes = []
     for suit, so in sorted(SUIT_ORD.items(), key=lambda kv: kv[1]):
@@ -261,7 +266,7 @@ def build():
          "composite_of": ["deck-" + s.replace("-","") for s in DECKS if any(c["slug"] == s for c in cards)]})
     add({"id": "axis-age", "name": "By Age", "level": 4, "category": "axis",
          "sections": {"What it is": "Decks grouped by era, oldest first."},
-         "composite_of": ["era-%d" % es for es, _ in eras]})
+         "composite_of": [era_id(es, ename) for es, ename in eras]})
     if xr_nodes:
         add({"id": "axis-number", "name": "By Rank — across all suits", "level": 4, "category": "axis",
              "sections": {"What it is": "Cross-suit numerology: every Ace, every Two … every King, across all suits and decks."},
