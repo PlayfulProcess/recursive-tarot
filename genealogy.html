@@ -114,8 +114,10 @@ function legendHTML(mode){
     const cb = [...byOrder.C].filter(d=>d.year<=fo.year).sort((a,b)=>b.year-a.year)[0] || [...byOrder.C].sort((a,b)=>a.year-b.year)[0];
     if(cb) edges.push({ data:{ id:'eturn', source:cb.node_id, target:fo.node_id, turn:1 } });
   }
+  // Only the DIRECT ancestor draws the transmission edge to the earliest tarot deck.
+  // Ancestral sheets / cousins sit as dated nodes without an asserted derivation edge.
   const earliestTarot = decks.filter(d=>d.ancestry==='tarot').sort((a,b)=>a.year-b.year)[0];
-  decks.filter(d=>d.tier==='direct-ancestor'||d.tier==='ancestral').forEach(a => {
+  decks.filter(d=>d.tier==='direct-ancestor').forEach(a => {
     if(earliestTarot) edges.push({ data:{ id:'anc'+a.node_id, source:a.node_id, target:earliestTarot.node_id, turn:1 } });
   });
 

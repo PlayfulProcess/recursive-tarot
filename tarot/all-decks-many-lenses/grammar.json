@@ -17,7 +17,7 @@
   "default_preview": "tree",
   "_generated": true,
   "_do_not_hand_edit": true,
-  "_built_at": "2026-06-08T21:32:14.910292+00:00",
+  "_built_at": "2026-06-08T21:42:00.404175+00:00",
   "_built_by": "scripts/build_meta_grammar.py",
   "_decks": [
     {
@@ -202,6 +202,62 @@
       "count": 8,
       "ancestry": "direct-ancestor",
       "tier": "direct-ancestor"
+    },
+    {
+      "slug": "cary-sheet",
+      "label": "Cary Sheet (Milanese woodcut)",
+      "node_id": "anc-cary-sheet",
+      "era": "Milan",
+      "era_sort": 0,
+      "date": "c. 1500",
+      "timeline_year": 1500,
+      "order": null,
+      "function": "game",
+      "count": 4,
+      "ancestry": "ancestral",
+      "tier": "ancestral"
+    },
+    {
+      "slug": "rosenwald-sheet",
+      "label": "Rosenwald Sheet (Florentine)",
+      "node_id": "anc-rosenwald-sheet",
+      "era": "Florence",
+      "era_sort": 0,
+      "date": "c. 1500",
+      "timeline_year": 1500,
+      "order": null,
+      "function": "game",
+      "count": 4,
+      "ancestry": "ancestral",
+      "tier": "ancestral"
+    },
+    {
+      "slug": "noblet-tarot",
+      "label": "Jean Noblet (oldest TdM)",
+      "node_id": "anc-noblet-tarot",
+      "era": "Paris",
+      "era_sort": 0,
+      "date": "c. 1650",
+      "timeline_year": 1650,
+      "order": null,
+      "function": "game",
+      "count": 4,
+      "ancestry": "ancestral",
+      "tier": "ancestral"
+    },
+    {
+      "slug": "ganjifa",
+      "label": "Ganjifa (Persian/Mughal cousin)",
+      "node_id": "anc-ganjifa",
+      "era": "Persia / Mughal India",
+      "era_sort": 0,
+      "date": "16th c.+",
+      "timeline_year": 1550,
+      "order": null,
+      "function": "game",
+      "count": 4,
+      "ancestry": "cousin",
+      "tier": "cousin"
     }
   ],
   "items": [

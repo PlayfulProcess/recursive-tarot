@@ -109,6 +109,14 @@ ANCESTORS = [
  dict(slug="mamluk-deck", label="Mamluk (Mulūk wa-nuwwāb)", node_id="anc-mamluk-deck",
       era="Mamluk Egypt & Syria", date="c. 1500 (Topkapı deck)", timeline_year=1375,
       ancestry="direct-ancestor", count=8),
+ dict(slug="cary-sheet", label="Cary Sheet (Milanese woodcut)", node_id="anc-cary-sheet",
+      era="Milan", date="c. 1500", timeline_year=1500, ancestry="ancestral", count=4),
+ dict(slug="rosenwald-sheet", label="Rosenwald Sheet (Florentine)", node_id="anc-rosenwald-sheet",
+      era="Florence", date="c. 1500", timeline_year=1500, ancestry="ancestral", count=4),
+ dict(slug="noblet-tarot", label="Jean Noblet (oldest TdM)", node_id="anc-noblet-tarot",
+      era="Paris", date="c. 1650", timeline_year=1650, ancestry="ancestral", count=4),
+ dict(slug="ganjifa", label="Ganjifa (Persian/Mughal cousin)", node_id="anc-ganjifa",
+      era="Persia / Mughal India", date="16th c.+", timeline_year=1550, ancestry="cousin", count=4),
 ]
 
 ORDER_SORT = {"A": 1, "B": 2, "C": 3, "occult": 4}
