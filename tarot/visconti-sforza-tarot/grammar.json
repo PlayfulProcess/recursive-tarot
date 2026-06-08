@@ -13,9 +13,14 @@
   "items": [
     {
       "id": "major-00-il-matto",
-      "name": "0 — The Fool",
-      "level": 1,
-      "category": "major-arcana",
+      "name": "0 — The Fool test",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-00-fool.jpg",
+      "sections": {
+        "History": "Unnumbered and unnamed in the original game — the wild card that stands outside the sequence of triumphs. It survives in the Morgan Library portion of the deck.",
+        "Reading": "The zero before counting begins: the holy fool, innocence and folly walking together at the edge of the procession.",
+        "Iconography": "A ragged man in a tattered tunic, bare-legged, seven feathers standing in his hair and a club over his shoulder. He is the village madman, the social outcast painted with the same gold leaf as kings.",
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay, not part of the deck's original use."
+      },
       "keywords": [
         "fool",
         "trionfi",
@@ -23,6 +28,10 @@
         "il matto",
         "arcana:the-fool"
       ],
+      "level": 1,
+      "category": "major-arcana",
+      "sort_order": 0,
+      "grammar_type": "custom",
       "metadata": {
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
@@ -44,14 +53,10 @@
         ],
         "mapping_confidence": "exact"
       },
-      "sections": {
-        "History": "Unnumbered and unnamed in the original game — the wild card that stands outside the sequence of triumphs. It survives in the Morgan Library portion of the deck.",
-        "Reading": "The zero before counting begins: the holy fool, innocence and folly walking together at the edge of the procession.",
-        "Iconography": "A ragged man in a tattered tunic, bare-legged, seven feathers standing in his hair and a club over his shoulder. He is the village madman, the social outcast painted with the same gold leaf as kings.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay, not part of the deck's original use."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-00-fool.jpg",
-      "sort_order": 0
+      "origin": {
+        "type": "human",
+        "timestamp": "2026-06-08T15:06:34.394Z"
+      }
     },
     {
       "id": "major-01-il-bagatto",
@@ -3647,13 +3652,6 @@
   ],
   "creator_name": "PlayfulProcess",
   "creator_link": "https://recursive.eco",
-  "watch_links": [
-    {
-      "provider": "Apple",
-      "type": "watch",
-      "url": "https://tv.apple.com/ie/movie/tarot-a-true-occult-story/umc.cmc.63ql4aksothcru86peyzso9xg"
-    }
-  ],
   "is_published": true,
   "open_to_community": true,
   "default_view": "cards",
