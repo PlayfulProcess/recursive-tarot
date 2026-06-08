@@ -31,7 +31,7 @@ DECKS = {
  "visconti-sforza-tarot":      dict(label="Visconti-Sforza", era="15th c · Renaissance Italy", era_sort=1,
         ed=dict(date="c. 1451", maker="Bonifacio Bembo workshop (attrib.)", patron="House of Visconti–Sforza, Milan",
                 context="Hand-painted ducal luxury deck, among the oldest surviving tarot", print="Hand-painted, gold leaf & tempera",
-                orientation="Game (trionfi) — pre-divinatory")),
+                orientation="Game (trionfi); no surviving record of divinatory use this early")),
  "cary-yale-visconti-tarot":   dict(label="Cary-Yale Visconti", era="15th c · Renaissance Italy", era_sort=1,
         ed=dict(date="c. 1442", maker="Bonifacio Bembo workshop (attrib.)", patron="House of Visconti, Milan",
                 context="The lavish outlier — six-rank courts + theological virtues", print="Hand-painted, gold-ground tempera",
@@ -81,6 +81,42 @@ DECKS = {
                 context="The full correspondence system (astrology, Hebrew, decans); swaps Strength ↔ Justice", print="Manuscript / RWS-style imagery",
                 orientation="Divination")),
 }
+
+# Historian classification (from research/*.mdx frontmatter): Dummett trump-ORDER branch +
+# game/divination FUNCTION. Drives the By-Lineage (genealogy) + By-Function emergence axes.
+# These are STRUCTURAL emergences (real historical properties), unlike the analytical lenses
+# (archetype/suit/rank) that re-group the same cards for study.
+CLASS = {
+ "visconti-sforza-tarot":         dict(order="C", function="game"),
+ "cary-yale-visconti-tarot":      dict(order="C", function="game"),
+ "charles-vi-tarot":              dict(order="B", function="game"),
+ "minchiate-florence-tarot":      dict(order="A", function="game"),
+ "tarocchino-bologna":            dict(order="A", function="game"),
+ "tarot-de-marseille-conver":     dict(order="C", function="game"),
+ "tarot-de-besancon":             dict(order="C", function="game"),
+ "court-de-gebelin-tarot":        dict(order="occult", function="origin-myth"),
+ "etteilla-i-livre-de-thot":      dict(order="occult", function="divination"),
+ "etteilla-ii-egyptian":          dict(order="occult", function="divination"),
+ "etteilla-iii-oracle-des-dames": dict(order="occult", function="divination"),
+ "oswald-wirth-tarot":            dict(order="occult", function="esoteric"),
+ "golden-dawn-book-t-tarot":      dict(order="occult", function="esoteric"),
+}
+# Upstream ancestors / cousins — their OWN grammars (not tarot; no trumps), surfaced on the
+# genealogy timeline via _decks (they do NOT enter the arcana/suit/rank card tree).
+# ancestry: direct-ancestor | ancestral | cousin. timeline_year positions the lineage role
+# (e.g. Mamluk's 1370s transmission) even when the surviving object is later.
+ANCESTORS = [
+ dict(slug="mamluk-deck", label="Mamluk (Mulūk wa-nuwwāb)", node_id="anc-mamluk-deck",
+      era="Mamluk Egypt & Syria", date="c. 1500 (Topkapı deck)", timeline_year=1375,
+      ancestry="direct-ancestor", count=8),
+]
+
+ORDER_SORT = {"A": 1, "B": 2, "C": 3, "occult": 4}
+ORDER_LABEL = {"A": "A-order — Florence / Bologna (southern)", "B": "B-order — Ferrara",
+               "C": "C-order — Milan → Tarot de Marseille", "occult": "The occult turn — off the C-order, post-1781"}
+FUNC_SORT = {"game": 1, "origin-myth": 2, "divination": 3, "esoteric": 4}
+FUNC_LABEL = {"game": "Game (trick-taking)", "origin-myth": "Origin-myth (proto-occult)",
+              "divination": "Divination (purpose-built)", "esoteric": "Esoteric / initiatory"}
 
 MAJ_NAMES = ["The Fool","The Magician","The High Priestess","The Empress","The Emperor","The Hierophant",
  "The Lovers","The Chariot","Strength","The Hermit","Wheel of Fortune","Justice","The Hanged Man","Death",
@@ -160,11 +196,13 @@ def build():
                     major = mnum
                 if major is not None:
                     arcana = "major"
+            cl = CLASS.get(slug, {})
             cards.append(dict(
                 cid="card-%s-%d" % (slug.replace("-",""), ord_),
                 slug=slug, label=dk["label"], era=dk["era"], era_sort=dk["era_sort"], ed=dk["ed"],
                 name=name, image_url=it.get("image_url"), src_item_id=it.get("id"),
-                arcana=arcana, suit=suit, rank=rank, major=major))
+                arcana=arcana, suit=suit, rank=rank, major=major,
+                order=cl.get("order"), function=cl.get("function")))
 
     items = []
     def add(o): items.append(o)
@@ -177,6 +215,7 @@ def build():
              "metadata": {k: v for k, v in {
                  "deck": c["label"], "arcana": c["arcana"], "suit": c["suit"],
                  "number": (c["major"] if c["major"] is not None else c["rank"]),
+                 "order": c["order"], "function": c["function"],
                  "source_deck": c["slug"], "source_item_id": c["src_item_id"],
                  "editorial": {"date": ed["date"], "maker": ed["maker"],
                                "patron": (None if ed["patron"] == "—" else ed["patron"]),
@@ -256,11 +295,51 @@ def build():
                  "sections": {"What it is": "Every %s across all four suits and every deck — cross-suit numerology." % RANK_NAMES[r]},
                  "composite_of": members})
             xr_nodes.append(xid)
+    # Historiography essay — the divination question, stated and weighed honestly.
+    add({"id": "essay-divination-question", "name": "The Divination Question — and why the Inquisition doesn't explain the silence",
+         "level": 5, "category": "essay",
+         "sections": {
+            "The documented origin is a game": (
+                "Tarot appears in 1440s northern Italy (Milan, Ferrara, Bologna) as a trick-taking GAME: 21 "
+                "'triumph' cards plus the Fool added to an ordinary four-suit deck so trumps beat the suits. "
+                "The earliest sources are account books, game treatises, tax/guild records and luxury commissions "
+                "— and the game never died (tarock/tarocchi is still played in continental Europe). For roughly "
+                "three centuries (c. 1440–1780) there is no surviving evidence that tarot was used for divination."),
+            "The concealment hypothesis (stated fairly)": (
+                "A fair objection: the archive records what was safe to write down. Divination, sortilegio and "
+                "judicial astrology were spiritually suspect, and the Inquisition prosecuted superstition — so a "
+                "fortune-teller in 1490 would call it 'just a game,' and any divinatory use of tarot might simply "
+                "have left no trace. On this view the silence reflects fear, not absence."),
+            "Why it does not hold up": (
+                "Four problems. (1) TIMING is backwards: tarot appears c. 1440, but the heavy anti-superstition "
+                "machinery ramps up later (Roman Inquisition 1542, Counter-Reformation) — leaving a century before "
+                "the crackdown still with no divination evidence. (2) The cards were NOT hidden: they were openly "
+                "bought, taxed, gifted and played; an underground practice riding the most visible deck in Europe is "
+                "implausible. (3) Other fortune-telling DID get recorded in the same period — court astrology, and "
+                "printed lot-books like Lorenzo Spirito's *Libro delle Sorti* (1482); tarot simply isn't part of that "
+                "documented sortes tradition until the 1700s. (4) The dog that didn't bark: the 15th-c. friar's sermon "
+                "(*Sermones de ludo cum aliis*) lists the 21 trumps by name and condemns the deck — as gambling and "
+                "the devil's work, NOT as divination, the graver sin moralists were eager to catalog. And the 18th-c. "
+                "emergence reads as invention, not inheritance: Court de Gébelin presents the Egyptian 'Book of Thoth' "
+                "as a fresh discovery (and gets Egypt flatly wrong), while Etteilla builds a cartomancy system from scratch."),
+            "Conclusion": (
+                "So the honest claim is not 'only ever a game,' and not 'secretly always divinatory.' It is: tarot was "
+                "DESIGNED AND FIRST USED AS A GAME; divinatory meaning is a later (18th-century) overlay. Informal "
+                "cartomancy with cards can't be wholly ruled out and the record is biased — but the Inquisition does "
+                "not explain the silence, and the simpler reading fits the positive evidence better."),
+            "Sources": (
+                "Michael Dummett, *The Game of Tarot* (1980); Ronald Decker, Thierry Depaulis & Michael Dummett, "
+                "*A Wicked Pack of Cards* (1996); Decker & Dummett, *A History of the Occult Tarot* (2002); Stuart "
+                "Kaplan, *The Encyclopedia of Tarot*; Andrea Vitali, *Le Tarot* essays (letarot.it); Lothar Teikemeier, "
+                "trionfi.com. Primary: the *Sermones de ludo cum aliis* ('Steele sermon'); Court de Gébelin, *Le Monde "
+                "Primitif* vol. VIII (1781, on Gallica/BnF); Lorenzo Spirito, *Libro delle Sorti* (1482).")
+         }})
+
     # Roots
     arc_children = [x for x in ("arc-major", "arc-minor") if any(i["id"] == x for i in items)]
     add({"id": "root-arcana", "name": "The Tarot — by Arcana · Suit · Number", "level": 6, "category": "root",
-         "sections": {"What it is": "The canonical tarot tree: Major Arcana by number, Minor Arcana → four suits → ranks Ace–King — every leaf gathered across all decks."},
-         "composite_of": arc_children})
+         "sections": {"What it is": "The canonical tarot tree: Major Arcana by number, Minor Arcana → four suits → ranks Ace–King — every leaf gathered across all decks. See also the essay 'The Divination Question' for how this collection frames game-vs-divination."},
+         "composite_of": ["essay-divination-question"] + arc_children})
     add({"id": "axis-deck", "name": "By Deck", "level": 4, "category": "axis",
          "sections": {"What it is": "Browse every card grouped by its source deck."},
          "composite_of": ["deck-" + s.replace("-","") for s in DECKS if any(c["slug"] == s for c in cards)]})
@@ -272,20 +351,112 @@ def build():
              "sections": {"What it is": "Cross-suit numerology: every Ace, every Two … every King, across all suits and decks."},
              "composite_of": xr_nodes})
 
+    # By Lineage — Dummett trump-order genealogy (STRUCTURAL: the real derivation branches).
+    lin_nodes = []
+    for o, _ in sorted(ORDER_SORT.items(), key=lambda kv: kv[1]):
+        members = ids(lambda c, o=o: c["order"] == o)
+        if members:
+            lid = "lineage-" + o
+            add({"id": lid, "name": ORDER_LABEL[o], "level": 3, "category": "lineage",
+                 "sections": {"What it is": "Decks of the %s, gathered across every card." % ORDER_LABEL[o]},
+                 "composite_of": members})
+            lin_nodes.append(lid)
+    if lin_nodes:
+        add({"id": "axis-lineage", "name": "By Lineage", "level": 4, "category": "axis",
+             "sections": {"What it is": "Michael Dummett's trump-order genealogy (A / B / C) plus the post-1781 occult turn — the real derivation history *between decks*."},
+             "composite_of": lin_nodes})
+
+    # By Function — game / divination / esoteric (STRUCTURAL: documented historical use).
+    fn_nodes = []
+    for fn, _ in sorted(FUNC_SORT.items(), key=lambda kv: kv[1]):
+        members = ids(lambda c, fn=fn: c["function"] == fn)
+        if members:
+            fid = "function-" + fn
+            add({"id": fid, "name": FUNC_LABEL[fn], "level": 3, "category": "function",
+                 "sections": {"What it is": "Cards from decks whose documented use was: %s." % FUNC_LABEL[fn]},
+                 "composite_of": members})
+            fn_nodes.append(fid)
+    if fn_nodes:
+        add({"id": "axis-function", "name": "By Function", "level": 4, "category": "axis",
+             "sections": {"What it is": "Game vs divination vs esoteric — documented use, which only turns divinatory after 1781."},
+             "composite_of": fn_nodes})
+
     # render_as: the orthogonal axes become faceted filter pills in the viewer
     # (the tree keeps the arcana->suit->rank spine). Mirrors the Library HashtagFilter.
+    PILL_AXES = ("axis-deck", "axis-age", "axis-number", "axis-lineage", "axis-function")
     for it in items:
-        if it["id"] in ("axis-deck", "axis-age", "axis-number"):
+        if it["id"] in PILL_AXES:
             it["render_as"] = "pill-group"
+
+    # emergence_kind: distinguish REAL structural emergences (deck, era, lineage, function —
+    # things that historically happened) from analytical LENSES (archetype/suit/rank — ways
+    # we re-group the same leaves). Lets a viewer show "the genealogy" vs "the study lenses".
+    STRUCTURAL_CATS = {"deck", "era", "lineage", "function", "root", "axis"}
+    LENS_CATS = {"rank", "suit", "archetype", "arcana", "rank-cross"}
+    for it in items:
+        cat = it.get("category")
+        if cat in STRUCTURAL_CATS:
+            it["emergence_kind"] = "structural"
+        elif cat in LENS_CATS:
+            it["emergence_kind"] = "lens"
+
+    # Denormalized per-deck index — lets a self-contained viewer (GitHub Pages /
+    # Cytoscape) render the genealogy-on-a-timeline from this one file, no globbing.
+    deck_summary = []
+    for slug, dk in DECKS.items():
+        dcards = [c for c in cards if c["slug"] == slug]
+        if not dcards:
+            continue
+        cl = CLASS.get(slug, {})
+        deck_summary.append({
+            "slug": slug, "label": dk["label"], "node_id": "deck-" + slug.replace("-", ""),
+            "era": dk["era"], "era_sort": dk["era_sort"], "date": dk["ed"]["date"],
+            "order": cl.get("order"), "function": cl.get("function"), "count": len(dcards),
+            "ancestry": "tarot", "tier": cl.get("order"),  # tarot decks lane by trump-order
+        })
+    # Upstream ancestors / cousins (separate grammars) on the same timeline.
+    for a in ANCESTORS:
+        deck_summary.append({
+            "slug": a["slug"], "label": a["label"], "node_id": a["node_id"],
+            "era": a["era"], "era_sort": 0, "date": a["date"], "timeline_year": a["timeline_year"],
+            "order": None, "function": "game", "count": a["count"],
+            "ancestry": a["ancestry"], "tier": a["ancestry"],  # ancestors lane by ancestry status
+        })
 
     grammar = {
         "_grammar_commons": {"schema_version": "1.0", "license": "CC-BY-SA-4.0",
             "attribution": [{"name": "PlayfulProcess", "note": "Generated meta-grammar; cards from the public-domain decks in this repo."}]},
         "name": "The Tarot — All Decks, Many Lenses (meta)",
-        "description": "A generated meta-grammar aggregating the public-domain tarot decks in recursive-tarot into one navigable tree: Major Arcana by number, Minor Arcana by suit & rank, plus By Deck, By Age, and cross-suit By Rank. Each card carries its source deck's editorial provenance (date, maker, patron, print, game-vs-divination). The whole collection is public domain — provenance lives here once, not tagged on each card.",
+        "description": (
+            "A generated meta-grammar aggregating the public-domain tarot decks in recursive-tarot "
+            "into one navigable tree: Major Arcana by number, Minor Arcana by suit & rank, plus By Deck, "
+            "By Age, and cross-suit By Rank. Each card carries its source deck's editorial provenance "
+            "(date, maker, patron, print, game-vs-divination). The whole collection is public domain — "
+            "provenance lives here once, not tagged on each card.\n\n"
+            "ON ORIGINS — read before judging the framing. The documented origin of tarot (1440s northern "
+            "Italy) is a trick-taking card GAME: the 'triumphs' (trionfi) were added to an ordinary four-suit "
+            "deck so trumps could beat the suits. For roughly three centuries there is no surviving evidence of "
+            "tarot used for divination; the cards were openly bought, taxed, gifted, and played across Europe "
+            "(the game survives as tarock/tarocchi today). Divinatory tarot is first attested in the 1780s — "
+            "Court de Gébelin's (evidence-free) 'ancient Egyptian Book of Thoth' claim, then Etteilla's "
+            "purpose-built cartomancy — and was elaborated by 19th-century occultists into the system most "
+            "people now assume was always there. So the honest claim is not 'only a game' but: DOCUMENTED AND "
+            "FIRST USED AS A GAME; divinatory meaning is a later (18th-century) overlay, not the original "
+            "purpose. One caveat is kept throughout: absence of evidence is shaped by what was safe to write "
+            "down — informal cartomancy can't be wholly ruled out (see the node 'The Divination Question'). "
+            "DEEPER ROOTS (a gaming, not divinatory, lineage): Tang-China money-suited cards → Mamluk Egypt's "
+            "kanjifah / Mulūk wa-nuwwāb — the four-suit pack Europe copied when cards reached Iberia & Italy in "
+            "the 1370s → Italian trionfi (1440s). Genuinely ancestral decks (Mamluk, the Cary Sheet, the "
+            "Rosenwald Sheet, Noblet) are being added, with the cousin branches (Ganjifa) labelled as such, so "
+            "the China → Islam → Europe story is visible. Full per-deck notes live in this repo's research/ "
+            "library. Scholarship: Dummett, *The Game of Tarot* (1980); Decker, Depaulis & Dummett, *A Wicked "
+            "Pack of Cards* (1996); Dummett & McLeod, *A History of Games Played with the Tarot Pack* (2004); "
+            "Kaplan, *Encyclopedia of Tarot*; Andrea Vitali, *Le Tarot* (letarot.it); Teikemeier, trionfi.com."
+        ),
         "grammar_type": "tarot", "creator_name": "PlayfulProcess", "default_view": "tree", "default_preview": "tree",
         "_generated": True, "_do_not_hand_edit": True, "_built_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "_built_by": "scripts/build_meta_grammar.py",
+        "_decks": deck_summary,
         "items": items,
     }
     out_dir = os.path.join(TAROT, OUT_SLUG)

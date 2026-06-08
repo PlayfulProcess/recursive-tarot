@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Recursive Tarot — Genealogy Graph</title>
+<!--
+  Self-contained visual catalogue for the recursive-tarot repo.
+  - No build, no server needed to VIEW: a single file + the committed meta JSON.
+  - Data-driven: reads tarot/all-decks-many-lenses/grammar.json (its `_decks` index).
+    Add a deck folder respecting the structure + rebuild the meta → it appears here.
+  - Cytoscape.js (MIT) from CDN — used, not forked.
+  - Honest edges: simplified lineage = trump-order (Dummett A/B/C) + chronology,
+    NOT a claim of exact deck-to-deck derivation.
+  Companion to recursive.eco (the rich integrated reader); this is the academic,
+  fork-it-yourself view of the repo's own data.
+-->
+<script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<style>
+  :root { --bg:#14121a; --panel:#1d1b26; --ink:#ece9f3; --muted:#a59fb5; --line:#2c2937; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  header { padding:14px 18px; border-bottom:1px solid var(--line); display:flex; gap:18px; align-items:baseline; flex-wrap:wrap; }
+  header h1 { font-size:18px; margin:0; font-weight:600; }
+  header h1 a { color:inherit; text-decoration:none; }
+  header .sub { color:var(--muted); font-size:13px; }
+  header .controls { margin-left:auto; display:flex; gap:10px; align-items:center; font-size:13px; }
+  button.toggle { background:var(--panel); color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:5px 10px; cursor:pointer; }
+  button.toggle.active { background:#6a3fb0; border-color:#6a3fb0; }
+  #wrap { display:flex; height:calc(100% - 56px); }
+  #cy { flex:1; height:100%; }
+  #panel { width:330px; border-left:1px solid var(--line); padding:16px; overflow:auto; background:var(--panel); }
+  #panel h2 { font-size:16px; margin:0 0 6px; }
+  #panel .row { font-size:13px; color:var(--muted); margin:3px 0; }
+  #panel .row b { color:var(--ink); font-weight:600; }
+  #panel a { color:#b794f6; }
+  .legend { display:flex; gap:14px; flex-wrap:wrap; font-size:12px; color:var(--muted); }
+  .legend span { display:inline-flex; align-items:center; gap:5px; }
+  .dot { width:11px; height:11px; border-radius:50%; display:inline-block; }
+  .empty { color:var(--muted); font-size:13px; }
+  .note { font-size:11px; color:var(--muted); padding:6px 18px; border-top:1px solid var(--line); }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="index.html">Recursive Tarot</a> — Genealogy Graph</h1>
+    <div class="sub">Public-domain decks placed by date × trump-order lineage. Click a deck.</div>
+  </div>
+  <div class="controls">
+    <span>Colour by:</span>
+    <button class="toggle active" id="byOrder">Lineage</button>
+    <button class="toggle" id="byFunction">Function</button>
+  </div>
+</header>
+<div id="wrap">
+  <div id="cy"></div>
+  <aside id="panel"><div class="empty">Loading the catalogue…</div></aside>
+</div>
+<div class="note">Edges are simplified lineage (trump-order + chronology), not a claim of exact deck-to-deck derivation. The dashed purple edge marks the post-1781 occult turn off the C-order. Data: this repo's <code>tarot/all-decks-many-lenses/grammar.json</code>.</div>
+<script>
+const META_URL = 'tarot/all-decks-many-lenses/grammar.json';
+// "tier" = ancestor status (upstream) OR tarot trump-order. Ancestors share the top lane.
+const TIER = { 'direct-ancestor':'#d4af37', 'ancestral':'#c9a227', 'cousin':'#8d99ae',
+  A:'#e07a5f', B:'#81b29a', C:'#5c6bc0', occult:'#9c47d1' };
+const TIER_NAME = { 'direct-ancestor':'Direct ancestor', 'ancestral':'Ancestral', 'cousin':'Cousin (not a parent)',
+  A:'A-order · Florence/Bologna', B:'B-order · Ferrara', C:'C-order · Milan→Marseille', occult:'Occult turn (post-1781)' };
+const TIER_LANE = { 'direct-ancestor':0, 'ancestral':0, 'cousin':0, A:1, B:2, C:3, occult:4 };
+const FUNC = { game:'#3aa3a0', 'origin-myth':'#c9a227', divination:'#c0556f', esoteric:'#7e57c2' };
+const FUNC_NAME = { game:'Game', 'origin-myth':'Origin-myth', divination:'Divination', esoteric:'Esoteric' };
+
+function parseYear(s){
+  s = String(s||'');
+  let m = s.match(/(\d{4})/); if(m) return +m[1];
+  m = s.match(/(\d{1,2})\s*(?:th|st|nd|rd)?\s*[–-]?\s*(?:\d{1,2}\s*(?:th|st|nd|rd)?)?\s*c/i);
+  if(m) return (+m[1]-1)*100 + 50;
+  return 1500;
+}
+const yearOf = d => d.timeline_year || parseYear(d.date||d.era);
+function activeMode(){ return document.getElementById('byFunction').classList.contains('active') ? 'function' : 'order'; }
+function legendHTML(mode){
+  const map = mode==='function' ? FUNC : TIER, names = mode==='function' ? FUNC_NAME : TIER_NAME;
+  return Object.keys(map).map(k => `<span><i class="dot" style="background:${map[k]}"></i>${names[k]}</span>`).join('');
+}
+
+(async function(){
+  const panel = document.getElementById('panel');
+  let meta;
+  try { meta = await (await fetch(META_URL)).json(); }
+  catch(e){ panel.innerHTML = '<div class="empty">Could not load '+META_URL+'. Rebuild the meta (<code>python scripts/build_meta_grammar.py</code>) and serve the repo root.</div>'; return; }
+  const decks = (meta._decks||[]).map(d => ({...d, year: yearOf(d)}));
+  if(!decks.length){ panel.innerHTML = '<div class="empty">No decks in the meta index (<code>_decks</code>). Rebuild the meta.</div>'; return; }
+
+  const years = decks.map(d=>d.year);
+  const minY = Math.min(...years), maxY = Math.max(...years);
+  const W = Math.max(900, document.getElementById('cy').clientWidth - 120);
+  const xOf = y => 50 + (maxY===minY ? 0 : (y-minY)/(maxY-minY))*W;
+  const yOf = tier => 80 + (TIER_LANE[tier] ?? 2) * 120;
+
+  const nodes = decks.map(d => ({ data:{ id:d.node_id, label:d.label, ...d }, position:{ x:xOf(d.year), y:yOf(d.tier) } }));
+
+  // Honest simplified edges: chain tarot decks within each trump-order by year; connect
+  // the occult lane to the latest C-order deck (Marseille → occult turn); and draw the
+  // transmission from each upstream ancestor to the earliest tarot deck.
+  const edges = []; const byOrder = {};
+  decks.filter(d=>d.order).forEach(d => (byOrder[d.order] ||= []).push(d));
+  Object.values(byOrder).forEach(arr => {
+    arr.sort((a,b)=>a.year-b.year);
+    for(let i=1;i<arr.length;i++) edges.push({ data:{ id:'e'+i+arr[i].node_id, source:arr[i-1].node_id, target:arr[i].node_id } });
+  });
+  if(byOrder.occult && byOrder.C){
+    const fo = [...byOrder.occult].sort((a,b)=>a.year-b.year)[0];
+    const cb = [...byOrder.C].filter(d=>d.year<=fo.year).sort((a,b)=>b.year-a.year)[0] || [...byOrder.C].sort((a,b)=>a.year-b.year)[0];
+    if(cb) edges.push({ data:{ id:'eturn', source:cb.node_id, target:fo.node_id, turn:1 } });
+  }
+  const earliestTarot = decks.filter(d=>d.ancestry==='tarot').sort((a,b)=>a.year-b.year)[0];
+  decks.filter(d=>d.tier==='direct-ancestor'||d.tier==='ancestral').forEach(a => {
+    if(earliestTarot) edges.push({ data:{ id:'anc'+a.node_id, source:a.node_id, target:earliestTarot.node_id, turn:1 } });
+  });
+
+  const cy = cytoscape({
+    container: document.getElementById('cy'),
+    elements: { nodes, edges },
+    layout: { name:'preset' },
+    style: [
+      { selector:'node', style:{ 'label':'data(label)', 'color':'#ece9f3', 'font-size':'11px',
+        'text-wrap':'wrap', 'text-max-width':'120px', 'text-valign':'bottom', 'text-margin-y':4,
+        'width':'data(_w)', 'height':'data(_w)', 'background-color':'data(_color)',
+        'border-width':2, 'border-color':'#00000055' } },
+      { selector:'edge', style:{ 'width':2, 'line-color':'#4a4660', 'target-arrow-color':'#4a4660',
+        'target-arrow-shape':'triangle', 'curve-style':'bezier', 'arrow-scale':0.8 } },
+      { selector:'edge[turn]', style:{ 'line-color':'#9c47d1', 'target-arrow-color':'#9c47d1', 'line-style':'dashed', 'width':3 } },
+      { selector:'node:selected', style:{ 'border-color':'#ffffff', 'border-width':3 } },
+    ],
+  });
+
+  function recolor(mode){
+    cy.nodes().forEach(n => { const d = n.data();
+      n.data('_color', mode==='function' ? (FUNC[d.function]||'#888') : (TIER[d.tier]||'#888'));
+      n.data('_w', 22 + Math.sqrt(d.count||1)*5);
+    });
+    cy.style().update();
+    const lg = document.getElementById('lg'); if(lg) lg.innerHTML = legendHTML(mode);
+  }
+  function setMode(mode){
+    document.getElementById('byOrder').classList.toggle('active', mode==='order');
+    document.getElementById('byFunction').classList.toggle('active', mode==='function');
+    recolor(mode);
+  }
+  document.getElementById('byOrder').onclick = () => setMode('order');
+  document.getElementById('byFunction').onclick = () => setMode('function');
+
+  panel.innerHTML = '<div class="empty">Click a deck to see its provenance.</div><div class="legend" id="lg" style="margin-top:14px"></div>';
+  recolor('order');
+
+  cy.on('tap','node', e => {
+    const d = e.target.data();
+    panel.innerHTML = `
+      <h2>${d.label}</h2>
+      <div class="row"><b>Date</b> · ${d.date||d.era||'—'}</div>
+      <div class="row"><b>Lineage</b> · ${TIER_NAME[d.tier]||d.tier||'—'}</div>
+      <div class="row"><b>Function</b> · ${FUNC_NAME[d.function]||d.function||'—'}</div>
+      <div class="row"><b>Cards</b> · ${d.count}</div>
+      <div class="row" style="margin-top:10px"><a href="deck.html?file=tarot/${d.slug}/grammar.json" target="_blank" rel="noopener">open deck ↗</a></div>
+      <div class="row"><a href="tarot/${d.slug}/grammar.json" target="_blank" rel="noopener">raw JSON ↗</a></div>
+      <div class="legend" id="lg" style="margin-top:16px"></div>`;
+    document.getElementById('lg').innerHTML = legendHTML(activeMode());
+  });
+
+  cy.fit(undefined, 60);
+  window.addEventListener('resize', () => cy.fit(undefined, 60));
+})();
+</script>
+</body>
+</html>

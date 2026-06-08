@@ -1,0 +1,60 @@
+name: Rebuild meta + deploy Pages
+
+# Auto-rebuilds the aggregated meta-grammar whenever a deck changes, then publishes
+# the repo (incl. genealogy.html) to GitHub Pages. So "add tarot/<deck>/grammar.json
+# respecting the structure → push" makes the genealogy graph update with no manual step.
+# (Enable once: Settings → Pages → Source = "GitHub Actions".)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tarot/**'
+      - 'scripts/build_meta_grammar.py'
+      - 'genealogy.html'
+      - 'index.html'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # to commit the regenerated meta
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Rebuild meta-grammar
+        run: python scripts/build_meta_grammar.py
+
+      - name: Commit regenerated meta (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- tarot/all-decks-many-lenses/grammar.json; then
+            git add tarot/all-decks-many-lenses/grammar.json
+            git commit -m "chore: rebuild meta-grammar [skip ci]"
+            git push
+          else
+            echo "meta unchanged"
+          fi
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - id: deploy
+        uses: actions/deploy-pages@v4
