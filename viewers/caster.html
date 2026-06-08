@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Recursive Tarot — Caster</title>
+<!--
+  Self-contained tarot caster for GitHub Pages. No backend.
+  - Reads this repo's meta-grammar (tarot/all-decks-many-lenses/grammar.json),
+    which already aggregates every public-domain deck's cards with provenance.
+  - Cast from a single historical deck OR across ALL decks at once (the meta's
+    unique power: a cross-deck draw the printed decks could never give you).
+  - Spread positions are Structures / Process / Possibilities — NOT past/present/
+    future. We read the shape a situation is in, not a fortune.
+  - The cast exports as JSON that recursive.eco's Journal imports, so the AI
+    reading happens there. This page draws; recursive.eco interprets.
+-->
+<style>
+  :root { --bg:#14121a; --panel:#1d1b26; --ink:#ece9f3; --muted:#a59fb5; --line:#2c2937; --accent:#8b5cf6; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; min-height:100%; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  a { color:#b794f6; }
+  header.site { display:flex; align-items:center; gap:18px; padding:12px 18px; border-bottom:1px solid var(--line); font-size:14px; }
+  header.site .brand { color:#c4b5fd; text-decoration:none; font-weight:600; }
+  header.site a.nav { color:var(--muted); text-decoration:none; }
+  header.site .sp { margin-left:auto; }
+  .wrap { max-width:1100px; margin:0 auto; padding:22px 18px 60px; }
+  h1 { font-size:22px; margin:0 0 4px; font-weight:600; }
+  .sub { color:var(--muted); font-size:14px; margin:0 0 22px; }
+  .controls { display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; }
+  .field { display:flex; flex-direction:column; gap:5px; }
+  .field label { font-size:12px; color:var(--muted); }
+  select, input[type=text], textarea { background:#14121a; color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:8px 10px; font-size:14px; font-family:inherit; }
+  select { min-width:260px; }
+  input#question { min-width:300px; }
+  .checkbox { display:flex; align-items:center; gap:6px; font-size:13px; color:var(--muted); }
+  button { background:var(--accent); color:#fff; border:none; border-radius:8px; padding:9px 18px; font-size:14px; font-weight:600; cursor:pointer; }
+  button.ghost { background:#2c2937; color:#d8d3e6; }
+  button:disabled { opacity:.5; cursor:default; }
+  .deckmeta { color:var(--muted); font-size:12px; margin-top:8px; }
+  .spread { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:26px; }
+  @media (max-width:760px){ .spread { grid-template-columns:1fr; } }
+  .pos { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:16px; display:flex; flex-direction:column; }
+  .pos .pname { font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--accent); font-weight:700; }
+  .pos .pprompt { font-size:12px; color:var(--muted); margin:4px 0 12px; line-height:1.4; }
+  .card-img { width:100%; aspect-ratio:3/5; object-fit:contain; background:#0a0910; border-radius:10px; border:1px solid var(--line); }
+  .card-img.placeholder { display:flex; align-items:center; justify-content:center; color:#4a4660; font-size:42px; }
+  .card-name { font-size:15px; font-weight:600; margin:12px 0 2px; }
+  .card-deck { font-size:12px; color:var(--muted); }
+  .reversed { color:#e0a458; font-size:11px; font-weight:600; margin-top:4px; }
+  .empty { color:var(--muted); font-size:14px; margin-top:26px; text-align:center; padding:40px 0; }
+  .export { margin-top:30px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; display:none; }
+  .export h2 { font-size:15px; margin:0 0 4px; }
+  .export p { color:var(--muted); font-size:13px; margin:0 0 12px; line-height:1.5; }
+  .export .btnrow { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+  textarea#json { width:100%; height:150px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11px; resize:vertical; }
+  .note { font-size:11px; color:var(--muted); border-top:1px solid var(--line); margin-top:30px; padding-top:14px; }
+  footer.site { padding:18px; border-top:1px solid var(--line); color:#6b7280; font-size:12px; text-align:center; }
+</style>
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="../index.html">Recursive Tarot</a>
+  <a class="nav" href="../genealogy.html">Genealogy</a>
+  <a class="nav" href="tree-viewer.html">Tree</a>
+  <a class="nav" href="cards.html">Cards</a>
+  <a class="nav sp" href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">GitHub ↗</a>
+</header>
+
+<div class="wrap">
+  <h1>Tarot Caster</h1>
+  <p class="sub">Draw three cards from any public-domain deck — or across every deck at once. Positions read <b>Structures · Process · Possibilities</b>, not a fortune. Export the cast to read it with AI in recursive.eco.</p>
+
+  <div class="controls">
+    <div class="field">
+      <label for="deck">Deck</label>
+      <select id="deck"><option>Loading decks…</option></select>
+      <div class="deckmeta" id="deckmeta"></div>
+    </div>
+    <div class="field">
+      <label for="question">Your question (optional)</label>
+      <input type="text" id="question" placeholder="What is this situation made of?" />
+    </div>
+    <label class="checkbox"><input type="checkbox" id="reversals" /> allow reversals</label>
+    <button id="cast" disabled>Cast</button>
+    <button id="reshuffle" class="ghost" style="display:none">Re-cast</button>
+  </div>
+
+  <div id="spread" class="spread" style="display:none"></div>
+  <div id="empty" class="empty">Pick a deck and cast.</div>
+
+  <div class="export" id="export">
+    <h2>Take this reading further</h2>
+    <p>This page draws the cards; <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a> interprets them. Copy or download the cast, then import it into your Journal there to get an AI reading — or just keep the JSON as a record.</p>
+    <div class="btnrow">
+      <button id="copyJson">Copy JSON</button>
+      <button id="downloadJson" class="ghost">Download .json</button>
+      <a id="journalLink" href="https://recursive.eco" target="_blank" rel="noopener"><button class="ghost">Open recursive.eco Journal ↗</button></a>
+    </div>
+    <textarea id="json" readonly></textarea>
+  </div>
+
+  <div class="note">
+    Data: this repo's <code>tarot/all-decks-many-lenses/grammar.json</code> — a generated index of every deck's cards with provenance. Cross-deck casts sample the whole pool; single-deck casts sample one deck. Cards are public domain.
+  </div>
+</div>
+
+<footer class="site">
+  Public-domain tarot data · <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">recursive-tarot</a> · companion to <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a>
+</footer>
+
+<script>
+const META_URL = '../tarot/all-decks-many-lenses/grammar.json';
+const ALL = '__all__';
+const POSITIONS = [
+  { name:'Structures',    prompt:"What's already built — the patterns, conditions, and forms holding this situation in place." },
+  { name:'Process',       prompt:"What's moving — the work underway, the change in motion right now." },
+  { name:'Possibilities', prompt:"What could emerge — the openings and futures not yet committed." },
+];
+
+let leaves = [];          // all castable leaf cards from the meta
+let byDeck = {};          // source_deck slug -> [cards]
+let deckLabels = {};      // slug -> label
+let lastCast = null;
+
+function castableName(it){
+  const m = it.metadata || {};
+  return m.deck || deckLabels[m.source_deck] || 'Unknown deck';
+}
+
+(async function init(){
+  let meta;
+  try { meta = await (await fetch(META_URL)).json(); }
+  catch(e){ document.getElementById('empty').textContent = 'Could not load the deck index. Serve the repo so '+META_URL+' is reachable.'; return; }
+
+  (meta._decks || []).forEach(d => { deckLabels[d.slug] = d.label; });
+
+  // Castable = leaf cards (no composite_of) that have a source deck + arcana (real tarot cards).
+  leaves = (meta.items || []).filter(i => !i.composite_of && i.metadata && i.metadata.source_deck && i.metadata.arcana);
+  leaves.forEach(c => {
+    const s = c.metadata.source_deck;
+    (byDeck[s] ||= []).push(c);
+  });
+
+  // Build dropdown: cross-deck first, then each deck with >=3 castable cards, ordered like the meta.
+  const sel = document.getElementById('deck');
+  sel.innerHTML = '';
+  const optAll = document.createElement('option');
+  optAll.value = ALL;
+  optAll.textContent = `All Decks — cross-deck draw (${leaves.length} cards)`;
+  sel.appendChild(optAll);
+  (meta._decks || []).forEach(d => {
+    const n = (byDeck[d.slug] || []).length;
+    if (n < 3) return;
+    const o = document.createElement('option');
+    o.value = d.slug;
+    o.textContent = `${d.label} · ${d.date || d.era || ''} (${n})`;
+    sel.appendChild(o);
+  });
+
+  document.getElementById('cast').disabled = false;
+  updateDeckMeta();
+  sel.addEventListener('change', updateDeckMeta);
+  document.getElementById('cast').addEventListener('click', cast);
+  document.getElementById('reshuffle').addEventListener('click', cast);
+  document.getElementById('copyJson').addEventListener('click', copyJson);
+  document.getElementById('downloadJson').addEventListener('click', downloadJson);
+})();
+
+function currentPool(){
+  const v = document.getElementById('deck').value;
+  return v === ALL ? leaves : (byDeck[v] || []);
+}
+function updateDeckMeta(){
+  const v = document.getElementById('deck').value;
+  const el = document.getElementById('deckmeta');
+  if (v === ALL) { el.textContent = 'One card may come from each of several centuries — only the meta can do this.'; }
+  else { el.textContent = `${(byDeck[v]||[]).length} castable cards in this deck.`; }
+}
+
+function draw3(){
+  const pool = currentPool().slice();
+  // Fisher–Yates, take 3 distinct.
+  for (let i = pool.length - 1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
+  return pool.slice(0, 3);
+}
+
+function cast(){
+  const cards = draw3();
+  if (cards.length < 3){ return; }
+  const allowRev = document.getElementById('reversals').checked;
+  const deckVal = document.getElementById('deck').value;
+  const deckName = deckVal === ALL ? 'All Decks (cross-deck)' : (deckLabels[deckVal] || deckVal);
+
+  const cast = {
+    _type: 'recursive-tarot-cast',
+    _version: 1,
+    _source: 'https://playfulprocess.github.io/recursive-tarot/viewers/caster.html',
+    spread: 'Structures / Process / Possibilities',
+    deck: deckName,
+    cast_at: new Date().toISOString(),
+    question: document.getElementById('question').value.trim() || null,
+    cards: cards.map((c, i) => {
+      const m = c.metadata || {};
+      const reversed = allowRev ? Math.random() < 0.5 : false;
+      return {
+        position: POSITIONS[i].name,
+        prompt: POSITIONS[i].prompt,
+        name: c.name,
+        deck: castableName(c),
+        arcana: m.arcana || null,
+        number: (m.number ?? null),
+        reversed,
+        image_url: c.image_url || null,
+        source_deck: m.source_deck || null,
+        source_item_id: m.source_item_id || null,
+      };
+    }),
+  };
+  lastCast = cast;
+  renderCast(cast);
+}
+
+function renderCast(cast){
+  document.getElementById('empty').style.display = 'none';
+  document.getElementById('reshuffle').style.display = 'inline-block';
+  const spread = document.getElementById('spread');
+  spread.style.display = 'grid';
+  spread.innerHTML = cast.cards.map(card => {
+    const img = card.image_url
+      ? `<img class="card-img" src="${card.image_url}" alt="${esc(card.name)}" style="${card.reversed?'transform:rotate(180deg);':''}" onerror="this.outerHTML='<div class=\\'card-img placeholder\\'>?</div>'">`
+      : `<div class="card-img placeholder">★</div>`;
+    return `<div class="pos">
+      <div class="pname">${esc(card.position)}</div>
+      <div class="pprompt">${esc(card.prompt)}</div>
+      ${img}
+      <div class="card-name">${esc(card.name)}</div>
+      <div class="card-deck">${esc(card.deck)}</div>
+      ${card.reversed?'<div class="reversed">reversed</div>':''}
+    </div>`;
+  }).join('');
+
+  const json = JSON.stringify(cast, null, 2);
+  document.getElementById('json').value = json;
+  document.getElementById('export').style.display = 'block';
+}
+
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function copyJson(){
+  const ta = document.getElementById('json');
+  ta.select();
+  navigator.clipboard?.writeText(ta.value).then(()=>{
+    const b = document.getElementById('copyJson'); const t=b.textContent; b.textContent='Copied ✓'; setTimeout(()=>b.textContent=t,1400);
+  }).catch(()=>{ document.execCommand('copy'); });
+}
+function downloadJson(){
+  if (!lastCast) return;
+  const blob = new Blob([JSON.stringify(lastCast,null,2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'tarot-cast-' + lastCast.cast_at.replace(/[:.]/g,'-') + '.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+</script>
+</body>
+</html>
