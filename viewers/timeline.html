@@ -22,6 +22,9 @@
   .toolbar button:hover{border-color:var(--accent);color:var(--accent)}
   #scroll{flex:1;overflow-y:auto;overflow-x:hidden;position:relative}
   svg{display:block;width:100%}
+  .axis path,.axis line{stroke:#39324d}
+  .axis text{fill:#9b94b3;font-size:11px}
+  .gridline{stroke:#221d33;stroke-dasharray:2 4}
   .rail{fill:none;stroke-width:2px;opacity:.55}
   .rowhit{fill:transparent;cursor:pointer}
   .rowhit:hover + .rowg .dname, .rowg:hover .dname{fill:#fff}
@@ -96,39 +99,63 @@ function parseYear(when){ if(!when) return null;
 
 function visible(){ return decks.filter(d=>!hidden.has(d.branch)); }
 
+const BRANCHES=['branch-roots','branch-a','branch-b','branch-c','branch-occult','branch-sui'];
 function draw(){
   const scroll=document.getElementById('scroll');
-  const W=scroll.clientWidth||900;
-  const rowH=40, padTop=24, railX=44, nodeR=6;
-  const data=visible().slice().sort((a,b)=>oldestFirst?a.year-b.year:b.year-a.year);
-  const H=padTop*2 + data.length*rowH;
-  const svg=d3.select('#svg').attr('viewBox',[0,0,W,H]).attr('height',H); svg.selectAll('*').remove();
-  if(!data.length) return;
-  const rowY=Object.fromEntries(data.map((d,i)=>[d.id,padTop+i*rowH+rowH/2]));
+  const W=Math.max(560, scroll.clientWidth||900);
+  const data=visible();
+  if(!data.length){ d3.select('#svg').selectAll('*').remove(); return; }
+  const years=d3.extent(data,d=>d.year);
+  const span=Math.max(1, years[1]-years[0]);
+  const PXY=1.9;                                   // px per year → real gaps are visible
+  const padTop=42, padBot=40, axisW=56;
+  const innerH=Math.max(360, span*PXY);
+  const H=padTop+innerH+padBot;
+  const y=d3.scaleLinear().domain(years).range(oldestFirst?[padTop,padTop+innerH]:[padTop+innerH,padTop]);
+  const laneW=(W-axisW-16)/BRANCHES.length;
+  const laneX=b=>axisW + BRANCHES.indexOf(b)*laneW + laneW*0.28;
 
-  // descent rail (curved connectors, bowing into the left gutter)
+  const svg=d3.select('#svg').attr('viewBox',[0,0,W,H]).attr('height',H); svg.selectAll('*').remove();
+
+  // year gridlines + axis (proportional → blank space = real time gaps)
+  const nTicks=Math.min(14, Math.max(4, Math.round(span/45)));
+  svg.append('g').selectAll('line').data(y.ticks(nTicks)).join('line').attr('class','gridline')
+    .attr('x1',axisW).attr('x2',W-8).attr('y1',d=>y(d)).attr('y2',d=>y(d));
+  svg.append('g').attr('class','axis').attr('transform',`translate(${axisW},0)`)
+    .call(d3.axisLeft(y).tickFormat(d3.format('d')).ticks(nTicks));
+  // branch lane headers (the "aggregated by colour" grouping)
+  svg.append('g').selectAll('text').data(BRANCHES).join('text')
+    .attr('x',b=>laneX(b)).attr('y',20).attr('fill',b=>RAW_COLORS[b])
+    .style('font-size','11px').style('font-weight','700')
+    .text(b=>(LABEL[b]||b).replace(/\s*\(.*\)/,''));
+  svg.append('g').selectAll('rect').data(BRANCHES).join('rect')   // faint lane tint
+    .attr('x',b=>axisW+BRANCHES.indexOf(b)*laneW).attr('y',padTop-8).attr('width',laneW-2).attr('height',innerH+16)
+    .attr('fill',b=>RAW_COLORS[b]).attr('opacity',0.04);
+
+  // collision-avoid only within a lane (keeps the time axis honest)
+  const minGap=18, laneLast={}; const placed=[];
+  data.slice().sort((a,b)=>oldestFirst?a.year-b.year:b.year-a.year).forEach(d=>{
+    let py=y(d.year); const dir=oldestFirst?1:-1;
+    if(laneLast[d.branch]!=null && Math.abs(py-laneLast[d.branch])<minGap) py=laneLast[d.branch]+dir*minGap;
+    laneLast[d.branch]=py; placed.push({...d, px:laneX(d.branch), py});
+  });
+  const byId=Object.fromEntries(placed.map(p=>[p.id,p]));
+
   if(document.getElementById('toggle-derive').checked){
-    const edges=[]; data.forEach(d=>d.derives.forEach(s=>{ if(rowY[s]!=null) edges.push({s,t:d.id,branch:d.branch}); }));
+    const edges=[]; placed.forEach(p=>p.derives.forEach(s=>{ if(byId[s]) edges.push({s:byId[s],t:p}); }));
     svg.append('g').selectAll('path').data(edges).join('path').attr('class','rail')
-      .attr('stroke',e=>RAW_COLORS[e.branch]||'#888')
-      .attr('d',e=>{ const y1=rowY[e.s],y2=rowY[e.t]; const bow=railX-14-Math.min(18,Math.abs(y2-y1)/8);
-        return `M${railX},${y1} C${bow},${(y1+y2)/2} ${bow},${(y1+y2)/2} ${railX},${y2}`; });
+      .attr('stroke',e=>RAW_COLORS[e.t.branch]||'#888')
+      .attr('d',e=>`M${e.s.px},${e.s.py}C${e.s.px},${(e.s.py+e.t.py)/2} ${e.t.px},${(e.s.py+e.t.py)/2} ${e.t.px},${e.t.py}`);
   }
 
-  const g=svg.append('g').selectAll('g.rowg').data(data).join('g').attr('class','rowg')
-    .attr('transform',d=>`translate(0,${rowY[d.id]})`);
-  // full-width hit area
-  g.append('rect').attr('class','rowhit').attr('x',0).attr('y',-rowH/2).attr('width',W).attr('height',rowH)
-    .on('click',(ev,d)=>{ev.stopPropagation();showDetail(d);})
-    .on('mouseenter',(ev,d)=>trace(d.id,g))
-    .on('mouseleave',()=>{g.classed('dim',false).classed('hot',false);svg.selectAll('.rail').classed('dim',false);});
-  g.append('circle').attr('class','node').attr('cx',railX).attr('cy',0).attr('r',nodeR)
-    .attr('fill',d=>RAW_COLORS[d.branch]||'#7a7290');
-  g.append('text').attr('class','dyear').attr('x',railX+18).attr('y',-2).text(d=>d.year);
-  g.append('text').attr('class','dname').attr('x',railX+18).attr('y',14)
-    .text(d=>d.name.replace(/\s+[—–-]\s+.*/,'').slice(0,40));
-  g.append('text').attr('class','dbranch').attr('x',W-16).attr('y',4).attr('text-anchor','end')
-    .text(d=>(LABEL[d.branch]||'').replace(/\s*\(.*\)/,''));
+  const g=svg.append('g').selectAll('g.rowg').data(placed).join('g').attr('class','rowg')
+    .attr('transform',d=>`translate(${d.px},${d.py})`);
+  g.append('circle').attr('class','node').attr('r',6).attr('fill',d=>RAW_COLORS[d.branch]||'#7a7290');
+  g.append('text').attr('class','dname').attr('x',10).attr('dy','0.32em').text(d=>d.name.replace(/\s+[—–-]\s+.*/,'').slice(0,17));
+  g.append('text').attr('class','dyear').attr('x',10).attr('y',-9).text(d=>d.year);
+  g.on('click',(ev,d)=>{ev.stopPropagation();showDetail(d);})
+   .on('mouseenter',(ev,d)=>trace(d.id,g))
+   .on('mouseleave',()=>{g.classed('dim',false).classed('hot',false);svg.selectAll('.rail').classed('dim',false);});
 
   svg.on('click',()=>document.getElementById('detail').classList.remove('open'));
 }
