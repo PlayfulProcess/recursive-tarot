@@ -85,7 +85,11 @@
           }
         ],
         "archetype": "arcana:the-high-priestess",
-        "mapping_confidence": "loose"
+        "mapping_confidence": "loose",
+        "print": {
+          "dpi_ready": false,
+          "bleed": false
+        }
       },
       "sections": {
         "Iconography": "The goddess Juno stands with her peacock — replacing the Marseille's Popess.",
@@ -124,7 +128,11 @@
           }
         ],
         "archetype": "arcana:the-hierophant",
-        "mapping_confidence": "loose"
+        "mapping_confidence": "loose",
+        "print": {
+          "dpi_ready": false,
+          "bleed": false
+        }
       },
       "sections": {
         "Iconography": "Jupiter enthroned with his eagle and thunderbolt — replacing the Marseille's Pope.",
@@ -163,7 +171,11 @@
           }
         ],
         "archetype": "arcana:the-emperor",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "print": {
+          "dpi_ready": false,
+          "bleed": false
+        }
       },
       "sections": {
         "Iconography": "A crowned, bearded sovereign — labelled in German ('Der Herrscher') in this trilingual Swiss edition.",
@@ -202,7 +214,11 @@
           }
         ],
         "archetype": "arcana:the-chariot",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "print": {
+          "dpi_ready": false,
+          "bleed": false
+        }
       },
       "sections": {
         "Iconography": "A crowned prince in a triumphal car.",
@@ -241,7 +257,11 @@
           }
         ],
         "archetype": "arcana:strength",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "print": {
+          "dpi_ready": false,
+          "bleed": false
+        }
       },
       "sections": {
         "Iconography": "A woman parting a lion's jaws — Strength at XI, the older Marseille numbering.",
@@ -280,7 +300,11 @@
           }
         ],
         "archetype": "arcana:temperance",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "print": {
+          "dpi_ready": false,
+          "bleed": false
+        }
       },
       "sections": {
         "Iconography": "A winged figure pouring between two vessels.",
@@ -319,7 +343,11 @@
           }
         ],
         "archetype": "arcana:the-devil",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "print": {
+          "dpi_ready": false,
+          "bleed": false
+        }
       },
       "sections": {
         "Iconography": "A horned devil over bound figures.",
@@ -358,7 +386,11 @@
           }
         ],
         "archetype": "arcana:the-tower",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "print": {
+          "dpi_ready": false,
+          "bleed": false
+        }
       },
       "sections": {
         "Iconography": "Figures fall from a tower struck by fire — the 'House of God'.",
@@ -397,7 +429,11 @@
           }
         ],
         "archetype": "arcana:the-world",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "print": {
+          "dpi_ready": false,
+          "bleed": false
+        }
       },
       "sections": {
         "Iconography": "A dancing figure in a wreath with the four beasts.",
@@ -440,7 +476,11 @@
         "rank": "Ace",
         "suit": "Swords",
         "archetype": "card:ace-of-swords",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "print": {
+          "dpi_ready": false,
+          "bleed": false
+        }
       },
       "sections": {
         "Iconography": "A single sword crowned, amid the suit's emblems.",
@@ -483,7 +523,11 @@
         "rank": "Two",
         "suit": "Cups",
         "archetype": "card:two-of-cups",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "print": {
+          "dpi_ready": false,
+          "bleed": false
+        }
       },
       "sections": {
         "Iconography": "Two cups amid foliate scrollwork.",
@@ -526,7 +570,11 @@
         "rank": "Two",
         "suit": "Batons",
         "archetype": "card:two-of-wands",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "print": {
+          "dpi_ready": false,
+          "bleed": false
+        }
       },
       "sections": {
         "Iconography": "Two crossed batons.",
@@ -569,7 +617,11 @@
         "rank": "Three",
         "suit": "Coins",
         "archetype": "card:three-of-coins",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "print": {
+          "dpi_ready": false,
+          "bleed": false
+        }
       },
       "sections": {
         "Iconography": "Three coins arranged with decoration.",
@@ -606,5 +658,24 @@
       "action": "created"
     }
   ],
-  "_enriched_from": "research/15-besancon-1jj.mdx"
+  "_enriched_from": "research/15-besancon-1jj.mdx",
+  "print_readiness": {
+    "cards": 13,
+    "imaged": 13,
+    "dpi_ready": 0,
+    "bleed_ready": 0,
+    "verdict": "web_res",
+    "spec": {
+      "card_in": "2.5x3.5",
+      "dpi": 300,
+      "ready_px": [
+        750,
+        1050
+      ],
+      "bleed_px": [
+        825,
+        1125
+      ]
+    }
+  }
 }
