@@ -137,6 +137,35 @@ ownership story — but it's a security-sensitive build with handoffs only the b
 can do, so it deserves its own focused session rather than being rushed in alongside
 everything else.
 
+### Contribution models — how a community edits (e.g. historians on a public deck)
+
+Two paths, with different maturity today:
+
+**A. Edit *in the app* (works now — no GitHub account needed).** Mark the deck *Community*
+(`open_to_community`). Contributors sign in to recursive.eco, self-add as Editors, edit
+cards, and submit. Proposals **stage in the private vault**, not the public repo. The
+maintainer reviews each in the Pending Edits panel (preview diff, leave a note/message),
+then Accept → **deep-merges** into the public repo + Supabase (curatorial fields survive),
+now committed as `recursive-eco[bot]`. This is the Design V flow, verified end-to-end.
+
+**B. Edit *via GitHub directly* (repo works; app-sync pending).** A contributor with GitHub
+access edits `grammar.json` / opens a PR; the maintainer merges on GitHub. The PR is gated
+by the `validate-grammar` Action (parse + required fields + no dropped top-level field).
+**Gap:** a direct-GitHub merge does not yet flow back into Supabase, so the app won't show
+it until **Phase 3 (webhook → reindex)** lands. Until then, Path A is the reliable route
+even for GitHub-comfortable contributors.
+
+**C. Bring-your-own-repo (not yet).** The vision: a community owns *their* repo, installs the
+`recursive-eco[bot]` App on it, and edits via app or GitHub — they own the data and can
+uninstall anytime. Needs the App scope flipped to "Any account" + an install-registration
+UI + a per-user installation→repo mapping. The hardcoded writable-repo allow-list
+(`recursive-tarot`, `recursive.eco-schemas`) becomes per-installation.
+
+### Phase status (Jun 9 2026)
+Phase 0 (deep-merge) ✅ live · Phase 1 (App auth + bot writes) ✅ done · Phase 2 (validation
+Action) ⏳ templates ready, needs repo install + branch protection · Phase 3 (webhook
+reindex) 🟡 dry-run scaffold · Bring-your-own-repo ⛔ not started.
+
 ### Interim mitigation already in place
 - Design V (Jun 9 2026): proposals always stage + read from the private vault, so a public-repo-backed deck's pending edits are visible to the maintainer. Merge is still full-replace, so the deep-merge fix (Phase 0) is the next guard.
 - The ⚠️ note above ("re-check top-level fields after a UI round-trip") remains the manual workaround until Phase 0 lands.
