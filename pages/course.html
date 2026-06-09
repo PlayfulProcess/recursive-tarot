@@ -35,6 +35,9 @@
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
 const params=new URLSearchParams(location.search);
+// The course now lives in the richer course-viewer (TOC sidebar). Bare course.html
+// (the old course page) forwards there; ?src=… still renders arbitrary MDX (research).
+if(!params.get('src')){ location.replace('course-viewer.html'); }
 const SRC=params.get('src')||'../course/build-a-tarot-deck-with-claude.mdx';
 (async function(){
   const art=document.getElementById('article');
