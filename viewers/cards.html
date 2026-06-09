@@ -1880,6 +1880,10 @@
         <div id="grammar-content" class="hidden">
             <!-- Header -->
             <div class="grammar-header">
+                <select id="deck-switcher" onchange="switchDeck(this.value)" title="Switch deck — or back to All Decks"
+                    style="margin-bottom:10px;background:#1d1830;color:#e9e4f6;border:1px solid #3a3450;border-radius:8px;padding:7px 12px;font-size:14px;font-weight:600;cursor:pointer;max-width:340px;">
+                    <option value="">Loading decks…</option>
+                </select>
                 <h1 id="grammar-title" class="grammar-title">Grammar Viewer</h1>
                 <div id="description-container" class="hidden">
                     <p id="grammar-description" class="grammar-description collapsed"></p>
@@ -2161,6 +2165,7 @@
         document.addEventListener('DOMContentLoaded', init);
 
         async function init() {
+            populateDeckSwitcher();
             try {
                 // Check auth state
                 const { data: { user } } = await supabaseClient.auth.getUser();
@@ -3106,25 +3111,38 @@
             }
         }
 
-        // In-session lens picker for an axis — flip pill ↔ cards ↔ tree/timeline/genealogy
-        // live. Pills/Cards re-render in place; the spatial lenses open their renderer.
+        // Deck switcher — toggle between decks (and "All Decks" = the meta) without
+        // leaving the cards view. Reads the repo's _collection.json.
+        function switchDeck(val) { if (val) window.location.href = 'cards.html?src=' + encodeURIComponent(val); }
+        async function populateDeckSwitcher() {
+            const sel = document.getElementById('deck-switcher'); if (!sel) return;
+            const curSrc = new URLSearchParams(location.search).get('src') || '';
+            let list = [];
+            try {
+                const c = await (await fetch('../tarot/_collection.json')).json();
+                list = (c.collection || c.decks || []).map(d => ({ slug: d.slug, name: d.name || d.slug, meta: !!d.is_meta })).filter(d => d.slug);
+            } catch (e) { sel.style.display = 'none'; return; }
+            const metaItem = list.find(d => d.meta) || { slug: 'all-decks-many-lenses', name: 'All Decks (the meta)' };
+            const decks = list.filter(d => !d.meta).sort((a, b) => a.name.localeCompare(b.name));
+            const srcFor = s => '../tarot/' + s + '/grammar.json';
+            const opt = (s, label) => `<option value="${srcFor(s)}"${curSrc.includes('/' + s + '/') ? ' selected' : ''}>${label.replace(/\s+[—–-]\s+.*/, '')}</option>`;
+            sel.innerHTML = opt(metaItem.slug, '✦ All Decks (the meta)') + decks.map(d => opt(d.slug, d.name)).join('');
+        }
+
+        // In-place dimension menu — NO redirect. Just changes how this dimension is
+        // shown within the cards view (filter the grid / expand in the sidebar / clear).
         function showLensMenu(item, anchor) {
             document.querySelectorAll('.lens-menu-pop').forEach(m => m.remove());
-            const src = new URLSearchParams(window.location.search).get('src') || '';
-            const q = src ? ('?src=' + encodeURIComponent(src)) : '';
-            const NAV = { tree: 'tree-viewer.html', timeline: 'timeline.html', genealogy: '../genealogy.html', treeoflife: 'genealogy-tree.html' };
             const opts = [
-                ['◫ Pills (filter here)', 'pills'],
-                ['▦ Cards in grid', 'cards'],
-                ['⛢ Tree', 'tree'],
-                ['↧ Timeline', 'timeline'],
-                ['⸬ Genealogy', 'genealogy'],
+                ['▦ Filter the grid to this', 'filter'],
+                ['☰ Expand in sidebar', 'sidebar'],
+                ['✕ Show all (clear filter)', 'clear'],
             ];
             const menu = document.createElement('div');
             menu.className = 'lens-menu-pop';
-            menu.style.cssText = 'position:fixed;z-index:9999;background:#161227;border:1px solid #3a3450;border-radius:9px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.55);min-width:170px;';
+            menu.style.cssText = 'position:fixed;z-index:9999;background:#161227;border:1px solid #3a3450;border-radius:9px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.55);min-width:190px;';
             const r = anchor.getBoundingClientRect();
-            menu.style.left = Math.min(r.left, window.innerWidth - 190) + 'px';
+            menu.style.left = Math.min(r.left, window.innerWidth - 210) + 'px';
             menu.style.top = (r.bottom + 4) + 'px';
             opts.forEach(([label, mode]) => {
                 const a = document.createElement('div');
@@ -3134,10 +3152,9 @@
                 a.onmouseleave = () => a.style.background = '';
                 a.onclick = (ev) => {
                     ev.stopPropagation(); menu.remove();
-                    if (NAV[mode]) { window.location.href = NAV[mode] + (mode === 'genealogy' ? '' : q); return; }
-                    // pills / cards: filter to this axis in place (live, no rebuild)
-                    expandedSections.add(item.id);
-                    filterByHierarchy(`l${item.level || 4}`, item.id);
+                    if (mode === 'clear') { filterByHierarchy(null, null); }
+                    else if (mode === 'sidebar') { expandedSections.add(item.id); }
+                    else { expandedSections.add(item.id); filterByHierarchy(`l${item.level || 4}`, item.id); }
                     buildHierarchySidebar();
                 };
                 menu.appendChild(a);
