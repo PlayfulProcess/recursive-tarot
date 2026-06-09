@@ -2468,6 +2468,10 @@
                         composite_of: item.composite_of || null,
                         level: level,
                         parent_l3: parent_l3,
+                        // Lens dispatch (MULTI_LENS_PLAN): an axis can declare its full-view renderer.
+                        category: item.category || null,
+                        render_as: item.render_as || null,
+                        lens: item.lens || null,
                         // Keep original fields for display
                         chinese_name: item.metadata?.chinese_name,
                         pinyin: item.metadata?.pinyin,
@@ -3127,6 +3131,16 @@
             `;
 
             header.addEventListener('click', () => {
+                // ── Lens dispatch ── an axis with a non-pill lens opens that renderer
+                // (By Age → timeline, By Deck/Lineage → genealogy), preserving ?src.
+                const LENS_VIEW = { timeline: 'timeline.html', genealogy: '../genealogy.html', tree: 'tree-viewer.html' };
+                if (item.category === 'axis' && item.lens && LENS_VIEW[item.lens]) {
+                    const src = new URLSearchParams(window.location.search).get('src') || '';
+                    const q = src ? ('?src=' + encodeURIComponent(src)) : '';
+                    // timeline/tree read the loaded grammar; genealogy reads the meta.
+                    window.location.href = LENS_VIEW[item.lens] + (item.lens === 'genealogy' ? '' : q);
+                    return;
+                }
                 if (children.length > 0) {
                     if (expandedSections.has(item.id)) {
                         expandedSections.delete(item.id);
