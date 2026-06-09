@@ -4,8 +4,11 @@
 and each axis declares **how it renders** via `render_as`. The viewer shows a
 lens-picker; choosing a lens swaps the renderer, not the data.*
 
-Status: **plan / proposed.** The foundation (axis nodes + `render_as` + a swept
-keyword axis) already exists; this doc is the design for completing it.
+Status: **partially built.**
+- ✅ **Phase 1** — `lens` stamped on all 5 meta axes (By Deck/Lineage→`genealogy`, By Age→`timeline`, By Rank/Function→`pills`).
+- ✅ **Phase 2** — numeric `metadata.year` stamped on all 768 meta cards (queryable).
+- ✅ **Timeline renderer** — `viewers/timeline.html`, the Phase-3 build-first proof (decks on a year axis + descent edges), live & verified. Added to the shared header.
+- ⏳ **Remaining** — the unified lens *dispatcher* (pick an axis in `cards.html` → swap renderer) and Phase 4 (cross-lens deep-linking). The timeline is standalone for now.
 
 ---
 
