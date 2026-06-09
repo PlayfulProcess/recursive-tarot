@@ -22,17 +22,7 @@
         const stubClient = { from: () => stubQuery(), auth: { getUser: async () => ({ data: { user: null } }) } };
         window.RecursiveAuth = { init() { return stubClient; }, getClient() { return stubClient; } };
 
-        // Minimal static header / footer custom elements.
-        class RTHeader extends HTMLElement {
-            connectedCallback() {
-                this.innerHTML = `<header style="display:flex;align-items:center;gap:18px;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.1);font-size:14px;">
-                    <a href="../index.html" style="color:#c4b5fd;text-decoration:none;font-weight:600;">Recursive Tarot</a>
-                    <a href="../genealogy.html" style="color:#9ca3af;text-decoration:none;">Genealogy</a>
-                    <a href="caster.html" style="color:#9ca3af;text-decoration:none;">Caster</a>
-                    <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener" style="color:#9ca3af;text-decoration:none;margin-left:auto;">GitHub ↗</a>
-                </header>`;
-            }
-        }
+        // Header comes from the shared ../site-header.js (loaded below).
         class RTFooter extends HTMLElement {
             connectedCallback() {
                 this.innerHTML = `<footer style="padding:18px;border-top:1px solid rgba(255,255,255,.1);color:#6b7280;font-size:12px;text-align:center;">
@@ -40,7 +30,6 @@
                 </footer>`;
             }
         }
-        if (!customElements.get('site-header')) customElements.define('site-header', RTHeader);
         if (!customElements.get('site-footer')) customElements.define('site-footer', RTFooter);
 
         // ViewModeDropdown stub: links between the local static viewers.
@@ -54,6 +43,7 @@
         };
     })();
     </script>
+    <script src="../site-header.js"></script>
     <style>
         :root {
             --tree-bg: #0f0f14;
@@ -602,7 +592,7 @@
 <body>
     <script src="grammar-loader.js"></script>
 
-    <site-header></site-header>
+    <site-header active="tree"></site-header>
 
     <div class="main-content">
         <!-- Loading -->
