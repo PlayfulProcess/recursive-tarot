@@ -219,6 +219,15 @@ def build():
     items = []
     def add(o): items.append(o)
 
+    import re as _re
+    def _year(s):   # MULTI_LENS_PLAN §2: numeric year for the timeline lens (queryable field)
+        if not s: return None
+        m = _re.search(r'\b(1[2-9]\d{2}|20\d{2})\b', str(s))
+        if m: return int(m.group(1))
+        m = _re.search(r'(\d{1,2})\s*(?:st|nd|rd|th)?\s*c', str(s), _re.I)
+        if m: return (int(m.group(1)) - 1) * 100 + 50
+        return None
+
     # L1 cards
     for c in cards:
         ed = c["ed"]
@@ -228,6 +237,7 @@ def build():
                  "deck": c["label"], "arcana": c["arcana"], "suit": c["suit"],
                  "number": (c["major"] if c["major"] is not None else c["rank"]),
                  "order": c["order"], "function": c["function"],
+                 "year": _year(ed["date"]) or _year(c["era"]),
                  "source_deck": c["slug"], "source_item_id": c["src_item_id"],
                  "editorial": {"date": ed["date"], "maker": ed["maker"],
                                "patron": (None if ed["patron"] == "—" else ed["patron"]),
@@ -353,13 +363,16 @@ def build():
          "sections": {"What it is": "The canonical tarot tree: Major Arcana by number, Minor Arcana → four suits → ranks Ace–King — every leaf gathered across all decks. See also the essay 'The Divination Question' for how this collection frames game-vs-divination."},
          "composite_of": ["essay-divination-question"] + arc_children})
     add({"id": "axis-deck", "name": "By Deck", "level": 4, "category": "axis",
+         "render_as": "pill-group", "lens": "genealogy",   # MULTI_LENS_PLAN §3: this axis renders as the descent DAG
          "sections": {"What it is": "Browse every card grouped by its source deck."},
          "composite_of": ["deck-" + s.replace("-","") for s in DECKS if any(c["slug"] == s for c in cards)]})
     add({"id": "axis-age", "name": "By Age", "level": 4, "category": "axis",
+         "render_as": "pill-group", "lens": "timeline",    # this axis renders as a year timeline
          "sections": {"What it is": "Decks grouped by era, oldest first."},
          "composite_of": [era_id(es, ename) for es, ename in eras]})
     if xr_nodes:
         add({"id": "axis-number", "name": "By Rank — across all suits", "level": 4, "category": "axis",
+             "render_as": "pill-group", "lens": "pills",
              "sections": {"What it is": "Cross-suit numerology: every Ace, every Two … every King, across all suits and decks."},
              "composite_of": xr_nodes})
 
@@ -396,9 +409,13 @@ def build():
     # render_as: the orthogonal axes become faceted filter pills in the viewer
     # (the tree keeps the arcana->suit->rank spine). Mirrors the Library HashtagFilter.
     PILL_AXES = ("axis-deck", "axis-age", "axis-number", "axis-lineage", "axis-function")
+    # MULTI_LENS_PLAN §3: each axis also declares its full-view renderer (`lens`).
+    AXIS_LENS = {"axis-deck": "genealogy", "axis-age": "timeline", "axis-number": "pills",
+                 "axis-lineage": "genealogy", "axis-function": "pills"}
     for it in items:
         if it["id"] in PILL_AXES:
             it["render_as"] = "pill-group"
+            it["lens"] = AXIS_LENS[it["id"]]
 
     # emergence_kind: distinguish REAL structural emergences (deck, era, lineage, function —
     # things that historically happened) from analytical LENSES (archetype/suit/rank — ways
