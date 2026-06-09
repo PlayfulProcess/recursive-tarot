@@ -1,70 +1,772 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Print — Recursive Tarot</title>
-<style>
-  :root{--bg:#0f0d17;--ink:#ece8f5;--muted:#9b94b3;--accent:#d4af37;--line:#2a2440;--card:#1a1726}
-  *{box-sizing:border-box}
-  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-  .bar{display:flex;align-items:center;gap:12px;padding:10px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-  .bar .title{font-weight:700;margin-right:auto}
-  .bar button{background:var(--accent);color:#0f0d17;border:0;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer}
-  .doc{max-width:920px;margin:0 auto;padding:24px}
-  .doc h1{font-size:26px;color:var(--accent);margin:.2em 0}
-  .doc .desc{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:18px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
-  .pcard{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;break-inside:avoid}
-  .pcard .img{aspect-ratio:2/3.2;background:#0a0810;display:flex;align-items:center;justify-content:center}
-  .pcard img{width:100%;height:100%;object-fit:contain}
-  .pcard .ph{font-size:30px;opacity:.5}
-  .pcard .cap{padding:7px 9px;font-size:12px;font-weight:600;border-top:1px solid var(--line)}
-  #err{padding:40px;text-align:center;color:#e07a5f}
-  @media print{
-    @page{margin:12mm}
-    html,body{background:#fff;color:#111}
-    .bar,site-header{display:none!important}
-    .doc h1{color:#111}.doc .desc{color:#444}
-    .pcard{background:#fff;border:1px solid #ccc}.pcard .img{background:#fff}
-    .pcard .cap{border-top:1px solid #ccc}
-    .grid{grid-template-columns:repeat(4,1fr);gap:8px}
-  }
-</style>
+    <script>if (new URLSearchParams(window.location.search).has('kiosk')) document.documentElement.classList.add('kiosk-mode');</script>
+    <style>.kiosk-mode .empty-state a { display: none; }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print - Recursive.eco</title>
+    <link rel="icon" type="image/png" href="/public/favicon.png">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f0;
+            color: #1a1a1a;
+            min-height: 100vh;
+        }
+
+        /* ============================================================
+           CONTROLS BAR
+           ============================================================ */
+        .controls-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #1a1a24;
+            color: #e5e5e5;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .back-btn {
+            background: none;
+            border: none;
+            color: #e5e5e5;
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.15s;
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.1); }
+        .back-btn svg { width: 18px; height: 18px; }
+        .controls-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .control-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #9ca3af;
+        }
+        .control-select {
+            padding: 6px 10px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 6px;
+            color: #e5e5e5;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .control-select option { background: #1a1a24; color: #e5e5e5; }
+        .grammar-name {
+            font-size: 13px;
+            color: #9ca3af;
+            font-style: italic;
+            max-width: 180px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .print-btn {
+            margin-left: auto;
+            padding: 8px 24px;
+            background: #8b5cf6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .print-btn:hover { background: #7c3aed; }
+
+        /* ============================================================
+           PAGES CONTAINER
+           ============================================================ */
+        #pages-container {
+            padding: 24px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        /* Each .print-page is exactly one paper page */
+        .print-page {
+            background: white;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .print-page.paper-a4 {
+            width: 210mm;
+            height: 297mm;
+        }
+        .print-page.paper-letter {
+            width: 8.5in;
+            height: 11in;
+        }
+        .print-page.landscape.paper-a4 {
+            width: 297mm;
+            height: 210mm;
+        }
+        .print-page.landscape.paper-letter {
+            width: 11in;
+            height: 8.5in;
+        }
+
+        /* ============================================================
+           CARD SHEET
+           ============================================================ */
+        .page-title {
+            text-align: center;
+            font-size: 10pt;
+            color: #888;
+            padding: 0.3in 0.4in 0.15in;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+        .card-grid {
+            display: grid;
+            gap: 0.1in;
+            justify-content: center;
+            padding: 0 0.4in;
+        }
+        .card {
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+        .card-image {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .card-symbol { font-size: 22pt; color: #aaa; }
+        .card-footer {
+            padding: 2px 4px;
+            border-top: 1px solid #e8e8e8;
+            background: #fafafa;
+        }
+        .card-name {
+            font-size: 6.5pt;
+            font-weight: 600;
+            text-align: center;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.3;
+        }
+        .card-keywords {
+            font-size: 5pt;
+            text-align: center;
+            color: #999;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* ============================================================
+           BOOKLET
+           ============================================================ */
+        .booklet-page {
+            padding: 0.6in;
+            height: 100%;
+            font-family: Georgia, "Times New Roman", serif;
+            color: #222;
+            font-size: 11pt;
+            line-height: 1.5;
+        }
+        .booklet-cover {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+        }
+        .booklet-cover h1 { font-size: 24pt; margin-bottom: 0.3in; }
+        .booklet-cover .description { font-size: 12pt; color: #666; font-style: italic; }
+        .booklet-cover .creator { margin-top: 0.8in; font-size: 10pt; color: #999; }
+        .booklet-toc h2 {
+            font-size: 16pt;
+            margin-bottom: 0.2in;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.1in;
+        }
+        .toc-list { list-style: none; columns: 2; column-gap: 0.4in; }
+        .toc-list li { padding: 2px 0; font-size: 10pt; }
+        .page-header {
+            display: flex;
+            gap: 0.2in;
+            align-items: flex-start;
+            margin-bottom: 0.2in;
+            padding-bottom: 0.1in;
+            border-bottom: 1px solid #eee;
+        }
+        .item-image {
+            width: 1.4in;
+            height: 2in;
+            object-fit: contain;
+            border: 1px solid #ddd;
+        }
+        .item-symbol {
+            width: 1.4in;
+            height: 2in;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40pt;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+        }
+        .item-info { flex: 1; }
+        .item-name { font-size: 16pt; margin-bottom: 3px; }
+        .item-category { font-size: 9pt; color: #666; text-transform: uppercase; letter-spacing: 0.04em; }
+        .keywords { margin-bottom: 0.2in; }
+        .keyword { display: inline-block; background: #f0f0f0; padding: 1px 6px; margin: 1px; font-size: 8pt; border-radius: 3px; }
+        .section { margin-bottom: 0.12in; }
+        .section-title { font-size: 9pt; text-transform: uppercase; letter-spacing: 0.04em; color: #666; margin-bottom: 3px; font-weight: bold; }
+        .section-content { font-size: 10pt; }
+
+        /* ============================================================
+           MEMORY GAME — pairs side by side
+           ============================================================ */
+        .memory-page-title {
+            text-align: center;
+            font-size: 10pt;
+            color: #888;
+            padding: 0.25in 0.4in 0.1in;
+        }
+        .memory-instructions {
+            text-align: center;
+            font-size: 8pt;
+            color: #aaa;
+            font-style: italic;
+            padding: 0 0.4in 0.15in;
+        }
+        .pairs-grid { padding: 0 0.4in; }
+        .pair-row {
+            display: flex;
+            align-items: center;
+            gap: 0.12in;
+            margin-bottom: 0.12in;
+            padding-bottom: 0.12in;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        .pair-row:last-child { border-bottom: none; }
+        .pair-label { font-size: 7pt; color: #aaa; width: 0.3in; text-align: center; font-weight: 600; }
+        .mem-card {
+            border: 1px dashed #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+        .mem-card-image {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+        }
+        .mem-card-image img { width: 100%; height: 100%; object-fit: contain; }
+        .mem-card-symbol { font-size: 18pt; color: #bbb; }
+        .mem-card-name {
+            font-size: 5.5pt;
+            text-align: center;
+            padding: 2px;
+            color: #666;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-top: 1px solid #eee;
+        }
+        .pair-connector { font-size: 12pt; color: #ccc; }
+
+        /* ============================================================
+           STORYBOARD
+           ============================================================ */
+        .storyboard-title {
+            text-align: center;
+            font-size: 10pt;
+            color: #888;
+            padding: 0.3in 0.4in 0.15in;
+        }
+        .storyboard-content { padding: 0 0.4in; }
+        .story-row { display: flex; gap: 0.15in; margin-bottom: 0.2in; }
+        .story-card {
+            flex: 1;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            position: relative;
+        }
+        .card-num { position: absolute; top: 3px; left: 5px; font-size: 7pt; color: #bbb; font-weight: 600; z-index: 1; }
+        .sb-card-image { height: 1.6in; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #fafafa; }
+        .sb-card-image img { width: 100%; height: 100%; object-fit: contain; }
+        .sb-card-symbol { font-size: 22pt; color: #ccc; }
+        .sb-card-info { padding: 3px 6px 1px; border-top: 1px solid #eee; }
+        .sb-card-name { font-size: 7pt; font-weight: 600; color: #333; }
+        .sb-card-keywords { font-size: 5.5pt; color: #999; margin-top: 1px; }
+        .notes-area { padding: 3px 6px 5px; border-top: 1px solid #f0f0f0; }
+        .notes-line { border-bottom: 1px solid #e8e8e8; height: 0.18in; }
+
+        /* ============================================================
+           STORY (full-page images)
+           ============================================================ */
+        .story-image-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 0.3in;
+        }
+        .story-image-page img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* ============================================================
+           EMPTY / STATUS
+           ============================================================ */
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            color: #999;
+            font-size: 14px;
+            gap: 12px;
+        }
+        .empty-state a { color: #8b5cf6; text-decoration: none; }
+        .page-number {
+            position: absolute;
+            bottom: 0.2in;
+            right: 0.3in;
+            font-size: 7pt;
+            color: #ccc;
+        }
+
+        /* ============================================================
+           PRINT STYLES
+           ============================================================ */
+        @media print {
+            body { background: white; }
+            .controls-bar { display: none !important; }
+            #pages-container { padding: 0; gap: 0; }
+            .print-page {
+                box-shadow: none;
+                page-break-after: always;
+                width: 100% !important;
+                height: auto !important;
+                min-height: 100vh;
+            }
+            .print-page:last-child { page-break-after: auto; }
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            img { image-rendering: auto; }
+        }
+        /* Default portrait — overridden dynamically by setPageOrientation() */
+        @page { margin: 0; size: portrait; }
+    </style>
 </head>
 <body>
-<script src="../site-header.js?v=3"></script>
-<site-header></site-header>
-<div class="bar">
-  <span class="title">Print sheet</span>
-  <script src="../view-switcher.js?v=3"></script>
-  <view-switcher active="print"></view-switcher>
-  <button onclick="window.print()">🖨 Print / Save PDF</button>
-</div>
-<div class="doc" id="doc"><div id="err" style="display:none"></div></div>
-<script>
-const params=new URLSearchParams(location.search);
-const SRC=params.get('src')||'../tarot/all-decks-many-lenses/grammar.json';
-function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-function plain(md){ return String(md||'').replace(/^#+\s*/gm,'').replace(/[*_>`]/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').split(/\n\n/)[0]; }
-(async function(){
-  const doc=document.getElementById('doc');
-  try{
-    const r=await fetch(SRC); if(!r.ok) throw new Error('Could not load '+SRC+' ('+r.status+')');
-    const g=await r.json();
-    const items=(g.items||[]).filter(i=>!i.composite_of && i.category!=='axis' && i.category!=='keyword-emergence');
-    document.title='Print — '+(g.name||'Tarot');
-    let html=`<h1>${esc((g.name||'').replace(/\s+[—–-]\s+.*/,'')||g.name||'Tarot')}</h1>`;
-    if(g.description) html+=`<div class="desc">${esc(plain(g.description)).slice(0,400)}</div>`;
-    html+='<div class="grid">';
-    for(const it of items){
-      const img=it.image_url||(it.metadata||{}).image_url;
-      html+=`<div class="pcard"><div class="img">${img?`<img src="${esc(img)}" alt="${esc(it.name)}" loading="lazy">`:'<span class="ph">★</span>'}</div><div class="cap">${esc(it.name)}</div></div>`;
-    }
-    html+='</div>';
-    doc.innerHTML=html;
-  }catch(e){ document.getElementById('err').style.display='block'; document.getElementById('err').textContent=e.message; }
-})();
-</script>
+    <script src="../site-header.js?v=3"></script>
+    <site-header active="print"></site-header>
+    <script src="../view-switcher.js?v=3"></script>
+    <style>@media print { site-header, view-switcher, .controls-bar { display: none !important; } }</style>
+    <div class="controls-bar" id="controls-bar">
+        <view-switcher active="print"></view-switcher>
+        <button class="back-btn" onclick="goBack()" title="Go back">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back
+        </button>
+        <span class="grammar-name" id="grammar-name-display"></span>
+        <div class="controls-group">
+            <span class="control-label">Layout</span>
+            <select class="control-select" id="layout-select" onchange="renderPreview()">
+                <option value="cards">Card Sheet</option>
+                <option value="booklet">Booklet</option>
+                <option value="memory">Memory Game</option>
+                <option value="storyboard">Storyboard</option>
+                <option value="story">Story (full images)</option>
+            </select>
+        </div>
+        <div class="controls-group" id="paper-group">
+            <span class="control-label">Paper</span>
+            <select class="control-select" id="paper-select" onchange="renderPreview()">
+                <option value="a4" selected>A4</option>
+                <option value="letter">Letter</option>
+            </select>
+        </div>
+        <div class="controls-group" id="card-size-group">
+            <span class="control-label">Card size</span>
+            <select class="control-select" id="card-size-select" onchange="renderPreview()">
+                <option value="standard">Standard (2.5 x 3.5 in)</option>
+                <option value="tarot">Tarot (2.75 x 4.75 in)</option>
+                <option value="mini">Mini (1.75 x 2.5 in)</option>
+            </select>
+        </div>
+        <button class="print-btn" onclick="window.print()">Print</button>
+    </div>
+
+    <div id="pages-container">
+        <div class="empty-state" id="empty-state">
+            <div>No print data found.</div>
+            <a href="/">Go to homepage</a>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // DATA
+        // ============================================================
+        var isKiosk = new URLSearchParams(window.location.search).has('kiosk');
+        var store = isKiosk ? sessionStorage : localStorage;
+        var printData = null;
+        var returnUrl = '../index.html';
+        // recursive-tarot drift: this static port loads the grammar from ?src
+        // (a repo grammar.json) when there's no print-data stashed by the app.
+        var PRINT_SRC = new URLSearchParams(window.location.search).get('src') || '../tarot/all-decks-many-lenses/grammar.json';
+        try {
+            var raw = store.getItem('print-data');
+            if (raw) printData = JSON.parse(raw);
+        } catch (e) { console.error('Failed to load print data:', e); }
+
+        function goBack() { window.location.href = returnUrl; }
+
+        // ============================================================
+        // HELPERS
+        // ============================================================
+        function getOfferApiBaseUrl() {
+            var host = window.location.hostname;
+            return (host.includes('dev.') || host.includes('localhost'))
+                ? 'https://dev.flow.recursive.eco' : 'https://flow.recursive.eco';
+        }
+
+        function getProxiedImageUrl(url) {
+            if (!url) return '';
+            var cm = url.match(/commons\.wikimedia\.org\/wiki\/File:([^#?]+)/);
+            if (cm) return 'https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(decodeURIComponent(cm[1]));
+            var fp = url.match(/^(https?:\/\/[^\/]+\/wiki\/Special:FilePath\/)(.+)$/);
+            if (fp) { try { return fp[1] + encodeURIComponent(decodeURIComponent(fp[2])); } catch(e){} }
+            var dp = [/drive\.google\.com\/file\/d\/([^\/]+)/, /drive\.google\.com\/open\?id=([^&]+)/];
+            for (var i = 0; i < dp.length; i++) {
+                var m = url.match(dp[i]);
+                if (m && m[1]) return getOfferApiBaseUrl() + '/api/proxy-image?url=' + encodeURIComponent('https://drive.google.com/uc?export=view&id=' + m[1]);
+            }
+            if (url.includes('drive.google.com')) return getOfferApiBaseUrl() + '/api/proxy-image?url=' + encodeURIComponent(url);
+            return url;
+        }
+
+        function escHtml(s) { if (!s) return ''; var d = document.createElement('div'); d.textContent = String(s); return d.innerHTML; }
+
+        // Lightweight markdown to HTML: images, bold, italic, links, line breaks
+        function mdToHtml(s) {
+            if (!s) return '';
+            var t = String(s);
+            // Images: ![alt](url)
+            t = t.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" style="max-width:100%;height:auto;margin:4px 0;">');
+            // Links: [text](url)
+            t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+            // Bold: **text**
+            t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+            // Italic: *text*
+            t = t.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+            // Line breaks
+            t = t.replace(/\n/g, '<br>');
+            return t;
+        }
+        function getItems() { return printData ? (printData.items || printData.cards || printData.hexagrams || []) : []; }
+        function getGrammarName() { return (printData && printData.name) || 'Grammar'; }
+
+        function getCardDims(cardSize) {
+            switch(cardSize) {
+                case 'tarot': return { w: '2.75in', h: '4.75in', cols: 3, rows: 2 };
+                case 'mini':  return { w: '1.75in', h: '2.5in',  cols: 4, rows: 4 };
+                default:      return { w: '2.5in',  h: '3.5in',  cols: 3, rows: 3 };
+            }
+        }
+
+        function getPaperClass() { return 'paper-' + document.getElementById('paper-select').value; }
+
+        // Dynamically set @page orientation so the browser print dialog defaults correctly
+        function setPageOrientation(landscape) {
+            var id = 'dynamic-page-orientation';
+            var el = document.getElementById(id);
+            if (!el) { el = document.createElement('style'); el.id = id; document.head.appendChild(el); }
+            var paper = document.getElementById('paper-select').value;
+            var size = (paper === 'a4') ? '210mm 297mm' : '8.5in 11in';
+            if (landscape) size = (paper === 'a4') ? '297mm 210mm' : '11in 8.5in';
+            el.textContent = '@page { size: ' + size + '; margin: 0; }';
+        }
+
+        function imgHtml(item, symbolCls) {
+            var u = getProxiedImageUrl(item.image_url);
+            return u ? '<img src="' + u + '" alt="' + escHtml(item.name) + '">'
+                     : '<div class="' + symbolCls + '">' + escHtml(item.symbol || (item.name ? item.name.charAt(0) : '?')) + '</div>';
+        }
+
+        function sectionsHtml(item) {
+            var h = '', sec = item.sections || {}, keys = Object.keys(sec);
+            if (!keys.length) {
+                if (item.interpretation) h += '<div class="section"><div class="section-title">Interpretation</div><div class="section-content">' + mdToHtml(item.interpretation) + '</div></div>';
+                if (item.reversed_interpretation) h += '<div class="section"><div class="section-title">Reversed</div><div class="section-content">' + mdToHtml(item.reversed_interpretation) + '</div></div>';
+                if (item.summary) h += '<div class="section"><div class="section-content">' + mdToHtml(item.summary) + '</div></div>';
+            } else {
+                for (var i = 0; i < keys.length; i++) {
+                    var v = sec[keys[i]];
+                    if (v && String(v).trim()) h += '<div class="section"><div class="section-title">' + escHtml(keys[i]) + '</div><div class="section-content">' + mdToHtml(String(v)) + '</div></div>';
+                }
+            }
+            return h;
+        }
+
+        function filterItems(items) {
+            return items.filter(function(it) { return !it.composite_of || !it.composite_of.length; });
+        }
+
+        function pageDiv(cls, landscape) {
+            return '<div class="print-page ' + getPaperClass() + (landscape ? ' landscape' : '') + (cls ? ' ' + cls : '') + '">';
+        }
+
+        // ============================================================
+        // LAYOUT: CARD SHEET — pre-paginated
+        // ============================================================
+        function renderCardSheet() {
+            var items = filterItems(getItems());
+            var name = getGrammarName();
+            var dim = getCardDims(document.getElementById('card-size-select').value);
+            var perPage = dim.cols * dim.rows;
+            var html = '';
+
+            for (var p = 0; p < items.length; p += perPage) {
+                var chunk = items.slice(p, p + perPage);
+                html += pageDiv();
+                if (p === 0) html += '<div class="page-title">' + escHtml(name) + '</div>';
+                html += '<div class="card-grid" style="grid-template-columns:repeat(' + dim.cols + ',' + dim.w + ');">';
+                for (var i = 0; i < chunk.length; i++) {
+                    var it = chunk[i];
+                    var kw = (it.keywords && it.keywords.length) ? '<div class="card-keywords">' + escHtml(it.keywords.slice(0,3).join(' \u00b7 ')) + '</div>' : '';
+                    html += '<div class="card" style="width:' + dim.w + ';height:' + dim.h + ';">';
+                    html += '<div class="card-image">' + imgHtml(it, 'card-symbol') + '</div>';
+                    html += '<div class="card-footer"><div class="card-name">' + escHtml(it.name) + '</div>' + kw + '</div>';
+                    html += '</div>';
+                }
+                html += '</div>';
+                html += '<div class="page-number">' + (Math.floor(p/perPage) + 1) + '</div>';
+                html += '</div>';
+            }
+            return html;
+        }
+
+        // ============================================================
+        // LAYOUT: BOOKLET — one item per page
+        // ============================================================
+        function renderBooklet() {
+            var items = filterItems(getItems());
+            var data = printData || {};
+            var name = getGrammarName();
+            var html = '';
+
+            // Cover
+            html += pageDiv();
+            html += '<div class="booklet-page"><div class="booklet-cover">';
+            html += '<h1>' + escHtml(name) + '</h1>';
+            if (data.description) html += '<p class="description">' + escHtml(data.description) + '</p>';
+            if (data.creatorName) html += '<p class="creator">by ' + escHtml(data.creatorName) + '</p>';
+            html += '</div></div></div>';
+
+            // TOC
+            html += pageDiv();
+            html += '<div class="booklet-page booklet-toc"><h2>Contents</h2><ol class="toc-list">';
+            for (var t = 0; t < items.length; t++) html += '<li>' + escHtml(items[t].name) + '</li>';
+            html += '</ol></div></div>';
+
+            // Item pages
+            for (var i = 0; i < items.length; i++) {
+                var it = items[i];
+                html += pageDiv();
+                html += '<div class="booklet-page">';
+                html += '<div class="page-header">';
+                var pu = getProxiedImageUrl(it.image_url);
+                if (pu) html += '<img class="item-image" src="' + pu + '" alt="' + escHtml(it.name) + '">';
+                else if (it.symbol) html += '<div class="item-symbol">' + escHtml(it.symbol) + '</div>';
+                html += '<div class="item-info"><h2 class="item-name">' + escHtml(it.name) + '</h2>';
+                if (it.category) html += '<p class="item-category">' + escHtml(it.category) + (it.subcategory ? ' - ' + escHtml(it.subcategory) : '') + '</p>';
+                html += '</div></div>';
+                if (it.keywords && it.keywords.length) {
+                    html += '<div class="keywords">';
+                    for (var k = 0; k < it.keywords.length; k++) html += '<span class="keyword">' + escHtml(it.keywords[k]) + '</span>';
+                    html += '</div>';
+                }
+                html += '<div class="sections">' + sectionsHtml(it) + '</div>';
+                html += '<div class="page-number">' + (i + 3) + '</div>';
+                html += '</div></div>';
+            }
+            return html;
+        }
+
+        // ============================================================
+        // LAYOUT: MEMORY GAME — pairs, 3 per page
+        // ============================================================
+        function renderMemoryGame() {
+            var items = filterItems(getItems()).slice(0, 18);
+            var name = getGrammarName();
+            var pairsPerPage = 3;
+            var cardW = '2in', cardH = '2.6in';
+            var html = '';
+
+            for (var p = 0; p < items.length; p += pairsPerPage) {
+                var chunk = items.slice(p, p + pairsPerPage);
+                html += pageDiv();
+                if (p === 0) {
+                    html += '<div class="memory-page-title">' + escHtml(name) + ' \u2014 Memory Game (' + items.length + ' pairs)</div>';
+                    html += '<div class="memory-instructions">Cut along dashed lines. Each row shows a matching pair.</div>';
+                }
+                html += '<div class="pairs-grid">';
+                for (var i = 0; i < chunk.length; i++) {
+                    var it = chunk[i];
+                    var card = '<div class="mem-card" style="width:' + cardW + ';height:' + cardH + ';"><div class="mem-card-image">' + imgHtml(it, 'mem-card-symbol') + '</div><div class="mem-card-name">' + escHtml(it.name) + '</div></div>';
+                    html += '<div class="pair-row"><div class="pair-label">' + (p + i + 1) + '</div>' + card + '<div class="pair-connector">=</div>' + card + '</div>';
+                }
+                html += '</div>';
+                html += '<div class="page-number">' + (Math.floor(p/pairsPerPage) + 1) + '</div>';
+                html += '</div>';
+            }
+            return html;
+        }
+
+        // ============================================================
+        // LAYOUT: STORYBOARD — 2 rows of 3 per page
+        // ============================================================
+        function renderStoryboard() {
+            var items = filterItems(getItems());
+            var name = getGrammarName();
+            var rowsPerPage = 2;
+            var html = '';
+            var rows = [];
+            for (var r = 0; r < items.length; r += 3) {
+                rows.push(items.slice(r, r + 3));
+            }
+
+            for (var p = 0; p < rows.length; p += rowsPerPage) {
+                var pageRows = rows.slice(p, p + rowsPerPage);
+                html += pageDiv('', true);
+                if (p === 0) html += '<div class="storyboard-title">' + escHtml(name) + ' \u2014 Storyboard</div>';
+                html += '<div class="storyboard-content">';
+                for (var ri = 0; ri < pageRows.length; ri++) {
+                    html += '<div class="story-row">';
+                    for (var ci = 0; ci < pageRows[ri].length; ci++) {
+                        var it = pageRows[ri][ci];
+                        var idx = (p + ri) * 3 + ci + 1;
+                        var kw = (it.keywords && it.keywords.length) ? '<div class="sb-card-keywords">' + escHtml(it.keywords.slice(0,3).join(' \u00b7 ')) + '</div>' : '';
+                        html += '<div class="story-card"><div class="card-num">' + idx + '</div><div class="sb-card-image">' + imgHtml(it, 'sb-card-symbol') + '</div>';
+                        html += '<div class="sb-card-info"><div class="sb-card-name">' + escHtml(it.name) + '</div>' + kw + '</div>';
+                        html += '<div class="notes-area"><div class="notes-line"></div><div class="notes-line"></div><div class="notes-line"></div></div></div>';
+                    }
+                    html += '</div>';
+                }
+                html += '</div>';
+                html += '<div class="page-number">' + (Math.floor(p/rowsPerPage) + 1) + '</div>';
+                html += '</div>';
+            }
+            return html;
+        }
+
+        // ============================================================
+        // LAYOUT: STORY — one image per page
+        // ============================================================
+        function renderStory() {
+            var items = getItems().filter(function(it) { return it.image_url && it.type !== 'video'; });
+            if (!items.length) return '<div class="empty-state"><div>No images found.</div></div>';
+            var html = '';
+            for (var i = 0; i < items.length; i++) {
+                html += pageDiv();
+                html += '<div class="story-image-page"><img src="' + getProxiedImageUrl(items[i].image_url) + '" alt=""></div>';
+                html += '</div>';
+            }
+            return html;
+        }
+
+        // ============================================================
+        // RENDER
+        // ============================================================
+        function renderPreview() {
+            if (!printData) return;
+            var layout = document.getElementById('layout-select').value;
+            document.getElementById('card-size-group').style.display = (layout === 'cards' || layout === 'memory') ? '' : 'none';
+
+            // Set page orientation hint for browser print dialog
+            var isLandscape = (layout === 'storyboard');
+            setPageOrientation(isLandscape);
+
+            var html = '';
+            switch(layout) {
+                case 'cards': html = renderCardSheet(); break;
+                case 'booklet': html = renderBooklet(); break;
+                case 'memory': html = renderMemoryGame(); break;
+                case 'storyboard': html = renderStoryboard(); break;
+                case 'story': html = renderStory(); break;
+            }
+            document.getElementById('pages-container').innerHTML = html;
+        }
+
+        // ============================================================
+        // INIT
+        // ============================================================
+        function startPrint() {
+            if (!printData) return;
+            document.getElementById('grammar-name-display').textContent = getGrammarName();
+            document.title = 'Print: ' + getGrammarName() + ' — Recursive Tarot';
+            document.getElementById('empty-state').style.display = 'none';
+            if (printData.type === 'sequence') document.getElementById('layout-select').value = 'story';
+            renderPreview();
+        }
+        (async function() {
+            if (printData) { startPrint(); return; }
+            try {
+                var r = await fetch(PRINT_SRC);
+                if (!r.ok) throw new Error('Could not load ' + PRINT_SRC + ' (' + r.status + ')');
+                printData = await r.json();
+                startPrint();
+            } catch (e) {
+                document.getElementById('empty-state').innerHTML = '<div>Could not load this grammar.</div><div style="font-size:12px;opacity:.7">' + escHtml(e.message) + '</div><a href="../index.html">Go home</a>';
+            }
+        })();
+    </script>
 </body>
 </html>
