@@ -379,6 +379,56 @@
       }
     },
     {
+      "id": "deck-lombardy",
+      "name": "Ancient Tarot of Lombardy (Gumppenberg)",
+      "sort_order": 125,
+      "category": "deck",
+      "level": 1,
+      "keywords": [
+        "tarot",
+        "history",
+        "c"
+      ],
+      "metadata": {
+        "branch": "branch-c",
+        "derives_from": [
+          "deck-marseille-conver"
+        ],
+        "when": "Milan, 1810"
+      },
+      "sections": {
+        "What it is": "A Milanese neoclassical-revival tarot first produced in 1810 by the Gumppenberg firm — the elegant Italian engraved reworking of the Marseille pattern.",
+        "Where & when": "Milan, 1810→",
+        "Lineage": "C-order; the Lombard/Italian engraved line that the Soprafino refines.",
+        "In this library": "🔨 Planned (distinct public-domain engraved pattern)."
+      }
+    },
+    {
+      "id": "deck-soprafino",
+      "name": "Soprafino (Carlo Della Rocca)",
+      "sort_order": 126,
+      "category": "deck",
+      "level": 1,
+      "keywords": [
+        "tarot",
+        "history",
+        "c"
+      ],
+      "metadata": {
+        "branch": "branch-c",
+        "derives_from": [
+          "deck-lombardy"
+        ],
+        "when": "Milan, 1835"
+      },
+      "sections": {
+        "What it is": "Carlo Della Rocca’s finely engraved Soprafino deck of 1835 — the high point of the Italian engraved tarot and the model behind many later “Ancient Italian” reproductions.",
+        "Where & when": "Milan, 1835→",
+        "Lineage": "C-order; the refined Lombard engraved pattern descending from the Gumppenberg line.",
+        "In this library": "🔨 Planned (distinct public-domain engraved pattern)."
+      }
+    },
+    {
       "id": "deck-court-de-gebelin",
       "name": "Court de Gébelin's Plates",
       "sort_order": 13,
@@ -764,7 +814,9 @@
         "deck-marseille-type1",
         "deck-besancon",
         "deck-belgian",
-        "deck-piemontese"
+        "deck-piemontese",
+        "deck-lombardy",
+        "deck-soprafino"
       ],
       "relationship_type": "emergence",
       "keywords": [
