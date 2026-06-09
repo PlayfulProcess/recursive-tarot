@@ -14,17 +14,17 @@
   // Path back to the repo root: '../' from any subdir (viewers/ OR pages/), '' at root.
   // All links are then root-relative so they work from every location.
   const inSub = /\/(viewers|pages)\//.test(location.pathname);
-  const root = inSub ? '../' : '';
+  const PFX = inSub ? '../' : '';   // path back to repo root (NB: not "root" — shadows the shadow-root var below)
 
   // [key, label, href, external?]
   const TABS = [
-    ['cards',      'Cards',        root + 'viewers/cards.html'],
-    ['treeoflife', 'Tree of Life', root + 'viewers/genealogy-tree.html'],
-    ['timeline',   'Timeline',     root + 'viewers/timeline.html'],
-    ['tree',       'Tree',         root + 'viewers/tree-viewer.html'],
-    ['caster',     'Caster',       root + 'viewers/caster.html'],
-    ['genealogy',  'Genealogy',    root + 'genealogy.html'],
-    ['course',     'Course',       root + 'pages/course.html'],
+    ['cards',      'Cards',        PFX + 'viewers/cards.html'],
+    ['treeoflife', 'Tree of Life', PFX + 'viewers/genealogy-tree.html'],
+    ['timeline',   'Timeline',     PFX + 'viewers/timeline.html'],
+    ['tree',       'Tree',         PFX + 'viewers/tree-viewer.html'],
+    ['caster',     'Caster',       PFX + 'viewers/caster.html'],
+    ['genealogy',  'Genealogy',    PFX + 'genealogy.html'],
+    ['course',     'Course',       PFX + 'pages/course.html'],
     ['github',     'GitHub ↗', 'https://github.com/PlayfulProcess/recursive-tarot', true],
   ];
 
@@ -75,7 +75,7 @@
           }
         </style>
         <div class="bar">
-          <a class="brand" href="${root}index.html">
+          <a class="brand" href="${PFX}index.html">
             <span class="name">The <span class="gold">Recursive Tarot</span></span>
             <span class="sub">part of <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a></span>
           </a>
