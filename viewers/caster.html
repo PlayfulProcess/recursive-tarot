@@ -80,6 +80,7 @@
     <label class="checkbox"><input type="checkbox" id="reversals" /> allow reversals</label>
     <button id="cast" disabled>Cast</button>
     <button id="reshuffle" class="ghost" style="display:none">Re-cast</button>
+    <label class="ghost" id="importLabel" title="Load a previously exported cast .json" style="display:inline-flex;align-items:center;background:#2c2937;color:#d8d3e6;border-radius:8px;padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer;">Import cast<input type="file" id="importFile" accept=".json,application/json" style="display:none"></label>
   </div>
 
   <div id="spread" class="spread" style="display:none"></div>
@@ -161,6 +162,16 @@ function castableName(it){
   document.getElementById('reshuffle').addEventListener('click', cast);
   document.getElementById('copyJson').addEventListener('click', copyJson);
   document.getElementById('downloadJson').addEventListener('click', downloadJson);
+  document.getElementById('importFile').addEventListener('change', async (e) => {
+    const f = e.target.files && e.target.files[0]; if (!f) return;
+    try {
+      const obj = JSON.parse(await f.text());
+      if (!obj || !Array.isArray(obj.cards)) throw new Error('not a cast file (missing cards[])');
+      lastCast = obj; renderCast(obj);
+      document.getElementById('export').scrollIntoView({ behavior: 'smooth' });
+    } catch (err) { alert('Could not import this file: ' + err.message); }
+    e.target.value = '';
+  });
 })();
 
 function currentPool(){
