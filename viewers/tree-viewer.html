@@ -32,18 +32,17 @@
         }
         if (!customElements.get('site-footer')) customElements.define('site-footer', RTFooter);
 
-        // ViewModeDropdown stub: links between the local static viewers.
+        // ViewModeDropdown stub: the shared "eye" view-switcher.
         window.ViewModeDropdown = {
             init(container, opts) {
                 if (!container) return;
-                const src = new URLSearchParams(window.location.search).get('src') || '';
-                const q = src ? ('?src=' + encodeURIComponent(src)) : '';
-                container.innerHTML = `<a href="cards.html${q}" style="display:inline-flex;padding:6px 12px;background:#374151;color:#d1d5db;border-radius:8px;text-decoration:none;font-size:13px;">Cards</a>`;
+                container.innerHTML = `<view-switcher active="tree"></view-switcher>`;
             }
         };
     })();
     </script>
     <script src="../site-header.js"></script>
+    <script src="../view-switcher.js"></script>
     <style>
         :root {
             --tree-bg: #0f0f14;
