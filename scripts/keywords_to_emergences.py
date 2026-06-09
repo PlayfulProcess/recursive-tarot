@@ -40,9 +40,11 @@ def promote(path, MIN=3, MAX_SHARE=0.7):
             kwmap[k.strip()].append(i['id'])
     cap = max(MIN, int(MAX_SHARE * N))
     qualifying = {k: ids for k, ids in kwmap.items() if MIN <= len(ids) <= cap}
+    imgof = {i['id']: (i.get('image_url') or (i.get('metadata') or {}).get('image_url')) for i in base}
     pills = []
     for k, ids in sorted(qualifying.items(), key=lambda kv: (-len(kv[1]), kv[0])):
-        pills.append({
+        rep = next((imgof[m] for m in ids if imgof.get(m)), None)   # representative thumbnail from a member
+        pill = {
             'id': 'kw-' + slug(k),
             'name': k[:1].upper() + k[1:],
             'level': 2,
@@ -51,7 +53,10 @@ def promote(path, MIN=3, MAX_SHARE=0.7):
             'composite_of': ids,
             'metadata': {'emergence_kind': 'keyword', 'keyword': k, 'member_count': len(ids)},
             'sections': {'Description': f'Cards in this deck sharing the keyword “{k}” ({len(ids)}).'},
-        })
+        }
+        if rep:
+            pill['image_url'] = rep
+        pills.append(pill)
     items.extend(pills)
     if pills:
         items.append({

@@ -488,6 +488,25 @@ def build():
         "_decks": deck_summary,
         "items": items,
     }
+    # Emergence thumbnails: every composite node (deck / era / lineage / rank / axis)
+    # inherits a representative image from a descendant card, so nothing renders blank.
+    by_id = {i["id"]: i for i in items}
+    def first_img(nid, seen):
+        if nid in seen: return None
+        seen.add(nid)
+        it = by_id.get(nid)
+        if not it: return None
+        img = it.get("image_url") or (it.get("metadata") or {}).get("image_url")
+        if img: return img
+        for cid in (it.get("composite_of") or []):
+            r = first_img(cid, seen)
+            if r: return r
+        return None
+    for it in items:
+        if it.get("composite_of") and not (it.get("image_url") or (it.get("metadata") or {}).get("image_url")):
+            img = first_img(it["id"], set())
+            if img: it["image_url"] = img
+
     out_dir = os.path.join(TAROT, OUT_SLUG)
     os.makedirs(out_dir, exist_ok=True)
     json.dump(grammar, open(os.path.join(out_dir, "grammar.json"), "w", encoding="utf-8"), indent=2, ensure_ascii=False)
