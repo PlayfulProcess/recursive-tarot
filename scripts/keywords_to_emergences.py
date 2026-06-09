@@ -59,7 +59,7 @@ def promote(path, MIN=3, MAX_SHARE=0.7):
         pills.append(pill)
     items.extend(pills)
     if pills:
-        items.append({
+        axis = {
             'id': 'axis-keyword',
             'name': 'By Keyword',
             'level': 3,
@@ -67,7 +67,11 @@ def promote(path, MIN=3, MAX_SHARE=0.7):
             'render_as': 'pill-group',
             'composite_of': [p['id'] for p in pills],
             'sections': {'Description': 'Cross-cutting facets derived from shared keywords — the same card appears under every keyword it carries.'},
-        })
+        }
+        rep = next((p['image_url'] for p in pills if p.get('image_url')), None)
+        if rep:
+            axis['image_url'] = rep
+        items.append(axis)
     d['items'] = items
     json.dump(d, open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
     return N, cap, pills
