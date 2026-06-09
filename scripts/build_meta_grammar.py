@@ -120,8 +120,8 @@ ANCESTORS = [
 ]
 
 ORDER_SORT = {"A": 1, "B": 2, "C": 3, "occult": 4}
-ORDER_LABEL = {"A": "A-order — Florence / Bologna (southern)", "B": "B-order — Ferrara",
-               "C": "C-order — Milan → Tarot de Marseille", "occult": "The occult turn — off the C-order, post-1781"}
+ORDER_LABEL = {"A": "The Southern Way — Florence & Bologna (A-order)", "B": "The Eastern Way — Ferrara (B-order)",
+               "C": "The Western Way — Milan → Marseille (C-order)", "occult": "The Occult Turn — off the Western way, 1781→"}
 FUNC_SORT = {"game": 1, "origin-myth": 2, "divination": 3, "esoteric": 4}
 FUNC_LABEL = {"game": "Game (trick-taking)", "origin-myth": "Origin-myth (proto-occult)",
               "divination": "Divination (purpose-built)", "esoteric": "Esoteric / initiatory"}

@@ -292,8 +292,8 @@ function buildLegend(){
   });
 }
 function labelFor(b){
-  return ({'branch-roots':'Roots (Milan)','branch-a':'A-order (Bologna/Florence)',
-    'branch-b':'B-order (Ferrara)','branch-c':'C-order (Marseille)',
+  return ({'branch-roots':'Roots (Milan)','branch-a':'Southern (A-order)',
+    'branch-b':'Eastern (B-order)','branch-c':'Western (C-order)',
     'branch-occult':'Occult','branch-sui':'Sui generis'})[b]||b;
 }
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
