@@ -58,6 +58,91 @@ entirely.
 
 ---
 
+## Parked: GitHub App write architecture (fixes the silent-overwrite class)
+
+**Why this exists.** What bit us on Visconti-Sforza (the UI write-back silently
+stripping `lineages`/`roots`/`shelves`/`worldview`) is a *symptom of the write
+architecture*, not a one-off bug: recursive.eco writes to the public repo by
+**direct commit to `main`, full-file replace, no review, no validation**, committed
+as the builder's personal GitHub identity (that's why merge commits read
+*"Merge edit by … [Anonymous]"*). A PR-based GitHub App fixes nearly all of it.
+
+### Core principle
+**Repo = source of truth. Supabase = a queryable projection of it. recursive.eco =
+the editor.** Today those roles are blurred (Supabase treated as truth, repo as a
+backup, writes flowing both ways with no gate). Pick the repo as canonical and make
+**every write pass through a gate.**
+
+### What's wrong with the current write path
+- **Full-file replace** → any field the serializer doesn't know about is dropped (the Visconti bug). *Fix: deep-merge onto the existing file, never replace.*
+- **Direct-to-main** → a bad write is live instantly and destructively; no diff catches it.
+- **Personal PAT / identity** → email-privacy push rejections, "Anonymous" attribution, one person's token gates everyone, broad scope, expiry.
+- **No CI** → nothing validates the JSON against `GRAMMAR_FORMAT.md` before it lands.
+
+### Target architecture
+```
+recursive.eco (editor)
+   │  edit intent
+   ▼
+GitHub App ──deep-merge onto current file──▶ branch + Pull Request
+   │                                            │
+   │                                 GitHub Action (the gate):
+   │                                 • JSON parses
+   │                                 • conforms to GRAMMAR_FORMAT schema
+   │                                 • NO required top-level field dropped ◀ kills the Visconti bug
+   │                                 • images resolve, manifest regenerates
+   │                                            │
+   │                       owner + checks green → auto-merge
+   │                       outside contributor  → waits for review
+   ▼                                            ▼
+push to main ──webhook──▶ Supabase reindex (upsert by UUIDv5) + Pages redeploy
+```
+
+### Why a GitHub App (not a PAT or OAuth App)
+The right primitive for a multi-tenant platform writing to *many users'* repos:
+
+| | PAT | OAuth App | **GitHub App** |
+|---|---|---|---|
+| Identity on commits | builder's gmail | acts as user | **`recursive-eco[bot]`** (fixes email-privacy + attribution) |
+| Scope | broad, all repos | broad, user's repos | **fine-grained: contents + pull_requests only, per installed repo** |
+| Token | long-lived, leak-prone | user refresh | **short-lived (1 hr) installation tokens** |
+| Multi-user | juggle everyone's PAT | per-user tokens | **each user installs it on their own repo** |
+| Rate limit | per user | per user | **per installation, scales** |
+| Revocable by user | no | clumsy | **uninstall per repo (matches "users own their data")** |
+
+The App also nails the stated ethos — *users own their data via git*: they install
+the app on their repo, grant only contents + PR, and can revoke anytime. A real
+ownership story, not a we-hold-your-token story.
+
+### Isn't PR-per-edit too heavy? No — auto-merge-on-green
+The owner's edit still feels one-click: branch → PR → CI validates → **auto-merges in
+seconds**. You get the diff, the validation gate, and provenance for free, and a bad
+write becomes a *closeable PR* instead of a destructive overwrite. Non-owner edits
+(the Editor/contributor model) naturally become PRs that **wait for review** — exactly
+the moderation flow we want anyway, and where the maintainer↔contributor messaging
+(built Jun 9 2026) becomes PR review comments instead of notification rows.
+
+### Phased plan (estimates in **sessions**, per the build-with-Claude rule)
+
+- **Phase 0 — deep-merge write + schema-validation GitHub Action.** ~1 session, **high confidence, no external handoff.** Kills the data-loss bug immediately. **Do this first regardless of everything else** — it removes ~80% of the pain (no silent field loss, no invalid grammars on `main`) for a fraction of the effort, and needs zero auth changes.
+- **Phase 1 — GitHub App for auth** (bot identity, scoped install tokens). ~1–2 sessions of code, **medium confidence** — the gate is the *external handoffs only the builder can do*: register the App in GitHub settings, generate + store the private key, set the webhook secret. Security-sensitive; **checkpoint with the builder on the token-minting code before it runs unsupervised.**
+- **Phase 2 — PR + auto-merge-on-green.** ~1 session once the App exists.
+- **Phase 3 — webhook → Supabase reindex** (repo becomes canonical). ~1–2 sessions; this is where the idempotent **UUIDv5** from the import-flow plan above pays off (stable repo-file ↔ Supabase-row mapping, no read-back).
+
+### Recommendation
+**Do Phase 0 now; decide on the App after.** Even if the GitHub App never gets built,
+switching the write to deep-merge + adding a validation Action removes most of the
+pain. The App is the right *destination* — bot identity, scoped tokens, PR review, the
+ownership story — but it's a security-sensitive build with handoffs only the builder
+can do, so it deserves its own focused session rather than being rushed in alongside
+everything else.
+
+### Interim mitigation already in place
+- Design V (Jun 9 2026): proposals always stage + read from the private vault, so a public-repo-backed deck's pending edits are visible to the maintainer. Merge is still full-replace, so the deep-merge fix (Phase 0) is the next guard.
+- The ⚠️ note above ("re-check top-level fields after a UI round-trip") remains the manual workaround until Phase 0 lands.
+
+---
+
 ## Viewers
 
 - `viewers/cards.html` — card grid + hierarchy sidebar + per-card deep-links.
