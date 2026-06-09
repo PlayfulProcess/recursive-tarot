@@ -35,6 +35,19 @@
 
   const VIEW_MAP = Object.fromEntries(VIEWS.map(([k, , href]) => [k, href]));
 
+  // Which view is THIS page? (so ?lens to the current view is a no-op, not a loop)
+  function autoActive() {
+    const f = (location.pathname.split('/').pop() || '').toLowerCase();
+    if (f.startsWith('tree-viewer')) return 'tree';
+    if (f.startsWith('genealogy-tree')) return 'treeoflife';
+    if (f.startsWith('timeline')) return 'timeline';
+    if (f.startsWith('caster')) return 'caster';
+    if (f.startsWith('print')) return 'print';
+    if (f.indexOf('genealogy') !== -1) return 'genealogy';
+    if (p.get('layout') === 'thumbnails') return 'thumbnails';
+    return 'cards';
+  }
+
   // Portable deep-link: ?lens=<view> redirects to that lens at load (preserving
   // src/item via the target href; lens is dropped so there's no loop). Runs
   // immediately, independent of the <view-switcher> element being present.
