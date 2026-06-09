@@ -4156,6 +4156,11 @@
 
         function navigateToPrint() {
             if (!grammarData) return;
+            // Preferred: pass ?src so the print page can fetch the deck AND show the
+            // per-deck print-quality + buy panel (which keys off the deck slug).
+            var curSrc = new URLSearchParams(location.search).get('src');
+            if (curSrc) { window.location.href = '../pages/print-viewer.html?src=' + encodeURIComponent(curSrc); return; }
+            // Fallback (in-memory grammar with no ?src): stash the data.
             try {
                 localStorage.setItem('print-data', JSON.stringify({
                     type: 'grammar',
@@ -4166,7 +4171,7 @@
                     creatorLink: grammarData.creator_link || ''
                 }));
                 localStorage.setItem('print-return-url', window.location.href);
-                window.location.href = '/pages/print-viewer.html';
+                window.location.href = '../pages/print-viewer.html';
             } catch (e) {
                 console.error('Failed to save print data:', e);
                 alert('Grammar is too large to print. Try a smaller selection.');
