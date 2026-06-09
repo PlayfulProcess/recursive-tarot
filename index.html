@@ -3,9 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Recursive Tarot — A Genealogy of the Cards</title>
-<meta name="description" content="A public-domain, scholarship-grounded genealogy of historical tarot decks — from the 1440s Italian game decks to the occult reframing — rendered as an explorable collection.">
+<title>The Recursive Tarot — A Public-Domain Genealogy of the Cards</title>
+<meta name="description" content="A public-domain, scholarship-grounded genealogy of historical tarot — what it is, how this open repo feeds recursive.eco, how to contribute, and a short honest history of the cards (with the common misconceptions corrected).">
 <link rel="stylesheet" href="style.css">
+<style>
+  main.wrap{max-width:820px}
+  .lede{font-size:18px;line-height:1.6}
+  section.block{margin:34px 0;padding-top:6px;border-top:1px solid rgba(212,175,55,.15)}
+  section.block h2{color:var(--gold,#d4af37);font-size:21px;margin:.2em 0 .5em}
+  section.block p{line-height:1.65;color:#d8d2ea}
+  .explore{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin:14px 0}
+  .explore a{display:block;padding:14px;background:#1a1726;border:1px solid #2a2440;border-radius:10px;text-decoration:none;color:#ece8f5}
+  .explore a:hover{border-color:var(--gold,#d4af37)}
+  .explore a .t{font-weight:700;font-size:15px}
+  .explore a .d{font-size:12.5px;color:#9b94b3;margin-top:3px}
+  ul.mis li{margin:.4em 0;line-height:1.55;color:#d8d2ea}
+  ul.mis li b{color:#ece8f5}
+  .links a{color:#b794f6}
+  .three{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:14px 0}
+  .three div{background:#161227;border:1px solid #2a2440;border-radius:10px;padding:14px}
+  .three h3{margin:.1em 0 .3em;font-size:15px;color:#d4af37}
+  .three p{font-size:13.5px;margin:0;color:#cfc8e2}
+</style>
 </head>
 <body>
 <script src="site-header.js"></script>
@@ -15,14 +34,71 @@
 </div></header>
 
 <main class="wrap">
-  <p class="lede">A <strong>public-domain</strong>, scholarship-grounded genealogy of the tarot —
-  fifteen historical decks from the 1440s Milanese game decks, through the printed Tarot de
-  Marseille, to the 1781 occult reframing that invented divination. Each deck is framed in its
-  <strong>own tradition</strong> (game decks are called games; meanings are never forced across
-  traditions), every image is public domain with attribution, and the whole thing is just files
-  in a public repo you can read, correct, and play. <span class="small muted">CC&#8209;BY&#8209;SA&#8209;4.0 · curated by PlayfulProcess.</span></p>
+  <p class="lede">A <strong>public-domain</strong>, scholarship-grounded genealogy of the tarot — from the
+  1440s Milanese card <em>game</em>, through the printed Tarot de Marseille, to the 1781 occult reframing
+  that invented divination. Every deck is framed in <strong>its own tradition</strong>, every image is public
+  domain with attribution, and the whole thing is just files in a public repo you can read, correct, and play.</p>
 
-  <div id="root"><div class="loading">Loading the collection…</div></div>
+  <div class="explore">
+    <a href="viewers/cards.html"><div class="t">🃏 Cards</div><div class="d">Browse every deck &amp; the meta; switch decks from the dropdown</div></a>
+    <a href="viewers/timeline.html"><div class="t">↧ Timeline</div><div class="d">Decks across the centuries, by lineage</div></a>
+    <a href="genealogy.html"><div class="t">⸬ Genealogy</div><div class="d">The descent graph of the patterns</div></a>
+    <a href="viewers/genealogy-tree.html"><div class="t">✦ Tree of Life</div><div class="d">Radial root → branch → deck</div></a>
+    <a href="viewers/caster.html"><div class="t">🔮 Caster</div><div class="d">Draw a spread; export to read with AI</div></a>
+    <a href="pages/course.html"><div class="t">📓 Course</div><div class="d">Build a deck yourself with Claude Code</div></a>
+  </div>
+
+  <section class="block">
+    <h2>What this is — and how it feeds recursive.eco</h2>
+    <p><a class="links" href="https://recursive.eco" target="_blank" rel="noopener"><strong>recursive.eco</strong></a>
+    is a place where people make sense together using <em>grammars</em> — symbolic systems like tarot decks,
+    stories, and I&nbsp;Ching books. This repository is the <strong>library</strong> behind it: each deck is a
+    plain JSON file in <code>tarot/</code>, public and forkable. The app is the <strong>window</strong> that
+    renders those files as cards, trees, timelines and oracles. The viewers you see here are <em>thin</em> —
+    the data is the point.</p>
+    <div class="three">
+      <div><h3>The public repo</h3><p>Every deck is a JSON grammar in <code>tarot/</code>. You + anyone on GitHub can read, fork, correct.</p></div>
+      <div><h3>The app (recursive.eco)</h3><p>Renders the same grammars as cards, oracles and readings for players.</p></div>
+      <div><h3>The viewers (here)</h3><p>Backend-free static pages on GitHub Pages — the same data, rendered many ways.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>A short, honest history of the cards</h2>
+    <p>Tarot began as a <strong>card game</strong> in 1440s northern Italy — extra trump cards (<em>trionfi</em>)
+    added to an ordinary four-suit pack imported from the Islamic world. For three centuries it was played, not
+    read. Only in <strong>1781</strong> did Antoine Court de Gébelin claim the cards held lost Egyptian wisdom,
+    and Etteilla turned that claim into a cartomancy business. The "ancient esoteric tarot" is itself an
+    18th-century invention — which makes it no less interesting, only younger than it pretends.</p>
+    <p class="links">Read the research (rendered from this repo):
+      <a href="pages/course.html?src=..%2Fresearch%2F00-overview-history-of-tarot.mdx">Overview history</a> ·
+      <a href="pages/course.html?src=..%2Fresearch%2F00b-origins-and-predecessors.mdx">Origins &amp; predecessors</a> ·
+      <a href="pages/course.html?src=..%2Fresearch%2F00c-islamic-and-chinese-card-origins.mdx">Islamic &amp; Chinese card origins</a> ·
+      <a href="pages/course.html?src=..%2Fresearch%2F14-genealogy-tree.mdx">The genealogy</a> ·
+      <a href="https://github.com/PlayfulProcess/recursive-tarot/tree/main/research" target="_blank" rel="noopener">all research files ↗</a>
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>Common misconceptions, corrected</h2>
+    <ul class="mis">
+      <li><b>"Tarot is ancient Egyptian."</b> No — it's 15th-century Italian, and the Egyptian story dates only to 1781.</li>
+      <li><b>"The Major Arcana came first."</b> The suits came first (from Mamluk playing cards); the trumps were added <em>to</em> them.</li>
+      <li><b>"Tarot was always for divination."</b> For ~340 years it was a trick-taking game; cartomancy is the late chapter, not the root.</li>
+      <li><b>"The Rider-Waite-Smith is the original."</b> It's from 1909 — its illustrated pips borrow from the 1491 Sola Busca, here in the library.</li>
+      <li><b>"One true meaning per card."</b> Each tradition reads differently; this library keeps each deck in <em>its own</em> tradition rather than forcing one system across all.</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>How to contribute</h2>
+    <p>It's a public commons. Spot an error, want to add a public-domain deck, or improve a description?
+    Fork <a class="links" href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">the repo</a>,
+    edit the JSON or research, and open a pull request — or just open an issue. The
+    <a class="links" href="pages/course.html">course</a> walks you through turning a deck you love into a grammar
+    with Claude Code. Every image must be public domain with attribution; every meaning stays in its source
+    tradition. <span class="small muted">CC-BY-SA-4.0 · curated by PlayfulProcess.</span></p>
+  </section>
 </main>
 
 <footer class="site"><div class="wrap">
@@ -30,53 +106,5 @@
   <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">github.com/PlayfulProcess/recursive-tarot</a>
   · Scholarship consulted (facts only, no text reproduced): the Tarot History Forum.
 </div></footer>
-
-<script src="loader.js"></script>
-<script>
-(async function () {
-  var root = document.getElementById('root');
-  try {
-    var col = await RT.fetchJson(RT.collectionUrl());
-    var bySlug = {}; col.grammars.forEach(function (g) { bySlug[g.slug] = g; });
-    var html = '';
-
-    // Feature the genealogy meta-grammar first
-    var tree = col.grammars.find(function (g) { return g.is_meta; });
-    if (tree) {
-      html += '<div class="branch"><h2>The Tree of Tarot</h2>' +
-        '<p class="muted small" style="margin:10px 0 0">' + RT.esc(tree.blurb || '') + '</p>' +
-        '<div class="decks"><div class="deck"><a href="' + RT.deckHref(tree.slug) + '">' +
-        thumb(tree) + '<div class="meta"><div class="nm">' + RT.esc(tree.name) +
-        '</div><div class="ct">' + tree.items + ' nodes · the whole genealogy</div></div></a></div></div></div>';
-    }
-
-    // Then each branch
-    col.branches.forEach(function (b) {
-      var decks = b.deck_slugs.map(function (s) { return bySlug[s]; }).filter(Boolean);
-      if (!decks.length) return;
-      html += '<div class="branch"><h2>' + RT.esc(b.name) + '</h2><div class="decks">';
-      decks.forEach(function (g) {
-        html += '<div class="deck"><a href="' + RT.deckHref(g.slug) + '">' + thumb(g) +
-          '<div class="meta"><div class="nm">' + RT.esc(g.name) +
-          '</div><div class="ct">' + g.items + ' cards</div></div></a></div>';
-      });
-      html += '</div></div>';
-    });
-
-    root.innerHTML = html;
-  } catch (e) {
-    root.innerHTML = '<div class="loading">Could not load the collection.<br><span class="small">' +
-      RT.esc(e.message) + '</span><br><br><span class="small muted">If you opened this file directly, run a local server first:<br><code>python -m http.server 8000</code> then visit <code>http://localhost:8000/site/</code></span></div>';
-  }
-
-  function thumb(g) {
-    if (g.cover_image_url) {
-      return '<div class="thumb" style="background-image:url(' +
-        "'" + g.cover_image_url.replace(/'/g, '%27') + "'" + ')"></div>';
-    }
-    return '<div class="thumb"></div>';
-  }
-})();
-</script>
 </body>
 </html>
