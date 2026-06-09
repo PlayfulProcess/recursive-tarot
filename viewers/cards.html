@@ -2439,9 +2439,11 @@
                         parent_l3 = l2ToL3Map.get(itemId);
                     }
 
-                    // Extract hexagram number for I Ching items
-                    // Priority: hexagram_number > number > parse from hex-{N} ID > sort_order > index
-                    let itemNumber = item.sort_order ?? index;
+                    // Card number for the badge. Prefer the item's real number
+                    // (metadata.number / number) — the meta sets sort_order:0 on every
+                    // card, which otherwise made EVERY card render "0".
+                    let itemNumber = (item.metadata && item.metadata.number != null) ? item.metadata.number
+                                   : (item.number != null ? item.number : (item.sort_order ?? index));
                     if (type === 'iching') {
                         if (item.hexagram_number != null) {
                             itemNumber = item.hexagram_number;
@@ -3140,7 +3142,12 @@
                 ['▦ Filter the grid to this', 'filter'],
                 ['☰ Expand in sidebar', 'sidebar'],
                 ['✕ Show all (clear filter)', 'clear'],
+                ['—', 'sep'],
+                ['⸬ View as Genealogy', 'genealogy'],
+                ['↧ View as Timeline', 'timeline'],
+                ['⛢ View as Tree', 'tree'],
             ];
+            const NAV = { genealogy: '../genealogy.html', timeline: 'timeline.html', tree: 'tree-viewer.html' };
             const menu = document.createElement('div');
             menu.className = 'lens-menu-pop';
             menu.style.cssText = 'position:fixed;z-index:9999;background:#161227;border:1px solid #3a3450;border-radius:9px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.55);min-width:190px;';
@@ -3148,6 +3155,7 @@
             menu.style.left = Math.min(r.left, window.innerWidth - 210) + 'px';
             menu.style.top = (r.bottom + 4) + 'px';
             opts.forEach(([label, mode]) => {
+                if (mode === 'sep') { const hr = document.createElement('div'); hr.style.cssText = 'height:1px;background:#3a3450;margin:5px 4px;'; menu.appendChild(hr); return; }
                 const a = document.createElement('div');
                 a.textContent = label;
                 a.style.cssText = 'padding:7px 11px;border-radius:6px;cursor:pointer;color:#cfc8e2;font-size:13px;';
@@ -3155,6 +3163,12 @@
                 a.onmouseleave = () => a.style.background = '';
                 a.onclick = (ev) => {
                     ev.stopPropagation(); menu.remove();
+                    if (NAV[mode]) {
+                        const src = new URLSearchParams(window.location.search).get('src') || '';
+                        const q = src ? ('?src=' + encodeURIComponent(src)) : '';
+                        window.location.href = NAV[mode] + (mode === 'genealogy' ? '' : q);
+                        return;
+                    }
                     if (mode === 'clear') { filterByHierarchy(null, null); }
                     else if (mode === 'sidebar') { expandedSections.add(item.id); }
                     else { expandedSections.add(item.id); filterByHierarchy(`l${item.level || 4}`, item.id); }
@@ -3192,16 +3206,8 @@
             `;
 
             header.addEventListener('click', () => {
-                // ── Lens dispatch ── an axis with a non-pill lens opens that renderer
-                // (By Age → timeline, By Deck/Lineage → genealogy), preserving ?src.
-                const LENS_VIEW = { timeline: 'timeline.html', genealogy: '../genealogy.html', tree: 'tree-viewer.html' };
-                if (item.category === 'axis' && item.lens && LENS_VIEW[item.lens]) {
-                    const src = new URLSearchParams(window.location.search).get('src') || '';
-                    const q = src ? ('?src=' + encodeURIComponent(src)) : '';
-                    // timeline/tree read the loaded grammar; genealogy reads the meta.
-                    window.location.href = LENS_VIEW[item.lens] + (item.lens === 'genealogy' ? '' : q);
-                    return;
-                }
+                // Click just uncollapses (and filters in place) — NO redirect.
+                // Spatial views (Genealogy / Timeline / Tree) live in the ▾ menu.
                 if (children.length > 0) {
                     if (expandedSections.has(item.id)) {
                         expandedSections.delete(item.id);
