@@ -3120,10 +3120,12 @@
             let list = [];
             try {
                 const c = await (await fetch('../tarot/_collection.json')).json();
-                list = (c.collection || c.decks || []).map(d => ({ slug: d.slug, name: d.name || d.slug, meta: !!d.is_meta })).filter(d => d.slug);
+                list = (c.grammars || c.collection || c.decks || []).map(d => ({ slug: d.slug, name: d.name || d.slug, meta: !!d.is_meta })).filter(d => d.slug);
             } catch (e) { sel.style.display = 'none'; return; }
-            const metaItem = list.find(d => d.meta) || { slug: 'all-decks-many-lenses', name: 'All Decks (the meta)' };
-            const decks = list.filter(d => !d.meta).sort((a, b) => a.name.localeCompare(b.name));
+            // ensure the fat meta is always offered, even if not listed in _collection
+            if (!list.some(d => d.slug === 'all-decks-many-lenses')) list.unshift({ slug: 'all-decks-many-lenses', name: 'All Decks (the meta)', meta: true });
+            const metaItem = list.find(d => d.slug === 'all-decks-many-lenses') || list.find(d => d.meta) || { slug: 'all-decks-many-lenses', name: 'All Decks (the meta)' };
+            const decks = list.filter(d => d.slug !== metaItem.slug).sort((a, b) => a.name.localeCompare(b.name));
             const srcFor = s => '../tarot/' + s + '/grammar.json';
             const opt = (s, label) => `<option value="${srcFor(s)}"${curSrc.includes('/' + s + '/') ? ' selected' : ''}>${label.replace(/\s+[—–-]\s+.*/, '')}</option>`;
             sel.innerHTML = opt(metaItem.slug, '✦ All Decks (the meta)') + decks.map(d => opt(d.slug, d.name)).join('');
