@@ -17,7 +17,7 @@
   // preserve the loaded grammar across views
   const p = new URLSearchParams(location.search);
   const keep = new URLSearchParams();
-  for (const k of ['src', 'github', 'id', 'type']) if (p.get(k)) keep.set(k, p.get(k));
+  for (const k of ['src', 'github', 'id', 'type', 'item']) if (p.get(k)) keep.set(k, p.get(k));
   const qs = keep.toString() ? '?' + keep.toString() : '';
   const amp = keep.toString() ? '&' : '?';
 
