@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tarot Timeline — Decks by Year · Recursive Tarot</title>
+<style>
+  :root{
+    --bg:#0f0d17; --panel:#1a1726; --ink:#ece8f5; --muted:#9b94b3; --accent:#d4af37; --line:#2a2440;
+    --roots:#c9a24b; --a:#e07a5f; --b:#81b29a; --c:#6d8ec9; --occult:#9b6dc9; --sui:#c96d9b;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{display:flex;height:calc(100vh - 52px);min-height:0}
+  #stage{flex:1;position:relative;overflow:hidden}
+  svg{width:100%;height:100%;display:block;cursor:grab}
+  svg:active{cursor:grabbing}
+  .axis path,.axis line{stroke:#39324d}
+  .axis text{fill:#9b94b3;font-size:11px}
+  .gridline{stroke:#221d33;stroke-dasharray:2 4}
+  .derive{fill:none;stroke-width:1.3px;opacity:.5;stroke-dasharray:3 3}
+  .deck circle{cursor:pointer;stroke:#0f0d17;stroke-width:1.3px}
+  .deck text{cursor:pointer;font-size:11px;fill:var(--ink);paint-order:stroke;stroke:#0f0d17;stroke-width:3px;stroke-linejoin:round}
+  .deck:hover circle{stroke:var(--accent);stroke-width:2.2px}
+  .dim{opacity:.13}.hot{opacity:1!important}
+  .hint{position:absolute;left:50%;top:12px;transform:translateX(-50%);font-size:11.5px;color:var(--muted);
+    background:rgba(20,17,32,.7);padding:5px 12px;border-radius:999px;pointer-events:none}
+  .controls{position:absolute;right:14px;top:12px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  .controls label,.controls button{background:var(--panel);color:#cfc8e2;border:1px solid var(--line);
+    border-radius:8px;padding:6px 11px;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+  .controls button:hover{border-color:var(--accent);color:var(--accent)}
+  .legend{position:absolute;left:14px;bottom:14px;background:rgba(20,17,32,.82);border:1px solid var(--line);
+    border-radius:10px;padding:10px 12px;font-size:12px;backdrop-filter:blur(4px)}
+  .legend .row{display:flex;align-items:center;gap:7px;margin:3px 0;cursor:pointer}
+  .legend .row.off{opacity:.35}.legend .sw{width:11px;height:11px;border-radius:3px}
+  .legend .ttl{font-weight:700;margin-bottom:6px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-size:10px}
+  aside#detail{width:330px;max-width:84vw;background:var(--panel);border-left:1px solid var(--line);padding:18px;overflow:auto;display:none}
+  aside#detail.open{display:block}
+  aside#detail img{width:100%;max-height:240px;object-fit:contain;background:#0a0810;border-radius:8px;margin-bottom:12px}
+  aside#detail h2{margin:.2em 0 .1em;font-size:18px}
+  aside#detail .when{color:var(--accent);font-size:13px;margin-bottom:10px}
+  aside#detail .sec{margin:12px 0;font-size:13.5px;line-height:1.55;color:#cfc8e2}
+  aside#detail .sec h4{margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  aside#detail .opencards{display:inline-block;margin-top:10px;padding:8px 14px;border:1px solid var(--accent);border-radius:999px;color:var(--accent);text-decoration:none;font-size:13px;font-weight:600}
+  aside#detail .close{float:right;cursor:pointer;color:var(--muted);font-size:20px;line-height:1}
+  #err{padding:40px;text-align:center;color:#e07a5f}
+</style>
+</head>
+<body>
+<script src="../site-header.js"></script>
+<site-header active="timeline"></site-header>
+<div class="wrap">
+  <div id="stage">
+    <div class="hint">A chronological genealogy — decks by year, descent flowing left→right · drag to pan, scroll to zoom · click a deck</div>
+    <div class="controls">
+      <label><input type="checkbox" id="toggle-derive" checked> Descent</label>
+      <label><input type="checkbox" id="toggle-cumulative"> Cumulative</label>
+      <button id="btn-reset">Reset</button>
+    </div>
+    <svg id="svg"></svg>
+    <div class="legend" id="legend"><div class="ttl">Branches — click to filter</div></div>
+    <div id="err" style="display:none"></div>
+  </div>
+  <aside id="detail"></aside>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script>
+const RAW_COLORS = {'branch-roots':'#c9a24b','branch-a':'#e07a5f','branch-b':'#81b29a','branch-c':'#6d8ec9','branch-occult':'#9b6dc9','branch-sui':'#c96d9b'};
+const SLUG_MAP = {
+  'deck-visconti-sforza':'visconti-sforza-tarot','deck-cary-yale':'cary-yale-visconti-tarot',
+  'deck-tarocchino-bologna':'tarocchino-bologna','deck-minchiate':'minchiate-florence-tarot',
+  'deck-charles-vi':'charles-vi-tarot','deck-marseille-conver':'tarot-de-marseille-conver',
+  'deck-marseille-type1':'noblet-tarot','deck-besancon':'tarot-de-besancon',
+  'deck-court-de-gebelin':'court-de-gebelin-tarot','deck-etteilla-i':'etteilla-i-livre-de-thot',
+  'deck-etteilla-iii':'etteilla-iii-oracle-des-dames','deck-oswald-wirth':'oswald-wirth-tarot',
+  'deck-golden-dawn':'golden-dawn-book-t-tarot','deck-sola-busca':'sola-busca-tarot','deck-mantegna':'mantegna-tarocchi',
+};
+const LABEL = {'branch-roots':'Roots (Milan)','branch-a':'A-order (Bologna/Florence)','branch-b':'B-order (Ferrara)','branch-c':'C-order (Marseille)','branch-occult':'Occult','branch-sui':'Sui generis'};
+
+const params = new URLSearchParams(location.search);
+const SRC = params.get('src') || '../tarot/tree-of-tarot/grammar.json';
+let itemMap, decks, hidden = new Set();
+
+function parseYear(when){
+  if(!when) return null;
+  let m = String(when).match(/\b(1[2-9]\d{2}|20\d{2})\b/);   // explicit 4-digit (incl. 1850s, ranges → start)
+  if(m) return +m[1];
+  m = String(when).match(/(\d{1,2})\s*(?:st|nd|rd|th)?\s*c\b/i);  // "16th c." → mid-century
+  if(m) return (+m[1]-1)*100 + 50;
+  return null;
+}
+
+(async function init(){
+  try{
+    const r = await fetch(SRC); if(!r.ok) throw new Error('Could not load '+SRC+' ('+r.status+')');
+    const g = await r.json();
+    const items = g.items||[];
+    itemMap = Object.fromEntries(items.map(i=>[i.id,i]));
+    decks = items.filter(i=>i.id.startsWith('deck-')).map(i=>({
+      id:i.id, name:i.name, when:(i.metadata||{}).when||'',
+      year:parseYear((i.metadata||{}).when), branch:(i.metadata||{}).branch,
+      derives:(i.metadata||{}).derives_from||[], image:i.image_url, sections:i.sections||{}
+    })).filter(d=>d.year!=null);
+  }catch(e){ document.getElementById('err').style.display='block'; document.getElementById('err').textContent=e.message; return; }
+  buildLegend(); draw();
+  window.addEventListener('resize', draw);
+  ['toggle-derive','toggle-cumulative'].forEach(id=>document.getElementById(id).addEventListener('change',draw));
+  document.getElementById('btn-reset').addEventListener('click',()=>{hidden.clear();buildLegend();draw();});
+})();
+
+function visible(){ return decks.filter(d=>!hidden.has(d.branch)); }
+
+function draw(){
+  const stage=document.getElementById('stage');
+  const W=stage.clientWidth, H=stage.clientHeight;
+  const M={top:40,right:40,bottom:46,left:40};
+  const svg=d3.select('#svg').attr('viewBox',[0,0,W,H]); svg.selectAll('*').remove();
+  const g=svg.append('g');
+  const zoom=d3.zoom().scaleExtent([0.5,5]).on('zoom',ev=>g.attr('transform',ev.transform));
+  svg.call(zoom);
+
+  const data=visible().slice().sort((a,b)=>a.year-b.year);
+  if(!data.length) return;
+  const years=d3.extent(data,d=>d.year);
+  const x=d3.scaleLinear().domain([years[0]-15,years[1]+15]).range([M.left,W-M.right]);
+
+  // gridlines every 50y + axis
+  const ticks=x.ticks(8);
+  g.append('g').selectAll('line').data(ticks).join('line').attr('class','gridline')
+    .attr('x1',d=>x(d)).attr('x2',d=>x(d)).attr('y1',M.top).attr('y2',H-M.bottom);
+  g.append('g').attr('class','axis').attr('transform',`translate(0,${H-M.bottom})`)
+    .call(d3.axisBottom(x).tickFormat(d3.format('d')).ticks(8));
+
+  // collision-avoidance: stack decks sharing close x into rows
+  const rowH=30, rows=[];
+  const placed=data.map(d=>{
+    const px=x(d.year); let row=0;
+    while(rows[row]!=null && px-rows[row]<88) row++;
+    rows[row]=px; return {...d, px, py:M.top+20+row*rowH};
+  });
+  const byId=Object.fromEntries(placed.map(p=>[p.id,p]));
+
+  // descent edges (left→right through time)
+  if(document.getElementById('toggle-derive').checked){
+    const edges=[];
+    placed.forEach(p=>p.derives.forEach(s=>{ if(byId[s]) edges.push({s:byId[s],t:p}); }));
+    g.append('g').selectAll('path').data(edges).join('path').attr('class','derive')
+      .attr('stroke',d=>RAW_COLORS[d.t.branch]||'#888')
+      .attr('d',d=>{const mx=(d.s.px+d.t.px)/2;return `M${d.s.px},${d.s.py}C${mx},${d.s.py} ${mx},${d.t.py} ${d.t.px},${d.t.py}`;});
+  }
+
+  const node=g.append('g').selectAll('g').data(placed).join('g').attr('class','deck')
+    .attr('transform',d=>`translate(${d.px},${d.py})`);
+  node.append('circle').attr('r',6).attr('fill',d=>RAW_COLORS[d.branch]||'#7a7290');
+  node.append('text').attr('x',10).attr('dy','0.32em')
+    .text(d=>d.name.replace(/\s+[—–-]\s+.*/,'').slice(0,26)+'  ·'+d.year);
+
+  node.on('click',(ev,d)=>{ev.stopPropagation();showDetail(d);})
+    .on('mouseenter',(ev,d)=>{
+      const keep=new Set([d.id]); const stack=[d.id];
+      while(stack.length){const id=stack.pop();(itemMap[id]?.metadata?.derives_from||[]).forEach(s=>{if(byId[s]&&!keep.has(s)){keep.add(s);stack.push(s);}});}
+      node.classed('dim',x=>!keep.has(x.id)).classed('hot',x=>keep.has(x.id));
+      g.selectAll('.derive').classed('dim',l=>!(keep.has(l.s.id)&&keep.has(l.t.id)));
+    })
+    .on('mouseleave',()=>{node.classed('dim',false).classed('hot',false);g.selectAll('.derive').classed('dim',false);});
+
+  // cumulative scrubber: dim everything after a moving year (simple: animate? keep static = show all)
+  if(document.getElementById('toggle-cumulative').checked){
+    // cumulative = emphasise that later decks contain the inheritance of earlier ones:
+    // fade by recency so the "stack so far" reads as a build-up
+    const maxY=years[1];
+    node.style('opacity',d=>0.45+0.55*(1-(maxY-d.year)/(maxY-years[0]+1)));
+  } else node.style('opacity',1);
+
+  svg.on('click',()=>document.getElementById('detail').classList.remove('open'));
+  draw._reset=()=>svg.transition().duration(400).call(zoom.transform,d3.zoomIdentity);
+}
+
+function mdToHtml(s){ if(!s) return ''; return String(s).split(/\n{2,}/).map(p=>`<p style="margin:.4em 0">${p.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')}</p>`).join(''); }
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+function showDetail(d){
+  const el=document.getElementById('detail'); const slug=SLUG_MAP[d.id];
+  let html=`<span class="close" onclick="document.getElementById('detail').classList.remove('open')">×</span>`;
+  if(d.image) html+=`<img src="${esc(d.image)}" alt="${esc(d.name)}" loading="lazy">`;
+  html+=`<h2>${esc(d.name)}</h2><div class="when">${esc(d.when)} · ${d.year}</div>`;
+  for(const [k,v] of Object.entries(d.sections)){ if(v) html+=`<div class="sec"><h4>${esc(k)}</h4>${mdToHtml(String(v))}</div>`; }
+  if(slug) html+=`<a class="opencards" href="cards.html?src=${encodeURIComponent('../tarot/'+slug+'/grammar.json')}">Open ${esc(d.name.replace(/\s+[—–-].*/,''))} cards →</a>`;
+  else html+=`<div class="sec" style="color:#9b94b3">No card-level deck in the repo yet for this node.</div>`;
+  el.innerHTML=html; el.classList.add('open');
+}
+
+function buildLegend(){
+  const order=['branch-roots','branch-a','branch-b','branch-c','branch-occult','branch-sui'];
+  const lg=document.getElementById('legend'); lg.querySelectorAll('.row').forEach(r=>r.remove());
+  order.forEach(b=>{ const row=document.createElement('div'); row.className='row'+(hidden.has(b)?' off':'');
+    row.innerHTML=`<span class="sw" style="background:${RAW_COLORS[b]}"></span><span>${LABEL[b]||b}</span>`;
+    row.onclick=()=>{hidden.has(b)?hidden.delete(b):hidden.add(b);buildLegend();draw();}; lg.appendChild(row); });
+}
+</script>
+</body>
+</html>

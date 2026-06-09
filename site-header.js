@@ -19,6 +19,7 @@
   const TABS = [
     ['cards',      'Cards',        toViewers + 'cards.html'],
     ['treeoflife', 'Tree of Life', toViewers + 'genealogy-tree.html'],
+    ['timeline',   'Timeline',     toViewers + 'timeline.html'],
     ['tree',       'Tree',         toViewers + 'tree-viewer.html'],
     ['caster',     'Caster',       toViewers + 'caster.html'],
     ['genealogy',  'Genealogy',    toRoot + 'genealogy.html'],
@@ -30,6 +31,7 @@
     const f = location.pathname.split('/').pop() || 'index.html';
     if (f.startsWith('cards')) return 'cards';
     if (f.startsWith('genealogy-tree')) return 'treeoflife';
+    if (f.startsWith('timeline')) return 'timeline';
     if (f.startsWith('tree-viewer')) return 'tree';
     if (f.startsWith('caster')) return 'caster';
     if (f.startsWith('genealogy')) return 'genealogy';
