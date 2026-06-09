@@ -11,19 +11,20 @@
 (function () {
   if (customElements.get('site-header')) return;
 
-  const inViewers = location.pathname.includes('/viewers/');
-  const toRoot = inViewers ? '../' : '';
-  const toViewers = inViewers ? '' : 'viewers/';
+  // Path back to the repo root: '../' from any subdir (viewers/ OR pages/), '' at root.
+  // All links are then root-relative so they work from every location.
+  const inSub = /\/(viewers|pages)\//.test(location.pathname);
+  const root = inSub ? '../' : '';
 
   // [key, label, href, external?]
   const TABS = [
-    ['cards',      'Cards',        toViewers + 'cards.html'],
-    ['treeoflife', 'Tree of Life', toViewers + 'genealogy-tree.html'],
-    ['timeline',   'Timeline',     toViewers + 'timeline.html'],
-    ['tree',       'Tree',         toViewers + 'tree-viewer.html'],
-    ['caster',     'Caster',       toViewers + 'caster.html'],
-    ['genealogy',  'Genealogy',    toRoot + 'genealogy.html'],
-    ['course',     'Course',       toRoot + 'pages/course.html'],
+    ['cards',      'Cards',        root + 'viewers/cards.html'],
+    ['treeoflife', 'Tree of Life', root + 'viewers/genealogy-tree.html'],
+    ['timeline',   'Timeline',     root + 'viewers/timeline.html'],
+    ['tree',       'Tree',         root + 'viewers/tree-viewer.html'],
+    ['caster',     'Caster',       root + 'viewers/caster.html'],
+    ['genealogy',  'Genealogy',    root + 'genealogy.html'],
+    ['course',     'Course',       root + 'pages/course.html'],
     ['github',     'GitHub ↗', 'https://github.com/PlayfulProcess/recursive-tarot', true],
   ];
 
@@ -74,7 +75,7 @@
           }
         </style>
         <div class="bar">
-          <a class="brand" href="${toRoot}index.html">
+          <a class="brand" href="${root}index.html">
             <span class="name">The <span class="gold">Recursive Tarot</span></span>
             <span class="sub">part of <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a></span>
           </a>
