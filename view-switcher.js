@@ -10,9 +10,8 @@
 (function () {
   if (customElements.get('view-switcher')) return;
 
-  const inViewers = location.pathname.includes('/viewers/');
-  const toViewers = inViewers ? '' : 'viewers/';
-  const toRoot = inViewers ? '../' : '';
+  // Root-relative from any subdir (viewers/ OR pages/), so links work everywhere.
+  const root = /\/(viewers|pages)\//.test(location.pathname) ? '../' : '';
 
   // preserve the loaded grammar across views
   const p = new URLSearchParams(location.search);
@@ -23,13 +22,13 @@
 
   // [key, label, href]
   const VIEWS = [
-    ['cards',      'Cards',        toViewers + 'cards.html' + qs],
-    ['tree',       'Tree',         toViewers + 'tree-viewer.html' + qs],
-    ['thumbnails', 'Thumbnails',   toViewers + 'cards.html' + qs + amp + 'layout=thumbnails'],
-    ['timeline',   'Timeline',     toViewers + 'timeline.html' + qs],
-    ['treeoflife', 'Tree of Life', toViewers + 'genealogy-tree.html' + qs],
-    ['genealogy',  'Genealogy',    toRoot + 'genealogy.html'],
-    ['print',      'Print',        toRoot + 'pages/print-viewer.html' + qs],
+    ['cards',      'Cards',        root + 'viewers/cards.html' + qs],
+    ['tree',       'Tree',         root + 'viewers/tree-viewer.html' + qs],
+    ['thumbnails', 'Thumbnails',   root + 'viewers/cards.html' + qs + amp + 'layout=thumbnails'],
+    ['timeline',   'Timeline',     root + 'viewers/timeline.html' + qs],
+    ['treeoflife', 'Tree of Life', root + 'viewers/genealogy-tree.html' + qs],
+    ['genealogy',  'Genealogy',    root + 'genealogy.html'],
+    ['print',      'Print',        root + 'pages/print-viewer.html' + qs],
   ];
 
   const EYE = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>';
