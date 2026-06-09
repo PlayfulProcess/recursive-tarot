@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="course-title">Course - Recursive.eco</title>
+    <link rel="icon" type="image/png" href="/public/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        /* Course-specific styles */
+        .course-sidebar {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+        .course-nav {
+            background: white;
+            border-radius: 0.5rem;
+            border: 1px solid #E5E7EB;
+            padding: 1.5rem;
+        }
+        .course-nav > h3 {
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+        .course-nav-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 0.125rem;
+        }
+        /* Collapsible navigation sections */
+        .nav-section {
+            margin-bottom: 0.25rem;
+        }
+        .nav-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            border-left: 3px solid transparent;
+            cursor: pointer;
+            color: #6B7280;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+        .nav-section-header:hover {
+            background-color: #F3F4F6;
+            color: #9333ea;
+        }
+        .nav-section-header.active {
+            color: #9333ea;
+            background-color: #F3F4F6;
+            border-left-color: #9333ea;
+            font-weight: 600;
+        }
+        .nav-section-chevron {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+        .nav-section.open .nav-section-chevron {
+            transform: rotate(180deg);
+        }
+        .nav-section-children {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .nav-section.open .nav-section-children {
+            max-height: 1000px;
+        }
+        .nav-section-children a {
+            display: block;
+            padding: 0.5rem 1rem 0.5rem 1.75rem;
+            font-size: 0.875rem;
+            color: #9CA3AF;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            transition: all 0.15s;
+        }
+        .nav-section-children a:hover {
+            color: #9333ea;
+            background-color: #F9FAFB;
+        }
+        .nav-section-children a.active {
+            color: #9333ea;
+            font-weight: 500;
+        }
+        /* Simple nav links (no children) */
+        .course-nav-inner > a {
+            color: #6B7280;
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+        .course-nav-inner > a:hover {
+            background-color: #F3F4F6;
+            color: #9333ea;
+        }
+        .course-nav-inner > a.active {
+            color: #9333ea;
+            background-color: #F3F4F6;
+            border-left-color: #9333ea;
+            font-weight: 600;
+        }
+        .course-content {
+            max-width: 800px;
+        }
+        /* Mobile TOC Button */
+        .mobile-toc-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 1rem;
+            width: 56px;
+            height: 56px;
+            background-color: #9333ea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(147, 51, 234, 0.4);
+            cursor: pointer;
+            z-index: 50;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .mobile-toc-button:hover {
+            background-color: #7e22ce;
+            transform: scale(1.05);
+        }
+        .mobile-toc-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 45;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .mobile-toc-overlay.active {
+            opacity: 1;
+        }
+        .mobile-toc-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 80%;
+            max-width: 320px;
+            background: white;
+            z-index: 50;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+            box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+        }
+        .mobile-toc-panel.active {
+            transform: translateX(0);
+        }
+        .mobile-toc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        .mobile-toc-close {
+            background: none;
+            border: none;
+            color: #6B7280;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        /* Root overflow guard — nothing should be able to push the page wider
+           than the viewport. Without this, a single wide element (long URL,
+           table, code block) makes mobile browsers shrink-to-fit and the
+           sticky header desyncs from the zoomed body. May 30 2026. */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        /* Wrap any over-long inline text/code in content. */
+        .course-content p,
+        .course-content li,
+        .course-content h1,
+        .course-content h2,
+        .course-content h3 {
+            overflow-wrap: anywhere;
+        }
+        .course-content code {
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+        @media (max-width: 768px) {
+            .course-sidebar {
+                display: none;
+            }
+            .mobile-toc-button {
+                display: flex;
+            }
+            /* Fix mobile text overflow */
+            .course-content {
+                width: 100%;
+                max-width: 100%;
+                padding-right: 0.5rem;
+            }
+            main.md\:col-span-3 {
+                padding: 0;
+            }
+            main.md\:col-span-3 > div {
+                padding: 1.25rem 1rem;
+                margin-right: 0;
+            }
+            .max-w-7xl {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            /* Smaller hero title so it doesn't overflow on narrow screens. */
+            #course-hero-title { font-size: 1.875rem; line-height: 1.2; }
+            #course-hero-description { font-size: 1.0625rem; }
+            /* Tables scroll horizontally inside their own box instead of
+               widening the whole page. */
+            .course-content table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            /* The QR "scan to open" block's label had min-width:200px which, with
+               the QR image + gaps, forced the content column wider than a narrow
+               phone — and because html/body clip overflow-x, that silently cut off
+               the right edge of every paragraph (Jun 7 2026, builder report). On
+               mobile: stack it and drop the min-width so nothing exceeds the viewport. */
+            .course-page-qr-inner { flex-direction: column; gap: 0.75rem; }
+            .course-page-qr-label { flex: 1 1 auto; min-width: 0; text-align: center; }
+            .course-page-qr-block { padding: 1rem; max-width: 100%; }
+            .course-page-qr-block img, .course-page-qr-block canvas { max-width: 100%; height: auto; }
+        }
+        .course-content h1 {
+            /* Markdown-level H1 — when the MDX body starts with `#`,
+               it renders here. Sized larger than h2 so the section
+               hierarchy is clear. Without this rule, Tailwind preflight
+               flattens the h1 to body-text size and the title looks
+               like bold paragraph text. */
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 2.25rem;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #111827;
+        }
+        .course-content h2 {
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #E5E7EB;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1F2937;
+            scroll-margin-top: 120px;
+        }
+        .course-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #374151;
+            scroll-margin-top: 120px;
+        }
+        .course-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: #4B5563;
+        }
+        .course-content ul, .course-content ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        .course-content ul {
+            list-style-type: disc;
+        }
+        .course-content ol {
+            list-style-type: decimal;
+        }
+        .course-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+        .course-content a {
+            color: #2563eb;
+            text-decoration: underline;
+            transition: color 0.2s;
+            /* Long URLs (course links, library deep-links) must wrap instead
+               of forcing horizontal overflow — that overflow was making mobile
+               browsers shrink-to-fit (auto zoom-out) and desync the sticky
+               header from the zoomed body. May 30 2026. */
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+        .course-content a:hover {
+            color: #1d4ed8;
+        }
+        .course-content blockquote {
+            border-left: 4px solid #9333ea;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #6B7280;
+        }
+        .course-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .course-content hr {
+            margin: 2rem 0;
+            border: 0;
+            border-top: 1px solid #E5E7EB;
+        }
+        .course-content code {
+            background-color: #F3F4F6;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.9em;
+        }
+        .course-content pre {
+            background-color: #1F2937;
+            color: #F9FAFB;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .course-content pre code {
+            background-color: transparent;
+            padding: 0;
+            color: inherit;
+        }
+        /* Table styling */
+        .course-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            border: 1px solid #E5E7EB;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        .course-content thead {
+            background-color: #F3F4F6;
+        }
+        .course-content th {
+            text-align: left;
+            padding: 0.875rem 1rem;
+            font-weight: 600;
+            color: #374151;
+            border-bottom: 2px solid #E5E7EB;
+        }
+        .course-content td {
+            padding: 0.875rem 1rem;
+            border-bottom: 1px solid #E5E7EB;
+            color: #4B5563;
+            vertical-align: top;
+        }
+        .course-content tr:hover {
+            background-color: #F9FAFB;
+        }
+        .course-content tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .duration-badge {
+            display: inline-block;
+            background-color: #DBEAFE;
+            color: #1E40AF;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        /* ── Presentation Mode (round 21 — QR-code-every-link toggle) ──
+           A toggle in the hero that turns every external link in the course
+           body into "link + QR code" pairs, so an audience watching a live
+           reading of the course can scan instead of typing URLs. State is
+           persisted in localStorage so it survives reload (useful when
+           presenting and the browser hiccups). Pagination/slide-mode is on
+           the roadmap; this commit ships only the QR overlay. */
+        .present-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background-color: #fff;
+            color: #6b21a8;
+            border: 1px solid #d8b4fe;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .present-toggle:hover {
+            background-color: #faf5ff;
+            border-color: #c084fc;
+        }
+        .present-toggle.active {
+            background-color: #6b21a8;
+            color: #fff;
+            border-color: #6b21a8;
+        }
+        /* Round 45: prominent QR block at the top of course content
+           when Presentation Mode is on — for the course page's own URL.
+           Big enough to scan from across a room, with a label that tells
+           workshop attendees what to do with it. */
+        .course-page-qr-block {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            padding: 1.25rem 1.5rem;
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            border: 2px solid #c4b5fd;
+            border-radius: 14px;
+            max-width: 560px;
+            transition: transform 0.15s;
+        }
+        .course-page-qr-block:hover { transform: scale(1.02); }
+        .course-page-qr-block:focus-visible { outline: 3px solid #7c3aed; outline-offset: 2px; }
+        .course-page-qr-inner {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .course-page-qr-target {
+            background: #fff;
+            padding: 6px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .course-page-qr-target canvas, .course-page-qr-target img { display: block; }
+        .course-page-qr-label { flex: 1 1 220px; min-width: 200px; }
+        .course-page-qr-label-main {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #4c1d95;
+            margin-bottom: 0.25rem;
+        }
+        .course-page-qr-label-sub {
+            font-size: 0.85rem;
+            color: #6d28d9;
+            line-height: 1.45;
+        }
+
+        .qr-code-inline {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 0.25rem;
+            padding: 4px;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            cursor: zoom-in;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .qr-code-inline:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+        .qr-code-inline canvas, .qr-code-inline img {
+            display: block;
+        }
+        /* Round 42: in-MDX popup buttons + their content panels.
+           Course authors write small clickable pills via
+           <button data-course-popup-trigger="…"> and a hidden
+           <div data-course-popup-content="…"> with the body.
+           Collapses long intro blockquotes (workshop note, building-
+           responsibly note, AI risks talk) into small icons. */
+        .course-popup-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.85rem;
+            margin: 0.25rem 0.35rem 0.25rem 0;
+            background: #ede9fe;
+            color: #5b21b6;
+            border: 1px solid #c4b5fd;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+        }
+        .course-popup-pill:hover { background: #ddd6fe; color: #4c1d95; }
+        .course-popup-pill[data-tone="amber"] {
+            background: #fef3c7; color: #92400e; border-color: #fde68a;
+        }
+        .course-popup-pill[data-tone="amber"]:hover { background: #fde68a; color: #78350f; }
+        .course-popup-pill[data-tone="rose"] {
+            background: #ffe4e6; color: #be123c; border-color: #fda4af;
+        }
+        .course-popup-pill[data-tone="rose"]:hover { background: #fecdd3; color: #9f1239; }
+        .course-popup-backdrop {
+            position: fixed; inset: 0;
+            background: rgba(15, 23, 42, 0.75);
+            z-index: 9998;
+            display: flex; align-items: center; justify-content: center;
+            padding: 0.5rem;
+            overflow-y: auto;
+        }
+        .course-popup-panel {
+            background: #fff;
+            border-radius: 12px;
+            max-width: 640px;
+            width: 100%;
+            max-height: calc(100vh - 1rem);
+            overflow-y: auto;
+            padding: 1.75rem 1.5rem 1.25rem;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            position: relative;
+            -webkit-overflow-scrolling: touch;
+        }
+        @media (max-width: 640px) {
+            .course-popup-panel {
+                padding: 1.5rem 1rem 1rem;
+                border-radius: 10px;
+            }
+        }
+        .course-popup-close {
+            position: absolute; top: 0.5rem; right: 0.75rem;
+            background: transparent; border: none;
+            color: #94a3b8; font-size: 1.75rem; line-height: 1;
+            cursor: pointer; padding: 0.25rem 0.5rem;
+        }
+        .course-popup-close:hover { color: #475569; }
+        .course-popup-body { color: #1e293b; font-size: 0.95rem; line-height: 1.65; }
+        .course-popup-body > *:first-child { margin-top: 0; }
+        .course-popup-body > *:last-child { margin-bottom: 0; }
+        .course-popup-body h3 {
+            font-size: 1.2rem; font-weight: 700; color: #1e1b4b;
+            margin: 0 2rem 0.75rem 0; line-height: 1.3;
+        }
+        .course-popup-body h4 {
+            font-size: 1rem; font-weight: 600; color: #312e81;
+            margin: 1.25rem 0 0.5rem; line-height: 1.35;
+        }
+        .course-popup-body p { margin: 0 0 0.85rem; }
+        .course-popup-body ul, .course-popup-body ol {
+            margin: 0 0 0.85rem; padding-left: 1.4rem;
+        }
+        .course-popup-body li { margin-bottom: 0.35rem; }
+        .course-popup-body li > p { margin: 0 0 0.35rem; }
+        .course-popup-body a { color: #7c3aed; text-decoration: underline; word-break: break-word; }
+        .course-popup-body img { max-width: 100%; height: auto; border-radius: 6px; }
+        .course-popup-body pre, .course-popup-body code { word-break: break-word; white-space: pre-wrap; }
+        [data-course-popup-content] { display: none; }
+
+        /* QR lightbox — click any inline QR to blow it up to a scannable
+           size from across the room. Round 22: previously the inline 64px
+           was too small for an audience past the second row. */
+        .qr-lightbox-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+            padding: 1rem;
+            backdrop-filter: blur(4px);
+        }
+        .qr-lightbox-box {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            max-width: min(90vw, 90vh, 520px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .qr-lightbox-box canvas, .qr-lightbox-box img {
+            display: block;
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+        }
+        .qr-lightbox-url {
+            font-size: 0.85rem;
+            color: #4b5563;
+            word-break: break-all;
+            text-align: center;
+            max-width: 420px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        }
+        .qr-lightbox-hint {
+            font-size: 0.75rem;
+            color: #9ca3af;
+        }
+        /* When presentation mode is active, render link + QR as a block so
+           the QR code sits visibly under the link rather than fighting for
+           inline space inside paragraphs. The audience sees both at once. */
+        body.presentation-mode .course-content a[target="_blank"] {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        body.presentation-mode .course-content {
+            font-size: 1.05rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- recursive-tarot drift: shared dark header instead of the recursive.eco shell. -->
+    <script src="../site-header.js?v=3"></script>
+    <site-header active="course"></site-header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Course Hero -->
+        <div class="mb-8">
+            <h1 id="course-hero-title" class="text-4xl font-bold text-gray-900 mb-4"></h1>
+            <p id="course-hero-description" class="text-xl text-gray-600 mb-4"></p>
+            <div id="course-hero-pills" class="flex gap-3 flex-wrap items-center">
+                <!-- The course popup pills (Teaching / Building responsibly)
+                     are relocated into this row from the MDX body at render
+                     time (see loadCourse), so the header carries the three
+                     interactive pills and the content card leads straight into
+                     the body. The old informative pills (duration / device /
+                     no-coding) were removed Jun 5 2026 — they read as noise. -->
+                <button id="present-toggle" class="present-toggle" type="button" aria-pressed="false" title="Toggle Presentation Mode — adds QR codes next to every link so an audience can scan instead of typing URLs">
+                    <span aria-hidden="true">▦</span>
+                    <span id="present-toggle-label">Presentation Mode</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="grid md:grid-cols-4 gap-8">
+            <!-- Left Sidebar with TOC -->
+            <aside class="md:col-span-1 course-sidebar">
+                <nav id="course-nav" class="course-nav">
+                    <h3>Contents</h3>
+                    <div class="course-nav-inner">
+                        <!-- Nav will be generated by JS -->
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- Right Content -->
+            <main class="md:col-span-3">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+                    <article id="course-content" class="course-content">
+                        <!-- Content will be loaded here -->
+                    </article>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Mobile TOC Button -->
+    <button class="mobile-toc-button" id="mobile-toc-button" aria-label="Open table of contents">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+    </button>
+
+    <!-- Mobile TOC Overlay -->
+    <div class="mobile-toc-overlay" id="mobile-toc-overlay"></div>
+
+    <!-- Mobile TOC Panel -->
+    <div class="mobile-toc-panel" id="mobile-toc-panel">
+        <div class="mobile-toc-header">
+            <h3 class="font-bold text-gray-900">Contents</h3>
+            <button class="mobile-toc-close" id="mobile-toc-close" aria-label="Close table of contents">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <nav class="course-nav" style="border: none; border-radius: 0;">
+            <div class="course-nav-inner" id="mobile-nav-inner">
+                <!-- Nav will be duplicated here by JS -->
+            </div>
+        </nav>
+    </div>
+
+    <!-- recursive-tarot drift: no recursive.eco footer/spiral/auth/config — static site. -->
+
+    <script>
+        // Get course ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const courseId = urlParams.get('course') || 'build-a-tarot-deck-with-claude';
+        const grammarId = urlParams.get('grammar_id');
+        const itemSlug = urlParams.get('item');
+
+        // Load MDX content — try local MDX file first (most current), fall back to Supabase
+        async function fetchCourseContent() {
+            // When grammar_id is provided with an item slug, the local MDX
+            // file is the authoritative source. May 30 2026: if the local MDX
+            // loads, RETURN it and never touch Supabase — the third-party
+            // *.supabase.co call was getting blocked by corporate / school /
+            // public-wifi web filters during live presentations, while the
+            // same-origin `?course=<id>` form (no Supabase) worked fine. Only
+            // fall through to Supabase when there is genuinely no local file
+            // (a grammar-only course that doesn't ship as MDX).
+            if (itemSlug) {
+                try {
+                    const localRes = await fetch(`courses/${itemSlug}.mdx`);
+                    // Guard against captive-portal / filter interstitials that
+                    // return 200 with an HTML body: require it to look like MDX
+                    // (has frontmatter or markdown), not an HTML doc.
+                    if (localRes.ok) {
+                        const mdx = await localRes.text();
+                        // Guard against captive-portal / filter interstitials
+                        // that return 200 with an HTML body. Return the RAW mdx
+                        // (frontmatter intact) — loadCourse() parses it for the
+                        // hero title/description.
+                        const looksHtml = /^\s*<(!doctype|html)/i.test(mdx);
+                        if (!looksHtml) {
+                            return mdx;
+                        }
+                    }
+                } catch { /* local file not found, fall through to Supabase */ }
+            }
+
+            if (grammarId) {
+                // Load from Supabase grammar
+                if (!window.ENV || !window.ENV.SUPABASE_URL || !window.supabase) {
+                    throw new Error('Supabase not configured. Check config.js.');
+                }
+                const sb = window.supabase.createClient(window.ENV.SUPABASE_URL, window.ENV.SUPABASE_ANON_KEY);
+
+                const { data, error } = await sb
+                    .from('user_documents')
+                    .select('document_data')
+                    .eq('id', grammarId)
+                    .single();
+
+                if (error || !data) throw new Error('Grammar not found');
+
+                const grammar = data.document_data;
+                const items = grammar.items || [];
+
+                // If item slug specified, load that item; otherwise load first item
+                const item = itemSlug
+                    ? items.find(i => i.id === itemSlug)
+                    : items[0];
+
+                if (!item) throw new Error('Course item not found');
+
+                // Build a course picker if multiple items and no specific item selected
+                if (!itemSlug && items.length > 1) {
+                    // Show course listing instead
+                    showCourseListing(grammar, items);
+                    return null;
+                }
+
+                return item.sections?.Content || item.sections?.content || '';
+            }
+
+            // Fallback: load from local MDX file by courseId (the same-origin
+            // `?course=<id>` path — preferred for presentations because it
+            // never touches Supabase, so it survives corporate/school filters).
+            const response = await fetch(`courses/${courseId}.mdx`);
+            return await response.text();
+        }
+
+        // Show a listing of all courses in the grammar (when no specific item selected)
+        function showCourseListing(grammar, items) {
+            document.getElementById('course-title').textContent = grammar.name || 'Courses';
+            document.getElementById('course-hero-title').textContent = grammar.name || 'Courses';
+            document.getElementById('course-hero-description').textContent = grammar.description || '';
+            document.getElementById('course-duration').textContent = `${items.length} courses`;
+
+            const html = items.map(item => {
+                const duration = item.metadata?.duration ? `${item.metadata.duration} min` : '';
+                const url = `?grammar_id=${grammarId}&item=${item.id}`;
+                return `<a href="${url}" class="block p-6 mb-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-purple-500 transition-colors">
+                    <h2 class="text-xl font-semibold text-white mb-2">${item.name}</h2>
+                    ${duration ? `<span class="text-sm text-gray-400">${duration}</span>` : ''}
+                </a>`;
+            }).join('');
+
+            document.getElementById('course-content').innerHTML = html;
+            // Hide sidebar nav for listing view
+            const nav = document.getElementById('course-nav');
+            if (nav) nav.style.display = 'none';
+        }
+
+        // Load and parse MDX file
+        async function loadCourse() {
+            try {
+                const mdxContent = await fetchCourseContent();
+                if (mdxContent === null) return; // Listing was shown instead
+
+                // Parse frontmatter.
+                // CRLF/BOM tolerant: files saved on Windows/OneDrive (or with an
+                // editor that adds a UTF-8 BOM) carry `\r\n` line endings, and the
+                // old `^---\n` regex silently failed on them — the whole YAML block
+                // then rendered as a setext H1 ("id: … title: … date: …" as a giant
+                // heading). Accept an optional BOM and either line ending. Jun 5 2026.
+                const frontmatterMatch = mdxContent.match(/^﻿?---\r?\n([\s\S]*?)\r?\n---/);
+                let content = mdxContent;
+                let metadata = {};
+
+                if (frontmatterMatch) {
+                    const frontmatter = frontmatterMatch[1];
+                    content = mdxContent.slice(frontmatterMatch[0].length);
+
+                    // Parse YAML frontmatter
+                    frontmatter.split(/\r?\n/).forEach(line => {
+                        const [key, ...valueParts] = line.split(':');
+                        if (key && valueParts.length) {
+                            const value = valueParts.join(':').trim().replace(/^["']|["']$/g, '');
+                            metadata[key.trim()] = value;
+                        }
+                    });
+                }
+
+                // ── Hero title + de-duplicate the body H1 ──
+                // The hero <h1> already shows the title (from frontmatter, or
+                // — when loading from Supabase with no frontmatter — from the
+                // first `# Heading` in the body). Either way we ALWAYS strip
+                // that leading H1 from the markdown body so the title doesn't
+                // render twice (once in the hero, once at the top of the
+                // article). The body then leads straight into its first
+                // paragraph. (May 9 2026; made unconditional Jun 5 2026.)
+                let heroTitle = metadata.title || '';
+                const h1Match = content.match(/^[ \t]*#\s+(.+?)\s*$/m);
+                if (h1Match) {
+                  if (!heroTitle) heroTitle = h1Match[1].trim();
+                  content = content.replace(h1Match[0], '').replace(/^\s*\n/, '');
+                }
+
+                // Update hero section
+                document.getElementById('course-title').textContent = heroTitle || 'Course';
+                document.getElementById('course-hero-title').textContent = heroTitle;
+                document.getElementById('course-hero-description').textContent = metadata.description || '';
+
+                // Configure marked to open all links in new tabs
+                const renderer = new marked.Renderer();
+                renderer.link = function(href, title, text) {
+                    // Handle marked v14+ object arg
+                    if (typeof href === 'object') { text = href.text; title = href.title; href = href.href; }
+                    const titleAttr = title ? ` title="${title}"` : '';
+                    return `<a href="${href}"${titleAttr} target="_blank" rel="noopener noreferrer">${text}</a>`;
+                };
+                marked.use({ renderer });
+
+                // Convert markdown to HTML
+                let html = marked.parse(content);
+
+                // Fix image paths: make relative paths absolute for both local and grammar-loaded content
+                html = html.replace(/src="\.\.\/images\//g, 'src="images/');
+                if (grammarId) {
+                    // When loaded from grammar, images need absolute paths to the landing site
+                    html = html.replace(/src="images\//g, 'src="https://recursive.eco/pages/courses/images/');
+                }
+
+                document.getElementById('course-content').innerHTML = html;
+
+                // ── Relocate the course popup pills into the hero row ──
+                // The MDX authors the Teaching / Building-responsibly pills at
+                // the top of the body. Move them up next to the Presentation
+                // Mode toggle so the header carries all three interactive
+                // pills and the content card leads straight into the first
+                // paragraph. Pills land BEFORE the toggle, preserving their
+                // authored order (Teaching, Building responsibly, then
+                // Presentation Mode). Any now-empty wrapper <p> marked left
+                // behind is removed. (Jun 5 2026)
+                (function relocateCoursePills() {
+                  const heroPills = document.getElementById('course-hero-pills');
+                  const presentToggle = document.getElementById('present-toggle');
+                  const contentEl = document.getElementById('course-content');
+                  if (!heroPills || !presentToggle || !contentEl) return;
+                  const pills = Array.from(contentEl.querySelectorAll('.course-popup-pill'));
+                  const wrappers = new Set();
+                  pills.forEach(pill => {
+                    wrappers.add(pill.parentElement);
+                    heroPills.insertBefore(pill, presentToggle);
+                  });
+                  wrappers.forEach(w => {
+                    if (w && w !== contentEl && !w.textContent.trim() && !w.querySelector('*')) {
+                      w.remove();
+                    }
+                  });
+                })();
+
+                // Round 42: wire popup triggers + repaint QR codes if
+                // already in Presentation Mode.
+                wireCoursePopupTriggers();
+
+                // Generate navigation from headers
+                generateNavigation();
+
+                // Setup scroll spy
+                setupScrollSpy();
+
+                // Initialize mobile TOC
+                initializeMobileTOC();
+
+                // Initialize presentation mode (loads pref from localStorage,
+                // wires the toggle, paints QR codes if the user had it on
+                // last visit). Has to run AFTER content is in the DOM so
+                // querying for links actually finds them.
+                initializePresentationMode();
+
+            } catch (error) {
+                console.error('Error loading course:', error);
+                document.getElementById('course-content').innerHTML =
+                    '<p class="text-red-600">Error loading course content. Please try again later.</p>';
+            }
+        }
+
+        // Generate hierarchical navigation (H2 with collapsible H3 children)
+        function generateNavigation() {
+            const content = document.getElementById('course-content');
+            const h2s = content.querySelectorAll('h2');
+            const h3s = content.querySelectorAll('h3');
+            const navInner = document.querySelector('.course-nav-inner');
+            const mobileNavInner = document.getElementById('mobile-nav-inner');
+
+            // Build structure: group H3s under their parent H2
+            const sections = [];
+            let currentSection = null;
+
+            h2s.forEach(h2 => {
+                const id = h2.id || h2.textContent.toLowerCase().replace(/[^\w]+/g, '-');
+                h2.id = id;
+                currentSection = { h2, id, title: h2.textContent, children: [] };
+                sections.push(currentSection);
+            });
+
+            // Assign H3s to their parent H2
+            h3s.forEach(h3 => {
+                const id = h3.id || h3.textContent.toLowerCase().replace(/[^\w]+/g, '-');
+                h3.id = id;
+
+                // Find parent H2 (the one that comes before this H3 in document order)
+                let parentSection = null;
+                for (let i = sections.length - 1; i >= 0; i--) {
+                    if (sections[i].h2.compareDocumentPosition(h3) & Node.DOCUMENT_POSITION_FOLLOWING) {
+                        parentSection = sections[i];
+                        break;
+                    }
+                }
+                if (parentSection) {
+                    parentSection.children.push({ id, title: h3.textContent });
+                }
+            });
+
+            // Build nav HTML
+            let navHTML = '';
+            sections.forEach(section => {
+                if (section.children.length > 0) {
+                    // Section with children - collapsible
+                    navHTML += `
+                        <div class="nav-section">
+                            <div class="nav-section-header" data-target="${section.id}">
+                                <span>${section.title}</span>
+                                <svg class="nav-section-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div class="nav-section-children">
+                                ${section.children.map(child =>
+                                    `<a href="#${child.id}">${child.title}</a>`
+                                ).join('')}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // Simple link without children
+                    navHTML += `<a href="#${section.id}">${section.title}</a>`;
+                }
+            });
+
+            navInner.innerHTML = navHTML;
+            if (mobileNavInner) {
+                mobileNavInner.innerHTML = navHTML;
+            }
+
+            // Add click handlers for collapsible sections and links
+            function setupNavHandlers(container) {
+                // Collapsible section headers
+                container.querySelectorAll('.nav-section-header').forEach(header => {
+                    header.addEventListener('click', (e) => {
+                        const section = header.closest('.nav-section');
+                        const targetId = header.dataset.target;
+                        const targetElement = document.getElementById(targetId);
+
+                        // Toggle open state
+                        section.classList.toggle('open');
+
+                        // Also scroll to the section
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    });
+                });
+
+                // Child links
+                container.querySelectorAll('.nav-section-children a').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = link.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            // Ensure parent section is open
+                            const section = link.closest('.nav-section');
+                            if (section) section.classList.add('open');
+
+                            // Close mobile nav if open
+                            if (container === mobileNavInner) {
+                                closeMobileTOC();
+                                setTimeout(() => {
+                                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }, 300);
+                            } else {
+                                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }
+                    });
+                });
+
+                // Simple links (no children)
+                container.querySelectorAll(':scope > a').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = link.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            if (container === mobileNavInner) {
+                                closeMobileTOC();
+                                setTimeout(() => {
+                                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }, 300);
+                            } else {
+                                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }
+                    });
+                });
+            }
+
+            setupNavHandlers(navInner);
+            if (mobileNavInner) {
+                setupNavHandlers(mobileNavInner);
+            }
+        }
+
+        // Mobile TOC functions
+        function openMobileTOC() {
+            const overlay = document.getElementById('mobile-toc-overlay');
+            const panel = document.getElementById('mobile-toc-panel');
+            overlay.style.display = 'block';
+            panel.style.display = 'block';
+            setTimeout(() => {
+                overlay.classList.add('active');
+                panel.classList.add('active');
+            }, 10);
+        }
+
+        function closeMobileTOC() {
+            const overlay = document.getElementById('mobile-toc-overlay');
+            const panel = document.getElementById('mobile-toc-panel');
+            overlay.classList.remove('active');
+            panel.classList.remove('active');
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                panel.style.display = 'none';
+            }, 300);
+        }
+
+        // Initialize mobile TOC
+        function initializeMobileTOC() {
+            const button = document.getElementById('mobile-toc-button');
+            const closeBtn = document.getElementById('mobile-toc-close');
+            const overlay = document.getElementById('mobile-toc-overlay');
+
+            button.addEventListener('click', openMobileTOC);
+            closeBtn.addEventListener('click', closeMobileTOC);
+            overlay.addEventListener('click', closeMobileTOC);
+        }
+
+        // Setup scroll spy for active nav highlighting
+        function setupScrollSpy() {
+            const h2s = document.querySelectorAll('#course-content h2');
+            const h3s = document.querySelectorAll('#course-content h3');
+            const allHeaders = [...h2s, ...h3s];
+
+            function updateActiveNav() {
+                let currentH2 = '';
+                let currentH3 = '';
+
+                allHeaders.forEach(header => {
+                    const rect = header.getBoundingClientRect();
+                    if (rect.top <= 200) {
+                        if (header.tagName === 'H2') {
+                            currentH2 = header.getAttribute('id');
+                            currentH3 = '';
+                        } else {
+                            currentH3 = header.getAttribute('id');
+                        }
+                    }
+                });
+
+                // Update nav active states
+                document.querySelectorAll('.course-nav-inner .nav-section-header').forEach(header => {
+                    header.classList.remove('active');
+                    if (header.dataset.target === currentH2) {
+                        header.classList.add('active');
+                    }
+                });
+
+                document.querySelectorAll('.course-nav-inner > a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentH2}`) {
+                        link.classList.add('active');
+                    }
+                });
+
+                document.querySelectorAll('.nav-section-children a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentH3}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNav, { passive: true });
+            setTimeout(updateActiveNav, 100);
+        }
+
+        // ── Presentation Mode (round 21) ──
+        // When enabled, every external link in the course body gets a QR
+        // code rendered inline next to it. Audience scans to open, no
+        // typing URLs from a projector. State persists in localStorage so
+        // a presenter doesn't have to re-enable it after each reload.
+        // QRCode lib loaded lazily (only when the user first toggles on)
+        // so the default page load stays as light as it was.
+        let qrcodeLibLoaded = false;
+        function loadQrcodeLib() {
+            if (qrcodeLibLoaded) return Promise.resolve();
+            return new Promise((resolve, reject) => {
+                const s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+                s.onload = () => { qrcodeLibLoaded = true; resolve(); };
+                s.onerror = () => reject(new Error('Failed to load QR library'));
+                document.head.appendChild(s);
+            });
+        }
+
+        // Round 42: in-MDX popup buttons. Course MDX can write
+        //   <button data-course-popup-trigger="teaching">📺 Teaching this course</button>
+        //   <div data-course-popup-content="teaching" hidden>...HTML...</div>
+        // and the trigger opens a centered modal with the content.
+        // Lets us collapse the long blockquote intros (workshop note +
+        // building-responsibly note + AI risks talk) into small
+        // clickable icons so the course page isn't polluted.
+        let coursePopupBackdrop = null;
+        function openCoursePopup(id) {
+            closeCoursePopup();
+            const contentEl = document.querySelector(`[data-course-popup-content="${id}"]`);
+            if (!contentEl) return;
+            const back = document.createElement('div');
+            back.className = 'course-popup-backdrop';
+            back.setAttribute('role', 'dialog');
+            back.setAttribute('aria-modal', 'true');
+            const panel = document.createElement('div');
+            panel.className = 'course-popup-panel';
+            const close = document.createElement('button');
+            close.type = 'button';
+            close.className = 'course-popup-close';
+            close.setAttribute('aria-label', 'Close');
+            close.textContent = '×';
+            close.addEventListener('click', closeCoursePopup);
+            const body = document.createElement('div');
+            body.className = 'course-popup-body';
+            body.innerHTML = contentEl.innerHTML;
+            // Strip any QR markup copied from the hidden source — qrcodejs
+            // paints into a <canvas> whose pixel data is NOT preserved by
+            // innerHTML copy, so on mobile the cloned QR is a blank box.
+            // We repaint below from scratch.
+            body.querySelectorAll('.qr-code-inline').forEach(el => el.remove());
+            body.querySelectorAll('a[data-qr-painted]').forEach(a => {
+                delete a.dataset.qrPainted;
+                delete a.dataset.qrWrapper;
+            });
+            panel.appendChild(close);
+            panel.appendChild(body);
+            back.appendChild(panel);
+            back.addEventListener('click', (e) => { if (e.target === back) closeCoursePopup(); });
+            document.body.appendChild(back);
+            coursePopupBackdrop = back;
+            document.addEventListener('keydown', escClosePopup);
+
+            // Re-wire any nested popup triggers in case the cloned body
+            // itself contains <button data-course-popup-trigger> pills.
+            body.querySelectorAll('[data-course-popup-trigger]').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openCoursePopup(el.dataset.coursePopupTrigger);
+                });
+            });
+
+            // If Presentation Mode is on, paint fresh QRs next to every
+            // external link inside the popup body (the cloned canvases
+            // wouldn't have rendered on mobile).
+            if (document.body.classList.contains('presentation-mode') && typeof QRCode !== 'undefined') {
+                paintQrCodesIn(body);
+            }
+        }
+        function closeCoursePopup() {
+            if (coursePopupBackdrop) {
+                coursePopupBackdrop.remove();
+                coursePopupBackdrop = null;
+            }
+            document.removeEventListener('keydown', escClosePopup);
+        }
+        function escClosePopup(e) {
+            if (e.key === 'Escape') closeCoursePopup();
+        }
+        function wireCoursePopupTriggers() {
+            // Pills authored in the MDX body start inside #course-content but
+            // relocateCoursePills() moves them up into #course-hero-pills before
+            // this runs, so scope to BOTH containers (the dataset.wired guard
+            // keeps it idempotent). (Jun 5 2026)
+            document.querySelectorAll('#course-content [data-course-popup-trigger], #course-hero-pills [data-course-popup-trigger]').forEach(el => {
+                if (el.dataset.wired === '1') return;
+                el.dataset.wired = '1';
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openCoursePopup(el.dataset.coursePopupTrigger);
+                });
+            });
+        }
+
+        // Round 45 (May 28 2026): paint a prominent QR for the COURSE
+        // PAGE'S OWN URL at the top of the content when Presentation
+        // Mode is on. Workshop facilitators wanted this as the first
+        // thing on the projected slide — "scan to open this course on
+        // your phone" — so attendees can follow along without typing
+        // the URL. Click to enlarge via the existing lightbox.
+        function paintCoursePageQr() {
+            const courseContent = document.getElementById('course-content');
+            if (!courseContent) return;
+            if (courseContent.querySelector('.course-page-qr-block')) return; // already painted
+            const courseUrl = window.location.href
+                .replace('://dev.recursive.eco', '://recursive.eco')
+                .replace('://dev.flow.recursive.eco', '://flow.recursive.eco');
+            const wrap = document.createElement('div');
+            wrap.className = 'course-page-qr-block';
+            wrap.innerHTML = `
+                <div class="course-page-qr-inner">
+                    <div class="course-page-qr-target"></div>
+                    <div class="course-page-qr-label">
+                        <div class="course-page-qr-label-main">📱 Scan to open this course on your phone</div>
+                        <div class="course-page-qr-label-sub">Project this slide so attendees can follow along — every external link below also gets a QR.</div>
+                    </div>
+                </div>
+            `;
+            const target = wrap.querySelector('.course-page-qr-target');
+            new QRCode(target, { text: courseUrl, width: 140, height: 140, correctLevel: QRCode.CorrectLevel.M });
+            const open = (e) => { e.preventDefault(); e.stopPropagation(); openQrLightbox(courseUrl); };
+            wrap.style.cursor = 'pointer';
+            wrap.setAttribute('role', 'button');
+            wrap.setAttribute('tabindex', '0');
+            wrap.setAttribute('aria-label', 'Open course-page QR code at scannable size');
+            wrap.title = 'Click to enlarge for the back row';
+            wrap.addEventListener('click', open);
+            wrap.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') open(e); });
+            courseContent.insertBefore(wrap, courseContent.firstChild);
+        }
+        function removeCoursePageQr() {
+            document.querySelectorAll('.course-page-qr-block').forEach(el => el.remove());
+        }
+
+        // Paint inline QRs after every external link in `container`. Skips
+        // links that already have a QR (dataset.qrPainted). Pulled out of
+        // paintQrCodes() so the popup body can reuse the same routine —
+        // copy/paste of qrcodejs-rendered canvases doesn't survive an
+        // innerHTML clone, so the popup repaints from scratch.
+        function paintQrCodesIn(container) {
+            if (!container) return;
+            const links = container.querySelectorAll('a[target="_blank"]');
+            links.forEach(a => {
+                if (a.dataset.qrPainted === '1') return;
+                const url = a.href;
+                if (!url || !/^https?:\/\//i.test(url)) return;
+                // Round 28: rewrite dev.recursive.eco / dev.flow.recursive.eco
+                // to their production hostnames before encoding the QR. A
+                // QR that says "dev.recursive.eco/..." printed on a workshop
+                // slide is a dead link for anyone scanning it. The href
+                // attribute stays on dev for the on-screen click; only the
+                // QR payload is normalized.
+                const qrUrl = url
+                  .replace('://dev.recursive.eco', '://recursive.eco')
+                  .replace('://dev.flow.recursive.eco', '://flow.recursive.eco');
+                const wrap = document.createElement('span');
+                wrap.className = 'qr-code-inline';
+                wrap.setAttribute('role', 'button');
+                wrap.setAttribute('tabindex', '0');
+                wrap.setAttribute('aria-label', 'Open QR code at scannable size');
+                wrap.title = 'Click to enlarge for the back row';
+                new QRCode(wrap, { text: qrUrl, width: 64, height: 64, correctLevel: QRCode.CorrectLevel.M });
+                const open = (e) => { e.preventDefault(); e.stopPropagation(); openQrLightbox(qrUrl); };
+                wrap.addEventListener('click', open);
+                wrap.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') open(e);
+                });
+                a.insertAdjacentElement('afterend', wrap);
+                a.dataset.qrPainted = '1';
+                a.dataset.qrWrapper = '1';
+            });
+        }
+
+        function paintQrCodes() {
+            paintCoursePageQr();
+            paintQrCodesIn(document.getElementById('course-content'));
+        }
+
+        // Lightbox: blow the QR up to ~420px so it's scannable from the
+        // back of a room. Click backdrop or press Esc to close.
+        let qrLightboxEl = null;
+        function openQrLightbox(url) {
+            closeQrLightbox(); // close any existing
+            const back = document.createElement('div');
+            back.className = 'qr-lightbox-backdrop';
+            back.setAttribute('role', 'dialog');
+            back.setAttribute('aria-modal', 'true');
+            back.setAttribute('aria-label', 'QR code enlarged');
+            const box = document.createElement('div');
+            box.className = 'qr-lightbox-box';
+            box.addEventListener('click', (e) => e.stopPropagation()); // clicking the box itself doesn't close
+            const qrTarget = document.createElement('div');
+            new QRCode(qrTarget, { text: url, width: 420, height: 420, correctLevel: QRCode.CorrectLevel.M });
+            const urlLine = document.createElement('div');
+            urlLine.className = 'qr-lightbox-url';
+            urlLine.textContent = url;
+            const hint = document.createElement('div');
+            hint.className = 'qr-lightbox-hint';
+            hint.textContent = 'Click outside or press Esc to close';
+            box.appendChild(qrTarget);
+            box.appendChild(urlLine);
+            box.appendChild(hint);
+            back.appendChild(box);
+            back.addEventListener('click', closeQrLightbox);
+            document.body.appendChild(back);
+            qrLightboxEl = back;
+            document.addEventListener('keydown', qrLightboxKeyHandler);
+        }
+        function closeQrLightbox() {
+            if (qrLightboxEl) {
+                qrLightboxEl.remove();
+                qrLightboxEl = null;
+                document.removeEventListener('keydown', qrLightboxKeyHandler);
+            }
+        }
+        function qrLightboxKeyHandler(e) {
+            if (e.key === 'Escape') closeQrLightbox();
+        }
+
+        function removeQrCodes() {
+            document.querySelectorAll('#course-content .qr-code-inline').forEach(el => el.remove());
+            document.querySelectorAll('#course-content a[data-qr-painted]').forEach(a => {
+                delete a.dataset.qrPainted;
+                delete a.dataset.qrWrapper;
+            });
+            removeCoursePageQr();
+        }
+
+        async function setPresentationMode(on) {
+            const body = document.body;
+            const btn = document.getElementById('present-toggle');
+            const label = document.getElementById('present-toggle-label');
+            if (on) {
+                try {
+                    await loadQrcodeLib();
+                } catch (err) {
+                    console.error('[presentation-mode] QR lib failed to load', err);
+                    return;
+                }
+                body.classList.add('presentation-mode');
+                btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
+                label.textContent = 'Exit Presentation';
+                paintQrCodes();
+                try { localStorage.setItem('course-presentation-mode', '1'); } catch { /* private mode */ }
+            } else {
+                body.classList.remove('presentation-mode');
+                btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
+                label.textContent = 'Presentation Mode';
+                removeQrCodes();
+                try { localStorage.removeItem('course-presentation-mode'); } catch { /* private mode */ }
+            }
+        }
+
+        function initializePresentationMode() {
+            const btn = document.getElementById('present-toggle');
+            if (!btn) return;
+            btn.addEventListener('click', () => {
+                const isOn = document.body.classList.contains('presentation-mode');
+                setPresentationMode(!isOn);
+            });
+            // Restore the persisted choice. Runs once after content load.
+            let saved = null;
+            try { saved = localStorage.getItem('course-presentation-mode'); } catch { /* private */ }
+            if (saved === '1') setPresentationMode(true);
+        }
+
+        // Load course on page load
+        loadCourse();
+    </script>
+    <!-- Library Assistant (iframe from flow app) -->
+    <style>
+        .assistant-toggle {
+            position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 40;
+            background: #9333ea; color: white; border: none; border-radius: 9999px;
+            width: 56px; height: 56px; cursor: pointer; box-shadow: 0 4px 12px rgba(147,51,234,0.4);
+            display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+        }
+        .assistant-toggle:hover { background: #7e22ce; transform: scale(1.05); }
+        .assistant-frame-container {
+            position: fixed; bottom: 5.5rem; right: 1.5rem; z-index: 40;
+            width: 384px; max-width: calc(100vw - 2rem); height: 500px; max-height: 70vh;
+            border-radius: 0.75rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 1px solid #374151; display: none;
+        }
+        .assistant-frame-container.open { display: block; }
+        .assistant-frame-container iframe { width: 100%; height: 100%; border: none; }
+    </style>
+    <button class="assistant-toggle" id="assistant-toggle" title="Ask the Library Assistant" onclick="toggleAssistant()">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+        </svg>
+    </button>
+    <div class="assistant-frame-container" id="assistant-frame">
+    </div>
+    <script>
+        function getFlowBaseUrl() { const h = window.location.hostname; if (h.includes("dev.") || h.includes("localhost")) return "https://dev.flow.recursive.eco"; return "https://flow.recursive.eco"; }
+        function toggleAssistant() {
+            const frame = document.getElementById('assistant-frame');
+            const isOpen = frame.classList.toggle('open');
+            if (isOpen && !frame.querySelector('iframe')) {
+                // Lazy-load iframe on first open
+                const params = new URLSearchParams(window.location.search);
+                const grammarId = params.get('id') || '';
+                const context = document.title.includes('Study') ? 'study' : document.title.includes('Tree') ? 'tree' : 'cards';
+                // Round 86 Jun 2 2026: when there's no grammar_id (e.g.
+                // course-viewer rendering a dialogue MDX via ?course=…),
+                // hand the LA the page title + URL so it can ground
+                // "what is this page about?" answers instead of asking
+                // the user which page they mean. Pulls title from the
+                // rendered hero (not document.title, which contains
+                // " — Recursive.eco" suffix noise).
+                const heroTitleEl = document.getElementById('course-hero-title');
+                const pageTitle = (heroTitleEl?.textContent || document.title || '').trim();
+                const pageUrl = window.location.href;
+                const qs = new URLSearchParams({
+                    grammar_id: grammarId,
+                    context,
+                    page_title: pageTitle,
+                    page_url: pageUrl,
+                });
+                const iframe = document.createElement('iframe');
+                iframe.src = `${getFlowBaseUrl()}/assistant?${qs.toString()}`;
+                frame.appendChild(iframe);
+            }
+        }
+    </script>
+
+</body>
+</html>
