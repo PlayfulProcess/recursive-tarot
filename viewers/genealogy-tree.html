@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tree of Tarot — Radial Genealogy · Recursive Tarot</title>
+<style>
+  :root{
+    --bg:#0f0d17; --panel:#1a1726; --ink:#ece8f5; --muted:#9b94b3;
+    --accent:#d4af37; --line:#39324d;
+    --roots:#c9a24b; --a:#e07a5f; --b:#81b29a; --c:#6d8ec9; --occult:#9b6dc9; --sui:#c96d9b;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  header.site{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line);
+    flex-wrap:wrap;background:linear-gradient(180deg,#141120,transparent)}
+  header.site h1{font-size:16px;margin:0;font-weight:700;letter-spacing:.3px}
+  header.site h1 .gold{color:var(--accent)}
+  header.site nav{display:flex;gap:14px;flex-wrap:wrap}
+  header.site nav a{color:#a99fc6;text-decoration:none;font-size:13px}
+  header.site nav a:hover{color:var(--accent)}
+  .wrap{display:flex;height:calc(100vh - 52px);min-height:0}
+  #stage{flex:1;position:relative;overflow:hidden}
+  svg{width:100%;height:100%;display:block;cursor:grab}
+  svg:active{cursor:grabbing}
+  .tree-link{fill:none;stroke:var(--line);stroke-width:1.1px;opacity:.7}
+  .derive-link{fill:none;stroke-width:1.4px;opacity:.55;stroke-dasharray:3 3}
+  .node circle{cursor:pointer;stroke:#0f0d17;stroke-width:1.2px}
+  .node text{cursor:pointer;font-size:11px;fill:var(--ink);paint-order:stroke;
+    stroke:#0f0d17;stroke-width:3px;stroke-linejoin:round}
+  .node.branch text{font-size:12.5px;font-weight:700}
+  .node.root text{font-size:13px;font-weight:800;fill:var(--accent)}
+  .node:hover circle{stroke:var(--accent);stroke-width:2px}
+  .dim{opacity:.12;transition:opacity .2s}
+  .hot{opacity:1 !important}
+  /* detail panel */
+  aside#detail{width:340px;max-width:84vw;background:var(--panel);border-left:1px solid var(--line);
+    padding:18px;overflow:auto;display:none}
+  aside#detail.open{display:block}
+  aside#detail img{width:100%;max-height:260px;object-fit:contain;background:#0a0810;border-radius:8px;margin-bottom:12px}
+  aside#detail h2{margin:.2em 0 .1em;font-size:18px}
+  aside#detail .when{color:var(--accent);font-size:13px;margin-bottom:10px}
+  aside#detail .sec{margin:12px 0;font-size:13.5px;line-height:1.55;color:#cfc8e2}
+  aside#detail .sec h4{margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  aside#detail .chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+  aside#detail .chip{font-size:11px;padding:3px 9px;border-radius:999px;background:#272036;color:#c3bad9}
+  aside#detail .opencards{display:inline-block;margin-top:10px;padding:8px 14px;border:1px solid var(--accent);
+    border-radius:999px;color:var(--accent);text-decoration:none;font-size:13px;font-weight:600}
+  aside#detail .close{float:right;cursor:pointer;color:var(--muted);font-size:20px;line-height:1}
+  /* legend + controls */
+  .legend{position:absolute;left:14px;bottom:14px;background:rgba(20,17,32,.82);border:1px solid var(--line);
+    border-radius:10px;padding:10px 12px;font-size:12px;backdrop-filter:blur(4px)}
+  .legend .row{display:flex;align-items:center;gap:7px;margin:3px 0;cursor:pointer}
+  .legend .row.off{opacity:.35}
+  .legend .sw{width:11px;height:11px;border-radius:3px}
+  .legend .ttl{font-weight:700;margin-bottom:6px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-size:10px}
+  .controls{position:absolute;right:14px;top:14px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  .controls button{background:var(--panel);color:#cfc8e2;border:1px solid var(--line);border-radius:8px;
+    padding:6px 11px;font-size:12px;cursor:pointer}
+  .controls button:hover{border-color:var(--accent);color:var(--accent)}
+  .controls label{display:inline-flex;align-items:center;gap:6px;background:var(--panel);border:1px solid var(--line);
+    border-radius:8px;padding:6px 11px;font-size:12px;color:#cfc8e2;cursor:pointer}
+  .hint{position:absolute;left:50%;top:14px;transform:translateX(-50%);font-size:11.5px;color:var(--muted);
+    background:rgba(20,17,32,.7);padding:5px 12px;border-radius:999px;pointer-events:none}
+  #err{padding:40px;text-align:center;color:#e07a5f}
+</style>
+</head>
+<body>
+<header class="site">
+  <h1><a href="../index.html" style="color:inherit;text-decoration:none">The <span class="gold">Recursive Tarot</span></a> · Tree of Life</h1>
+  <nav>
+    <a href="tree-viewer.html">Levels tree</a>
+    <a href="../genealogy.html">Graph</a>
+    <a href="cards.html">Cards</a>
+    <a href="caster.html">Caster</a>
+    <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">GitHub ↗</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div id="stage">
+    <div class="hint">Drag to pan · scroll to zoom · click a deck for detail · hover to trace descent</div>
+    <div class="controls">
+      <label><input type="checkbox" id="toggle-derive" checked> Descent arcs</label>
+      <button id="btn-reset">Reset view</button>
+    </div>
+    <svg id="svg"></svg>
+    <div class="legend" id="legend"><div class="ttl">Branches — click to filter</div></div>
+    <div id="err" style="display:none"></div>
+  </div>
+  <aside id="detail"></aside>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script>
+const BRANCH_COLORS = {
+  'branch-roots':'var(--roots)','branch-a':'var(--a)','branch-b':'var(--b)',
+  'branch-c':'var(--c)','branch-occult':'var(--occult)','branch-sui':'var(--sui)'
+};
+const RAW_COLORS = {
+  'branch-roots':'#c9a24b','branch-a':'#e07a5f','branch-b':'#81b29a',
+  'branch-c':'#6d8ec9','branch-occult':'#9b6dc9','branch-sui':'#c96d9b'
+};
+// map a tree-of-tarot deck node id -> the repo deck slug (so "Open cards" can deep-link)
+const SLUG_MAP = {
+  'deck-visconti-sforza':'visconti-sforza-tarot','deck-cary-yale':'cary-yale-visconti-tarot',
+  'deck-tarocchino-bologna':'tarocchino-bologna','deck-minchiate':'minchiate-florence-tarot',
+  'deck-charles-vi':'charles-vi-tarot','deck-marseille-conver':'tarot-de-marseille-conver',
+  'deck-marseille-type1':'noblet-tarot','deck-besancon':'tarot-de-besancon',
+  'deck-court-de-gebelin':'court-de-gebelin-tarot','deck-etteilla-i':'etteilla-i-livre-de-thot',
+  'deck-etteilla-iii':'etteilla-iii-oracle-des-dames','deck-oswald-wirth':'oswald-wirth-tarot',
+  'deck-golden-dawn':'golden-dawn-book-t-tarot','deck-sola-busca':null,'deck-mantegna':'mantegna-tarocchi'
+};
+
+const params = new URLSearchParams(location.search);
+const SRC = params.get('src') || '../tarot/tree-of-tarot/grammar.json';
+
+let G, itemMap, hidden = new Set();
+
+(async function init(){
+  try{
+    const res = await fetch(SRC);
+    if(!res.ok) throw new Error('Could not load '+SRC+' ('+res.status+')');
+    G = await res.json();
+  }catch(e){ document.getElementById('err').style.display='block';
+    document.getElementById('err').textContent = e.message; return; }
+
+  const items = G.items || [];
+  itemMap = Object.fromEntries(items.map(i=>[i.id,i]));
+
+  // Find root (level 3) and build nested hierarchy via composite_of
+  const root = items.find(i=>(i.level||1)===3) || items.find(i=>!items.some(p=>(p.composite_of||[]).includes(i.id)));
+  function build(node){
+    const kids = (node.composite_of||[]).map(id=>itemMap[id]).filter(Boolean);
+    return { id:node.id, data:node, children: kids.map(build) };
+  }
+  const nested = build(root);
+
+  buildLegend();
+  draw(nested);
+  window.addEventListener('resize', ()=>draw(nested));
+  document.getElementById('toggle-derive').addEventListener('change', ()=>draw(nested));
+  document.getElementById('btn-reset').addEventListener('click', ()=>{ hidden.clear(); buildLegend(); draw(nested); });
+})();
+
+function yearOf(it){
+  const w = (it.metadata||{}).when || '';
+  const m = w.match(/\b(1[2-9]\d{2}|20\d{2})\b/);
+  return m ? +m[1] : null;
+}
+function branchOf(it){ return (it.metadata||{}).branch || (it.id.startsWith('branch-')?it.id:null); }
+
+function draw(nested){
+  const stage = document.getElementById('stage');
+  const W = stage.clientWidth, H = stage.clientHeight;
+  const radius = Math.max(160, Math.min(W,H)/2 - 90);
+  const svg = d3.select('#svg').attr('viewBox',[-W/2,-H/2,W,H]);
+  svg.selectAll('*').remove();
+  const g = svg.append('g');
+
+  // zoom/pan
+  const zoom = d3.zoom().scaleExtent([0.4,4]).on('zoom',ev=>g.attr('transform',ev.transform));
+  svg.call(zoom);
+  draw._reset = ()=>svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity);
+
+  const hierarchy = d3.hierarchy(nested, d=>{
+    // hide children whose branch is filtered off
+    return (d.children||[]).filter(c=>{
+      const b = branchOf(c.data);
+      return !(b && hidden.has(b));
+    });
+  });
+  const cluster = d3.cluster().size([2*Math.PI, radius]).separation((a,b)=>(a.parent===b.parent?1:2)/a.depth);
+  cluster(hierarchy);
+
+  const nodes = hierarchy.descendants();
+  const nodeById = {};
+  nodes.forEach(n=>nodeById[n.data.id]=n);
+
+  // ── taxonomic tree links (root→branch→deck) ──
+  g.append('g').selectAll('path').data(hierarchy.links()).join('path')
+    .attr('class','tree-link')
+    .attr('d', d3.linkRadial().angle(d=>d.x).radius(d=>d.y));
+
+  // ── descent arcs (derives_from) drawn deck→deck through the centre ──
+  if(document.getElementById('toggle-derive').checked){
+    const derive=[];
+    nodes.forEach(n=>{
+      const df = (n.data.data.metadata||{}).derives_from || [];
+      df.forEach(srcId=>{ if(nodeById[srcId]) derive.push({s:nodeById[srcId],t:n}); });
+    });
+    g.append('g').selectAll('path').data(derive).join('path')
+      .attr('class','derive-link')
+      .attr('stroke', d=>RAW_COLORS[branchOf(d.t.data.data)]||'#888')
+      .attr('d', d=>{
+        const [sx,sy]=radial(d.s.x,d.s.y), [tx,ty]=radial(d.t.x,d.t.y);
+        return `M${sx},${sy}Q0,0 ${tx},${ty}`;
+      });
+  }
+
+  // ── nodes ──
+  const node = g.append('g').selectAll('g').data(nodes).join('g')
+    .attr('class',d=>'node '+(d.depth===0?'root':d.depth===1?'branch':'deck'))
+    .attr('transform',d=>`translate(${radial(d.x,d.y)})`);
+
+  node.append('circle')
+    .attr('r',d=>d.depth===0?9:d.depth===1?7:5)
+    .attr('fill',d=>{
+      if(d.depth===0) return '#d4af37';
+      const b=branchOf(d.data.data); return RAW_COLORS[b]||'#7a7290';
+    });
+
+  node.append('text')
+    .attr('dy','0.31em')
+    .attr('x',d=> d.x < Math.PI ? 11 : -11)
+    .attr('text-anchor',d=> d.x < Math.PI ? 'start':'end')
+    .attr('transform',d=> d.x >= Math.PI ? 'rotate(180)' : null)
+    .style('transform-box','fill-box')
+    .text(d=> d.data.data.name.replace(/\s+[—–-]\s+.*/,'').slice(0,30));
+
+  node.on('click',(ev,d)=>{ ev.stopPropagation(); showDetail(d.data.data); })
+      .on('mouseenter',(ev,d)=>traceDescent(d,nodeById,node,g))
+      .on('mouseleave',()=>{ node.classed('dim',false).classed('hot',false);
+        g.selectAll('.tree-link,.derive-link').classed('dim',false); });
+
+  svg.on('click',()=>document.getElementById('detail').classList.remove('open'));
+
+  function radial(a,r){ return [Math.cos(a-Math.PI/2)*r, Math.sin(a-Math.PI/2)*r]; }
+}
+
+function traceDescent(d,nodeById,node,g){
+  // highlight the chosen node, its taxonomic ancestors, and derives_from chain
+  const keep=new Set();
+  let n=d; while(n){ keep.add(n.data.id); n=n.parent; }
+  // follow derives_from upstream
+  const stack=[d.data.id];
+  while(stack.length){ const id=stack.pop();
+    const df=((itemMap[id]||{}).metadata||{}).derives_from||[];
+    df.forEach(s=>{ if(!keep.has(s)){ keep.add(s); stack.push(s);} }); }
+  node.classed('dim',x=>!keep.has(x.data.id)).classed('hot',x=>keep.has(x.data.id));
+  g.selectAll('.tree-link').classed('dim',true);
+  g.selectAll('.derive-link').classed('dim',l=>!(keep.has(l.s.data.id)&&keep.has(l.t.data.id)));
+}
+
+function showDetail(it){
+  const el=document.getElementById('detail');
+  const b=branchOf(it);
+  const when=(it.metadata||{}).when||'';
+  const secs=it.sections||{};
+  const slug = SLUG_MAP[it.id];
+  let html = `<span class="close" onclick="document.getElementById('detail').classList.remove('open')">×</span>`;
+  if(it.image_url) html+=`<img src="${esc(it.image_url)}" alt="${esc(it.name)}" loading="lazy">`;
+  html+=`<h2>${esc(it.name)}</h2>`;
+  if(when) html+=`<div class="when">${esc(when)}</div>`;
+  if(b && it.id!==b) html+=`<div class="chips"><span class="chip" style="background:${RAW_COLORS[b]}33;color:${RAW_COLORS[b]}">${esc((itemMap[b]||{}).name||b)}</span></div>`;
+  const df=(it.metadata||{}).derives_from||[];
+  if(df.length) html+=`<div class="sec"><h4>Derives from</h4>${df.map(id=>esc((itemMap[id]||{}).name||id)).join(' · ')}</div>`;
+  for(const [k,v] of Object.entries(secs)){
+    if(!v) continue;
+    html+=`<div class="sec"><h4>${esc(k)}</h4>${esc(String(v)).slice(0,600)}</div>`;
+  }
+  if(slug) html+=`<a class="opencards" href="cards.html?src=${encodeURIComponent('../tarot/'+slug+'/grammar.json')}">Open ${esc(it.name.replace(/\s+[—–-].*/,''))} cards →</a>`;
+  else html+=`<div class="sec" style="color:#9b94b3">No card-level deck in the repo yet for this node.</div>`;
+  el.innerHTML=html; el.classList.add('open');
+}
+
+function buildLegend(){
+  const order=['branch-roots','branch-a','branch-b','branch-c','branch-occult','branch-sui'];
+  const lg=document.getElementById('legend');
+  lg.querySelectorAll('.row').forEach(r=>r.remove());
+  order.forEach(b=>{
+    const row=document.createElement('div');
+    row.className='row'+(hidden.has(b)?' off':'');
+    row.innerHTML=`<span class="sw" style="background:${RAW_COLORS[b]}"></span><span>${labelFor(b)}</span>`;
+    row.onclick=()=>{ hidden.has(b)?hidden.delete(b):hidden.add(b); buildLegend();
+      document.getElementById('toggle-derive').dispatchEvent(new Event('change')); };
+    lg.appendChild(row);
+  });
+}
+function labelFor(b){
+  return ({'branch-roots':'Roots (Milan)','branch-a':'A-order (Bologna/Florence)',
+    'branch-b':'B-order (Ferrara)','branch-c':'C-order (Marseille)',
+    'branch-occult':'Occult','branch-sui':'Sui generis'})[b]||b;
+}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+</script>
+</body>
+</html>
