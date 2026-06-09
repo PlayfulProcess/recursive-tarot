@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Print — Recursive Tarot</title>
+<style>
+  :root{--bg:#0f0d17;--ink:#ece8f5;--muted:#9b94b3;--accent:#d4af37;--line:#2a2440;--card:#1a1726}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .bar{display:flex;align-items:center;gap:12px;padding:10px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .bar .title{font-weight:700;margin-right:auto}
+  .bar button{background:var(--accent);color:#0f0d17;border:0;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer}
+  .doc{max-width:920px;margin:0 auto;padding:24px}
+  .doc h1{font-size:26px;color:var(--accent);margin:.2em 0}
+  .doc .desc{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;break-inside:avoid}
+  .pcard .img{aspect-ratio:2/3.2;background:#0a0810;display:flex;align-items:center;justify-content:center}
+  .pcard img{width:100%;height:100%;object-fit:contain}
+  .pcard .ph{font-size:30px;opacity:.5}
+  .pcard .cap{padding:7px 9px;font-size:12px;font-weight:600;border-top:1px solid var(--line)}
+  #err{padding:40px;text-align:center;color:#e07a5f}
+  @media print{
+    @page{margin:12mm}
+    html,body{background:#fff;color:#111}
+    .bar,site-header{display:none!important}
+    .doc h1{color:#111}.doc .desc{color:#444}
+    .pcard{background:#fff;border:1px solid #ccc}.pcard .img{background:#fff}
+    .pcard .cap{border-top:1px solid #ccc}
+    .grid{grid-template-columns:repeat(4,1fr);gap:8px}
+  }
+</style>
+</head>
+<body>
+<script src="../site-header.js"></script>
+<site-header></site-header>
+<div class="bar">
+  <span class="title">Print sheet</span>
+  <script src="../view-switcher.js"></script>
+  <view-switcher active="print"></view-switcher>
+  <button onclick="window.print()">🖨 Print / Save PDF</button>
+</div>
+<div class="doc" id="doc"><div id="err" style="display:none"></div></div>
+<script>
+const params=new URLSearchParams(location.search);
+const SRC=params.get('src')||'../tarot/all-decks-many-lenses/grammar.json';
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function plain(md){ return String(md||'').replace(/^#+\s*/gm,'').replace(/[*_>`]/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').split(/\n\n/)[0]; }
+(async function(){
+  const doc=document.getElementById('doc');
+  try{
+    const r=await fetch(SRC); if(!r.ok) throw new Error('Could not load '+SRC+' ('+r.status+')');
+    const g=await r.json();
+    const items=(g.items||[]).filter(i=>!i.composite_of && i.category!=='axis' && i.category!=='keyword-emergence');
+    document.title='Print — '+(g.name||'Tarot');
+    let html=`<h1>${esc((g.name||'').replace(/\s+[—–-]\s+.*/,'')||g.name||'Tarot')}</h1>`;
+    if(g.description) html+=`<div class="desc">${esc(plain(g.description)).slice(0,400)}</div>`;
+    html+='<div class="grid">';
+    for(const it of items){
+      const img=it.image_url||(it.metadata||{}).image_url;
+      html+=`<div class="pcard"><div class="img">${img?`<img src="${esc(img)}" alt="${esc(it.name)}" loading="lazy">`:'<span class="ph">★</span>'}</div><div class="cap">${esc(it.name)}</div></div>`;
+    }
+    html+='</div>';
+    doc.innerHTML=html;
+  }catch(e){ document.getElementById('err').style.display='block'; document.getElementById('err').textContent=e.message; }
+})();
+</script>
+</body>
+</html>

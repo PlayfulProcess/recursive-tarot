@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Course — Recursive Tarot</title>
+<style>
+  :root{--bg:#0f0d17;--ink:#ece8f5;--muted:#9b94b3;--accent:#d4af37;--line:#2a2440;--card:#1a1726}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65}
+  .article{max-width:760px;margin:0 auto;padding:32px 22px 80px}
+  .article h1{font-size:30px;color:var(--accent);line-height:1.2;margin:.4em 0}
+  .article h2{font-size:22px;margin:1.6em 0 .4em;border-bottom:1px solid var(--line);padding-bottom:.2em}
+  .article h3{font-size:17px;margin:1.3em 0 .3em;color:#cfc8e2}
+  .article p,.article li{font-size:15.5px;color:#d8d2ea}
+  .article a{color:#b794f6}
+  .article code{background:#221d33;padding:.12em .4em;border-radius:5px;font-size:.9em}
+  .article pre{background:#161227;border:1px solid var(--line);border-radius:10px;padding:14px;overflow:auto}
+  .article pre code{background:none;padding:0}
+  .article blockquote{border-left:3px solid var(--accent);margin:1em 0;padding:.2em 0 .2em 1em;color:#cfc8e2;opacity:.92}
+  .article table{border-collapse:collapse;width:100%;margin:1em 0;font-size:14px}
+  .article th,.article td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+  .article th{background:#1d1830}
+  .article img{max-width:100%;border-radius:8px}
+  .article hr{border:0;border-top:1px solid var(--line);margin:1.6em 0}
+  .meta{color:var(--muted);font-size:13px;margin-bottom:8px}
+  #err{padding:40px;text-align:center;color:#e07a5f}
+</style>
+</head>
+<body>
+<script src="../site-header.js"></script>
+<site-header active="course"></site-header>
+<article class="article" id="article"><div id="err" style="display:none"></div></article>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+const params=new URLSearchParams(location.search);
+const SRC=params.get('src')||'../course/build-a-tarot-deck-with-claude.mdx';
+(async function(){
+  const art=document.getElementById('article');
+  try{
+    const r=await fetch(SRC); if(!r.ok) throw new Error('Could not load '+SRC+' ('+r.status+')');
+    let text=await r.text();
+    // strip YAML frontmatter, pull title/author/duration
+    let meta={};
+    const fm=text.match(/^---\n([\s\S]*?)\n---\n/);
+    if(fm){ fm[1].split('\n').forEach(l=>{const m=l.match(/^(\w+):\s*"?(.*?)"?$/);if(m)meta[m[1]]=m[2];}); text=text.slice(fm[0].length); }
+    // strip any MDX import/export lines (the course is plain markdown, but be safe)
+    text=text.replace(/^\s*(import|export)\s.*$/gm,'');
+    marked.setOptions({gfm:true,breaks:false});
+    let html='';
+    if(meta.author||meta.duration) html+=`<div class="meta">${[meta.author,meta.duration?meta.duration+' min':null,meta.date].filter(Boolean).join(' · ')}</div>`;
+    html+=marked.parse(text);
+    art.innerHTML=html;
+    document.title=(meta.title||'Course')+' — Recursive Tarot';
+  }catch(e){ document.getElementById('err').style.display='block'; document.getElementById('err').textContent=e.message; }
+})();
+</script>
+</body>
+</html>

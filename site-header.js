@@ -23,7 +23,7 @@
     ['tree',       'Tree',         toViewers + 'tree-viewer.html'],
     ['caster',     'Caster',       toViewers + 'caster.html'],
     ['genealogy',  'Genealogy',    toRoot + 'genealogy.html'],
-    ['course',     'Course',       toRoot + 'course/build-a-tarot-deck-with-claude.mdx'],
+    ['course',     'Course',       toRoot + 'pages/course.html'],
     ['github',     'GitHub ↗', 'https://github.com/PlayfulProcess/recursive-tarot', true],
   ];
 
