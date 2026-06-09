@@ -51,6 +51,8 @@
     <div class="sub">Public-domain decks placed by date × trump-order lineage. Click a deck.</div>
   </div>
   <div class="controls">
+    <script src="view-switcher.js"></script>
+    <view-switcher active="genealogy"></view-switcher>
     <span>Colour by:</span>
     <button class="toggle active" id="byOrder">Lineage</button>
     <button class="toggle" id="byFunction">Function</button>
@@ -166,8 +168,8 @@ function legendHTML(mode){
       <div class="row"><b>Lineage</b> · ${TIER_NAME[d.tier]||d.tier||'—'}</div>
       <div class="row"><b>Function</b> · ${FUNC_NAME[d.function]||d.function||'—'}</div>
       <div class="row"><b>Cards</b> · ${d.count}</div>
-      <div class="row" style="margin-top:10px"><a href="deck.html?file=tarot/${d.slug}/grammar.json" target="_blank" rel="noopener">open deck ↗</a></div>
-      <div class="row"><a href="tarot/${d.slug}/grammar.json" target="_blank" rel="noopener">raw JSON ↗</a></div>
+      ${d.slug ? `<div class="row" style="margin-top:10px"><a href="viewers/cards.html?src=${encodeURIComponent('../tarot/'+d.slug+'/grammar.json')}" target="_blank" rel="noopener">open cards ↗</a></div>
+      <div class="row"><a href="tarot/${d.slug}/grammar.json" target="_blank" rel="noopener">raw JSON ↗</a></div>` : '<div class="row" style="margin-top:10px;color:#a59fb5">No card-level deck in the repo yet for this node.</div>'}
       <div class="legend" id="lg" style="margin-top:16px"></div>`;
     document.getElementById('lg').innerHTML = legendHTML(activeMode());
   });
