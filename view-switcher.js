@@ -36,16 +36,18 @@
 
   const VIEW_MAP = Object.fromEntries(VIEWS.map(([k, , href]) => [k, href]));
 
+  // Portable deep-link: ?lens=<view> redirects to that lens at load (preserving
+  // src/item via the target href; lens is dropped so there's no loop). Runs
+  // immediately, independent of the <view-switcher> element being present.
+  const wantLens = p.get('lens');
+  if (wantLens && wantLens !== autoActive() && VIEW_MAP[wantLens]) {
+    location.replace(VIEW_MAP[wantLens]);
+    return;
+  }
+
   class ViewSwitcher extends HTMLElement {
     connectedCallback() {
       const active = this.getAttribute('active') || '';
-      // Portable deep-link: ?lens=<view> redirects to that lens, preserving
-      // src/item (the target href already carries them; lens is dropped, no loop).
-      const wantLens = p.get('lens');
-      if (wantLens && wantLens !== active && VIEW_MAP[wantLens]) {
-        location.replace(VIEW_MAP[wantLens]);
-        return;
-      }
       const root = this.attachShadow({ mode: 'open' });
       const items = VIEWS.map(([k, label, href]) =>
         `<a class="vs-item${k === active ? ' active' : ''}" href="${href}">${label}</a>`
