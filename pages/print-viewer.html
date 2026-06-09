@@ -460,11 +460,15 @@
         var returnUrl = '../index.html';
         // recursive-tarot drift: this static port loads the grammar from ?src
         // (a repo grammar.json) when there's no print-data stashed by the app.
-        var PRINT_SRC = new URLSearchParams(window.location.search).get('src') || '../tarot/all-decks-many-lenses/grammar.json';
-        try {
-            var raw = store.getItem('print-data');
-            if (raw) printData = JSON.parse(raw);
-        } catch (e) { console.error('Failed to load print data:', e); }
+        var urlSrc = new URLSearchParams(window.location.search).get('src');
+        var PRINT_SRC = urlSrc || '../tarot/all-decks-many-lenses/grammar.json';
+        // Explicit ?src in the URL wins over any stashed print-data (priority: user choice first).
+        if (!urlSrc) {
+            try {
+                var raw = store.getItem('print-data');
+                if (raw) printData = JSON.parse(raw);
+            } catch (e) { console.error('Failed to load print data:', e); }
+        }
 
         function goBack() { window.location.href = returnUrl; }
 
