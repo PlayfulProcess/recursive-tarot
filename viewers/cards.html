@@ -3482,6 +3482,14 @@
         function openModal(item) {
             selectedItem = item;
 
+            // Reflect the open card in the URL so it's shareable / deep-linkable.
+            // On reload, the init code (params.get('item')) re-opens this card.
+            try {
+                const u = new URL(window.location.href);
+                if (item.id) u.searchParams.set('item', item.id);
+                history.replaceState(null, '', u);
+            } catch (e) {}
+
             // Update grid selection
             document.querySelectorAll('.item-card').forEach(card => {
                 card.classList.toggle('active', card.dataset.itemId === item.id);
@@ -3536,6 +3544,28 @@
                         ${item.keywords.map(k => `<span class="keyword-tag">${escapeHtml(k)}</span>`).join('')}
                     </div>
                 `;
+            }
+
+            // ── Open in source deck (static deep-link) ──
+            // Meta cards carry metadata.source_deck (the deck's repo slug) +
+            // metadata.source_item_id (the card's id within that deck). When we're
+            // not already viewing that deck, offer a link that loads the individual
+            // deck's grammar opened on this exact card — pure static, no backend.
+            {
+                const md = item.metadata || {};
+                const srcDeck = md.source_deck;
+                const srcItem = md.source_item_id;
+                const curSrc = new URLSearchParams(window.location.search).get('src') || '';
+                if (srcDeck && srcItem && !curSrc.includes('/' + srcDeck + '/')) {
+                    const deckLabel = md.deck || srcDeck;
+                    const deckUrl = '?src=' + encodeURIComponent('../tarot/' + srcDeck + '/grammar.json')
+                        + '&item=' + encodeURIComponent(srcItem);
+                    bodyHtml += `
+                        <a href="${deckUrl}"
+                           style="display:inline-flex;align-items:center;gap:0.4rem;margin:0.25rem 0 0.85rem;padding:0.45rem 0.9rem;border:1px solid var(--grammar-accent);border-radius:9999px;color:var(--grammar-accent);text-decoration:none;font-size:0.85rem;font-weight:600;">
+                            Open in ${escapeHtml(deckLabel)} deck &rarr;
+                        </a>`;
+                }
             }
 
             // Action buttons (minimal, at top)
@@ -3779,6 +3809,12 @@
 
         function closeModal() {
             selectedItem = null;
+            // Drop the ?item= deep-link param when the card is dismissed.
+            try {
+                const u = new URL(window.location.href);
+                u.searchParams.delete('item');
+                history.replaceState(null, '', u);
+            } catch (e) {}
             modalBackdrop.classList.remove('open');
             document.querySelectorAll('.item-card').forEach(card => {
                 card.classList.remove('active');
