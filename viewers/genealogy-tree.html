@@ -214,8 +214,6 @@ function draw(nested){
     .attr('dy','0.31em')
     .attr('x',d=> d.x < Math.PI ? 11 : -11)
     .attr('text-anchor',d=> d.x < Math.PI ? 'start':'end')
-    .attr('transform',d=> d.x >= Math.PI ? 'rotate(180)' : null)
-    .style('transform-box','fill-box')
     .text(d=> d.data.data.name.replace(/\s+[—–-]\s+.*/,'').slice(0,30));
 
   node.on('click',(ev,d)=>{ ev.stopPropagation(); showDetail(d.data.data); })
