@@ -2064,6 +2064,176 @@
         "The whole ascent": "Read in order, the 50 plates form one continuous Neoplatonic ascent: from the Beggar at the bottom of human society, up through the estates, the inspiring Muses, the disciplines of knowledge, the cosmic genii and the seven virtues, then the planetary spheres, to the fixed stars, the Prime Mover, and finally the First Cause — God. It is a map of the soul's climb from matter to the divine.",
         "Why it is here (and why it is NOT a tarot)": "The 'Mantegna Tarocchi' is the most famous false relative of the tarot: a 15th-century Italian engraving set, often shelved beside tarot and even called 'Tarocchi', but with no suits, no 22 trumps, and no game. (It is also not by Mantegna.) Its imagery — virtues, planets, estates — overlaps the tarot trumps because both drew on the same Renaissance iconographic vocabulary, which is exactly why the two are confused. Including it here lets the genealogy say clearly: this is a cousin in imagery, not an ancestor in fact."
       }
+    },
+    {
+      "id": "kw-arts",
+      "name": "Arts",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "plate-21",
+        "plate-22",
+        "plate-23",
+        "plate-24",
+        "plate-25",
+        "plate-26",
+        "plate-27",
+        "plate-28",
+        "plate-29",
+        "plate-30"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "arts",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “arts” (10)."
+      }
+    },
+    {
+      "id": "kw-estates",
+      "name": "Estates",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "plate-01",
+        "plate-02",
+        "plate-03",
+        "plate-04",
+        "plate-05",
+        "plate-06",
+        "plate-07",
+        "plate-08",
+        "plate-09",
+        "plate-10"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "estates",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “estates” (10)."
+      }
+    },
+    {
+      "id": "kw-muses",
+      "name": "Muses",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "plate-11",
+        "plate-12",
+        "plate-13",
+        "plate-14",
+        "plate-15",
+        "plate-16",
+        "plate-17",
+        "plate-18",
+        "plate-19",
+        "plate-20"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "muses",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “muses” (10)."
+      }
+    },
+    {
+      "id": "kw-spheres",
+      "name": "Spheres",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "plate-41",
+        "plate-42",
+        "plate-43",
+        "plate-44",
+        "plate-45",
+        "plate-46",
+        "plate-47",
+        "plate-48",
+        "plate-49",
+        "plate-50"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "spheres",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “spheres” (10)."
+      }
+    },
+    {
+      "id": "kw-virtues",
+      "name": "Virtues",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "plate-34",
+        "plate-35",
+        "plate-36",
+        "plate-37",
+        "plate-38",
+        "plate-39",
+        "plate-40"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "virtues",
+        "member_count": 7
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “virtues” (7)."
+      }
+    },
+    {
+      "id": "kw-genii",
+      "name": "Genii",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "plate-31",
+        "plate-32",
+        "plate-33"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "genii",
+        "member_count": 3
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “genii” (3)."
+      }
+    },
+    {
+      "id": "axis-keyword",
+      "name": "By Keyword",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "kw-arts",
+        "kw-estates",
+        "kw-muses",
+        "kw-spheres",
+        "kw-virtues",
+        "kw-genii"
+      ],
+      "sections": {
+        "Description": "Cross-cutting facets derived from shared keywords — the same card appears under every keyword it carries."
+      }
     }
   ],
   "_community_folder": "tarot",
