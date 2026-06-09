@@ -232,6 +232,28 @@ function traceDescent(d,nodeById,node,g){
   g.selectAll('.derive-link').classed('dim',l=>!(keep.has(l.s.data.id)&&keep.has(l.t.data.id)));
 }
 
+function mdToHtml(s){
+  if(!s) return '';
+  const e=x=>x.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const inl=t=>e(t)
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>')
+    .replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')
+    .replace(/`([^`]+)`/g,'<code>$1</code>')
+    .replace(/(^|[^*])\*([^*\n]+)\*/g,'$1<em>$2</em>');
+  let html='',inList=false,inQ=false,m;
+  const cL=()=>{if(inList){html+='</ul>';inList=false;}};
+  const cQ=()=>{if(inQ){html+='</blockquote>';inQ=false;}};
+  for(const raw of String(s).split(/\r?\n/)){
+    const line=raw.trim();
+    if(!line){cL();cQ();continue;}
+    if(m=line.match(/^(#{1,6})\s+(.*)$/)){cL();cQ();html+=`<div style="font-weight:700;font-size:1.03em;margin:.6em 0 .2em;">${inl(m[2])}</div>`;continue;}
+    if(m=line.match(/^>\s?(.*)$/)){cL();if(!inQ){html+='<blockquote style="border-left:3px solid currentColor;opacity:.8;margin:.5em 0;padding:.1em 0 .1em .7em;">';inQ=true;}html+=inl(m[1])+' ';continue;}
+    if(m=line.match(/^[-*+]\s+(.*)$/)){cQ();if(!inList){html+='<ul style="margin:.3em 0;padding-left:1.1em;">';inList=true;}html+=`<li>${inl(m[1])}</li>`;continue;}
+    cL();cQ();html+=`<p style="margin:.4em 0;">${inl(line)}</p>`;
+  }
+  cL();cQ();return html;
+}
+
 function showDetail(it){
   const el=document.getElementById('detail');
   const b=branchOf(it);
@@ -247,7 +269,7 @@ function showDetail(it){
   if(df.length) html+=`<div class="sec"><h4>Derives from</h4>${df.map(id=>esc((itemMap[id]||{}).name||id)).join(' · ')}</div>`;
   for(const [k,v] of Object.entries(secs)){
     if(!v) continue;
-    html+=`<div class="sec"><h4>${esc(k)}</h4>${esc(String(v)).slice(0,600)}</div>`;
+    html+=`<div class="sec"><h4>${esc(k)}</h4>${mdToHtml(String(v))}</div>`;
   }
   if(slug) html+=`<a class="opencards" href="cards.html?src=${encodeURIComponent('../tarot/'+slug+'/grammar.json')}">Open ${esc(it.name.replace(/\s+[—–-].*/,''))} cards →</a>`;
   else html+=`<div class="sec" style="color:#9b94b3">No card-level deck in the repo yet for this node.</div>`;
