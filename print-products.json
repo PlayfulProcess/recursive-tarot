@@ -1,0 +1,17 @@
+{
+  "_comment": "Print-on-demand product config. One entry per deck. The print page reads this to show a 'Buy a printed deck' button. To go live: create the product at your vendor, paste its public product/checkout URL into product_url (add any affiliate tag there), and set status to 'live'. back_image is optional — when set, the print page offers a deck-back option.",
+  "default_vendor": {
+    "name": "The Game Crafter",
+    "site": "https://www.thegamecrafter.com",
+    "model": "seller-margin",
+    "note": "You are the seller; you earn margin per sale (better than a typical affiliate cut). Affiliate-tagged URLs also work — just paste them into product_url."
+  },
+  "card_spec": { "size_in": "2.5 x 3.5", "dpi": 300, "print_ready_px": [750, 1050], "bleed_ready_px": [825, 1125] },
+  "decks": {
+    "golden-dawn-book-t-tarot": { "status": "ready_full_bleed", "vendor": "The Game Crafter", "product_url": "", "back_image": "", "sizes": ["poker"], "note": "All 78 cards bleed-ready (RWS art)." },
+    "minchiate-florence-tarot": { "status": "ready_full_bleed", "vendor": "The Game Crafter", "product_url": "", "back_image": "", "sizes": ["poker"], "note": "All 97 cards bleed-ready." },
+    "oswald-wirth-tarot": { "status": "ready_full_bleed", "vendor": "The Game Crafter", "product_url": "", "back_image": "", "sizes": ["poker"], "note": "22 majors, all bleed-ready." },
+    "tarot-de-marseille-conver": { "status": "ready_bordered", "vendor": "The Game Crafter", "product_url": "", "back_image": "", "sizes": ["poker"], "note": "All 78 print-ready; print as bordered cards (54 lack full bleed margin)." },
+    "etteilla-i-livre-de-thot": { "status": "ready_bordered", "vendor": "The Game Crafter", "product_url": "", "back_image": "", "sizes": ["poker"], "note": "All 78 print-ready; print as bordered cards (no bleed margin)." }
+  }
+}
