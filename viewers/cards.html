@@ -3106,6 +3106,46 @@
             }
         }
 
+        // In-session lens picker for an axis — flip pill ↔ cards ↔ tree/timeline/genealogy
+        // live. Pills/Cards re-render in place; the spatial lenses open their renderer.
+        function showLensMenu(item, anchor) {
+            document.querySelectorAll('.lens-menu-pop').forEach(m => m.remove());
+            const src = new URLSearchParams(window.location.search).get('src') || '';
+            const q = src ? ('?src=' + encodeURIComponent(src)) : '';
+            const NAV = { tree: 'tree-viewer.html', timeline: 'timeline.html', genealogy: '../genealogy.html', treeoflife: 'genealogy-tree.html' };
+            const opts = [
+                ['◫ Pills (filter here)', 'pills'],
+                ['▦ Cards in grid', 'cards'],
+                ['⛢ Tree', 'tree'],
+                ['↧ Timeline', 'timeline'],
+                ['⸬ Genealogy', 'genealogy'],
+            ];
+            const menu = document.createElement('div');
+            menu.className = 'lens-menu-pop';
+            menu.style.cssText = 'position:fixed;z-index:9999;background:#161227;border:1px solid #3a3450;border-radius:9px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.55);min-width:170px;';
+            const r = anchor.getBoundingClientRect();
+            menu.style.left = Math.min(r.left, window.innerWidth - 190) + 'px';
+            menu.style.top = (r.bottom + 4) + 'px';
+            opts.forEach(([label, mode]) => {
+                const a = document.createElement('div');
+                a.textContent = label;
+                a.style.cssText = 'padding:7px 11px;border-radius:6px;cursor:pointer;color:#cfc8e2;font-size:13px;';
+                a.onmouseenter = () => a.style.background = '#241d3a';
+                a.onmouseleave = () => a.style.background = '';
+                a.onclick = (ev) => {
+                    ev.stopPropagation(); menu.remove();
+                    if (NAV[mode]) { window.location.href = NAV[mode] + (mode === 'genealogy' ? '' : q); return; }
+                    // pills / cards: filter to this axis in place (live, no rebuild)
+                    expandedSections.add(item.id);
+                    filterByHierarchy(`l${item.level || 4}`, item.id);
+                    buildHierarchySidebar();
+                };
+                menu.appendChild(a);
+            });
+            document.body.appendChild(menu);
+            setTimeout(() => document.addEventListener('click', function close() { menu.remove(); document.removeEventListener('click', close); }), 0);
+        }
+
         function buildSidebarNode(item, depth) {
             const children = items.filter(child =>
                 item.composite_of && item.composite_of.includes(child.id) &&
@@ -3128,6 +3168,7 @@
                 <span class="sidebar-expand-toggle ${isExpanded ? 'expanded' : ''}">${children.length > 0 ? (isExpanded ? '▼' : '▶') : ''}</span>
                 <span class="sidebar-item-name" title="${escapeHtml(item.name)}">${escapeHtml(item.name)}</span>
                 ${leafCount > 0 ? `<span class="sidebar-item-count">${leafCount}</span>` : ''}
+                ${item.category === 'axis' ? `<span class="sidebar-lens-toggle" title="Render this axis as…" style="margin-left:6px;cursor:pointer;opacity:.65;font-size:11px;">▾</span>` : ''}
             `;
 
             header.addEventListener('click', () => {
@@ -3151,6 +3192,12 @@
                 filterByHierarchy(`l${level}`, item.id);
                 buildHierarchySidebar();
             });
+
+            // In-session "render as ▾" — flip how this axis renders, live, no rebuild.
+            const lensToggle = header.querySelector('.sidebar-lens-toggle');
+            if (lensToggle) {
+                lensToggle.addEventListener('click', (e) => { e.stopPropagation(); showLensMenu(item, lensToggle); });
+            }
 
             container.appendChild(header);
 

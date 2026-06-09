@@ -34,9 +34,18 @@
 
   const EYE = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>';
 
+  const VIEW_MAP = Object.fromEntries(VIEWS.map(([k, , href]) => [k, href]));
+
   class ViewSwitcher extends HTMLElement {
     connectedCallback() {
       const active = this.getAttribute('active') || '';
+      // Portable deep-link: ?lens=<view> redirects to that lens, preserving
+      // src/item (the target href already carries them; lens is dropped, no loop).
+      const wantLens = p.get('lens');
+      if (wantLens && wantLens !== active && VIEW_MAP[wantLens]) {
+        location.replace(VIEW_MAP[wantLens]);
+        return;
+      }
       const root = this.attachShadow({ mode: 'open' });
       const items = VIEWS.map(([k, label, href]) =>
         `<a class="vs-item${k === active ? ' active' : ''}" href="${href}">${label}</a>`
