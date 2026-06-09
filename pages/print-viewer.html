@@ -405,7 +405,7 @@
     <script src="../site-header.js?v=3"></script>
     <site-header active="print"></site-header>
     <script src="../view-switcher.js?v=3"></script>
-    <style>@media print { site-header, view-switcher, .controls-bar { display: none !important; } }</style>
+    <style>@media print { site-header, view-switcher, .controls-bar, #buy-panel { display: none !important; } }</style>
     <div class="controls-bar" id="controls-bar">
         <view-switcher active="print"></view-switcher>
         <button class="back-btn" onclick="goBack()" title="Go back">
@@ -441,6 +441,22 @@
             </select>
         </div>
         <button class="print-btn" onclick="window.print()">Print</button>
+    </div>
+
+    <!-- Buy-a-printed-deck panel (recursive-tarot drift). Reads ../print-products.json. -->
+    <div id="buy-panel" style="display:none;max-width:920px;margin:14px auto;padding:14px 18px;background:#161227;border:1px solid #3a3450;border-radius:12px;color:#e9e4f6;">
+        <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between">
+            <div style="min-width:240px;flex:1">
+                <div style="font-weight:700;font-size:15px;margin-bottom:4px">🖨 Order a printed deck</div>
+                <div id="buy-quality" style="font-size:13px;color:#b9b2d2;line-height:1.5"></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap">
+                <label style="font-size:12px;color:#9b94b3">Copies<br><input id="buy-copies" type="number" min="1" max="50" value="1" style="width:64px;margin-top:3px;background:#1d1830;color:#e9e4f6;border:1px solid #3a3450;border-radius:7px;padding:6px 8px;font-size:14px"></label>
+                <label id="buy-back-wrap" style="display:none;font-size:12px;color:#9b94b3">Deck back<br><select id="buy-back" style="margin-top:3px;background:#1d1830;color:#e9e4f6;border:1px solid #3a3450;border-radius:7px;padding:6px 8px;font-size:14px"><option value="plain">Plain</option><option value="custom">Custom back</option></select></label>
+                <a id="buy-link" href="#" target="_blank" rel="noopener" style="background:#d4af37;color:#0f0d17;border-radius:9px;padding:10px 18px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Buy a printed deck ↗</a>
+            </div>
+        </div>
+        <div style="font-size:11px;color:#6f688a;margin-top:9px">Quality is auto-measured per card (300 DPI = 2.5×3.5″). Public-domain art, free to print. Checkout happens on the vendor's site.</div>
     </div>
 
     <div id="pages-container">
@@ -759,6 +775,44 @@
             document.getElementById('empty-state').style.display = 'none';
             if (printData.type === 'sequence') document.getElementById('layout-select').value = 'story';
             renderPreview();
+            buildBuyPanel();
+        }
+
+        // Buy-a-printed-deck panel: quality summary (from per-card metadata.print) + vendor link.
+        async function buildBuyPanel() {
+            var slug = (PRINT_SRC.match(/tarot\/([^\/]+)\/grammar/) || [])[1];
+            if (!slug || slug === 'all-decks-many-lenses') return;
+            var cards = getItems().filter(function (it) { return (!it.composite_of || !it.composite_of.length) && it.category !== 'axis' && it.category !== 'keyword-emergence'; });
+            var imaged = cards.filter(function (c) { return c.image_url || (c.metadata || {}).image_url; });
+            var withP = cards.filter(function (c) { return c.metadata && c.metadata.print; });
+            var ready = withP.filter(function (c) { return c.metadata.print.ready; }).length;
+            var bleed = withP.filter(function (c) { return c.metadata.print.bleed; }).length;
+            var cfg = {}; try { cfg = await (await fetch('../print-products.json')).json(); } catch (e) {}
+            var deck = (cfg.decks || {})[slug] || null;
+
+            var panel = document.getElementById('buy-panel');
+            var q = document.getElementById('buy-quality');
+            var allReady = withP.length && ready === withP.length;
+            var qtxt = imaged.length + ' of ' + cards.length + ' cards have art';
+            if (withP.length) {
+                qtxt += ' · <b style="color:' + (allReady ? '#81b29a' : '#e0a35f') + '">' + ready + '/' + withP.length + ' print-ready (300 DPI)</b>';
+                qtxt += bleed === withP.length ? ' · full-bleed ✓' : (bleed ? ' · ' + bleed + ' with bleed margin' : ' · print as bordered cards');
+            }
+            q.innerHTML = qtxt;
+
+            var link = document.getElementById('buy-link');
+            var vendor = (deck && deck.vendor) || (cfg.default_vendor && cfg.default_vendor.name) || 'a print vendor';
+            if (deck && deck.product_url) {
+                link.href = deck.product_url; link.textContent = 'Buy a printed deck at ' + vendor + ' ↗';
+                link.style.opacity = '1'; link.style.pointerEvents = 'auto';
+            } else {
+                link.href = (cfg.default_vendor && cfg.default_vendor.site) || '#';
+                link.textContent = 'Printable — vendor coming soon';
+                link.style.opacity = '0.6'; link.style.pointerEvents = deck ? 'auto' : 'none';
+                if (!deck) { link.title = 'This deck is not yet set up for printing.'; }
+            }
+            if (deck && deck.back_image) { document.getElementById('buy-back-wrap').style.display = ''; }
+            panel.style.display = '';
         }
         (async function() {
             if (printData) { startPrint(); return; }
