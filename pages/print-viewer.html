@@ -785,31 +785,35 @@
             var cards = getItems().filter(function (it) { return (!it.composite_of || !it.composite_of.length) && it.category !== 'axis' && it.category !== 'keyword-emergence'; });
             var imaged = cards.filter(function (c) { return c.image_url || (c.metadata || {}).image_url; });
             var withP = cards.filter(function (c) { return c.metadata && c.metadata.print; });
-            var ready = withP.filter(function (c) { return c.metadata.print.ready; }).length;
+            var ready = withP.filter(function (c) { return c.metadata.print.dpi_ready; }).length;
             var bleed = withP.filter(function (c) { return c.metadata.print.bleed; }).length;
             var cfg = {}; try { cfg = await (await fetch('../print-products.json')).json(); } catch (e) {}
             var deck = (cfg.decks || {})[slug] || null;
+            var allReady = withP.length > 0 && ready === withP.length;
+            var allBleed = withP.length > 0 && bleed === withP.length;
 
-            var panel = document.getElementById('buy-panel');
             var q = document.getElementById('buy-quality');
-            var allReady = withP.length && ready === withP.length;
             var qtxt = imaged.length + ' of ' + cards.length + ' cards have art';
             if (withP.length) {
-                qtxt += ' · <b style="color:' + (allReady ? '#81b29a' : '#e0a35f') + '">' + ready + '/' + withP.length + ' print-ready (300 DPI)</b>';
-                qtxt += bleed === withP.length ? ' · full-bleed ✓' : (bleed ? ' · ' + bleed + ' with bleed margin' : ' · print as bordered cards');
+                var col = allReady ? '#81b29a' : '#e07a5f';
+                qtxt += ' · <b style="color:' + col + '">' + ready + '/' + withP.length + ' print-ready (300 DPI)</b>';
+                if (allReady) qtxt += allBleed ? ' · full-bleed ✓' : (bleed ? ' · ' + bleed + ' full-bleed, rest bordered' : ' · prints as bordered cards');
+                else qtxt += ' · ' + (withP.length - ready) + ' too low-res for a good print';
             }
             q.innerHTML = qtxt;
 
             var link = document.getElementById('buy-link');
             var vendor = (deck && deck.vendor) || (cfg.default_vendor && cfg.default_vendor.name) || 'a print vendor';
-            if (deck && deck.product_url) {
+            if (!allReady) {                                   // web-res deck — not for print
+                link.href = '#'; link.textContent = 'Not print-quality (web-res scans)';
+                link.style.opacity = '0.55'; link.style.pointerEvents = 'none';
+            } else if (deck && deck.product_url) {             // live product
                 link.href = deck.product_url; link.textContent = 'Buy a printed deck at ' + vendor + ' ↗';
                 link.style.opacity = '1'; link.style.pointerEvents = 'auto';
-            } else {
+            } else {                                           // print-ready, no product yet
                 link.href = (cfg.default_vendor && cfg.default_vendor.site) || '#';
-                link.textContent = 'Printable — vendor coming soon';
-                link.style.opacity = '0.6'; link.style.pointerEvents = deck ? 'auto' : 'none';
-                if (!deck) { link.title = 'This deck is not yet set up for printing.'; }
+                link.textContent = 'Print-ready — vendor coming soon';
+                link.style.opacity = '0.7'; link.style.pointerEvents = 'auto';
             }
             if (deck && deck.back_image) { document.getElementById('buy-back-wrap').style.display = ''; }
             panel.style.display = '';
