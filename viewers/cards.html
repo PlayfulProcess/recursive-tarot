@@ -29,9 +29,10 @@
 
         window.ViewModeDropdown = {
             init(container) {
-                if (!container) return;
-                // The "eye" view-switcher (flips through every view, preserves ?src).
-                container.innerHTML = `<view-switcher active="cards"></view-switcher>`;
+                // Eye view-switcher removed from cards: it duplicated the header nav.
+                // Viewers live in the header; DIMENSIONS live in the left sidebar
+                // (By Deck / By Age / By Rank …, each with an in-place "▾" render menu).
+                if (container) container.innerHTML = '';
             }
         };
     })();
