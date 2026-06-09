@@ -2037,6 +2037,792 @@
       "sections": {
         "About this suit": "The Batons (Bastoni) of the Tarocchino: Ace and 6–10 only, plus the four courts — the Bolognese 'stripping' of the low pips that gives the 62-card deck."
       }
+    },
+    {
+      "id": "kw-pip",
+      "name": "Pip",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-ace",
+        "coins-six",
+        "coins-seven",
+        "coins-eight",
+        "coins-nine",
+        "coins-ten",
+        "cups-ace",
+        "cups-six",
+        "cups-seven",
+        "cups-eight",
+        "cups-nine",
+        "cups-ten",
+        "swords-ace",
+        "swords-six",
+        "swords-seven",
+        "swords-eight",
+        "swords-nine",
+        "swords-ten",
+        "batons-ace",
+        "batons-six",
+        "batons-seven",
+        "batons-eight",
+        "batons-nine",
+        "batons-ten"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "pip",
+        "member_count": 24
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “pip” (24)."
+      }
+    },
+    {
+      "id": "kw-bolognese",
+      "name": "Bolognese",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "trump-matto",
+        "trump-bagatto",
+        "trump-papa-a",
+        "trump-papa-b",
+        "trump-papa-c",
+        "trump-papa-d",
+        "trump-amore",
+        "trump-carro",
+        "trump-temperanza",
+        "trump-giustizia",
+        "trump-forza",
+        "trump-ruota",
+        "trump-vecchio",
+        "trump-traditore",
+        "trump-morte",
+        "trump-diavolo",
+        "trump-torre",
+        "trump-stella",
+        "trump-luna",
+        "trump-sole",
+        "trump-mondo",
+        "trump-angelo"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "bolognese",
+        "member_count": 22
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “bolognese” (22)."
+      }
+    },
+    {
+      "id": "kw-tarocchino",
+      "name": "Tarocchino",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "trump-matto",
+        "trump-bagatto",
+        "trump-papa-a",
+        "trump-papa-b",
+        "trump-papa-c",
+        "trump-papa-d",
+        "trump-amore",
+        "trump-carro",
+        "trump-temperanza",
+        "trump-giustizia",
+        "trump-forza",
+        "trump-ruota",
+        "trump-vecchio",
+        "trump-traditore",
+        "trump-morte",
+        "trump-diavolo",
+        "trump-torre",
+        "trump-stella",
+        "trump-luna",
+        "trump-sole",
+        "trump-mondo",
+        "trump-angelo"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "tarocchino",
+        "member_count": 22
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “tarocchino” (22)."
+      }
+    },
+    {
+      "id": "kw-trionfi",
+      "name": "Trionfi",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "trump-matto",
+        "trump-bagatto",
+        "trump-papa-a",
+        "trump-papa-b",
+        "trump-papa-c",
+        "trump-papa-d",
+        "trump-amore",
+        "trump-carro",
+        "trump-temperanza",
+        "trump-giustizia",
+        "trump-forza",
+        "trump-ruota",
+        "trump-vecchio",
+        "trump-traditore",
+        "trump-morte",
+        "trump-diavolo",
+        "trump-torre",
+        "trump-stella",
+        "trump-luna",
+        "trump-sole",
+        "trump-mondo",
+        "trump-angelo"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "trionfi",
+        "member_count": 22
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “trionfi” (22)."
+      }
+    },
+    {
+      "id": "kw-court",
+      "name": "Court",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-fante",
+        "coins-cavallo",
+        "coins-regina",
+        "coins-re",
+        "cups-fante",
+        "cups-cavallo",
+        "cups-regina",
+        "cups-re",
+        "swords-fante",
+        "swords-cavallo",
+        "swords-regina",
+        "swords-re",
+        "batons-fante",
+        "batons-cavallo",
+        "batons-regina",
+        "batons-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "court",
+        "member_count": 16
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “court” (16)."
+      }
+    },
+    {
+      "id": "kw-air",
+      "name": "Air",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "swords-ace",
+        "swords-six",
+        "swords-seven",
+        "swords-eight",
+        "swords-nine",
+        "swords-ten",
+        "swords-fante",
+        "swords-cavallo",
+        "swords-regina",
+        "swords-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "air",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “air” (10)."
+      }
+    },
+    {
+      "id": "kw-bastoni",
+      "name": "Bastoni",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "batons-ace",
+        "batons-six",
+        "batons-seven",
+        "batons-eight",
+        "batons-nine",
+        "batons-ten",
+        "batons-fante",
+        "batons-cavallo",
+        "batons-regina",
+        "batons-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "bastoni",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “bastoni” (10)."
+      }
+    },
+    {
+      "id": "kw-batons",
+      "name": "Batons",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "batons-ace",
+        "batons-six",
+        "batons-seven",
+        "batons-eight",
+        "batons-nine",
+        "batons-ten",
+        "batons-fante",
+        "batons-cavallo",
+        "batons-regina",
+        "batons-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "batons",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “batons” (10)."
+      }
+    },
+    {
+      "id": "kw-coins",
+      "name": "Coins",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-ace",
+        "coins-six",
+        "coins-seven",
+        "coins-eight",
+        "coins-nine",
+        "coins-ten",
+        "coins-fante",
+        "coins-cavallo",
+        "coins-regina",
+        "coins-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "coins",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “coins” (10)."
+      }
+    },
+    {
+      "id": "kw-coppe",
+      "name": "Coppe",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "cups-ace",
+        "cups-six",
+        "cups-seven",
+        "cups-eight",
+        "cups-nine",
+        "cups-ten",
+        "cups-fante",
+        "cups-cavallo",
+        "cups-regina",
+        "cups-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "coppe",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “coppe” (10)."
+      }
+    },
+    {
+      "id": "kw-cups",
+      "name": "Cups",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "cups-ace",
+        "cups-six",
+        "cups-seven",
+        "cups-eight",
+        "cups-nine",
+        "cups-ten",
+        "cups-fante",
+        "cups-cavallo",
+        "cups-regina",
+        "cups-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "cups",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “cups” (10)."
+      }
+    },
+    {
+      "id": "kw-denari",
+      "name": "Denari",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-ace",
+        "coins-six",
+        "coins-seven",
+        "coins-eight",
+        "coins-nine",
+        "coins-ten",
+        "coins-fante",
+        "coins-cavallo",
+        "coins-regina",
+        "coins-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "denari",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “denari” (10)."
+      }
+    },
+    {
+      "id": "kw-earth",
+      "name": "Earth",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-ace",
+        "coins-six",
+        "coins-seven",
+        "coins-eight",
+        "coins-nine",
+        "coins-ten",
+        "coins-fante",
+        "coins-cavallo",
+        "coins-regina",
+        "coins-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "earth",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “earth” (10)."
+      }
+    },
+    {
+      "id": "kw-fire",
+      "name": "Fire",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "batons-ace",
+        "batons-six",
+        "batons-seven",
+        "batons-eight",
+        "batons-nine",
+        "batons-ten",
+        "batons-fante",
+        "batons-cavallo",
+        "batons-regina",
+        "batons-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "fire",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “fire” (10)."
+      }
+    },
+    {
+      "id": "kw-spade",
+      "name": "Spade",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "swords-ace",
+        "swords-six",
+        "swords-seven",
+        "swords-eight",
+        "swords-nine",
+        "swords-ten",
+        "swords-fante",
+        "swords-cavallo",
+        "swords-regina",
+        "swords-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "spade",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “spade” (10)."
+      }
+    },
+    {
+      "id": "kw-swords",
+      "name": "Swords",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "swords-ace",
+        "swords-six",
+        "swords-seven",
+        "swords-eight",
+        "swords-nine",
+        "swords-ten",
+        "swords-fante",
+        "swords-cavallo",
+        "swords-regina",
+        "swords-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "swords",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “swords” (10)."
+      }
+    },
+    {
+      "id": "kw-water",
+      "name": "Water",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "cups-ace",
+        "cups-six",
+        "cups-seven",
+        "cups-eight",
+        "cups-nine",
+        "cups-ten",
+        "cups-fante",
+        "cups-cavallo",
+        "cups-regina",
+        "cups-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "water",
+        "member_count": 10
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “water” (10)."
+      }
+    },
+    {
+      "id": "kw-ace",
+      "name": "Ace",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-ace",
+        "cups-ace",
+        "swords-ace",
+        "batons-ace"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "ace",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “ace” (4)."
+      }
+    },
+    {
+      "id": "kw-cavallo",
+      "name": "Cavallo",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-cavallo",
+        "cups-cavallo",
+        "swords-cavallo",
+        "batons-cavallo"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "cavallo",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “cavallo” (4)."
+      }
+    },
+    {
+      "id": "kw-eight",
+      "name": "Eight",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-eight",
+        "cups-eight",
+        "swords-eight",
+        "batons-eight"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "eight",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “eight” (4)."
+      }
+    },
+    {
+      "id": "kw-fante",
+      "name": "Fante",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-fante",
+        "cups-fante",
+        "swords-fante",
+        "batons-fante"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "fante",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “fante” (4)."
+      }
+    },
+    {
+      "id": "kw-nine",
+      "name": "Nine",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-nine",
+        "cups-nine",
+        "swords-nine",
+        "batons-nine"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "nine",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “nine” (4)."
+      }
+    },
+    {
+      "id": "kw-papa-moro",
+      "name": "Papa / moro",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "trump-papa-a",
+        "trump-papa-b",
+        "trump-papa-c",
+        "trump-papa-d"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "papa / moro",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “papa / moro” (4)."
+      }
+    },
+    {
+      "id": "kw-re",
+      "name": "Re",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-re",
+        "cups-re",
+        "swords-re",
+        "batons-re"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "re",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “re” (4)."
+      }
+    },
+    {
+      "id": "kw-regina",
+      "name": "Regina",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-regina",
+        "cups-regina",
+        "swords-regina",
+        "batons-regina"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "regina",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “regina” (4)."
+      }
+    },
+    {
+      "id": "kw-seven",
+      "name": "Seven",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-seven",
+        "cups-seven",
+        "swords-seven",
+        "batons-seven"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "seven",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “seven” (4)."
+      }
+    },
+    {
+      "id": "kw-six",
+      "name": "Six",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-six",
+        "cups-six",
+        "swords-six",
+        "batons-six"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "six",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “six” (4)."
+      }
+    },
+    {
+      "id": "kw-ten",
+      "name": "Ten",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-ten",
+        "cups-ten",
+        "swords-ten",
+        "batons-ten"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "ten",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “ten” (4)."
+      }
+    },
+    {
+      "id": "axis-keyword",
+      "name": "By Keyword",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "kw-pip",
+        "kw-bolognese",
+        "kw-tarocchino",
+        "kw-trionfi",
+        "kw-court",
+        "kw-air",
+        "kw-bastoni",
+        "kw-batons",
+        "kw-coins",
+        "kw-coppe",
+        "kw-cups",
+        "kw-denari",
+        "kw-earth",
+        "kw-fire",
+        "kw-spade",
+        "kw-swords",
+        "kw-water",
+        "kw-ace",
+        "kw-cavallo",
+        "kw-eight",
+        "kw-fante",
+        "kw-nine",
+        "kw-papa-moro",
+        "kw-re",
+        "kw-regina",
+        "kw-seven",
+        "kw-six",
+        "kw-ten"
+      ],
+      "sections": {
+        "Description": "Cross-cutting facets derived from shared keywords — the same card appears under every keyword it carries."
+      }
     }
   ],
   "_community_folder": "tarot",

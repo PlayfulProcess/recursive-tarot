@@ -3237,6 +3237,874 @@
         "About this Suit": "The surviving Batons cards of the Cary-Yale. Like all four suits here, its court runs to six ranks — King, Queen, Knight, Horsewoman, Knave, Damsel — doubling the usual nobility with female riders and pages.",
         "How to Use": "Browse the suit to see the Cary-Yale's defining peculiarity: a court half made of women, unmatched in any other historical tarot."
       }
+    },
+    {
+      "id": "kw-pip",
+      "name": "Pip",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-ace",
+        "coins-two",
+        "coins-four",
+        "coins-five",
+        "coins-six",
+        "coins-seven",
+        "coins-eight",
+        "coins-nine",
+        "coins-ten",
+        "cups-ace",
+        "cups-two",
+        "cups-three",
+        "cups-four",
+        "cups-five",
+        "cups-six",
+        "cups-seven",
+        "cups-eight",
+        "cups-nine",
+        "cups-ten",
+        "swords-ace",
+        "swords-two",
+        "swords-three",
+        "swords-four",
+        "swords-five",
+        "swords-six",
+        "swords-seven",
+        "swords-eight",
+        "swords-nine",
+        "swords-ten",
+        "batons-ace",
+        "batons-two",
+        "batons-three",
+        "batons-four",
+        "batons-five",
+        "batons-six",
+        "batons-seven",
+        "batons-eight",
+        "batons-nine",
+        "batons-ten"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "pip",
+        "member_count": 39
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “pip” (39)."
+      }
+    },
+    {
+      "id": "kw-court-card",
+      "name": "Court card",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-damsel",
+        "coins-knight",
+        "coins-horsewoman",
+        "coins-queen",
+        "coins-king",
+        "cups-knave",
+        "cups-damsel",
+        "cups-knight",
+        "cups-king",
+        "swords-damsel",
+        "swords-horsewoman",
+        "swords-queen",
+        "swords-king",
+        "batons-knave",
+        "batons-damsel",
+        "batons-horsewoman",
+        "batons-queen"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "court card",
+        "member_count": 17
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “court card” (17)."
+      }
+    },
+    {
+      "id": "kw-air",
+      "name": "Air",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "swords-ace",
+        "swords-two",
+        "swords-three",
+        "swords-four",
+        "swords-five",
+        "swords-six",
+        "swords-seven",
+        "swords-eight",
+        "swords-nine",
+        "swords-ten",
+        "swords-damsel",
+        "swords-horsewoman",
+        "swords-queen",
+        "swords-king"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "air",
+        "member_count": 14
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “air” (14)."
+      }
+    },
+    {
+      "id": "kw-bastoni",
+      "name": "Bastoni",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "batons-ace",
+        "batons-two",
+        "batons-three",
+        "batons-four",
+        "batons-five",
+        "batons-six",
+        "batons-seven",
+        "batons-eight",
+        "batons-nine",
+        "batons-ten",
+        "batons-knave",
+        "batons-damsel",
+        "batons-horsewoman",
+        "batons-queen"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "bastoni",
+        "member_count": 14
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “bastoni” (14)."
+      }
+    },
+    {
+      "id": "kw-batons",
+      "name": "Batons",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "batons-ace",
+        "batons-two",
+        "batons-three",
+        "batons-four",
+        "batons-five",
+        "batons-six",
+        "batons-seven",
+        "batons-eight",
+        "batons-nine",
+        "batons-ten",
+        "batons-knave",
+        "batons-damsel",
+        "batons-horsewoman",
+        "batons-queen"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "batons",
+        "member_count": 14
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “batons” (14)."
+      }
+    },
+    {
+      "id": "kw-coins",
+      "name": "Coins",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-ace",
+        "coins-two",
+        "coins-four",
+        "coins-five",
+        "coins-six",
+        "coins-seven",
+        "coins-eight",
+        "coins-nine",
+        "coins-ten",
+        "coins-damsel",
+        "coins-knight",
+        "coins-horsewoman",
+        "coins-queen",
+        "coins-king"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "coins",
+        "member_count": 14
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “coins” (14)."
+      }
+    },
+    {
+      "id": "kw-coppe",
+      "name": "Coppe",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "cups-ace",
+        "cups-two",
+        "cups-three",
+        "cups-four",
+        "cups-five",
+        "cups-six",
+        "cups-seven",
+        "cups-eight",
+        "cups-nine",
+        "cups-ten",
+        "cups-knave",
+        "cups-damsel",
+        "cups-knight",
+        "cups-king"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "coppe",
+        "member_count": 14
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “coppe” (14)."
+      }
+    },
+    {
+      "id": "kw-cups",
+      "name": "Cups",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "cups-ace",
+        "cups-two",
+        "cups-three",
+        "cups-four",
+        "cups-five",
+        "cups-six",
+        "cups-seven",
+        "cups-eight",
+        "cups-nine",
+        "cups-ten",
+        "cups-knave",
+        "cups-damsel",
+        "cups-knight",
+        "cups-king"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "cups",
+        "member_count": 14
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “cups” (14)."
+      }
+    },
+    {
+      "id": "kw-denari",
+      "name": "Denari",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-ace",
+        "coins-two",
+        "coins-four",
+        "coins-five",
+        "coins-six",
+        "coins-seven",
+        "coins-eight",
+        "coins-nine",
+        "coins-ten",
+        "coins-damsel",
+        "coins-knight",
+        "coins-horsewoman",
+        "coins-queen",
+        "coins-king"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "denari",
+        "member_count": 14
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “denari” (14)."
+      }
+    },
+    {
+      "id": "kw-earth",
+      "name": "Earth",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-ace",
+        "coins-two",
+        "coins-four",
+        "coins-five",
+        "coins-six",
+        "coins-seven",
+        "coins-eight",
+        "coins-nine",
+        "coins-ten",
+        "coins-damsel",
+        "coins-knight",
+        "coins-horsewoman",
+        "coins-queen",
+        "coins-king"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "earth",
+        "member_count": 14
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “earth” (14)."
+      }
+    },
+    {
+      "id": "kw-fire",
+      "name": "Fire",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "batons-ace",
+        "batons-two",
+        "batons-three",
+        "batons-four",
+        "batons-five",
+        "batons-six",
+        "batons-seven",
+        "batons-eight",
+        "batons-nine",
+        "batons-ten",
+        "batons-knave",
+        "batons-damsel",
+        "batons-horsewoman",
+        "batons-queen"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "fire",
+        "member_count": 14
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “fire” (14)."
+      }
+    },
+    {
+      "id": "kw-spade",
+      "name": "Spade",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "swords-ace",
+        "swords-two",
+        "swords-three",
+        "swords-four",
+        "swords-five",
+        "swords-six",
+        "swords-seven",
+        "swords-eight",
+        "swords-nine",
+        "swords-ten",
+        "swords-damsel",
+        "swords-horsewoman",
+        "swords-queen",
+        "swords-king"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "spade",
+        "member_count": 14
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “spade” (14)."
+      }
+    },
+    {
+      "id": "kw-swords",
+      "name": "Swords",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "swords-ace",
+        "swords-two",
+        "swords-three",
+        "swords-four",
+        "swords-five",
+        "swords-six",
+        "swords-seven",
+        "swords-eight",
+        "swords-nine",
+        "swords-ten",
+        "swords-damsel",
+        "swords-horsewoman",
+        "swords-queen",
+        "swords-king"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "swords",
+        "member_count": 14
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “swords” (14)."
+      }
+    },
+    {
+      "id": "kw-water",
+      "name": "Water",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "cups-ace",
+        "cups-two",
+        "cups-three",
+        "cups-four",
+        "cups-five",
+        "cups-six",
+        "cups-seven",
+        "cups-eight",
+        "cups-nine",
+        "cups-ten",
+        "cups-knave",
+        "cups-damsel",
+        "cups-knight",
+        "cups-king"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "water",
+        "member_count": 14
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “water” (14)."
+      }
+    },
+    {
+      "id": "kw-cary-yale",
+      "name": "Cary-yale",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "trump-emperor",
+        "trump-empress",
+        "trump-lovers",
+        "trump-chariot",
+        "trump-strength",
+        "trump-death",
+        "trump-judgement",
+        "trump-world",
+        "virtue-faith",
+        "virtue-hope",
+        "virtue-charity"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "cary-yale",
+        "member_count": 11
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “cary-yale” (11)."
+      }
+    },
+    {
+      "id": "kw-trump",
+      "name": "Trump",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "trump-emperor",
+        "trump-empress",
+        "trump-lovers",
+        "trump-chariot",
+        "trump-strength",
+        "trump-death",
+        "trump-judgement",
+        "trump-world"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "trump",
+        "member_count": 8
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “trump” (8)."
+      }
+    },
+    {
+      "id": "kw-ace",
+      "name": "Ace",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-ace",
+        "cups-ace",
+        "swords-ace",
+        "batons-ace"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "ace",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “ace” (4)."
+      }
+    },
+    {
+      "id": "kw-damsel",
+      "name": "Damsel",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-damsel",
+        "cups-damsel",
+        "swords-damsel",
+        "batons-damsel"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "damsel",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “damsel” (4)."
+      }
+    },
+    {
+      "id": "kw-eight",
+      "name": "Eight",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-eight",
+        "cups-eight",
+        "swords-eight",
+        "batons-eight"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "eight",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “eight” (4)."
+      }
+    },
+    {
+      "id": "kw-five",
+      "name": "Five",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-five",
+        "cups-five",
+        "swords-five",
+        "batons-five"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "five",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “five” (4)."
+      }
+    },
+    {
+      "id": "kw-four",
+      "name": "Four",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-four",
+        "cups-four",
+        "swords-four",
+        "batons-four"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "four",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “four” (4)."
+      }
+    },
+    {
+      "id": "kw-nine",
+      "name": "Nine",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-nine",
+        "cups-nine",
+        "swords-nine",
+        "batons-nine"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "nine",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “nine” (4)."
+      }
+    },
+    {
+      "id": "kw-seven",
+      "name": "Seven",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-seven",
+        "cups-seven",
+        "swords-seven",
+        "batons-seven"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "seven",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “seven” (4)."
+      }
+    },
+    {
+      "id": "kw-six",
+      "name": "Six",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-six",
+        "cups-six",
+        "swords-six",
+        "batons-six"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "six",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “six” (4)."
+      }
+    },
+    {
+      "id": "kw-ten",
+      "name": "Ten",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-ten",
+        "cups-ten",
+        "swords-ten",
+        "batons-ten"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "ten",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “ten” (4)."
+      }
+    },
+    {
+      "id": "kw-two",
+      "name": "Two",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-two",
+        "cups-two",
+        "swords-two",
+        "batons-two"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "two",
+        "member_count": 4
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “two” (4)."
+      }
+    },
+    {
+      "id": "kw-horsewoman",
+      "name": "Horsewoman",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-horsewoman",
+        "swords-horsewoman",
+        "batons-horsewoman"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "horsewoman",
+        "member_count": 3
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “horsewoman” (3)."
+      }
+    },
+    {
+      "id": "kw-king",
+      "name": "King",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-king",
+        "cups-king",
+        "swords-king"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "king",
+        "member_count": 3
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “king” (3)."
+      }
+    },
+    {
+      "id": "kw-queen",
+      "name": "Queen",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "coins-queen",
+        "swords-queen",
+        "batons-queen"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "queen",
+        "member_count": 3
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “queen” (3)."
+      }
+    },
+    {
+      "id": "kw-theological-virtue",
+      "name": "Theological virtue",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "virtue-faith",
+        "virtue-hope",
+        "virtue-charity"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "theological virtue",
+        "member_count": 3
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “theological virtue” (3)."
+      }
+    },
+    {
+      "id": "kw-three",
+      "name": "Three",
+      "level": 2,
+      "category": "keyword-emergence",
+      "render_as": "pill",
+      "composite_of": [
+        "cups-three",
+        "swords-three",
+        "batons-three"
+      ],
+      "metadata": {
+        "emergence_kind": "keyword",
+        "keyword": "three",
+        "member_count": 3
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “three” (3)."
+      }
+    },
+    {
+      "id": "axis-keyword",
+      "name": "By Keyword",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "kw-pip",
+        "kw-court-card",
+        "kw-air",
+        "kw-bastoni",
+        "kw-batons",
+        "kw-coins",
+        "kw-coppe",
+        "kw-cups",
+        "kw-denari",
+        "kw-earth",
+        "kw-fire",
+        "kw-spade",
+        "kw-swords",
+        "kw-water",
+        "kw-cary-yale",
+        "kw-trump",
+        "kw-ace",
+        "kw-damsel",
+        "kw-eight",
+        "kw-five",
+        "kw-four",
+        "kw-nine",
+        "kw-seven",
+        "kw-six",
+        "kw-ten",
+        "kw-two",
+        "kw-horsewoman",
+        "kw-king",
+        "kw-queen",
+        "kw-theological-virtue",
+        "kw-three"
+      ],
+      "sections": {
+        "Description": "Cross-cutting facets derived from shared keywords — the same card appears under every keyword it carries."
+      }
     }
   ],
   "_community_folder": "tarot",

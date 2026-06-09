@@ -189,6 +189,10 @@ def build():
             print("  ! missing", slug); continue
         g = json.load(open(path, encoding="utf-8"))
         for ord_, it in enumerate(g.get("items", []), 1):
+            # Only aggregate real L1 cards. Skip emergence/axis nodes (anything with
+            # composite_of, e.g. suit/keyword pills) so they don't leak in as bogus cards.
+            if it.get("composite_of") or it.get("category") in ("axis", "keyword-emergence"):
+                continue
             m = it.get("metadata", {}) or {}
             name = it.get("name") or ""
             suit = suit_norm(m.get("suit"))
