@@ -5,7 +5,7 @@ import json, os, urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-def fp(name, w=1200):
+def fp(name, w=700):
     return "https://commons.wikimedia.org/wiki/Special:FilePath/" + urllib.parse.quote(name) + "?width=" + str(w)
 
 CARDS = [  # (Skokloster inventory no, filename)
@@ -65,6 +65,7 @@ items.append({
 card_ids.append("card-sheet-" + SHEET[0])
 items.append({"id": "skokloster-set", "name": "The Skokloster Surviving Set", "level": 3,
               "category": "axis", "render_as": "pill-group", "composite_of": card_ids,
+              "image_url": fp(CARDS[0][1]),
               "sections": {"What it is": "The twelve Ma Diao items that survive in Sweden at Skokloster Castle — a fragmentary but high-resolution, openly public-domain witness to a money-suited Chinese pack."}})
 
 grammar = {

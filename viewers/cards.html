@@ -276,15 +276,26 @@
         }
 
         .sidebar-expand-toggle {
-            font-size: 0.6rem;
-            width: 1rem;
-            text-align: center;
+            width: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             color: var(--grammar-text-muted);
-            transition: transform 0.2s;
+            flex-shrink: 0;
         }
-
-        .sidebar-expand-toggle.expanded {
-            color: var(--grammar-accent);
+        .sidebar-expand-toggle.expanded { color: var(--grammar-accent); }
+        .sidebar-chev { transition: transform 0.18s ease; }
+        /* small representative thumbnail next to each sidebar dimension/emergence */
+        .sidebar-thumb {
+            width: 16px;
+            height: 23px;
+            object-fit: cover;
+            border-radius: 3px;
+            margin: 0 5px 0 1px;
+            flex-shrink: 0;
+            opacity: 0.92;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: #0a0810;
         }
 
         .sidebar-l2-list {
@@ -3198,11 +3209,15 @@
             header.dataset.level = `l${level}`;
             header.dataset.id = item.id;
 
+            const _imgUrl = item.image_url || (item.metadata || {}).image_url;
+            const _chevron = children.length > 0
+                ? `<svg class="sidebar-chev" width="9" height="9" viewBox="0 0 10 10" style="transform:rotate(${isExpanded ? 90 : 0}deg)"><path d="M3 1.5 L7 5 L3 8.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+                : '';
             header.innerHTML = `
-                <span class="sidebar-expand-toggle ${isExpanded ? 'expanded' : ''}">${children.length > 0 ? (isExpanded ? '▼' : '▶') : ''}</span>
+                <span class="sidebar-expand-toggle ${isExpanded ? 'expanded' : ''}">${_chevron}</span>
+                ${_imgUrl ? `<img class="sidebar-thumb" src="${escapeHtml(_imgUrl)}" alt="" loading="lazy" onerror="this.remove()">` : ''}
                 <span class="sidebar-item-name" title="${escapeHtml(item.name)}">${escapeHtml(item.name)}</span>
                 ${leafCount > 0 ? `<span class="sidebar-item-count">${leafCount}</span>` : ''}
-                ${item.category === 'axis' ? `<span class="sidebar-lens-toggle" title="Render this axis as…" style="margin-left:6px;cursor:pointer;opacity:.65;font-size:11px;">▾</span>` : ''}
             `;
 
             header.addEventListener('click', () => {
@@ -3219,11 +3234,8 @@
                 buildHierarchySidebar();
             });
 
-            // In-session "render as ▾" — flip how this axis renders, live, no rebuild.
-            const lensToggle = header.querySelector('.sidebar-lens-toggle');
-            if (lensToggle) {
-                lensToggle.addEventListener('click', (e) => { e.stopPropagation(); showLensMenu(item, lensToggle); });
-            }
+            // (The old "render as ▾" menu was removed — the sidebar dimension now
+            // simply collapses/expands on click and filters the grid, in place.)
 
             container.appendChild(header);
 
