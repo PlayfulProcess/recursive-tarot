@@ -78,15 +78,26 @@ No backend. Lights up product-by-product.
   Tarot, Fábrica do Baralho, Atual Card, Copag custom) — serves BR buyers
   domestically (import tax avoidance), not a US export base.
 
-## Status checklist
-- [x] 8 decks audited print-ready, files built at 900×1500 cream-border
-- [x] Sampler deck built (15/21; 6 backs pending a Commons rate-limit retry)
-- [x] TGC API probed live + upload script ready
-- [ ] TGC API key created (builder: Account → Apps)
-- [ ] API test: script fills a fresh Golden Dawn deck
-- [ ] SAMPLER proof ordered (builder, 1 copy)
+## Status checklist (updated June 10 2026, afternoon)
+- [x] 8 decks audited print-ready, files built at 900×1500 cream-border (559 cards)
+- [x] Sampler deck built (19 cards: 8 ready + 6 webres-test + 5 backs)
+- [x] TGC API key created (app renamed to "recursive-tarot-print" via API)
+- [x] **API FLOW PROVEN**: session → game creation → tarot-deck creation → back
+      upload → 78/78 + 19/19 card uploads, zero manual dragging. Products built:
+      "Golden Dawn Tarot (API)" (deck 27B3B844…) and "Recursive Tarot — Print
+      Sampler" (game 1C2D3BF2…, deck 370F9906…).
+- [x] Shop page live (pages/shop.html + header Shop tab) — 8 products, quality
+      badges, booklet links, coming-soon buttons until proofs pass
+- [x] Booklets v1: "Games of the Tarot" + "Etteilla intro" written
+      (booklets/*.mdx, linked from shop); Golden Dawn uses per-card Booklet layout
+- [x] Chinese money-cards image hunt: **Skokloster Castle (Sweden) has 12 digitized
+      Ma Diao cards on Commons** + Water Margin money-card images — grammar is
+      feasible; build next session
+- [ ] Builder: proof BOTH products in TGC (visual proof-all) then ORDER 1 copy each
 - [ ] Proof inspected → decide: scans as-is vs restoration pass
-- [ ] Shop page built
-- [ ] Booklets: Golden Dawn, Games overview, Etteilla intro
-- [ ] Chinese money-cards grammar (image hunt first)
-- [ ] Vendor report → final architecture (worker) → build (2 sessions)
+- [ ] Remaining 6 deck products via API (one command each) after proof passes
+- [ ] Golden Dawn Book T booklet (per-card, from grammar sections)
+- [ ] Vendor report (deep research resumed after overnight stall) → final
+      architecture (Cloudflare worker) → build (2 sessions)
+- [ ] Builder: delete TGC_PASSWORD line from env-local.txt after testing; consider
+      rotating the password
