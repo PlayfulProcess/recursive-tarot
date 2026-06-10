@@ -17,6 +17,12 @@
   .explore a:hover{border-color:var(--gold,#d4af37)}
   .explore a .t{font-weight:700;font-size:15px}
   .explore a .d{font-size:12.5px;color:#9b94b3;margin-top:3px}
+  .starthere{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:20px 0 8px}
+  .starthere a.big{display:flex;flex-direction:column;gap:4px;padding:18px 16px;background:linear-gradient(160deg,#1d1830,#161227);border:1px solid #3a3450;border-radius:14px;text-decoration:none;color:#ece8f5;transition:border-color .15s,transform .15s}
+  .starthere a.big:hover{border-color:var(--gold,#d4af37);transform:translateY(-2px)}
+  .starthere a.big .ico{font-size:26px}
+  .starthere a.big b{font-size:17px;color:#f0e7c8}
+  .starthere a.big span:last-child{font-size:12.5px;color:#9b94b3;line-height:1.45}
   ul.mis li{margin:.4em 0;line-height:1.55;color:#d8d2ea}
   ul.mis li b{color:#ece8f5}
   .links a{color:#b794f6}
@@ -34,18 +40,24 @@
 </div></header>
 
 <main class="wrap">
-  <p class="lede">A <strong>public-domain</strong>, scholarship-grounded genealogy of the tarot — from the
+  <p class="lede">A free, <strong>public-domain</strong> collection of historical tarot decks — from the
   1440s Milanese card <em>game</em>, through the printed Tarot de Marseille, to the 1781 occult reframing
-  that invented divination. Every deck is framed in <strong>its own tradition</strong>, every image is public
-  domain with attribution, and the whole thing is just files in a public repo you can read, correct, and play.</p>
+  that invented divination. Every deck is shown in <strong>its own tradition</strong> (games are called games),
+  every image is public domain, and it's all open files you can read, correct, and print.</p>
 
+  <div class="starthere">
+    <a class="big" href="viewers/cards.html"><span class="ico">🃏</span><b>Browse the decks</b><span>Flip through ~21 historical decks, card by card</span></a>
+    <a class="big" href="viewers/caster.html"><span class="ico">🔮</span><b>Pull a reading</b><span>Draw a spread from any deck — read it yourself or with AI</span></a>
+    <a class="big" href="pages/shop.html"><span class="ico">🛒</span><b>Print a deck</b><span>Order a real printed copy, or just browse the editions</span></a>
+  </div>
+
+  <p class="small muted" style="margin:8px 0 0">More ways in:</p>
   <div class="explore">
-    <a href="viewers/cards.html"><div class="t">🃏 Cards</div><div class="d">Browse every deck &amp; the meta; switch decks from the dropdown</div></a>
     <a href="viewers/timeline.html"><div class="t">↧ Timeline</div><div class="d">Decks across the centuries, by lineage</div></a>
-    <a href="genealogy.html"><div class="t">⸬ Genealogy</div><div class="d">The descent graph of the patterns</div></a>
+    <a href="genealogy.html"><div class="t">⸬ Genealogy</div><div class="d">The family tree — which deck came from which</div></a>
     <a href="viewers/genealogy-tree.html"><div class="t">✦ Tree of Life</div><div class="d">Radial root → branch → deck</div></a>
-    <a href="viewers/caster.html"><div class="t">🔮 Caster</div><div class="d">Draw a spread; export to read with AI</div></a>
-    <a href="pages/course-viewer.html"><div class="t">📓 Course</div><div class="d">Build a deck yourself with Claude Code</div></a>
+    <a href="pages/course-viewer.html"><div class="t">📓 Course</div><div class="d">Build your own deck with Claude Code</div></a>
+    <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener"><div class="t">⌥ The repo</div><div class="d">Every deck is an open JSON file ("grammar") — fork it</div></a>
   </div>
 
   <section class="block">
