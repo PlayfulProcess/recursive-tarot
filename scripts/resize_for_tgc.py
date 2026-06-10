@@ -35,13 +35,27 @@ def main():
             left, top = (nw - tw) // 2, (nh - th) // 2
             canvas = im.crop((left, top, left + tw, top + th))
         else:
-            # BORDER (default): the WHOLE original card sits inside the safe zone on a
-            # white canvas — the printer's trim only ever cuts blank white, never art.
+            # BORDER (default): the WHOLE original card sits inside the safe zone,
+            # and the canvas is filled with the CARD'S OWN sampled border colour
+            # (not white) so the added margin blends into the vintage frame with
+            # no contrast line. A small inset crop first removes scanner edge junk.
+            inset = max(2, round(min(w, h) * 0.012))           # ~1.2% edge shave
+            im = im.crop((inset, inset, w - inset, h - inset))
+            w, h = im.size
+            # sample the border colour: median of a thin ring just inside the edge
+            ring = max(2, round(min(w, h) * 0.02))
+            px = []
+            for x in range(0, w, 7):
+                px += [im.getpixel((x, ring)), im.getpixel((x, h - 1 - ring))]
+            for y in range(0, h, 7):
+                px += [im.getpixel((ring, y)), im.getpixel((w - 1 - ring, y))]
+            px.sort(key=lambda c: c[0] + c[1] + c[2])
+            border_col = px[len(px) // 2]                      # median tone of the frame
             sw, sh = SAFE
             scale = min(sw / w, sh / h)
             nw, nh = round(w * scale), round(h * scale)
             im = im.resize((nw, nh), Image.LANCZOS)
-            canvas = Image.new("RGB", (tw, th), (255, 255, 255))
+            canvas = Image.new("RGB", (tw, th), border_col)
             canvas.paste(im, ((tw - nw) // 2, (th - nh) // 2))
         base = os.path.splitext(os.path.basename(f))[0]
         canvas.save(os.path.join(out, base + ".jpg"), "JPEG", quality=92)
