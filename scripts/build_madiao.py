@@ -5,8 +5,13 @@ import json, os, urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-def fp(name, w=700):
-    return "https://commons.wikimedia.org/wiki/Special:FilePath/" + urllib.parse.quote(name) + "?width=" + str(w)
+def fp(name, w=1000):
+    # Route through the images.weserv.nl proxy: it fetches the heavy 22-megapixel
+    # Skokloster TIF from Commons ONCE, caches it on its own CDN, and serves a fast
+    # JPEG. Hotlinking Commons directly fails here — its on-demand thumbnailer
+    # rate-limits the grid's concurrent requests, so the cards render blank.
+    commons = "commons.wikimedia.org/wiki/Special:FilePath/" + urllib.parse.quote(name)
+    return "https://images.weserv.nl/?url=" + urllib.parse.quote(commons, safe="") + f"&w={w}&output=jpg"
 
 CARDS = [  # (Skokloster inventory no, filename)
     ("102351", "Kinesiskt spelkort till Ma Diao - Skoklosters slott - 102351.tif"),
