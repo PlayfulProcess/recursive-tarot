@@ -73,13 +73,15 @@ For EACH remaining planned deck, in priority order:
 Priority: Brera-Brambilla (done) → d'Este → Soprafino → Lombardy → Siciliano →
 Piemontese (PD-only) → Belgian → resolve Marseille-Type-I node.
 
-### O1b. Ancestors line — Ma Diao (Chinese money cards) — NEW, not in tree yet
-Skokloster Castle (Sweden) has 12 Ma Diao cards on Commons (search
-`Skoklosters Ma Diao`; `Special:FilePath/<name>?width=1200` for JPEG). Build
-`tarot/madiao-money-cards/grammar.json` in the ancestors framing (money-suited
-system; Ming game context; China→Islam→Europe per
-`research/00c-islamic-and-chinese-card-origins.mdx`); add node next to Mamluk in
-the tree. Educational deck — print-res not required.
+### O1b. Ancestors line — Ma Diao (Chinese money cards) — ✅ DONE
+Built `tarot/madiao-money-cards/grammar.json` (18 items, 12 PD Skokloster scans),
+house-style "deep root, not a parent" framing, added to `_collection` (branch:
+ancestors), live. `scripts/build_madiao.py`. NOTE: the tree-of-tarot has NO
+ancestors layer (mamluk/ganjifa aren't tree nodes either), so Ma Diao was added as
+a discoverable DECK but intentionally not a trump-genealogy node. FOLLOW-UP idea
+(Opus): add an "ancestors" cluster to the tree (Ma Diao + Mamluk + Ganjifa as deep
+roots) AND add the 6 built-but-uncollected ancestors (mamluk, ganjifa, sola-busca,
+noblet, cary-sheet, rosenwald) to `_collection` so they're discoverable too.
 
 ### O2. Historical-claims audit + fixes (integrity pass)
 The audit agent died on the token limit. Redo it directly (no subagent). Audit
@@ -95,11 +97,10 @@ every `tarot/*/grammar.json` name/description/sections + `index.html`:
 Write `research/AUDIT-historical-claims.md` (table: deck | quoted claim | problem |
 rewording | severity), then APPLY fix-now + hedge edits, regen meta, commit, push.
 
-### O3. Homepage clarity pass
-`index.html`: a newcomer should grasp in 10s what they can DO. Add a "Start here"
-strip (Browse cards / Get a reading / Print a deck → shop), add the missing 🛒 Shop
-card to the explore grid, gloss "grammar" in one clause, keep history +
-misconceptions. Dark style. Verify live in browser.
+### O3. Homepage clarity pass — ✅ DONE
+`index.html` now leads with a "Start here" 3-action strip (Browse the decks / Pull
+a reading / Print a deck → shop), Shop is linked, "grammar" is glossed in the repo
+card, lede is plainer. History + misconceptions kept.
 
 ### O4. Vendor synthesis (business judgment)
 The deep-research run's "all refuted" output is a TOKEN-LIMIT ARTIFACT (verifiers
