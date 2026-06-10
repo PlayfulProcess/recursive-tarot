@@ -26,13 +26,12 @@
     {
       "id": "major-00-il-matto",
       "name": "0 — The Fool test",
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-00-fool.jpg",
-      "sections": {
-        "History": "Unnumbered and unnamed in the original game — the wild card that stands outside the sequence of triumphs. It survives in the Morgan Library portion of the deck.",
-        "Reading": "The zero before counting begins: the holy fool, innocence and folly walking together at the edge of the procession.",
-        "Iconography": "A ragged man in a tattered tunic, bare-legged, seven feathers standing in his hair and a club over his shoulder. He is the village madman, the social outcast painted with the same gold leaf as kings.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay, not part of the deck's original use."
+      "level": 1,
+      "origin": {
+        "type": "human",
+        "timestamp": "2026-06-08T15:06:34.394Z"
       },
+      "category": "major-arcana",
       "keywords": [
         "fool",
         "trionfi",
@@ -40,11 +39,11 @@
         "il matto",
         "arcana:the-fool"
       ],
-      "level": 1,
-      "category": "major-arcana",
-      "sort_order": 0,
-      "grammar_type": "custom",
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 0,
@@ -63,16 +62,17 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
-      "origin": {
-        "type": "human",
-        "timestamp": "2026-06-08T15:06:34.394Z"
-      }
+      "sections": {
+        "History": "Unnumbered and unnamed in the original game — the wild card that stands outside the sequence of triumphs. It survives in the Morgan Library portion of the deck.",
+        "Reading": "The zero before counting begins: the holy fool, innocence and folly walking together at the edge of the procession.",
+        "Iconography": "A ragged man in a tattered tunic, bare-legged, seven feathers standing in his hair and a club over his shoulder. He is the village madman, the social outcast painted with the same gold leaf as kings.",
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay, not part of the deck's original use."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-00-fool.jpg",
+      "sort_order": 0,
+      "grammar_type": "custom"
     },
     {
       "id": "major-01-il-bagatto",
@@ -87,6 +87,10 @@
         "arcana:the-magician"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 1,
@@ -105,11 +109,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "\"Bagatella\" means a trifle; he is the lowest of the triumphs, the everyman who opens the parade. The earliest, most worldly figure of the trumps.",
@@ -133,6 +133,10 @@
         "arcana:the-high-priestess"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 2,
@@ -151,11 +155,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "The most scandalous card in the deck: she is almost certainly Sister Maifreda da Pirovano, a Visconti kinswoman elected 'popess' by the heretical Guglielmite sect and burned at the stake in 1300. A buried family memory rendered in gold.",
@@ -179,6 +179,10 @@
         "arcana:the-empress"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 3,
@@ -197,11 +201,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "Worldly feminine sovereignty wedded to the dynasty's heraldry — the Empress is the house made flesh.",
@@ -225,6 +225,10 @@
         "arcana:the-emperor"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 4,
@@ -243,11 +247,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "Temporal masculine power — a portrait of dynastic legitimacy in an age when the Visconti and Sforza were buying and marrying their way toward a crown.",
@@ -271,6 +271,10 @@
         "arcana:the-hierophant"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 5,
@@ -289,11 +293,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "Spiritual authority answering the temporal Emperor — the sanctioned hierophant of the established Church.",
@@ -317,6 +317,10 @@
         "arcana:the-lovers"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 6,
@@ -335,11 +339,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "Likely a Visconti-Sforza marriage portrait — possibly Francesco Sforza and Bianca Maria Visconti, whose union produced the deck's patrons. Here love is dynastic alliance.",
@@ -363,6 +363,10 @@
         "arcana:the-chariot"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 7,
@@ -381,11 +385,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "The card that names the whole game: a Roman-style 'trionfo', the victory parade from which 'trumps' descend.",
@@ -409,6 +409,10 @@
         "arcana:justice"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 8,
@@ -427,11 +431,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "In this pre-occult ordering Justice sits at VIII (the Golden Dawn would later swap it with Strength). The mounted knight is a Visconti flourish.",
@@ -455,6 +455,10 @@
         "arcana:the-hermit"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 9,
@@ -473,11 +477,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "Originally 'Il Tempo' — Time, or the Old Man — not yet the lamp-bearing Hermit of later decks. The hourglass marks his true subject.",
@@ -501,6 +501,10 @@
         "arcana:wheel-of-fortune"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 10,
@@ -519,11 +523,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A medieval commonplace given Bembo's gold — 'regnabo, regno, regnavi, sum sine regno' (I shall reign, I reign, I have reigned, I am without reign).",
@@ -547,6 +547,10 @@
         "arcana:strength"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 11,
@@ -565,11 +569,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "One of the six cards repainted by a later hand (c.1480s–90s, often attributed to Antonio Cicognara) after the Bembo original was lost. The style is visibly different from the first artist's.",
@@ -593,6 +593,10 @@
         "arcana:the-hanged-man"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 12,
@@ -611,11 +615,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A 'pittura infamante' — the shaming portrait Italian cities painted of traitors and debtors, hung by the foot. Only later did occultists read it as sacrifice.",
@@ -639,6 +639,10 @@
         "arcana:death"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 13,
@@ -657,11 +661,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "Unnamed and unnumbered in the original deck — the card too plain to need a label. The great equaliser of the danse macabre.",
@@ -685,6 +685,10 @@
         "arcana:temperance"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 14,
@@ -703,11 +707,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "Another of the six later-hand restorations. Temperance's gesture — mixing without spilling — is among the oldest stable tarot images.",
@@ -791,6 +791,10 @@
         "arcana:the-star"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 17,
@@ -809,11 +813,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "One of the six later restorations. The Visconti Star is a simple votive figure, far from the kneeling water-pourer of the Marseille and Waite decks.",
@@ -837,6 +837,10 @@
         "arcana:the-moon"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 18,
@@ -855,11 +859,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "Later-hand restoration. The eerie dogs-and-crayfish landscape of later Moon cards is a much later invention; here the Moon is simply held, like an attribute.",
@@ -883,6 +883,10 @@
         "arcana:the-sun"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 19,
@@ -901,11 +905,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "Among the six repainted cards. The cherub bearing the sun is one of Bembo's most charming surviving compositions in the restored hand.",
@@ -929,6 +929,10 @@
         "arcana:judgement"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 20,
@@ -947,11 +951,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "Later-hand restoration. A straightforward Last Judgement, the most explicitly Christian of the trumps.",
@@ -975,6 +975,10 @@
         "arcana:the-world"
       ],
       "metadata": {
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "major",
         "museum": "Pierpont Morgan Library, New York / Accademia Carrara, Bergamo",
         "number": 21,
@@ -993,11 +997,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "The last and highest triumph, and the final card of the six restorations — the triumph that overcomes all other triumphs.",
@@ -1026,6 +1026,10 @@
       "metadata": {
         "rank": "Ace",
         "suit": "Coins",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Earth",
@@ -1042,11 +1046,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Coins (Denari), the suit of Earth. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1075,6 +1075,10 @@
       "metadata": {
         "rank": "Two",
         "suit": "Coins",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Earth",
@@ -1091,11 +1095,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Coins (Denari), the suit of Earth. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1124,6 +1124,10 @@
       "metadata": {
         "rank": "Three",
         "suit": "Coins",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Earth",
@@ -1140,11 +1144,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Coins (Denari), the suit of Earth. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1173,6 +1173,10 @@
       "metadata": {
         "rank": "Four",
         "suit": "Coins",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Earth",
@@ -1189,11 +1193,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Coins (Denari), the suit of Earth. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1222,6 +1222,10 @@
       "metadata": {
         "rank": "Five",
         "suit": "Coins",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Earth",
@@ -1238,11 +1242,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Coins (Denari), the suit of Earth. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1271,6 +1271,10 @@
       "metadata": {
         "rank": "Six",
         "suit": "Coins",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Earth",
@@ -1287,11 +1291,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Coins (Denari), the suit of Earth. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1320,6 +1320,10 @@
       "metadata": {
         "rank": "Seven",
         "suit": "Coins",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Earth",
@@ -1336,11 +1340,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Coins (Denari), the suit of Earth. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1369,6 +1369,10 @@
       "metadata": {
         "rank": "Eight",
         "suit": "Coins",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Earth",
@@ -1385,11 +1389,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Coins (Denari), the suit of Earth. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1418,6 +1418,10 @@
       "metadata": {
         "rank": "Nine",
         "suit": "Coins",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Earth",
@@ -1434,11 +1438,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Coins (Denari), the suit of Earth. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1467,6 +1467,10 @@
       "metadata": {
         "rank": "Ten",
         "suit": "Coins",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Earth",
@@ -1483,11 +1487,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Coins (Denari), the suit of Earth. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1517,6 +1517,10 @@
         "rank": "Page",
         "suit": "Coins",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Earth",
@@ -1533,11 +1537,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Coins (Denari). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -1567,6 +1567,10 @@
         "rank": "Knight",
         "suit": "Coins",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "lost",
         "element": "Earth",
@@ -1584,11 +1588,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "The Knight of Coins is one of the four cards lost from the Morgan-Bergamo deck — no Morgan-Bergamo example survives. The image shown here is the Knight of Coins from the Cary-Yale sister deck (c. 1442, same Bembo workshop), where it does survive, standing in for the lost original.",
@@ -1618,6 +1618,10 @@
         "rank": "Queen",
         "suit": "Coins",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Earth",
@@ -1634,11 +1638,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Coins (Denari). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -1668,6 +1668,10 @@
         "rank": "King",
         "suit": "Coins",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Earth",
@@ -1684,11 +1688,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Coins (Denari). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -1717,6 +1717,10 @@
       "metadata": {
         "rank": "Ace",
         "suit": "Cups",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -1733,11 +1737,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Cups (Coppe), the suit of Water. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1766,6 +1766,10 @@
       "metadata": {
         "rank": "Two",
         "suit": "Cups",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -1782,11 +1786,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Cups (Coppe), the suit of Water. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1815,6 +1815,10 @@
       "metadata": {
         "rank": "Three",
         "suit": "Cups",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -1831,11 +1835,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Cups (Coppe), the suit of Water. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1864,6 +1864,10 @@
       "metadata": {
         "rank": "Four",
         "suit": "Cups",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -1880,11 +1884,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Cups (Coppe), the suit of Water. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1913,6 +1913,10 @@
       "metadata": {
         "rank": "Five",
         "suit": "Cups",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -1929,11 +1933,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Cups (Coppe), the suit of Water. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -1962,6 +1962,10 @@
       "metadata": {
         "rank": "Six",
         "suit": "Cups",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -1978,11 +1982,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Cups (Coppe), the suit of Water. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2011,6 +2011,10 @@
       "metadata": {
         "rank": "Seven",
         "suit": "Cups",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -2027,11 +2031,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Cups (Coppe), the suit of Water. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2060,6 +2060,10 @@
       "metadata": {
         "rank": "Eight",
         "suit": "Cups",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -2076,11 +2080,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Cups (Coppe), the suit of Water. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2109,6 +2109,10 @@
       "metadata": {
         "rank": "Nine",
         "suit": "Cups",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -2125,11 +2129,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Cups (Coppe), the suit of Water. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2158,6 +2158,10 @@
       "metadata": {
         "rank": "Ten",
         "suit": "Cups",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -2174,11 +2178,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Cups (Coppe), the suit of Water. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2208,6 +2208,10 @@
         "rank": "Page",
         "suit": "Cups",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -2224,11 +2228,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Cups (Coppe). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -2258,6 +2258,10 @@
         "rank": "Knight",
         "suit": "Cups",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -2274,11 +2278,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Cups (Coppe). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -2308,6 +2308,10 @@
         "rank": "Queen",
         "suit": "Cups",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -2324,11 +2328,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Cups (Coppe). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -2358,6 +2358,10 @@
         "rank": "King",
         "suit": "Cups",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Water",
@@ -2375,11 +2379,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Cups (Coppe). The Morgan-Bergamo King of Cups survives but has not been digitized on Wikimedia Commons, so the image shown here is the King of Cups from the Cary-Yale (Visconti di Modrone) deck — the same Bembo workshop, about a decade earlier. In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King; the Cary-Yale deck unusually doubled these with female knights and damsels.",
@@ -2408,6 +2408,10 @@
       "metadata": {
         "rank": "Ace",
         "suit": "Swords",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Air",
@@ -2424,11 +2428,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Swords (Spade), the suit of Air. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2457,6 +2457,10 @@
       "metadata": {
         "rank": "Two",
         "suit": "Swords",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Air",
@@ -2473,11 +2477,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Swords (Spade), the suit of Air. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2506,6 +2506,10 @@
       "metadata": {
         "rank": "Three",
         "suit": "Swords",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "lost",
         "element": "Air",
@@ -2523,11 +2527,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "The Three of Swords is one of the four cards lost from the Morgan-Bergamo deck. The image shown here is the Three of Swords (Spade) from the Cary-Yale sister deck (c. 1442, same Bembo workshop), where it survives, standing in for the lost original.",
@@ -2556,6 +2556,10 @@
       "metadata": {
         "rank": "Four",
         "suit": "Swords",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Air",
@@ -2572,11 +2576,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Swords (Spade), the suit of Air. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2605,6 +2605,10 @@
       "metadata": {
         "rank": "Five",
         "suit": "Swords",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Air",
@@ -2621,11 +2625,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Swords (Spade), the suit of Air. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2654,6 +2654,10 @@
       "metadata": {
         "rank": "Six",
         "suit": "Swords",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Air",
@@ -2670,11 +2674,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Swords (Spade), the suit of Air. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2703,6 +2703,10 @@
       "metadata": {
         "rank": "Seven",
         "suit": "Swords",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Air",
@@ -2719,11 +2723,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Swords (Spade), the suit of Air. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2752,6 +2752,10 @@
       "metadata": {
         "rank": "Eight",
         "suit": "Swords",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Air",
@@ -2768,11 +2772,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Swords (Spade), the suit of Air. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2801,6 +2801,10 @@
       "metadata": {
         "rank": "Nine",
         "suit": "Swords",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Air",
@@ -2817,11 +2821,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Swords (Spade), the suit of Air. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2850,6 +2850,10 @@
       "metadata": {
         "rank": "Ten",
         "suit": "Swords",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Air",
@@ -2866,11 +2870,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Swords (Spade), the suit of Air. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -2900,6 +2900,10 @@
         "rank": "Page",
         "suit": "Swords",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Air",
@@ -2916,11 +2920,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Swords (Spade). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -2950,6 +2950,10 @@
         "rank": "Knight",
         "suit": "Swords",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Air",
@@ -2966,11 +2970,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Swords (Spade). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -3000,6 +3000,10 @@
         "rank": "Queen",
         "suit": "Swords",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Air",
@@ -3016,11 +3020,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Swords (Spade). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -3050,6 +3050,10 @@
         "rank": "King",
         "suit": "Swords",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Air",
@@ -3066,11 +3070,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Swords (Spade). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -3099,6 +3099,10 @@
       "metadata": {
         "rank": "Ace",
         "suit": "Batons",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3115,11 +3119,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Batons (Bastoni), the suit of Fire. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -3148,6 +3148,10 @@
       "metadata": {
         "rank": "Two",
         "suit": "Batons",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3164,11 +3168,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Batons (Bastoni), the suit of Fire. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -3197,6 +3197,10 @@
       "metadata": {
         "rank": "Three",
         "suit": "Batons",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3213,11 +3217,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Batons (Bastoni), the suit of Fire. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -3246,6 +3246,10 @@
       "metadata": {
         "rank": "Four",
         "suit": "Batons",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3262,11 +3266,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Batons (Bastoni), the suit of Fire. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -3295,6 +3295,10 @@
       "metadata": {
         "rank": "Five",
         "suit": "Batons",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3311,11 +3315,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Batons (Bastoni), the suit of Fire. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -3344,6 +3344,10 @@
       "metadata": {
         "rank": "Six",
         "suit": "Batons",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3360,11 +3364,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Batons (Bastoni), the suit of Fire. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -3393,6 +3393,10 @@
       "metadata": {
         "rank": "Seven",
         "suit": "Batons",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3409,11 +3413,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Batons (Bastoni), the suit of Fire. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -3442,6 +3442,10 @@
       "metadata": {
         "rank": "Eight",
         "suit": "Batons",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3458,11 +3462,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Batons (Bastoni), the suit of Fire. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -3491,6 +3491,10 @@
       "metadata": {
         "rank": "Nine",
         "suit": "Batons",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3507,11 +3511,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Batons (Bastoni), the suit of Fire. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -3540,6 +3540,10 @@
       "metadata": {
         "rank": "Ten",
         "suit": "Batons",
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3556,11 +3560,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A pip card of Batons (Bastoni), the suit of Fire. Painted in the Bembo workshop for the dukes of Milan, it was a playing card for the game of trionfi — divinatory meanings were attached only centuries later.",
@@ -3590,6 +3590,10 @@
         "rank": "Page",
         "suit": "Batons",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3606,11 +3610,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Batons (Bastoni). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -3640,6 +3640,10 @@
         "rank": "Knight",
         "suit": "Batons",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3656,11 +3660,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Batons (Bastoni). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -3690,6 +3690,10 @@
         "rank": "Queen",
         "suit": "Batons",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3706,11 +3710,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Batons (Bastoni). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -3740,6 +3740,10 @@
         "rank": "King",
         "suit": "Batons",
         "court": true,
+        "print": {
+          "bleed": false,
+          "dpi_ready": false
+        },
         "arcana": "minor",
         "status": "surviving",
         "element": "Fire",
@@ -3756,11 +3760,7 @@
             "artist_dates": "active c. 1444–1482"
           }
         ],
-        "mapping_confidence": "exact",
-        "print": {
-          "dpi_ready": false,
-          "bleed": false
-        }
+        "mapping_confidence": "exact"
       },
       "sections": {
         "History": "A court card of Batons (Bastoni). In the four-court Morgan-Bergamo deck the ranks run Page, Knight, Queen, King — the Cary-Yale sister deck unusually doubled these with female knights and damsels.",
@@ -3970,6 +3970,15 @@
       "name": "Minor arcana",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "minor arcana",
+        "member_count": 40,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “minor arcana” (40)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-ace",
@@ -4012,22 +4021,22 @@
         "batons-08",
         "batons-09",
         "batons-10"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "minor arcana",
-        "member_count": 40
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “minor arcana” (40)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-major-arcana",
       "name": "Major arcana",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "major arcana",
+        "member_count": 22,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “major arcana” (22)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-00-fool.jpg",
       "render_as": "pill",
       "composite_of": [
         "major-00-il-matto",
@@ -4052,22 +4061,22 @@
         "major-19-il-sole",
         "major-20-il-giudizio",
         "major-21-il-mondo"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "major arcana",
-        "member_count": 22
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “major arcana” (22)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-00-fool.jpg"
+      ]
     },
     {
       "id": "kw-trionfi",
       "name": "Trionfi",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "trionfi",
+        "member_count": 22,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “trionfi” (22)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-00-fool.jpg",
       "render_as": "pill",
       "composite_of": [
         "major-00-il-matto",
@@ -4092,22 +4101,22 @@
         "major-19-il-sole",
         "major-20-il-giudizio",
         "major-21-il-mondo"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "trionfi",
-        "member_count": 22
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “trionfi” (22)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-00-fool.jpg"
+      ]
     },
     {
       "id": "kw-court-card",
       "name": "Court card",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "court card",
+        "member_count": 16,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “court card” (16)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-11-knave.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-page",
@@ -4126,22 +4135,22 @@
         "batons-knight",
         "batons-queen",
         "batons-king"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "court card",
-        "member_count": 16
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “court card” (16)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-11-knave.jpg"
+      ]
     },
     {
       "id": "kw-air",
       "name": "Air",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "air",
+        "member_count": 14,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “air” (14)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-swords-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "swords-ace",
@@ -4158,22 +4167,22 @@
         "swords-knight",
         "swords-queen",
         "swords-king"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "air",
-        "member_count": 14
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “air” (14)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-swords-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-batons",
       "name": "Batons",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "batons",
+        "member_count": 14,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “batons” (14)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-staves-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "batons-ace",
@@ -4190,22 +4199,22 @@
         "batons-knight",
         "batons-queen",
         "batons-king"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "batons",
-        "member_count": 14
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “batons” (14)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-staves-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-coins",
       "name": "Coins",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "coins",
+        "member_count": 14,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “coins” (14)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-ace",
@@ -4222,22 +4231,22 @@
         "coins-knight",
         "coins-queen",
         "coins-king"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "coins",
-        "member_count": 14
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “coins” (14)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-cups",
       "name": "Cups",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "cups",
+        "member_count": 14,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “cups” (14)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-cups-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "cups-ace",
@@ -4254,22 +4263,22 @@
         "cups-knight",
         "cups-queen",
         "cups-king"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "cups",
-        "member_count": 14
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “cups” (14)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-cups-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-earth",
       "name": "Earth",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "earth",
+        "member_count": 14,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “earth” (14)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-ace",
@@ -4286,22 +4295,22 @@
         "coins-knight",
         "coins-queen",
         "coins-king"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "earth",
-        "member_count": 14
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “earth” (14)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-fire",
       "name": "Fire",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "fire",
+        "member_count": 14,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “fire” (14)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-staves-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "batons-ace",
@@ -4318,22 +4327,22 @@
         "batons-knight",
         "batons-queen",
         "batons-king"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "fire",
-        "member_count": 14
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “fire” (14)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-staves-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-swords",
       "name": "Swords",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "swords",
+        "member_count": 14,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “swords” (14)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-swords-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "swords-ace",
@@ -4350,22 +4359,22 @@
         "swords-knight",
         "swords-queen",
         "swords-king"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "swords",
-        "member_count": 14
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “swords” (14)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-swords-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-water",
       "name": "Water",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "water",
+        "member_count": 14,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “water” (14)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-cups-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "cups-ace",
@@ -4382,22 +4391,22 @@
         "cups-knight",
         "cups-queen",
         "cups-king"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "water",
-        "member_count": 14
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “water” (14)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-cups-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-bastoni",
       "name": "Bastoni",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "bastoni",
+        "member_count": 10,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “bastoni” (10)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-staves-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "batons-ace",
@@ -4410,22 +4419,22 @@
         "batons-08",
         "batons-09",
         "batons-10"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "bastoni",
-        "member_count": 10
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “bastoni” (10)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-staves-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-coppe",
       "name": "Coppe",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "coppe",
+        "member_count": 10,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “coppe” (10)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-cups-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "cups-ace",
@@ -4438,22 +4447,22 @@
         "cups-08",
         "cups-09",
         "cups-10"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "coppe",
-        "member_count": 10
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “coppe” (10)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-cups-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-denari",
       "name": "Denari",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "denari",
+        "member_count": 10,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “denari” (10)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-ace",
@@ -4466,22 +4475,22 @@
         "coins-08",
         "coins-09",
         "coins-10"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "denari",
-        "member_count": 10
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “denari” (10)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-spade",
       "name": "Spade",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "spade",
+        "member_count": 10,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “spade” (10)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-swords-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "swords-ace",
@@ -4494,418 +4503,413 @@
         "swords-08",
         "swords-09",
         "swords-10"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "spade",
-        "member_count": 10
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “spade” (10)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-swords-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-ace",
       "name": "Ace",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "ace",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “ace” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-01-ace.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-ace",
         "cups-ace",
         "swords-ace",
         "batons-ace"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "ace",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “ace” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-01-ace.jpg"
+      ]
     },
     {
       "id": "kw-cavallo",
       "name": "Cavallo",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "cavallo",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “cavallo” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Cary-Yale%20Tarot%20deck%20-%20Knight%20of%20Coins.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-knight",
         "cups-knight",
         "swords-knight",
         "batons-knight"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "cavallo",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “cavallo” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Cary-Yale%20Tarot%20deck%20-%20Knight%20of%20Coins.jpg"
+      ]
     },
     {
       "id": "kw-eight",
       "name": "Eight",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "eight",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “eight” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-08.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-08",
         "cups-08",
         "swords-08",
         "batons-08"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "eight",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “eight” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-08.jpg"
+      ]
     },
     {
       "id": "kw-fante",
       "name": "Fante",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "fante",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “fante” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-11-knave.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-page",
         "cups-page",
         "swords-page",
         "batons-page"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "fante",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “fante” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-11-knave.jpg"
+      ]
     },
     {
       "id": "kw-five",
       "name": "Five",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "five",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “five” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-05.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-05",
         "cups-05",
         "swords-05",
         "batons-05"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "five",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “five” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-05.jpg"
+      ]
     },
     {
       "id": "kw-four",
       "name": "Four",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "four",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “four” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-04.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-04",
         "cups-04",
         "swords-04",
         "batons-04"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "four",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “four” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-04.jpg"
+      ]
     },
     {
       "id": "kw-king",
       "name": "King",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "king",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “king” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-14-king.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-king",
         "cups-king",
         "swords-king",
         "batons-king"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "king",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “king” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-14-king.jpg"
+      ]
     },
     {
       "id": "kw-knight",
       "name": "Knight",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "knight",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “knight” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Cary-Yale%20Tarot%20deck%20-%20Knight%20of%20Coins.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-knight",
         "cups-knight",
         "swords-knight",
         "batons-knight"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "knight",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “knight” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Cary-Yale%20Tarot%20deck%20-%20Knight%20of%20Coins.jpg"
+      ]
     },
     {
       "id": "kw-nine",
       "name": "Nine",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "nine",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “nine” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-09.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-09",
         "cups-09",
         "swords-09",
         "batons-09"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "nine",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “nine” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-09.jpg"
+      ]
     },
     {
       "id": "kw-page",
       "name": "Page",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "page",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “page” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-11-knave.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-page",
         "cups-page",
         "swords-page",
         "batons-page"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "page",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “page” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-11-knave.jpg"
+      ]
     },
     {
       "id": "kw-queen",
       "name": "Queen",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "queen",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “queen” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-13-queen.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-queen",
         "cups-queen",
         "swords-queen",
         "batons-queen"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "queen",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “queen” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-13-queen.jpg"
+      ]
     },
     {
       "id": "kw-re",
       "name": "Re",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "re",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “re” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-14-king.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-king",
         "cups-king",
         "swords-king",
         "batons-king"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "re",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “re” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-14-king.jpg"
+      ]
     },
     {
       "id": "kw-regina",
       "name": "Regina",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "regina",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “regina” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-13-queen.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-queen",
         "cups-queen",
         "swords-queen",
         "batons-queen"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "regina",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “regina” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-13-queen.jpg"
+      ]
     },
     {
       "id": "kw-seven",
       "name": "Seven",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "seven",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “seven” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-07.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-07",
         "cups-07",
         "swords-07",
         "batons-07"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "seven",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “seven” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-07.jpg"
+      ]
     },
     {
       "id": "kw-six",
       "name": "Six",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "six",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “six” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-06.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-06",
         "cups-06",
         "swords-06",
         "batons-06"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "six",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “six” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-06.jpg"
+      ]
     },
     {
       "id": "kw-ten",
       "name": "Ten",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "ten",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “ten” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-10.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-10",
         "cups-10",
         "swords-10",
         "batons-10"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "ten",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “ten” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-10.jpg"
+      ]
     },
     {
       "id": "kw-three",
       "name": "Three",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "three",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “three” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-03.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-03",
         "cups-03",
         "swords-03",
         "batons-03"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "three",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “three” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-03.jpg"
+      ]
     },
     {
       "id": "kw-two",
       "name": "Two",
       "level": 2,
       "category": "keyword-emergence",
+      "metadata": {
+        "keyword": "two",
+        "member_count": 4,
+        "emergence_kind": "keyword"
+      },
+      "sections": {
+        "Description": "Cards in this deck sharing the keyword “two” (4)."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-02-deuce.jpg",
       "render_as": "pill",
       "composite_of": [
         "coins-02",
         "cups-02",
         "swords-02",
         "batons-02"
-      ],
-      "metadata": {
-        "emergence_kind": "keyword",
-        "keyword": "two",
-        "member_count": 4
-      },
-      "sections": {
-        "Description": "Cards in this deck sharing the keyword “two” (4)."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-02-deuce.jpg"
+      ]
     },
     {
       "id": "axis-keyword",
       "name": "By Keyword",
       "level": 3,
       "category": "axis",
+      "sections": {
+        "Description": "Cross-cutting facets derived from shared keywords — the same card appears under every keyword it carries."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-01-ace.jpg",
       "render_as": "pill-group",
       "composite_of": [
         "kw-minor-arcana",
@@ -4942,16 +4946,12 @@
         "kw-ten",
         "kw-three",
         "kw-two"
-      ],
-      "sections": {
-        "Description": "Cross-cutting facets derived from shared keywords — the same card appears under every keyword it carries."
-      },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-01-ace.jpg"
+      ]
     }
   ],
   "creator_name": "PlayfulProcess",
   "creator_link": "https://recursive.eco",
-  "is_published": false,
+  "is_published": true,
   "open_to_community": true,
   "default_view": "cards",
   "_detected_categories": [
