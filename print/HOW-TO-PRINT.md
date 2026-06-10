@@ -36,9 +36,23 @@ python scripts/resize_for_tgc.py print/decks/golden-dawn-book-t-tarot
 #   -> writes print/decks/golden-dawn-book-t-tarot-tgc/  (78 files, all 900x1500)
 ```
 
-`resize_for_tgc.py` scales each card to **fill** 900×1500 and centre-crops the
-tiny overflow (only the bleed/border margin is touched — no art is lost). Both
-`print/decks/` folders are gitignored; delete them after uploading.
+**White-margin rule (learned in TGC proofing):** `resize_for_tgc.py` defaults to
+**border mode** — the whole original card is fitted *inside* TGC's safe zone
+(750×1350) on a white 900×1500 canvas. TGC trims 1/8" per side (the red zone in
+their proofing UI) and recommends keeping art another 1/8" inside the cut (the
+dotted line). Our scans are *complete historical cards* — frame, numerals, titles
+— so the earlier cover-fit mode pushed the card's own frame into the trim (the
+Four of Cups "IV" sat in the cut zone). Border mode means the trim only ever cuts
+blank white, and the printed card gets a white frame — which is how the original
+decks were printed anyway. Use `--cover` ONLY for genuinely borderless art (e.g.
+the decorative back pattern).
+
+**How to verify in TGC's proofing UI:** open any card's proof → the **red zone**
+(bleed, will be cut) must contain only white; the **entire card art** including
+top numeral and bottom title must sit inside the **dotted line** (safe zone).
+"Proof All" pages through every card; Approve each.
+
+Both `print/decks/` folders are gitignored; delete them after uploading.
 
 **The deck back** also must be exactly 900×1500. Pick a historical back from the
 Print page ("Deck back"), and resize it the same way (or reuse
