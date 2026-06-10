@@ -30,13 +30,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def load_env():
     env = {}
-    p = os.path.join(ROOT, "print", ".env.tgc")
-    if os.path.exists(p):
-        for line in open(p, encoding="utf-8"):
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                k, v = line.split("=", 1)
-                env[k.strip()] = v.strip()
+    for p in (os.path.join(ROOT, "print", ".env.tgc"), os.path.join(ROOT, "env-local.txt")):
+        if os.path.exists(p):
+            for line in open(p, encoding="utf-8"):
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    k, v = line.split("=", 1)
+                    env.setdefault(k.strip(), v.strip())
     for k in ("TGC_API_KEY_ID", "TGC_USERNAME", "TGC_PASSWORD"):
         env.setdefault(k, os.environ.get(k, ""))
     missing = [k for k in ("TGC_API_KEY_ID", "TGC_USERNAME", "TGC_PASSWORD") if not env.get(k)]
