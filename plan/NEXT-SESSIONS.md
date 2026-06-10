@@ -1,120 +1,154 @@
-# Next Sessions Plan — split by model
+# Next Sessions Plan — split by model (rev. 2, June 10 2026)
 
-Written June 10 2026 after hitting the session token limit. Run each section in a
-FRESH session with the named model; tell the session to "read plan/NEXT-SESSIONS.md
-and do your section". Context docs: `print/SHOP-PLAN.md` (status checklist),
-`print/HOW-TO-PRINT.md` (verified TGC process), recursive-eco
-`docs/future_plan/print-on-demand-pipeline.md` (architecture).
+**Revised strategy (builder's directive):** Do NOT print a whole deck, and do NOT
+use the API-built test decks as the proof. Instead:
+1. **Build every PLANNED deck** as a real library grammar (honest history + the
+   best available public-domain images, even if fragmentary).
+2. **Then** assemble ONE "1-card-per-deck" sampler spanning EVERY deck (built +
+   planned) and print THAT single deck as the workflow proof — so the resize /
+   margin / print settings are tested for every deck's image at once.
 
-## State as of this writing (do not redo)
-- TGC API flow PROVEN. Two products built via API on the builder's account:
-  - Golden Dawn Tarot (API): game `C07782A2-645A-11F1-87B8-CDFD42BF08F6`,
-    deck `27B3B844-64E4-11F1-9D82-EA4366E3122E`, 78/78 + back
-  - Print Sampler: game `1C2D3BF2-64E5-11F1-9D82-035066E3122E`,
-    deck `370F9906-64E5-11F1-9D0E-30818797CA38`, 19/19 + back
-- Credentials in gitignored `env-local.txt` (key id + username + password).
-  BUILDER TODO: delete password line after testing; consider rotating password.
-- All 8 print-ready decks have 900×1500 cream-border files in `print/decks/*-tgc/`.
-- Shop live (`pages/shop.html`, header Shop tab). Booklets: `booklets/*.mdx`.
-- Builder still to do: TGC "Proof All" + Approve on both products, then ORDER 1
-  copy of each. Nothing publishes before the physical proof passes.
+Context docs: this file, `print/SHOP-PLAN.md`, `print/HOW-TO-PRINT.md`,
+recursive-eco `docs/future_plan/print-on-demand-pipeline.md`.
 
 ---
 
-## OPUS 4.8 SECTION (judgment-heavy — run first)
+## THE BOTTLENECK (why this is Opus work, not a quick Sonnet job)
+The 8 planned decks are gated by **image provenance**, which only careful judgment
+can clear. From a June 10 Commons hunt (`plan/PLANNED-DECKS-IMAGE-HUNT.md`):
 
-### O1. Historical-claims audit + fixes (the big one)
-Audit every `tarot/*/grammar.json` (names, descriptions, axis/composite sections;
-sample ~10 items/deck) + `index.html` against the project's evidence-first brand.
-Hunt: (a) absolutist/superlative claims — house rule requires hedging ("among the
-earliest", "arguably"); KNOWN ISSUE: Visconti-Sforza is titled "The Oldest Tarot
-(c. 1451)" while our own Cary-Yale is dated ~1442-45 — self-contradiction, fix;
-(b) debated attributions stated as fact (Bembo for Visconti decks; "Charles VI" is
-NOT 1392 French — check framed as misnomer; Mantegna misnomer framing; the
-golden-dawn deck uses 1909 RWS imagery — verify name/description don't imply it IS
-the Golden Dawn's own deck); (c) false date precision (prefer "c."); (d)
-occult-projection leakage: game decks (Visconti, Marseille, Minchiate, Tarocchino,
-Sola Busca, Charles VI, Besançon, Mantegna) must not present divinatory meanings as
-native — Etteilla/Wirth/Golden Dawn are divination-native and fine. Write findings
-to `research/AUDIT-historical-claims.md` (table: deck | quoted claim | problem |
-rewording | severity), then APPLY the FIX-NOW and HEDGE items to the grammars,
-regenerate meta (`scripts/build_meta_grammar.py`), commit, push.
+| Planned deck | Commons PD images? | Print-res? | Note |
+|---|---|---|---|
+| **Brera-Brambilla** | ✅ yes, 15th-c PD | ~954×1921 (some) | BUILD FIRST — genuine PD, decent res |
+| Tarocco Siciliano | partial, low-res PD | ✗ tiny | display-only stub; fragments exist |
+| Tarocco Piemontese | tiny PD scans | ✗ 120×211 | **living deck — modern scans are COPYRIGHTED**; only pre-1900 PD usable |
+| d'Este (Ferrara) | ✗ catalogs only | ✗ | image-blocked; fragmentary (~16 cards survive) |
+| Soprafino (1835) | ✗ none found | — | exists but **Lo Scarabeo "Ancient Italian" reproduction is COPYRIGHTED**; need original Della Rocca scans (Gallica/museum) |
+| Ancient Lombardy (1810) | ✗ none found | — | Gumppenberg; original PD but not on Commons under these terms |
+| Belgian / Vandenborre | ✗ none found | — | try Gallica/BnF |
+| Marseille Type I (Noblet/Dodal) | noblet already BUILT | — | this planned node is largely redundant with `noblet-tarot`; decide: merge or repurpose to "Dodal 1701" |
 
-### O2. Ma Diao (Chinese money cards) grammar — ancestors line
-Skokloster Castle (Sweden) has 12 digitized Ma Diao cards on Commons (search
-`Skoklosters Ma Diao`, files like "Kinesiskt spelkort till Ma Diao - Skoklosters
-slott - 102351.tif"; use `Special:FilePath/<name>?width=1200` to get JPEG renders;
-also 水滸牌 Water Margin money-card images exist). Build
-`tarot/madiao-money-cards/grammar.json` in the house style (see `mamluk-deck` and
-`ganjifa` for the ancestors framing): evidence-first, money-suited system
-explained (cash/strings/myriads), Ming-era game context, China → Islamic world →
-Europe transmission per `research/00c-islamic-and-chinese-card-origins.mdx`. Add a
-node + derives edge in `tarot/tree-of-tarot/grammar.json` next to the Mamluk node.
-Run `scripts/stamp_print_metadata.py`-style audit only if images measure ≥750×1050
-(unlikely for TIF renders — fine, it's an educational deck). Validate, regen meta,
-add to `_collection.json` the way other decks appear, push, verify renders live.
+**Implication:** "build all planned decks fully" isn't a fast mechanical job — half
+of them need deep sourcing from museum/library digital collections (BnF Gallica,
+Beinecke, World of Playing Cards, un-searched Commons categories) AND copyright
+judgment (PD original vs. modern reproduction). That sourcing + the house-style
+historical writing is the Opus work. Where no clean PD scan exists, the deck still
+becomes a real grammar entry with honest history and a "fragmentary / no surviving
+high-res scan" note (a catalogue stub), so it appears in the library and the
+genealogy even before it has full card art.
+
+---
+
+## OPUS SECTION (judgment, research, writing — only Opus)
+
+### O0. (DONE this session) Historical-claims audit + fixes
+Did the integrity pass FIRST (correctness before count): `research/AUDIT-historical-claims.md`
+written; FIX-NOW + clear HEDGE items applied to grammars (visconti-sforza title:
+"Oldest" → "Oldest Near-Complete" + "attr. Bembo"; noblet: "oldest TdM" → "oldest
+surviving *complete* TdM *deck*", with a Cary-Sheet distinction; oswald-wirth:
+"first overtly occult deck" → "first occult/initiatic instrument, distinct from
+Etteilla's 1788 divination deck"). Meta regenerated. STILL OPEN (need source check):
+mamluk "43 vs 48" survivor count; golden-dawn RWS-is-Waite's-adaptation clause;
+full per-card occult-projection pass on game decks.
+
+Also surveyed planned-deck image availability (table above) — image sourcing is
+the real bottleneck; no planned deck was *built* this session (building one with
+wrong provenance is worse than not building it — see O1).
+
+### O1. Source + build the remaining planned decks (the core work)
+For EACH remaining planned deck, in priority order:
+1. **Source PD images** with provenance judgment — confirm PD (pre-1900 / museum
+   PD release), NOT a modern reproduction. Try, in order: Commons categories
+   directly (not just search), BnF Gallica (gallica.bnf.fr), Beinecke (Yale),
+   World of Playing Cards (wopc.co.uk), Trionfi.com. Record source + license per
+   image.
+2. **Write the grammar** in house style (model on `mamluk-deck` / `ganjifa` for
+   fragmentary/ancestor decks, full decks on `tarot-de-marseille-conver`):
+   evidence-first, hedged claims, framed in its OWN tradition, no occult
+   projection onto game decks.
+3. Add/repurpose its node + derives-edge in `tarot/tree-of-tarot/grammar.json`;
+   add to `_collection.json` like the others.
+4. Where images are missing, ship a catalogue stub (history + "no high-res PD scan
+   located yet") rather than a fake.
+Priority: Brera-Brambilla (done) → d'Este → Soprafino → Lombardy → Siciliano →
+Piemontese (PD-only) → Belgian → resolve Marseille-Type-I node.
+
+### O1b. Ancestors line — Ma Diao (Chinese money cards) — NEW, not in tree yet
+Skokloster Castle (Sweden) has 12 Ma Diao cards on Commons (search
+`Skoklosters Ma Diao`; `Special:FilePath/<name>?width=1200` for JPEG). Build
+`tarot/madiao-money-cards/grammar.json` in the ancestors framing (money-suited
+system; Ming game context; China→Islam→Europe per
+`research/00c-islamic-and-chinese-card-origins.mdx`); add node next to Mamluk in
+the tree. Educational deck — print-res not required.
+
+### O2. Historical-claims audit + fixes (integrity pass)
+The audit agent died on the token limit. Redo it directly (no subagent). Audit
+every `tarot/*/grammar.json` name/description/sections + `index.html`:
+- **KNOWN, FIX NOW:** Visconti-Sforza titled "The Oldest Tarot (c. 1451)" while our
+  own Cary-Yale is ~1442–45 and Brera-Brambilla ~1442–47 — self-contradiction.
+  Reword to "among the earliest surviving" / cite the genuine dating debate.
+- Hedge all absolutist claims (house rule); flag debated attributions stated as
+  fact (Bembo; "Charles VI" must read as a misnomer for an Italian c.1475–1500
+  deck; Mantegna misnomer; golden-dawn deck = 1909 RWS imagery, NOT the Golden
+  Dawn's own deck — verify framed honestly); prefer "c." dates; ensure no game
+  deck presents divinatory meanings as native.
+Write `research/AUDIT-historical-claims.md` (table: deck | quoted claim | problem |
+rewording | severity), then APPLY fix-now + hedge edits, regen meta, commit, push.
 
 ### O3. Homepage clarity pass
-`index.html`: a newcomer should understand in 10 seconds what they can DO. Add a
-"Start here" strip (Browse the cards / Get a reading / Print a deck → shop), add
-the missing 🛒 Shop card to the explore grid, gloss the word "grammar" in one
-clause, keep the history + misconceptions sections. Keep dark style. Verify live.
+`index.html`: a newcomer should grasp in 10s what they can DO. Add a "Start here"
+strip (Browse cards / Get a reading / Print a deck → shop), add the missing 🛒 Shop
+card to the explore grid, gloss "grammar" in one clause, keep history +
+misconceptions. Dark style. Verify live in browser.
 
-### O4. Vendor research synthesis (when token budget allows)
-The deep-research run stalled twice; treat its "refuted" verdicts as ARTIFACTS of
-the token limit (verifiers died 0-0), NOT real. Salvageable unverified findings:
-QPMN (QP Printing Ltd, Hong Kong) markets an API + MOQ-1 POD tarot at 2.75×4.75 +
-Shopify app w/ split fulfillment but VERY low adoption (1 review, multi-week
-delivery) and order flow partially manual; MPC (makeplayingcards.com) confirms
-MOQ-1 POD + per-card images + 2-3 day production but web-UI only, no public API.
-Task: verify QPMN's API docs directly + MPC reseller/API programs, compare against
-TGC (proven, US, hosted checkout), decide the worker's vendor; update
-`print/SHOP-PLAN.md` §5 and recursive-eco pipeline doc. Brazil angle: Fábrica de
-Tarot / Fábrica do Baralho / Atual Card / Copag = BR-domestic candidates (no APIs
-found) — serves BR buyers, not US export.
+### O4. Vendor synthesis (business judgment)
+The deep-research run's "all refuted" output is a TOKEN-LIMIT ARTIFACT (verifiers
+died 0-0), NOT real. Unverified-but-useful: QPMN (QP Printing, Hong Kong) markets
+an API + MOQ-1 tarot POD + Shopify split-fulfillment but tiny adoption / partly
+manual orders; MPC confirms MOQ-1 POD + per-card images + 2–3 day production but
+web-UI only, no public API. TGC API is PROVEN (US, hosted checkout). Verify QPMN's
+actual API docs + MPC reseller program, then pick the worker's vendor; update
+`SHOP-PLAN.md` §5. Brazil = domestic-only candidates (Fábrica de Tarot etc.).
 
 ---
 
-## SONNET SECTION (mechanical, well-specified — run second)
+## SONNET SECTION (mechanical — run AFTER Opus delivers verified grammars)
 
-### S1. Finish the sampler (21/21) + push via API
-`python scripts/build_sampler.py` (idempotent; only 2 backs missing: aluette-1860,
-napoletane — Commons 429s, the script now has backoff). Then
-`python scripts/tgc_upload_deck.py --game 1C2D3BF2-64E5-11F1-9D82-035066E3122E
---deck 370F9906-64E5-11F1-9D0E-30818797CA38 --cards print/decks/sampler-tgc`
-(idempotent — uploads only the new cards).
+### S1. Package each new deck for print
+For every deck Opus builds: `download_deck_images.py <slug>` →
+`resize_for_tgc.py print/decks/<slug>` (border mode) → `stamp_print_metadata.py`
+audit → regen meta (`build_meta_grammar.py`) → confirm it's in `_collection.json`
+→ push. (Skip print packaging for catalogue-stub decks with no usable images.)
 
-### S2. Planned-deck image hunts (report, build only if rich)
-Commons API searches for: "Soprafino Della Rocca tarot" (1835), "Gumppenberg
-tarot Lombardy" (1810), "d'Este tarot Ferrara" (~1450), "Brera-Brambilla". For
-each: count usable PD scans + max resolution; log results in
-`plan/PLANNED-DECKS-IMAGE-HUNT.md`. Only build a grammar if ≥20 cards exist at
-usable res; otherwise leave the planned node as-is.
+### S2. Build the comprehensive "1-card-per-deck" SAMPLER (the proof)
+Extend `scripts/build_sampler.py` to include ONE representative card from EVERY
+deck in the library (built + newly-planned), labelled, plus the historical backs.
+This is the single deck the builder prints to test the workflow across all decks.
+Output `print/decks/sampler-tgc/`.
 
 ### S3. Site polish
-(a) Favicon: small gold spiral SVG (`favicon.svg`, reuse the spiral path from
-index.html's logo) + `<link rel="icon">` in all pages; (b) og:title/og:description
-/og:image meta on index + shop; (c) shop covers: swap Commons cover URLs for
-R2-hosted first-card images from each deck grammar (Commons is slow/429-prone).
+favicon (gold spiral SVG + `<link rel=icon>` on all pages); og:title/description
+/image on index + shop; swap shop cover URLs from slow Commons to R2-hosted
+first-card images.
 
-### S4. After the builder's proofs PASS (do not run before)
-Create the remaining 6 deck products via API (one `tgc_upload_deck.py` run each,
-new game per deck named "<Deck> — Recursive Tarot"); builder publishes + pastes
-shop URLs into `print-products.json` (flips Buy buttons live automatically).
+### S4. (when builder re-adds TGC_PASSWORD) push the sampler via API
+`tgc_upload_deck.py` into a fresh game "Recursive Tarot — Print Sampler v2".
+Builder then proofs + orders ONE copy. Nothing else publishes.
 
-### S5. Disk cleanup (after all TGC uploads done)
-Delete `print/decks/*-tgc/` raw folders (machine is disk-tight; files regenerate
-via download+resize scripts).
+### S5. Disk cleanup
+After uploads: delete `print/decks/*-tgc/` (regenerable; machine disk-tight).
 
 ---
 
-## Standing rules for both sessions
-- Push recursive-tarot freely (GitHub Pages, free). recursive-eco: docs commit
-  LOCALLY only (no push — Vercel cost).
-- The meta-rebuild GitHub Action auto-pushes "chore: rebuild meta-grammar" —
-  `git pull` + `git checkout --ours` on the meta file when it conflicts.
-- Never put credentials in chat or commits; `env-local.txt` is gitignored.
-- House writing style: no absolutist claims; hedge; each deck framed in its own
-  tradition; PD images only, with attribution; builder = PlayfulProcess publicly.
-- Proof-first: nothing publishes for sale before the builder holds the physical
-  proof and approves.
+## Standing rules
+- Push recursive-tarot freely (free Pages). recursive-eco docs: commit LOCAL only.
+- Meta-rebuild Action auto-pushes "chore: rebuild meta-grammar" → on conflict:
+  `git pull` + `git checkout --ours tarot/all-decks-many-lenses/grammar.json` + regen.
+- No credentials in chat/commits; `env-local.txt` gitignored (password currently
+  removed by builder — re-add the TGC_PASSWORD line only when running an API upload).
+- House style: hedge all claims; each deck in its own tradition; PD images only,
+  with attribution + source recorded; "PlayfulProcess" in public content.
+- **Proof-first:** nothing sells before the builder holds the physical proof.
+- **Copyright trap:** many historical decks have COPYRIGHTED modern reproductions
+  (Lo Scarabeo, Modiano, US Games). Only the pre-1900 originals are PD. Verify
+  every image's actual age/source — this is the #1 thing Sonnet must NOT guess.
