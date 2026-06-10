@@ -402,9 +402,9 @@
     </style>
 </head>
 <body>
-    <script src="../site-header.js?v=5"></script>
+    <script src="../site-header.js?v=6"></script>
     <site-header active="print"></site-header>
-    <script src="../view-switcher.js?v=5"></script>
+    <script src="../view-switcher.js?v=6"></script>
     <style>@media print { site-header, view-switcher, .controls-bar, #buy-panel { display: none !important; } }</style>
     <div class="controls-bar" id="controls-bar">
         <view-switcher active="print"></view-switcher>
@@ -774,6 +774,10 @@
             document.title = 'Print: ' + getGrammarName() + ' — Recursive Tarot';
             document.getElementById('empty-state').style.display = 'none';
             if (printData.type === 'sequence') document.getElementById('layout-select').value = 'story';
+            // ?layout=booklet|cards|memory|storyboard|story — deep-linkable layout (shop links use this)
+            var lay = new URLSearchParams(window.location.search).get('layout');
+            var sel = document.getElementById('layout-select');
+            if (lay && [...sel.options].some(function (o) { return o.value === lay; })) sel.value = lay;
             renderPreview();
             buildBuyPanel();
         }

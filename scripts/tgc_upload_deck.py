@@ -113,10 +113,28 @@ def main():
 
     faces = sorted(glob.glob(os.path.join(a.cards, "*.jpg")) +
                    glob.glob(os.path.join(a.cards, "*.png")))
+    # idempotency: skip cards that already exist in the deck (by name)
+    existing = set()
+    try:
+        page = 1
+        while True:
+            res = call("GET", f"/tarotdeck/{deck_id}/cards",
+                       params={"session_id": sid, "_page_number": page, "_items_per_page": 100})
+            items = res.get("items", [])
+            existing |= {c.get("name") for c in items}
+            if len(items) < 100:
+                break
+            page += 1
+    except SystemExit:
+        pass
+    if existing:
+        print(f"   ({len(existing)} cards already in deck — skipping those)")
     print(f"4) uploading {len(faces)} cards…")
-    ok = 0
+    ok = len([f for f in faces if os.path.splitext(os.path.basename(f))[0] in existing])
     for i, f in enumerate(faces, 1):
         name = os.path.splitext(os.path.basename(f))[0]
+        if name in existing:
+            continue
         try:
             fid = upload(f)
             call("POST", "/card", params={

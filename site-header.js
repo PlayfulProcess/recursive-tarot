@@ -25,6 +25,7 @@
     ['caster',     'Caster',       PFX + 'viewers/caster.html'],
     ['genealogy',  'Genealogy',    PFX + 'genealogy.html'],
     ['course',     'Course',       PFX + 'pages/course-viewer.html'],
+    ['shop',       'Shop',         PFX + 'pages/shop.html'],
     ['github',     'GitHub ↗', 'https://github.com/PlayfulProcess/recursive-tarot', true],
   ];
 
