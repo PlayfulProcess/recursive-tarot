@@ -5,13 +5,18 @@ import json, os, urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+import re as _re
+# Images are committed to tarot/madiao-money-cards/images/ and served by GitHub
+# Pages (a real CDN). Hotlinking Commons or weserv failed: Commons' on-demand
+# thumbnailer and weserv's free tier both rate-limit the grid's ~14 concurrent
+# requests for these 22-megapixel museum TIFs, so the cards rendered blank.
+# To (re)generate the local JPEGs, run scripts/localize_madiao_images once
+# (downloads each Commons render sequentially → images/<inv>.jpg).
 def fp(name, w=1000):
-    # Route through the images.weserv.nl proxy: it fetches the heavy 22-megapixel
-    # Skokloster TIF from Commons ONCE, caches it on its own CDN, and serves a fast
-    # JPEG. Hotlinking Commons directly fails here — its on-demand thumbnailer
-    # rate-limits the grid's concurrent requests, so the cards render blank.
-    commons = "commons.wikimedia.org/wiki/Special:FilePath/" + urllib.parse.quote(name)
-    return "https://images.weserv.nl/?url=" + urllib.parse.quote(commons, safe="") + f"&w={w}&output=jpg"
+    m = _re.search(r"(\d+)\.tif", name)
+    inv = m.group(1) if m else "x"
+    fn = ("sheet-" + inv if "Mo Diao" in name else inv) + ".jpg"
+    return "https://tarot.recursive.eco/tarot/madiao-money-cards/images/" + fn
 
 CARDS = [  # (Skokloster inventory no, filename)
     ("102351", "Kinesiskt spelkort till Ma Diao - Skoklosters slott - 102351.tif"),
