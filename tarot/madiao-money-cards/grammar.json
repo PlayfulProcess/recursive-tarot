@@ -1,0 +1,261 @@
+{
+  "name": "Ma Diao (馬吊) — Chinese Money-Suited Cards (the Deep Root)",
+  "slug": "madiao-money-cards",
+  "description": "# Ma Diao (馬吊) — Chinese money-suited cards\n\n## At a glance\n\nThe **deepest root of the playing-card form itself** — and, deliberately, *not* a direct ancestor of tarot. Paper playing cards are first documented in **Tang-dynasty China** (618–907 CE); by the time of the Song and Ming they had developed into **money-suited** packs whose suits are denominations of currency. **Ma Diao** (馬吊, 'hanging horse') is the best-documented of these games, codified in the **late Ming** (16th–17th c.) and described in period manuals. This library includes it to show where the *idea* of a suited pack of cards begins, several removes upstream of anything European.\n\n## The money suits\n\nFour ascending money denominations: **cash → strings of cash → myriads → tens-of-myriads** (文 · 索 · 萬 · 十萬). The suits are not abstract pips but units of money — the structural signature of the East-Asian tradition. The **myriad (萬) suit** was, in many sets, illustrated with the 108 bandit-heroes of the novel *Water Margin* (水滸傳), so painted 'Water Margin cards' (水滸牌) are a famous money-suited variety still made in folk workshops today.\n\n## Relationship to tarot — a deep root, not a parent\n\nThe standard scholarly thesis (Wilkinson, Needham, Lo) is that the playing-card *form* diffused **westward out of China**, reaching Europe through the **Islamic world**, where the **Mamluk pack** (Egypt/Syria) is the deck Europe directly copied. So the line to tarot runs **China → (centuries, many intermediaries) → Mamluk → Italian/Spanish suits → trionfi/tarot**. Ma Diao is a **cousin and a deep root**, like Ganjifa — it shows the origin of the form, but no card here descends by a clean line into a tarot trump. The detail of the transmission is genuinely debated; what is not debated is that paper cards are a Chinese invention.\n\n## Game, never divination\n\nMa Diao is a **trick-and-draw gambling game** for four players, played with a 40-card money-suited pack. There is no cartomantic tradition attached to it — it sits in this library purely as the upstream of the *object*, not of any reading practice.\n\n## Provenance & evidence\n\nThe cards shown are the **public-domain holdings at Skokloster Castle, Sweden** (high-resolution museum scans on Wikimedia Commons), a European collection of an East-Asian pack. Twelve items survive there. Individual suit/value identification is left open rather than guessed.\n\n## Sources\n\n- W. H. Wilkinson, 'Chinese Origin of Playing Cards' (1895); Joseph Needham, *Science and Civilisation in China*, vol. 5; Andrew Lo on Ma Diao and Water Margin cards; Dummett & Mann, *The Game of Tarot* (on the China→Islam→Europe diffusion). Card images: Skokloster Castle / Wikimedia Commons, public domain.\n\n---\n*AI-assisted first-pass draft in the house evidence-first style — claims hedged, transmission flagged as debated. Corrections welcome.*",
+  "grammar_type": "tarot",
+  "creator_name": "PlayfulProcess",
+  "license": "CC-BY-SA-4.0",
+  "default_view": "cards",
+  "metadata": {
+    "year": 1600,
+    "tradition": "Chinese money-suited cards",
+    "branch": "ancestors"
+  },
+  "_source": "Wikimedia Commons (Skokloster Castle), public domain. Hotlinked with attribution.",
+  "items": [
+    {
+      "id": "suit-cash",
+      "name": "文錢 · Cash (Coins)",
+      "level": 1,
+      "category": "suit",
+      "sections": {
+        "What it is": "The lowest money suit: single copper coins (wén). The coin is the ancestor of the European 'Coins/Pentacles' suit — the one suit that survived the long diffusion west more or less recognisably."
+      }
+    },
+    {
+      "id": "suit-strings",
+      "name": "索子 · Strings of Cash",
+      "level": 1,
+      "category": "suit",
+      "sections": {
+        "What it is": "Strings or ropes (suǒ) on which coins were threaded — each string a bundle of one hundred cash. A denomination, not an abstract pip: the suits of this pack are literally units of money."
+      }
+    },
+    {
+      "id": "suit-myriads",
+      "name": "萬貫 · Myriads",
+      "level": 1,
+      "category": "suit",
+      "sections": {
+        "What it is": "Ten-thousand-cash units (wàn). In many money-card sets this suit was illustrated with the 108 bandit-heroes of the novel *Water Margin* (水滸傳) — so 'Water Margin cards' (水滸牌) are a famous money-suited variety."
+      }
+    },
+    {
+      "id": "suit-tens",
+      "name": "十萬 · Tens of Myriads",
+      "level": 1,
+      "category": "suit",
+      "sections": {
+        "What it is": "The top suit (the 'decade' / tens-of-myriads), carrying the honour cards. The four ascending money denominations — cash → strings → myriads → tens-of-myriads — are the whole structure of the game."
+      }
+    },
+    {
+      "id": "axis-money-suits",
+      "name": "The Four Money Suits",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "suit-cash",
+        "suit-strings",
+        "suit-myriads",
+        "suit-tens"
+      ],
+      "sections": {
+        "What it is": "Ma Diao is a *money-suited* pack: its four suits are ascending denominations of cash, not the cups/swords/coins/batons of the Mamluk and European line. This is the structural signature of the East-Asian card tradition."
+      }
+    },
+    {
+      "id": "card-102351",
+      "name": "Ma Diao card — Skokloster 102351",
+      "level": 1,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kinesiskt%20spelkort%20till%20Ma%20Diao%20-%20Skoklosters%20slott%20-%20102351.tif?width=1200",
+      "metadata": {
+        "collection": "Skokloster Castle, Sweden",
+        "inventory": "102351",
+        "source": "Wikimedia Commons (public domain)"
+      },
+      "sections": {
+        "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading."
+      }
+    },
+    {
+      "id": "card-102352",
+      "name": "Ma Diao card — Skokloster 102352",
+      "level": 1,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kinesiskt%20spelkort%20Ma%20Diao%20-%20Skoklosters%20slott%20-%20102352.tif?width=1200",
+      "metadata": {
+        "collection": "Skokloster Castle, Sweden",
+        "inventory": "102352",
+        "source": "Wikimedia Commons (public domain)"
+      },
+      "sections": {
+        "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading."
+      }
+    },
+    {
+      "id": "card-102353",
+      "name": "Ma Diao card — Skokloster 102353",
+      "level": 1,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kinesiskt%20spelkort%20till%20Ma%20Diao%20-%20Skoklosters%20slott%20-%20102353.tif?width=1200",
+      "metadata": {
+        "collection": "Skokloster Castle, Sweden",
+        "inventory": "102353",
+        "source": "Wikimedia Commons (public domain)"
+      },
+      "sections": {
+        "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading."
+      }
+    },
+    {
+      "id": "card-102354",
+      "name": "Ma Diao card — Skokloster 102354",
+      "level": 1,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kinesiskt%20spelkort%20till%20Ma%20Diao%20-%20Skoklosters%20slott%20-%20102354.tif?width=1200",
+      "metadata": {
+        "collection": "Skokloster Castle, Sweden",
+        "inventory": "102354",
+        "source": "Wikimedia Commons (public domain)"
+      },
+      "sections": {
+        "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading."
+      }
+    },
+    {
+      "id": "card-102355",
+      "name": "Ma Diao card — Skokloster 102355",
+      "level": 1,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kinesiskt%20spelkort%20till%20Ma%20Diao%20-%20Skoklosters%20slott%20-%20102355.tif?width=1200",
+      "metadata": {
+        "collection": "Skokloster Castle, Sweden",
+        "inventory": "102355",
+        "source": "Wikimedia Commons (public domain)"
+      },
+      "sections": {
+        "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading."
+      }
+    },
+    {
+      "id": "card-102356",
+      "name": "Ma Diao card — Skokloster 102356",
+      "level": 1,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kinesiskt%20spelkort%20till%20Ma%20Diao%20-%20Skoklosters%20slott%20-%20102356.tif?width=1200",
+      "metadata": {
+        "collection": "Skokloster Castle, Sweden",
+        "inventory": "102356",
+        "source": "Wikimedia Commons (public domain)"
+      },
+      "sections": {
+        "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading."
+      }
+    },
+    {
+      "id": "card-102357",
+      "name": "Ma Diao card — Skokloster 102357",
+      "level": 1,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kinesiskt%20spelkort%20till%20Ma%20Diao%20-%20Skoklosters%20slott%20-%20102357.tif?width=1200",
+      "metadata": {
+        "collection": "Skokloster Castle, Sweden",
+        "inventory": "102357",
+        "source": "Wikimedia Commons (public domain)"
+      },
+      "sections": {
+        "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading."
+      }
+    },
+    {
+      "id": "card-102358",
+      "name": "Ma Diao card — Skokloster 102358",
+      "level": 1,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kinesiskt%20spelkort%20till%20Ma%20Diao%20-%20Skoklosters%20slott%20-%20102358.tif?width=1200",
+      "metadata": {
+        "collection": "Skokloster Castle, Sweden",
+        "inventory": "102358",
+        "source": "Wikimedia Commons (public domain)"
+      },
+      "sections": {
+        "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading."
+      }
+    },
+    {
+      "id": "card-102359",
+      "name": "Ma Diao card — Skokloster 102359",
+      "level": 1,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kinesiskt%20spelkort%20till%20Ma%20Diao%20-%20Skoklosters%20slott%20-%20102359.tif?width=1200",
+      "metadata": {
+        "collection": "Skokloster Castle, Sweden",
+        "inventory": "102359",
+        "source": "Wikimedia Commons (public domain)"
+      },
+      "sections": {
+        "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading."
+      }
+    },
+    {
+      "id": "card-102360",
+      "name": "Ma Diao card — Skokloster 102360",
+      "level": 1,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kinesiskt%20spelkort%20till%20Ma%20Diao%20-%20Skoklosters%20slott%20-%20102360.tif?width=1200",
+      "metadata": {
+        "collection": "Skokloster Castle, Sweden",
+        "inventory": "102360",
+        "source": "Wikimedia Commons (public domain)"
+      },
+      "sections": {
+        "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading."
+      }
+    },
+    {
+      "id": "card-102361",
+      "name": "Ma Diao card — Skokloster 102361",
+      "level": 1,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kinesiskt%20spelkort%20till%20Ma%20Diao%20-%20Skoklosters%20slott%20-%20102361.tif?width=1200",
+      "metadata": {
+        "collection": "Skokloster Castle, Sweden",
+        "inventory": "102361",
+        "source": "Wikimedia Commons (public domain)"
+      },
+      "sections": {
+        "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading."
+      }
+    },
+    {
+      "id": "card-sheet-13617",
+      "name": "Ma Diao cards (sheet) — Skokloster 13617",
+      "level": 1,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kinesiska%20spelkort%20f%C3%B6r%20kortspelet%20Mo%20Diao%20-%20Skoklosters%20slott%20-%2013617.tif?width=1200",
+      "metadata": {
+        "collection": "Skokloster Castle, Sweden",
+        "inventory": "13617",
+        "source": "Wikimedia Commons (public domain)"
+      },
+      "sections": {
+        "About": "Several Ma Diao cards together (catalogued as 'Mo Diao') from the same Skokloster holdings."
+      }
+    },
+    {
+      "id": "skokloster-set",
+      "name": "The Skokloster Surviving Set",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "card-102351",
+        "card-102352",
+        "card-102353",
+        "card-102354",
+        "card-102355",
+        "card-102356",
+        "card-102357",
+        "card-102358",
+        "card-102359",
+        "card-102360",
+        "card-102361",
+        "card-sheet-13617"
+      ],
+      "sections": {
+        "What it is": "The twelve Ma Diao items that survive in Sweden at Skokloster Castle — a fragmentary but high-resolution, openly public-domain witness to a money-suited Chinese pack."
+      }
+    }
+  ]
+}
