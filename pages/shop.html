@@ -58,7 +58,12 @@
     const col=await colR.json(), prods=await prodR.json();
     const bySlug={}; (col.grammars||[]).forEach(g=>bySlug[g.slug]=g);
     const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-    const BOOKLET={'golden-dawn-book-t-tarot':'Booklet: Book T meanings','etteilla-i-livre-de-thot':'Booklet: Etteilla intro','etteilla-ii-egyptian':'Booklet: Etteilla intro','etteilla-iii-oracle-des-dames':'Booklet: Etteilla intro'};
+    // booklet per product: written companions for traditions that have one;
+    // Golden Dawn gets the per-card Book T booklet (print-viewer Booklet layout).
+    const ETTEILLA='course.html?src='+encodeURIComponent('../booklets/etteilla-intro.mdx');
+    const GAMES='course.html?src='+encodeURIComponent('../booklets/games-of-the-tarot.mdx');
+    const BOOKLET_URL={'etteilla-i-livre-de-thot':ETTEILLA,'etteilla-ii-egyptian':ETTEILLA,'etteilla-iii-oracle-des-dames':ETTEILLA,
+      'minchiate-florence-tarot':GAMES,'tarot-de-marseille-conver':GAMES,'mantegna-tarocchi':GAMES};
     let html='';
     for(const [slug,p] of Object.entries(prods.decks||{})){
       const g=bySlug[slug]||{};
@@ -73,7 +78,7 @@
           <div class="meta"><span class="badge ${full?'b-bleed':'b-border'}">${full?'full art':'bordered'}</span>${g.items||'?'} cards · ${esc(p.note||'')}</div>
           <div class="row">
             <a class="btn buy ${live?'':'soon'}" href="${live?esc(p.product_url):'#'}" ${live?'target="_blank" rel="noopener"':''}>${live?'Buy printed ↗':'Coming soon (proofing)'}</a>
-            <a class="btn ghost" href="print-viewer.html?src=${src}&layout=booklet" title="${esc(BOOKLET[slug]||'Companion booklet (free)')}">📓 Booklet</a>
+            <a class="btn ghost" href="${BOOKLET_URL[slug]||('print-viewer.html?src='+src+'&layout=booklet')}" title="Free companion booklet">📓 Booklet</a>
           </div>
         </div></div>`;
     }
