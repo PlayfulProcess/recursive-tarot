@@ -13,7 +13,7 @@ imaged card regardless. Files are named "NN - Card Name.ext" in card order, in
 which is gitignored — delete it after you've uploaded to the vendor (the images
 are large and this machine is disk-tight).
 """
-import json, os, sys, re, urllib.request
+import json, os, sys, re, time, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -47,13 +47,24 @@ def main():
         num = (it.get("metadata") or {}).get("number")
         prefix = f"{int(num):02d} - " if isinstance(num, (int, float)) else f"{idx:02d} - "
         dest = os.path.join(outdir, prefix + safe(it.get("name")) + ext)
-        try:
-            req = urllib.request.Request(img, headers={"User-Agent": "recursive-tarot-print/1.0"})
-            with urllib.request.urlopen(req, timeout=30) as r, open(dest, "wb") as f:
-                f.write(r.read())
-            saved += 1; print(f"  saved {prefix}{safe(it.get('name'))}{ext}")
-        except Exception as e:
-            failed += 1; print(f"  FAIL {safe(it.get('name'))}: {e}")
+        if os.path.exists(dest) and os.path.getsize(dest) > 10000:
+            saved += 1; continue                      # already fetched (rerun-friendly)
+        ok = False
+        for attempt in range(3):                      # retry with backoff (Commons 429s)
+            try:
+                req = urllib.request.Request(img, headers={"User-Agent": "recursive-tarot-print/1.0"})
+                with urllib.request.urlopen(req, timeout=40) as r, open(dest, "wb") as f:
+                    f.write(r.read())
+                saved += 1; ok = True
+                print(f"  saved {prefix}{safe(it.get('name'))}{ext}")
+                break
+            except Exception as e:
+                if "429" in str(e) and attempt < 2:
+                    time.sleep(30 * (attempt + 1)); continue
+                failed += 1; print(f"  FAIL {safe(it.get('name'))}: {e}")
+                break
+        if "commons.wikimedia" in img or "wikipedia" in img:
+            time.sleep(3)                             # be polite to Commons
     print(f"\n{saved} saved, {skipped} skipped (web-res), {failed} failed -> {outdir}")
     print("Upload these to your vendor, then delete the folder (large files).")
 
