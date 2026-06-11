@@ -265,6 +265,18 @@
       "cover_image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c01.jpg",
       "blurb": "One of the three oldest surviving Tarots de Marseille (Paris, c.1650) — the great outlier, leaning toward the Eastern/Belgian branch. 78 woodcut cards from the BnF/Gallica public-domain scan.",
       "path": "tarot/vieville-tarot/grammar.json"
+    },
+    {
+      "slug": "belgian-tarot",
+      "name": "Belgian Tarot — Vandenborre / 'Tarot Flamand' (Brussels, c. 1780)",
+      "type": "tarot",
+      "branch": "marseille",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 22,
+      "cover_image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t05.jpg",
+      "blurb": "The Flemish tarot (Vandenborre, Brussels c.1780): the Marseille trumps with two famous swaps — the Captain for the Popess and Bacchus for the Pope. 22 Major Arcana, public domain.",
+      "path": "tarot/belgian-tarot/grammar.json"
     }
   ]
 }
