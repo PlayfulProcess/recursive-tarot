@@ -38,17 +38,30 @@ def autotrim(im):
             return im.crop((max(0, l - pad), max(0, t - pad), min(w, r + pad), min(h, b + pad)))
     return im
 
-def border_fit(im):
-    """DEFAULT mode: card fitted inside the trim on a canvas of its own sampled
-    border colour (so the bleed band matches the card, not a white edge)."""
+def _corner_colour(im):
+    """Average of the four corner patches — the clean card-stock colour. Used so the
+    bleed band MATCHES the card (no darker 'contour' seam from edge shadow)."""
+    w, h = im.size; c = max(4, round(min(w, h) * 0.05)); cols = []
+    for box in [(0, 0, c, c), (w - c, 0, w, c), (0, h - c, c, h), (w - c, h - c, w, h)]:
+        cols.append(im.crop(box).resize((1, 1)).getpixel((0, 0)))
+    return tuple(round(sum(p[i] for p in cols) / len(cols)) for i in range(3))
+
+def border_fit(im, blend_frame=False):
+    """DEFAULT mode: card fitted inside the trim on a canvas of its own border colour.
+    blend_frame=True samples that colour from the card's clean CORNERS instead of the
+    edge median — so a card sitting on cream/white stock gets a matching bleed and the
+    white/black 'contour' seam disappears (the print analog of PPT's 'set transparent')."""
     im = autotrim(im)
     w, h = im.size
     inset = max(1, round(min(w, h) * 0.005))
     im = im.crop((inset, inset, w - inset, h - inset)); w, h = im.size
-    ring = max(2, round(min(w, h) * 0.02)); px = []
-    for x in range(0, w, 7): px += [im.getpixel((x, ring)), im.getpixel((x, h - 1 - ring))]
-    for y in range(0, h, 7): px += [im.getpixel((ring, y)), im.getpixel((w - 1 - ring, y))]
-    px.sort(key=lambda c: sum(c)); col = px[len(px) // 2]
+    if blend_frame:
+        col = _corner_colour(im)
+    else:
+        ring = max(2, round(min(w, h) * 0.02)); px = []
+        for x in range(0, w, 7): px += [im.getpixel((x, ring)), im.getpixel((x, h - 1 - ring))]
+        for y in range(0, h, 7): px += [im.getpixel((ring, y)), im.getpixel((w - 1 - ring, y))]
+        px.sort(key=lambda c: sum(c)); col = px[len(px) // 2]
     s = min(FIT[0] / w, FIT[1] / h)
     im = im.resize((round(w * s), round(h * s)), Image.LANCZOS)
     canvas = Image.new("RGB", (TW, TH), col)
