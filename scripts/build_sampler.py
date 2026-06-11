@@ -33,9 +33,26 @@ def fetch(url):
     req = urllib.request.Request(url, headers={"User-Agent": "recursive-tarot/1.0"})
     return Image.open(io.BytesIO(urllib.request.urlopen(req, timeout=60).read())).convert("RGB")
 
+def autotrim(im):
+    # Remove a uniform scan margin that matches the corner colour, so the actual
+    # card fills the frame. This fixes the tiny Ma Diao card (lots of whitespace
+    # around it) and the white/black "contours" some scans carry.
+    from PIL import ImageChops
+    corner = im.getpixel((1, 1))
+    diff = ImageChops.difference(im, Image.new("RGB", im.size, corner))
+    mask = diff.convert("L").point(lambda p: 255 if p > 24 else 0)
+    bbox = mask.getbbox()
+    if bbox:
+        l, t, r, b = bbox; w, h = im.size
+        if l > w * 0.015 or t > h * 0.015 or r < w * 0.985 or b < h * 0.985:
+            pad = round(min(w, h) * 0.008)
+            return im.crop((max(0, l - pad), max(0, t - pad), min(w, r + pad), min(h, b + pad)))
+    return im
+
 def border_fit(im):
+    im = autotrim(im)
     w, h = im.size
-    inset = max(2, round(min(w, h) * 0.012))
+    inset = max(1, round(min(w, h) * 0.005))
     im = im.crop((inset, inset, w - inset, h - inset)); w, h = im.size
     ring = max(2, round(min(w, h) * 0.02)); px = []
     for x in range(0, w, 7): px += [im.getpixel((x, ring)), im.getpixel((x, h - 1 - ring))]
