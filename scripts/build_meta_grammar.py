@@ -313,7 +313,8 @@ def build():
         members = ids(lambda c, r=r: c["rank"] == r and c["suit"])
         if members:
             xid = "num-rank-%d" % r
-            add({"id": xid, "name": "%ss" % RANK_NAMES[r], "level": 3, "category": "rank-cross",
+            _plural = RANK_NAMES[r] + ("es" if RANK_NAMES[r][-1] in "sxz" else "s")
+            add({"id": xid, "name": _plural, "level": 3, "category": "rank-cross",
                  "sections": {"What it is": "Every %s across all four suits and every deck — cross-suit numerology." % RANK_NAMES[r]},
                  "composite_of": members})
             xr_nodes.append(xid)
