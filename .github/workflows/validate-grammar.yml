@@ -1,0 +1,29 @@
+# Grammar PR validation — copy to .github/workflows/validate-grammar.yml in each
+# public data repo (recursive-tarot, recursive.eco-schemas).
+#
+# Gates every PR that touches a grammar.json: it must parse, carry the required
+# fields, and — critically — NOT drop any top-level field that exists on the base
+# branch (the Visconti-Sforza silent-overwrite guard). Pair with branch protection
+# ("Require status checks: validate-grammar") + "Allow auto-merge" so the owner's
+# bot PRs auto-merge on green while outside contributors wait for review.
+name: validate-grammar
+
+on:
+  pull_request:
+    paths:
+      - '**/grammar.json'
+      - 'tarot/**'
+      - 'grammars/**'
+
+jobs:
+  validate-grammar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # need base history for the dropped-field diff
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate changed grammars
+        run: node scripts/validate-grammar.mjs "origin/${{ github.base_ref }}"
