@@ -55,7 +55,30 @@ Also surveyed planned-deck image availability (table above) — image sourcing i
 the real bottleneck; no planned deck was *built* this session (building one with
 wrong provenance is worse than not building it — see O1).
 
+### O1pipeline. ✅ PROVEN: the Gallica → contact-sheet → build pipeline
+Built **Jacques Viéville (Paris c.1650)** end-to-end from BnF/Gallica
+(`tarot/vieville-tarot/`, 78 cards, named trumps + 4 suit groups, live). The
+reusable method for any Gallica-digitised deck:
+1. IIIF manifest `…/ark/manifest.json` → count canvases (often face/back pairs:
+   odd = faces, even = patterned backs).
+2. Download faces `…/ark/f{N}/full/600,/0/native.jpg` → `tarot/<slug>/images/cNN.jpg`.
+3. **Contact-sheet card-ID** (PIL montage of all faces → one image → Read it):
+   identify trumps by their printed numerals + suits by symbol, in ONE-few views
+   instead of N. (scripts/build_vieville.py + the montage snippets show how.)
+4. Commit images → served by Pages (robust CDN; Commons/weserv throttle concurrent
+   grids — see Ma Diao). Add to `_collection`. Honesty note in the grammar for any
+   best-effort pip-rank assignments.
+This same pipeline is the cleanest path for the remaining planned decks that are
+on Gallica/BnF (Noblet's other sibling the anonymous Parisian `btv1b105109624`;
+Belgian/Vandenborre if locatable; possibly Soprafino/Lombardy at museum sites).
+
 ### O1. Source + build the remaining planned decks (the core work)
+**Status (June 10):** Viéville ✅ (Gallica). Still queued: **Belgian/Vandenborre**
+(not found via Gallica SRU `vandenborre tarot` — needs a different ark/title hunt
+or BnF catalogue lookup); **Brera-Brambilla** (Commons has only ~1 clearly-tagged
+PD card — a real build needs Pinacoteca di Brera / Accademia Carrara digital
+collections, and care against Visconti-Sforza/Cary-Yale conflation; otherwise a
+fragment stub). Then d'Este, Soprafino, Lombardy, Siciliano, Piemontese.
 For EACH remaining planned deck, in priority order:
 1. **Source PD images** with provenance judgment — confirm PD (pre-1900 / museum
    PD release), NOT a modern reproduction. Try, in order: Commons categories
