@@ -73,12 +73,19 @@ on Gallica/BnF (Noblet's other sibling the anonymous Parisian `btv1b105109624`;
 Belgian/Vandenborre if locatable; possibly Soprafino/Lombardy at museum sites).
 
 ### O1. Source + build the remaining planned decks (the core work)
-**Status (June 10):** Viéville ✅ (Gallica). Still queued: **Belgian/Vandenborre**
-(not found via Gallica SRU `vandenborre tarot` — needs a different ark/title hunt
-or BnF catalogue lookup); **Brera-Brambilla** (Commons has only ~1 clearly-tagged
-PD card — a real build needs Pinacoteca di Brera / Accademia Carrara digital
-collections, and care against Visconti-Sforza/Cary-Yale conflation; otherwise a
-fragment stub). Then d'Este, Soprafino, Lombardy, Siciliano, Piemontese.
+**Status (June 11):** ✅ **Viéville** (Gallica, 78), ✅ **Belgian/Vandenborre** (Commons
+'Tarot Belgijski' PD set, 22 trumps, 22/22 imaged), ✅ **Anonymous Parisian Tarot**
+(Gallica btv1b105109624, 78 named cards) — the three early Parisian tarots
+(Noblet + Viéville + Anonymous) are now all in the library. Ma Diao ✅ too.
+**Still genuinely blocked on PD images** (verified June 10–11): **Soprafino**
+(0 on Commons; only the copyrighted Lo Scarabeo repro — needs an original 1835
+Della Rocca scan from a museum), **Lombardy/Gumppenberg** (0), **d'Este** (catalogs
+only), **Brera-Brambilla** (~1 clear card on Commons; needs Pinacoteca di Brera /
+Accademia Carrara). **Partly available:** **Siciliano** (~22 mixed Commons files,
+low-res, and a living deck = modern-repro copyright trap; only pre-1900 cards
+usable), **Piemontese** (living deck, same trap).
+Next clean Gallica candidates worth a hunt: other BnF Marseille/Besançon scans,
+the Conver siblings, Vandenborre minors.
 For EACH remaining planned deck, in priority order:
 1. **Source PD images** with provenance judgment — confirm PD (pre-1900 / museum
    PD release), NOT a modern reproduction. Try, in order: Commons categories
