@@ -130,17 +130,35 @@
         }
 
         .sidebar-resize-handle {
-            width: 6px;
+            width: 9px;
             cursor: col-resize;
             flex-shrink: 0;
             margin: 0 -3px;
             border-radius: 3px;
+            position: relative;
             transition: background 0.2s;
         }
-
+        /* always-visible grip so users know the sidebar is draggable */
+        .sidebar-resize-handle::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 30px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.18);
+            transition: background 0.2s, height 0.2s;
+        }
         .sidebar-resize-handle:hover,
         .sidebar-resize-handle.active {
-            background: rgba(139, 92, 246, 0.4);
+            background: rgba(139, 92, 246, 0.25);
+        }
+        .sidebar-resize-handle:hover::before,
+        .sidebar-resize-handle.active::before {
+            background: var(--grammar-accent, #8b5cf6);
+            height: 44px;
         }
 
         .hierarchy-sidebar.hidden + .sidebar-resize-handle {
@@ -255,9 +273,16 @@
 
         .sidebar-item-name {
             flex: 1;
+            min-width: 0;
             overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            /* wrap to (at most) two lines instead of a hard ellipsis cut, so names
+               are readable at the default width; full name still in the title tooltip */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            line-height: 1.25;
+            word-break: break-word;
         }
 
         .sidebar-item-count {
@@ -1953,7 +1978,7 @@
                         <!-- Dynamically populated -->
                     </div>
                 </aside>
-                <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+                <div id="sidebar-resize-handle" class="sidebar-resize-handle" title="Drag to resize the sidebar · double-click to reset"></div>
 
                 <!-- Main Content Area -->
                 <div class="hierarchy-content">
@@ -2175,6 +2200,12 @@
 
                 document.addEventListener('mousemove', onMove);
                 document.addEventListener('mouseup', onUp);
+            });
+
+            // Double-click the handle to reset to the default width.
+            handle.addEventListener('dblclick', () => {
+                sidebar.style.removeProperty('--sidebar-width');
+                localStorage.removeItem('grammar-sidebar-width');
             });
         })();
 
