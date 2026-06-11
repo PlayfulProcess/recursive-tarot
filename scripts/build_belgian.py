@@ -1,10 +1,62 @@
 #!/usr/bin/env python3
 """Build the Belgian (Vandenborre / 'Tarot Flamand') tarot grammar — 22 Major
 Arcana from the public-domain c.1780 set on Wikimedia Commons (the 'Tarot
-Belgijski' upload). Images committed to images/ and served via GitHub Pages."""
-import json, os
+Belgijski' upload). Images committed to images/ and served via GitHub Pages.
+
+  python scripts/build_belgian.py            # (re)build the grammar JSON
+  python scripts/build_belgian.py --fetch    # idempotently download missing card
+                                             # images (multi-source, with backoff)
+"""
+import json, os, sys, time, hashlib, urllib.parse, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Polish file-name suffix on Commons for each A-number (the 'Tarot Belgijski' set)
+POL = {1: "Mag", 2: "Kapitan Eracasse", 3: "Cesarzowa", 4: "Cesarz", 5: "Bachus",
+       6: "Kochankowie", 7: "Rydwan", 8: "Sprawiedliwość", 9: "Pustelnik",
+       10: "Koło Fortuny", 11: "Siła", 12: "Wisielec", 13: "Śmierć",
+       14: "Umiarkowanie", 15: "Diabeł", 16: "Gniew Boży", 17: "Gwiazda",
+       18: "Księżyc", 19: "Słońce", 20: "Sąd Boży", 21: "Świat", 22: "Głupiec"}
+
+def fetch_images():
+    """Idempotently download the 22 trump images. Tries the Wikimedia upload CDN,
+    Special:FilePath, then the weserv proxy; backs off on HTTP 429. Re-run until
+    22/22 (Wikimedia rate-limits a hammered IP — just run it again later)."""
+    out_dir = os.path.join(ROOT, "tarot", "belgian-tarot", "images")
+    os.makedirs(out_dir, exist_ok=True)
+    def sources(fname):
+        u = fname.replace(" ", "_")
+        h = hashlib.md5(u.encode()).hexdigest()
+        enc = urllib.parse.quote(u)
+        commons = "commons.wikimedia.org/wiki/Special:FilePath/" + urllib.parse.quote(fname)
+        return [f"https://upload.wikimedia.org/wikipedia/commons/{h[0]}/{h[0:2]}/{enc}",
+                "https://" + commons,
+                "https://images.weserv.nl/?url=" + urllib.parse.quote(commons, safe="") + "&output=jpg"]
+    have = 0
+    for n in range(1, 23):
+        out = os.path.join(out_dir, f"t{n:02d}.jpg")
+        if os.path.exists(out) and os.path.getsize(out) > 3000:
+            have += 1; continue
+        fname = f"Tarot Belgijski - A{n} - {POL[n]}.jpg"
+        for url in sources(fname):
+            try:
+                data = urllib.request.urlopen(urllib.request.Request(
+                    url, headers={"User-Agent": "recursive-tarot/1.0 (PlayfulProcess)"}), timeout=60).read()
+                if len(data) > 3000:
+                    open(out, "wb").write(data); have += 1
+                    print(f"  t{n:02d} ok ({len(data)//1024} KB)"); break
+            except urllib.error.HTTPError as e:
+                if e.code == 429: time.sleep(8)
+            except Exception:
+                pass
+        time.sleep(1.5)
+    print(f"images present: {have}/22")
+    return have
+
+if "--fetch" in sys.argv:
+    fetch_images()
+    sys.exit(0)
+
 BASE = "https://tarot.recursive.eco/tarot/belgian-tarot/images"
 def img(n): return f"{BASE}/t{n:02d}.jpg"
 
