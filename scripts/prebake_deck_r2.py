@@ -62,7 +62,8 @@ def main():
         try:
             src = tgc_card.fetch(url)
             q = tgc_card.print_quality(src)
-            card = tgc_card.border_fit(src, blend_frame=(slug in tgc_card.BLEND_FRAME))
+            card = tgc_card.border_fit(src, blend_frame=(slug in tgc_card.BLEND_FRAME),
+                                       tight=(slug in tgc_card.TIGHT_TRIM))
             buf = io.BytesIO(); card.save(buf, "JPEG", quality=92)
             key = f"{KEY_PREFIX}{slug}/{it['id']}.jpg"
             s3.put_object(Bucket=bucket, Key=key, Body=buf.getvalue(),

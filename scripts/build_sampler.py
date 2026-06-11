@@ -13,7 +13,7 @@ Pages images are only display-res).
 import json, os, glob, sys
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tgc_card import TW, TH, fetch, border_fit, cover_fit, print_quality, autotrim, BLEND_FRAME  # shared
+from tgc_card import TW, TH, fetch, border_fit, cover_fit, print_quality, autotrim, BLEND_FRAME, TIGHT_TRIM  # shared
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "print", "decks", "sampler-tgc")
@@ -44,18 +44,14 @@ def main():
     n = 0
     for i, slug in enumerate(sorted(slugs), 1):
         try:
-            # prefer a pre-built cream-bordered TGC file if one exists
-            built = sorted(glob.glob(os.path.join(ROOT, "print", "decks", slug + "-tgc", "*.jpg")))
-            if built:
-                im = Image.open(built[0]).convert("RGB")
-                tier = "READY"
-            else:
-                url = HIGH_RES.get(slug) or first_card(slug)
-                if not url:
-                    print(f"  skip {slug}: no card image"); continue
-                src = fetch(url)
-                tier = "READY" if min(src.size) >= 800 else "WEBRES TEST"
-                im = border_fit(src, blend_frame=(slug in BLEND_FRAME))
+            # always re-process from source with the shared tgc_card settings (the
+            # old pre-built *-tgc files are stale cream-border, before auto-trim)
+            url = HIGH_RES.get(slug) or first_card(slug)
+            if not url:
+                print(f"  skip {slug}: no card image"); continue
+            src = fetch(url)
+            tier = "READY" if min(src.size) >= 800 else "WEBRES TEST"
+            im = border_fit(src, blend_frame=(slug in BLEND_FRAME), tight=(slug in TIGHT_TRIM))
             im.save(os.path.join(OUT, f"{i:02d} - {tier} - {slug[:28]}.jpg"), "JPEG", quality=92)
             n += 1; print(f"  {tier:11} {slug}")
         except Exception as e:
