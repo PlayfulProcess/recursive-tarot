@@ -16,7 +16,10 @@ from PIL import Image
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "print", "decks", "sampler-tgc")
 TW, TH = 900, 1500
-SAFE = (750, 1350)
+# Fit each card close to the TGC trim (825x1425) instead of the inner safe zone, so
+# cards reach nearer the cut edge — less surrounding margin, bigger card. The thin
+# remaining band is the sampled-colour bleed.
+SAFE = (855, 1450)
 
 # Decks whose committed Pages images are display-res but whose source archive has
 # print-res — re-pull ONE representative card at ~1000px wide for the proof.

@@ -27,6 +27,30 @@ edge-map underneath save the new session the discovery work.*
 
 ---
 
+## Runtime sync — the builder's design (carry into recursive-eco)
+
+The static-site generator (above) keeps recursive-tarot coherent. For **recursive-eco**
+the builder wants the *same* idea but live, driven by data not a build step:
+
+```
+GitHub main (deck grammars = source of truth)
+      │  push webhook
+      ▼
+Supabase  (decks + leaf tags ingested; the normalized read store)
+      │  query (keyword → emergence rules)
+      ▼
+recursive-eco  (generates By-Order / By-Age / genealogy / timeline views
+                AUTONOMOUSLY from Supabase — never hand-maintained)
+```
+
+So: **GitHub is the truth, a webhook syncs it into Supabase on every push, and
+recursive-eco computes the emergent views from Supabase at request time** (or
+materializes them on the webhook). This is the *same* "keywords in, emergences out,
+materialize for reads" model — just with Supabase as the materialization layer and a
+webhook as the freshness trigger. The tarot decks become one data source feeding it;
+user-created grammars in recursive-eco feed the same pipeline. Design the tag schema
+and the generation rules so BOTH repos share them.
+
 ## Live findings (June 11 2026 — what's stale)
 
 | Surface | Reads | State |
