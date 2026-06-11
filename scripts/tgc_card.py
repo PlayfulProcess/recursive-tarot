@@ -17,6 +17,13 @@ TRIM   = (825, 1425)
 FIT    = (800, 1395)   # fit cards just INSIDE the trim — full, but nothing cut
 PRINT_MIN = 800        # min source short-side (px) to count as print-ready at card size
 
+# Decks whose scans sit on cream/white card-stock — sample the bleed from the clean
+# corners (blend_frame) so the white/black "contour" seam disappears. Shared so the
+# sampler AND whole-deck product bakes treat them identically.
+BLEND_FRAME = {"charles-vi-tarot", "este-tarot", "madiao-money-cards",
+               "minchiate-florence-tarot", "oswald-wirth-tarot",
+               "paris-anonymous-tarot", "vieville-tarot"}
+
 def fetch(url):
     req = urllib.request.Request(url, headers={"User-Agent": "recursive-tarot/1.0 (PlayfulProcess)"})
     return Image.open(io.BytesIO(urllib.request.urlopen(req, timeout=90).read())).convert("RGB")
