@@ -10,16 +10,13 @@ backs use cover mode (patterns are borderless by design). Decks whose source is 
 high-res IIIF archive are re-pulled at print width via HIGH_RES (their committed
 Pages images are only display-res).
 """
-import io, json, os, glob, urllib.request
+import json, os, glob, sys
 from PIL import Image
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from tgc_card import TW, TH, fetch, border_fit, cover_fit, print_quality  # shared processing
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "print", "decks", "sampler-tgc")
-TW, TH = 900, 1500
-# Fit each card just INSIDE the TGC trim (825x1425) — bigger than the old safe-zone
-# fit, but the card edge stays inside the cut line (with ~12px tolerance buffer) so
-# nothing gets trimmed off. The remaining band to 900x1500 is the sampled-colour bleed.
-SAFE = (800, 1395)
 
 # Decks whose committed Pages images are display-res but whose source archive has
 # print-res — re-pull ONE representative card at ~1000px wide for the proof.
@@ -28,47 +25,6 @@ HIGH_RES = {
     "paris-anonymous-tarot": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b105109624/f1/full/1000,/0/native.jpg",
     "este-tarot":            "https://collections.library.yale.edu/iiif/2/33215686/full/1000,/0/default.jpg",
 }
-
-def fetch(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "recursive-tarot/1.0"})
-    return Image.open(io.BytesIO(urllib.request.urlopen(req, timeout=60).read())).convert("RGB")
-
-def autotrim(im):
-    # Remove a uniform scan margin that matches the corner colour, so the actual
-    # card fills the frame. This fixes the tiny Ma Diao card (lots of whitespace
-    # around it) and the white/black "contours" some scans carry.
-    from PIL import ImageChops
-    corner = im.getpixel((1, 1))
-    diff = ImageChops.difference(im, Image.new("RGB", im.size, corner))
-    mask = diff.convert("L").point(lambda p: 255 if p > 24 else 0)
-    bbox = mask.getbbox()
-    if bbox:
-        l, t, r, b = bbox; w, h = im.size
-        if l > w * 0.015 or t > h * 0.015 or r < w * 0.985 or b < h * 0.985:
-            pad = round(min(w, h) * 0.008)
-            return im.crop((max(0, l - pad), max(0, t - pad), min(w, r + pad), min(h, b + pad)))
-    return im
-
-def border_fit(im):
-    im = autotrim(im)
-    w, h = im.size
-    inset = max(1, round(min(w, h) * 0.005))
-    im = im.crop((inset, inset, w - inset, h - inset)); w, h = im.size
-    ring = max(2, round(min(w, h) * 0.02)); px = []
-    for x in range(0, w, 7): px += [im.getpixel((x, ring)), im.getpixel((x, h - 1 - ring))]
-    for y in range(0, h, 7): px += [im.getpixel((ring, y)), im.getpixel((w - 1 - ring, y))]
-    px.sort(key=lambda c: c[0] + c[1] + c[2]); col = px[len(px) // 2]
-    s = min(SAFE[0] / w, SAFE[1] / h)
-    im = im.resize((round(w * s), round(h * s)), Image.LANCZOS)
-    canvas = Image.new("RGB", (TW, TH), col)
-    canvas.paste(im, ((TW - im.width) // 2, (TH - im.height) // 2))
-    return canvas
-
-def cover_fit(im):
-    w, h = im.size; s = max(TW / w, TH / h)
-    im = im.resize((round(w * s), round(h * s)), Image.LANCZOS)
-    l, t = (im.width - TW) // 2, (im.height - TH) // 2
-    return im.crop((l, t, l + TW, t + TH))
 
 def first_card(slug):
     g = json.load(open(os.path.join(ROOT, "tarot", slug, "grammar.json"), encoding="utf-8"))
