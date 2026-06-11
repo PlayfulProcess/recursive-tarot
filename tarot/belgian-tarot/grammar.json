@@ -1,0 +1,361 @@
+{
+  "name": "Belgian Tarot — Vandenborre / 'Tarot Flamand' (Brussels, c. 1780)",
+  "slug": "belgian-tarot",
+  "description": "# Belgian Tarot — the Vandenborre / Flemish pattern\n\n## At a glance\n\nThe **Flemish tarot** (*Tarot flamand*), printed in Brussels in the later 18th century by makers such as **F. I. Vandenborre** and Jacques/Jean Galler. It keeps the whole **Tarot de Marseille** structure but is famous for **two substitutions** in the trumps — a quiet response to Catholic sensibilities:\n\n- **II · Le Capitaine** — a braggart soldier replaces **La Papesse** (the Popess).\n- **V · Bacchus** — the wine-god on a barrel replaces **Le Pape** (the Pope).\n\nWith both clergy gone, the deck could be sold without offence in a region pulled between Catholic and Protestant authority. It is the **Eastern/Belgian branch** of the family — the same current the earlier **Viéville** (1650) pointed toward.\n\n## What you're looking at\n\nThe **22 Major Arcana** (atouts) of the Vandenborre pattern, from the public-domain c. 1780 set on Wikimedia Commons. The 56 suit cards are not included here — clean public-domain scans of the Flemish minors have not yet been located at usable resolution; this is therefore a **trumps-only** grammar (like our Oswald Wirth), and the images are **display resolution**, not print.\n\n## Game, not divination\n\nThe Flemish tarot was a **card game**; the cartomantic readings attached to tarot belong to the later French occult tradition, not to this Brussels playing pack.\n\n## Sources\n\nWikimedia Commons 'Tarot Belgijski' set (public domain, c. 1780); Thierry Depaulis on the Belgian/Flemish cartiers; Dummett, *The Game of Tarot*. Trump identifications follow the standard Vandenborre order.\n\n---\n*AI-assisted first-pass: 22 trumps from the PD Commons set, named in the standard order with the two documented Flemish substitutions flagged. Corrections welcome.*",
+  "grammar_type": "tarot",
+  "creator_name": "PlayfulProcess",
+  "license": "CC-BY-SA-4.0",
+  "default_view": "cards",
+  "metadata": {
+    "year": 1780,
+    "tradition": "Tarot de Marseille family (Flemish/Belgian)",
+    "branch": "marseille",
+    "order": "Eastern/Belgian"
+  },
+  "_source": "Wikimedia Commons 'Tarot Belgijski' (public domain, c. 1780).",
+  "items": [
+    {
+      "id": "trump-01",
+      "name": "I · Le Bateleur",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t01.jpg",
+      "metadata": {
+        "number": "I",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The mountebank — the Magician."
+      }
+    },
+    {
+      "id": "trump-02",
+      "name": "II · Le Capitaine Fracasse",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t02.jpg",
+      "metadata": {
+        "number": "II",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "**A Belgian substitution.** Where the Marseille has La Papesse (the Popess), the Flemish tarot puts a swaggering soldier — the *Capitaine* of farce and commedia dell'arte. Avoiding the female 'pope' sidesteps a figure the Counter-Reformation found scandalous."
+      }
+    },
+    {
+      "id": "trump-03",
+      "name": "III · L'Impératrice",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t03.jpg",
+      "metadata": {
+        "number": "III",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Empress."
+      }
+    },
+    {
+      "id": "trump-04",
+      "name": "IIII · L'Empereur",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t04.jpg",
+      "metadata": {
+        "number": "IIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Emperor."
+      }
+    },
+    {
+      "id": "trump-05",
+      "name": "V · Bacchus",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t05.jpg",
+      "metadata": {
+        "number": "V",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "**The second Belgian substitution.** In place of Le Pape (the Pope), the wine-god **Bacchus** rides a barrel — a playful, anticlerical swap that, with the Captain, removes both Catholic clergy from the trumps."
+      }
+    },
+    {
+      "id": "trump-06",
+      "name": "VI · L'Amoureux",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t06.jpg",
+      "metadata": {
+        "number": "VI",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Lovers."
+      }
+    },
+    {
+      "id": "trump-07",
+      "name": "VII · Le Chariot",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t07.jpg",
+      "metadata": {
+        "number": "VII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Chariot."
+      }
+    },
+    {
+      "id": "trump-08",
+      "name": "VIII · La Justice",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t08.jpg",
+      "metadata": {
+        "number": "VIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Justice."
+      }
+    },
+    {
+      "id": "trump-09",
+      "name": "VIIII · L'Ermite",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t09.jpg",
+      "metadata": {
+        "number": "VIIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Hermit."
+      }
+    },
+    {
+      "id": "trump-10",
+      "name": "X · La Roue de Fortune",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t10.jpg",
+      "metadata": {
+        "number": "X",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Wheel of Fortune."
+      }
+    },
+    {
+      "id": "trump-11",
+      "name": "XI · La Force",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t11.jpg",
+      "metadata": {
+        "number": "XI",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Strength."
+      }
+    },
+    {
+      "id": "trump-12",
+      "name": "XII · Le Pendu",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t12.jpg",
+      "metadata": {
+        "number": "XII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Hanged Man."
+      }
+    },
+    {
+      "id": "trump-13",
+      "name": "XIII · La Mort",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t13.jpg",
+      "metadata": {
+        "number": "XIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Death (the card itself is unnamed)."
+      }
+    },
+    {
+      "id": "trump-14",
+      "name": "XIIII · Tempérance",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t14.jpg",
+      "metadata": {
+        "number": "XIIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Temperance."
+      }
+    },
+    {
+      "id": "trump-15",
+      "name": "XV · Le Diable",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t15.jpg",
+      "metadata": {
+        "number": "XV",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Devil."
+      }
+    },
+    {
+      "id": "trump-16",
+      "name": "XVI · La Foudre (La Maison-Dieu)",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t16.jpg",
+      "metadata": {
+        "number": "XVI",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Tower — here a lightning-struck tower, the 'Wrath of God'."
+      }
+    },
+    {
+      "id": "trump-17",
+      "name": "XVII · L'Étoile",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t17.jpg",
+      "metadata": {
+        "number": "XVII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Star."
+      }
+    },
+    {
+      "id": "trump-18",
+      "name": "XVIII · La Lune",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t18.jpg",
+      "metadata": {
+        "number": "XVIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Moon."
+      }
+    },
+    {
+      "id": "trump-19",
+      "name": "XVIIII · Le Soleil",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t19.jpg",
+      "metadata": {
+        "number": "XVIIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Sun."
+      }
+    },
+    {
+      "id": "trump-20",
+      "name": "XX · Le Jugement",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t20.jpg",
+      "metadata": {
+        "number": "XX",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Judgement."
+      }
+    },
+    {
+      "id": "trump-21",
+      "name": "XXI · Le Monde",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t21.jpg",
+      "metadata": {
+        "number": "XXI",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The World."
+      }
+    },
+    {
+      "id": "trump-22",
+      "name": "Le Fou (The Fool)",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t22.jpg",
+      "metadata": {
+        "number": "",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The unnumbered Fool / Mat — the wandering jester."
+      }
+    },
+    {
+      "id": "axis-atouts",
+      "name": "Les Atouts (22 Trumps)",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "trump-01",
+        "trump-02",
+        "trump-03",
+        "trump-04",
+        "trump-05",
+        "trump-06",
+        "trump-07",
+        "trump-08",
+        "trump-09",
+        "trump-10",
+        "trump-11",
+        "trump-12",
+        "trump-13",
+        "trump-14",
+        "trump-15",
+        "trump-16",
+        "trump-17",
+        "trump-18",
+        "trump-19",
+        "trump-20",
+        "trump-21",
+        "trump-22"
+      ],
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t05.jpg",
+      "sections": {
+        "What it is": "The 22 trumps of the Flemish tarot — the Marseille sequence with the Captain and Bacchus swapped in for the Popess and the Pope."
+      }
+    }
+  ]
+}
