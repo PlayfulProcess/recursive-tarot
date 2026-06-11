@@ -313,7 +313,7 @@ def build():
         members = ids(lambda c, r=r: c["rank"] == r and c["suit"])
         if members:
             xid = "num-rank-%d" % r
-            add({"id": xid, "name": "%ss (every suit, all decks)" % RANK_NAMES[r], "level": 3, "category": "rank-cross",
+            add({"id": xid, "name": "%ss" % RANK_NAMES[r], "level": 3, "category": "rank-cross",
                  "sections": {"What it is": "Every %s across all four suits and every deck — cross-suit numerology." % RANK_NAMES[r]},
                  "composite_of": members})
             xr_nodes.append(xid)
@@ -371,9 +371,9 @@ def build():
          "sections": {"What it is": "Decks grouped by era, oldest first."},
          "composite_of": [era_id(es, ename) for es, ename in eras]})
     if xr_nodes:
-        add({"id": "axis-number", "name": "By Rank — across all suits", "level": 4, "category": "axis",
+        add({"id": "axis-number", "name": "By Rank", "level": 4, "category": "axis",
              "render_as": "pill-group", "lens": "pills",
-             "sections": {"What it is": "Cross-suit numerology: every Ace, every Two … every King, across all suits and decks."},
+             "sections": {"What it is": "Cross-suit numerology — every Ace, every Two … every King, gathered across all four suits and every deck. This is the *transpose* of 'The Tarot' tree: where that goes suit→rank (all the Coins together), this goes rank→suit (all the Aces together)."},
              "composite_of": xr_nodes})
 
     # By Lineage — Dummett trump-order genealogy (STRUCTURAL: the real derivation branches).
@@ -387,8 +387,8 @@ def build():
                  "composite_of": members})
             lin_nodes.append(lid)
     if lin_nodes:
-        add({"id": "axis-lineage", "name": "By Lineage", "level": 4, "category": "axis",
-             "sections": {"What it is": "Michael Dummett's trump-order genealogy (A / B / C) plus the post-1781 occult turn — the real derivation history *between decks*."},
+        add({"id": "axis-lineage", "name": "By Order (A · B · C)", "level": 4, "category": "axis",
+             "sections": {"What it is": "Michael Dummett's three trump-orders — A (Florence/Bologna), B (Ferrara), C (Milan→Marseille) — plus the post-1781 occult turn that left the C-order line. The orders are the closest thing to a 'family tree' the early decks have: which city's sequence a deck follows is its lineage."},
              "composite_of": lin_nodes})
 
     # By Function — game / divination / esoteric (STRUCTURAL: documented historical use).

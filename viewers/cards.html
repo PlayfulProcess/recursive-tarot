@@ -885,12 +885,17 @@
             padding: 0.375rem 0.6rem;
             border-radius: 9999px;
             border: 1px solid var(--grammar-accent, #8b5cf6);
-            background: rgba(139, 92, 246, 0.12);
-            color: var(--grammar-accent, #c4b5fd);
+            background: #221b38;
+            color: #d6c8ff;
             cursor: pointer;
             font-weight: 600;
+            color-scheme: dark;            /* darken the native dropdown popup */
         }
         .groupby-select:focus { outline: none; }
+        .groupby-select option {
+            background: #1a1430;
+            color: #ece8f5;
+        }
 
         /* Explanation of the chosen axis (and the active child) */
         .axis-explainer {

@@ -17,7 +17,7 @@
   "default_preview": "tree",
   "_generated": true,
   "_do_not_hand_edit": true,
-  "_built_at": "2026-06-11T04:13:44.708565+00:00",
+  "_built_at": "2026-06-11T04:36:14.897336+00:00",
   "_built_by": "scripts/build_meta_grammar.py",
   "_decks": [
     {
@@ -28252,7 +28252,7 @@
     },
     {
       "id": "num-rank-1",
-      "name": "Aces (every suit, all decks)",
+      "name": "Aces",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28302,7 +28302,7 @@
     },
     {
       "id": "num-rank-2",
-      "name": "Twos (every suit, all decks)",
+      "name": "Twos",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28349,7 +28349,7 @@
     },
     {
       "id": "num-rank-3",
-      "name": "Threes (every suit, all decks)",
+      "name": "Threes",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28394,7 +28394,7 @@
     },
     {
       "id": "num-rank-4",
-      "name": "Fours (every suit, all decks)",
+      "name": "Fours",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28439,7 +28439,7 @@
     },
     {
       "id": "num-rank-5",
-      "name": "Fives (every suit, all decks)",
+      "name": "Fives",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28484,7 +28484,7 @@
     },
     {
       "id": "num-rank-6",
-      "name": "Sixs (every suit, all decks)",
+      "name": "Sixs",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28533,7 +28533,7 @@
     },
     {
       "id": "num-rank-7",
-      "name": "Sevens (every suit, all decks)",
+      "name": "Sevens",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28582,7 +28582,7 @@
     },
     {
       "id": "num-rank-8",
-      "name": "Eights (every suit, all decks)",
+      "name": "Eights",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28631,7 +28631,7 @@
     },
     {
       "id": "num-rank-9",
-      "name": "Nines (every suit, all decks)",
+      "name": "Nines",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28680,7 +28680,7 @@
     },
     {
       "id": "num-rank-10",
-      "name": "Tens (every suit, all decks)",
+      "name": "Tens",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28729,7 +28729,7 @@
     },
     {
       "id": "num-rank-11",
-      "name": "Pages (every suit, all decks)",
+      "name": "Pages",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28772,7 +28772,7 @@
     },
     {
       "id": "num-rank-12",
-      "name": "Knights (every suit, all decks)",
+      "name": "Knights",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28819,7 +28819,7 @@
     },
     {
       "id": "num-rank-13",
-      "name": "Queens (every suit, all decks)",
+      "name": "Queens",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28867,7 +28867,7 @@
     },
     {
       "id": "num-rank-14",
-      "name": "Kings (every suit, all decks)",
+      "name": "Kings",
       "level": 3,
       "category": "rank-cross",
       "sections": {
@@ -28997,13 +28997,13 @@
     },
     {
       "id": "axis-number",
-      "name": "By Rank — across all suits",
+      "name": "By Rank",
       "level": 4,
       "category": "axis",
       "render_as": "pill-group",
       "lens": "pills",
       "sections": {
-        "What it is": "Cross-suit numerology: every Ace, every Two … every King, across all suits and decks."
+        "What it is": "Cross-suit numerology — every Ace, every Two … every King, gathered across all four suits and every deck. This is the *transpose* of 'The Tarot' tree: where that goes suit→rank (all the Coins together), this goes rank→suit (all the Aces together)."
       },
       "composite_of": [
         "num-rank-1",
@@ -29846,11 +29846,11 @@
     },
     {
       "id": "axis-lineage",
-      "name": "By Lineage",
+      "name": "By Order (A · B · C)",
       "level": 4,
       "category": "axis",
       "sections": {
-        "What it is": "Michael Dummett's trump-order genealogy (A / B / C) plus the post-1781 occult turn — the real derivation history *between decks*."
+        "What it is": "Michael Dummett's three trump-orders — A (Florence/Bologna), B (Ferrara), C (Milan→Marseille) — plus the post-1781 occult turn that left the C-order line. The orders are the closest thing to a 'family tree' the early decks have: which city's sequence a deck follows is its lineage."
       },
       "composite_of": [
         "lineage-A",
