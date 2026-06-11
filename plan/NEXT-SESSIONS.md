@@ -77,15 +77,22 @@ Belgian/Vandenborre if locatable; possibly Soprafino/Lombardy at museum sites).
 'Tarot Belgijski' PD set, 22 trumps, 22/22 imaged), ✅ **Anonymous Parisian Tarot**
 (Gallica btv1b105109624, 78 named cards) — the three early Parisian tarots
 (Noblet + Viéville + Anonymous) are now all in the library. Ma Diao ✅ too.
-**Still genuinely blocked on PD images** (verified June 10–11): **Soprafino**
-(0 on Commons; only the copyrighted Lo Scarabeo repro — needs an original 1835
-Della Rocca scan from a museum), **Lombardy/Gumppenberg** (0), **d'Este** (catalogs
-only), **Brera-Brambilla** (~1 clear card on Commons; needs Pinacoteca di Brera /
-Accademia Carrara). **Partly available:** **Siciliano** (~22 mixed Commons files,
-low-res, and a living deck = modern-repro copyright trap; only pre-1900 cards
-usable), **Piemontese** (living deck, same trap).
-Next clean Gallica candidates worth a hunt: other BnF Marseille/Besançon scans,
-the Conver siblings, Vandenborre minors.
+**✅ d'Este UNBLOCKED (June 11)** via **Yale Beinecke / Cary Collection** (the same
+archive as our Cary Sheet + Cary-Yale): `collections.library.yale.edu`, IIIF v3
+manifests, open access, museum-res. d'Este = 16 surviving cards at 3256×5640,
+named from Yale's own catalogue. **Yale is the unblock pathway** — its catalog API
+(`/catalog.json?q=`) + manifests (`/manifests/{oid}`, IIIF v2 image API
+`/iiif/2/{id}/full/{w},/0/default.jpg`) hold the early Italian hand-painted decks.
+KEY LESSON: when Commons/Gallica are dry, **hunt the holding institution directly**
+(Yale Beinecke, British Museum, Pinacoteca di Brera) — planning doesn't unblock,
+sourcing does.
+
+**Still blocked:** **Brera-Brambilla** (NOT at Yale — physically at Pinacoteca di
+Brera, Milan; not openly digitised). **Soprafino / Lombardy** (19th-c *printed*, not
+in Yale's hand-painted holdings → try the **British Museum** collection online +
+World of Playing Cards). **Siciliano / Piemontese** (living decks; only pre-1900
+editions are PD — British Museum is the place to look). The British Museum is the
+next archive to mine.
 For EACH remaining planned deck, in priority order:
 1. **Source PD images** with provenance judgment — confirm PD (pre-1900 / museum
    PD release), NOT a modern reproduction. Try, in order: Commons categories
