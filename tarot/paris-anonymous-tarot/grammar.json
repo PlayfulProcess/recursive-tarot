@@ -1,0 +1,1252 @@
+{
+  "name": "Anonymous Parisian Tarot — BnF (Tarot de Marseille, 17th–18th c.)",
+  "slug": "paris-anonymous-tarot",
+  "description": "# Anonymous Parisian Tarot de Marseille (BnF)\n\n## At a glance\n\nThe **third of the three early Parisian tarots** held at the Bibliothèque nationale de France and freely on **Gallica** (ark:/12148/btv1b105109624) — the unsigned companion to our **Jean Noblet** (c. 1650) and **Jacques Viéville** decks. Unlike the outlier Viéville, this pack sits squarely in the **C-order (Marseille)** mainstream: a fully **named** French Tarot de Marseille, every trump captioned on the card in period spelling (LE BATELEVR, LA IVSTICE, ATREMPANCE…). 78 woodcut cards, hand-coloured, shown here from the BnF scan.\n\n## Why it matters\n\nWith Noblet and Viéville, it shows that the **named, numbered Marseille pattern was already standardised in Paris a century before Nicolas Conver's 1760 Marseille** — the printed standard our library also holds. It is a clean witness to the C-order line in its Parisian form.\n\n## What you're looking at\n\n- **22 atouts (trumps):** 21 numbered + the unnumbered **Mat**, with the card names read directly from the scans.\n- **56 suit cards:** **Deniers** (Coins), **Coupes** (Cups), **Bâtons** (Batons), **Épées** (Swords), each with ten pips and four courts (Valet, Cavalier, Reine, Roi).\n\n## Honesty notes\n\nDating and maker are **uncertain** — the deck is anonymous; '17th–18th c.' follows the BnF's cautious placement and the company it keeps in the Noblet/Viéville group. The trumps are named from their printed captions; suit cards are shown in **BnF folio order** and pip ranks are assigned by position (corrections welcome).\n\n## Game, not divination\n\nA playing pack; the cartomantic readings attached to the Marseille came later, with the 18th-century occult revival.\n\n## Sources\n\nBnF / Gallica (ark:/12148/btv1b105109624), public domain; Thierry Depaulis on the Parisian cartiers; Dummett, *The Game of Tarot*.\n\n---\n*AI-assisted first-pass: faces from the BnF scan, trumps from their printed captions, suits by symbol. Corrections welcome.*",
+  "grammar_type": "tarot",
+  "creator_name": "PlayfulProcess",
+  "license": "CC-BY-SA-4.0",
+  "default_view": "cards",
+  "metadata": {
+    "year": 1700,
+    "tradition": "Tarot de Marseille (Parisian)",
+    "branch": "marseille",
+    "order": "C-order"
+  },
+  "_source": "BnF / Gallica ark:/12148/btv1b105109624 — public domain.",
+  "items": [
+    {
+      "id": "trump-01",
+      "name": "I · Le Bateleur",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c01.jpg",
+      "metadata": {
+        "number": "I",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Le Bateleur (atout I) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-02",
+      "name": "II · La Papesse",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c02.jpg",
+      "metadata": {
+        "number": "II",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "La Papesse (atout II) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-03",
+      "name": "III · L'Impératrice",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c03.jpg",
+      "metadata": {
+        "number": "III",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "L'Impératrice (atout III) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-04",
+      "name": "IIII · L'Empereur",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c04.jpg",
+      "metadata": {
+        "number": "IIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "L'Empereur (atout IIII) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-05",
+      "name": "V · Le Pape",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c05.jpg",
+      "metadata": {
+        "number": "V",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Le Pape (atout V) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-06",
+      "name": "VI · L'Amoureux",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c06.jpg",
+      "metadata": {
+        "number": "VI",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "L'Amoureux (atout VI) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-07",
+      "name": "VII · Le Chariot",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c07.jpg",
+      "metadata": {
+        "number": "VII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Le Chariot (atout VII) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-08",
+      "name": "VIII · La Justice",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c08.jpg",
+      "metadata": {
+        "number": "VIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "La Justice (atout VIII) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-09",
+      "name": "VIIII · L'Hermite",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c09.jpg",
+      "metadata": {
+        "number": "VIIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "L'Hermite (atout VIIII) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-10",
+      "name": "X · La Roue de Fortune",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c10.jpg",
+      "metadata": {
+        "number": "X",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "La Roue de Fortune (atout X) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-11",
+      "name": "XI · La Force",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c11.jpg",
+      "metadata": {
+        "number": "XI",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "La Force (atout XI) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-12",
+      "name": "XII · Le Pendu",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c12.jpg",
+      "metadata": {
+        "number": "XII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Le Pendu (atout XII) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-13",
+      "name": "XIII · La Mort",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c13.jpg",
+      "metadata": {
+        "number": "XIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "La Mort (atout XIII) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-14",
+      "name": "XIIII · Tempérance",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c14.jpg",
+      "metadata": {
+        "number": "XIIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Tempérance (atout XIIII) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-15",
+      "name": "XV · Le Diable",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c15.jpg",
+      "metadata": {
+        "number": "XV",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Le Diable (atout XV) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-16",
+      "name": "XVI · La Maison-Dieu",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c16.jpg",
+      "metadata": {
+        "number": "XVI",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "La Maison-Dieu (atout XVI) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-17",
+      "name": "XVII · L'Étoile",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c17.jpg",
+      "metadata": {
+        "number": "XVII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "L'Étoile (atout XVII) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-18",
+      "name": "XVIII · La Lune",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c18.jpg",
+      "metadata": {
+        "number": "XVIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "La Lune (atout XVIII) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-19",
+      "name": "XVIIII · Le Soleil",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c19.jpg",
+      "metadata": {
+        "number": "XVIIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Le Soleil (atout XVIIII) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-20",
+      "name": "XX · Le Jugement",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c20.jpg",
+      "metadata": {
+        "number": "XX",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Le Jugement (atout XX) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "trump-21",
+      "name": "XXI · Le Monde",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c21.jpg",
+      "metadata": {
+        "number": "XXI",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Le Monde (atout XXI) — the name is printed on the card."
+      }
+    },
+    {
+      "id": "deniers-22",
+      "name": "As de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c22.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "As of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-23",
+      "name": "Deux de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c23.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Deux of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-24",
+      "name": "Trois de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c24.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Trois of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-25",
+      "name": "Quatre de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c25.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Quatre of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-26",
+      "name": "Cinq de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c26.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cinq of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-27",
+      "name": "Six de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c27.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Six of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-28",
+      "name": "Sept de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c28.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Sept of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-29",
+      "name": "Huit de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c29.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Huit of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-30",
+      "name": "Neuf de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c30.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Neuf of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-31",
+      "name": "Dix de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c31.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Dix of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-32",
+      "name": "Valet de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c32.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Valet of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-33",
+      "name": "Cavalier de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c33.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cavalier of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-34",
+      "name": "Reine de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c34.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Reine of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-35",
+      "name": "Roi de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c35.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Roi of Coins (BnF folio order)."
+      }
+    },
+    {
+      "id": "suit-deniers",
+      "name": "Deniers · Coins",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "deniers-22",
+        "deniers-23",
+        "deniers-24",
+        "deniers-25",
+        "deniers-26",
+        "deniers-27",
+        "deniers-28",
+        "deniers-29",
+        "deniers-30",
+        "deniers-31",
+        "deniers-32",
+        "deniers-33",
+        "deniers-34",
+        "deniers-35"
+      ],
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c22.jpg",
+      "sections": {
+        "What it is": "The Deniers (Coins) suit — ten pips plus Valet, Cavalier, Reine and Roi."
+      }
+    },
+    {
+      "id": "coupes-36",
+      "name": "As de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c36.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "As of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-37",
+      "name": "Deux de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c37.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Deux of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-38",
+      "name": "Trois de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c38.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Trois of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-39",
+      "name": "Quatre de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c39.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Quatre of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-40",
+      "name": "Cinq de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c40.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cinq of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-41",
+      "name": "Six de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c41.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Six of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-42",
+      "name": "Sept de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c42.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Sept of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-43",
+      "name": "Huit de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c43.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Huit of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-44",
+      "name": "Neuf de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c44.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Neuf of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-45",
+      "name": "Dix de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c45.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Dix of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-46",
+      "name": "Valet de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c46.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Valet of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-47",
+      "name": "Cavalier de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c47.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cavalier of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-48",
+      "name": "Reine de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c48.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Reine of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-49",
+      "name": "Roi de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c49.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Roi of Cups (BnF folio order)."
+      }
+    },
+    {
+      "id": "suit-coupes",
+      "name": "Coupes · Cups",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "coupes-36",
+        "coupes-37",
+        "coupes-38",
+        "coupes-39",
+        "coupes-40",
+        "coupes-41",
+        "coupes-42",
+        "coupes-43",
+        "coupes-44",
+        "coupes-45",
+        "coupes-46",
+        "coupes-47",
+        "coupes-48",
+        "coupes-49"
+      ],
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c36.jpg",
+      "sections": {
+        "What it is": "The Coupes (Cups) suit — ten pips plus Valet, Cavalier, Reine and Roi."
+      }
+    },
+    {
+      "id": "batons-50",
+      "name": "As de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c50.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "As of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-51",
+      "name": "Deux de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c51.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Deux of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-52",
+      "name": "Trois de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c52.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Trois of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-53",
+      "name": "Quatre de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c53.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Quatre of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-54",
+      "name": "Cinq de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c54.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cinq of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-55",
+      "name": "Six de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c55.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Six of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-56",
+      "name": "Sept de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c56.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Sept of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-57",
+      "name": "Huit de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c57.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Huit of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-58",
+      "name": "Neuf de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c58.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Neuf of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-59",
+      "name": "Dix de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c59.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Dix of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-60",
+      "name": "Valet de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c60.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Valet of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-61",
+      "name": "Cavalier de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c61.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cavalier of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-62",
+      "name": "Reine de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c62.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Reine of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-63",
+      "name": "Roi de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c63.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Roi of Batons (BnF folio order)."
+      }
+    },
+    {
+      "id": "suit-batons",
+      "name": "Bâtons · Batons",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "batons-50",
+        "batons-51",
+        "batons-52",
+        "batons-53",
+        "batons-54",
+        "batons-55",
+        "batons-56",
+        "batons-57",
+        "batons-58",
+        "batons-59",
+        "batons-60",
+        "batons-61",
+        "batons-62",
+        "batons-63"
+      ],
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c50.jpg",
+      "sections": {
+        "What it is": "The Bâtons (Batons) suit — ten pips plus Valet, Cavalier, Reine and Roi."
+      }
+    },
+    {
+      "id": "epees-64",
+      "name": "As de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c64.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "As of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-65",
+      "name": "Deux de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c65.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Deux of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-66",
+      "name": "Trois de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c66.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Trois of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-67",
+      "name": "Quatre de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c67.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Quatre of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-68",
+      "name": "Cinq de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c68.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cinq of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-69",
+      "name": "Six de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c69.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Six of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-70",
+      "name": "Sept de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c70.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Sept of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-71",
+      "name": "Huit de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c71.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Huit of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-72",
+      "name": "Neuf de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c72.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Neuf of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-73",
+      "name": "Dix de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c73.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Dix of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-74",
+      "name": "Valet de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c74.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Valet of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-75",
+      "name": "Cavalier de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c75.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cavalier of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-76",
+      "name": "Reine de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c76.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Reine of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-77",
+      "name": "Roi de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c77.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Roi of Swords (BnF folio order)."
+      }
+    },
+    {
+      "id": "suit-epees",
+      "name": "Épées · Swords",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "epees-64",
+        "epees-65",
+        "epees-66",
+        "epees-67",
+        "epees-68",
+        "epees-69",
+        "epees-70",
+        "epees-71",
+        "epees-72",
+        "epees-73",
+        "epees-74",
+        "epees-75",
+        "epees-76",
+        "epees-77"
+      ],
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c64.jpg",
+      "sections": {
+        "What it is": "The Épées (Swords) suit — ten pips plus Valet, Cavalier, Reine and Roi."
+      }
+    },
+    {
+      "id": "trump-mat",
+      "name": "Le Mat (The Fool)",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c78.jpg",
+      "metadata": {
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The unnumbered Fool, last in the BnF scan."
+      }
+    },
+    {
+      "id": "axis-atouts",
+      "name": "Les Atouts (22 Trumps)",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "trump-01",
+        "trump-02",
+        "trump-03",
+        "trump-04",
+        "trump-05",
+        "trump-06",
+        "trump-07",
+        "trump-08",
+        "trump-09",
+        "trump-10",
+        "trump-11",
+        "trump-12",
+        "trump-13",
+        "trump-14",
+        "trump-15",
+        "trump-16",
+        "trump-17",
+        "trump-18",
+        "trump-19",
+        "trump-20",
+        "trump-21",
+        "trump-mat"
+      ],
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c01.jpg",
+      "sections": {
+        "What it is": "The 22 named trumps — 21 numbered atouts plus the Mat."
+      }
+    }
+  ]
+}
