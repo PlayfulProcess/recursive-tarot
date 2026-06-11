@@ -101,3 +101,11 @@ No backend. Lights up product-by-product.
       architecture (Cloudflare worker) → build (2 sessions)
 - [ ] Builder: delete TGC_PASSWORD line from env-local.txt after testing; consider
       rotating the password
+
+## ✅ FULL SAMPLER ON TGC (June 11 2026)
+- 26-card proof deck pushed via API: 19 decks (12 READY + 7 webres-test) + 7 card
+  backs (now on R2, no more Commons 429). All 900×1500.
+- Game `1C2D3BF2-64E5-11F1-9D82-035066E3122E` → deck **`ED62C786-65BD-11F1-9690-37668797CA38`**
+  ("Recursive Tarot — Full Sampler (26 cards)"). Back = golden-dawn back.
+- NEXT (builder): open the deck on TGC → run the visual proof-all → **order ONE copy.**
+  Then remove the TGC_PASSWORD line from env-local.txt.
