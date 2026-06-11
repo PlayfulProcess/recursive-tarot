@@ -87,12 +87,21 @@ KEY LESSON: when Commons/Gallica are dry, **hunt the holding institution directl
 (Yale Beinecke, British Museum, Pinacoteca di Brera) — planning doesn't unblock,
 sourcing does.
 
-**Still blocked:** **Brera-Brambilla** (NOT at Yale — physically at Pinacoteca di
-Brera, Milan; not openly digitised). **Soprafino / Lombardy** (19th-c *printed*, not
-in Yale's hand-painted holdings → try the **British Museum** collection online +
-World of Playing Cards). **Siciliano / Piemontese** (living decks; only pre-1900
-editions are PD — British Museum is the place to look). The British Museum is the
-next archive to mine.
+**Still blocked — and now with the reasons nailed down (June 11 hunt: Met API +
+Commons Italian/BM terms both 0):**
+- **Soprafino / Lombardy / Siciliano / Piemontese** — NOT on any queryable open-PD
+  archive (Commons, Gallica, **Met Museum open API**, Yale Beinecke all dry). The
+  originals are PD (pre-1900) but **no institution has released clean PD scans**.
+- **Brera-Brambilla** — physically at Pinacoteca di Brera (Milan), not openly digitised.
+- ⚠️ **LICENSE TRAP for the print goal:** the **British Museum** *does* hold these
+  decks, but released its images under **CC BY-NC-SA 4.0** — **Non-Commercial**.
+  That's usable for the free educational library (display) but **NOT for printed
+  products you sell**. So BM is a dead end for the shop track; only use it (if at
+  all) for display, clearly flagged. World of Playing Cards claims rights on its scans.
+- **Conclusion:** d'Este was the only one of the six with an accessible,
+  print-compatible PD source. The other five are genuinely blocked — leave as
+  catalogue stubs / future digitisation, do NOT fake. Print-compatible images must
+  be **PD or CC-BY / CC-BY-SA — never NC**.
 For EACH remaining planned deck, in priority order:
 1. **Source PD images** with provenance judgment — confirm PD (pre-1900 / museum
    PD release), NOT a modern reproduction. Try, in order: Commons categories
