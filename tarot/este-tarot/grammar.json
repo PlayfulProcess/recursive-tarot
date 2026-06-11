@@ -1,0 +1,292 @@
+{
+  "name": "d'Este Tarocchi — The Ferrarese Fragment (c. 1450)",
+  "slug": "este-tarot",
+  "description": "# d'Este (Estensi) Tarocchi\n\n## At a glance\n\nAmong the **oldest surviving tarot of all** — sixteen hand-painted cards made in **Ferrara around 1450**, in the orbit of the ruling **House of Este**, contemporaries of the Milanese Visconti decks but from the *other* great early tarot court. Only **16 cards survive** (8 trumps + 8 court cards) of what was once a full pack; they are held in the **Cary Collection of Playing Cards at Yale's Beinecke Library** (PLAYING CARDS GEN 966) and shown here from Yale's open-access high-resolution scans.\n\n## Why it matters — the B-order home\n\nFerrara is the home of the **B-order** trump sequence (the Eastern branch in Dummett's A/B/C scheme), the same family as our **'Charles VI'** cards. Where Milan's Visconti decks head the **C-order** line that became the Tarot de Marseille, the d'Este cards are a rare, luxurious witness to Ferrara's parallel tradition — proof that tarot's invention was not a single Milanese event but a courtly fashion shared across northern Italy in the 1440s–50s.\n\n## What survives\n\n- **8 trumps:** Il Bagatto (the Magician), Il Papa (the Pope), Temperance, the Star, the Moon, the Sun, the World, and Il Matto (the Fool).\n- **8 court cards:** kings, queens, a cavalier and a jack across Swords, Batons, Coins and Cups.\n- Card identifications are **Yale's own catalogue labels** — not guessed from iconography. The cards are unnumbered (as 15th-century hand-painted trumps were).\n\n## Game, not divination\n\nLike the Visconti decks, this is a **luxury court game** object — *trionfi*, three centuries before any divinatory use. No cartomantic meaning is native to it.\n\n## Provenance & evidence\n\nBeinecke Rare Book & Manuscript Library, Yale — Cary Collection (Mary Flagler Cary, 1967); PLAYING CARDS GEN 966; cards 140 × 78 mm; completely digitized, open access (credit: Yale University Library). Dating ('c. 1450') and the Ferrarese/Este attribution follow the standard scholarship but, as with all the early hand-painted decks, remain debated.\n\n## Sources\n\nYale Beinecke / Cary Collection catalogue; Michael Dummett, *The Game of Tarot* (1980); Thierry Depaulis on the Ferrarese decks.\n\n---\n*AI-assisted first-pass: high-resolution faces from Yale's open-access IIIF, named from Yale's catalogue. Corrections welcome.*",
+  "grammar_type": "tarot",
+  "creator_name": "PlayfulProcess",
+  "license": "CC-BY-SA-4.0",
+  "default_view": "cards",
+  "metadata": {
+    "year": 1450,
+    "tradition": "Ferrarese hand-painted tarocchi",
+    "branch": "roots",
+    "order": "B"
+  },
+  "_source": "Yale Beinecke / Cary Collection of Playing Cards (PLAYING CARDS GEN 966), open access. Credit: Yale University Library.",
+  "items": [
+    {
+      "id": "card-01",
+      "name": "King of Swords",
+      "level": 1,
+      "category": "court",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c01.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "Re di Spade."
+      }
+    },
+    {
+      "id": "card-03",
+      "name": "Queen of Swords",
+      "level": 1,
+      "category": "court",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c03.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "Regina di Spade."
+      }
+    },
+    {
+      "id": "card-05",
+      "name": "Cavalier of Swords",
+      "level": 1,
+      "category": "court",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c05.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "Cavallo di Spade."
+      }
+    },
+    {
+      "id": "card-07",
+      "name": "King of Batons",
+      "level": 1,
+      "category": "court",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c07.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "Re di Bastoni."
+      }
+    },
+    {
+      "id": "card-09",
+      "name": "Cavalier of Batons",
+      "level": 1,
+      "category": "court",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c09.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "Cavallo di Bastoni."
+      }
+    },
+    {
+      "id": "card-11",
+      "name": "Jack of Batons",
+      "level": 1,
+      "category": "court",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c11.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "Fante di Bastoni."
+      }
+    },
+    {
+      "id": "card-13",
+      "name": "King of Coins",
+      "level": 1,
+      "category": "court",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c13.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "Re di Denari."
+      }
+    },
+    {
+      "id": "card-15",
+      "name": "Queen of Cups",
+      "level": 1,
+      "category": "court",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c15.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "Regina di Coppe."
+      }
+    },
+    {
+      "id": "card-17",
+      "name": "Il Bagatto (The Magician)",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c17.jpg",
+      "metadata": {
+        "arcana": "major",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "The mountebank — the first trump (atout I)."
+      }
+    },
+    {
+      "id": "card-19",
+      "name": "Il Papa (The Pope)",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c19.jpg",
+      "metadata": {
+        "arcana": "major",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "The Pope / Hierophant."
+      }
+    },
+    {
+      "id": "card-21",
+      "name": "Temperance",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c21.jpg",
+      "metadata": {
+        "arcana": "major",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "Temperance, pouring between two vessels."
+      }
+    },
+    {
+      "id": "card-23",
+      "name": "The Star",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c23.jpg",
+      "metadata": {
+        "arcana": "major",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "La Stella."
+      }
+    },
+    {
+      "id": "card-25",
+      "name": "The Moon",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c25.jpg",
+      "metadata": {
+        "arcana": "major",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "La Luna."
+      }
+    },
+    {
+      "id": "card-27",
+      "name": "The Sun",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c27.jpg",
+      "metadata": {
+        "arcana": "major",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "Il Sole."
+      }
+    },
+    {
+      "id": "card-29",
+      "name": "The World",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c29.jpg",
+      "metadata": {
+        "arcana": "major",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "Il Mondo."
+      }
+    },
+    {
+      "id": "card-31",
+      "name": "Il Matto (The Fool)",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c31.jpg",
+      "metadata": {
+        "arcana": "major",
+        "collection": "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
+      },
+      "sections": {
+        "About": "The Fool / Mat — the unnumbered wanderer."
+      }
+    },
+    {
+      "id": "axis-trumps",
+      "name": "Surviving Trumps (8)",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "card-17",
+        "card-19",
+        "card-21",
+        "card-23",
+        "card-25",
+        "card-27",
+        "card-29",
+        "card-31"
+      ],
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c17.jpg",
+      "sections": {
+        "What it is": "The eight trumps that survive — Bagatto, Pope, Temperance, Star, Moon, Sun, World and the Fool — out of an original sequence now mostly lost."
+      }
+    },
+    {
+      "id": "axis-courts",
+      "name": "Surviving Court Cards (8)",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "card-01",
+        "card-03",
+        "card-05",
+        "card-07",
+        "card-09",
+        "card-11",
+        "card-13",
+        "card-15"
+      ],
+      "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c01.jpg",
+      "sections": {
+        "What it is": "Eight court cards across the four Italian suits (Swords, Batons, Coins, Cups) — kings, queens, a cavalier and a jack."
+      }
+    }
+  ]
+}
