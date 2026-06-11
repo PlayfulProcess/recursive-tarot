@@ -1,7 +1,7 @@
 {
   "name": "Jacques Viéville Tarot — Paris, c. 1650 (BnF)",
   "slug": "vieville-tarot",
-  "description": "# Jacques Viéville Tarot (Paris, c. 1650)\n\n## At a glance\n\nOne of the **three oldest surviving named Tarots de Marseille-family decks**, printed in Paris around 1650 by the *maître-cartier* **Jacques Viéville** — a near-contemporary of **Jean Noblet** (whose deck this library also holds). The single known copy is at the **Bibliothèque nationale de France** and is on **Gallica** (ark:/12148/btv1b10510963k), fully public domain. Its 78 woodcut cards are shown here from the BnF scan, at high resolution.\n\n## Why it matters — the road not taken\n\nViéville's pack is the great **outlier** of the early Parisian tarots. Where Noblet sits squarely in the **C-order (Marseille)** line that became standard, Viéville's trump imagery leans toward the **Eastern/Belgian** branch: its figures face the other way, several trumps (the Popess, the Sun, the World, the Star) carry markedly different designs, and the pack is a key witness to the family that later surfaces in the **Vandenborre / 'Tarot Flamand'** decks rather than the Marseille mainstream. It shows that c. 1650 Paris held *two* competing tarot patterns at once.\n\n## What you're looking at\n\n- **22 atouts (trumps):** 21 carry printed Roman numerals (read directly from the scans here) plus the unnumbered **Mat** (Fool).\n- **56 suit cards:** four Italian suits — **Épées** (Swords), **Deniers** (Coins), **Bâtons** (Batons), **Coupes** (Cups) — each with King, Queen, Cavalier, Valet and ten pips.\n- The even-numbered canvases of the BnF scan are the cards' **patterned backs**; only the faces are shown.\n\n## Honesty notes\n\nThe trumps are identified by their **printed numerals** (the Viéville's imagery is idiosyncratic, so the name follows the deck's own number rather than the scene). Suit cards are shown in **BnF folio order**; courts are identified by figure, and **pip ranks are assigned by position and may warrant correction** — corrections welcome, as everywhere in this library.\n\n## Game, not divination\n\nLike Noblet, this is a **playing-and-trick-taking** pack from a century before tarot was attached to fortune-telling; no cartomantic meaning is native to it.\n\n## Sources\n\nBnF / Gallica (ark:/12148/btv1b10510963k), public domain; Thierry Depaulis on the early Parisian cartiers; Dummett, *The Game of Tarot*.\n\n---\n*AI-assisted first-pass: card faces from the BnF scan, trumps read from their numerals, suits/courts identified by symbol. Corrections welcome.*",
+  "description": "# Jacques Viéville Tarot (Paris, c. 1650)\n\n## At a glance\n\nOne of the **three oldest surviving named Tarots de Marseille-family decks**, printed in Paris around 1650 by the *maître-cartier* **Jacques Viéville** — a near-contemporary of **Jean Noblet** (whose deck this library also holds). The single known copy is at the **Bibliothèque nationale de France** and is on **Gallica** (ark:/12148/btv1b10510963k), fully public domain. Its 78 woodcut cards are shown here from the BnF scan, at high resolution.\n\n## Why it matters — the road not taken\n\nViéville's pack is the great **outlier** of the early Parisian tarots. Where Noblet sits squarely in the **C-order (Marseille)** line that became standard, Viéville's trump imagery leans toward the **Eastern/Belgian** branch: its figures face the other way, several trumps (the Popess, the Sun, the World, the Star) carry markedly different designs, and the pack is a key witness to the family that later surfaces in the **Vandenborre / 'Tarot Flamand'** decks rather than the Marseille mainstream. It shows that c. 1650 Paris held *two* competing tarot patterns at once.\n\n## What you're looking at\n\n- **22 atouts (trumps):** 21 carry printed Roman numerals (read directly from the scans here) plus the unnumbered **Mat** (Fool).\n- **56 suit cards:** four Italian suits — **Épées** (Swords), **Deniers** (Coins), **Bâtons** (Batons), **Coupes** (Cups) — each with King, Queen, Cavalier, Valet and ten pips.\n- The even-numbered canvases of the BnF scan are the cards' **patterned backs**; only the faces are shown.\n\n## Honesty notes\n\nThe trumps are identified by their **printed numerals AND their scenes** — and the two together reveal a key feature: the Viéville follows the older **Eastern trump order**, not the later Marseille standard. Here **Justice is VII, the Chariot VIII, Strength VIIII, and the Hermit XI** — exactly the cards the Marseille (Conver) sequence reorders. This non-standard order is itself the evidence for the deck's Eastern/Belgian-leaning lineage. Suit cards are shown in **BnF folio order**; courts are identified by figure, and **pip ranks are assigned by position and may warrant correction** — corrections welcome, as everywhere in this library.\n\n## Game, not divination\n\nLike Noblet, this is a **playing-and-trick-taking** pack from a century before tarot was attached to fortune-telling; no cartomantic meaning is native to it.\n\n## Sources\n\nBnF / Gallica (ark:/12148/btv1b10510963k), public domain; Thierry Depaulis on the early Parisian cartiers; Dummett, *The Game of Tarot*.\n\n---\n*AI-assisted first-pass: card faces from the BnF scan, trumps read from their numerals, suits/courts identified by symbol. Corrections welcome.*",
   "grammar_type": "tarot",
   "creator_name": "PlayfulProcess",
   "license": "CC-BY-SA-4.0",
@@ -100,7 +100,7 @@
     },
     {
       "id": "trump-07",
-      "name": "VII · Le Chariot",
+      "name": "VII · La Justice",
       "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c07.jpg",
@@ -109,12 +109,12 @@
         "arcana": "major"
       },
       "sections": {
-        "About": "The Chariot."
+        "About": "Justice — sword and scales — numbered VII. The Viéville keeps the older Eastern order, where Justice sits at 7, not the Marseille-standard 8."
       }
     },
     {
       "id": "trump-08",
-      "name": "VIII · La Justice",
+      "name": "VIII · Le Chariot",
       "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c08.jpg",
@@ -123,12 +123,12 @@
         "arcana": "major"
       },
       "sections": {
-        "About": "Trump VIII — named by its numeral (Justice in the Western order)."
+        "About": "The Chariot under its canopy, numbered VIII — the position the Marseille standard gives to Justice."
       }
     },
     {
       "id": "trump-09",
-      "name": "VIIII · L'Ermite",
+      "name": "VIIII · La Force",
       "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c09.jpg",
@@ -137,7 +137,7 @@
         "arcana": "major"
       },
       "sections": {
-        "About": "The Hermit with his lantern."
+        "About": "Strength — the figure mastering the lion — at VIIII (9), its Eastern-order position."
       }
     },
     {
@@ -156,7 +156,7 @@
     },
     {
       "id": "trump-11",
-      "name": "XI · La Force",
+      "name": "XI · L'Hermite",
       "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c11.jpg",
@@ -165,7 +165,7 @@
         "arcana": "major"
       },
       "sections": {
-        "About": "Trump XI — Strength."
+        "About": "The Hermit, the cloaked old man — at XI, where the Marseille standard puts Strength."
       }
     },
     {
