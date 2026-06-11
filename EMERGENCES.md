@@ -74,6 +74,32 @@ cross-deck structure.)
 Both are *the same node shape*. A generated view can be snapshotted into an authored
 one (and then edited) — a natural promotion path.
 
+## 4b. Keywords vs. emergences — the false choice (keywords IN, emergences OUT)
+
+These are not rivals; they're the two ends of one pipe. **Keywords/tags are the
+efficient *input*; emergences are the generated *output*.**
+
+- **Tag the leaves, cheaply.** Each card/deck carries lightweight keywords — `order`,
+  `year`, `suit`, `rank`, `function`, and a *relational* `derives_from` (parent slug).
+  Tagging is far cheaper than authoring `composite_of` lists, and it's the natural
+  input for **user-generated** content (folksonomy) — which is why recursive-eco
+  should lean on it.
+- **Generate the emergences from the tags.** Every axis — By Order, By Age, By
+  Function, By Deck, *and the genealogy DAG* — is computed by grouping (or
+  edge-building, for `derives_from`) over those tags. The `composite_of` you see in
+  the meta is the **materialized output**, never hand-authored. `build_meta_grammar.py`
+  already works this way internally: it reads per-deck metadata and groups.
+- **The one discipline that makes it pay off:** render every tag-axis through a
+  small set of **shared lenses** (`render_as`: pill-group / timeline /
+  genealogy-graph / radial-tree), so the *same* keyword-axis looks identical across
+  every deck and across both repos. Inconsistent rendering is what makes people
+  think they need bespoke structures; consistent lenses let plain tags carry it.
+
+So: **keywords are more efficient AND they drive the genealogy** (relations are just
+a `derives_from` keyword). The only thing a flat tag can't express is an edge — and
+that's solved by letting one keyword *be* an edge. See
+`plan/HANDOFF-rearchitect-genealogy.md` for the concrete cross-repo plan.
+
 ## 5. Lenses — an emergence is self-describing
 
 An emergence carries `render_as` / `lens`, so it declares **how it wants to be seen**
