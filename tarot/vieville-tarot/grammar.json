@@ -1,0 +1,1252 @@
+{
+  "name": "Jacques Viéville Tarot — Paris, c. 1650 (BnF)",
+  "slug": "vieville-tarot",
+  "description": "# Jacques Viéville Tarot (Paris, c. 1650)\n\n## At a glance\n\nOne of the **three oldest surviving named Tarots de Marseille-family decks**, printed in Paris around 1650 by the *maître-cartier* **Jacques Viéville** — a near-contemporary of **Jean Noblet** (whose deck this library also holds). The single known copy is at the **Bibliothèque nationale de France** and is on **Gallica** (ark:/12148/btv1b10510963k), fully public domain. Its 78 woodcut cards are shown here from the BnF scan, at high resolution.\n\n## Why it matters — the road not taken\n\nViéville's pack is the great **outlier** of the early Parisian tarots. Where Noblet sits squarely in the **C-order (Marseille)** line that became standard, Viéville's trump imagery leans toward the **Eastern/Belgian** branch: its figures face the other way, several trumps (the Popess, the Sun, the World, the Star) carry markedly different designs, and the pack is a key witness to the family that later surfaces in the **Vandenborre / 'Tarot Flamand'** decks rather than the Marseille mainstream. It shows that c. 1650 Paris held *two* competing tarot patterns at once.\n\n## What you're looking at\n\n- **22 atouts (trumps):** 21 carry printed Roman numerals (read directly from the scans here) plus the unnumbered **Mat** (Fool).\n- **56 suit cards:** four Italian suits — **Épées** (Swords), **Deniers** (Coins), **Bâtons** (Batons), **Coupes** (Cups) — each with King, Queen, Cavalier, Valet and ten pips.\n- The even-numbered canvases of the BnF scan are the cards' **patterned backs**; only the faces are shown.\n\n## Honesty notes\n\nThe trumps are identified by their **printed numerals** (the Viéville's imagery is idiosyncratic, so the name follows the deck's own number rather than the scene). Suit cards are shown in **BnF folio order**; courts are identified by figure, and **pip ranks are assigned by position and may warrant correction** — corrections welcome, as everywhere in this library.\n\n## Game, not divination\n\nLike Noblet, this is a **playing-and-trick-taking** pack from a century before tarot was attached to fortune-telling; no cartomantic meaning is native to it.\n\n## Sources\n\nBnF / Gallica (ark:/12148/btv1b10510963k), public domain; Thierry Depaulis on the early Parisian cartiers; Dummett, *The Game of Tarot*.\n\n---\n*AI-assisted first-pass: card faces from the BnF scan, trumps read from their numerals, suits/courts identified by symbol. Corrections welcome.*",
+  "grammar_type": "tarot",
+  "creator_name": "PlayfulProcess",
+  "license": "CC-BY-SA-4.0",
+  "default_view": "cards",
+  "metadata": {
+    "year": 1650,
+    "tradition": "Tarot de Marseille family (Parisian)",
+    "branch": "marseille",
+    "order": "Eastern/Belgian-leaning"
+  },
+  "_source": "BnF / Gallica ark:/12148/btv1b10510963k — public domain.",
+  "items": [
+    {
+      "id": "trump-01",
+      "name": "I · Le Bateleur",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c01.jpg",
+      "metadata": {
+        "number": "I",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The mountebank at his table — the deck opens, as the Parisian pattern does, with the conjuror."
+      }
+    },
+    {
+      "id": "trump-02",
+      "name": "II · La Papesse",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c02.jpg",
+      "metadata": {
+        "number": "II",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "A seated, winged figure with the papal tiara — the Viéville's idiosyncratic Popess."
+      }
+    },
+    {
+      "id": "trump-03",
+      "name": "III · L'Impératrice",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c03.jpg",
+      "metadata": {
+        "number": "III",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Enthroned with the eagle shield and a cross-staff — the Empress."
+      }
+    },
+    {
+      "id": "trump-04",
+      "name": "IIII · L'Empereur",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c04.jpg",
+      "metadata": {
+        "number": "IIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The crowned Emperor."
+      }
+    },
+    {
+      "id": "trump-05",
+      "name": "V · Le Pape",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c05.jpg",
+      "metadata": {
+        "number": "V",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Pope / Hierophant."
+      }
+    },
+    {
+      "id": "trump-06",
+      "name": "VI · L'Amoureux",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c06.jpg",
+      "metadata": {
+        "number": "VI",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Lovers, under the radiant cupid."
+      }
+    },
+    {
+      "id": "trump-07",
+      "name": "VII · Le Chariot",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c07.jpg",
+      "metadata": {
+        "number": "VII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Chariot."
+      }
+    },
+    {
+      "id": "trump-08",
+      "name": "VIII · La Justice",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c08.jpg",
+      "metadata": {
+        "number": "VIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Trump VIII — named by its numeral (Justice in the Western order)."
+      }
+    },
+    {
+      "id": "trump-09",
+      "name": "VIIII · L'Ermite",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c09.jpg",
+      "metadata": {
+        "number": "VIIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Hermit with his lantern."
+      }
+    },
+    {
+      "id": "trump-10",
+      "name": "X · La Roue de Fortune",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c10.jpg",
+      "metadata": {
+        "number": "X",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Wheel of Fortune."
+      }
+    },
+    {
+      "id": "trump-11",
+      "name": "XI · La Force",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c11.jpg",
+      "metadata": {
+        "number": "XI",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Trump XI — Strength."
+      }
+    },
+    {
+      "id": "trump-12",
+      "name": "XII · Le Pendu",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c12.jpg",
+      "metadata": {
+        "number": "XII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Hanged Man."
+      }
+    },
+    {
+      "id": "trump-13",
+      "name": "XIII · La Mort",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c13.jpg",
+      "metadata": {
+        "number": "XIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Death — the scything skeleton (the card itself is unnamed, as usual)."
+      }
+    },
+    {
+      "id": "trump-14",
+      "name": "XIIII · Tempérance",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c14.jpg",
+      "metadata": {
+        "number": "XIIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "Temperance, pouring between two vessels."
+      }
+    },
+    {
+      "id": "trump-15",
+      "name": "XV · Le Diable",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c15.jpg",
+      "metadata": {
+        "number": "XV",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Devil."
+      }
+    },
+    {
+      "id": "trump-16",
+      "name": "XVI · La Maison-Dieu",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c16.jpg",
+      "metadata": {
+        "number": "XVI",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Tower / House of God, struck and falling."
+      }
+    },
+    {
+      "id": "trump-17",
+      "name": "XVII · L'Étoile",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c17.jpg",
+      "metadata": {
+        "number": "XVII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Star."
+      }
+    },
+    {
+      "id": "trump-18",
+      "name": "XVIII · La Lune",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c18.jpg",
+      "metadata": {
+        "number": "XVIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Moon."
+      }
+    },
+    {
+      "id": "trump-19",
+      "name": "XVIIII · Le Soleil",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c19.jpg",
+      "metadata": {
+        "number": "XVIIII",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Sun, with figures beneath."
+      }
+    },
+    {
+      "id": "trump-20",
+      "name": "XX · Le Jugement",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c20.jpg",
+      "metadata": {
+        "number": "XX",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The Judgement — the angel and the rising dead."
+      }
+    },
+    {
+      "id": "trump-21",
+      "name": "XXI · Le Monde",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c21.jpg",
+      "metadata": {
+        "number": "XXI",
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The World."
+      }
+    },
+    {
+      "id": "epees-22",
+      "name": "Roi de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c22.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Roi of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-23",
+      "name": "Reine de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c23.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Reine of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-24",
+      "name": "Cavalier de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c24.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cavalier of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-25",
+      "name": "Valet de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c25.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Valet of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-26",
+      "name": "Dix de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c26.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Dix of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-27",
+      "name": "Neuf de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c27.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Neuf of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-28",
+      "name": "Huit de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c28.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Huit of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-29",
+      "name": "Sept de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c29.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Sept of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-30",
+      "name": "Six de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c30.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Six of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-31",
+      "name": "Cinq de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c31.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cinq of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-32",
+      "name": "Quatre de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c32.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Quatre of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-33",
+      "name": "Trois de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c33.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Trois of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-34",
+      "name": "Deux de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c34.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Deux of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "epees-35",
+      "name": "As de Épées",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c35.jpg",
+      "metadata": {
+        "suit": "Swords",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "As of Swords, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "suit-epees",
+      "name": "Épées · Swords",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "epees-22",
+        "epees-23",
+        "epees-24",
+        "epees-25",
+        "epees-26",
+        "epees-27",
+        "epees-28",
+        "epees-29",
+        "epees-30",
+        "epees-31",
+        "epees-32",
+        "epees-33",
+        "epees-34",
+        "epees-35"
+      ],
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c22.jpg",
+      "sections": {
+        "What it is": "The Épées (Swords) suit — King, Queen, Cavalier, Valet and ten pips."
+      }
+    },
+    {
+      "id": "deniers-36",
+      "name": "Roi de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c36.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Roi of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-37",
+      "name": "Reine de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c37.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Reine of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-38",
+      "name": "Cavalier de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c38.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cavalier of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-39",
+      "name": "Valet de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c39.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Valet of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-40",
+      "name": "Dix de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c40.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Dix of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-41",
+      "name": "Neuf de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c41.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Neuf of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-42",
+      "name": "Huit de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c42.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Huit of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-43",
+      "name": "Sept de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c43.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Sept of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-44",
+      "name": "Six de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c44.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Six of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-45",
+      "name": "Cinq de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c45.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cinq of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-46",
+      "name": "Quatre de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c46.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Quatre of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-47",
+      "name": "Trois de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c47.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Trois of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-48",
+      "name": "Deux de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c48.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Deux of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "deniers-49",
+      "name": "As de Deniers",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c49.jpg",
+      "metadata": {
+        "suit": "Coins",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "As of Coins, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "suit-deniers",
+      "name": "Deniers · Coins",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "deniers-36",
+        "deniers-37",
+        "deniers-38",
+        "deniers-39",
+        "deniers-40",
+        "deniers-41",
+        "deniers-42",
+        "deniers-43",
+        "deniers-44",
+        "deniers-45",
+        "deniers-46",
+        "deniers-47",
+        "deniers-48",
+        "deniers-49"
+      ],
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c36.jpg",
+      "sections": {
+        "What it is": "The Deniers (Coins) suit — King, Queen, Cavalier, Valet and ten pips."
+      }
+    },
+    {
+      "id": "batons-50",
+      "name": "Roi de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c50.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Roi of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-51",
+      "name": "Reine de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c51.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Reine of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-52",
+      "name": "Cavalier de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c52.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cavalier of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-53",
+      "name": "Valet de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c53.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Valet of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-54",
+      "name": "Dix de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c54.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Dix of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-55",
+      "name": "Neuf de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c55.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Neuf of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-56",
+      "name": "Huit de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c56.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Huit of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-57",
+      "name": "Sept de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c57.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Sept of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-58",
+      "name": "Six de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c58.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Six of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-59",
+      "name": "Cinq de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c59.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cinq of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-60",
+      "name": "Quatre de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c60.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Quatre of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-61",
+      "name": "Trois de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c61.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Trois of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-62",
+      "name": "Deux de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c62.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Deux of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "batons-63",
+      "name": "As de Bâtons",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c63.jpg",
+      "metadata": {
+        "suit": "Batons",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "As of Batons, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "suit-batons",
+      "name": "Bâtons · Batons",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "batons-50",
+        "batons-51",
+        "batons-52",
+        "batons-53",
+        "batons-54",
+        "batons-55",
+        "batons-56",
+        "batons-57",
+        "batons-58",
+        "batons-59",
+        "batons-60",
+        "batons-61",
+        "batons-62",
+        "batons-63"
+      ],
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c50.jpg",
+      "sections": {
+        "What it is": "The Bâtons (Batons) suit — King, Queen, Cavalier, Valet and ten pips."
+      }
+    },
+    {
+      "id": "coupes-64",
+      "name": "Roi de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c64.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Roi of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-65",
+      "name": "Reine de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c65.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Reine of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-66",
+      "name": "Cavalier de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c66.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cavalier of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-67",
+      "name": "Valet de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c67.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Valet of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-68",
+      "name": "Dix de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c68.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Dix of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-69",
+      "name": "Neuf de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c69.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Neuf of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-70",
+      "name": "Huit de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c70.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Huit of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-71",
+      "name": "Sept de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c71.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Sept of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-72",
+      "name": "Six de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c72.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Six of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-73",
+      "name": "Cinq de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c73.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Cinq of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-74",
+      "name": "Quatre de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c74.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Quatre of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-75",
+      "name": "Trois de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c75.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Trois of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-76",
+      "name": "Deux de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c76.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "Deux of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "coupes-77",
+      "name": "As de Coupes",
+      "level": 1,
+      "category": "suit-card",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c77.jpg",
+      "metadata": {
+        "suit": "Cups",
+        "arcana": "minor"
+      },
+      "sections": {
+        "About": "As of Cups, from the Viéville pack (BnF folio order)."
+      }
+    },
+    {
+      "id": "suit-coupes",
+      "name": "Coupes · Cups",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "coupes-64",
+        "coupes-65",
+        "coupes-66",
+        "coupes-67",
+        "coupes-68",
+        "coupes-69",
+        "coupes-70",
+        "coupes-71",
+        "coupes-72",
+        "coupes-73",
+        "coupes-74",
+        "coupes-75",
+        "coupes-76",
+        "coupes-77"
+      ],
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c64.jpg",
+      "sections": {
+        "What it is": "The Coupes (Cups) suit — King, Queen, Cavalier, Valet and ten pips."
+      }
+    },
+    {
+      "id": "trump-mat",
+      "name": "Le Mat (The Fool)",
+      "level": 1,
+      "category": "trump",
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c78.jpg",
+      "metadata": {
+        "arcana": "major"
+      },
+      "sections": {
+        "About": "The unnumbered Fool, the wandering figure — placed last in the BnF scan."
+      }
+    },
+    {
+      "id": "axis-atouts",
+      "name": "Les Atouts (22 Trumps)",
+      "level": 3,
+      "category": "axis",
+      "render_as": "pill-group",
+      "composite_of": [
+        "trump-01",
+        "trump-02",
+        "trump-03",
+        "trump-04",
+        "trump-05",
+        "trump-06",
+        "trump-07",
+        "trump-08",
+        "trump-09",
+        "trump-10",
+        "trump-11",
+        "trump-12",
+        "trump-13",
+        "trump-14",
+        "trump-15",
+        "trump-16",
+        "trump-17",
+        "trump-18",
+        "trump-19",
+        "trump-20",
+        "trump-21",
+        "trump-mat"
+      ],
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c01.jpg",
+      "sections": {
+        "What it is": "The 22 trumps (atouts) of the Viéville — 21 numbered cards plus the unnumbered Mat."
+      }
+    }
+  ]
+}
