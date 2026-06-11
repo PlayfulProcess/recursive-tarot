@@ -13,13 +13,7 @@ Pages images are only display-res).
 import json, os, glob, sys
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tgc_card import TW, TH, fetch, border_fit, cover_fit, print_quality, autotrim  # shared processing
-
-# Decks whose scans sit on cream/white card-stock — sample the bleed from the clean
-# corners so the white/black "contour" seam disappears (frame-blend).
-BLEND_FRAME = {"charles-vi-tarot", "este-tarot", "madiao-money-cards",
-               "minchiate-florence-tarot", "oswald-wirth-tarot",
-               "paris-anonymous-tarot", "vieville-tarot"}
+from tgc_card import TW, TH, fetch, border_fit, cover_fit, print_quality, autotrim, BLEND_FRAME  # shared
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "print", "decks", "sampler-tgc")
