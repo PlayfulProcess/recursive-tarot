@@ -876,7 +876,36 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             justify-content: center;
+            align-items: center;
         }
+
+        /* "Group by" axis selector — drives what the pills represent */
+        .groupby-select {
+            font-size: 0.75rem;
+            padding: 0.375rem 0.6rem;
+            border-radius: 9999px;
+            border: 1px solid var(--grammar-accent, #8b5cf6);
+            background: rgba(139, 92, 246, 0.12);
+            color: var(--grammar-accent, #c4b5fd);
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .groupby-select:focus { outline: none; }
+
+        /* Explanation of the chosen axis (and the active child) */
+        .axis-explainer {
+            max-width: 760px;
+            margin: 0.6rem auto 0;
+            padding: 0.6rem 0.9rem;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: var(--grammar-text-muted);
+            background: rgba(139, 92, 246, 0.07);
+            border: 1px solid rgba(139, 92, 246, 0.22);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .axis-explainer b { color: var(--grammar-accent, #c4b5fd); }
 
         .filter-pill {
             padding: 0.375rem 0.75rem;
@@ -1989,6 +2018,8 @@
                             <!-- Dynamically populated based on grammar -->
                         </div>
                     </div>
+                    <!-- Explanation of the chosen "group by" axis -->
+                    <div id="axis-explainer" class="axis-explainer" hidden></div>
 
                     <!-- Item Grid (grouped by hierarchy when applicable) -->
                     <div id="item-grid" class="item-grid">
@@ -3047,57 +3078,120 @@
             }
         }
 
+        // Which emergence axis (if any) currently drives the filter pills.
+        // null = the default "Levels" mode (L1/L2/L3 + categories).
+        let pillAxisId = null;
+
+        // The top-level emergence axes (composite items that aren't children of
+        // any other composite) — e.g. By Deck, By Age, The Tarot. Same set the
+        // sidebar uses as its roots.
+        function getRootAxes() {
+            const hasParent = new Set();
+            items.forEach(i => (i.composite_of || []).forEach(c => hasParent.add(c)));
+            const composites = items.filter(i => i.composite_of && i.composite_of.length > 0);
+            let roots = composites.filter(i => !hasParent.has(i.id));
+            if (!roots.length && composites.length) {
+                const mx = Math.max(...composites.map(c => c.level || 2));
+                roots = composites.filter(i => (i.level || 2) === mx);
+            }
+            return roots;
+        }
+
+        function stripMd(s) {
+            return (s || '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+                .replace(/[#>*_`]/g, '').replace(/\s+/g, ' ').trim();
+        }
+        function axisExplanation(item) {
+            if (!item) return '';
+            if (item.sections) return item.sections['What it is'] || item.sections['About'] || Object.values(item.sections)[0] || '';
+            return item.description || '';
+        }
+        function updateAxisExplainer() {
+            const el = document.getElementById('axis-explainer');
+            if (!el) return;
+            if (!pillAxisId) { el.hidden = true; el.innerHTML = ''; return; }
+            const axis = items.find(i => i.id === pillAxisId);
+            let html = `<b>${escapeHtml(axis ? axis.name : '')}</b> — ${escapeHtml(stripMd(axisExplanation(axis)).slice(0, 280))}`;
+            if (hierarchyFilter && hierarchyFilter.id) {
+                const child = items.find(i => i.id === hierarchyFilter.id);
+                const cx = stripMd(axisExplanation(child));
+                if (child && cx) html += `<br><b>${escapeHtml(child.name)}</b> — ${escapeHtml(cx.slice(0, 220))}`;
+            }
+            el.innerHTML = html; el.hidden = false;
+        }
+
         function buildFilters() {
             filterPills.innerHTML = '';
+            const axes = getRootAxes();
 
-            // All filter
-            const allBtn = createFilterButton('All', 'all', true);
-            filterPills.appendChild(allBtn);
-
-            // Dynamic level-based filter buttons
-            const levels = [...new Set(items.map(i => i.level || 1))].sort((a, b) => a - b);
-            if (levels.length > 1) {
-                levels.forEach(lvl => {
-                    const count = items.filter(i => (i.level || 1) === lvl).length;
-                    const label = lvl === 1 ? `L1 Base (${count})` : `L${lvl} (${count})`;
-                    const btn = createFilterButton(label, `level:${lvl}`);
-                    filterPills.appendChild(btn);
+            // "Group by" selector — choose what the pills represent (only when the
+            // grammar actually has emergence axes, e.g. the meta-grammar)
+            if (axes.length) {
+                const sel = document.createElement('select');
+                sel.className = 'groupby-select';
+                sel.title = 'Choose what the filter pills represent — the levels, or any emergence axis (By Deck, By Age, …)';
+                sel.innerHTML = '<option value="">⧉ Group: Levels</option>' +
+                    axes.map(a => `<option value="${a.id}">⧉ Group: ${escapeHtml(a.name)}</option>`).join('');
+                sel.value = pillAxisId || '';
+                sel.addEventListener('change', () => {
+                    pillAxisId = sel.value || null;
+                    activeFilter = 'all';
+                    filterByHierarchy(null, null);  // reset selection
+                    buildFilters();
+                    buildHierarchySidebar();
                 });
+                filterPills.appendChild(sel);
             }
 
-            // Data-driven category filters: only show if items actually have these values
-            {
-                const arcanaValues = [...new Set(items.map(i => i.categories.arcana).filter(Boolean))];
-                if (arcanaValues.includes('major')) {
-                    filterPills.appendChild(createFilterButton('Major Arcana', 'major'));
-                }
-                if (arcanaValues.includes('minor')) {
-                    filterPills.appendChild(createFilterButton('Minor Arcana', 'minor'));
-                }
+            // "All" pill — clears both filter systems
+            const allBtn = document.createElement('button');
+            allBtn.className = 'filter-pill' + ((!hierarchyFilter && activeFilter === 'all') ? ' active' : '');
+            allBtn.textContent = 'All';
+            allBtn.addEventListener('click', () => { activeFilter = 'all'; filterByHierarchy(null, null); buildFilters(); });
+            filterPills.appendChild(allBtn);
 
-                const suits = [...new Set(items.map(i => i.categories.suit).filter(Boolean))];
-                suits.forEach(suit => {
-                    const btn = createFilterButton(capitalize(suit), `suit:${suit}`);
+            if (pillAxisId) {
+                // AXIS MODE: the chosen axis's children become named filter pills
+                const axis = items.find(i => i.id === pillAxisId);
+                const children = (axis && axis.composite_of || []).map(id => items.find(i => i.id === id)).filter(Boolean);
+                children.forEach(ch => {
+                    const btn = document.createElement('button');
+                    btn.className = 'filter-pill' + (hierarchyFilter && hierarchyFilter.id === ch.id ? ' active' : '');
+                    const n = (ch.composite_of && ch.composite_of.length) ? ` (${ch.composite_of.length})` : '';
+                    btn.textContent = ch.name + n;
+                    btn.title = stripMd(axisExplanation(ch)).slice(0, 220) || ch.name;
+                    btn.addEventListener('click', () => {
+                        filterByHierarchy(`l${ch.level || 2}`, ch.id);
+                        buildFilters();
+                    });
                     filterPills.appendChild(btn);
                 });
-
-                // Generic category filters for non-tarot grammars
+            } else {
+                // LEVELS MODE (default): level + category pills
+                const levels = [...new Set(items.map(i => i.level || 1))].sort((a, b) => a - b);
+                if (levels.length > 1) {
+                    levels.forEach(lvl => {
+                        const count = items.filter(i => (i.level || 1) === lvl).length;
+                        const label = lvl === 1 ? `L1 Base (${count})` : `L${lvl} (${count})`;
+                        filterPills.appendChild(createFilterButton(label, `level:${lvl}`));
+                    });
+                }
+                const arcanaValues = [...new Set(items.map(i => i.categories.arcana).filter(Boolean))];
+                if (arcanaValues.includes('major')) filterPills.appendChild(createFilterButton('Major Arcana', 'major'));
+                if (arcanaValues.includes('minor')) filterPills.appendChild(createFilterButton('Minor Arcana', 'minor'));
+                const suits = [...new Set(items.map(i => i.categories.suit).filter(Boolean))];
+                suits.forEach(suit => filterPills.appendChild(createFilterButton(capitalize(suit), `suit:${suit}`)));
                 if (arcanaValues.length === 0 && suits.length === 0) {
                     const categories = [...new Set(items.map(i => i.categories.arcana || i.category).filter(Boolean))];
-                    categories.forEach(cat => {
-                        const btn = createFilterButton(capitalize(cat), `category:${cat}`);
-                        filterPills.appendChild(btn);
+                    categories.forEach(cat => filterPills.appendChild(createFilterButton(capitalize(cat), `category:${cat}`)));
+                }
+                if (grammarType === 'iching') {
+                    Object.entries(TRIGRAMS).forEach(([key, trigram]) => {
+                        filterPills.appendChild(createFilterButton(`${trigram.symbol} ${trigram.name}`, `trigram:${key}`));
                     });
                 }
             }
-
-            if (grammarType === 'iching') {
-                // Trigram filters
-                Object.entries(TRIGRAMS).forEach(([key, trigram]) => {
-                    const btn = createFilterButton(`${trigram.symbol} ${trigram.name}`, `trigram:${key}`);
-                    filterPills.appendChild(btn);
-                });
-            }
+            updateAxisExplainer();
         }
 
         function createFilterButton(label, value, isActive = false) {
@@ -3154,8 +3248,9 @@
             // Show All button
             const showAllBtn = document.createElement('button');
             showAllBtn.className = `sidebar-show-all ${!hierarchyFilter ? 'active' : ''}`;
-            showAllBtn.textContent = 'Show All Items';
-            showAllBtn.addEventListener('click', () => filterByHierarchy(null, null));
+            showAllBtn.textContent = hierarchyFilter ? '↺ Clear filter · show all' : '✦ Showing all cards';
+            showAllBtn.title = 'Clear any active filter and show every card in this grammar';
+            showAllBtn.addEventListener('click', () => { activeFilter = 'all'; filterByHierarchy(null, null); buildFilters(); });
             hierarchyIndex.appendChild(showAllBtn);
 
             // Render tree recursively
@@ -3290,6 +3385,7 @@
                 }
                 filterByHierarchy(`l${level}`, item.id);
                 buildHierarchySidebar();
+                buildFilters();   // keep the pills + axis explainer in sync
             });
 
             // (The old "render as ▾" menu was removed — the sidebar dimension now
