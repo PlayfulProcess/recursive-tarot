@@ -24,6 +24,10 @@ BLEND_FRAME = {"charles-vi-tarot", "este-tarot", "madiao-money-cards",
                "minchiate-florence-tarot", "oswald-wirth-tarot",
                "paris-anonymous-tarot", "vieville-tarot"}
 
+# Decks where a plain auto-trim leaves a wide card-stock margin (faint marginal
+# text / library stamps fool the bbox). Use the density-based content crop instead.
+TIGHT_TRIM = {"oswald-wirth-tarot", "minchiate-florence-tarot", "paris-anonymous-tarot"}
+
 def fetch(url):
     req = urllib.request.Request(url, headers={"User-Agent": "recursive-tarot/1.0 (PlayfulProcess)"})
     return Image.open(io.BytesIO(urllib.request.urlopen(req, timeout=90).read())).convert("RGB")
@@ -53,12 +57,35 @@ def _corner_colour(im):
         cols.append(im.crop(box).resize((1, 1)).getpixel((0, 0)))
     return tuple(round(sum(p[i] for p in cols) / len(cols)) for i in range(3))
 
-def border_fit(im, blend_frame=False):
+def content_crop(im, frac=0.05):
+    """Crop to the DENSE content region — drops a wide card-stock margin AND the
+    sparse marginal marks (faint top text, library stamps) that fool a plain bbox.
+    Works on a small thumbnail for speed, then maps the crop back to full res."""
+    W, H = im.size
+    small = im.resize((min(420, W), max(1, round(min(420, W) * H / W))))
+    sw, sh = small.size
+    corner = small.getpixel((1, 1))
+    mask = ImageChops.difference(small, Image.new("RGB", small.size, corner)).convert("L").point(lambda p: 1 if p > 28 else 0)
+    px = mask.load()
+    colsum = [sum(px[x, y] for y in range(sh)) for x in range(sw)]
+    rowsum = [sum(px[x, y] for x in range(sw)) for y in range(sh)]
+    cmax = max(colsum) or 1; rmax = max(rowsum) or 1
+    xs = [x for x in range(sw) if colsum[x] > frac * cmax]
+    ys = [y for y in range(sh) if rowsum[y] > frac * rmax]
+    if not xs or not ys:
+        return im
+    pad = 0.012
+    l = max(0.0, min(xs) / sw - pad); r = min(1.0, (max(xs) + 1) / sw + pad)
+    t = max(0.0, min(ys) / sh - pad); b = min(1.0, (max(ys) + 1) / sh + pad)
+    return im.crop((round(l * W), round(t * H), round(r * W), round(b * H)))
+
+def border_fit(im, blend_frame=False, tight=False):
     """DEFAULT mode: card fitted inside the trim on a canvas of its own border colour.
     blend_frame=True samples that colour from the card's clean CORNERS instead of the
     edge median — so a card sitting on cream/white stock gets a matching bleed and the
-    white/black 'contour' seam disappears (the print analog of PPT's 'set transparent')."""
-    im = autotrim(im)
+    white/black 'contour' seam disappears (the print analog of PPT's 'set transparent').
+    tight=True uses the density content crop (for wide card-stock margins)."""
+    im = content_crop(im) if tight else autotrim(im)
     w, h = im.size
     inset = max(1, round(min(w, h) * 0.005))
     im = im.crop((inset, inset, w - inset, h - inset)); w, h = im.size
