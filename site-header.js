@@ -21,6 +21,15 @@
   const inSub = /\/(viewers|pages)\//.test(location.pathname);
   const PFX = inSub ? '../' : '';
 
+  // Shared-identity widget (reads the .recursive.eco session cookie; L1 of the
+  // integration ladder). Loaded once; renders as <recursive-auth> in the bar.
+  if (!document.querySelector('script[data-recursive-auth]')) {
+    const s = document.createElement('script');
+    s.src = PFX + 'auth-widget.js?v=1';
+    s.dataset.recursiveAuth = '1';
+    document.head.appendChild(s);
+  }
+
   // [key, label, href]
   const VIEWS = [
     ['cards',      'Cards',        PFX + 'viewers/cards.html'],
@@ -111,6 +120,7 @@
             ${VIEWS.map(tab).join('')}
             <span class="sep"></span>
             ${TOOLS.map(tab).join('')}
+            <recursive-auth></recursive-auth>
           </nav>
         </div>`;
     }
