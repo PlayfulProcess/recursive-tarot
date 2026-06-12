@@ -23,6 +23,7 @@
   // [key, label, href]
   const VIEWS = [
     ['cards',      'Cards',        root + 'viewers/cards.html' + qs],
+    ['explorer',   'Explorer',     root + 'viewers/explorer.html' + qs],
     ['tree',       'Tree',         root + 'viewers/tree-viewer.html' + qs],
     ['thumbnails', 'Thumbnails',   root + 'viewers/cards.html' + qs + amp + 'layout=thumbnails'],
     ['timeline',   'Timeline',     root + 'viewers/timeline.html' + qs],
