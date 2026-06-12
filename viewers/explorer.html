@@ -37,14 +37,15 @@
   .chip .n{color:var(--muted);font-size:10.5px}
   .chip.filter-active{border-color:var(--accent);background:rgba(212,175,55,.1)}
 
-  /* ── filter popover ────────────────────────────────────── */
+  /* ── popover (filters + deck multiselect) ──────────────── */
   #pop{position:absolute;z-index:60;background:var(--panel);border:1px solid var(--chipline);border-radius:10px;
-    box-shadow:0 10px 30px rgba(0,0,0,.5);padding:10px;min-width:200px;max-width:280px;display:none}
+    box-shadow:0 10px 30px rgba(0,0,0,.5);padding:10px;min-width:210px;max-width:300px;display:none}
   #pop input[type=text]{width:100%;background:#0f0d17;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px 8px;font-size:12px;margin-bottom:6px}
-  #pop .vals{max-height:240px;overflow:auto}
+  #pop .vals{max-height:250px;overflow:auto}
   #pop label{display:flex;align-items:center;gap:7px;font-size:12.5px;padding:3px 2px;cursor:pointer;color:#cfc8e2}
   #pop .pbtns{display:flex;gap:6px;margin-top:8px}
   #pop .pbtns button{flex:1;font-size:11px;padding:4px;background:var(--chip);border:1px solid var(--chipline);border-radius:6px;color:#cfc8e2;cursor:pointer}
+  #pop .pbtns button:hover{border-color:var(--accent);color:var(--accent)}
 
   /* ── pivot output ──────────────────────────────────────── */
   #out{padding:14px 16px;overflow:auto}
@@ -53,14 +54,38 @@
   .pivot thead th{background:var(--panel);font-size:12px;position:sticky;top:0;z-index:5}
   .pivot th.rowhead{background:var(--panel);font-size:12.5px;white-space:nowrap;font-weight:600}
   .pivot th.rowhead .cnt{color:var(--muted);font-weight:400;font-size:10.5px}
-  .cellwrap{display:flex;flex-wrap:wrap;gap:4px;align-items:flex-end;max-width:340px}
+  .cellwrap{display:flex;flex-wrap:wrap;gap:4px;align-items:flex-end;max-width:360px}
   .cellwrap img{height:62px;border-radius:4px;background:#0a0810;cursor:pointer;transition:transform .12s}
   .cellwrap img:hover{transform:scale(1.6);z-index:9;position:relative}
+  /* emergence pills: hue = branch, gradient depth = level */
+  .epill{display:inline-flex;align-items:center;gap:4px;border-radius:7px;padding:4px 8px;font-size:11px;
+    color:#ece8f5;cursor:pointer;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    border:1px solid rgba(255,255,255,.12)}
+  .epill .lv{font-size:9px;opacity:.8;font-weight:700}
+  .epill:hover{border-color:#fff}
+  [data-rid].dim{opacity:.12;filter:grayscale(.85)}
   .more{font-size:11px;color:var(--muted);align-self:center;cursor:pointer}
   .ccount{font-size:13px;font-weight:700;text-align:center;min-width:40px}
   .empty{color:#39324d}
   #hint{color:var(--muted);font-size:13px;padding:30px;text-align:center;line-height:1.7}
-  #stats{font-size:11.5px;color:var(--muted);padding:0 16px 4px}
+  #stats{font-size:11.5px;color:var(--muted);padding:0 16px 4px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  #tracebar{display:none;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.4);
+    border-radius:999px;padding:2px 10px;color:var(--accent);cursor:pointer}
+
+  /* ── detail panel (trace up/down) ──────────────────────── */
+  #det{position:fixed;top:60px;right:0;bottom:0;width:340px;max-width:90vw;background:var(--panel);
+    border-left:1px solid var(--chipline);padding:16px;overflow:auto;z-index:70;display:none;box-shadow:-8px 0 30px rgba(0,0,0,.45)}
+  #det.open{display:block}
+  #det .close{float:right;cursor:pointer;color:var(--muted);font-size:20px;line-height:1}
+  #det img.hero{width:55%;max-height:230px;object-fit:contain;background:#0a0810;border-radius:8px;display:block;margin:6px 0 10px;cursor:zoom-in}
+  #det h2{margin:.2em 0 .15em;font-size:16px}
+  #det .meta{font-size:12px;color:var(--muted);margin-bottom:10px}
+  #det h4{margin:14px 0 6px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  #det .rel{display:flex;flex-wrap:wrap;gap:5px}
+  #det .rel img{height:52px;border-radius:4px;cursor:pointer;background:#0a0810}
+  #det .tracebtn{margin-top:14px;width:100%;padding:8px;border-radius:8px;border:1px solid var(--accent);
+    background:transparent;color:var(--accent);font-weight:600;cursor:pointer}
+  #det .tracebtn:hover{background:rgba(212,175,55,.12)}
 
   /* lightbox */
   #lb{position:fixed;inset:0;background:rgba(8,6,14,.92);display:none;align-items:center;justify-content:center;z-index:99;flex-direction:column;gap:12px}
@@ -71,11 +96,11 @@
 </head>
 <body>
 <script src="../site-header.js?v=7"></script>
-<site-header active="cards"></site-header>
+<site-header active="explorer"></site-header>
 
 <div class="toolbar">
   <div class="title">Emergence Explorer <span class="sub">— drag fields to pivot the cards; every grouping is an emergence</span></div>
-  <select id="deckpick" title="Data source"></select>
+  <button id="deckbtn" title="Pick one or many grammars">✦ Decks ▾</button>
   <span class="spacer"></span>
   <button id="mode-cards" class="active">🃏 Cards</button>
   <button id="mode-counts">∑ Counts</button>
@@ -87,10 +112,11 @@
   <div class="zone" id="z-rows"><div class="zlab">Rows ▦</div><div class="chips"></div></div>
   <div class="zone" id="z-cols"><div class="zlab">Columns ▥</div><div class="chips"></div></div>
 </div>
-<div id="stats"></div>
+<div id="stats"><span id="statxt"></span><span id="tracebar"></span></div>
 <div id="out"><div id="hint">Loading…</div></div>
 
 <div id="pop"></div>
+<aside id="det"></aside>
 <div id="lb" onclick="this.style.display='none'"><img id="lbimg" src="" alt=""><div class="cap" id="lbcap"></div></div>
 
 <script>
@@ -100,30 +126,34 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;
 const PFX = '../';
 
 /* ── state ─────────────────────────────────────────────── */
-let records = [];                 // flattened cards
-let fields = [];                  // [{name, values:Set, multi}]
-let spec = { rows:[], cols:[], filters:{} };   // filters: {field:[values]}
+let records = [], fields = [], byId = {};
+let spec = { rows:[], cols:[], filters:{} };
 let mode = 'cards';
+let traceSet = null, traceName = '';
+let collection = null;
 
-/* ── 1. FLATTEN: grammar items → records with auto-discovered fields ── */
-function flatten(grammar){
+/* branch colour code (house palette) — pills: hue = branch, gradient = level */
+const BRANCH_COLOR = { A:'#e07a5f', B:'#81b29a', C:'#6d8ec9', marseille:'#6d8ec9',
+  occult:'#9b6dc9', esoteric:'#9b6dc9', roots:'#c9a24b', ancestors:'#c9a24b',
+  'sui-generis':'#c96d9b' };
+const rgba = (hex,a) => { const n=parseInt(hex.slice(1),16);
+  return `rgba(${n>>16},${(n>>8)&255},${n&255},${a})`; };
+
+/* ── 1. FLATTEN: items → records (+ __parents/__children for tracing) ── */
+function flatten(grammar, inherit, prefix){
   const items = grammar.items || [];
-  // reverse index: leaf id → emergence names it belongs to
+  const pid = id => (prefix ? prefix + ':' : '') + id;
   const memberOf = {};
-  for (const it of items){
-    if (it.composite_of && it.composite_of.length){
-      for (const cid of it.composite_of){
-        (memberOf[cid] = memberOf[cid] || []).push(it.name.split(' — ')[0].slice(0,40));
-      }
-    }
-  }
+  for (const it of items)
+    for (const cid of (it.composite_of || []))
+      (memberOf[pid(cid)] = memberOf[pid(cid)] || []).push(pid(it.id));
   const recs = [];
   for (const it of items){
-    // EVERY item becomes a record — leaves AND emergence nodes. The `level` field
-    // (L1 = base cards, L2+ = emergences) is a normal draggable dimension, and the
-    // default spec filters it to L1 so the explorer opens on the cards.
     const lvl = it.level || (it.composite_of?.length ? 2 : 1);
-    const r = { __name: it.name, __img: it.image_url || it.metadata?.image_url || '', __id: it.id };
+    const r = { __name: it.name, __img: it.image_url || it.metadata?.image_url || '',
+                __id: pid(it.id),
+                __children: (it.composite_of || []).map(pid),
+                __parents: memberOf[pid(it.id)] || [] };
     r.level = ['L' + lvl];
     const md = it.metadata || {};
     for (const [k,v] of Object.entries(md)){
@@ -132,20 +162,25 @@ function flatten(grammar){
       if (typeof v === 'string' && !/^https?:/.test(v) && v.length < 60) r[k] = [v];
       else if (typeof v === 'number') r[k] = [v];
     }
-    // numeric year → century bucket too
+    // inherited deck-level fields (multiselect mode): records WITHOUT their own
+    // value take the deck's — so a deck's emergences are catalogued into its
+    // century, branch, etc. alongside the cards.
+    if (inherit) for (const [k,v] of Object.entries(inherit))
+      if (v != null && !r[k]) r[k] = [v];
     if (r.year){ const y = +r.year[0]; if (y) r.century = [ (Math.floor((y-1)/100)+1) + 'th c.' ]; }
-    // keywords: "ns:val" → field ns·kw ; plain → multi-value keyword
     for (const kw of (it.keywords || [])){
       const m = /^([a-z_-]{2,20}):(.+)$/.exec(kw);
       if (m) (r[m[1]+' ·kw'] = r[m[1]+' ·kw'] || []).push(m[2]);
       else (r.keyword = r.keyword || []).push(kw);
     }
     if (it.category) r.category = [it.category];
-    if (memberOf[it.id]) r.emergence = memberOf[it.id];
+    if (r.__parents.length)
+      r.emergence = r.__parents.map(p => (byIdName(p) || p).split(' — ')[0].slice(0,40));
     recs.push(r);
   }
   return recs;
 }
+function byIdName(id){ return byId[id]?.__name; }
 
 function discoverFields(recs){
   const tally = {};
@@ -164,7 +199,7 @@ function smartCmp(a,b){ const na=+a, nb=+b;
   if (!isNaN(na) && !isNaN(nb)) return na-nb;
   return String(a).localeCompare(String(b)); }
 
-/* ── 2. PIVOT: spec → grouped output ───────────────────── */
+/* ── 2. PIVOT ──────────────────────────────────────────── */
 const vals = (r,f) => r[f] || ['—'];
 function passes(r){
   for (const [f, sel] of Object.entries(spec.filters)){
@@ -185,6 +220,20 @@ function groupBy(recs, fs){
 }
 
 /* ── 3. RENDER ─────────────────────────────────────────── */
+function branchColor(r){
+  const b = (r.order?.[0]) || (r.branch?.[0]) || '';
+  return BRANCH_COLOR[b] || '#8b5cf6';
+}
+function recHTML(r){
+  const lvl = +(r.level?.[0]||'L1').slice(1);
+  if (lvl === 1 && r.__img)
+    return `<img loading="lazy" data-rid="${esc(r.__id)}" src="${esc(r.__img)}" title="${esc(r.__name)}">`;
+  const c = branchColor(r);
+  const lo = Math.min(.5, .06 + .07*lvl), hi = Math.min(.85, .14 + .12*lvl);
+  return `<span class="epill" data-rid="${esc(r.__id)}" title="${esc(r.__name)}"
+    style="background:linear-gradient(135deg,${rgba(c,lo)},${rgba(c,hi)});border-left:3px solid ${c}">
+    <span class="lv">L${lvl}</span>${esc(r.__name.split(' — ')[0].slice(0,26))}</span>`;
+}
 function cellHTML(rs){
   if (!rs.length) return '<td><span class="empty">·</span></td>';
   if (mode === 'counts'){
@@ -193,24 +242,19 @@ function cellHTML(rs){
     return `<td class="ccount" style="background:rgba(139,92,246,${a.toFixed(2)})">${rs.length}</td>`;
   }
   const N = 6, shown = rs.slice(0,N);
-  let h = '<td><div class="cellwrap">';
-  for (const r of shown)
-    h += r.__img ? `<img loading="lazy" src="${esc(r.__img)}" title="${esc(r.__name)}" onclick="window.__lb('${esc(r.__img)}','${esc(r.__name)}')">`
-                 : `<span class="more" title="${esc(r.__name)}">▢</span>`;
+  let h = '<td><div class="cellwrap">' + shown.map(recHTML).join('');
   if (rs.length > N) h += `<span class="more">+${rs.length-N}</span>`;
-  h += `</div></td>`;
-  return h;
+  return h + '</div></td>';
 }
 function render(){
   const live = records.filter(passes);
-  $('#stats').textContent = `${live.length} of ${records.length} cards` +
+  $('#statxt').textContent = `${live.length} of ${records.length} items` +
     (Object.keys(spec.filters).filter(f=>spec.filters[f].length).length ? ' (filtered)' : '');
   const out = $('#out');
   const colField = spec.cols[0];
   const colVals = colField ? [...new Set(live.flatMap(r=>vals(r,colField).map(String)))].sort(smartCmp) : null;
   const tree = groupBy(live, spec.rows);
 
-  // precompute max cell for the counts heatmap
   if (mode==='counts'){ let mx=1;
     (function walk(t){ if(!t) return; for(const g of t){ if(g.children) walk(g.children);
       else { if(colVals){ for(const cv of colVals){ mx=Math.max(mx,g.recs.filter(r=>vals(r,colField).map(String).includes(cv)).length);} } else mx=Math.max(mx,g.recs.length);} } })(tree);
@@ -219,18 +263,17 @@ function render(){
 
   if (!spec.rows.length && !colField){
     out.innerHTML = live.length
-      ? `<div class="cellwrap" style="max-width:none">${live.slice(0,160).map(r=>r.__img?`<img loading="lazy" src="${esc(r.__img)}" title="${esc(r.__name)}" onclick="window.__lb('${esc(r.__img)}','${esc(r.__name)}')">`:'').join('')}${live.length>160?`<span class="more">+${live.length-160} more</span>`:''}</div>`
-      : '<div id="hint">No cards match the filters.</div>';
-    if (!spec.rows.length && !colField && !Object.keys(spec.filters).length)
-      out.insertAdjacentHTML('afterbegin','<div id="hint">Drag a field into <b>Rows</b> (try <b>deck</b> or <b>century</b>), one into <b>Columns</b> (try <b>suit</b> or <b>order</b>). <b>Click any chip to filter it</b> — including <b>level</b>, which starts at L1 (base cards); add L2+ to see the emergences themselves. Every cell is an emergence — a pattern over the same cards.</div>');
-    return;
+      ? `<div class="cellwrap" style="max-width:none">${live.slice(0,160).map(recHTML).join('')}${live.length>160?`<span class="more">+${live.length-160} more</span>`:''}</div>`
+      : '<div id="hint">No items match the filters.</div>';
+    if (!Object.keys(spec.filters).length)
+      out.insertAdjacentHTML('afterbegin','<div id="hint">Drag a field into <b>Rows</b> (try <b>deck</b> or <b>century</b>), one into <b>Columns</b> (try <b>suit</b> or <b>level</b>). <b>Click any chip to filter it</b> — <b>level</b> starts at L1; add L2+ to see the emergences as coloured pills (hue = branch, depth = level). Click any card or pill to trace its relationships ⬆⬇.</div>');
+    applyTrace(); return;
   }
   let h = '<table class="pivot"><thead><tr>';
   for (const rf of spec.rows) h += `<th>${esc(rf)}</th>`;
   if (colVals) for (const cv of colVals) h += `<th>${esc(cv)}</th>`;
-  else h += '<th>cards</th>';
+  else h += '<th>items</th>';
   h += '</tr></thead><tbody>';
-
   const rowsOut = [];
   (function walk(tree, path){
     if (!tree) return;
@@ -239,17 +282,14 @@ function render(){
       else rowsOut.push([...path, g]);
     }
   })(tree, []);
-
-  if (!rowsOut.length){ // columns only
-    h += '<tr>';
-    for (const cv of colVals) h += cellHTML(live.filter(r=>vals(r,colField).map(String).includes(cv)));
-    h += '</tr>';
+  if (!rowsOut.length && colVals){
+    h += '<tr>' + colVals.map(cv => cellHTML(live.filter(r=>vals(r,colField).map(String).includes(cv)))).join('') + '</tr>';
   }
   let prev = [];
   for (const path of rowsOut){
     h += '<tr>';
     path.forEach((g,i)=>{
-      if (prev[i] !== g) { h += `<th class="rowhead">${esc(g.key)} <span class="cnt">${g.recs.length}</span></th>`; }
+      if (prev[i] !== g) h += `<th class="rowhead">${esc(g.key)} <span class="cnt">${g.recs.length}</span></th>`;
       else h += '<th class="rowhead" style="border-top:none"></th>';
     });
     const leafRecs = path[path.length-1].recs;
@@ -259,13 +299,60 @@ function render(){
     prev = path;
   }
   out.innerHTML = h + '</tbody></table>';
+  applyTrace();
 }
+
+/* ── 3b. TRACE (Excel-style precedents/dependents) ─────── */
+function relativesOf(id){
+  const set = new Set([id]);
+  const up = [id], down = [id];
+  while (up.length){ const r = byId[up.pop()]; if (!r) continue;
+    for (const p of r.__parents) if (!set.has(p)){ set.add(p); up.push(p); } }
+  while (down.length){ const r = byId[down.pop()]; if (!r) continue;
+    for (const c of r.__children) if (!set.has(c)){ set.add(c); down.push(c); } }
+  return set;
+}
+function applyTrace(){
+  const bar = $('#tracebar');
+  document.querySelectorAll('[data-rid]').forEach(el =>
+    el.classList.toggle('dim', !!traceSet && !traceSet.has(el.dataset.rid)));
+  if (traceSet){ bar.style.display='inline-block';
+    bar.textContent = `🔦 tracing: ${traceName} (${traceSet.size} related) — click to clear`; }
+  else bar.style.display='none';
+}
+$('#tracebar').onclick = () => { traceSet=null; applyTrace(); };
+
+function openDetail(id){
+  const r = byId[id]; if (!r) return;
+  const det = $('#det');
+  const relList = ids => ids.map(i => byId[i]).filter(Boolean).slice(0,18)
+    .map(x => x.__img && +(x.level?.[0]||'L1').slice(1)===1
+      ? `<img data-rid="${esc(x.__id)}" src="${esc(x.__img)}" title="${esc(x.__name)}">`
+      : recHTML(x)).join('');
+  const metaBits = ['level','deck','source_deck','century','order','branch','suit','rank','function','print quality']
+    .filter(k=>r[k]).map(k=>`${k}: <b>${esc(r[k].join(', '))}</b>`).join(' · ');
+  det.innerHTML = `
+    <span class="close" onclick="document.getElementById('det').classList.remove('open')">✕</span>
+    ${r.__img ? `<img class="hero" src="${esc(r.__img)}" onclick="window.__lb('${esc(r.__img)}','${esc(r.__name)}')">` : ''}
+    <h2>${esc(r.__name)}</h2>
+    <div class="meta">${metaBits}</div>
+    <h4>⬆ Part of (${r.__parents.length})</h4>
+    <div class="rel">${r.__parents.length ? relList(r.__parents) : '<span class="empty">— top level</span>'}</div>
+    <h4>⬇ Contains (${r.__children.length})</h4>
+    <div class="rel">${r.__children.length ? relList(r.__children) + (r.__children.length>18?`<span class="more">+${r.__children.length-18}</span>`:'') : '<span class="empty">— a leaf card</span>'}</div>
+    <button class="tracebtn">🔦 Trace relationships in the pivot</button>`;
+  det.querySelector('.tracebtn').onclick = () => {
+    traceSet = relativesOf(id); traceName = r.__name.split(' — ')[0].slice(0,30); applyTrace(); };
+  det.classList.add('open');
+}
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-rid]');
+  if (t) { openDetail(t.dataset.rid); }
+});
 window.__lb = (src,cap)=>{ $('#lbimg').src=src; $('#lbcap').textContent=cap; $('#lb').style.display='flex'; };
 
-/* ── 4. UI: chips, zones, drag-drop, popover ───────────── */
+/* ── 4. chips / zones / popover ────────────────────────── */
 function chipEl(f, zone){
-  // EVERY chip is also a filter: click → value picker; gold = filter active.
-  // ✕ clears the chip completely — as a filter AND as a dimension.
   const el = document.createElement('span');
   const fl = fields.find(x=>x.name===f);
   const nsel = (spec.filters[f]||[]).length;
@@ -287,7 +374,7 @@ function removeField(f, zone){
 function sync(){
   const tray = $('#tray');
   tray.querySelectorAll('.chip').forEach(c=>c.remove());
-  const used = new Set([...spec.rows, ...spec.cols]);   // filtered chips STAY in the tray, gold
+  const used = new Set([...spec.rows, ...spec.cols]);
   for (const f of fields) if (!used.has(f.name)) tray.appendChild(chipEl(f.name, null));
   const fill = (sel, list, zone) => { const c = $(sel+' .chips'); c.innerHTML='';
     for (const f of list) c.appendChild(chipEl(f, zone)); };
@@ -305,22 +392,25 @@ for (const [sel, zone] of [['#z-rows','rows'],['#z-cols','cols'],['#tray',null]]
     let d; try { d = JSON.parse(e.dataTransfer.getData('text/plain')); } catch(err){ return; }
     if (d.from) removeField(d.f, d.from);
     if (zone==='rows' && !spec.rows.includes(d.f)) spec.rows.push(d.f);
-    if (zone==='cols'){ spec.cols=[d.f]; }                 // single column field (v1)
+    if (zone==='cols'){ spec.cols=[d.f]; }
     sync();
   });
 }
+function popAt(anchor){
+  const pop = $('#pop'); const r = anchor.getBoundingClientRect();
+  pop.style.left = Math.min(r.left, innerWidth-320) + 'px';
+  pop.style.top = (r.bottom + scrollY + 6) + 'px';
+  pop.style.display = 'block';
+  return pop;
+}
 function openPop(f, anchor, zone){
-  const pop = $('#pop');
   const fl = fields.find(x=>x.name===f); if (!fl) return;
   const sel = new Set((spec.filters[f]||[]).map(String));
+  const pop = popAt(anchor);
   pop.innerHTML = `<input type="text" placeholder="search values…">
     <div class="vals">${fl.values.map(v=>`<label><input type="checkbox" value="${esc(v)}" ${sel.has(String(v))?'checked':''}> ${esc(v)}</label>`).join('')}</div>
     <div class="pbtns"><button data-a="all">All</button><button data-a="none">None</button><button data-a="ok">Apply ⧩</button></div>
     ${zone ? '' : `<div class="pbtns"><button data-a="rows">→ Rows</button><button data-a="cols">→ Columns</button></div>`}`;
-  const r = anchor.getBoundingClientRect();
-  pop.style.left = Math.min(r.left, innerWidth-300) + 'px';
-  pop.style.top = (r.bottom + scrollY + 6) + 'px';
-  pop.style.display = 'block';
   pop.querySelector('input[type=text]').oninput = e => {
     const q = e.target.value.toLowerCase();
     pop.querySelectorAll('.vals label').forEach(l => l.style.display = l.textContent.toLowerCase().includes(q)?'':'none');
@@ -336,44 +426,82 @@ function openPop(f, anchor, zone){
   });
 }
 document.addEventListener('click', e => {
-  if (!$('#pop').contains(e.target) && !e.target.closest('.chip')) $('#pop').style.display='none';
+  if (!$('#pop').contains(e.target) && !e.target.closest('.chip') && e.target.id!=='deckbtn')
+    $('#pop').style.display='none';
 });
 
-/* ── 5. boot ───────────────────────────────────────────── */
+/* ── 5. deck MULTISELECT ───────────────────────────────── */
+function selectedSlugs(){
+  const d = new URLSearchParams(location.search).get('decks');
+  return d ? d.split(',').filter(Boolean) : [];
+}
+$('#deckbtn').onclick = () => {
+  if (!collection) return;
+  const sel = new Set(selectedSlugs());
+  const pop = popAt($('#deckbtn'));
+  const decks = collection.grammars.filter(g=>!g.is_meta && g.slug!=='tree-of-tarot');
+  pop.innerHTML = `<input type="text" placeholder="search decks…">
+    <div class="vals">${decks.map(g=>`<label><input type="checkbox" value="${esc(g.slug)}" ${sel.has(g.slug)?'checked':''}> ${esc(g.name.split(' — ')[0].slice(0,34))}</label>`).join('')}</div>
+    <div class="pbtns"><button data-a="meta">✦ Meta (all-in-one)</button></div>
+    <div class="pbtns"><button data-a="all">All</button><button data-a="none">None</button><button data-a="ok">Load selected</button></div>`;
+  pop.querySelector('input[type=text]').oninput = e => {
+    const q = e.target.value.toLowerCase();
+    pop.querySelectorAll('.vals label').forEach(l => l.style.display = l.textContent.toLowerCase().includes(q)?'':'none');
+  };
+  pop.querySelectorAll('.pbtns button').forEach(b => b.onclick = () => {
+    if (b.dataset.a==='all') pop.querySelectorAll('.vals input').forEach(i=>i.checked=true);
+    else if (b.dataset.a==='none') pop.querySelectorAll('.vals input').forEach(i=>i.checked=false);
+    else if (b.dataset.a==='meta') location.href = 'explorer.html';
+    else { const v = [...pop.querySelectorAll('.vals input:checked')].map(i=>i.value);
+           location.href = v.length ? 'explorer.html?decks=' + v.join(',') : 'explorer.html'; }
+  });
+};
+
+/* ── 6. boot ───────────────────────────────────────────── */
 $('#mode-cards').onclick = () => { mode='cards'; $('#mode-cards').classList.add('active'); $('#mode-counts').classList.remove('active'); render(); };
 $('#mode-counts').onclick = () => { mode='counts'; $('#mode-counts').classList.add('active'); $('#mode-cards').classList.remove('active'); render(); };
-$('#reset').onclick = () => { spec={rows:[],cols:[],filters:{}}; sync(); };
+$('#reset').onclick = () => { spec={rows:[],cols:[],filters:{}}; traceSet=null; sync(); };
 
-async function loadCollectionPicker(){
-  try{
-    const c = await (await fetch(PFX+'tarot/_collection.json')).json();
-    const cur = new URLSearchParams(location.search).get('src') || '';
-    const opts = [['../tarot/all-decks-many-lenses/grammar.json','✦ All Decks (the meta)']]
-      .concat(c.grammars.filter(g=>!g.is_meta && g.slug!=='tree-of-tarot')
-        .map(g=>[`../tarot/${g.slug}/grammar.json`, g.name.split(' — ')[0]]));
-    $('#deckpick').innerHTML = opts.map(([v,t])=>`<option value="${esc(v)}" ${v===cur?'selected':''}>${esc(t)}</option>`).join('');
-    $('#deckpick').onchange = e => location.href = `explorer.html?src=${encodeURIComponent(e.target.value)}`;
-  }catch(e){}
-}
 async function boot(){
-  loadCollectionPicker();
-  const src = new URLSearchParams(location.search).get('src') || PFX+'tarot/all-decks-many-lenses/grammar.json';
-  let g;
-  try { g = await (await fetch(src)).json(); }
-  catch(e){ $('#out').innerHTML = '<div id="hint">Could not load the grammar.</div>'; return; }
-  records = flatten(g);
+  try { collection = await (await fetch(PFX+'tarot/_collection.json')).json(); } catch(e){}
+  const slugs = selectedSlugs();
+  const srcParam = new URLSearchParams(location.search).get('src');
+  records = []; byId = {};
+  try{
+    if (slugs.length && collection){
+      $('#deckbtn').textContent = `✦ Decks ▾ (${slugs.length})`;
+      const metas = Object.fromEntries(collection.grammars.map(g=>[g.slug,g]));
+      const loads = slugs.map(async slug => {
+        const g = await (await fetch(`${PFX}tarot/${slug}/grammar.json`)).json();
+        const cm = metas[slug] || {};
+        const inherit = { deck: (cm.name || g.name || slug).split(' — ')[0].slice(0,34),
+                          year: g.metadata?.year, branch: cm.branch || g.metadata?.branch,
+                          order: g.metadata?.order, tradition: g.metadata?.tradition };
+        return flatten(g, inherit, slug);
+      });
+      for (const recs of await Promise.all(loads)) records.push(...recs);
+    } else {
+      const src = srcParam || PFX+'tarot/all-decks-many-lenses/grammar.json';
+      const g = await (await fetch(src)).json();
+      records = flatten(g, null, null);
+      if (srcParam) $('#deckbtn').textContent = '✦ ' + (g.name||'deck').split(' — ')[0].slice(0,22) + ' ▾';
+    }
+  } catch(e){ $('#out').innerHTML = '<div id="hint">Could not load the grammar(s).</div>'; return; }
+  for (const r of records) byId[r.__id] = r;
+  // resolve emergence names now that byId is full
+  for (const r of records) if (r.__parents.length)
+    r.emergence = r.__parents.map(p => (byId[p]?.__name || p).split(' — ')[0].slice(0,40));
   fields = discoverFields(records);
-  // restore shared state from URL hash
   let restored = false;
   try { const s = JSON.parse(decodeURIComponent(location.hash.slice(1)));
         if (s && s.rows) { spec = s; restored = true; } } catch(e){}
   if (!restored){
-    // default: show base cards only (level = L1) — but level is a normal chip:
-    // click it to add L2/L3 emergences, or drag it into Rows to pivot BY level.
     const lv = fields.find(f=>f.name==='level');
     if (lv && lv.count > 1 && lv.values.includes('L1')) spec.filters.level = ['L1'];
     if (fields.some(f=>f.name==='century') && fields.some(f=>f.name==='suit'))
       { spec.rows=['century']; spec.cols=['suit']; }
+    else if (slugs.length > 1 && fields.some(f=>f.name==='century'))
+      { spec.rows=['century']; if (fields.some(f=>f.name==='deck')) spec.cols=['deck']; }
   }
   sync();
 }
