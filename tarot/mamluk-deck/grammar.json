@@ -15,8 +15,8 @@
   "creator_name": "PlayfulProcess",
   "default_view": "tree",
   "default_preview": "tree",
-  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck-cover.jpg",
-  "description": "The single most important upstream object in this repo: the four-suit pack Europe copied. The surviving deck — *Mulūk wa-nuwwāb* (\"Kings and Deputies\"), the game called *kanjifah* — is a Mamluk-era set (Egypt & Syria, dated to roughly the 15th century, c. 1500), of which **roughly 48 cards survive — about 43 from the original pack plus a handful of cruder later replacement cards** (the original deck had 52), held at the **Topkapı Palace Museum, Istanbul** (found and published by L. A. Mayer, 1939/1971). It has **four suits** — cups, coins, swords, and **polo-sticks** — each running **Ace–10 plus three court cards** (a king and two deputies). The courts are **aniconic**: no human figures, only abstract design and calligraphic inscriptions naming the rank. When this pack reached Iberia and Italy in the **1370s** (as *naipes* / *naibi*), Italians later added a fifth suit of 21 triumphs + the Fool — and that addition, in the **1440s**, is tarot. So tarot is *this deck plus trumps*. The polo-sticks, a game Europeans didn't play, were redrawn as **batons/wands**; cups, coins and swords carried over directly.\n\nGAME OR DIVINATION? A gaming/gambling object. The deepest roots of tarot are a card-game tradition (Tang-China money-suited cards → Mamluk *kanjifah* → European *naibi*); divination cultures existed alongside but used *other* instruments. See the meta's essay 'The Divination Question.'\n\nANCESTRAL STATUS: **direct ancestor** (the parent of the European four-suit pack), as distinct from the *cousin* branches (e.g. Ganjifa) that did not become tarot.\n\nSOURCES: L. A. Mayer, *Mamluk Playing Cards* (1971); Michael Dummett, *The Game of Tarot* (1980); Topkapı Palace Museum, Istanbul; see also this repo's research/00c-islamic-and-chinese-card-origins.mdx.\n\n---\n*AI-assisted first-pass draft, pending review by the maintainer and the Tarot History Forum. Corrections welcome via pending edit.*",
+  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%201.jpg",
+  "description": "The single most important upstream object in this repo: the four-suit pack Europe copied. The surviving deck — *Mulūk wa-nuwwāb* (\"Kings and Deputies\"), the game called *kanjifah* — is a Mamluk-era set (Egypt & Syria, dated to roughly the 15th century, c. 1500), of which **roughly 48 cards survive — about 43 from the original pack plus a handful of cruder later replacement cards** (the original deck had 52), held at the **Topkapı Palace Museum, Istanbul** (found and published by L. A. Mayer, 1939/1971).\n\nIt has **four suits** — cups, coins, swords, and **polo-sticks** — each running **Ace–10 plus three court cards** (a king and two deputies). The courts are **aniconic**: no human figures, only abstract design and calligraphic inscriptions naming the rank. When this pack reached Iberia and Italy in the **1370s** (as *naipes* / *naibi*), Italians later added a fifth suit of 21 triumphs + the Fool — and that addition, in the **1440s**, is tarot. So tarot is *this deck plus trumps*. The polo-sticks, a game Europeans didn't play, were redrawn as **batons/wands**; cups, coins and swords carried over directly.\n\n**How the suits became European:** Cups → Cups, Coins → Coins, Swords → Swords (Latin suits), and Polo-sticks → Batons. The Latin-suited packs (Italian/Spanish) preserve the Mamluk shapes most faithfully; the later French suits (hearts/tiles/clovers/pikes) are a simplification of these.\n\n**China → Islam → Europe:** Playing cards most likely begin in Tang-dynasty China (money-suited cards). Through an undocumented transmission they reach the Islamic world as *kanjifah*; the Mamluk pack is the form that crossed into Iberia and Italy in the 1370s. Italy's fifth suit of triumphs (1440s) makes it tarot. The deepest roots are gaming, not divination.\n\nGAME OR DIVINATION? A gaming/gambling object. The deepest roots of tarot are a card-game tradition (Tang-China money-suited cards → Mamluk *kanjifah* → European *naibi*); divination cultures existed alongside but used *other* instruments.\n\nANCESTRAL STATUS: **direct ancestor** (the parent of the European four-suit pack), as distinct from the *cousin* branches (e.g. Ganjifa) that did not become tarot.\n\nSOURCES: L. A. Mayer, *Mamluk Playing Cards* (1971); Michael Dummett, *The Game of Tarot* (1980); Topkapı Palace Museum, Istanbul.\n\n---\n*AI-assisted first-pass draft, pending review by the maintainer and the Tarot History Forum. Corrections welcome via pending edit.*",
   "tags": [
     "mamluk",
     "kanjifah",
@@ -47,9 +47,7 @@
         "suit-coins",
         "suit-swords",
         "suit-polo",
-        "court-structure",
-        "suits-to-europe",
-        "china-islam-europe"
+        "court-structure"
       ]
     },
     {
@@ -61,7 +59,8 @@
       "sections": {
         "What it is": "Ten pip cards (Ace–10) plus three courts. Carried into Europe directly as Cups (coppe / coupes)."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%202.jpg"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%202.jpg",
+      "composite_of": ["cups-king", "cups-deputy", "cups-pip"]
     },
     {
       "id": "suit-coins",
@@ -72,7 +71,8 @@
       "sections": {
         "What it is": "Ten pips plus three courts. Carried into Europe as Coins (denari / deniers)."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%203.jpg"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%203.jpg",
+      "composite_of": ["coins-king", "coins-deputy", "coins-pip"]
     },
     {
       "id": "suit-swords",
@@ -83,7 +83,8 @@
       "sections": {
         "What it is": "Ten pips plus three courts. The Mamluk swords are straight; carried into Europe as Swords (spade / épées)."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%204.jpg"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%204.jpg",
+      "composite_of": ["swords-king", "swords-deputy", "swords-pip"]
     },
     {
       "id": "suit-polo",
@@ -94,7 +95,8 @@
       "sections": {
         "What it is": "Ten pips plus three courts. Polo was a Mamluk court sport Europeans did not play — so this suit was redrawn as Batons / Wands (bastoni / bâtons). The clearest single fingerprint of the Islamic origin."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%205.jpg"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%205.jpg",
+      "composite_of": ["polo-king", "polo-deputy", "polo-pip"]
     },
     {
       "id": "court-structure",
@@ -106,29 +108,188 @@
         "What it is": "Each suit has three court cards: the **malik** (king), the **nā'ib** (viceroy / deputy), and the **thānī nā'ib** (second deputy). Hence the game's name, *Mulūk wa-nuwwāb*, 'Kings and Deputies.'",
         "Aniconic": "Following Islamic norms against figural images, the courts show no human figures — only abstract ornament and calligraphic inscriptions (rank names, sometimes verses of courtly praise). Europe later replaced the second deputy with a mounted Knight and added a Queen."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%206.jpg"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%206.jpg",
+      "composite_of": ["cups-king", "coins-king", "swords-king", "polo-king"]
     },
     {
-      "id": "suits-to-europe",
-      "name": "How the suits became European",
+      "id": "cups-king",
+      "name": "Malik al-ṭūmān — King of Cups",
       "level": 1,
-      "category": "lineage-note",
-      "sort_order": 6,
+      "category": "card",
+      "suit": "cups",
+      "rank": "king",
+      "sort_order": 10,
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%202.jpg",
+      "part_of": "suit-cups",
       "sections": {
-        "What it is": "Cups → Cups, Coins → Coins, Swords → Swords (Latin suits), and Polo-sticks → Batons. The Latin-suited packs (Italian/Spanish) preserve the Mamluk shapes most faithfully; the later French suits (hearts/tiles/clovers/pikes) are a simplification of these."
+        "Card": "The king (malik) of the Cups suit. An aniconic court card: no figure, only decorative and calligraphic ornament proclaiming the rank. The three Cups courts (malik, nā'ib, thānī nā'ib) became the King, Knight, and Page of the European Latin-suited packs; the Queen was added later."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%207.jpg"
+      "keywords": ["court", "king", "aniconic", "cups"]
     },
     {
-      "id": "china-islam-europe",
-      "name": "China → Islam → Europe",
+      "id": "cups-deputy",
+      "name": "Nā'ib al-ṭūmān — Deputy of Cups",
       "level": 1,
-      "category": "lineage-note",
-      "sort_order": 7,
+      "category": "card",
+      "suit": "cups",
+      "rank": "deputy",
+      "sort_order": 11,
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%206.jpg",
+      "part_of": "suit-cups",
       "sections": {
-        "What it is": "Playing cards most likely begin in Tang-dynasty China (money-suited cards). Through an undocumented transmission they reach the Islamic world as *kanjifah*; the Mamluk pack is the form that crossed into Iberia and Italy in the 1370s. Italy's fifth suit of triumphs (1440s) makes it tarot. The deepest roots are gaming, not divination."
+        "Card": "The viceroy (nā'ib) of the Cups suit — the senior deputy court card. Aniconic calligraphic design."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%201.jpg"
+      "keywords": ["court", "deputy", "aniconic", "cups"]
+    },
+    {
+      "id": "cups-pip",
+      "name": "Pip card — Cups (representative)",
+      "level": 1,
+      "category": "card",
+      "suit": "cups",
+      "rank": "pip",
+      "sort_order": 12,
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%201.jpg",
+      "part_of": "suit-cups",
+      "sections": {
+        "Card": "A surviving pip card from the Cups suit. Pip cards carry the suit symbol repeated numerically (Ace through 10) with decorative borders — entirely abstract, no narrative content. The suit symbol here is the cup (ṭūmān)."
+      },
+      "keywords": ["pip", "cups"]
+    },
+    {
+      "id": "coins-king",
+      "name": "Malik al-darāhim — King of Coins",
+      "level": 1,
+      "category": "card",
+      "suit": "coins",
+      "rank": "king",
+      "sort_order": 20,
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%203.jpg",
+      "part_of": "suit-coins",
+      "sections": {
+        "Card": "The king (malik) of the Coins suit. Aniconic court card with calligraphic inscription. Carried into Europe as the King of Coins (denari / deniers)."
+      },
+      "keywords": ["court", "king", "aniconic", "coins"]
+    },
+    {
+      "id": "coins-deputy",
+      "name": "Nā'ib al-darāhim — Deputy of Coins",
+      "level": 1,
+      "category": "card",
+      "suit": "coins",
+      "rank": "deputy",
+      "sort_order": 21,
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%206.jpg",
+      "part_of": "suit-coins",
+      "sections": {
+        "Card": "The viceroy (nā'ib) of the Coins suit. Aniconic calligraphic design."
+      },
+      "keywords": ["court", "deputy", "aniconic", "coins"]
+    },
+    {
+      "id": "coins-pip",
+      "name": "Pip card — Coins (representative)",
+      "level": 1,
+      "category": "card",
+      "suit": "coins",
+      "rank": "pip",
+      "sort_order": 22,
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%201.jpg",
+      "part_of": "suit-coins",
+      "sections": {
+        "Card": "A surviving pip card from the Coins suit. The coin symbol (darāhim) repeated numerically with decorative borders."
+      },
+      "keywords": ["pip", "coins"]
+    },
+    {
+      "id": "swords-king",
+      "name": "Malik al-suyūf — King of Swords",
+      "level": 1,
+      "category": "card",
+      "suit": "swords",
+      "rank": "king",
+      "sort_order": 30,
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%204.jpg",
+      "part_of": "suit-swords",
+      "sections": {
+        "Card": "The king (malik) of the Swords suit. Aniconic. Mamluk swords are straight (not the curved scimitar) — this detail carried into European Swords suits which also show straight blades."
+      },
+      "keywords": ["court", "king", "aniconic", "swords"]
+    },
+    {
+      "id": "swords-deputy",
+      "name": "Nā'ib al-suyūf — Deputy of Swords",
+      "level": 1,
+      "category": "card",
+      "suit": "swords",
+      "rank": "deputy",
+      "sort_order": 31,
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%206.jpg",
+      "part_of": "suit-swords",
+      "sections": {
+        "Card": "The viceroy (nā'ib) of the Swords suit. Aniconic calligraphic design."
+      },
+      "keywords": ["court", "deputy", "aniconic", "swords"]
+    },
+    {
+      "id": "swords-pip",
+      "name": "Pip card — Swords (representative)",
+      "level": 1,
+      "category": "card",
+      "suit": "swords",
+      "rank": "pip",
+      "sort_order": 32,
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%201.jpg",
+      "part_of": "suit-swords",
+      "sections": {
+        "Card": "A surviving pip card from the Swords suit. Straight-bladed sword symbol repeated numerically."
+      },
+      "keywords": ["pip", "swords"]
+    },
+    {
+      "id": "polo-king",
+      "name": "Malik al-jawkān — King of Polo-sticks",
+      "level": 1,
+      "category": "card",
+      "suit": "polo",
+      "rank": "king",
+      "sort_order": 40,
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%205.jpg",
+      "part_of": "suit-polo",
+      "sections": {
+        "Card": "The king (malik) of the Polo-sticks suit. Aniconic. The jawkān (polo mallet) was a Mamluk court sport marker. Europeans, unfamiliar with polo, redrew this suit as Batons / Wands — the transformation is visible when comparing this card to a Visconti batons card."
+      },
+      "keywords": ["court", "king", "aniconic", "polo-sticks", "batons"]
+    },
+    {
+      "id": "polo-deputy",
+      "name": "Nā'ib al-jawkān — Deputy of Polo-sticks",
+      "level": 1,
+      "category": "card",
+      "suit": "polo",
+      "rank": "deputy",
+      "sort_order": 41,
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%206.jpg",
+      "part_of": "suit-polo",
+      "sections": {
+        "Card": "The viceroy (nā'ib) of the Polo-sticks suit. Aniconic calligraphic design."
+      },
+      "keywords": ["court", "deputy", "aniconic", "polo-sticks", "batons"]
+    },
+    {
+      "id": "polo-pip",
+      "name": "Pip card — Polo-sticks (representative)",
+      "level": 1,
+      "category": "card",
+      "suit": "polo",
+      "rank": "pip",
+      "sort_order": 42,
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%207.jpg",
+      "part_of": "suit-polo",
+      "sections": {
+        "Card": "A surviving pip card from the Polo-sticks suit. The jawkān symbol repeated numerically. When this suit crossed to Europe as Batons / Wands, the stick shape was retained but the polo context was lost."
+      },
+      "keywords": ["pip", "polo-sticks", "batons"]
     }
   ]
 }
