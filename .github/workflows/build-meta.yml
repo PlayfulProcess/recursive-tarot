@@ -7,7 +7,7 @@ name: Rebuild meta + deploy Pages
 
 on:
   push:
-    branches: [main]
+    branches: [dev]   # dev-phase (Jun 12 2026): Pages serves dev; restore [main] when dev merges back
     paths:
       - 'tarot/**'
       - 'scripts/build_meta_grammar.py'
