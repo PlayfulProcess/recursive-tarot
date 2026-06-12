@@ -15,7 +15,10 @@
       "name": "Roots — The First Tarots (Milan, c. 1440s)",
       "deck_slugs": [
         "visconti-sforza-tarot",
-        "cary-yale-visconti-tarot"
+        "cary-yale-visconti-tarot",
+        "noblet-tarot",
+        "cary-sheet",
+        "rosenwald-sheet"
       ]
     },
     {
@@ -57,7 +60,17 @@
       "id": "sui-generis",
       "name": "Sui Generis & Relatives",
       "deck_slugs": [
-        "mantegna-tarocchi"
+        "mantegna-tarocchi",
+        "sola-busca-tarot"
+      ]
+    },
+    {
+      "id": "ancestors",
+      "name": "Ancestors — Pre-Tarot Card Traditions",
+      "deck_slugs": [
+        "madiao-money-cards",
+        "mamluk-deck",
+        "ganjifa"
       ]
     }
   ],
@@ -301,6 +314,78 @@
       "cover_image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c17.jpg",
       "blurb": "Among the oldest tarot of all — 16 surviving hand-painted Ferrarese cards (c.1450, House of Este), the B-order home. High-res open-access scans from Yale Beinecke / Cary Collection.",
       "path": "tarot/este-tarot/grammar.json"
+    },
+    {
+      "slug": "mamluk-deck",
+      "name": "Mamluk Playing Cards — Mulūk wa-nuwwāb (the Direct Ancestor)",
+      "type": "custom",
+      "branch": "ancestors",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 8,
+      "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%201.jpg",
+      "blurb": "The single most important upstream object in this repo: the four-suit pack Europe copied. The Mamluk kanjifah (Egypt & Syria, c. 1500) — four suits of ten pips plus three courts (aniconic) — is the direct structural ancestor of European playing cards and thus of tarot itself.",
+      "path": "tarot/mamluk-deck/grammar.json"
+    },
+    {
+      "slug": "ganjifa",
+      "name": "Ganjifa — Persian & Mughal Cards (the Cousin, not the Parent)",
+      "type": "custom",
+      "branch": "ancestors",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 1,
+      "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/ganjifa/Ten%20Playing%20Cards%20(Ganjifa)%20LACMA%20M.2001.210.4.1-.10.jpg",
+      "blurb": "The Persian and Mughal circular card tradition — a cousin branch that shares deep Islamic roots with the Mamluk pack but did not become the ancestor of European cards or tarot.",
+      "path": "tarot/ganjifa/grammar.json"
+    },
+    {
+      "slug": "sola-busca-tarot",
+      "name": "Sola Busca Tarot — The First Fully-Engraved Deck (N. Italy, c. 1491)",
+      "type": "tarot",
+      "branch": "sui-generis",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 108,
+      "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-wikimedia/Sola%20Busca%20tarot%20card%2000.jpg",
+      "blurb": "The first tarot deck engraved with fully scenic pip cards (Northern Italy, c. 1491) — a unique alchemical-mythological programme. The deck that directly inspired Pamela Colman Smith's pip designs for the Rider-Waite-Smith.",
+      "path": "tarot/sola-busca-tarot/grammar.json"
+    },
+    {
+      "slug": "noblet-tarot",
+      "name": "Jean Noblet Tarot — The Oldest Surviving Complete Tarot de Marseille Deck (Paris, c. 1650)",
+      "type": "tarot",
+      "branch": "marseille",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 1,
+      "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/noblet-tarot/Jeu%20de%20tarot%20%C3%A0%20enseignes%20italiennes%20dit%20%22tarot%20Noblet%22%20-%20jeu%20de%20cartes%2C%20estampe%20-%20btv1b105109641%20(012%20of%20154).jpg",
+      "blurb": "The oldest surviving complete Tarot de Marseille deck (Paris, c. 1650, Jean Noblet) — a companion to the Viéville and Anonymous Parisian tarots, all from the BnF/Gallica public-domain scans.",
+      "path": "tarot/noblet-tarot/grammar.json"
+    },
+    {
+      "slug": "cary-sheet",
+      "name": "The Cary Sheet — Earliest Marseille Pattern (Milan, c. 1500)",
+      "type": "tarot",
+      "branch": "roots",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 1,
+      "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/cary-sheet/Tarot-cary-collection-ita-sheet-3s-c1500..jpg",
+      "blurb": "An uncut sheet of tarot cards (Milan, c. 1500) representing the earliest known example of the Marseille pattern — a bridge between the hand-painted Visconti tradition and the printed Marseille standard.",
+      "path": "tarot/cary-sheet/grammar.json"
+    },
+    {
+      "slug": "rosenwald-sheet",
+      "name": "The Rosenwald Sheet — Early Florentine (A-order), c. 1500",
+      "type": "tarot",
+      "branch": "roots",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 1,
+      "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/rosenwald-sheet/rosenwald-tarocchi-sheet.jpg",
+      "blurb": "An uncut Florentine tarot sheet (c. 1500) following the A-order trump sequence — held at the National Gallery of Art (Rosenwald Collection). One of the rarest early tarot documents.",
+      "path": "tarot/rosenwald-sheet/grammar.json"
     }
   ]
 }
