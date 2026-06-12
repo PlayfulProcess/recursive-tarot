@@ -113,7 +113,7 @@
         </style>
         <div class="bar">
           <a class="brand" href="${PFX}index.html">
-            <img src="${PFX}recursive-logo.svg" width="28" height="28" alt="" aria-hidden="true" style="display:block;flex-shrink:0">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#fff;border-radius:50%;flex-shrink:0"><img src="${PFX}recursive-logo.svg" width="30" height="30" alt="" aria-hidden="true" style="display:block"></span>
             <span class="wordmark">
               <span class="name">The <span class="gold">Recursive Tarot</span></span>
               <span class="sub">part of <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a></span>
