@@ -221,8 +221,8 @@ function groupBy(recs, fs){
 
 /* ── 3. RENDER ─────────────────────────────────────────── */
 function branchColor(r){
-  const b = (r.order?.[0]) || (r.branch?.[0]) || '';
-  return BRANCH_COLOR[b] || '#8b5cf6';
+  // try order, then branch — skipping values the palette doesn't know
+  return BRANCH_COLOR[r.order?.[0]] || BRANCH_COLOR[r.branch?.[0]] || '#8b5cf6';
 }
 function recHTML(r){
   const lvl = +(r.level?.[0]||'L1').slice(1);
