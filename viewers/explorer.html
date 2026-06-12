@@ -86,6 +86,15 @@
   #hint{color:var(--muted);font-size:13px;padding:30px;text-align:center;line-height:1.7}
   #stats{font-size:11.5px;color:var(--muted);padding:0 16px 4px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 
+  /* ── sidebar layout ─────────────────────────────────────── */
+  body.sidebar #main{display:flex;align-items:flex-start}
+  body.sidebar #builder{grid-template-columns:1fr;border-bottom:none;border-right:1px solid var(--line);
+    width:240px;flex-shrink:0;height:calc(100vh - 60px);overflow-y:auto;position:sticky;top:60px;padding:10px}
+  body.sidebar #z-filters{grid-column:1}
+  body.sidebar #stats-out{flex:1;overflow:hidden}
+  body.sidebar #stats{border-bottom:1px solid var(--line);padding:6px 16px}
+  body.sidebar #out{min-height:calc(100vh - 100px)}
+
   /* ── detail panel (part-of / contains) ─────────────────── */
   #det{position:fixed;top:60px;right:0;bottom:0;width:340px;max-width:90vw;background:var(--panel);
     border-left:1px solid var(--chipline);padding:16px;overflow:auto;z-index:70;display:none;box-shadow:-8px 0 30px rgba(0,0,0,.45)}
@@ -115,17 +124,22 @@
   <span class="spacer"></span>
   <button id="mode-cards" class="active">🃏 Cards</button>
   <button id="mode-counts">∑ Counts</button>
+  <button id="sidebar-btn" title="Toggle sidebar layout">◧</button>
   <button id="reset">↺ Reset</button>
 </div>
 
+<div id="main">
 <div id="builder">
   <div id="tray"><span class="lab">Fields — click any chip to filter it ⧩ · drag into a box to group by it</span></div>
   <div class="zone" id="z-rows"><div class="zlab">Rows ▦</div><div class="chips"></div></div>
   <div class="zone" id="z-cols"><div class="zlab">Columns ▥</div><div class="chips"></div></div>
   <div class="zone" id="z-filters"><div class="zlab">⊸ Filters — drop a field here to pin its values as toggles</div><div id="z-filters-body"></div></div>
 </div>
+<div id="stats-out">
 <div id="stats"><span id="statxt"></span></div>
 <div id="out"><div id="hint">Loading…</div></div>
+</div>
+</div>
 
 <div id="pop"></div>
 <aside id="det"></aside>
@@ -569,7 +583,16 @@ $('#deckbtn').onclick = () => {
 /* ── 6. boot ───────────────────────────────────────────── */
 $('#mode-cards').onclick = () => { mode='cards'; $('#mode-cards').classList.add('active'); $('#mode-counts').classList.remove('active'); render(); };
 $('#mode-counts').onclick = () => { mode='counts'; $('#mode-counts').classList.add('active'); $('#mode-cards').classList.remove('active'); render(); };
-$('#reset').onclick = () => { spec={rows:[],cols:[],filters:{}}; sync(); };
+$('#reset').onclick = () => { spec={rows:[],cols:[],filters:{},pinned:[]}; sync(); };
+$('#sidebar-btn').onclick = () => {
+  const on = document.body.classList.toggle('sidebar');
+  $('#sidebar-btn').classList.toggle('active', on);
+  localStorage.setItem('explorer-sidebar', on ? '1' : '');
+};
+if (localStorage.getItem('explorer-sidebar')) {
+  document.body.classList.add('sidebar');
+  $('#sidebar-btn').classList.add('active');
+}
 
 async function boot(){
   try { collection = await (await fetch(PFX+'tarot/_collection.json')).json(); } catch(e){}
