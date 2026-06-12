@@ -21,7 +21,7 @@
   .spacer{margin-left:auto}
 
   /* ── field tray + drop zones ───────────────────────────── */
-  #builder{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)}
+  #builder{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)}
   #tray{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding-bottom:4px}
   #tray .lab{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:4px}
   .zone{background:rgba(0,0,0,.25);border:1.5px dashed var(--chipline);border-radius:10px;min-height:54px;padding:8px}
@@ -70,7 +70,7 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=6"></script>
+<script src="../site-header.js?v=7"></script>
 <site-header active="cards"></site-header>
 
 <div class="toolbar">
@@ -83,10 +83,9 @@
 </div>
 
 <div id="builder">
-  <div id="tray"><span class="lab">Fields</span></div>
+  <div id="tray"><span class="lab">Fields — click any chip to filter it ⧩ · drag into a box to group by it</span></div>
   <div class="zone" id="z-rows"><div class="zlab">Rows ▦</div><div class="chips"></div></div>
   <div class="zone" id="z-cols"><div class="zlab">Columns ▥</div><div class="chips"></div></div>
-  <div class="zone" id="z-filters"><div class="zlab">Filters ⧩ (click a chip to pick values)</div><div class="chips"></div></div>
 </div>
 <div id="stats"></div>
 <div id="out"><div id="hint">Loading…</div></div>
@@ -120,9 +119,12 @@ function flatten(grammar){
   }
   const recs = [];
   for (const it of items){
-    if (it.composite_of?.length) continue;
-    if (['axis','keyword-emergence','essay','root'].includes(it.category)) continue;
+    // EVERY item becomes a record — leaves AND emergence nodes. The `level` field
+    // (L1 = base cards, L2+ = emergences) is a normal draggable dimension, and the
+    // default spec filters it to L1 so the explorer opens on the cards.
+    const lvl = it.level || (it.composite_of?.length ? 2 : 1);
     const r = { __name: it.name, __img: it.image_url || it.metadata?.image_url || '', __id: it.id };
+    r.level = ['L' + lvl];
     const md = it.metadata || {};
     for (const [k,v] of Object.entries(md)){
       if (v == null) continue;
@@ -220,7 +222,7 @@ function render(){
       ? `<div class="cellwrap" style="max-width:none">${live.slice(0,160).map(r=>r.__img?`<img loading="lazy" src="${esc(r.__img)}" title="${esc(r.__name)}" onclick="window.__lb('${esc(r.__img)}','${esc(r.__name)}')">`:'').join('')}${live.length>160?`<span class="more">+${live.length-160} more</span>`:''}</div>`
       : '<div id="hint">No cards match the filters.</div>';
     if (!spec.rows.length && !colField && !Object.keys(spec.filters).length)
-      out.insertAdjacentHTML('afterbegin','<div id="hint">Drag a field into <b>Rows</b> (try <b>deck</b> or <b>century</b>), one into <b>Columns</b> (try <b>suit</b> or <b>order</b>), and click filter chips to slice. Every cell is an emergence — a pattern over the same cards.</div>');
+      out.insertAdjacentHTML('afterbegin','<div id="hint">Drag a field into <b>Rows</b> (try <b>deck</b> or <b>century</b>), one into <b>Columns</b> (try <b>suit</b> or <b>order</b>). <b>Click any chip to filter it</b> — including <b>level</b>, which starts at L1 (base cards); add L2+ to see the emergences themselves. Every cell is an emergence — a pattern over the same cards.</div>');
     return;
   }
   let h = '<table class="pivot"><thead><tr>';
@@ -262,43 +264,39 @@ window.__lb = (src,cap)=>{ $('#lbimg').src=src; $('#lbcap').textContent=cap; $('
 
 /* ── 4. UI: chips, zones, drag-drop, popover ───────────── */
 function chipEl(f, zone){
+  // EVERY chip is also a filter: click → value picker; gold = filter active.
+  // ✕ clears the chip completely — as a filter AND as a dimension.
   const el = document.createElement('span');
-  el.className = 'chip' + (zone ? ' inzone' : '');
   const fl = fields.find(x=>x.name===f);
-  el.innerHTML = `${esc(f)} <span class="n">${fl?fl.count:''}</span>` + (zone?` <span class="x">✕</span>`:'');
+  const nsel = (spec.filters[f]||[]).length;
+  el.className = 'chip' + (zone ? ' inzone' : '') + (nsel ? ' filter-active' : '');
+  el.innerHTML = `${esc(f)} <span class="n">${nsel ? '⧩ '+nsel+'/'+(fl?fl.count:'?') : (fl?fl.count:'')}</span>`
+    + ((zone || nsel) ? ` <span class="x" title="Clear as filter and dimension">✕</span>` : '');
   el.draggable = true;
+  el.title = 'Click to filter · drag into Rows / Columns to group';
   el.addEventListener('dragstart', e => { e.dataTransfer.setData('text/plain', JSON.stringify({f, from:zone||null})); });
-  if (zone){
-    el.querySelector('.x').onclick = () => { removeField(f, zone); sync(); };
-    if (zone === 'filters'){
-      el.classList.toggle('filter-active', (spec.filters[f]||[]).length>0);
-      el.onclick = e => { if (!e.target.classList.contains('x')) openPop(f, el); };
-    }
-  } else {
-    el.title = 'Drag into Rows / Columns / Filters — or click to add to Rows';
-    el.onclick = () => { if(!spec.rows.includes(f)) spec.rows.push(f); sync(); };
-  }
+  el.onclick = e => { if (!e.target.classList.contains('x')) openPop(f, el, zone); };
+  const x = el.querySelector('.x');
+  if (x) x.onclick = e => { e.stopPropagation(); if (zone) removeField(f, zone); delete spec.filters[f]; sync(); };
   return el;
 }
 function removeField(f, zone){
   if (zone==='rows') spec.rows = spec.rows.filter(x=>x!==f);
   if (zone==='cols') spec.cols = spec.cols.filter(x=>x!==f);
-  if (zone==='filters') delete spec.filters[f];
 }
 function sync(){
   const tray = $('#tray');
   tray.querySelectorAll('.chip').forEach(c=>c.remove());
-  const used = new Set([...spec.rows, ...spec.cols, ...Object.keys(spec.filters)]);
+  const used = new Set([...spec.rows, ...spec.cols]);   // filtered chips STAY in the tray, gold
   for (const f of fields) if (!used.has(f.name)) tray.appendChild(chipEl(f.name, null));
   const fill = (sel, list, zone) => { const c = $(sel+' .chips'); c.innerHTML='';
     for (const f of list) c.appendChild(chipEl(f, zone)); };
   fill('#z-rows', spec.rows, 'rows');
   fill('#z-cols', spec.cols, 'cols');
-  fill('#z-filters', Object.keys(spec.filters), 'filters');
   try { location.hash = encodeURIComponent(JSON.stringify(spec)); } catch(e){}
   render();
 }
-for (const [sel, zone] of [['#z-rows','rows'],['#z-cols','cols'],['#z-filters','filters'],['#tray',null]]){
+for (const [sel, zone] of [['#z-rows','rows'],['#z-cols','cols'],['#tray',null]]){
   const z = $(sel);
   z.addEventListener('dragover', e => { e.preventDefault(); z.classList.add('dragover'); });
   z.addEventListener('dragleave', () => z.classList.remove('dragover'));
@@ -308,17 +306,17 @@ for (const [sel, zone] of [['#z-rows','rows'],['#z-cols','cols'],['#z-filters','
     if (d.from) removeField(d.f, d.from);
     if (zone==='rows' && !spec.rows.includes(d.f)) spec.rows.push(d.f);
     if (zone==='cols'){ spec.cols=[d.f]; }                 // single column field (v1)
-    if (zone==='filters' && !(d.f in spec.filters)) spec.filters[d.f]=[];
     sync();
   });
 }
-function openPop(f, anchor){
+function openPop(f, anchor, zone){
   const pop = $('#pop');
   const fl = fields.find(x=>x.name===f); if (!fl) return;
   const sel = new Set((spec.filters[f]||[]).map(String));
   pop.innerHTML = `<input type="text" placeholder="search values…">
     <div class="vals">${fl.values.map(v=>`<label><input type="checkbox" value="${esc(v)}" ${sel.has(String(v))?'checked':''}> ${esc(v)}</label>`).join('')}</div>
-    <div class="pbtns"><button data-a="all">All</button><button data-a="none">None</button><button data-a="ok">Apply</button></div>`;
+    <div class="pbtns"><button data-a="all">All</button><button data-a="none">None</button><button data-a="ok">Apply ⧩</button></div>
+    ${zone ? '' : `<div class="pbtns"><button data-a="rows">→ Rows</button><button data-a="cols">→ Columns</button></div>`}`;
   const r = anchor.getBoundingClientRect();
   pop.style.left = Math.min(r.left, innerWidth-300) + 'px';
   pop.style.top = (r.bottom + scrollY + 6) + 'px';
@@ -330,7 +328,10 @@ function openPop(f, anchor){
   pop.querySelectorAll('.pbtns button').forEach(b => b.onclick = () => {
     if (b.dataset.a==='all') pop.querySelectorAll('.vals input').forEach(i=>i.checked=true);
     else if (b.dataset.a==='none') pop.querySelectorAll('.vals input').forEach(i=>i.checked=false);
-    else { spec.filters[f] = [...pop.querySelectorAll('.vals input:checked')].map(i=>i.value);
+    else if (b.dataset.a==='rows'){ if(!spec.rows.includes(f)) spec.rows.push(f); pop.style.display='none'; sync(); }
+    else if (b.dataset.a==='cols'){ spec.cols=[f]; pop.style.display='none'; sync(); }
+    else { const v = [...pop.querySelectorAll('.vals input:checked')].map(i=>i.value);
+           if (v.length && v.length < fl.values.length) spec.filters[f] = v; else delete spec.filters[f];
            pop.style.display='none'; sync(); }
   });
 }
@@ -363,11 +364,17 @@ async function boot(){
   records = flatten(g);
   fields = discoverFields(records);
   // restore shared state from URL hash
+  let restored = false;
   try { const s = JSON.parse(decodeURIComponent(location.hash.slice(1)));
-        if (s && s.rows) spec = s; } catch(e){}
-  // friendly default on the meta: rows=century, cols=suit
-  if (!spec.rows.length && fields.some(f=>f.name==='century') && fields.some(f=>f.name==='suit'))
-    spec = { rows:['century'], cols:['suit'], filters:{} };
+        if (s && s.rows) { spec = s; restored = true; } } catch(e){}
+  if (!restored){
+    // default: show base cards only (level = L1) — but level is a normal chip:
+    // click it to add L2/L3 emergences, or drag it into Rows to pivot BY level.
+    const lv = fields.find(f=>f.name==='level');
+    if (lv && lv.count > 1 && lv.values.includes('L1')) spec.filters.level = ['L1'];
+    if (fields.some(f=>f.name==='century') && fields.some(f=>f.name==='suit'))
+      { spec.rows=['century']; spec.cols=['suit']; }
+  }
   sync();
 }
 boot();
