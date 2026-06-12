@@ -17,8 +17,8 @@ recon of `apps/flow/src/lib/supabase-client.ts` and `apps/flow/src/app/api/ai/*`
 | Rung | What | Status |
 |---|---|---|
 | **L0 — Links & canonical pointers** | Header links both ways; `_github_url` stamps; import-a-grammar-as-user path | ✅ built & tested |
-| **L1 — Shared identity** | One sign-in across `recursive.eco` and `tarot.recursive.eco` | 🟡 ~80% exists (below) |
-| **L2 — Shared AI** | Fruit pages call the tree's AI routes (course tutor, caster readings) | 🟡 routes exist; CORS missing |
+| **L1 — Shared identity** | One sign-in across `recursive.eco` and `tarot.recursive.eco` | ✅ shipped Jun 12 (cookie domain confirmed in Vercel prod; `auth-widget.js` in the site header reads the session) |
+| **L2 — Shared AI** | Fruit pages call the tree's AI routes (course tutor, caster readings) | 🟡 CORS on `/api/ai/chat` committed LOCALLY in recursive-eco (builder pushes); fruit-side chat panel + caster wiring next |
 | **L3 — Shared data** | GitHub main → Supabase webhook sync; user favourites/spreads saved from fruit pages | 📋 specced in `HANDOFF-rearchitect-genealogy.md` |
 | **L4 — Commerce** | TGC print-on-demand Worker; credits wallet shared | 📋 specced in `NEXT-SESSION-DELEGATION.md` O3 |
 
