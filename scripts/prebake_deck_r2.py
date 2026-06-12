@@ -12,9 +12,36 @@ Usage: python scripts/prebake_deck_r2.py <slug>
 R2 creds (gitignored, never echoed): CLOUDFLARE_ACCOUNT_ID from
 ../recursive-eco/apps/flow/.env.local; R2 keys + bucket from ../recursive-eco/.env.local.
 """
-import io, json, os, sys, time
+import io, json, os, re, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import tgc_card
+
+def high_res_url(slug, image_url):
+    """Map a committed display image (images/cNN.jpg) to its PRINT-RES archive
+    source. The repo keeps small display copies; print masters come straight from
+    Gallica/Yale IIIF at bake time — no repo bloat. Faces are the odd canvases."""
+    m = re.search(r"/images/c(\d+)\.jpg", image_url or "")
+    if not m:
+        return None
+    n = int(m.group(1))
+    if slug == "vieville-tarot":
+        return f"https://gallica.bnf.fr/iiif/ark:/12148/btv1b10510963k/f{2*n-1}/full/1100,/0/native.jpg"
+    if slug == "paris-anonymous-tarot":
+        return f"https://gallica.bnf.fr/iiif/ark:/12148/btv1b105109624/f{2*n-1}/full/1100,/0/native.jpg"
+    if slug == "este-tarot":
+        return f"https://collections.library.yale.edu/iiif/2/{33215685 + n}/full/1100,/0/default.jpg"
+    return None
+
+def fetch_retry(url, tries=4):
+    """tgc_card.fetch with 429 backoff (Commons throttles hammered IPs)."""
+    import urllib.error
+    for a in range(tries):
+        try:
+            return tgc_card.fetch(url)
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and a < tries - 1:
+                time.sleep(25 * (a + 1)); continue
+            raise
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PUBLIC = "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev"
@@ -60,7 +87,11 @@ def main():
         if not url:
             continue
         try:
-            src = tgc_card.fetch(url)
+            hr = high_res_url(slug, url)
+            try:
+                src = fetch_retry(hr) if hr else fetch_retry(url)
+            except Exception:
+                src = fetch_retry(url)   # archive hiccup → fall back to display copy
             q = tgc_card.print_quality(src)
             card = tgc_card.border_fit(src, blend_frame=(slug in tgc_card.BLEND_FRAME),
                                        tight=(slug in tgc_card.TIGHT_TRIM))
