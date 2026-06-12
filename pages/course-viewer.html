@@ -628,7 +628,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- recursive-tarot drift: shared dark header instead of the recursive.eco shell. -->
-    <script src="../site-header.js?v=9"></script>
+    <script src="../site-header.js?v=10"></script>
     <site-header active="course"></site-header>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -709,34 +709,31 @@
         const grammarId = urlParams.get('grammar_id');
         const itemSlug = urlParams.get('item');
 
-        // Load MDX content — try local MDX file first (most current), fall back to Supabase
+        // Courses live in the public recursive-courses repo; tarot site fetches
+        // from raw GitHub. Local file in course/ is kept as offline fallback.
+        const COURSES_RAW = 'https://raw.githubusercontent.com/PlayfulProcess/recursive-courses/main/courses';
+
+        async function fetchMdxFromUrl(url) {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const mdx = await res.text();
+            if (/^\s*<(!doctype|html)/i.test(mdx)) throw new Error('HTML response (likely redirect)');
+            return mdx;
+        }
+
+        // Load MDX content — try recursive-courses repo first, then local fallback, then Supabase
         async function fetchCourseContent() {
-            // When grammar_id is provided with an item slug, the local MDX
-            // file is the authoritative source. May 30 2026: if the local MDX
-            // loads, RETURN it and never touch Supabase — the third-party
-            // *.supabase.co call was getting blocked by corporate / school /
-            // public-wifi web filters during live presentations, while the
-            // same-origin `?course=<id>` form (no Supabase) worked fine. Only
-            // fall through to Supabase when there is genuinely no local file
-            // (a grammar-only course that doesn't ship as MDX).
             if (itemSlug) {
+                // 1. recursive-courses repo (canonical source)
+                try { return await fetchMdxFromUrl(`${COURSES_RAW}/${itemSlug}/course.mdx`); } catch {}
+                // 2. local fallback (offline / presentation mode)
                 try {
-                    const localRes = await fetch(`courses/${itemSlug}.mdx`);
-                    // Guard against captive-portal / filter interstitials that
-                    // return 200 with an HTML body: require it to look like MDX
-                    // (has frontmatter or markdown), not an HTML doc.
+                    const localRes = await fetch(`../course/${itemSlug}.mdx`);
                     if (localRes.ok) {
                         const mdx = await localRes.text();
-                        // Guard against captive-portal / filter interstitials
-                        // that return 200 with an HTML body. Return the RAW mdx
-                        // (frontmatter intact) — loadCourse() parses it for the
-                        // hero title/description.
-                        const looksHtml = /^\s*<(!doctype|html)/i.test(mdx);
-                        if (!looksHtml) {
-                            return mdx;
-                        }
+                        if (!/^\s*<(!doctype|html)/i.test(mdx)) return mdx;
                     }
-                } catch { /* local file not found, fall through to Supabase */ }
+                } catch {}
             }
 
             if (grammarId) {
@@ -774,10 +771,9 @@
                 return item.sections?.Content || item.sections?.content || '';
             }
 
-            // Fallback: load from local MDX file by courseId (the same-origin
-            // `?course=<id>` path — preferred for presentations because it
-            // never touches Supabase, so it survives corporate/school filters).
-            const response = await fetch(`courses/${courseId}.mdx`);
+            // Fallback: ?course=<id> path — try recursive-courses repo then local
+            try { return await fetchMdxFromUrl(`${COURSES_RAW}/${courseId}/course.mdx`); } catch {}
+            const response = await fetch(`../course/${courseId}.mdx`);
             return await response.text();
         }
 
