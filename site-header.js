@@ -77,11 +77,13 @@
             border-bottom:1px solid #2a2440;
             font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
           }
-          .brand{ display:flex; flex-direction:column; line-height:1.05; text-decoration:none; margin-right:4px; }
+          .brand{ display:flex; flex-direction:row; align-items:center; gap:8px; text-decoration:none; margin-right:4px; }
+          .brand .wordmark{ display:flex; flex-direction:column; line-height:1.05; }
           .brand .name{ font-size:15px; font-weight:800; letter-spacing:.3px; color:#ece8f5; white-space:nowrap; }
           .brand .name .gold{ color:#d4af37; }
           .brand .sub{ font-size:10px; color:#7c7596; letter-spacing:.02em; }
           .brand .sub a{ color:#9b8fc4; text-decoration:none; }
+          .brand svg{ flex-shrink:0; }
           .spacer{ flex:1 1 auto; }
           nav{ display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
           .cap{ font-size:9.5px; text-transform:uppercase; letter-spacing:.14em;
@@ -93,7 +95,7 @@
             border:1px solid transparent;
           }
           .tab:hover{ color:#ece8f5; background:#1d1830; }
-          .tab.active{ color:#0f0d17 !important; background:#d4af37; font-weight:700; border-color:#d4af37; }
+          .tab.active{ color:#fff !important; background:#9333ea; font-weight:700; border-color:#9333ea; }
           /* tools — colour-coded, pill-outlined (a different nature than the views) */
           .t-caster{ color:#b9a3f5; border-color:rgba(139,92,246,.45); }
           .t-caster:hover{ color:#d4c5ff; background:rgba(139,92,246,.12); }
@@ -111,8 +113,14 @@
         </style>
         <div class="bar">
           <a class="brand" href="${PFX}index.html">
-            <span class="name">The <span class="gold">Recursive Tarot</span></span>
-            <span class="sub">part of <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a></span>
+            <svg width="22" height="22" viewBox="0 0 100 100" aria-hidden="true">
+              <path d="M53 47 a4 4 0 1 0 4 6 a11 11 0 1 0 -13 -3 a18 18 0 1 0 24 7 a26 26 0 1 0 -37 -11 a34 34 0 1 0 50 16"
+                fill="none" stroke="#9333ea" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+            <span class="wordmark">
+              <span class="name">The <span class="gold">Recursive Tarot</span></span>
+              <span class="sub">part of <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a></span>
+            </span>
           </a>
           <span class="spacer"></span>
           <nav>

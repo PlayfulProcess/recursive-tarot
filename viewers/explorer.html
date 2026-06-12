@@ -22,6 +22,18 @@
 
   /* ── field tray + drop zones ───────────────────────────── */
   #builder{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)}
+  #z-filters{ grid-column:1 / -1; background:rgba(147,51,234,.06); border-color:rgba(147,51,234,.35); }
+  #z-filters.dragover{ border-color:#9333ea; background:rgba(147,51,234,.12); }
+  #z-filters .zlab{ color:#b9a3f5; }
+  .fval-pill{ display:inline-flex; align-items:center; gap:5px; padding:3px 9px; border-radius:999px; font-size:11.5px;
+    cursor:pointer; border:1px solid rgba(147,51,234,.4); color:#cfc8e2; background:rgba(147,51,234,.08); transition:.12s; }
+  .fval-pill.on{ background:rgba(147,51,234,.35); border-color:#9333ea; color:#fff; font-weight:600; }
+  .fval-pill:hover{ border-color:#9333ea; }
+  .fpin-label{ font-size:11px; color:var(--muted); display:flex; align-items:center; gap:6px; margin-bottom:4px; }
+  .fpin-label .rx{ cursor:pointer; color:var(--muted); font-weight:700; font-size:13px; }
+  .fpin-label .rx:hover{ color:#e07a5f; }
+  .fpinned-group{ padding:0 0 6px 0; border-bottom:1px solid var(--line); margin-bottom:6px; }
+  .fpinned-group:last-child{ border-bottom:none; margin-bottom:0; }
   #tray{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding-bottom:4px}
   #tray .lab{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:4px}
   /* field-hierarchy groups: fields that nest (inferred from the data) render as a
@@ -94,7 +106,7 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=8"></script>
+<script src="../site-header.js?v=9"></script>
 <site-header active="explorer"></site-header>
 
 <div class="toolbar">
@@ -110,6 +122,7 @@
   <div id="tray"><span class="lab">Fields — click any chip to filter it ⧩ · drag into a box to group by it</span></div>
   <div class="zone" id="z-rows"><div class="zlab">Rows ▦</div><div class="chips"></div></div>
   <div class="zone" id="z-cols"><div class="zlab">Columns ▥</div><div class="chips"></div></div>
+  <div class="zone" id="z-filters"><div class="zlab">⊸ Filters — drop a field here to pin its values as toggles</div><div id="z-filters-body"></div></div>
 </div>
 <div id="stats"><span id="statxt"></span></div>
 <div id="out"><div id="hint">Loading…</div></div>
@@ -127,7 +140,7 @@ const PFX = '../';
 /* ── state ─────────────────────────────────────────────── */
 let records = [], fields = [], byId = {};
 let fieldParent = {};   // field -> immediate parent field (inferred containment)
-let spec = { rows:[], cols:[], filters:{} };
+let spec = { rows:[], cols:[], filters:{}, pinned:[] };
 let mode = 'cards';
 let collection = null;
 let specKey = null;   // localStorage key for this grammar selection's spec
@@ -295,11 +308,14 @@ function render(){
   }
 
   if (!spec.rows.length && !colField){
+    // Default view: flat card wall — selection IS the view.
+    // Tip appears above the cards as a subtle guide, not blocking them.
+    const tip = !Object.keys(spec.filters).filter(f=>spec.filters[f].length).length
+      ? '<p style="color:var(--muted);font-size:12px;margin:0 0 10px">Drag a field into <b>Rows</b> or <b>Columns</b> to pivot · drop into <b>⊸ Filters</b> to pin a filter · click a chip to filter by value</p>'
+      : '';
     out.innerHTML = live.length
-      ? `<div class="cellwrap" style="max-width:none">${live.slice(0,160).map(recHTML).join('')}${live.length>160?`<span class="more">+${live.length-160} more</span>`:''}</div>`
-      : '<div id="hint">No items match the filters.</div>';
-    if (!Object.keys(spec.filters).length)
-      out.insertAdjacentHTML('afterbegin','<div id="hint">Drag a field into <b>Rows</b> (try <b>deck</b> or <b>century</b>), one into <b>Columns</b> (try <b>suit</b> or <b>level</b>). <b>Click any chip to filter it</b> — <b>level</b> starts at L1; add L2+ to see the emergences as coloured pills (hue = branch, depth = level). Chips joined by ▸ nest inside each other — inferred from the data itself. Click any card or pill to see what it is part of ⬆ and contains ⬇.</div>');
+      ? tip + `<div class="cellwrap" style="max-width:none;padding:4px 0">${live.slice(0,200).map(recHTML).join('')}${live.length>200?`<span class="more" style="padding:8px">+${live.length-200} more</span>`:''}</div>`
+      : tip + '<p style="color:var(--muted);font-size:13px">No items match the filters.</p>';
     return;
   }
   let h = '<table class="pivot"><thead><tr>';
@@ -379,11 +395,12 @@ function chipEl(f, zone){
 function removeField(f, zone){
   if (zone==='rows') spec.rows = spec.rows.filter(x=>x!==f);
   if (zone==='cols') spec.cols = spec.cols.filter(x=>x!==f);
+  if (zone==='filters'){ spec.pinned = spec.pinned.filter(x=>x!==f); delete spec.filters[f]; }
 }
 function sync(){
   const tray = $('#tray');
   tray.querySelectorAll('.chip, .fgroup').forEach(c=>c.remove());
-  const used = new Set([...spec.rows, ...spec.cols]);
+  const used = new Set([...spec.rows, ...spec.cols, ...spec.pinned]);
   // Render the inferred hierarchy: chains of nesting fields share a hue and are
   // joined "coarse ▸ fine" (e.g. arcana ▸ suit); cross-cutting fields stand alone.
   const kids = {};
@@ -421,13 +438,60 @@ function sync(){
     for (const f of list) c.appendChild(chipEl(f, zone)); };
   fill('#z-rows', spec.rows, 'rows');
   fill('#z-cols', spec.cols, 'cols');
+  renderPinnedFilters();
   try { location.hash = encodeURIComponent(JSON.stringify(spec)); } catch(e){}
   // Persist per grammar-selection so leaving and returning to the tab (or
   // reopening the page without a hash) restores the last arrangement.
   try { if (specKey) localStorage.setItem(specKey, JSON.stringify(spec)); } catch(e){}
   render();
 }
-for (const [sel, zone] of [['#z-rows','rows'],['#z-cols','cols'],['#tray',null]]){
+function renderPinnedFilters(){
+  const body = $('#z-filters-body'); body.innerHTML = '';
+  if (!spec.pinned.length){ body.innerHTML = '<span style="color:var(--muted);font-size:11.5px;opacity:.6">empty — drag a chip here</span>'; return; }
+  for (const f of spec.pinned){
+    const allVals = [...new Set(records.flatMap(r => (r[f]||['—']).map(String)))].sort((a,b)=>smartCmp(a,b));
+    const selected = spec.filters[f] || [];
+    const grp = document.createElement('div'); grp.className = 'fpinned-group';
+    const lbl = document.createElement('div'); lbl.className = 'fpin-label';
+    lbl.innerHTML = `<b style="color:#b9a3f5">${esc(f)}</b>
+      <span class="rx" data-unpinf="${esc(f)}" title="Remove filter">✕</span>`;
+    grp.appendChild(lbl);
+    for (const v of allVals){
+      const pill = document.createElement('span');
+      pill.className = 'fval-pill' + (selected.includes(v) ? ' on' : '');
+      pill.textContent = v; pill.dataset.filterf = f; pill.dataset.filterv = v;
+      grp.appendChild(pill); grp.appendChild(document.createTextNode(' '));
+    }
+    body.appendChild(grp);
+  }
+  body.addEventListener('click', e => {
+    const pill = e.target.closest('.fval-pill');
+    if (pill){ const {filterf:f, filterv:v} = pill.dataset;
+      if (!spec.filters[f]) spec.filters[f] = [];
+      const idx = spec.filters[f].indexOf(v);
+      if (idx >= 0) spec.filters[f].splice(idx, 1); else spec.filters[f].push(v);
+      sync(); return; }
+    const rx = e.target.closest('[data-unpinf]');
+    if (rx){ const f = rx.dataset.unpinf;
+      spec.pinned = spec.pinned.filter(x=>x!==f);
+      delete spec.filters[f]; sync(); }
+  }, {once: true}); // rebind each sync — use event delegation on body with once:false
+}
+// rebind click each render by using delegation on the static parent
+$('#z-filters').addEventListener('click', e => {
+  const pill = e.target.closest('.fval-pill');
+  if (pill){ const {filterf:f, filterv:v} = pill.dataset;
+    if (!spec.filters[f]) spec.filters[f] = [];
+    const idx = spec.filters[f].indexOf(v);
+    if (idx >= 0) spec.filters[f].splice(idx, 1); else spec.filters[f].push(v);
+    sync(); return; }
+  const rx = e.target.closest('[data-unpinf]');
+  if (rx){ const f = rx.dataset.unpinf;
+    spec.pinned = spec.pinned.filter(x=>x!==f);
+    delete spec.filters[f]; sync(); }
+});
+
+for (const [sel, zone] of [['#z-rows','rows'],['#z-cols','cols'],['#z-filters','filters'],['#tray',null]]){
   const z = $(sel);
   z.addEventListener('dragover', e => { e.preventDefault(); z.classList.add('dragover'); });
   z.addEventListener('dragleave', () => z.classList.remove('dragover'));
@@ -437,6 +501,7 @@ for (const [sel, zone] of [['#z-rows','rows'],['#z-cols','cols'],['#tray',null]]
     if (d.from) removeField(d.f, d.from);
     if (zone==='rows' && !spec.rows.includes(d.f)) spec.rows.push(d.f);
     if (zone==='cols'){ spec.cols=[d.f]; }
+    if (zone==='filters' && !spec.pinned.includes(d.f)){ spec.pinned.push(d.f); if (!spec.filters[d.f]) spec.filters[d.f]=[]; }
     sync();
   });
 }
