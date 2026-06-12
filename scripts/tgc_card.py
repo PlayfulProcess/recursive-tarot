@@ -10,7 +10,8 @@ The Game Crafter — Tarot Deck spec:
     safe zone      : 750 x 1350   (keep critical content inside this)
 """
 import io, urllib.request
-from PIL import Image, ImageChops
+from collections import deque
+from PIL import Image, ImageChops, ImageFilter
 
 TW, TH = 900, 1500
 TRIM   = (825, 1425)
@@ -27,6 +28,19 @@ BLEND_FRAME = {"charles-vi-tarot", "este-tarot", "madiao-money-cards",
 # Decks where a plain auto-trim leaves a wide card-stock margin (faint marginal
 # text / library stamps fool the bbox). Use the density-based content crop instead.
 TIGHT_TRIM = {"oswald-wirth-tarot", "minchiate-florence-tarot", "paris-anonymous-tarot"}
+
+# Decks whose scans keep leftover photographic BACKGROUND (white lightbox or black
+# velvet) around a non-rectangular card — a plain rect crop can never remove it, so
+# the bg shows as a contour against the canvas. flood_bg replaces every border-
+# connected bg pixel with the canvas colour itself (the print analog of "set
+# transparent color"): bg and bleed become one continuous colour, seam impossible.
+# ONLY safe for cards with a CLOSED border/frame — on open line art the flood leaks
+# through the engraving into the artwork (verified visually June 2026: court-de-
+# gebelin, vieville, belgian, minchiate, marseille-conver leak; golden-dawn loses
+# its genuine white RWS border; besancon picks a bad canvas colour).
+FLOOD_BG = {"charles-vi-tarot", "paris-anonymous-tarot", "este-tarot",
+            "madiao-money-cards", "mantegna-tarocchi", "sola-busca-tarot",
+            "noblet-tarot", "visconti-sforza-tarot", "cary-sheet", "rosenwald-sheet"}
 
 def fetch(url):
     req = urllib.request.Request(url, headers={"User-Agent": "recursive-tarot/1.0 (PlayfulProcess)"})
@@ -79,7 +93,59 @@ def content_crop(im, frac=0.05):
     t = max(0.0, min(ys) / sh - pad); b = min(1.0, (max(ys) + 1) / sh + pad)
     return im.crop((round(l * W), round(t * H), round(r * W), round(b * H)))
 
-def border_fit(im, blend_frame=False, tight=False):
+def _flood_bg_mask(im, tol=40):
+    """Mask (L) of pixels CONNECTED TO THE IMAGE BORDER whose colour is close to the
+    border colour — i.e. the leftover scan background (white lightbox or black velvet)
+    around a non-rectangular card. Flood-fill on a thumbnail for speed, then upscale +
+    feather. Returns (mask, bg_colour). Pixels of similar colour INSIDE the card are
+    safe: they aren't border-connected, so the flood never reaches them."""
+    W, H = im.size
+    sw = 320; sh = max(2, round(sw * H / W))
+    small = im.resize((sw, sh))
+    px = small.load()
+    perim = ([px[x, 0] for x in range(sw)] + [px[x, sh - 1] for x in range(sw)] +
+             [px[0, y] for y in range(sh)] + [px[sw - 1, y] for y in range(sh)])
+    perim.sort(key=lambda c: sum(c))
+    bg = perim[len(perim) // 2]
+    def close(c):
+        return abs(c[0] - bg[0]) <= tol and abs(c[1] - bg[1]) <= tol and abs(c[2] - bg[2]) <= tol
+    seen = bytearray(sw * sh)
+    dq = deque()
+    for x in range(sw):
+        for y in (0, sh - 1):
+            if close(px[x, y]) and not seen[y * sw + x]:
+                seen[y * sw + x] = 1; dq.append((x, y))
+    for y in range(sh):
+        for x in (0, sw - 1):
+            if close(px[x, y]) and not seen[y * sw + x]:
+                seen[y * sw + x] = 1; dq.append((x, y))
+    while dq:
+        x, y = dq.popleft()
+        for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
+            if 0 <= nx < sw and 0 <= ny < sh and not seen[ny * sw + nx] and close(px[nx, ny]):
+                seen[ny * sw + nx] = 1; dq.append((nx, ny))
+    mask = Image.frombytes("L", (sw, sh), bytes(255 if v else 0 for v in seen))
+    mask = mask.filter(ImageFilter.MaxFilter(3))               # grow 1px: eat the dark fringe
+    mask = mask.resize((W, H), Image.BILINEAR).filter(ImageFilter.GaussianBlur(3))  # feather
+    return mask, bg
+
+def _ring_colour_excluding(im, bg, tol=40):
+    """Median colour of the content edge ring, IGNORING pixels close to bg — the
+    card-stock colour even when leftover background pollutes the edges."""
+    w, h = im.size
+    ring = max(2, round(min(w, h) * 0.04)); px = []
+    for x in range(0, w, 5):
+        px += [im.getpixel((x, ring)), im.getpixel((x, h - 1 - ring))]
+    for y in range(0, h, 5):
+        px += [im.getpixel((ring, y)), im.getpixel((w - 1 - ring, y))]
+    px = [c for c in px
+          if not (abs(c[0] - bg[0]) <= tol and abs(c[1] - bg[1]) <= tol and abs(c[2] - bg[2]) <= tol)]
+    if not px:
+        return bg
+    px.sort(key=lambda c: sum(c))
+    return px[len(px) // 2]
+
+def border_fit(im, blend_frame=False, tight=False, flood=False):
     """DEFAULT mode: card fitted inside the trim on a canvas of its own border colour.
     blend_frame=True samples that colour from the card's clean CORNERS instead of the
     edge median — so a card sitting on cream/white stock gets a matching bleed and the
@@ -89,7 +155,13 @@ def border_fit(im, blend_frame=False, tight=False):
     w, h = im.size
     inset = max(1, round(min(w, h) * 0.005))
     im = im.crop((inset, inset, w - inset, h - inset)); w, h = im.size
-    if blend_frame:
+    if flood:
+        # replace border-connected scan background with the card-stock colour, and
+        # use that SAME colour for the canvas — bg and bleed become one colour.
+        mask, bg = _flood_bg_mask(im)
+        col = _ring_colour_excluding(im, bg)
+        im = Image.composite(Image.new("RGB", im.size, col), im, mask)
+    elif blend_frame:
         col = _corner_colour(im)
     else:
         ring = max(2, round(min(w, h) * 0.02)); px = []
