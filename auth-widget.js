@@ -23,6 +23,11 @@
   const SUPABASE_URL = 'https://xtviwcznhbrsvkitepvm.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh0dml3Y3puaGJyc3ZraXRlcHZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1NDA1MDMsImV4cCI6MjA4MzExNjUwM30.eBXM6NTe3Sz3SfdtI0pTHQyJzd6PXJl5ZvpNg7yFSII';
   const TREE = 'https://recursive.eco';
+  const FLOW = 'https://flow.recursive.eco';
+  // Sign-in deep link: opens the tree's auth modal in a NEW TAB (so work on the
+  // fruit is never lost) and tells it where the visitor came from, so after
+  // sign-in the tree can offer "return to the tarot site".
+  const signInUrl = () => FLOW + '/?signin=1&next=' + encodeURIComponent(location.href);
 
   const clientPromise = import('https://esm.sh/@supabase/ssr@0.5.2')
     .then(({ createBrowserClient }) => createBrowserClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
@@ -54,14 +59,14 @@
           .in{ color:#9ad0b5; border-color:rgba(129,178,154,.45) }
           .in:hover{ color:#bfe8d2 }
         </style>
-        <a href="${TREE}" target="_blank" rel="noopener" title="Sign in at recursive.eco — the session carries over to this site">Sign in ↗</a>`;
+        <a href="${signInUrl()}" target="_blank" rel="noopener" title="Sign in at recursive.eco — the session carries over to this site">Sign in ↗</a>`;
       const user = await window.recursiveAuth.getUser();
       if (user) {
         const name = (user.user_metadata && (user.user_metadata.username || user.user_metadata.full_name))
                      || (user.email || '').split('@')[0] || 'account';
         const a = root.querySelector('a');
         a.className = 'in';
-        a.href = TREE + '/account';
+        a.href = FLOW + '/account';
         a.title = 'Signed in as ' + (user.email || name) + ' — manage at recursive.eco';
         a.innerHTML = '<span class="dot"></span>' + name.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
       }
