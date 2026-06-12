@@ -241,8 +241,10 @@ function cellHTML(rs){
     const a = Math.min(.85, .1 + .75*rs.length/max);
     return `<td class="ccount" style="background:rgba(139,92,246,${a.toFixed(2)})">${rs.length}</td>`;
   }
-  const N = 6, shown = rs.slice(0,N);
-  let h = '<td><div class="cellwrap">' + shown.map(recHTML).join('');
+  // emergence pills surface FIRST (they label the cell), sample cards after
+  const N = 6;
+  const sorted = [...rs].sort((a,b) => (+(b.level?.[0]||'L1').slice(1)) - (+(a.level?.[0]||'L1').slice(1)));
+  let h = '<td><div class="cellwrap">' + sorted.slice(0,N).map(recHTML).join('');
   if (rs.length > N) h += `<span class="more">+${rs.length-N}</span>`;
   return h + '</div></td>';
 }
