@@ -25,7 +25,7 @@
   // integration ladder). Loaded once; renders as <recursive-auth> in the bar.
   if (!document.querySelector('script[data-recursive-auth]')) {
     const s = document.createElement('script');
-    s.src = PFX + 'auth-widget.js?v=1';
+    s.src = PFX + 'auth-widget.js?v=2';
     s.dataset.recursiveAuth = '1';
     document.head.appendChild(s);
   }

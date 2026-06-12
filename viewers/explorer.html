@@ -130,6 +130,7 @@ let fieldParent = {};   // field -> immediate parent field (inferred containment
 let spec = { rows:[], cols:[], filters:{} };
 let mode = 'cards';
 let collection = null;
+let specKey = null;   // localStorage key for this grammar selection's spec
 
 /* branch colour code (house palette) — pills: hue = branch, gradient = level */
 const BRANCH_COLOR = { A:'#e07a5f', B:'#81b29a', C:'#6d8ec9', marseille:'#6d8ec9',
@@ -421,6 +422,9 @@ function sync(){
   fill('#z-rows', spec.rows, 'rows');
   fill('#z-cols', spec.cols, 'cols');
   try { location.hash = encodeURIComponent(JSON.stringify(spec)); } catch(e){}
+  // Persist per grammar-selection so leaving and returning to the tab (or
+  // reopening the page without a hash) restores the last arrangement.
+  try { if (specKey) localStorage.setItem(specKey, JSON.stringify(spec)); } catch(e){}
   render();
 }
 for (const [sel, zone] of [['#z-rows','rows'],['#z-cols','cols'],['#tray',null]]){
@@ -505,6 +509,7 @@ $('#reset').onclick = () => { spec={rows:[],cols:[],filters:{}}; sync(); };
 async function boot(){
   try { collection = await (await fetch(PFX+'tarot/_collection.json')).json(); } catch(e){}
   const slugs = selectedSlugs();
+  specKey = 'explorer-spec:' + slugs.slice().sort().join(',');
   const srcParam = new URLSearchParams(location.search).get('src');
   records = []; byId = {};
   try{
@@ -536,6 +541,10 @@ async function boot(){
   let restored = false;
   try { const s = JSON.parse(decodeURIComponent(location.hash.slice(1)));
         if (s && s.rows) { spec = s; restored = true; } } catch(e){}
+  if (!restored){ // no hash → last saved arrangement for this grammar selection
+    try { const s = JSON.parse(localStorage.getItem(specKey));
+          if (s && s.rows) { spec = s; restored = true; } } catch(e){}
+  }
   if (!restored){
     const lv = fields.find(f=>f.name==='level');
     if (lv && lv.count > 1 && lv.values.includes('L1')) spec.filters.level = ['L1'];
