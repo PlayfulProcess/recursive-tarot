@@ -24,6 +24,11 @@
   #builder{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)}
   #tray{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding-bottom:4px}
   #tray .lab{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:4px}
+  /* field-hierarchy groups: fields that nest (inferred from the data) render as a
+     chain "arcana ▸ suit ▸ …" sharing a hue — coarsest first, finest last */
+  .fgroup{display:inline-flex;align-items:center;gap:2px;padding:2px 4px;border-radius:10px;
+    background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.05)}
+  .fgroup .sep{font-size:10px;color:var(--muted);opacity:.8;user-select:none}
   .zone{background:rgba(0,0,0,.25);border:1.5px dashed var(--chipline);border-radius:10px;min-height:54px;padding:8px}
   .zone.dragover{border-color:var(--accent);background:rgba(212,175,55,.06)}
   .zone .zlab{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 6px 2px}
@@ -63,16 +68,13 @@
     border:1px solid rgba(255,255,255,.12)}
   .epill .lv{font-size:9px;opacity:.8;font-weight:700}
   .epill:hover{border-color:#fff}
-  [data-rid].dim{opacity:.12;filter:grayscale(.85)}
   .more{font-size:11px;color:var(--muted);align-self:center;cursor:pointer}
   .ccount{font-size:13px;font-weight:700;text-align:center;min-width:40px}
   .empty{color:#39324d}
   #hint{color:var(--muted);font-size:13px;padding:30px;text-align:center;line-height:1.7}
   #stats{font-size:11.5px;color:var(--muted);padding:0 16px 4px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-  #tracebar{display:none;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.4);
-    border-radius:999px;padding:2px 10px;color:var(--accent);cursor:pointer}
 
-  /* ── detail panel (trace up/down) ──────────────────────── */
+  /* ── detail panel (part-of / contains) ─────────────────── */
   #det{position:fixed;top:60px;right:0;bottom:0;width:340px;max-width:90vw;background:var(--panel);
     border-left:1px solid var(--chipline);padding:16px;overflow:auto;z-index:70;display:none;box-shadow:-8px 0 30px rgba(0,0,0,.45)}
   #det.open{display:block}
@@ -83,9 +85,6 @@
   #det h4{margin:14px 0 6px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
   #det .rel{display:flex;flex-wrap:wrap;gap:5px}
   #det .rel img{height:52px;border-radius:4px;cursor:pointer;background:#0a0810}
-  #det .tracebtn{margin-top:14px;width:100%;padding:8px;border-radius:8px;border:1px solid var(--accent);
-    background:transparent;color:var(--accent);font-weight:600;cursor:pointer}
-  #det .tracebtn:hover{background:rgba(212,175,55,.12)}
 
   /* lightbox */
   #lb{position:fixed;inset:0;background:rgba(8,6,14,.92);display:none;align-items:center;justify-content:center;z-index:99;flex-direction:column;gap:12px}
@@ -112,7 +111,7 @@
   <div class="zone" id="z-rows"><div class="zlab">Rows ▦</div><div class="chips"></div></div>
   <div class="zone" id="z-cols"><div class="zlab">Columns ▥</div><div class="chips"></div></div>
 </div>
-<div id="stats"><span id="statxt"></span><span id="tracebar"></span></div>
+<div id="stats"><span id="statxt"></span></div>
 <div id="out"><div id="hint">Loading…</div></div>
 
 <div id="pop"></div>
@@ -127,9 +126,9 @@ const PFX = '../';
 
 /* ── state ─────────────────────────────────────────────── */
 let records = [], fields = [], byId = {};
+let fieldParent = {};   // field -> immediate parent field (inferred containment)
 let spec = { rows:[], cols:[], filters:{} };
 let mode = 'cards';
-let traceSet = null, traceName = '';
 let collection = null;
 
 /* branch colour code (house palette) — pills: hue = branch, gradient = level */
@@ -198,6 +197,37 @@ function discoverFields(recs){
 function smartCmp(a,b){ const na=+a, nb=+b;
   if (!isNaN(na) && !isNaN(nb)) return na-nb;
   return String(a).localeCompare(String(b)); }
+
+/* ── field hierarchy, inferred from the data: field A nests inside field B when
+   every observed value of A co-occurs with exactly ONE value of B (so e.g. every
+   suit sits inside one arcana; every deck sits inside one branch). Works on any
+   grammar — no tarot-specific names. Cross-cutting axes (a Four exists in every
+   suit) correctly stay standalone. */
+function inferHierarchy(recs, flds){
+  const parent = {};
+  const META = new Set(['level', 'print quality']);   // structural, not content dimensions
+  for (const a of flds){
+    if (META.has(a.name)) continue;
+    let best = null;
+    for (const b of flds){
+      if (a === b || META.has(b.name) || b.count >= a.count) continue;
+      const map = new Map(); let ok = true, seen = 0;
+      for (const r of recs){
+        if (!r[a.name] || !r[b.name]) continue;
+        if (r[a.name].length > 1 || r[b.name].length > 1) continue;
+        const av = String(r[a.name][0]), bv = String(r[b.name][0]);
+        if (av === '—' || bv === '—') continue;
+        seen++;
+        if (map.has(av)) { if (map.get(av) !== bv) { ok = false; break; } }
+        else map.set(av, bv);
+      }
+      if (ok && map.size >= 2 && seen >= map.size * 2)
+        if (!best || b.count > best.count) best = b;   // closest (most specific) ancestor
+    }
+    if (best) parent[a.name] = best.name;
+  }
+  return parent;
+}
 
 /* ── 2. PIVOT ──────────────────────────────────────────── */
 const vals = (r,f) => r[f] || ['—'];
@@ -268,8 +298,8 @@ function render(){
       ? `<div class="cellwrap" style="max-width:none">${live.slice(0,160).map(recHTML).join('')}${live.length>160?`<span class="more">+${live.length-160} more</span>`:''}</div>`
       : '<div id="hint">No items match the filters.</div>';
     if (!Object.keys(spec.filters).length)
-      out.insertAdjacentHTML('afterbegin','<div id="hint">Drag a field into <b>Rows</b> (try <b>deck</b> or <b>century</b>), one into <b>Columns</b> (try <b>suit</b> or <b>level</b>). <b>Click any chip to filter it</b> — <b>level</b> starts at L1; add L2+ to see the emergences as coloured pills (hue = branch, depth = level). Click any card or pill to trace its relationships ⬆⬇.</div>');
-    applyTrace(); return;
+      out.insertAdjacentHTML('afterbegin','<div id="hint">Drag a field into <b>Rows</b> (try <b>deck</b> or <b>century</b>), one into <b>Columns</b> (try <b>suit</b> or <b>level</b>). <b>Click any chip to filter it</b> — <b>level</b> starts at L1; add L2+ to see the emergences as coloured pills (hue = branch, depth = level). Chips joined by ▸ nest inside each other — inferred from the data itself. Click any card or pill to see what it is part of ⬆ and contains ⬇.</div>');
+    return;
   }
   let h = '<table class="pivot"><thead><tr>';
   for (const rf of spec.rows) h += `<th>${esc(rf)}</th>`;
@@ -301,28 +331,7 @@ function render(){
     prev = path;
   }
   out.innerHTML = h + '</tbody></table>';
-  applyTrace();
 }
-
-/* ── 3b. TRACE (Excel-style precedents/dependents) ─────── */
-function relativesOf(id){
-  const set = new Set([id]);
-  const up = [id], down = [id];
-  while (up.length){ const r = byId[up.pop()]; if (!r) continue;
-    for (const p of r.__parents) if (!set.has(p)){ set.add(p); up.push(p); } }
-  while (down.length){ const r = byId[down.pop()]; if (!r) continue;
-    for (const c of r.__children) if (!set.has(c)){ set.add(c); down.push(c); } }
-  return set;
-}
-function applyTrace(){
-  const bar = $('#tracebar');
-  document.querySelectorAll('[data-rid]').forEach(el =>
-    el.classList.toggle('dim', !!traceSet && !traceSet.has(el.dataset.rid)));
-  if (traceSet){ bar.style.display='inline-block';
-    bar.textContent = `🔦 tracing: ${traceName} (${traceSet.size} related) — click to clear`; }
-  else bar.style.display='none';
-}
-$('#tracebar').onclick = () => { traceSet=null; applyTrace(); };
 
 function openDetail(id){
   const r = byId[id]; if (!r) return;
@@ -341,10 +350,7 @@ function openDetail(id){
     <h4>⬆ Part of (${r.__parents.length})</h4>
     <div class="rel">${r.__parents.length ? relList(r.__parents) : '<span class="empty">— top level</span>'}</div>
     <h4>⬇ Contains (${r.__children.length})</h4>
-    <div class="rel">${r.__children.length ? relList(r.__children) + (r.__children.length>18?`<span class="more">+${r.__children.length-18}</span>`:'') : '<span class="empty">— a leaf card</span>'}</div>
-    <button class="tracebtn">🔦 Trace relationships in the pivot</button>`;
-  det.querySelector('.tracebtn').onclick = () => {
-    traceSet = relativesOf(id); traceName = r.__name.split(' — ')[0].slice(0,30); applyTrace(); };
+    <div class="rel">${r.__children.length ? relList(r.__children) + (r.__children.length>18?`<span class="more">+${r.__children.length-18}</span>`:'') : '<span class="empty">— a leaf card</span>'}</div>`;
   det.classList.add('open');
 }
 document.addEventListener('click', e => {
@@ -375,9 +381,41 @@ function removeField(f, zone){
 }
 function sync(){
   const tray = $('#tray');
-  tray.querySelectorAll('.chip').forEach(c=>c.remove());
+  tray.querySelectorAll('.chip, .fgroup').forEach(c=>c.remove());
   const used = new Set([...spec.rows, ...spec.cols]);
-  for (const f of fields) if (!used.has(f.name)) tray.appendChild(chipEl(f.name, null));
+  // Render the inferred hierarchy: chains of nesting fields share a hue and are
+  // joined "coarse ▸ fine" (e.g. arcana ▸ suit); cross-cutting fields stand alone.
+  const kids = {};
+  for (const [c,p] of Object.entries(fieldParent)) (kids[p] = kids[p] || []).push(c);
+  const HUES = ['#c9a24b','#81b29a','#6d8ec9','#9b6dc9','#c96d9b','#e07a5f'];
+  let hueIx = 0;
+  const placed = new Set();
+  const addChain = (grp, name, hue, depth) => {
+    placed.add(name);
+    if (!used.has(name)){
+      const el = chipEl(name, null);
+      el.style.borderLeft = `3px solid ${hue}`;
+      el.style.background = `linear-gradient(135deg,${rgba(hue,.05+.05*depth)},${rgba(hue,.12+.08*depth)})`;
+      el.title = depth ? `nested: every value sits inside one ${fieldParent[name]} (inferred from the data) · click to filter · drag to group`
+                       : 'click to filter · drag into Rows / Columns to group';
+      grp.appendChild(el);
+    }
+    for (const c of (kids[name]||[]).sort()){
+      if (grp.lastChild && !used.has(c)){
+        const s = document.createElement('span'); s.className='sep'; s.textContent='▸';
+        grp.appendChild(s);
+      }
+      addChain(grp, c, hue, depth+1);
+    }
+  };
+  const roots = fields.filter(f => kids[f.name] && !fieldParent[f.name]);
+  for (const f of roots){
+    const grp = document.createElement('span'); grp.className = 'fgroup';
+    addChain(grp, f.name, HUES[hueIx++ % HUES.length], 0);
+    if (grp.querySelector('.chip')) tray.appendChild(grp);
+  }
+  for (const f of fields)
+    if (!placed.has(f.name) && !used.has(f.name)) tray.appendChild(chipEl(f.name, null));
   const fill = (sel, list, zone) => { const c = $(sel+' .chips'); c.innerHTML='';
     for (const f of list) c.appendChild(chipEl(f, zone)); };
   fill('#z-rows', spec.rows, 'rows');
@@ -462,7 +500,7 @@ $('#deckbtn').onclick = () => {
 /* ── 6. boot ───────────────────────────────────────────── */
 $('#mode-cards').onclick = () => { mode='cards'; $('#mode-cards').classList.add('active'); $('#mode-counts').classList.remove('active'); render(); };
 $('#mode-counts').onclick = () => { mode='counts'; $('#mode-counts').classList.add('active'); $('#mode-cards').classList.remove('active'); render(); };
-$('#reset').onclick = () => { spec={rows:[],cols:[],filters:{}}; traceSet=null; sync(); };
+$('#reset').onclick = () => { spec={rows:[],cols:[],filters:{}}; sync(); };
 
 async function boot(){
   try { collection = await (await fetch(PFX+'tarot/_collection.json')).json(); } catch(e){}
@@ -494,6 +532,7 @@ async function boot(){
   for (const r of records) if (r.__parents.length)
     r.emergence = r.__parents.map(p => (byId[p]?.__name || p).split(' — ')[0].slice(0,40));
   fields = discoverFields(records);
+  fieldParent = inferHierarchy(records, fields);
   let restored = false;
   try { const s = JSON.parse(decodeURIComponent(location.hash.slice(1)));
         if (s && s.rows) { spec = s; restored = true; } } catch(e){}
