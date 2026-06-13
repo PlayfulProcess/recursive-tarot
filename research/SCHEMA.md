@@ -44,10 +44,14 @@ order: "occult"                      # A | B | C | occult | n/a
 ancestry: "descendant"               # direct-ancestor | ancestral | cousin | descendant | n/a
 people: ["etteilla"]                 # ids from research/people/ (the makers/patrons/scholars)
 derives_from: ["court-de-gebelin-tarot", "tarot-de-marseille-conver"]  # parent deck ids
-# person-only:
+# person/institution-only:
+role_group: "occultists"             # REQUIRED for the generator: makers | patrons | occultists | scholars | institutions
+summary: "One-line who-and-why for the grammar leaf."
 lifespan: "1738–1791"
 roles: ["cartomancer", "deck designer", "occult entrepreneur"]
-made: ["etteilla-i-livre-de-thot", "etteilla-ii-egyptian"]   # deck ids this person made
+made: ["etteilla-i-livre-de-thot", "etteilla-ii-egyptian"]   # deck ids this person MADE
+studied: []                          # deck ids a scholar STUDIED (use instead of `made` for scholars)
+features_cards: []                   # optional "deck-slug:card-id" links to specific cards
 # cards-only:
 deck: "etteilla-i-livre-de-thot"     # which deck this card-file documents
 card_count: 78

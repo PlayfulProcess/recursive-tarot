@@ -1,0 +1,197 @@
+{
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "note": "Generated from research/people dossiers; for maintainer + Tarot History Forum review."
+      }
+    ]
+  },
+  "name": "People & Institutions of Tarot — The Hands Behind the Cards",
+  "slug": "people-of-tarot",
+  "grammar_type": "custom",
+  "creator_name": "PlayfulProcess",
+  "creator_link": "https://recursive.eco",
+  "default_view": "tree",
+  "default_preview": "tree",
+  "_generated": true,
+  "_do_not_hand_edit": true,
+  "_built_by": "scripts/build_people_grammar.py",
+  "_source_of_truth": "research/people/*.md",
+  "description": "The makers, patrons, occultists, scholars, and institutions behind the historical tarot decks in this collection. Each node links to the deck(s) that person or body made, reframed, printed, or holds — and, where specific, to the cards that feature them (e.g. Pamela Colman Smith's scenes in the RWS deck). Generated from the research/people dossiers, which carry the sourced evidence.",
+  "tags": [
+    "people",
+    "history",
+    "tarot",
+    "biography",
+    "institutions"
+  ],
+  "is_published": true,
+  "items": [
+    {
+      "id": "person-gertrude-moakley",
+      "name": "Gertrude Moakley (1905–1998)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 1,
+      "keywords": [
+        "librarian",
+        "tarot iconographer",
+        "scholars"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "scholars",
+        "lifespan": "1905–1998",
+        "roles": [
+          "librarian",
+          "tarot iconographer"
+        ],
+        "studied": [
+          "visconti-sforza-tarot",
+          "cary-yale-visconti-tarot"
+        ],
+        "confidence": "high",
+        "research": "research/people/gertrude-moakley.md"
+      },
+      "sections": {
+        "Who": "A cataloguer at the New York Public Library for some four decades, Gertrude Moakley produced\nthe decisive iconographic insight of modern tarot history: the 22 trumps are a **procession\nof triumphs** in the manner of **Petrarch's _I Trionfi_** and the carnival *trionfo* — Love,\nChastity, Death, Fame, Time, Eternity — not a coded Egyptian or kabbalistic book. Her reading\ngrounded the trumps in the actual visual culture of 15th-century Italy.",
+        "Claim vs the record": "Moakley **dissolved** the occult origin-myth on iconographic grounds before Dummett\nsystematised the documentary case: the trumps are intelligible as Renaissance triumph-imagery,\nso no Egyptian or Hebrew key is required to explain them. Her attribution to **Bonifacio\nBembo** is itself now hedged (the Zavattari workshop is a rival candidate) — preserve the\nhedge.",
+        "In this collection": "Not a maker — the **iconographer**. Cited in the Visconti-Sforza and Cary-Yale dossiers and\nin the trump-meaning notes wherever the \"triumph procession\" reading is invoked."
+      }
+    },
+    {
+      "id": "person-la-mayer",
+      "name": "L. A. Mayer (Leo Aryeh Mayer, 1895–1959)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 2,
+      "keywords": [
+        "Islamic-art scholar",
+        "orientalist",
+        "scholars"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "scholars",
+        "lifespan": "1895–1959",
+        "roles": [
+          "Islamic-art scholar",
+          "orientalist"
+        ],
+        "studied": [
+          "mamluk-deck"
+        ],
+        "confidence": "high",
+        "research": "research/people/la-mayer.md"
+      },
+      "sections": {
+        "Who": "Leo Aryeh Mayer was an Israeli scholar of Islamic art who, in the 1930s, recognised a set\nof richly decorated cards in the Topkapı Sarayı, Istanbul, as a **Mamluk-era playing pack** —\nthe *Mulūk wa-nuwwāb* (\"Kings and Deputies\"). His identification supplied the missing link\nbetween Chinese money-suited cards and the European four-suit pack that became tarot.",
+        "Claim vs the record": "Mayer's careful description corrected loose talk of \"Saracen\" or \"gypsy\" card origins with a\ndated, physical object. Note the survivor-count nuance his work and its readers established:\nthe Topkapı set is **almost complete (~48 cards)**, of which **~43 belong to the original\npack** and a handful are cruder later replacements; the complete pack held 52. (confidence:\nhigh on the structure; the exact survivor count is reported variously as 43/47/48 across\nsources — the dossier states the reconciled figure.)",
+        "In this collection": "Not a maker — the **identifier** of the `mamluk-deck` ancestor. He is the principal citation\nin the Mamluk deck dossier and grammar."
+      }
+    },
+    {
+      "id": "person-michael-dummett",
+      "name": "Sir Michael Dummett (1925–2011)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 3,
+      "keywords": [
+        "philosopher",
+        "tarot historian",
+        "card-game historian",
+        "scholars"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "scholars",
+        "lifespan": "1925–2011",
+        "roles": [
+          "philosopher",
+          "tarot historian",
+          "card-game historian"
+        ],
+        "studied": [
+          "visconti-sforza-tarot",
+          "tarocchino-bologna",
+          "minchiate-florence-tarot",
+          "tarot-de-marseille-conver",
+          "court-de-gebelin-tarot",
+          "etteilla-i-livre-de-thot"
+        ],
+        "confidence": "high",
+        "research": "research/people/michael-dummett.md"
+      },
+      "sections": {
+        "Who": "One of the major analytic philosophers of the 20th century (Wykeham Professor of Logic at\nOxford), Michael Dummett was also the most important modern historian of tarot — not as a\ndivinatory system but as a **trick-taking card game**. His trilogy is the documentary\nbaseline this collection defaults to: tarot is a 15th-century Italian game; the\noccult/Egyptian/divinatory readings are a learned **overlay imposed after c. 1781**.",
+        "Claim vs the record": "Dummett **is** the record here. Where a deck's own tradition claims ancient Egyptian,\nHebrew-kabbalistic, or \"suppressed wisdom\" origins, this collection states the claim fairly\nand then weighs it against Dummett's documentary findings. The collection does **not** treat\nhim as infallible — later scholars (Depaulis, Pratesi, Vitali) refine dates and the A/B/C\npicture — but it treats the burden of proof as his framework sets it.",
+        "In this collection": "Not a maker — a **lens**. He is cited across nearly every deck dossier as the document-first\nauthority (`[@dummett1980]`, `[@decker1996]`, `[@dummett2004]`). He does not \"feature\" in\ncard art; he features in the collection's *method*."
+      }
+    },
+    {
+      "id": "person-stuart-kaplan",
+      "name": "Stuart R. Kaplan (1932–2021)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 4,
+      "keywords": [
+        "publisher",
+        "collector",
+        "cataloguer",
+        "scholars"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "scholars",
+        "lifespan": "1932–2021",
+        "roles": [
+          "publisher",
+          "collector",
+          "cataloguer"
+        ],
+        "studied": [
+          "golden-dawn-book-t-tarot"
+        ],
+        "confidence": "high",
+        "research": "research/people/stuart-kaplan.md"
+      },
+      "sections": {
+        "Who": "Stuart Kaplan founded **U.S. Games Systems** (1968) and, more than anyone, drove tarot's\nlate-20th-century popular revival in the United States. As a collector-cataloguer he compiled\nthe four-volume **_Encyclopedia of Tarot_**, the most comprehensive descriptive catalogue of\nhistorical decks; as a publisher he reissued the **Rider-Waite-Smith** deck and many others.",
+        "Claim vs the record": "Kaplan is a **catalogue** authority more than an origins theorist; his Encyclopedia is\ndescriptive and is used here for *what a deck is and where copies are*, not for contested\norigin claims (for those, defer to the Dummett spine). His commercial framing sometimes\ncarries the occult tradition's self-description — read those passages as tradition, not as\ndocumented history.",
+        "In this collection": "Not a historical maker — a **cataloguer/publisher**. Cited where a dossier needs deck\nidentification, provenance of surviving copies, or the modern publication history of the RWS\nline."
+      }
+    },
+    {
+      "id": "grp-scholars",
+      "name": "Scholars & Cataloguers",
+      "level": 2,
+      "category": "role-group",
+      "sort_order": 104,
+      "composite_of": [
+        "person-gertrude-moakley",
+        "person-la-mayer",
+        "person-michael-dummett",
+        "person-stuart-kaplan"
+      ],
+      "sections": {
+        "What this groups": "4 scholars & cataloguers catalogued in this collection."
+      }
+    },
+    {
+      "id": "root-people-of-tarot",
+      "name": "The Hands Behind the Cards",
+      "level": 3,
+      "category": "root",
+      "sort_order": 999,
+      "composite_of": [
+        "grp-scholars"
+      ],
+      "sections": {
+        "What it is": "Every person and institution that made, paid for, reframed, printed, or catalogued the decks in this collection — generated from the research/people dossiers."
+      }
+    }
+  ]
+}
