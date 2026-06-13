@@ -141,15 +141,13 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
 - note: Fibbia origin legend (c.1419) is apocryphal (Berti) — keep flagged.
 
 ## tarot/vieville-tarot/grammar.json (from research; confidence medium)
-- ✅ Mislabelled as Marseille: metadata.tradition "Tarot de Marseille family" + branch "marseille"
-  → it's the Rouen-Brussels / Belgian line (Dummett: Bologna→Piedmont/Savoy). Re-tag.
+- ✅ DONE: re-tagged metadata.tradition/branch to Rouen-Brussels/Belgian line.
 - 🟡 Trump-16: it's **La Foudre** (a tree under fire/hail + shepherd), NOT the Marseille struck Tower.
 - 🟡 Trump-12 Hanged Man is **upright**; trumps 17/18/19 = astronomer-with-compasses / woman-with-spindle / youth-on-horseback (celestial divergences).
 - 🟡 "Eastern trump order" label → Bologna-via-Piedmont/Savoy (Belgian line), not "Eastern".
 
 ## tarot/mamluk-deck/grammar.json (from research; confidence high)
-- 🟡 Internal inconsistency: mamluk-overview "What it is" says "43 surviving" but the description
-  says "~48 survive / ~43 original". Reconcile the overview text to ~48/43/52.
+- ✅ DONE: mamluk-overview reconciled to "~48 survive / ~43 original + replacements / 52".
 
 ## tarot/tarot-de-besancon/grammar.json (from research; confidence high)
 - 🟡 Tradition Note calls it a "regional cousin" of Marseille → it's a direct **descendant**
@@ -168,9 +166,8 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
   (Gallica scan not read card-by-card — WebFetch 403). See research/decks/paris-anonymous-tarot.md.
 
 ## tarot/belgian-tarot/grammar.json (from research; confidence medium, Belgian-line corroborated)
-- ✅ trump-13 "La Mort (the card itself is unnamed)" → the Belgian card IS named La Mort (it's
-  the *Marseille* XIII that's unnamed). Remove the parenthetical.
-- ✅ metadata branch "marseille"/tradition "Tarot de Marseille family" → Rouen-Brussels/Belgian line.
+- ✅ DONE: trump-13 corrected (Belgian Death IS named La Mort).
+- ✅ DONE: belgian metadata re-tagged to Rouen-Brussels/Belgian line.
 - 🟡 trump-02 "Le Capitaine Fracasse" → inscription is "L'Espagnol Capitano Eracasse" (Fracasse =
   later Commedia name). trump-12 Hanged Man hangs right-side-up. trump-16 = tree struck by
   lightning + shepherd, NOT a tower / "Maison-Dieu".
