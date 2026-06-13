@@ -63,9 +63,9 @@ still requires a session with non-sandboxed access to those blocked hosts.
   cups-king corrected from card 2 → card 7; cups-pip corrected from card 1 → card 2; image notes added.
   **Remaining:** cards 3–6 still unverified stand-ins; the full ~48-card set (mamluk.spiorad.net,
   l-pollett.tripod.com) still blocked. The "IMAGE PROVENANCE / TODO" note in the grammar remains valid.
-- **Sola Busca minors** — ✅ PARTIAL: 4 sourced scene descriptions added (2 of Cups, Page of Swords,
-  Knight of Swords, Page of Coins) from secondary web sources. 52 of 56 still carry honest placeholders.
-  To fill the remaining 52: need actual image viewing (BM/Brera scans) or Di Vincenzo 1998 book.
+- **Sola Busca minors** — ✅ COMPLETE: All 56 minor arcana (cards 22–77) now have Scene descriptions
+  written from direct visual inspection of the c.1491 engravings (downloaded from project R2 and viewed
+  via Read tool vision). Committed 2026-06-13 in feat(sola-busca): add scene descriptions for all 56 minor arcana.
 - **Paris-Anonymous (Tarot de Paris)** — ✅ ALREADY DONE: grammar has French captions from the card
   labels ("printed on the card") and comparative Research notes for all 22 trumps. Gallica blocked.
   Specific staging details ("Hell-mouth Foudre at XVI", "figural animal Aces") still need Gallica.
