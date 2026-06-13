@@ -92,12 +92,18 @@ Status: ⬜ todo · 🟡 research done · ✅ integrated+pushed · ⚠️ blocke
 > rest on the Dummett spine; Wikipedia/blog keys are orientation only. Maintainer should
 > re-confirm flagged `confidence: medium/low` items against primaries.
 
-✅ DONE (dossier+grammar): michael-dummett, la-mayer, gertrude-moakley, stuart-kaplan
-(scholars) · etteilla, court-de-gebelin, comte-de-mellet, eliphas-levi, oswald-wirth
-(occultists).
-🟡 IN FLIGHT (agents running): bonifacio-bembo, nicolas-conver, jean-noblet, jacques-vieville,
-vandenborre, visconti-sforza-patrons (makers/patrons) · golden-dawn, macgregor-mathers,
-wynn-westcott, a-e-waite, pamela-colman-smith, william-rider (GD/RWS circle).
+✅ DONE — **21 people dossiers + generated grammar** (`build_people_grammar.py`), 5 groups:
+- scholars: michael-dummett, la-mayer, gertrude-moakley, stuart-kaplan
+- occultists: etteilla, court-de-gebelin, comte-de-mellet, eliphas-levi, oswald-wirth,
+  macgregor-mathers, wynn-westcott, a-e-waite
+- makers: bonifacio-bembo, nicolas-conver, jean-noblet, jacques-vieville, vandenborre,
+  pamela-colman-smith
+- patrons: visconti-sforza-patrons
+- institutions: golden-dawn, william-rider
+Pamela Colman Smith is linked to specific RWS pip cards via `features_cards`.
+⬜ candidates still to add: andrea-mantegna (debunk), "Gringonneur" (debunk), the Sola Busca
+Master, Éliphas Lévi already in, holding institutions (Topkapı/BnF/Beinecke/Morgan/NGA),
+publishers (Grimaud, U.S. Games).
 
 ⬜ Bembo (+ Zavattari workshop) · ⬜ Visconti/Sforza patrons · ⬜ "Gringonneur" (debunk) ·
 ⬜ Andrea Mantegna (debunk attribution) · ⬜ Sola Busca Master · ⬜ Nicolas Conver ·
