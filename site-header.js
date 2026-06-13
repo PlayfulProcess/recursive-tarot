@@ -30,9 +30,11 @@
     document.head.appendChild(s);
   }
 
-  // [key, label, href]
-  const VIEWS = [
-    ['cards',      'Cards',        PFX + 'viewers/cards.html'],
+  // [key, label, href] — split by level
+  const CARD_VIEWS = [
+    ['cards',   'Cards',  PFX + 'viewers/cards.html'],
+  ];
+  const GRAMMAR_VIEWS = [
     ['explorer',   'Explorer',     PFX + 'viewers/explorer.html'],
     ['treeoflife', 'Tree of Life', PFX + 'viewers/genealogy-tree.html'],
     ['timeline',   'Timeline',     PFX + 'viewers/timeline.html'],
@@ -88,6 +90,8 @@
           nav{ display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
           .cap{ font-size:9.5px; text-transform:uppercase; letter-spacing:.14em;
                 color:#5f5878; margin:0 2px 0 6px; user-select:none; }
+          .cap.card-cap{ color:#b8860b; }
+          .cap.gram-cap{ color:#6d4fa8; }
           .sep{ width:1px; height:20px; background:#2a2440; margin:0 6px; }
           .tab{
             color:#a99fc6; text-decoration:none; font-size:13px; font-weight:500;
@@ -121,8 +125,11 @@
           </a>
           <span class="spacer"></span>
           <nav>
-            <span class="cap" title="Different previews of the same decks">◫ views</span>
-            ${VIEWS.map(tab).join('')}
+            <span class="cap card-cap" title="Browse individual cards">🃏 card</span>
+            ${CARD_VIEWS.map(tab).join('')}
+            <span class="sep"></span>
+            <span class="cap gram-cap" title="Analyse patterns across the whole collection">⊞ grammar</span>
+            ${GRAMMAR_VIEWS.map(tab).join('')}
             <span class="sep"></span>
             ${TOOLS.map(tab).join('')}
             <recursive-auth></recursive-auth>
