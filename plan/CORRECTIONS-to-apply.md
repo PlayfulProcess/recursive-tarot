@@ -4,6 +4,42 @@ Research dossiers flagged these factual errors in the live grammars. Each is app
 in a focused, verified pass (research-first, then grammar edits — the maintainer's order).
 Confidence noted; only ✅-corroborated items get applied without a further check.
 
+---
+
+## ✅ STATUS (2026-06-13) — what is DONE vs what needs YOU
+
+**Applied to the grammars (all corroborated, each traceable to research/decks|cards/<slug>.md
+and bibliography.bib):** Etteilla I/II/III card identities (13→Lovers, 21→Chariot, 78→Fool,
+card 8 = female significator) AND removal of the anachronistic RWS pip-symbol metadata from all
+3 Etteilla decks; Wirth Hebrew letters (Shin/Lamed per Lévi, Fool placed XX–XXI); Visconti
+Judgement→Bembo + provenance/Cicognara note; Gébelin Mellet re-attribution, Diogenes, etymology
+split; Golden Dawn keyword dedup + court-rank caution; Madiao + Mamluk citation/count; Minchiate
+Gobbo; Viéville+Belgian re-tagged Belgian-line + tree-not-tower Foudre + upright Hanged Man +
+La Mort + Spanish-Captain inscription; fragment metadata; 143 Bembo floruit dates; sourced
+RESEARCH NOTEs on 13 decks. _collection.json refreshed; _research pointers added.
+
+**⚠️ NEEDS A MAINTAINER DECISION (I added a sourced, attributed note in-grammar but did NOT
+silently flip — these are genuine scholarly debates or big reframes):**
+1. **Charles VI** — Florence (newer BnF: Apollonio di Giovanni) vs Ferrara/B-order (older Dummett).
+   Pick the framing; the note states both with sources.
+2. **Paris-Anonymous** — the cited BnF object is the idiosyncratic *Tarot de Paris*, not a
+   mainstream Marseille. Needs a full reframe (name, description, trump titles). Confidence medium
+   (Gallica scan not read card-by-card — blocked by the 403).
+3. **Minchiate Papi** — scholarly identities (Bagatto / Grand Duke / two Emperors / Love; no Pope;
+   Popess dropped). A 5-card identity rewrite; I noted it rather than rewrote (confidence medium).
+4. **Cary-Yale** — the six-rank courts collide on the four-archetype scheme (Damsel/Knave→page,
+   Mounted-Lady/Knight→knight). Needs distinct archetype ids — a schema design choice.
+5. **Noblet** — "complete" vs "near-complete" in the title (6–10 of Swords missing). Wording call.
+
+**🟡 NEEDS WEBFETCH / PRIMARY SCANS (I refused to fabricate — flagged, not filled):**
+- Sola Busca: the 56 minor "Scene" texts are honest generic placeholders; fill from BM/Brera scans.
+- Several medium-confidence dossier claims (exact inscriptions, dates, per-card iconography) were
+  WebSearch-snippet–corroborated only; re-verify against primaries when WebFetch (403) is restored.
+
+Everything below is the detailed per-deck log (✅ done · 🟡 minor/needs-care · ⚠️ your call).
+
+---
+
 ## tarot/etteilla-i-livre-de-thot/grammar.json
 - ✅ **Card 13 "Le Grand Prêtre"**: `archetype` maps to `the-hierophant` → should be
   **the-lovers** (TdM VI). Card 13 = *Le Mariage* (Marriage/Union), the reworked Lovers.
