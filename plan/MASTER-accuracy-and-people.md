@@ -85,7 +85,19 @@ Status: ⬜ todo · 🟡 research done · ✅ integrated+pushed · ⚠️ blocke
 | tarot-de-besancon | marseille (Juno/Jupiter) | ⬜ | ⬜ | ⬜ | Swiss 1JJ variant |
 | belgian-tarot | (Flemish) | ⬜ | ⬜ | ⬜ | Vandenborre c.1780 |
 
-## 4. People & institutions ledger (`tarot/people-of-tarot/grammar.json`)
+## 4. People & institutions ledger (`tarot/people-of-tarot/grammar.json` — GENERATED from research/people/*.md by build_people_grammar.py)
+
+> **Env constraint:** sub-agent + orchestrator **WebFetch is blocked (HTTP 403)** here.
+> All research is **WebSearch-only** (snippet cross-corroboration). Load-bearing claims
+> rest on the Dummett spine; Wikipedia/blog keys are orientation only. Maintainer should
+> re-confirm flagged `confidence: medium/low` items against primaries.
+
+✅ DONE (dossier+grammar): michael-dummett, la-mayer, gertrude-moakley, stuart-kaplan
+(scholars) · etteilla, court-de-gebelin, comte-de-mellet, eliphas-levi, oswald-wirth
+(occultists).
+🟡 IN FLIGHT (agents running): bonifacio-bembo, nicolas-conver, jean-noblet, jacques-vieville,
+vandenborre, visconti-sforza-patrons (makers/patrons) · golden-dawn, macgregor-mathers,
+wynn-westcott, a-e-waite, pamela-colman-smith, william-rider (GD/RWS circle).
 
 ⬜ Bembo (+ Zavattari workshop) · ⬜ Visconti/Sforza patrons · ⬜ "Gringonneur" (debunk) ·
 ⬜ Andrea Mantegna (debunk attribution) · ⬜ Sola Busca Master · ⬜ Nicolas Conver ·
