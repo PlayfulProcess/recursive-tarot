@@ -190,8 +190,11 @@ Add a first-run hint near the picker (dismissable, localStorage):
    "✦ Decks ▾" button + `?decks=` URL mode: loads multiple grammar.json files,
    stamps each item with `_deck` field, sidebar switches to per-deck grouping,
    filter pills become deck pills. Single-deck mode unchanged.
-4. Cards sidebar accepts chip drops (one `rows` slot); eye-switcher carries spec
-   between Cards/Explorer/Tree.
+4. ✅ **DONE** (Jun 13, Sonnet) Dimension chip tray in multi-deck cards: draggable
+   dimension chips + sidebar drop zone (`⊸ Drop a dimension here`). Clicking a chip
+   or dropping it groups the sidebar by that field (suit/arcana/level/deck…).
+   `view-switcher.js` now carries `decks` param + spec hash (`#groupby=field` ↔
+   `#{"rows":["field"]}`) across card-level viewer switches.
 5. Tree of Life + Timeline: deck-level field discovery drives hub/lane grouping;
    remove eye icon from grammar-level pages, split the switcher.
 6. I Ching test: load the python-schema experiments as grammars, point the same
