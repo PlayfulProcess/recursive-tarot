@@ -5167,17 +5167,28 @@
     <div class="assistant-frame-container" id="assistant-frame">
     </div>
     <script>
-        function toggleAssistant() {
+        async function toggleAssistant() {
             const frame = document.getElementById('assistant-frame');
             const isOpen = frame.classList.toggle('open');
-            if (isOpen && !frame.querySelector('iframe')) {
-                // Lazy-load iframe on first open
-                const grammarId = new URLSearchParams(window.location.search).get('id') || '';
-                const context = document.title.includes('Study') ? 'study' : document.title.includes('Tree') ? 'tree' : 'cards';
-                const iframe = document.createElement('iframe');
-                iframe.src = `${getFlowBaseUrl()}/assistant?grammar_id=${grammarId}&context=${context}`;
-                frame.appendChild(iframe);
+            if (!isOpen || frame.querySelector('iframe')) return;
+            // Logged-out users get a clear sign-in prompt instead of a confused anonymous iframe
+            let user = null;
+            try { user = await window.recursiveAuth?.getUser?.(); } catch (e) {}
+            if (!user) {
+                frame.innerHTML = `<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#16121f;color:#cfc8e2;font-family:-apple-system,'Segoe UI',sans-serif;font-size:14px;text-align:center;padding:24px">
+                    <div style="font-size:28px">💬</div>
+                    <div>The Library Assistant needs a free<br><b>recursive.eco</b> account.</div>
+                    <a href="${getFlowBaseUrl()}/?signin=1" target="_blank" rel="noopener" style="background:#9333ea;color:#fff;text-decoration:none;padding:8px 18px;border-radius:8px;font-weight:600">Sign in ↗</a>
+                    <small style="color:#7c7596">Sign in, then reopen this bubble.</small></div>`;
+                return;
             }
+            frame.innerHTML = '';
+            // Lazy-load iframe on first open
+            const grammarId = new URLSearchParams(window.location.search).get('id') || '';
+            const context = document.title.includes('Study') ? 'study' : document.title.includes('Tree') ? 'tree' : 'cards';
+            const iframe = document.createElement('iframe');
+            iframe.src = `${getFlowBaseUrl()}/assistant?grammar_id=${grammarId}&context=${context}`;
+            frame.appendChild(iframe);
         }
     </script>
 
