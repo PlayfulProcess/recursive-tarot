@@ -11,34 +11,30 @@ quoting sources), back each claim with research dossiers, and build a standalone
 
 ---
 
-## ⏯️ RESUME HERE (state as of 2026-06-13 ~07:10 UTC)
+## ⏯️ RESUME HERE (state as of 2026-06-13 ~11:40 UTC)
 
-**Tree is clean and fully pushed.** A session rate-limit (resets **7:10am UTC**) killed
-wave 5 — sub-agents returned "session limit" with no output. Re-launch them after reset.
+**Tree clean and fully pushed.** Research phase essentially COMPLETE.
 
 **Done (committed):**
-- Research **deck + cards dossiers for 19 decks**: court-de-gebelin, etteilla-i/ii/iii,
-  oswald-wirth, golden-dawn-book-t, visconti-sforza, cary-yale-visconti, charles-vi, este,
-  sola-busca, minchiate, tarocchino-bologna, cary-sheet, rosenwald-sheet, madiao, ganjifa,
-  mantegna, tarot-de-marseille-conver.
-- **23 people dossiers** → generated `people-of-tarot` grammar (5 groups), registered in
-  `_collection.json`. `bibliography.bib` ≈ 230 entries, all `[@key]` citations resolve.
-- **Grammar fixes applied**: etteilla-i/ii/iii (card 13→Lovers, 21→Chariot, 78→Fool),
-  wirth (Hebrew letters), visconti (Judgement is original Bembo), marseille (Empress claim),
-  gebelin (Mellet re-attribution, Diogenes), golden-dawn (keyword dedup), madiao (citation),
-  fragments (function/order/ancestry metadata).
+- **All ~25 decks now have a deck dossier + card-by-card dossier** (research/decks + research/cards):
+  the full Tier A–D set incl. the Marseille family (noblet, vieville, paris-anonymous, besancon,
+  belgian) and the roots (mamluk, madiao, ganjifa). Every `[@key]` resolves; bib ≈ 285 entries.
+- **23 people dossiers** → generated `people-of-tarot` grammar (5 groups), in `_collection.json`.
+- Each enriched grammar carries a `_research` pointer to its dossier.
+- `_collection.json` derived fields refreshed from grammars (`scripts/refresh_collection.py`).
+- **Grammar fixes applied** (sourced): etteilla-i/ii/iii card identities; wirth Hebrew letters;
+  visconti Judgement→Bembo; gebelin Mellet re-attribution + Diogenes; golden-dawn keyword dedup
+  + court-rank caution; madiao + mamluk citation/count; minchiate Gobbo; belgian+vieville
+  re-tagged Belgian-line (not Marseille) + belgian La Mort; fragment metadata.
 
-**TODO when limit resets — re-run wave 5 (5 deck research agents), then mamluk:**
-- `noblet-tarot` (oldest TdM, Type I) · `vieville-tarot` (Rouen-Brussels/Belgian line, NOT
-  Marseille) · `paris-anonymous-tarot` (Italian-suited Parisian pattern) · `tarot-de-besancon`
-  (Juno/Jupiter for Papess/Pope) · `belgian-tarot` (Vandenborre; Bacchus + Spanish-Captain).
-- `mamluk-deck` cards dossier (deck text already corrected on dev).
-- Agent brief: see the wave-5 prompts pattern — WebSearch only (WebFetch 403), cite, flag
-  confidence, write only research/decks+cards/<slug>.md, append bib at EOF, terse return.
-
-**Then: a grammar-correction sweep from `plan/CORRECTIONS-to-apply.md`** (apply the ✅ items;
-leave ⚠️ maintainer-decision items: Charles VI Florence-vs-Ferrara, Minchiate Papi, Cary-Yale
-six-court archetype collision). And refresh stale `_collection.json` item counts.
+**REMAINING = grammar-correction sweep from `plan/CORRECTIONS-to-apply.md`:**
+- ⚠️ **Maintainer-decision** (do NOT auto-flip): Charles VI Florence-vs-Ferrara; Minchiate Papi
+  identities; Cary-Yale six-court↔four-archetype collision; Paris-Anonymous = *Tarot de Paris*
+  misidentification (big reframe); Noblet "complete"→"near-complete" title wording.
+- 🟡 **Content polish** (safe but needs care/verification, ideally with WebFetch restored):
+  Sola Busca placeholder scene texts; Etteilla-II minors carry anachronistic RWS scenic-pip
+  descriptions; Visconti Cicognara hedge + provenance split; Marseille elemental-suit overlay
+  note; vieville/belgian per-card text (La Foudre tree, upright Hanged Man); etc.
 
 ---
 
