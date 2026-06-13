@@ -156,3 +156,13 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
   (Marseille Type-II with Juno/Jupiter swap); derives_from set in dossier. Tighten wording.
 - 🟡 Juno→high-priestess / Jupiter→hierophant archetypes are the occult overlay, not the game
   deck's own — keep as reading aid with a note. (14 items = 13 cards + 1 emergence.)
+
+## tarot/paris-anonymous-tarot/grammar.json — MISIDENTIFICATION (maintainer review)
+- ⚠️ The grammar frames this as a mainstream "C-order Tarot de Marseille (Parisian)", but the
+  cited BnF object (ark:/12148/btv1b105109624) IS the famous idiosyncratic **Tarot de Paris** —
+  a pattern of its OWN (broken period captions: LAN PEREUT, LER MITE, A TREMPANCE, LES TOILLES,
+  LA FOUDRE; figural animal Aces; Hell-mouth XVI = La Foudre, not La Maison-Dieu).
+- ⚠️ Self-contradiction: the grammar's "Honesty notes" say it is "NOT the famous Tarot de Paris,"
+  yet the cited ark is exactly that deck. Resolve.
+- Substantial reframe (name, description, trump titles, branch/tradition). Confidence medium
+  (Gallica scan not read card-by-card — WebFetch 403). See research/decks/paris-anonymous-tarot.md.
