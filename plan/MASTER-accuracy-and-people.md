@@ -40,6 +40,19 @@ Agents: research (steps 1–2) can be fanned out in parallel to sub-agents writi
 files on **disjoint paths**; integration (steps 3–5) is done by the orchestrator to keep
 grammar edits controlled and validated.
 
+## 3b. Progress log (most recent first)
+- **Wave 4 IN FLIGHT:** cary-yale, charles-vi (Gringonneur debunk), sola-busca, minchiate,
+  tarocchino-bologna, + fragments (este, cary-sheet, rosenwald). [deck+cards research]
+- **Wave 3 ✅ research done + integrated:** etteilla-ii, etteilla-iii, oswald-wirth,
+  golden-dawn-book-t (78 cards), visconti-sforza, tarot-de-marseille-conver. Grammar fixes
+  applied: visconti Judgement→Bembo; marseille Empress claim removed. Rest queued.
+- **Wave 2 ✅:** roots (madiao/ganjifa/mantegna) research; people makers+GD/RWS circle.
+- **Wave 1 ✅:** occult-cluster people; etteilla-i + court-de-gebelin research; etteilla-i
+  grammar fixes (cards 13/21/78); gébelin Lovers re-attribution.
+- People grammar: 23 dossiers, generated, registered in _collection.json.
+- STILL TODO research: noblet, vieville, paris-anonymous, tarot-de-besancon, belgian (Tier D
+  Marseille family); mamluk cards detail. Then a GRAMMAR-CORRECTION pass over CORRECTIONS-to-apply.md.
+
 ## 3. Deck ledger
 
 Status: ⬜ todo · 🟡 research done · ✅ integrated+pushed · ⚠️ blocked/needs-human
