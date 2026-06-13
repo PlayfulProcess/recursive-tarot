@@ -18,7 +18,10 @@ Gobbo; Viéville+Belgian re-tagged Belgian-line + tree-not-tower Foudre + uprigh
 La Mort + Spanish-Captain inscription; fragment metadata; 143 Bembo floruit dates; sourced
 RESEARCH NOTEs on 13 decks. _collection.json refreshed; _research pointers added.
 
-**⚠️ NEEDS A MAINTAINER DECISION (I added a sourced, attributed note in-grammar but did NOT
+**✅ EDITORIAL CALLS MADE (2026-06-13, maintainer-delegated) — see each deck's description for the call:**
+1. Charles VI → attribution Florentine (order A/B left open). 2. Paris → reframed Tarot de Paris (per-card captions need scans). 3. Minchiate → Papi identities corrected (Bagatto/Grand Duke/two Emperors/Love). 4. Cary-Yale → distinct damsel/horsewoman archetypes. 5. Noblet → 'near-complete'.
+
+**(historical detail of those 5, now resolved)** (I added a sourced, attributed note in-grammar but did NOT
 silently flip — these are genuine scholarly debates or big reframes):**
 1. **Charles VI** — Florence (newer BnF: Apollonio di Giovanni) vs Ferrara/B-order (older Dummett).
    Pick the framing; the note states both with sources.

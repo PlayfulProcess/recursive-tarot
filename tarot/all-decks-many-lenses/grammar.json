@@ -17,7 +17,7 @@
   "default_preview": "tree",
   "_generated": true,
   "_do_not_hand_edit": true,
-  "_built_at": "2026-06-13T16:52:22.659795+00:00",
+  "_built_at": "2026-06-13T17:01:06.029279+00:00",
   "_built_by": "scripts/build_meta_grammar.py",
   "_decks": [
     {
@@ -5417,13 +5417,14 @@
     },
     {
       "id": "card-minchiateflorencetarot-2",
-      "name": "1 — Papa One — Minchiate (Florence)",
+      "name": "1 — Papa One (Il Bagatto · the Juggler / “Trivial Performer”) — Minchiate (Florence)",
       "level": 1,
       "category": "card",
       "ref_preview": "study",
       "metadata": {
         "deck": "Minchiate (Florence)",
-        "arcana": "trump",
+        "arcana": "major",
+        "number": 1,
         "order": "A",
         "function": "game",
         "year": 1750,
@@ -5447,14 +5448,13 @@
     },
     {
       "id": "card-minchiateflorencetarot-3",
-      "name": "2 — Papa Two (The Empress) — Minchiate (Florence)",
+      "name": "2 — Papa Two (the Grand Duke) — Minchiate (Florence)",
       "level": 1,
       "category": "card",
       "ref_preview": "study",
       "metadata": {
         "deck": "Minchiate (Florence)",
-        "arcana": "major",
-        "number": 3,
+        "arcana": "trump",
         "order": "A",
         "function": "game",
         "year": 1750,
@@ -5478,7 +5478,7 @@
     },
     {
       "id": "card-minchiateflorencetarot-4",
-      "name": "3 — Papa Three (The Emperor) — Minchiate (Florence)",
+      "name": "3 — Papa Three (the Western Emperor) — Minchiate (Florence)",
       "level": 1,
       "category": "card",
       "ref_preview": "study",
@@ -5509,14 +5509,14 @@
     },
     {
       "id": "card-minchiateflorencetarot-5",
-      "name": "4 — Papa Four (The Pope) — Minchiate (Florence)",
+      "name": "4 — Papa Four (the Eastern Emperor) — Minchiate (Florence)",
       "level": 1,
       "category": "card",
       "ref_preview": "study",
       "metadata": {
         "deck": "Minchiate (Florence)",
         "arcana": "major",
-        "number": 5,
+        "number": 4,
         "order": "A",
         "function": "game",
         "year": 1750,
@@ -27710,6 +27710,7 @@
         "card-etteillailivredethot-1",
         "card-etteillailivredethot-15",
         "card-goldendawnbookttarot-2",
+        "card-minchiateflorencetarot-2",
         "card-oswaldwirthtarot-2",
         "card-tarocchinobologna-2",
         "card-tarotdemarseilleconver-2",
@@ -27755,7 +27756,6 @@
         "card-etteillaiiioracledesdames-3",
         "card-etteillailivredethot-3",
         "card-goldendawnbookttarot-4",
-        "card-minchiateflorencetarot-3",
         "card-oswaldwirthtarot-4",
         "card-tarotdemarseilleconver-4",
         "card-viscontisforzatarot-4"
@@ -27780,6 +27780,7 @@
         "card-etteillailivredethot-4",
         "card-goldendawnbookttarot-5",
         "card-minchiateflorencetarot-4",
+        "card-minchiateflorencetarot-5",
         "card-oswaldwirthtarot-5",
         "card-tarotdebesancon-2",
         "card-tarotdebesancon-3",
@@ -27804,7 +27805,6 @@
         "card-etteillaiiioracledesdames-5",
         "card-etteillailivredethot-5",
         "card-goldendawnbookttarot-6",
-        "card-minchiateflorencetarot-5",
         "card-oswaldwirthtarot-6",
         "card-tarotdemarseilleconver-6",
         "card-viscontisforzatarot-6"
