@@ -43,3 +43,18 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
   solo, or **Dummett & McLeod (2004)** for the games history. "Mann" is an error.
 - 🟡 metadata.year 1600 / "17th–18th-c. European collection" (Skokloster) loosely sourced;
   money-suited form firmly attested from Lu Rong (1436–94); Ma Diao codified late Ming. Hedge.
+
+## tarot/golden-dawn-book-t-tarot/grammar.json
+- ✅ FIXED: 8 court cards had duplicate "knight"/"queen" keywords (deduped); "a ardent"
+  → "an ardent" in the 4 Wands courts.
+- 🟡 Court-hierarchy gloss: sections assert flat RWS=GD court equivalence. True by *name*
+  (Book T's top court is the "Knight"), but in *rank* the GD Knight ↔ RWS King and GD King
+  ↔ RWS Knight. Add one clarifying line so users don't misread the hierarchy. (content edit)
+
+## People-pass flags (for dossiers / future grammar notes — not auto-applied)
+- Conver: block date **1760** vs BnF authority **Nicolas Conver 1784–1833** — genuine,
+  unresolved (inherited/re-signed blocks). Keep both, flagged; don't assert 1760 as his cut.
+- Bembo: Visconti-Sforza & Cary-Yale are "workshop of Bembo" — Zavattari is a live rival
+  attribution (Algeri). Preserve the hedge in both deck grammars.
+- Viéville/Vandenborre sit in the Rouen-Brussels/Belgian line, distinct from the Marseille
+  line (Dummett) — make sure the deck dossiers/grammars don't call Viéville a "Marseille".

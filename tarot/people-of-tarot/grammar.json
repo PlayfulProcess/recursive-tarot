@@ -31,11 +31,82 @@
   "is_published": true,
   "items": [
     {
+      "id": "person-a-e-waite",
+      "name": "Arthur Edward Waite (A. E. Waite)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 1,
+      "keywords": [
+        "occultist",
+        "mystic",
+        "author",
+        "tarot designer (scheme)",
+        "translator",
+        "occultists"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "occultists",
+        "lifespan": "1857–1942",
+        "roles": [
+          "occultist",
+          "mystic",
+          "author",
+          "tarot designer (scheme)",
+          "translator"
+        ],
+        "made": [
+          "golden-dawn-book-t-tarot"
+        ],
+        "confidence": "high",
+        "research": "research/people/a-e-waite.md"
+      },
+      "sections": {
+        "Who": "**Arthur Edward Waite** (2 October **1857** – 19 May **1942**), known as **A. E. Waite**, was an\nAmerican-born British mystic and scholar of the occult, a Golden Dawn initiate who became the\n**directing mind of the Rider-Waite-Smith tarot**. In 1909 he commissioned the artist **Pamela\nColman Smith** to execute a \"rectified\" tarot pack to his specifications, and in 1910/1911 he\npublished *The Pictorial Key to the Tarot* as its companion text. The essential precision: **Waite\ndesigned the symbolic *scheme* and wrote the book — he did not draw the cards.** That work was\nSmith's [@web_pkt_wp; @decker2002; @waite1910].",
+        "Claim vs the record": "- **Common conflation: \"the Rider-Waite deck\" as Waite's solo creation.** **The record:** Waite\n  authored the *programme*; **Pamela Colman Smith drew every one of the 78 cards.** The very name\n  the collection uses — **Rider-Waite-*Smith*** — exists to correct a century of crediting Waite\n  (and the publisher Rider) while erasing the artist [@web_pcs_wp; @web_rws_wopc].\n- **Myth: the deck encodes recovered ancient wisdom.** **The record:** its symbolism is a\n  knowing **Golden-Dawn-era construction**, popularised for a general audience; its \"antiquity\" is\n  inherited rhetoric, not pedigree [@decker2002].",
+        "In this collection": "Within `golden-dawn-book-t-tarot`, Waite is the **scheme/author node** for the RWS imagery the\ngrammar borrows: the designer of the symbolic programme and author of its reading book. His leaf\nmust state plainly that he **designed but did not draw** the cards, pairing him with Smith on the\nart and pointing to Mathers/the Order for the underlying correspondences."
+      }
+    },
+    {
+      "id": "person-bonifacio-bembo",
+      "name": "Bonifacio Bembo",
+      "level": 1,
+      "category": "person",
+      "sort_order": 2,
+      "keywords": [
+        "painter",
+        "miniaturist",
+        "court artist",
+        "makers"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "makers",
+        "lifespan": "fl. c.1442 – d. before 1482 (Cremona / Milan)",
+        "roles": [
+          "painter",
+          "miniaturist",
+          "court artist"
+        ],
+        "made": [
+          "visconti-sforza-tarot",
+          "cary-yale-visconti-tarot"
+        ],
+        "confidence": "medium",
+        "research": "research/people/bonifacio-bembo.md"
+      },
+      "sections": {
+        "Who": "**Bonifacio Bembo** was a mid-15th-century painter from a family of artists active in\n**Cremona** and **Milan**, documented in the service of the Sforza dukes from roughly the\nlate 1440s into the 1470s [@web_bembo_wp]. He matters to tarot because the great\nhand-painted **Visconti-Sforza** luxury packs — the headwaters of surviving tarot — are\n**traditionally attributed to Bembo or his workshop** [@web_bembo_wp; @web_met_bembo;\n@web_wopc_vs]. The attribution is **load-bearing but not secure**: the rival candidate is\nthe **Zavattari** workshop (Francesco Zavattari), and even Bembo's wider oeuvre has been\nquestioned by art historians [@web_vs_wp; @web_bembo_wp]. Treat \"Bembo\" as the conventional\nlabel for the painter(s) behind these decks, not a settled fact.",
+        "Claim vs the record": "- **The traditional claim — \"painted by Bonifacio Bembo.\"** This is the attribution\n  enshrined by **Gertrude Moakley**, whose 1966 study is literally titled *The Tarot Cards\n  Painted by Bonifacio Bembo for the Visconti-Sforza Family* [@moakley1966]. It originates\n  earlier: **Roberto Longhi** proposed Bembo in 1928, and the attribution was adopted by\n  Wittgens (1936) and Rasmo (1939) [@web_vs_wp].\n- **The rival claim — the Zavattari workshop.** **Giuliana Algeri** argued that the\n  Brambilla and Visconti-Sforza packs were painted instead by **Francesco Zavattari**, on\n  the grounds of stylistic resemblance to the Zavattari frescoes in the Chapel of\n  Theodelinda at **Monza** [@web_vs_wp]. The Metropolitan Museum hedges by cataloguing its\n  cards under **\"Workshop of Bonifacio Bembo\"** rather than Bembo's own hand\n  [@web_met_bembo].\n- **The honest position:** the cards are firmly **Milanese court work of the mid-15th\n  century**, but the *individual hand* is genuinely debated. State the debate; do not assert\n  Bembo as fact [@web_vs_wp; @web_bembo_wp].",
+        "In this collection": "Bembo is the credited **maker** for two deck slugs: **`visconti-sforza-tarot`** and\n**`cary-yale-visconti-tarot`**. Wherever either deck's authorship is named, the grammar\nshould render it as *attributed to the workshop of Bonifacio Bembo (Zavattari proposed as\nan alternative)* — never as a flat \"by Bembo.\" He is the maker-node that links to the\n`visconti-sforza-patrons` family and to `gertrude-moakley`."
+      }
+    },
+    {
       "id": "person-comte-de-mellet",
       "name": "Louis-Raphaël-Lucrèce de Fayolle, comte de Mellet",
       "level": 1,
       "category": "person",
-      "sort_order": 1,
+      "sort_order": 3,
       "keywords": [
         "army officer",
         "courtier",
@@ -67,7 +138,7 @@
       "name": "Antoine Court de Gébelin",
       "level": 1,
       "category": "person",
-      "sort_order": 2,
+      "sort_order": 4,
       "keywords": [
         "scholar",
         "Protestant pastor",
@@ -104,7 +175,7 @@
       "name": "Éliphas Lévi (Alphonse-Louis Constant)",
       "level": 1,
       "category": "person",
-      "sort_order": 3,
+      "sort_order": 5,
       "keywords": [
         "occultist",
         "magician",
@@ -136,7 +207,7 @@
       "name": "Jean-Baptiste Alliette — \"Etteilla\"",
       "level": 1,
       "category": "person",
-      "sort_order": 4,
+      "sort_order": 6,
       "keywords": [
         "cartomancer",
         "deck designer",
@@ -173,7 +244,7 @@
       "name": "Gertrude Moakley (1905–1998)",
       "level": 1,
       "category": "person",
-      "sort_order": 5,
+      "sort_order": 7,
       "keywords": [
         "librarian",
         "tarot iconographer",
@@ -201,11 +272,106 @@
       }
     },
     {
+      "id": "person-golden-dawn",
+      "name": "Hermetic Order of the Golden Dawn",
+      "level": 1,
+      "category": "institution",
+      "sort_order": 8,
+      "keywords": [
+        "esoteric order",
+        "tarot system-builder",
+        "ritual lodge",
+        "institutions"
+      ],
+      "metadata": {
+        "kind": "institution",
+        "role_group": "institutions",
+        "lifespan": "1888–c.1903 (original order; offshoots continue)",
+        "roles": [
+          "esoteric order",
+          "tarot system-builder",
+          "ritual lodge"
+        ],
+        "made": [
+          "golden-dawn-book-t-tarot"
+        ],
+        "confidence": "high",
+        "research": "research/people/golden-dawn.md"
+      },
+      "sections": {
+        "Who": "The **Hermetic Order of the Golden Dawn** is the single most important engine of the modern\nesoteric tarot. Founded in London on **1 March 1888**, this small, oath-bound magical society\nfused tarot, Kabbalah, astrology, alchemy and Hermetic imagery into one graded, internally\nconsistent system, recorded in a confidential teaching paper called **Book T**. Book T\nassigned every card a place in a master grid of **astrological, elemental and decanic\ncorrespondences**, and — to keep that grid tidy — **swapped the traditional numbers of\nStrength and Justice (VIII↔XI)**. Crucially, the Order **never published a deck of its own**:\nmembers hand-copied their cards from Mathers' specimen under the secrecy of the lodge. The\n*public* realisation of its system came later and from outside the Order's control — the\n**Rider-Waite-Smith** deck of 1909 [@decker1996; @decker2002; @tarot_heritage].",
+        "Claim vs the record": "- **Myth: the Golden Dawn recovered an ancient, suppressed tarot tradition.** **The record:**\n  its antiquity is *manufactured* — the founders themselves forged the Sprengel lineage to\n  furnish a Continental pedigree. The system is a brilliant **1880s–90s synthesis** drawn from\n  Éliphas Lévi, Christian Kabbalah, Renaissance Hermetica and Victorian Egyptology, not a\n  transmission [@decker1996; @decker2002].\n- **The conflation this collection must correct: \"the Golden Dawn deck\" ≠ the Rider-Waite-Smith\n  deck.** The Order's *own* cards were **unpublished, hand-copied, secret, and now largely lost**.\n  The deck nearly everyone calls \"the Golden Dawn tarot\" in popular usage is in fact the **later,\n  public RWS deck** (1909) — a *derivative realisation* of Book T's correspondences by two former\n  members, made commercially and outside lodge discipline. The grammar must keep **Book T as\n  text** distinct from any **visual deck** [@web_gd_nodeck; @tarot_heritage].",
+        "In this collection": "The Golden Dawn is the **institution node** behind the `golden-dawn-book-t-tarot` deck: it\nauthored the correspondences (titles, Hebrew letters, Tree-of-Life paths, decans) the grammar\nrenders, while the *imagery* in that grammar is borrowed RWS art. A \"people of tarot\" leaf\nshould frame the Order as **the system's author, not its publisher** — and flag that the cards\nshown are a later public deck, not the Order's own lost pack."
+      }
+    },
+    {
+      "id": "person-jacques-vieville",
+      "name": "Jacques Viéville",
+      "level": 1,
+      "category": "person",
+      "sort_order": 9,
+      "keywords": [
+        "cardmaker (cartier)",
+        "wood-block engraver",
+        "makers"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "makers",
+        "lifespan": "fl. Paris, c.1650 (working dates only; birth/death unknown)",
+        "roles": [
+          "cardmaker (cartier)",
+          "wood-block engraver"
+        ],
+        "made": [
+          "vieville-tarot"
+        ],
+        "confidence": "medium",
+        "research": "research/people/jacques-vieville.md"
+      },
+      "sections": {
+        "Who": "**Jacques Viéville** was a Paris cardmaker active around **1650** — the same city and decade\nas **Jean Noblet** — but his tarot is **not** in the Marseille line. It belongs to a\n**divergent tradition**, the so-called **\"Rouen-Brussels\" (Rouen-Bruxelles)** pattern, and is\nthe French **ancestor of the later Belgian / Flemish tarot** [@web_th_rouen_bruxelles;\n@web_belgian_wp]. The only known copy is preserved in the **Bibliothèque nationale de France**\n[@web_letarot_vieville]. He is, like Noblet, **thinly documented as a person** — known chiefly\nthrough his deck — so this dossier is short and floruit-only (confidence: medium).",
+        "Claim vs the record": "- **Claim: \"a variant Tarot de Marseille.\"** **The record:** it is better described as a\n  **separate pattern** that happens to be contemporary with the earliest Marseille survivor\n  (Noblet). Calling it \"Marseille\" obscures the Bologna-via-Piedmont ancestry Dummett\n  identifies; it is the **Rouen-Brussels / Belgian** line, not the Marseille line\n  [@dummett1980; @web_th_rouen_bruxelles].",
+        "In this collection": "Viéville is the maker of **`vieville-tarot`**. In the grammar he is the **counter-example to\nthe Marseille hegemony**: same time and place as Noblet, different lineage. Render the diff\nexplicitly — *La Foudre*-tree instead of the struck Tower, upright Hanged Man, re-ordered\nvirtues — and link him forward to the `vandenborre` Belgian deck as the same family's\n18th-century continuation."
+      }
+    },
+    {
+      "id": "person-jean-noblet",
+      "name": "Jean Noblet",
+      "level": 1,
+      "category": "person",
+      "sort_order": 10,
+      "keywords": [
+        "cardmaker (cartier)",
+        "wood-block engraver",
+        "makers"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "makers",
+        "lifespan": "fl. Paris, c.1650–1681 (working dates only; birth/death unknown)",
+        "roles": [
+          "cardmaker (cartier)",
+          "wood-block engraver"
+        ],
+        "made": [
+          "noblet-tarot"
+        ],
+        "confidence": "medium",
+        "research": "research/people/jean-noblet.md"
+      },
+      "sections": {
+        "Who": "**Jean Noblet** was a Paris cardmaker whose pack — surviving in a **single copy in the\nBibliothèque nationale de France** — is the **oldest known near-complete Tarot de\nMarseille**, conventionally classed as **\"Type I\"** [@web_bnf_noblet; @web_wopc_noblet].\nWorking *\"au faubourg St Germain\"* around the **mid-17th century (c. 1650; the BnF dates the\nsurviving deck 1659, and his activity c. 1659–1681)**, Noblet made the earliest object that\nconforms to the graphic type later called *tarot de Marseille* because Marseille came to\nspecialise in it [@web_bnf_noblet]. He is **barely documented as a person** — known mainly\nthrough his name and address printed on the cards themselves — so this dossier stays short\nand the biography is floruit-only (confidence: medium).",
+        "Claim vs the record": "- **Claim: \"the oldest Tarot de Marseille.\"** **The record supports this** with the\n  qualifier *surviving*: Noblet's is the oldest **extant near-complete** deck of the Marseille\n  graphic type, but the **pattern is named for Marseille only later** (18th c.), and Noblet\n  himself worked in **Paris** — so \"Marseille\" here is a type-label, not a place of origin\n  [@web_bnf_noblet; @dummett1980].\n- **Type I vs Type II.** Noblet anchors the older **Type I** Marseille; the **Conver 1760**\n  deck is the canonical **Type II**. The two-type division is a modern descriptive scheme,\n  not a maker's category [@dummett1980; @depaulis1984].",
+        "In this collection": "Noblet is the maker of **`noblet-tarot`**, the deck to cite whenever the collection needs\nthe **oldest surviving Marseille** witness or the **Type I** archetype. In prose, pair him\nwith `nicolas-conver` (Type I → Type II) and contrast him with `jacques-vieville` (same city\nand decade, different pattern). The self-identifying cards — the **Two of Coins / Two of\nCups** (address) and the **Chariot** (\"I. N.\" monogram) — are the ones that physically carry\nhis signature."
+      }
+    },
+    {
       "id": "person-la-mayer",
       "name": "L. A. Mayer (Leo Aryeh Mayer, 1895–1959)",
       "level": 1,
       "category": "person",
-      "sort_order": 6,
+      "sort_order": 11,
       "keywords": [
         "Islamic-art scholar",
         "orientalist",
@@ -232,11 +398,48 @@
       }
     },
     {
+      "id": "person-macgregor-mathers",
+      "name": "Samuel Liddell MacGregor Mathers",
+      "level": 1,
+      "category": "person",
+      "sort_order": 12,
+      "keywords": [
+        "occultist",
+        "ceremonial magician",
+        "translator",
+        "ritual author",
+        "tarot system-builder",
+        "occultists"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "occultists",
+        "lifespan": "1854–1918",
+        "roles": [
+          "occultist",
+          "ceremonial magician",
+          "translator",
+          "ritual author",
+          "tarot system-builder"
+        ],
+        "made": [
+          "golden-dawn-book-t-tarot"
+        ],
+        "confidence": "high",
+        "research": "research/people/macgregor-mathers.md"
+      },
+      "sections": {
+        "Who": "**Samuel Liddell MacGregor Mathers** (8 January **1854** – November **1918**) was the creative\nengine of the Hermetic Order of the Golden Dawn and the **chief author of its tarot teaching,\nBook T**. While **Westcott** supplied the Cipher Manuscripts and the order's (forged) pedigree,\nMathers wrote most of the rituals and built the **correspondence system** — Hebrew letters,\nTree-of-Life paths, and the astrological/decanic attributions — that still underlies how almost\neveryone reads tarot today. He produced **no published deck**; his cards survived as a lodge\nspecimen to be hand-copied by initiates [@web_mathers_wp; @decker1996; @tarot_heritage].",
+        "Claim vs the record": "- **Myth: Book T transmits an ancient Egyptian/Hermetic tarot key.** **The record:** Mathers'\n  attributions are a **constructed synthesis of the 1880s–90s**, built on Lévi's trump↔Hebrew\n  scheme and the Order's astrology, then projected backward as ancient wisdom [@decker2002].\n- **Precision: he authored a *scheme*, not a marketed deck.** Mathers wrote the correspondences\n  and painted a lodge specimen; the cards were **hand-copied in secret**, never published. The\n  famous *public* cards are Smith's RWS art — a separate, later object [@web_gd_nodeck].\n- **The schism candour.** In 1900 Mathers told Florence Farr that **Westcott had forged the\n  Sprengel letters** — effectively admitting the Order's foundation legend was fraudulent, even as\n  he defended his own authority [@decker1996].",
+        "In this collection": "Mathers is the **author node** for `golden-dawn-book-t-tarot`: the titles, Hebrew letters, Tree\npaths and decanic meanings rendered in that grammar are his. A \"people of tarot\" leaf should name\nhim **the architect of the Book-T correspondences** and stress that he built, did not recover,\nthem — and that he published no deck."
+      }
+    },
+    {
       "id": "person-michael-dummett",
       "name": "Sir Michael Dummett (1925–2011)",
       "level": 1,
       "category": "person",
-      "sort_order": 7,
+      "sort_order": 13,
       "keywords": [
         "philosopher",
         "tarot historian",
@@ -270,11 +473,42 @@
       }
     },
     {
+      "id": "person-nicolas-conver",
+      "name": "Nicolas Conver",
+      "level": 1,
+      "category": "person",
+      "sort_order": 14,
+      "keywords": [
+        "master cardmaker (maître cartier)",
+        "wood-block engraver",
+        "makers"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "makers",
+        "lifespan": "fl. Marseille, 18th–early 19th c. (dates contested — see below)",
+        "roles": [
+          "master cardmaker (maître cartier)",
+          "wood-block engraver"
+        ],
+        "made": [
+          "tarot-de-marseille-conver"
+        ],
+        "confidence": "medium",
+        "research": "research/people/nicolas-conver.md"
+      },
+      "sections": {
+        "Who": "**Nicolas Conver** is the name signed on the most famous single witness of the **Tarot de\nMarseille**: a woodblock-and-stencil pack **dated 1760** and printed in **Marseille**, which\nbecame the canonical **\"Type II\"** Marseille pattern — the reference layout copied by\nFrench cardmakers for more than a century [@web_camoin_conver1760; @web_vs_conver_heritage;\n@dummett1980; @depaulis1984]. His official style was *maître cartier* (master cardmaker) of\nMarseille [@web_camoin_conver]. **The catch:** the man documented as \"Nicolas Conver,\ncartier\" in the **BnF authority record lived 1784–1833** — making it physically impossible\nfor *that* Nicolas Conver to have engraved blocks in 1760 [@web_bnf_conver]. The 1760 date\nis therefore either inherited from older blocks, or attaches to an earlier/different Conver;\nthe standard practice was for cardmakers to buy or inherit pearwood moulds, erase the\nprevious *cartier*'s name, and substitute their own while **leaving the original date**\n[@web_vs_conver_heritage]. So \"1760\" is a real engraving date; \"Nicolas Conver, its author\"\nis the contested part.",
+        "Claim vs the record": "- **Claim: \"Nicolas Conver engraved the gold-standard tarot in 1760.\"** **The record:** the\n  blocks *are* dated 1760, but the BnF-documented Nicolas Conver (1784–1833) was not yet born\n  [@web_bnf_conver]. The Camoin firm's own narrative asserts he engraved them in 1760\n  [@web_camoin_conver1760]; the document-minded reading is that he (or his workshop)\n  **inherited and re-signed older blocks that kept their 1760 date** [@web_vs_conver_heritage].\n  Flag the date as belonging to the *object*, and the *authorship* as contested.\n- **Claim: the Conver deck is the \"original\" Tarot de Marseille.** **The record:** it is the\n  most renowned and most-copied witness, but the Marseille *pattern* predates it (Noblet\n  c. 1650 is older; Chosson is earlier in the Marseille line) — Conver is canonical, not\n  primordial [@dummett1980; @depaulis1984].",
+        "In this collection": "Conver is the maker of **`tarot-de-marseille-conver`** and the human anchor for the\nrepo's already-written Marseille deck dossier (`08-tarot-de-marseille.mdx`). Wherever the\ngrammar names him, render the date as *\"dated 1760\"* with the authorship hedge, and\ndistinguish the **Marseille pattern** (broad type) from the **Conver 1760 edition** (this\nspecific witness). Cards worth featuring are the signature trumps of the Type-II pattern\n(e.g. Le Bateleur, La Maison Dieu, Le Monde), but the per-card pass is owned by the deck\ndossier."
+      }
+    },
+    {
       "id": "person-oswald-wirth",
       "name": "Oswald Wirth",
       "level": 1,
       "category": "person",
-      "sort_order": 8,
+      "sort_order": 15,
       "keywords": [
         "occultist",
         "illustrator",
@@ -305,11 +539,55 @@
       }
     },
     {
+      "id": "person-pamela-colman-smith",
+      "name": "Pamela Colman Smith ('Pixie')",
+      "level": 1,
+      "category": "person",
+      "sort_order": 16,
+      "keywords": [
+        "illustrator",
+        "artist",
+        "folklorist",
+        "stage designer",
+        "occultist",
+        "makers"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "makers",
+        "lifespan": "1878–1951",
+        "roles": [
+          "illustrator",
+          "artist",
+          "folklorist",
+          "stage designer",
+          "occultist"
+        ],
+        "made": [
+          "golden-dawn-book-t-tarot"
+        ],
+        "features_cards": [
+          "golden-dawn-book-t-tarot:wands-02",
+          "golden-dawn-book-t-tarot:cups-03",
+          "golden-dawn-book-t-tarot:swords-03",
+          "golden-dawn-book-t-tarot:swords-10",
+          "golden-dawn-book-t-tarot:pentacles-08"
+        ],
+        "confidence": "high",
+        "research": "research/people/pamela-colman-smith.md"
+      },
+      "sections": {
+        "Who": "**Pamela Colman Smith** (16 February **1878** – 18 September **1951**), nicknamed **\"Pixie,\"** was\nthe artist who **illustrated all 78 cards of the Rider-Waite-Smith tarot** (1909). Her decisive\ninnovation was the **fully scenic Minor Arcana**: where earlier packs left the pips as bare\narrangements of suit-signs, Smith drew **narrative scenes with figures** on every numbered card —\nthe move that made the deck readable at a glance and set the template for most modern tarot. For\nnearly a century she went **uncredited**, the deck called simply \"Rider-Waite\"; restoring her name\nis one of the clearest documented cases of an erased maker in tarot's record\n[@web_pcs_wp; @web_rws_wopc; @web_pcs_artnet].",
+        "Claim vs the record": "- **The erasure to correct: \"Rider-Waite\" leaves Smith out.** She received a **flat fee — and a\n  small one — instead of any share of copyright or royalties**, **no formal credit** on the deck or\n  packaging, and was written out of its fame for most of a century while the publisher (Rider) and\n  the scheme's author (Waite) were named. The collection's use of **Rider-Waite-*Smith*** is the\n  deliberate correction; her name belongs on the art [@web_pcs_wp; @web_pcs_artnet].\n- **Precision on division of labour:** Waite set the symbolic programme; **Smith drew the cards**,\n  and on the Minor Arcana she **invented** as much as she illustrated. The intuitive imagery a modern\n  reader \"reads\" is largely Smith's design choice [@web_rws_wopc].",
+        "In this collection": "In `golden-dawn-book-t-tarot`, the rendered imagery is **Smith's RWS art**, so she should feature\nprominently — and **specifically on the Minor Arcana (pip) cards**, since her fully scenic pips are\nher signal innovation and the reason the deck reads the way it does. The grammar **does** expose\nper-card ids, so she is linked in `features_cards` to representative pips —\n`golden-dawn-book-t-tarot:wands-02`, `:cups-03`, `:swords-03`, `:swords-10`, `:pentacles-08`\n(the suit-prefixed pip ids: `wands-02`…`wands-10`, `cups-02`…, `swords-02`…, `pentacles-02`…).\nA \"people of tarot\" leaf should name her **the artist who gave tarot its pictures** — and note that\nshe was long denied the credit."
+      }
+    },
+    {
       "id": "person-stuart-kaplan",
       "name": "Stuart R. Kaplan (1932–2021)",
       "level": 1,
       "category": "person",
-      "sort_order": 9,
+      "sort_order": 17,
       "keywords": [
         "publisher",
         "collector",
@@ -338,20 +616,177 @@
       }
     },
     {
+      "id": "person-vandenborre",
+      "name": "F. I. Vandenborre (Brussels firm)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 18,
+      "keywords": [
+        "card-manufacturer (cartier)",
+        "publisher",
+        "makers"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "makers",
+        "lifespan": "fl. Brussels, c.1762–1803 (firm's active dates; the tarot c.1770/1780)",
+        "roles": [
+          "card-manufacturer (cartier)",
+          "publisher"
+        ],
+        "made": [
+          "belgian-tarot"
+        ],
+        "confidence": "medium",
+        "research": "research/people/vandenborre.md"
+      },
+      "sections": {
+        "Who": "**F. I. Vandenborre** was a **Brussels** card-manufacturer whose name attaches to the\nstandard **Belgian / Flemish tarot** (*Tarot Flamand*), conventionally dated **c. 1780**\n(sources give 1770 or 1780; the firm was active **c. 1762–1803**) [@web_wopc_vandenborre;\n@web_belgian_wp]. The deck is famous for its **anticlerical substitutions**: card II, the\n**Popess (La Papesse)**, is replaced by **the Spanish Captain** (*Le Spagnol Capitano\nEracasse* / Captain Fracasse), and card V, the **Pope (Le Pape)**, by **Bacchus** (*Bacus*),\nthe god of wine astride a barrel [@web_wopc_vandenborre; @web_th_spanish_captain]. Like the\nMarseille deck it has illustrated trumps and **pip** minor cards [@web_wopc_vandenborre].\nVandenborre is a **firm/imprint** more than a richly documented individual; treat as a\nmaker-node (confidence: medium).",
+        "Claim vs the record": "- **Claim: Vandenborre \"created\" the Belgian tarot.** **The record:** he **published and\n  standardised** an existing **Rouen-Brussels** pattern; the type predates the firm (Viéville\n  c. 1650; Bodet 1693) [@web_belgian_wp; @web_th_rouen_bruxelles].\n- **The substitutions are pattern features, not Vandenborre inventions.** The\n  **Bacchus/Spanish-Captain** replacements belong to the Belgian tradition this deck carries,\n  not uniquely to Vandenborre's hand; they are usually read as a **secular/anticlerical**\n  softening of the two ecclesiastical trumps (the Popess being theologically awkward, the Pope\n  politically so), echoing the Besançon line's Jupiter/Juno swap for the same two cards\n  [@web_th_spanish_captain; @web_belgian_wp]. (confidence: medium on the *motive* — the swap is\n  documented; the precise reason is interpretive.)",
+        "In this collection": "Vandenborre is the maker of **`belgian-tarot`**. The two cards to feature are exactly the\nsubstitutions: **II — the Spanish Captain** (replacing the Popess) and **V — Bacchus**\n(replacing the Pope) — the clearest single illustration in the collection of how a regional\npattern could **edit the ecclesiastical trumps out**. Link the deck back to `jacques-vieville`\n(its tradition's ancestor) and contrast it with the Marseille makers."
+      }
+    },
+    {
+      "id": "person-visconti-sforza-patrons",
+      "name": "The Visconti & Sforza of Milan (ducal patrons)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 19,
+      "keywords": [
+        "Duke of Milan",
+        "Duchess of Milan",
+        "condottiero / patron",
+        "patrons"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "patrons",
+        "lifespan": "Filippo Maria Visconti 1392–1447; Francesco Sforza 1401–1466; Bianca Maria Visconti 1425–1468",
+        "roles": [
+          "Duke of Milan",
+          "Duchess of Milan",
+          "condottiero / patron"
+        ],
+        "confidence": "high",
+        "research": "research/people/visconti-sforza-patrons.md"
+      },
+      "sections": {
+        "Who": "The oldest surviving tarots were **commissioned by the ruling house of Milan**: **Filippo\nMaria Visconti**, last Visconti Duke; his only (illegitimate but legitimised) daughter\n**Bianca Maria Visconti**; and the *condottiero* she married, **Francesco Sforza**, who\nbecame the first Sforza Duke of Milan [@web_vs_wp; @web_filippo_wp; @web_bianca_wp;\n@web_francesco_wp]. Their patronage produced the hand-painted, gold-leafed **trionfi** packs —\nthe **Cary-Yale / Visconti di Modrone** and the **Pierpont-Morgan–Bergamo (Visconti-Sforza)**\ndecks — that anchor the entire history of surviving tarot, and whose dating is unusually\nsecure *because* the dynastic heraldry is painted right onto the cards [@web_vs_wp;\n@web_wopc_vs].",
+        "Claim vs the record": "- **Claim: a \"secret\" or esoteric origin for these cards.** **The record:** this is\n  **conspicuous dynastic display**, not clandestine ritual — the patrons' **heraldry is\n  literally painted on the cards**, and the figures are standard Italian Christian-allegorical\n  types. They were a **game** (*trionfi*) at court, not a divinatory instrument; any occult\n  reading is a much later (18th–19th c.) overlay [@web_vs_wp; @web_wopc_vs; @dummett1980].\n- **Claim: the deck commemorates the 1441 wedding.** **The record:** this is the\n  **most-discussed theory** for the Cary-Yale specifically, and a reasonable one given a\n  gold-leaf pack as a dynastic gift — but it is a hypothesis, and the various Visconti-Sforza\n  sets span c. 1441–1460; treat exact occasions as proposed, not proven\n  [@web_beinecke_visconti; @web_vs_wp].",
+        "In this collection": "This node is the **patron anchor** for the two earliest deck slugs,\n**`cary-yale-visconti-tarot`** and **`visconti-sforza-tarot`**. They never appear as \"makers\"\n(`made: []`); in the grammar they are the **commissioners** whose heraldry and dynastic story\nexplain *why* the decks exist and *how* they are dated. Cards that carry Visconti/Sforza\nheraldic devices, and any trumps modelled on family members in period dress, are where this\npatron node is most visible."
+      }
+    },
+    {
+      "id": "person-william-rider",
+      "name": "William Rider & Son (publisher)",
+      "level": 1,
+      "category": "institution",
+      "sort_order": 20,
+      "keywords": [
+        "publisher",
+        "occult press",
+        "institutions"
+      ],
+      "metadata": {
+        "kind": "institution",
+        "role_group": "institutions",
+        "lifespan": "1908–c.1960s (imprint; survives within Penguin Random House)",
+        "roles": [
+          "publisher",
+          "occult press"
+        ],
+        "confidence": "high",
+        "research": "research/people/william-rider.md"
+      },
+      "sections": {
+        "Who": "**William Rider & Son** was the London publishing house that issued the **Rider-Waite-Smith tarot\ndeck in 1909** and **A. E. Waite's *Pictorial Key to the Tarot* (1910/1911)** — the \"**Rider**\" in\nthe deck's tripartite name. In the early twentieth century it was **the foremost British publisher\nof occult, mystical and esoteric literature**, and its commercial release of the Waite–Smith deck\nis the moment esoteric tarot crossed from the secret lodge into the open marketplace. The firm\n**commissioned neither the artwork nor the symbolic scheme** — those were Smith's and Waite's; its\ncontribution was publication and distribution [@web_rws_wopc; @web_rider_wp; @web_pkt_wp].",
+        "Claim vs the record": "- **The name problem.** Calling the deck \"**Rider**-Waite\" foregrounds the *publisher* and the\n  *scheme-author* while omitting the **artist, Pamela Colman Smith**, who drew all 78 cards. The\n  collection's preferred **Rider-Waite-Smith** restores her; \"Rider\" should be read as the\n  *publisher's* mark, not a creative credit [@web_rws_wopc; @web_pcs_wp].\n- **Copyright caution.** Rider's original UK copyrights have lapsed in many jurisdictions (UK public\n  domain), but the situation is **uneven internationally** and later editions/reissues complicate it\n  — keep the repo's \"reference, don't necessarily reproduce\" caution [@web_rws_faq].",
+        "In this collection": "Rider is an **institution node**: the publisher that put esoteric tarot on sale. In any RWS-derived\ncontext (including the `golden-dawn-book-t-tarot` grammar's borrowed imagery), Rider should be named\nas the **publisher of record** for the 1909 deck and the *Pictorial Key* — explicitly distinct from\nthe *maker* (Smith) and the *scheme's author* (Waite), and used to anchor the deck's date and\ncopyright story."
+      }
+    },
+    {
+      "id": "person-wynn-westcott",
+      "name": "William Wynn Westcott",
+      "level": 1,
+      "category": "person",
+      "sort_order": 21,
+      "keywords": [
+        "occultist",
+        "coroner",
+        "Freemason",
+        "Rosicrucian",
+        "Theosophist",
+        "occultists"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "occultists",
+        "lifespan": "1848–1925",
+        "roles": [
+          "occultist",
+          "coroner",
+          "Freemason",
+          "Rosicrucian",
+          "Theosophist"
+        ],
+        "confidence": "high",
+        "research": "research/people/wynn-westcott.md"
+      },
+      "sections": {
+        "Who": "**Dr. William Wynn Westcott** (17 December **1848** – 30 July **1925**) was a London coroner,\nFreemason and Rosicrucian who, with **Mathers** and **Woodman**, co-founded the Hermetic Order\nof the Golden Dawn in 1888. His distinctive contribution was documentary, not artistic: he\nbrought the **Cipher Manuscripts** to light and decoded them, and produced the supposed\nauthorising correspondence with the German adept **Anna Sprengel** — the warrant that gave the\nOrder its Continental pedigree, and which later scholarship holds he **fabricated**. He designed\n**no deck** and is not a maker of tarot cards [@web_westcott_wp; @decker1996; @web_gd_swap].",
+        "Claim vs the record": "- **Myth: the Sprengel correspondence proves an authentic German Rosicrucian descent.** **The\n  record:** while the Cipher Manuscripts themselves are genuine documents, the **Sprengel letters\n  are a fabrication** — in 1900 Mathers publicly stated that Westcott had forged them, and the\n  scholarly consensus (Decker, Depaulis, Dummett) agrees the page and the correspondence were\n  invented to manufacture a lineage [@decker1996; @web_westcott_wp].\n- **Precision: Westcott is the Order's founder-administrator, not a tarot maker.** Any tarot\n  authority attributed to him belongs properly to Mathers' Book T [@web_mathers_wp].",
+        "In this collection": "Westcott is a **context node** for the `golden-dawn` institution: the co-founder whose Cipher\nManuscripts and forged warrant explain *how* the Order came to exist and *why* its claimed\nantiquity is a fiction. He should appear in the founding narrative, explicitly **not** credited\nwith any card or deck."
+      }
+    },
+    {
+      "id": "grp-makers",
+      "name": "Makers, Engravers & Printers",
+      "level": 2,
+      "category": "role-group",
+      "sort_order": 101,
+      "composite_of": [
+        "person-bonifacio-bembo",
+        "person-jacques-vieville",
+        "person-jean-noblet",
+        "person-nicolas-conver",
+        "person-pamela-colman-smith",
+        "person-vandenborre"
+      ],
+      "sections": {
+        "What this groups": "6 makers, engravers & printers catalogued in this collection."
+      }
+    },
+    {
+      "id": "grp-patrons",
+      "name": "Patrons & Commissioners",
+      "level": 2,
+      "category": "role-group",
+      "sort_order": 102,
+      "composite_of": [
+        "person-visconti-sforza-patrons"
+      ],
+      "sections": {
+        "What this groups": "1 patrons & commissioners catalogued in this collection."
+      }
+    },
+    {
       "id": "grp-occultists",
       "name": "Occultists & System-Builders",
       "level": 2,
       "category": "role-group",
       "sort_order": 103,
       "composite_of": [
+        "person-a-e-waite",
         "person-comte-de-mellet",
         "person-court-de-gebelin",
         "person-eliphas-levi",
         "person-etteilla",
-        "person-oswald-wirth"
+        "person-macgregor-mathers",
+        "person-oswald-wirth",
+        "person-wynn-westcott"
       ],
       "sections": {
-        "What this groups": "5 occultists & system-builders catalogued in this collection."
+        "What this groups": "8 occultists & system-builders catalogued in this collection."
       }
     },
     {
@@ -371,14 +806,31 @@
       }
     },
     {
+      "id": "grp-institutions",
+      "name": "Holding Institutions & Publishers",
+      "level": 2,
+      "category": "role-group",
+      "sort_order": 105,
+      "composite_of": [
+        "person-golden-dawn",
+        "person-william-rider"
+      ],
+      "sections": {
+        "What this groups": "2 holding institutions & publishers catalogued in this collection."
+      }
+    },
+    {
       "id": "root-people-of-tarot",
       "name": "The Hands Behind the Cards",
       "level": 3,
       "category": "root",
       "sort_order": 999,
       "composite_of": [
+        "grp-makers",
+        "grp-patrons",
         "grp-occultists",
-        "grp-scholars"
+        "grp-scholars",
+        "grp-institutions"
       ],
       "sections": {
         "What it is": "Every person and institution that made, paid for, reframed, printed, or catalogued the decks in this collection — generated from the research/people dossiers."
