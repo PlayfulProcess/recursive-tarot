@@ -231,11 +231,41 @@
       }
     },
     {
+      "id": "person-este-family",
+      "name": "The Este of Ferrara (ducal patrons)",
+      "level": 1,
+      "category": "institution",
+      "sort_order": 7,
+      "keywords": [
+        "patron",
+        "commissioner",
+        "patrons"
+      ],
+      "metadata": {
+        "kind": "institution",
+        "role_group": "patrons",
+        "lifespan": "ruling dynasty 1240–1597, Ferrara",
+        "roles": [
+          "patron",
+          "commissioner"
+        ],
+        "made": [
+          "este-tarot"
+        ],
+        "confidence": "medium",
+        "research": "research\\people\\este-family.md"
+      },
+      "sections": {
+        "Who": "The **Este dynasty** ruled Ferrara from 1240 to 1597 and were among the most important\n**early tarot patrons** in documented history. Their court at Ferrara was a centre of\n**Quattrocento humanist culture** — the same milieu that produced the Mantegna Tarocchi\nand the Ferrarese style of luxury card-making — and the **Este tarot** (c. 1441–1461)\nis named for them. A **1457 Este inventory** lists tarot cards among the court's\npossessions, providing one of the earliest dated references to tarot in any archival\nsource [@dummett1980; @web_este_wp].",
+        "Claim vs the record": "- **Common framing**: \"Tarot was invented in Ferrara.\" **The record**: Ferrara is the\n  site of some of the **earliest dated references** to tarot trump cards in archival\n  sources, alongside Milan. Both cities have strong claims. Dummett argues for a Milanese\n  or Ferrarese origin in the 1420s–1440s; Pratesi's archival work reinforces the early\n  Ferrarese evidence. Neither city can claim exclusive invention from the surviving record.\n- **The Este tarot attribution**: the surviving cards are attributed to the Este court by\n  conventional scholarship but the specific patron (Leonello? Borso?) and date\n  (c.1441–1461?) remain uncertain [@dummett1980]."
+      }
+    },
+    {
       "id": "person-etteilla",
       "name": "Jean-Baptiste Alliette — \"Etteilla\"",
       "level": 1,
       "category": "person",
-      "sort_order": 7,
+      "sort_order": 8,
       "keywords": [
         "cartomancer",
         "deck designer",
@@ -268,11 +298,67 @@
       }
     },
     {
+      "id": "person-filippo-maria-visconti",
+      "name": "Filippo Maria Visconti (1392–1447)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 9,
+      "keywords": [
+        "patron",
+        "commissioner",
+        "patrons"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "patrons",
+        "lifespan": "1392–1447 (Milan)",
+        "roles": [
+          "patron",
+          "commissioner"
+        ],
+        "confidence": "high",
+        "research": "research\\people\\filippo-maria-visconti.md"
+      },
+      "sections": {
+        "Who": "**Filippo Maria Visconti** was the **third and last Visconti Duke of Milan** (r. 1412–1447),\nson of Gian Galeazzo Visconti who built the dynasty to its greatest extent. He is the\n**patron behind the earliest documented tarot trump programme**: his secretary\n**Marziano da Tortona** designed a bespoke sixteen-trump deck for him, and the luxury\nhand-painted Visconti tarots — though made after his death for the Sforza who succeeded\nhim — belong to the world his court created [@dummett1980; @pratesi_marziano].",
+        "Claim vs the record": "- **Common assumption**: \"The Visconti tarot\" was made for Filippo Maria Visconti.\n- **The precise record**: The surviving luxury packs (Visconti-Sforza, Cary-Yale) are more\n  plausibly dated **after 1450** and associated with the Sforza who succeeded him. The\n  Cary-Yale deck is sometimes linked to the **1441 marriage** of his daughter Bianca Maria\n  to Francesco Sforza. Filippo Maria himself commissioned the earlier *Marziano* trump\n  series, which did not survive physically.\n- **Scholarly consensus** (Dummett, Pratesi): Filippo Maria is the earliest documented\n  tarot patron, but the surviving luxury decks are Sforza-era objects, not his."
+      }
+    },
+    {
+      "id": "person-franco-pratesi",
+      "name": "Franco Pratesi (b. 1939)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 10,
+      "keywords": [
+        "scholar",
+        "historian",
+        "archivist",
+        "scholars"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "scholars",
+        "lifespan": "b. 1939 (Florence)",
+        "roles": [
+          "scholar",
+          "historian",
+          "archivist"
+        ],
+        "confidence": "high",
+        "research": "research\\people\\franco-pratesi.md"
+      },
+      "sections": {
+        "Who": "**Franco Pratesi** is a retired Florentine physicist who became one of the most\nimportant **archival researchers in tarot history** — not through synthesis or theory,\nbut through direct excavation of **Italian Renaissance account books, guild records,\nand inventories**. His discoveries in Florentine, Ferrarese, and Bolognese archives\nhave repeatedly pushed back or complicated the accepted chronology of early tarot,\nand his work has been essential to the careers of every subsequent tarot historian\n[@pratesi_marziano; @pratesi_ferrara; @web_pratesi_site].",
+        "Claim vs the record": "- **Pratesi's contributions are primary research, not interpretation**: he finds documents;\n  others interpret them. Where Dummett or other historians make interpretive claims about\n  tarot origins, Pratesi's documents are often the evidence base — but the interpretive\n  conclusions are not always Pratesi's own.\n- **His findings sometimes complicate neat narratives**: Florentine evidence alongside\n  Milanese and Ferrarese evidence suggests tarot spread quickly across multiple Italian\n  courts in the 1440s–1460s, making any single \"origin city\" claim overly simple."
+      }
+    },
+    {
       "id": "person-gertrude-moakley",
       "name": "Gertrude Moakley (1905–1998)",
       "level": 1,
       "category": "person",
-      "sort_order": 8,
+      "sort_order": 11,
       "keywords": [
         "librarian",
         "tarot iconographer",
@@ -304,7 +390,7 @@
       "name": "Hermetic Order of the Golden Dawn",
       "level": 1,
       "category": "institution",
-      "sort_order": 9,
+      "sort_order": 12,
       "keywords": [
         "esoteric order",
         "tarot system-builder",
@@ -337,7 +423,7 @@
       "name": "Jacquemin Gringonneur (fl. 1392) — the misattribution",
       "level": 1,
       "category": "person",
-      "sort_order": 10,
+      "sort_order": 13,
       "keywords": [
         "card painter",
         "makers"
@@ -363,7 +449,7 @@
       "name": "Jacques Viéville",
       "level": 1,
       "category": "person",
-      "sort_order": 11,
+      "sort_order": 14,
       "keywords": [
         "cardmaker (cartier)",
         "wood-block engraver",
@@ -394,7 +480,7 @@
       "name": "Jean Noblet",
       "level": 1,
       "category": "person",
-      "sort_order": 12,
+      "sort_order": 15,
       "keywords": [
         "cardmaker (cartier)",
         "wood-block engraver",
@@ -425,7 +511,7 @@
       "name": "L. A. Mayer (Leo Aryeh Mayer, 1895–1959)",
       "level": 1,
       "category": "person",
-      "sort_order": 13,
+      "sort_order": 16,
       "keywords": [
         "Islamic-art scholar",
         "orientalist",
@@ -456,7 +542,7 @@
       "name": "Samuel Liddell MacGregor Mathers",
       "level": 1,
       "category": "person",
-      "sort_order": 14,
+      "sort_order": 17,
       "keywords": [
         "occultist",
         "ceremonial magician",
@@ -489,11 +575,100 @@
       }
     },
     {
+      "id": "person-marziano-da-tortona",
+      "name": "Marziano da Tortona",
+      "level": 1,
+      "category": "person",
+      "sort_order": 18,
+      "keywords": [
+        "humanist",
+        "secretary",
+        "tarot designer (programme)",
+        "makers"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "makers",
+        "lifespan": "fl. c.1410–c.1425 (Pavia / Milan)",
+        "roles": [
+          "humanist",
+          "secretary",
+          "tarot designer (programme)"
+        ],
+        "confidence": "high",
+        "research": "research\\people\\marziano-da-tortona.md"
+      },
+      "sections": {
+        "Who": "**Marziano da Tortona** (fl. early 15th century) was a **humanist secretary** to\n**Filippo Maria Visconti**, Duke of Milan, and the **earliest named tarot designer in\nhistory** — perhaps the earliest named designer of any card trump series. Around\n**c. 1415–1425** he wrote a Latin treatise, *Tractatus de deificatione sexdecim heroum*,\ndescribing a set of **sixteen trump cards** he had designed for the duke's personal use,\neach depicting a Roman god above a bird sacred to that deity [@dummett1980;\n@pratesi_marziano; @web_marziano_wp].",
+        "Claim vs the record": "- **The claim**: Marziano da Tortona designed the first tarot trumps.\n- **The precise record**: He designed *a* trump series — documented, named, classicising —\n  that is certainly the **earliest tarot programme we can attach to a named individual**.\n  Whether it predates or influenced the standard triumph/trionfi sequence is unknown.\n  Franco Pratesi has argued the Marziano deck was made **c. 1418–1425** on the basis of\n  manuscript dating [@pratesi_marziano]. Michael Dummett discusses it at length in\n  *The Game of Tarot* as evidence for the early Milanese origin of tarot trumps\n  [@dummett1980].\n- **The key uncertainty**: did the standard tarot trump hierarchy (Fool, Magician, Popess…\n  World) derive from experiments like Marziano's, or did both arise independently from a\n  broader Milanese court culture of luxury card games? The honest answer is: unknown."
+      }
+    },
+    {
+      "id": "person-master-of-the-e-series",
+      "name": "Master of the E-series (Mantegna Tarocchi engraver)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 19,
+      "keywords": [
+        "engraver",
+        "printmaker",
+        "makers"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "makers",
+        "lifespan": "active c. 1460–1470 (Ferrara or Padua, attr.)",
+        "roles": [
+          "engraver",
+          "printmaker"
+        ],
+        "made": [
+          "mantegna-tarocchi"
+        ],
+        "confidence": "medium",
+        "research": "research\\people\\master-of-the-e-series.md"
+      },
+      "sections": {
+        "Who": "The **Master of the E-series** is the conventional name given to the anonymous North\nItalian engraver who produced the **earlier and finer set** of the so-called\n*Mantegna Tarocchi* — a sequence of **50 didactic engravings** depicting a cosmic\nhierarchy from the lowest social estate (the beggar) to the highest sphere (the First\nMover). The name \"E-series\" comes from the series designation used in early print\ncatalogues; the companion *S-series* is a slightly later copy, probably by a different\nhand [@web_mantegna_wp; @web_mantegna_wopc].\n\n**The attribution to Andrea Mantegna is wrong** — this has been the consensus of art\nhistorians since the early 20th century — but the label persists as a convenient\nshorthand.",
+        "Claim vs the record": "- **The myth**: Andrea Mantegna engraved this deck. **The record**: rejected by art\n  historical consensus. Mantegna's engraving style is known from authenticated works\n  (the *Battle of the Sea Gods*, the *Bacchanals*) and is markedly different in quality\n  and technique from the E-series. The misattribution entered the literature through an\n  18th-century manuscript note and was repeated until the 20th century\n  [@web_mantegna_wp; @dummett1980].\n- **The programme**: not a tarot in any game-playing sense — the 50 cards do not map\n  onto tarot suits or the standard trump hierarchy. They are a **didactic series in the\n  tradition of medieval cosmic hierarchies** (estates of man, liberal arts, planetary\n  spheres), closer to an illustrated encyclopaedia than a card game."
+      }
+    },
+    {
+      "id": "person-master-of-the-sola-busca",
+      "name": "Master of the Sola Busca (anonymous engraver, c. 1491)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 20,
+      "keywords": [
+        "engraver",
+        "printmaker",
+        "makers"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "makers",
+        "lifespan": "active c. 1491 (Venice or Ferrara, attr.)",
+        "roles": [
+          "engraver",
+          "printmaker"
+        ],
+        "made": [
+          "sola-busca-tarot"
+        ],
+        "confidence": "medium",
+        "research": "research\\people\\master-of-the-sola-busca.md"
+      },
+      "sections": {
+        "Who": "The **Master of the Sola Busca** is the conventional name for the anonymous\n**North Italian engraver** who produced the **Sola Busca tarot** (c. 1491) —\nthe **first known fully pictorial 78-card tarot deck**, meaning every card including\nthe pip minors carries a narrative scene rather than geometric suit symbols.\nSeveral cards bear the monogram **\"MS\"** which is presumed to indicate the\nengraver's initials, but no historical individual has been securely identified\n[@web_sb_wp; @web_sb_ciompi].",
+        "Claim vs the record": "- **The \"MS\" monogram**: unresolved. No engraver with those initials active in Northern\n  Italy c. 1491 has been definitively identified in archival records [@web_sb_ciompi].\n- **Pamela Colman Smith connection**: strongly supported by circumstantial evidence —\n  the British Museum exhibited the Sola Busca's hand-coloured photographs in 1907, two\n  years before the RWS was published, and several RWS pip compositions show close\n  parallels to Sola Busca cards [@web_pcs_wp; @web_sb_wp]. This is now the\n  mainstream scholarly view but was not widely known until the 2000s–2010s.\n- **The commissioner**: unknown. The \"Sola Busca\" name comes from the aristocratic\n  Milanese family who owned the deck in the 19th century; they may not have commissioned it."
+      }
+    },
+    {
       "id": "person-michael-dummett",
       "name": "Sir Michael Dummett (1925–2011)",
       "level": 1,
       "category": "person",
-      "sort_order": 15,
+      "sort_order": 21,
       "keywords": [
         "philosopher",
         "tarot historian",
@@ -531,7 +706,7 @@
       "name": "Nicolas Conver",
       "level": 1,
       "category": "person",
-      "sort_order": 16,
+      "sort_order": 22,
       "keywords": [
         "master cardmaker (maître cartier)",
         "wood-block engraver",
@@ -562,7 +737,7 @@
       "name": "Oswald Wirth",
       "level": 1,
       "category": "person",
-      "sort_order": 17,
+      "sort_order": 23,
       "keywords": [
         "occultist",
         "illustrator",
@@ -597,7 +772,7 @@
       "name": "Pamela Colman Smith ('Pixie')",
       "level": 1,
       "category": "person",
-      "sort_order": 18,
+      "sort_order": 24,
       "keywords": [
         "illustrator",
         "artist",
@@ -637,11 +812,69 @@
       }
     },
     {
+      "id": "person-petrarch",
+      "name": "Francesco Petrarca ('Petrarch', 1304–1374)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 25,
+      "keywords": [
+        "poet",
+        "humanist",
+        "source text author",
+        "makers"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "makers",
+        "lifespan": "1304–1374 (Avignon / Padua / Arquà)",
+        "roles": [
+          "poet",
+          "humanist",
+          "source text author"
+        ],
+        "confidence": "high",
+        "research": "research\\people\\petrarch.md"
+      },
+      "sections": {
+        "Who": "**Francesco Petrarca** (Petrarch) was the defining figure of early Italian humanism —\npoet, scholar, collector of ancient manuscripts, and the author of the *Trionfi*\n(*Triumphs*), an allegorical poem sequence whose **procession of allegorical figures**\nis almost certainly the **primary literary source** for the tarot major arcana\n[@moakley1966; @dummett1980; @web_petrarch_wp].\n\nPetrarch had no connection to tarot cards, which emerged roughly 50 years after his\ndeath. But his *Trionfi* created the **cultural grammar** — a hierarchical parade of\ncosmic forces in which higher powers capture and defeat lower ones — that the tarot\ntrump designers translated into visual form.",
+        "Claim vs the record": "- **The claim**: Petrarch \"invented tarot.\"\n- **The correct framing**: Petrarch provided the **literary framework** — the allegoric\n  triumph procession with a fixed hierarchy of cosmic forces — that tarot trump designers\n  adapted. He did not design or know about tarot cards. The tarot is a *reception* of\n  his allegory, not his creation.\n- **The scholarly consensus** (Moakley, Dummett, Kaplan): the *Trionfi* connection is\n  well-supported and explains both the word *trionfi* for trump cards and the thematic\n  logic of the major arcana sequence. But tarot also incorporated **Christian allegory,\n  astrological symbolism, and court-game traditions** not found in Petrarch — it was not\n  a simple translation of the poem."
+      }
+    },
+    {
+      "id": "person-pierre-madenie",
+      "name": "Pierre Madenié (active c. 1709–1736, Dijon)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 26,
+      "keywords": [
+        "cardmaker",
+        "engraver",
+        "printer",
+        "makers"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "makers",
+        "lifespan": "fl. 1709–1736 (Dijon, Burgundy)",
+        "roles": [
+          "cardmaker",
+          "engraver",
+          "printer"
+        ],
+        "confidence": "medium",
+        "research": "research\\people\\pierre-madenié.md"
+      },
+      "sections": {
+        "Who": "**Pierre Madenié** was a Dijon cardmaker whose **1709 Tarot de Marseille** (complete\ndeck, signed and dated) is one of the **earliest intact surviving examples** of the\nTarot de Marseille pattern — the woodcut-engraved, stencil-coloured printed tarot that\nbecame the standard European form. The Madenié deck is a critical document in the history\nof **TdM standardisation**: it shows the trump iconography in a relatively early form,\npredating the 1760 Conver deck that the collection uses as the canonical TdM reference\n[@web_tdm_wp; @web_tdm_wopc; @dummett1980].",
+        "Claim vs the record": "- **\"Nicolas Conver invented the Tarot de Marseille.\"** **The record**: Conver's 1760 deck\n  *standardised* an already-existing iconographic tradition. Madenié's 1709 deck shows\n  that the TdM pattern was already stable fifty years earlier. Conver's version became\n  canonical because of its quality and because 20th-century occultists (Papus, then the\n  entire esoteric tradition) reprinted from it — not because he invented it."
+      }
+    },
+    {
       "id": "person-stuart-kaplan",
       "name": "Stuart R. Kaplan (1932–2021)",
       "level": 1,
       "category": "person",
-      "sort_order": 19,
+      "sort_order": 27,
       "keywords": [
         "publisher",
         "collector",
@@ -674,7 +907,7 @@
       "name": "F. I. Vandenborre (Brussels firm)",
       "level": 1,
       "category": "person",
-      "sort_order": 20,
+      "sort_order": 28,
       "keywords": [
         "card-manufacturer (cartier)",
         "publisher",
@@ -705,7 +938,7 @@
       "name": "The Visconti & Sforza of Milan (ducal patrons)",
       "level": 1,
       "category": "person",
-      "sort_order": 21,
+      "sort_order": 29,
       "keywords": [
         "Duke of Milan",
         "Duchess of Milan",
@@ -735,7 +968,7 @@
       "name": "William Rider & Son (publisher)",
       "level": 1,
       "category": "institution",
-      "sort_order": 22,
+      "sort_order": 30,
       "keywords": [
         "publisher",
         "occult press",
@@ -763,7 +996,7 @@
       "name": "William Wynn Westcott",
       "level": 1,
       "category": "person",
-      "sort_order": 23,
+      "sort_order": 31,
       "keywords": [
         "occultist",
         "coroner",
@@ -804,12 +1037,17 @@
         "person-gringonneur",
         "person-jacques-vieville",
         "person-jean-noblet",
+        "person-marziano-da-tortona",
+        "person-master-of-the-e-series",
+        "person-master-of-the-sola-busca",
         "person-nicolas-conver",
         "person-pamela-colman-smith",
+        "person-petrarch",
+        "person-pierre-madenie",
         "person-vandenborre"
       ],
       "sections": {
-        "What this groups": "8 makers, engravers & printers catalogued in this collection."
+        "What this groups": "13 makers, engravers & printers catalogued in this collection."
       }
     },
     {
@@ -819,10 +1057,12 @@
       "category": "role-group",
       "sort_order": 102,
       "composite_of": [
+        "person-este-family",
+        "person-filippo-maria-visconti",
         "person-visconti-sforza-patrons"
       ],
       "sections": {
-        "What this groups": "1 patrons & commissioners catalogued in this collection."
+        "What this groups": "3 patrons & commissioners catalogued in this collection."
       }
     },
     {
@@ -852,13 +1092,14 @@
       "category": "role-group",
       "sort_order": 104,
       "composite_of": [
+        "person-franco-pratesi",
         "person-gertrude-moakley",
         "person-la-mayer",
         "person-michael-dummett",
         "person-stuart-kaplan"
       ],
       "sections": {
-        "What this groups": "4 scholars & cataloguers catalogued in this collection."
+        "What this groups": "5 scholars & cataloguers catalogued in this collection."
       }
     },
     {
