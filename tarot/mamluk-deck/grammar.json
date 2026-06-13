@@ -60,7 +60,11 @@
         "What it is": "Ten pip cards (Ace–10) plus three courts. Carried into Europe directly as Cups (coppe / coupes)."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%202.jpg",
-      "composite_of": ["cups-king", "cups-deputy", "cups-pip"]
+      "composite_of": [
+        "cups-king",
+        "cups-deputy",
+        "cups-pip"
+      ]
     },
     {
       "id": "suit-coins",
@@ -72,7 +76,11 @@
         "What it is": "Ten pips plus three courts. Carried into Europe as Coins (denari / deniers)."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%203.jpg",
-      "composite_of": ["coins-king", "coins-deputy", "coins-pip"]
+      "composite_of": [
+        "coins-king",
+        "coins-deputy",
+        "coins-pip"
+      ]
     },
     {
       "id": "suit-swords",
@@ -84,7 +92,11 @@
         "What it is": "Ten pips plus three courts. The Mamluk swords are straight; carried into Europe as Swords (spade / épées)."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%204.jpg",
-      "composite_of": ["swords-king", "swords-deputy", "swords-pip"]
+      "composite_of": [
+        "swords-king",
+        "swords-deputy",
+        "swords-pip"
+      ]
     },
     {
       "id": "suit-polo",
@@ -96,7 +108,11 @@
         "What it is": "Ten pips plus three courts. Polo was a Mamluk court sport Europeans did not play — so this suit was redrawn as Batons / Wands (bastoni / bâtons). The clearest single fingerprint of the Islamic origin."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%205.jpg",
-      "composite_of": ["polo-king", "polo-deputy", "polo-pip"]
+      "composite_of": [
+        "polo-king",
+        "polo-deputy",
+        "polo-pip"
+      ]
     },
     {
       "id": "court-structure",
@@ -109,7 +125,12 @@
         "Aniconic": "Following Islamic norms against figural images, the courts show no human figures — only abstract ornament and calligraphic inscriptions (rank names, sometimes verses of courtly praise). Europe later replaced the second deputy with a mounted Knight and added a Queen."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%206.jpg",
-      "composite_of": ["cups-king", "coins-king", "swords-king", "polo-king"]
+      "composite_of": [
+        "cups-king",
+        "coins-king",
+        "swords-king",
+        "polo-king"
+      ]
     },
     {
       "id": "cups-king",
@@ -124,7 +145,12 @@
       "sections": {
         "Card": "The king (malik) of the Cups suit. An aniconic court card: no figure, only decorative and calligraphic ornament proclaiming the rank. The three Cups courts (malik, nā'ib, thānī nā'ib) became the King, Knight, and Page of the European Latin-suited packs; the Queen was added later."
       },
-      "keywords": ["court", "king", "aniconic", "cups"]
+      "keywords": [
+        "court",
+        "king",
+        "aniconic",
+        "cups"
+      ]
     },
     {
       "id": "cups-deputy",
@@ -139,7 +165,12 @@
       "sections": {
         "Card": "The viceroy (nā'ib) of the Cups suit — the senior deputy court card. Aniconic calligraphic design."
       },
-      "keywords": ["court", "deputy", "aniconic", "cups"]
+      "keywords": [
+        "court",
+        "deputy",
+        "aniconic",
+        "cups"
+      ]
     },
     {
       "id": "cups-pip",
@@ -154,7 +185,10 @@
       "sections": {
         "Card": "A surviving pip card from the Cups suit. Pip cards carry the suit symbol repeated numerically (Ace through 10) with decorative borders — entirely abstract, no narrative content. The suit symbol here is the cup (ṭūmān)."
       },
-      "keywords": ["pip", "cups"]
+      "keywords": [
+        "pip",
+        "cups"
+      ]
     },
     {
       "id": "coins-king",
@@ -169,7 +203,12 @@
       "sections": {
         "Card": "The king (malik) of the Coins suit. Aniconic court card with calligraphic inscription. Carried into Europe as the King of Coins (denari / deniers)."
       },
-      "keywords": ["court", "king", "aniconic", "coins"]
+      "keywords": [
+        "court",
+        "king",
+        "aniconic",
+        "coins"
+      ]
     },
     {
       "id": "coins-deputy",
@@ -184,7 +223,12 @@
       "sections": {
         "Card": "The viceroy (nā'ib) of the Coins suit. Aniconic calligraphic design."
       },
-      "keywords": ["court", "deputy", "aniconic", "coins"]
+      "keywords": [
+        "court",
+        "deputy",
+        "aniconic",
+        "coins"
+      ]
     },
     {
       "id": "coins-pip",
@@ -199,7 +243,10 @@
       "sections": {
         "Card": "A surviving pip card from the Coins suit. The coin symbol (darāhim) repeated numerically with decorative borders."
       },
-      "keywords": ["pip", "coins"]
+      "keywords": [
+        "pip",
+        "coins"
+      ]
     },
     {
       "id": "swords-king",
@@ -214,7 +261,12 @@
       "sections": {
         "Card": "The king (malik) of the Swords suit. Aniconic. Mamluk swords are straight (not the curved scimitar) — this detail carried into European Swords suits which also show straight blades."
       },
-      "keywords": ["court", "king", "aniconic", "swords"]
+      "keywords": [
+        "court",
+        "king",
+        "aniconic",
+        "swords"
+      ]
     },
     {
       "id": "swords-deputy",
@@ -229,7 +281,12 @@
       "sections": {
         "Card": "The viceroy (nā'ib) of the Swords suit. Aniconic calligraphic design."
       },
-      "keywords": ["court", "deputy", "aniconic", "swords"]
+      "keywords": [
+        "court",
+        "deputy",
+        "aniconic",
+        "swords"
+      ]
     },
     {
       "id": "swords-pip",
@@ -244,7 +301,10 @@
       "sections": {
         "Card": "A surviving pip card from the Swords suit. Straight-bladed sword symbol repeated numerically."
       },
-      "keywords": ["pip", "swords"]
+      "keywords": [
+        "pip",
+        "swords"
+      ]
     },
     {
       "id": "polo-king",
@@ -259,7 +319,13 @@
       "sections": {
         "Card": "The king (malik) of the Polo-sticks suit. Aniconic. The jawkān (polo mallet) was a Mamluk court sport marker. Europeans, unfamiliar with polo, redrew this suit as Batons / Wands — the transformation is visible when comparing this card to a Visconti batons card."
       },
-      "keywords": ["court", "king", "aniconic", "polo-sticks", "batons"]
+      "keywords": [
+        "court",
+        "king",
+        "aniconic",
+        "polo-sticks",
+        "batons"
+      ]
     },
     {
       "id": "polo-deputy",
@@ -274,7 +340,13 @@
       "sections": {
         "Card": "The viceroy (nā'ib) of the Polo-sticks suit. Aniconic calligraphic design."
       },
-      "keywords": ["court", "deputy", "aniconic", "polo-sticks", "batons"]
+      "keywords": [
+        "court",
+        "deputy",
+        "aniconic",
+        "polo-sticks",
+        "batons"
+      ]
     },
     {
       "id": "polo-pip",
@@ -289,7 +361,16 @@
       "sections": {
         "Card": "A surviving pip card from the Polo-sticks suit. The jawkān symbol repeated numerically. When this suit crossed to Europe as Batons / Wands, the stick shape was retained but the polo context was lost."
       },
-      "keywords": ["pip", "polo-sticks", "batons"]
+      "keywords": [
+        "pip",
+        "polo-sticks",
+        "batons"
+      ]
     }
-  ]
+  ],
+  "_research": {
+    "deck": "research/decks/mamluk-deck.md",
+    "cards": "research/cards/mamluk-deck.md",
+    "bibliography": "research/bibliography.bib"
+  }
 }
