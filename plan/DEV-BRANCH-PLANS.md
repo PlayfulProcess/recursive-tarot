@@ -185,11 +185,11 @@ Add a first-run hint near the picker (dismissable, localStorage):
    thin wrappers — every call site unchanged, verified identical (156/238 items, 22
    chips, 0 errors). **This is the shared core every other viewer now imports.**
    ── Sonnet can pick up from step 3. ──
-3. `deck-picker.js` shared; Cards gets multiselect + `deck` dimension. Pattern to
-   follow: load `dimension-engine.js?v=1`, then in the viewer's script
-   `const { flatten, discoverFields, groupBy, passes, vals, smartCmp } = DimensionEngine;`
-   and feed it the loaded grammars exactly as explorer's `boot()` does (see
-   explorer.html flatten call sites + the inherit object).
+3. ✅ **DONE** (Jun 13, Sonnet) `viewers/deck-picker.js` — shared deck-multiselect
+   popover (`DeckPicker.open(anchor, {collection, selected, onLoad})`). Cards gets
+   "✦ Decks ▾" button + `?decks=` URL mode: loads multiple grammar.json files,
+   stamps each item with `_deck` field, sidebar switches to per-deck grouping,
+   filter pills become deck pills. Single-deck mode unchanged.
 4. Cards sidebar accepts chip drops (one `rows` slot); eye-switcher carries spec
    between Cards/Explorer/Tree.
 5. Tree of Life + Timeline: deck-level field discovery drives hub/lane grouping;
