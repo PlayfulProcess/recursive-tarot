@@ -1935,6 +1935,8 @@
 <body>
     <!-- Shared grammar loading component (local copy) -->
     <script src="grammar-loader.js"></script>
+    <script src="dimension-engine.js?v=1"></script>
+    <script src="deck-picker.js?v=1"></script>
 
     <!-- Site Header -->
     <site-header active="cards"></site-header>
@@ -2002,6 +2004,8 @@
                     class="search-box"
                     placeholder="Search by name, number, or meaning..."
                 >
+                <button id="decks-btn" title="Load multiple decks — compare patterns across collections"
+                    style="padding:8px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:var(--grammar-text-muted);font-size:13px;cursor:pointer;white-space:nowrap;">✦ Decks ▾</button>
             </div>
 
             <!-- Hierarchical Layout: Sidebar + Content -->
@@ -2149,6 +2153,9 @@
         let activeFilter = 'all';
         let layoutMode = 'cards'; // 'cards' or 'thumbnails'
         let currentUser = null; // Track auth state
+        let collection = null; // Parsed _collection.json for deck-picker
+        let activeDecks = []; // Slugs loaded via ?decks= multiselect
+        let deckGroupField = 'deck'; // Field used to group when multiselect active
 
         // Selection mode state
         let isSelectionMode = false;
@@ -2250,6 +2257,29 @@
 
         async function init() {
             populateDeckSwitcher();
+            // Load collection for deck-picker (non-blocking)
+            fetch('../tarot/_collection.json').then(r => r.json()).then(c => {
+                collection = c;
+                const btn = document.getElementById('decks-btn');
+                if (btn && activeDecks.length) btn.textContent = `✦ Decks ▾ (${activeDecks.length})`;
+            }).catch(() => {});
+
+            // Wire Decks button
+            document.getElementById('decks-btn').addEventListener('click', e => {
+                if (!collection) return;
+                DeckPicker.open(e.currentTarget, {
+                    collection,
+                    selected: activeDecks,
+                    onLoad(slugs) {
+                        if (!slugs.length) {
+                            location.href = 'cards.html';
+                        } else {
+                            location.href = 'cards.html?decks=' + slugs.join(',');
+                        }
+                    }
+                });
+            });
+
             try {
                 // Check auth state
                 const { data: { user } } = await supabaseClient.auth.getUser();
@@ -2261,8 +2291,9 @@
                 grammarType = params.get('type') || detectTypeFromUrl() || 'tarot';
                 const id = params.get('id') || params.get('deckId') || params.get('bookId');
                 const githubPath = params.get('github'); // GitHub path parameter
+                const decksParam = params.get('decks'); // Multi-deck mode
                 // Static mode: load a grammar.json straight from a URL; default to the repo meta.
-                const srcUrl = params.get('src') || (!id && !githubPath ? '../tarot/all-decks-many-lenses/grammar.json' : '');
+                const srcUrl = params.get('src') || (!id && !githubPath && !decksParam ? '../tarot/all-decks-many-lenses/grammar.json' : '');
 
                 // Detect layout mode
                 layoutMode = params.get('layout') || 'cards';
@@ -2275,6 +2306,15 @@
                 let bodyClasses = `theme-${grammarType}`;
                 if (isSelectionMode) bodyClasses += ' selection-mode';
                 document.body.className = bodyClasses;
+
+                // ── Multi-deck mode ───────────────────────────────────────────
+                if (decksParam) {
+                    activeDecks = decksParam.split(',').filter(Boolean);
+                    const btn = document.getElementById('decks-btn');
+                    if (btn) btn.textContent = `✦ Decks ▾ (${activeDecks.length})`;
+                    await loadMultipleDecks(activeDecks);
+                    return;
+                }
 
                 if (!id && !githubPath && !srcUrl) {
                     showError('No grammar provided. Add ?src=path/to/grammar.json or ?github=path/to/grammar.json to the URL.');
@@ -2342,6 +2382,96 @@
             if (path.includes('tarot')) return 'tarot';
             if (path.includes('iching')) return 'iching';
             return null;
+        }
+
+        // ── Multi-deck loader (step 3: deck-picker + deck dimension) ─────────
+        async function loadMultipleDecks(slugs) {
+            try {
+                // Fetch collection if not yet loaded
+                if (!collection) {
+                    try { collection = await (await fetch('../tarot/_collection.json')).json(); } catch(_) {}
+                }
+                const collMap = Object.fromEntries((collection?.grammars || []).map(g => [g.slug, g]));
+
+                const loads = slugs.map(async slug => {
+                    const g = await (await fetch(`../tarot/${slug}/grammar.json`)).json();
+                    const cm = collMap[slug] || {};
+                    const deckName = (cm.name || g.name || slug).split(' — ')[0].slice(0, 34);
+                    const normalized = normalizeItems(grammarType, g);
+                    // Stamp each item with deck metadata so it shows as a grouping field
+                    normalized.forEach(item => {
+                        item._deck = deckName;
+                        item._deckSlug = slug;
+                        // prefix id to avoid cross-deck collisions
+                        item.id = slug + ':' + item.id;
+                        if (item.composite_of) item.composite_of = item.composite_of.map(c => slug + ':' + c);
+                    });
+                    return normalized;
+                });
+
+                const allGroups = await Promise.all(loads);
+                items = allGroups.flat();
+                filteredItems = [...items];
+                activeDecks = slugs;
+
+                // Set the grammar title
+                const titleEl = document.getElementById('grammar-title');
+                if (titleEl) titleEl.textContent = slugs.length + ' Decks Selected';
+                document.getElementById('description-container')?.classList.add('hidden');
+
+                buildFilters();
+                buildHierarchySidebar();
+                renderGrid();
+                setupEventListeners();
+                showContent();
+            } catch (err) {
+                console.error('Multi-deck load failed:', err);
+                showError('Could not load selected decks: ' + err.message);
+            }
+        }
+
+        // Group items by _deck for the sidebar when in multi-deck mode
+        function buildDeckSidebar() {
+            const sidebar = document.getElementById('hierarchy-sidebar');
+            const hierarchyIndex = document.getElementById('hierarchy-index');
+            if (!sidebar || !hierarchyIndex) return;
+
+            const deckGroups = new Map();
+            items.forEach(item => {
+                const dk = item._deck || 'Unknown Deck';
+                if (!deckGroups.has(dk)) deckGroups.set(dk, []);
+                deckGroups.get(dk).push(item);
+            });
+
+            if (deckGroups.size < 2) { sidebar.classList.add('hidden'); return; }
+            sidebar.classList.remove('hidden');
+            hierarchyIndex.innerHTML = '';
+
+            const showAllBtn = document.createElement('button');
+            showAllBtn.className = `sidebar-show-all ${!hierarchyFilter ? 'active' : ''}`;
+            showAllBtn.textContent = hierarchyFilter ? '↺ Clear filter · show all' : '✦ Showing all decks';
+            showAllBtn.addEventListener('click', () => { hierarchyFilter = null; activeFilter = 'all'; filteredItems = [...items]; buildFilters(); renderGrid(); buildDeckSidebar(); });
+            hierarchyIndex.appendChild(showAllBtn);
+
+            const hdr = document.createElement('div');
+            hdr.className = 'sidebar-group-header';
+            hdr.textContent = 'By Deck';
+            hierarchyIndex.appendChild(hdr);
+
+            deckGroups.forEach((deckItems, deckName) => {
+                const el = document.createElement('div');
+                el.className = `sidebar-item ${hierarchyFilter?.deckName === deckName ? 'active' : ''}`;
+                el.innerHTML = `<span class="sidebar-item-name" title="${escapeHtml(deckName)}">${escapeHtml(deckName)}</span><span class="sidebar-item-count">${deckItems.length}</span>`;
+                el.addEventListener('click', () => {
+                    hierarchyFilter = { deckName };
+                    activeFilter = 'all';
+                    filteredItems = items.filter(i => i._deck === deckName);
+                    buildFilters();
+                    renderGrid();
+                    buildDeckSidebar();
+                });
+                hierarchyIndex.appendChild(el);
+            });
         }
 
         // Static mode: load a grammar.json straight from any URL (repo-relative or raw GitHub).
@@ -3127,6 +3257,34 @@
 
         function buildFilters() {
             filterPills.innerHTML = '';
+
+            // Multi-deck mode: deck pills instead of arcana/suit pills
+            if (activeDecks.length > 1) {
+                const allBtn = document.createElement('button');
+                allBtn.className = 'filter-pill' + (!hierarchyFilter ? ' active' : '');
+                allBtn.textContent = 'All Decks';
+                allBtn.addEventListener('click', () => {
+                    hierarchyFilter = null; activeFilter = 'all';
+                    filteredItems = [...items]; renderGrid(); buildDeckSidebar(); buildFilters();
+                });
+                filterPills.appendChild(allBtn);
+                const deckNames = [...new Set(items.map(i => i._deck).filter(Boolean))];
+                deckNames.forEach(dk => {
+                    const btn = document.createElement('button');
+                    btn.className = 'filter-pill' + (hierarchyFilter?.deckName === dk ? ' active' : '');
+                    const cnt = items.filter(i => i._deck === dk).length;
+                    btn.textContent = dk + ' (' + cnt + ')';
+                    btn.addEventListener('click', () => {
+                        hierarchyFilter = { deckName: dk };
+                        activeFilter = 'all';
+                        filteredItems = items.filter(i => i._deck === dk);
+                        renderGrid(); buildDeckSidebar(); buildFilters();
+                    });
+                    filterPills.appendChild(btn);
+                });
+                return;
+            }
+
             const axes = getRootAxes();
 
             // "Group by" selector — choose what the pills represent (only when the
@@ -3213,6 +3371,9 @@
 
         // Build hierarchy sidebar — level-agnostic recursive tree
         function buildHierarchySidebar() {
+            // Multi-deck mode: show deck groups instead of composite tree
+            if (activeDecks.length > 1) { buildDeckSidebar(); return; }
+
             const sidebar = document.getElementById('hierarchy-sidebar');
             const hierarchyIndex = document.getElementById('hierarchy-index');
             if (!sidebar || !hierarchyIndex) return;
