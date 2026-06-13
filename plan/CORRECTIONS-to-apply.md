@@ -139,3 +139,14 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
 - 🟡 1725 gloss: equal-rank Papi predate 1725; only the turbaned-Moor imagery is the 1725 change
   (Montieri affair / Cardinal Ruffo edict). The two identical Moors (mor2.gif reuse) is genuine.
 - note: Fibbia origin legend (c.1419) is apocryphal (Berti) — keep flagged.
+
+## tarot/vieville-tarot/grammar.json (from research; confidence medium)
+- ✅ Mislabelled as Marseille: metadata.tradition "Tarot de Marseille family" + branch "marseille"
+  → it's the Rouen-Brussels / Belgian line (Dummett: Bologna→Piedmont/Savoy). Re-tag.
+- 🟡 Trump-16: it's **La Foudre** (a tree under fire/hail + shepherd), NOT the Marseille struck Tower.
+- 🟡 Trump-12 Hanged Man is **upright**; trumps 17/18/19 = astronomer-with-compasses / woman-with-spindle / youth-on-horseback (celestial divergences).
+- 🟡 "Eastern trump order" label → Bologna-via-Piedmont/Savoy (Belgian line), not "Eastern".
+
+## tarot/mamluk-deck/grammar.json (from research; confidence high)
+- 🟡 Internal inconsistency: mamluk-overview "What it is" says "43 surviving" but the description
+  says "~48 survive / ~43 original". Reconcile the overview text to ~48/43/52.
