@@ -28,7 +28,7 @@
     ]
   },
   "name": "Etteilla II",
-  "description": "# Etteilla II — Grand Livre de Thot\n\n> Part of the Etteilla lineage — hub at `10-etteilla.mdx`; see also `10a` and `10c`.\n\n## At a glance\n\nThe **second-generation** Etteilla: a posthumous re-edition of Alliette's system,\npublished **c.1838–1840** (often associated with the publisher **Simon Blocquel** and the\nlikely-pseudonymous **\"Julia Orsini\"**). It carries Etteilla's divinatory framework\nforward with **altered titling and imagery** — a brand continued by his \"school,\" not by\nhis hand.\n\n## Origin & dating\n\nIssued roughly **1838 (or 1840)**, decades after Alliette's death (1791). Marketed under\nthe *Grand Livre de Thot* title and the name **Julia Orsini** — believed to be a publisher's\npseudonym rather than a real cartomancer. Cards were **hand-water-coloured**.\n\n## Provenance & evidence\n\nSurviving decks and accompanying booklets; catalogued in collector and reconstruction\nliterature. It is a **variant** of Etteilla I — same divinatory DNA, different drawings,\nsome renamed cards and revised keywords.\n\n## Game or divination?\n\n**Divination** — squarely within the cartomantic tradition Etteilla founded; never a game\ndeck.\n\n## The fear question\n\nBy the 1830s–40s, cartomancy in France was a **commercial publishing genre** — printed,\ntitled, sold openly with instruction booklets. The \"fear\" register here is essentially\nzero for the publisher: fortune-telling decks were a normal product of the Paris print\ntrade. (The criminalised, precarious end of the practice remained the *itinerant* reader,\nnot the boxed retail deck.)\n\n## Counter-voices\n\nThe proliferation of Etteilla editions shows how quickly a **manufactured tradition**\n(\"ancient Egyptian tarot\") becomes a self-sustaining market. That is not evidence of\nsuppressed antiquity; it is evidence of a **successful 19th-century commercial myth**.\n\n## Open questions / corrections owed\n\n- Confirm the 1838 vs. 1840 dating and the Blocquel/Orsini attribution in the grammar.\n- Catalogue exactly which cards differ from Etteilla I (titles, numbers, imagery) rather\n  than assuming identity.\n\n## Sources & further reading\n\n- \"Etteilla,\" Wikipedia; Tarot Heritage and benebell wen Etteilla reconstructions;\n  Druidcraft blog, \"The Etteilla Tarot (Type I/II/III).\"\n\n---\n*Research notes — AI-assisted first-pass draft, pending review by the maintainer and the Tarot History Forum. Skeptical, document-first (Dummett spine). Corrections welcome via pending edit.*",
+  "description": "# Etteilla II — Grand Livre de Thot\n\n> Part of the Etteilla lineage — hub at `10-etteilla.mdx`; see also `10a` and `10c`.\n\n## At a glance\n\nThe **second-generation** Etteilla: a posthumous re-edition of Alliette's system,\npublished **c.1838–1840** (often associated with the publisher **Simon Blocquel** and the\nlikely-pseudonymous **\"Julia Orsini\"**). It carries Etteilla's divinatory framework\nforward with **altered titling and imagery** — a brand continued by his \"school,\" not by\nhis hand.\n\n## Origin & dating\n\nIssued roughly **1838 (or 1840)**, decades after Alliette's death (1791). Marketed under\nthe *Grand Livre de Thot* title and the name **Julia Orsini** — believed to be a publisher's\npseudonym rather than a real cartomancer. Cards were **hand-water-coloured**.\n\n## Provenance & evidence\n\nSurviving decks and accompanying booklets; catalogued in collector and reconstruction\nliterature. It is a **variant** of Etteilla I — same divinatory DNA, different drawings,\nsome renamed cards and revised keywords.\n\n## Game or divination?\n\n**Divination** — squarely within the cartomantic tradition Etteilla founded; never a game\ndeck.\n\n## The fear question\n\nBy the 1830s–40s, cartomancy in France was a **commercial publishing genre** — printed,\ntitled, sold openly with instruction booklets. The \"fear\" register here is essentially\nzero for the publisher: fortune-telling decks were a normal product of the Paris print\ntrade. (The criminalised, precarious end of the practice remained the *itinerant* reader,\nnot the boxed retail deck.)\n\n## Counter-voices\n\nThe proliferation of Etteilla editions shows how quickly a **manufactured tradition**\n(\"ancient Egyptian tarot\") becomes a self-sustaining market. That is not evidence of\nsuppressed antiquity; it is evidence of a **successful 19th-century commercial myth**.\n\n## Open questions / corrections owed\n\n- Confirm the 1838 vs. 1840 dating and the Blocquel/Orsini attribution in the grammar.\n- Catalogue exactly which cards differ from Etteilla I (titles, numbers, imagery) rather\n  than assuming identity.\n\n## Sources & further reading\n\n- \"Etteilla,\" Wikipedia; Tarot Heritage and benebell wen Etteilla reconstructions;\n  Druidcraft blog, \"The Etteilla Tarot (Type I/II/III).\"\n\n---\n*Research notes — AI-assisted first-pass draft, pending review by the maintainer and the Tarot History Forum. Skeptical, document-first (Dummett spine). Corrections welcome via pending edit.*\n\n**RESEARCH NOTE (2026-06-13) — metadata correction.** The per-card `metadata.symbols` on the minor (pip) cards had been templated from **Rider-Waite-Smith (1909)** scene iconography (e.g. a 'sunflower'/'cat' on the Queen, 'bandage'/'infinity' on pips) — anachronistic for Etteilla's 1788 near-pip pack, whose minors are arranged suit-symbols with printed keyword titles, not Smith's narrative scenes. Those false symbol lists have been REMOVED. The cards' divinatory sections (Etteilla's own upright/reversed meanings) are unaffected. The `archetype: card:<rank>-of-<suit>` fields are kept only as structural cross-references (King of Bâtons ↔ King of Wands), not as a claim of shared imagery. See research/cards/<this deck>.md.",
   "grammar_type": "tarot",
   "creator_name": "PlayfulProcess",
   "creator_link": "https://recursive.eco",
@@ -1135,13 +1135,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 22,
-        "symbols": [
-          "king",
-          "wand",
-          "throne",
-          "fire",
-          "leadership"
-        ],
         "archetype": "card:king-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1180,13 +1173,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 23,
-        "symbols": [
-          "queen",
-          "wand",
-          "sunflower",
-          "fire",
-          "cat"
-        ],
         "archetype": "card:queen-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1225,13 +1211,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 24,
-        "symbols": [
-          "knight",
-          "horse",
-          "wand",
-          "desert",
-          "adventure"
-        ],
         "archetype": "card:knight-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1270,13 +1249,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 25,
-        "symbols": [
-          "page",
-          "wand",
-          "youth",
-          "message",
-          "enthusiasm"
-        ],
         "archetype": "card:page-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1315,12 +1287,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 26,
-        "symbols": [
-          "ten wands",
-          "burden",
-          "struggle",
-          "determination"
-        ],
         "archetype": "card:ten-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1359,12 +1325,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 27,
-        "symbols": [
-          "nine wands",
-          "bandage",
-          "vigilance",
-          "defense"
-        ],
         "archetype": "card:nine-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1403,12 +1363,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 28,
-        "symbols": [
-          "eight wands",
-          "flight",
-          "speed",
-          "arrows"
-        ],
         "archetype": "card:eight-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1447,12 +1401,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 29,
-        "symbols": [
-          "seven wands",
-          "defense",
-          "high ground",
-          "challenge"
-        ],
         "archetype": "card:seven-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1491,13 +1439,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 30,
-        "symbols": [
-          "six wands",
-          "victory",
-          "laurel",
-          "horse",
-          "crowd"
-        ],
         "archetype": "card:six-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1536,12 +1477,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 31,
-        "symbols": [
-          "five wands",
-          "conflict",
-          "competition",
-          "struggle"
-        ],
         "archetype": "card:five-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1580,13 +1515,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 32,
-        "symbols": [
-          "four wands",
-          "celebration",
-          "garland",
-          "home",
-          "castle"
-        ],
         "archetype": "card:four-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1625,13 +1553,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 33,
-        "symbols": [
-          "three wands",
-          "ships",
-          "horizon",
-          "waiting",
-          "commerce"
-        ],
         "archetype": "card:three-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1670,12 +1591,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 34,
-        "symbols": [
-          "two wands",
-          "globe",
-          "decision",
-          "contemplation"
-        ],
         "archetype": "card:two-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1714,13 +1629,6 @@
         "suit": "batons",
         "arcana": "minor",
         "number": 35,
-        "symbols": [
-          "ace",
-          "wand",
-          "hand",
-          "clouds",
-          "new growth"
-        ],
         "archetype": "card:ace-of-wands",
         "mapping_confidence": "exact",
         "print": {
@@ -1759,13 +1667,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 36,
-        "symbols": [
-          "king",
-          "cup",
-          "throne",
-          "water",
-          "fish"
-        ],
         "archetype": "card:king-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -1804,13 +1705,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 37,
-        "symbols": [
-          "queen",
-          "cup",
-          "throne",
-          "water",
-          "shells"
-        ],
         "archetype": "card:queen-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -1849,13 +1743,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 38,
-        "symbols": [
-          "knight",
-          "horse",
-          "cup",
-          "river",
-          "romance"
-        ],
         "archetype": "card:knight-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -1894,13 +1781,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 39,
-        "symbols": [
-          "page",
-          "cup",
-          "fish",
-          "message",
-          "youth"
-        ],
         "archetype": "card:page-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -1939,13 +1819,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 40,
-        "symbols": [
-          "ten cups",
-          "rainbow",
-          "family",
-          "home",
-          "joy"
-        ],
         "archetype": "card:ten-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -1984,12 +1857,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 41,
-        "symbols": [
-          "nine cups",
-          "satisfaction",
-          "abundance",
-          "wish"
-        ],
         "archetype": "card:nine-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -2028,13 +1895,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 42,
-        "symbols": [
-          "eight cups",
-          "departure",
-          "moon",
-          "mountains",
-          "journey"
-        ],
         "archetype": "card:eight-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -2073,13 +1933,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 43,
-        "symbols": [
-          "seven cups",
-          "clouds",
-          "visions",
-          "fantasy",
-          "choices"
-        ],
         "archetype": "card:seven-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -2118,13 +1971,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 44,
-        "symbols": [
-          "six cups",
-          "children",
-          "flowers",
-          "garden",
-          "past"
-        ],
         "archetype": "card:six-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -2163,13 +2009,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 45,
-        "symbols": [
-          "five cups",
-          "cloaked figure",
-          "bridge",
-          "spilled",
-          "loss"
-        ],
         "archetype": "card:five-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -2208,13 +2047,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 46,
-        "symbols": [
-          "four cups",
-          "contemplation",
-          "tree",
-          "offer",
-          "withdrawal"
-        ],
         "archetype": "card:four-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -2253,13 +2085,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 47,
-        "symbols": [
-          "three cups",
-          "dancing women",
-          "celebration",
-          "friendship",
-          "harvest"
-        ],
         "archetype": "card:three-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -2298,13 +2123,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 48,
-        "symbols": [
-          "two cups",
-          "couple",
-          "caduceus",
-          "lion",
-          "union"
-        ],
         "archetype": "card:two-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -2343,14 +2161,6 @@
         "suit": "coupes",
         "arcana": "minor",
         "number": 49,
-        "symbols": [
-          "ace",
-          "cup",
-          "hand",
-          "dove",
-          "water",
-          "lotus"
-        ],
         "archetype": "card:ace-of-cups",
         "mapping_confidence": "exact",
         "print": {
@@ -2389,13 +2199,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 50,
-        "symbols": [
-          "king",
-          "sword",
-          "throne",
-          "butterflies",
-          "air"
-        ],
         "archetype": "card:king-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -2434,13 +2237,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 51,
-        "symbols": [
-          "queen",
-          "sword",
-          "throne",
-          "clouds",
-          "butterflies"
-        ],
         "archetype": "card:queen-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -2479,13 +2275,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 52,
-        "symbols": [
-          "knight",
-          "horse",
-          "sword",
-          "wind",
-          "clouds"
-        ],
         "archetype": "card:knight-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -2524,13 +2313,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 53,
-        "symbols": [
-          "page",
-          "sword",
-          "wind",
-          "vigilance",
-          "youth"
-        ],
         "archetype": "card:page-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -2569,13 +2351,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 54,
-        "symbols": [
-          "ten swords",
-          "figure",
-          "darkness",
-          "dawn",
-          "ending"
-        ],
         "archetype": "card:ten-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -2614,13 +2389,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 55,
-        "symbols": [
-          "nine swords",
-          "figure",
-          "bed",
-          "night",
-          "worry"
-        ],
         "archetype": "card:nine-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -2659,13 +2427,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 56,
-        "symbols": [
-          "eight swords",
-          "bound figure",
-          "water",
-          "castle",
-          "restriction"
-        ],
         "archetype": "card:eight-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -2704,13 +2465,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 57,
-        "symbols": [
-          "seven swords",
-          "figure",
-          "tents",
-          "stealth",
-          "escape"
-        ],
         "archetype": "card:seven-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -2749,13 +2503,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 58,
-        "symbols": [
-          "six swords",
-          "boat",
-          "water",
-          "figures",
-          "journey"
-        ],
         "archetype": "card:six-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -2794,13 +2541,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 59,
-        "symbols": [
-          "five swords",
-          "figures",
-          "clouds",
-          "conflict",
-          "defeat"
-        ],
         "archetype": "card:five-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -2839,13 +2579,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 60,
-        "symbols": [
-          "four swords",
-          "tomb",
-          "stained glass",
-          "rest",
-          "prayer"
-        ],
         "archetype": "card:four-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -2884,13 +2617,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 61,
-        "symbols": [
-          "three swords",
-          "heart",
-          "clouds",
-          "rain",
-          "piercing"
-        ],
         "archetype": "card:three-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -2929,13 +2655,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 62,
-        "symbols": [
-          "two swords",
-          "blindfold",
-          "moon",
-          "water",
-          "balance"
-        ],
         "archetype": "card:two-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -2974,14 +2693,6 @@
         "suit": "epees",
         "arcana": "minor",
         "number": 63,
-        "symbols": [
-          "ace",
-          "sword",
-          "crown",
-          "hand",
-          "clouds",
-          "victory"
-        ],
         "archetype": "card:ace-of-swords",
         "mapping_confidence": "exact",
         "print": {
@@ -3020,13 +2731,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 64,
-        "symbols": [
-          "king",
-          "coin",
-          "throne",
-          "castle",
-          "abundance"
-        ],
         "archetype": "card:king-of-coins",
         "mapping_confidence": "exact",
         "print": {
@@ -3065,13 +2769,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 65,
-        "symbols": [
-          "queen",
-          "coin",
-          "throne",
-          "garden",
-          "rabbit"
-        ],
         "archetype": "card:queen-of-coins",
         "mapping_confidence": "exact",
         "print": {
@@ -3110,13 +2807,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 66,
-        "symbols": [
-          "knight",
-          "horse",
-          "coin",
-          "field",
-          "patience"
-        ],
         "archetype": "card:knight-of-coins",
         "mapping_confidence": "exact",
         "print": {
@@ -3155,13 +2845,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 67,
-        "symbols": [
-          "page",
-          "coin",
-          "youth",
-          "landscape",
-          "study"
-        ],
         "archetype": "card:page-of-coins",
         "mapping_confidence": "exact",
         "print": {
@@ -3200,13 +2883,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 68,
-        "symbols": [
-          "ten coins",
-          "family",
-          "archway",
-          "dogs",
-          "legacy"
-        ],
         "archetype": "card:ten-of-coins",
         "mapping_confidence": "exact",
         "print": {
@@ -3245,13 +2921,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 69,
-        "symbols": [
-          "nine coins",
-          "woman",
-          "falcon",
-          "garden",
-          "luxury"
-        ],
         "archetype": "card:nine-of-coins",
         "mapping_confidence": "exact",
         "print": {
@@ -3290,13 +2959,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 70,
-        "symbols": [
-          "eight coins",
-          "craftsman",
-          "tools",
-          "work",
-          "detail"
-        ],
         "archetype": "card:eight-of-coins",
         "mapping_confidence": "exact",
         "print": {
@@ -3335,13 +2997,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 71,
-        "symbols": [
-          "seven coins",
-          "figure",
-          "vine",
-          "waiting",
-          "evaluation"
-        ],
         "archetype": "card:seven-of-coins",
         "mapping_confidence": "exact",
         "print": {
@@ -3380,13 +3035,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 72,
-        "symbols": [
-          "six coins",
-          "scales",
-          "giving",
-          "receiving",
-          "merchant"
-        ],
         "archetype": "card:six-of-coins",
         "mapping_confidence": "exact",
         "print": {
@@ -3425,13 +3073,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 73,
-        "symbols": [
-          "five coins",
-          "figures",
-          "snow",
-          "church",
-          "hardship"
-        ],
         "archetype": "card:five-of-coins",
         "mapping_confidence": "exact",
         "print": {
@@ -3470,13 +3111,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 74,
-        "symbols": [
-          "four coins",
-          "figure",
-          "city",
-          "crown",
-          "control"
-        ],
         "archetype": "card:four-of-coins",
         "mapping_confidence": "exact",
         "print": {
@@ -3515,13 +3149,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 75,
-        "symbols": [
-          "three coins",
-          "craftsmen",
-          "cathedral",
-          "collaboration",
-          "planning"
-        ],
         "archetype": "card:three-of-coins",
         "mapping_confidence": "exact",
         "print": {
@@ -3560,13 +3187,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 76,
-        "symbols": [
-          "two coins",
-          "figure",
-          "infinity",
-          "waves",
-          "balance"
-        ],
         "archetype": "card:two-of-coins",
         "mapping_confidence": "exact",
         "print": {
@@ -3605,13 +3225,6 @@
         "suit": "deniers",
         "arcana": "minor",
         "number": 77,
-        "symbols": [
-          "ace",
-          "coin",
-          "hand",
-          "garden",
-          "gateway"
-        ],
         "archetype": "card:ace-of-coins",
         "mapping_confidence": "exact",
         "print": {
