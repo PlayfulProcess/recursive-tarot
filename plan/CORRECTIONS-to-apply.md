@@ -105,3 +105,19 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
   or a disambiguator (design decision — flag for maintainer).
 - 🟡 Bembo artist_dates "active c.1444–1482" vs deck "c.1442" — align to floruit c.1442.
 - 🟡 description vague on counts; state firm 67 surviving / ~86 original.
+
+## tarot/charles-vi-tarot/grammar.json — SCHOLARLY DEBATE (maintainer decision)
+- ⚠️ Origin attribution: repo says **Ferrarese / B-order** (older Dummett classification). Newer
+  **BnF Catalogue général** attributes it to the **Florentine** workshop of Apollonio di Giovanni
+  & Marco del Buono, c. 1460 (A-leaning: all virtues below Death). Genuinely debated — do NOT
+  silently flip; maintainer should choose framing. Sources in research/decks/charles-vi-tarot.md.
+- 🟡 "17 trumps" overcount where it appears — it's 16 trumps + 1 Page of Swords = 17 cards
+  (the emergence node "16 Surviving Trumps" is already correct).
+- 🟡 Missing trumps: Magician, Popess, Empress, Wheel, Devil, Star.
+
+## tarot/minchiate-florence-tarot/grammar.json — Papi identities (verify before applying)
+- ⚠️ The five Papi: grammar names them Popess/Empress/Emperor/Pope/Love. Scholarly identities:
+  I=Bagatto (Juggler), II=Grand Duke, III=Western Emperor, IV=Eastern Emperor, V=Love. NO Pope
+  card; Popess dropped (not folded in). 5-card identity rewrite — confidence medium; verify.
+- 🟡 Il Gobbo (XI)→Hermit mapping_confidence "exact" → "loose" (it's the Time/Old-Man ancestor).
+- 🟡 suit→element pairings are a modern overlay, mark non-historical.
