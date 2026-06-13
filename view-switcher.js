@@ -13,18 +13,38 @@
   // Root-relative from any subdir (viewers/ OR pages/), so links work everywhere.
   const root = /\/(viewers|pages)\//.test(location.pathname) ? '../' : '';
 
-  // preserve the loaded grammar across views
+  // preserve the loaded grammar + deck multiselect across views
   const p = new URLSearchParams(location.search);
   const keep = new URLSearchParams();
-  for (const k of ['src', 'github', 'id', 'type', 'item']) if (p.get(k)) keep.set(k, p.get(k));
+  for (const k of ['src', 'github', 'id', 'type', 'item', 'decks']) if (p.get(k)) keep.set(k, p.get(k));
   const qs = keep.toString() ? '?' + keep.toString() : '';
   const amp = keep.toString() ? '&' : '?';
 
+  // Carry the active spec (groupby/rows) in the URL hash across card-level views.
+  // Explorer writes {rows,cols,...} as JSON to location.hash.
+  // Cards writes #groupby=fieldName.
+  // When switching, translate between formats.
+  let specHash = '';
+  try {
+    const h = decodeURIComponent(location.hash.slice(1));
+    if (h.startsWith('{')) {
+      const s = JSON.parse(h);
+      if (s.rows?.length) specHash = '#groupby=' + encodeURIComponent(s.rows[0]);
+      else if (h) specHash = location.hash; // pass through
+    } else if (h.startsWith('groupby=')) {
+      const field = new URLSearchParams(h).get('groupby');
+      if (field) specHash = '#' + encodeURIComponent(JSON.stringify({ rows: [field], cols: [], filters: {}, pinned: [] }));
+    }
+  } catch (_) {}
+
   // [key, label, href]
+  // Card-level viewers carry the spec hash so the active grouping survives view switches.
+  const cardSpec = specHash && !specHash.startsWith('#' + encodeURIComponent('{')) ? '' : specHash;
+  const explorerSpec = specHash.startsWith('#groupby=') ? '#' + encodeURIComponent(JSON.stringify({ rows: [new URLSearchParams(specHash.slice(9)).get('groupby') || decodeURIComponent(specHash.slice(9))], cols: [], filters: {}, pinned: [] })) : specHash;
   const VIEWS = [
-    ['cards',      'Cards',        root + 'viewers/cards.html' + qs],
-    ['explorer',   'Explorer',     root + 'viewers/explorer.html' + qs],
-    ['tree',       'Tree',         root + 'viewers/tree-viewer.html' + qs],
+    ['cards',      'Cards',        root + 'viewers/cards.html' + qs + cardSpec],
+    ['explorer',   'Explorer',     root + 'viewers/explorer.html' + qs + explorerSpec],
+    ['tree',       'Tree',         root + 'viewers/tree-viewer.html' + qs + cardSpec],
     ['thumbnails', 'Thumbnails',   root + 'viewers/cards.html' + qs + amp + 'layout=thumbnails'],
     ['timeline',   'Timeline',     root + 'viewers/timeline.html' + qs],
     ['treeoflife', 'Tree of Life', root + 'viewers/genealogy-tree.html' + qs],

@@ -2155,7 +2155,7 @@
         let currentUser = null; // Track auth state
         let collection = null; // Parsed _collection.json for deck-picker
         let activeDecks = []; // Slugs loaded via ?decks= multiselect
-        let deckGroupField = 'deck'; // Field used to group when multiselect active
+        let deckGroupField = null; // Discovered field used to group cards sidebar (null = by deck)
 
         // Selection mode state
         let isSelectionMode = false;
@@ -2414,6 +2414,28 @@
                 filteredItems = [...items];
                 activeDecks = slugs;
 
+                // Restore groupby from URL hash if present
+                try {
+                    const h = decodeURIComponent(location.hash.slice(1));
+                    if (h.startsWith('groupby=')) deckGroupField = new URLSearchParams(h).get('groupby');
+                } catch(_) {}
+
+                // Build dimension-engine records for field discovery
+                const deRecs = [];
+                allGroups.forEach((grpItems, gi) => {
+                    const slug = slugs[gi];
+                    grpItems.forEach(item => {
+                        const r = { __id: item.id, deck: [item._deck || slug] };
+                        if (item.categories?.suit) r.suit = [item.categories.suit];
+                        if (item.categories?.arcana) r.arcana = [item.categories.arcana];
+                        if (item.level) r.level = ['L' + item.level];
+                        (item.keywords || []).forEach(kw => { (r.keyword = r.keyword || []).push(kw); });
+                        deRecs.push(r);
+                    });
+                });
+                const { discoverFields: df } = DimensionEngine;
+                const discoveredFields = df(deRecs).filter(f => f.count >= 2 && f.count <= 32);
+
                 // Set the grammar title
                 const titleEl = document.getElementById('grammar-title');
                 if (titleEl) titleEl.textContent = slugs.length + ' Decks Selected';
@@ -2421,6 +2443,7 @@
 
                 buildFilters();
                 buildHierarchySidebar();
+                buildDimChipTray(discoveredFields);
                 renderGrid();
                 setupEventListeners();
                 showContent();
@@ -2430,42 +2453,96 @@
             }
         }
 
-        // Group items by _deck for the sidebar when in multi-deck mode
+        // Chip tray for multi-deck mode: draggable dimension chips above the sidebar
+        function buildDimChipTray(fields) {
+            let tray = document.getElementById('dim-chip-tray');
+            if (!tray) {
+                tray = document.createElement('div');
+                tray.id = 'dim-chip-tray';
+                tray.style.cssText = 'display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px;padding:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;';
+                const sidebar = document.getElementById('hierarchy-sidebar');
+                if (sidebar) sidebar.parentElement.insertBefore(tray, sidebar);
+            }
+            tray.innerHTML = '<span style="font-size:11px;color:var(--grammar-text-muted);flex-basis:100%;margin-bottom:2px;">Drag a dimension to Group by ↓</span>';
+            fields.forEach(f => {
+                const chip = document.createElement('span');
+                chip.draggable = true;
+                chip.dataset.field = f.name;
+                chip.style.cssText = `display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:14px;font-size:12px;cursor:grab;border:1px solid rgba(255,255,255,.18);background:${deckGroupField===f.name?'#9333ea':'rgba(255,255,255,.07)'};color:${deckGroupField===f.name?'#fff':'var(--grammar-text-muted)'};user-select:none;`;
+                chip.textContent = f.name + ' (' + f.count + ')';
+                chip.addEventListener('dragstart', e => {
+                    e.dataTransfer.setData('text/plain', JSON.stringify({ field: f.name }));
+                    chip.style.opacity = '.5';
+                });
+                chip.addEventListener('dragend', () => { chip.style.opacity = ''; });
+                chip.addEventListener('click', () => { applyDeckGroupField(f.name); });
+                tray.appendChild(chip);
+            });
+        }
+
+        function applyDeckGroupField(field) {
+            deckGroupField = deckGroupField === field ? null : field;
+            location.hash = deckGroupField ? 'groupby=' + encodeURIComponent(deckGroupField) : '';
+            hierarchyFilter = null;
+            filteredItems = [...items];
+            buildFilters();
+            buildDeckSidebar();
+        }
+
+        // Group items by _deck (or by deckGroupField) for the sidebar when in multi-deck mode
         function buildDeckSidebar() {
             const sidebar = document.getElementById('hierarchy-sidebar');
             const hierarchyIndex = document.getElementById('hierarchy-index');
             if (!sidebar || !hierarchyIndex) return;
 
-            const deckGroups = new Map();
+            // Determine grouping key
+            const groupKey = deckGroupField || '_deck';
+            const labelOf = item => (groupKey === '_deck' ? item._deck : (item.categories?.[groupKey] || item.metadata?.[groupKey] || item[groupKey])) || '—';
+
+            const groups = new Map();
             items.forEach(item => {
-                const dk = item._deck || 'Unknown Deck';
-                if (!deckGroups.has(dk)) deckGroups.set(dk, []);
-                deckGroups.get(dk).push(item);
+                const k = labelOf(item);
+                if (!groups.has(k)) groups.set(k, []);
+                groups.get(k).push(item);
             });
 
-            if (deckGroups.size < 2) { sidebar.classList.add('hidden'); return; }
+            if (groups.size < 2) { sidebar.classList.add('hidden'); return; }
             sidebar.classList.remove('hidden');
             hierarchyIndex.innerHTML = '';
 
+            // Drop zone at the top of the sidebar
+            const dropZone = document.createElement('div');
+            dropZone.style.cssText = `padding:6px 8px;border-radius:6px;border:1.5px dashed rgba(255,255,255,.18);font-size:11.5px;color:var(--grammar-text-muted);margin-bottom:8px;text-align:center;transition:border-color .15s,background .15s;`;
+            dropZone.textContent = deckGroupField ? ('Grouped by: ' + deckGroupField + ' ✕') : '⊸ Drop a dimension here';
+            dropZone.title = deckGroupField ? 'Click to clear grouping' : 'Drag a dimension chip here to group cards';
+            if (deckGroupField) { dropZone.style.borderColor = '#9333ea'; dropZone.style.color = '#c4b5fd'; dropZone.style.cursor = 'pointer'; dropZone.addEventListener('click', () => applyDeckGroupField(deckGroupField)); }
+            dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.style.background = 'rgba(147,51,234,.18)'; dropZone.style.borderColor = '#9333ea'; });
+            dropZone.addEventListener('dragleave', () => { dropZone.style.background = ''; dropZone.style.borderColor = 'rgba(255,255,255,.18)'; });
+            dropZone.addEventListener('drop', e => {
+                e.preventDefault(); dropZone.style.background = ''; dropZone.style.borderColor = 'rgba(255,255,255,.18)';
+                try { const d = JSON.parse(e.dataTransfer.getData('text/plain')); if (d.field) applyDeckGroupField(d.field); } catch(_) {}
+            });
+            hierarchyIndex.appendChild(dropZone);
+
             const showAllBtn = document.createElement('button');
             showAllBtn.className = `sidebar-show-all ${!hierarchyFilter ? 'active' : ''}`;
-            showAllBtn.textContent = hierarchyFilter ? '↺ Clear filter · show all' : '✦ Showing all decks';
+            showAllBtn.textContent = hierarchyFilter ? '↺ Clear filter · show all' : '✦ Showing all';
             showAllBtn.addEventListener('click', () => { hierarchyFilter = null; activeFilter = 'all'; filteredItems = [...items]; buildFilters(); renderGrid(); buildDeckSidebar(); });
             hierarchyIndex.appendChild(showAllBtn);
 
             const hdr = document.createElement('div');
             hdr.className = 'sidebar-group-header';
-            hdr.textContent = 'By Deck';
+            hdr.textContent = 'By ' + (deckGroupField || 'Deck');
             hierarchyIndex.appendChild(hdr);
 
-            deckGroups.forEach((deckItems, deckName) => {
+            groups.forEach((grpItems, groupName) => {
                 const el = document.createElement('div');
-                el.className = `sidebar-item ${hierarchyFilter?.deckName === deckName ? 'active' : ''}`;
-                el.innerHTML = `<span class="sidebar-item-name" title="${escapeHtml(deckName)}">${escapeHtml(deckName)}</span><span class="sidebar-item-count">${deckItems.length}</span>`;
+                el.className = `sidebar-item ${hierarchyFilter?.groupName === groupName ? 'active' : ''}`;
+                el.innerHTML = `<span class="sidebar-item-name" title="${escapeHtml(groupName)}">${escapeHtml(groupName)}</span><span class="sidebar-item-count">${grpItems.length}</span>`;
                 el.addEventListener('click', () => {
-                    hierarchyFilter = { deckName };
+                    hierarchyFilter = { groupName };
                     activeFilter = 'all';
-                    filteredItems = items.filter(i => i._deck === deckName);
+                    filteredItems = items.filter(i => labelOf(i) === groupName);
                     buildFilters();
                     renderGrid();
                     buildDeckSidebar();
@@ -3268,16 +3345,18 @@
                     filteredItems = [...items]; renderGrid(); buildDeckSidebar(); buildFilters();
                 });
                 filterPills.appendChild(allBtn);
-                const deckNames = [...new Set(items.map(i => i._deck).filter(Boolean))];
-                deckNames.forEach(dk => {
+                const groupKey = deckGroupField || '_deck';
+                const labelOf = item => (groupKey === '_deck' ? item._deck : (item.categories?.[groupKey] || item.metadata?.[groupKey] || item[groupKey])) || '—';
+                const groupNames = [...new Set(items.map(labelOf).filter(Boolean))].sort();
+                groupNames.forEach(gn => {
                     const btn = document.createElement('button');
-                    btn.className = 'filter-pill' + (hierarchyFilter?.deckName === dk ? ' active' : '');
-                    const cnt = items.filter(i => i._deck === dk).length;
-                    btn.textContent = dk + ' (' + cnt + ')';
+                    btn.className = 'filter-pill' + (hierarchyFilter?.groupName === gn ? ' active' : '');
+                    const cnt = items.filter(i => labelOf(i) === gn).length;
+                    btn.textContent = gn + ' (' + cnt + ')';
                     btn.addEventListener('click', () => {
-                        hierarchyFilter = { deckName: dk };
+                        hierarchyFilter = { groupName: gn };
                         activeFilter = 'all';
-                        filteredItems = items.filter(i => i._deck === dk);
+                        filteredItems = items.filter(i => labelOf(i) === gn);
                         renderGrid(); buildDeckSidebar(); buildFilters();
                     });
                     filterPills.appendChild(btn);
