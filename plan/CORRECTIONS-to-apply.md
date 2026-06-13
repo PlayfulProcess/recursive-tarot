@@ -121,3 +121,23 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
   card; Popess dropped (not folded in). 5-card identity rewrite — confidence medium; verify.
 - 🟡 Il Gobbo (XI)→Hermit mapping_confidence "exact" → "loose" (it's the Time/Old-Man ancestor).
 - 🟡 suit→element pairings are a modern overlay, mark non-historical.
+
+## Fragment grammars — safe metadata gaps (from fragments pass)
+- ✅ este-tarot: add metadata function: game, ancestry: ancestral (has order:B, branch:roots).
+- ✅ cary-sheet: add metadata order: C, function: game (has ancestry).
+- ✅ rosenwald-sheet: add metadata order: A, function: game (has ancestry).
+- 🟡 este description "c. 1450" — add the c.1470s (Pollett) hedge.
+
+## tarot/sola-busca-tarot/grammar.json (from research; quality flags)
+- 🟡 Per-card "Scene" texts are generic placeholders, not real engraving descriptions — rewrite
+  from primary scans when WebFetch is restored (do not fabricate).
+- 🟡 Grammar omits the named court figures (Amone/Olinpia/Natanabo, Alexander cycle); court order
+  listed Page→King (standard is King–Queen–Knight–Page).
+- ✅ corroborated downstream: SB Three of Swords → RWS Three of Swords; SB Ten of Swords echoes RWS.
+
+## tarot/tarocchino-bologna/grammar.json (from research; mostly accurate)
+- 🟡 sort_order 0–21 is positional; the printed Bolognese numbering runs only 5–16 (low/high
+  trumps unnumbered). Note this so users don't read it as full sequential numbering.
+- 🟡 1725 gloss: equal-rank Papi predate 1725; only the turbaned-Moor imagery is the 1725 change
+  (Montieri affair / Cardinal Ruffo edict). The two identical Moors (mor2.gif reuse) is genuine.
+- note: Fibbia origin legend (c.1419) is apocryphal (Berti) — keep flagged.
