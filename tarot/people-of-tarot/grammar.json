@@ -31,11 +31,149 @@
   "is_published": true,
   "items": [
     {
+      "id": "person-comte-de-mellet",
+      "name": "Louis-Raphaël-Lucrèce de Fayolle, comte de Mellet",
+      "level": 1,
+      "category": "person",
+      "sort_order": 1,
+      "keywords": [
+        "army officer",
+        "courtier",
+        "tarot essayist",
+        "amateur esotericist",
+        "occultists"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "occultists",
+        "lifespan": "1727–1804",
+        "roles": [
+          "army officer",
+          "courtier",
+          "tarot essayist",
+          "amateur esotericist"
+        ],
+        "confidence": "high",
+        "research": "research/people/comte-de-mellet.md"
+      },
+      "sections": {
+        "Who": "The **Comte de Mellet** — full name **Louis-Raphaël-Lucrèce de Fayolle** (1727–1804) — wrote\nthe *second*, often-overlooked tarot essay bundled into Court de Gébelin's *Le Monde primitif*,\nvol. 8 (1781). While Gébelin supplied the Egyptian *origin myth*, it was **Mellet** who first\nin print (a) explicitly paired the **22 trumps-plus-Fool with the 22 letters of the Hebrew\nalphabet**, (b) read the trumps in an **inverted order** (from the World down to the Fool) as\nthe Three Ages of the World, and (c) described a concrete **divination method** — arguably the\noldest published tarot *spread*. He is the quiet hinge between Gébelin's theory and Etteilla's\npractice [@decker1996; @web_place_mellet; @web_hrmtc_first].",
+        "Claim vs the record": "- **Myth: the Hebrew-letter correspondence is an ancient transmission.** **The record:** it is\n  an **18th-century construction**. Mellet *proposed* the 22-trumps ↔ 22-Hebrew-letters pairing\n  in 1781 as an interpretive overlay on a 15th-century Italian card game; there is no medieval\n  Kabbalistic tarot behind it. The idea is influential and internally elegant, but it is\n  **invented in print by Mellet (and Gébelin's circle)**, not recovered [@decker1996;\n  @dummett1980].\n- **Misattribution of the \"reading-the-cards\" idea to Gébelin.** Popular accounts credit Court\n  de Gébelin with founding tarot divination. The record: the *method* and the *Hebrew/divination*\n  material are largely **Mellet's**, appended to Gébelin's origin essay; the two should not be\n  merged [@web_place_mellet; @decker1996].\n- **Identity once disputed.** \"M. le C. de M.\" was for a time mysterious; the consensus\n  identification with the comte de Mellet (de Fayolle) is now standard but still worth treating\n  as well-supported rather than incontrovertible (confidence: medium-high on the identity)\n  [@web_place_mellet; @web_mellet_search].",
+        "In this collection": "Mellet makes no deck, so he carries no deck slug; in the grammar he is a **person/idea node**,\npaired with **`court-de-gebelin`** on the 1781 origin of the occult reading. He should feature\nwherever the collection narrates the **Hebrew-letter correspondence** and the **first tarot\nspread** — i.e. as the under-credited author behind a system usually attributed to Gébelin or\nLévi. A \"people of tarot\" card for Mellet should foreground \"the man who first paired the 22\ntrumps with the 22 Hebrew letters, in 1781.\""
+      }
+    },
+    {
+      "id": "person-court-de-gebelin",
+      "name": "Antoine Court de Gébelin",
+      "level": 1,
+      "category": "person",
+      "sort_order": 2,
+      "keywords": [
+        "scholar",
+        "Protestant pastor",
+        "Freemason",
+        "encyclopedist",
+        "origin-mythographer",
+        "occultists"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "occultists",
+        "lifespan": "1725–1784",
+        "roles": [
+          "scholar",
+          "Protestant pastor",
+          "Freemason",
+          "encyclopedist",
+          "origin-mythographer"
+        ],
+        "made": [
+          "court-de-gebelin-tarot"
+        ],
+        "confidence": "high",
+        "research": "research/people/court-de-gebelin.md"
+      },
+      "sections": {
+        "Who": "**Antoine Court de Gébelin** (c. 1725 – 1784) is the hinge of the entire \"occult turn.\" In\n**1781**, in volume 8 of his vast encyclopedia *Le Monde primitif*, the Protestant pastor and\nFreemason published an essay declaring the Tarot de Marseille a survival of the ancient\nEgyptian **Book of Thoth**. He offered **no evidence**, and was **wrong** — but he converted a\ncard game into a \"sacred text\" and launched two centuries of esoteric tarot. Bundled with his\nessay was a second piece by the **Comte de Mellet**, which first proposed actually *reading*\nthe cards and tying them to the Hebrew alphabet [@decker1996; @web_wopc_monde].",
+        "Claim vs the record": "- **Myth: tarot is the ancient Egyptian \"Book of Thoth.\"** **The record: FALSE.** Tarot is a\n  15th-century North-Italian invention (the *trionfi* / tarocchi card game, first documented in\n  the courts of Milan and Ferrara). Gébelin wrote in 1781, **four decades before Champollion\n  deciphered hieroglyphs** (Lettre à M. Dacier, 1822); his \"Egyptian\" reading was pure\n  imagination projected onto Italian Christian imagery. The verdict of the document-first\n  scholarship is unequivocal: the Egyptian genealogy is **invented, not recovered**\n  [@dummett1980; @decker1996].\n- **Myth: he recovered \"suppressed\" esoteric knowledge.** **The record:** he announced his\n  theory *openly*, under his own name, in a prestigious subscription encyclopedia read by the\n  Parisian elite. The occult overlay was born not in secrecy but as a **high-status\n  Enlightenment fad** — fashionable erudition about an imagined Egypt, not a transmitted\n  tradition [@decker1996].\n- **Important caveat.** Debunking Gébelin removes a false *pedigree*; it does **not** debunk the\n  real, later history of divinatory practice (Etteilla onward) or its persecuted practitioners.\n  Separate the false antiquity from the genuine 18th-century practice [@decker1996].",
+        "In this collection": "Gébelin is the maker of the deck slug **`court-de-gebelin-tarot`** (the 1781 redrawn plates),\nwhich the grammar should treat strictly as **origin-myth**, dated 1781, and **never** as\nevidence about the cards' real 15th-century origin. In a \"people of tarot\" set he is the figure\non whom the **myth-vs-record** split is most load-bearing: state the Egyptian claim, then the\nDummett-spine correction, on his card and on any card descended from his plates (esp. those he\nre-Egyptianised). He pairs naturally with the **comte-de-mellet** card as the two halves of the\n1781 turn."
+      }
+    },
+    {
+      "id": "person-eliphas-levi",
+      "name": "Éliphas Lévi (Alphonse-Louis Constant)",
+      "level": 1,
+      "category": "person",
+      "sort_order": 3,
+      "keywords": [
+        "occultist",
+        "magician",
+        "author",
+        "ex-seminarian",
+        "occultists"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "occultists",
+        "lifespan": "1810–1875",
+        "roles": [
+          "occultist",
+          "magician",
+          "author",
+          "ex-seminarian"
+        ],
+        "confidence": "high",
+        "research": "research/people/eliphas-levi.md"
+      },
+      "sections": {
+        "Who": "**Éliphas Lévi** — born **Alphonse-Louis Constant** (8 February 1810 – 31 May 1875) — is the\nhinge of the *modern* occult tarot. In *Dogme et rituel de la haute magie* (two volumes,\n**1854 and 1856**) he was the first to **systematically** weld the **22 tarot trumps to the 22\nletters of the Hebrew alphabet** and to the Kabbalah, embedding the tarot in a complete magical\nphilosophy. He **designed no deck** of his own — but everything downstream (Wirth and de Guaita\nin France, the Golden Dawn and Waite–Smith in England) builds on the framework he set. He is the\npivot from the 18th-century salon theorists (Gébelin, Mellet) to the 1889 occult deck\n[@decker2002; @tarot_heritage; @levi1856].",
+        "Claim vs the record": "- **Myth: the tarot–Hebrew–Kabbalah correspondence is an ancient, recovered key.** **The\n  record:** Lévi's specific assignment of trumps to Hebrew letters is an **invention of the\n  1850s**, an interpretive construction laid over a 15th-century Italian card game — not a\n  medieval survival. It is powerful and generative, but its antiquity is asserted, not\n  documented [@decker2002; @dummett1980].\n- **Myth: \"TAROT comes from Egyptian/Hebrew *ROTA*.\"** **The record:** the ROTA/TARO word-play\n  is a mnemonic conceit Lévi popularised, not an etymology supported by the history of the word\n  *tarocchi/tarot* [@web_levi_rota; @decker2002].\n- **He is honest about being a *builder*, not always about being a *recoverer*.** Unlike the\n  flat-false Egyptian-origin claim, Lévi's contribution is genuinely original synthesis; the\n  caveat is only that he framed his new system as ancient wisdom. The grammar should record a\n  **deliberate, dated esoteric construction (1850s)**, not a transmission [@decker2002].",
+        "In this collection": "Lévi carries **no deck slug** (he made no cards) but is a **central person node**: the author\nof the correspondence system the esoteric decks rely on. He should feature wherever the\ncollection narrates the **trump↔Hebrew-letter** mapping and the **Tree of Life** overlay — and\nspecifically behind the **Wheel of Fortune** (his ROTA/TARO play), the **Devil/Baphomet**\nimagery, and as the named source \"restored\" by the **`oswald-wirth-tarot`** deck. A \"people of\ntarot\" card should frame him as **the man who made tarot Kabbalistic — in the 1850s, by\nconstruction.**"
+      }
+    },
+    {
+      "id": "person-etteilla",
+      "name": "Jean-Baptiste Alliette — \"Etteilla\"",
+      "level": 1,
+      "category": "person",
+      "sort_order": 4,
+      "keywords": [
+        "cartomancer",
+        "deck designer",
+        "occult entrepreneur",
+        "teacher",
+        "occultists"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "occultists",
+        "lifespan": "1738–1791",
+        "roles": [
+          "cartomancer",
+          "deck designer",
+          "occult entrepreneur",
+          "teacher"
+        ],
+        "made": [
+          "etteilla-i-livre-de-thot",
+          "etteilla-ii-egyptian",
+          "etteilla-iii-oracle-des-dames"
+        ],
+        "confidence": "high",
+        "research": "research/people/etteilla.md"
+      },
+      "sections": {
+        "Who": "**Jean-Baptiste Alliette** (1 March 1738 – 12 December 1791), who reversed his surname to\nsign himself **\"Etteilla,\"** was the first person known to history to earn his living by\nreading cards, the author of the first self-instruction manuals for it, and the maker of the\n**first tarot deck purpose-built for divination** (1788–89). Where Court de Gébelin supplied a\n*theory* (the cards as an Egyptian \"Book of Thoth\") and the Comte de Mellet sketched a\n*method*, Etteilla industrialised both into a working practice, a printed deck, and a\ncorrespondence *school*. His system outlived him as a 19th-century commercial brand through two\nposthumous editions (Etteilla II and III) produced by his followers and later publishers\n[@decker1996; @tarot_heritage].",
+        "Claim vs the record": "- **Myth: the deck transmits ancient Egyptian wisdom (the \"Book of Thoth\").** Etteilla took\n  this framing wholesale from Court de Gébelin (1781) and marketed his deck under it. **The\n  record:** the Egyptian pedigree is invented. Tarot is a 15th-century North-Italian card game;\n  hieroglyphs were undeciphered until Champollion (1820s). Etteilla *founded a real and durable\n  divinatory practice* but sold it under a *false antiquity* — both are true, and the dossier\n  honours the practice while flagging the pedigree [@decker1996; @dummett1980].\n- **Myth: \"the first tarot fortune-teller is ancient/timeless.\"** **The record:** the\n  documentary trail for systematic tarot divination begins, concretely, with Etteilla's printed\n  books (1770 for cards, 1783–85 for tarot) and his 1788–89 deck — a dated 18th-century\n  invention, not a recovered tradition [@decker1996].\n- **Etteilla II and III are *not* his work.** They are posthumous continuations by his school\n  and by later commercial publishers (Blocquel/\"Orsini\"; Régamey/Lequart-Mignot/Grimaud).\n  Attributing them to Alliette himself is a common error [@web_grand_etteilla; @web_druidcraft].",
+        "In this collection": "Etteilla is the maker behind three deck slugs in this repo: **`etteilla-i-livre-de-thot`**\n(his own 1788–89 deck), **`etteilla-ii-egyptian`**, and **`etteilla-iii-oracle-des-dames`**\n(posthumous). He should feature prominently on the cards his system *renumbered or invented* —\nabove all the **querent/significator and element cards** that have no Marseille parent, and the\n**Death** card (renumbered away from XIII), where his departure from the Marseille tradition is\nsharpest. Any \"people of tarot\" card should frame him as **the first professional cartomancer**\nand the bridge from Gébelin's theory to a working deck."
+      }
+    },
+    {
       "id": "person-gertrude-moakley",
       "name": "Gertrude Moakley (1905–1998)",
       "level": 1,
       "category": "person",
-      "sort_order": 1,
+      "sort_order": 5,
       "keywords": [
         "librarian",
         "tarot iconographer",
@@ -67,7 +205,7 @@
       "name": "L. A. Mayer (Leo Aryeh Mayer, 1895–1959)",
       "level": 1,
       "category": "person",
-      "sort_order": 2,
+      "sort_order": 6,
       "keywords": [
         "Islamic-art scholar",
         "orientalist",
@@ -98,7 +236,7 @@
       "name": "Sir Michael Dummett (1925–2011)",
       "level": 1,
       "category": "person",
-      "sort_order": 3,
+      "sort_order": 7,
       "keywords": [
         "philosopher",
         "tarot historian",
@@ -132,11 +270,46 @@
       }
     },
     {
+      "id": "person-oswald-wirth",
+      "name": "Oswald Wirth",
+      "level": 1,
+      "category": "person",
+      "sort_order": 8,
+      "keywords": [
+        "occultist",
+        "illustrator",
+        "Freemason",
+        "author",
+        "occultists"
+      ],
+      "metadata": {
+        "kind": "person",
+        "role_group": "occultists",
+        "lifespan": "1860–1943",
+        "roles": [
+          "occultist",
+          "illustrator",
+          "Freemason",
+          "author"
+        ],
+        "made": [
+          "oswald-wirth-tarot"
+        ],
+        "confidence": "high",
+        "research": "research/people/oswald-wirth.md"
+      },
+      "sections": {
+        "Who": "**Joseph Paul Oswald Wirth** (5 August 1860 – 9 March 1943) was a Swiss-born occultist,\nillustrator and Freemason who, under the direction of the Kabbalist **Stanislas de Guaita**,\n**drew the first overtly occult tarot deck**: the **22 trumps (Major Arcana only)** of *Les 22\nArcanes du Tarot Kabbalistique*, **1889**. He turned **Éliphas Lévi's** tarot–Hebrew–Kabbalah\nprogram into actual *cards*, and decades later issued a revised, far better-known version\nalongside his book *Le Tarot des imagiers du Moyen Âge* (**1927**). He is the Continental\ncounterpart to the Golden Dawn's English work, and the bridge from Lévi's text to the modern\nesoteric deck [@web_wirth_wp; @decker2002; @web_harrington_wirth].",
+        "Claim vs the record": "- **Myth: the deck *restores* an ancient symbolic tarot.** **The record:** the deck is an\n  **honest construction**. Wirth openly builds a *new* symbolic system **on top of the\n  Marseille**, following **Lévi's 1850s** Hebrew-letter scheme — itself a 19th-century invention.\n  Unlike Gébelin's flat-false Egyptian *antiquity* claim, the Wirth deck is transparent about\n  being a designed esoteric overlay; the grammar should record it as a **well-documented\n  construction (1889 / 1926)**, not a recovered tradition [@decker2002; @web_wirth_wp].\n- **Caveat on the correspondence.** Wirth's Hebrew-letter / trump assignments are **Lévi's\n  Continental scheme**, which **differs** from the **Golden Dawn's** English system. Do **not**\n  conflate the two correspondence systems [@decker2002; @web_wirth_wp].\n- **Two distinct editions.** The **1889** de-Guaita-directed deck and Wirth's **1926** mature\n  revision are different objects (e.g. the revised La Papesse) and should be distinguished in\n  the grammar [@web_harrington_wirth; @web_wirth_wp].",
+        "In this collection": "Wirth is the maker of the deck slug **`oswald-wirth-tarot`** (1889 / 1926, **22 trumps only**).\nHe should feature on the trumps where his esoteric overlay is most visible — the **Magician**\n(alchemical/Hermetic emblems), **La Papesse** (the card he most revised between editions), the\n**Hebrew-lettered** trumps generally, and the **Wheel of Fortune** (Lévi's ROTA program made\nvisual). In a \"people of tarot\" set he is **\"the man who first drew the occult tarot,\"** the\nillustrator who turned Lévi's theory into cards under de Guaita's direction."
+      }
+    },
+    {
       "id": "person-stuart-kaplan",
       "name": "Stuart R. Kaplan (1932–2021)",
       "level": 1,
       "category": "person",
-      "sort_order": 4,
+      "sort_order": 9,
       "keywords": [
         "publisher",
         "collector",
@@ -165,6 +338,23 @@
       }
     },
     {
+      "id": "grp-occultists",
+      "name": "Occultists & System-Builders",
+      "level": 2,
+      "category": "role-group",
+      "sort_order": 103,
+      "composite_of": [
+        "person-comte-de-mellet",
+        "person-court-de-gebelin",
+        "person-eliphas-levi",
+        "person-etteilla",
+        "person-oswald-wirth"
+      ],
+      "sections": {
+        "What this groups": "5 occultists & system-builders catalogued in this collection."
+      }
+    },
+    {
       "id": "grp-scholars",
       "name": "Scholars & Cataloguers",
       "level": 2,
@@ -187,6 +377,7 @@
       "category": "root",
       "sort_order": 999,
       "composite_of": [
+        "grp-occultists",
         "grp-scholars"
       ],
       "sections": {
