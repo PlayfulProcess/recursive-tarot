@@ -145,6 +145,7 @@
 <aside id="det"></aside>
 <div id="lb" onclick="this.style.display='none'"><img id="lbimg" src="" alt=""><div class="cap" id="lbcap"></div></div>
 
+<script src="dimension-engine.js?v=1"></script>
 <script>
 (() => {
 const $ = s => document.querySelector(s);
@@ -166,116 +167,14 @@ const BRANCH_COLOR = { A:'#e07a5f', B:'#81b29a', C:'#6d8ec9', marseille:'#6d8ec9
 const rgba = (hex,a) => { const n=parseInt(hex.slice(1),16);
   return `rgba(${n>>16},${(n>>8)&255},${n&255},${a})`; };
 
-/* ── 1. FLATTEN: items → records (+ __parents/__children for tracing) ── */
-function flatten(grammar, inherit, prefix){
-  const items = grammar.items || [];
-  const pid = id => (prefix ? prefix + ':' : '') + id;
-  const memberOf = {};
-  for (const it of items)
-    for (const cid of (it.composite_of || []))
-      (memberOf[pid(cid)] = memberOf[pid(cid)] || []).push(pid(it.id));
-  const recs = [];
-  for (const it of items){
-    const lvl = it.level || (it.composite_of?.length ? 2 : 1);
-    const r = { __name: it.name, __img: it.image_url || it.metadata?.image_url || '',
-                __id: pid(it.id),
-                __children: (it.composite_of || []).map(pid),
-                __parents: memberOf[pid(it.id)] || [] };
-    r.level = ['L' + lvl];
-    const md = it.metadata || {};
-    for (const [k,v] of Object.entries(md)){
-      if (v == null) continue;
-      if (k === 'print' && v.quality) { r['print quality'] = [String(v.quality)]; continue; }
-      if (typeof v === 'string' && !/^https?:/.test(v) && v.length < 60) r[k] = [v];
-      else if (typeof v === 'number') r[k] = [v];
-    }
-    // inherited deck-level fields (multiselect mode): records WITHOUT their own
-    // value take the deck's — so a deck's emergences are catalogued into its
-    // century, branch, etc. alongside the cards.
-    if (inherit) for (const [k,v] of Object.entries(inherit))
-      if (v != null && !r[k]) r[k] = [v];
-    if (r.year){ const y = +r.year[0]; if (y) r.century = [ (Math.floor((y-1)/100)+1) + 'th c.' ]; }
-    for (const kw of (it.keywords || [])){
-      const m = /^([a-z_-]{2,20}):(.+)$/.exec(kw);
-      if (m) (r[m[1]+' ·kw'] = r[m[1]+' ·kw'] || []).push(m[2]);
-      else (r.keyword = r.keyword || []).push(kw);
-    }
-    if (it.category) r.category = [it.category];
-    if (r.__parents.length)
-      r.emergence = r.__parents.map(p => (byIdName(p) || p).split(' — ')[0].slice(0,40));
-    recs.push(r);
-  }
-  return recs;
-}
-function byIdName(id){ return byId[id]?.__name; }
-
-function discoverFields(recs){
-  const tally = {};
-  for (const r of recs) for (const k of Object.keys(r)){
-    if (k.startsWith('__')) continue;
-    tally[k] = tally[k] || { vals:new Set(), cover:0 };
-    tally[k].cover++;
-    for (const v of r[k]) tally[k].vals.add(v);
-  }
-  return Object.entries(tally)
-    .filter(([k,t]) => t.vals.size >= 2 && t.vals.size <= 64)
-    .map(([k,t]) => ({ name:k, count:t.vals.size, values:[...t.vals].sort(smartCmp) }))
-    .sort((a,b) => a.count - b.count);
-}
-function smartCmp(a,b){ const na=+a, nb=+b;
-  if (!isNaN(na) && !isNaN(nb)) return na-nb;
-  return String(a).localeCompare(String(b)); }
-
-/* ── field hierarchy, inferred from the data: field A nests inside field B when
-   every observed value of A co-occurs with exactly ONE value of B (so e.g. every
-   suit sits inside one arcana; every deck sits inside one branch). Works on any
-   grammar — no tarot-specific names. Cross-cutting axes (a Four exists in every
-   suit) correctly stay standalone. */
-function inferHierarchy(recs, flds){
-  const parent = {};
-  const META = new Set(['level', 'print quality']);   // structural, not content dimensions
-  for (const a of flds){
-    if (META.has(a.name)) continue;
-    let best = null;
-    for (const b of flds){
-      if (a === b || META.has(b.name) || b.count >= a.count) continue;
-      const map = new Map(); let ok = true, seen = 0;
-      for (const r of recs){
-        if (!r[a.name] || !r[b.name]) continue;
-        if (r[a.name].length > 1 || r[b.name].length > 1) continue;
-        const av = String(r[a.name][0]), bv = String(r[b.name][0]);
-        if (av === '—' || bv === '—') continue;
-        seen++;
-        if (map.has(av)) { if (map.get(av) !== bv) { ok = false; break; } }
-        else map.set(av, bv);
-      }
-      if (ok && map.size >= 2 && seen >= map.size * 2)
-        if (!best || b.count > best.count) best = b;   // closest (most specific) ancestor
-    }
-    if (best) parent[a.name] = best.name;
-  }
-  return parent;
-}
-
-/* ── 2. PIVOT ──────────────────────────────────────────── */
-const vals = (r,f) => r[f] || ['—'];
-function passes(r){
-  for (const [f, sel] of Object.entries(spec.filters)){
-    if (!sel.length) continue;
-    if (!vals(r,f).some(v => sel.includes(String(v)))) return false;
-  }
-  return true;
-}
-function groupBy(recs, fs){
-  if (!fs.length) return null;
-  const m = new Map();
-  for (const r of recs) for (const v of vals(r, fs[0])){
-    if (!m.has(v)) m.set(v, []);
-    m.get(v).push(r);
-  }
-  return [...m.entries()].sort((a,b)=>smartCmp(a[0],b[0]))
-    .map(([key, rs]) => ({ key, recs:rs, children: groupBy(rs, fs.slice(1)) }));
-}
+/* ── engine (viewers/dimension-engine.js) ─────────────────
+   Pure data functions live in the shared engine now. Thin local wrappers bind the
+   explorer's state (byId for name resolution, spec.filters for `passes`) so every
+   call site below stays exactly as it was. */
+const { smartCmp, discoverFields, inferHierarchy, vals, groupBy } = DimensionEngine;
+const byIdName = id => byId[id]?.__name;
+const flatten = (grammar, inherit, prefix) => DimensionEngine.flatten(grammar, inherit, prefix, byIdName);
+const passes = r => DimensionEngine.passes(r, spec.filters);
 
 /* ── 3. RENDER ─────────────────────────────────────────── */
 function branchColor(r){
