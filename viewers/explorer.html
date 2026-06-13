@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.25">
 <title>Emergence Explorer — Pivot the Tarot · Recursive Tarot</title>
 <style>
   :root{
@@ -328,7 +328,9 @@ function chipEl(f, zone){
   el.innerHTML = `${esc(f)} <span class="n">${nsel ? '⧩ '+nsel+'/'+(fl?fl.count:'?') : (fl?fl.count:'')}</span>`
     + ((zone || nsel) ? ` <span class="x" title="Clear as filter and dimension">✕</span>` : '');
   el.draggable = true;
-  el.title = 'Click to filter · drag into Rows / Columns to group';
+  el.dataset.f = f;
+  el.dataset.zone = zone || '';
+  el.title = 'Click to filter · drag into Rows / Columns to group · hold on mobile';
   el.addEventListener('dragstart', e => { e.dataTransfer.setData('text/plain', JSON.stringify({f, from:zone||null})); });
   el.onclick = e => { if (!e.target.classList.contains('x')) openPop(f, el, zone); };
   const x = el.querySelector('.x');
@@ -575,6 +577,88 @@ async function boot(){
   sync();
 }
 boot();
+})();
+
+/* ── Touch long-press drag (mobile) ───────────────────────────────────────
+   Hold a chip for 420ms to start dragging; move finger to a drop zone and
+   release to drop. Short taps still open the filter popover normally.       */
+(function(){
+  const HOLD_MS = 420, MOVE_LIMIT = 10;
+  let timer = null, active = null, clone = null, dragData = null;
+  let startX = 0, startY = 0;
+  const ZONE_MAP = [['#z-rows','rows'],['#z-cols','cols'],['#z-filters','filters'],['#tray',null]];
+
+  function cancelHold(){ clearTimeout(timer); timer = null; }
+  function endDrag(dropZone){
+    if (clone){ clone.remove(); clone = null; }
+    if (active){ active.style.opacity = ''; active = null; }
+    document.querySelectorAll('.dragover').forEach(z=>z.classList.remove('dragover'));
+    if (dragData && dropZone !== undefined){
+      const {f, from} = dragData;
+      if (from) removeField(f, from);
+      if (dropZone==='rows' && !spec.rows.includes(f)) spec.rows.push(f);
+      if (dropZone==='cols') spec.cols=[f];
+      if (dropZone==='filters' && !spec.pinned.includes(f)){ spec.pinned.push(f); if(!spec.filters[f]) spec.filters[f]=[]; }
+      sync();
+    }
+    dragData = null;
+  }
+
+  document.addEventListener('touchstart', e=>{
+    const chip = e.target.closest('.chip[data-f]');
+    if (!chip) return;
+    const t = e.touches[0];
+    startX = t.clientX; startY = t.clientY;
+    cancelHold();
+    timer = setTimeout(()=>{
+      timer = null;
+      active = chip;
+      dragData = { f: chip.dataset.f, from: chip.dataset.zone || null };
+      const r = chip.getBoundingClientRect();
+      clone = chip.cloneNode(true);
+      Object.assign(clone.style, {
+        position:'fixed', zIndex:'9999', pointerEvents:'none',
+        opacity:'.85', left:r.left+'px', top:r.top+'px',
+        width:r.width+'px', transform:'scale(1.08)', transition:'transform .1s'
+      });
+      document.body.appendChild(clone);
+      chip.style.opacity = '.3';
+      if (navigator.vibrate) navigator.vibrate(25);
+    }, HOLD_MS);
+  }, {passive:true});
+
+  document.addEventListener('touchmove', e=>{
+    const t = e.touches[0];
+    if (timer){
+      if (Math.hypot(t.clientX-startX, t.clientY-startY) > MOVE_LIMIT) cancelHold();
+      return;
+    }
+    if (!clone) return;
+    e.preventDefault();
+    clone.style.left = (t.clientX - clone.offsetWidth/2)+'px';
+    clone.style.top  = (t.clientY - clone.offsetHeight/2)+'px';
+    ZONE_MAP.forEach(([sel])=>{
+      const z = document.querySelector(sel); if (!z) return;
+      const r = z.getBoundingClientRect();
+      const over = t.clientX>=r.left && t.clientX<=r.right && t.clientY>=r.top && t.clientY<=r.bottom;
+      z.classList.toggle('dragover', over);
+    });
+  }, {passive:false});
+
+  document.addEventListener('touchend', e=>{
+    cancelHold();
+    if (!clone) return;
+    const t = e.changedTouches[0];
+    let hit;
+    for (const [sel, zone] of ZONE_MAP){
+      const z = document.querySelector(sel); if (!z) continue;
+      const r = z.getBoundingClientRect();
+      if (t.clientX>=r.left && t.clientX<=r.right && t.clientY>=r.top && t.clientY<=r.bottom){ hit=zone; break; }
+    }
+    endDrag(hit);
+  }, {passive:true});
+
+  document.addEventListener('touchcancel', ()=>{ cancelHold(); endDrag(undefined); }, {passive:true});
 })();
 </script>
 </body>
