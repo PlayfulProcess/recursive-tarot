@@ -11,21 +11,21 @@ quoting sources), back each claim with research dossiers, and build a standalone
 
 ---
 
-## ⏯️ RESUME HERE (state as of 2026-06-13 ~11:40 UTC)
+## ⏯️ RESUME HERE (state as of 2026-06-13 ~16:30 UTC)
 
-**Tree clean and fully pushed.** Research phase essentially COMPLETE.
+**Tree clean; pushed to `claude/tarot-deck-accuracy-n4dv2r` AND fast-forwarded to `dev`**
+(the branch GitHub Pages deploys from → live at tarot.recursive.eco via build-meta.yml).
+Note: the Settings→Pages *source* can't be changed via API (owner-only UI); it was already
+wired to `dev`, which now carries this work.
 
-**Done (committed):**
-- **All ~25 decks now have a deck dossier + card-by-card dossier** (research/decks + research/cards):
-  the full Tier A–D set incl. the Marseille family (noblet, vieville, paris-anonymous, besancon,
-  belgian) and the roots (mamluk, madiao, ganjifa). Every `[@key]` resolves; bib ≈ 285 entries.
-- **23 people dossiers** → generated `people-of-tarot` grammar (5 groups), in `_collection.json`.
-- Each enriched grammar carries a `_research` pointer to its dossier.
-- `_collection.json` derived fields refreshed from grammars (`scripts/refresh_collection.py`).
-- **Grammar fixes applied** (sourced): etteilla-i/ii/iii card identities; wirth Hebrew letters;
-  visconti Judgement→Bembo; gebelin Mellet re-attribution + Diogenes; golden-dawn keyword dedup
-  + court-rank caution; madiao + mamluk citation/count; minchiate Gobbo; belgian+vieville
-  re-tagged Belgian-line (not Marseille) + belgian La Mort; fragment metadata.
+**Phases COMPLETE:**
+- Research: 25 deck dossiers + 25 card-by-card dossiers + 23 people dossiers (bib ≈ 285).
+- People grammar generated from dossiers; `_collection.json` refreshed; `_research` pointers.
+- Corroborated grammar corrections applied; anachronistic RWS pip-symbol metadata erased from
+  the 3 Etteilla decks; sourced RESEARCH NOTEs on the debated decks.
+- **Card enrichment: 471 cards across 17 decks now carry a sourced "Research note"**
+  (delta + citations + dossier pointer), via `scripts/enrich_cards_from_research.py` (ADD-only,
+  idempotent — re-run after editing any dossier).
 
 **Correction sweep DONE** — all corroborated 🟡 items applied (incl. erasing the anachronistic
 RWS pip-symbol metadata from all 3 Etteilla decks, the Belgian-line card text, Visconti/Gébelin/
