@@ -41,16 +41,25 @@
   // Card-level viewers carry the spec hash so the active grouping survives view switches.
   const cardSpec = specHash && !specHash.startsWith('#' + encodeURIComponent('{')) ? '' : specHash;
   const explorerSpec = specHash.startsWith('#groupby=') ? '#' + encodeURIComponent(JSON.stringify({ rows: [new URLSearchParams(specHash.slice(9)).get('groupby') || decodeURIComponent(specHash.slice(9))], cols: [], filters: {}, pinned: [] })) : specHash;
-  const VIEWS = [
+
+  // Two viewer families:
+  // • Card-level: render items (one node per card / emergence)
+  // • Grammar-level: render whole decks (one node per grammar)
+  const CARD_VIEWS = [
     ['cards',      'Cards',        root + 'viewers/cards.html' + qs + cardSpec],
     ['explorer',   'Explorer',     root + 'viewers/explorer.html' + qs + explorerSpec],
     ['tree',       'Tree',         root + 'viewers/tree-viewer.html' + qs + cardSpec],
-    ['thumbnails', 'Thumbnails',   root + 'viewers/cards.html' + qs + amp + 'layout=thumbnails'],
+  ];
+  const GRAMMAR_VIEWS = [
     ['timeline',   'Timeline',     root + 'viewers/timeline.html' + qs],
     ['treeoflife', 'Tree of Life', root + 'viewers/genealogy-tree.html' + qs],
     ['genealogy',  'Genealogy',    root + 'genealogy.html'],
+  ];
+  const EXTRA_VIEWS = [
+    ['thumbnails', 'Thumbnails',   root + 'viewers/cards.html' + qs + amp + 'layout=thumbnails'],
     ['print',      'Print',        root + 'pages/print-viewer.html' + qs],
   ];
+  const VIEWS = [...CARD_VIEWS, ...GRAMMAR_VIEWS, ...EXTRA_VIEWS];
 
   const EYE = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>';
 
@@ -78,14 +87,24 @@
     return;
   }
 
+  function renderSection(views, active) {
+    return views.map(([k, label, href]) =>
+      `<a class="vs-item${k === active ? ' active' : ''}" href="${href}">${label}</a>`
+    ).join('');
+  }
+
   class ViewSwitcher extends HTMLElement {
     connectedCallback() {
-      const active = this.getAttribute('active') || '';
-      const root = this.attachShadow({ mode: 'open' });
-      const items = VIEWS.map(([k, label, href]) =>
-        `<a class="vs-item${k === active ? ' active' : ''}" href="${href}">${label}</a>`
-      ).join('');
-      root.innerHTML = `
+      const active = this.getAttribute('active') || autoActive();
+      const sr = this.attachShadow({ mode: 'open' });
+      const menu =
+        `<div class="vs-section-label">Card views</div>` +
+        renderSection(CARD_VIEWS, active) +
+        `<div class="vs-divider"></div><div class="vs-section-label">Collection maps</div>` +
+        renderSection(GRAMMAR_VIEWS, active) +
+        `<div class="vs-divider"></div>` +
+        renderSection(EXTRA_VIEWS, active);
+      sr.innerHTML = `
         <style>
           :host{ display:inline-block; position:relative; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
           details{ position:relative; }
@@ -93,20 +112,21 @@
             padding:6px 11px; border:1px solid #3a3450; border-radius:8px; background:#1d1830; color:#cfc8e2;
             font-size:13px; font-weight:600; user-select:none; }
           summary::-webkit-details-marker{ display:none; }
-          summary:hover{ border-color:#d4af37; color:#d4af37; }
+          summary:hover{ border-color:#9333ea; color:#c4b5fd; }
           summary .cap{ font-size:12px; opacity:.85; }
           .menu{ position:absolute; top:calc(100% + 6px); left:0; z-index:60; min-width:170px;
             background:#161227; border:1px solid #3a3450; border-radius:10px; padding:6px; box-shadow:0 8px 24px rgba(0,0,0,.5); }
+          .vs-section-label{ padding:4px 10px 2px; font-size:10px; letter-spacing:.07em; text-transform:uppercase; color:#6b5fa0; font-weight:600; }
+          .vs-divider{ margin:4px 0; border-top:1px solid #2a2240; }
           .vs-item{ display:block; padding:7px 12px; border-radius:7px; text-decoration:none; color:#cfc8e2; font-size:13px; }
           .vs-item:hover{ background:#241d3a; color:#ece8f5; }
-          .vs-item.active{ background:#d4af37; color:#0f0d17; font-weight:700; }
+          .vs-item.active{ background:#9333ea; color:#fff; font-weight:700; }
         </style>
         <details>
           <summary title="Switch view">${EYE}<span class="cap">View</span></summary>
-          <div class="menu">${items}</div>
+          <div class="menu">${menu}</div>
         </details>`;
-      // close on outside click
-      const det = root.querySelector('details');
+      const det = sr.querySelector('details');
       document.addEventListener('click', (e) => { if (!this.contains(e.target)) det.removeAttribute('open'); });
     }
   }
