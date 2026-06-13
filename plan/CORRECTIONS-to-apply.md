@@ -58,3 +58,43 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
   attribution (Algeri). Preserve the hedge in both deck grammars.
 - Viéville/Vandenborre sit in the Rouen-Brussels/Belgian line, distinct from the Marseille
   line (Dummett) — make sure the deck dossiers/grammars don't call Viéville a "Marseille".
+
+## tarot/etteilla-ii-egyptian/grammar.json (from research; same family as Etteilla I)
+- ✅ Card 78 "La Folie" mislabelled female querent → it's the Fool (0); female significator = Card 8 (Le Repos). (inherited)
+- ✅ Card 13 archetype Hierophant → the Lovers (mapping_confidence exact→reworked).
+- ✅ Card 21 archetype Emperor → the Chariot.
+- 🟡 Card 6: name "Les Astres" vs french_name "Les Étoiles" — internal inconsistency, reconcile.
+- 🟡 Card 8: name "Repos" → "Le Repos" (missing article).
+- ⚠️ Minors 22–77 carry **RWS `card:*` archetypes + RWS scenic-pip descriptions** (sunflower, bandage…)
+  — anachronistic for an Etteilla near-pip pack. Flag/rewrite (do not import RWS scenes).
+
+## tarot/oswald-wirth-tarot/grammar.json (from research)
+- ✅ Le Fou: keep Shin, but it belongs **unnumbered between XX and XXI**, NOT as card 0 at the head
+  (card-0-at-head implies the Golden Dawn arrangement Wirth rejected). Fix ordering/note.
+- ✅ Le Pendu (12): "element of Water" is the **Golden Dawn** (Mem) reading; Wirth follows Lévi's
+  **Lamed** — remove the Water note.
+- ✅ Le Monde: "21th letter" typo → "22nd letter" (Tav, 22nd Hebrew letter; World = 21st trump).
+- 🟡 Several cards mix Lévi planetary + Golden-Dawn zodiacal attributions under one label — verify vs Wirth.
+
+## tarot/visconti-sforza-tarot/grammar.json (from research; confidence high)
+- ✅ `major-20-il-giudizio` tagged `painter_hand: "second"` → should be **bembo**. The six later
+  replacements are Fortitude, Temperance, Star, Moon, Sun, World — NOT Judgement (which is original).
+- 🟡 Cicognara replacement-hand attribution (e.g. Strength #11 "attributed to Antonio Cicognara")
+  is **discredited** (rests on a 19th-c. forgery) — add the hedge.
+- 🟡 Refresh provenance line to the verified split: Morgan 35 / Accademia Carrara 26 / Casa Colleoni 13.
+
+## tarot/etteilla-iii-oracle-des-dames/grammar.json (same family)
+- ✅ Card 78 La Folie female-querent → Fool; female significator = Card 8 (Le Repos).
+- ✅ Card 13 archetype Hierophant → Lovers; Card 21 archetype Emperor → Chariot.
+
+## tarot/tarot-de-marseille-conver/grammar.json (from research; confidence high)
+- ✅ `major-03` (L'Impératrice) Iconography claims "Conver's block mislabels her 'II'; she is trump III."
+  Uncorroborated and the item's own number=3 — likely a factual error in the prose. Remove/correct.
+- 🟡 Elemental suit labels (Coins=Earth, Cups=Water, Swords=Air, Batons=Fire) are a later Golden Dawn
+  overlay, not native to a 1760 game pack — mark as overlay, not native.
+
+## tarot/golden-dawn-book-t-tarot/grammar.json (court naming, from RWS/Book-T pass)
+- 🟡 Courts use RWS names (King/Queen/Knight/Page) — correct for the imagery, but add the Book T
+  equivalents: RWS Knight→GD King, RWS King→GD Prince, RWS Page→GD Princess (rank, not name).
+- note: the "mother-letter" trumps' "modern decks add an outer planet" line is correctly hedged
+  ("modern decks add"), not a Book T attribution — leave, it's flagged.
