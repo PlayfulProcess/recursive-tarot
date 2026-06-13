@@ -460,7 +460,8 @@
         "integration",
         "pause",
         "reflection",
-        "etteilla:cosmogony"
+        "etteilla:cosmogony",
+        "etteilla:significator-female"
       ],
       "metadata": {
         "suit": null,
@@ -736,7 +737,7 @@
         "wisdom",
         "blessing",
         "orthodoxy",
-        "arcana:the-hierophant"
+        "arcana:the-lovers"
       ],
       "metadata": {
         "suit": null,
@@ -749,8 +750,8 @@
           "tradition",
           "sacred knowledge"
         ],
-        "archetype": "arcana:the-hierophant",
-        "mapping_confidence": "exact",
+        "archetype": "arcana:the-lovers",
+        "mapping_confidence": "reworked",
         "print": {
           "quality": "web",
           "source_px": [
@@ -761,9 +762,10 @@
         }
       },
       "sections": {
-        "Card in Etteilla's System": "Le Grand Prêtre — The High Priest",
+        "Card in Etteilla's System": "Le Grand Prêtre — The High Priest. Despite the 'priest' title, this is Etteilla's reworking of the Marseille **Lovers (VI)**: its divinatory sense is *Mariage / Union* — the priest who sanctions the marriage.",
         "Upright": "Counsel, sanction, marriage, spiritual authority; a trusted guide.",
-        "Reversed": "Hollow dogma, a bad counsellor, hypocrisy in high place."
+        "Reversed": "Hollow dogma, a bad counsellor, hypocrisy in high place.",
+        "Correction": "Correction (2026-06-13, research/cards/etteilla-i-livre-de-thot.md): mapped here to the Tarot de Marseille trump this card actually reworks; earlier metadata mis-mapped it. Sources: etteillastrumps (M. J. Hurst), Public Domain Review, benebell wen."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771275165371-8tx6435oj4a.jpg"
     },
@@ -1080,7 +1082,7 @@
         "leadership",
         "control",
         "dominion",
-        "arcana:the-emperor"
+        "arcana:the-chariot"
       ],
       "metadata": {
         "suit": null,
@@ -1092,7 +1094,7 @@
           "power",
           "authority"
         ],
-        "archetype": "arcana:the-emperor",
+        "archetype": "arcana:the-chariot",
         "mapping_confidence": "loose",
         "print": {
           "quality": "web",
@@ -1106,7 +1108,8 @@
       "sections": {
         "Card in Etteilla's System": "Le Despote Africain — The Sovereign",
         "Upright": "Great power and a powerful protector; dissension mastered by a strong hand.",
-        "Reversed": "Tyranny; a dangerous man, discord stirred from above."
+        "Reversed": "Tyranny; a dangerous man, discord stirred from above.",
+        "Correction": "Correction (2026-06-13, research/cards/etteilla-i-livre-de-thot.md): mapped here to the Tarot de Marseille trump this card actually reworks; earlier metadata mis-mapped it. Sources: etteillastrumps (M. J. Hurst), Public Domain Review, benebell wen. (Card 21 'Le Despote Africain' answers to the Chariot (VII); later Grimaud editions title it 'Dissension'.)"
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771275168607-sivv9ggcmo.jpg"
     },
@@ -3627,7 +3630,7 @@
     },
     {
       "id": "etteilla-78",
-      "name": "La Folie (The Questioner - Female)",
+      "name": "La Folie (The Fool)",
       "sort_order": 77,
       "category": "major",
       "level": 1,
@@ -3637,7 +3640,7 @@
         "innocence",
         "beginning",
         "female energy",
-        "etteilla:significator-female"
+        "arcana:the-fool"
       ],
       "metadata": {
         "suit": null,
@@ -3649,7 +3652,7 @@
           "innocence",
           "openness"
         ],
-        "archetype": null,
+        "archetype": "arcana:the-fool",
         "mapping_confidence": "none",
         "print": {
           "quality": "web",
@@ -3661,9 +3664,10 @@
         }
       },
       "sections": {
-        "Card in Etteilla's System": "La Folie — the female querent (significator)",
-        "Upright": "The female consultant herself, and the wild card outside the count: the matter unbound, open to any turn.",
-        "Reversed": "Recklessness; a question asked in folly, energy with no rein."
+        "Card in Etteilla's System": "La Folie — the Fool (0), the unnumbered card left outside the running count. (Not the female querent: that significator is Card 8, Le Repos.)",
+        "Upright": "The wild card outside the count: the matter unbound, open to any turn; the holy fool, divine madness.",
+        "Reversed": "Recklessness; a question asked in folly, energy with no rein.",
+        "Correction": "Correction (2026-06-13): earlier metadata mislabelled La Folie as 'The Questioner – Female'. La Folie is the Fool; the female querent significator is Card 8 (Le Repos). Sources: stolen-thyme Etteilla trumps, benebell wen, Public Domain Review."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771275186488-195ps3sma8zh.jpg"
     },
