@@ -166,3 +166,11 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
   yet the cited ark is exactly that deck. Resolve.
 - Substantial reframe (name, description, trump titles, branch/tradition). Confidence medium
   (Gallica scan not read card-by-card — WebFetch 403). See research/decks/paris-anonymous-tarot.md.
+
+## tarot/belgian-tarot/grammar.json (from research; confidence medium, Belgian-line corroborated)
+- ✅ trump-13 "La Mort (the card itself is unnamed)" → the Belgian card IS named La Mort (it's
+  the *Marseille* XIII that's unnamed). Remove the parenthetical.
+- ✅ metadata branch "marseille"/tradition "Tarot de Marseille family" → Rouen-Brussels/Belgian line.
+- 🟡 trump-02 "Le Capitaine Fracasse" → inscription is "L'Espagnol Capitano Eracasse" (Fracasse =
+  later Commedia name). trump-12 Hanged Man hangs right-side-up. trump-16 = tree struck by
+  lightning + shepherd, NOT a tower / "Maison-Dieu".
