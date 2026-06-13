@@ -4,6 +4,28 @@ Newest first. One bullet per shipped thing.
 
 ## Jun 13 2026
 
+- **Accuracy & research drive (Opus session)** — a long pass to make every deck as historically
+  precise as possible and reference every claim:
+  - **Research catalogue** (`research/SCHEMA.md` + `bibliography.bib`, ~290 sources): a
+    **deck dossier + card-by-card dossier for all ~25 decks** (`research/decks/`, `research/cards/`),
+    every load-bearing claim cited `[@key]`, confidence-flagged. Dossiers are the source of truth.
+  - **People & Institutions of Tarot** — new grammar `tarot/people-of-tarot/grammar.json`,
+    **generated** from **23 people dossiers** (`research/people/`) by `scripts/build_people_grammar.py`
+    (5 groups: makers/patrons/occultists/scholars/institutions). Pamela Colman Smith linked to RWS
+    pip cards; Mantegna & Gringonneur as debunked attributions. Registered in `_collection.json`.
+  - **471 cards enriched** with sourced "Research note" sections (`scripts/enrich_cards_from_research.py`,
+    ADD-only/idempotent) — the per-card "what changed vs. its parent" deltas + citations.
+  - **Corrections + 5 editorial calls applied** (`plan/CORRECTIONS-to-apply.md`): Etteilla card
+    identities (13→Lovers, 21→Chariot, 78→Fool) and **removal of anachronistic RWS pip-symbol
+    metadata** from the 3 Etteilla decks; Wirth Hebrew letters; Visconti Judgement→Bembo; Gébelin
+    Mellet re-attribution; Viéville+Belgian re-tagged Rouen-Brussels/Belgian (not Marseille);
+    Charles VI→Florentine attribution; Paris-Anonymous→Tarot de Paris; Minchiate Papi identities;
+    Cary-Yale distinct court archetypes; Noblet→"near-complete".
+  - **Mamluk image honesty** — flagged that we hold 7 of ~48 surviving Topkapı cards (shown as
+    representatives); full set TODO needs image access.
+  - **deck-picker** now **orders decks by year** with the year shown in parentheses
+    (`scripts/refresh_collection.py` curates `year`/`year_label`; `viewers/deck-picker.js`).
+  - `scripts/check_all.py` gates every change (JSON valid · no dangling refs · meta/people rebuild).
 - **P5 step 5: dynamic lane/hub grouping** — Timeline "Lane:" dropdown + genealogy-tree "Hub color:" dropdown; both use `DimensionEngine.discoverFields()` over deck metadata so any discovered field (century, branch, tradition…) drives lane/color; `<view-switcher>` removed from grammar-level pages
 - **P5 step 4: dimension chip tray in cards** — multi-deck mode shows draggable DimensionEngine chips above sidebar; drag or click to group cards by any field; `#groupby=field` hash serialized so view-switcher carries the active grouping into explorer (`#{rows:[field]}`)
 - **P5 step 3: deck-picker.js + cards multiselect** — shared `DeckPicker.open()` popover; cards.html gets "✦ Decks ▾" button + `?decks=a,b` multi-deck mode; sidebar groups by deck, filter pills become deck pills; `view-switcher.js v=8` carries `decks` param
