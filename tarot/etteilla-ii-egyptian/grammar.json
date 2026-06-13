@@ -367,7 +367,7 @@
           "origin": "From Latin 'stella' meaning star or celestial body",
           "literal": "The Stars"
         },
-        "french_name": "Les Étoiles",
+        "french_name": "Les Astres",
         "genesis_day": "Day 4 - Creation of Sun, Moon, and Stars",
         "etteilla_version": "Etteilla II (Orsini/Blocquel, 1838)",
         "hermetic_correspondence": "The stellar intelligences; astrological influences on human affairs",
@@ -389,7 +389,8 @@
         "Etymology": "The Stars. From Latin 'stella' meaning star or celestial body. Corresponds to Genesis 1:14-19, creation of sun, moon, and stars",
         "Genesis Connection": "Day 4 - Creation of Sun, Moon, and Stars",
         "Historical Context": "Les Étoiles depicts the fourth day of Genesis, when God created the sun, moon, and stars to govern day and night and to mark seasons, days, and years. For Etteilla, this was not merely astronomical but deeply astrological—the stars influence human destiny.\n\nEtteilla's 'Société des Interprètes du Livre de Thot' systematically integrated astrology with tarot. The stars card embodies this synthesis: celestial bodies are not distant objects but active powers shaping earthly events.",
-        "Hermetic Correspondence": "The stellar intelligences; astrological influences on human affairs"
+        "Hermetic Correspondence": "The stellar intelligences; astrological influences on human affairs",
+        "Correction": "Correction (2026-06-13): name/french_name reconciled to 'Les Astres' (day-4 luminaries trump)."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771275749154-nhucylwu6ge.jpg"
     },
@@ -451,7 +452,7 @@
     },
     {
       "id": "etteilla-08",
-      "name": "Repos (Rest)",
+      "name": "Le Repos (Rest)",
       "sort_order": 7,
       "category": "major",
       "level": 1,
@@ -461,7 +462,8 @@
         "integration",
         "pause",
         "reflection",
-        "etteilla:cosmogony"
+        "etteilla:cosmogony",
+        "etteilla:significator-female"
       ],
       "metadata": {
         "suit": null,
@@ -737,7 +739,7 @@
         "wisdom",
         "blessing",
         "orthodoxy",
-        "arcana:the-hierophant"
+        "arcana:the-lovers"
       ],
       "metadata": {
         "suit": null,
@@ -750,8 +752,8 @@
           "tradition",
           "sacred knowledge"
         ],
-        "archetype": "arcana:the-hierophant",
-        "mapping_confidence": "exact",
+        "archetype": "arcana:the-lovers",
+        "mapping_confidence": "reworked",
         "print": {
           "quality": "print",
           "source_px": [
@@ -764,7 +766,8 @@
       "sections": {
         "Card in Etteilla's System": "Le Grand Prêtre — The High Priest",
         "Upright": "Counsel, sanction, marriage, spiritual authority; a trusted guide.",
-        "Reversed": "Hollow dogma, a bad counsellor, hypocrisy in high place."
+        "Reversed": "Hollow dogma, a bad counsellor, hypocrisy in high place.",
+        "Correction": "Correction (2026-06-13, research/cards/<deck>.md): mapped to the Tarot de Marseille trump this card actually reworks; the 'priest'/'despot' titles are Etteilla-II/III re-labels. Sources: etteillastrumps, benebell wen, steve-p.org. (Card 13 = the Lovers / 'Le Mariage'.)"
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771275751625-uf2vb0pujy.jpg"
     },
@@ -1081,7 +1084,7 @@
         "leadership",
         "control",
         "dominion",
-        "arcana:the-emperor"
+        "arcana:the-chariot"
       ],
       "metadata": {
         "suit": null,
@@ -1093,7 +1096,7 @@
           "power",
           "authority"
         ],
-        "archetype": "arcana:the-emperor",
+        "archetype": "arcana:the-chariot",
         "mapping_confidence": "loose",
         "print": {
           "quality": "print",
@@ -1107,7 +1110,8 @@
       "sections": {
         "Card in Etteilla's System": "Le Despote Africain — The Sovereign",
         "Upright": "Great power and a powerful protector; dissension mastered by a strong hand.",
-        "Reversed": "Tyranny; a dangerous man, discord stirred from above."
+        "Reversed": "Tyranny; a dangerous man, discord stirred from above.",
+        "Correction": "Correction (2026-06-13, research/cards/<deck>.md): mapped to the Tarot de Marseille trump this card actually reworks; the 'priest'/'despot' titles are Etteilla-II/III re-labels. Sources: etteillastrumps, benebell wen, steve-p.org. (Card 21 = the Chariot; Grimaud title 'Dissension'.)"
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771275755605-qfulwdacuf.jpg"
     },
@@ -3628,7 +3632,7 @@
     },
     {
       "id": "etteilla-78",
-      "name": "La Folie (The Questioner - Female)",
+      "name": "La Folie (The Fool)",
       "sort_order": 77,
       "category": "major",
       "level": 1,
@@ -3638,7 +3642,7 @@
         "innocence",
         "beginning",
         "female energy",
-        "etteilla:significator-female"
+        "arcana:the-fool"
       ],
       "metadata": {
         "suit": null,
@@ -3650,7 +3654,7 @@
           "innocence",
           "openness"
         ],
-        "archetype": null,
+        "archetype": "arcana:the-fool",
         "mapping_confidence": "none",
         "print": {
           "quality": "print",
@@ -3664,7 +3668,8 @@
       "sections": {
         "Card in Etteilla's System": "La Folie — the female querent (significator)",
         "Upright": "The female consultant herself, and the wild card outside the count: the matter unbound, open to any turn.",
-        "Reversed": "Recklessness; a question asked in folly, energy with no rein."
+        "Reversed": "Recklessness; a question asked in folly, energy with no rein.",
+        "Correction": "Correction (2026-06-13): La Folie is the Fool (0), not the female querent (that is Card 8, Le Repos)."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771275781264-wy6atn4o0dr.jpg"
     },
