@@ -174,3 +174,10 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
 - 🟡 trump-02 "Le Capitaine Fracasse" → inscription is "L'Espagnol Capitano Eracasse" (Fracasse =
   later Commedia name). trump-12 Hanged Man hangs right-side-up. trump-16 = tree struck by
   lightning + shepherd, NOT a tower / "Maison-Dieu".
+
+## tarot/noblet-tarot/grammar.json (from research; confidence medium)
+- 🟡 name/description say "oldest surviving COMPLETE TdM" → it's **near-complete** (Six–Ten of
+  Swords missing per BnF/WOPC). Title wording — maintainer call (was deliberately "complete" to
+  contrast the Cary *sheet*). Hedge to "near-complete" or keep with a clause.
+- 🟡 date "c. 1650" — BnF dates the object **1659** (Noblet active c.1659–1681). Hedge c.1650/1659.
+- note: grammar is a 1-item overview stub; cards dossier now supplies trump-by-trump for a fill.
