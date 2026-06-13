@@ -98,3 +98,10 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
   equivalents: RWS Knight→GD King, RWS King→GD Prince, RWS Page→GD Princess (rank, not name).
 - note: the "mother-letter" trumps' "modern decks add an outer planet" line is correctly hedged
   ("modern decks add"), not a Book T attribution — leave, it's flagged.
+
+## tarot/cary-yale-visconti-tarot/grammar.json (from research; six-rank courts)
+- ⚠️ Archetype collisions: Damsel + Knave both → card:page-of-X; Horsewoman + Knight both →
+  card:knight-of-X. Six-rank courts can't key onto a 4-archetype scheme — needs distinct ids
+  or a disambiguator (design decision — flag for maintainer).
+- 🟡 Bembo artist_dates "active c.1444–1482" vs deck "c.1442" — align to floruit c.1442.
+- 🟡 description vague on counts; state firm 67 surviving / ~86 original.
