@@ -2,6 +2,17 @@
 
 Newest first. One bullet per shipped thing.
 
+## Jun 13 2026
+
+- **P5 step 5: dynamic lane/hub grouping** — Timeline "Lane:" dropdown + genealogy-tree "Hub color:" dropdown; both use `DimensionEngine.discoverFields()` over deck metadata so any discovered field (century, branch, tradition…) drives lane/color; `<view-switcher>` removed from grammar-level pages
+- **P5 step 4: dimension chip tray in cards** — multi-deck mode shows draggable DimensionEngine chips above sidebar; drag or click to group cards by any field; `#groupby=field` hash serialized so view-switcher carries the active grouping into explorer (`#{rows:[field]}`)
+- **P5 step 3: deck-picker.js + cards multiselect** — shared `DeckPicker.open()` popover; cards.html gets "✦ Decks ▾" button + `?decks=a,b` multi-deck mode; sidebar groups by deck, filter pills become deck pills; `view-switcher.js v=8` carries `decks` param
+- **P5 step 2: dimension-engine.js extracted** — pure DOM-free module (`flatten/discoverFields/inferHierarchy/groupBy/passes/vals/smartCmp`); explorer binds thin wrappers, verified identical output
+- **P5 step 1: explorer quick wins** — +N badge expands cell in place; multiselect hint; AI balloon logged-out message; Opus session Jun 12
+- **Logo: recursive-logo.svg added** — purple Archimedean spiral (copied from flow app) with white circular backdrop in site-header for dark header contrast; `site-header.js?v=10`
+- **AI balloon: logged-out prompt** — cards.html + tree-viewer show "Sign in ↗" message instead of blank iframe when user is not authenticated
+- **TGC: sampler v6 shipped** — v6 deck E25631D6 (33 cards, Dodal 1701 back) proofed; stale draft decks v2/v3/v4 removed; diagnostic scripts added to `scripts/`
+
 ## Jun 12 2026
 
 - **S3: 6 hidden ancestor decks surfaced** — mamluk-deck, ganjifa, sola-busca-tarot, noblet-tarot, cary-sheet, rosenwald-sheet added to `_collection.json`; new "ancestors" branch; collection 20 → 26 decks
