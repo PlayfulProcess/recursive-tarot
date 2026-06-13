@@ -50,11 +50,13 @@
 </head>
 <body>
 <script src="../site-header.js?v=10"></script>
+<script src="../view-switcher.js?v=9"></script>
 <site-header active="timeline"></site-header>
 <div class="wrap">
   <div id="stage">
     <div class="toolbar">
       <div class="title">Tarot Timeline <span class="sub">— decks through time, descent on the rail</span></div>
+      <view-switcher active="timeline"></view-switcher>
       <label style="gap:4px">Lane: <select id="lane-field" style="background:#1a1726;color:#cfc8e2;border:1px solid #2a2440;border-radius:6px;padding:3px 7px;font-size:12px;cursor:pointer"><option value="branch">branch</option></select></label>
       <button id="flip">↑ Oldest first</button>
       <label><input type="checkbox" id="toggle-derive" checked> Descent</label>

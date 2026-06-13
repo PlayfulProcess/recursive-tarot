@@ -38,7 +38,7 @@
     })();
     </script>
     <script src="../site-header.js?v=10"></script>
-    <script src="../view-switcher.js?v=8"></script>
+    <script src="../view-switcher.js?v=9"></script>
     <style>
         /* Unified Grammar Theme - adapts based on grammar type */
         :root {
@@ -2342,6 +2342,34 @@
                     setupEventListeners();
                     showContent();
 
+                    // Chip tray for single-deck mode: discover fields + render above sidebar
+                    if (typeof DimensionEngine !== 'undefined') {
+                        // discoverFields expects each field value to be an array (iterable of scalars)
+                        const deRecs = items.map(it => {
+                            const r = { __id: it.id };
+                            if (it.categories?.suit) r.suit = [it.categories.suit];
+                            if (it.categories?.arcana) r.arcana = [it.categories.arcana];
+                            if (it.level) r.level = ['L' + it.level];
+                            (it.keywords || []).forEach(kw => { (r.keyword = r.keyword || []).push(kw); });
+                            // pick any string/number scalar fields from metadata
+                            Object.entries(it.metadata || {}).forEach(([k, v]) => {
+                                if (typeof v === 'string' || typeof v === 'number') r[k] = [String(v)];
+                                else if (Array.isArray(v)) r[k] = v.map(String);
+                            });
+                            return r;
+                        });
+                        const sdFields = DimensionEngine.discoverFields(deRecs)
+                            .filter(f => f.count >= 2 && f.count <= Math.max(items.length * 0.8, 20));
+                        if (sdFields.length) {
+                            try {
+                                const h = decodeURIComponent(location.hash.slice(1));
+                                if (h.startsWith('groupby=')) deckGroupField = new URLSearchParams(h).get('groupby');
+                            } catch(_) {}
+                            buildDimChipTray(sdFields);
+                            if (deckGroupField) buildHierarchySidebar();
+                        }
+                    }
+
                     // Update Edit/Copy buttons now that we know if it's a community grammar
                     updateEditCopyButtons();
 
@@ -2486,7 +2514,7 @@
             hierarchyFilter = null;
             filteredItems = [...items];
             buildFilters();
-            buildDeckSidebar();
+            buildHierarchySidebar(); // delegates to buildDeckSidebar when deckGroupField set
         }
 
         // Group items by _deck (or by deckGroupField) for the sidebar when in multi-deck mode
@@ -3450,8 +3478,8 @@
 
         // Build hierarchy sidebar — level-agnostic recursive tree
         function buildHierarchySidebar() {
-            // Multi-deck mode: show deck groups instead of composite tree
-            if (activeDecks.length > 1) { buildDeckSidebar(); return; }
+            // Multi-deck mode or active group-by field: show group sidebar instead of composite tree
+            if (activeDecks.length > 1 || deckGroupField) { buildDeckSidebar(); return; }
 
             const sidebar = document.getElementById('hierarchy-sidebar');
             const hierarchyIndex = document.getElementById('hierarchy-index');
