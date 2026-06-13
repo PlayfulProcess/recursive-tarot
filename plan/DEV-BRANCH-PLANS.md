@@ -195,8 +195,12 @@ Add a first-run hint near the picker (dismissable, localStorage):
    or dropping it groups the sidebar by that field (suit/arcana/level/deck…).
    `view-switcher.js` now carries `decks` param + spec hash (`#groupby=field` ↔
    `#{"rows":["field"]}`) across card-level viewer switches.
-5. Tree of Life + Timeline: deck-level field discovery drives hub/lane grouping;
-   remove eye icon from grammar-level pages, split the switcher.
+5. ✅ **DONE** (Jun 13, Sonnet) Timeline + genealogy-tree: both load `dimension-engine.js`
+   and run `discoverFields()` over deck-level records. Timeline adds "Lane: [field]"
+   dropdown (discovered fields, defaults to branch); genealogy-tree adds "Hub color:
+   [field]" dropdown. Both legends become dynamic (values of the chosen field, palette
+   from `colorOf`). `<view-switcher>` removed from timeline + genealogy-tree; remaining
+   card-level consumers bumped to `view-switcher.js?v=8` which also carries `decks` param.
 6. I Ching test: load the python-schema experiments as grammars, point the same
    viewers at them. What breaks defines the porting spec for recursive.eco.
 7. Only after 6: port the engine + spec format to recursive.eco viewers.

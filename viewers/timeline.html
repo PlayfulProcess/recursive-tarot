@@ -55,8 +55,7 @@
   <div id="stage">
     <div class="toolbar">
       <div class="title">Tarot Timeline <span class="sub">— decks through time, descent on the rail</span></div>
-      <script src="../view-switcher.js?v=7"></script>
-      <view-switcher active="timeline"></view-switcher>
+      <label style="gap:4px">Lane: <select id="lane-field" style="background:#1a1726;color:#cfc8e2;border:1px solid #2a2440;border-radius:6px;padding:3px 7px;font-size:12px;cursor:pointer"><option value="branch">branch</option></select></label>
       <button id="flip">↑ Oldest first</button>
       <label><input type="checkbox" id="toggle-derive" checked> Descent</label>
     </div>
@@ -66,40 +65,72 @@
   <aside id="detail"></aside>
 </div>
 
+<script src="dimension-engine.js?v=1"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script>
-const RAW_COLORS={'branch-roots':'#c9a24b','branch-a':'#e07a5f','branch-b':'#81b29a','branch-c':'#6d8ec9','branch-occult':'#9b6dc9','branch-sui':'#c96d9b'};
-const LABEL={'branch-roots':'Roots (Milan)','branch-a':'Southern (A-order)','branch-b':'Eastern (B-order)','branch-c':'Western (C-order)','branch-occult':'Occult','branch-sui':'Sui generis'};
+const BRANCH_RAW={'branch-roots':'#c9a24b','branch-a':'#e07a5f','branch-b':'#81b29a','branch-c':'#6d8ec9','branch-occult':'#9b6dc9','branch-sui':'#c96d9b'};
+const BRANCH_LABEL={'branch-roots':'Roots (Milan)','branch-a':'Southern (A-order)','branch-b':'Eastern (B-order)','branch-c':'Western (C-order)','branch-occult':'Occult','branch-sui':'Sui generis'};
+const PALETTE=['#c9a24b','#e07a5f','#81b29a','#6d8ec9','#9b6dc9','#c96d9b','#d4af37','#7a7290','#4db6ac','#e57373'];
 const SLUG_MAP={'deck-visconti-sforza':'visconti-sforza-tarot','deck-cary-yale':'cary-yale-visconti-tarot','deck-tarocchino-bologna':'tarocchino-bologna','deck-minchiate':'minchiate-florence-tarot','deck-charles-vi':'charles-vi-tarot','deck-marseille-conver':'tarot-de-marseille-conver','deck-marseille-type1':'noblet-tarot','deck-besancon':'tarot-de-besancon','deck-court-de-gebelin':'court-de-gebelin-tarot','deck-etteilla-i':'etteilla-i-livre-de-thot','deck-etteilla-iii':'etteilla-iii-oracle-des-dames','deck-oswald-wirth':'oswald-wirth-tarot','deck-golden-dawn':'golden-dawn-book-t-tarot','deck-sola-busca':'sola-busca-tarot','deck-mantegna':'mantegna-tarocchi'};
 
 const params=new URLSearchParams(location.search);
 const SRC=params.get('src')||'../tarot/tree-of-tarot/grammar.json';
-let itemMap, decks, hidden=new Set(), oldestFirst=true;
+let itemMap, decks, hidden=new Set(), oldestFirst=true, laneField='branch';
+let laneValues=[], colorOf={};   // set by buildLaneFromField()
 
 function parseYear(when){ if(!when) return null;
   let m=String(when).match(/\b(1[2-9]\d{2}|20\d{2})\b/); if(m) return +m[1];
   m=String(when).match(/(\d{1,2})\s*(?:st|nd|rd|th)?\s*c\b/i); if(m) return (+m[1]-1)*100+50; return null; }
+
+// Extract a field value from a deck for the current laneField
+function laneOf(d){
+  if(laneField==='branch') return d.branch||'—';
+  return d[laneField]||d.meta?.[laneField]||'—';
+}
+
+// Build laneValues + colorOf from current decks + laneField
+function buildLaneFromField(){
+  const vals=[...new Set(decks.map(laneOf).filter(v=>v&&v!=='—'))].sort(DimensionEngine.smartCmp);
+  laneValues=vals.length?vals:['—'];
+  colorOf={};
+  laneValues.forEach((v,i)=>{ colorOf[v]=laneField==='branch'?(BRANCH_RAW[v]||PALETTE[i%PALETTE.length]):PALETTE[i%PALETTE.length]; });
+  colorOf['—']='#7a7290';
+}
 
 (async function init(){
   try{
     const r=await fetch(SRC); if(!r.ok) throw new Error('Could not load '+SRC+' ('+r.status+')');
     const g=await r.json(); const items=g.items||[];
     itemMap=Object.fromEntries(items.map(i=>[i.id,i]));
-    decks=items.filter(i=>i.id.startsWith('deck-')).map(i=>({
-      id:i.id,name:i.name,when:(i.metadata||{}).when||'',year:parseYear((i.metadata||{}).when),
-      branch:(i.metadata||{}).branch,derives:(i.metadata||{}).derives_from||[],image:i.image_url,sections:i.sections||{}
-    })).filter(d=>d.year!=null);
+    decks=items.filter(i=>i.id.startsWith('deck-')).map(i=>{
+      const md=i.metadata||{};
+      const d={id:i.id,name:i.name,when:md.when||'',year:parseYear(md.when),
+               branch:md.branch,derives:md.derives_from||[],image:i.image_url,sections:i.sections||{}};
+      // copy all metadata fields onto deck record for lane discovery
+      Object.entries(md).forEach(([k,v])=>{ if(typeof v==='string'&&v.length<60) d[k]=v; });
+      return d;
+    }).filter(d=>d.year!=null);
+
+    // Discover field options via DimensionEngine
+    const deRecs=decks.map(d=>{ const r={};
+      Object.entries(d).forEach(([k,v])=>{ if(typeof v==='string'&&v&&!['id','name','when','image'].includes(k)) r[k]=[v]; });
+      return r; });
+    const fields=DimensionEngine.discoverFields(deRecs).filter(f=>f.count>=2&&f.count<=12);
+
+    const sel=document.getElementById('lane-field');
+    sel.innerHTML=fields.map(f=>`<option value="${f.name}"${f.name==='branch'?' selected':''}>${f.name} (${f.count})</option>`).join('');
+    laneField=sel.value||'branch';
+    sel.addEventListener('change',()=>{ laneField=sel.value; hidden.clear(); buildLaneFromField(); buildLegend(); draw(); });
   }catch(e){ document.getElementById('err').style.display='block'; document.getElementById('err').textContent=e.message; return; }
-  buildLegend(); draw();
+  buildLaneFromField(); buildLegend(); draw();
   window.addEventListener('resize',draw);
   document.getElementById('toggle-derive').addEventListener('change',draw);
   document.getElementById('flip').addEventListener('click',()=>{ oldestFirst=!oldestFirst;
     document.getElementById('flip').textContent=oldestFirst?'↑ Oldest first':'↓ Newest first'; draw(); });
 })();
 
-function visible(){ return decks.filter(d=>!hidden.has(d.branch)); }
+function visible(){ return decks.filter(d=>!hidden.has(laneOf(d))); }
 
-const BRANCHES=['branch-roots','branch-a','branch-b','branch-c','branch-occult','branch-sui'];
 function draw(){
   const scroll=document.getElementById('scroll');
   const W=Math.max(560, scroll.clientWidth||900);
@@ -112,8 +143,9 @@ function draw(){
   const innerH=Math.max(360, span*PXY);
   const H=padTop+innerH+padBot;
   const y=d3.scaleLinear().domain(years).range(oldestFirst?[padTop,padTop+innerH]:[padTop+innerH,padTop]);
-  const laneW=(W-axisW-16)/BRANCHES.length;
-  const laneX=b=>axisW + BRANCHES.indexOf(b)*laneW + laneW*0.28;
+  const lanes=laneValues; // dynamic from buildLaneFromField()
+  const laneW=(W-axisW-16)/Math.max(1,lanes.length);
+  const laneX=v=>axisW + lanes.indexOf(v)*laneW + laneW*0.28;
 
   const svg=d3.select('#svg').attr('viewBox',[0,0,W,H]).attr('height',H); svg.selectAll('*').remove();
 
@@ -123,34 +155,35 @@ function draw(){
     .attr('x1',axisW).attr('x2',W-8).attr('y1',d=>y(d)).attr('y2',d=>y(d));
   svg.append('g').attr('class','axis').attr('transform',`translate(${axisW},0)`)
     .call(d3.axisLeft(y).tickFormat(d3.format('d')).ticks(nTicks));
-  // branch lane headers (the "aggregated by colour" grouping)
-  svg.append('g').selectAll('text').data(BRANCHES).join('text')
-    .attr('x',b=>laneX(b)).attr('y',20).attr('fill',b=>RAW_COLORS[b])
+  // lane headers (discovered field values)
+  svg.append('g').selectAll('text').data(lanes).join('text')
+    .attr('x',v=>laneX(v)).attr('y',20).attr('fill',v=>colorOf[v]||'#7a7290')
     .style('font-size','11px').style('font-weight','700')
-    .text(b=>(LABEL[b]||b).replace(/\s*\(.*\)/,''));
-  svg.append('g').selectAll('rect').data(BRANCHES).join('rect')   // faint lane tint
-    .attr('x',b=>axisW+BRANCHES.indexOf(b)*laneW).attr('y',padTop-8).attr('width',laneW-2).attr('height',innerH+16)
-    .attr('fill',b=>RAW_COLORS[b]).attr('opacity',0.04);
+    .text(v=>(laneField==='branch'?(BRANCH_LABEL[v]||v):v).replace(/\s*\(.*\)/,'').slice(0,14));
+  svg.append('g').selectAll('rect').data(lanes).join('rect')   // faint lane tint
+    .attr('x',v=>axisW+lanes.indexOf(v)*laneW).attr('y',padTop-8).attr('width',laneW-2).attr('height',innerH+16)
+    .attr('fill',v=>colorOf[v]||'#7a7290').attr('opacity',0.04);
 
   // collision-avoid only within a lane (keeps the time axis honest)
   const minGap=18, laneLast={}; const placed=[];
   data.slice().sort((a,b)=>oldestFirst?a.year-b.year:b.year-a.year).forEach(d=>{
+    const lv=laneOf(d);
     let py=y(d.year); const dir=oldestFirst?1:-1;
-    if(laneLast[d.branch]!=null && Math.abs(py-laneLast[d.branch])<minGap) py=laneLast[d.branch]+dir*minGap;
-    laneLast[d.branch]=py; placed.push({...d, px:laneX(d.branch), py});
+    if(laneLast[lv]!=null && Math.abs(py-laneLast[lv])<minGap) py=laneLast[lv]+dir*minGap;
+    laneLast[lv]=py; placed.push({...d, lv, px:laneX(lv), py});
   });
   const byId=Object.fromEntries(placed.map(p=>[p.id,p]));
 
   if(document.getElementById('toggle-derive').checked){
     const edges=[]; placed.forEach(p=>p.derives.forEach(s=>{ if(byId[s]) edges.push({s:byId[s],t:p}); }));
     svg.append('g').selectAll('path').data(edges).join('path').attr('class','rail')
-      .attr('stroke',e=>RAW_COLORS[e.t.branch]||'#888')
+      .attr('stroke',e=>colorOf[e.t.lv]||'#888')
       .attr('d',e=>`M${e.s.px},${e.s.py}C${e.s.px},${(e.s.py+e.t.py)/2} ${e.t.px},${(e.s.py+e.t.py)/2} ${e.t.px},${e.t.py}`);
   }
 
   const g=svg.append('g').selectAll('g.rowg').data(placed).join('g').attr('class','rowg')
     .attr('transform',d=>`translate(${d.px},${d.py})`);
-  g.append('circle').attr('class','node').attr('r',6).attr('fill',d=>RAW_COLORS[d.branch]||'#7a7290');
+  g.append('circle').attr('class','node').attr('r',6).attr('fill',d=>colorOf[d.lv]||'#7a7290');
   g.append('text').attr('class','dname').attr('x',10).attr('dy','0.32em').text(d=>d.name.replace(/\s+[—–-]\s+.*/,'').slice(0,17));
   g.append('text').attr('class','dyear').attr('x',10).attr('y',-9).text(d=>d.year);
   g.on('click',(ev,d)=>{ev.stopPropagation();showDetail(d);})
@@ -180,11 +213,11 @@ function showDetail(d){
   el.innerHTML=html; el.classList.add('open');
 }
 function buildLegend(){
-  const order=['branch-roots','branch-a','branch-b','branch-c','branch-occult','branch-sui'];
   const lg=document.getElementById('legend'); lg.innerHTML='';
-  order.forEach(b=>{ const row=document.createElement('div'); row.className='row'+(hidden.has(b)?' off':'');
-    row.innerHTML=`<span class="sw" style="background:${RAW_COLORS[b]}"></span><span>${LABEL[b]||b}</span>`;
-    row.onclick=()=>{hidden.has(b)?hidden.delete(b):hidden.add(b);buildLegend();draw();}; lg.appendChild(row); });
+  laneValues.forEach(v=>{ const row=document.createElement('div'); row.className='row'+(hidden.has(v)?' off':'');
+    const label=laneField==='branch'?(BRANCH_LABEL[v]||v):v;
+    row.innerHTML=`<span class="sw" style="background:${colorOf[v]||'#7a7290'}"></span><span>${label}</span>`;
+    row.onclick=()=>{hidden.has(v)?hidden.delete(v):hidden.add(v);buildLegend();draw();}; lg.appendChild(row); });
 }
 </script>
 </body>
