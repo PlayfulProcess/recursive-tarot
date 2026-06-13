@@ -37,3 +37,9 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
 
 ## tarot/mamluk-deck/grammar.json
 - ✅ already fixed on dev: survivor count "~48 survive / ~43 original + later replacements / 52 complete".
+
+## tarot/madiao-money-cards/grammar.json
+- ✅ description cites **"Dummett & Mann, The Game of Tarot"** → correct to **Dummett (1980)**
+  solo, or **Dummett & McLeod (2004)** for the games history. "Mann" is an error.
+- 🟡 metadata.year 1600 / "17th–18th-c. European collection" (Skokloster) loosely sourced;
+  money-suited form firmly attested from Lu Rong (1436–94); Ma Diao codified late Ming. Hedge.
