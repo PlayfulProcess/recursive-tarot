@@ -47,9 +47,7 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
 ## tarot/golden-dawn-book-t-tarot/grammar.json
 - ✅ FIXED: 8 court cards had duplicate "knight"/"queen" keywords (deduped); "a ardent"
   → "an ardent" in the 4 Wands courts.
-- 🟡 Court-hierarchy gloss: sections assert flat RWS=GD court equivalence. True by *name*
-  (Book T's top court is the "Knight"), but in *rank* the GD Knight ↔ RWS King and GD King
-  ↔ RWS Knight. Add one clarifying line so users don't misread the hierarchy. (content edit)
+- ✅ DONE: added a deck-level court-rank naming caution (RWS King=GD Knight, RWS Knight=GD Prince, RWS Page=GD Princess).
 
 ## People-pass flags (for dossiers / future grammar notes — not auto-applied)
 - Conver: block date **1760** vs BnF authority **Nicolas Conver 1784–1833** — genuine,
@@ -63,7 +61,7 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
 - ✅ Card 78 "La Folie" mislabelled female querent → it's the Fool (0); female significator = Card 8 (Le Repos). (inherited)
 - ✅ Card 13 archetype Hierophant → the Lovers (mapping_confidence exact→reworked).
 - ✅ Card 21 archetype Emperor → the Chariot.
-- 🟡 Card 6: name "Les Astres" vs french_name "Les Étoiles" — internal inconsistency, reconcile.
+- ✅ DONE (etteilla-i): card 6 french_name → "Les Astres"; card 8 name → "Le Repos".
 - 🟡 Card 8: name "Repos" → "Le Repos" (missing article).
 - ⚠️ Minors 22–77 carry **RWS `card:*` archetypes + RWS scenic-pip descriptions** (sunflower, bandage…)
   — anachronistic for an Etteilla near-pip pack. Flag/rewrite (do not import RWS scenes).
@@ -119,7 +117,7 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
 - ⚠️ The five Papi: grammar names them Popess/Empress/Emperor/Pope/Love. Scholarly identities:
   I=Bagatto (Juggler), II=Grand Duke, III=Western Emperor, IV=Eastern Emperor, V=Love. NO Pope
   card; Popess dropped (not folded in). 5-card identity rewrite — confidence medium; verify.
-- 🟡 Il Gobbo (XI)→Hermit mapping_confidence "exact" → "loose" (it's the Time/Old-Man ancestor).
+- ✅ DONE: Il Gobbo (XI)→Hermit mapping_confidence "exact" → "loose".
 - 🟡 suit→element pairings are a modern overlay, mark non-historical.
 
 ## Fragment grammars — safe metadata gaps (from fragments pass)
