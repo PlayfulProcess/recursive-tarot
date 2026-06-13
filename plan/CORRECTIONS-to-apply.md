@@ -150,3 +150,9 @@ Confidence noted; only ✅-corroborated items get applied without a further chec
 ## tarot/mamluk-deck/grammar.json (from research; confidence high)
 - 🟡 Internal inconsistency: mamluk-overview "What it is" says "43 surviving" but the description
   says "~48 survive / ~43 original". Reconcile the overview text to ~48/43/52.
+
+## tarot/tarot-de-besancon/grammar.json (from research; confidence high)
+- 🟡 Tradition Note calls it a "regional cousin" of Marseille → it's a direct **descendant**
+  (Marseille Type-II with Juno/Jupiter swap); derives_from set in dossier. Tighten wording.
+- 🟡 Juno→high-priestess / Jupiter→hierophant archetypes are the occult overlay, not the game
+  deck's own — keep as reading aid with a note. (14 items = 13 cards + 1 emergence.)
