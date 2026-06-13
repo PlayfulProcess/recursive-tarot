@@ -1281,6 +1281,43 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
+        /* Study navigation: prev/next arrows flanking the modal */
+        .modal-nav-btn {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.2);
+            color: #e5e5e5;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .15s, opacity .15s;
+            flex-shrink: 0;
+        }
+        .modal-nav-btn:hover { background: rgba(147,51,234,.4); border-color: #9333ea; }
+        .modal-nav-btn:disabled { opacity: .25; cursor: default; }
+
+        /* Card counter badge in the modal */
+        .modal-counter {
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,.45);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 20px;
+            padding: 2px 12px;
+            font-size: 11px;
+            color: #9ca3af;
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 11;
+        }
+
         /* Modal visual */
         .modal-visual {
             display: flex;
@@ -2041,8 +2078,10 @@
 
     <!-- Detail Modal -->
     <div id="modal-backdrop" class="modal-backdrop">
+        <button id="modal-prev" class="modal-nav-btn" onclick="navigateItem(-1)" title="Previous card (←)" aria-label="Previous">&#8592;</button>
         <div class="modal-content">
             <button id="modal-close" class="modal-close">&times;</button>
+            <div id="modal-counter" class="modal-counter"></div>
             <div id="modal-visual" class="modal-visual">
                 <!-- Image or icon -->
             </div>
@@ -2050,6 +2089,7 @@
                 <!-- Content sections -->
             </div>
         </div>
+        <button id="modal-next" class="modal-nav-btn" onclick="navigateItem(1)" title="Next card (→)" aria-label="Next">&#8594;</button>
     </div>
 
     <!-- Image Lightbox -->
@@ -2061,14 +2101,14 @@
     <!-- Report Modal -->
     <div id="report-modal" class="report-modal hidden">
         <div class="report-modal-content">
-            <h3>⚑ Report Issue</h3>
-            <p style="color: var(--grammar-text-muted); font-size: 0.875rem; margin-bottom: 1rem;">
-                Please describe the issue with this grammar (inappropriate content, copyright violation, broken data, etc.)
+            <h3>⚑ Report an Inaccuracy</h3>
+            <p style="color: var(--grammar-text-muted); font-size: 0.875rem; margin-bottom: 1rem; line-height:1.5;">
+                Describe what's wrong — a wrong date, misattribution, incorrect card identity, etc. We'll open a pre-filled GitHub issue you can submit (free account required).
             </p>
-            <textarea id="report-reason" placeholder="What's wrong with this grammar?"></textarea>
+            <textarea id="report-reason" placeholder="e.g. The Chariot date is listed as 1760 but should be 1701 per Dummett (1980)." style="min-height:90px;"></textarea>
             <div class="report-modal-buttons">
                 <button class="report-cancel" onclick="closeReportModal()">Cancel</button>
-                <button class="report-submit" onclick="submitReport()">Submit Report</button>
+                <button class="report-submit" onclick="submitReport()">Open on GitHub ↗</button>
             </div>
         </div>
     </div>
@@ -3999,7 +4039,6 @@
             selectedItem = item;
 
             // Reflect the open card in the URL so it's shareable / deep-linkable.
-            // On reload, the init code (params.get('item')) re-opens this card.
             try {
                 const u = new URL(window.location.href);
                 if (item.id) u.searchParams.set('item', item.id);
@@ -4010,6 +4049,15 @@
             document.querySelectorAll('.item-card').forEach(card => {
                 card.classList.toggle('active', card.dataset.itemId === item.id);
             });
+
+            // Study navigation: update counter + enable/disable prev/next
+            const idx = filteredItems.findIndex(i => i.id === item.id);
+            const counter = document.getElementById('modal-counter');
+            const prevBtn = document.getElementById('modal-prev');
+            const nextBtn = document.getElementById('modal-next');
+            if (counter && idx !== -1) counter.textContent = `${idx + 1} of ${filteredItems.length}`;
+            if (prevBtn) prevBtn.disabled = idx <= 0;
+            if (nextBtn) nextBtn.disabled = idx >= filteredItems.length - 1;
 
             // Render visual - prefer explicit image, fall through to YouTube thumb, then icon
             const detailThumbUrl = getItemThumbnailUrl(item);
@@ -4647,70 +4695,34 @@
             }
         }
 
-        async function submitReport(e) {
-            console.log('[Report] Submit clicked');
-            if (e) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
-            const reasonEl = document.getElementById('report-reason');
-            const submitBtn = document.querySelector('.report-submit');
-            console.log('[Report] Reason element:', reasonEl);
-            const reason = reasonEl ? reasonEl.value.trim() : '';
-            console.log('[Report] Reason:', reason);
+        function submitReport(e) {
+            if (e) { e.preventDefault(); e.stopPropagation(); }
+            const reason = (document.getElementById('report-reason')?.value || '').trim();
+            if (!reason) { alert('Please describe the issue.'); return; }
 
-            if (!reason) {
-                alert('Please describe the issue.');
-                return;
-            }
+            // Build context from the currently open card / grammar
+            const deckTitle = document.getElementById('grammar-title')?.textContent || '';
+            const cardName = selectedItem ? selectedItem.name : '';
+            const cardId = selectedItem ? selectedItem.id : '';
+            const pageUrl = window.location.href;
 
-            // Get grammar info from URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const grammarId = urlParams.get('id') || urlParams.get('deck') || urlParams.get('book');
-            const gType = urlParams.get('type') || 'unknown';
+            const title = encodeURIComponent(
+                `Accuracy: ${deckTitle}${cardName ? ' — ' + cardName : ''}`
+            );
+            const body = encodeURIComponent(
+`**Deck / grammar:** ${deckTitle}
+**Card:** ${cardName || '(deck-level)'}${cardId ? ' (' + cardId + ')' : ''}
+**Page:** ${pageUrl}
 
-            console.log('[Report] Sending report for:', grammarId, gType);
+**What's wrong:**
+${reason}
 
-            // Disable button during submission
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
-            }
-
-            try {
-                // Send report via API
-                const response = await fetch(`${getOfferApiBaseUrl()}/api/grammar-report`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        grammarId,
-                        grammarType: gType,
-                        reason,
-                        pageUrl: window.location.href
-                    })
-                });
-
-                const result = await response.json();
-                console.log('[Report] API response:', result);
-
-                if (result.success) {
-                    alert('Thank you for your report. We will review it shortly.');
-                    closeReportModal();
-                } else {
-                    alert('Failed to send report. Please try again later.');
-                }
-            } catch (error) {
-                console.error('[Report] Error sending report:', error);
-                alert('Failed to send report. Please try again later.');
-            } finally {
-                // Re-enable button
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Submit Report';
-                }
-            }
+---
+*Reported via tarot.recursive.eco*`
+            );
+            const url = `https://github.com/PlayfulProcess/recursive-tarot/issues/new?labels=accuracy&title=${title}&body=${body}`;
+            window.open(url, '_blank', 'noopener');
+            closeReportModal();
         }
 
         function setupEventListeners() {
