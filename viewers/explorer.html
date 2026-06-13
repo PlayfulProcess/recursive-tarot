@@ -303,10 +303,15 @@ function cellHTML(rs){
   const N = 6;
   const sorted = [...rs].sort((a,b) => (+(b.level?.[0]||'L1').slice(1)) - (+(a.level?.[0]||'L1').slice(1)));
   let h = '<td><div class="cellwrap">' + sorted.slice(0,N).map(recHTML).join('');
-  if (rs.length > N) h += `<span class="more">+${rs.length-N}</span>`;
+  if (rs.length > N){
+    const ci = cellRecs.push(sorted) - 1;
+    h += `<span class="more" data-cell="${ci}" title="Show all ${rs.length} items">+${rs.length-N}</span>`;
+  }
   return h + '</div></td>';
 }
+let cellRecs = [];   // per-render registry: "+N" click expands the full cell
 function render(){
+  cellRecs = [];
   const live = records.filter(passes);
   $('#statxt').textContent = `${live.length} of ${records.length} items` +
     (Object.keys(spec.filters).filter(f=>spec.filters[f].length).length ? ' (filtered)' : '');
@@ -327,8 +332,10 @@ function render(){
     const tip = !Object.keys(spec.filters).filter(f=>spec.filters[f].length).length
       ? '<p style="color:var(--muted);font-size:12px;margin:0 0 10px">Drag a field into <b>Rows</b> or <b>Columns</b> to pivot · drop into <b>⊸ Filters</b> to pin a filter · click a chip to filter by value</p>'
       : '';
+    const wallMore = live.length > 200
+      ? `<span class="more" style="padding:8px" data-cell="${cellRecs.push(live)-1}" title="Show all ${live.length} items">+${live.length-200} more</span>` : '';
     out.innerHTML = live.length
-      ? tip + `<div class="cellwrap" style="max-width:none;padding:4px 0">${live.slice(0,200).map(recHTML).join('')}${live.length>200?`<span class="more" style="padding:8px">+${live.length-200} more</span>`:''}</div>`
+      ? tip + `<div class="cellwrap" style="max-width:none;padding:4px 0">${live.slice(0,200).map(recHTML).join('')}${wallMore}</div>`
       : tip + '<p style="color:var(--muted);font-size:13px">No items match the filters.</p>';
     return;
   }
@@ -385,6 +392,13 @@ function openDetail(id){
   det.classList.add('open');
 }
 document.addEventListener('click', e => {
+  const m = e.target.closest('.more[data-cell]');
+  if (m) {   // "+N" → expand the cell in place, render every item
+    const rs = cellRecs[+m.dataset.cell] || [];
+    const wrap = m.parentElement;
+    if (wrap) wrap.innerHTML = rs.map(recHTML).join('');
+    return;
+  }
   const t = e.target.closest('[data-rid]');
   if (t) { openDetail(t.dataset.rid); }
 });
@@ -563,7 +577,9 @@ $('#deckbtn').onclick = () => {
   const sel = new Set(selectedSlugs());
   const pop = popAt($('#deckbtn'));
   const decks = collection.grammars.filter(g=>!g.is_meta && g.slug!=='tree-of-tarot');
-  pop.innerHTML = `<input type="text" placeholder="search decks…">
+  pop.innerHTML = `<p style="margin:2px 0 8px;font-size:11.5px;color:var(--muted);max-width:240px;line-height:1.45">
+      Tick <b>several decks</b> and Load — patterns appear when collections overlap. Each deck becomes a filterable field.</p>
+    <input type="text" placeholder="search decks…">
     <div class="vals">${decks.map(g=>`<label><input type="checkbox" value="${esc(g.slug)}" ${sel.has(g.slug)?'checked':''}> ${esc(g.name.split(' — ')[0].slice(0,34))}</label>`).join('')}</div>
     <div class="pbtns"><button data-a="meta">✦ Meta (all-in-one)</button></div>
     <div class="pbtns"><button data-a="all">All</button><button data-a="none">None</button><button data-a="ok">Load selected</button></div>`;
