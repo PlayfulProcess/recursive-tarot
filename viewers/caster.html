@@ -50,10 +50,16 @@
   .card-deck { font-size:12px; color:var(--muted); }
   .reversed { color:#e0a458; font-size:11px; font-weight:600; margin-top:4px; }
   .empty { color:var(--muted); font-size:14px; margin-top:26px; text-align:center; padding:40px 0; }
-  .export { margin-top:30px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; display:none; }
+  .export { margin-top:30px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; display:none; }
   .export h2 { font-size:15px; margin:0 0 4px; }
   .export p { color:var(--muted); font-size:13px; margin:0 0 12px; line-height:1.5; }
   .export .btnrow { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+  .export .journal-cta { display:block; width:100%; text-align:center; padding:14px 18px; font-size:16px;
+    font-weight:700; background:linear-gradient(135deg,#7c3aed,#9333ea); border-radius:10px;
+    color:#fff; text-decoration:none; letter-spacing:.02em; margin-bottom:14px;
+    box-shadow:0 4px 18px rgba(147,51,234,.35); transition:box-shadow .2s,transform .15s; }
+  .export .journal-cta:hover { box-shadow:0 6px 24px rgba(147,51,234,.55); transform:translateY(-1px); }
+  .export .cta-sub { font-size:11.5px; color:var(--muted); text-align:center; margin:-8px 0 12px; }
   textarea#json { width:100%; height:150px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11px; resize:vertical; }
   .note { font-size:11px; color:var(--muted); border-top:1px solid var(--line); margin-top:30px; padding-top:14px; }
   footer.site { padding:18px; border-top:1px solid var(--line); color:#6b7280; font-size:12px; text-align:center; }
@@ -64,8 +70,8 @@
 <site-header active="caster"></site-header>
 
 <div class="wrap">
-  <h1>Tarot Caster</h1>
-  <p class="sub">Draw three cards from any public-domain deck — or across every deck at once. Positions read <b>Structures · Process · Possibilities</b>, not a fortune. Export the cast to read it with AI in recursive.eco.</p>
+  <h1>Tarot Caster <span style="font-size:13px;font-weight:400;color:var(--muted);vertical-align:middle;margin-left:6px;">— free, open-source</span></h1>
+  <p class="sub">Draw three cards from any historical deck — or across every deck at once. Positions: <b>Structures · Process · Possibilities</b>. This is the simple version: it draws; <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a> interprets with AI, renders Oracle cards, and keeps a Journal.</p>
 
   <div class="controls">
     <div class="field">
@@ -88,11 +94,14 @@
 
   <div class="export" id="export">
     <h2>Take this reading further</h2>
-    <p>This page draws the cards; <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a> interprets them. Copy or download the cast, then import it into your Journal there to get an AI reading — or just keep the JSON as a record.</p>
+    <p>This page draws from historical decks. On recursive.eco, your cast becomes Oracle cards — each rendered with provenance, AI interpretation, and saved to your Journal.</p>
+    <a id="journalLink" class="journal-cta" href="https://recursive.eco" target="_blank" rel="noopener">
+      Open in recursive.eco Journal ↗
+    </a>
+    <p class="cta-sub">Free account · AI reading · Oracle card layout · keep your cast</p>
     <div class="btnrow">
       <button id="copyJson">Copy JSON</button>
       <button id="downloadJson" class="ghost">Download .json</button>
-      <a id="journalLink" href="https://recursive.eco" target="_blank" rel="noopener"><button class="ghost">Open recursive.eco Journal ↗</button></a>
     </div>
     <textarea id="json" readonly></textarea>
   </div>

@@ -71,8 +71,9 @@
   .pivot thead th{background:var(--panel);font-size:12px;position:sticky;top:0;z-index:5}
   .pivot th.rowhead{background:var(--panel);font-size:12.5px;white-space:nowrap;font-weight:600}
   .pivot th.rowhead .cnt{color:var(--muted);font-weight:400;font-size:10.5px}
+  :root { --card-h: 62px; }
   .cellwrap{display:flex;flex-wrap:wrap;gap:4px;align-items:flex-end;max-width:360px}
-  .cellwrap img{height:62px;border-radius:4px;background:#0a0810;cursor:pointer;transition:transform .12s}
+  .cellwrap img{height:var(--card-h);border-radius:4px;background:#0a0810;cursor:pointer;transition:transform .12s,height .12s}
   .cellwrap img:hover{transform:scale(1.6);z-index:9;position:relative}
   /* emergence pills: hue = branch, gradient depth = level */
   .epill{display:inline-flex;align-items:center;gap:4px;border-radius:7px;padding:4px 8px;font-size:11px;
@@ -124,6 +125,12 @@
   <span class="spacer"></span>
   <button id="mode-cards" class="active">🃏 Cards</button>
   <button id="mode-counts">∑ Counts</button>
+  <label title="Card size" style="display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#9ca3af;">
+    <span>⊕</span>
+    <input id="zoom-slider" type="range" min="32" max="160" value="62" step="8"
+      style="width:72px;accent-color:#9333ea;cursor:pointer;" oninput="applyZoom(this.value)">
+    <span id="zoom-pct" style="min-width:32px;color:#cfc8e2;font-size:11px;">100%</span>
+  </label>
   <button id="sidebar-btn" title="Toggle sidebar layout">◧</button>
   <button id="reset">↺ Reset</button>
 </div>
@@ -151,6 +158,15 @@
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const PFX = '../';
+
+/* zoom: card-h CSS variable driven by slider */
+function applyZoom(px) {
+  document.documentElement.style.setProperty('--card-h', px + 'px');
+  const pct = Math.round(px / 62 * 100);
+  const el = document.getElementById('zoom-pct');
+  if (el) el.textContent = pct + '%';
+}
+window.applyZoom = applyZoom;
 
 /* ── state ─────────────────────────────────────────────── */
 let records = [], fields = [], byId = {};
