@@ -18,7 +18,10 @@
   function open(anchor, { collection, selected, onLoad }) {
     document.querySelectorAll('.dp-pop').forEach(p => p.remove());
     const sel = new Set(selected || []);
-    const decks = (collection?.grammars || []).filter(g => !g.is_meta && g.slug !== 'tree-of-tarot');
+    const decks = (collection?.grammars || [])
+      .filter(g => !g.is_meta && g.slug !== 'tree-of-tarot')
+      .sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) ||
+                      (a.name || '').localeCompare(b.name || ''));
 
     const pop = document.createElement('div');
     pop.className = 'dp-pop';
@@ -48,8 +51,15 @@
       const cb = document.createElement('input');
       cb.type = 'checkbox'; cb.value = g.slug; cb.checked = sel.has(g.slug);
       cb.style.accentColor = '#9333ea';
-      const name = document.createTextNode(g.name.split(' — ')[0].slice(0, 34));
+      const name = document.createElement('span');
+      name.textContent = g.name.split(' — ')[0].slice(0, 34);
       label.append(cb, name);
+      if (g.year_label) {
+        const yr = document.createElement('span');
+        yr.textContent = '(' + g.year_label + ')';
+        yr.style.cssText = 'margin-left:auto;padding-left:8px;color:#8b7fb0;font-size:11px;white-space:nowrap;';
+        label.appendChild(yr);
+      }
       list.appendChild(label);
     });
     pop.appendChild(list);
