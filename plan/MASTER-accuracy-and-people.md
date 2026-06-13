@@ -27,14 +27,16 @@ quoting sources), back each claim with research dossiers, and build a standalone
   + court-rank caution; madiao + mamluk citation/count; minchiate Gobbo; belgian+vieville
   re-tagged Belgian-line (not Marseille) + belgian La Mort; fragment metadata.
 
-**REMAINING = grammar-correction sweep from `plan/CORRECTIONS-to-apply.md`:**
-- ⚠️ **Maintainer-decision** (do NOT auto-flip): Charles VI Florence-vs-Ferrara; Minchiate Papi
-  identities; Cary-Yale six-court↔four-archetype collision; Paris-Anonymous = *Tarot de Paris*
-  misidentification (big reframe); Noblet "complete"→"near-complete" title wording.
-- 🟡 **Content polish** (safe but needs care/verification, ideally with WebFetch restored):
-  Sola Busca placeholder scene texts; Etteilla-II minors carry anachronistic RWS scenic-pip
-  descriptions; Visconti Cicognara hedge + provenance split; Marseille elemental-suit overlay
-  note; vieville/belgian per-card text (La Foudre tree, upright Hanged Man); etc.
+**Correction sweep DONE** — all corroborated 🟡 items applied (incl. erasing the anachronistic
+RWS pip-symbol metadata from all 3 Etteilla decks, the Belgian-line card text, Visconti/Gébelin/
+Tarocchino/etc. sourced notes). See the ✅ STATUS block at the top of
+`plan/CORRECTIONS-to-apply.md`.
+
+**ONLY remaining = items that are genuinely the maintainer's call or need primary scans:**
+- ⚠️ Charles VI (Florence/Ferrara) · Paris-Anonymous (= Tarot de Paris reframe) · Minchiate Papi
+  (5-card identity rewrite) · Cary-Yale (six-court archetype schema) · Noblet ("complete" wording).
+  Each has a sourced, attributed note in-grammar now; the decision is yours.
+- 🟡 Sola Busca per-card scenes + re-verify medium-confidence claims when WebFetch (403) returns.
 
 ---
 
