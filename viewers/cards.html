@@ -2011,6 +2011,11 @@
         .lens-empty { display: flex; align-items: center; justify-content: center;
             width: 100%; min-height: 90px; padding: 14px; text-align: center;
             font-size: 11px; opacity: .4; font-style: italic; }
+        /* later-commentary sections in card detail: a quiet divider marks where the
+           deck's own voice ends and dated later interpretations begin. */
+        .content-section.later-section { border-top: 1px dashed rgba(196,167,255,.28); padding-top: 14px; margin-top: 6px; }
+        .content-section.later-section + .content-section.later-section { border-top: 0; padding-top: 0; margin-top: 0; }
+        .content-section.later-section .section-title .lens-later { vertical-align: middle; margin-left: 6px; }
     </style>
     <script>
         if (window.self !== window.top) {
@@ -2582,8 +2587,12 @@
                 tray = document.createElement('div');
                 tray.id = 'dim-chip-tray';
                 tray.style.cssText = 'display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px;padding:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;';
-                const sidebar = document.getElementById('hierarchy-sidebar');
-                if (sidebar) sidebar.parentElement.insertBefore(tray, sidebar);
+                // Mount ABOVE the sidebar+content row, not inside it. The row is a
+                // flex container; inserting the tray as a sibling of the sidebar made
+                // it a 3rd flex column that ate ~900px and collapsed the content to a
+                // sliver. Placing it before .hierarchy-layout makes it full-width.
+                const layout = document.querySelector('.hierarchy-layout');
+                if (layout && layout.parentElement) layout.parentElement.insertBefore(tray, layout);
             }
             tray.innerHTML = '<span style="font-size:11px;color:var(--grammar-text-muted);flex-basis:100%;margin-bottom:2px;">Drag a dimension to Group by ↓</span>';
             fields.forEach(f => {
@@ -4503,28 +4512,31 @@
                 }
             }
 
-            // Content sections
-            Object.entries(item.sections || {}).forEach(([title, content]) => {
-                // Section Lens: skip sections the user has toggled off (e.g. later
-                // interpretations hidden by default until revealed).
-                if (window._sectionLens && window._sectionLens.hidden.has(lensNorm(title))) return;
-                // Handle different content types
-                let contentStr = '';
-                if (typeof content === 'string') {
-                    contentStr = content;
-                } else if (typeof content === 'object' && content !== null) {
-                    // Convert object sections to readable text
-                    contentStr = Object.entries(content)
-                        .map(([k, v]) => `${k}: ${v}`)
-                        .join('\n');
-                }
-                if (!contentStr || !contentStr.trim()) return;
-
+            // Content sections — traditional/native voice first (in the grammar's own
+            // order), then later commentary appended at the end in chronological order
+            // by the year in its "[Author, Work, YEAR — …]" attribution line. Hidden
+            // sections (toggled off in the Section Lens) are skipped.
+            const _secEntries = Object.entries(item.sections || {})
+                .filter(([title]) => !(window._sectionLens && window._sectionLens.hidden.has(lensNorm(title))))
+                .map(([title, content], i) => {
+                    let str = '';
+                    if (typeof content === 'string') str = content;
+                    else if (content && typeof content === 'object') str = Object.entries(content).map(([k, v]) => `${k}: ${v}`).join('\n');
+                    const attr = lensAttribution(str);
+                    const ym = attr && attr.match(/\b(1[0-9]{3}|20[0-9]{2})\b/);
+                    return { title, str, i, attributed: !!attr, year: ym ? +ym[1] : Infinity };
+                })
+                .filter(e => e.str && e.str.trim());
+            _secEntries.sort((a, b) =>
+                (a.attributed - b.attributed)                 // native (0) before later (1)
+                || (a.attributed ? (a.year - b.year || a.i - b.i)  // later: chronological, then original
+                                 : (a.i - b.i)));                  // native: keep grammar order
+            _secEntries.forEach(({ title, str, attributed }) => {
                 const isHighlight = title === 'Affirmation' || title === 'Questions';
                 bodyHtml += `
-                    <div class="content-section ${isHighlight ? 'highlight-box' : ''}">
-                        <h3 class="section-title">${escapeHtml(title.replace(/_/g, ' '))}</h3>
-                        <div class="section-content">${mdToHtml(contentStr)}</div>
+                    <div class="content-section ${isHighlight ? 'highlight-box' : ''}${attributed ? ' later-section' : ''}">
+                        <h3 class="section-title">${escapeHtml(title.replace(/_/g, ' '))}${attributed ? ' <span class="lens-later">later</span>' : ''}</h3>
+                        <div class="section-content">${mdToHtml(str)}</div>
                     </div>
                 `;
             });
