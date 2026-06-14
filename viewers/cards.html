@@ -1959,6 +1959,58 @@
 
         /* Hide header when loaded in an iframe */
         body.in-iframe site-header { display: none !important; }
+
+        /* ── Section Lens bar (inference-driven; works for any grammar) ────────
+           Surfaces the section types that emerge from the loaded items, lets you
+           hide/show them in detail, flag later-interpretation layers, and flip
+           the grid from images to a chosen section's text. Pure render-layer —
+           stores nothing, compatible with recursive.eco's UnifiedItem shape. */
+        .section-lens-bar {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+            margin: 2px 0 10px; padding: 8px 10px;
+            background: rgba(255,255,255,.03);
+            border: 1px solid rgba(255,255,255,.08); border-radius: 10px;
+        }
+        .section-lens-bar.hidden { display: none; }
+        .lens-bar-label { font-size: 11px; letter-spacing: .04em; text-transform: uppercase;
+            color: var(--grammar-text-muted, #9b93b5); margin-right: 2px; }
+        .lens-display-select {
+            background: #1d1830; color: #e9e4f6; border: 1px solid #3a3450;
+            border-radius: 8px; padding: 5px 9px; font-size: 12px; font-weight: 600; cursor: pointer;
+        }
+        .lens-chip {
+            display: inline-flex; align-items: center; gap: 5px;
+            padding: 4px 9px; border-radius: 999px; cursor: pointer; user-select: none;
+            font-size: 12px; line-height: 1; border: 1px solid rgba(255,255,255,.16);
+            background: rgba(255,255,255,.06); color: var(--grammar-text, #e9e4f6);
+            transition: opacity .12s, background .12s;
+        }
+        .lens-chip:hover { background: rgba(255,255,255,.12); }
+        .lens-chip.off { opacity: .38; text-decoration: line-through; }
+        .lens-chip .lens-cov { font-size: 10px; opacity: .6; }
+        .lens-chip.attributed { border-color: rgba(196,167,255,.5); }
+        .lens-chip .lens-later {
+            font-size: 9px; text-transform: uppercase; letter-spacing: .03em;
+            color: #c4a7ff; border: 1px solid rgba(196,167,255,.4);
+            border-radius: 4px; padding: 1px 3px;
+        }
+        .lens-master {
+            margin-left: auto; font-size: 11px; color: var(--grammar-text-muted, #9b93b5);
+            display: inline-flex; align-items: center; gap: 5px; cursor: pointer; user-select: none;
+        }
+        .lens-master input { accent-color: #c4a7ff; cursor: pointer; }
+        /* lens-flip text in grid cells (both card + thumbnail layouts) */
+        .item-visual .lens-text, .thumb-image .lens-text {
+            display: block; width: 100%; max-height: 240px; overflow: auto;
+            padding: 10px 11px; text-align: left; font-size: 11.5px; line-height: 1.5;
+            color: var(--grammar-text, #e9e4f6); background: rgba(12,9,22,.55);
+        }
+        .item-visual .lens-text p, .thumb-image .lens-text p { margin: 0 0 .5em; }
+        .lens-text .lens-attr { display: block; font-size: 10px; opacity: .65;
+            font-style: italic; margin-bottom: 6px; }
+        .lens-empty { display: flex; align-items: center; justify-content: center;
+            width: 100%; min-height: 90px; padding: 14px; text-align: center;
+            font-size: 11px; opacity: .4; font-style: italic; }
     </style>
     <script>
         if (window.self !== window.top) {
@@ -2064,6 +2116,8 @@
                             <!-- Dynamically populated based on grammar -->
                         </div>
                     </div>
+                    <!-- Section Lens bar — inferred from loaded items, populated by renderSectionLensBar() -->
+                    <div id="section-lens-bar" class="section-lens-bar hidden"></div>
                     <!-- Explanation of the chosen "group by" axis -->
                     <div id="axis-explainer" class="axis-explainer" hidden></div>
 
@@ -3824,6 +3878,8 @@
         }
 
         function renderGrid() {
+            // Keep the inferred Section Lens bar in sync with the loaded deck(s).
+            renderSectionLensBar();
             // Route to thumbnails layout if active
             if (layoutMode === 'thumbnails') {
                 renderThumbnailsGrid();
@@ -3853,6 +3909,9 @@
                 } else {
                     visualHtml = `<span class="icon">${noImageVisual(grammarType)}</span>`;
                 }
+                // Lens-flip: if a section is the chosen display field, show its text instead.
+                const _lensVisual = lensCellVisual(item);
+                if (_lensVisual !== null) visualHtml = _lensVisual;
 
                 // Selection badge (shows position number when selected)
                 const selectionBadge = isSelectionMode ? `<span class="selection-badge">${selectionIndex >= 0 ? selectionIndex + 1 : ''}</span>` : '';
@@ -3895,6 +3954,127 @@
             }
         }
 
+        // ── Section Lens — inference-driven section visibility + grid lens-flip ──
+        // Reusable across any grammar (tarot / I Ching / astrology): it reads only
+        // the `sections` map already present on every UnifiedItem. Nothing is
+        // stored; section identity = key name, provenance is inferred from the
+        // bracket-attribution convention "[Author, Work, Date — …]", and default
+        // visibility emerges from ubiquity. Compatible with recursive.eco as-is.
+        window._sectionLens = window._sectionLens || {
+            displayField: 'Image',   // 'Image' or a section name (grid lens-flip)
+            hidden: new Set(),       // section names hidden in card detail
+            inited: false,           // first-run default applied?
+        };
+
+        // Detect the leading "[…]" attribution line a later-interpretation section
+        // opens with; returns the inner label (author/work/date) or null.
+        function lensAttribution(text) {
+            if (typeof text !== 'string') return null;
+            const m = text.trim().match(/^\[([^\]]{3,200})\]/);
+            return m ? m[1].trim() : null;
+        }
+
+        // Infer the section types present across the loaded deck(s).
+        // Returns [{ name, count, coverage, attributed, source }] by frequency.
+        function inferSections(list) {
+            const total = (list && list.length) || 0;
+            const stat = new Map();
+            (list || []).forEach(it => {
+                const secs = (it && it.sections) || {};
+                Object.entries(secs).forEach(([name, val]) => {
+                    if (typeof val !== 'string' || !val.trim()) return;
+                    let s = stat.get(name);
+                    if (!s) { s = { name, count: 0, attributed: false, source: null }; stat.set(name, s); }
+                    s.count++;
+                    const attr = lensAttribution(val);
+                    if (attr) { s.attributed = true; if (!s.source) s.source = attr; }
+                });
+            });
+            return [...stat.values()]
+                .map(s => ({ ...s, coverage: total ? s.count / total : 0 }))
+                .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+        }
+
+        // Build / refresh the Section Lens bar from the full item set (not the
+        // filtered subset) so available lenses stay stable while you filter.
+        function renderSectionLensBar() {
+            const bar = document.getElementById('section-lens-bar');
+            if (!bar) return;
+            const stats = inferSections(items);
+            if (!stats.length) { bar.classList.add('hidden'); bar.innerHTML = ''; return; }
+            bar.classList.remove('hidden');
+
+            const L = window._sectionLens;
+            // First run: hide later-interpretation layers by default (native voice first).
+            if (!L.inited) {
+                stats.forEach(s => { if (s.attributed) L.hidden.add(s.name); });
+                L.inited = true;
+            }
+            // Drop stale display field if that section vanished after a deck switch.
+            if (L.displayField !== 'Image' && !stats.some(s => s.name === L.displayField)) {
+                L.displayField = 'Image';
+            }
+
+            const opts = ['Image'].concat(stats.map(s => s.name))
+                .map(n => `<option value="${escapeHtml(n)}"${n === L.displayField ? ' selected' : ''}>${n === 'Image' ? 'Image' : escapeHtml(n)}</option>`)
+                .join('');
+
+            const chips = stats.map(s => {
+                const off = L.hidden.has(s.name);
+                const pct = Math.round(s.coverage * 100);
+                return `<span class="lens-chip${off ? ' off' : ''}${s.attributed ? ' attributed' : ''}"
+                    data-section="${escapeHtml(s.name)}"
+                    title="${escapeHtml(s.name)} — on ${s.count} of ${items.length} cards${s.source ? ' · ' + escapeHtml(s.source) : ''}${off ? ' · hidden in detail' : ''}">
+                    ${escapeHtml(s.name)}
+                    ${s.attributed ? '<span class="lens-later">later</span>' : ''}
+                    <span class="lens-cov">${pct}%</span>
+                </span>`;
+            }).join('');
+
+            const anyAttributed = stats.some(s => s.attributed);
+            const allAttrHidden = stats.filter(s => s.attributed).every(s => L.hidden.has(s.name));
+            const master = anyAttributed ? `<label class="lens-master" title="Hide every later-interpretation layer at once">
+                <input type="checkbox" id="lens-hide-later"${allAttrHidden ? ' checked' : ''}> Hide later interpretations</label>` : '';
+
+            bar.innerHTML = `<span class="lens-bar-label">Show as</span>
+                <select class="lens-display-select" id="lens-display-select">${opts}</select>
+                <span class="lens-bar-label" style="margin-left:6px;">Sections</span>
+                ${chips}${master}`;
+
+            // Wire controls (re-bound each rebuild; cheap and stateless).
+            const sel = document.getElementById('lens-display-select');
+            if (sel) sel.onchange = () => { L.displayField = sel.value; renderGrid(); };
+            bar.querySelectorAll('.lens-chip').forEach(chip => {
+                chip.onclick = () => {
+                    const name = chip.dataset.section;
+                    if (L.hidden.has(name)) L.hidden.delete(name); else L.hidden.add(name);
+                    renderSectionLensBar();
+                    if (selectedItem) openModal(selectedItem); // refresh open detail
+                };
+            });
+            const hideLater = document.getElementById('lens-hide-later');
+            if (hideLater) hideLater.onchange = () => {
+                stats.forEach(s => { if (s.attributed) { if (hideLater.checked) L.hidden.add(s.name); else L.hidden.delete(s.name); } });
+                renderSectionLensBar();
+                if (selectedItem) openModal(selectedItem);
+            };
+        }
+
+        // Grid lens-flip: when a section is chosen as the display field, return its
+        // HTML for the cell visual slot, or an empty-state marker. Returns null when
+        // the default Image display is active (caller keeps the image).
+        function lensCellVisual(item) {
+            const L = window._sectionLens;
+            if (!L || L.displayField === 'Image') return null;
+            const raw = item.sections && item.sections[L.displayField];
+            if (!raw || !raw.trim()) {
+                return `<span class="lens-empty">— no ${escapeHtml(L.displayField)} —</span>`;
+            }
+            const attr = lensAttribution(raw);
+            const body = attr ? raw.trim().replace(/^\[[^\]]*\]\s*/, '') : raw;
+            return `<div class="lens-text">${attr ? `<span class="lens-attr">${escapeHtml(attr)}</span>` : ''}${mdToHtml(body)}</div>`;
+        }
+
         function renderThumbnailsGrid() {
             itemGrid.innerHTML = '';
             itemGrid.classList.add('thumbnails-layout');
@@ -3916,6 +4096,9 @@
                 } else {
                     imageHtml = `<span class="thumb-icon">${fallbackIcon}</span>`;
                 }
+                // Lens-flip: chosen section's text replaces the thumbnail image.
+                const _lensThumb = lensCellVisual(item);
+                if (_lensThumb !== null) imageHtml = _lensThumb;
 
                 // Determine routing — course / external-link / modal.
                 // May 21 2026: external-link detection extended to read
@@ -4296,6 +4479,9 @@
 
             // Content sections
             Object.entries(item.sections || {}).forEach(([title, content]) => {
+                // Section Lens: skip sections the user has toggled off (e.g. later
+                // interpretations hidden by default until revealed).
+                if (window._sectionLens && window._sectionLens.hidden.has(title)) return;
                 // Handle different content types
                 let contentStr = '';
                 if (typeof content === 'string') {
