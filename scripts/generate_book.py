@@ -475,7 +475,15 @@ EMBED = {
 def render_mdx():
     body = []
     title = None
-    for block in re.split(r"\n{2,}", open(MDX, encoding="utf-8").read().strip()):
+    raw = open(MDX, encoding="utf-8").read().lstrip("﻿").strip()
+    # strip YAML frontmatter; lift its description into the book's subtitle
+    subtitle = None
+    fm = re.match(r"^---\s*\n(.*?)\n---\s*\n", raw, re.S)
+    if fm:
+        md = dict(re.findall(r'^([a-z_]+):\s*"?(.*?)"?\s*$', fm.group(1), re.M))
+        subtitle = md.get("description")
+        raw = raw[fm.end():]
+    for block in re.split(r"\n{2,}", raw.strip()):
         b = block.strip()
         if b == "---":
             continue
@@ -496,6 +504,8 @@ def render_mdx():
             if title is None:
                 title = h
                 body.append("<h1>%s</h1>" % inline(h))
+                if subtitle:
+                    body.append('<p class="subtitle">%s</p>' % inline(subtitle))
             else:
                 body.append('<h1 class="part">%s</h1>' % inline(h))   # Part II divider
         else:
