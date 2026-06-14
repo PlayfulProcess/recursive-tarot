@@ -84,6 +84,17 @@
   .more{font-size:11px;color:var(--muted);align-self:center;cursor:pointer}
   .ccount{font-size:13px;font-weight:700;text-align:center;min-width:40px}
   .empty{color:#39324d}
+  /* Sections render mode: a clamped section snippet per card */
+  .esec{position:relative;display:block;width:150px;max-height:150px;overflow:hidden;cursor:pointer;
+    border-radius:7px;border:1px solid rgba(255,255,255,.12);background:rgba(12,9,22,.55);
+    padding:7px 9px;font-size:10.5px;line-height:1.45;color:#d8d2ec;text-align:left;
+    -webkit-box-orient:vertical;-webkit-line-clamp:8;display:-webkit-box}
+  .esec.later{border-color:rgba(196,167,255,.45)}
+  .esec.none{opacity:.3;font-style:italic;-webkit-line-clamp:1;color:#9b93b5}
+  .esec .nm{display:block;font-size:9px;color:#9b93b5;margin-bottom:3px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+  .esec .at{display:block;font-size:9px;font-style:italic;opacity:.6;margin-bottom:2px}
+  .esec::after{content:'';position:absolute;left:0;right:0;bottom:0;height:22px;background:linear-gradient(transparent,rgba(12,9,22,.92));pointer-events:none}
+  .esec.none::after{display:none}
   #hint{color:var(--muted);font-size:13px;padding:30px;text-align:center;line-height:1.7}
   #stats{font-size:11.5px;color:var(--muted);padding:0 16px 4px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 
@@ -125,6 +136,8 @@
   <span class="spacer"></span>
   <button id="mode-cards" class="active">🃏 Cards</button>
   <button id="mode-counts">∑ Counts</button>
+  <button id="mode-sections">§ Sections</button>
+  <select id="section-pick" title="Which section to render" style="display:none;background:#1d1830;color:#e9e4f6;border:1px solid #3a3450;border-radius:7px;padding:5px 8px;font-size:12px;font-weight:600;cursor:pointer;max-width:200px;"></select>
   <label title="Card size" style="display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#9ca3af;">
     <span>⊕</span>
     <input id="zoom-slider" type="range" min="32" max="620" value="62" step="8"
@@ -175,6 +188,33 @@ let spec = { rows:[], cols:[], filters:{}, pinned:[] };
 let mode = 'cards';
 let collection = null;
 let specKey = null;   // localStorage key for this grammar selection's spec
+let secById = {};     // __id -> sections map (flatten drops sections; we keep them aside)
+let sectionField = null;   // normalized section-group key chosen for Sections mode
+let sectionGroups = [];    // inferred [{key,label,count,attributed}]
+
+/* Section Lens contract (shared with cards.html): identity = normalized name,
+   provenance inferred from the leading "[Author, Work, Date]" attribution line. */
+const SEC_STOP = new Set(['the','a','an','this','that','these','those','it','its']);
+const lensNorm = s => String(s).toLowerCase().replace(/['’]s\b/g,'').replace(/[_\-]+/g,' ').replace(/[.:;,]+$/,'').split(/\s+/).filter(w=>w&&!SEC_STOP.has(w)).join(' ').trim();
+const lensAttr = t => { if(typeof t!=='string')return null; const m=t.trim().match(/^\[([^\]]{3,200})\]/); return m?m[1].trim():null; };
+function inferSectionGroups(){
+  const m = new Map();
+  for (const secs of Object.values(secById)) for (const [k,v] of Object.entries(secs||{})){
+    if (typeof v!=='string' || !v.trim()) continue;
+    const key = lensNorm(k); if(!key) continue;
+    let s = m.get(key); if(!s){ s={key,count:0,labels:new Map(),attributed:false}; m.set(key,s); }
+    s.count++; s.labels.set(k,(s.labels.get(k)||0)+1);
+    if (lensAttr(v)) s.attributed = true;
+  }
+  return [...m.values()].map(s=>({key:s.key,label:[...s.labels].sort((a,b)=>b[1]-a[1])[0][0],count:s.count,attributed:s.attributed}))
+    .sort((a,b)=>b.count-a.count);
+}
+// a record's section text for the chosen group (by normalized key)
+function recSection(r){
+  const secs = secById[r.__id] || {};
+  for (const [k,v] of Object.entries(secs)){ if(typeof v==='string'&&v.trim()&&lensNorm(k)===sectionField) return {name:k,val:v}; }
+  return null;
+}
 
 /* branch colour code (house palette) — pills: hue = branch, gradient = level */
 const BRANCH_COLOR = { A:'#e07a5f', B:'#81b29a', C:'#6d8ec9', marseille:'#6d8ec9',
@@ -199,6 +239,14 @@ function branchColor(r){
 }
 function recHTML(r){
   const lvl = +(r.level?.[0]||'L1').slice(1);
+  if (mode === 'sections'){
+    const s = recSection(r);
+    if (!s) return `<span class="esec none" data-rid="${esc(r.__id)}" title="${esc(r.__name)}"><span class="nm">${esc(r.__name).slice(0,24)}</span>— none —</span>`;
+    const attr = lensAttr(s.val);
+    const body = attr ? s.val.trim().replace(/^\[[^\]]*\]\s*/,'') : s.val;
+    return `<span class="esec ${attr?'later':''}" data-rid="${esc(r.__id)}" title="${esc(r.__name)} — ${esc(s.name)}">
+      <span class="nm">${esc(r.__name).slice(0,24)}</span>${attr?`<span class="at">${esc(attr).slice(0,46)}</span>`:''}${esc(body).slice(0,260)}</span>`;
+  }
   if (lvl === 1 && r.__img)
     return `<img loading="lazy" data-rid="${esc(r.__id)}" src="${esc(r.__img)}" title="${esc(r.__name)}">`;
   const c = branchColor(r);
@@ -514,8 +562,21 @@ $('#deckbtn').onclick = () => {
 };
 
 /* ── 6. boot ───────────────────────────────────────────── */
-$('#mode-cards').onclick = () => { mode='cards'; $('#mode-cards').classList.add('active'); $('#mode-counts').classList.remove('active'); render(); };
-$('#mode-counts').onclick = () => { mode='counts'; $('#mode-counts').classList.add('active'); $('#mode-cards').classList.remove('active'); render(); };
+function setMode(m){
+  mode = m;
+  for (const id of ['mode-cards','mode-counts','mode-sections']) $('#'+id).classList.toggle('active', id==='mode-'+m);
+  const pick = $('#section-pick'); if (pick) pick.style.display = (m==='sections') ? '' : 'none';
+  render();
+}
+function populateSectionPick(){
+  const pick = $('#section-pick'); if (!pick) return;
+  pick.innerHTML = sectionGroups.map(s =>
+    `<option value="${esc(s.key)}"${s.key===sectionField?' selected':''}>${esc(s.label)} (${s.count})${s.attributed?' · later':''}</option>`).join('');
+}
+$('#mode-cards').onclick = () => setMode('cards');
+$('#mode-counts').onclick = () => setMode('counts');
+$('#mode-sections').onclick = () => setMode('sections');
+$('#section-pick').onchange = e => { sectionField = e.target.value; render(); };
 $('#reset').onclick = () => { spec={rows:[],cols:[],filters:{},pinned:[]}; sync(); };
 $('#sidebar-btn').onclick = () => {
   const on = document.body.classList.toggle('sidebar');
@@ -532,7 +593,9 @@ async function boot(){
   const slugs = selectedSlugs();
   specKey = 'explorer-spec:' + slugs.slice().sort().join(',');
   const srcParam = new URLSearchParams(location.search).get('src');
-  records = []; byId = {};
+  records = []; byId = {}; secById = {};
+  // record an item's sections under the same prefixed id flatten produces
+  const stash = (g, prefix) => { for (const it of (g.items||[])) secById[(prefix?prefix+':':'')+it.id] = it.sections || {}; };
   try{
     if (slugs.length && collection){
       $('#deckbtn').textContent = `✦ Decks ▾ (${slugs.length})`;
@@ -543,16 +606,21 @@ async function boot(){
         const inherit = { deck: (cm.name || g.name || slug).split(' — ')[0].slice(0,34),
                           year: g.metadata?.year, branch: cm.branch || g.metadata?.branch,
                           order: g.metadata?.order, tradition: g.metadata?.tradition };
+        stash(g, slug);
         return flatten(g, inherit, slug);
       });
       for (const recs of await Promise.all(loads)) records.push(...recs);
     } else {
       const src = srcParam || PFX+'tarot/all-decks-many-lenses/grammar.json';
       const g = await (await fetch(src)).json();
+      stash(g, null);
       records = flatten(g, null, null);
       if (srcParam) $('#deckbtn').textContent = '✦ ' + (g.name||'deck').split(' — ')[0].slice(0,22) + ' ▾';
     }
   } catch(e){ $('#out').innerHTML = '<div id="hint">Could not load the grammar(s).</div>'; return; }
+  sectionGroups = inferSectionGroups();
+  if (!sectionField && sectionGroups.length) sectionField = sectionGroups[0].key;
+  populateSectionPick();
   for (const r of records) byId[r.__id] = r;
   // resolve emergence names now that byId is full
   for (const r of records) if (r.__parents.length)
