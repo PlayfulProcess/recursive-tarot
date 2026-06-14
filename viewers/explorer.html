@@ -34,6 +34,12 @@
   .fpin-label .rx:hover{ color:#e07a5f; }
   .fpinned-group{ padding:0 0 6px 0; border-bottom:1px solid var(--line); margin-bottom:6px; }
   .fpinned-group:last-child{ border-bottom:none; margin-bottom:0; }
+  #presets{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding-bottom:8px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+  #presets .lab{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:2px}
+  button.preset{background:rgba(147,51,234,.12);color:#e7defb;border:1px solid rgba(147,51,234,.4);
+    border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+  button.preset:hover{background:rgba(147,51,234,.28);border-color:#9333ea}
+  button.preset-clear{background:rgba(255,255,255,.05);border-color:var(--line);color:var(--muted)}
   #tray{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding-bottom:4px}
   #tray .lab{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:4px}
   /* field-hierarchy groups: fields that nest (inferred from the data) render as a
@@ -150,7 +156,17 @@
 
 <div id="main">
 <div id="builder">
-  <div id="tray"><span class="lab">Fields — click any chip to filter it ⧩ · drag into a box to group by it</span></div>
+  <div id="presets">
+    <span class="lab">Organize ▸</span>
+    <button class="preset" data-r="arcana,suit,rank">Major/Minor ▸ Suit ▸ Rank</button>
+    <button class="preset" data-r="arcana" data-c="suit">Arcana × Suit</button>
+    <button class="preset" data-r="suit" data-c="rank">Suit × Rank</button>
+    <button class="preset" data-r="deck" data-c="arcana">Deck × Arcana</button>
+    <button class="preset" data-r="number">Number line</button>
+    <button class="preset" data-r="branch,deck">Lineage ▸ Deck</button>
+    <button class="preset preset-clear" data-clear="1">Clear</button>
+  </div>
+  <div id="tray"><span class="lab">…or drag any field below — click a chip to filter it ⧩ · drag into Rows / Columns to group</span></div>
   <div class="zone" id="z-rows"><div class="zlab">Rows ▦</div><div class="chips"></div></div>
   <div class="zone" id="z-cols"><div class="zlab">Columns ▥</div><div class="chips"></div></div>
   <div class="zone" id="z-filters"><div class="zlab">⊸ Filters — drop a field here to pin its values as toggles</div><div id="z-filters-body"></div></div>
@@ -573,6 +589,15 @@ function populateSectionPick(){
   pick.innerHTML = sectionGroups.map(s =>
     `<option value="${esc(s.key)}"${s.key===sectionField?' selected':''}>${esc(s.label)} (${s.count})${s.attributed?' · later':''}</option>`).join('');
 }
+// Preset pivots — one click sets Rows/Columns (only with fields the data actually has).
+document.querySelectorAll('#presets button').forEach(b => b.onclick = () => {
+  if (b.dataset.clear) { spec.rows = []; spec.cols = []; spec.filters = {}; sync(); return; }
+  const avail = new Set(fields.map(f => f.name));
+  const pick = s => (s ? s.split(',') : []).filter(x => avail.has(x));
+  spec.rows = pick(b.dataset.r);
+  spec.cols = pick(b.dataset.c);
+  sync();
+});
 $('#mode-cards').onclick = () => setMode('cards');
 $('#mode-counts').onclick = () => setMode('counts');
 $('#mode-sections').onclick = () => setMode('sections');
