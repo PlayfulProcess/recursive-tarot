@@ -48,6 +48,18 @@ def inline(s):
 def para(s):
     return "".join("<p>%s</p>" % inline(b) for b in re.split(r"\n{2,}", str(s or "").strip()) if b.strip())
 
+def attribution(text):
+    """The leading [Author, Work, Year] line a later-interpretation section opens with."""
+    m = re.match(r"^\s*\[([^\]]{3,200})\]", str(text or ""))
+    return m.group(1).strip() if m else None
+
+def attr_year(a):
+    m = re.search(r"\b(1[0-9]{3}|20[0-9]{2})\b", a or "")
+    return int(m.group(1)) if m else 9999
+
+def strip_attr(text):
+    return re.sub(r"^\s*\[[^\]]*\]\s*", "", str(text or ""))
+
 # ── image cache: download once, downscale, return path relative to book.html ──
 os.makedirs(IMGDIR, exist_ok=True)
 _imgfail = [0]
@@ -93,7 +105,8 @@ for g in decks:
         img = it.get("image_url") or (it.get("metadata") or {}).get("image_url")
         trump_idx.setdefault(tk, []).append({
             "slug": slug, "name": (g.get("name") or slug).split(" — ")[0],
-            "year": g.get("year") or 9999, "id": it.get("id"), "img": img})
+            "year": g.get("year") or 9999, "id": it.get("id"), "img": img,
+            "sections": it.get("sections") or {}})
 
 def deck_name(slug):
     return (deck_meta.get(slug, {}).get("name") or slug).split(" — ")[0]
@@ -128,6 +141,8 @@ def render_people():
     html.append("</div>")
     return "".join(html)
 
+ANCHOR_EARLY = ["cary-yale-visconti-tarot", "visconti-sforza-tarot", "charles-vi-tarot", "este-tarot"]
+
 def render_cards():
     out = []
     n_imgs = 0
@@ -135,16 +150,62 @@ def render_cards():
         if tk not in synth:
             continue
         lbl = tk.replace("-", " ").title()
+        entries = sorted(trump_idx.get(tk, []), key=lambda x: x["year"])
+
+        # image strip across decks
         cells = []
-        for c in sorted(trump_idx.get(tk, []), key=lambda x: x["year"]):
+        for c in entries:
             rel = thumb(c["img"])
             if not rel:
                 continue
             n_imgs += 1
             cells.append('<figure class="c"><img src="%s"><figcaption>%s</figcaption></figure>'
                          % (esc(rel), esc(c["name"][:16])))
+
+        # "In the decks" — the literal Scene from anchor decks (earliest · Marseille · Golden Dawn)
+        def scene_of(slug):
+            for c in entries:
+                if c["slug"] == slug:
+                    s = c["sections"]
+                    return s.get("Scene") or s.get("About") or s.get("Iconography")
+            return None
+        early = next((s for s in ANCHOR_EARLY if scene_of(s)), None)
+        anchors = []
+        for slug in [early, "tarot-de-marseille-conver", "golden-dawn-book-t-tarot"]:
+            if slug:
+                sc = scene_of(slug)
+                if sc:
+                    anchors.append((slug, sc))
+        indecks = ""
+        if anchors:
+            indecks = "<h4>In the decks</h4>" + "".join(
+                '<p class="indeck"><strong>%s · %s.</strong> %s%s</p>'
+                % (esc(deck_name(s)), deck_year(s) or "", inline(sc[:520]), "…" if len(sc) > 520 else "")
+                for s, sc in anchors)
+
+        # "Later readings" — the dated commentary (Gébelin / Papus / Wirth / Waite), by year, one per voice
+        later, seen = [], set()
+        for c in entries:
+            for v in c["sections"].values():
+                a = attribution(v)
+                if not a:
+                    continue
+                voice = a.split(",")[0].strip()
+                if voice in seen:
+                    continue
+                seen.add(voice)
+                later.append((attr_year(a), a, strip_attr(v)))
+        later.sort()
+        laterhtml = ""
+        if later:
+            laterhtml = "<h4>Later readings</h4>" + "".join(
+                '<div class="later"><div class="later-src">%s</div>%s</div>'
+                % (esc(a), para(body[:760] + ("…" if len(body) > 760 else "")))
+                for _, a, body in later)
+
         out.append('<section class="card-chapter"><h3>%d — %s</h3><div class="synthbox">%s</div>'
-                   '<div class="strip">%s</div></section>' % (i, esc(lbl), para(synth[tk]), "".join(cells)))
+                   '<div class="strip">%s</div>%s%s</section>'
+                   % (i, esc(lbl), para(synth[tk]), "".join(cells), indecks, laterhtml))
     print("  card images embedded: %d" % n_imgs)
     return "".join(out)
 
@@ -200,6 +261,12 @@ figcaption{ font-size:8.5pt; color:#666; margin-top:.3em; }
 .card-chapter{ break-before:page; }
 .synthbox{ background:#f6f4fb; border:1px solid #d8c8f5; border-radius:8px; padding:.5em .7em; margin:.4em 0 .8em; }
 .synthbox p{ margin:.2em 0; }
+h4{ font-size:10.5pt; text-transform:uppercase; letter-spacing:.04em; color:#7a5fb0; margin:1em 0 .3em; break-after:avoid; }
+.indeck{ font-size:10pt; margin:.3em 0; break-inside:avoid; }
+.indeck strong{ color:#333; }
+.later{ break-inside:avoid; margin:.5em 0; padding-left:.6em; border-left:2px solid #c9b8ee; }
+.later-src{ font-style:italic; font-size:8.5pt; color:#777; margin-bottom:.1em; }
+.later p{ font-size:10pt; margin:.15em 0; }
 .strip{ display:flex; flex-wrap:wrap; gap:7px; break-inside:avoid; }
 .strip .c{ margin:0; text-align:center; width:1in; }
 .strip .c img{ width:1in; height:1.6in; object-fit:cover; border:1px solid #ccc; border-radius:4px; }
