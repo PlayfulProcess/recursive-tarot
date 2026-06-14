@@ -3960,10 +3960,11 @@
         // stored; section identity = key name, provenance is inferred from the
         // bracket-attribution convention "[Author, Work, Date — …]", and default
         // visibility emerges from ubiquity. Compatible with recursive.eco as-is.
+        const LENS_IMAGE = '__image__';  // sentinel display field = show the image
         window._sectionLens = window._sectionLens || {
-            displayField: 'Image',   // 'Image' or a section name (grid lens-flip)
-            hidden: new Set(),       // section names hidden in card detail
-            inited: false,           // first-run default applied?
+            displayField: LENS_IMAGE, // LENS_IMAGE or a normalized group key (grid lens-flip)
+            hidden: new Set(),        // normalized group keys hidden in card detail
+            inited: false,            // first-run default applied?
         };
 
         // Detect the leading "[…]" attribution line a later-interpretation section
@@ -3974,8 +3975,28 @@
             return m ? m[1].trim() : null;
         }
 
-        // Infer the section types present across the loaded deck(s).
-        // Returns [{ name, count, coverage, attributed, source }] by frequency.
+        // Normalize a section name into a grouping key. Bias is to MERGE: fold case,
+        // separators, possessives, trailing punctuation, and a tiny set of
+        // determiners/pronouns so trivial spelling differences ("About this Suit" /
+        // "About this suit", "Why it matters" / "Why this Matters") collapse to one
+        // pill. Conservative — keeps verbs/prepositions so genuinely different
+        // sections ("What" vs "What it is", "About suit" vs "About cards") stay apart.
+        const LENS_STOP = new Set(['the', 'a', 'an', 'this', 'that', 'these', 'those', 'it', 'its']);
+        function lensNorm(s) {
+            return String(s).toLowerCase()
+                .replace(/['’]s\b/g, '')        // possessive
+                .replace(/[_\-]+/g, ' ')
+                .replace(/[.:;,]+$/, '')
+                .split(/\s+/)
+                .filter(w => w && !LENS_STOP.has(w))
+                .join(' ')
+                .trim();
+        }
+
+        // Infer the section GROUPS present across the loaded deck(s). Sections are
+        // bucketed by lensNorm(); each group carries its display label (the most
+        // common original spelling), total count, coverage, and provenance.
+        // Returns [{ key, label, count, coverage, attributed, source }] by frequency.
         function inferSections(list) {
             const total = (list && list.length) || 0;
             const stat = new Map();
@@ -3983,16 +4004,20 @@
                 const secs = (it && it.sections) || {};
                 Object.entries(secs).forEach(([name, val]) => {
                     if (typeof val !== 'string' || !val.trim()) return;
-                    let s = stat.get(name);
-                    if (!s) { s = { name, count: 0, attributed: false, source: null }; stat.set(name, s); }
+                    const key = lensNorm(name);
+                    if (!key) return;
+                    let s = stat.get(key);
+                    if (!s) { s = { key, count: 0, attributed: false, source: null, _labels: new Map() }; stat.set(key, s); }
                     s.count++;
+                    s._labels.set(name, (s._labels.get(name) || 0) + 1); // canonical label = most common spelling
                     const attr = lensAttribution(val);
                     if (attr) { s.attributed = true; if (!s.source) s.source = attr; }
                 });
             });
-            return [...stat.values()]
-                .map(s => ({ ...s, coverage: total ? s.count / total : 0 }))
-                .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+            return [...stat.values()].map(s => {
+                const label = [...s._labels.entries()].sort((a, b) => b[1] - a[1])[0][0];
+                return { key: s.key, label, count: s.count, coverage: total ? s.count / total : 0, attributed: s.attributed, source: s.source };
+            }).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
         }
 
         // Build / refresh the Section Lens bar from the full item set (not the
@@ -4007,32 +4032,31 @@
             const L = window._sectionLens;
             // First run: hide later-interpretation layers by default (native voice first).
             if (!L.inited) {
-                stats.forEach(s => { if (s.attributed) L.hidden.add(s.name); });
+                stats.forEach(s => { if (s.attributed) L.hidden.add(s.key); });
                 L.inited = true;
             }
-            // Drop stale display field if that section vanished after a deck switch.
-            if (L.displayField !== 'Image' && !stats.some(s => s.name === L.displayField)) {
-                L.displayField = 'Image';
+            // Drop stale display field if that group vanished after a deck switch.
+            if (L.displayField !== LENS_IMAGE && !stats.some(s => s.key === L.displayField)) {
+                L.displayField = LENS_IMAGE;
             }
 
-            const opts = ['Image'].concat(stats.map(s => s.name))
-                .map(n => `<option value="${escapeHtml(n)}"${n === L.displayField ? ' selected' : ''}>${n === 'Image' ? 'Image' : escapeHtml(n)}</option>`)
-                .join('');
+            const opts = `<option value="${LENS_IMAGE}"${L.displayField === LENS_IMAGE ? ' selected' : ''}>Image</option>`
+                + stats.map(s => `<option value="${escapeHtml(s.key)}"${s.key === L.displayField ? ' selected' : ''}>${escapeHtml(s.label)}</option>`).join('');
 
             const chips = stats.map(s => {
-                const off = L.hidden.has(s.name);
+                const off = L.hidden.has(s.key);
                 const pct = Math.round(s.coverage * 100);
                 return `<span class="lens-chip${off ? ' off' : ''}${s.attributed ? ' attributed' : ''}"
-                    data-section="${escapeHtml(s.name)}"
-                    title="${escapeHtml(s.name)} — on ${s.count} of ${items.length} cards${s.source ? ' · ' + escapeHtml(s.source) : ''}${off ? ' · hidden in detail' : ''}">
-                    ${escapeHtml(s.name)}
+                    data-key="${escapeHtml(s.key)}"
+                    title="${escapeHtml(s.label)} — on ${s.count} of ${items.length} cards${s.source ? ' · ' + escapeHtml(s.source) : ''}${off ? ' · hidden in detail' : ''}">
+                    ${escapeHtml(s.label)}
                     ${s.attributed ? '<span class="lens-later">later</span>' : ''}
                     <span class="lens-cov">${pct}%</span>
                 </span>`;
             }).join('');
 
             const anyAttributed = stats.some(s => s.attributed);
-            const allAttrHidden = stats.filter(s => s.attributed).every(s => L.hidden.has(s.name));
+            const allAttrHidden = stats.filter(s => s.attributed).every(s => L.hidden.has(s.key));
             const master = anyAttributed ? `<label class="lens-master" title="Hide every later-interpretation layer at once">
                 <input type="checkbox" id="lens-hide-later"${allAttrHidden ? ' checked' : ''}> Hide later interpretations</label>` : '';
 
@@ -4046,30 +4070,32 @@
             if (sel) sel.onchange = () => { L.displayField = sel.value; renderGrid(); };
             bar.querySelectorAll('.lens-chip').forEach(chip => {
                 chip.onclick = () => {
-                    const name = chip.dataset.section;
-                    if (L.hidden.has(name)) L.hidden.delete(name); else L.hidden.add(name);
+                    const key = chip.dataset.key;
+                    if (L.hidden.has(key)) L.hidden.delete(key); else L.hidden.add(key);
                     renderSectionLensBar();
                     if (selectedItem) openModal(selectedItem); // refresh open detail
                 };
             });
             const hideLater = document.getElementById('lens-hide-later');
             if (hideLater) hideLater.onchange = () => {
-                stats.forEach(s => { if (s.attributed) { if (hideLater.checked) L.hidden.add(s.name); else L.hidden.delete(s.name); } });
+                stats.forEach(s => { if (s.attributed) { if (hideLater.checked) L.hidden.add(s.key); else L.hidden.delete(s.key); } });
                 renderSectionLensBar();
                 if (selectedItem) openModal(selectedItem);
             };
         }
 
-        // Grid lens-flip: when a section is chosen as the display field, return its
-        // HTML for the cell visual slot, or an empty-state marker. Returns null when
-        // the default Image display is active (caller keeps the image).
+        // Grid lens-flip: when a section group is the display field, find this item's
+        // matching section (by normalized key) and return its HTML for the cell visual
+        // slot, or an empty-state marker. Returns null when Image display is active.
         function lensCellVisual(item) {
             const L = window._sectionLens;
-            if (!L || L.displayField === 'Image') return null;
-            const raw = item.sections && item.sections[L.displayField];
-            if (!raw || !raw.trim()) {
-                return `<span class="lens-empty">— no ${escapeHtml(L.displayField)} —</span>`;
+            if (!L || L.displayField === LENS_IMAGE) return null;
+            const secs = (item && item.sections) || {};
+            let raw = null;
+            for (const [name, val] of Object.entries(secs)) {
+                if (typeof val === 'string' && val.trim() && lensNorm(name) === L.displayField) { raw = val; break; }
             }
+            if (!raw) return `<span class="lens-empty">— none —</span>`;
             const attr = lensAttribution(raw);
             const body = attr ? raw.trim().replace(/^\[[^\]]*\]\s*/, '') : raw;
             return `<div class="lens-text">${attr ? `<span class="lens-attr">${escapeHtml(attr)}</span>` : ''}${mdToHtml(body)}</div>`;
@@ -4481,7 +4507,7 @@
             Object.entries(item.sections || {}).forEach(([title, content]) => {
                 // Section Lens: skip sections the user has toggled off (e.g. later
                 // interpretations hidden by default until revealed).
-                if (window._sectionLens && window._sectionLens.hidden.has(title)) return;
+                if (window._sectionLens && window._sectionLens.hidden.has(lensNorm(title))) return;
                 // Handle different content types
                 let contentStr = '';
                 if (typeof content === 'string') {
