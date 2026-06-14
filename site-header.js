@@ -32,13 +32,13 @@
 
   // [key, label, href] — split by level
   const CARD_VIEWS = [
-    ['cards',   'Cards',  PFX + 'viewers/cards.html'],
+    ['cards',    'Cards',    PFX + 'viewers/cards.html'],
+    ['explorer', 'Explorer', PFX + 'viewers/explorer.html'],
+    ['tree',     'Tree',     PFX + 'viewers/tree-viewer.html'],
   ];
   const GRAMMAR_VIEWS = [
-    ['explorer',   'Explorer',     PFX + 'viewers/explorer.html'],
     ['treeoflife', 'Tree of Life', PFX + 'viewers/genealogy-tree.html'],
     ['timeline',   'Timeline',     PFX + 'viewers/timeline.html'],
-    ['tree',       'Tree',         PFX + 'viewers/tree-viewer.html'],
     ['genealogy',  'Genealogy',    PFX + 'genealogy.html'],
   ];
   // [key, label, href, cssClass, external?]
