@@ -641,8 +641,13 @@
         .synthbox{ background:linear-gradient(135deg,rgba(147,51,234,.08),rgba(196,167,255,.05));
             border:1px solid #d8c8f5; border-radius:12px; padding:1rem 1.1rem; margin:.6rem 0; }
         .strip{ display:flex; gap:.5rem; overflow-x:auto; padding:.4rem 0; }
-        .strip .c{ flex:0 0 88px; text-align:center; font-size:.65rem; color:#6b7280; }
+        .strip .c{ flex:0 0 88px; text-align:center; font-size:.65rem; color:#6b7280; text-decoration:none; }
+        .strip a.c img{ transition:transform .12s, box-shadow .12s; }
+        .strip a.c:hover img{ transform:translateY(-2px); box-shadow:0 4px 14px rgba(147,51,234,.3); }
         .strip .c img{ width:88px; height:142px; object-fit:cover; border-radius:6px; border:1px solid #e5e7eb; background:#0a0712; }
+        .card-links{ font-size:.85rem; margin-top:.5rem; }
+        .card-links a{ color:#9333ea; text-decoration:none; font-weight:600; }
+        .card-links a:hover{ text-decoration:underline; }
 
         /* ── PRINT: clean book pagination ── */
         @media print{
@@ -983,11 +988,17 @@
                       if(col){ const cells=[];
                         for(const g of col.grammars.filter(x=>!x.is_meta)){ const dg=await get(T+'/'+g.slug+'/grammar.json'); if(!dg)continue;
                           const it=dg.items.find(i=>(i.metadata||{}).trump_key===tk); const img=it&&(it.image_url||(it.metadata||{}).image_url);
-                          if(img) cells.push({y:g.year||9999,h:`<div class="c"><img loading="lazy" src="${esc(img)}"><div>${esc((g.name||g.slug).split(' — ')[0].slice(0,14))}</div></div>`});
+                          const dname=(g.name||g.slug).split(' — ')[0];
+                          // each card links to its detail view in that deck (history-only static viewer)
+                          const url=`../viewers/cards.html?src=../tarot/${g.slug}/grammar.json&item=${encodeURIComponent(it?it.id:'')}`;
+                          if(img) cells.push({y:g.year||9999,h:`<a class="c" href="${url}" title="Open the ${esc(dname)} card"><img loading="lazy" src="${esc(img)}"><div>${esc(dname.slice(0,14))}</div></a>`});
                         }
                         cells.sort((a,b)=>a.y-b.y); html+=cells.map(c=>c.h).join('');
                       }
-                      el.innerHTML=html+'</div>';
+                      html+='</div>';
+                      const lbl=tk.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+                      html+=`<p class="card-links screen-only"><a href="../viewers/prototypes/lenses.html?card=${encodeURIComponent(tk)}">See ${esc(lbl)} across every deck in Lenses →</a> · <a href="https://flow.recursive.eco" target="_blank" rel="noopener">Get a reading at recursive.eco →</a></p>`;
+                      el.innerHTML=html;
                     }
                   }
                 })();

@@ -385,7 +385,10 @@ function buildTabs(){
   buildTabs(); renderDeckPanel();
   const db=document.getElementById('deckbtn'); db.style.display=''; db.textContent=`✦ Decks (${SELECTED.size}/${DECKS.length}) ▾`;
   db.onclick=()=>document.getElementById('deckpanel').classList.toggle('open');
-  render();
+  // Deep-link: ?card=<trump_key> lands on that card in the Synopsis (the book's "across decks" link)
+  const deep=new URLSearchParams(location.search).get('card');
+  if(deep && trumpOptions().includes(deep)){ cur='synopsis'; buildTabs(); render(deep); }
+  else render();
 })();
 </script>
 </body>
