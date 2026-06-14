@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lens prototypes — Recursive Tarot</title>
+<style>
+  :root{
+    --bg:#0c0916; --panel:#161029; --panel2:#1d1830; --line:rgba(255,255,255,.10);
+    --text:#e9e4f6; --muted:#9b93b5; --accent:#c4a7ff; --accent2:#9333ea;
+    --native:#6ee7b7; --later:#c4a7ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 -apple-system,Segoe UI,Roboto,sans-serif}
+  header{padding:14px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5}
+  h1{font-size:17px;margin:0 0 3px}
+  .sub{font-size:12px;color:var(--muted)}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+  .tab{padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:var(--panel);
+    color:var(--text);cursor:pointer;font-size:13px;font-weight:600}
+  .tab.on{background:var(--accent2);border-color:var(--accent2);color:#fff}
+  main{padding:18px;max-width:1280px;margin:0 auto}
+  .ctl{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+  select{background:var(--panel2);color:var(--text);border:1px solid #3a3450;border-radius:8px;padding:7px 11px;font-size:13px;font-weight:600;cursor:pointer}
+  label.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .loading{color:var(--muted);padding:40px;text-align:center}
+  .legend{font-size:11px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap;margin:8px 0 0}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:middle;margin-right:4px}
+
+  /* Matrix */
+  table.matrix{border-collapse:collapse;font-size:12px}
+  table.matrix th,table.matrix td{border:1px solid var(--line);padding:0}
+  table.matrix th{background:var(--panel);position:sticky;font-weight:600;color:var(--muted)}
+  table.matrix thead th{top:0;z-index:3;padding:8px 6px;white-space:nowrap;vertical-align:bottom}
+  table.matrix tbody th{left:0;z-index:2;text-align:left;padding:6px 10px;background:var(--panel);max-width:230px}
+  table.matrix tbody th .ttl{color:var(--text);font-weight:600}
+  table.matrix tbody th .later-tag{font-size:9px;color:var(--later);border:1px solid rgba(196,167,255,.4);border-radius:4px;padding:0 3px;margin-left:5px}
+  .cell{width:62px;height:34px;display:flex;align-items:center;justify-content:center;font-size:11px;cursor:default}
+
+  /* Synopsis */
+  .cols{display:flex;gap:14px;overflow-x:auto;padding-bottom:8px}
+  .col{flex:0 0 320px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .col h3{margin:0;padding:10px 12px;font-size:13px;background:var(--panel2);border-bottom:1px solid var(--line)}
+  .col .colimg{height:150px;background:#0a0712 center/contain no-repeat}
+  .col .secs{padding:10px 12px;max-height:440px;overflow:auto}
+  .sec{margin:0 0 12px}
+  .sec .st{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);margin:0 0 3px}
+  .sec.later .st{color:var(--later)}
+  .sec .sb{font-size:12.5px;color:#d8d2ec}
+  .sec .attr{font-size:10px;font-style:italic;color:var(--muted);display:block;margin-bottom:3px}
+  .divider{border:0;border-top:1px dashed rgba(196,167,255,.3);margin:14px 0 10px}
+  .divider-lbl{font-size:10px;color:var(--later);text-transform:uppercase;letter-spacing:.05em}
+
+  /* Ribbon */
+  .ribbon{position:relative;height:200px;margin:30px 0 10px;border-left:1px solid var(--line)}
+  .axis{position:absolute;left:0;right:0;top:120px;height:2px;background:linear-gradient(90deg,#2a2440,#5a4a8a)}
+  .tick{position:absolute;top:120px;transform:transl(-50%,-50%);text-align:center}
+  .tick .pt{width:14px;height:14px;border-radius:50%;border:2px solid var(--bg);margin:0 auto;cursor:pointer}
+  .tick .yr{font-size:10px;color:var(--muted);margin-top:6px;white-space:nowrap}
+  .tick .nm{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:10px;white-space:nowrap;color:var(--text)}
+  .tick.native .pt{background:var(--native)}
+  .tick.later .pt{background:var(--later)}
+  .tick .thumb{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);width:40px;height:62px;object-fit:cover;border-radius:4px;border:1px solid var(--line)}
+  #ribbon-read{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:12px;min-height:60px;font-size:13px}
+
+  /* Small multiples */
+  .multiples{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .mtile{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .mtile .mimg{height:200px;background:#0a0712 center/contain no-repeat}
+  .mtile .mcap{padding:7px 9px;font-size:11px;color:var(--muted)}
+  .mtile .mcap b{color:var(--text);display:block;font-size:12px}
+
+  /* Reader */
+  .reader{max-width:640px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .reader .rimg{height:280px;background:#0a0712 center/contain no-repeat;margin:18px}
+  .reader .rbody{padding:0 26px 26px}
+  .reader h2{font-size:22px;margin:0 0 4px}
+  .reader .rsec{margin:0 0 16px}
+  .reader .rsec .st{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin:0 0 4px}
+  .reader .rsec.later{opacity:.92}
+  .reader .rsec.later .st{color:var(--later)}
+  .reader details{border-top:1px dashed rgba(196,167,255,.3);padding-top:10px;margin-top:14px}
+  .reader summary{cursor:pointer;font-size:12px;color:var(--later);text-transform:uppercase;letter-spacing:.04em}
+  .nav{display:flex;justify-content:space-between;padding:14px 26px;border-top:1px solid var(--line)}
+  .nav button{background:var(--panel2);border:1px solid #3a3450;color:var(--text);border-radius:8px;padding:8px 16px;cursor:pointer;font-weight:600}
+  .attr{font-size:10px;font-style:italic;color:var(--muted);display:block;margin-bottom:4px}
+  b.md{color:#fff}
+</style>
+</head>
+<body>
+<header>
+  <h1>Lens prototypes <span style="color:var(--muted);font-weight:400">· five ways to see the same data</span></h1>
+  <div class="sub" id="status">Loading the sample decks…</div>
+  <div class="tabs" id="tabs"></div>
+</header>
+<main id="main"><div class="loading">Loading…</div></main>
+
+<script>
+// ── Sample decks (span 1450→1909; mix of bare + commentary-rich) ──────────────
+const DECKS = [
+  {slug:'visconti-sforza-tarot',      label:'Visconti-Sforza', year:1451},
+  {slug:'charles-vi-tarot',           label:'Charles VI',      year:1475},
+  {slug:'tarot-de-marseille-conver',  label:'Marseille · Conver', year:1760},
+  {slug:'court-de-gebelin-tarot',     label:'Court de Gébelin', year:1781},
+  {slug:'oswald-wirth-tarot',         label:'Oswald Wirth',    year:1889},
+  {slug:'golden-dawn-book-t-tarot',   label:'Golden Dawn',     year:1888},
+];
+
+// ── helpers (shared with the Section Lens contract) ───────────────────────────
+const STOP=new Set(['the','a','an','this','that','these','those','it','its']);
+const lensNorm=s=>String(s).toLowerCase().replace(/['’]s\b/g,'').replace(/[_\-]+/g,' ').replace(/[.:;,]+$/,'').split(/\s+/).filter(w=>w&&!STOP.has(w)).join(' ').trim();
+const lensAttr=t=>{ if(typeof t!=='string')return null; const m=t.trim().match(/^\[([^\]]{3,200})\]/); return m?m[1].trim():null; };
+const attrYear=a=>{ const m=a&&a.match(/\b(1[0-9]{3}|20[0-9]{2})\b/); return m?+m[1]:Infinity; };
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function md(s){ return esc(s).replace(/\*\*(.+?)\*\*/g,'<b class="md">$1</b>').replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>'); }
+
+// 22-major identity by name keywords (so "the same card" matches across decks)
+const TRUMPS=[
+ ['Fool',['fool','mat ','le mat','matto','fou']],['Magician',['magician','bateleur','bagatto','juggler']],
+ ['High Priestess',['priestess','papesse','papessa','popess','juno']],['Empress',['empress','imperatrice','imperatrice']],
+ ['Emperor',['emperor','empereur','imperatore']],['Hierophant / Pope',['hierophant','pope','le pape','papa','jupiter']],
+ ['Lovers',['lovers','amoureux','amore','love']],['Chariot',['chariot','carro']],
+ ['Strength',['strength','force','fortitude','forza']],['Hermit',['hermit','hermite','ermite','vecchio','old man']],
+ ['Wheel of Fortune',['wheel','roue','fortune','ruota']],['Justice',['justice','giustizia']],
+ ['Hanged Man',['hanged','pendu','traitor','impiccato']],['Death',['death','mort','morte']],
+ ['Temperance',['temperance','temperanza']],['Devil',['devil','diable','diavolo','typhon']],
+ ['Tower',['tower','maison','torre','lightning','house of god']],['Star',['star','etoile','stella']],
+ ['Moon',['moon','lune','luna']],['Sun',['sun','soleil','sole']],
+ ['Judgement',['judgement','judgment','jugement','angel','angelo']],['World',['world','monde','mondo','universe']],
+];
+function trumpId(name){
+  const n=' '+name.toLowerCase()+' ';
+  for(const [canon,keys] of TRUMPS){ if(keys.some(k=>n.includes(k))) return canon; }
+  return null;
+}
+
+let ITEMS=[];   // flat: {deck, label, year, id, name, sections, image, trump}
+let SECGROUPS=[];
+
+async function load(){
+  const out=[];
+  await Promise.all(DECKS.map(async d=>{
+    try{
+      const g=await (await fetch(`../../tarot/${d.slug}/grammar.json`)).json();
+      for(const it of (g.items||[])){
+        const secs=it.sections||{};
+        const hasText=Object.values(secs).some(v=>typeof v==='string'&&v.trim());
+        if(!hasText && !it.image_url) continue;
+        out.push({deck:d.slug,label:d.label,year:d.year,id:it.id,name:it.name||it.id,
+          sections:secs,image:it.image_url||it.metadata?.image_url||'',trump:trumpId(it.name||'')});
+      }
+    }catch(e){ console.warn('skip',d.slug,e); }
+  }));
+  ITEMS=out;
+  // section groups across everything
+  const m=new Map();
+  for(const it of ITEMS) for(const [k,v] of Object.entries(it.sections)){
+    if(typeof v!=='string'||!v.trim())continue;
+    const key=lensNorm(k); if(!key)continue;
+    let s=m.get(key); if(!s){s={key,count:0,labels:new Map(),attributed:false,year:Infinity};m.set(key,s);}
+    s.count++; s.labels.set(k,(s.labels.get(k)||0)+1);
+    const a=lensAttr(v); if(a){s.attributed=true; s.year=Math.min(s.year,attrYear(a));}
+  }
+  SECGROUPS=[...m.values()].map(s=>({...s,label:[...s.labels].sort((a,b)=>b[1]-a[1])[0][0]}))
+    .sort((a,b)=>b.count-a.count);
+  document.getElementById('status').textContent=`${ITEMS.length} cards · ${DECKS.length} decks (1451–1909) · ${SECGROUPS.length} section types`;
+}
+
+// item's section text for a normalized group key
+const secOf=(it,key)=>{ for(const [k,v] of Object.entries(it.sections)){ if(typeof v==='string'&&v.trim()&&lensNorm(k)===key) return {raw:k,val:v}; } return null; };
+
+// ── VIEW 1: MATRIX (section-type × deck coverage heatmap) ─────────────────────
+function viewMatrix(){
+  const decks=DECKS;
+  const rows=SECGROUPS.filter(s=>s.count>=2);
+  const perDeckTotal={}; decks.forEach(d=>perDeckTotal[d.slug]=ITEMS.filter(i=>i.deck===d.slug).length);
+  let h=`<div class="ctl"><div><b>Matrix</b> — section coverage across decks. Each cell: how many cards in that deck carry that section. Reveals at a glance which commentary belongs where.</div></div>
+   <div class="legend"><span><span class="dot" style="background:var(--native)"></span>native / traditional</span>
+     <span><span class="dot" style="background:var(--later)"></span>later interpretation (dated)</span>
+     <span>cell shade = coverage</span></div>
+   <div style="overflow:auto;margin-top:12px"><table class="matrix"><thead><tr><th>section ↓ &nbsp; deck →</th>`;
+  decks.forEach(d=>h+=`<th>${esc(d.label)}<br><span style="font-weight:400">${d.year}</span></th>`);
+  h+=`</tr></thead><tbody>`;
+  for(const s of rows){
+    h+=`<tr><th><span class="ttl">${esc(s.label)}</span>${s.attributed?`<span class="later-tag">${s.year<Infinity?s.year:'later'}</span>`:''}</th>`;
+    for(const d of decks){
+      const n=ITEMS.filter(i=>i.deck===d.slug && secOf(i,s.key)).length;
+      const tot=perDeckTotal[d.slug]||1; const cov=n/tot;
+      const base=s.attributed?'196,167,255':'110,231,183';
+      const bg=n? `background:rgba(${base},${(0.12+cov*0.6).toFixed(2)})`:'';
+      h+=`<td><div class="cell" style="${bg}" title="${esc(s.label)} · ${esc(d.label)}: ${n}/${tot}">${n||''}</div></td>`;
+    }
+    h+=`</tr>`;
+  }
+  h+=`</tbody></table></div>`;
+  return h;
+}
+
+// ── VIEW 2: SYNOPSIS (one card across decks, side by side) ────────────────────
+function trumpOptions(){ const set=[...new Set(ITEMS.filter(i=>i.trump).map(i=>i.trump))];
+  return TRUMPS.map(t=>t[0]).filter(t=>set.includes(t)); }
+function viewSynopsis(sel){
+  const opts=trumpOptions(); const card=sel||opts[0];
+  let h=`<div class="ctl"><label class="lbl">Card</label><select id="syn-sel">${opts.map(o=>`<option${o===card?' selected':''}>${esc(o)}</option>`).join('')}</select>
+    <span style="color:var(--muted);font-size:12px">— the same trump read across every deck that has it; native voice first, later commentary below the divider.</span></div><div class="cols">`;
+  for(const d of DECKS){
+    const it=ITEMS.find(i=>i.deck===d.slug && i.trump===card); if(!it)continue;
+    const entries=Object.entries(it.sections).filter(([k,v])=>typeof v==='string'&&v.trim())
+      .map(([k,v],i)=>{const a=lensAttr(v);return{k,v,i,attributed:!!a,attr:a,year:a?attrYear(a):Infinity};})
+      .sort((a,b)=>(a.attributed-b.attributed)||(a.attributed?(a.year-b.year):(a.i-b.i)));
+    let body=''; let dividerDone=false;
+    for(const e of entries){
+      if(e.attributed&&!dividerDone){body+=`<hr class="divider"><div class="divider-lbl">later interpretations</div>`;dividerDone=true;}
+      const bv=e.attr?e.v.trim().replace(/^\[[^\]]*\]\s*/,''):e.v;
+      body+=`<div class="sec ${e.attributed?'later':''}"><div class="st">${esc(e.k)}</div>${e.attr?`<span class="attr">${esc(e.attr)}</span>`:''}<div class="sb"><p>${md(bv.slice(0,600))}${bv.length>600?'…':''}</p></div></div>`;
+    }
+    h+=`<div class="col"><h3>${esc(d.label)} · ${d.year}</h3>${it.image?`<div class="colimg" style="background-image:url('${esc(it.image)}')"></div>`:''}<div class="secs">${body||'<span style="color:var(--muted)">—</span>'}</div></div>`;
+  }
+  h+=`</div>`;
+  return h;
+}
+
+// ── VIEW 3: PROVENANCE RIBBON (one card's layers along a timeline) ────────────
+function viewRibbon(sel){
+  const opts=trumpOptions(); const card=sel||'Fool';
+  const pts=[];
+  for(const d of DECKS){
+    const it=ITEMS.find(i=>i.deck===d.slug && i.trump===card); if(!it)continue;
+    pts.push({year:d.year,kind:'native',label:d.label,img:it.image,
+      text:`**${d.label}** (${d.year}) — the card as depicted in this deck.`});
+    for(const [k,v] of Object.entries(it.sections)){
+      const a=lensAttr(v); if(!a)continue; const y=attrYear(a); if(y===Infinity)continue;
+      if(pts.some(p=>p.kind==='later'&&p.year===y&&p.src===k))continue;
+      pts.push({year:y,kind:'later',label:k,src:k,attr:a,text:v.trim().replace(/^\[[^\]]*\]\s*/,'')});
+    }
+  }
+  pts.sort((a,b)=>a.year-b.year);
+  const yrs=pts.map(p=>p.year); const min=Math.min(...yrs,1440),max=Math.max(...yrs,1920);
+  const X=y=>((y-min)/(max-min))*94+3;
+  let ticks='';
+  pts.forEach((p,i)=>{ ticks+=`<div class="tick ${p.kind}" style="left:${X(p.year).toFixed(1)}%">
+     ${p.kind==='native'&&p.img?`<img class="thumb" src="${esc(p.img)}">`:`<span class="nm">${esc(p.label).slice(0,18)}</span>`}
+     <div class="pt" data-i="${i}"></div><div class="yr">${p.year}</div></div>`; });
+  window._ribbonPts=pts;
+  let h=`<div class="ctl"><label class="lbl">Card</label><select id="rib-sel">${opts.map(o=>`<option${o===card?' selected':''}>${esc(o)}</option>`).join('')}</select>
+    <span style="color:var(--muted);font-size:12px">— one card's whole life: each deck's depiction (green) and each dated commentary (purple), placed in time. Click a point.</span></div>
+    <div class="ribbon"><div class="axis"></div>${ticks}</div>
+    <div id="ribbon-read"><span style="color:var(--muted)">Click a point on the timeline to read that layer.</span></div>`;
+  return h;
+}
+
+// ── VIEW 4: SMALL MULTIPLES (one card, every deck's image) ────────────────────
+function viewMultiples(sel){
+  const opts=trumpOptions(); const card=sel||'Fool';
+  let tiles='';
+  for(const d of DECKS){
+    // one tile per deck — prefer the matching card that actually has an image
+    const matches=ITEMS.filter(i=>i.deck===d.slug && i.trump===card);
+    const it=matches.find(m=>m.image)||matches[0]; if(!it)continue;
+    tiles+=`<div class="mtile">${it.image?`<div class="mimg" style="background-image:url('${esc(it.image)}')"></div>`:`<div class="mimg"></div>`}
+      <div class="mcap"><b>${esc(d.label)}</b>${d.year} · ${esc(it.name).slice(0,30)}</div></div>`;
+  }
+  return `<div class="ctl"><label class="lbl">Card</label><select id="mul-sel">${opts.map(o=>`<option${o===card?' selected':''}>${esc(o)}</option>`).join('')}</select>
+    <span style="color:var(--muted);font-size:12px">— pure iconography: the same trump rendered by every tradition, side by side.</span></div>
+    <div class="multiples">${tiles||'<span style="color:var(--muted)">No images.</span>'}</div>`;
+}
+
+// ── VIEW 5: READER (one deck, one card per spread, later layers collapsed) ─────
+let readerDeck='court-de-gebelin-tarot', readerIdx=0;
+function viewReader(){
+  const list=ITEMS.filter(i=>i.deck===readerDeck);
+  if(readerIdx>=list.length)readerIdx=0; if(readerIdx<0)readerIdx=list.length-1;
+  const it=list[readerIdx]||{};
+  const entries=Object.entries(it.sections||{}).filter(([k,v])=>typeof v==='string'&&v.trim())
+    .map(([k,v],i)=>{const a=lensAttr(v);return{k,v,i,attributed:!!a,attr:a,year:a?attrYear(a):Infinity};})
+    .sort((a,b)=>(a.attributed-b.attributed)||(a.attributed?(a.year-b.year):(a.i-b.i)));
+  const native=entries.filter(e=>!e.attributed), later=entries.filter(e=>e.attributed);
+  const secHtml=e=>{const bv=e.attr?e.v.trim().replace(/^\[[^\]]*\]\s*/,''):e.v;
+    return `<div class="rsec ${e.attributed?'later':''}"><div class="st">${esc(e.k)}</div>${e.attr?`<span class="attr">${esc(e.attr)}</span>`:''}<div><p>${md(bv)}</p></div></div>`;};
+  let h=`<div class="ctl"><label class="lbl">Deck</label><select id="rd-deck">${DECKS.map(d=>`<option value="${d.slug}"${d.slug===readerDeck?' selected':''}>${esc(d.label)}</option>`).join('')}</select>
+    <span style="color:var(--muted);font-size:12px">— deep read: one card per spread, the deck's own voice in full; later layers tucked into an expander.</span></div>
+   <div class="reader">${it.image?`<div class="rimg" style="background-image:url('${esc(it.image)}')"></div>`:''}
+     <div class="rbody"><h2>${esc(it.name||'—')}</h2><div class="sub" style="color:var(--muted);margin-bottom:14px">${readerDeck.replace(/-/g,' ')} · ${readerIdx+1} / ${list.length}</div>
+       ${native.map(secHtml).join('')}
+       ${later.length?`<details open><summary>${later.length} later interpretation${later.length>1?'s':''} ▾</summary>${later.map(secHtml).join('')}</details>`:''}
+     </div>
+     <div class="nav"><button id="rd-prev">← Prev</button><button id="rd-next">Next →</button></div>
+   </div>`;
+  return h;
+}
+
+// ── tab plumbing ──────────────────────────────────────────────────────────────
+const VIEWS=[
+  ['matrix','Matrix',()=>viewMatrix()],
+  ['synopsis','Synopsis',s=>viewSynopsis(s)],
+  ['ribbon','Provenance ribbon',s=>viewRibbon(s)],
+  ['multiples','Small multiples',s=>viewMultiples(s)],
+  ['reader','Reader',()=>viewReader()],
+];
+let cur='matrix';
+function render(arg){
+  document.getElementById('main').innerHTML=VIEWS.find(v=>v[0]===cur)[2](arg);
+  // wire per-view controls
+  const on=(id,ev,fn)=>{const e=document.getElementById(id);if(e)e[ev]=fn;};
+  on('syn-sel','onchange',e=>render(e.target.value));
+  on('mul-sel','onchange',e=>render(e.target.value));
+  on('rib-sel','onchange',e=>render(e.target.value));
+  if(cur==='ribbon') document.querySelectorAll('.tick .pt').forEach(pt=>pt.onclick=()=>{
+    const p=window._ribbonPts[+pt.dataset.i];
+    document.getElementById('ribbon-read').innerHTML=`<div style="font-size:11px;color:var(--${p.kind==='later'?'later':'native'});text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">${p.year} · ${esc(p.label)}</div>${p.attr?`<span class="attr">${esc(p.attr)}</span>`:''}<p>${md(p.text.slice(0,1200))}${p.text.length>1200?'…':''}</p>`;
+  });
+  if(cur==='reader'){ on('rd-deck','onchange',e=>{readerDeck=e.target.value;readerIdx=0;render();});
+    on('rd-prev','onclick',()=>{readerIdx--;render();}); on('rd-next','onclick',()=>{readerIdx++;render();}); }
+}
+function buildTabs(){
+  document.getElementById('tabs').innerHTML=VIEWS.map(v=>`<span class="tab ${v[0]===cur?'on':''}" data-v="${v[0]}">${v[1]}</span>`).join('');
+  document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{cur=t.dataset.v;buildTabs();render();});
+}
+(async function(){ await load(); buildTabs(); render(); })();
+</script>
+</body>
+</html>
