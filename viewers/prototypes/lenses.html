@@ -30,6 +30,11 @@
   .seg button.on{background:var(--accent2);color:#fff}
   .loading{color:var(--muted);padding:40px;text-align:center}
   .legend{font-size:11px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap;margin:8px 0 0}
+  /* "Across the decks" synthesis banner — content of the emergent trump node */
+  .synth{background:linear-gradient(135deg,rgba(147,51,234,.12),rgba(196,167,255,.06));
+    border:1px solid rgba(196,167,255,.32);border-radius:12px;padding:14px 16px;margin:0 0 16px;font-size:13px;line-height:1.65}
+  .synth .sh{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:7px;font-weight:700}
+  .synth b.md{color:#fff}
   .dot{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:middle;margin-right:4px}
 
   /* Deck picker panel */
@@ -140,9 +145,16 @@ let DECKS=[];        // [{slug,label,year}] from the collection, sorted by year
 let SELECTED=new Set();  // selected deck slugs
 let ITEMS=[];        // flat: {deck,label,year,id,name,sections,image,trump,trumpNum}
 let SECGROUPS=[];
+let SYNTHESIS={};    // trump_key -> cross-deck evolution narrative (research/synthesis/trumps.json)
+// "Across the decks" overview banner for a card, if a synthesis exists for it.
+function synthHTML(trumpKey){
+  const t=SYNTHESIS[trumpKey]; if(!t||typeof t!=='string'||!t.trim()) return '';
+  return `<div class="synth"><div class="sh">Across the decks — the evolution of ${esc(trumpLabel(trumpKey))}</div><p style="margin:0">${md(t)}</p></div>`;
+}
 
 // ── load EVERY deck from the collection (programmatic; new decks just appear) ──
 async function load(){
+  try{ SYNTHESIS=await (await fetch('../../research/synthesis/trumps.json')).json(); }catch(e){}
   const col=await (await fetch('../../tarot/_collection.json')).json();
   DECKS=col.grammars.filter(g=>!g.is_meta && g.type!=='meta')
     .map(g=>({slug:g.slug,label:(g.name||g.slug).split(' — ')[0].slice(0,32),year:g.year||9999}))
@@ -236,6 +248,7 @@ function viewSynopsis(sel){
   let h=`<div class="ctl"><label class="lbl">Card</label><select id="syn-sel">${opts.map(o=>`<option value="${o}"${o===card?' selected':''}>${esc(trumpLabel(o))}</option>`).join('')}</select>
     <span class="seg"><button data-m="deck" class="${synMode==='deck'?'on':''}">By deck</button><button data-m="section" class="${synMode==='section'?'on':''}">By section</button></span>
     <span style="color:var(--muted);font-size:12px">${decksWith.length} decks have this card</span></div>`;
+  h+=synthHTML(card);
   if(!decksWith.length) return h+'<p style="color:var(--muted)">No deck in the current selection has this card.</p>';
   const secEntries=it=>Object.entries(it.sections).filter(([k,v])=>typeof v==='string'&&v.trim())
       .map(([k,v],i)=>{const a=lensAttr(v);return{k,v,i,attributed:!!a,attr:a,year:a?attrYear(a):Infinity};})
@@ -304,6 +317,7 @@ function viewRibbon(sel){
   });
   let h=`<div class="ctl"><label class="lbl">Card</label><select id="rib-sel">${opts.map(o=>`<option value="${o}"${o===card?' selected':''}>${esc(trumpLabel(o))}</option>`).join('')}</select>
     <span style="color:var(--muted);font-size:12px">— one card's whole life: each deck's depiction (green) + each dated commentary (purple). Click a point.</span></div>
+    ${synthHTML(card)}
     <div class="ribbon"><div class="axis"></div>${ticks}</div>
     <div id="ribbon-read"><span style="color:var(--muted)">Click a point on the timeline to read that layer.</span></div>`;
   return h;

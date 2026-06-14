@@ -23,6 +23,17 @@ import json, os, re, glob, datetime
 HERE = os.path.dirname(__file__)
 TAROT = os.path.abspath(os.path.join(HERE, "..", "tarot"))
 OUT_SLUG = "all-decks-many-lenses"
+
+# Cross-deck SYNTHESIS per trump (the evolution narrative), keyed by trump_key.
+# Injected into the emergent num-major-N nodes as an "Across the decks" section.
+# Same file is read by viewers/prototypes/lenses.html. Edit research/synthesis/trumps.json.
+try:
+    TRUMP_SYNTHESIS = json.load(open(os.path.join(HERE, "..", "research", "synthesis", "trumps.json"), encoding="utf-8"))
+except Exception:
+    TRUMP_SYNTHESIS = {}
+NUM_TO_KEY = ["fool", "magician", "high-priestess", "empress", "emperor", "hierophant", "lovers",
+              "chariot", "strength", "hermit", "wheel-of-fortune", "justice", "hanged-man", "death",
+              "temperance", "devil", "tower", "star", "moon", "sun", "judgement", "world"]
 R2 = "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev"  # public base (kept if a deck already uses it)
 
 # --- Decks to include + per-deck editorial/era (provenance is a deck property) ---
@@ -295,9 +306,12 @@ def build():
         members = ids(lambda c, n=n: c["major"] == n)
         if members:
             mid = "num-major-%d" % n
+            secs = {"What it is": "%s — Arcanum %d — across the decks." % (MAJ_NAMES[n], n)}
+            syn = TRUMP_SYNTHESIS.get(NUM_TO_KEY[n]) if n < len(NUM_TO_KEY) else None
+            if syn:
+                secs["Across the decks"] = syn
             add({"id": mid, "name": "%d — %s" % (n, MAJ_NAMES[n]), "level": 3, "category": "archetype",
-                 "sections": {"What it is": "%s — Arcanum %d — across the decks." % (MAJ_NAMES[n], n)},
-                 "composite_of": members})
+                 "sections": secs, "composite_of": members})
             maj_nodes.append(mid)
     if maj_nodes:
         add({"id": "arc-major", "name": "Major Arcana", "level": 4, "category": "arcana",
