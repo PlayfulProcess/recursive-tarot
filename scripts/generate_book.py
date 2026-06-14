@@ -98,6 +98,10 @@ for g in decks:
         dg = load(os.path.join(TAROT, slug, "grammar.json"))
     except Exception:
         continue
+    g["_desc"] = dg.get("description")
+    g["_sig"] = [(it.get("image_url") or (it.get("metadata") or {}).get("image_url"))
+                 for it in dg.get("items", [])
+                 if it.get("level", 1) == 1 and (it.get("image_url") or (it.get("metadata") or {}).get("image_url"))]
     for it in dg.get("items", []):
         tk = (it.get("metadata") or {}).get("trump_key")
         if not tk:
@@ -114,6 +118,44 @@ def deck_year(slug):
     return deck_meta.get(slug, {}).get("year")
 
 # ── embed renderers ──
+def render_markdown(text):
+    """Deck descriptions are little markdown docs — render body, drop the top # title
+    (the chapter heading already names the deck)."""
+    out = []
+    for block in re.split(r"\n{2,}", str(text or "").strip()):
+        b = block.strip()
+        if b.startswith("### ") or b.startswith("## "):
+            out.append("<h4>%s</h4>" % inline(b.lstrip("# ")))
+        elif b.startswith("# "):
+            continue
+        elif b.startswith("- ") or b.startswith("* "):
+            items = "".join("<li>%s</li>" % inline(li.lstrip("-* ")) for li in b.splitlines())
+            out.append("<ul>%s</ul>" % items)
+        else:
+            out.append(para(b))
+    return "".join(out)
+
+def render_decks():
+    out, n = [], 0
+    for g in sorted(decks, key=lambda x: x.get("year") or 9999):
+        slug = g["slug"]
+        sigs = (g.get("_sig") or [])
+        cover = g.get("cover_image_url") or (sigs[0] if sigs else None)
+        rel = thumb(cover) if cover else None
+        coverhtml = ('<img class="deck-cover" src="%s">' % esc(rel)) if rel else ""
+        cells = []
+        for im in sigs[1:9]:
+            r = thumb(im)
+            if r:
+                cells.append('<figure class="c"><img src="%s"></figure>' % esc(r)); n += 1
+        strip = ('<div class="strip">%s</div>' % "".join(cells)) if cells else ""
+        yl = g.get("year_label") or g.get("year")
+        out.append('<section class="deck-chapter"><h3>%s%s</h3>%s%s%s</section>'
+                   % (esc((g.get("name") or slug).split(" — ")[0]),
+                      (" · %s" % yl) if yl else "", coverhtml, render_markdown(g.get("_desc")), strip))
+    print("  deck signature images: %d" % n)
+    return "".join(out)
+
 def fig(which):
     label = "The Lineage of Tarot" if which == "lineage" else "Timeline · 1440s–1900s"
     return ('<figure class="figure"><img src="figures/%s.png" alt="%s">'
@@ -213,6 +255,7 @@ EMBED = {
     "lineage": lambda: fig("lineage"),
     "timeline": lambda: fig("timeline"),
     "people": render_people,
+    "decks": render_decks,
     "all-cards": render_cards,
 }
 
@@ -258,6 +301,9 @@ figcaption{ font-size:8.5pt; color:#666; margin-top:.3em; }
 .bio{ break-inside:avoid; border-left:2px solid #b9a3f5; padding-left:.5em; margin:.6em 0; }
 .bio-name{ font-weight:700; } .bio-life{ font-weight:400; color:#777; font-size:.85em; }
 .bio-text p{ margin:.15em 0; font-size:10pt; }
+.deck-chapter{ break-before:page; }
+.deck-cover{ float:right; width:2.3in; margin:.1in 0 .3in .35in; border:1px solid #bbb; border-radius:6px; }
+.deck-chapter .strip{ clear:both; padding-top:.4em; }
 .card-chapter{ break-before:page; }
 .synthbox{ background:#f6f4fb; border:1px solid #d8c8f5; border-radius:8px; padding:.5em .7em; margin:.4em 0 .8em; }
 .synthbox p{ margin:.2em 0; }
