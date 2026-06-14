@@ -119,7 +119,7 @@
         .mobile-toc-button {
             position: fixed;
             bottom: 2rem;
-            right: 1rem;
+            left: 1rem;   /* left side — its panel slides from the left, and it no longer collides with the bottom-right AI library icon */
             width: 56px;
             height: 56px;
             background-color: #9333ea;
@@ -668,7 +668,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- recursive-tarot drift: shared dark header instead of the recursive.eco shell. -->
-    <script src="../site-header.js?v=10"></script>
+    <script src="../site-header.js?v=11"></script>
     <site-header active="course"></site-header>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -950,7 +950,7 @@
                   // live viewers
                   root.querySelectorAll('[data-embed="lineage"],[data-embed="timeline"]').forEach(el=>{
                     const w=el.dataset.embed;
-                    const src=w==='lineage'?'../viewers/genealogy-tree.html':'../viewers/timeline.html';
+                    const src=(w==='lineage'?'../viewers/genealogy-tree.html':'../viewers/timeline.html')+'?embed=1';
                     const label=w==='lineage'?'The Lineage of Tarot':'Timeline · 1440s–1900s';
                     el.innerHTML=`<figure class="tarot-embed"><div class="viewer-frame screen-only"><iframe loading="lazy" title="${label}" src="${src}"></iframe></div><div class="print-figure">[ Figure — ${label} · static plate in print ]</div><figcaption>${label}. Interactive on screen; a static plate in print.</figcaption></figure>`;
                   });
