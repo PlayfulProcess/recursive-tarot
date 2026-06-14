@@ -187,7 +187,10 @@
            sticky header desyncs from the zoomed body. May 30 2026. */
         html, body {
             max-width: 100%;
-            overflow-x: hidden;
+            /* `clip` guards against horizontal overflow WITHOUT creating a scroll
+               container — so the sticky course sidebar still follows the reader.
+               (`overflow-x: hidden` on the root silently breaks position:sticky.) */
+            overflow-x: clip;
         }
         /* Wrap any over-long inline text/code in content. */
         .course-content p,
@@ -653,6 +656,8 @@
         .later-src{ font-style:italic; font-size:.78rem; color:#777; }
         .deck-cover{ float:right; width:180px; margin:0 0 .6rem .9rem; border:1px solid #e5e7eb; border-radius:8px; }
         .deck-chapter .strip{ clear:both; }
+        .made-by{ clear:both; margin:.6rem 0; background:#faf8ff; border:1px solid #ece6fb; border-radius:8px; padding:.5rem .8rem; }
+        .made-by .maker{ font-size:.92rem; margin:.25rem 0; }
         .card-links{ font-size:.85rem; margin-top:.5rem; }
         .card-links a{ color:#9333ea; text-decoration:none; font-weight:600; }
         .card-links a:hover{ text-decoration:underline; }
@@ -965,31 +970,28 @@
                     const fig=w==='lineage'?'../print/book/figures/lineage.png':'../print/book/figures/timeline.png';
                     el.innerHTML=`<figure class="tarot-embed"><div class="viewer-frame screen-only"><iframe loading="lazy" title="${label}" src="${src}"></iframe></div><div class="print-figure"><img src="${fig}" alt="${label}"></div><figcaption>${label}. Interactive on screen; a static plate in print.</figcaption></figure>`;
                   });
-                  // people who's who (per deck) + emergent "Hands Behind the Cards" weave
+                  // people — the weave + a who's-who organised BY ROLE (deck-specific makers
+                  // are woven into the deck chapters instead).
                   const peopleEls=[...root.querySelectorAll('[data-embed="people"]')];
-                  if(peopleEls.length){
-                    const pg=await get(T+'/people-of-tarot/grammar.json'); const col=await get(T+'/_collection.json');
-                    if(pg){
-                      const people=pg.items.filter(i=>(i.metadata||{}).kind==='person'||i.category==='person');
-                      const r3=pg.items.find(i=>i.id==='root-people-of-tarot');
-                      const nameOf=s=>(((col&&col.grammars.find(g=>g.slug===s))||{}).name||s).split(' — ')[0];
-                      const yearOf=s=>((col&&col.grammars.find(g=>g.slug===s))||{}).year;
-                      const byDeck={}; for(const p of people) for(const slug of ((p.metadata||{}).made||[])) (byDeck[slug]=byDeck[slug]||[]).push(p);
-                      const slugs=Object.keys(byDeck).sort((a,b)=>(yearOf(a)||9999)-(yearOf(b)||9999));
-                      let html='<div class="people-weave">';
-                      if(r3) html+='<p>'+mdl((r3.sections||{})['What it is'])+'</p>';
-                      for(const slug of slugs){
-                        html+=`<h3>${esc(nameOf(slug))}${yearOf(slug)?` · ${yearOf(slug)}`:''}</h3><div class="whoswho">`;
-                        for(const p of byDeck[slug]){
-                          const who=((p.sections||{}).Who||'').replace(/\s*\[@[^\]]+\]/g,''); const life=(p.metadata||{}).lifespan||'';
-                          html+=`<div class="bio"><div class="bio-name">${esc(p.name)}${life?` <span class="bio-life">${esc(life)}</span>`:''}</div><div class="bio-text"><p>${mdl(who.slice(0,420))}${who.length>420?'…':''}</p></div></div>`;
-                        }
-                        html+='</div>';
-                      }
-                      peopleEls.forEach(el=>el.innerHTML=html+'</div>');
-                    }
+                  let PG=null, makersByDeck={};
+                  if(peopleEls.length || root.querySelector('[data-embed="decks"]')){
+                    PG=await get(T+'/people-of-tarot/grammar.json');
+                    if(PG) for(const p of PG.items){ if((p.metadata||{}).kind==='person'||p.category==='person') for(const s of ((p.metadata||{}).made||[])) (makersByDeck[s]=makersByDeck[s]||[]).push(p); }
                   }
-                  // per-deck chapters (Part II) — overview from the deck grammar description
+                  if(peopleEls.length && PG){
+                    const items=Object.fromEntries(PG.items.map(i=>[i.id,i]));
+                    const r3=items['root-people-of-tarot'];
+                    let html=''; if(r3)html+='<div class="people-weave"><p>'+mdl((r3.sections||{})['What it is'])+'</p></div>';
+                    for(const gid of ['grp-makers','grp-patrons','grp-occultists','grp-scholars','grp-institutions']){ const grp=items[gid]; if(!grp)continue;
+                      html+='<h3>'+esc(grp.name)+'</h3>'; const wt=(grp.sections||{})['What this groups']; if(wt)html+='<p>'+mdl(wt)+'</p>';
+                      for(const cid of grp.composite_of||[]){ const p=items[cid]; if(!p)continue;
+                        const who=((p.sections||{}).Who||'').replace(/\s*\[@[^\]]+\]/g,''); const life=(p.metadata||{}).lifespan||'';
+                        html+=`<div class="bio"><div class="bio-name">${esc(p.name)}${life?` <span class="bio-life">${esc(life)}</span>`:''}</div><div class="bio-text"><p>${mdl(who)}</p></div></div>`;
+                      }
+                    }
+                    peopleEls.forEach(el=>el.innerHTML=html);
+                  }
+                  // per-deck chapters (Part II) — overview + the hands behind each deck
                   const deckEls=[...root.querySelectorAll('[data-embed="decks"]')];
                   if(deckEls.length){
                     const col=await get(T+'/_collection.json');
@@ -1001,7 +1003,11 @@
                       const sigs=dg.items.filter(i=>(i.level||1)===1 && (i.image_url||(i.metadata||{}).image_url)).map(i=>i.image_url||(i.metadata||{}).image_url);
                       const cover=g.cover_image_url||sigs[0];
                       const cells=sigs.slice(1,9).map(im=>`<figure class="c"><img loading="lazy" src="${esc(im)}"></figure>`).join('');
-                      html+=`<section class="deck-chapter"><h3>${esc((g.name||g.slug).split(' — ')[0])}${g.year_label?' · '+esc(g.year_label):''}</h3>${cover?`<img class="deck-cover" src="${esc(cover)}">`:''}${mdBlock(dg.description)}${cells?`<div class="strip">${cells}</div>`:''}</section>`;
+                      let makers='';
+                      for(const p of (makersByDeck[g.slug]||[])){ const who=((p.sections||{}).Who||'').replace(/\s*\[@[^\]]+\]/g,'').split('. ')[0]; const life=(p.metadata||{}).lifespan||'';
+                        makers+=`<p class="maker"><strong>${esc(p.name)}${life?' ('+esc(life)+')':''}</strong> — ${mdl(who.slice(0,240))}.</p>`; }
+                      if(makers)makers='<div class="made-by"><h4>The hands behind it</h4>'+makers+'</div>';
+                      html+=`<section class="deck-chapter"><h3>${esc((g.name||g.slug).split(' — ')[0])}${g.year_label?' · '+esc(g.year_label):''}</h3>${cover?`<img class="deck-cover" src="${esc(cover)}">`:''}${mdBlock(dg.description)}${makers}${cells?`<div class="strip">${cells}</div>`:''}</section>`;
                     } }
                     deckEls.forEach(el=>el.innerHTML=html);
                   }
@@ -1112,8 +1118,9 @@
                     const col=await get(T+'/_collection.json');
                     let cred='<h3>Image credits</h3><p>Every card image here is in the <strong>public domain</strong> — the originals all predate the twentieth century. Reproductions are drawn from the institutions and archives below; full per-card provenance is in the research dossiers on GitHub.</p><ul class="credits">';
                     if(col){ for(const g of col.grammars.filter(x=>!x.is_meta).sort((a,b)=>(a.year||9999)-(b.year||9999))){
-                      const dg=await get(T+'/'+g.slug+'/grammar.json'); const colls=[...new Set((dg?dg.items:[]).map(i=>(i.metadata||{}).collection).filter(Boolean))];
-                      cred+=`<li><strong>${esc((g.name||g.slug).split(' — ')[0])}.</strong> ${esc(colls.join('; ')||'public domain — see the deck dossier')}.</li>`;
+                      const dg=await get(T+'/'+g.slug+'/grammar.json');
+                      const credit=(dg&&dg.image_credit)||[...new Set((dg?dg.items:[]).map(i=>(i.metadata||{}).collection).filter(Boolean))].join('; ')||'public domain — see the deck dossier';
+                      cred+=`<li><strong>${esc((g.name||g.slug).split(' — ')[0])}.</strong> ${esc(credit)}.</li>`;
                     } }
                     cred+='</ul>';
                     let bib='';
