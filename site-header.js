@@ -32,8 +32,9 @@
 
   // [key, label, href] — split by level
   const CARD_VIEWS = [
-    ['cards',    'Cards',    PFX + 'viewers/cards.html'],
     ['explorer', 'Explorer', PFX + 'viewers/explorer.html'],
+    ['cards',    'Cards',    PFX + 'viewers/cards.html'],
+    ['lenses',   '⚗ Lenses', PFX + 'viewers/prototypes/lenses.html'],
     ['tree',     'Tree',     PFX + 'viewers/tree-viewer.html'],
   ];
   const GRAMMAR_VIEWS = [
@@ -53,6 +54,7 @@
     const f = location.pathname.split('/').pop() || 'index.html';
     if (f.startsWith('cards')) return 'cards';
     if (f.startsWith('explorer')) return 'explorer';
+    if (f.startsWith('lenses')) return 'lenses';
     if (f.startsWith('genealogy-tree')) return 'treeoflife';
     if (f.startsWith('timeline')) return 'timeline';
     if (f.startsWith('tree-viewer')) return 'tree';
