@@ -2559,16 +2559,25 @@
                 allGroups.forEach((grpItems, gi) => {
                     const slug = slugs[gi];
                     grpItems.forEach(item => {
+                        const md = item.metadata || {}, cat = item.categories || {};
                         const r = { __id: item.id, deck: [item._deck || slug] };
-                        if (item.categories?.suit) r.suit = [item.categories.suit];
-                        if (item.categories?.arcana) r.arcana = [item.categories.arcana];
+                        // Build clean group-by axes straight from metadata so the chip tray
+                        // offers exactly major/minor, suit, number — the way you'd organize cards.
+                        const arcana = md.arcana || cat.suit && 'minor' || null;  // metadata.arcana is the clean "major"/"minor"
+                        if (arcana) r.arcana = [arcana];
+                        if (md.suit) r.suit = [md.suit];
                         if (item.level) r.level = ['L' + item.level];
+                        // number / rank (majors: metadata.number 1–21; minors: metadata.rank Ace–King)
+                        const num = md.number ?? md.rank ?? item.number;
+                        if (num !== undefined && num !== null && num !== '') r.number = [String(num)];
+                        // the stamped cross-deck figure identity (Death, Justice…) becomes a group-by axis
+                        if (md.trump_key) r.trump = [String(md.trump_key)];
                         (item.keywords || []).forEach(kw => { (r.keyword = r.keyword || []).push(kw); });
                         deRecs.push(r);
                     });
                 });
                 const { discoverFields: df } = DimensionEngine;
-                const discoveredFields = df(deRecs).filter(f => f.count >= 2 && f.count <= 32);
+                const discoveredFields = df(deRecs).filter(f => f.count >= 2 && f.count <= 64);
 
                 // Set the grammar title
                 const titleEl = document.getElementById('grammar-title');
