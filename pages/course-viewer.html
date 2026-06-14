@@ -959,11 +959,15 @@
                 // ── Tarot embeds: fill [data-embed] placeholders from the grammars.
                 // Lets a course inline the live viewers, a per-deck who's who from the
                 // People grammar, and a card chapter (synthesis + cross-deck image strip).
-                (async function expandTarotEmbeds(){
+                await (async function expandTarotEmbeds(){
                   const root = document.getElementById('course-content'); if(!root) return;
                   const T='../tarot', RES='../research';
                   const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-                  const mdl=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>').replace(/\*+/g,'').replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>');
+                  const mdl=s=>esc(String(s||'').replace(/\s*\[@[^\]]+\]/g,''))  // drop [@citation] keys
+                    .replace(/`([^`]+)`/g,'<code>$1</code>')                       // inline code
+                    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>').replace(/\*+/g,'')
+                    .replace(/\[([^\]]+)\]\(([^)]+)\)/g,(m,t,h)=>`<a href="${h}"${h.startsWith('#')?'':' target="_blank" rel="noopener noreferrer"'}>${t}</a>`)
+                    .replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>');
                   const get=async u=>{ try{ return await (await fetch(u)).json(); }catch(e){ return null; } };
                   // live viewers
                   root.querySelectorAll('[data-embed="lineage"],[data-embed="timeline"]').forEach(el=>{
@@ -1172,6 +1176,22 @@
                 // already in Presentation Mode.
                 wireCoursePopupTriggers();
 
+                // Links: external/relative links open in a NEW TAB; in-page (#)
+                // anchors — the deck cross-links and the synthesis→detail jumps —
+                // scroll smoothly in place instead of spawning a reloaded tab.
+                (function normalizeLinks(){
+                  const root=document.getElementById('course-content'); if(!root) return;
+                  root.querySelectorAll('a[href]').forEach(a=>{
+                    const href=a.getAttribute('href')||'';
+                    if(href.startsWith('#')){
+                      a.removeAttribute('target'); a.removeAttribute('rel');
+                      a.addEventListener('click',e=>{ const el=document.getElementById(href.slice(1)); if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); history.replaceState(null,'',href); } });
+                    } else if(/^(https?:|\.\.?\/|\/)/.test(href)){
+                      a.target='_blank'; a.rel='noopener noreferrer';
+                    }
+                  });
+                })();
+
                 // Generate navigation from headers
                 generateNavigation();
 
@@ -1206,8 +1226,20 @@
             const sections = [];
             let currentSection = null;
 
+            // The embed renderers inject many headings (the 22 trumps appear in both
+            // the synthesis and the detail; each suit twice; the decks). That means
+            // duplicate ids — so dedupe: the first wins its plain id, later twins get
+            // -2, -3 … and the heading's own id is updated to match its TOC link.
+            const usedIds = new Set();
+            const uniqueId = base => {
+                let id = base || 'section', n = 1;
+                while (usedIds.has(id)) { n++; id = base + '-' + n; }
+                usedIds.add(id);
+                return id;
+            };
+
             h2s.forEach(h2 => {
-                const id = h2.id || h2.textContent.toLowerCase().replace(/[^\w]+/g, '-');
+                const id = uniqueId(h2.id || h2.textContent.toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, ''));
                 h2.id = id;
                 currentSection = { h2, id, title: h2.textContent, children: [] };
                 sections.push(currentSection);
@@ -1215,7 +1247,7 @@
 
             // Assign H3s to their parent H2
             h3s.forEach(h3 => {
-                const id = h3.id || h3.textContent.toLowerCase().replace(/[^\w]+/g, '-');
+                const id = uniqueId(h3.id || h3.textContent.toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, ''));
                 h3.id = id;
 
                 // Find parent H2 (the one that comes before this H3 in document order)
