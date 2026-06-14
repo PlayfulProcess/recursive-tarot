@@ -22,6 +22,14 @@
   const _segs = location.pathname.split('/').filter(Boolean);
   const PFX = '../'.repeat(Math.max(0, _segs.length - 1));
 
+  // Figure-capture mode (?fig=1): hide a viewer's own control toolbars so headless
+  // screenshots become clean static plates for the print book. Only when explicitly asked.
+  if (new URLSearchParams(location.search).get('fig') === '1') {
+    const s = document.createElement('style');
+    s.textContent = '.hint,.controls,.toolbar{display:none!important}';
+    (document.head || document.documentElement).appendChild(s);
+  }
+
   // Shared-identity widget (reads the .recursive.eco session cookie; L1 of the
   // integration ladder). Loaded once; renders as <recursive-auth> in the bar.
   if (!document.querySelector('script[data-recursive-auth]')) {
