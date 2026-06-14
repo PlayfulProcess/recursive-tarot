@@ -60,6 +60,7 @@
   // Courses — a dropdown under one "Courses" pill (each is a course-viewer ?course=…).
   const COURSES = [
     ['history-of-tarot',                'A History of Tarot'],
+    ['tarot-and-the-crack',             'Tarot & the Crack'],
     ['build-a-tarot-deck-with-claude',  'Build a Tarot Deck with Claude'],
   ];
 
