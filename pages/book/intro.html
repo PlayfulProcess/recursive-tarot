@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Recursive Tarot — A Genealogy Across the Decks</title>
+<style>
+  :root{ --bg:#0c0916; --ink:#e9e4f6; --muted:#9b93b5; --accent:#c4a7ff; --line:rgba(255,255,255,.12); --paper:#161029; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Georgia,'Times New Roman',serif}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 80px}
+  .chrome{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 22px;font:13px/1.4 -apple-system,Segoe UI,sans-serif;display:flex;gap:14px;align-items:center}
+  .chrome a{color:var(--accent);text-decoration:none;font-weight:600}
+  .chrome .grow{margin-left:auto;color:var(--muted)}
+  h1{font-size:34px;line-height:1.15;margin:.2em 0 .1em}
+  .subtitle{color:var(--muted);font-style:italic;font-size:18px;margin-bottom:1.4em}
+  h2{font-size:26px;margin:1.6em 0 .3em;font-family:-apple-system,Segoe UI,sans-serif}
+  h3{font-size:19px;margin:1.4em 0 .2em;font-family:-apple-system,Segoe UI,sans-serif}
+  .lead{font-size:18px}
+  .kicker{font:600 12px/1 -apple-system,Segoe UI,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+  figure{margin:1.6em 0}
+  figcaption{font:13px/1.5 -apple-system,Segoe UI,sans-serif;color:var(--muted);margin-top:8px;text-align:center}
+  /* inline live viewer (screen) */
+  .viewer-frame{width:100%;height:520px;border:1px solid var(--line);border-radius:12px;background:var(--paper);overflow:hidden}
+  .viewer-frame iframe{width:100%;height:100%;border:0;display:block}
+  /* print stand-in for each viewer */
+  .print-figure{display:none;border:1px solid var(--line);border-radius:12px;padding:22px;background:var(--paper);text-align:center}
+  .print-figure .ph{height:300px;display:flex;align-items:center;justify-content:center;color:var(--muted);border:1px dashed var(--line);border-radius:8px}
+  .card-chapter{margin:2em 0}
+  .synthbox{background:linear-gradient(135deg,rgba(147,51,234,.10),rgba(196,167,255,.05));border:1px solid rgba(196,167,255,.3);border-radius:12px;padding:16px 18px}
+  .strip{display:flex;gap:8px;overflow-x:auto;padding:6px 0}
+  .strip .c{flex:0 0 92px;text-align:center;font:11px/1.3 -apple-system,sans-serif;color:var(--muted)}
+  .strip .c img{width:92px;height:150px;object-fit:cover;border-radius:6px;border:1px solid var(--line);background:#0a0712}
+  b.md{color:#fff}
+  em{color:#d8d2ec}
+
+  /* ─────────────────────────  PRINT  ───────────────────────── */
+  @media print{
+    @page{ size: 7in 10in; margin: 0.7in 0.65in; }
+    html,body{background:#fff;color:#111;font-size:11pt}
+    .chrome, .screen-only{ display:none !important; }
+    .print-figure{ display:block !important; color:#444; background:#f6f4fb; }
+    .print-figure .ph{ color:#777; border-color:#bbb; height:3.2in; }
+    .wrap{max-width:none;padding:0}
+    h1{font-size:26pt} h2{font-size:18pt} h3{font-size:13pt}
+    .subtitle,.kicker,figcaption{color:#666}
+    .synthbox{background:#f6f4fb;border-color:#cbb8ee;color:#111}
+    b.md,em{color:#111}
+    a{color:#111;text-decoration:none}
+    /* page-break discipline */
+    .chapter{ break-before: page; }
+    h1,h2,h3{ break-after: avoid; }
+    figure,.print-figure,.card-chapter,.synthbox,.strip{ break-inside: avoid; }
+    .strip{ overflow:visible; flex-wrap:wrap; }
+    .strip .c img{ width:1in; height:1.6in; }
+  }
+</style>
+</head>
+<body>
+<div class="chrome screen-only">
+  <a href="../../index.html">← The Recursive Tarot</a>
+  <span class="grow">Course / book preview · use your browser's <b>Print</b> to test pagination</span>
+  <a href="#" onclick="window.print();return false">🖨 Print</a>
+</div>
+
+<div class="wrap">
+  <p class="kicker">A public-domain history</p>
+  <h1>The Recursive Tarot</h1>
+  <div class="subtitle">A genealogy across the decks — from a Renaissance card game to an esoteric cosmos, card by card.</div>
+
+  <p class="lead" id="lead">Loading…</p>
+
+  <!-- PART I — THE LINEAGE -->
+  <div class="chapter">
+    <p class="kicker">Part I</p>
+    <h2>The Lineage</h2>
+    <div id="branches"></div>
+
+    <figure>
+      <div class="viewer-frame screen-only"><iframe loading="lazy" title="Lineage of tarot" src="../../viewers/genealogy-tree.html"></iframe></div>
+      <div class="print-figure"><div class="ph">[ Figure 1 — The Lineage of Tarot · static figure generated for print ]</div></div>
+      <figcaption>Figure 1 — The lineage of tarot decks. Interactive on screen; a static plate in print.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="viewer-frame screen-only"><iframe loading="lazy" title="Timeline of tarot" src="../../viewers/timeline.html"></iframe></div>
+      <div class="print-figure"><div class="ph">[ Figure 2 — Timeline, 1440s–1900s · static figure generated for print ]</div></div>
+      <figcaption>Figure 2 — Six centuries of tarot, oldest first.</figcaption>
+    </figure>
+  </div>
+
+  <!-- PART III — sample card chapter (proof of the per-card layout) -->
+  <div class="chapter card-chapter">
+    <p class="kicker">Part III · The Cards</p>
+    <h2 id="card-title">Death — across the decks</h2>
+    <div class="synthbox" id="card-synth">Loading…</div>
+    <h3>The card across the decks</h3>
+    <div class="strip" id="card-strip"></div>
+    <figcaption>One trump rendered by each tradition — the image holds while the meaning is remade.</figcaption>
+  </div>
+</div>
+
+<script>
+(async function(){
+  const md = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/\*\*(.+?)\*\*/g,'<b class="md">$1</b>').replace(/\*(.+?)\*/g,'<em>$1</em>')
+    .replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>');
+  // Intro narrative + branch sections from the tree-of-tarot grammar
+  try{
+    const g = await (await fetch('../../tarot/tree-of-tarot/grammar.json')).json();
+    const byId = Object.fromEntries(g.items.map(i=>[i.id,i]));
+    document.getElementById('lead').innerHTML =
+      '<p>'+md((byId['root-tree-of-tarot']?.sections?.Scene)||'')+'</p>';
+    const branchIds = ['branch-roots','branch-a','branch-b','branch-c','branch-occult','branch-sui'];
+    document.getElementById('branches').innerHTML = branchIds.filter(id=>byId[id]).map(id=>
+      `<h3>${byId[id].name}</h3><p>${md((byId[id].sections?.Scene||'').slice(0,520))}…</p>`).join('');
+  }catch(e){ document.getElementById('lead').textContent='(could not load narrative)'; }
+  // Sample card chapter: Death synthesis + image strip across decks
+  try{
+    const syn = await (await fetch('../../research/synthesis/trumps.json')).json();
+    document.getElementById('card-synth').innerHTML = '<p>'+md(syn.death)+'</p>';
+    const col = await (await fetch('../../tarot/_collection.json')).json();
+    const decks = col.grammars.filter(x=>!x.is_meta).map(x=>x.slug);
+    const cells=[];
+    await Promise.all(decks.map(async slug=>{
+      try{ const dg = await (await fetch(`../../tarot/${slug}/grammar.json`)).json();
+        const it = dg.items.find(i=>(i.metadata||{}).trump_key==='death');
+        if(it && (it.image_url||it.metadata?.image_url)){
+          const lab=(col.grammars.find(x=>x.slug===slug)?.name||slug).split(' — ')[0].slice(0,16);
+          cells.push({y:col.grammars.find(x=>x.slug===slug)?.year||9999,html:`<div class="c"><img loading="lazy" src="${it.image_url||it.metadata.image_url}"><div>${lab}</div></div>`});
+        }
+      }catch(_){}
+    }));
+    cells.sort((a,b)=>a.y-b.y);
+    document.getElementById('card-strip').innerHTML = cells.map(c=>c.html).join('') || '<span style="color:var(--muted)">no images</span>';
+  }catch(e){ document.getElementById('card-synth').textContent='(could not load card)'; }
+})();
+</script>
+</body>
+</html>
