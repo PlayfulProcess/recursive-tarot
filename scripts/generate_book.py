@@ -92,6 +92,8 @@ SUIT_CANON = {"cups":"cups","coins":"coins","swords":"swords","batons":"batons",
 suit_idx = {}
 people = load(os.path.join(TAROT, "people-of-tarot", "grammar.json"))
 tree = {it["id"]: it for it in load(os.path.join(TAROT, "tree-of-tarot", "grammar.json"))["items"]}
+meta = load(os.path.join(TAROT, "all-decks-many-lenses", "grammar.json"))
+essay_item = next((i for i in meta["items"] if i["id"] == "essay-divination-question"), None)
 
 # trump_key -> [ {slug,name,year,id,img} ] (decks loaded once)
 trump_idx = {}
@@ -217,27 +219,40 @@ def render_people():
     return "".join(html)
 
 ANCHOR_EARLY = ["cary-yale-visconti-tarot", "visconti-sforza-tarot", "charles-vi-tarot", "este-tarot"]
+_NIMG = [0]
 
-def render_cards():
+def _strip(tk):
+    cells = []
+    for c in sorted(trump_idx.get(tk, []), key=lambda x: x["year"]):
+        rel = thumb(c["img"])
+        if rel:
+            cells.append('<figure class="c"><img src="%s"><figcaption>%s</figcaption></figure>'
+                         % (esc(rel), esc(c["name"][:16])))
+            _NIMG[0] += 1
+    return ('<div class="strip">%s</div>' % "".join(cells)) if cells else ""
+
+def render_essay():
+    if not essay_item:
+        return ""
+    return "".join("<h3>%s</h3>%s" % (esc(k), para(v)) for k, v in (essay_item.get("sections") or {}).items())
+
+def render_trumps_synth():
+    """FRONT (the Story): each trump's cross-deck synthesis + image strip — readable straight through."""
     out = []
-    n_imgs = 0
     for i, tk in enumerate(ORDER):
         if tk not in synth:
             continue
-        lbl = tk.replace("-", " ").title()
+        out.append('<section class="card-chapter"><h3>%d — %s</h3><div class="synthbox">%s</div>%s</section>'
+                   % (i, esc(tk.replace("-", " ").title()), para(synth[tk]), _strip(tk)))
+    return "".join(out)
+
+def render_trumps_detail():
+    """CATALOGUE (the back): per trump, the literal per-deck Scenes + the dated later readings."""
+    out = []
+    for i, tk in enumerate(ORDER):
+        if tk not in synth:
+            continue
         entries = sorted(trump_idx.get(tk, []), key=lambda x: x["year"])
-
-        # image strip across decks
-        cells = []
-        for c in entries:
-            rel = thumb(c["img"])
-            if not rel:
-                continue
-            n_imgs += 1
-            cells.append('<figure class="c"><img src="%s"><figcaption>%s</figcaption></figure>'
-                         % (esc(rel), esc(c["name"][:16])))
-
-        # "In the decks" — the literal Scene from anchor decks (earliest · Marseille · Golden Dawn)
         def scene_of(slug):
             for c in entries:
                 if c["slug"] == slug:
@@ -245,20 +260,13 @@ def render_cards():
                     return s.get("Scene") or s.get("About") or s.get("Iconography")
             return None
         early = next((s for s in ANCHOR_EARLY if scene_of(s)), None)
-        anchors = []
-        for slug in [early, "tarot-de-marseille-conver", "golden-dawn-book-t-tarot"]:
-            if slug:
-                sc = scene_of(slug)
-                if sc:
-                    anchors.append((slug, sc))
+        anchors = [(slug, scene_of(slug)) for slug in [early, "tarot-de-marseille-conver", "golden-dawn-book-t-tarot"] if slug and scene_of(slug)]
         indecks = ""
         if anchors:
             indecks = "<h4>In the decks</h4>" + "".join(
                 '<p class="indeck"><strong>%s · %s.</strong> %s%s</p>'
                 % (esc(deck_name(s)), deck_year(s) or "", inline(sc[:520]), "…" if len(sc) > 520 else "")
                 for s, sc in anchors)
-
-        # "Later readings" — the dated commentary (Gébelin / Papus / Wirth / Waite), by year, one per voice
         later, seen = [], set()
         for c in entries:
             for v in c["sections"].values():
@@ -277,28 +285,30 @@ def render_cards():
                 '<div class="later"><div class="later-src">%s</div>%s</div>'
                 % (esc(a), para(body[:760] + ("…" if len(body) > 760 else "")))
                 for _, a, body in later)
-
-        out.append('<section class="card-chapter"><h3>%d — %s</h3><div class="synthbox">%s</div>'
-                   '<div class="strip">%s</div>%s%s</section>'
-                   % (i, esc(lbl), para(synth[tk]), "".join(cells), indecks, laterhtml))
-    print("  card images embedded: %d" % n_imgs)
+        if indecks or laterhtml:
+            out.append('<section class="card-chapter"><h3>%d — %s</h3>%s%s</section>'
+                       % (i, esc(tk.replace("-", " ").title()), indecks, laterhtml))
     return "".join(out)
 
 EMBED = {
     "lineage": lambda: fig("lineage"),
     "timeline": lambda: fig("timeline"),
+    "essay": render_essay,
     "people": render_people,
     "decks": render_decks,
     "suits": render_suits,
-    "all-cards": render_cards,
+    "trumps-synthesis": render_trumps_synth,
+    "trumps-detail": render_trumps_detail,
 }
 
 # ── render the MDX (single source for prose) ──
 def render_mdx():
     body = []
-    title = "The Recursive Tarot"
+    title = None
     for block in re.split(r"\n{2,}", open(MDX, encoding="utf-8").read().strip()):
         b = block.strip()
+        if b == "---":
+            continue
         m = re.match(r'<div data-embed="([a-z\-]+)"', b)
         if m:
             fn = EMBED.get(m.group(1))
@@ -310,11 +320,15 @@ def render_mdx():
         elif b.startswith("## "):
             body.append('<h2 class="chapter">%s</h2>' % inline(b[3:]))
         elif b.startswith("# "):
-            title = b[2:].strip()
-            body.append("<h1>%s</h1>" % inline(title))
+            h = b[2:].strip()
+            if title is None:
+                title = h
+                body.append("<h1>%s</h1>" % inline(h))
+            else:
+                body.append('<h1 class="part">%s</h1>' % inline(h))   # Part II divider
         else:
             body.append(para(b))
-    return title, "".join(body)
+    return (title or "The Recursive Tarot"), "".join(body)
 
 CSS = """
 @page { size: 7in 10in; margin: 0.62in 0.6in; }
@@ -322,6 +336,7 @@ CSS = """
 html,body{ margin:0; }
 body{ font: 11pt/1.55 Georgia,'Times New Roman',serif; color:#111; }
 h1{ font-size:30pt; line-height:1.1; margin:0 0 .2em; }
+h1.part{ break-before:page; font-size:32pt; text-align:center; margin-top:2.5in; color:#5a3fa0; }
 h2{ font-size:19pt; margin:0; }
 h2.chapter{ break-before:page; padding-top:.2in; }
 h3{ font-size:13pt; margin:1.1em 0 .3em; break-after:avoid; }

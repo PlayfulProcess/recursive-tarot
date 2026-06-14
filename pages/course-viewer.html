@@ -647,6 +647,10 @@
         .strip .c img{ width:88px; height:142px; object-fit:cover; border-radius:6px; border:1px solid #e5e7eb; background:#0a0712; }
         .card-chapter{ margin:1.6rem 0; }
         .deck-chapter{ margin:1.8rem 0; }
+        .course-content h4{ font-size:.8rem; text-transform:uppercase; letter-spacing:.04em; color:#7a5fb0; margin:1rem 0 .3rem; }
+        .indeck{ font-size:.92rem; margin:.3rem 0; }
+        .later{ border-left:2px solid #c9b8ee; padding-left:.6rem; margin:.5rem 0; }
+        .later-src{ font-style:italic; font-size:.78rem; color:#777; }
         .deck-cover{ float:right; width:180px; margin:0 0 .6rem .9rem; border:1px solid #e5e7eb; border-radius:8px; }
         .deck-chapter .strip{ clear:both; }
         .card-links{ font-size:.85rem; margin-top:.5rem; }
@@ -1042,23 +1046,54 @@
                       el.innerHTML=html;
                     }
                   }
-                  // all 22 trump chapters — fetch each deck ONCE, build a trump→images index, render
-                  const allEls=[...root.querySelectorAll('[data-embed="all-cards"]')];
-                  if(allEls.length){
+                  // trump chapters — fetch each deck ONCE, build a trump→entries index (with sections).
+                  // FRONT: trumps-synthesis (synthesis + strip). CATALOGUE: trumps-detail (per-deck Scenes + later readings).
+                  const synEls=[...root.querySelectorAll('[data-embed="trumps-synthesis"]')];
+                  const detEls=[...root.querySelectorAll('[data-embed="trumps-detail"]')];
+                  if(synEls.length||detEls.length){
                     const syn=await get(RES+'/synthesis/trumps.json'); const col=await get(T+'/_collection.json');
                     const ORDER=['fool','magician','high-priestess','empress','emperor','hierophant','lovers','chariot','strength','hermit','wheel-of-fortune','justice','hanged-man','death','temperance','devil','tower','star','moon','sun','judgement','world'];
                     const NUM={}; ORDER.forEach((k,i)=>NUM[k]=i);
                     const idx={};
                     if(col){ for(const g of col.grammars.filter(x=>!x.is_meta)){ const dg=await get(T+'/'+g.slug+'/grammar.json'); if(!dg)continue;
                       for(const it of dg.items){ const tk=(it.metadata||{}).trump_key; if(!tk)continue; const img=it.image_url||(it.metadata||{}).image_url;
-                        if(img) (idx[tk]=idx[tk]||[]).push({slug:g.slug,name:(g.name||g.slug).split(' — ')[0],year:g.year||9999,id:it.id,img}); } } }
-                    let html='';
-                    for(const tk of ORDER){ if(!syn||!syn[tk]) continue;
-                      const lbl=tk.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
-                      const cells=(idx[tk]||[]).sort((a,b)=>a.year-b.year).map(c=>`<a class="c" href="../viewers/cards.html?src=../tarot/${c.slug}/grammar.json&item=${encodeURIComponent(c.id)}" title="Open the ${esc(c.name)} card"><img loading="lazy" src="${esc(c.img)}"><div>${esc(c.name.slice(0,14))}</div></a>`).join('');
-                      html+=`<div class="card-chapter"><h3>${NUM[tk]} — ${esc(lbl)}</h3><div class="synthbox"><p>${mdl(syn[tk])}</p></div><div class="strip">${cells}</div><p class="card-links screen-only"><a href="../viewers/prototypes/lenses.html?card=${tk}">See ${esc(lbl)} across every deck in Lenses →</a> · <a href="https://flow.recursive.eco" target="_blank" rel="noopener">Get a reading at recursive.eco →</a></p></div>`;
+                        (idx[tk]=idx[tk]||[]).push({slug:g.slug,name:(g.name||g.slug).split(' — ')[0],year:g.year||9999,id:it.id,img,sections:it.sections||{}}); } } }
+                    const attr=v=>{const m=String(v||'').match(/^\s*\[([^\]]{3,200})\]/);return m?m[1].trim():null;};
+                    const ayear=a=>{const m=(a||'').match(/\b(1[0-9]{3}|20[0-9]{2})\b/);return m?+m[1]:9999;};
+                    const lbl=tk=>tk.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+                    if(synEls.length){ let html='';
+                      for(const tk of ORDER){ if(!syn||!syn[tk])continue;
+                        const cells=(idx[tk]||[]).filter(c=>c.img).sort((a,b)=>a.year-b.year).map(c=>`<a class="c" href="../viewers/cards.html?src=../tarot/${c.slug}/grammar.json&item=${encodeURIComponent(c.id)}"><img loading="lazy" src="${esc(c.img)}"><div>${esc(c.name.slice(0,14))}</div></a>`).join('');
+                        html+=`<div class="card-chapter"><h3>${NUM[tk]} — ${esc(lbl(tk))}</h3><div class="synthbox"><p>${mdl(syn[tk])}</p></div><div class="strip">${cells}</div><p class="card-links screen-only"><a href="../viewers/prototypes/lenses.html?card=${tk}">See ${esc(lbl(tk))} across every deck in Lenses →</a> · <a href="https://flow.recursive.eco" target="_blank" rel="noopener">Get a reading at recursive.eco →</a></p></div>`;
+                      }
+                      synEls.forEach(el=>el.innerHTML=html);
                     }
-                    allEls.forEach(el=>el.innerHTML=html);
+                    if(detEls.length){ const ANCH=['cary-yale-visconti-tarot','visconti-sforza-tarot','charles-vi-tarot','este-tarot']; let html='';
+                      for(const tk of ORDER){ if(!syn||!syn[tk])continue;
+                        const ents=(idx[tk]||[]).sort((a,b)=>a.year-b.year);
+                        const sceneOf=slug=>{const c=ents.find(x=>x.slug===slug);if(!c)return null;const s=c.sections;return s.Scene||s.About||s.Iconography;};
+                        const early=ANCH.find(s=>sceneOf(s)); let ind='';
+                        for(const slug of [early,'tarot-de-marseille-conver','golden-dawn-book-t-tarot']){ if(!slug)continue; const sc=sceneOf(slug); if(!sc)continue;
+                          const g=col.grammars.find(x=>x.slug===slug);
+                          ind+=`<p class="indeck"><strong>${esc((g.name||slug).split(' — ')[0])} · ${g.year||''}.</strong> ${mdl(sc.slice(0,520))}${sc.length>520?'…':''}</p>`; }
+                        if(ind)ind='<h4>In the decks</h4>'+ind;
+                        const later=[],seen=new Set();
+                        for(const c of ents)for(const v of Object.values(c.sections)){const a=attr(v);if(!a)continue;const voice=a.split(',')[0].trim();if(seen.has(voice))continue;seen.add(voice);later.push([ayear(a),a,String(v).replace(/^\s*\[[^\]]*\]\s*/,'')]);}
+                        later.sort((a,b)=>a[0]-b[0]); let lat='';
+                        for(const [,a,body] of later)lat+=`<div class="later"><div class="later-src">${esc(a)}</div><p>${mdl(body.slice(0,760))}${body.length>760?'…':''}</p></div>`;
+                        if(lat)lat='<h4>Later readings</h4>'+lat;
+                        if(ind||lat)html+=`<div class="card-chapter"><h3>${NUM[tk]} — ${esc(lbl(tk))}</h3>${ind}${lat}</div>`;
+                      }
+                      detEls.forEach(el=>el.innerHTML=html);
+                    }
+                  }
+                  // the Divination Question essay — from the meta grammar (single source)
+                  const essayEls=[...root.querySelectorAll('[data-embed="essay"]')];
+                  if(essayEls.length){
+                    const mg=await get(T+'/all-decks-many-lenses/grammar.json');
+                    const e=mg&&mg.items.find(i=>i.id==='essay-divination-question');
+                    let html=''; if(e)for(const [k,v] of Object.entries(e.sections||{}))html+=`<h3>${esc(k)}</h3><p>${mdl(v)}</p>`;
+                    essayEls.forEach(el=>el.innerHTML=html);
                   }
                 })();
 
