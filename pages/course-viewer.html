@@ -1001,6 +1001,24 @@
                     } }
                     deckEls.forEach(el=>el.innerHTML=html);
                   }
+                  // the four suits (Minor Arcana) — intro + per-suit synthesis + pip→scenic strip
+                  const suitEls=[...root.querySelectorAll('[data-embed="suits"]')];
+                  if(suitEls.length){
+                    const suits=await get(RES+'/synthesis/suits.json');
+                    const CANON={cups:'cups',coins:'coins',swords:'swords',batons:'batons',wands:'batons',pentacles:'coins',disks:'coins',staves:'batons',clubs:'batons'};
+                    const SORDER=['batons','coins','swords','cups'], STITLE={batons:'Batons (Wands)',coins:'Coins (Pentacles)',swords:'Swords',cups:'Cups'};
+                    const ANCH=['tarot-de-marseille-conver','sola-busca-tarot','golden-dawn-book-t-tarot','visconti-sforza-tarot'];
+                    const sidx={};
+                    for(const slug of ANCH){ const dg=await get(T+'/'+slug+'/grammar.json'); if(!dg)continue;
+                      for(const it of dg.items){ const s=(it.metadata||{}).suit, img=it.image_url||(it.metadata||{}).image_url;
+                        if(s&&img){ const cs=CANON[String(s).toLowerCase()]; if(cs){ (sidx[cs]=sidx[cs]||{}); (sidx[cs][slug]=sidx[cs][slug]||[]).push(img); } } } }
+                    let html=suits?`<p>${mdl(suits._intro)}</p>`:'';
+                    for(const cs of SORDER){ if(!suits||!suits[cs])continue;
+                      const cells=ANCH.flatMap(slug=>((sidx[cs]||{})[slug]||[]).slice(0,5)).map(im=>`<figure class="c"><img loading="lazy" src="${esc(im)}"></figure>`).join('');
+                      html+=`<section class="card-chapter"><h3>The Suit of ${esc(STITLE[cs])}</h3><div class="synthbox"><p>${mdl(suits[cs])}</p></div><div class="strip">${cells}</div></section>`;
+                    }
+                    suitEls.forEach(el=>el.innerHTML=html);
+                  }
                   // card chapter: synthesis + cross-deck image strip
                   const cardEls=[...root.querySelectorAll('[data-embed="card"]')];
                   if(cardEls.length){
