@@ -17,9 +17,10 @@
 (function () {
   if (customElements.get('site-header')) return;
 
-  // Path back to the repo root: '../' from any subdir (viewers/ OR pages/), '' at root.
-  const inSub = /\/(viewers|pages)\//.test(location.pathname);
-  const PFX = inSub ? '../' : '';
+  // Path back to the repo root — depth-aware so it works at any nesting
+  // (root, /viewers/, /pages/, AND /viewers/prototypes/, /pages/book/ …).
+  const _segs = location.pathname.split('/').filter(Boolean);
+  const PFX = '../'.repeat(Math.max(0, _segs.length - 1));
 
   // Shared-identity widget (reads the .recursive.eco session cookie; L1 of the
   // integration ladder). Loaded once; renders as <recursive-auth> in the bar.
@@ -45,9 +46,13 @@
   // [key, label, href, cssClass, external?]
   const TOOLS = [
     ['caster', '🔮 Caster',  PFX + 'viewers/caster.html',      't-caster'],
-    ['course', '📓 Course',  PFX + 'pages/course-viewer.html', 't-course'],
     ['shop',   '🛒 Shop',    PFX + 'pages/shop.html',          't-shop'],
     ['github', 'GitHub ↗',  'https://github.com/PlayfulProcess/recursive-tarot', 't-github', true],
+  ];
+  // Courses — a dropdown under one "Courses" pill (each is a course-viewer ?course=…).
+  const COURSES = [
+    ['history-of-tarot',                'A History of Tarot'],
+    ['build-a-tarot-deck-with-claude',  'Build a Tarot Deck with Claude'],
   ];
 
   function autoActive() {
@@ -67,6 +72,8 @@
 
   class SiteHeader extends HTMLElement {
     connectedCallback() {
+      // Embedded (iframed into a course/book): render no header at all.
+      if (new URLSearchParams(location.search).get('embed') === '1') { this.style.display = 'none'; return; }
       const active = this.getAttribute('active') || autoActive();
       const root = this.attachShadow({ mode: 'open' });
       const tab = ([key, label, href, cls, ext]) =>
@@ -111,6 +118,16 @@
           .t-shop:hover{ color:#f4dd92; background:rgba(212,175,55,.10); }
           .t-github{ color:#8f87a8; border-color:transparent; border-bottom:1px dashed #3a3450; border-radius:0; }
           .t-github:hover{ color:#cfc8e2; background:transparent; }
+          /* Courses dropdown */
+          .dd{ position:relative; }
+          .dd-btn{ background:none; font-family:inherit; cursor:pointer; }
+          .dd-menu{ position:absolute; top:calc(100% + 6px); right:0; min-width:230px;
+            background:#15101f; border:1px solid #3a3450; border-radius:10px; padding:6px;
+            box-shadow:0 12px 32px rgba(0,0,0,.5); display:none; z-index:60; }
+          .dd:hover .dd-menu, .dd:focus-within .dd-menu{ display:block; }
+          .dd-menu a{ display:block; color:#cdbff0; text-decoration:none; font-size:13px;
+            padding:8px 10px; border-radius:7px; white-space:nowrap; }
+          .dd-menu a:hover{ background:#241e38; color:#fff; }
           @media (max-width:680px){
             .brand .sub{ display:none; }
             .tab{ padding:5px 8px; font-size:12px; }
@@ -133,6 +150,12 @@
             <span class="cap gram-cap" title="Analyse patterns across the whole collection">⊞ grammar</span>
             ${GRAMMAR_VIEWS.map(tab).join('')}
             <span class="sep"></span>
+            <span class="dd" tabindex="0">
+              <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}">📓 Courses ▾</a>
+              <span class="dd-menu">
+                ${COURSES.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')}
+              </span>
+            </span>
             ${TOOLS.map(tab).join('')}
             <recursive-auth></recursive-auth>
           </nav>
