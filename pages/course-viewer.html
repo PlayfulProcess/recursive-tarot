@@ -940,7 +940,7 @@
                   const root = document.getElementById('course-content'); if(!root) return;
                   const T='../tarot', RES='../research';
                   const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-                  const mdl=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>').replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>');
+                  const mdl=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>').replace(/\*+/g,'').replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>');
                   const get=async u=>{ try{ return await (await fetch(u)).json(); }catch(e){ return null; } };
                   // live viewers
                   root.querySelectorAll('[data-embed="lineage"],[data-embed="timeline"]').forEach(el=>{
