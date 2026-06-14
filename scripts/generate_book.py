@@ -86,6 +86,10 @@ def thumb(url):
 col = load(os.path.join(TAROT, "_collection.json"))
 decks = [g for g in col["grammars"] if not g.get("is_meta") and g.get("type") != "meta"]
 synth = load(SYN)
+suits = load(os.path.join(ROOT, "research", "synthesis", "suits.json"))
+SUIT_CANON = {"cups":"cups","coins":"coins","swords":"swords","batons":"batons",
+              "wands":"batons","pentacles":"coins","disks":"coins","staves":"batons","clubs":"batons"}
+suit_idx = {}
 people = load(os.path.join(TAROT, "people-of-tarot", "grammar.json"))
 tree = {it["id"]: it for it in load(os.path.join(TAROT, "tree-of-tarot", "grammar.json"))["items"]}
 
@@ -103,10 +107,16 @@ for g in decks:
                  for it in dg.get("items", [])
                  if it.get("level", 1) == 1 and (it.get("image_url") or (it.get("metadata") or {}).get("image_url"))]
     for it in dg.get("items", []):
-        tk = (it.get("metadata") or {}).get("trump_key")
+        md = it.get("metadata") or {}
+        img = it.get("image_url") or md.get("image_url")
+        suit = md.get("suit")
+        if suit and img:
+            cs = SUIT_CANON.get(str(suit).lower())
+            if cs:
+                suit_idx.setdefault(cs, {}).setdefault(slug, []).append(img)
+        tk = md.get("trump_key")
         if not tk:
             continue
-        img = it.get("image_url") or (it.get("metadata") or {}).get("image_url")
         trump_idx.setdefault(tk, []).append({
             "slug": slug, "name": (g.get("name") or slug).split(" — ")[0],
             "year": g.get("year") or 9999, "id": it.get("id"), "img": img,
@@ -154,6 +164,29 @@ def render_decks():
                    % (esc((g.get("name") or slug).split(" — ")[0]),
                       (" · %s" % yl) if yl else "", coverhtml, render_markdown(g.get("_desc")), strip))
     print("  deck signature images: %d" % n)
+    return "".join(out)
+
+SUIT_ORDER = ["batons", "coins", "swords", "cups"]
+SUIT_TITLE = {"batons": "Batons (Wands)", "coins": "Coins (Pentacles)", "swords": "Swords", "cups": "Cups"}
+SUIT_ANCHORS = ["tarot-de-marseille-conver", "sola-busca-tarot", "golden-dawn-book-t-tarot", "visconti-sforza-tarot"]
+
+def render_suits():
+    out = ['<div class="suit-intro">%s</div>' % para(suits.get("_intro"))]
+    n = 0
+    for cs in SUIT_ORDER:
+        syn = suits.get(cs)
+        if not syn:
+            continue
+        cells = []
+        for slug in SUIT_ANCHORS:
+            for im in ((suit_idx.get(cs) or {}).get(slug) or [])[:5]:
+                r = thumb(im)
+                if r:
+                    cells.append('<figure class="c"><img src="%s"></figure>' % esc(r)); n += 1
+        strip = ('<div class="strip">%s</div>' % "".join(cells)) if cells else ""
+        out.append('<section class="card-chapter"><h3>The Suit of %s</h3><div class="synthbox">%s</div>%s</section>'
+                   % (esc(SUIT_TITLE[cs]), para(syn), strip))
+    print("  suit images: %d" % n)
     return "".join(out)
 
 def fig(which):
@@ -256,6 +289,7 @@ EMBED = {
     "timeline": lambda: fig("timeline"),
     "people": render_people,
     "decks": render_decks,
+    "suits": render_suits,
     "all-cards": render_cards,
 }
 
