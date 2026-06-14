@@ -38,11 +38,21 @@ def load(p):
 def esc(s):
     return (str(s or "").replace("&","&amp;").replace("<","&lt;").replace(">","&gt;"))
 
+def slugify(s):
+    """Match marked.js GitHub-style heading ids, so MDX links resolve identically
+    in the printed book and the on-screen course viewer."""
+    s = re.sub(r"\[@[^\]]+\]", "", str(s or "")).lower().strip()
+    s = re.sub(r"[^\w\s-]", "", s)
+    return re.sub(r"[\s_-]+", "-", s)
+
 def inline(s):
     s = re.sub(r"\s*\[@[^\]]+\]", "", str(s or ""))      # drop citation keys
     s = esc(s)
     s = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", s)
     s = re.sub(r"\*(.+?)\*", r"<em>\1</em>", s)
+    # markdown links [text](href) — only the MDX prose uses these; grammar
+    # attributions are [Author, Work] with no trailing (...), so they're untouched.
+    s = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', s)
     return s
 
 def para(s):
@@ -90,6 +100,7 @@ suits = load(os.path.join(ROOT, "research", "synthesis", "suits.json"))
 SUIT_CANON = {"cups":"cups","coins":"coins","swords":"swords","batons":"batons",
               "wands":"batons","pentacles":"coins","disks":"coins","staves":"batons","clubs":"batons"}
 suit_idx = {}
+minor_idx = {}   # archetype (card:ace-of-wands) -> [ {slug,name,year,sections} ]  — cross-deck "same minor card"
 people = load(os.path.join(TAROT, "people-of-tarot", "grammar.json"))
 tree = {it["id"]: it for it in load(os.path.join(TAROT, "tree-of-tarot", "grammar.json"))["items"]}
 meta = load(os.path.join(TAROT, "all-decks-many-lenses", "grammar.json"))
@@ -127,6 +138,12 @@ for g in decks:
             cs = SUIT_CANON.get(str(suit).lower())
             if cs:
                 suit_idx.setdefault(cs, {}).setdefault(slug, []).append(img)
+        arch = md.get("archetype")
+        if arch and str(arch).startswith("card:") and (md.get("arcana") == "minor" or suit):
+            minor_idx.setdefault(arch, []).append({
+                "slug": slug, "name": (g.get("name") or slug).split(" — ")[0],
+                "year": g.get("year") or 9999, "img": img,
+                "sections": it.get("sections") or {}})
         tk = md.get("trump_key")
         if not tk:
             continue
@@ -185,8 +202,8 @@ def render_decks():
                 rows.append('<p class="maker"><strong>%s%s</strong> — %s.</p>'
                             % (esc(p["name"]), (" (%s)" % esc(life)) if life else "", inline(first[:240])))
             makers = '<div class="made-by"><h4>The hands behind it</h4>%s</div>' % "".join(rows)
-        out.append('<section class="deck-chapter"><h3>%s%s</h3>%s%s%s%s</section>'
-                   % (esc((g.get("name") or slug).split(" — ")[0]),
+        out.append('<section class="deck-chapter" id="deck-%s"><h3>%s%s</h3>%s%s%s%s</section>'
+                   % (slug, esc((g.get("name") or slug).split(" — ")[0]),
                       (" · %s" % yl) if yl else "", coverhtml, render_markdown(g.get("_desc")), makers, strip))
     print("  deck signature images: %d" % n)
     return "".join(out)
@@ -370,8 +387,74 @@ def render_trumps_detail():
                 % (esc(a), para(body[:760] + ("…" if len(body) > 760 else "")))
                 for _, a, body in later)
         if indecks or laterhtml:
-            out.append('<section class="card-chapter"><h3>%d — %s</h3>%s%s</section>'
-                       % (i, esc(tk.replace("-", " ").title()), indecks, laterhtml))
+            out.append('<section class="card-chapter" id="trumpdetail-%s"><h3>%d — %s</h3>%s%s</section>'
+                       % (tk, i, esc(tk.replace("-", " ").title()), indecks, laterhtml))
+    return "".join(out)
+
+_RANK_ORDER = {"ace":1,"one":1,"two":2,"three":3,"four":4,"five":5,"six":6,"seven":7,
+               "eight":8,"nine":9,"ten":10,"page":11,"knave":11,"valet":11,"jack":11,"princess":11,
+               "knight":12,"cavalier":12,"prince":12,"queen":13,"king":14}
+SUIT_DETAIL_ANCHORS = ["sola-busca-tarot", "tarot-de-marseille-conver", "golden-dawn-book-t-tarot"]
+
+def _arch_parts(arch):
+    m = re.match(r"card:(.+?)-of-(.+)", arch or "")
+    if not m:
+        return (None, None, 99)
+    rank, suit = m.group(1), m.group(2)
+    return (rank, SUIT_CANON.get(suit, suit), _RANK_ORDER.get(rank, 50))
+
+def render_suits_detail():
+    """CATALOGUE (the back): the Minor Arcana card by card — pip and court — described
+    in the decks' own words, in parallel to the Major Arcana detail below it."""
+    # group archetypes by canonical suit
+    by_suit = {}
+    for arch in minor_idx:
+        rank, cs, ro = _arch_parts(arch)
+        if not cs:
+            continue
+        by_suit.setdefault(cs, []).append((ro, rank, arch))
+    out = []
+    for cs in SUIT_ORDER:
+        cards = sorted(by_suit.get(cs, []))
+        if not cards:
+            continue
+        out.append('<section class="card-chapter" id="suitdetail-%s"><h3>The Suit of %s</h3>' % (cs, esc(SUIT_TITLE[cs])))
+        for ro, rank, arch in cards:
+            entries = sorted(minor_idx.get(arch, []), key=lambda x: x["year"])
+            def scene_of(slug):
+                for c in entries:
+                    if c["slug"] == slug:
+                        s = c["sections"]
+                        return s.get("Scene") or s.get("Description") or s.get("About") or s.get("Iconography")
+                return None
+            anchors = [(slug, scene_of(slug)) for slug in SUIT_DETAIL_ANCHORS if scene_of(slug)]
+            indeck = ""
+            if anchors:
+                s, sc = anchors[0]
+                indeck = '<span class="mscene"><strong>%s:</strong> %s%s</span>' % (
+                    esc(deck_name(s)), inline(sc[:300]), "…" if len(sc) > 300 else "")
+            # one attributed later reading (the divinatory meaning), if any
+            later, seen = [], set()
+            for c in entries:
+                for v in c["sections"].values():
+                    a = attribution(v)
+                    if not a:
+                        continue
+                    voice = a.split(",")[0].strip()
+                    if voice in seen:
+                        continue
+                    seen.add(voice)
+                    later.append((attr_year(a), a, strip_attr(v)))
+            later.sort()
+            readinghtml = ""
+            if later:
+                _, a, body = later[0]
+                readinghtml = '<span class="mread"><em>%s</em> — %s%s</span>' % (
+                    esc(a.split(",")[0]), inline(body[:240]), "…" if len(body) > 240 else "")
+            rank_label = (rank or "").replace("-", " ").title()
+            out.append('<p class="minor-card"><strong>%s of %s.</strong> %s %s</p>'
+                       % (esc(rank_label), esc(SUIT_TITLE[cs].split(" ")[0]), indeck, readinghtml))
+        out.append("</section>")
     return "".join(out)
 
 EMBED = {
@@ -383,6 +466,7 @@ EMBED = {
     "people": render_people,
     "decks": render_decks,
     "suits": render_suits,
+    "suits-detail": render_suits_detail,
     "trumps-synthesis": render_trumps_synth,
     "trumps-detail": render_trumps_detail,
 }
@@ -402,9 +486,11 @@ def render_mdx():
                 body.append(fn())
             continue
         if b.startswith("### "):
-            body.append("<h3>%s</h3>" % inline(b[4:]))
+            t = b[4:]
+            body.append('<h3 id="%s">%s</h3>' % (slugify(t), inline(t)))
         elif b.startswith("## "):
-            body.append('<h2 class="chapter">%s</h2>' % inline(b[3:]))
+            t = b[3:]
+            body.append('<h2 class="chapter" id="%s">%s</h2>' % (slugify(t), inline(t)))
         elif b.startswith("# "):
             h = b[2:].strip()
             if title is None:
@@ -450,6 +536,9 @@ h4{ font-size:10.5pt; text-transform:uppercase; letter-spacing:.04em; color:#7a5
 .later{ break-inside:avoid; margin:.5em 0; padding-left:.6em; border-left:2px solid #c9b8ee; }
 .later-src{ font-style:italic; font-size:8.5pt; color:#777; margin-bottom:.1em; }
 .later p{ font-size:10pt; margin:.15em 0; }
+.minor-card{ font-size:10pt; margin:.3em 0; break-inside:avoid; }
+.minor-card .mscene{ color:#333; }
+.minor-card .mread{ color:#5a3fa0; }
 .strip{ display:flex; flex-wrap:wrap; gap:7px; break-inside:avoid; }
 .strip .c{ margin:0; text-align:center; width:1in; }
 .strip .c img{ width:1in; height:1.6in; object-fit:cover; border:1px solid #ccc; border-radius:4px; }
