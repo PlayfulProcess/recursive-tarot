@@ -63,10 +63,10 @@ def strip_attr(text):
 # ── image cache: download once, downscale, return path relative to book.html ──
 os.makedirs(IMGDIR, exist_ok=True)
 _imgfail = [0]
-def thumb(url):
+def thumb(url, w=IMG_W):
     if not url:
         return None
-    h = hashlib.md5(url.encode()).hexdigest()[:16]
+    h = hashlib.md5(("%s@%d" % (url, w)).encode()).hexdigest()[:16]
     rel = "build/img/%s.jpg" % h
     dst = os.path.join(BOOK, rel)
     if os.path.exists(dst):
@@ -75,8 +75,8 @@ def thumb(url):
         req = urllib.request.Request(url, headers={"User-Agent": "recursive-tarot-book"})
         data = urllib.request.urlopen(req, timeout=30).read()
         im = Image.open(BytesIO(data)).convert("RGB")
-        im.thumbnail((IMG_W, IMG_W * 3))      # cap width; keep aspect
-        im.save(dst, "JPEG", quality=82, optimize=True)
+        im.thumbnail((w, w * 3))      # cap width; keep aspect
+        im.save(dst, "JPEG", quality=85, optimize=True)
         return rel
     except Exception as e:
         _imgfail[0] += 1
@@ -108,6 +108,9 @@ for g in decks:
     g["_sig"] = [(it.get("image_url") or (it.get("metadata") or {}).get("image_url"))
                  for it in dg.get("items", [])
                  if it.get("level", 1) == 1 and (it.get("image_url") or (it.get("metadata") or {}).get("image_url"))]
+    g["_coll"] = sorted({(it.get("metadata") or {}).get("collection") for it in dg.get("items", [])
+                         if (it.get("metadata") or {}).get("collection")})
+    g["_gh"] = dg.get("_github_url") or dg.get("_github_source_url")
     for it in dg.get("items", []):
         md = it.get("metadata") or {}
         img = it.get("image_url") or md.get("image_url")
@@ -231,6 +234,64 @@ def _strip(tk):
             _NIMG[0] += 1
     return ('<div class="strip">%s</div>' % "".join(cells)) if cells else ""
 
+# curated full-page plates — the most striking cards (deck slug, trump_key, caption)
+PLATES = [
+    ("visconti-sforza-tarot", "world", "The World — Visconti-Sforza, Milan, c. 1451. Hand-painted on gold ground for the ducal court."),
+    ("cary-yale-visconti-tarot", "death", "Death — Cary-Yale Visconti, c. 1442. The earliest surviving Death: a mounted archer, rendered with courtly dignity."),
+    ("tarot-de-marseille-conver", "moon", "The Moon — Tarot de Marseille (Conver), 1760. The uncanny scene that the occultists inherited whole."),
+    ("court-de-gebelin-tarot", "magician", "The Magician — Court de Gébelin's plates, 1781. Where the street conjurer was first read as an Egyptian sage."),
+    ("golden-dawn-book-t-tarot", "death", "Death — Golden Dawn / Rider-Waite-Smith line, 1909. Death remade: mounted again, now bearing a banner of renewal."),
+]
+
+def render_plates():
+    out, n = [], 0
+    for slug, tk, cap in PLATES:
+        entry = next((c for c in trump_idx.get(tk, []) if c["slug"] == slug and c["img"]), None)
+        if not entry:
+            continue
+        rel = thumb(entry["img"], 900)
+        if not rel:
+            continue
+        n += 1
+        out.append('<figure class="plate"><img src="%s"><figcaption>%s</figcaption></figure>' % (esc(rel), inline(cap)))
+    print("  plates: %d" % n)
+    return "".join(out)
+
+def render_bib():
+    try:
+        txt = open(os.path.join(ROOT, "research", "bibliography.bib"), encoding="utf-8").read()
+    except Exception:
+        return ""
+    rows = []
+    for m in re.finditer(r"@\w+\s*\{[^,]+,(.*?)\n\}", txt, re.S):
+        body = m.group(1)
+        def f(name):
+            mm = re.search(name + r"\s*=\s*[{\"]([^}\"]*)[}\"]", body, re.I)
+            return mm.group(1).strip() if mm else ""
+        au, ti, yr = f("author") or f("editor"), f("title"), f("year")
+        if ti:
+            rows.append((au, ti, yr))
+    rows.sort(key=lambda r: (r[0].lower(), r[2]))
+    return "".join('<p class="bibentry">%s%s%s.</p>'
+                   % ((inline(au) + ". ") if au else "", "<em>%s</em>" % inline(ti), (" (%s)" % yr) if yr else "")
+                   for au, ti, yr in rows)
+
+def render_apparatus():
+    out = ["<h3>Image credits</h3>",
+           "<p>Every card image reproduced in this book is in the <strong>public domain</strong> — the original works all predate the twentieth century. Reproductions are drawn from the holding institutions and digital archives listed below; full per-card provenance lives in the research dossiers at the project's GitHub repository.</p>",
+           '<ul class="credits">']
+    for g in sorted(decks, key=lambda x: x.get("year") or 9999):
+        coll = g.get("_coll") or []
+        src = "; ".join(coll) if coll else "public domain — see the deck's research dossier"
+        out.append("<li><strong>%s.</strong> %s.</li>" % (esc((g.get("name") or g["slug"]).split(" — ")[0]), inline(src)))
+    out.append("</ul>")
+    out.append("<h3>Sources &amp; further reading</h3>")
+    out.append("<p>The historical claims throughout are cited in the per-card and per-deck research dossiers (each <em>Research note</em> links to its source). The full bibliography follows.</p>")
+    out.append('<div class="bib">%s</div>' % render_bib())
+    out.append("<h3>About this book</h3>")
+    out.append("<p>Generated from the open data of <strong>The Recursive Tarot</strong> — a public-domain collection of historical tarot grammars. Text is licensed CC-BY-SA-4.0; the card images are public domain. Source and data: github.com/PlayfulProcess/recursive-tarot.</p>")
+    return "".join(out)
+
 def render_essay():
     if not essay_item:
         return ""
@@ -294,6 +355,8 @@ EMBED = {
     "lineage": lambda: fig("lineage"),
     "timeline": lambda: fig("timeline"),
     "essay": render_essay,
+    "plates": render_plates,
+    "apparatus": render_apparatus,
     "people": render_people,
     "decks": render_decks,
     "suits": render_suits,
@@ -366,6 +429,13 @@ h4{ font-size:10.5pt; text-transform:uppercase; letter-spacing:.04em; color:#7a5
 .strip .c{ margin:0; text-align:center; width:1in; }
 .strip .c img{ width:1in; height:1.6in; object-fit:cover; border:1px solid #ccc; border-radius:4px; }
 .strip .c figcaption{ font-size:6.5pt; }
+.plate{ break-before:page; break-inside:avoid; text-align:center; margin:0; padding-top:.3in; }
+.plate img{ max-width:100%; max-height:7.6in; border:1px solid #ccc; }
+.plate figcaption{ font-size:9pt; color:#555; margin-top:.5em; max-width:5in; margin-left:auto; margin-right:auto; }
+.credits{ font-size:9.5pt; list-style:none; padding:0; }
+.credits li{ margin:.3em 0; }
+.bib{ column-count:1; }
+.bibentry{ font-size:9pt; margin:.35em 0; padding-left:1.2em; text-indent:-1.2em; text-align:left; }
 """
 
 def main():

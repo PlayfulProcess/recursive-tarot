@@ -1095,6 +1095,37 @@
                     let html=''; if(e)for(const [k,v] of Object.entries(e.sections||{}))html+=`<h3>${esc(k)}</h3><p>${mdl(v)}</p>`;
                     essayEls.forEach(el=>el.innerHTML=html);
                   }
+                  // full-page plates (front gallery)
+                  const plateEls=[...root.querySelectorAll('[data-embed="plates"]')];
+                  if(plateEls.length){
+                    const PLATES=[['visconti-sforza-tarot','world','The World — Visconti-Sforza, Milan, c. 1451. Hand-painted on gold ground for the ducal court.'],['cary-yale-visconti-tarot','death','Death — Cary-Yale Visconti, c. 1442. The earliest surviving Death: a mounted archer.'],['tarot-de-marseille-conver','moon','The Moon — Tarot de Marseille (Conver), 1760. The uncanny scene the occultists inherited whole.'],['court-de-gebelin-tarot','magician','The Magician — Court de Gébelin’s plates, 1781. The street conjurer read as an Egyptian sage.'],['golden-dawn-book-t-tarot','death','Death — Golden Dawn / Rider-Waite-Smith line, 1909. Mounted again, now with a banner of renewal.']];
+                    let html='';
+                    for(const [slug,tk,cap] of PLATES){ const dg=await get(T+'/'+slug+'/grammar.json'); if(!dg)continue;
+                      const it=dg.items.find(i=>(i.metadata||{}).trump_key===tk); const img=it&&(it.image_url||(it.metadata||{}).image_url);
+                      if(img)html+=`<figure class="plate"><img loading="lazy" src="${esc(img)}"><figcaption>${esc(cap)}</figcaption></figure>`;
+                    }
+                    plateEls.forEach(el=>el.innerHTML=html);
+                  }
+                  // apparatus: image credits + bibliography + colophon
+                  const appEls=[...root.querySelectorAll('[data-embed="apparatus"]')];
+                  if(appEls.length){
+                    const col=await get(T+'/_collection.json');
+                    let cred='<h3>Image credits</h3><p>Every card image here is in the <strong>public domain</strong> — the originals all predate the twentieth century. Reproductions are drawn from the institutions and archives below; full per-card provenance is in the research dossiers on GitHub.</p><ul class="credits">';
+                    if(col){ for(const g of col.grammars.filter(x=>!x.is_meta).sort((a,b)=>(a.year||9999)-(b.year||9999))){
+                      const dg=await get(T+'/'+g.slug+'/grammar.json'); const colls=[...new Set((dg?dg.items:[]).map(i=>(i.metadata||{}).collection).filter(Boolean))];
+                      cred+=`<li><strong>${esc((g.name||g.slug).split(' — ')[0])}.</strong> ${esc(colls.join('; ')||'public domain — see the deck dossier')}.</li>`;
+                    } }
+                    cred+='</ul>';
+                    let bib='';
+                    try{ const txt=await (await fetch('../research/bibliography.bib')).text();
+                      const rows=[]; const re2=/@\w+\s*\{[^,]+,([\s\S]*?)\n\}/g; let m;
+                      while((m=re2.exec(txt))){ const b=m[1]; const f=n=>{const mm=new RegExp(n+'\\s*=\\s*[{"]([^}"]*)[}"]','i').exec(b);return mm?mm[1].trim():'';};
+                        const au=f('author')||f('editor'),ti=f('title'),yr=f('year'); if(ti)rows.push([au,ti,yr]); }
+                      rows.sort((a,b)=>(a[0].toLowerCase()+a[2]).localeCompare(b[0].toLowerCase()+b[2]));
+                      bib=rows.map(([au,ti,yr])=>`<p class="bibentry">${au?esc(au)+'. ':''}<em>${esc(ti)}</em>${yr?' ('+esc(yr)+')':''}.</p>`).join('');
+                    }catch(e){}
+                    appEls.forEach(el=>el.innerHTML=cred+'<h3>Sources &amp; further reading</h3><div class="bib">'+bib+'</div><h3>About this book</h3><p>Generated from the open data of <strong>The Recursive Tarot</strong> — a public-domain collection of historical tarot grammars. Text CC-BY-SA-4.0; card images public domain. Source: github.com/PlayfulProcess/recursive-tarot.</p>');
+                  }
                 })();
 
                 // Round 42: wire popup triggers + repaint QR codes if
