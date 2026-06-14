@@ -100,7 +100,9 @@
             209
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/trump-matto.jpg"
-        }
+        },
+        "trump_key": "fool",
+        "trump_number": 0
       },
       "sections": {
         "Iconography": "A ragged fool — unnumbered, the 'Excuse' of the game, exempt from following suit.",
@@ -149,7 +151,9 @@
             209
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/trump-bagatto.jpg"
-        }
+        },
+        "trump_key": "magician",
+        "trump_number": 1
       },
       "sections": {
         "Iconography": "A craftsman at his table — the lowest of the trumps proper.",
@@ -197,7 +201,9 @@
             209
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/trump-papa-a.jpg"
-        }
+        },
+        "trump_key": "hierophant",
+        "trump_number": 5
       },
       "sections": {
         "Iconography": "One of four near-identical crowned/turbaned figures.",
@@ -244,7 +250,9 @@
             209
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/trump-papa-b.jpg"
-        }
+        },
+        "trump_key": "hierophant",
+        "trump_number": 5
       },
       "sections": {
         "Iconography": "The second of the four equal Papi.",
@@ -291,7 +299,9 @@
             209
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/trump-papa-c.jpg"
-        }
+        },
+        "trump_key": "hierophant",
+        "trump_number": 5
       },
       "sections": {
         "Iconography": "The third of the four equal Papi.",
@@ -338,7 +348,9 @@
             209
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/trump-papa-d.jpg"
-        }
+        },
+        "trump_key": "hierophant",
+        "trump_number": 5
       },
       "sections": {
         "Iconography": "The fourth of the four equal Papi.",
@@ -368,7 +380,9 @@
         "italian_name": "L'Amore",
         "tradition": "bolognese",
         "archetype": "arcana:the-lovers",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "trump_key": "lovers",
+        "trump_number": 6
       },
       "sections": {
         "Iconography": "A couple beneath a winged Cupid.",
@@ -398,7 +412,9 @@
         "italian_name": "Il Carro",
         "tradition": "bolognese",
         "archetype": "arcana:the-chariot",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "trump_key": "chariot",
+        "trump_number": 7
       },
       "sections": {
         "Iconography": "A victor in a triumphal car.",
@@ -428,7 +444,9 @@
         "italian_name": "La Temperanza",
         "tradition": "bolognese",
         "archetype": "arcana:temperance",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "trump_key": "temperance",
+        "trump_number": 14
       },
       "sections": {
         "Iconography": "A figure pouring between two vessels.",
@@ -458,7 +476,9 @@
         "italian_name": "La Giustizia",
         "tradition": "bolognese",
         "archetype": "arcana:justice",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "trump_key": "justice",
+        "trump_number": 11
       },
       "sections": {
         "Iconography": "An enthroned woman with sword and scales.",
@@ -488,7 +508,9 @@
         "italian_name": "La Forza",
         "tradition": "bolognese",
         "archetype": "arcana:strength",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "trump_key": "strength",
+        "trump_number": 8
       },
       "sections": {
         "Iconography": "A figure mastering a lion or column.",
@@ -518,7 +540,9 @@
         "italian_name": "La Ruota",
         "tradition": "bolognese",
         "archetype": "arcana:wheel-of-fortune",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "trump_key": "wheel-of-fortune",
+        "trump_number": 10
       },
       "sections": {
         "Iconography": "A turning wheel with rising and falling figures.",
@@ -548,7 +572,9 @@
         "italian_name": "Il Vecchio",
         "tradition": "bolognese",
         "archetype": "arcana:the-hermit",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "trump_key": "hermit",
+        "trump_number": 9
       },
       "sections": {
         "Iconography": "A bent old man with an hourglass — Time, the Bolognese 'Hermit'.",
@@ -578,7 +604,9 @@
         "italian_name": "Il Traditore",
         "tradition": "bolognese",
         "archetype": "arcana:the-hanged-man",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "trump_key": "hanged-man",
+        "trump_number": 12
       },
       "sections": {
         "Iconography": "A youth hung by one foot — the shaming image of a traitor.",
@@ -608,7 +636,9 @@
         "italian_name": "La Morte",
         "tradition": "bolognese",
         "archetype": "arcana:death",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "trump_key": "death",
+        "trump_number": 13
       },
       "sections": {
         "Iconography": "A skeletal reaper among the fallen.",
@@ -638,7 +668,9 @@
         "italian_name": "Il Diavolo",
         "tradition": "bolognese",
         "archetype": "arcana:the-devil",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "trump_key": "devil",
+        "trump_number": 15
       },
       "sections": {
         "Iconography": "A horned figure over bound captives.",
@@ -668,7 +700,9 @@
         "italian_name": "La Saetta / La Torre",
         "tradition": "bolognese",
         "archetype": "arcana:the-tower",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "trump_key": "tower",
+        "trump_number": 16
       },
       "sections": {
         "Iconography": "A tower struck by a bolt — called 'La Saetta' (the lightning) in Bologna.",
@@ -697,7 +731,9 @@
         "italian_name": "La Stella",
         "tradition": "bolognese",
         "archetype": "arcana:the-star",
-        "mapping_confidence": "exact"
+        "mapping_confidence": "exact",
+        "trump_key": "star",
+        "trump_number": 17
       },
       "sections": {
         "Iconography": "A figure beneath a great star.",
@@ -745,7 +781,9 @@
             209
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/trump-luna.jpg"
-        }
+        },
+        "trump_key": "moon",
+        "trump_number": 18
       },
       "sections": {
         "Iconography": "The Moon over the night world.",
@@ -794,7 +832,9 @@
             209
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/trump-sole.jpg"
-        }
+        },
+        "trump_key": "sun",
+        "trump_number": 19
       },
       "sections": {
         "Iconography": "A radiant sun over the day world.",
@@ -843,7 +883,9 @@
             209
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/trump-mondo.jpg"
-        }
+        },
+        "trump_key": "world",
+        "trump_number": 21
       },
       "sections": {
         "Iconography": "A figure within a cosmic frame.",
@@ -892,7 +934,9 @@
             209
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/trump-angelo.jpg"
-        }
+        },
+        "trump_key": "judgement",
+        "trump_number": 20
       },
       "sections": {
         "Iconography": "Angels with trumpets; the dead rise.",
