@@ -629,8 +629,8 @@
         .tarot-embed{ margin:1.6rem 0; }
         .viewer-frame{ width:100%; height:520px; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; background:#161029; }
         .viewer-frame iframe{ width:100%; height:100%; border:0; display:block; }
-        .print-figure{ display:none; border:1px solid #cbd5e1; border-radius:12px; background:#f6f4fb; color:#6b7280;
-            text-align:center; padding:2.2rem 1rem; font-size:.85rem; }
+        .print-figure{ display:none; border:1px solid #cbd5e1; border-radius:12px; overflow:hidden; }
+        .print-figure img{ display:block; width:100%; height:auto; }
         .tarot-embed figcaption, .strip + figcaption{ font-size:.8rem; color:#6b7280; text-align:center; margin-top:.4rem; }
         .people-weave h3{ margin:1.2rem 0 .4rem; }
         .whoswho{ display:grid; gap:.9rem; }
@@ -645,6 +645,7 @@
         .strip a.c img{ transition:transform .12s, box-shadow .12s; }
         .strip a.c:hover img{ transform:translateY(-2px); box-shadow:0 4px 14px rgba(147,51,234,.3); }
         .strip .c img{ width:88px; height:142px; object-fit:cover; border-radius:6px; border:1px solid #e5e7eb; background:#0a0712; }
+        .card-chapter{ margin:1.6rem 0; }
         .card-links{ font-size:.85rem; margin-top:.5rem; }
         .card-links a{ color:#9333ea; text-decoration:none; font-weight:600; }
         .card-links a:hover{ text-decoration:underline; }
@@ -661,6 +662,8 @@
             .course-content h1,.course-content h2,.course-content h3{ break-after:avoid; }
             .tarot-embed,.print-figure,.synthbox,.strip,.bio,.whoswho{ break-inside:avoid; }
             .course-content h2{ break-before:page; }
+            .card-chapter{ break-before:page; }
+            .card-chapter h3{ break-after:avoid; }
             .strip{ overflow:visible; flex-wrap:wrap; }
             .strip .c img{ width:1in; height:1.6in; }
         }
@@ -952,7 +955,8 @@
                     const w=el.dataset.embed;
                     const src=(w==='lineage'?'../viewers/genealogy-tree.html':'../viewers/timeline.html')+'?embed=1';
                     const label=w==='lineage'?'The Lineage of Tarot':'Timeline · 1440s–1900s';
-                    el.innerHTML=`<figure class="tarot-embed"><div class="viewer-frame screen-only"><iframe loading="lazy" title="${label}" src="${src}"></iframe></div><div class="print-figure">[ Figure — ${label} · static plate in print ]</div><figcaption>${label}. Interactive on screen; a static plate in print.</figcaption></figure>`;
+                    const fig=w==='lineage'?'../print/book/figures/lineage.png':'../print/book/figures/timeline.png';
+                    el.innerHTML=`<figure class="tarot-embed"><div class="viewer-frame screen-only"><iframe loading="lazy" title="${label}" src="${src}"></iframe></div><div class="print-figure"><img src="${fig}" alt="${label}"></div><figcaption>${label}. Interactive on screen; a static plate in print.</figcaption></figure>`;
                   });
                   // people who's who (per deck) + emergent "Hands Behind the Cards" weave
                   const peopleEls=[...root.querySelectorAll('[data-embed="people"]')];
@@ -1000,6 +1004,24 @@
                       html+=`<p class="card-links screen-only"><a href="../viewers/prototypes/lenses.html?card=${encodeURIComponent(tk)}">See ${esc(lbl)} across every deck in Lenses →</a> · <a href="https://flow.recursive.eco" target="_blank" rel="noopener">Get a reading at recursive.eco →</a></p>`;
                       el.innerHTML=html;
                     }
+                  }
+                  // all 22 trump chapters — fetch each deck ONCE, build a trump→images index, render
+                  const allEls=[...root.querySelectorAll('[data-embed="all-cards"]')];
+                  if(allEls.length){
+                    const syn=await get(RES+'/synthesis/trumps.json'); const col=await get(T+'/_collection.json');
+                    const ORDER=['fool','magician','high-priestess','empress','emperor','hierophant','lovers','chariot','strength','hermit','wheel-of-fortune','justice','hanged-man','death','temperance','devil','tower','star','moon','sun','judgement','world'];
+                    const NUM={}; ORDER.forEach((k,i)=>NUM[k]=i);
+                    const idx={};
+                    if(col){ for(const g of col.grammars.filter(x=>!x.is_meta)){ const dg=await get(T+'/'+g.slug+'/grammar.json'); if(!dg)continue;
+                      for(const it of dg.items){ const tk=(it.metadata||{}).trump_key; if(!tk)continue; const img=it.image_url||(it.metadata||{}).image_url;
+                        if(img) (idx[tk]=idx[tk]||[]).push({slug:g.slug,name:(g.name||g.slug).split(' — ')[0],year:g.year||9999,id:it.id,img}); } } }
+                    let html='';
+                    for(const tk of ORDER){ if(!syn||!syn[tk]) continue;
+                      const lbl=tk.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+                      const cells=(idx[tk]||[]).sort((a,b)=>a.year-b.year).map(c=>`<a class="c" href="../viewers/cards.html?src=../tarot/${c.slug}/grammar.json&item=${encodeURIComponent(c.id)}" title="Open the ${esc(c.name)} card"><img loading="lazy" src="${esc(c.img)}"><div>${esc(c.name.slice(0,14))}</div></a>`).join('');
+                      html+=`<div class="card-chapter"><h3>${NUM[tk]} — ${esc(lbl)}</h3><div class="synthbox"><p>${mdl(syn[tk])}</p></div><div class="strip">${cells}</div><p class="card-links screen-only"><a href="../viewers/prototypes/lenses.html?card=${tk}">See ${esc(lbl)} across every deck in Lenses →</a> · <a href="https://flow.recursive.eco" target="_blank" rel="noopener">Get a reading at recursive.eco →</a></p></div>`;
+                    }
+                    allEls.forEach(el=>el.innerHTML=html);
                   }
                 })();
 
