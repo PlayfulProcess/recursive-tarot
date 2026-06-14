@@ -95,6 +95,13 @@ tree = {it["id"]: it for it in load(os.path.join(TAROT, "tree-of-tarot", "gramma
 meta = load(os.path.join(TAROT, "all-decks-many-lenses", "grammar.json"))
 essay_item = next((i for i in meta["items"] if i["id"] == "essay-divination-question"), None)
 
+# people who MADE / commissioned each deck (metadata.made) — woven into each deck chapter
+makers_by_deck = {}
+for _p in people["items"]:
+    if (_p.get("metadata") or {}).get("kind") == "person" or _p.get("category") == "person":
+        for _slug in ((_p.get("metadata") or {}).get("made") or []):
+            makers_by_deck.setdefault(_slug, []).append(_p)
+
 # trump_key -> [ {slug,name,year,id,img} ] (decks loaded once)
 trump_idx = {}
 deck_meta = {}
@@ -111,6 +118,7 @@ for g in decks:
     g["_coll"] = sorted({(it.get("metadata") or {}).get("collection") for it in dg.get("items", [])
                          if (it.get("metadata") or {}).get("collection")})
     g["_gh"] = dg.get("_github_url") or dg.get("_github_source_url")
+    g["_credit"] = dg.get("image_credit")
     for it in dg.get("items", []):
         md = it.get("metadata") or {}
         img = it.get("image_url") or md.get("image_url")
@@ -165,9 +173,21 @@ def render_decks():
                 cells.append('<figure class="c"><img src="%s"></figure>' % esc(r)); n += 1
         strip = ('<div class="strip">%s</div>' % "".join(cells)) if cells else ""
         yl = g.get("year_label") or g.get("year")
-        out.append('<section class="deck-chapter"><h3>%s%s</h3>%s%s%s</section>'
+        # weave in the people behind this deck
+        makers = ""
+        mk = makers_by_deck.get(slug) or []
+        if mk:
+            rows = []
+            for p in mk:
+                who = re.sub(r"\s*\[@[^\]]+\]", "", (p.get("sections") or {}).get("Who") or "")
+                first = who.split(". ")[0]
+                life = (p.get("metadata") or {}).get("lifespan") or ""
+                rows.append('<p class="maker"><strong>%s%s</strong> — %s.</p>'
+                            % (esc(p["name"]), (" (%s)" % esc(life)) if life else "", inline(first[:240])))
+            makers = '<div class="made-by"><h4>The hands behind it</h4>%s</div>' % "".join(rows)
+        out.append('<section class="deck-chapter"><h3>%s%s</h3>%s%s%s%s</section>'
                    % (esc((g.get("name") or slug).split(" — ")[0]),
-                      (" · %s" % yl) if yl else "", coverhtml, render_markdown(g.get("_desc")), strip))
+                      (" · %s" % yl) if yl else "", coverhtml, render_markdown(g.get("_desc")), makers, strip))
     print("  deck signature images: %d" % n)
     return "".join(out)
 
@@ -200,26 +220,30 @@ def fig(which):
             '<figcaption>%s</figcaption></figure>' % (which, esc(label), esc(label)))
 
 def render_people():
-    by_deck = {}
-    for p in people["items"]:
-        if (p.get("metadata") or {}).get("kind") != "person" and p.get("category") != "person":
-            continue
-        for slug in ((p.get("metadata") or {}).get("made") or []):
-            by_deck.setdefault(slug, []).append(p)
-    r3 = next((i for i in people["items"] if i["id"] == "root-people-of-tarot"), None)
-    html = ['<div class="people">']
+    """Organised by ROLE (makers, patrons, occultists, scholars, institutions) — a
+    different cut from the deck chapters, which already name each deck's own makers."""
+    items = {i["id"]: i for i in people["items"]}
+    r3 = items.get("root-people-of-tarot")
+    out = []
     if r3:
-        html.append(para((r3.get("sections") or {}).get("What it is")))
-    for slug in sorted(by_deck, key=lambda s: deck_year(s) or 9999):
-        yr = deck_year(slug)
-        html.append('<h3>%s%s</h3>' % (esc(deck_name(slug)), (" · %d" % yr) if yr else ""))
-        for p in by_deck[slug]:
-            who = (p.get("sections") or {}).get("Who") or ""
+        out.append('<div class="people-weave">%s</div>' % para((r3.get("sections") or {}).get("What it is")))
+    for gid in ["grp-makers", "grp-patrons", "grp-occultists", "grp-scholars", "grp-institutions"]:
+        grp = items.get(gid)
+        if not grp:
+            continue
+        out.append("<h3>%s</h3>" % esc(grp.get("name")))
+        wt = (grp.get("sections") or {}).get("What this groups")
+        if wt:
+            out.append(para(wt))
+        for cid in (grp.get("composite_of") or []):
+            p = items.get(cid)
+            if not p:
+                continue
+            who = re.sub(r"\s*\[@[^\]]+\]", "", (p.get("sections") or {}).get("Who") or "")
             life = (p.get("metadata") or {}).get("lifespan") or ""
-            html.append('<div class="bio"><div class="bio-name">%s%s</div><div class="bio-text">%s</div></div>'
-                        % (esc(p.get("name")), (' <span class="bio-life">%s</span>' % esc(life)) if life else "", para(who)))
-    html.append("</div>")
-    return "".join(html)
+            out.append('<div class="bio"><div class="bio-name">%s%s</div><div class="bio-text">%s</div></div>'
+                       % (esc(p.get("name")), (' <span class="bio-life">%s</span>' % esc(life)) if life else "", para(who)))
+    return "".join(out)
 
 ANCHOR_EARLY = ["cary-yale-visconti-tarot", "visconti-sforza-tarot", "charles-vi-tarot", "este-tarot"]
 _NIMG = [0]
@@ -281,8 +305,7 @@ def render_apparatus():
            "<p>Every card image reproduced in this book is in the <strong>public domain</strong> — the original works all predate the twentieth century. Reproductions are drawn from the holding institutions and digital archives listed below; full per-card provenance lives in the research dossiers at the project's GitHub repository.</p>",
            '<ul class="credits">']
     for g in sorted(decks, key=lambda x: x.get("year") or 9999):
-        coll = g.get("_coll") or []
-        src = "; ".join(coll) if coll else "public domain — see the deck's research dossier"
+        src = g.get("_credit") or ("; ".join(g.get("_coll") or []) or "public domain — see the deck's research dossier")
         out.append("<li><strong>%s.</strong> %s.</li>" % (esc((g.get("name") or g["slug"]).split(" — ")[0]), inline(src)))
     out.append("</ul>")
     out.append("<h3>Sources &amp; further reading</h3>")
@@ -415,6 +438,8 @@ figcaption{ font-size:8.5pt; color:#666; margin-top:.3em; }
 .bio-text p{ margin:.15em 0; font-size:10pt; }
 .deck-chapter{ break-before:page; }
 .deck-cover{ float:right; width:2.3in; margin:.1in 0 .3in .35in; border:1px solid #bbb; border-radius:6px; }
+.made-by{ clear:both; margin-top:.6em; break-inside:avoid; }
+.made-by .maker{ font-size:10pt; margin:.2em 0; }
 .deck-chapter .strip{ clear:both; padding-top:.4em; }
 .card-chapter{ break-before:page; }
 .synthbox{ background:#f6f4fb; border:1px solid #d8c8f5; border-radius:8px; padding:.5em .7em; margin:.4em 0 .8em; }
