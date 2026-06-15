@@ -1051,6 +1051,30 @@
                     }
                     suitEls.forEach(el=>el.innerHTML=html);
                   }
+                  // the numbers (pips Ace–Ten) — one shared meaning per number across the suits
+                  // (the Golden Dawn laid the ten pips over the ten Sephiroth). synthesis + cross-suit strip.
+                  const numEls=[...root.querySelectorAll('[data-embed="numbers"]')];
+                  if(numEls.length){
+                    const nums=await get(RES+'/synthesis/numbers.json');
+                    const RANKW={ace:1,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10};
+                    const CANON2={cups:'Cups',coins:'Coins',pentacles:'Coins',disks:'Coins',swords:'Swords',batons:'Batons',wands:'Batons',staves:'Batons',clubs:'Batons'};
+                    const SUITORDER=['Batons','Coins','Swords','Cups'];
+                    const nidx={};
+                    for(const slug of ['golden-dawn-book-t-tarot']){ const dg=await get(T+'/'+slug+'/grammar.json'); if(!dg)continue;
+                      for(const it of dg.items){ const md=it.metadata||{}; let n=md.number; const arch=String(md.archetype||'');
+                        const m=arch.match(/card:(.+?)-of-(.+)/); if(n==null&&m)n=RANKW[m[1].toLowerCase()];
+                        const suit=md.suit||(m&&m[2]); const cs=suit&&CANON2[String(suit).toLowerCase()];
+                        if(!n||n>10||!cs)continue; const img=it.image_url||md.image_url;
+                        (nidx[n]=nidx[n]||{})[cs]={img,title:md.golden_dawn_title||'',item:it.id,slug}; } }
+                    let html=nums&&nums._intro?`<p>${mdl(nums._intro)}</p>`:'';
+                    for(let n=1;n<=10;n++){ if(!nums||!nums[n])continue;
+                      const cells=SUITORDER.map(cs=>{const c=(nidx[n]||{})[cs];if(!c||!c.img)return '';
+                        return `<a class="c" href="../viewers/cards.html?src=../tarot/${c.slug}/grammar.json&item=${encodeURIComponent(c.item)}" title="${esc(c.title)}"><img loading="lazy" src="${esc(c.img)}"><div>${esc(cs)}</div></a>`;}).join('');
+                      const tm=String(nums[n]).match(/^\*\*(.+?)\*\*\s*/); const head=tm?tm[1]:('Number '+n); const body=tm?String(nums[n]).slice(tm[0].length):String(nums[n]);
+                      html+=`<section class="card-chapter"><h3>${esc(head)}</h3><div class="synthbox"><p>${mdl(body)}</p></div><div class="strip">${cells}</div></section>`;
+                    }
+                    numEls.forEach(el=>el.innerHTML=html);
+                  }
                   // card chapter: synthesis + cross-deck image strip
                   const cardEls=[...root.querySelectorAll('[data-embed="card"]')];
                   if(cardEls.length){
