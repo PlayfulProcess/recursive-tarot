@@ -93,13 +93,20 @@
             1037
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-junon.jpg"
-        }
+        },
+        "trump_key": "high-priestess",
+        "trump_number": 2,
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "major-02-la-papesse",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Iconography": "The goddess Juno stands with her peacock — replacing the Marseille's Popess.",
         "The Besançon variant": "THE defining card of the Besançon variant. The scandalous female 'Pope' is swapped for the pagan goddess Juno — one of the two 'J' cards that give the 1JJ its name. A Protestant-friendly redesign that removes the Catholic clergy.",
         "Tradition Note": "The Tarot de Besançon was a GAME deck, not a divination deck; reading-meanings are a later overlay. It is a regional cousin of the Tarot de Marseille (Dummett C-order).",
-        "Research note": "**What changed (vs. its parent):** **THE defining change.** The Marseille's doctrinally awkward female \"Pope\" (Popess II) is **replaced by Juno with her peacock** — a secular classical deity of the right \"rank\" (queen of the Roman gods) that gives no offence to Protestant or partisan Catholic card-buyers. The number (II) and trump position are unchanged; only the figure and title change [@web_besancon_wp; @web_th_besancon; @web_swiss1jj_wp]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_besancon_wp], [@web_th_besancon].\n\n*Full card-by-card research:* `research/cards/tarot-de-besancon.md`."
+        "Research note": "**What changed (vs. its parent):** **THE defining change.** The Marseille's doctrinally awkward female \"Pope\" (Popess II) is **replaced by Juno with her peacock** — a secular classical deity of the right \"rank\" (queen of the Roman gods) that gives no offence to Protestant or partisan Catholic card-buyers. The number (II) and trump position are unchanged; only the figure and title change [@web_besancon_wp; @web_th_besancon; @web_swiss1jj_wp]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_besancon_wp], [@web_th_besancon].\n\n*Full card-by-card research:* [research/cards/tarot-de-besancon.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/tarot-de-besancon.md).",
+        "Scene": "A crowned woman is enthroned, holding a sceptre. At her feet or nearby stands a peacock, Juno's sacred bird. She wears classical robes and her bearing is queenly and composed. In the Besançon tradition, Juno (Hera) replaces the Popess (trump II).",
+        "Symbol": "The substitution of the Popess by Juno avoids Catholic ecclesiastical imagery while preserving a powerful female figure in the trump sequence. Juno is queen of the gods, patron of marriage and sovereignty."
       }
     },
     {
@@ -141,13 +148,20 @@
             1317
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-jupiter.jpg"
-        }
+        },
+        "trump_key": "hierophant",
+        "trump_number": 5,
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "major-05-le-pape",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Iconography": "Jupiter enthroned with his eagle and thunderbolt — replacing the Marseille's Pope.",
         "The Besançon variant": "The second defining card: the Pope becomes the god Jupiter. With Juno, this removes both Church figures from the deck — the hallmark of the Besançon / Swiss type.",
         "Tradition Note": "The Tarot de Besançon was a GAME deck, not a divination deck; reading-meanings are a later overlay. It is a regional cousin of the Tarot de Marseille (Dummett C-order).",
-        "Research note": "**What changed (vs. its parent):** the **second defining change.** The Marseille's **Pope (V)** is **replaced by Jupiter with his eagle** — again a neutral classical substitute of matching rank (king of the gods). With Juno, this **removes both Church figures from the deck**, the hallmark of the Besançon / Swiss type. Number (V) and position unchanged [@web_besancon_wp; @web_th_besancon; @web_swiss1jj_wp]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_besancon_wp], [@web_th_besancon].\n\n*Full card-by-card research:* `research/cards/tarot-de-besancon.md`."
+        "Research note": "**What changed (vs. its parent):** the **second defining change.** The Marseille's **Pope (V)** is **replaced by Jupiter with his eagle** — again a neutral classical substitute of matching rank (king of the gods). With Juno, this **removes both Church figures from the deck**, the hallmark of the Besançon / Swiss type. Number (V) and position unchanged [@web_besancon_wp; @web_th_besancon; @web_swiss1jj_wp]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_besancon_wp], [@web_th_besancon].\n\n*Full card-by-card research:* [research/cards/tarot-de-besancon.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/tarot-de-besancon.md).",
+        "Scene": "An enthroned male figure in classical robes holds a thunderbolt or sceptre. An eagle stands nearby or perches on his shoulder. Jupiter (Zeus) replaces the Pope (trump V) in the Besançon tradition.",
+        "Symbol": "Jupiter as king of the gods replaces the earthly vicar of Christ. The substitution reflects Swiss Protestant resistance to papal imagery; the Roman god's authority is celestial rather than institutional."
       }
     },
     {
@@ -189,13 +203,20 @@
             710
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-emperor.jpg"
-        }
+        },
+        "trump_key": "emperor",
+        "trump_number": 4,
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "major-04-lempereur",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Iconography": "A crowned, bearded sovereign — labelled in German ('Der Herrscher') in this trilingual Swiss edition.",
         "The Besançon variant": "The Emperor survives the substitution. Swiss 1JJ cards were printed with French, German, and English titles.",
         "Tradition Note": "The Tarot de Besançon was a GAME deck, not a divination deck; reading-meanings are a later overlay. It is a regional cousin of the Tarot de Marseille (Dummett C-order).",
-        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille.** The Emperor **survives the substitution** untouched; the only novelty is the trilingual (French/German/English) titling of the Swiss printing [@web_besancon_wp; @web_aeclectic_1jj]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_besancon_wp].\n\n*Full card-by-card research:* `research/cards/tarot-de-besancon.md`."
+        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille.** The Emperor **survives the substitution** untouched; the only novelty is the trilingual (French/German/English) titling of the Swiss printing [@web_besancon_wp; @web_aeclectic_1jj]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_besancon_wp].\n\n*Full card-by-card research:* [research/cards/tarot-de-besancon.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/tarot-de-besancon.md).",
+        "Scene": "A crowned emperor in armour sits on a throne holding a sceptre. The 1JJ rendering follows standard Marseille composition in clean engraved line with hand-colouring.",
+        "Symbol": "Temporal authority and the ordering power of law and governance."
       }
     },
     {
@@ -237,13 +258,20 @@
             475
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-chariot.jpg"
-        }
+        },
+        "trump_key": "chariot",
+        "trump_number": 7,
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "major-07-le-chariot",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Iconography": "A crowned prince in a triumphal car.",
         "The Besançon variant": "Triumph; here titled in English.",
         "Tradition Note": "The Tarot de Besançon was a GAME deck, not a divination deck; reading-meanings are a later overlay. It is a regional cousin of the Tarot de Marseille (Dummett C-order).",
-        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_besancon_wp; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_besancon_wp].\n\n*Full card-by-card research:* `research/cards/tarot-de-besancon.md`."
+        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_besancon_wp; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_besancon_wp].\n\n*Full card-by-card research:* [research/cards/tarot-de-besancon.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/tarot-de-besancon.md).",
+        "Scene": "A crowned warrior rides in a canopied chariot drawn by two horses. He holds a sceptre or sword; the canopy is decorated. The 1JJ Chariot follows Marseille composition closely.",
+        "Symbol": "Willpower directing contrary forces; triumph and forward momentum."
       }
     },
     {
@@ -285,13 +313,20 @@
             600
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-strength.jpg"
-        }
+        },
+        "trump_key": "strength",
+        "trump_number": 8,
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "major-11-la-force",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Iconography": "A woman parting a lion's jaws — Strength at XI, the older Marseille numbering.",
         "The Besançon variant": "Keeps the Marseille order (Strength XI, not the Golden Dawn's VIII).",
         "Tradition Note": "The Tarot de Besançon was a GAME deck, not a divination deck; reading-meanings are a later overlay. It is a regional cousin of the Tarot de Marseille (Dummett C-order).",
-        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille.** Crucially the Besançon **keeps the older Marseille numbering — Strength at XI, Justice at VIII** — and makes **no Golden-Dawn-style swap** [@web_swiss_tarot_wp; @web_aeclectic_1jj; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_swiss_tarot_wp].\n\n*Full card-by-card research:* `research/cards/tarot-de-besancon.md`."
+        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille.** Crucially the Besançon **keeps the older Marseille numbering — Strength at XI, Justice at VIII** — and makes **no Golden-Dawn-style swap** [@web_swiss_tarot_wp; @web_aeclectic_1jj; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_swiss_tarot_wp].\n\n*Full card-by-card research:* [research/cards/tarot-de-besancon.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/tarot-de-besancon.md).",
+        "Scene": "A woman in a long dress gently holds open the jaws of a lion. The composition is the standard Marseille Strength: calm mastery over wild force.",
+        "Symbol": "Moral courage expressed through gentleness rather than violence."
       }
     },
     {
@@ -333,13 +368,20 @@
             634
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-temperance.jpg"
-        }
+        },
+        "trump_key": "temperance",
+        "trump_number": 14,
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "major-14-temperance",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Iconography": "A winged figure pouring between two vessels.",
         "The Besançon variant": "The tempering virtue.",
         "Tradition Note": "The Tarot de Besançon was a GAME deck, not a divination deck; reading-meanings are a later overlay. It is a regional cousin of the Tarot de Marseille (Dummett C-order).",
-        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_besancon_wp; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_besancon_wp].\n\n*Full card-by-card research:* `research/cards/tarot-de-besancon.md`."
+        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_besancon_wp; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_besancon_wp].\n\n*Full card-by-card research:* [research/cards/tarot-de-besancon.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/tarot-de-besancon.md).",
+        "Scene": "A standing angel pours liquid between two vessels. The 1JJ version follows the Marseille Temperance, with the figure shown in a long gown pouring steadily between two pitchers.",
+        "Symbol": "Moderation, balance, and the careful blending of opposites without excess."
       }
     },
     {
@@ -381,13 +423,20 @@
             1390
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-devil.jpg"
-        }
+        },
+        "trump_key": "devil",
+        "trump_number": 15,
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "major-15-le-diable",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Iconography": "A horned devil over bound figures.",
         "The Besançon variant": "Bondage and appetite; German title here.",
         "Tradition Note": "The Tarot de Besançon was a GAME deck, not a divination deck; reading-meanings are a later overlay. It is a regional cousin of the Tarot de Marseille (Dummett C-order).",
-        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_besancon_wp; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_besancon_wp].\n\n*Full card-by-card research:* `research/cards/tarot-de-besancon.md`."
+        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_besancon_wp; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_1jj], [@web_besancon_wp].\n\n*Full card-by-card research:* [research/cards/tarot-de-besancon.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/tarot-de-besancon.md).",
+        "Scene": "A horned, winged devil stands on a pedestal; two smaller chained figures are at its feet. The 1JJ Devil follows the Marseille composition, with bat wings and a grim expression.",
+        "Symbol": "Bondage to compulsion and the material; the chains represent self-imposed limitation."
       }
     },
     {
@@ -429,13 +478,20 @@
             634
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-tower.jpg"
-        }
+        },
+        "trump_key": "tower",
+        "trump_number": 16,
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "major-16-la-maison-dieu",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Iconography": "Figures fall from a tower struck by fire — the 'House of God'.",
         "The Besançon variant": "Sudden ruin.",
         "Tradition Note": "The Tarot de Besançon was a GAME deck, not a divination deck; reading-meanings are a later overlay. It is a regional cousin of the Tarot de Marseille (Dummett C-order).",
-        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** (retains the Marseille name *La Maison Dieu*, not the later \"Tower\") [@web_besancon_wp; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_besancon_wp].\n\n*Full card-by-card research:* `research/cards/tarot-de-besancon.md`."
+        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** (retains the Marseille name *La Maison Dieu*, not the later \"Tower\") [@web_besancon_wp; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_besancon_wp].\n\n*Full card-by-card research:* [research/cards/tarot-de-besancon.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/tarot-de-besancon.md).",
+        "Scene": "A tall crenellated tower on a rock is struck by fire or lightning from above; the tower's crown is blasted off and two figures fall from the windows.",
+        "Symbol": "The sudden dismantling of proud or false structures; the catastrophic revelation of instability."
       }
     },
     {
@@ -477,13 +533,20 @@
             773
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-world.jpg"
-        }
+        },
+        "trump_key": "world",
+        "trump_number": 21,
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "major-21-le-monde",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Iconography": "A dancing figure in a wreath with the four beasts.",
         "The Besançon variant": "Completion, the highest numbered trump.",
         "Tradition Note": "The Tarot de Besançon was a GAME deck, not a divination deck; reading-meanings are a later overlay. It is a regional cousin of the Tarot de Marseille (Dummett C-order).",
-        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_besancon_wp; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_besancon_wp].\n\n*Full card-by-card research:* `research/cards/tarot-de-besancon.md`."
+        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_besancon_wp; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_besancon_wp].\n\n*Full card-by-card research:* [research/cards/tarot-de-besancon.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/tarot-de-besancon.md).",
+        "Scene": "An androgynous dancing figure is enclosed within an oval wreath. At the four corners appear the tetramorph symbols: angel, eagle, lion, and bull. The 1JJ version follows the Marseille World.",
+        "Symbol": "Completion and cosmic integration; the dancer at the centre of all things."
       }
     },
     {
@@ -529,13 +592,18 @@
             633
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-swords-ace.jpg"
-        }
+        },
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "swords-ace",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Iconography": "A single sword crowned, amid the suit's emblems.",
         "The Besançon variant": "Root of the sword suit (Air).",
         "Tradition Note": "The Tarot de Besançon was a GAME deck, not a divination deck; reading-meanings are a later overlay. It is a regional cousin of the Tarot de Marseille (Dummett C-order).",
-        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_aeclectic_1jj; @dummett1980]. \n\n*Sources:* [@decker2002], [@dummett1980], [@web_aeclectic_1jj], [@web_learntarot_1jj].\n\n*Full card-by-card research:* `research/cards/tarot-de-besancon.md`."
+        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_aeclectic_1jj; @dummett1980]. \n\n*Sources:* [@decker2002], [@dummett1980], [@web_aeclectic_1jj], [@web_learntarot_1jj].\n\n*Full card-by-card research:* [research/cards/tarot-de-besancon.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/tarot-de-besancon.md).",
+        "Scene": "A large upright sword dominates the card, surmounted by a crown from which laurel branches extend. The blade is shown full-length in the Marseille ace-of-swords tradition.",
+        "Symbol": "The seed power of the sword suit: clarity, force, and decisive beginning."
       }
     },
     {
@@ -581,13 +649,18 @@
             960
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-cups-two.jpg"
-        }
+        },
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "cups-02",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Iconography": "Two cups amid foliate scrollwork.",
         "The Besançon variant": "Pairing in the cup suit (Water).",
         "Tradition Note": "The Tarot de Besançon was a GAME deck, not a divination deck; reading-meanings are a later overlay. It is a regional cousin of the Tarot de Marseille (Dummett C-order).",
-        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_aeclectic_1jj; @dummett1980]. \n\n*Sources:* [@decker2002], [@dummett1980], [@web_aeclectic_1jj], [@web_learntarot_1jj].\n\n*Full card-by-card research:* `research/cards/tarot-de-besancon.md`."
+        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_aeclectic_1jj; @dummett1980]. \n\n*Sources:* [@decker2002], [@dummett1980], [@web_aeclectic_1jj], [@web_learntarot_1jj].\n\n*Full card-by-card research:* [research/cards/tarot-de-besancon.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/tarot-de-besancon.md).",
+        "Scene": "Two cups are shown side by side within a decorative border typical of Marseille-tradition pip cards. The cups are rounded and chalice-like.",
+        "Symbol": "The first relational number in the cups suit; partnership and the beginning of emotional connection."
       }
     },
     {
@@ -633,13 +706,18 @@
             631
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-wands-two.jpg"
-        }
+        },
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "batons-02",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Iconography": "Two crossed batons.",
         "The Besançon variant": "Pairing in the baton suit (Fire).",
         "Tradition Note": "The Tarot de Besançon was a GAME deck, not a divination deck; reading-meanings are a later overlay. It is a regional cousin of the Tarot de Marseille (Dummett C-order).",
-        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_aeclectic_1jj; @dummett1980]. \n\n*Sources:* [@decker2002], [@dummett1980], [@web_aeclectic_1jj], [@web_learntarot_1jj].\n\n*Full card-by-card research:* `research/cards/tarot-de-besancon.md`."
+        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_aeclectic_1jj; @dummett1980]. \n\n*Sources:* [@decker2002], [@dummett1980], [@web_aeclectic_1jj], [@web_learntarot_1jj].\n\n*Full card-by-card research:* [research/cards/tarot-de-besancon.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/tarot-de-besancon.md).",
+        "Scene": "Two batons or wands cross within a decorative frame. The 1JJ pip cards show the suit symbols arranged geometrically in the Marseille tradition.",
+        "Symbol": "The duality that initiates the wands sequence; two creative energies in dialogue."
       }
     },
     {
@@ -685,13 +763,18 @@
             600
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-coins-three.jpg"
-        }
+        },
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "coins-03",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Iconography": "Three coins arranged with decoration.",
         "The Besançon variant": "Growth in the coin suit (Earth).",
         "Tradition Note": "The Tarot de Besançon was a GAME deck, not a divination deck; reading-meanings are a later overlay. It is a regional cousin of the Tarot de Marseille (Dummett C-order).",
-        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_aeclectic_1jj; @dummett1980]. \n\n*Sources:* [@decker2002], [@dummett1980], [@web_aeclectic_1jj], [@web_learntarot_1jj].\n\n*Full card-by-card research:* `research/cards/tarot-de-besancon.md`."
+        "Research note": "**What changed (vs. its parent):** **unchanged — standard Marseille** [@web_aeclectic_1jj; @dummett1980]. \n\n*Sources:* [@decker2002], [@dummett1980], [@web_aeclectic_1jj], [@web_learntarot_1jj].\n\n*Full card-by-card research:* [research/cards/tarot-de-besancon.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/tarot-de-besancon.md).",
+        "Scene": "Three coins or discs are arranged in a triangular pattern within the 1JJ-style pip border. Each coin shows a circular ornamental design.",
+        "Symbol": "The third coin: the first stable configuration of material resources, suggesting craft and foundation."
       }
     },
     {
@@ -709,7 +792,9 @@
       "metadata": {},
       "sections": {
         "What changed": "The Tarot de Besançon's one defining move: it replaces the Popess (II) with the goddess JUNO and the Pope (V) with JUPITER, removing both Catholic clergy from the deck. The two 'J' cards give the 'Swiss 1JJ' its name.",
-        "Why": "Made for Protestant and mixed-confessional regions (eastern France, Switzerland, the Rhineland) where the Popess and Pope were unwelcome, the substitution let the Marseille pattern travel into Reformed territory. The cards were often printed trilingually (French/German/English)."
+        "Why": "Made for Protestant and mixed-confessional regions (eastern France, Switzerland, the Rhineland) where the Popess and Pope were unwelcome, the substitution let the Marseille pattern travel into Reformed territory. The cards were often printed trilingually (French/German/English).",
+        "Scene": "The two famous substitutions of the Besançon tradition side by side: Juno (trump II) with her peacock replaces the Papesse, and Jupiter (trump V) with his eagle and thunderbolt replaces the Pope. Both cards are shown in the 1JJ Tarot engraved style.",
+        "Symbol": "The Besançon substitutions were made in the mid-17th century, likely by card makers in Besançon and later Switzerland, to navigate religious sensitivities in a Protestant region. The Roman deity substitutions retained powerful mythological figures while removing specifically Catholic iconography."
       }
     }
   ],
@@ -746,5 +831,6 @@
   "_research": {
     "deck": "research/decks/tarot-de-besancon.md",
     "bibliography": "research/bibliography.bib"
-  }
+  },
+  "image_credit": "Reproductions in the public domain (Besançon / Swiss 1JJ type)"
 }

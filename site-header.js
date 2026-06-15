@@ -17,9 +17,18 @@
 (function () {
   if (customElements.get('site-header')) return;
 
-  // Path back to the repo root: '../' from any subdir (viewers/ OR pages/), '' at root.
-  const inSub = /\/(viewers|pages)\//.test(location.pathname);
-  const PFX = inSub ? '../' : '';
+  // Path back to the repo root — depth-aware so it works at any nesting
+  // (root, /viewers/, /pages/, AND /viewers/prototypes/, /pages/book/ …).
+  const _segs = location.pathname.split('/').filter(Boolean);
+  const PFX = '../'.repeat(Math.max(0, _segs.length - 1));
+
+  // Figure-capture mode (?fig=1): hide a viewer's own control toolbars so headless
+  // screenshots become clean static plates for the print book. Only when explicitly asked.
+  if (new URLSearchParams(location.search).get('fig') === '1') {
+    const s = document.createElement('style');
+    s.textContent = '.hint,.controls,.toolbar{display:none!important}';
+    (document.head || document.documentElement).appendChild(s);
+  }
 
   // Shared-identity widget (reads the .recursive.eco session cookie; L1 of the
   // integration ladder). Loaded once; renders as <recursive-auth> in the bar.
@@ -30,27 +39,36 @@
     document.head.appendChild(s);
   }
 
-  // [key, label, href]
-  const VIEWS = [
-    ['cards',      'Cards',        PFX + 'viewers/cards.html'],
-    ['explorer',   'Explorer',     PFX + 'viewers/explorer.html'],
+  // [key, label, href] — split by level
+  const CARD_VIEWS = [
+    ['explorer', 'Explorer', PFX + 'viewers/explorer.html'],
+    ['cards',    'Cards',    PFX + 'viewers/cards.html'],
+    ['lenses',   '⚗ Lenses', PFX + 'viewers/prototypes/lenses.html'],
+    ['tree',     'Tree',     PFX + 'viewers/tree-viewer.html'],
+  ];
+  const GRAMMAR_VIEWS = [
     ['treeoflife', 'Tree of Life', PFX + 'viewers/genealogy-tree.html'],
     ['timeline',   'Timeline',     PFX + 'viewers/timeline.html'],
-    ['tree',       'Tree',         PFX + 'viewers/tree-viewer.html'],
     ['genealogy',  'Genealogy',    PFX + 'genealogy.html'],
   ];
   // [key, label, href, cssClass, external?]
   const TOOLS = [
     ['caster', '🔮 Caster',  PFX + 'viewers/caster.html',      't-caster'],
-    ['course', '📓 Course',  PFX + 'pages/course-viewer.html', 't-course'],
     ['shop',   '🛒 Shop',    PFX + 'pages/shop.html',          't-shop'],
     ['github', 'GitHub ↗',  'https://github.com/PlayfulProcess/recursive-tarot', 't-github', true],
+  ];
+  // Courses — a dropdown under one "Courses" pill (each is a course-viewer ?course=…).
+  const COURSES = [
+    ['history-of-tarot',                'A History of Tarot'],
+    ['tarot-and-the-crack',             'Tarot & the Crack'],
+    ['build-a-tarot-deck-with-claude',  'Build a Tarot Deck with Claude'],
   ];
 
   function autoActive() {
     const f = location.pathname.split('/').pop() || 'index.html';
     if (f.startsWith('cards')) return 'cards';
     if (f.startsWith('explorer')) return 'explorer';
+    if (f.startsWith('lenses')) return 'lenses';
     if (f.startsWith('genealogy-tree')) return 'treeoflife';
     if (f.startsWith('timeline')) return 'timeline';
     if (f.startsWith('tree-viewer')) return 'tree';
@@ -63,6 +81,8 @@
 
   class SiteHeader extends HTMLElement {
     connectedCallback() {
+      // Embedded (iframed into a course/book): render no header at all.
+      if (new URLSearchParams(location.search).get('embed') === '1') { this.style.display = 'none'; return; }
       const active = this.getAttribute('active') || autoActive();
       const root = this.attachShadow({ mode: 'open' });
       const tab = ([key, label, href, cls, ext]) =>
@@ -88,6 +108,8 @@
           nav{ display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
           .cap{ font-size:9.5px; text-transform:uppercase; letter-spacing:.14em;
                 color:#5f5878; margin:0 2px 0 6px; user-select:none; }
+          .cap.card-cap{ color:#b8860b; }
+          .cap.gram-cap{ color:#6d4fa8; }
           .sep{ width:1px; height:20px; background:#2a2440; margin:0 6px; }
           .tab{
             color:#a99fc6; text-decoration:none; font-size:13px; font-weight:500;
@@ -105,6 +127,16 @@
           .t-shop:hover{ color:#f4dd92; background:rgba(212,175,55,.10); }
           .t-github{ color:#8f87a8; border-color:transparent; border-bottom:1px dashed #3a3450; border-radius:0; }
           .t-github:hover{ color:#cfc8e2; background:transparent; }
+          /* Courses dropdown */
+          .dd{ position:relative; }
+          .dd-btn{ background:none; font-family:inherit; cursor:pointer; }
+          .dd-menu{ position:absolute; top:calc(100% + 6px); right:0; min-width:230px;
+            background:#15101f; border:1px solid #3a3450; border-radius:10px; padding:6px;
+            box-shadow:0 12px 32px rgba(0,0,0,.5); display:none; z-index:60; }
+          .dd:hover .dd-menu, .dd:focus-within .dd-menu{ display:block; }
+          .dd-menu a{ display:block; color:#cdbff0; text-decoration:none; font-size:13px;
+            padding:8px 10px; border-radius:7px; white-space:nowrap; }
+          .dd-menu a:hover{ background:#241e38; color:#fff; }
           @media (max-width:680px){
             .brand .sub{ display:none; }
             .tab{ padding:5px 8px; font-size:12px; }
@@ -121,9 +153,18 @@
           </a>
           <span class="spacer"></span>
           <nav>
-            <span class="cap" title="Different previews of the same decks">◫ views</span>
-            ${VIEWS.map(tab).join('')}
+            <span class="cap card-cap" title="Browse individual cards">🃏 card</span>
+            ${CARD_VIEWS.map(tab).join('')}
             <span class="sep"></span>
+            <span class="cap gram-cap" title="Analyse patterns across the whole collection">⊞ grammar</span>
+            ${GRAMMAR_VIEWS.map(tab).join('')}
+            <span class="sep"></span>
+            <span class="dd" tabindex="0">
+              <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}">📓 Courses ▾</a>
+              <span class="dd-menu">
+                ${COURSES.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')}
+              </span>
+            </span>
             ${TOOLS.map(tab).join('')}
             <recursive-auth></recursive-auth>
           </nav>

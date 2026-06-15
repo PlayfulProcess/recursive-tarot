@@ -67,12 +67,14 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=10"></script>
+<script src="../site-header.js?v=12"></script>
+<script src="../view-switcher.js?v=9"></script>
 <site-header active="treeoflife"></site-header>
 <div class="wrap">
   <div id="stage">
     <div class="hint">Drag to pan · scroll to zoom · click a deck for detail · hover to trace descent</div>
     <div class="controls">
+      <view-switcher active="treeoflife"></view-switcher>
       <label style="font-size:12px;color:#9b94b3;gap:4px">Hub color: <select id="hub-field" style="background:#161227;color:#cfc8e2;border:1px solid #2a2440;border-radius:6px;padding:3px 7px;font-size:12px;cursor:pointer"><option value="branch">branch</option></select></label>
       <label><input type="checkbox" id="toggle-derive" checked> Descent arcs</label>
       <button id="btn-reset">Reset view</button>

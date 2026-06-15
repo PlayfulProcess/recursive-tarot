@@ -15,7 +15,7 @@
   "creator_name": "PlayfulProcess",
   "default_view": "tree",
   "default_preview": "tree",
-  "description": "The **oldest surviving complete Tarot de Marseille deck** (the uncut Cary Sheet, c. 1500, is earlier evidence of the *pattern* itself), printed in Paris c. 1650 by Jean Noblet — **110 years before Conver**. The single known copy lives at the **Bibliothèque nationale de France** and is on **Gallica** (ark:/12148/btv1b105109641), freely usable. Its siblings — the Jacques Viéville deck (ark:/12148/btv1b10510963k) and an anonymous Parisian tarot (ark:/12148/btv1b105109624) — sit right alongside it: three mid-17th-century Parisian decks just upstream of the Marseille standard.\n\nANCESTRAL STATUS: **ancestral** to the Marseille standard (the oldest extant TdM of the C-order line).\n\nSOURCES: BnF / Gallica; Thierry Depaulis.\n\n---\n*AI-assisted first-pass draft, pending review by the maintainer and the Tarot History Forum. Corrections welcome via pending edit.*\n\n**RESEARCH NOTE (2026-06-13).** Strictly **near-complete** (the Six–Ten of Swords are missing); 'complete' here distinguishes it from the Cary *sheet* (an uncut partial sheet), but the precise wording is a maintainer call. BnF dates the surviving object **1659** (Noblet active c.1659–1681), so 'c. 1650' is soft — read as c.1650/1659. It is the Type I Marseille (vs Conver's Type II). See research/decks/noblet-tarot.md.\n\n**EDITORIAL CALL (2026-06-13, maintainer-delegated):** title changed 'Complete' → 'Near-Complete' — the pack is missing the Six–Ten of Swords (BnF/WOPC). Still the oldest surviving TdM deck and the Type I reference. [@web_wopc_noblet; @web_bnf_noblet]",
+  "description": "The **oldest surviving complete Tarot de Marseille deck** (the uncut Cary Sheet, c. 1500, is earlier evidence of the *pattern* itself), printed in Paris c. 1650 by Jean Noblet — **110 years before Conver**. The single known copy lives at the **Bibliothèque nationale de France** and is on **Gallica** (ark:/12148/btv1b105109641), freely usable. Its siblings — the Jacques Viéville deck (ark:/12148/btv1b10510963k) and an anonymous Parisian tarot (ark:/12148/btv1b105109624) — sit right alongside it: three mid-17th-century Parisian decks just upstream of the Marseille standard.\n\nANCESTRAL STATUS: **ancestral** to the Marseille standard (the oldest extant TdM of the C-order line).\n\nSOURCES: BnF / Gallica; Thierry Depaulis.\n\n---\n*AI-assisted first-pass draft, pending review by the maintainer and the Tarot History Forum. Corrections welcome via pending edit.*\n\n**RESEARCH NOTE (2026-06-13).** Strictly **near-complete** (the Six–Ten of Swords are missing); 'complete' here distinguishes it from the Cary *sheet* (an uncut partial sheet), but the precise wording is a maintainer call. BnF dates the surviving object **1659** (Noblet active c.1659–1681), so 'c. 1650' is soft — read as c.1650/1659. It is the Type I Marseille (vs Conver's Type II). See [research/decks/noblet-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/decks/noblet-tarot.md).\n\n**EDITORIAL CALL (2026-06-13, maintainer-delegated):** title changed 'Complete' → 'Near-Complete' — the pack is missing the Six–Ten of Swords (BnF/WOPC). Still the oldest surviving TdM deck and the Type I reference. [@web_wopc_noblet; @web_bnf_noblet]",
   "metadata": {
     "ancestry": "ancestral",
     "tradition": "Tarot de Marseille (C-order), Paris"
@@ -30,8 +30,14 @@
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/noblet-tarot/Jeu%20de%20tarot%20%C3%A0%20enseignes%20italiennes%20dit%20%22tarot%20Noblet%22%20-%20jeu%20de%20cartes%2C%20estampe%20-%20btv1b105109641%20(012%20of%20154).jpg",
       "sections": {
         "What it is": "Jean Noblet's Paris deck, c. 1650 — the earliest surviving Tarot de Marseille, one known copy at the BnF (Gallica)."
+      },
+      "metadata": {
+        "source_deck": "people-of-tarot",
+        "source_item_id": "person-jean-noblet",
+        "deck": "Jean Noblet · People & Institutions"
       }
     }
   ],
-  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/noblet-tarot-cover.jpg"
+  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/noblet-tarot-cover.jpg",
+  "image_credit": "Bibliothèque nationale de France, Paris (Jean Noblet, c. 1650)"
 }
