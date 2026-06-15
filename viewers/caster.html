@@ -50,22 +50,51 @@
   .card-deck { font-size:12px; color:var(--muted); }
   .reversed { color:#e0a458; font-size:11px; font-weight:600; margin-top:4px; }
   .empty { color:var(--muted); font-size:14px; margin-top:26px; text-align:center; padding:40px 0; }
-  .export { margin-top:30px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; display:none; }
+  .export { margin-top:30px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; display:none; }
   .export h2 { font-size:15px; margin:0 0 4px; }
   .export p { color:var(--muted); font-size:13px; margin:0 0 12px; line-height:1.5; }
   .export .btnrow { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+  .export .journal-cta { display:block; width:100%; text-align:center; padding:14px 18px; font-size:16px;
+    font-weight:700; background:linear-gradient(135deg,#7c3aed,#9333ea); border-radius:10px;
+    color:#fff; text-decoration:none; letter-spacing:.02em; margin-bottom:14px;
+    box-shadow:0 4px 18px rgba(147,51,234,.35); transition:box-shadow .2s,transform .15s; }
+  .export .journal-cta:hover { box-shadow:0 6px 24px rgba(147,51,234,.55); transform:translateY(-1px); }
+  .export .cta-sub { font-size:11.5px; color:var(--muted); text-align:center; margin:-8px 0 12px; }
+
+  /* card detail modal */
+  .cdm-backdrop { position:fixed; inset:0; background:rgba(10,8,20,.85); z-index:1000;
+    display:flex; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(4px); }
+  .cdm-box { background:#1a1726; border:1px solid #3a3450; border-radius:16px; max-width:540px;
+    width:100%; max-height:88vh; overflow-y:auto; position:relative; }
+  .cdm-header { display:flex; align-items:flex-start; gap:14px; padding:18px 18px 14px; border-bottom:1px solid #2a2440; }
+  .cdm-img { width:72px; flex-shrink:0; border-radius:8px; border:1px solid #2a2440; background:#0a0910; }
+  .cdm-close { position:absolute; top:12px; right:14px; background:none; border:none;
+    color:#7c7596; font-size:20px; cursor:pointer; line-height:1; padding:4px; }
+  .cdm-close:hover { color:#ece8f5; }
+  .cdm-pos { font-size:10px; text-transform:uppercase; letter-spacing:.1em; color:#8b5cf6; font-weight:700; }
+  .cdm-name { font-size:17px; font-weight:700; color:#f0ecff; margin:4px 0 2px; }
+  .cdm-deck { font-size:12px; color:#9b94b3; }
+  .cdm-body { padding:16px 18px 20px; }
+  .cdm-section { margin-bottom:14px; }
+  .cdm-sec-label { font-size:10.5px; text-transform:uppercase; letter-spacing:.11em;
+    color:#6d5a9c; font-weight:700; margin-bottom:5px; }
+  .cdm-sec-text { font-size:13.5px; color:#cbc6e0; line-height:1.6; }
+  .cdm-loading { text-align:center; color:#6b6488; font-size:13px; padding:30px 0; }
+  .cdm-dblclick-hint { font-size:11px; color:#4a4660; text-align:center; margin-top:6px; }
+  .pos { cursor:pointer; }
+  .pos:active { opacity:.9; }
   textarea#json { width:100%; height:150px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11px; resize:vertical; }
   .note { font-size:11px; color:var(--muted); border-top:1px solid var(--line); margin-top:30px; padding-top:14px; }
   footer.site { padding:18px; border-top:1px solid var(--line); color:#6b7280; font-size:12px; text-align:center; }
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=10"></script>
+<script src="../site-header.js?v=12"></script>
 <site-header active="caster"></site-header>
 
 <div class="wrap">
-  <h1>Tarot Caster</h1>
-  <p class="sub">Draw three cards from any public-domain deck — or across every deck at once. Positions read <b>Structures · Process · Possibilities</b>, not a fortune. Export the cast to read it with AI in recursive.eco.</p>
+  <h1>Tarot Caster <span style="font-size:13px;font-weight:400;color:var(--muted);vertical-align:middle;margin-left:6px;">— free, open-source</span></h1>
+  <p class="sub">Draw three cards from any historical deck — or across every deck at once. Positions: <b>Structures · Process · Possibilities</b>. This is the simple version: it draws; <a href="https://flow.recursive.eco/cast" target="_blank" rel="noopener">recursive.eco</a> interprets with AI, renders Oracle cards, keeps a Journal, and lets you <strong>edit the cards</strong> in your own grammar library.</p>
 
   <div class="controls">
     <div class="field">
@@ -88,17 +117,37 @@
 
   <div class="export" id="export">
     <h2>Take this reading further</h2>
-    <p>This page draws the cards; <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a> interprets them. Copy or download the cast, then import it into your Journal there to get an AI reading — or just keep the JSON as a record.</p>
+    <p>This page draws from historical decks. On recursive.eco, your cast becomes Oracle cards — each rendered with provenance, AI interpretation, and saved to your Journal. You can also <strong>edit the cards</strong> directly in your own grammar library.</p>
+    <a id="journalLink" class="journal-cta" href="https://flow.recursive.eco/cast" target="_blank" rel="noopener">
+      Open in recursive.eco Journal ↗
+    </a>
+    <p class="cta-sub">Free account · AI reading · Oracle card layout · edit cards · keep your cast</p>
     <div class="btnrow">
       <button id="copyJson">Copy JSON</button>
       <button id="downloadJson" class="ghost">Download .json</button>
-      <a id="journalLink" href="https://recursive.eco" target="_blank" rel="noopener"><button class="ghost">Open recursive.eco Journal ↗</button></a>
     </div>
     <textarea id="json" readonly></textarea>
   </div>
 
   <div class="note">
     Data: this repo's <code>tarot/all-decks-many-lenses/grammar.json</code> — a generated index of every deck's cards with provenance. Cross-deck casts sample the whole pool; single-deck casts sample one deck. Cards are public domain.
+    <div class="cdm-dblclick-hint">Double-click any card to see its full description, Scene &amp; Symbol.</div>
+  </div>
+
+  <!-- card detail modal (hidden until double-click) -->
+  <div id="cardDetailModal" class="cdm-backdrop" style="display:none" role="dialog" aria-modal="true">
+    <div class="cdm-box">
+      <button class="cdm-close" id="cdmClose" aria-label="Close">✕</button>
+      <div class="cdm-header">
+        <img id="cdmImg" class="cdm-img" src="" alt="" style="display:none">
+        <div>
+          <div id="cdmPos" class="cdm-pos"></div>
+          <div id="cdmName" class="cdm-name"></div>
+          <div id="cdmDeck" class="cdm-deck"></div>
+        </div>
+      </div>
+      <div class="cdm-body" id="cdmBody"><div class="cdm-loading">Loading card details…</div></div>
+    </div>
   </div>
 </div>
 
@@ -250,7 +299,95 @@ function renderCast(cast){
   const json = JSON.stringify(cast, null, 2);
   document.getElementById('json').value = json;
   document.getElementById('export').style.display = 'block';
+
+  // Encode cast for flow.recursive.eco
+  const enc = btoa(unescape(encodeURIComponent(json))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
+  document.getElementById('journalLink').href = 'https://flow.recursive.eco/cast?d=' + enc;
+
+  // Attach double-click detail handlers
+  spread.querySelectorAll('.pos').forEach((el, i) => {
+    el.addEventListener('dblclick', () => openCardDetail(cast.cards[i]));
+  });
 }
+
+// ─── Card detail modal ────────────────────────────────────────────────────────
+
+const grammarCache = {};
+
+async function fetchGrammarItem(sourceDeck, sourceItemId) {
+  if (!sourceDeck || !sourceItemId) return null;
+  if (!grammarCache[sourceDeck]) {
+    try {
+      const url = `../tarot/${sourceDeck}/grammar.json`;
+      const r = await fetch(url);
+      if (!r.ok) throw new Error(r.status);
+      grammarCache[sourceDeck] = await r.json();
+    } catch(e) {
+      grammarCache[sourceDeck] = null;
+    }
+  }
+  const g = grammarCache[sourceDeck];
+  if (!g) return null;
+  return (g.items || []).find(it => it.id === sourceItemId) || null;
+}
+
+async function openCardDetail(card) {
+  const modal = document.getElementById('cardDetailModal');
+  const body = document.getElementById('cdmBody');
+
+  document.getElementById('cdmPos').textContent = card.position || '';
+  document.getElementById('cdmName').textContent = card.name + (card.reversed ? ' (reversed)' : '');
+  document.getElementById('cdmDeck').textContent = card.deck || '';
+
+  const img = document.getElementById('cdmImg');
+  if (card.image_url) {
+    img.src = card.image_url;
+    img.alt = card.name;
+    img.style.display = 'block';
+    if (card.reversed) img.style.transform = 'rotate(180deg)';
+    else img.style.transform = '';
+  } else {
+    img.style.display = 'none';
+  }
+
+  body.innerHTML = '<div class="cdm-loading">Loading card details…</div>';
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+
+  const item = await fetchGrammarItem(card.source_deck, card.source_item_id);
+  if (!item) {
+    body.innerHTML = '<div class="cdm-loading">No additional details available.</div>';
+    return;
+  }
+
+  const SECTION_ORDER = ['Scene','Symbol','Figure','Tradition Note','Research note'];
+  const sections = item.sections || {};
+  const keys = [...SECTION_ORDER.filter(k => sections[k]), ...Object.keys(sections).filter(k => !SECTION_ORDER.includes(k))];
+
+  if (keys.length === 0) {
+    body.innerHTML = '<div class="cdm-loading">No sections found for this card.</div>';
+    return;
+  }
+
+  body.innerHTML = keys.map(k =>
+    `<div class="cdm-section"><div class="cdm-sec-label">${esc(k)}</div><div class="cdm-sec-text">${esc(sections[k])}</div></div>`
+  ).join('');
+}
+
+function closeCardDetail() {
+  document.getElementById('cardDetailModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('cdmClose').addEventListener('click', closeCardDetail);
+  document.getElementById('cardDetailModal').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeCardDetail();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeCardDetail();
+  });
+});
 
 function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 

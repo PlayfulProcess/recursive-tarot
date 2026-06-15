@@ -119,7 +119,7 @@
         .mobile-toc-button {
             position: fixed;
             bottom: 2rem;
-            right: 1rem;
+            left: 1rem;   /* left side — its panel slides from the left, and it no longer collides with the bottom-right AI library icon */
             width: 56px;
             height: 56px;
             background-color: #9333ea;
@@ -187,7 +187,10 @@
            sticky header desyncs from the zoomed body. May 30 2026. */
         html, body {
             max-width: 100%;
-            overflow-x: hidden;
+            /* `clip` guards against horizontal overflow WITHOUT creating a scroll
+               container — so the sticky course sidebar still follows the reader.
+               (`overflow-x: hidden` on the root silently breaks position:sticky.) */
+            overflow-x: clip;
         }
         /* Wrap any over-long inline text/code in content. */
         .course-content p,
@@ -624,11 +627,66 @@
         body.presentation-mode .course-content {
             font-size: 1.05rem;
         }
+
+        /* ── Tarot embeds (filled by expandTarotEmbeds from [data-embed]) ── */
+        .tarot-embed{ margin:1.6rem 0; }
+        .viewer-frame{ width:100%; height:520px; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; background:#161029; }
+        .viewer-frame iframe{ width:100%; height:100%; border:0; display:block; }
+        .print-figure{ display:none; border:1px solid #cbd5e1; border-radius:12px; overflow:hidden; }
+        .print-figure img{ display:block; width:100%; height:auto; }
+        .tarot-embed figcaption, .strip + figcaption{ font-size:.8rem; color:#6b7280; text-align:center; margin-top:.4rem; }
+        .people-weave h3{ margin:1.2rem 0 .4rem; }
+        .whoswho{ display:grid; gap:.9rem; }
+        .bio{ border-left:3px solid #c4a7ff; padding:.2rem 0 .2rem .8rem; }
+        .bio-name{ font-weight:700; }
+        .bio-life{ font-weight:400; color:#6b7280; font-size:.85em; }
+        .bio-text{ font-size:.95rem; }
+        .synthbox{ background:linear-gradient(135deg,rgba(147,51,234,.08),rgba(196,167,255,.05));
+            border:1px solid #d8c8f5; border-radius:12px; padding:1rem 1.1rem; margin:.6rem 0; }
+        .strip{ display:flex; gap:.5rem; overflow-x:auto; padding:.4rem 0; }
+        .strip .c{ flex:0 0 88px; text-align:center; font-size:.65rem; color:#6b7280; text-decoration:none; }
+        .strip a.c img{ transition:transform .12s, box-shadow .12s; }
+        .strip a.c:hover img{ transform:translateY(-2px); box-shadow:0 4px 14px rgba(147,51,234,.3); }
+        .strip .c img{ width:88px; height:142px; object-fit:cover; border-radius:6px; border:1px solid #e5e7eb; background:#0a0712; }
+        .card-chapter{ margin:1.6rem 0; }
+        .deck-chapter{ margin:1.8rem 0; }
+        .course-content h4{ font-size:.8rem; text-transform:uppercase; letter-spacing:.04em; color:#7a5fb0; margin:1rem 0 .3rem; }
+        .indeck{ font-size:.92rem; margin:.3rem 0; }
+        .later{ border-left:2px solid #c9b8ee; padding-left:.6rem; margin:.5rem 0; }
+        .later-src{ font-style:italic; font-size:.78rem; color:#777; }
+        .deck-cover{ float:right; width:180px; margin:0 0 .6rem .9rem; border:1px solid #e5e7eb; border-radius:8px; }
+        .deck-chapter .strip{ clear:both; }
+        .minor-card{ margin:.35rem 0; font-size:.94em; }
+        .minor-card .mscene{ color:#333; }
+        .minor-card .mread{ color:#5a3fa0; }
+        .made-by{ clear:both; margin:.6rem 0; background:#faf8ff; border:1px solid #ece6fb; border-radius:8px; padding:.5rem .8rem; }
+        .made-by .maker{ font-size:.92rem; margin:.25rem 0; }
+        .card-links{ font-size:.85rem; margin-top:.5rem; }
+        .card-links a{ color:#9333ea; text-decoration:none; font-weight:600; }
+        .card-links a:hover{ text-decoration:underline; }
+
+        /* ── PRINT: clean book pagination ── */
+        @media print{
+            @page{ size: 7in 10in; margin: .7in .65in; }
+            site-header, .course-sidebar, #course-hero-pills, #present-toggle, #course-nav,
+            .course-popup-pill, button, .screen-only{ display:none !important; }
+            body, body.bg-gray-50{ background:#fff !important; }
+            .max-w-7xl{ max-width:none !important; }
+            .viewer-frame{ display:none !important; }
+            .print-figure{ display:block !important; }
+            .course-content h1,.course-content h2,.course-content h3{ break-after:avoid; }
+            .tarot-embed,.print-figure,.synthbox,.strip,.bio,.whoswho{ break-inside:avoid; }
+            .course-content h2{ break-before:page; }
+            .card-chapter{ break-before:page; }
+            .card-chapter h3{ break-after:avoid; }
+            .strip{ overflow:visible; flex-wrap:wrap; }
+            .strip .c img{ width:1in; height:1.6in; }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- recursive-tarot drift: shared dark header instead of the recursive.eco shell. -->
-    <script src="../site-header.js?v=10"></script>
+    <script src="../site-header.js?v=12"></script>
     <site-header active="course"></site-header>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -898,9 +956,241 @@
                   });
                 })();
 
+                // ── Tarot embeds: fill [data-embed] placeholders from the grammars.
+                // Lets a course inline the live viewers, a per-deck who's who from the
+                // People grammar, and a card chapter (synthesis + cross-deck image strip).
+                await (async function expandTarotEmbeds(){
+                  const root = document.getElementById('course-content'); if(!root) return;
+                  const T='../tarot', RES='../research';
+                  const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+                  const mdl=s=>esc(String(s||'').replace(/\s*\[@[^\]]+\]/g,''))  // drop [@citation] keys
+                    .replace(/`([^`]+)`/g,'<code>$1</code>')                       // inline code
+                    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>').replace(/\*+/g,'')
+                    .replace(/\[([^\]]+)\]\(([^)]+)\)/g,(m,t,h)=>`<a href="${h}"${h.startsWith('#')?'':' target="_blank" rel="noopener noreferrer"'}>${t}</a>`)
+                    .replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>');
+                  const get=async u=>{ try{ return await (await fetch(u)).json(); }catch(e){ return null; } };
+                  // live viewers
+                  root.querySelectorAll('[data-embed="lineage"],[data-embed="timeline"]').forEach(el=>{
+                    const w=el.dataset.embed;
+                    const src=(w==='lineage'?'../viewers/genealogy-tree.html':'../viewers/timeline.html')+'?embed=1';
+                    const label=w==='lineage'?'The Lineage of Tarot':'Timeline · 1440s–1900s';
+                    const fig=w==='lineage'?'../print/book/figures/lineage.png':'../print/book/figures/timeline.png';
+                    el.innerHTML=`<figure class="tarot-embed"><div class="viewer-frame screen-only"><iframe loading="lazy" title="${label}" src="${src}"></iframe></div><div class="print-figure"><img src="${fig}" alt="${label}"></div><figcaption>${label}. Interactive on screen; a static plate in print.</figcaption></figure>`;
+                  });
+                  // people — the weave + a who's-who organised BY ROLE (deck-specific makers
+                  // are woven into the deck chapters instead).
+                  const peopleEls=[...root.querySelectorAll('[data-embed="people"]')];
+                  let PG=null, makersByDeck={};
+                  if(peopleEls.length || root.querySelector('[data-embed="decks"]')){
+                    PG=await get(T+'/people-of-tarot/grammar.json');
+                    if(PG) for(const p of PG.items){ if((p.metadata||{}).kind==='person'||p.category==='person') for(const s of ((p.metadata||{}).made||[])) (makersByDeck[s]=makersByDeck[s]||[]).push(p); }
+                  }
+                  if(peopleEls.length && PG){
+                    const items=Object.fromEntries(PG.items.map(i=>[i.id,i]));
+                    const r3=items['root-people-of-tarot'];
+                    let html=''; if(r3)html+='<div class="people-weave"><p>'+mdl((r3.sections||{})['What it is'])+'</p></div>';
+                    for(const gid of ['grp-makers','grp-patrons','grp-occultists','grp-scholars','grp-institutions']){ const grp=items[gid]; if(!grp)continue;
+                      html+='<h3>'+esc(grp.name)+'</h3>'; const wt=(grp.sections||{})['What this groups']; if(wt)html+='<p>'+mdl(wt)+'</p>';
+                      for(const cid of grp.composite_of||[]){ const p=items[cid]; if(!p)continue;
+                        const who=((p.sections||{}).Who||'').replace(/\s*\[@[^\]]+\]/g,''); const life=(p.metadata||{}).lifespan||'';
+                        html+=`<div class="bio"><div class="bio-name">${esc(p.name)}${life?` <span class="bio-life">${esc(life)}</span>`:''}</div><div class="bio-text"><p>${mdl(who)}</p></div></div>`;
+                      }
+                    }
+                    peopleEls.forEach(el=>el.innerHTML=html);
+                  }
+                  // per-deck chapters (Part II) — overview + the hands behind each deck
+                  const deckEls=[...root.querySelectorAll('[data-embed="decks"]')];
+                  if(deckEls.length){
+                    const col=await get(T+'/_collection.json');
+                    const mdBlock=t=>String(t||'').split(/\n{2,}/).map(b=>{ b=b.trim();
+                      return /^#{1,3}\s/.test(b)?'<h4>'+esc(b.replace(/^#+\s*/,''))+'</h4>':(b?'<p>'+mdl(b)+'</p>':''); }).join('');
+                    let html='';
+                    if(col){ for(const g of col.grammars.filter(x=>!x.is_meta).sort((a,b)=>(a.year||9999)-(b.year||9999))){
+                      const dg=await get(T+'/'+g.slug+'/grammar.json'); if(!dg)continue;
+                      const sigs=dg.items.filter(i=>(i.level||1)===1 && (i.image_url||(i.metadata||{}).image_url)).map(i=>i.image_url||(i.metadata||{}).image_url);
+                      const cover=g.cover_image_url||sigs[0];
+                      const cells=sigs.slice(1,9).map(im=>`<figure class="c"><img loading="lazy" src="${esc(im)}"></figure>`).join('');
+                      let makers='';
+                      for(const p of (makersByDeck[g.slug]||[])){ const who=((p.sections||{}).Who||'').replace(/\s*\[@[^\]]+\]/g,'').split('. ')[0]; const life=(p.metadata||{}).lifespan||'';
+                        makers+=`<p class="maker"><strong>${esc(p.name)}${life?' ('+esc(life)+')':''}</strong> — ${mdl(who.slice(0,240))}.</p>`; }
+                      if(makers)makers='<div class="made-by"><h4>The hands behind it</h4>'+makers+'</div>';
+                      html+=`<section class="deck-chapter" id="deck-${g.slug}"><h3>${esc((g.name||g.slug).split(' — ')[0])}${g.year_label?' · '+esc(g.year_label):''}</h3>${cover?`<img class="deck-cover" src="${esc(cover)}">`:''}${mdBlock(dg.description)}${makers}${cells?`<div class="strip">${cells}</div>`:''}</section>`;
+                    } }
+                    deckEls.forEach(el=>el.innerHTML=html);
+                  }
+                  // the four suits (Minor Arcana) — intro + per-suit synthesis + pip→scenic strip
+                  const suitEls=[...root.querySelectorAll('[data-embed="suits"]')];
+                  if(suitEls.length){
+                    const suits=await get(RES+'/synthesis/suits.json');
+                    const CANON={cups:'cups',coins:'coins',swords:'swords',batons:'batons',wands:'batons',pentacles:'coins',disks:'coins',staves:'batons',clubs:'batons'};
+                    const SORDER=['batons','coins','swords','cups'], STITLE={batons:'Batons (Wands)',coins:'Coins (Pentacles)',swords:'Swords',cups:'Cups'};
+                    const ANCH=['tarot-de-marseille-conver','sola-busca-tarot','golden-dawn-book-t-tarot','visconti-sforza-tarot'];
+                    const sidx={};
+                    for(const slug of ANCH){ const dg=await get(T+'/'+slug+'/grammar.json'); if(!dg)continue;
+                      for(const it of dg.items){ const s=(it.metadata||{}).suit, img=it.image_url||(it.metadata||{}).image_url;
+                        if(s&&img){ const cs=CANON[String(s).toLowerCase()]; if(cs){ (sidx[cs]=sidx[cs]||{}); (sidx[cs][slug]=sidx[cs][slug]||[]).push(img); } } } }
+                    let html=suits?`<p>${mdl(suits._intro)}</p>`:'';
+                    for(const cs of SORDER){ if(!suits||!suits[cs])continue;
+                      const cells=ANCH.flatMap(slug=>((sidx[cs]||{})[slug]||[]).slice(0,5)).map(im=>`<figure class="c"><img loading="lazy" src="${esc(im)}"></figure>`).join('');
+                      html+=`<section class="card-chapter"><h3>The Suit of ${esc(STITLE[cs])}</h3><div class="synthbox"><p>${mdl(suits[cs])}</p></div><div class="strip">${cells}</div></section>`;
+                    }
+                    suitEls.forEach(el=>el.innerHTML=html);
+                  }
+                  // card chapter: synthesis + cross-deck image strip
+                  const cardEls=[...root.querySelectorAll('[data-embed="card"]')];
+                  if(cardEls.length){
+                    const syn=await get(RES+'/synthesis/trumps.json'); const col=await get(T+'/_collection.json');
+                    for(const el of cardEls){
+                      const tk=el.dataset.trump; if(!tk) continue;
+                      let html='<div class="synthbox"><p>'+mdl((syn&&syn[tk])||'')+'</p></div><div class="strip">';
+                      if(col){ const cells=[];
+                        for(const g of col.grammars.filter(x=>!x.is_meta)){ const dg=await get(T+'/'+g.slug+'/grammar.json'); if(!dg)continue;
+                          const it=dg.items.find(i=>(i.metadata||{}).trump_key===tk); const img=it&&(it.image_url||(it.metadata||{}).image_url);
+                          const dname=(g.name||g.slug).split(' — ')[0];
+                          // each card links to its detail view in that deck (history-only static viewer)
+                          const url=`../viewers/cards.html?src=../tarot/${g.slug}/grammar.json&item=${encodeURIComponent(it?it.id:'')}`;
+                          if(img) cells.push({y:g.year||9999,h:`<a class="c" href="${url}" title="Open the ${esc(dname)} card"><img loading="lazy" src="${esc(img)}"><div>${esc(dname.slice(0,14))}</div></a>`});
+                        }
+                        cells.sort((a,b)=>a.y-b.y); html+=cells.map(c=>c.h).join('');
+                      }
+                      html+='</div>';
+                      const lbl=tk.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+                      html+=`<p class="card-links screen-only"><a href="../viewers/prototypes/lenses.html?card=${encodeURIComponent(tk)}">See ${esc(lbl)} across every deck in Lenses →</a> · <a href="https://flow.recursive.eco" target="_blank" rel="noopener">Get a reading at recursive.eco →</a></p>`;
+                      el.innerHTML=html;
+                    }
+                  }
+                  // trump chapters — fetch each deck ONCE, build a trump→entries index (with sections).
+                  // FRONT: trumps-synthesis (synthesis + strip). CATALOGUE: trumps-detail (per-deck Scenes + later readings).
+                  const synEls=[...root.querySelectorAll('[data-embed="trumps-synthesis"]')];
+                  const detEls=[...root.querySelectorAll('[data-embed="trumps-detail"]')];
+                  const sdetEls=[...root.querySelectorAll('[data-embed="suits-detail"]')];
+                  if(synEls.length||detEls.length||sdetEls.length){
+                    const syn=await get(RES+'/synthesis/trumps.json'); const col=await get(T+'/_collection.json');
+                    const ORDER=['fool','magician','high-priestess','empress','emperor','hierophant','lovers','chariot','strength','hermit','wheel-of-fortune','justice','hanged-man','death','temperance','devil','tower','star','moon','sun','judgement','world'];
+                    const NUM={}; ORDER.forEach((k,i)=>NUM[k]=i);
+                    const CANON={cups:'cups',coins:'coins',swords:'swords',batons:'batons',wands:'batons',pentacles:'coins',disks:'coins',staves:'batons',clubs:'batons'};
+                    const idx={}, midx={};
+                    if(col){ for(const g of col.grammars.filter(x=>!x.is_meta)){ const dg=await get(T+'/'+g.slug+'/grammar.json'); if(!dg)continue;
+                      for(const it of dg.items){ const md=it.metadata||{}; const img=it.image_url||md.image_url;
+                        const arch=md.archetype;
+                        if(arch&&String(arch).startsWith('card:')&&(md.arcana==='minor'||md.suit)){
+                          (midx[arch]=midx[arch]||[]).push({slug:g.slug,name:(g.name||g.slug).split(' — ')[0],year:g.year||9999,sections:it.sections||{}}); }
+                        const tk=md.trump_key; if(!tk)continue;
+                        (idx[tk]=idx[tk]||[]).push({slug:g.slug,name:(g.name||g.slug).split(' — ')[0],year:g.year||9999,id:it.id,img,sections:it.sections||{}}); } } }
+                    const attr=v=>{const m=String(v||'').match(/^\s*\[([^\]]{3,200})\]/);return m?m[1].trim():null;};
+                    const ayear=a=>{const m=(a||'').match(/\b(1[0-9]{3}|20[0-9]{2})\b/);return m?+m[1]:9999;};
+                    const lbl=tk=>tk.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+                    if(synEls.length){ let html='';
+                      for(const tk of ORDER){ if(!syn||!syn[tk])continue;
+                        const cells=(idx[tk]||[]).filter(c=>c.img).sort((a,b)=>a.year-b.year).map(c=>`<a class="c" href="../viewers/cards.html?src=../tarot/${c.slug}/grammar.json&item=${encodeURIComponent(c.id)}"><img loading="lazy" src="${esc(c.img)}"><div>${esc(c.name.slice(0,14))}</div></a>`).join('');
+                        html+=`<div class="card-chapter"><h3>${NUM[tk]} — ${esc(lbl(tk))}</h3><div class="synthbox"><p>${mdl(syn[tk])}</p></div><div class="strip">${cells}</div><p class="card-links screen-only"><a href="../viewers/prototypes/lenses.html?card=${tk}">See ${esc(lbl(tk))} across every deck in Lenses →</a> · <a href="https://flow.recursive.eco" target="_blank" rel="noopener">Get a reading at recursive.eco →</a></p></div>`;
+                      }
+                      synEls.forEach(el=>el.innerHTML=html);
+                    }
+                    if(detEls.length){ const ANCH=['cary-yale-visconti-tarot','visconti-sforza-tarot','charles-vi-tarot','este-tarot']; let html='';
+                      for(const tk of ORDER){ if(!syn||!syn[tk])continue;
+                        const ents=(idx[tk]||[]).sort((a,b)=>a.year-b.year);
+                        const sceneOf=slug=>{const c=ents.find(x=>x.slug===slug);if(!c)return null;const s=c.sections;return s.Scene||s.About||s.Iconography;};
+                        const early=ANCH.find(s=>sceneOf(s)); let ind='';
+                        for(const slug of [early,'tarot-de-marseille-conver','golden-dawn-book-t-tarot']){ if(!slug)continue; const sc=sceneOf(slug); if(!sc)continue;
+                          const g=col.grammars.find(x=>x.slug===slug);
+                          ind+=`<p class="indeck"><strong>${esc((g.name||slug).split(' — ')[0])} · ${g.year||''}.</strong> ${mdl(sc.slice(0,520))}${sc.length>520?'…':''}</p>`; }
+                        if(ind)ind='<h4>In the decks</h4>'+ind;
+                        const later=[],seen=new Set();
+                        for(const c of ents)for(const v of Object.values(c.sections)){const a=attr(v);if(!a)continue;const voice=a.split(',')[0].trim();if(seen.has(voice))continue;seen.add(voice);later.push([ayear(a),a,String(v).replace(/^\s*\[[^\]]*\]\s*/,'')]);}
+                        later.sort((a,b)=>a[0]-b[0]); let lat='';
+                        for(const [,a,body] of later)lat+=`<div class="later"><div class="later-src">${esc(a)}</div><p>${mdl(body.slice(0,760))}${body.length>760?'…':''}</p></div>`;
+                        if(lat)lat='<h4>Later readings</h4>'+lat;
+                        if(ind||lat)html+=`<div class="card-chapter"><h3>${NUM[tk]} — ${esc(lbl(tk))}</h3>${ind}${lat}</div>`;
+                      }
+                      detEls.forEach(el=>el.innerHTML=html);
+                    }
+                    if(sdetEls.length){
+                      const RANK={ace:1,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,page:11,knave:11,valet:11,jack:11,princess:11,knight:12,cavalier:12,prince:12,queen:13,king:14};
+                      const SORDER=['batons','coins','swords','cups'], STITLE={batons:'Batons (Wands)',coins:'Coins (Pentacles)',swords:'Swords',cups:'Cups'};
+                      const SANCH=['sola-busca-tarot','tarot-de-marseille-conver','golden-dawn-book-t-tarot'];
+                      const parts=a=>{const m=String(a||'').match(/^card:(.+?)-of-(.+)/);if(!m)return null;const cs=CANON[m[2]]||m[2];return{rank:m[1],cs,ro:RANK[m[1]]||50};};
+                      const bySuit={};
+                      for(const arch of Object.keys(midx)){const p=parts(arch);if(!p)continue;(bySuit[p.cs]=bySuit[p.cs]||[]).push([p.ro,p.rank,arch]);}
+                      let html='';
+                      for(const cs of SORDER){ const cards=(bySuit[cs]||[]).sort((a,b)=>a[0]-b[0]); if(!cards.length)continue;
+                        html+=`<div class="card-chapter" id="suitdetail-${cs}"><h3>The Suit of ${esc(STITLE[cs])}</h3>`;
+                        for(const [,rank,arch] of cards){ const ents=(midx[arch]||[]).sort((a,b)=>a.year-b.year);
+                          const sceneOf=slug=>{const c=ents.find(x=>x.slug===slug);if(!c)return null;const s=c.sections;return s.Scene||s.Description||s.About||s.Iconography;};
+                          let ind='';for(const slug of SANCH){const sc=sceneOf(slug);if(sc){const g=col.grammars.find(x=>x.slug===slug);ind=`<span class="mscene"><strong>${esc((g.name||slug).split(' — ')[0])}:</strong> ${mdl(sc.slice(0,300))}${sc.length>300?'…':''}</span>`;break;}}
+                          const later=[],seen=new Set();
+                          for(const c of ents)for(const v of Object.values(c.sections)){const a=attr(v);if(!a)continue;const voice=a.split(',')[0].trim();if(seen.has(voice))continue;seen.add(voice);later.push([ayear(a),a,String(v).replace(/^\s*\[[^\]]*\]\s*/,'')]);}
+                          later.sort((a,b)=>a[0]-b[0]); let rd='';
+                          if(later.length){const [,a,body]=later[0];rd=`<span class="mread"><em>${esc(a.split(',')[0])}</em> — ${mdl(body.slice(0,240))}${body.length>240?'…':''}</span>`;}
+                          const rl=(rank||'').replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+                          html+=`<p class="minor-card"><strong>${esc(rl)} of ${esc(STITLE[cs].split(' ')[0])}.</strong> ${ind} ${rd}</p>`;
+                        }
+                        html+='</div>';
+                      }
+                      sdetEls.forEach(el=>el.innerHTML=html);
+                    }
+                  }
+                  // the Divination Question essay — from the meta grammar (single source)
+                  const essayEls=[...root.querySelectorAll('[data-embed="essay"]')];
+                  if(essayEls.length){
+                    const mg=await get(T+'/all-decks-many-lenses/grammar.json');
+                    const e=mg&&mg.items.find(i=>i.id==='essay-divination-question');
+                    let html=''; if(e)for(const [k,v] of Object.entries(e.sections||{}))html+=`<h3>${esc(k)}</h3><p>${mdl(v)}</p>`;
+                    essayEls.forEach(el=>el.innerHTML=html);
+                  }
+                  // full-page plates (front gallery)
+                  const plateEls=[...root.querySelectorAll('[data-embed="plates"]')];
+                  if(plateEls.length){
+                    const PLATES=[['visconti-sforza-tarot','world','The World — Visconti-Sforza, Milan, c. 1451. Hand-painted on gold ground for the ducal court.'],['cary-yale-visconti-tarot','death','Death — Cary-Yale Visconti, c. 1442. The earliest surviving Death: a mounted archer.'],['tarot-de-marseille-conver','moon','The Moon — Tarot de Marseille (Conver), 1760. The uncanny scene the occultists inherited whole.'],['court-de-gebelin-tarot','magician','The Magician — Court de Gébelin’s plates, 1781. The street conjurer read as an Egyptian sage.'],['golden-dawn-book-t-tarot','death','Death — Golden Dawn / Rider-Waite-Smith line, 1909. Mounted again, now with a banner of renewal.']];
+                    let html='';
+                    for(const [slug,tk,cap] of PLATES){ const dg=await get(T+'/'+slug+'/grammar.json'); if(!dg)continue;
+                      const it=dg.items.find(i=>(i.metadata||{}).trump_key===tk); const img=it&&(it.image_url||(it.metadata||{}).image_url);
+                      if(img)html+=`<figure class="plate"><img loading="lazy" src="${esc(img)}"><figcaption>${esc(cap)}</figcaption></figure>`;
+                    }
+                    plateEls.forEach(el=>el.innerHTML=html);
+                  }
+                  // apparatus: image credits + bibliography + colophon
+                  const appEls=[...root.querySelectorAll('[data-embed="apparatus"]')];
+                  if(appEls.length){
+                    const col=await get(T+'/_collection.json');
+                    let cred='<h3>Image credits</h3><p>Every card image here is in the <strong>public domain</strong> — the originals all predate the twentieth century. Reproductions are drawn from the institutions and archives below; full per-card provenance is in the research dossiers on GitHub.</p><ul class="credits">';
+                    if(col){ for(const g of col.grammars.filter(x=>!x.is_meta).sort((a,b)=>(a.year||9999)-(b.year||9999))){
+                      const dg=await get(T+'/'+g.slug+'/grammar.json');
+                      const credit=(dg&&dg.image_credit)||[...new Set((dg?dg.items:[]).map(i=>(i.metadata||{}).collection).filter(Boolean))].join('; ')||'public domain — see the deck dossier';
+                      cred+=`<li><strong>${esc((g.name||g.slug).split(' — ')[0])}.</strong> ${esc(credit)}.</li>`;
+                    } }
+                    cred+='</ul>';
+                    let bib='';
+                    try{ const txt=await (await fetch('../research/bibliography.bib')).text();
+                      const rows=[]; const re2=/@\w+\s*\{[^,]+,([\s\S]*?)\n\}/g; let m;
+                      while((m=re2.exec(txt))){ const b=m[1]; const f=n=>{const mm=new RegExp(n+'\\s*=\\s*[{"]([^}"]*)[}"]','i').exec(b);return mm?mm[1].trim():'';};
+                        const au=f('author')||f('editor'),ti=f('title'),yr=f('year'); if(ti)rows.push([au,ti,yr]); }
+                      rows.sort((a,b)=>(a[0].toLowerCase()+a[2]).localeCompare(b[0].toLowerCase()+b[2]));
+                      bib=rows.map(([au,ti,yr])=>`<p class="bibentry">${au?esc(au)+'. ':''}<em>${esc(ti)}</em>${yr?' ('+esc(yr)+')':''}.</p>`).join('');
+                    }catch(e){}
+                    appEls.forEach(el=>el.innerHTML=cred+'<h3>Sources &amp; further reading</h3><div class="bib">'+bib+'</div><h3>About this book</h3><p>Generated from the open data of <strong>The Recursive Tarot</strong> — a public-domain collection of historical tarot grammars. Text CC-BY-SA-4.0; card images public domain. Source: github.com/PlayfulProcess/recursive-tarot.</p>');
+                  }
+                })();
+
                 // Round 42: wire popup triggers + repaint QR codes if
                 // already in Presentation Mode.
                 wireCoursePopupTriggers();
+
+                // Links: external/relative links open in a NEW TAB; in-page (#)
+                // anchors — the deck cross-links and the synthesis→detail jumps —
+                // scroll smoothly in place instead of spawning a reloaded tab.
+                (function normalizeLinks(){
+                  const root=document.getElementById('course-content'); if(!root) return;
+                  root.querySelectorAll('a[href]').forEach(a=>{
+                    const href=a.getAttribute('href')||'';
+                    if(href.startsWith('#')){
+                      a.removeAttribute('target'); a.removeAttribute('rel');
+                      a.addEventListener('click',e=>{ const el=document.getElementById(href.slice(1)); if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); history.replaceState(null,'',href); } });
+                    } else if(/^(https?:|\.\.?\/|\/)/.test(href)){
+                      a.target='_blank'; a.rel='noopener noreferrer';
+                    }
+                  });
+                })();
 
                 // Generate navigation from headers
                 generateNavigation();
@@ -936,8 +1226,20 @@
             const sections = [];
             let currentSection = null;
 
+            // The embed renderers inject many headings (the 22 trumps appear in both
+            // the synthesis and the detail; each suit twice; the decks). That means
+            // duplicate ids — so dedupe: the first wins its plain id, later twins get
+            // -2, -3 … and the heading's own id is updated to match its TOC link.
+            const usedIds = new Set();
+            const uniqueId = base => {
+                let id = base || 'section', n = 1;
+                while (usedIds.has(id)) { n++; id = base + '-' + n; }
+                usedIds.add(id);
+                return id;
+            };
+
             h2s.forEach(h2 => {
-                const id = h2.id || h2.textContent.toLowerCase().replace(/[^\w]+/g, '-');
+                const id = uniqueId(h2.id || h2.textContent.toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, ''));
                 h2.id = id;
                 currentSection = { h2, id, title: h2.textContent, children: [] };
                 sections.push(currentSection);
@@ -945,7 +1247,7 @@
 
             // Assign H3s to their parent H2
             h3s.forEach(h3 => {
-                const id = h3.id || h3.textContent.toLowerCase().replace(/[^\w]+/g, '-');
+                const id = uniqueId(h3.id || h3.textContent.toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, ''));
                 h3.id = id;
 
                 // Find parent H2 (the one that comes before this H3 in document order)

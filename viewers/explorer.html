@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.25">
 <title>Emergence Explorer — Pivot the Tarot · Recursive Tarot</title>
 <style>
   :root{
@@ -34,6 +34,12 @@
   .fpin-label .rx:hover{ color:#e07a5f; }
   .fpinned-group{ padding:0 0 6px 0; border-bottom:1px solid var(--line); margin-bottom:6px; }
   .fpinned-group:last-child{ border-bottom:none; margin-bottom:0; }
+  #presets{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding-bottom:8px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+  #presets .lab{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:2px}
+  button.preset{background:rgba(147,51,234,.12);color:#e7defb;border:1px solid rgba(147,51,234,.4);
+    border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+  button.preset:hover{background:rgba(147,51,234,.28);border-color:#9333ea}
+  button.preset-clear{background:rgba(255,255,255,.05);border-color:var(--line);color:var(--muted)}
   #tray{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding-bottom:4px}
   #tray .lab{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:4px}
   /* field-hierarchy groups: fields that nest (inferred from the data) render as a
@@ -71,8 +77,9 @@
   .pivot thead th{background:var(--panel);font-size:12px;position:sticky;top:0;z-index:5}
   .pivot th.rowhead{background:var(--panel);font-size:12.5px;white-space:nowrap;font-weight:600}
   .pivot th.rowhead .cnt{color:var(--muted);font-weight:400;font-size:10.5px}
+  :root { --card-h: 62px; }
   .cellwrap{display:flex;flex-wrap:wrap;gap:4px;align-items:flex-end;max-width:360px}
-  .cellwrap img{height:62px;border-radius:4px;background:#0a0810;cursor:pointer;transition:transform .12s}
+  .cellwrap img{height:var(--card-h);border-radius:4px;background:#0a0810;cursor:pointer;transition:transform .12s,height .12s}
   .cellwrap img:hover{transform:scale(1.6);z-index:9;position:relative}
   /* emergence pills: hue = branch, gradient depth = level */
   .epill{display:inline-flex;align-items:center;gap:4px;border-radius:7px;padding:4px 8px;font-size:11px;
@@ -83,6 +90,17 @@
   .more{font-size:11px;color:var(--muted);align-self:center;cursor:pointer}
   .ccount{font-size:13px;font-weight:700;text-align:center;min-width:40px}
   .empty{color:#39324d}
+  /* Sections render mode: a clamped section snippet per card */
+  .esec{position:relative;display:block;width:150px;max-height:150px;overflow:hidden;cursor:pointer;
+    border-radius:7px;border:1px solid rgba(255,255,255,.12);background:rgba(12,9,22,.55);
+    padding:7px 9px;font-size:10.5px;line-height:1.45;color:#d8d2ec;text-align:left;
+    -webkit-box-orient:vertical;-webkit-line-clamp:8;display:-webkit-box}
+  .esec.later{border-color:rgba(196,167,255,.45)}
+  .esec.none{opacity:.3;font-style:italic;-webkit-line-clamp:1;color:#9b93b5}
+  .esec .nm{display:block;font-size:9px;color:#9b93b5;margin-bottom:3px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+  .esec .at{display:block;font-size:9px;font-style:italic;opacity:.6;margin-bottom:2px}
+  .esec::after{content:'';position:absolute;left:0;right:0;bottom:0;height:22px;background:linear-gradient(transparent,rgba(12,9,22,.92));pointer-events:none}
+  .esec.none::after{display:none}
   #hint{color:var(--muted);font-size:13px;padding:30px;text-align:center;line-height:1.7}
   #stats{font-size:11.5px;color:var(--muted);padding:0 16px 4px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 
@@ -115,7 +133,7 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=10"></script>
+<script src="../site-header.js?v=12"></script>
 <site-header active="explorer"></site-header>
 
 <div class="toolbar">
@@ -124,13 +142,31 @@
   <span class="spacer"></span>
   <button id="mode-cards" class="active">🃏 Cards</button>
   <button id="mode-counts">∑ Counts</button>
+  <button id="mode-sections">§ Sections</button>
+  <select id="section-pick" title="Which section to render" style="display:none;background:#1d1830;color:#e9e4f6;border:1px solid #3a3450;border-radius:7px;padding:5px 8px;font-size:12px;font-weight:600;cursor:pointer;max-width:200px;"></select>
+  <label title="Card size" style="display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#9ca3af;">
+    <span>⊕</span>
+    <input id="zoom-slider" type="range" min="32" max="620" value="62" step="8"
+      style="width:72px;accent-color:#9333ea;cursor:pointer;" oninput="applyZoom(this.value)">
+    <span id="zoom-pct" style="min-width:32px;color:#cfc8e2;font-size:11px;">100%</span>
+  </label>
   <button id="sidebar-btn" title="Toggle sidebar layout">◧</button>
   <button id="reset">↺ Reset</button>
 </div>
 
 <div id="main">
 <div id="builder">
-  <div id="tray"><span class="lab">Fields — click any chip to filter it ⧩ · drag into a box to group by it</span></div>
+  <div id="presets">
+    <span class="lab">Organize ▸</span>
+    <button class="preset" data-r="arcana,suit,rank">Major/Minor ▸ Suit ▸ Rank</button>
+    <button class="preset" data-r="arcana" data-c="suit">Arcana × Suit</button>
+    <button class="preset" data-r="suit" data-c="rank">Suit × Rank</button>
+    <button class="preset" data-r="deck" data-c="arcana">Deck × Arcana</button>
+    <button class="preset" data-r="number">Number line</button>
+    <button class="preset" data-r="branch,deck">Lineage ▸ Deck</button>
+    <button class="preset preset-clear" data-clear="1">Clear</button>
+  </div>
+  <div id="tray"><span class="lab">…or drag any field below — click a chip to filter it ⧩ · drag into Rows / Columns to group</span></div>
   <div class="zone" id="z-rows"><div class="zlab">Rows ▦</div><div class="chips"></div></div>
   <div class="zone" id="z-cols"><div class="zlab">Columns ▥</div><div class="chips"></div></div>
   <div class="zone" id="z-filters"><div class="zlab">⊸ Filters — drop a field here to pin its values as toggles</div><div id="z-filters-body"></div></div>
@@ -152,6 +188,15 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const PFX = '../';
 
+/* zoom: card-h CSS variable driven by slider */
+function applyZoom(px) {
+  document.documentElement.style.setProperty('--card-h', px + 'px');
+  const pct = Math.round(px / 62 * 100);
+  const el = document.getElementById('zoom-pct');
+  if (el) el.textContent = pct + '%';
+}
+window.applyZoom = applyZoom;
+
 /* ── state ─────────────────────────────────────────────── */
 let records = [], fields = [], byId = {};
 let fieldParent = {};   // field -> immediate parent field (inferred containment)
@@ -159,6 +204,33 @@ let spec = { rows:[], cols:[], filters:{}, pinned:[] };
 let mode = 'cards';
 let collection = null;
 let specKey = null;   // localStorage key for this grammar selection's spec
+let secById = {};     // __id -> sections map (flatten drops sections; we keep them aside)
+let sectionField = null;   // normalized section-group key chosen for Sections mode
+let sectionGroups = [];    // inferred [{key,label,count,attributed}]
+
+/* Section Lens contract (shared with cards.html): identity = normalized name,
+   provenance inferred from the leading "[Author, Work, Date]" attribution line. */
+const SEC_STOP = new Set(['the','a','an','this','that','these','those','it','its']);
+const lensNorm = s => String(s).toLowerCase().replace(/['’]s\b/g,'').replace(/[_\-]+/g,' ').replace(/[.:;,]+$/,'').split(/\s+/).filter(w=>w&&!SEC_STOP.has(w)).join(' ').trim();
+const lensAttr = t => { if(typeof t!=='string')return null; const m=t.trim().match(/^\[([^\]]{3,200})\]/); return m?m[1].trim():null; };
+function inferSectionGroups(){
+  const m = new Map();
+  for (const secs of Object.values(secById)) for (const [k,v] of Object.entries(secs||{})){
+    if (typeof v!=='string' || !v.trim()) continue;
+    const key = lensNorm(k); if(!key) continue;
+    let s = m.get(key); if(!s){ s={key,count:0,labels:new Map(),attributed:false}; m.set(key,s); }
+    s.count++; s.labels.set(k,(s.labels.get(k)||0)+1);
+    if (lensAttr(v)) s.attributed = true;
+  }
+  return [...m.values()].map(s=>({key:s.key,label:[...s.labels].sort((a,b)=>b[1]-a[1])[0][0],count:s.count,attributed:s.attributed}))
+    .sort((a,b)=>b.count-a.count);
+}
+// a record's section text for the chosen group (by normalized key)
+function recSection(r){
+  const secs = secById[r.__id] || {};
+  for (const [k,v] of Object.entries(secs)){ if(typeof v==='string'&&v.trim()&&lensNorm(k)===sectionField) return {name:k,val:v}; }
+  return null;
+}
 
 /* branch colour code (house palette) — pills: hue = branch, gradient = level */
 const BRANCH_COLOR = { A:'#e07a5f', B:'#81b29a', C:'#6d8ec9', marseille:'#6d8ec9',
@@ -183,6 +255,14 @@ function branchColor(r){
 }
 function recHTML(r){
   const lvl = +(r.level?.[0]||'L1').slice(1);
+  if (mode === 'sections'){
+    const s = recSection(r);
+    if (!s) return `<span class="esec none" data-rid="${esc(r.__id)}" title="${esc(r.__name)}"><span class="nm">${esc(r.__name).slice(0,24)}</span>— none —</span>`;
+    const attr = lensAttr(s.val);
+    const body = attr ? s.val.trim().replace(/^\[[^\]]*\]\s*/,'') : s.val;
+    return `<span class="esec ${attr?'later':''}" data-rid="${esc(r.__id)}" title="${esc(r.__name)} — ${esc(s.name)}">
+      <span class="nm">${esc(r.__name).slice(0,24)}</span>${attr?`<span class="at">${esc(attr).slice(0,46)}</span>`:''}${esc(body).slice(0,260)}</span>`;
+  }
   if (lvl === 1 && r.__img)
     return `<img loading="lazy" data-rid="${esc(r.__id)}" src="${esc(r.__img)}" title="${esc(r.__name)}">`;
   const c = branchColor(r);
@@ -312,7 +392,9 @@ function chipEl(f, zone){
   el.innerHTML = `${esc(f)} <span class="n">${nsel ? '⧩ '+nsel+'/'+(fl?fl.count:'?') : (fl?fl.count:'')}</span>`
     + ((zone || nsel) ? ` <span class="x" title="Clear as filter and dimension">✕</span>` : '');
   el.draggable = true;
-  el.title = 'Click to filter · drag into Rows / Columns to group';
+  el.dataset.f = f;
+  el.dataset.zone = zone || '';
+  el.title = 'Click to filter · drag into Rows / Columns to group · hold on mobile';
   el.addEventListener('dragstart', e => { e.dataTransfer.setData('text/plain', JSON.stringify({f, from:zone||null})); });
   el.onclick = e => { if (!e.target.classList.contains('x')) openPop(f, el, zone); };
   const x = el.querySelector('.x');
@@ -496,8 +578,30 @@ $('#deckbtn').onclick = () => {
 };
 
 /* ── 6. boot ───────────────────────────────────────────── */
-$('#mode-cards').onclick = () => { mode='cards'; $('#mode-cards').classList.add('active'); $('#mode-counts').classList.remove('active'); render(); };
-$('#mode-counts').onclick = () => { mode='counts'; $('#mode-counts').classList.add('active'); $('#mode-cards').classList.remove('active'); render(); };
+function setMode(m){
+  mode = m;
+  for (const id of ['mode-cards','mode-counts','mode-sections']) $('#'+id).classList.toggle('active', id==='mode-'+m);
+  const pick = $('#section-pick'); if (pick) pick.style.display = (m==='sections') ? '' : 'none';
+  render();
+}
+function populateSectionPick(){
+  const pick = $('#section-pick'); if (!pick) return;
+  pick.innerHTML = sectionGroups.map(s =>
+    `<option value="${esc(s.key)}"${s.key===sectionField?' selected':''}>${esc(s.label)} (${s.count})${s.attributed?' · later':''}</option>`).join('');
+}
+// Preset pivots — one click sets Rows/Columns (only with fields the data actually has).
+document.querySelectorAll('#presets button').forEach(b => b.onclick = () => {
+  if (b.dataset.clear) { spec.rows = []; spec.cols = []; spec.filters = {}; sync(); return; }
+  const avail = new Set(fields.map(f => f.name));
+  const pick = s => (s ? s.split(',') : []).filter(x => avail.has(x));
+  spec.rows = pick(b.dataset.r);
+  spec.cols = pick(b.dataset.c);
+  sync();
+});
+$('#mode-cards').onclick = () => setMode('cards');
+$('#mode-counts').onclick = () => setMode('counts');
+$('#mode-sections').onclick = () => setMode('sections');
+$('#section-pick').onchange = e => { sectionField = e.target.value; render(); };
 $('#reset').onclick = () => { spec={rows:[],cols:[],filters:{},pinned:[]}; sync(); };
 $('#sidebar-btn').onclick = () => {
   const on = document.body.classList.toggle('sidebar');
@@ -514,7 +618,9 @@ async function boot(){
   const slugs = selectedSlugs();
   specKey = 'explorer-spec:' + slugs.slice().sort().join(',');
   const srcParam = new URLSearchParams(location.search).get('src');
-  records = []; byId = {};
+  records = []; byId = {}; secById = {};
+  // record an item's sections under the same prefixed id flatten produces
+  const stash = (g, prefix) => { for (const it of (g.items||[])) secById[(prefix?prefix+':':'')+it.id] = it.sections || {}; };
   try{
     if (slugs.length && collection){
       $('#deckbtn').textContent = `✦ Decks ▾ (${slugs.length})`;
@@ -525,16 +631,21 @@ async function boot(){
         const inherit = { deck: (cm.name || g.name || slug).split(' — ')[0].slice(0,34),
                           year: g.metadata?.year, branch: cm.branch || g.metadata?.branch,
                           order: g.metadata?.order, tradition: g.metadata?.tradition };
+        stash(g, slug);
         return flatten(g, inherit, slug);
       });
       for (const recs of await Promise.all(loads)) records.push(...recs);
     } else {
       const src = srcParam || PFX+'tarot/all-decks-many-lenses/grammar.json';
       const g = await (await fetch(src)).json();
+      stash(g, null);
       records = flatten(g, null, null);
       if (srcParam) $('#deckbtn').textContent = '✦ ' + (g.name||'deck').split(' — ')[0].slice(0,22) + ' ▾';
     }
   } catch(e){ $('#out').innerHTML = '<div id="hint">Could not load the grammar(s).</div>'; return; }
+  sectionGroups = inferSectionGroups();
+  if (!sectionField && sectionGroups.length) sectionField = sectionGroups[0].key;
+  populateSectionPick();
   for (const r of records) byId[r.__id] = r;
   // resolve emergence names now that byId is full
   for (const r of records) if (r.__parents.length)
@@ -559,6 +670,88 @@ async function boot(){
   sync();
 }
 boot();
+})();
+
+/* ── Touch long-press drag (mobile) ───────────────────────────────────────
+   Hold a chip for 420ms to start dragging; move finger to a drop zone and
+   release to drop. Short taps still open the filter popover normally.       */
+(function(){
+  const HOLD_MS = 420, MOVE_LIMIT = 10;
+  let timer = null, active = null, clone = null, dragData = null;
+  let startX = 0, startY = 0;
+  const ZONE_MAP = [['#z-rows','rows'],['#z-cols','cols'],['#z-filters','filters'],['#tray',null]];
+
+  function cancelHold(){ clearTimeout(timer); timer = null; }
+  function endDrag(dropZone){
+    if (clone){ clone.remove(); clone = null; }
+    if (active){ active.style.opacity = ''; active = null; }
+    document.querySelectorAll('.dragover').forEach(z=>z.classList.remove('dragover'));
+    if (dragData && dropZone !== undefined){
+      const {f, from} = dragData;
+      if (from) removeField(f, from);
+      if (dropZone==='rows' && !spec.rows.includes(f)) spec.rows.push(f);
+      if (dropZone==='cols') spec.cols=[f];
+      if (dropZone==='filters' && !spec.pinned.includes(f)){ spec.pinned.push(f); if(!spec.filters[f]) spec.filters[f]=[]; }
+      sync();
+    }
+    dragData = null;
+  }
+
+  document.addEventListener('touchstart', e=>{
+    const chip = e.target.closest('.chip[data-f]');
+    if (!chip) return;
+    const t = e.touches[0];
+    startX = t.clientX; startY = t.clientY;
+    cancelHold();
+    timer = setTimeout(()=>{
+      timer = null;
+      active = chip;
+      dragData = { f: chip.dataset.f, from: chip.dataset.zone || null };
+      const r = chip.getBoundingClientRect();
+      clone = chip.cloneNode(true);
+      Object.assign(clone.style, {
+        position:'fixed', zIndex:'9999', pointerEvents:'none',
+        opacity:'.85', left:r.left+'px', top:r.top+'px',
+        width:r.width+'px', transform:'scale(1.08)', transition:'transform .1s'
+      });
+      document.body.appendChild(clone);
+      chip.style.opacity = '.3';
+      if (navigator.vibrate) navigator.vibrate(25);
+    }, HOLD_MS);
+  }, {passive:true});
+
+  document.addEventListener('touchmove', e=>{
+    const t = e.touches[0];
+    if (timer){
+      if (Math.hypot(t.clientX-startX, t.clientY-startY) > MOVE_LIMIT) cancelHold();
+      return;
+    }
+    if (!clone) return;
+    e.preventDefault();
+    clone.style.left = (t.clientX - clone.offsetWidth/2)+'px';
+    clone.style.top  = (t.clientY - clone.offsetHeight/2)+'px';
+    ZONE_MAP.forEach(([sel])=>{
+      const z = document.querySelector(sel); if (!z) return;
+      const r = z.getBoundingClientRect();
+      const over = t.clientX>=r.left && t.clientX<=r.right && t.clientY>=r.top && t.clientY<=r.bottom;
+      z.classList.toggle('dragover', over);
+    });
+  }, {passive:false});
+
+  document.addEventListener('touchend', e=>{
+    cancelHold();
+    if (!clone) return;
+    const t = e.changedTouches[0];
+    let hit;
+    for (const [sel, zone] of ZONE_MAP){
+      const z = document.querySelector(sel); if (!z) continue;
+      const r = z.getBoundingClientRect();
+      if (t.clientX>=r.left && t.clientX<=r.right && t.clientY>=r.top && t.clientY<=r.bottom){ hit=zone; break; }
+    }
+    endDrag(hit);
+  }, {passive:true});
+
+  document.addEventListener('touchcancel', ()=>{ cancelHold(); endDrag(undefined); }, {passive:true});
 })();
 </script>
 </body>

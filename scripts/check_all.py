@@ -69,8 +69,8 @@ for script in ("build_people_grammar.py", "build_meta_grammar.py"):
 for w in warnings:
     print("WARN:", w)
 if errors:
-    print(f"\n✗ {len(errors)} ERROR(S):")
+    print(f"\nFAIL: {len(errors)} ERROR(S):")
     for e in errors:
         print("  -", e)
     sys.exit(1)
-print(f"\n✓ all checks passed ({len(glob.glob(os.path.join(TAROT, '*', 'grammar.json')))} grammars)")
+print(f"\nOK: all checks passed ({len(glob.glob(os.path.join(TAROT, '*', 'grammar.json')))} grammars)")

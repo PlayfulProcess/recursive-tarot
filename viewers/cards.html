@@ -37,8 +37,8 @@
         };
     })();
     </script>
-    <script src="../site-header.js?v=10"></script>
-    <script src="../view-switcher.js?v=8"></script>
+    <script src="../site-header.js?v=12"></script>
+    <script src="../view-switcher.js?v=9"></script>
     <style>
         /* Unified Grammar Theme - adapts based on grammar type */
         :root {
@@ -1281,6 +1281,43 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
+        /* Study navigation: prev/next arrows flanking the modal */
+        .modal-nav-btn {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.2);
+            color: #e5e5e5;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .15s, opacity .15s;
+            flex-shrink: 0;
+        }
+        .modal-nav-btn:hover { background: rgba(147,51,234,.4); border-color: #9333ea; }
+        .modal-nav-btn:disabled { opacity: .25; cursor: default; }
+
+        /* Card counter badge in the modal */
+        .modal-counter {
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,.45);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 20px;
+            padding: 2px 12px;
+            font-size: 11px;
+            color: #9ca3af;
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 11;
+        }
+
         /* Modal visual */
         .modal-visual {
             display: flex;
@@ -1922,6 +1959,70 @@
 
         /* Hide header when loaded in an iframe */
         body.in-iframe site-header { display: none !important; }
+
+        /* ── Section Lens bar (inference-driven; works for any grammar) ────────
+           Surfaces the section types that emerge from the loaded items, lets you
+           hide/show them in detail, flag later-interpretation layers, and flip
+           the grid from images to a chosen section's text. Pure render-layer —
+           stores nothing, compatible with recursive.eco's UnifiedItem shape. */
+        .section-lens-bar {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+            margin: 2px 0 10px; padding: 8px 10px;
+            background: rgba(255,255,255,.03);
+            border: 1px solid rgba(255,255,255,.08); border-radius: 10px;
+        }
+        .section-lens-bar.hidden { display: none; }
+        .lens-bar-label { font-size: 11px; letter-spacing: .04em; text-transform: uppercase;
+            color: var(--grammar-text-muted, #9b93b5); margin-right: 2px; }
+        .lens-display-select {
+            background: #1d1830; color: #e9e4f6; border: 1px solid #3a3450;
+            border-radius: 8px; padding: 5px 9px; font-size: 12px; font-weight: 600; cursor: pointer;
+        }
+        .lens-chip {
+            display: inline-flex; align-items: center; gap: 5px;
+            padding: 4px 9px; border-radius: 999px; cursor: pointer; user-select: none;
+            font-size: 12px; line-height: 1; border: 1px solid rgba(255,255,255,.16);
+            background: rgba(255,255,255,.06); color: var(--grammar-text, #e9e4f6);
+            transition: opacity .12s, background .12s;
+        }
+        .lens-chip:hover { background: rgba(255,255,255,.12); }
+        .lens-chip.off { opacity: .38; text-decoration: line-through; }
+        .lens-chip .lens-cov { font-size: 10px; opacity: .6; }
+        .lens-chip.attributed { border-color: rgba(196,167,255,.5); }
+        .lens-chip .lens-later {
+            font-size: 9px; text-transform: uppercase; letter-spacing: .03em;
+            color: #c4a7ff; border: 1px solid rgba(196,167,255,.4);
+            border-radius: 4px; padding: 1px 3px;
+        }
+        .lens-master {
+            margin-left: auto; font-size: 11px; color: var(--grammar-text-muted, #9b93b5);
+            display: inline-flex; align-items: center; gap: 5px; cursor: pointer; user-select: none;
+        }
+        .lens-master input { accent-color: #c4a7ff; cursor: pointer; }
+        /* lens-flip text in grid cells (both card + thumbnail layouts) — a clean
+           clamped snippet that fades out (no per-cell scrollbars); click the card
+           to read the full text in the modal. */
+        .item-visual .lens-text, .thumb-image .lens-text {
+            display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 11;
+            position: relative; width: 100%; max-height: 230px; overflow: hidden; cursor: pointer;
+            padding: 10px 11px; text-align: left; font-size: 11.5px; line-height: 1.5;
+            color: var(--grammar-text, #e9e4f6); background: rgba(12,9,22,.55);
+        }
+        .item-visual .lens-text::after, .thumb-image .lens-text::after {
+            content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 30px;
+            background: linear-gradient(transparent, rgba(12,9,22,.92)); pointer-events: none;
+        }
+        .item-visual .lens-text p, .thumb-image .lens-text p { margin: 0 0 .5em; }
+        .lens-text .lens-attr { display: block; font-size: 10px; opacity: .65;
+            font-style: italic; margin-bottom: 6px; }
+        .lens-empty { display: flex; align-items: center; justify-content: center;
+            width: 100%; min-height: 90px; padding: 14px; text-align: center;
+            font-size: 11px; opacity: .4; font-style: italic; }
+        /* later-commentary sections in card detail: a quiet divider marks where the
+           deck's own voice ends and dated later interpretations begin. */
+        .content-section.later-section { border-top: 1px dashed rgba(196,167,255,.28); padding-top: 14px; margin-top: 6px; }
+        .content-section.later-section + .content-section.later-section { border-top: 0; padding-top: 0; margin-top: 0; }
+        .content-section.later-section .section-title .lens-later { vertical-align: middle; margin-left: 6px; }
     </style>
     <script>
         if (window.self !== window.top) {
@@ -2027,6 +2128,8 @@
                             <!-- Dynamically populated based on grammar -->
                         </div>
                     </div>
+                    <!-- Section Lens bar — inferred from loaded items, populated by renderSectionLensBar() -->
+                    <div id="section-lens-bar" class="section-lens-bar hidden"></div>
                     <!-- Explanation of the chosen "group by" axis -->
                     <div id="axis-explainer" class="axis-explainer" hidden></div>
 
@@ -2041,8 +2144,10 @@
 
     <!-- Detail Modal -->
     <div id="modal-backdrop" class="modal-backdrop">
+        <button id="modal-prev" class="modal-nav-btn" onclick="navigateItem(-1)" title="Previous card (←)" aria-label="Previous">&#8592;</button>
         <div class="modal-content">
             <button id="modal-close" class="modal-close">&times;</button>
+            <div id="modal-counter" class="modal-counter"></div>
             <div id="modal-visual" class="modal-visual">
                 <!-- Image or icon -->
             </div>
@@ -2050,6 +2155,7 @@
                 <!-- Content sections -->
             </div>
         </div>
+        <button id="modal-next" class="modal-nav-btn" onclick="navigateItem(1)" title="Next card (→)" aria-label="Next">&#8594;</button>
     </div>
 
     <!-- Image Lightbox -->
@@ -2061,14 +2167,14 @@
     <!-- Report Modal -->
     <div id="report-modal" class="report-modal hidden">
         <div class="report-modal-content">
-            <h3>⚑ Report Issue</h3>
-            <p style="color: var(--grammar-text-muted); font-size: 0.875rem; margin-bottom: 1rem;">
-                Please describe the issue with this grammar (inappropriate content, copyright violation, broken data, etc.)
+            <h3>⚑ Report an Inaccuracy</h3>
+            <p style="color: var(--grammar-text-muted); font-size: 0.875rem; margin-bottom: 1rem; line-height:1.5;">
+                Describe what's wrong — a wrong date, misattribution, incorrect card identity, etc. We'll open a pre-filled GitHub issue you can submit (free account required).
             </p>
-            <textarea id="report-reason" placeholder="What's wrong with this grammar?"></textarea>
+            <textarea id="report-reason" placeholder="e.g. The Chariot date is listed as 1760 but should be 1701 per Dummett (1980)." style="min-height:90px;"></textarea>
             <div class="report-modal-buttons">
                 <button class="report-cancel" onclick="closeReportModal()">Cancel</button>
-                <button class="report-submit" onclick="submitReport()">Submit Report</button>
+                <button class="report-submit" onclick="submitReport()">Open on GitHub ↗</button>
             </div>
         </div>
     </div>
@@ -2342,6 +2448,34 @@
                     setupEventListeners();
                     showContent();
 
+                    // Chip tray for single-deck mode: discover fields + render above sidebar
+                    if (typeof DimensionEngine !== 'undefined') {
+                        // discoverFields expects each field value to be an array (iterable of scalars)
+                        const deRecs = items.map(it => {
+                            const r = { __id: it.id };
+                            if (it.categories?.suit) r.suit = [it.categories.suit];
+                            if (it.categories?.arcana) r.arcana = [it.categories.arcana];
+                            if (it.level) r.level = ['L' + it.level];
+                            (it.keywords || []).forEach(kw => { (r.keyword = r.keyword || []).push(kw); });
+                            // pick any string/number scalar fields from metadata
+                            Object.entries(it.metadata || {}).forEach(([k, v]) => {
+                                if (typeof v === 'string' || typeof v === 'number') r[k] = [String(v)];
+                                else if (Array.isArray(v)) r[k] = v.map(String);
+                            });
+                            return r;
+                        });
+                        const sdFields = DimensionEngine.discoverFields(deRecs)
+                            .filter(f => f.count >= 2 && f.count <= Math.max(items.length * 0.8, 20));
+                        if (sdFields.length) {
+                            try {
+                                const h = decodeURIComponent(location.hash.slice(1));
+                                if (h.startsWith('groupby=')) deckGroupField = new URLSearchParams(h).get('groupby');
+                            } catch(_) {}
+                            buildDimChipTray(sdFields);
+                            if (deckGroupField) buildHierarchySidebar();
+                        }
+                    }
+
                     // Update Edit/Copy buttons now that we know if it's a community grammar
                     updateEditCopyButtons();
 
@@ -2425,16 +2559,25 @@
                 allGroups.forEach((grpItems, gi) => {
                     const slug = slugs[gi];
                     grpItems.forEach(item => {
+                        const md = item.metadata || {}, cat = item.categories || {};
                         const r = { __id: item.id, deck: [item._deck || slug] };
-                        if (item.categories?.suit) r.suit = [item.categories.suit];
-                        if (item.categories?.arcana) r.arcana = [item.categories.arcana];
+                        // Build clean group-by axes straight from metadata so the chip tray
+                        // offers exactly major/minor, suit, number — the way you'd organize cards.
+                        const arcana = md.arcana || cat.suit && 'minor' || null;  // metadata.arcana is the clean "major"/"minor"
+                        if (arcana) r.arcana = [arcana];
+                        if (md.suit) r.suit = [md.suit];
                         if (item.level) r.level = ['L' + item.level];
+                        // number / rank (majors: metadata.number 1–21; minors: metadata.rank Ace–King)
+                        const num = md.number ?? md.rank ?? item.number;
+                        if (num !== undefined && num !== null && num !== '') r.number = [String(num)];
+                        // the stamped cross-deck figure identity (Death, Justice…) becomes a group-by axis
+                        if (md.trump_key) r.trump = [String(md.trump_key)];
                         (item.keywords || []).forEach(kw => { (r.keyword = r.keyword || []).push(kw); });
                         deRecs.push(r);
                     });
                 });
                 const { discoverFields: df } = DimensionEngine;
-                const discoveredFields = df(deRecs).filter(f => f.count >= 2 && f.count <= 32);
+                const discoveredFields = df(deRecs).filter(f => f.count >= 2 && f.count <= 64);
 
                 // Set the grammar title
                 const titleEl = document.getElementById('grammar-title');
@@ -2460,8 +2603,12 @@
                 tray = document.createElement('div');
                 tray.id = 'dim-chip-tray';
                 tray.style.cssText = 'display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px;padding:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;';
-                const sidebar = document.getElementById('hierarchy-sidebar');
-                if (sidebar) sidebar.parentElement.insertBefore(tray, sidebar);
+                // Mount ABOVE the sidebar+content row, not inside it. The row is a
+                // flex container; inserting the tray as a sibling of the sidebar made
+                // it a 3rd flex column that ate ~900px and collapsed the content to a
+                // sliver. Placing it before .hierarchy-layout makes it full-width.
+                const layout = document.querySelector('.hierarchy-layout');
+                if (layout && layout.parentElement) layout.parentElement.insertBefore(tray, layout);
             }
             tray.innerHTML = '<span style="font-size:11px;color:var(--grammar-text-muted);flex-basis:100%;margin-bottom:2px;">Drag a dimension to Group by ↓</span>';
             fields.forEach(f => {
@@ -2486,7 +2633,7 @@
             hierarchyFilter = null;
             filteredItems = [...items];
             buildFilters();
-            buildDeckSidebar();
+            buildHierarchySidebar(); // delegates to buildDeckSidebar when deckGroupField set
         }
 
         // Group items by _deck (or by deckGroupField) for the sidebar when in multi-deck mode
@@ -3450,8 +3597,8 @@
 
         // Build hierarchy sidebar — level-agnostic recursive tree
         function buildHierarchySidebar() {
-            // Multi-deck mode: show deck groups instead of composite tree
-            if (activeDecks.length > 1) { buildDeckSidebar(); return; }
+            // Multi-deck mode or active group-by field: show group sidebar instead of composite tree
+            if (activeDecks.length > 1 || deckGroupField) { buildDeckSidebar(); return; }
 
             const sidebar = document.getElementById('hierarchy-sidebar');
             const hierarchyIndex = document.getElementById('hierarchy-index');
@@ -3756,6 +3903,8 @@
         }
 
         function renderGrid() {
+            // Keep the inferred Section Lens bar in sync with the loaded deck(s).
+            renderSectionLensBar();
             // Route to thumbnails layout if active
             if (layoutMode === 'thumbnails') {
                 renderThumbnailsGrid();
@@ -3785,6 +3934,9 @@
                 } else {
                     visualHtml = `<span class="icon">${noImageVisual(grammarType)}</span>`;
                 }
+                // Lens-flip: if a section is the chosen display field, show its text instead.
+                const _lensVisual = lensCellVisual(item);
+                if (_lensVisual !== null) visualHtml = _lensVisual;
 
                 // Selection badge (shows position number when selected)
                 const selectionBadge = isSelectionMode ? `<span class="selection-badge">${selectionIndex >= 0 ? selectionIndex + 1 : ''}</span>` : '';
@@ -3827,6 +3979,153 @@
             }
         }
 
+        // ── Section Lens — inference-driven section visibility + grid lens-flip ──
+        // Reusable across any grammar (tarot / I Ching / astrology): it reads only
+        // the `sections` map already present on every UnifiedItem. Nothing is
+        // stored; section identity = key name, provenance is inferred from the
+        // bracket-attribution convention "[Author, Work, Date — …]", and default
+        // visibility emerges from ubiquity. Compatible with recursive.eco as-is.
+        const LENS_IMAGE = '__image__';  // sentinel display field = show the image
+        window._sectionLens = window._sectionLens || {
+            displayField: LENS_IMAGE, // LENS_IMAGE or a normalized group key (grid lens-flip)
+            hidden: new Set(),        // normalized group keys hidden in card detail
+            inited: false,            // first-run default applied?
+        };
+
+        // Detect the leading "[…]" attribution line a later-interpretation section
+        // opens with; returns the inner label (author/work/date) or null.
+        function lensAttribution(text) {
+            if (typeof text !== 'string') return null;
+            const m = text.trim().match(/^\[([^\]]{3,200})\]/);
+            return m ? m[1].trim() : null;
+        }
+
+        // Normalize a section name into a grouping key. Bias is to MERGE: fold case,
+        // separators, possessives, trailing punctuation, and a tiny set of
+        // determiners/pronouns so trivial spelling differences ("About this Suit" /
+        // "About this suit", "Why it matters" / "Why this Matters") collapse to one
+        // pill. Conservative — keeps verbs/prepositions so genuinely different
+        // sections ("What" vs "What it is", "About suit" vs "About cards") stay apart.
+        const LENS_STOP = new Set(['the', 'a', 'an', 'this', 'that', 'these', 'those', 'it', 'its']);
+        function lensNorm(s) {
+            return String(s).toLowerCase()
+                .replace(/['’]s\b/g, '')        // possessive
+                .replace(/[_\-]+/g, ' ')
+                .replace(/[.:;,]+$/, '')
+                .split(/\s+/)
+                .filter(w => w && !LENS_STOP.has(w))
+                .join(' ')
+                .trim();
+        }
+
+        // Infer the section GROUPS present across the loaded deck(s). Sections are
+        // bucketed by lensNorm(); each group carries its display label (the most
+        // common original spelling), total count, coverage, and provenance.
+        // Returns [{ key, label, count, coverage, attributed, source }] by frequency.
+        function inferSections(list) {
+            const total = (list && list.length) || 0;
+            const stat = new Map();
+            (list || []).forEach(it => {
+                const secs = (it && it.sections) || {};
+                Object.entries(secs).forEach(([name, val]) => {
+                    if (typeof val !== 'string' || !val.trim()) return;
+                    const key = lensNorm(name);
+                    if (!key) return;
+                    let s = stat.get(key);
+                    if (!s) { s = { key, count: 0, attributed: false, source: null, _labels: new Map() }; stat.set(key, s); }
+                    s.count++;
+                    s._labels.set(name, (s._labels.get(name) || 0) + 1); // canonical label = most common spelling
+                    const attr = lensAttribution(val);
+                    if (attr) { s.attributed = true; if (!s.source) s.source = attr; }
+                });
+            });
+            return [...stat.values()].map(s => {
+                const label = [...s._labels.entries()].sort((a, b) => b[1] - a[1])[0][0];
+                return { key: s.key, label, count: s.count, coverage: total ? s.count / total : 0, attributed: s.attributed, source: s.source };
+            }).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+        }
+
+        // Build / refresh the Section Lens bar from the full item set (not the
+        // filtered subset) so available lenses stay stable while you filter.
+        function renderSectionLensBar() {
+            const bar = document.getElementById('section-lens-bar');
+            if (!bar) return;
+            const stats = inferSections(items);
+            if (!stats.length) { bar.classList.add('hidden'); bar.innerHTML = ''; return; }
+            bar.classList.remove('hidden');
+
+            const L = window._sectionLens;
+            // First run: hide later-interpretation layers by default (native voice first).
+            if (!L.inited) {
+                stats.forEach(s => { if (s.attributed) L.hidden.add(s.key); });
+                L.inited = true;
+            }
+            // Drop stale display field if that group vanished after a deck switch.
+            if (L.displayField !== LENS_IMAGE && !stats.some(s => s.key === L.displayField)) {
+                L.displayField = LENS_IMAGE;
+            }
+
+            const opts = `<option value="${LENS_IMAGE}"${L.displayField === LENS_IMAGE ? ' selected' : ''}>Image</option>`
+                + stats.map(s => `<option value="${escapeHtml(s.key)}"${s.key === L.displayField ? ' selected' : ''}>${escapeHtml(s.label)}</option>`).join('');
+
+            const chips = stats.map(s => {
+                const off = L.hidden.has(s.key);
+                const pct = Math.round(s.coverage * 100);
+                return `<span class="lens-chip${off ? ' off' : ''}${s.attributed ? ' attributed' : ''}"
+                    data-key="${escapeHtml(s.key)}"
+                    title="${escapeHtml(s.label)} — on ${s.count} of ${items.length} cards${s.source ? ' · ' + escapeHtml(s.source) : ''}${off ? ' · hidden in detail' : ''}">
+                    ${escapeHtml(s.label)}
+                    ${s.attributed ? '<span class="lens-later">later</span>' : ''}
+                    <span class="lens-cov">${pct}%</span>
+                </span>`;
+            }).join('');
+
+            const anyAttributed = stats.some(s => s.attributed);
+            const allAttrHidden = stats.filter(s => s.attributed).every(s => L.hidden.has(s.key));
+            const master = anyAttributed ? `<label class="lens-master" title="Hide every later-interpretation layer at once">
+                <input type="checkbox" id="lens-hide-later"${allAttrHidden ? ' checked' : ''}> Hide later interpretations</label>` : '';
+
+            bar.innerHTML = `<span class="lens-bar-label">Show as</span>
+                <select class="lens-display-select" id="lens-display-select">${opts}</select>
+                <span class="lens-bar-label" style="margin-left:6px;">Sections</span>
+                ${chips}${master}`;
+
+            // Wire controls (re-bound each rebuild; cheap and stateless).
+            const sel = document.getElementById('lens-display-select');
+            if (sel) sel.onchange = () => { L.displayField = sel.value; renderGrid(); };
+            bar.querySelectorAll('.lens-chip').forEach(chip => {
+                chip.onclick = () => {
+                    const key = chip.dataset.key;
+                    if (L.hidden.has(key)) L.hidden.delete(key); else L.hidden.add(key);
+                    renderSectionLensBar();
+                    if (selectedItem) openModal(selectedItem); // refresh open detail
+                };
+            });
+            const hideLater = document.getElementById('lens-hide-later');
+            if (hideLater) hideLater.onchange = () => {
+                stats.forEach(s => { if (s.attributed) { if (hideLater.checked) L.hidden.add(s.key); else L.hidden.delete(s.key); } });
+                renderSectionLensBar();
+                if (selectedItem) openModal(selectedItem);
+            };
+        }
+
+        // Grid lens-flip: when a section group is the display field, find this item's
+        // matching section (by normalized key) and return its HTML for the cell visual
+        // slot, or an empty-state marker. Returns null when Image display is active.
+        function lensCellVisual(item) {
+            const L = window._sectionLens;
+            if (!L || L.displayField === LENS_IMAGE) return null;
+            const secs = (item && item.sections) || {};
+            let raw = null;
+            for (const [name, val] of Object.entries(secs)) {
+                if (typeof val === 'string' && val.trim() && lensNorm(name) === L.displayField) { raw = val; break; }
+            }
+            if (!raw) return `<span class="lens-empty">— none —</span>`;
+            const attr = lensAttribution(raw);
+            const body = attr ? raw.trim().replace(/^\[[^\]]*\]\s*/, '') : raw;
+            return `<div class="lens-text">${attr ? `<span class="lens-attr">${escapeHtml(attr)}</span>` : ''}${mdToHtml(body)}</div>`;
+        }
+
         function renderThumbnailsGrid() {
             itemGrid.innerHTML = '';
             itemGrid.classList.add('thumbnails-layout');
@@ -3848,6 +4147,9 @@
                 } else {
                     imageHtml = `<span class="thumb-icon">${fallbackIcon}</span>`;
                 }
+                // Lens-flip: chosen section's text replaces the thumbnail image.
+                const _lensThumb = lensCellVisual(item);
+                if (_lensThumb !== null) imageHtml = _lensThumb;
 
                 // Determine routing — course / external-link / modal.
                 // May 21 2026: external-link detection extended to read
@@ -3971,7 +4273,6 @@
             selectedItem = item;
 
             // Reflect the open card in the URL so it's shareable / deep-linkable.
-            // On reload, the init code (params.get('item')) re-opens this card.
             try {
                 const u = new URL(window.location.href);
                 if (item.id) u.searchParams.set('item', item.id);
@@ -3982,6 +4283,15 @@
             document.querySelectorAll('.item-card').forEach(card => {
                 card.classList.toggle('active', card.dataset.itemId === item.id);
             });
+
+            // Study navigation: update counter + enable/disable prev/next
+            const idx = filteredItems.findIndex(i => i.id === item.id);
+            const counter = document.getElementById('modal-counter');
+            const prevBtn = document.getElementById('modal-prev');
+            const nextBtn = document.getElementById('modal-next');
+            if (counter && idx !== -1) counter.textContent = `${idx + 1} of ${filteredItems.length}`;
+            if (prevBtn) prevBtn.disabled = idx <= 0;
+            if (nextBtn) nextBtn.disabled = idx >= filteredItems.length - 1;
 
             // Render visual - prefer explicit image, fall through to YouTube thumb, then icon
             const detailThumbUrl = getItemThumbnailUrl(item);
@@ -4218,25 +4528,31 @@
                 }
             }
 
-            // Content sections
-            Object.entries(item.sections || {}).forEach(([title, content]) => {
-                // Handle different content types
-                let contentStr = '';
-                if (typeof content === 'string') {
-                    contentStr = content;
-                } else if (typeof content === 'object' && content !== null) {
-                    // Convert object sections to readable text
-                    contentStr = Object.entries(content)
-                        .map(([k, v]) => `${k}: ${v}`)
-                        .join('\n');
-                }
-                if (!contentStr || !contentStr.trim()) return;
-
+            // Content sections — traditional/native voice first (in the grammar's own
+            // order), then later commentary appended at the end in chronological order
+            // by the year in its "[Author, Work, YEAR — …]" attribution line. Hidden
+            // sections (toggled off in the Section Lens) are skipped.
+            const _secEntries = Object.entries(item.sections || {})
+                .filter(([title]) => !(window._sectionLens && window._sectionLens.hidden.has(lensNorm(title))))
+                .map(([title, content], i) => {
+                    let str = '';
+                    if (typeof content === 'string') str = content;
+                    else if (content && typeof content === 'object') str = Object.entries(content).map(([k, v]) => `${k}: ${v}`).join('\n');
+                    const attr = lensAttribution(str);
+                    const ym = attr && attr.match(/\b(1[0-9]{3}|20[0-9]{2})\b/);
+                    return { title, str, i, attributed: !!attr, year: ym ? +ym[1] : Infinity };
+                })
+                .filter(e => e.str && e.str.trim());
+            _secEntries.sort((a, b) =>
+                (a.attributed - b.attributed)                 // native (0) before later (1)
+                || (a.attributed ? (a.year - b.year || a.i - b.i)  // later: chronological, then original
+                                 : (a.i - b.i)));                  // native: keep grammar order
+            _secEntries.forEach(({ title, str, attributed }) => {
                 const isHighlight = title === 'Affirmation' || title === 'Questions';
                 bodyHtml += `
-                    <div class="content-section ${isHighlight ? 'highlight-box' : ''}">
-                        <h3 class="section-title">${escapeHtml(title.replace(/_/g, ' '))}</h3>
-                        <div class="section-content">${mdToHtml(contentStr)}</div>
+                    <div class="content-section ${isHighlight ? 'highlight-box' : ''}${attributed ? ' later-section' : ''}">
+                        <h3 class="section-title">${escapeHtml(title.replace(/_/g, ' '))}${attributed ? ' <span class="lens-later">later</span>' : ''}</h3>
+                        <div class="section-content">${mdToHtml(str)}</div>
                     </div>
                 `;
             });
@@ -4619,70 +4935,34 @@
             }
         }
 
-        async function submitReport(e) {
-            console.log('[Report] Submit clicked');
-            if (e) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
-            const reasonEl = document.getElementById('report-reason');
-            const submitBtn = document.querySelector('.report-submit');
-            console.log('[Report] Reason element:', reasonEl);
-            const reason = reasonEl ? reasonEl.value.trim() : '';
-            console.log('[Report] Reason:', reason);
+        function submitReport(e) {
+            if (e) { e.preventDefault(); e.stopPropagation(); }
+            const reason = (document.getElementById('report-reason')?.value || '').trim();
+            if (!reason) { alert('Please describe the issue.'); return; }
 
-            if (!reason) {
-                alert('Please describe the issue.');
-                return;
-            }
+            // Build context from the currently open card / grammar
+            const deckTitle = document.getElementById('grammar-title')?.textContent || '';
+            const cardName = selectedItem ? selectedItem.name : '';
+            const cardId = selectedItem ? selectedItem.id : '';
+            const pageUrl = window.location.href;
 
-            // Get grammar info from URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const grammarId = urlParams.get('id') || urlParams.get('deck') || urlParams.get('book');
-            const gType = urlParams.get('type') || 'unknown';
+            const title = encodeURIComponent(
+                `Accuracy: ${deckTitle}${cardName ? ' — ' + cardName : ''}`
+            );
+            const body = encodeURIComponent(
+`**Deck / grammar:** ${deckTitle}
+**Card:** ${cardName || '(deck-level)'}${cardId ? ' (' + cardId + ')' : ''}
+**Page:** ${pageUrl}
 
-            console.log('[Report] Sending report for:', grammarId, gType);
+**What's wrong:**
+${reason}
 
-            // Disable button during submission
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
-            }
-
-            try {
-                // Send report via API
-                const response = await fetch(`${getOfferApiBaseUrl()}/api/grammar-report`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        grammarId,
-                        grammarType: gType,
-                        reason,
-                        pageUrl: window.location.href
-                    })
-                });
-
-                const result = await response.json();
-                console.log('[Report] API response:', result);
-
-                if (result.success) {
-                    alert('Thank you for your report. We will review it shortly.');
-                    closeReportModal();
-                } else {
-                    alert('Failed to send report. Please try again later.');
-                }
-            } catch (error) {
-                console.error('[Report] Error sending report:', error);
-                alert('Failed to send report. Please try again later.');
-            } finally {
-                // Re-enable button
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Submit Report';
-                }
-            }
+---
+*Reported via tarot.recursive.eco*`
+            );
+            const url = `https://github.com/PlayfulProcess/recursive-tarot/issues/new?labels=accuracy&title=${title}&body=${body}`;
+            window.open(url, '_blank', 'noopener');
+            closeReportModal();
         }
 
         function setupEventListeners() {
@@ -4912,6 +5192,10 @@
                 .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
                 .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
                 .replace(/`([^`]+)`/g, '<code>$1</code>')
+                // Research-source paths (e.g. `research/cards/foo.md`) become GitHub links —
+                // every "Research note" points at its dossier on GitHub, app-wide.
+                .replace(/<code>(research\/[^<\s]+?\.md)<\/code>/g,
+                    '<a href="https://github.com/PlayfulProcess/recursive-tarot/blob/main/$1" target="_blank" rel="noopener noreferrer" title="View research source on GitHub">$1 ↗</a>')
                 .replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
             const lines = String(s).split(/\r?\n/);
             let html = '', inList = false, inQuote = false, m;
