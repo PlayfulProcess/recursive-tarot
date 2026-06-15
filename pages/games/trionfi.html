@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trionfi — Play the Tarot Game · Recursive Tarot</title>
+<!--
+  A playable, backend-free version of the ORIGINAL use of tarot: a trick-taking game
+  where the trumps (trionfi) triumph over the four suits — the 15th-century Italian
+  innovation. Simplified to a quick 10-trick duel vs. a basic AI, rendered with the
+  public-domain Tarot de Marseille (Conver, 1760), the classic game deck.
+-->
+<style>
+  :root{ --bg:#0f0d17; --panel:#1a1726; --ink:#ece8f5; --muted:#9b94b3; --accent:#d4af37; --line:#2a2440;
+         --win:#81b29a; --lose:#e07a5f; }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#fbfaff; --panel:#fff; --ink:#241b3a; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:920px;margin:0 auto;padding:18px 16px 60px}
+  h1{font-size:22px;margin:.2em 0 .1em}
+  h1 .sub{font-size:13px;font-weight:400;color:var(--muted)}
+  .lede{color:var(--muted);font-size:14px;line-height:1.55;max-width:70ch}
+  .lede a{color:var(--accent)}
+  .board{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .score{display:flex;gap:18px;align-items:center;font-size:14px;margin-left:auto}
+  .score b{font-size:20px}
+  .you-c{color:var(--win)} .ai-c{color:var(--lose)}
+  .label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+  .hand,.table-zone{display:flex;gap:8px;flex-wrap:wrap;min-height:128px;align-items:center}
+  .table-zone{justify-content:center;gap:26px;min-height:180px;margin:6px 0}
+  .card{width:84px;border-radius:7px;border:1px solid var(--line);background:#0a0712;overflow:hidden;
+    position:relative;display:block;flex:0 0 auto}
+  .card img{width:100%;height:134px;object-fit:cover;display:block}
+  .card .cap{font-size:9.5px;text-align:center;padding:2px 1px;color:var(--muted);line-height:1.1;height:22px;overflow:hidden}
+  .card.trump{border-color:var(--accent)}
+  .hand .card.play{cursor:pointer;transition:transform .12s,box-shadow .12s}
+  .hand .card.play:hover{transform:translateY(-7px);box-shadow:0 8px 20px rgba(147,51,234,.35)}
+  .hand .card.illegal{opacity:.32;filter:grayscale(.6);cursor:not-allowed}
+  .table-zone .card{width:108px;box-shadow:0 6px 22px rgba(0,0,0,.4)}
+  .table-zone .card img{height:172px}
+  .table-zone .slot{display:flex;flex-direction:column;align-items:center;gap:6px}
+  .table-zone .who{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+  .table-zone .who.winner{color:var(--accent);font-weight:700}
+  .back{width:84px;height:158px;border-radius:7px;border:1px solid var(--line);
+    background:repeating-linear-gradient(45deg,#241c3a,#241c3a 6px,#1a1430 6px,#1a1430 12px)}
+  .status{font-size:14px;margin:10px 0;min-height:20px;color:var(--ink)}
+  button{background:var(--accent);color:#1a1206;border:0;border-radius:9px;padding:9px 16px;font-size:14px;
+    font-weight:700;cursor:pointer}
+  button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:500}
+  .rules{font-size:13px;color:var(--muted);line-height:1.6}
+  .rules summary{cursor:pointer;color:var(--ink);font-weight:600;margin:.4em 0}
+  .result{font-size:18px;font-weight:700;margin:6px 0}
+  .trump-badge{position:absolute;top:3px;left:3px;background:var(--accent);color:#1a1206;font-size:9px;
+    font-weight:800;padding:1px 4px;border-radius:4px}
+  #err{color:var(--lose);padding:24px}
+</style>
+</head>
+<body>
+<script src="../../site-header.js?v=13"></script>
+<site-header active="play"></site-header>
+
+<div class="wrap">
+  <h1>Trionfi <span class="sub">— the tarot game, the way it began</span></h1>
+  <p class="lede">Before any fortune was ever told with them, tarot cards were for <strong>playing</strong>. The Italian
+  novelty of the 1440s was a set of <em>trionfi</em> — trumps — laid over an ordinary four-suit pack, cards that
+  <em>triumph</em> over the suits in a trick-taking game. Here is that idea, simplified to a quick duel, dealt from the
+  public-domain <strong>Tarot de Marseille</strong> (Conver, 1760). For the divinatory side, try the
+  <a href="../../viewers/caster.html">Caster</a> or the <a href="https://flow.recursive.eco/cast" target="_blank" rel="noopener">Oracle on recursive.eco ↗</a>.</p>
+
+  <div id="err" style="display:none"></div>
+
+  <div class="board" id="game" style="display:none">
+    <div class="row">
+      <div><div class="label">Opponent</div><div id="ai-hand" class="row" style="gap:5px;margin-top:5px"></div></div>
+      <div class="score"><span class="ai-c">Them <b id="ai-tricks">0</b></span><span class="you-c">You <b id="you-tricks">0</b></span></div>
+    </div>
+    <div class="table-zone" id="table"></div>
+    <div class="status" id="status"></div>
+    <div><div class="label">Your hand</div><div id="you-hand" class="hand"></div></div>
+    <div class="row" style="margin-top:14px">
+      <button id="newgame">New game</button>
+      <button class="ghost" id="how">How to play</button>
+    </div>
+    <details class="rules" id="rules" style="margin-top:12px">
+      <summary>Rules</summary>
+      <p>A 10-trick duel. The deck is six <strong>trumps</strong> (I–VI) plus the Coins and Cups one through seven.
+      You lead first.</p>
+      <ul>
+        <li><strong>Follow suit.</strong> When a suit is led you must play that suit if you can; only if you have
+        none may you play a trump or throw another card.</li>
+        <li><strong>Trumps triumph.</strong> Any trump beats any suit card. Between two trumps, or two cards of the led
+        suit, the higher number wins. A card of neither the led suit nor a trump cannot win the trick.</li>
+        <li>The trick's winner leads the next. Win the most of the ten tricks to win the game.</li>
+      </ul>
+    </details>
+  </div>
+</div>
+
+<script>
+const SRC='../../tarot/tarot-de-marseille-conver/grammar.json';
+const TOTAL=10;
+const RANKNUM={ace:1,two:2,three:3,four:4,five:5,six:6,seven:7};
+const ROMAN=['','I','II','III','IV','V','VI'];
+let DECK=[], hands={you:[],ai:[]}, tricks={you:0,ai:0};
+let table=[], ledSuit=null, lead='you', turn='you', busy=false, played=0;
+const $=id=>document.getElementById(id);
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+const cardVal=c=>(c.kind==='trump'?100:0)+c.rank;            // trumps valued high → saved when dumping
+const img=i=>i.image_url||(i.metadata||{}).image_url;
+
+async function loadDeck(){
+  const g=await (await fetch(SRC)).json();
+  const trumps=g.items
+    .filter(i=>(i.metadata||{}).trump_key && img(i) && i.metadata.number>=1 && i.metadata.number<=6)
+    .map(i=>({kind:'trump',rank:i.metadata.number,img:img(i),label:i.name.split(/\s+[—–-]\s+/)[0]}));
+  const suit=s=>g.items
+    .filter(i=>{const mk=(i.metadata||{}).minor_key; return mk && mk.endsWith('-of-'+s) && img(i) && RANKNUM[mk.split('-of-')[0]]>=1 && RANKNUM[mk.split('-of-')[0]]<=7;})
+    .map(i=>{const r=RANKNUM[i.metadata.minor_key.split('-of-')[0]]; return {kind:s,rank:r,img:img(i),label:cap(i.metadata.minor_key.split('-of-')[0])+' of '+cap(s)};});
+  DECK=[...trumps,...suit('coins'),...suit('cups')];
+  if(DECK.length<20) throw new Error('Not enough card images to deal a game.');
+}
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]];} return a; }
+function sortHand(h){ const ord={coins:0,cups:1,trump:2}; h.sort((a,b)=>ord[a.kind]-ord[b.kind]||a.rank-b.rank); }
+function legal(hand, led){ if(!led) return hand.slice(); const f=hand.filter(c=>c.kind===led); return f.length?f:hand.slice(); }
+function beats(c, leader){
+  if(c.kind==='trump'&&leader.kind!=='trump') return true;
+  if(c.kind==='trump'&&leader.kind==='trump') return c.rank>leader.rank;
+  if(c.kind!=='trump'&&leader.kind==='trump') return false;
+  return c.kind===ledSuit && leader.kind===ledSuit && c.rank>leader.rank;
+}
+function trickWinner(){
+  const t=table.filter(x=>x.card.kind==='trump');
+  if(t.length) return t.reduce((a,b)=>b.card.rank>a.card.rank?b:a).by;
+  const led=table.filter(x=>x.card.kind===ledSuit);
+  return led.reduce((a,b)=>b.card.rank>a.card.rank?b:a).by;
+}
+
+function newGame(){
+  const d=shuffle(DECK.slice());
+  hands.you=d.slice(0,10); hands.ai=d.slice(10,20); sortHand(hands.you);
+  tricks={you:0,ai:0}; played=0; lead='you';
+  startTrick();
+}
+function startTrick(){
+  table=[]; ledSuit=null;
+  if(lead==='you'){ turn='you'; busy=false; setStatus('Your lead — play any card.'); }
+  else { turn='ai'; busy=true; setStatus('Opponent leads…'); setTimeout(aiLead,650); }
+  render();
+}
+function aiLead(){
+  const nt=hands.ai.filter(c=>c.kind!=='trump'); const pool=nt.length?nt:hands.ai;
+  const card=pool.reduce((a,b)=>b.rank<a.rank?b:a);
+  remove('ai',card); ledSuit=card.kind; table.push({by:'ai',card});
+  turn='you'; busy=false; setStatus('Opponent led the '+card.label+'. Follow.'); render();
+}
+function playerPlay(card){
+  if(busy||turn!=='you') return;
+  const lset=legal(hands.you, table.length?ledSuit:null);
+  if(!lset.includes(card)){ setStatus('You must follow '+ledSuit+' — play a highlighted card.'); return; }
+  remove('you',card);
+  if(table.length===0) ledSuit=card.kind;
+  table.push({by:'you',card}); render();
+  if(table.length===2) finishTrick();
+  else { busy=true; turn='ai'; setStatus('Opponent thinking…'); setTimeout(aiFollow,650); }
+}
+function aiFollow(){
+  const lset=legal(hands.ai, ledSuit); const leader=table[0].card;
+  const wins=lset.filter(c=>beats(c,leader));
+  const card=(wins.length?wins:lset).reduce((a,b)=>cardVal(b)<cardVal(a)?b:a);
+  remove('ai',card); table.push({by:'ai',card}); render(); finishTrick();
+}
+function finishTrick(){
+  busy=true; const w=trickWinner(); tricks[w]++; played++; lead=w;
+  render(true);
+  setStatus((w==='you'?'You take the trick.':'Opponent takes the trick.')+'  ('+tricks.you+'–'+tricks.ai+')');
+  if(played>=TOTAL||hands.you.length===0) setTimeout(endGame,1000);
+  else setTimeout(startTrick,1200);
+}
+function endGame(){
+  const win=tricks.you>tricks.ai, tie=tricks.you===tricks.ai;
+  setStatus('');
+  $('table').innerHTML=`<div class="result" style="color:${tie?'var(--muted)':win?'var(--win)':'var(--lose)'}">`
+    +(tie?`A draw — ${tricks.you} tricks each.`:win?`You win, ${tricks.you}–${tricks.ai}! The trumps served you well.`
+      :`You lose, ${tricks.you}–${tricks.ai}. The trumps fell to your opponent.`)+`</div>`;
+}
+function remove(who,card){ const h=hands[who]; h.splice(h.indexOf(card),1); }
+function setStatus(t){ $('status').textContent=t; }
+
+function cardEl(c, opts={}){
+  const el=document.createElement(opts.play?'button':'div');
+  el.className='card'+(c.kind==='trump'?' trump':'')+(opts.play?' play':'')+(opts.illegal?' illegal':'');
+  if(opts.play) el.style.cssText='padding:0;font:inherit';
+  el.innerHTML=(c.kind==='trump'?`<span class="trump-badge">${ROMAN[c.rank]||'T'}</span>`:'')
+    +`<img loading="lazy" src="${c.img}" alt=""><div class="cap">${c.label}</div>`;
+  if(opts.play) el.onclick=()=>playerPlay(c);
+  return el;
+}
+function render(showWinner){
+  // opponent hand (backs)
+  const ai=$('ai-hand'); ai.innerHTML='';
+  hands.ai.forEach(()=>{ const b=document.createElement('div'); b.className='back'; b.style.cssText='width:46px;height:74px'; ai.appendChild(b); });
+  $('ai-tricks').textContent=tricks.ai; $('you-tricks').textContent=tricks.you;
+  // table
+  const tb=$('table'); tb.innerHTML='';
+  const win=showWinner?trickWinner():null;
+  table.forEach(x=>{ const slot=document.createElement('div'); slot.className='slot';
+    const who=document.createElement('div'); who.className='who'+(showWinner&&x.by===win?' winner':'');
+    who.textContent=x.by==='you'?'You':'Them'; slot.appendChild(who); slot.appendChild(cardEl(x.card)); tb.appendChild(slot); });
+  // your hand
+  const yh=$('you-hand'); yh.innerHTML='';
+  const lset=(turn==='you'&&!busy)?legal(hands.you, table.length?ledSuit:null):hands.you;
+  hands.you.forEach(c=>{ const playable=(turn==='you'&&!busy); yh.appendChild(cardEl(c,{play:playable,illegal:playable&&!lset.includes(c)})); });
+}
+
+(async function(){
+  try{ await loadDeck(); $('game').style.display='block'; newGame(); }
+  catch(e){ $('err').style.display='block'; $('err').textContent='Could not start the game: '+e.message; }
+})();
+$('newgame')?.addEventListener('click',newGame);
+$('how')?.addEventListener('click',()=>{ const r=$('rules'); r.open=true; r.scrollIntoView({behavior:'smooth'}); });
+</script>
+</body>
+</html>

@@ -53,7 +53,7 @@
   ];
   // [key, label, href, cssClass, external?]
   const TOOLS = [
-    ['caster', '🔮 Caster',  PFX + 'viewers/caster.html',      't-caster'],
+    ['play',   '🎴 Play',    PFX + 'pages/play.html',          't-caster'],
     ['shop',   '🛒 Shop',    PFX + 'pages/shop.html',          't-shop'],
     ['github', 'GitHub ↗',  'https://github.com/PlayfulProcess/recursive-tarot', 't-github', true],
   ];
@@ -72,7 +72,7 @@
     if (f.startsWith('genealogy-tree')) return 'treeoflife';
     if (f.startsWith('timeline')) return 'timeline';
     if (f.startsWith('tree-viewer')) return 'tree';
-    if (f.startsWith('caster')) return 'caster';
+    if (f.startsWith('play') || f.startsWith('caster') || f.startsWith('trionfi') || location.pathname.includes('/games/')) return 'play';
     if (f.startsWith('genealogy')) return 'genealogy';
     if (f.startsWith('course')) return 'course';
     if (f.startsWith('shop')) return 'shop';
