@@ -29,9 +29,9 @@
   svg:active{cursor:grabbing}
   .tree-link{fill:none;stroke:var(--line);stroke-width:1.1px;opacity:.7}
   .derive-link{fill:none;stroke-width:1.4px;opacity:.55;stroke-dasharray:3 3}
-  .node circle{cursor:pointer;stroke:#0f0d17;stroke-width:1.2px}
+  .node circle{cursor:pointer;stroke:var(--bg);stroke-width:1.2px}
   .node text{cursor:pointer;font-size:11px;fill:var(--ink);paint-order:stroke;
-    stroke:#0f0d17;stroke-width:3px;stroke-linejoin:round}
+    stroke:var(--bg);stroke-width:3px;stroke-linejoin:round}
   .node.branch text{font-size:12.5px;font-weight:700}
   .node.root text{font-size:13px;font-weight:800;fill:var(--accent)}
   .node:hover circle{stroke:var(--accent);stroke-width:2px}
@@ -52,7 +52,8 @@
     border-radius:999px;color:var(--accent);text-decoration:none;font-size:13px;font-weight:600}
   aside#detail .close{float:right;cursor:pointer;color:var(--muted);font-size:20px;line-height:1}
   /* legend + controls */
-  .legend{position:absolute;left:14px;bottom:14px;background:rgba(20,17,32,.82);border:1px solid var(--line);
+  .legend{position:absolute;left:14px;bottom:14px;background:color-mix(in srgb,var(--panel) 88%,transparent);
+    color:var(--ink);border:1px solid var(--line);
     border-radius:10px;padding:10px 12px;font-size:12px;backdrop-filter:blur(4px)}
   .legend .row{display:flex;align-items:center;gap:7px;margin:3px 0;cursor:pointer}
   .legend .row.off{opacity:.35}
@@ -65,8 +66,12 @@
   .controls label{display:inline-flex;align-items:center;gap:6px;background:var(--panel);border:1px solid var(--line);
     border-radius:8px;padding:6px 11px;font-size:12px;color:#cfc8e2;cursor:pointer}
   .hint{position:absolute;left:50%;top:14px;transform:translateX(-50%);font-size:11.5px;color:var(--muted);
-    background:rgba(20,17,32,.7);padding:5px 12px;border-radius:999px;pointer-events:none}
+    background:color-mix(in srgb,var(--panel) 80%,transparent);border:1px solid var(--line);
+    padding:5px 12px;border-radius:999px;pointer-events:none}
   #err{padding:40px;text-align:center;color:#e07a5f}
+  /* embed mode: drop site chrome so the book figure is just the viz */
+  body.embed header.site, body.embed site-header, body.embed view-switcher, body.embed .hint{display:none}
+  body.embed .wrap{height:600px}
 </style>
 </head>
 <body>
@@ -78,7 +83,6 @@
     <div class="hint">Drag to pan · scroll to zoom · click a deck for detail · hover to trace descent</div>
     <div class="controls">
       <view-switcher active="treeoflife"></view-switcher>
-      <label style="font-size:12px;color:#9b94b3;gap:4px">Hub color: <select id="hub-field" style="background:#161227;color:#cfc8e2;border:1px solid #2a2440;border-radius:6px;padding:3px 7px;font-size:12px;cursor:pointer"><option value="branch">branch</option></select></label>
       <label><input type="checkbox" id="toggle-derive" checked> Descent arcs</label>
       <button id="btn-reset">Reset view</button>
     </div>
@@ -116,6 +120,10 @@ const SLUG_MAP = {
 
 const params = new URLSearchParams(location.search);
 const SRC = params.get('src') || '../tarot/tree-of-tarot/grammar.json';
+const EMBED = params.get('embed');
+if(EMBED) document.body.classList.add('embed');
+function postHeight(){ if(!EMBED) return; try{ parent.postMessage({type:'tarotEmbedHeight',h:Math.ceil(document.body.scrollHeight)},'*'); }catch(e){} }
+if(EMBED){ window.addEventListener('load',()=>setTimeout(postHeight,90)); window.addEventListener('resize',postHeight); }
 
 let G, itemMap, hidden = new Set();
 
@@ -138,16 +146,9 @@ let G, itemMap, hidden = new Set();
   }
   const nested = build(root);
 
-  // Discover groupable fields from deck-level items
-  const deckItems = items.filter(i=>i.id.startsWith('deck-'));
-  const deRecs = deckItems.map(i=>{ const r={}, md=i.metadata||{};
-    Object.entries(md).forEach(([k,v])=>{ if(typeof v==='string'&&v&&v.length<60) r[k]=[v]; }); return r; });
-  const fields = DimensionEngine.discoverFields(deRecs).filter(f=>f.count>=2&&f.count<=10);
-  const sel = document.getElementById('hub-field');
-  sel.innerHTML = fields.map(f=>`<option value="${f.name}"${f.name==='branch'?' selected':''}>${f.name} (${f.count})</option>`).join('');
-  hubField = sel.value || 'branch';
+  // Color hubs by branch (the only field with >1 value across the decks; the old picker was a no-op).
+  hubField = 'branch';
   rebuildHubColors();
-  sel.addEventListener('change', ()=>{ hubField=sel.value; hidden.clear(); rebuildHubColors(); buildLegend(); draw(nested); });
 
   buildLegend();
   draw(nested);
@@ -250,14 +251,19 @@ function draw(nested){
 }
 
 function traceDescent(d,nodeById,node,g){
-  // highlight the chosen node, its taxonomic ancestors, and derives_from chain
+  // highlight the chosen node, its taxonomic ancestors, and its derives_from chain
+  // in BOTH directions — ancestors it descends from AND descendants that descend from it.
   const keep=new Set();
   let n=d; while(n){ keep.add(n.data.id); n=n.parent; }
-  // follow derives_from upstream
-  const stack=[d.data.id];
-  while(stack.length){ const id=stack.pop();
+  // upstream: things this deck derives from
+  const up=[d.data.id];
+  while(up.length){ const id=up.pop();
     const df=((itemMap[id]||{}).metadata||{}).derives_from||[];
-    df.forEach(s=>{ if(!keep.has(s)){ keep.add(s); stack.push(s);} }); }
+    df.forEach(s=>{ if(!keep.has(s)){ keep.add(s); up.push(s);} }); }
+  // downstream: things that derive from this deck (reverse derives_from edges)
+  const down=[d.data.id];
+  while(down.length){ const id=down.pop();
+    (G.items||[]).forEach(it=>{ if(((it.metadata||{}).derives_from||[]).includes(id) && !keep.has(it.id)){ keep.add(it.id); down.push(it.id);} }); }
   node.classed('dim',x=>!keep.has(x.data.id)).classed('hot',x=>keep.has(x.data.id));
   g.selectAll('.tree-link').classed('dim',true);
   g.selectAll('.derive-link').classed('dim',l=>!(keep.has(l.s.data.id)&&keep.has(l.t.data.id)));

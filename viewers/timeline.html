@@ -6,11 +6,14 @@
 <title>Tarot Timeline — Decks Through Time · Recursive Tarot</title>
 <style>
   :root{
-    --bg:#0f0d17; --panel:#1a1726; --ink:#ece8f5; --muted:#9b94b3; --accent:#d4af37; --line:#2a2440;
+    --bg:#0f0d17; --panel:#1a1726; --ink:#ece8f5; --ink-strong:#fff; --muted:#9b94b3; --accent:#b8860b; --line:#2a2440;
     --roots:#c9a24b; --a:#e07a5f; --b:#81b29a; --c:#6d8ec9; --occult:#9b6dc9; --sui:#c96d9b;
   }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#fbfaff; --panel:#ffffff; --ink:#241b3a; --ink-strong:#0c0817; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
+  }
   *{box-sizing:border-box}
-  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);color-scheme:light dark;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
   .wrap{display:flex;height:calc(100vh - 52px);min-height:0}
   #stage{flex:1;display:flex;flex-direction:column;min-width:0}
@@ -22,13 +25,13 @@
   .toolbar button:hover{border-color:var(--accent);color:var(--accent)}
   #scroll{flex:1;overflow-y:auto;overflow-x:hidden;position:relative}
   svg{display:block;width:100%}
-  .axis path,.axis line{stroke:#39324d}
-  .axis text{fill:#9b94b3;font-size:11px}
-  .gridline{stroke:#221d33;stroke-dasharray:2 4}
+  .axis path,.axis line{stroke:var(--line)}
+  .axis text{fill:var(--muted);font-size:11px}
+  .gridline{stroke:var(--line);stroke-dasharray:2 4}
   .rail{fill:none;stroke-width:2px;opacity:.55}
   .rowhit{fill:transparent;cursor:pointer}
-  .rowhit:hover + .rowg .dname, .rowg:hover .dname{fill:#fff}
-  .node{stroke:#0f0d17;stroke-width:2px;cursor:pointer}
+  .rowhit:hover + .rowg .dname, .rowg:hover .dname{fill:var(--ink-strong)}
+  .node{stroke:var(--bg);stroke-width:2px;cursor:pointer}
   .dname{font-size:13.5px;fill:var(--ink);font-weight:600;cursor:pointer}
   .dyear{font-size:12px;fill:var(--accent);font-weight:700}
   .dbranch{font-size:11px;fill:var(--muted)}
@@ -46,6 +49,11 @@
   aside#detail .opencards{display:inline-block;margin-top:10px;padding:8px 14px;border:1px solid var(--accent);border-radius:999px;color:var(--accent);text-decoration:none;font-size:13px;font-weight:600}
   aside#detail .close{float:right;cursor:pointer;color:var(--muted);font-size:20px;line-height:1}
   #err{padding:40px;text-align:center;color:#e07a5f}
+  /* embed mode: a clean book figure — no site chrome, no controls, no internal scroll */
+  body.embed site-header, body.embed view-switcher, body.embed .lbl-descent{display:none}
+  body.embed .wrap{height:auto;display:block}
+  body.embed #stage{display:block}
+  body.embed #scroll{overflow:visible;flex:none}
 </style>
 </head>
 <body>
@@ -57,9 +65,8 @@
     <div class="toolbar">
       <div class="title">Tarot Timeline <span class="sub">— decks through time, descent on the rail</span></div>
       <view-switcher active="timeline"></view-switcher>
-      <label style="gap:4px">Lane: <select id="lane-field" style="background:#1a1726;color:#cfc8e2;border:1px solid #2a2440;border-radius:6px;padding:3px 7px;font-size:12px;cursor:pointer"><option value="branch">branch</option></select></label>
       <button id="flip">↑ Oldest first</button>
-      <label><input type="checkbox" id="toggle-derive" checked> Descent</label>
+      <label class="lbl-descent"><input type="checkbox" id="toggle-derive" checked> Descent</label>
     </div>
     <div id="scroll"><svg id="svg"></svg><div id="err" style="display:none"></div></div>
     <div class="legend" id="legend"></div>
@@ -77,6 +84,10 @@ const SLUG_MAP={'deck-visconti-sforza':'visconti-sforza-tarot','deck-cary-yale':
 
 const params=new URLSearchParams(location.search);
 const SRC=params.get('src')||'../tarot/tree-of-tarot/grammar.json';
+const EMBED=params.get('embed');
+if(EMBED) document.body.classList.add('embed');
+function postHeight(){ if(!EMBED) return; try{ parent.postMessage({type:'tarotEmbedHeight',h:Math.ceil(document.body.scrollHeight)},'*'); }catch(e){} }
+if(EMBED) window.addEventListener('load',()=>setTimeout(postHeight,90));
 let itemMap, decks, hidden=new Set(), oldestFirst=true, laneField='branch';
 let laneValues=[], colorOf={};   // set by buildLaneFromField()
 
@@ -113,16 +124,8 @@ function buildLaneFromField(){
       return d;
     }).filter(d=>d.year!=null);
 
-    // Discover field options via DimensionEngine
-    const deRecs=decks.map(d=>{ const r={};
-      Object.entries(d).forEach(([k,v])=>{ if(typeof v==='string'&&v&&!['id','name','when','image'].includes(k)) r[k]=[v]; });
-      return r; });
-    const fields=DimensionEngine.discoverFields(deRecs).filter(f=>f.count>=2&&f.count<=12);
-
-    const sel=document.getElementById('lane-field');
-    sel.innerHTML=fields.map(f=>`<option value="${f.name}"${f.name==='branch'?' selected':''}>${f.name} (${f.count})</option>`).join('');
-    laneField=sel.value||'branch';
-    sel.addEventListener('change',()=>{ laneField=sel.value; hidden.clear(); buildLaneFromField(); buildLegend(); draw(); });
+    // Lane by branch — the only deck field with more than one value, so the old picker was a no-op.
+    laneField='branch';
   }catch(e){ document.getElementById('err').style.display='block'; document.getElementById('err').textContent=e.message; return; }
   buildLaneFromField(); buildLegend(); draw();
   window.addEventListener('resize',draw);
@@ -193,6 +196,7 @@ function draw(){
    .on('mouseleave',()=>{g.classed('dim',false).classed('hot',false);svg.selectAll('.rail').classed('dim',false);});
 
   svg.on('click',()=>document.getElementById('detail').classList.remove('open'));
+  postHeight();
 }
 
 function trace(id,g){

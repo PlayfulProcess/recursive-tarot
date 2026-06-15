@@ -632,8 +632,8 @@
 
         /* ── Tarot embeds (filled by expandTarotEmbeds from [data-embed]) ── */
         .tarot-embed{ margin:1.6rem 0; }
-        .viewer-frame{ width:100%; height:520px; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; background:#161029; }
-        .viewer-frame iframe{ width:100%; height:100%; border:0; display:block; }
+        .viewer-frame{ width:100%; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; background:#fbfaff; }
+        .viewer-frame iframe{ width:100%; height:560px; border:0; display:block; }
         .print-figure{ display:none; border:1px solid #cbd5e1; border-radius:12px; overflow:hidden; }
         .print-figure img{ display:block; width:100%; height:auto; }
         .tarot-embed figcaption, .strip + figcaption{ font-size:.8rem; color:#6b7280; text-align:center; margin-top:.4rem; }
@@ -996,6 +996,10 @@
                     const fig=w==='lineage'?'../print/book/figures/lineage.png':'../print/book/figures/timeline.png';
                     el.innerHTML=`<figure class="tarot-embed"><div class="viewer-frame screen-only"><iframe loading="lazy" title="${label}" src="${src}"></iframe></div><div class="print-figure"><img src="${fig}" alt="${label}"></div><figcaption>${label}. Interactive on screen; a static plate in print.</figcaption></figure>`;
                   });
+                  // embeds report their full content height (?embed=1) so they render whole, no inner scroll
+                  if(!window.__tarotEmbedHeightHooked){ window.__tarotEmbedHeightHooked=true;
+                    window.addEventListener('message',e=>{ if(!e.data||e.data.type!=='tarotEmbedHeight')return;
+                      document.querySelectorAll('.viewer-frame iframe').forEach(f=>{ if(f.contentWindow===e.source) f.style.height=Math.max(320,e.data.h)+'px'; }); }); }
                   // people — the weave + a who's-who organised BY ROLE (deck-specific makers
                   // are woven into the deck chapters instead).
                   const peopleEls=[...root.querySelectorAll('[data-embed="people"]')];
