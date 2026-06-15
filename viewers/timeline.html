@@ -54,6 +54,8 @@
   body.embed .wrap{height:auto;display:block}
   body.embed #stage{display:block}
   body.embed #scroll{overflow:visible;flex:none}
+  /* in the (light) book, force the embed light regardless of the reader's OS theme */
+  body.embed{ --bg:#fbfaff; --panel:#ffffff; --ink:#241b3a; --ink-strong:#0c0817; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
 </style>
 </head>
 <body>
@@ -149,8 +151,9 @@ function draw(){
   const H=padTop+innerH+padBot;
   const y=d3.scaleLinear().domain(years).range(oldestFirst?[padTop,padTop+innerH]:[padTop+innerH,padTop]);
   const lanes=laneValues; // dynamic from buildLaneFromField()
-  const laneW=(W-axisW-16)/Math.max(1,lanes.length);
-  const laneX=v=>axisW + lanes.indexOf(v)*laneW + laneW*0.28;
+  const rightGutter=110;  // room for the rightmost lane's deck names so they don't clip
+  const laneW=(W-axisW-rightGutter)/Math.max(1,lanes.length);
+  const laneX=v=>axisW + lanes.indexOf(v)*laneW + laneW*0.18;
 
   const svg=d3.select('#svg').attr('viewBox',[0,0,W,H]).attr('height',H); svg.selectAll('*').remove();
 

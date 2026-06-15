@@ -72,6 +72,8 @@
   /* embed mode: drop site chrome so the book figure is just the viz */
   body.embed header.site, body.embed site-header, body.embed view-switcher, body.embed .hint{display:none}
   body.embed .wrap{height:600px}
+  /* in the (light) book, force the embed light regardless of the reader's OS theme */
+  body.embed{ --bg:#fbfaff; --panel:#ffffff; --ink:#241b3a; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
 </style>
 </head>
 <body>
