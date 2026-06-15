@@ -637,6 +637,16 @@
         .print-figure{ display:none; border:1px solid #cbd5e1; border-radius:12px; overflow:hidden; }
         .print-figure img{ display:block; width:100%; height:auto; }
         .tarot-embed figcaption, .strip + figcaption{ font-size:.8rem; color:#6b7280; text-align:center; margin-top:.4rem; }
+        .plates-h{ font-size:.95rem; font-weight:700; color:#3f3a52; margin:1.3rem 0 .55rem; }
+        .plate-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+        .plate-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:1rem; }
+        .plate{ margin:0; }
+        .plate a{ display:block; }
+        .plate img{ width:100%; border-radius:8px; border:1px solid #e5e7eb; background:#faf8ff; display:block; }
+        .plate-row .plate img{ height:300px; object-fit:contain; }
+        .plate-grid .plate img{ height:210px; object-fit:contain; }
+        .plate figcaption{ font-size:.78rem; color:#6b7280; margin-top:.45rem; line-height:1.45; text-align:left; }
+        @media print{ .plate-row,.plate-grid{ grid-template-columns:repeat(2,1fr); } }
         .people-weave h3{ margin:1.2rem 0 .4rem; }
         .whoswho{ display:grid; gap:.9rem; }
         .bio{ border-left:3px solid #c4a7ff; padding:.2rem 0 .2rem .8rem; }
@@ -1196,14 +1206,33 @@
                   // full-page plates (front gallery)
                   const plateEls=[...root.querySelectorAll('[data-embed="plates"]')];
                   if(plateEls.length){
-                    // One card across the centuries: Death. The skeleton persists for ~460 years
-                    // while the scene around it is rebuilt each time — the 'painted fossil' in one card.
-                    const PLATES=[['visconti-sforza-tarot','death','Death — Visconti-Sforza, Milan, c. 1451. The earliest clear tarot Death: a white skeleton standing frontally on a gold ground, holding a bow and arrow.'],['tarot-de-marseille-conver','death','Death — Tarot de Marseille (Conver), 1760. Three centuries on, the same skeleton now mows a field of severed body parts with a scythe — and the card is left pointedly untitled.'],['golden-dawn-book-t-tarot','death','Death — Rider-Waite-Smith line, 1909. The skeleton survives the whole journey but is restaged once more: an armoured rider on a pale horse beneath a rising sun. The emblem holds; the scene is rebuilt each time.'],['visconti-sforza-tarot','world','The World — Visconti-Sforza, c. 1451. Hand-painted on gold for the ducal court.'],['court-de-gebelin-tarot','magician','The Magician — Court de Gébelin’s plates, 1781. The street conjurer reread as an Egyptian sage — the moment the meaning began to turn.']];
-                    let html='';
-                    for(const [slug,tk,cap] of PLATES){ const dg=await get(T+'/'+slug+'/grammar.json'); if(!dg)continue;
-                      const it=dg.items.find(i=>(i.metadata||{}).trump_key===tk); const img=it&&(it.image_url||(it.metadata||{}).image_url);
-                      if(img)html+=`<figure class="plate"><img loading="lazy" src="${esc(img)}"><figcaption>${esc(cap)}</figcaption></figure>`;
-                    }
+                    // Part 1 — one card across the centuries: Death. The skeleton persists ~460 years
+                    // while the scene around it is rebuilt each time (the 'painted fossil').
+                    const DEATH=[
+                      ['visconti-sforza-tarot','tk:death','Death — Visconti-Sforza, Milan, c. 1451. The earliest clear tarot Death: a white skeleton standing frontally on a gold ground, holding a bow and arrow.'],
+                      ['tarot-de-marseille-conver','tk:death','Death — Tarot de Marseille (Conver), 1760. Three centuries on, the same skeleton now mows a field of severed body parts with a scythe — and the card is left pointedly untitled.'],
+                      ['golden-dawn-book-t-tarot','tk:death','Death — Rider-Waite-Smith line, 1909. The skeleton survives the whole journey but is restaged once more: an armoured rider on a pale horse beneath a rising sun.']];
+                    // Part 2 — continuity (the Fool, recognisable for 460 years) + diversity (how far the family spreads).
+                    const ICONS=[
+                      ['visconti-sforza-tarot','tk:fool','The Fool — Visconti-Sforza, c. 1451. A ragged wanderer; the figure scarcely changes for five centuries.'],
+                      ['tarot-de-marseille-conver','tk:fool','Le Mat — Marseille (Conver), 1760. The same vagabond and his nipping dog, now in woodcut.'],
+                      ['golden-dawn-book-t-tarot','tk:fool','The Fool — Rider-Waite-Smith line, 1909. Still the wanderer, stepping off a cliff into the modern deck.'],
+                      ['mamluk-deck','item:cups-king','Mamluk card, 14th–15th c. Egypt/Syria — the four-suit ancestor that reached Europe in the 1370s.'],
+                      ['sola-busca-tarot','item:cups-05','Sola Busca, 1491 — the first deck to give every numbered pip a figured scene, four centuries before the RWS.'],
+                      ['mantegna-tarocchi','item:plate-01','The "Mantegna Tarocchi", c. 1465 — a humanist set of ranks and virtues, not a tarot at all: a cousin, not a parent.'],
+                      ['visconti-sforza-tarot','tk:world','The World — Visconti-Sforza, c. 1451. Tooled gold leaf for a ducal court: tarot began as luxury, not occultism.'],
+                      ['tarot-de-marseille-conver','tk:moon','The Moon — Marseille, 1760. The uncanny scene of towers, dogs, and crayfish the occultists inherited whole.']];
+                    const resolve=(dg,spec)=> spec.startsWith('tk:') ? dg.items.find(i=>(i.metadata||{}).trump_key===spec.slice(3))
+                      : spec.startsWith('item:') ? dg.items.find(i=>i.id===spec.slice(5))
+                      : dg.items.find(i=>i.image_url||(i.metadata||{}).image_url);
+                    async function gallery(list){ let h='';
+                      for(const [slug,spec,cap] of list){ const dg=await get(T+'/'+slug+'/grammar.json'); if(!dg)continue;
+                        const it=resolve(dg,spec); const img=it&&(it.image_url||(it.metadata||{}).image_url); if(!img)continue;
+                        const href=`../viewers/cards.html?src=${encodeURIComponent('../tarot/'+slug+'/grammar.json')}&item=${encodeURIComponent(it.id)}`;
+                        h+=`<figure class="plate"><a href="${href}"><img loading="lazy" src="${esc(img)}"></a><figcaption>${esc(cap)}</figcaption></figure>`; }
+                      return h; }
+                    const html=`<div class="plates-h">One card across the centuries — Death</div><div class="plate-row">${await gallery(DEATH)}</div>`
+                      +`<div class="plates-h">Continuity &amp; diversity — a few iconic cards</div><div class="plate-grid">${await gallery(ICONS)}</div>`;
                     plateEls.forEach(el=>el.innerHTML=html);
                   }
                   // apparatus: image credits + bibliography + colophon
