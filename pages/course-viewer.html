@@ -1013,10 +1013,12 @@
                   // people — the weave + a who's-who organised BY ROLE (deck-specific makers
                   // are woven into the deck chapters instead).
                   const peopleEls=[...root.querySelectorAll('[data-embed="people"]')];
-                  let PG=null, makersByDeck={};
+                  let PG=null, makersByDeck={}, scholarsByDeck={};
                   if(peopleEls.length || root.querySelector('[data-embed="decks"]')){
                     PG=await get(T+'/people-of-tarot/grammar.json');
-                    if(PG) for(const p of PG.items){ if((p.metadata||{}).kind==='person'||p.category==='person') for(const s of ((p.metadata||{}).made||[])) (makersByDeck[s]=makersByDeck[s]||[]).push(p); }
+                    if(PG) for(const p of PG.items){ if((p.metadata||{}).kind==='person'||p.category==='person'){
+                      for(const s of ((p.metadata||{}).made||[])) (makersByDeck[s]=makersByDeck[s]||[]).push(p);
+                      for(const s of ((p.metadata||{}).studied||[])) (scholarsByDeck[s]=scholarsByDeck[s]||[]).push(p); } }
                   }
                   if(peopleEls.length && PG){
                     const items=Object.fromEntries(PG.items.map(i=>[i.id,i]));
@@ -1047,6 +1049,8 @@
                       for(const p of (makersByDeck[g.slug]||[])){ const who=((p.sections||{}).Who||'').replace(/\s*\[@[^\]]+\]/g,'').split('. ')[0]; const life=(p.metadata||{}).lifespan||'';
                         makers+=`<p class="maker"><strong>${esc(p.name)}${life?' ('+esc(life)+')':''}</strong> — ${mdl(who.slice(0,240))}.</p>`; }
                       if(makers)makers='<div class="made-by"><h4>The hands behind it</h4>'+makers+'</div>';
+                      const sch=(scholarsByDeck[g.slug]||[]).map(p=>esc(p.name)).join(' · ');
+                      if(sch)makers+='<div class="made-by"><h4>Studied by</h4><p class="maker">'+sch+'</p></div>';
                       html+=`<section class="deck-chapter" id="deck-${g.slug}"><h3>${esc((g.name||g.slug).split(' — ')[0])}${g.year_label?' · '+esc(g.year_label):''}</h3>${cover?`<img class="deck-cover" src="${esc(cover)}">`:''}${mdBlock(dg.description)}${makers}${cells?`<div class="strip">${cells}</div>`:''}</section>`;
                     } }
                     deckEls.forEach(el=>el.innerHTML=html);
