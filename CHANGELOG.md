@@ -2,6 +2,33 @@
 
 Newest first. One bullet per shipped thing.
 
+## Jun 15 2026
+
+- **The book ("The Recursive Tarot") — accuracy & rendering pass (Opus session):**
+  - **Local `course/` is now canonical** — `pages/course-viewer.html` loads the in-app `course/*.mdx`
+    first, with the `recursive-courses` repo as fallback (was the reverse), so the in-app book and
+    its prose render from this repo.
+  - **Canonical `minor_key` for the Minor Arcana** — `scripts/add_minor_keys.py` writes a canonical
+    key (e.g. `four-of-coins`, `knight-of-cups`) onto every minor item, parity with the majors'
+    `trump_key`; maps all suit/court name variants, idempotent, fails loud on intra-deck collisions.
+    Applied across 26 decks (548 items → 63 keys = the standard 56 + Cary-Yale's 7 extra female
+    courts, kept distinct). The course pip/suit detail now groups by it (court duplication 77 → 56).
+  - **"The Numbers"** — `scripts/analyze_numbers.py` reproducibly answers "does a number mean the
+    same across suits?" from the grammars (Ace→Kether … Ten→Malkuth, one Sephirah per number, zero
+    inconsistencies); `research/synthesis/numbers.json` synthesis + a `data-embed="numbers"` section.
+  - **Trump/pip detail rebuilt** — per-deck Scene with image thumbnails + a synthesis overview;
+    pips as blocks with a rank-number badge + representative image.
+  - **Plates → the Death card across the centuries** (Visconti-Sforza 1451 → Marseille 1760 → RWS
+    1909); corrected a wrong caption (Cary-Yale was a standing harvester, not a "mounted archer").
+  - **Card strips → responsive grid** (all cards visible at once; 2-col in print) with Explorer-style
+    hover-zoom; **left sidebar scrolls independently**; **de-duplicated the Four-Suits intro**.
+  - **Home page** features the book (start-here card + history-section link), corrects "26 → 25
+    decks", and wires the course links to explicit `?course=` params.
+  - **Citations** — Jessica Dore's Tower-as-radical-acceptance reading linked to *Tarot for Change*;
+    credential corrected "licensed therapist" → "licensed social worker".
+  - Remaining agreed work captured in `plan/BOOK-VIEWER-NEXT.md` (tree/timeline light mode +
+    hover-both + no-scroll, plates redesign, section re-ordering, per-deck people, playable game).
+
 ## Jun 13 2026
 
 - **Accuracy & research drive (Opus session)** — a long pass to make every deck as historically

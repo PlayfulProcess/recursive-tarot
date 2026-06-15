@@ -7,11 +7,14 @@
 <style>
   :root{
     --bg:#0f0d17; --panel:#1a1726; --ink:#ece8f5; --muted:#9b94b3;
-    --accent:#d4af37; --line:#39324d;
+    --accent:#b8860b; --line:#39324d;
     --roots:#c9a24b; --a:#e07a5f; --b:#81b29a; --c:#6d8ec9; --occult:#9b6dc9; --sui:#c96d9b;
   }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#fbfaff; --panel:#ffffff; --ink:#241b3a; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
+  }
   *{box-sizing:border-box}
-  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);color-scheme:light dark;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
   header.site{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line);
     flex-wrap:wrap;background:linear-gradient(180deg,#141120,transparent)}
