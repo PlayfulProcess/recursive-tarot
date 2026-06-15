@@ -1,5 +1,13 @@
 # Book viewer — agreed improvements (rev. June 15 2026)
 
+> **Update (later same day):** shipped & live on `dev` — embed **light mode** (system-aware +
+> forced light in the book), dead **dropdown removed**, tree **hover both directions**,
+> **render-in-full** (no inner scroll), timeline **right-crop fixed** + controls legible in light;
+> **plates redesign** (Death analysis + iconic gallery); **section re-order** (Decks after Lineage;
+> card-detail folded into each suit/major breakdown); **per-deck "Hands Behind the Cards"** (makers +
+> "Studied by" scholars in each deck chapter; standalone section removed). The **Numbers** section
+> already carries its per-number detail embed. **Still open:** the playable historical game.
+
 Captured from the in-app book review session. Status: ✅ shipped · 🟡 partial · ◻ pending.
 The book renders from the **local `course/` files** (canonical as of this session); the viewer
 logic lives in `pages/course-viewer.html`, the embeds in `viewers/*.html`, the synthesis prose in
