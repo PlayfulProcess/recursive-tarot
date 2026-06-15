@@ -664,6 +664,19 @@
         .card-links{ font-size:.85rem; margin-top:.5rem; }
         .card-links a{ color:#9333ea; text-decoration:none; font-weight:600; }
         .card-links a:hover{ text-decoration:underline; }
+        /* detail cards: per-deck rows with a card thumbnail (alternating sides) */
+        .indeck-row{ display:flex; gap:.9rem; align-items:flex-start; margin:.7rem 0; }
+        .indeck-row.flip{ flex-direction:row-reverse; }
+        .indeck-row .cardthumb{ flex:0 0 96px; }
+        .indeck-row .cardthumb img{ width:96px; height:155px; object-fit:cover; border-radius:6px; border:1px solid #e5e7eb; background:#0a0712; display:block; transition:transform .12s, box-shadow .12s; }
+        .indeck-row .cardthumb:hover img{ transform:translateY(-2px); box-shadow:0 4px 14px rgba(147,51,234,.3); }
+        .indeck-row .indeck-text{ font-size:.92rem; }
+        /* minor (pip/court) cards: prominent rank number + scene + a card image below */
+        .minor-card{ margin:.9rem 0; padding:.6rem .75rem; border:1px solid #ece6fb; border-radius:10px; background:#fbfaff; font-size:.94em; }
+        .minor-card .minor-head{ display:flex; align-items:center; gap:.55rem; margin-bottom:.3rem; }
+        .minor-card .rank-num{ display:inline-flex; align-items:center; justify-content:center; min-width:1.9rem; height:1.9rem; padding:0 .4rem; border-radius:8px; background:#9333ea; color:#fff; font-weight:800; font-size:1.1rem; line-height:1; }
+        .minor-card .minor-img{ margin-top:.45rem; }
+        .minor-card .minor-img img{ width:120px; height:194px; object-fit:cover; border-radius:6px; border:1px solid #e5e7eb; background:#0a0712; display:block; }
 
         /* ── PRINT: clean book pagination ── */
         @media print{
@@ -681,6 +694,8 @@
             .card-chapter h3{ break-after:avoid; }
             .strip{ overflow:visible; flex-wrap:wrap; }
             .strip .c img{ width:1in; height:1.6in; }
+            .minor-card,.indeck-row{ break-inside:avoid; }
+            .indeck-row .cardthumb img,.minor-card .minor-img img{ width:1in; height:1.6in; }
         }
     </style>
 </head>
@@ -1074,7 +1089,7 @@
                       for(const it of dg.items){ const md=it.metadata||{}; const img=it.image_url||md.image_url;
                         const arch=md.archetype;
                         if(arch&&String(arch).startsWith('card:')&&(md.arcana==='minor'||md.suit)){
-                          (midx[arch]=midx[arch]||[]).push({slug:g.slug,name:(g.name||g.slug).split(' — ')[0],year:g.year||9999,sections:it.sections||{}}); }
+                          (midx[arch]=midx[arch]||[]).push({slug:g.slug,name:(g.name||g.slug).split(' — ')[0],year:g.year||9999,img,sections:it.sections||{}}); }
                         const tk=md.trump_key; if(!tk)continue;
                         (idx[tk]=idx[tk]||[]).push({slug:g.slug,name:(g.name||g.slug).split(' — ')[0],year:g.year||9999,id:it.id,img,sections:it.sections||{}}); } } }
                     const attr=v=>{const m=String(v||'').match(/^\s*\[([^\]]{3,200})\]/);return m?m[1].trim():null;};
@@ -1090,18 +1105,21 @@
                     if(detEls.length){ const ANCH=['cary-yale-visconti-tarot','visconti-sforza-tarot','charles-vi-tarot','este-tarot']; let html='';
                       for(const tk of ORDER){ if(!syn||!syn[tk])continue;
                         const ents=(idx[tk]||[]).sort((a,b)=>a.year-b.year);
-                        const sceneOf=slug=>{const c=ents.find(x=>x.slug===slug);if(!c)return null;const s=c.sections;return s.Scene||s.About||s.Iconography;};
-                        const early=ANCH.find(s=>sceneOf(s)); let ind='';
-                        for(const slug of [early,'tarot-de-marseille-conver','golden-dawn-book-t-tarot']){ if(!slug)continue; const sc=sceneOf(slug); if(!sc)continue;
+                        const entryOf=slug=>ents.find(x=>x.slug===slug);
+                        const sceneOf=c=>{if(!c)return null;const s=c.sections;return s.Scene||s.About||s.Iconography;};
+                        const early=ANCH.find(s=>sceneOf(entryOf(s))); let ind='', drow=0;
+                        for(const slug of [early,'tarot-de-marseille-conver','golden-dawn-book-t-tarot']){ if(!slug)continue; const c=entryOf(slug); const sc=sceneOf(c); if(!sc)continue;
                           const g=col.grammars.find(x=>x.slug===slug);
-                          ind+=`<p class="indeck"><strong>${esc((g.name||slug).split(' — ')[0])} · ${g.year||''}.</strong> ${mdl(sc.slice(0,520))}${sc.length>520?'…':''}</p>`; }
+                          const thumb=c.img?`<a class="cardthumb" href="../viewers/cards.html?src=../tarot/${slug}/grammar.json&item=${encodeURIComponent(c.id)}"><img loading="lazy" src="${esc(c.img)}"></a>`:'';
+                          ind+=`<div class="indeck-row${drow++%2?' flip':''}">${thumb}<div class="indeck-text"><strong>${esc((g.name||slug).split(' — ')[0])} · ${g.year||''}.</strong> ${mdl(sc.slice(0,520))}${sc.length>520?'…':''}</div></div>`; }
                         if(ind)ind='<h4>In the decks</h4>'+ind;
                         const later=[],seen=new Set();
                         for(const c of ents)for(const v of Object.values(c.sections)){const a=attr(v);if(!a)continue;const voice=a.split(',')[0].trim();if(seen.has(voice))continue;seen.add(voice);later.push([ayear(a),a,String(v).replace(/^\s*\[[^\]]*\]\s*/,'')]);}
                         later.sort((a,b)=>a[0]-b[0]); let lat='';
                         for(const [,a,body] of later)lat+=`<div class="later"><div class="later-src">${esc(a)}</div><p>${mdl(body.slice(0,760))}${body.length>760?'…':''}</p></div>`;
                         if(lat)lat='<h4>Later readings</h4>'+lat;
-                        if(ind||lat)html+=`<div class="card-chapter"><h3>${NUM[tk]} — ${esc(lbl(tk))}</h3>${ind}${lat}</div>`;
+                        const ov=syn[tk]?`<div class="synthbox"><p>${mdl(syn[tk])}</p></div>`:'';
+                        if(ind||lat)html+=`<div class="card-chapter"><h3>${NUM[tk]} — ${esc(lbl(tk))}</h3>${ov}${ind}${lat}</div>`;
                       }
                       detEls.forEach(el=>el.innerHTML=html);
                     }
@@ -1115,15 +1133,18 @@
                       let html='';
                       for(const cs of SORDER){ const cards=(bySuit[cs]||[]).sort((a,b)=>a[0]-b[0]); if(!cards.length)continue;
                         html+=`<div class="card-chapter" id="suitdetail-${cs}"><h3>The Suit of ${esc(STITLE[cs])}</h3>`;
-                        for(const [,rank,arch] of cards){ const ents=(midx[arch]||[]).sort((a,b)=>a.year-b.year);
+                        for(const [ro,rank,arch] of cards){ const ents=(midx[arch]||[]).sort((a,b)=>a.year-b.year);
                           const sceneOf=slug=>{const c=ents.find(x=>x.slug===slug);if(!c)return null;const s=c.sections;return s.Scene||s.Description||s.About||s.Iconography;};
-                          let ind='';for(const slug of SANCH){const sc=sceneOf(slug);if(sc){const g=col.grammars.find(x=>x.slug===slug);ind=`<span class="mscene"><strong>${esc((g.name||slug).split(' — ')[0])}:</strong> ${mdl(sc.slice(0,300))}${sc.length>300?'…':''}</span>`;break;}}
+                          let ind='',repimg='';for(const slug of SANCH){const sc=sceneOf(slug);if(sc){const g=col.grammars.find(x=>x.slug===slug);const c=ents.find(x=>x.slug===slug);if(c&&c.img)repimg=c.img;ind=`<span class="mscene"><strong>${esc((g.name||slug).split(' — ')[0])}:</strong> ${mdl(sc.slice(0,300))}${sc.length>300?'…':''}</span>`;break;}}
+                          if(!repimg){const wi=ents.find(x=>x.img);if(wi)repimg=wi.img;}
                           const later=[],seen=new Set();
                           for(const c of ents)for(const v of Object.values(c.sections)){const a=attr(v);if(!a)continue;const voice=a.split(',')[0].trim();if(seen.has(voice))continue;seen.add(voice);later.push([ayear(a),a,String(v).replace(/^\s*\[[^\]]*\]\s*/,'')]);}
                           later.sort((a,b)=>a[0]-b[0]); let rd='';
                           if(later.length){const [,a,body]=later[0];rd=`<span class="mread"><em>${esc(a.split(',')[0])}</em> — ${mdl(body.slice(0,240))}${body.length>240?'…':''}</span>`;}
                           const rl=(rank||'').replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
-                          html+=`<p class="minor-card"><strong>${esc(rl)} of ${esc(STITLE[cs].split(' ')[0])}.</strong> ${ind} ${rd}</p>`;
+                          const badge=(ro>=1&&ro<=10)?String(ro):esc(rl.charAt(0));
+                          const imgh=repimg?`<div class="minor-img"><img loading="lazy" src="${esc(repimg)}"></div>`:'';
+                          html+=`<div class="minor-card"><div class="minor-head"><span class="rank-num">${badge}</span><strong>${esc(rl)} of ${esc(STITLE[cs].split(' ')[0])}</strong></div><div class="minor-body">${ind} ${rd}</div>${imgh}</div>`;
                         }
                         html+='</div>';
                       }
