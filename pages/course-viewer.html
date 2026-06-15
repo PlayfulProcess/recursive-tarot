@@ -659,7 +659,7 @@
         .strip .c{ text-align:center; font-size:.65rem; color:#6b7280; text-decoration:none; }
         .strip a.c img{ transition:transform .12s, box-shadow .12s; }
         .strip a.c:hover img{ transform:scale(1.7); z-index:9; position:relative; box-shadow:0 6px 22px rgba(147,51,234,.35); }
-        .strip .c img{ width:100%; max-width:104px; aspect-ratio:88/142; object-fit:cover; border-radius:6px; border:1px solid #e5e7eb; background:#0a0712; }
+        .strip .c img{ width:100%; max-width:104px; aspect-ratio:88/142; object-fit:contain; border-radius:6px; border:1px solid #e5e7eb; background:#0a0712; }
         @media print{ .strip{ grid-template-columns:repeat(2,1fr); } }
         .card-chapter{ margin:1.6rem 0; }
         .deck-chapter{ margin:1.8rem 0; }
@@ -681,7 +681,7 @@
         .indeck-row{ display:flex; gap:.9rem; align-items:flex-start; margin:.7rem 0; }
         .indeck-row.flip{ flex-direction:row-reverse; }
         .indeck-row .cardthumb{ flex:0 0 96px; }
-        .indeck-row .cardthumb img{ width:96px; height:155px; object-fit:cover; border-radius:6px; border:1px solid #e5e7eb; background:#0a0712; display:block; transition:transform .12s, box-shadow .12s; }
+        .indeck-row .cardthumb img{ width:96px; height:155px; object-fit:contain; border-radius:6px; border:1px solid #e5e7eb; background:#0a0712; display:block; transition:transform .12s, box-shadow .12s; }
         .indeck-row .cardthumb:hover img{ transform:translateY(-2px); box-shadow:0 4px 14px rgba(147,51,234,.3); }
         .indeck-row .indeck-text{ font-size:.92rem; }
         /* minor (pip/court) cards: prominent rank number + scene + a card image below */
@@ -689,7 +689,7 @@
         .minor-card .minor-head{ display:flex; align-items:center; gap:.55rem; margin-bottom:.3rem; }
         .minor-card .rank-num{ display:inline-flex; align-items:center; justify-content:center; min-width:1.9rem; height:1.9rem; padding:0 .4rem; border-radius:8px; background:#9333ea; color:#fff; font-weight:800; font-size:1.1rem; line-height:1; }
         .minor-card .minor-img{ margin-top:.45rem; }
-        .minor-card .minor-img img{ width:120px; height:194px; object-fit:cover; border-radius:6px; border:1px solid #e5e7eb; background:#0a0712; display:block; }
+        .minor-card .minor-img img{ width:120px; height:194px; object-fit:contain; border-radius:6px; border:1px solid #e5e7eb; background:#0a0712; display:block; }
 
         /* ── PRINT: clean book pagination ── */
         @media print{

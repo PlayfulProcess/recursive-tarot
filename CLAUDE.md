@@ -50,6 +50,11 @@ All deck images are on R2 at:
 
 To write Scene/Symbol sections: download images from R2 to a temp dir, use Read tool vision to view each, write descriptions, delete temp dir. Sola Busca minors done 2026-06-13 this way.
 
+**Thumbnails are always resized, never cropped.** Card images must show the whole card — use
+`object-fit:contain` (letterboxed on a neutral background), never `object-fit:cover`. A clipped
+card hides the very iconography the thumbnail exists to show. Applies to every card thumbnail:
+play tiles, course strips/detail, game cards, deck covers, viewers.
+
 ## Scripts cheat-sheet
 
 | Script | What it does |
