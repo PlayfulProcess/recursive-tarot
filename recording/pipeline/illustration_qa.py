@@ -33,6 +33,15 @@ def worksheet():
         ill = p.get("illustration", {})
         text = " ".join(p["lines"])
         cues = sorted(set(m.group(0).lower() for m in SIZE_CUES.finditer(text)))
+        # PROVENANCE GATE: only AI-generated art may be REMADE. Public-domain / human art
+        # (e.g. original Tenniel engravings) may be reordered but NEVER regenerated.
+        prov = (ill.get("provenance") or "unknown").lower()      # ai | public-domain | human | unknown
+        eligible_for_remake = prov == "ai"
+        status = ill.get("status")
+        if status in ("regenerated", "reordered"):
+            action = status if (status != "regenerated" or eligible_for_remake) else "review"
+        else:
+            action = "review"
         rows.append({
             "passage_index": i,
             "passage_id": p["id"],
@@ -41,13 +50,15 @@ def worksheet():
             "size_cues_to_honor": cues,             # the picture must match these
             "current_image_url": ill.get("image_url"),
             "has_offline_placeholder_svg": bool(ill.get("svg")),
+            "provenance": prov,
+            "eligible_for_remake": eligible_for_remake,   # False → reorder only, do NOT regenerate
             # --- agent fills these after SEEing the image ---
             "seen": False,
             "depicts_passage": None,                # true/false
             "reorder_to": None,                     # passage_id if it belongs elsewhere
             "problems": [m.strip() for m in [ill.get("regenerated_reason")] if m] or [],
-            "action": ill.get("status", "original") if ill.get("status") in ("regenerated", "reordered") else "review",
-            "regenerate_prompt": ill.get("prompt", ""),
+            "action": action,                       # review | keep | reorder | regenerate
+            "regenerate_prompt": ill.get("prompt", "") if eligible_for_remake else "",
             "new_url": None,
             "reverified": False,
         })
@@ -60,18 +71,21 @@ def build():
               indent=2, ensure_ascii=False)
     md = ["# Illustration QA worksheet — Alice", "",
           "Fill `seen / depicts_passage / problems / action / new_url` after viewing each image. "
-          "`action`: keep · reorder · regenerate. Regenerate via recursive-eco `generate_item_image` "
-          "with the prompt shown.", ""]
+          "`action`: keep · reorder · regenerate. **Provenance gate:** only `eligible_for_remake` "
+          "(AI-generated) images may be regenerated; public-domain / human art may be reordered "
+          "but never remade. Regenerate via recursive-eco `generate_item_image`.", ""]
     for r in rows:
-        md += [f"## {r['passage_index']}. {r['title']}  ·  `{r['action']}`",
+        gate = "remake OK" if r["eligible_for_remake"] else "REORDER ONLY (provenance=%s)" % r["provenance"]
+        md += [f"## {r['passage_index']}. {r['title']}  ·  `{r['action']}`  ·  {gate}",
                f"- text: {r['text']}",
                f"- **size cues the picture MUST honor:** {', '.join(r['size_cues_to_honor']) or '(none)'}",
                f"- problems: {'; '.join(r['problems']) or '—'}",
-               f"- regenerate prompt: {r['regenerate_prompt'][:160]}…", ""]
+               f"- regenerate prompt: {(r['regenerate_prompt'][:160]+'…') if r['regenerate_prompt'] else '(blocked — not AI provenance)'}", ""]
     open(OUTM, "w", encoding="utf-8").write("\n".join(md))
     flagged = [r for r in rows if r["action"] in ("regenerate", "review")]
+    remakeable = [r for r in rows if r["eligible_for_remake"]]
     print(f"wrote {os.path.relpath(OUTJ, ROOT)} + .md — {len(rows)} passages, "
-          f"{len(flagged)} need a vision pass (incl. size-cue check)")
+          f"{len(flagged)} need a vision pass, {len(remakeable)} eligible for remake (AI provenance)")
 
 if __name__ == "__main__":
     build()
