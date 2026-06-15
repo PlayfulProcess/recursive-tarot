@@ -782,8 +782,8 @@
         const grammarId = urlParams.get('grammar_id');
         const itemSlug = urlParams.get('item');
 
-        // Courses live in the public recursive-courses repo; tarot site fetches
-        // from raw GitHub. Local file in course/ is kept as offline fallback.
+        // The local course/ files in this repo are CANONICAL for now; the public
+        // recursive-courses repo is kept as a fallback. (Flip back when courses migrate.)
         const COURSES_RAW = 'https://raw.githubusercontent.com/PlayfulProcess/recursive-courses/main/courses';
 
         async function fetchMdxFromUrl(url) {
@@ -794,19 +794,21 @@
             return mdx;
         }
 
-        // Load MDX content — try recursive-courses repo first, then local fallback, then Supabase
+        async function fetchLocalMdx(slug) {
+            const res = await fetch(`../course/${slug}.mdx`);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const mdx = await res.text();
+            if (/^\s*<(!doctype|html)/i.test(mdx)) throw new Error('HTML response (likely redirect)');
+            return mdx;
+        }
+
+        // Load MDX content — local course/ first (canonical), then recursive-courses, then Supabase
         async function fetchCourseContent() {
             if (itemSlug) {
-                // 1. recursive-courses repo (canonical source)
+                // 1. local course/ (canonical for now)
+                try { return await fetchLocalMdx(itemSlug); } catch {}
+                // 2. recursive-courses repo (fallback)
                 try { return await fetchMdxFromUrl(`${COURSES_RAW}/${itemSlug}/course.mdx`); } catch {}
-                // 2. local fallback (offline / presentation mode)
-                try {
-                    const localRes = await fetch(`../course/${itemSlug}.mdx`);
-                    if (localRes.ok) {
-                        const mdx = await localRes.text();
-                        if (!/^\s*<(!doctype|html)/i.test(mdx)) return mdx;
-                    }
-                } catch {}
             }
 
             if (grammarId) {
@@ -844,10 +846,9 @@
                 return item.sections?.Content || item.sections?.content || '';
             }
 
-            // Fallback: ?course=<id> path — try recursive-courses repo then local
-            try { return await fetchMdxFromUrl(`${COURSES_RAW}/${courseId}/course.mdx`); } catch {}
-            const response = await fetch(`../course/${courseId}.mdx`);
-            return await response.text();
+            // ?course=<id> path — local course/ is canonical for now, recursive-courses is fallback
+            try { return await fetchLocalMdx(courseId); } catch {}
+            return await fetchMdxFromUrl(`${COURSES_RAW}/${courseId}/course.mdx`);
         }
 
         // Show a listing of all courses in the grammar (when no specific item selected)
@@ -1111,9 +1112,11 @@
                     const idx={}, midx={};
                     if(col){ for(const g of col.grammars.filter(x=>!x.is_meta)){ const dg=await get(T+'/'+g.slug+'/grammar.json'); if(!dg)continue;
                       for(const it of dg.items){ const md=it.metadata||{}; const img=it.image_url||md.image_url;
-                        const arch=md.archetype;
-                        if(arch&&String(arch).startsWith('card:')&&(md.arcana==='minor'||md.suit)){
-                          (midx[arch]=midx[arch]||[]).push({slug:g.slug,name:(g.name||g.slug).split(' — ')[0],year:g.year||9999,img,sections:it.sections||{}}); }
+                        // group minors by the canonical minor_key (e.g. four-of-coins) so the same card
+                        // lines up across decks regardless of suit/court naming; archetype is a fallback.
+                        const mk=md.minor_key||(String(md.archetype||'').match(/^card:(.+)/)||[])[1];
+                        if(mk&&(md.arcana==='minor'||md.suit||md.minor_key)){
+                          (midx[mk]=midx[mk]||[]).push({slug:g.slug,name:(g.name||g.slug).split(' — ')[0],year:g.year||9999,img,sections:it.sections||{}}); }
                         const tk=md.trump_key; if(!tk)continue;
                         (idx[tk]=idx[tk]||[]).push({slug:g.slug,name:(g.name||g.slug).split(' — ')[0],year:g.year||9999,id:it.id,img,sections:it.sections||{}}); } } }
                     const attr=v=>{const m=String(v||'').match(/^\s*\[([^\]]{3,200})\]/);return m?m[1].trim():null;};
@@ -1151,7 +1154,7 @@
                       const RANK={ace:1,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,page:11,knave:11,valet:11,jack:11,princess:11,knight:12,cavalier:12,prince:12,queen:13,king:14};
                       const SORDER=['batons','coins','swords','cups'], STITLE={batons:'Batons (Wands)',coins:'Coins (Pentacles)',swords:'Swords',cups:'Cups'};
                       const SANCH=['sola-busca-tarot','tarot-de-marseille-conver','golden-dawn-book-t-tarot'];
-                      const parts=a=>{const m=String(a||'').match(/^card:(.+?)-of-(.+)/);if(!m)return null;const cs=CANON[m[2]]||m[2];return{rank:m[1],cs,ro:RANK[m[1]]||50};};
+                      const parts=a=>{const m=String(a||'').match(/^(?:card:)?(.+?)-of-(.+)/);if(!m)return null;const cs=CANON[m[2]]||m[2];return{rank:m[1],cs,ro:RANK[m[1]]||50};};
                       const bySuit={};
                       for(const arch of Object.keys(midx)){const p=parts(arch);if(!p)continue;(bySuit[p.cs]=bySuit[p.cs]||[]).push([p.ro,p.rank,arch]);}
                       let html='';
