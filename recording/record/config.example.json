@@ -1,0 +1,22 @@
+{
+  "headless": true,
+  "fullscreen": false,
+  "viewport": { "width": 1920, "height": 1080 },
+  "fps": 30,
+  "playerUrl": "../player/perform.html",
+  "tts": {
+    "engine": "provided",
+    "voice": "en-GB-Standard-A",
+    "rate": 0.9,
+    "_engines": ["provided", "elevenlabs", "google", "azure"],
+    "providedAudioDir": "audio",
+    "align": "whisperx"
+  },
+  "paths": {
+    "work": "out/work",
+    "out": "out"
+  },
+  "credentials": {
+    "_note": "Set via env, never commit: ELEVENLABS_API_KEY, GOOGLE_APPLICATION_CREDENTIALS, AZURE_SPEECH_KEY"
+  }
+}

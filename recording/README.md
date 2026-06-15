@@ -54,6 +54,14 @@ python3 pipeline/illustration_qa.py               # build the illustration QA wo
 python3 pipeline/narration_script.py              # build the Vibe Coding 101 screencast script
 ```
 
+## The Chrome recording stack (`record/`)
+For an actual recorded file (not just the live read-along), `record/` drives **Chrome via
+Playwright**: TTS-or-your-audiobook → word timestamps → `player/perform.html` (marks-driven
+karaoke) → recorded video → **ffmpeg** mux → MP4 + a timestamped grammar. Key design fact: Web
+Speech audio isn't recordable, so recording uses **file-based audio + word marks** (your
+audiobook via forced alignment, or cloud TTS with timestamps). See `record/README.md`. One
+command: `node record/orchestrate.mjs productions/alice-in-wonderland`.
+
 ## What still needs a real environment
 - **Vision on existing illustrations** (download + look) needs outbound network.
 - **Image (re)generation** uses the recursive-eco MCP `generate_item_image` (server-side, costs
