@@ -84,10 +84,12 @@
   .suitkey span{display:inline-flex;align-items:center;gap:4px;color:var(--muted)}
   .suitkey i{width:10px;height:10px;border-radius:3px;display:inline-block}
   #err{color:var(--bad);padding:24px}
+  @media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important}
+    .card:hover,.mcard:hover,.strip a.c:hover img,.hero-cast .hc-cta:hover{transform:none!important} }
 </style>
 </head>
 <body>
-<script src="../../site-header.js?v=15"></script>
+<script src="../../site-header.js?v=16"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">

@@ -95,10 +95,12 @@
   .log-row .wn{display:block;margin-top:2px;font-weight:700}
   .log-empty{font-size:12px;color:var(--muted)}
   #err{color:var(--them);padding:24px}
+  @media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important}
+    .card:hover,.mcard:hover,.strip a.c:hover img,.hero-cast .hc-cta:hover{transform:none!important} }
 </style>
 </head>
 <body>
-<script src="../../site-header.js?v=15"></script>
+<script src="../../site-header.js?v=16"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">

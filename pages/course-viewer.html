@@ -710,11 +710,13 @@
             .minor-card,.indeck-row{ break-inside:avoid; }
             .indeck-row .cardthumb img,.minor-card .minor-img img{ width:1in; height:1.6in; }
         }
-    </style>
+      @media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important}
+    .card:hover,.mcard:hover,.strip a.c:hover img,.hero-cast .hc-cta:hover{transform:none!important} }
+</style>
 </head>
 <body class="bg-gray-50">
     <!-- recursive-tarot drift: shared dark header instead of the recursive.eco shell. -->
-    <script src="../site-header.js?v=15"></script>
+    <script src="../site-header.js?v=16"></script>
     <site-header active="course"></site-header>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -795,18 +797,7 @@
         const grammarId = urlParams.get('grammar_id');
         const itemSlug = urlParams.get('item');
 
-        // The local course/ files in this repo are CANONICAL for now; the public
-        // recursive-courses repo is kept as a fallback. (Flip back when courses migrate.)
-        const COURSES_RAW = 'https://raw.githubusercontent.com/PlayfulProcess/recursive-courses/main/courses';
-
-        async function fetchMdxFromUrl(url) {
-            const res = await fetch(url);
-            if (!res.ok) throw new Error(`HTTP ${res.status}`);
-            const mdx = await res.text();
-            if (/^\s*<(!doctype|html)/i.test(mdx)) throw new Error('HTML response (likely redirect)');
-            return mdx;
-        }
-
+        // Course MDX is served from this repo's local course/ directory — the single source of truth.
         async function fetchLocalMdx(slug) {
             const res = await fetch(`../course/${slug}.mdx`);
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -815,13 +806,10 @@
             return mdx;
         }
 
-        // Load MDX content — local course/ first (canonical), then recursive-courses, then Supabase
+        // Load MDX content — from the local course/ files (or a Supabase grammar via ?grammar_id).
         async function fetchCourseContent() {
             if (itemSlug) {
-                // 1. local course/ (canonical for now)
                 try { return await fetchLocalMdx(itemSlug); } catch {}
-                // 2. recursive-courses repo (fallback)
-                try { return await fetchMdxFromUrl(`${COURSES_RAW}/${itemSlug}/course.mdx`); } catch {}
             }
 
             if (grammarId) {
@@ -859,9 +847,8 @@
                 return item.sections?.Content || item.sections?.content || '';
             }
 
-            // ?course=<id> path — local course/ is canonical for now, recursive-courses is fallback
-            try { return await fetchLocalMdx(courseId); } catch {}
-            return await fetchMdxFromUrl(`${COURSES_RAW}/${courseId}/course.mdx`);
+            // ?course=<id> path — served from the local course/ directory
+            return await fetchLocalMdx(courseId);
         }
 
         // Show a listing of all courses in the grammar (when no specific item selected)

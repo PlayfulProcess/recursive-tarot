@@ -31,27 +31,10 @@ Goal: a visitor moving tree↔fruit should feel one family, not two sites.
 4. Bump `site-header.js?v=` everywhere (13 HTML files) after edits.
 5. Verify on local static server: every page header, active states, favicon.
 
-## P2 — Courses as their own repo (`recursive-courses`)
+## P2 — Courses-as-a-separate-repo idea — ABANDONED
 
-Goal: one public repo holding all course MDX; both tree and fruits render from raw
-GitHub; the Library Assistant can read it to answer course questions.
-
-1. **Repo shape** (mirror recursive-tarot's pattern):
-   - `courses/<slug>/course.mdx` (or split per-part MDX) + `_collection.json`
-     listing courses with title/description/audience.
-   - A thin `pages/course-viewer.html` copied from recursive-tarot's (it already
-     renders MDX client-side) + GitHub Pages on, CC-BY-SA. Images stay on R2.
-2. **Migration**: move `course/` MDX from recursive-tarot and the course content in
-   recursive-eco (`apps/flow` course preview + any landing MDX) into it. Tarot's
-   course-viewer then fetches `https://raw.githubusercontent.com/PlayfulProcess/recursive-courses/main/courses/build-a-deck/...`
-   (keep a local fallback for offline dev).
-3. **Library Assistant access** (recursive-eco side): it already has
-   `read_codebase_file`/`search_codebase`; add a `read_course` tool that fetches raw
-   GitHub from the courses repo (public, no token) so answers cite actual course
-   content. This fixes the observed failure: the assistant couldn't see
-   "Build a Tarot Deck with Claude Code".
-4. **Don't** build a sync/webhook yet — raw-GitHub fetch is enough (L3 ladder rung
-   covers sync later).
+Dropped (Jun 2026): course MDX stays in this repo under `course/`, rendered locally by
+`pages/course-viewer.html` as the single source of truth. No external courses repo.
 
 ## P3 — Explorer → general emergent-pattern system
 
