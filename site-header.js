@@ -59,6 +59,7 @@
   // Play — a dropdown of the games + readings (the pill itself links to the Play hub).
   const PLAY_MENU = [
     [PFX + 'pages/games/tarocchino.html', '♛ Tarocchino di Bologna'],
+    [PFX + 'pages/games/madiao.html',     '🀄 Ma Diao 馬吊'],
     [PFX + 'pages/games/trionfi.html',    '♛ Trionfi'],
     [PFX + 'viewers/caster.html',         '🔮 Caster'],
     ['https://flow.recursive.eco/cast',   '✦ Oracle ↗', true],

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ma Diao 馬吊 — Play the Oldest Card Game · Recursive Tarot</title>
+<!--
+  Ma Diao (馬吊) — the Ming-dynasty money-suited trick game, the deepest documented root of the
+  playing-card family (China → Mamluk → Europe → tarot) and an ancestor of Mahjong.
+  - 40-card pack: Cash 文 (Zero, Half, 1-9 — RANK REVERSED), Strings 索 (1-9), Myriads 萬 (1-9),
+    Tens-of-Myriads 十萬 (20-90, Hundred 百萬, Thousand 千萬, Myriad-Myriad 萬萬貫).
+  - 4 players, individual. Deal 8 each, 8 to a flipped stock. Lead a suit; the HIGHEST card of the
+    LED suit wins; off-suit cards are face-down sloughs (cannot win). Take ≥2 of the 8 tricks to be
+    safe, else pay the banker. Cards are money-suited (calligraphic), rendered here from type.
+  - Rules: John McLeod / pagat.com, World of Playing Cards, Wikipedia (Madiao). Banker payments,
+    the stock's role and the dealer-cut are simplified — noted in the panel.
+-->
+<style>
+  :root{ --bg:#0f0d17; --panel:#1a1726; --panel2:#16121f; --felt:#1f2233; --ink:#ece8f5; --muted:#9b94b3;
+         --accent:#d4af37; --line:#2a2440; --good:#81b29a; --bad:#e07a5f;
+         --cash:#c8932f; --strings:#3a8a52; --myriads:#c0473b; --tens:#8a5fb0; }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#fbfaff; --panel:#fff; --panel2:#f4f1fb; --felt:#eef0f7; --ink:#241b3a; --muted:#6b6388;
+           --accent:#8a5a00; --line:#e6e0f4; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:18px 16px 60px}
+  h1{font-size:22px;margin:.2em 0 .1em} h1 .sub{font-size:13px;font-weight:400;color:var(--muted)}
+  .lede{color:var(--muted);font-size:14px;line-height:1.55;max-width:84ch;margin:.3em 0 14px}
+  .lede a{color:var(--accent)}
+  .rules-hero{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 16px;margin-bottom:14px}
+  .rh-row{display:flex;flex-wrap:wrap;gap:10px 22px}
+  .rh-item{font-size:13px;color:var(--muted);max-width:48ch} .rh-item b{color:var(--ink)}
+  .rh-foot{font-size:11.5px;color:var(--muted);margin-top:10px;padding-top:9px;border-top:1px solid var(--line);line-height:1.55}
+  .rh-foot a{color:var(--accent)} .rh-foot b{color:var(--ink)}
+
+  .toolbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+  button{background:var(--accent);color:#1a1206;border:0;border-radius:9px;padding:9px 16px;font-size:14px;font-weight:700;cursor:pointer}
+  .deck-note{font-size:12px;color:var(--muted)}
+
+  .layout{display:flex;flex-direction:column;gap:16px}
+  .board{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .felt{background:var(--felt);border:1px solid var(--line);border-radius:14px;padding:10px;
+    display:grid;grid-template-columns:1fr 1.3fr 1fr;grid-template-rows:auto auto auto;
+    grid-template-areas:". north ." "west center east" ". south ."; gap:4px;align-items:center;justify-items:center}
+  .seat{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--muted)}
+  .seat.north{grid-area:north} .seat.west{grid-area:west} .seat.east{grid-area:east} .seat.south{grid-area:south}
+  .center{grid-area:center;text-align:center;color:var(--muted);font-size:12px;min-height:56px;display:flex;align-items:center}
+  .seat .nm{font-weight:700;color:var(--ink);font-size:12px}
+  .seat .nm.turn{color:var(--accent)} .seat .nm .t{color:var(--good);font-weight:800}
+  .backs{display:flex;gap:2px} .back-s{width:13px;height:20px;border-radius:3px;border:1px solid var(--line);
+    background:repeating-linear-gradient(45deg,#2a2238,#2a2238 4px,#1a1430 4px,#1a1430 8px)}
+  .play-slot{min-height:96px;display:flex;align-items:center;justify-content:center}
+  .play-slot .ph{color:var(--muted);font-size:20px;opacity:.4}
+
+  .mcard{width:62px;height:92px;border-radius:7px;border:1px solid var(--line);border-top:4px solid var(--c,#888);
+    background:var(--panel2);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+    padding:4px 2px;flex:0 0 auto;position:relative;overflow:hidden;font:inherit;color:inherit}
+  .mcard .m-suit{font-size:10px;color:var(--c,#888);font-weight:800;line-height:1}
+  .mcard .m-val{font-size:21px;font-weight:700;color:var(--ink);margin:1px 0 0;line-height:1.05;letter-spacing:-.5px}
+  .mcard .m-lbl{font-size:8px;color:var(--muted);margin-top:auto;text-align:center;line-height:1.05}
+  .mcard.slough{opacity:.5}
+  .play-slot .mcard{width:70px;height:104px}
+  .mcard.win{box-shadow:0 0 0 2px var(--accent)}
+
+  .status{font-size:14px;margin:12px 0 6px;min-height:20px;color:var(--ink);font-weight:600}
+  .hand{display:flex;gap:7px;flex-wrap:wrap;align-items:center;min-height:104px}
+  .hand .mcard{cursor:pointer;transition:transform .12s,box-shadow .12s}
+  .hand .mcard:hover{transform:translateY(-7px);box-shadow:0 9px 22px rgba(147,51,234,.3)}
+  .hand .mcard.beats{box-shadow:0 0 0 2px var(--good)}
+  .result{font-size:18px;font-weight:700}
+
+  .logpanel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .logpanel h3{margin:0 0 4px;font-size:15px} .logpanel h4{margin:14px 0 5px;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent)}
+  .logpanel .hint{font-size:12px;color:var(--muted);margin:0 0 10px} .logpanel p{font-size:12.5px;color:var(--muted);line-height:1.55;margin:.4em 0}
+  .logpanel a{color:var(--accent)}
+  #log{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px;max-height:300px;overflow:auto}
+  .log-row{font-size:11.5px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--panel2);line-height:1.4}
+  .log-row .wn{display:block;margin-top:2px;font-weight:700}
+  .log-empty{font-size:12px;color:var(--muted)}
+  .suitkey{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;font-size:11px}
+  .suitkey span{display:inline-flex;align-items:center;gap:4px;color:var(--muted)}
+  .suitkey i{width:10px;height:10px;border-radius:3px;display:inline-block}
+  #err{color:var(--bad);padding:24px}
+</style>
+</head>
+<body>
+<script src="../../site-header.js?v=15"></script>
+<site-header active="play"></site-header>
+
+<div class="wrap">
+  <h1>Ma Diao 馬吊 <span class="sub">— the oldest card game we can still play</span></h1>
+  <p class="lede">Before tarot, before Europe even had cards, there was <strong>Ma Diao</strong> — the Ming-dynasty
+  money-suited trick game that is the <strong>deepest documented root</strong> of the whole playing-card family
+  (China → the Islamic world → Europe → tarot) and an ancestor of Mahjong. Its suits are denominations of
+  <em>money</em>. The cards were calligraphic, so they're rendered here from type. Read about its place in the
+  <a href="../course-viewer.html?course=history-of-tarot">history of tarot</a>.</p>
+
+  <div class="rules-hero">
+    <div class="rh-row">
+      <div class="rh-item"><b>Four players, every one for themselves.</b> You sit South. Deal is 8 cards each (eight more form a flipped stock). You lead first.</div>
+      <div class="rh-item"><b>Lead a suit; highest of it wins.</b> Following suit isn't required — you may play any card. Only the <em>highest card of the led suit</em> takes the trick; anything off-suit is a face-down <em>slough</em> that can't win. The winner leads next.</div>
+      <div class="rh-item"><b>Take two to be safe.</b> Win at least <b>2 of the 8 tricks</b> or you pay the banker. (Win 0 of the first seven and you forfeit the last.)</div>
+      <div class="rh-item"><b>The money suits.</b> Cash 文, Strings 索, Myriads 萬, Tens-of-Myriads 十萬 — and the Cash suit ranks <em>backwards</em>: Zero is highest, Nine the lowest.</div>
+    </div>
+    <div class="rh-foot">
+      <span class="suitkey">
+        <span><i style="background:var(--cash)"></i>文 Cash (Zero·Half·1–9, reversed)</span>
+        <span><i style="background:var(--strings)"></i>索 Strings (1–9)</span>
+        <span><i style="background:var(--myriads)"></i>萬 Myriads (1–9)</span>
+        <span><i style="background:var(--tens)"></i>十萬 Tens (20–90 · 百萬 · 千萬 · 萬萬貫)</span>
+      </span>
+      <div style="margin-top:7px">Rules after John McLeod's <a href="https://www.pagat.com/national/madiao.html" target="_blank" rel="noopener">pagat.com</a>,
+      the <a href="https://www.wopc.co.uk/explore/game/madiao/" target="_blank" rel="noopener">World of Playing Cards</a>, and
+      <a href="https://en.wikipedia.org/wiki/Madiao" target="_blank" rel="noopener">Wikipedia</a>. The banker payments, the stock's role
+      and the dealer-cut are simplified to the core trick game.</div>
+    </div>
+  </div>
+
+  <div class="toolbar"><button id="newgame">New deal</button><span class="deck-note" id="deck-note"></span></div>
+  <div id="err" style="display:none"></div>
+
+  <div class="layout" id="game">
+    <div class="board">
+      <div class="felt">
+        <div class="seat north"><div class="nm" id="nm-2">North</div><div id="h-2" class="backs"></div><div id="t-2" class="play-slot"></div></div>
+        <div class="seat west"><div class="nm" id="nm-1">West</div><div id="h-1" class="backs"></div><div id="t-1" class="play-slot"></div></div>
+        <div class="center" id="center"></div>
+        <div class="seat east"><div class="nm" id="nm-3">East</div><div id="h-3" class="backs"></div><div id="t-3" class="play-slot"></div></div>
+        <div class="seat south"><div id="t-0" class="play-slot"></div><div class="nm turn" id="nm-0">You (South)</div></div>
+      </div>
+      <div class="status" id="status"></div>
+      <div class="label" style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">Your hand</div>
+      <div id="you-hand" class="hand"></div>
+    </div>
+    <aside class="logpanel">
+      <h3>Play log</h3>
+      <p class="hint">Every trick — the cards, who won — so nothing slips by.</p>
+      <div id="log"></div>
+      <h4>How it was played</h4>
+      <p>The 40-card money pack, the reversed Cash suit and the "highest of the led suit wins" trick are documented
+      Ming rules. The banker stakes/payments, the eight-card stock's role and the cut for first deal are simplified
+      here to the core trick game.</p>
+    </aside>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ───────── pure engine (Node-sim friendly) ─────────
+  const CN=['','一','二','三','四','五','六','七','八','九'];
+  const SUITC={cash:'文',strings:'索',myriads:'萬',tens:'十萬'};
+  function buildDeck(){
+    const d=[]; const push=(suit,key,val,label,rank)=>d.push({suit,key,val,label,rank});
+    // CASH 文 — reversed: high→low = Zero, Half, 1,2,…,9  (11)
+    const cash=[['zero','空','Zero Cash'],['half','半','Half Cash']]
+      .concat([1,2,3,4,5,6,7,8,9].map(n=>[String(n),CN[n],n+' Cash']));
+    cash.forEach((c,i)=>push('cash','cash-'+c[0],c[1],c[2],cash.length-i));
+    for(let n=9;n>=1;n--) push('strings','str-'+n,CN[n],n+' Strings',n);
+    for(let n=9;n>=1;n--) push('myriads','my-'+n,CN[n],n+' Myriads',n);
+    // TENS 十萬 — high→low: Myriad-Myriad, Thousand, Hundred, 90…20  (11)
+    const tens=[['mm','萬萬貫','Myriad-Myriad'],['thou','千萬','Thousand Myriad'],['hund','百萬','Hundred Myriad']]
+      .concat([90,80,70,60,50,40,30,20].map(n=>['t'+n,CN[n/10]+'十萬',n+' Myriad']));
+    tens.forEach((c,i)=>push('tens','tens-'+c[0],c[1],c[2],tens.length-i));
+    return d; // 11+9+9+11 = 40
+  }
+  let hands=[[],[],[],[]], stock=[], trick=[], ledSuit=null, leader=0, tricksWon=[0,0,0,0], played=0;
+  function shuffle(a){ for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]];} return a; }
+  function deal(){ const d=shuffle(buildDeck());
+    for(let s=0;s<4;s++) hands[s]=d.slice(s*8,s*8+8); stock=d.slice(32);
+    trick=[]; ledSuit=null; leader=0; tricksWon=[0,0,0,0]; played=0; }
+  function play(seat,card){ const h=hands[seat]; h.splice(h.indexOf(card),1);
+    if(ledSuit===null) ledSuit=card.suit; trick.push({seat,card}); }
+  function ledBest(){ const l=trick.filter(x=>x.card.suit===ledSuit);
+    return l.length?l.reduce((a,b)=>b.card.rank>a.card.rank?b:a):null; }
+  function resolveTrick(){ const w=ledBest(); tricksWon[w.seat]++; leader=w.seat; played++;
+    const out={seat:w.seat,cards:trick.map(x=>({seat:x.seat,card:x.card}))}; trick=[]; ledSuit=null; return out; }
+  function aiChoose(seat){ const h=hands[seat];
+    if(trick.length===0){ return h.reduce((a,b)=>b.rank<a.rank?b:a); }   // lead a low card
+    const best=ledBest().card;
+    const winners=h.filter(c=>c.suit===ledSuit && c.rank>best.rank);
+    const last = played===7;                                            // contest the last trick if void of wins so far
+    if(winners.length && (tricksWon[seat]<2 || last)) return winners.reduce((a,b)=>a.rank<b.rank?a:b);
+    return h.reduce((a,b)=>b.rank<a.rank?b:a);                          // slough lowest
+  }
+  function playGameHeadless(){ deal();
+    for(let t=0;t<8;t++){ ledSuit=null; trick=[];
+      for(let k=0;k<4;k++){ const seat=(leader+k)%4; play(seat,aiChoose(seat)); } resolveTrick(); }
+    return {tricksWon:[...tricksWon], total:tricksWon.reduce((a,b)=>a+b,0)}; }
+
+  if(typeof module!=='undefined' && module.exports){ module.exports={buildDeck,playGameHeadless}; return; }
+
+  // ───────── browser UI ─────────
+  const $=id=>document.getElementById(id);
+  const SUITVAR={cash:'var(--cash)',strings:'var(--strings)',myriads:'var(--myriads)',tens:'var(--tens)'};
+  const SEATNAME=['You','West','North','East']; let turn=0, busy=false;
+
+  function cardEl(c,opts={}){
+    const el=document.createElement(opts.play?'button':'div');
+    el.className='mcard'+(opts.play?'':'')+(opts.slough?' slough':'')+(opts.beats?' beats':'')+(opts.win?' win':'');
+    el.style.setProperty('--c', SUITVAR[c.suit]);
+    if(opts.play){ el.type='button'; el.onclick=()=>humanPlay(c); }
+    el.innerHTML=`<div class="m-suit">${SUITC[c.suit]}</div><div class="m-val">${c.val}</div><div class="m-lbl">${c.label}</div>`;
+    return el;
+  }
+  function render(showWin){
+    for(let s=0;s<4;s++){ const nm=$('nm-'+s); if(nm){ const lbl=SEATNAME[s]+(s===0?' (South)':'')+' · '+tricksWon[s];
+        nm.innerHTML=SEATNAME[s]+(s===0?' (South)':'')+' <span class="t">'+tricksWon[s]+'</span>';
+        nm.className='nm'+(turn===s&&!busy?' turn':''); }
+      if(s!==0){ const hb=$('h-'+s); if(hb){hb.innerHTML=''; for(let n=0;n<hands[s].length;n++){const b=document.createElement('div');b.className='back-s';hb.appendChild(b);}} }
+    }
+    const win=showWin?(ledBest()&&ledBest().seat):null;
+    for(let s=0;s<4;s++){ const slot=$('t-'+s); if(!slot)continue; slot.innerHTML='';
+      const e=trick.find(x=>x.seat===s);
+      if(e){ slot.appendChild(cardEl(e.card,{slough:e.card.suit!==ledSuit, win:showWin&&s===win})); }
+      else slot.innerHTML='<span class="ph">·</span>'; }
+    const yh=$('you-hand'); yh.innerHTML='';
+    const can=(turn===0&&!busy);
+    const best=(trick.length&&ledBest())?ledBest().card:null;
+    for(const c of hands[0]) yh.appendChild(cardEl(c,{play:can, beats:can&&best&&c.suit===ledSuit&&c.rank>best.rank}));
+  }
+  const setStatus=t=>$('status').textContent=t;
+  function logTrick(out){
+    const side=x=>`${SEATNAME[x.seat]} ${x.card.label}`;
+    const cls = out.seat===0?'good':'';
+    const row=`<div class="log-row"><b>${played}.</b> ${out.cards.map(side).join(' · ')}`
+      +`<span class="wn" style="color:${out.seat===0?'var(--good)':'var(--ink)'}">${SEATNAME[out.seat]} takes it</span></div>`;
+    const log=$('log'); if(log.querySelector('.log-empty')) log.innerHTML=''; log.insertAdjacentHTML('afterbegin',row);
+  }
+  function step(){
+    if(trick.length===4){ busy=true; render(true);
+      setTimeout(()=>{ const out=resolveTrick(); logTrick(out); busy=false;
+        if(played>=8){ endGame(); return; } setStatus((leader===0?'You lead':SEATNAME[leader]+' leads')+' the next trick.'); setTimeout(step,650); }, 950); return; }
+    const seat=(leader+trick.length)%4; turn=seat;
+    if(seat===0){ busy=false; render();
+      setStatus(trick.length===0?'Your lead — play any card.':'Your turn — beat the led suit (green) to win, or slough any card.'); return; }
+    busy=true; render(); setTimeout(()=>{ play(seat,aiChoose(seat)); step(); }, 680);
+  }
+  function humanPlay(c){ if(turn!==0||busy||trick.length===4) return; play(0,c); render(); step(); }
+  function endGame(){
+    const mine=tricksWon[0], best=Math.max(...tricksWon), top=tricksWon.indexOf(best);
+    setStatus('');
+    const msg = mine>=2 ? `You took ${mine} tricks — safe!${top===0?' And the most at the table.':''}`
+              : `You took only ${mine} — you'd pay the banker this round.`;
+    $('center').innerHTML=`<div class="result" style="color:${mine>=2?'var(--good)':'var(--bad)'}">${msg}</div>`;
+  }
+  function newDeal(){ deal(); $('log').innerHTML='<div class="log-empty">No tricks yet.</div>';
+    busy=false; $('deck-note').textContent='40-card money pack · 8 tricks · '+stock.length+' in the stock';
+    setStatus('You lead the first trick.'); render(); step(); }
+  try{ newDeal(); $('newgame').addEventListener('click',newDeal); }
+  catch(e){ $('err').style.display='block'; $('err').textContent='Could not start: '+e.message; }
+})();
+</script>
+</body>
+</html>
