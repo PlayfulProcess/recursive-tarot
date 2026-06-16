@@ -100,6 +100,7 @@
           :host{ display:block; position:sticky; top:0; z-index:50;
                  background:#0f0d17; padding:0; margin:0; border:0; font-size:14px;
                  transition:transform .25s ease; will-change:transform; }
+          @media (prefers-reduced-motion: reduce){ :host{ transition:none; } .tab, .dd-menu a, .brand{ transition:none !important; } }
           .bar{
             display:flex; align-items:center; gap:14px; flex-wrap:wrap;
             padding:11px 18px; background:#0f0d17;
@@ -161,21 +162,21 @@
             </span>
           </a>
           <span class="spacer"></span>
-          <nav>
+          <nav aria-label="Site sections">
             <span class="cap card-cap" title="Browse individual cards">🃏 card</span>
             ${CARD_VIEWS.map(tab).join('')}
             <span class="sep"></span>
             <span class="cap gram-cap" title="Analyse patterns across the whole collection">⊞ grammar</span>
             ${GRAMMAR_VIEWS.map(tab).join('')}
             <span class="sep"></span>
-            <span class="dd" tabindex="0">
-              <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}">📓 Courses ▾</a>
+            <span class="dd">
+              <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Courses menu">📓 Courses ▾</a>
               <span class="dd-menu">
                 ${COURSES.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')}
               </span>
             </span>
-            <span class="dd" tabindex="0">
-              <a class="tab t-caster dd-btn${active === 'play' ? ' active' : ''}" href="${PFX}pages/play.html">🎴 Play ▾</a>
+            <span class="dd">
+              <a class="tab t-caster dd-btn${active === 'play' ? ' active' : ''}" href="${PFX}pages/play.html" aria-haspopup="true" aria-expanded="false" aria-label="Play menu">🎴 Play ▾</a>
               <span class="dd-menu">
                 ${PLAY_MENU.map(([href, label, ext]) => `<a href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`).join('')}
               </span>
@@ -185,11 +186,29 @@
           </nav>
         </div>`;
 
-      // Auto-hide on scroll down, reveal on scroll up (gives the page its full height back).
+      // Dropdowns: keyboard + ARIA on top of the hover/focus-within CSS.
+      root.querySelectorAll('.dd').forEach(dd => {
+        const btn = dd.querySelector('.dd-btn');
+        const set = open => btn && btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        dd.addEventListener('mouseenter', () => set(true));
+        dd.addEventListener('mouseleave', () => set(false));
+        dd.addEventListener('focusin', () => set(true));
+        dd.addEventListener('focusout', () => { if (!dd.matches(':focus-within')) set(false); });
+        dd.addEventListener('keydown', e => {
+          if (e.key === 'Escape') { set(false); btn && btn.focus(); }
+          // Enter/Space opens the menu when the trigger has no own link to follow
+          if ((e.key === 'Enter' || e.key === ' ') && e.target === btn && !btn.getAttribute('href')) {
+            const first = dd.querySelector('.dd-menu a'); if (first) { e.preventDefault(); set(true); first.focus(); }
+          }
+        });
+      });
+
+      // Auto-hide on scroll down, reveal on scroll up — but never while the nav has keyboard focus.
       let lastY = window.scrollY || 0, host = this;
       window.addEventListener('scroll', () => {
         const y = window.scrollY || 0;
-        host.style.transform = (y > 90 && y > lastY + 4) ? 'translateY(-100%)' : 'translateY(0)';
+        const hide = y > 90 && y > lastY + 4 && !host.matches(':focus-within');
+        host.style.transform = hide ? 'translateY(-100%)' : 'translateY(0)';
         lastY = y;
       }, { passive: true });
     }

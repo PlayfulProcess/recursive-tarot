@@ -5,9 +5,8 @@ Newest first. One bullet per shipped thing.
 ## Jun 15 2026
 
 - **The book ("The Recursive Tarot") — accuracy & rendering pass (Opus session):**
-  - **Local `course/` is now canonical** — `pages/course-viewer.html` loads the in-app `course/*.mdx`
-    first, with the `recursive-courses` repo as fallback (was the reverse), so the in-app book and
-    its prose render from this repo.
+  - **Courses render from the local `course/` directory** — `pages/course-viewer.html` loads the
+    in-app `course/*.mdx` as the single source of truth, so the book and its prose live in this repo.
   - **Canonical `minor_key` for the Minor Arcana** — `scripts/add_minor_keys.py` writes a canonical
     key (e.g. `four-of-coins`, `knight-of-cups`) onto every minor item, parity with the majors'
     `trump_key`; maps all suit/court name variants, idempotent, fails loud on intra-deck collisions.
