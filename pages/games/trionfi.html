@@ -117,8 +117,7 @@
       <span class="lab">Suit, low→high</span> <span class="pill">Ace</span> 2 3 4 5
       <span class="pill">Page</span><span class="pill">Knight</span><span class="pill">Queen</span><span class="pill">King</span>
       <span style="margin:0 6px;color:var(--muted)">·</span>
-      <span class="lab">Trumps</span> <span class="pill t">I</span><span class="pill t">II</span><span class="pill t">III</span><span class="pill t">IV</span><span class="pill t">V</span><span class="pill t">VI</span>
-      <span style="color:var(--muted)">(any beats a suit card)</span>
+      <span class="lab">Trumps</span> any trump beats any suit card; among trumps the <b>higher number</b> wins (each card keeps its real trump number).
     </div>
   </div>
 
@@ -155,7 +154,8 @@
 const TOTAL=12;
 const PIP={ace:1,two:2,three:3,four:4,five:5};
 const COURT={page:6,knight:7,queen:8,king:9};
-const ROMAN=['','I','II','III','IV','V','VI'];
+const CANON_NUM={magician:1,'high-priestess':2,empress:3,emperor:4,hierophant:5,lovers:6,chariot:7,strength:8,hermit:9,'wheel-of-fortune':10,justice:11,'hanged-man':12,death:13,temperance:14,devil:15,tower:16,star:17,moon:18,sun:19,judgement:20,world:21,fool:0};
+const toRoman=n=>{const t=[[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];let r='',x=n;for(const[v,s]of t)while(x>=v){r+=s;x-=v;}return r||'0';};
 const SUITNAME={coins:'Coins',cups:'Cups',swords:'Swords',batons:'Batons',trump:'Trumps'};
 const PLAYABLE=['tarot-de-marseille-conver','visconti-sforza-tarot','golden-dawn-book-t-tarot',
   'minchiate-florence-tarot','cary-yale-visconti-tarot','sola-busca-tarot',
@@ -171,10 +171,13 @@ const isMajor=md=>md.arcana==='major'||md.trump_key||/^(major|trump)/.test(Strin
 async function loadDeck(slug){
   const g=await (await fetch('../../tarot/'+slug+'/grammar.json')).json();
   CURNAME=(g.name||slug).split(/\s+[—–-]\s+/)[0];
-  // six lowest trumps, ranked I–VI by order (any trump beats any suit)
+  // each trump keeps its REAL number (from its key — e.g. the Emperor is IV); take the six lowest
+  // available, rank by that number (higher wins). Fall back to the deck's own number, then order.
   let majors=g.items.filter(i=>isMajor(i.metadata||{})&&img(i))
-    .map(i=>({i,n:(i.metadata||{}).number})).sort((a,b)=>(a.n??99)-(b.n??99)).slice(0,6);
-  const trumps=majors.map((m,idx)=>({kind:'trump',rank:idx,badge:ROMAN[idx+1]||'T',img:img(m.i),
+    .map((i,idx)=>{const k=(i.metadata||{}).trump_key; let n=(k in CANON_NUM)?CANON_NUM[k]:(i.metadata||{}).number; if(n==null)n=idx; return {i,k,n};})
+    .filter(m=>m.k!=='fool');
+  majors.sort((a,b)=>a.n-b.n); majors=majors.slice(0,6);
+  const trumps=majors.map(m=>({kind:'trump',rank:m.n,badge:toRoman(m.n),img:img(m.i),
     label:m.i.name.split(/\s+[—–-]\s+/)[0]}));
   // suit coverage → take the two best-stocked suits
   const cov={};
