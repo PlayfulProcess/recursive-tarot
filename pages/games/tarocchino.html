@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tarocchino di Bologna — Play · Recursive Tarot</title>
+<!--
+  Tarocchino Bolognese: the historical 62-card partnership game (4 players, 2 teams).
+  - 62-card pack: 22 trumps + each suit reduced to Ace,6,7,8,9,10 + Fante/Cavallo/Donna/Re.
+  - A-order (Dummett's A): Bagattino · four equal Moors · Love · Chariot · the three Virtues
+    clustered · Wheel · Hermit · Hanged Man · Death · Devil · Tower · Star · Moon · Sun · World ·
+    Angel (highest). The Fool (Matto) is the Excuse — it never wins, and stays with its own side.
+  - Latin-suit ranking: round suits (Coins, Cups) Ace-low→10-high; long suits (Swords, Batons)
+    inverted, Ace-high→10-low; courts always on top.
+  - Win by CARD POINTS, not trick count: honours (Matto, Bagattino, Angel, World) & Kings 5,
+    Queens 4, Knights 3, Knaves 2; everything else 0 (76 points in the pack).
+  - Source: research/decks/tarocchino-bologna.md (Dummett A-order; IPCS; pagat/McLeod).
+  Simplifications noted in the rules panel (cricche/sequenze bonuses & the Matto exchange: TODO).
+-->
+<style>
+  :root{ --bg:#0f0d17; --panel:#1a1726; --panel2:#16121f; --felt:#15321f; --ink:#ece8f5; --muted:#9b94b3;
+         --accent:#d4af37; --line:#2a2440; --us:#81b29a; --them:#e07a5f; }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#fbfaff; --panel:#fff; --panel2:#f4f1fb; --felt:#e7f0e9; --ink:#241b3a; --muted:#6b6388;
+           --accent:#8a5a00; --line:#e6e0f4; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:18px 16px 60px}
+  h1{font-size:22px;margin:.2em 0 .1em} h1 .sub{font-size:13px;font-weight:400;color:var(--muted)}
+  .lede{color:var(--muted);font-size:14px;line-height:1.55;max-width:84ch;margin:.3em 0 14px}
+  .lede a{color:var(--accent)}
+  .rules-hero{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 16px;margin-bottom:14px}
+  .rh-row{display:flex;flex-wrap:wrap;gap:10px 22px}
+  .rh-item{font-size:13px;color:var(--muted);max-width:48ch} .rh-item b{color:var(--ink)}
+  .rh-order{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-top:11px;padding-top:11px;
+    border-top:1px solid var(--line);font-size:12px;color:var(--ink)}
+  .rh-order .lab{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-right:2px}
+  .pill{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:2px 6px;white-space:nowrap}
+  .pill.t{border-color:var(--accent);color:var(--accent)}
+
+  .toolbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+  .toolbar label{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}
+  select{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13px;font-family:inherit;cursor:pointer}
+  button{background:var(--accent);color:#1a1206;border:0;border-radius:9px;padding:9px 16px;font-size:14px;font-weight:700;cursor:pointer}
+  .deck-note{font-size:12px;color:var(--muted)}
+
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px;align-items:start}
+  @media (max-width:900px){ .layout{grid-template-columns:1fr} }
+  .board{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+
+  .scorebar{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:12px;font-size:14px}
+  .scorebar .us b{color:var(--us);font-size:22px} .scorebar .them b{color:var(--them);font-size:22px}
+  .scorebar .trk{margin-left:auto;color:var(--muted);font-size:12px}
+
+  .felt{background:var(--felt);border:1px solid var(--line);border-radius:14px;padding:12px;
+    display:grid;grid-template-columns:1fr 1.4fr 1fr;grid-template-rows:auto auto auto;
+    grid-template-areas:". north ." "west center east" ". south ."; gap:8px;min-height:330px;align-items:center;justify-items:center}
+  .seat{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11px;color:var(--muted)}
+  .seat.north{grid-area:north} .seat.west{grid-area:west} .seat.east{grid-area:east} .seat.south{grid-area:south}
+  .center{grid-area:center;align-self:center;justify-self:center;text-align:center;color:var(--muted);font-size:12px;min-height:60px;display:flex;align-items:center}
+  .seat .nm{font-weight:700;color:var(--ink);font-size:12px}
+  .seat .nm.turn{color:var(--accent)}
+  .seat .nm .you-c{color:var(--us)} .seat .nm .them-c{color:var(--them)}
+  .backs{display:flex;gap:2px} .back-s{width:15px;height:23px;border-radius:3px;border:1px solid var(--line);
+    background:repeating-linear-gradient(45deg,#241c3a,#241c3a 4px,#1a1430 4px,#1a1430 8px)}
+  @media (prefers-color-scheme: light){ .back-s{background:repeating-linear-gradient(45deg,#d9d0f0,#d9d0f0 4px,#cdc2ea 4px,#cdc2ea 8px)} }
+  .play-slot{min-height:120px;display:flex;align-items:center;justify-content:center}
+  .play-slot .ph{color:var(--muted);font-size:22px;opacity:.4}
+
+  .card{width:76px;border-radius:6px;border:1px solid var(--line);background:var(--panel2);overflow:hidden;
+    position:relative;display:block;flex:0 0 auto;padding:0;font:inherit;color:inherit}
+  .card img{width:100%;height:116px;object-fit:contain;display:block;background:var(--panel2)}
+  .card .cap{font-size:9px;text-align:center;padding:2px 1px;color:var(--muted);line-height:1.1;height:22px;overflow:hidden}
+  .card.trump{border-color:var(--accent)}
+  .play-slot .card{width:84px} .play-slot .card img{height:128px}
+  .card.win{box-shadow:0 0 0 2px var(--accent)}
+  .honour-badge{position:absolute;top:2px;left:2px;background:var(--accent);color:#1a1206;font-size:8px;font-weight:800;padding:0 3px;border-radius:3px}
+
+  .status{font-size:14px;margin:12px 0 6px;min-height:20px;color:var(--ink);font-weight:600}
+  .hand{display:flex;gap:7px;flex-wrap:wrap;align-items:center;min-height:130px}
+  .hand .card.play{cursor:pointer;transition:transform .12s,box-shadow .12s}
+  .hand .card.play:hover{transform:translateY(-7px);box-shadow:0 9px 22px rgba(147,51,234,.35)}
+  .hand .card.illegal{opacity:.32;filter:grayscale(.65);cursor:not-allowed}
+  .hand .card.legal{box-shadow:0 0 0 2px var(--accent)}
+  .result{font-size:18px;font-weight:700}
+
+  .logpanel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;position:sticky;top:14px}
+  .logpanel h3{margin:0 0 4px;font-size:15px} .logpanel h4{margin:14px 0 5px;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent)}
+  .logpanel .hint{font-size:12px;color:var(--muted);margin:0 0 10px}
+  .logpanel p{font-size:12.5px;color:var(--muted);line-height:1.55;margin:.4em 0}
+  #log{display:flex;flex-direction:column;gap:6px;max-height:46vh;overflow:auto}
+  .log-row{font-size:11.5px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--panel2);line-height:1.4}
+  .log-row .ln{color:var(--muted);font-weight:700;margin-right:4px}
+  .log-row .wn{display:block;margin-top:2px;font-weight:700}
+  .log-empty{font-size:12px;color:var(--muted)}
+  #err{color:var(--them);padding:24px}
+</style>
+</head>
+<body>
+<script src="../../site-header.js?v=13"></script>
+<site-header active="play"></site-header>
+
+<div class="wrap">
+  <h1>Tarocchino di Bologna <span class="sub">— the historical 62-card partnership game</span></h1>
+  <p class="lede">Bologna's own shrunken tarot, played continuously since the 1500s: a fast <strong>four-player,
+  two-partnership</strong> trick game on a <strong>62-card</strong> pack (the 2–5 of every suit removed). You sit
+  South; <strong>North is your partner</strong>. It is the most faithful surviving witness to Dummett's
+  <strong>A-order</strong> of the trumps. You win by capturing <strong>card points</strong>, not tricks.</p>
+
+  <div class="rules-hero">
+    <div class="rh-row">
+      <div class="rh-item"><b>Teams.</b> You + North vs. West + East. Play goes clockwise; the trick winner leads next.</div>
+      <div class="rh-item"><b>Follow, then trump.</b> Follow the led suit if you can. Void in it, you <em>must</em> play a trump if you hold one; only then may you discard.</div>
+      <div class="rh-item"><b>The Fool is the Excuse.</b> The Matto can be played any time, never wins the trick, and stays with your side for its 5 points.</div>
+      <div class="rh-item"><b>Win by points.</b> Honours (Matto · Bagattino · Angel · World) & Kings = 5, Queens 4, Knights 3, Knaves 2; all else 0. Take over half of the 76.</div>
+    </div>
+    <div class="rh-order">
+      <span class="lab">A-order, low→high</span>
+      <span class="pill t">Bagattino</span><span class="pill t">4 Moors</span><span class="pill t">Love</span><span class="pill t">Chariot</span>
+      <span class="pill t">Temp.</span><span class="pill t">Just.</span><span class="pill t">Str.</span><span class="pill t">Wheel</span>
+      <span class="pill t">…</span><span class="pill t">Star</span><span class="pill t">Moon</span><span class="pill t">Sun</span><span class="pill t">World</span><span class="pill t">Angel</span>
+      <span style="margin:0 4px;color:var(--muted)">·</span>
+      <span class="lab">Suits</span> round: Ace→10; long (swords/batons): <b>inverted</b>, Ace high · courts on top
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <label>Deck <select id="deck"></select></label>
+    <button id="newgame">New deal</button>
+    <span class="deck-note" id="deck-note"></span>
+  </div>
+
+  <div id="err" style="display:none"></div>
+
+  <div class="layout" id="game" style="display:none">
+    <div class="board">
+      <div class="scorebar">
+        <span class="us">Your team <b id="us-pts">0</b></span>
+        <span class="them">Opponents <b id="them-pts">0</b></span>
+        <span class="trk" id="trk">Trick 1</span>
+      </div>
+      <div class="felt">
+        <div class="seat north"><div class="nm" id="nm-2">Partner</div><div id="h-2" class="backs"></div><div id="t-2" class="play-slot"></div></div>
+        <div class="seat west"><div class="nm" id="nm-1">West</div><div id="h-1" class="backs"></div><div id="t-1" class="play-slot"></div></div>
+        <div class="center" id="center"></div>
+        <div class="seat east"><div class="nm" id="nm-3">East</div><div id="h-3" class="backs"></div><div id="t-3" class="play-slot"></div></div>
+        <div class="seat south"><div id="t-0" class="play-slot"></div><div class="nm turn" id="nm-0">You (South)</div></div>
+      </div>
+      <div class="status" id="status"></div>
+      <div id="you-hand" class="hand"></div>
+    </div>
+
+    <aside class="logpanel">
+      <h3>Play log</h3>
+      <p class="hint">Each trick — every card, who won, points taken — so a fast table never loses you.</p>
+      <div id="log"></div>
+      <h4>Note on accuracy</h4>
+      <p>Pack, A-order, suit ranking, the Excuse and the point values follow the Bolognese tradition
+      (see the deck's research dossier). The <em>cricche</em>/<em>sequenze</em> declaration bonuses and the
+      Matto card-exchange are not yet scored — a faithful next step.</p>
+    </aside>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ───────────────────────── pure engine (also used by the Node sim) ─────────────────────────
+  const SUITS=['coins','cups','swords','batons'];
+  const ROUND=new Set(['coins','cups']);
+  const PIP_ROUND={ace:1,six:6,seven:7,eight:8,nine:9,ten:10};
+  const PIP_LONG ={ten:1,nine:2,eight:3,seven:4,six:5,ace:6};   // long suits invert; Ace high
+  const COURTVAL={page:11,knight:12,queen:13,king:14};
+  const AORDER={magician:1,emperor:2,empress:2,hierophant:2,'high-priestess':2,lovers:5,chariot:6,
+    temperance:7,justice:8,strength:9,'wheel-of-fortune':10,hermit:11,'hanged-man':12,death:13,
+    devil:14,tower:15,star:16,moon:17,sun:18,world:19,judgement:20};
+  const HONOUR=new Set(['fool','magician','judgement','world']);   // 5 points each
+  const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+  const suitRank=(suit,word)=>COURTVAL[word]||(ROUND.has(suit)?PIP_ROUND[word]:PIP_LONG[word]);
+  const cardPoints=c=>c.kind==='trump'?(HONOUR.has(c.tkey)?5:0):({king:5,queen:4,knight:3,page:2}[c.court]||0);
+  const imgOf=i=>i.image_url||(i.metadata||{}).image_url;
+
+  function buildDeck(g){
+    const T=[], seen=new Set();
+    for(const i of g.items){ const k=(i.metadata||{}).trump_key; if(!k||!imgOf(i)||seen.has(k))continue;
+      if(k==='fool'){ seen.add(k); T.push({kind:'trump',tkey:'fool',matto:true,rank:null,honour:true,img:imgOf(i),label:'Fool · Matto'}); }
+      else if(k in AORDER){ seen.add(k); T.push({kind:'trump',tkey:k,rank:AORDER[k],honour:HONOUR.has(k),img:imgOf(i),label:i.name.split(/\s+[—–-]\s+/)[0]}); } }
+    const WORDS=['ace','six','seven','eight','nine','ten','page','knight','queen','king'];
+    const S=[], seen2=new Set();
+    for(const s of SUITS) for(const i of g.items){ const mk=(i.metadata||{}).minor_key; if(!mk||!imgOf(i)||!mk.endsWith('-of-'+s))continue;
+      const w=mk.split('-of-')[0]; if(!WORDS.includes(w))continue; const id=s+':'+w; if(seen2.has(id))continue; seen2.add(id);
+      S.push({kind:'suit',suit:s,word:w,court:COURTVAL[w]?w:null,rank:suitRank(s,w),honour:false,img:imgOf(i),label:cap(w)+' of '+cap(s)}); }
+    return [...T,...S];
+  }
+
+  // game state
+  let hands=[[],[],[],[]], trick=[], ledSuit=null, leader=0, teamPts=[0,0], kitty=[], lastWinner=0, played=0, ntricks=0, logRows=[];
+  const teamOf=seat=>seat%2;                 // team 0 = seats 0&2 (You+North); team 1 = 1&3
+  function shuffle(a){ for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]];} return a; }
+
+  function deal(deck){
+    const d=shuffle(deck.slice()); ntricks=Math.floor(d.length/4);
+    for(let s=0;s<4;s++) hands[s]=d.slice(s*ntricks,(s+1)*ntricks);
+    kitty=d.slice(4*ntricks);
+    trick=[]; ledSuit=null; leader=0; teamPts=[0,0]; lastWinner=0; played=0; logRows=[];
+  }
+  function legalMoves(seat){
+    const h=hands[seat]; if(ledSuit===null) return h.slice();
+    const matto=h.filter(c=>c.matto);
+    let pool = ledSuit==='trump' ? h.filter(c=>c.kind==='trump'&&!c.matto)
+            : h.filter(c=>c.kind==='suit'&&c.suit===ledSuit);
+    if(!pool.length && ledSuit!=='trump') pool=h.filter(c=>c.kind==='trump'&&!c.matto);   // void → must trump
+    if(!pool.length) return h.slice();                                                    // void & no trump → anything
+    return pool.concat(matto);                                                            // Excuse always allowed
+  }
+  function winnerEntry(cards){            // cards: [{seat,card,idx}]
+    const tr=cards.filter(x=>x.card.kind==='trump'&&!x.card.matto);
+    if(tr.length) return tr.reduce((a,b)=>(b.card.rank>a.card.rank||(b.card.rank===a.card.rank&&b.idx>a.idx))?b:a); // Moors: later wins
+    const led=cards.filter(x=>x.card.suit===ledSuit&&!x.card.matto);
+    return led.length?led.reduce((a,b)=>b.card.rank>a.card.rank?b:a):null;
+  }
+  function play(seat,card){
+    hands[seat].splice(hands[seat].indexOf(card),1);
+    if(ledSuit===null && !card.matto) ledSuit = card.kind==='trump' ? 'trump' : card.suit;
+    trick.push({seat,card});
+  }
+  function resolveTrick(){
+    const cards=trick.map((x,idx)=>({...x,idx}));
+    const w=winnerEntry(cards), wseat=w?w.seat:leader;
+    for(const x of cards){ if(x.card.matto) teamPts[teamOf(x.seat)]+=cardPoints(x.card);
+      else teamPts[teamOf(wseat)]+=cardPoints(x.card); }
+    leader=wseat; lastWinner=wseat; played++;
+    const out={seat:wseat,cards:cards.map(c=>({seat:c.seat,card:c.card}))};
+    trick=[]; ledSuit=null; return out;
+  }
+  // partnership-aware heuristic
+  function curWinnerSeat(){ const w=winnerEntry(trick.map((x,idx)=>({...x,idx}))); return w?w.seat:null; }
+  function wouldWin(seat,card){ const hypo=trick.map((x,idx)=>({...x,idx})).concat([{seat,card,idx:trick.length}]);
+    const w=winnerEntry(hypo); return w&&w.seat===seat; }
+  const byRank=a=>a.slice().sort((x,y)=>(x.rank??0)-(y.rank??0));
+  const byVal =a=>a.slice().sort((x,y)=>cardPoints(x)-cardPoints(y)||(x.rank??0)-(y.rank??0));
+  function aiChoose(seat){
+    const legal=legalMoves(seat);
+    if(trick.length===0){ const nt=legal.filter(c=>c.kind==='suit'&&!c.matto);
+      return byRank(nt.length?nt:legal.filter(c=>!c.matto)).slice(-1)[0]?byRank(nt.length?nt:legal.filter(c=>!c.matto))[0]:legal[0]; }
+    const cw=curWinnerSeat();
+    const partnerWinning = cw!=null && teamOf(cw)===teamOf(seat);
+    const wins=legal.filter(c=>!c.matto && wouldWin(seat,c));
+    if(partnerWinning){ const safe=legal.filter(c=>!c.matto); return byVal(safe.length?safe:legal)[0]; }   // don't overtake partner
+    if(wins.length) return byRank(wins)[0];                                                                // win as cheaply as possible
+    const dump=legal.filter(c=>!c.matto); return byVal(dump.length?dump:legal)[0];                          // can't win → throw least value
+  }
+
+  function playGameHeadless(deck){
+    deal(deck);
+    for(let t=0;t<ntricks;t++){ ledSuit=null; trick=[];
+      for(let k=0;k<4;k++){ const seat=(leader+k)%4; play(seat,aiChoose(seat)); }
+      resolveTrick(); }
+    for(const c of kitty) teamPts[teamOf(lastWinner)]+=cardPoints(c);
+    return {teamPts:[...teamPts], total:teamPts[0]+teamPts[1], ntricks};
+  }
+
+  if(typeof module!=='undefined' && module.exports){ module.exports={buildDeck,playGameHeadless,suitRank,cardPoints,AORDER}; return; }
+
+  // ───────────────────────────────── browser UI ─────────────────────────────────
+  const $=id=>document.getElementById(id);
+  const PLAYABLE=['tarot-de-marseille-conver','golden-dawn-book-t-tarot','visconti-sforza-tarot'];
+  const SEATNAME=['You','West','Partner','East'];
+  let DECK=[], CURNAME='', turn=0, busy=false;
+
+  async function loadDeck(slug){
+    const g=await (await fetch('../../tarot/'+slug+'/grammar.json')).json();
+    CURNAME=(g.name||slug).split(/\s+[—–-]\s+/)[0]; DECK=buildDeck(g);
+    if(DECK.length<40) throw new Error('“'+CURNAME+'” lacks enough card images for the 62-card pack.');
+  }
+  function cardEl(c,opts={}){
+    const el=document.createElement(opts.play?'button':'div');
+    el.className='card'+(c.kind==='trump'?' trump':'')+(opts.play?' play':'')+(opts.illegal?' illegal':'')+(opts.legalHint?' legal':'')+(opts.win?' win':'');
+    if(opts.play){ el.type='button'; el.disabled=!!opts.illegal; if(!opts.illegal) el.onclick=()=>humanPlay(c);
+      else el.title='You must follow '+(ledSuit==='trump'?'with a trump':cap(ledSuit)); }
+    el.innerHTML=(c.honour?`<span class="honour-badge">★</span>`:'')+`<img loading="lazy" src="${c.img}" alt=""><div class="cap">${c.label}</div>`;
+    return el;
+  }
+  function renderSeats(winSeat){
+    for(let s=0;s<4;s++){ const nm=$('nm-'+s); if(nm) nm.className='nm'+(turn===s&&!busy?' turn':'');
+      if(s!==0){ const hb=$('h-'+s); hb.innerHTML=''; for(let n=0;n<hands[s].length;n++){const b=document.createElement('div');b.className='back-s';hb.appendChild(b);} }
+      const slot=$('t-'+s); if(slot){ slot.innerHTML=''; const e=trick.find(x=>x.seat===s);
+        if(e) slot.appendChild(cardEl(e.card,{win:winSeat===s})); else slot.innerHTML='<span class="ph">·</span>'; } }
+    $('us-pts').textContent=teamPts[0]; $('them-pts').textContent=teamPts[1];
+    $('trk').textContent='Trick '+Math.min(played+1,ntricks)+' / '+ntricks;
+    $('center').textContent = busy?'' : (trick.length? '' : '');
+  }
+  function renderHand(){
+    const yh=$('you-hand'); yh.innerHTML='';
+    const can=(turn===0&&!busy); const lset=can?legalMoves(0):hands[0];
+    const must=can&&ledSuit!==null&&lset.length<hands[0].length;
+    for(const c of hands[0]) yh.appendChild(cardEl(c,{play:can,illegal:can&&!lset.includes(c),legalHint:must&&lset.includes(c)}));
+  }
+  const setStatus=t=>$('status').textContent=t;
+  function logTrick(out){
+    const nm=s=>SEATNAME[s]; const side=x=>`${nm(x.seat)} ${x.card.label}`;
+    const cardsTxt=out.cards.map(side).join(' · ');
+    const team=teamOf(out.seat)===0?'your team':'the opponents';
+    const cls=teamOf(out.seat)===0?'us':'them';
+    const row=`<div class="log-row"><span class="ln">${played}.</span> ${cardsTxt}`
+      +`<span class="wn" style="color:var(--${cls})">${nm(out.seat)} wins for ${team}</span></div>`;
+    const log=$('log'); if(log.querySelector('.log-empty')) log.innerHTML=''; log.insertAdjacentHTML('afterbegin',row);
+  }
+
+  function step(){
+    if(trick.length===4){ const winS=curWinnerSeat(); busy=true; renderSeats(winS); renderHand();
+      setTimeout(()=>{ const out=resolveTrick(); logTrick(out); busy=false;
+        if(played>=ntricks){ endGame(); return; } setStatus((SEATNAME[leader]==='You'?'You lead':SEATNAME[leader]+' leads')+' the next trick.'); setTimeout(step,650); }, 950); return; }
+    const seat=(leader+trick.length)%4; turn=seat;
+    if(seat===0){ busy=false; renderSeats(); renderHand();
+      setStatus(ledSuit===null?'Your lead — play any card.':(legalMoves(0).some(c=>!c.matto&&((ledSuit==='trump'&&c.kind==='trump')||c.suit===ledSuit))?'Your turn — follow '+(ledSuit==='trump'?'with a trump':cap(ledSuit))+'.':'Your turn — you are void, play a trump or discard.')); return; }
+    busy=true; renderSeats(); renderHand();
+    setTimeout(()=>{ play(seat,aiChoose(seat)); step(); }, 700);
+  }
+  function humanPlay(c){ if(turn!==0||busy||trick.length===4) return; if(!legalMoves(0).includes(c)) return; play(0,c); step(); }
+  function endGame(){
+    const us=teamPts[0], them=teamPts[1], win=us>them, tie=us===them;
+    renderSeats(); setStatus('');
+    $('center').innerHTML=`<div class="result" style="color:${tie?'var(--muted)':win?'var(--us)':'var(--them)'}">`
+      +(tie?`Even — ${us}–${them} points.`:win?`Your team wins, ${us}–${them} points!`:`Opponents win, ${them}–${us}.`)+`</div>`;
+  }
+  function newDeal(){ teamPts=[0,0]; deal(DECK); $('log').innerHTML='<div class="log-empty">No tricks yet.</div>';
+    busy=false; setStatus('You lead the first trick.'); renderSeats(); renderHand(); step(); }
+
+  async function start(slug){
+    try{ await loadDeck(slug); $('err').style.display='none'; $('game').style.display='grid';
+      $('deck-note').textContent='Dealt from '+CURNAME+' · '+DECK.length+'-card pack ('+Math.floor(DECK.length/4)+' tricks)'; newDeal(); }
+    catch(e){ $('game').style.display='none'; $('err').style.display='block'; $('err').textContent=e.message; }
+  }
+  (async function(){
+    try{
+      const col=await (await fetch('../../tarot/_collection.json')).json();
+      const nameOf={}; col.grammars.forEach(g=>nameOf[g.slug]=(g.name||g.slug).split(/\s+[—–-]\s+/)[0]);
+      const sel=$('deck'); sel.innerHTML=PLAYABLE.map(s=>`<option value="${s}">${nameOf[s]||s}</option>`).join('');
+      sel.value=PLAYABLE[0]; sel.addEventListener('change',()=>start(sel.value)); await start(sel.value);
+    }catch(e){ $('err').style.display='block'; $('err').textContent='Could not load the decks: '+e.message; }
+  })();
+  $('newgame').addEventListener('click',()=>start($('deck').value));
+})();
+</script>
+</body>
+</html>
