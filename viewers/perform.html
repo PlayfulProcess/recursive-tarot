@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Performance · Recursive Tarot</title>
+<!--
+  Backend-free performance/sequence player. Reads a `sequence` grammar (recording/docs/
+  performance-grammar.md shape): items[] each with image_url + metadata + a `performance` object
+  { start_sec, end_sec, overlays[] {kind,content,start_sec,end_sec,x_pct,y_pct,width_pct} }.
+  A global clock drives image swaps + timed karaoke overlays; intermission items (no image_url)
+  render their text centred. Audio optional: metadata.audio (single track) drives the clock if set,
+  else an internal clock auto-advances. ?src=../data/performances/<id>.json (default: Death demo).
+-->
+<style>
+  :root{ --bg:#0f0d17; --panel:#1a1726; --stage:#0a0712; --ink:#ece8f5; --muted:#9b94b3; --accent:#d4af37; --line:#2a2440; }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#fbfaff; --panel:#fff; --stage:#15121f; --ink:#241b3a; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:16px}
+  h1{font-size:18px;margin:.2em 0 .1em} h1 .sub{font-size:13px;font-weight:400;color:var(--muted)}
+  .note{font-size:12px;color:var(--muted);margin:.2em 0 12px}
+  .note a{color:var(--accent)}
+
+  .stage{position:relative;width:100%;height:min(70vh,720px);background:var(--stage);border:1px solid var(--line);
+    border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .stage img{max-width:100%;max-height:100%;object-fit:contain;display:block;transition:opacity .5s ease}
+  .ov{position:absolute;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.85),0 0 2px rgba(0,0,0,.9)}
+  .ov.text{font-weight:800;font-size:clamp(16px,3.4vw,30px);line-height:1.25;letter-spacing:.01em}
+  .ov.label{font-weight:700;font-size:clamp(11px,1.6vw,14px);letter-spacing:.12em;color:var(--accent);
+    text-transform:uppercase;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+  .stage.intermission{background:var(--panel)}
+  .stage.intermission .ov.text{color:var(--ink);font-size:clamp(18px,3.6vw,30px);font-weight:700;text-align:center;text-shadow:none;font-style:italic}
+
+  .bar{display:flex;align-items:center;gap:12px;margin-top:12px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:10px 14px;flex-wrap:wrap}
+  .bar button{background:var(--accent);color:#1a1206;border:0;border-radius:8px;padding:8px 13px;font-size:15px;font-weight:700;cursor:pointer}
+  .bar button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:600;font-size:14px}
+  .bar .time{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);min-width:88px}
+  .scrub{flex:1;min-width:140px;accent-color:var(--accent)}
+  .passages{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+  .passages button{background:var(--panel);border:1px solid var(--line);color:var(--muted);border-radius:999px;
+    padding:5px 11px;font-size:12px;cursor:pointer}
+  .passages button.on{border-color:var(--accent);color:var(--accent);font-weight:700}
+  #err{color:#e07a5f;padding:24px}
+  @media (prefers-reduced-motion: reduce){ .stage img{transition:none} }
+</style>
+</head>
+<body>
+<script src="../site-header.js?v=16"></script>
+<site-header active="play"></site-header>
+
+<div class="wrap">
+  <h1 id="title">Performance</h1>
+  <p class="note" id="note"></p>
+  <div id="err" style="display:none"></div>
+
+  <div class="stage" id="stage" aria-live="off"><img id="plate" alt=""></div>
+  <audio id="audio" preload="auto"></audio>
+
+  <div class="bar">
+    <button id="play" aria-label="Play or pause">▶ Play</button>
+    <button class="ghost" id="prev" aria-label="Previous passage">⏮</button>
+    <button class="ghost" id="next" aria-label="Next passage">⏭</button>
+    <input class="scrub" id="scrub" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+    <span class="time" id="time">0:00 / 0:00</span>
+  </div>
+  <div class="passages" id="passages"></div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const params=new URLSearchParams(location.search);
+const SRC=params.get('src')||'../data/performances/death-across-the-centuries.json';
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+
+let G=null, items=[], TOTAL=0, t=0, playing=false, raf=0, lastTs=0, audio=$('audio'), hasAudio=false;
+const perf=i=>i.performance||{};
+const itemEnd=i=>perf(i).end_sec ?? (perf(i).start_sec||0)+ (perf(i).duration_sec||4);
+
+(async function(){
+  try{
+    G=await (await fetch(SRC)).json();
+    items=(G.items||[]).slice().sort((a,b)=>(perf(a).start_sec||0)-(perf(b).start_sec||0));
+    if(!items.length) throw new Error('No items in this sequence grammar.');
+    TOTAL=(G.metadata&&G.metadata.total_sec) || Math.max(...items.map(itemEnd));
+    $('title').innerHTML=esc(G.name||'Performance')+' <span class="sub">— a performance</span>';
+    const audioUrl=(G.metadata&&G.metadata.audio)||null;
+    if(audioUrl){ audio.src=audioUrl; hasAudio=true; }
+    $('note').innerHTML = hasAudio ? 'Narrated performance.'
+      : 'Caption-only preview — narration audio &amp; word-timing are still to come. '
+        +'<a href="../pages/course-viewer.html?course=history-of-tarot">Read the full history →</a>';
+    buildPassages(); $('scrub').max=TOTAL; render(); bind();
+  }catch(e){ $('err').style.display='block'; $('err').textContent='Could not load the performance: '+e.message; }
+})();
+
+function activeItem(){ for(let k=items.length-1;k>=0;k--){ if(t>=(perf(items[k]).start_sec||0)) return items[k]; } return items[0]; }
+function buildPassages(){
+  const p=$('passages'); p.innerHTML='';
+  items.forEach((it,idx)=>{ const b=document.createElement('button'); b.textContent=(idx+1)+'. '+(it.name||it.id);
+    b.onclick=()=>{ seek(perf(it).start_sec||0); }; p.appendChild(b); });
+}
+function render(){
+  const it=activeItem(); const pf=perf(it);
+  const stage=$('stage'), plate=$('plate');
+  const intermission=!it.image_url;
+  stage.classList.toggle('intermission',intermission);
+  if(it.image_url){ if(plate.getAttribute('src')!==it.image_url) plate.src=it.image_url; plate.style.display=''; plate.alt=it.name||''; }
+  else plate.style.display='none';
+  // overlays
+  stage.querySelectorAll('.ov').forEach(o=>o.remove());
+  for(const ov of (pf.overlays||[])){
+    if(t<(ov.start_sec||0) || t>=(ov.end_sec||TOTAL)) continue;
+    const el=document.createElement('div'); el.className='ov '+(ov.kind==='label'?'label':'text');
+    if(intermission && ov.kind!=='label'){ el.style.left='8%'; el.style.right='8%'; el.style.top=(ov.y_pct??42)+'%'; el.style.textAlign='center'; }
+    else { el.style.left=(ov.x_pct??6)+'%'; el.style.top=(ov.y_pct??82)+'%'; el.style.width=(ov.width_pct??88)+'%'; }
+    el.textContent=ov.content||''; stage.appendChild(el);
+  }
+  // passage highlight + scrubber + time
+  items.forEach((x,idx)=>$('passages').children[idx]&&$('passages').children[idx].classList.toggle('on',x===it));
+  if(document.activeElement!==$('scrub')) $('scrub').value=t;
+  $('time').textContent=fmt(t)+' / '+fmt(TOTAL);
+}
+function tick(ts){
+  if(!playing) return;
+  if(hasAudio){ t=audio.currentTime; }
+  else { if(!lastTs)lastTs=ts; t+=(ts-lastTs)/1000; lastTs=ts; }
+  if(t>=TOTAL){ t=TOTAL; pause(); render(); return; }
+  render(); raf=requestAnimationFrame(tick);
+}
+function play(){ if(playing)return; playing=true; lastTs=0; $('play').textContent='⏸ Pause';
+  if(hasAudio){ audio.currentTime=Math.min(t,TOTAL-0.05); audio.play().catch(()=>{}); }
+  raf=requestAnimationFrame(tick); }
+function pause(){ playing=false; $('play').textContent='▶ Play'; cancelAnimationFrame(raf); if(hasAudio)audio.pause(); }
+function seek(sec){ t=Math.max(0,Math.min(sec,TOTAL)); if(hasAudio)audio.currentTime=t; lastTs=0; render(); }
+function bind(){
+  $('play').onclick=()=>playing?pause():play();
+  $('prev').onclick=()=>{ const cur=perf(activeItem()).start_sec||0; const prev=[...items].reverse().find(x=>(perf(x).start_sec||0)<cur-0.3); seek(prev?perf(prev).start_sec:0); };
+  $('next').onclick=()=>{ const cur=perf(activeItem()).start_sec||0; const nx=items.find(x=>(perf(x).start_sec||0)>cur+0.3); if(nx)seek(perf(nx).start_sec); };
+  $('scrub').oninput=e=>{ pause(); seek(+e.target.value); };
+  document.addEventListener('keydown',e=>{
+    if(e.target.tagName==='INPUT')return;
+    if(e.key===' '){ e.preventDefault(); playing?pause():play(); }
+    else if(e.key==='ArrowRight') $('next').click();
+    else if(e.key==='ArrowLeft') $('prev').click();
+    else if(e.key==='Home') seek(0);
+  });
+}
+</script>
+</body>
+</html>

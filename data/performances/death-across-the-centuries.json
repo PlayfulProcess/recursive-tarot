@@ -1,0 +1,85 @@
+{
+  "id": "perf-death-across-the-centuries",
+  "name": "Death across the centuries",
+  "type": "sequence",
+  "default_preview": "performance",
+  "metadata": {
+    "about": "A short caption-only performance — the Death card across ~460 years, the 'painted fossil' that is much of this book's argument in one card. DEMO of the sequence viewer: the captions are timed, but narration audio + true word-timing are TODO (estimated kid-paced timings stand in).",
+    "source": "course/history-of-tarot.mdx · A Few Plates",
+    "audio": null,
+    "total_sec": 53
+  },
+  "items": [
+    {
+      "id": "open",
+      "name": "Cold open",
+      "image_url": "",
+      "sections": { "Text": "To hold a tarot card is to hold a small painted fossil." },
+      "metadata": { "kind": "intermission" },
+      "performance": {
+        "start_sec": 0, "end_sec": 6.5, "video_visible": false,
+        "overlays": [
+          { "kind": "text", "content": "To hold a tarot card is to hold a small painted fossil.", "start_sec": 0.4, "end_sec": 6.5, "x_pct": 10, "y_pct": 42, "width_pct": 80 }
+        ]
+      }
+    },
+    {
+      "id": "visconti-1451",
+      "name": "Death — Visconti-Sforza, c. 1451",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-13-death.jpg",
+      "sections": { "Text": "The earliest clear tarot Death: a white skeleton standing on a gold ground, holding a bow." },
+      "metadata": { "deck": "visconti-sforza-tarot", "trump_key": "death" },
+      "performance": {
+        "start_sec": 6.5, "end_sec": 20, "video_visible": false,
+        "overlays": [
+          { "kind": "label", "content": "VISCONTI-SFORZA · c. 1451", "start_sec": 6.7, "end_sec": 20, "x_pct": 6, "y_pct": 5, "width_pct": 60 },
+          { "kind": "text", "content": "THE EARLIEST CLEAR TAROT DEATH —", "start_sec": 7.0, "end_sec": 13.0, "x_pct": 6, "y_pct": 82, "width_pct": 88 },
+          { "kind": "text", "content": "A WHITE SKELETON ON GOLD, HOLDING A BOW.", "start_sec": 13.0, "end_sec": 20, "x_pct": 6, "y_pct": 82, "width_pct": 88 }
+        ]
+      }
+    },
+    {
+      "id": "marseille-1760",
+      "name": "Death — Tarot de Marseille, 1760",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/13%20XIII%20Nicolas%20Conver%20Tarot%201760.jpg",
+      "sections": { "Text": "Three centuries on, the same skeleton now mows a field of severed limbs with a scythe — and the card is left pointedly untitled." },
+      "metadata": { "deck": "tarot-de-marseille-conver", "trump_key": "death" },
+      "performance": {
+        "start_sec": 20, "end_sec": 34, "video_visible": false,
+        "overlays": [
+          { "kind": "label", "content": "TAROT DE MARSEILLE · 1760", "start_sec": 20.2, "end_sec": 34, "x_pct": 6, "y_pct": 5, "width_pct": 60 },
+          { "kind": "text", "content": "THREE CENTURIES ON, THE SAME SKELETON —", "start_sec": 20.5, "end_sec": 26.5, "x_pct": 6, "y_pct": 82, "width_pct": 88 },
+          { "kind": "text", "content": "NOW A SCYTHE-MOWER, AND THE CARD UNTITLED.", "start_sec": 26.5, "end_sec": 34, "x_pct": 6, "y_pct": 82, "width_pct": 88 }
+        ]
+      }
+    },
+    {
+      "id": "rws-1909",
+      "name": "Death — Rider-Waite-Smith line, 1909",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot/RWS_Tarot_13_Death.jpg",
+      "sections": { "Text": "The skeleton survives the whole journey but is restaged once more: an armoured rider on a pale horse beneath a rising sun." },
+      "metadata": { "deck": "golden-dawn-book-t-tarot", "trump_key": "death" },
+      "performance": {
+        "start_sec": 34, "end_sec": 47, "video_visible": false,
+        "overlays": [
+          { "kind": "label", "content": "RIDER-WAITE-SMITH LINE · 1909", "start_sec": 34.2, "end_sec": 47, "x_pct": 6, "y_pct": 5, "width_pct": 60 },
+          { "kind": "text", "content": "THE SKELETON SURVIVES THE WHOLE JOURNEY —", "start_sec": 34.5, "end_sec": 40.5, "x_pct": 6, "y_pct": 82, "width_pct": 88 },
+          { "kind": "text", "content": "RESTAGED AS A RIDER ON A PALE HORSE.", "start_sec": 40.5, "end_sec": 47, "x_pct": 6, "y_pct": 82, "width_pct": 88 }
+        ]
+      }
+    },
+    {
+      "id": "close",
+      "name": "Closer",
+      "image_url": "",
+      "sections": { "Text": "The picture is a fossil; the meaning is poured in fresh each century." },
+      "metadata": { "kind": "intermission" },
+      "performance": {
+        "start_sec": 47, "end_sec": 53, "video_visible": false,
+        "overlays": [
+          { "kind": "text", "content": "The picture is a fossil; the meaning is poured in fresh each century.", "start_sec": 47.4, "end_sec": 53, "x_pct": 10, "y_pct": 42, "width_pct": 80 }
+        ]
+      }
+    }
+  ]
+}
