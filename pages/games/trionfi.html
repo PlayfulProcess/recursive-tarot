@@ -35,6 +35,8 @@
   .rh-order .lab{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-right:2px}
   .pill{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:2px 7px;white-space:nowrap}
   .pill.t{border-color:var(--accent);color:var(--accent)}
+  .rh-foot{font-size:11.5px;color:var(--muted);margin-top:10px;padding-top:9px;border-top:1px solid var(--line);line-height:1.55}
+  .rh-foot a{color:var(--accent)}
 
   .toolbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
   .toolbar label{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}
@@ -42,8 +44,7 @@
   .deck-note{font-size:12px;color:var(--muted)}
   button{background:var(--accent);color:#1a1206;border:0;border-radius:9px;padding:9px 16px;font-size:14px;font-weight:700;cursor:pointer}
 
-  .layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px;align-items:start}
-  @media (max-width:880px){ .layout{grid-template-columns:1fr} }
+  .layout{display:flex;flex-direction:column;gap:16px}
   .board{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
 
   .scorebar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}
@@ -80,10 +81,10 @@
   .result{font-size:18px;font-weight:700}
 
   /* play log */
-  .logpanel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;position:sticky;top:14px}
+  .logpanel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
   .logpanel h3{margin:0 0 4px;font-size:15px}
   .logpanel .hint{font-size:12px;color:var(--muted);margin:0 0 10px}
-  #log{display:flex;flex-direction:column;gap:7px;max-height:62vh;overflow:auto}
+  #log{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:7px;max-height:300px;overflow:auto}
   .log-row{font-size:12px;border:1px solid var(--line);border-radius:8px;padding:7px 9px;background:var(--panel2);line-height:1.4}
   .log-row .ln{display:inline-block;min-width:18px;color:var(--muted);font-weight:700;margin-right:4px}
   .log-row .led{color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.06em;margin-left:2px}
@@ -96,7 +97,7 @@
 </style>
 </head>
 <body>
-<script src="../../site-header.js?v=13"></script>
+<script src="../../site-header.js?v=14"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">
@@ -114,11 +115,16 @@
       <div class="rh-item"><b>Trumps triumph.</b> Any trump beats any suit card. Between two trumps — or two cards of the led suit — the higher rank wins. Off-suit, non-trump cards can't win.</div>
     </div>
     <div class="rh-order">
-      <span class="lab">Suit, low→high</span> <span class="pill">Ace</span> 2 3 4 5
+      <span class="lab">Suit, low→high</span> <span class="pill">Ace</span> 2 … 10
       <span class="pill">Page</span><span class="pill">Knight</span><span class="pill">Queen</span><span class="pill">King</span>
       <span style="margin:0 6px;color:var(--muted)">·</span>
-      <span class="lab">Trumps</span> any trump beats any suit card; among trumps the <b>higher number</b> wins (each card keeps its real trump number).
+      <span class="lab">Trumps</span> Bagatto <span class="pill t">I</span> … the World <span class="pill t">XXI</span> — any trump beats any suit card; the <b>higher number</b> wins.
     </div>
+    <div class="rh-foot">In the long suits — Swords and Batons — that pip order <em>inverts</em> (Ace high, Ten low); the fuller game
+      <a href="tarocchino.html">Tarocchino</a> honours it. Court cards vary by tradition, too: Spanish-suited games keep
+      <b>three</b> (no Queen), tarot <b>four</b>, and the Cary-Yale uniquely <b>six</b>. This Trionfi deals a short teaching pack
+      (Ace–5 + courts, six trumps). Rules after John McLeod's <a href="https://www.pagat.com/tarot/ottocento.html" target="_blank" rel="noopener">pagat.com</a>
+      and the <a href="https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/decks/tarocchino-bologna.md" target="_blank" rel="noopener">research dossier</a>.</div>
   </div>
 
   <div class="toolbar">

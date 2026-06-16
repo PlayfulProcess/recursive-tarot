@@ -53,9 +53,16 @@
   ];
   // [key, label, href, cssClass, external?]
   const TOOLS = [
-    ['play',   '🎴 Play',    PFX + 'pages/play.html',          't-caster'],
     ['shop',   '🛒 Shop',    PFX + 'pages/shop.html',          't-shop'],
     ['github', 'GitHub ↗',  'https://github.com/PlayfulProcess/recursive-tarot', 't-github', true],
+  ];
+  // Play — a dropdown of the games + readings (the pill itself links to the Play hub).
+  const PLAY_MENU = [
+    [PFX + 'pages/games/tarocchino.html', '♛ Tarocchino di Bologna'],
+    [PFX + 'pages/games/trionfi.html',    '♛ Trionfi'],
+    [PFX + 'viewers/caster.html',         '🔮 Caster'],
+    ['https://flow.recursive.eco/cast',   '✦ Oracle ↗', true],
+    [PFX + 'pages/play.html',             'All games & readings →'],
   ];
   // Courses — a dropdown under one "Courses" pill (each is a course-viewer ?course=…).
   const COURSES = [
@@ -90,7 +97,8 @@
       root.innerHTML = `
         <style>
           :host{ display:block; position:sticky; top:0; z-index:50;
-                 background:#0f0d17; padding:0; margin:0; border:0; font-size:14px; }
+                 background:#0f0d17; padding:0; margin:0; border:0; font-size:14px;
+                 transition:transform .25s ease; will-change:transform; }
           .bar{
             display:flex; align-items:center; gap:14px; flex-wrap:wrap;
             padding:11px 18px; background:#0f0d17;
@@ -165,10 +173,24 @@
                 ${COURSES.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')}
               </span>
             </span>
+            <span class="dd" tabindex="0">
+              <a class="tab t-caster dd-btn${active === 'play' ? ' active' : ''}" href="${PFX}pages/play.html">🎴 Play ▾</a>
+              <span class="dd-menu">
+                ${PLAY_MENU.map(([href, label, ext]) => `<a href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`).join('')}
+              </span>
+            </span>
             ${TOOLS.map(tab).join('')}
             <recursive-auth></recursive-auth>
           </nav>
         </div>`;
+
+      // Auto-hide on scroll down, reveal on scroll up (gives the page its full height back).
+      let lastY = window.scrollY || 0, host = this;
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY || 0;
+        host.style.transform = (y > 90 && y > lastY + 4) ? 'translateY(-100%)' : 'translateY(0)';
+        lastY = y;
+      }, { passive: true });
     }
   }
   customElements.define('site-header', SiteHeader);

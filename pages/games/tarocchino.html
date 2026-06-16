@@ -46,17 +46,16 @@
   button{background:var(--accent);color:#1a1206;border:0;border-radius:9px;padding:9px 16px;font-size:14px;font-weight:700;cursor:pointer}
   .deck-note{font-size:12px;color:var(--muted)}
 
-  .layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px;align-items:start}
-  @media (max-width:900px){ .layout{grid-template-columns:1fr} }
+  .layout{display:flex;flex-direction:column;gap:16px}
   .board{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
 
   .scorebar{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:12px;font-size:14px}
   .scorebar .us b{color:var(--us);font-size:22px} .scorebar .them b{color:var(--them);font-size:22px}
   .scorebar .trk{margin-left:auto;color:var(--muted);font-size:12px}
 
-  .felt{background:var(--felt);border:1px solid var(--line);border-radius:14px;padding:12px;
-    display:grid;grid-template-columns:1fr 1.4fr 1fr;grid-template-rows:auto auto auto;
-    grid-template-areas:". north ." "west center east" ". south ."; gap:8px;min-height:330px;align-items:center;justify-items:center}
+  .felt{background:var(--felt);border:1px solid var(--line);border-radius:14px;padding:10px;
+    display:grid;grid-template-columns:1fr 1.3fr 1fr;grid-template-rows:auto auto auto;
+    grid-template-areas:". north ." "west center east" ". south ."; gap:4px;min-height:0;align-items:center;justify-items:center}
   .seat{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11px;color:var(--muted)}
   .seat.north{grid-area:north} .seat.west{grid-area:west} .seat.east{grid-area:east} .seat.south{grid-area:south}
   .center{grid-area:center;align-self:center;justify-self:center;text-align:center;color:var(--muted);font-size:12px;min-height:60px;display:flex;align-items:center}
@@ -66,15 +65,15 @@
   .backs{display:flex;gap:2px} .back-s{width:15px;height:23px;border-radius:3px;border:1px solid var(--line);
     background:repeating-linear-gradient(45deg,#241c3a,#241c3a 4px,#1a1430 4px,#1a1430 8px)}
   @media (prefers-color-scheme: light){ .back-s{background:repeating-linear-gradient(45deg,#d9d0f0,#d9d0f0 4px,#cdc2ea 4px,#cdc2ea 8px)} }
-  .play-slot{min-height:120px;display:flex;align-items:center;justify-content:center}
+  .play-slot{min-height:74px;display:flex;align-items:center;justify-content:center}
   .play-slot .ph{color:var(--muted);font-size:22px;opacity:.4}
 
-  .card{width:76px;border-radius:6px;border:1px solid var(--line);background:var(--panel2);overflow:hidden;
+  .card{width:60px;border-radius:6px;border:1px solid var(--line);background:var(--panel2);overflow:hidden;
     position:relative;display:block;flex:0 0 auto;padding:0;font:inherit;color:inherit}
-  .card img{width:100%;height:116px;object-fit:contain;display:block;background:var(--panel2)}
-  .card .cap{font-size:9px;text-align:center;padding:2px 1px;color:var(--muted);line-height:1.1;height:22px;overflow:hidden}
+  .card img{width:100%;height:90px;object-fit:contain;display:block;background:var(--panel2)}
+  .card .cap{font-size:8.5px;text-align:center;padding:2px 1px;color:var(--muted);line-height:1.1;height:20px;overflow:hidden}
   .card.trump{border-color:var(--accent)}
-  .play-slot .card{width:84px} .play-slot .card img{height:128px}
+  .play-slot .card{width:66px} .play-slot .card img{height:100px}
   .card.win{box-shadow:0 0 0 2px var(--accent)}
   .honour-badge{position:absolute;top:2px;left:2px;background:var(--accent);color:#1a1206;font-size:8px;font-weight:800;padding:0 3px;border-radius:3px}
 
@@ -86,11 +85,11 @@
   .hand .card.legal{box-shadow:0 0 0 2px var(--accent)}
   .result{font-size:18px;font-weight:700}
 
-  .logpanel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;position:sticky;top:14px}
+  .logpanel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
   .logpanel h3{margin:0 0 4px;font-size:15px} .logpanel h4{margin:14px 0 5px;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent)}
   .logpanel .hint{font-size:12px;color:var(--muted);margin:0 0 10px}
   .logpanel p{font-size:12.5px;color:var(--muted);line-height:1.55;margin:.4em 0}
-  #log{display:flex;flex-direction:column;gap:6px;max-height:46vh;overflow:auto}
+  #log{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px;max-height:300px;overflow:auto}
   .log-row{font-size:11.5px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--panel2);line-height:1.4}
   .log-row .ln{color:var(--muted);font-weight:700;margin-right:4px}
   .log-row .wn{display:block;margin-top:2px;font-weight:700}
@@ -99,7 +98,7 @@
 </style>
 </head>
 <body>
-<script src="../../site-header.js?v=13"></script>
+<script src="../../site-header.js?v=14"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">
@@ -156,10 +155,12 @@
       <h3>Play log</h3>
       <p class="hint">Each trick — every card, who won, points taken — so a fast table never loses you.</p>
       <div id="log"></div>
-      <h4>Note on accuracy</h4>
-      <p>Pack, A-order, suit ranking, the Excuse and the point values follow the Bolognese tradition
-      (see the deck's research dossier). The <em>cricche</em>/<em>sequenze</em> declaration bonuses and the
-      Matto card-exchange are not yet scored — a faithful next step.</p>
+      <h4>How it was played</h4>
+      <p>Pack, A-order, suit ranking, the Excuse and the point values follow the Bolognese tradition —
+      see John McLeod's <a href="https://www.pagat.com/tarot/ottocento.html" target="_blank" rel="noopener" style="color:var(--accent)">Ottocento rules (pagat.com)</a>,
+      <a href="https://en.wikipedia.org/wiki/Tarocco_Bolognese" target="_blank" rel="noopener" style="color:var(--accent)">Tarocco Bolognese</a>,
+      and this deck's <a href="https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/decks/tarocchino-bologna.md" target="_blank" rel="noopener" style="color:var(--accent)">research dossier</a>.
+      The <em>cricche</em>/<em>sequenze</em> declaration bonuses and the Matto card-exchange are not yet scored — a faithful next step.</p>
     </aside>
   </div>
 </div>
