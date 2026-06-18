@@ -195,6 +195,41 @@ That's the full circle: **you build it once in the open, anyone can improve it, 
 
 ---
 
+## Part 9 — The faster path: the recursive.eco MCP
+
+Everything above builds a deck **in the open**, as files in a GitHub repo — the right path when you want your deck reviewed and merged into the public commons. But there's a second, more direct path for **drafting in your own recursive.eco library**: the **recursive.eco MCP server**.
+
+An MCP server is a set of tools you connect to Claude Code once; after that, Claude can act on your recursive.eco account **directly** — no JSON files, no local server, no push. You describe the deck in plain language and Claude builds it straight into your library, where you can preview, cast, and (when ready) publish it.
+
+### Connect it once
+
+In Claude Code, add the recursive.eco MCP server (you'll authorize it against your recursive.eco account — it acts as *you*, only on *your* grammars). Then:
+
+> "List the MCP tools you now have for recursive.eco, and read the grammar one of them returns so you understand the shape."
+
+### What it lets Claude do
+
+Think of it in three jobs — the same three this course is about, but performed live in your library instead of in files:
+
+| Job | What you ask for | What Claude does for you |
+|---|---|---|
+| **Create new grammars** | "Make a new tarot grammar called *My Marseille* with the 22 majors." | Creates the grammar, then adds each card as an item with its sections — no JSON by hand. |
+| **Generate images** | "Illustrate the Death card." / "Give every major an image in a woodcut style." | Generates an AI image for a card and attaches it — or sets a public-domain URL you provide onto the card. |
+| **Upload / import documents** | "Import this grammar JSON I already have." / "How much storage am I using?" | Brings an existing grammar into your library, lists what you've uploaded, and reports your storage. |
+
+And to **read and test** as you go: list your grammars, fetch one back to check its sections, and even **draw a spread** from it to feel how it reads — all from the chat.
+
+### MCP vs. the GitHub path — when to use which
+
+- **MCP** = fastest way to draft a *personal* deck in your own library, illustrate it with generated images, and try it as an oracle. Private to you until you choose to publish.
+- **GitHub (Parts 1–8)** = the way to contribute a deck to the **public commons** — reviewable scripts, public-domain sourcing, pull requests, version history.
+
+A common rhythm: **draft with the MCP** to get something playable fast, then, if it's good and well-sourced, **move it to the repo** so the community can own and improve it.
+
+> Honesty note: AI-generated images are wonderful for a personal deck, but the public historical decks in this library are **scanned public-domain art**, not generated. Keep that line clear — if you publish, say which images are generated and which are historical.
+
+---
+
 ## The ethos
 
 You're not making a product. You're **seeding a commons**. A deck you build well — accurate, public-domain, honestly noted — becomes something a stranger in another country can read, correct, teach from, and draw a card from. The repo is public so the work can outlive any one of us; the viewers are thin so the data, not the platform, is what matters.
