@@ -1,0 +1,550 @@
+{
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "url": "https://recursive.eco",
+        "date": "2026-06-16",
+        "note": "History-of-tarot performance program"
+      }
+    ]
+  },
+  "name": "The Recursive Tarot — A History in Cards & Clips",
+  "description": "A walk through six hundred years of tarot, following course/history-of-tarot.mdx: Mamluk origins → 15th-c. Italian trionfi → Marseille → occult / Golden Dawn → Rider-Waite-Smith → the modern mirror. Narrative title cards alternate with footage-slot cards. No YouTube IDs are invented: every clip beat is a card whose subtitle names exactly what footage to source; convert it to a 'segment' (add metadata.youtube_video_id + performance.start_sec/end_sec) once you have a verified clip. See recording/docs/sequence-format.md.",
+  "cover_image_url": "",
+  "tags": [
+    "history",
+    "tarot",
+    "performance",
+    "sequence"
+  ],
+  "grammar_type": "custom",
+  "items": [
+    {
+      "id": "h00-the-recursive-tarot",
+      "name": "The Recursive Tarot",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1e1b4b",
+        "card_subtitle": "A history in cards & clips — from Mamluk game to modern mirror",
+        "card_hold_sec": 12
+      },
+      "sections": {},
+      "sort_order": 0
+    },
+    {
+      "id": "h01-a-painted-fossil",
+      "name": "A Painted Fossil",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1e1b4b",
+        "card_subtitle": "The picture holds for nearly 600 years. The meaning is poured in fresh each century.",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 1
+    },
+    {
+      "id": "h02-opening-footage",
+      "name": "▶ Opening footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: hands shuffling & holding a historical deck; a macro of a single card.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 2
+    },
+    {
+      "id": "h03-the-cards-come-west",
+      "name": "The Cards Come West",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0f3d3a",
+        "card_subtitle": "Tang/Song China, 9th–10th c. — 'money-suited' cards travel the trade routes.",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 3
+    },
+    {
+      "id": "h04-m-di-o-footage",
+      "name": "▶ Mǎ Diào footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: Chinese money-suited cards / a hand of Mǎ Diào (馬吊). Deck: madiao-money-cards.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 4
+    },
+    {
+      "id": "h05-the-mamluk-pack",
+      "name": "The Mamluk Pack",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#5b3a1a",
+        "card_subtitle": "Egypt & Syria — cups, coins, swords, polo-sticks. An incomplete pack survives in Istanbul's Topkapı.",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 5
+    },
+    {
+      "id": "h06-mamluk-cards-footage",
+      "name": "▶ Mamluk cards footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: the Topkapı Mamluk pack, museum close-ups. Deck: mamluk-deck.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 6
+    },
+    {
+      "id": "h07-into-europe-1370s",
+      "name": "Into Europe, 1370s",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#7c2d12",
+        "card_subtitle": "A finished four-suit game arrives — already crossed deserts and seas. India's Ganjifa is a cousin.",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 7
+    },
+    {
+      "id": "h08-ganjifa-footage",
+      "name": "▶ Ganjifa footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: round hand-painted Ganjifa cards being played in India. Deck: ganjifa.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 8
+    },
+    {
+      "id": "h09-the-italian-novelty",
+      "name": "The Italian Novelty\nTrionfi",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#6b4e16",
+        "card_subtitle": "Milan, 1440s — a fifth, permanent suit of pictures that outranks all four ordinary suits at once.",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 9
+    },
+    {
+      "id": "h10-visconti-sforza-footage",
+      "name": "▶ Visconti-Sforza footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: gold-ground Visconti-Sforza cards (Morgan Library / Beinecke). Deck: visconti-sforza-tarot.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 10
+    },
+    {
+      "id": "h11-a-game-first-of-all",
+      "name": "A Game, First of All",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#14402a",
+        "card_subtitle": "Trick-taking — the family of Whist, Bridge, Hearts. 'Trump' is the word *triumph* worn smooth.",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 11
+    },
+    {
+      "id": "h12-trick-taking-footage",
+      "name": "▶ Trick-taking footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: a tarot trick-game being dealt (French Tarot in a café).",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 12
+    },
+    {
+      "id": "h13-the-games-played",
+      "name": "The Games, Played",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#3b0764",
+        "card_subtitle": "Reserved slot — the family's oldest still-dealable games, playable in your browser.",
+        "card_hold_sec": 10
+      },
+      "sections": {},
+      "sort_order": 13
+    },
+    {
+      "id": "h14-screen-capture-the-playable-games",
+      "name": "▶ Screen-capture: the playable games",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1a0b2e",
+        "card_subtitle": "TO RECORD (roadmap): pages/games/ — trionfi.html, tarocchino.html, madiao.html → screen-capture → YouTube → drop in as a cropped segment here.",
+        "card_hold_sec": 10,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 14
+    },
+    {
+      "id": "h15-regional-dialects",
+      "name": "Regional Dialects",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#4a3a12",
+        "card_subtitle": "Tarocchino of Bologna (62 cards) · Minchiate of Florence (97). The rules drift; the core holds.",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 15
+    },
+    {
+      "id": "h16-minchiate-tarocchino-footage",
+      "name": "▶ Minchiate / Tarocchino footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: the 97-card Minchiate, or a Bolognese Tarocchino hand. Decks: minchiate-florence-tarot, tarocchino-bologna.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 16
+    },
+    {
+      "id": "h17-the-lineage",
+      "name": "The Lineage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1f2937",
+        "card_subtitle": "Milan → Florence, Bologna, Ferrara → the workshops of Marseille → at last the occultists.",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 17
+    },
+    {
+      "id": "h18-lineage-map-footage",
+      "name": "▶ Lineage map footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: an animated spread/map — or a screen-capture of viewers/genealogy-tree.html.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 18
+    },
+    {
+      "id": "h19-marseille",
+      "name": "Marseille",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#5b1a1a",
+        "card_subtitle": "Nicolas Conver's deck fixes the standard woodblock pattern that everyone would copy.",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 19
+    },
+    {
+      "id": "h20-tarot-de-marseille-footage",
+      "name": "▶ Tarot de Marseille footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: Conver / Marseille woodblock cards. Deck: tarot-de-marseille-conver.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 20
+    },
+    {
+      "id": "h21-the-occult-turn",
+      "name": "The Occult Turn",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#2e1065",
+        "card_subtitle": "Court de Gébelin invents the Egyptian myth (1781); Etteilla turns the game into divination.",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 21
+    },
+    {
+      "id": "h22-court-de-g-belin-etteilla-footage",
+      "name": "▶ Court de Gébelin / Etteilla footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: Monde Primitif plates; the Etteilla divination deck. Decks: court-de-gebelin-tarot, etteilla-i-livre-de-thot.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 22
+    },
+    {
+      "id": "h23-the-golden-dawn",
+      "name": "The Golden Dawn",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#3a2e0a",
+        "card_subtitle": "Kabbalah laid over the cards — the ten pips placed on the Tree of Life. They called it 'Book T.'",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 23
+    },
+    {
+      "id": "h24-tree-of-life-footage",
+      "name": "▶ Tree of Life footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: the Sephiroth / Tree of Life diagram; Golden Dawn materials. Deck: golden-dawn-book-t-tarot.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 24
+    },
+    {
+      "id": "h25-rider-waite-smith-1909",
+      "name": "Rider-Waite-Smith, 1909",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#4a1d2b",
+        "card_subtitle": "Pamela Colman Smith draws every pip into a full scene. (No public-domain RWS deck in this library yet.)",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 25
+    },
+    {
+      "id": "h26-rider-waite-smith-footage",
+      "name": "▶ Rider-Waite-Smith footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: Smith's 1909 scenes, card by card.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 26
+    },
+    {
+      "id": "h27-when-numbers-became-scenes",
+      "name": "When Numbers Became Scenes",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#4a2c12",
+        "card_subtitle": "Sola Busca, 1491 — the first fully figured minor arcana, three centuries before RWS did the same.",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 27
+    },
+    {
+      "id": "h28-sola-busca-footage",
+      "name": "▶ Sola Busca footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: the Sola Busca engravings. Deck: sola-busca-tarot.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 28
+    },
+    {
+      "id": "h29-death-across-the-centuries",
+      "name": "Death, Across the Centuries",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#18181b",
+        "card_subtitle": "1450s standing archer → Marseille scythe-mower → 1909 pale rider. The skeleton holds; the scene is rebuilt.",
+        "card_hold_sec": 10
+      },
+      "sections": {},
+      "sort_order": 29
+    },
+    {
+      "id": "h30-death-plate-sequence",
+      "name": "▶ 'Death' plate sequence",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: a cross-fade of the Death card across decks — or a screen-capture of viewers/cards.html plates.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 30
+    },
+    {
+      "id": "h31-was-it-magic",
+      "name": "Was It Magic?",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#172554",
+        "card_subtitle": "For its first three centuries, no — it was a game (the point Michael Dummett spent a career proving). The magic was *added*.",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 31
+    },
+    {
+      "id": "h32-the-divination-question",
+      "name": "▶ The divination question",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: a short explainer on Dummett's history-of-tarot scholarship.",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 32
+    },
+    {
+      "id": "h33-mirror-not-fortune",
+      "name": "Mirror, Not Fortune",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#134e4a",
+        "card_subtitle": "Knowing the game underneath loosens meaning's grip — a card asks what's alive in you. Narrative therapy calls it 'externalising.'",
+        "card_hold_sec": 9
+      },
+      "sections": {},
+      "sort_order": 33
+    },
+    {
+      "id": "h34-jessica-dore-footage",
+      "name": "▶ Jessica Dore footage",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0b0b10",
+        "card_subtitle": "FOOTAGE TO SOURCE: Jessica Dore on *Tarot for Change* (the Tower as radical acceptance, not prophecy).",
+        "card_hold_sec": 8,
+        "footage_slot": true
+      },
+      "sections": {},
+      "sort_order": 34
+    },
+    {
+      "id": "h35-pick-the-cards-back-up",
+      "name": "Pick the Cards Back Up",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1e1b4b",
+        "card_subtitle": "As mirrors rather than fortunes. recursive.eco — a place about how human beings make meaning together, and remake it.",
+        "card_hold_sec": 10
+      },
+      "sections": {},
+      "sort_order": 35
+    }
+  ],
+  "creator_name": "PlayfulProcess",
+  "creator_link": "https://recursive.eco"
+}

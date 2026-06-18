@@ -1,0 +1,421 @@
+{
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "url": "https://recursive.eco",
+        "date": "2026-06-16",
+        "note": "Curated 'further watching' playlist — links to third-party YouTube videos (not our content)"
+      }
+    ]
+  },
+  "name": "The Recursive Tarot — Further Watching",
+  "description": "A companion PLAYLIST to history-of-tarot-sequence.json: external YouTube documentaries on the deep history of cards & games, tarot history, the Italian Renaissance, and the printing press / paper revolution. Grouped into four themed sections. Every video ID was verified embeddable via YouTube oEmbed on 2026-06-16; three candidates that disallowed embedding were dropped. Videos play full (start_sec:0, no end_sec) and advance when they end or when you press ⏭ — add an end_sec to crop any into a tight beat. Third-party videos remain the property of their channels.",
+  "cover_image_url": "",
+  "tags": [
+    "history",
+    "tarot",
+    "renaissance",
+    "printing",
+    "playlist",
+    "further-watching"
+  ],
+  "grammar_type": "custom",
+  "items": [
+    {
+      "id": "w00-further-watching",
+      "name": "Further Watching",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1e1b4b",
+        "card_subtitle": "A companion playlist to The Recursive Tarot — real, verified documentaries on cards, tarot, the Renaissance & the printing press.",
+        "card_hold_sec": 11
+      },
+      "sections": {},
+      "sort_order": 0
+    },
+    {
+      "id": "w-sec-01",
+      "name": "① Cards & Games — the deep history",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0f3d3a",
+        "card_subtitle": "6 videos",
+        "card_hold_sec": 7
+      },
+      "sections": {},
+      "sort_order": 1
+    },
+    {
+      "id": "w02-QCESsdZqJ14",
+      "name": "History of Playing Cards",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "QCESsdZqJ14",
+        "channel": "Recorded History"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 2
+    },
+    {
+      "id": "w03-761eACLWjiI",
+      "name": "The Secret 1000-Year History of Playing Cards",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "761eACLWjiI",
+        "channel": "AeyeTube"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 3
+    },
+    {
+      "id": "w04-CfP4cs2SLWA",
+      "name": "The Story of China Dynasties on Playing Cards",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "CfP4cs2SLWA",
+        "channel": "makeplayingcards"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 4
+    },
+    {
+      "id": "w05-KywzeiFZ0NM",
+      "name": "The History of Playing Cards",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "KywzeiFZ0NM",
+        "channel": "The Generalist Papers"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 5
+    },
+    {
+      "id": "w06-hrUTftlkNaQ",
+      "name": "A Brief History of Playing Cards",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "hrUTftlkNaQ",
+        "channel": "Braden Carlisle"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 6
+    },
+    {
+      "id": "w07-u7r7viJdjMY",
+      "name": "Mamluk Cards → Bembo's Visconti Minor Arcana (influence)",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "u7r7viJdjMY",
+        "channel": "Hermit of Visconti"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 7
+    },
+    {
+      "id": "w-sec-08",
+      "name": "② Tarot History — from game to occult",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#2e1065",
+        "card_subtitle": "5 videos",
+        "card_hold_sec": 7
+      },
+      "sections": {},
+      "sort_order": 8
+    },
+    {
+      "id": "w09-3AOkmVRgr3Y",
+      "name": "The Ultimate Tarot History — Part I: From Triumphs to the Tarot",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "3AOkmVRgr3Y",
+        "channel": "Play-In Games"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 9
+    },
+    {
+      "id": "w10-do2UVUthdwA",
+      "name": "The Ultimate Tarot History — Part II: From Games to the Occult & Beyond",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "do2UVUthdwA",
+        "channel": "Play-In Games"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 10
+    },
+    {
+      "id": "w11-fQsmbWUF5Ts",
+      "name": "A History of the Tarot",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "fQsmbWUF5Ts",
+        "channel": "Colin Low"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 11
+    },
+    {
+      "id": "w12-B99zUfrEVnE",
+      "name": "Michael Dummett on the Tarot",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "B99zUfrEVnE",
+        "channel": "Oudler"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 12
+    },
+    {
+      "id": "w13-mZhHxcV5rWs",
+      "name": "Tarot History: Theories of Origin",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "mZhHxcV5rWs",
+        "channel": "Benebell Wen"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 13
+    },
+    {
+      "id": "w-sec-14",
+      "name": "③ The Renaissance — the world that made the cards",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#6b4e16",
+        "card_subtitle": "4 videos",
+        "card_hold_sec": 7
+      },
+      "sections": {},
+      "sort_order": 14
+    },
+    {
+      "id": "w15-1UFjtc_usGw",
+      "name": "Italian Renaissance: Art, Science & Humanism in Florence",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "1UFjtc_usGw",
+        "channel": "Daily Dose Documentary"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 15
+    },
+    {
+      "id": "w16-0qdxeKdPWmU",
+      "name": "Florence, a Renaissance Masterpiece",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "0qdxeKdPWmU",
+        "channel": "Show Me the World"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 16
+    },
+    {
+      "id": "w17-qjhnumqvOiQ",
+      "name": "The High Renaissance",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "qjhnumqvOiQ",
+        "channel": "Documentary Renaissance HD"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 17
+    },
+    {
+      "id": "w18-4JSoEEPp530",
+      "name": "Florence: Italy's Renaissance Treasure — Michelangelo, Leonardo, Medici",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "4JSoEEPp530",
+        "channel": "Bella Italia"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 18
+    },
+    {
+      "id": "w-sec-19",
+      "name": "④ Press & Paper — the print revolution",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#4a2c12",
+        "card_subtitle": "3 videos",
+        "card_hold_sec": 7
+      },
+      "sections": {},
+      "sort_order": 19
+    },
+    {
+      "id": "w20-n-jkS5qOWS8",
+      "name": "Johann Gutenberg: Creator of the First Printing Press (Stephen Fry, full doc)",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "n-jkS5qOWS8",
+        "channel": "Perspective"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 20
+    },
+    {
+      "id": "w21-uQ88yC35NjI",
+      "name": "The Machine That Made Us — Gutenberg (Stephen Fry)",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "uQ88yC35NjI",
+        "channel": "Timeline"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 21
+    },
+    {
+      "id": "w22-DLctAw4JZXE",
+      "name": "How a Gutenberg Printing Press Works",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "DLctAw4JZXE",
+        "channel": "Sabrina Huyett"
+      },
+      "sections": {},
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 22
+    },
+    {
+      "id": "w23-back-to-history",
+      "name": "Back to the History",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1e1b4b",
+        "card_subtitle": "Return to the cards: viewers/sequence.html?src=../recording/examples/history-of-tarot-sequence.json",
+        "card_hold_sec": 10
+      },
+      "sections": {},
+      "sort_order": 23
+    }
+  ],
+  "creator_name": "PlayfulProcess",
+  "creator_link": "https://recursive.eco"
+}
