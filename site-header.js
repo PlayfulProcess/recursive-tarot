@@ -107,12 +107,12 @@
             border-bottom:1px solid #2a2440;
             font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
           }
-          .brand{ display:flex; flex-direction:row; align-items:center; gap:8px; text-decoration:none; margin-right:4px; }
-          .brand .wordmark{ display:flex; flex-direction:column; line-height:1.05; }
-          .brand .name{ font-size:15px; font-weight:800; letter-spacing:.3px; color:#ece8f5; white-space:nowrap; }
-          .brand .name .gold{ color:#d4af37; }
-          .brand .sub{ font-size:10px; color:#7c7596; letter-spacing:.02em; }
-          .brand .sub a{ color:#9b8fc4; text-decoration:none; }
+          .brand{ display:flex; flex-direction:row; align-items:center; gap:9px; margin-right:4px; }
+          .brand-logo, .brand-name{ display:inline-flex; align-items:center; text-decoration:none; }
+          .brand-logo{ border-radius:50%; }
+          .brand-name .name{ font-size:15px; font-weight:800; letter-spacing:.3px; color:#ece8f5; white-space:nowrap; }
+          .brand-name:hover .name{ color:#fff; }
+          .brand-name .name .gold{ color:#d4af37; }
           .brand svg{ flex-shrink:0; }
           .spacer{ flex:1 1 auto; }
           nav{ display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
@@ -154,13 +154,14 @@
           }
         </style>
         <div class="bar">
-          <a class="brand" href="${PFX}index.html">
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#fff;border-radius:50%;flex-shrink:0"><img src="${PFX}recursive-logo.svg" width="30" height="30" alt="" aria-hidden="true" style="display:block"></span>
-            <span class="wordmark">
+          <span class="brand">
+            <a class="brand-logo" href="https://recursive.eco" target="_blank" rel="noopener" title="Part of recursive.eco — the parent project" aria-label="recursive.eco — the parent project">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#fff;border-radius:50%;flex-shrink:0"><img src="${PFX}recursive-logo.svg" width="30" height="30" alt="" aria-hidden="true" style="display:block"></span>
+            </a>
+            <a class="brand-name" href="${PFX}index.html" title="The Recursive Tarot — home">
               <span class="name">The <span class="gold">Recursive Tarot</span></span>
-              <span class="sub">part of <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a></span>
-            </span>
-          </a>
+            </a>
+          </span>
           <span class="spacer"></span>
           <nav aria-label="Site sections">
             <span class="cap card-cap" title="Browse individual cards">🃏 card</span>
