@@ -95,6 +95,11 @@
       const root = this.attachShadow({ mode: 'open' });
       const tab = ([key, label, href, cls, ext]) =>
         `<a class="tab ${cls || ''}${key === active ? ' active' : ''}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`;
+      // Dropdown menu item (used inside the Views menu) — highlights the current page.
+      const menuItem = ([key, label, href, cls, ext]) =>
+        `<a class="${key === active ? 'on' : ''}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`;
+      const VIEW_KEYS = ['explorer', 'cards', 'lenses', 'tree', 'treeoflife', 'timeline', 'genealogy'];
+      const viewActive = VIEW_KEYS.includes(active);
       root.innerHTML = `
         <style>
           :host{ display:block; position:sticky; top:0; z-index:50;
@@ -147,6 +152,10 @@
           .dd-menu a{ display:block; color:#cdbff0; text-decoration:none; font-size:13px;
             padding:8px 10px; border-radius:7px; white-space:nowrap; }
           .dd-menu a:hover{ background:#241e38; color:#fff; }
+          .dd-menu a.on{ color:#fff; background:#2b2442; font-weight:600; }
+          .dd-cap{ display:block; font-size:9px; text-transform:uppercase; letter-spacing:.14em;
+            color:#5f5878; padding:8px 10px 3px; user-select:none; }
+          .dd-cap:first-child{ padding-top:2px; }
           @media (max-width:680px){
             .brand .sub{ display:none; }
             .tab{ padding:5px 8px; font-size:12px; }
@@ -164,12 +173,15 @@
           </span>
           <span class="spacer"></span>
           <nav aria-label="Site sections">
-            <span class="cap card-cap" title="Browse individual cards">🃏 card</span>
-            ${CARD_VIEWS.map(tab).join('')}
-            <span class="sep"></span>
-            <span class="cap gram-cap" title="Analyse patterns across the whole collection">⊞ grammar</span>
-            ${GRAMMAR_VIEWS.map(tab).join('')}
-            <span class="sep"></span>
+            <span class="dd">
+              <a class="tab dd-btn${viewActive ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Views menu">⊞ Views ▾</a>
+              <span class="dd-menu">
+                <span class="dd-cap">🃏 By card</span>
+                ${CARD_VIEWS.map(menuItem).join('')}
+                <span class="dd-cap">⊞ Across the collection</span>
+                ${GRAMMAR_VIEWS.map(menuItem).join('')}
+              </span>
+            </span>
             <span class="dd">
               <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Courses menu">📓 Courses ▾</a>
               <span class="dd-menu">
