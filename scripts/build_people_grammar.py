@@ -57,6 +57,60 @@ def known_deck_slugs():
     return {os.path.basename(p) for p in glob.glob(os.path.join(TAROT_DIR, "*")) if os.path.isdir(p)}
 
 
+# Cache: deck slug -> (short_label, representative_card_id) for person->deck pills.
+_DECK_CACHE = {}
+
+
+def deck_label_and_target(slug):
+    """Short human label + a real item id to deep-link to, for a person->deck pill.
+    The pill needs a source_item_id that exists in the target grammar; we prefer the
+    first level-1 card, falling back to the first item. Label = name before the dash."""
+    if slug in _DECK_CACHE:
+        return _DECK_CACHE[slug]
+    path = os.path.join(TAROT_DIR, slug, "grammar.json")
+    label, target = slug, None
+    try:
+        g = json.load(open(path, encoding="utf-8"))
+        label = re.split(r"\s[—–-]\s", g.get("name", slug))[0].strip() or slug
+        items = g.get("items", []) or []
+        for it in items:
+            if it.get("level") == 1 and it.get("id"):
+                target = it["id"]
+                break
+        if not target and items:
+            target = items[0].get("id")
+    except Exception:
+        pass
+    _DECK_CACHE[slug] = (label, target)
+    return label, target
+
+
+def make_pill(fm, decks):
+    """One cross-link pill per person, in priority order:
+       1. book:  -> Books Behind the Tarot (a real book-* item)
+       2. features_cards: -> the first specific card that features them
+       3. made:  -> the deck they made (first level-1 card as the landing item)
+    Returns the three pill keys (source_deck/source_item_id/deck) or {}."""
+    book = fm.get("book")
+    if book:
+        book_id = book if str(book).startswith("book-") else "book-" + str(book)
+        return {"source_deck": "books-of-tarot", "source_item_id": book_id,
+                "deck": "Books Behind the Tarot"}
+    feats = fm.get("features_cards") or []
+    if feats and ":" in str(feats[0]):
+        d, _, card = str(feats[0]).partition(":")
+        if d in decks:
+            label, _t = deck_label_and_target(d)
+            return {"source_deck": d, "source_item_id": card, "deck": label}
+    made = fm.get("made") or []
+    for slug in made:
+        if slug in decks:
+            label, target = deck_label_and_target(slug)
+            if target:
+                return {"source_deck": slug, "source_item_id": target, "deck": label}
+    return {}
+
+
 def build():
     decks = known_deck_slugs()
     people = []
@@ -104,9 +158,16 @@ def build():
             "studied": fm.get("studied", []),
             "features_cards": fm.get("features_cards", []),
             "confidence": fm.get("confidence"),
-            "research": os.path.relpath(path, ROOT),
+            # posix path so Windows and Linux/CI builds produce identical output
+            "research": os.path.relpath(path, ROOT).replace(os.sep, "/"),
+            # the Wikipedia (or canonical) redirect, rendered as the item's external link
+            "url": fm.get("wikipedia"),
+            # excessive-attribution credit string for the portrait (PD/CC images)
+            "image_credit": fm.get("image_credit"),
         }
-        items.append({
+        # one cross-link pill (book > featured-card > made-deck)
+        meta.update(make_pill(fm, decks))
+        item = {
             "id": leaf_id,
             "name": fm.get("title", fm["id"]),
             "level": 1,
@@ -115,7 +176,10 @@ def build():
             "keywords": [r for r in fm.get("roles", [])] + [fm.get("role_group")],
             "metadata": {k: v for k, v in meta.items() if v not in (None, [], "")},
             "sections": sections,
-        })
+        }
+        if fm.get("image"):
+            item["image_url"] = fm["image"]
+        items.append(item)
 
     # L2 group nodes (only those with members), L3 root
     root_children = []
