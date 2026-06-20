@@ -186,6 +186,7 @@
               <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Courses menu">📓 Courses ▾</a>
               <span class="dd-menu">
                 ${COURSES.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')}
+                <a href="${PFX}pages/sources.html" style="border-top:1px solid #3a3450;margin-top:4px;padding-top:9px">📚 All courses &amp; sources →</a>
               </span>
             </span>
             <span class="dd">
