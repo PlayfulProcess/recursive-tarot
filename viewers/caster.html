@@ -89,12 +89,12 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=19"></script>
+<script src="../site-header.js?v=20"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">
   <h1>Tarot Caster <span style="font-size:13px;font-weight:400;color:var(--muted);vertical-align:middle;margin-left:6px;">— free, open-source</span></h1>
-  <p class="sub">Draw three cards from any historical deck — or across every deck at once. Positions: <b>Structures · Process · Possibilities</b>. This is the simple version: it draws; <a href="https://flow.recursive.eco/cast" target="_blank" rel="noopener">recursive.eco</a> interprets with AI, renders Oracle cards, keeps a Journal, and lets you <strong>edit the cards</strong> in your own grammar library.</p>
+  <p class="sub">Draw three cards from any historical deck — or across every deck at once. Positions: <b>Structures · Process · Possibilities</b>. This is the simple version: it draws; <a href="https://flow.recursive.eco/" target="_blank" rel="noopener">recursive.eco</a> interprets with AI, renders Oracle cards, keeps a Journal, and lets you <strong>edit the cards</strong> in your own grammar library.</p>
 
   <div class="controls">
     <div class="field">
@@ -118,7 +118,7 @@
   <div class="export" id="export">
     <h2>Take this reading further</h2>
     <p>This page draws from historical decks. On recursive.eco, your cast becomes Oracle cards — each rendered with provenance, AI interpretation, and saved to your Journal. You can also <strong>edit the cards</strong> directly in your own grammar library.</p>
-    <a id="journalLink" class="journal-cta" href="https://flow.recursive.eco/cast" target="_blank" rel="noopener">
+    <a id="journalLink" class="journal-cta" href="https://flow.recursive.eco/" target="_blank" rel="noopener">
       Open in recursive.eco Journal ↗
     </a>
     <p class="cta-sub">Free account · AI reading · Oracle card layout · edit cards · keep your cast</p>
@@ -302,7 +302,7 @@ function renderCast(cast){
 
   // Encode cast for flow.recursive.eco
   const enc = btoa(unescape(encodeURIComponent(json))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
-  document.getElementById('journalLink').href = 'https://flow.recursive.eco/cast?d=' + enc;
+  document.getElementById('journalLink').href = 'https://flow.recursive.eco/?d=' + enc;
 
   // Attach double-click detail handlers
   spread.querySelectorAll('.pos').forEach((el, i) => {
