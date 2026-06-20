@@ -74,7 +74,11 @@ set_grammar_media · upload_audio · narrate_grammar · align_audio.
   check first. (Prompt drafted earlier.)
 - ◐ **Watchlist commentary** — agree/differ notes written for 3 clips (Cannucciari, Mamluk→Visconti,
   ARTE Marseille). Annotate the rest where we have a grounded take.
-- ☐ Fold the Marziano/Cola/Marcello beats into `course/history-of-tarot.mdx` "first tarot" section.
+- ✅ Folded the Marziano/Cola/Marcello beats into `course/history-of-tarot.mdx` ("The First Deck").
+- ☐ **Illustrate the contributor course** — use the **Chrome MCP** to screenshot each step of
+  `build-a-tarot-deck-with-claude.mdx` (sign-in → Library → fork/edit → Grammar Assistant → GitHub
+  web-editor → open PR), save under `pages/courses/images/`, embed in the MDX as `images/<name>.png`
+  (course-viewer rewrites the path) for visual, follow-along navigation.
 
 ## E. Polish / launch (see also LAUNCH-CHECKLIST.md)
 
@@ -113,7 +117,13 @@ Use the recursive.eco MCP (not raw SQL) for everything grammars-related. Goals, 
 2) AUDIT the MCP for full grammar coverage and CORRECT the code where needed: grammar-metadata
    update (name/description/cover/tags), tools-table/channel operations, and decide repo round-trip.
    See BACKLOG.md section C.
-3) Then build, in recursive-tarot, the items in BACKLOG.md the user has greenlit — likely:
+3) ILLUSTRATE THE COURSE with real screenshots (use the Chrome MCP). Walk each step in
+   course/build-a-tarot-deck-with-claude.mdx in a real browser — sign in to recursive.eco, open
+   Library, fork/edit a deck, use the Grammar Assistant, then GitHub's web editor and opening a
+   pull request — and SCREENSHOT each step. Save the PNGs under recursive-tarot/pages/courses/images/
+   and embed them in the MDX as images/<name>.png (the course-viewer already rewrites that path to
+   the live origin), so users can follow the steps visually instead of from text alone.
+4) Then build, in recursive-tarot, the items in BACKLOG.md the user has greenlit — likely:
    the illustrated Ma Diao money deck (40 SVG faces), extend the Cast/View/Edit bar to the
    tree/timeline viewers + deck headers, and the multiplayer spec.
 
