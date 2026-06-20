@@ -130,3 +130,42 @@ Use the recursive.eco MCP (not raw SQL) for everything grammars-related. Goals, 
 Constraints: recursive-tarot stays static/dependency-free. Don't push recursive-eco apps/flow just
 to verify (paid Vercel builds — build locally). Confirm each deck's UUID via the MCP before publishing.
 ```
+
+---
+
+## MCP: make public-domain image retrieval first-class (answers "can I tailor the MCP so PD images are easier?")
+
+**Yes — the reason I "choke" on PD images is that I reach for the broken screenshot tool. The fix is an
+API-backed MCP tool, because Wikimedia is fully queryable over HTTP (no browser needed).** Proven this
+session: Wikipedia REST `GET /api/rest_v1/page/summary/<Title>` → `.thumbnail.source` returns a Commons
+`upload.wikimedia.org` URL; all 8 historical-author portraits + 2 book links resolved 200 via plain curl.
+
+Propose adding to `recursive-eco/apps/flow/src/lib/ai-pkg/mcp-tools.ts`:
+
+- **`commons_image_search`** — input `{ query, limit?, license_filter? }`. Hits the MediaWiki Commons API
+  (`https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&prop=imageinfo&iiprop=url|extmetadata|mime`).
+  Returns `[{ title, url, thumb_url, width, height, mime, license, license_url, artist, credit }]` parsed
+  from `imageinfo.extmetadata` (LicenseShortName / UsageTerms / Artist). Lets me pick a verified PD/CC image
+  + its attribution in one call, instead of guessing or screenshotting.
+- **`wikipedia_summary`** — input `{ title }` → `{ extract, thumbnail, content_url }` from the REST summary
+  endpoint. Gives both the lead portrait *and* the canonical Wikipedia URL (exactly what "redirect people to
+  their Wikipedia page" needs).
+- Optional **`set_item_image_from_url`** convenience (the existing `set_item_image` likely already takes a URL;
+  if so this is just docs) — so the flow is search → set in two MCP calls.
+
+Filter to `license` ∈ {public domain, CC0, CC-BY, CC-BY-SA} and always return the attribution string so the
+caller can store `metadata.image_credit`. This makes "populate thumbnails with PD images" a 2-call loop for
+any future deck/people/book grammar.
+
+## Still pending from this arc
+- **People grammar → portraits + Wikipedia redirects + cross-links to books.** people-of-tarot is GENERATED
+  from `research/people/*.md` via `scripts/build_people_grammar.py`. To do this right: add `image:` and
+  `wikipedia:` front-matter fields to each dossier, teach the generator to emit `image_url` +
+  (for the redirect) a `metadata.url`, then rebuild. Same Wikimedia REST method as the books. ~31 people.
+- **Cross-link decks/people → their books** via the one pill pattern
+  (`metadata.source_deck:"books-of-tarot"`, `source_item_id:"book-…"`, `deck:"Books Behind the Tarot"`).
+- **Ambiguous titles to confirm with the user before adding to books-of-tarot:** "Michael Thomas" (which
+  book?), "12 tarot games" (likely Dummett & McLeod's games book — now added), "The Neuroscience of Tarot"
+  (looked low-credibility — left out), and the practice manuals named in the source video (Greer *Paths of
+  Wisdom*, Gareth Knight, Ashcroft-Nowicki *The Shining Paths*) — these are modern *practice* books, a
+  separate "further practice" category from "sources behind the tarot."
