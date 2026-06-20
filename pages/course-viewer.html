@@ -940,7 +940,7 @@
                 html = html.replace(/src="\.\.\/images\//g, 'src="images/');
                 if (grammarId) {
                     // When loaded from grammar, images need absolute paths to the landing site
-                    html = html.replace(/src="images\//g, 'src="https://recursive.eco/pages/courses/images/');
+                    html = html.replace(/src="images\//g, 'src="' + location.origin + '/pages/courses/images/');
                 }
 
                 document.getElementById('course-content').innerHTML = html;
