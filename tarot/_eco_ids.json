@@ -1,6 +1,11 @@
 {
   "_note": "Hardcoded map: repo deck slug -> its recursive.eco grammar UUID (the deckId). Used to build per-deck links: open/read = https://flow.recursive.eco/?deckId=<id> ; edit/fork = https://flow.recursive.eco/create/dashboard/unified/new?forkId=<id>. Sourced from the recursive.eco DB (user_documents) on 2026-06-20 by _community_slug / exact name match. UUIDs are stable across publish; a link only resolves for visitors once that deck is is_public=true on recursive.eco.",
-  "_public_now": ["visconti-sforza-tarot", "all-decks-many-lenses"],
+  "_public_now": [
+    "visconti-sforza-tarot",
+    "all-decks-many-lenses",
+    "books-of-tarot",
+    "people-of-tarot"
+  ],
   "ids": {
     "visconti-sforza-tarot": "6dc092b0-9972-43f0-b493-ff6c2a61dcfc",
     "cary-yale-visconti-tarot": "4102566c-1d94-4f35-b1f8-c647e8ff7099",
@@ -29,6 +34,7 @@
     "madiao-money-cards": "51858640-0605-4428-b6b0-633b115f642e",
     "all-decks-many-lenses": "b03937bf-92be-414b-bd23-a85fe9be39eb",
     "people-of-tarot": "a284fa37-694f-48dc-b977-f093658bc2b7",
-    "tree-of-tarot": "1aa29bd2-eb06-4cf4-b53d-ab46da5e2d43"
+    "tree-of-tarot": "1aa29bd2-eb06-4cf4-b53d-ab46da5e2d43",
+    "books-of-tarot": "7ff3ad23-6ceb-4b20-8c27-8bb04d0876ef"
   }
 }

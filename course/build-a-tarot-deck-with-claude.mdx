@@ -128,6 +128,51 @@ Use it to *draft* a personal deck fast and illustrate it; then, if it's good and
 
 ---
 
+## Rung 5 in practice — a real audit-and-improve pass
+
+Here is an actual contribution made with Claude Desktop + the recursive.eco MCP, on **2026-06-20**. Nothing here is a mock-up — these are the real prompts, the real tool calls, and the real results. **You can do this too.** The full narrated build log lives at [`research/build-logs/grammar-audit-mcp-2026-06-20.md`](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/build-logs/grammar-audit-mcp-2026-06-20.md).
+
+**The task:** audit the two "sources" grammars — *Books Behind the Tarot* and *People & Institutions of Tarot* — and close the gaps: missing public-domain portraits, missing links between books, people and decks, and one cross-platform bug in the people generator.
+
+### Step 1 — Find public-domain images (don't guess, verify)
+
+The MCP can query Wikimedia Commons directly over HTTP — no browser, no broken screenshot tool. Ask in plain language; Claude calls **`commons_image_search`** and you read the license straight off the result.
+
+![Asking the MCP for a public-domain portrait, and reading the license off the result.](images/mcp-audit-01-commons-search.png)
+
+The rule is strict and worth repeating: **only `Public domain` / `CC0` / `CC-BY` / `CC-BY-SA` images are accepted**, and you always store the artist/license as a credit string. If nothing is freely licensed, the item stays imageless — you never scrape or guess.
+
+For a person you usually want two things at once — the canonical Wikipedia page (to "redirect" a reader there) *and* a lead portrait. **`wikipedia_summary`** returns both; then a quick `commons_image_search` confirms the license.
+
+![wikipedia_summary gives the page URL and a lead image; a second call confirms the license.](images/mcp-audit-02-wikipedia-summary.png)
+
+A real dead-end from this session: the bare query `"Oswald Wirth portrait"` returned only unrelated scanned book PDFs, so the `wikipedia_summary` lead-image route was used instead, then license-checked on Commons. And **Stuart Kaplan** has no Wikipedia page at all, so he was left imageless on purpose — an honest gap beats a wrong picture.
+
+### Step 2 — Fix the source of truth, keep the gate green
+
+`people-of-tarot` is **generated** — you never hand-edit its `grammar.json`. The real edits go into the dossiers (`research/people/*.md`) as new front-matter (`image:`, `wikipedia:`, `book:`), and the Python generator was upgraded to emit them — plus a fix to write file paths with forward slashes so Windows and CI stop fighting. Then the gate must pass:
+
+![The pre-commit gate after the generator upgrade — dangling=0, all checks passed.](images/mcp-audit-03-check-all.png)
+
+### Step 3 — Make it live (and open it to everyone)
+
+With the repo work pushed, the same MCP attaches the verified images in one bulk call (**`set_item_images`**, which mirrors each image to R2) and then publishes:
+
+![Bulk-attaching the 12 verified portraits in a single call.](images/mcp-audit-04-set-item-images.png)
+
+Finally, **`set_grammar_visibility`** publishes each grammar *and* opens it to community editing — the whole point, so the per-deck links resolve for visitors and anyone signed in can propose a fix.
+
+![Publishing and opening to community in one call — with the live link.](images/mcp-audit-05-publish.png)
+
+The result is live now:
+
+- **Books Behind the Tarot** → [flow.recursive.eco/g/7ff3ad23-6ceb-4b20-8c27-8bb04d0876ef](https://flow.recursive.eco/g/7ff3ad23-6ceb-4b20-8c27-8bb04d0876ef)
+- **People & Institutions of Tarot** → [flow.recursive.eco/g/a284fa37-694f-48dc-b977-f093658bc2b7](https://flow.recursive.eco/g/a284fa37-694f-48dc-b977-f093658bc2b7)
+
+> The five panels above are faithful renderings of the actual MCP/CLI exchanges from this session (the pass was run head-less in Claude Code, not the Desktop GUI). The calls, arguments and results are verbatim; a maintainer can swap in live Desktop captures any time.
+
+---
+
 ## The ethos
 
 You're not filing a bug. You're **tending a commons** — a deck you correct well becomes something a stranger in another country can read, trust, and draw a card from. The repo is public so the work outlives any one of us; the viewers are thin so the **data**, not the platform, is what matters.
