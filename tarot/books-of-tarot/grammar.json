@@ -1,0 +1,335 @@
+{
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "url": "https://recursive.eco",
+        "date": "2026-06-20",
+        "note": "Books behind the tarot — sources + our editorial reading"
+      }
+    ]
+  },
+  "name": "Books Behind the Tarot — The Sources & Our Reading",
+  "slug": "books-of-tarot",
+  "grammar_type": "custom",
+  "creator_name": "PlayfulProcess",
+  "creator_link": "https://recursive.eco",
+  "default_view": "cards",
+  "default_preview": "cards",
+  "is_published": true,
+  "tags": [
+    "sources",
+    "bibliography",
+    "history",
+    "editorial"
+  ],
+  "description": "# Books Behind the Tarot\n\nA grammar of the **sources** behind the cards — the occult-revival classics, the foundational texts, and the modern scholarship — each with **our editorial reading**: where it's reliable and where it overreaches. The twin of *People & Institutions of Tarot*. We don't host anything: **public-domain** works link to a free full text; **in-copyright** works are cited and linked, never reproduced.",
+  "items": [
+    {
+      "id": "book-agrippa-occult-philosophy",
+      "name": "Three Books of Occult Philosophy — Heinrich Cornelius Agrippa (1531 (Eng. 1651))",
+      "level": 1,
+      "category": "book",
+      "sort_order": 0,
+      "keywords": [
+        "foundation",
+        "public-domain"
+      ],
+      "metadata": {
+        "author": "Heinrich Cornelius Agrippa",
+        "year": "1531 (Eng. 1651)",
+        "kind": "foundation",
+        "copyright": "public-domain",
+        "url": "https://en.wikipedia.org/wiki/Three_Books_of_Occult_Philosophy",
+        "fulltext_url": "https://www.esotericarchives.com/agrippa/agrippa1.htm"
+      },
+      "sections": {
+        "What it is": "The Renaissance encyclopedia of elements, planets, numbers and correspondences.",
+        "Why it matters": "Upstream of the whole Western correspondence system the occultists later mapped onto the cards.",
+        "Our editorial view": "Foundational PD source — but predates tarot's occult use entirely. Context for the correspondences, **not a tarot book**.",
+        "Copyright": "**Public domain.** Free to read, quote, and cite.",
+        "Where to read": "[Reference](https://en.wikipedia.org/wiki/Three_Books_of_Occult_Philosophy) · [full text](https://www.esotericarchives.com/agrippa/agrippa1.htm)"
+      }
+    },
+    {
+      "id": "book-court-de-gebelin-monde-primitif",
+      "name": "Le Monde Primitif, vol. VIII — Antoine Court de Gébelin (1781)",
+      "level": 1,
+      "category": "book",
+      "sort_order": 1,
+      "keywords": [
+        "occult-revival",
+        "public-domain"
+      ],
+      "metadata": {
+        "author": "Antoine Court de Gébelin",
+        "year": "1781",
+        "kind": "occult-revival",
+        "copyright": "public-domain",
+        "url": "https://en.wikipedia.org/wiki/Antoine_Court_de_G%C3%A9belin"
+      },
+      "sections": {
+        "What it is": "The essay that first claimed the tarot was ancient Egyptian wisdom.",
+        "Why it matters": "The single text that launched tarot's occult reinterpretation.",
+        "Our editorial view": "Beautifully written and historically **wrong** — the birthplace of the Egyptian myth. Read it as the start of meaning *added*, not as history.",
+        "Copyright": "**Public domain.** Free to read, quote, and cite.",
+        "Where to read": "[Reference](https://en.wikipedia.org/wiki/Antoine_Court_de_G%C3%A9belin)"
+      }
+    },
+    {
+      "id": "book-etteilla-cartomancy",
+      "name": "Etteilla's cartomancy works — Jean-Baptiste Alliette (Etteilla) (1780s–90s)",
+      "level": 1,
+      "category": "book",
+      "sort_order": 2,
+      "keywords": [
+        "occult-revival",
+        "public-domain"
+      ],
+      "metadata": {
+        "author": "Jean-Baptiste Alliette (Etteilla)",
+        "year": "1780s–90s",
+        "kind": "occult-revival",
+        "copyright": "public-domain",
+        "url": "https://en.wikipedia.org/wiki/Etteilla"
+      },
+      "sections": {
+        "What it is": "The first systematic method for divining with tarot, and the first purpose-made divinatory deck.",
+        "Why it matters": "Turned Court de Gébelin's theory into a practice; the root of modern card reading.",
+        "Our editorial view": "Genuinely first at *cartomancy* — but his Egyptian/Thoth origin claims are invention. Credit the practice, flag the pseudo-history.",
+        "Copyright": "**Public domain.** Free to read, quote, and cite.",
+        "Where to read": "[Reference](https://en.wikipedia.org/wiki/Etteilla)"
+      }
+    },
+    {
+      "id": "book-levi-dogme-et-rituel",
+      "name": "Dogme et Rituel de la Haute Magie — Éliphas Lévi (1854–56)",
+      "level": 1,
+      "category": "book",
+      "sort_order": 3,
+      "keywords": [
+        "occult-revival",
+        "public-domain"
+      ],
+      "metadata": {
+        "author": "Éliphas Lévi",
+        "year": "1854–56",
+        "kind": "occult-revival",
+        "copyright": "public-domain",
+        "url": "https://en.wikipedia.org/wiki/%C3%89liphas_L%C3%A9vi",
+        "fulltext_url": "https://sacred-texts.com/eso/tm/index.htm"
+      },
+      "sections": {
+        "What it is": "The work that welded the 22 trumps to the 22 Hebrew letters and the Kabbalah.",
+        "Why it matters": "The hinge between French occultism and the later Golden Dawn / RWS systems.",
+        "Our editorial view": "Hugely influential, intellectually serious — and the tarot-Kabbalah link is **his construction**, not a historical inheritance.",
+        "Copyright": "**Public domain.** Free to read, quote, and cite.",
+        "Where to read": "[Reference](https://en.wikipedia.org/wiki/%C3%89liphas_L%C3%A9vi) · [full text](https://sacred-texts.com/eso/tm/index.htm)"
+      }
+    },
+    {
+      "id": "book-mathers-book-t",
+      "name": "“Book T” — The Tarot (Golden Dawn) — S. L. MacGregor Mathers (Hermetic Order of the Golden Dawn) (c. 1888)",
+      "level": 1,
+      "category": "book",
+      "sort_order": 4,
+      "keywords": [
+        "foundation",
+        "public-domain"
+      ],
+      "metadata": {
+        "author": "S. L. MacGregor Mathers (Hermetic Order of the Golden Dawn)",
+        "year": "c. 1888",
+        "kind": "foundation",
+        "copyright": "public-domain",
+        "url": "https://en.wikipedia.org/wiki/Hermetic_Order_of_the_Golden_Dawn"
+      },
+      "sections": {
+        "What it is": "The Golden Dawn's internal tarot paper: decans, sephiroth, elemental dignities, the “Lord of…” minor titles.",
+        "Why it matters": "The actual source our golden-dawn-book-t deck is built on, and the system RWS visualizes.",
+        "Our editorial view": "The **primary document** to cite (PD; Mathers d. 1918) — not Regardie's copyrighted 1937/1984 reprints. Use it to verify our deck's correspondences.",
+        "Copyright": "**Public domain.** Free to read, quote, and cite.",
+        "Where to read": "[Reference](https://en.wikipedia.org/wiki/Hermetic_Order_of_the_Golden_Dawn)"
+      }
+    },
+    {
+      "id": "book-papus-tarot-bohemians",
+      "name": "Le Tarot des Bohémiens — Papus (Gérard Encausse) (1889)",
+      "level": 1,
+      "category": "book",
+      "sort_order": 5,
+      "keywords": [
+        "occult-revival",
+        "public-domain"
+      ],
+      "metadata": {
+        "author": "Papus (Gérard Encausse)",
+        "year": "1889",
+        "kind": "occult-revival",
+        "copyright": "public-domain",
+        "url": "https://en.wikipedia.org/wiki/Papus",
+        "fulltext_url": "https://sacred-texts.com/tarot/tob/index.htm"
+      },
+      "sections": {
+        "What it is": "A systematizing occult treatise tying tarot to Kabbalah and 'the Bohemians' (Roma).",
+        "Why it matters": "Spread Lévi's synthesis to a wider audience around 1900.",
+        "Our editorial view": "Erudite and confident — and the **Roma-origin claim is a myth**. Period piece, not evidence.",
+        "Copyright": "**Public domain.** Free to read, quote, and cite.",
+        "Where to read": "[Reference](https://en.wikipedia.org/wiki/Papus) · [full text](https://sacred-texts.com/tarot/tob/index.htm)"
+      }
+    },
+    {
+      "id": "book-waite-pictorial-key",
+      "name": "The Pictorial Key to the Tarot — Arthur Edward Waite (1911)",
+      "level": 1,
+      "category": "book",
+      "sort_order": 6,
+      "keywords": [
+        "occult-revival",
+        "public-domain"
+      ],
+      "metadata": {
+        "author": "Arthur Edward Waite",
+        "year": "1911",
+        "kind": "occult-revival",
+        "copyright": "public-domain",
+        "url": "https://en.wikipedia.org/wiki/The_Pictorial_Key_to_the_Tarot",
+        "fulltext_url": "https://sacred-texts.com/tarot/pkt/index.htm"
+      },
+      "sections": {
+        "What it is": "Waite's companion to the Rider-Waite-Smith deck — card-by-card meanings.",
+        "Why it matters": "The most influential divinatory text of the last century; defines the 'standard' RWS readings.",
+        "Our editorial view": "Now public domain (Waite d. 1942). Authoritative *for RWS*, but Waite mystifies on purpose and downplays Pamela Colman Smith's art.",
+        "Copyright": "**Public domain.** Free to read, quote, and cite.",
+        "Where to read": "[Reference](https://en.wikipedia.org/wiki/The_Pictorial_Key_to_the_Tarot) · [full text](https://sacred-texts.com/tarot/pkt/index.htm)"
+      }
+    },
+    {
+      "id": "book-dummett-game-of-tarot",
+      "name": "The Game of Tarot — Michael Dummett (1980)",
+      "level": 1,
+      "category": "book",
+      "sort_order": 7,
+      "keywords": [
+        "scholarship",
+        "in-copyright"
+      ],
+      "metadata": {
+        "author": "Michael Dummett",
+        "year": "1980",
+        "kind": "scholarship",
+        "copyright": "in-copyright",
+        "url": "https://en.wikipedia.org/wiki/Michael_Dummett"
+      },
+      "sections": {
+        "What it is": "The foundational scholarly history: tarot as a 15th-c. Italian card game.",
+        "Why it matters": "The book that put tarot history on rigorous, game-first footing.",
+        "Our editorial view": "Our north star for the **game-first** thesis. In copyright — cite and link, don't host.",
+        "Copyright": "**In copyright** — link and cite only; we don't host it.",
+        "Where to read": "[Reference](https://en.wikipedia.org/wiki/Michael_Dummett)"
+      }
+    },
+    {
+      "id": "book-wicked-pack-of-cards",
+      "name": "A Wicked Pack of Cards — Ronald Decker, Thierry Depaulis & Michael Dummett (1996)",
+      "level": 1,
+      "category": "book",
+      "sort_order": 8,
+      "keywords": [
+        "scholarship",
+        "in-copyright"
+      ],
+      "metadata": {
+        "author": "Ronald Decker, Thierry Depaulis & Michael Dummett",
+        "year": "1996",
+        "kind": "scholarship",
+        "copyright": "in-copyright",
+        "url": "https://en.wikipedia.org/wiki/Michael_Dummett"
+      },
+      "sections": {
+        "What it is": "The definitive history of the *occult* tarot — how the esoteric myths were invented, by whom.",
+        "Why it matters": "Documents exactly where Court de Gébelin, Etteilla & co. went wrong.",
+        "Our editorial view": "Our primary authority for debunking origin myths. In copyright — reference only.",
+        "Copyright": "**In copyright** — link and cite only; we don't host it.",
+        "Where to read": "[Reference](https://en.wikipedia.org/wiki/Michael_Dummett)"
+      }
+    },
+    {
+      "id": "book-farley-cultural-history",
+      "name": "A Cultural History of Tarot — Helen Farley (2009)",
+      "level": 1,
+      "category": "book",
+      "sort_order": 9,
+      "keywords": [
+        "scholarship",
+        "in-copyright"
+      ],
+      "metadata": {
+        "author": "Helen Farley",
+        "year": "2009",
+        "kind": "scholarship",
+        "copyright": "in-copyright"
+      },
+      "sections": {
+        "What it is": "An accessible scholarly survey from playing card to esoteric tool.",
+        "Why it matters": "A readable bridge between Dummett-level rigor and the general reader.",
+        "Our editorial view": "Solid modern synthesis. In copyright — cite and link.",
+        "Copyright": "**In copyright** — link and cite only; we don't host it.",
+        "Where to read": "In print (I.B. Tauris, 2009) — find it via your library or a bookseller."
+      }
+    },
+    {
+      "id": "book-crowley-book-of-thoth",
+      "name": "The Book of Thoth — Aleister Crowley (1944)",
+      "level": 1,
+      "category": "book",
+      "sort_order": 10,
+      "keywords": [
+        "occult-revival",
+        "in-copyright"
+      ],
+      "metadata": {
+        "author": "Aleister Crowley",
+        "year": "1944",
+        "kind": "occult-revival",
+        "copyright": "in-copyright",
+        "url": "https://en.wikipedia.org/wiki/The_Book_of_Thoth_(Crowley)"
+      },
+      "sections": {
+        "What it is": "Crowley's esoteric system for the Thoth deck painted by Lady Frieda Harris.",
+        "Why it matters": "The most elaborate 20th-c. occult tarot synthesis.",
+        "Our editorial view": "Brilliant and idiosyncratic. **In copyright** (text, and Harris's images to ~2033) — reference, never reproduce. See our note on the Thoth deck being off-limits.",
+        "Copyright": "**In copyright** — link and cite only; we don't host it.",
+        "Where to read": "[Reference](https://en.wikipedia.org/wiki/The_Book_of_Thoth_(Crowley))"
+      }
+    },
+    {
+      "id": "book-place-tarot-history",
+      "name": "The Tarot: History, Symbolism, and Divination — Robert M. Place (2005)",
+      "level": 1,
+      "category": "book",
+      "sort_order": 11,
+      "keywords": [
+        "scholarship",
+        "in-copyright"
+      ],
+      "metadata": {
+        "author": "Robert M. Place",
+        "year": "2005",
+        "kind": "scholarship",
+        "copyright": "in-copyright",
+        "url": "https://en.wikipedia.org/wiki/Robert_M._Place"
+      },
+      "sections": {
+        "What it is": "A practitioner-scholar's synthesis of history and symbolism.",
+        "Why it matters": "Bridges the historical record and the divinatory tradition fairly.",
+        "Our editorial view": "Balanced and well-sourced for a popular book. In copyright — cite and link.",
+        "Copyright": "**In copyright** — link and cite only; we don't host it.",
+        "Where to read": "[Reference](https://en.wikipedia.org/wiki/Robert_M._Place)"
+      }
+    }
+  ]
+}

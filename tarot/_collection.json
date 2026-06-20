@@ -290,7 +290,7 @@
       "branch": null,
       "is_meta": true,
       "default_preview": "tree",
-      "items": 29,
+      "items": 37,
       "cover_image_url": null,
       "blurb": "The makers, patrons, occultists, scholars, and institutions behind the historical tarot decks in this collection. Each node links to the deck(s) that person or body made, reframed, printed, or holds —…",
       "path": "tarot/people-of-tarot/grammar.json"
@@ -303,7 +303,7 @@
       "is_meta": false,
       "default_preview": null,
       "items": 18,
-      "cover_image_url": null,
+      "cover_image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102351.jpg",
       "blurb": "# Ma Diao (馬吊) — Chinese money-suited cards",
       "path": "tarot/madiao-money-cards/grammar.json",
       "year": 1400,
@@ -317,7 +317,7 @@
       "is_meta": false,
       "default_preview": null,
       "items": 83,
-      "cover_image_url": null,
+      "cover_image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c21.jpg",
       "blurb": "# Jacques Viéville Tarot (Paris, c. 1650)",
       "path": "tarot/vieville-tarot/grammar.json",
       "year": 1650,
@@ -331,7 +331,7 @@
       "is_meta": false,
       "default_preview": null,
       "items": 23,
-      "cover_image_url": null,
+      "cover_image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t21.jpg",
       "blurb": "# Belgian Tarot — the Vandenborre / Flemish pattern",
       "path": "tarot/belgian-tarot/grammar.json",
       "year": 1780,
@@ -345,7 +345,7 @@
       "is_meta": false,
       "default_preview": null,
       "items": 83,
-      "cover_image_url": null,
+      "cover_image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c21.jpg",
       "blurb": "# Anonymous Parisian Tarot de Marseille (BnF)",
       "path": "tarot/paris-anonymous-tarot/grammar.json",
       "year": 1625,
@@ -359,7 +359,7 @@
       "is_meta": false,
       "default_preview": null,
       "items": 18,
-      "cover_image_url": null,
+      "cover_image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c29.jpg",
       "blurb": "# d'Este (Estensi) Tarocchi",
       "path": "tarot/este-tarot/grammar.json",
       "year": 1450,
@@ -448,6 +448,17 @@
       "path": "tarot/rosenwald-sheet/grammar.json",
       "year": 1500,
       "year_label": "c. 1500"
+    },
+    {
+      "slug": "books-of-tarot",
+      "name": "Books Behind the Tarot — The Sources & Our Reading",
+      "type": "custom",
+      "branch": null,
+      "is_meta": true,
+      "default_preview": "cards",
+      "path": "tarot/books-of-tarot/grammar.json",
+      "items": 12,
+      "blurb": "# Books Behind the Tarot"
     }
   ]
 }
