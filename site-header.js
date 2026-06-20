@@ -69,7 +69,7 @@
   const COURSES = [
     ['history-of-tarot',                'A History of Tarot'],
     ['tarot-and-the-crack',             'Tarot & the Crack'],
-    ['build-a-tarot-deck-with-claude',  'Build a Tarot Deck with Claude'],
+    ['build-a-tarot-deck-with-claude',  'Contribute to the Commons'],
   ];
 
   function autoActive() {
