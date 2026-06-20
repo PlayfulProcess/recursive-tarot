@@ -117,3 +117,69 @@ already settles the count (C3).
 
 > Not touched: deck grammars (spot-check only), `tree-of-tarot`, anything
 > in-copyright (cited + linked, never hosted).
+
+---
+
+## Step 2 — Fixes applied (repo)
+
+- **Generator** (`scripts/build_people_grammar.py`): posix `research` path; emits
+  `image_url` + `metadata.image_credit` (from `image:`/`image_credit:`),
+  `metadata.url` (from `wikipedia:`), and one pill via `make_pill()` —
+  priority **book > featured-card > made-deck**. `make_pill` reads the
+  *existing* `made`/`features_cards`, so deck pills auto-generate.
+- **Dossiers**: 14 files gained front-matter (12 portraits + 13 Wikipedia
+  redirects + 7 book links). Sourced via the MCP table above.
+- **books-of-tarot** (hand-edit; not generated): 10 author pills →
+  `people-of-tarot`.
+- **Rebuild**: `build_people_grammar.py` →
+  `image_url=12, pill=18, url=13, backslashes=0`. All deck-pill targets verified
+  to resolve (0 broken). `all-decks-many-lenses` timestamp-only churn **discarded**.
+- **Gate**: `check_all.py` → `dangling=0`, "all checks passed (30 grammars)". ✅
+
+## Step 3 — Live sync to recursive.eco (via MCP, owner-confirmed)
+
+| Action | MCP call | Result |
+|---|---|---|
+| Import Books grammar | `import_grammars(url=<branch raw books-of-tarot>)` | new id `7ff3ad23-6ceb-4b20-8c27-8bb04d0876ef` (private draft) |
+| Publish + open Books | `set_grammar_visibility(7ff3ad23…, is_public, open_to_community)` | `is_public:true, open_to_community:true` |
+| Mirror Books portraits | `set_item_images(7ff3ad23…, 8 imgs)` | `set:8 failed:0` → R2 |
+| Sync People portraits | `set_item_images(a284fa37…, 12 imgs)` | `set:12 failed:0` → R2 |
+| Sync People metadata | `update_items(a284fa37…, 22 items)` | `updated:22, not_found:[]` (pills + wiki url + credits) |
+| Publish + open People | `set_grammar_visibility(a284fa37…, is_public, open_to_community)` | `is_public:true, open_to_community:true` |
+
+`people-of-tarot` already existed in the DB (`a284fa37…`), so it was updated
+**in place** (no duplicate, no prod deletion). `books-of-tarot` did not exist →
+imported fresh. `get_grammar(7ff3ad23…)` confirmed the importer preserved every
+`image_url`, pill, and copyright label. `tarot/_eco_ids.json` updated: books id
+added; both grammars added to `_public_now`.
+
+Live: <https://flow.recursive.eco/g/7ff3ad23-6ceb-4b20-8c27-8bb04d0876ef> ·
+<https://flow.recursive.eco/g/a284fa37-694f-48dc-b977-f093658bc2b7>
+
+## Step 4 — Documentation
+
+- This build log.
+- Course lesson appended to `course/build-a-tarot-deck-with-claude.mdx`
+  ("Rung 5 in practice"), with 5 session figures under
+  `pages/courses/images/mcp-audit-*.png`. The figures are faithful renderings of
+  the real MCP/CLI exchanges (this pass ran head-less in **Claude Code**, not the
+  Desktop GUI); calls/args/results are verbatim and a maintainer can replace them
+  with live Desktop captures.
+
+## Definition of done
+
+- ☑ `check_all` passes, `dangling=0`.
+- ☑ Findings logged, then fixes applied (PD/CC images + wiki redirects +
+  cross-links). No facts needed correcting (mamluk already fixed).
+- ☑ Generated grammars rebuilt via scripts, not hand-edited; backslash/timestamp
+  noise discarded.
+- ☑ Build log + course lesson with figures.
+- ☑ Live on recursive.eco (owner-confirmed); both public + community-open.
+- ☐ Pull request opened (final step).
+
+## Backlog spun out (not done this pass)
+
+- New person nodes for book-authors with no dossier: **Crowley, Papus, Agrippa,
+  Jung** (would unlock those books' author pills). ~15 authors total lack a node.
+- **Zavattari** node (Bembo's rival hand); folded Sforza patrons could split out.
+- Per-dossier confirmation of the few floruit-only makers' Wikipedia pages.
