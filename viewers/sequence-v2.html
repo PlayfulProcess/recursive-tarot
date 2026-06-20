@@ -102,6 +102,8 @@
 </style>
 </head>
 <body>
+<script src="../site-header.js?v=20"></script>
+<site-header active="play"></site-header>
 
 <div class="wrap">
   <h1 id="title">Sequence <span class="v2">v2</span></h1>
@@ -446,7 +448,9 @@ function bind(){
   1. Supabase content load (loadContent() + GrammarLoader)  → replaced with fetch(?src=<static JSON>)
   2. window.ENV / config.js (Supabase URL + anon key)        → removed; no backend, nothing to configure
   3. window.RecursiveAuth / auth-init                        → removed; viewer is fully anonymous, no auth
-  4. <site-header> / <site-footer> web components            → removed; standalone page chrome only
+  4. <site-footer> web component                             → removed; standalone page chrome only
+     (NOTE: <site-header> was RE-ADDED — it's this repo's own shared nav, not an eco dependency;
+      every other viewer carries it, so a header-less page was an inconsistency, not a feature.)
   5. flow.recursive.eco/api/proxy-image (Drive image proxy)  → removed; image URLs used as-is (our images
                                                                live on R2 / tarot.recursive.eco / i.ytimg.com,
                                                                none need the Drive CORS proxy)

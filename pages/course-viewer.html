@@ -936,11 +936,15 @@
                 // Convert markdown to HTML
                 let html = marked.parse(content);
 
-                // Fix image paths: make relative paths absolute for both local and grammar-loaded content
+                // Fix image paths. Course images live in pages/courses/images/ and the
+                // MDX authors them as images/<name>.png. The base differs per load mode:
+                //  - grammar-loaded: absolute URL to the landing site origin.
+                //  - local course/ file: this viewer lives in pages/, so courses/images/.
                 html = html.replace(/src="\.\.\/images\//g, 'src="images/');
                 if (grammarId) {
-                    // When loaded from grammar, images need absolute paths to the landing site
                     html = html.replace(/src="images\//g, 'src="' + location.origin + '/pages/courses/images/');
+                } else {
+                    html = html.replace(/src="images\//g, 'src="courses/images/');
                 }
 
                 document.getElementById('course-content').innerHTML = html;
