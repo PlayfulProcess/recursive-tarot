@@ -62,7 +62,7 @@
     [PFX + 'pages/games/madiao.html',     '🀄 Ma Diao 馬吊'],
     [PFX + 'pages/games/trionfi.html',    '♛ Trionfi'],
     [PFX + 'viewers/caster.html',         '🔮 Caster'],
-    ['https://flow.recursive.eco/cast',   '✦ Oracle ↗', true],
+    ['https://flow.recursive.eco/',   '✦ Oracle ↗', true],
     [PFX + 'pages/play.html',             'All games & readings →'],
   ];
   // Courses — a dropdown under one "Courses" pill (each is a course-viewer ?course=…).
