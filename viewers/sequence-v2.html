@@ -86,6 +86,17 @@
     padding:6px 10px;font-size:12px;cursor:pointer;max-width:170px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .strip button.seg{border-left:3px solid var(--accent)}
   .strip button.on{border-color:var(--accent);color:var(--accent);font-weight:700;background:rgba(212,175,55,.08)}
+  /* Our commentary — renders the current item's sections below the player */
+  .notes{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px;display:none}
+  .notes.on{display:block}
+  .notes .ntitle{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:700;margin-bottom:9px}
+  .notes .nsec{margin:0 0 11px;padding-left:11px;border-left:2px solid var(--line)}
+  .notes .nsec:last-child{margin-bottom:0}
+  .notes .nsec.agree{border-left-color:#6ee7b7}
+  .notes .nsec.differ{border-left-color:#e07a5f}
+  .notes .nk{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px}
+  .notes .nsec.agree .nk{color:#6ee7b7} .notes .nsec.differ .nk{color:#e6a08c}
+  .notes .nb{font-size:13px;line-height:1.55;color:var(--muted)} .notes .nb b{color:var(--ink)} .notes .nb a{color:var(--accent)}
   #err{color:#e07a5f;padding:24px}
   @media (prefers-reduced-motion: reduce){ .card-prog{transition:none} }
 </style>
@@ -127,6 +138,7 @@
     <span class="now" id="now"></span>
   </div>
   <div class="strip" id="strip" role="tablist" aria-label="Program items"></div>
+  <div class="notes" id="notes" aria-live="polite"></div>
 </div>
 
 <script>
@@ -207,6 +219,24 @@ function destroyPlayer(){ if(player){ try{player.destroy();}catch(_){ } player=n
 function destroyBg(){ if(bgPlayer){ try{bgPlayer.destroy();}catch(_){ } bgPlayer=null; } bgCfg=null;
   const h=$('bg-audio-host'); if(h) h.innerHTML=''; }
 
+// ---- our commentary: render the current item's sections below the player ----
+function fmtNotes(s){ return esc(s)
+  .replace(/\*\*(.+?)\*\*/g,'<b>$1</b>')
+  .replace(/\*(.+?)\*/g,'<i>$1</i>')
+  .replace(/`([^`]+)`/g,'<code>$1</code>')
+  .replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>')
+  .replace(/\n/g,'<br>'); }
+function renderNotes(it){
+  const n=$('notes'); const secs=(it&&it.sections)||{};
+  const keys=Object.keys(secs).filter(k=>typeof secs[k]==='string'&&secs[k].trim());
+  if(!keys.length){ n.className='notes'; n.innerHTML=''; return; }
+  n.className='notes on';
+  n.innerHTML='<div class="ntitle">Our commentary</div>'+keys.map(k=>{
+    const cls=/\bagree\b/i.test(k)?'agree':(/\b(differ|disagree|caveat|but|note)\b/i.test(k)?'differ':'');
+    return `<div class="nsec ${cls}"><div class="nk">${esc(k)}</div><div class="nb">${fmtNotes(secs[k])}</div></div>`;
+  }).join('');
+}
+
 function show(i, autostart){
   if(i<0||i>=items.length) return;
   clearTimers(); destroyPlayer();
@@ -215,6 +245,7 @@ function show(i, autostart){
   $('pos').textContent=(i+1)+' / '+items.length;
   $('now').innerHTML='<b>'+esc(it.title||'')+'</b>'+(it.type==='video'?' · '+segLabel(it):' · '+it.type);
   $('scrub').classList.toggle('on', it.type==='video');
+  renderNotes(it);
   [...$('strip').children].forEach((b,k)=>b.classList.toggle('on',k===i));
   if($('strip').children[i]) $('strip').children[i].scrollIntoView({block:'nearest',inline:'center'});
 
