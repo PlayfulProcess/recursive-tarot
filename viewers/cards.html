@@ -4637,6 +4637,14 @@
                 `;
             }
 
+            // Always-visible recursive.eco actions for the open card: Edit this card →
+            // the recursive.eco editor (this card pre-selected); View deck → the deck on Flow.
+            bodyHtml += `
+                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)">
+                    <a href="#" onclick="editCommunityGrammar(selectedItem &amp;&amp; selectedItem.id);return false;" title="Open this card in the recursive.eco editor" style="font-size:12.5px;color:var(--grammar-accent,#a78bfa);text-decoration:none;padding:6px 11px;border-radius:7px;border:1px solid rgba(255,255,255,.12);background:rgba(147,51,234,.08)">✎ Edit this card on recursive.eco →</a>
+                    <a href="#" onclick="openDeckOnEco();return false;" title="Open this whole deck on recursive.eco" style="font-size:12.5px;color:var(--grammar-accent,#a78bfa);text-decoration:none;padding:6px 11px;border-radius:7px;border:1px solid rgba(255,255,255,.12);background:rgba(147,51,234,.08)">▦ View deck on recursive.eco →</a>
+                </div>`;
+
             modalBody.innerHTML = bodyHtml;
             modalBackdrop.classList.add('open');
         }
@@ -4843,6 +4851,25 @@
                 editUrl += `&card=${encodeURIComponent(cardId)}`;
             }
             window.open(editUrl, '_blank');
+        }
+
+        // Open the whole deck on recursive.eco — same deck resolution as "Get a Reading".
+        async function openDeckOnEco() {
+            const flowBaseUrl = getFlowBaseUrl();
+            const id = await resolveDeckFlowId();
+            let url = flowBaseUrl;
+            if (id) {
+                const typeStr = String(grammarType || '').toLowerCase();
+                const items = grammarData && grammarData.items ? grammarData.items : [];
+                const looksLikeIching = typeStr.includes('iching') || typeStr.includes('i-ching') || typeStr.includes('hex')
+                    || items.some(it => typeof it.number === 'number' && it.number >= 1 && it.number <= 64 && (it.binary || it.king_wen || it.trigram_above));
+                const looksLikeAstro = typeStr.includes('astro') || typeStr.includes('birthchart') || typeStr.includes('birth_chart')
+                    || (grammarData && Array.isArray(grammarData.birth_charts) && grammarData.birth_charts.length > 0);
+                url = looksLikeIching ? `${flowBaseUrl}/?bookId=${id}`
+                    : looksLikeAstro ? `${flowBaseUrl}/?astroGrammarId=${id}`
+                    : `${flowBaseUrl}/?deckId=${id}`;
+            }
+            window.open(url, '_blank', 'noopener');
         }
 
         // Copy grammar to user's drafts - opens editor with ?forkId= or ?copyFrom= param
