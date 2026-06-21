@@ -131,6 +131,7 @@
     <h2 id="intentionTitle">Before you cast</h2>
     <p class="creed" id="intentionCreed"></p>
     <ul class="principles" id="intentionPrinciples"></ul>
+    <p id="intentionNote" style="margin:8px 0 0;font-size:11.5px;color:#8b85a6;font-style:italic;line-height:1.5"></p>
     <div class="voices" id="voices" aria-label="Reading orientations — tap one to hear how it reads"></div>
     <div class="voice-detail" id="voiceDetail"></div>
   </div>
@@ -419,6 +420,7 @@ async function loadVoices(){
   $('intentionTitle').textContent = si.title || 'Before you cast';
   $('intentionCreed').textContent = si.creed || '';
   $('intentionPrinciples').innerHTML = (si.principles||[]).map(p=>'<li>'+esc(p)+'</li>').join('');
+  $('intentionNote').textContent = si.interpretation_note || '';
   const vbox = $('voices'), detail = $('voiceDetail');
   (data.voices||[]).forEach(v => { const el=document.createElement('div'); el.className='voice'; el.style.setProperty('--vc', v.color||'var(--accent)');
     el.innerHTML = '<div class="g">'+esc(v.glyph||'•')+'</div><div class="vn">'+esc(v.name)+'</div><div class="vt">'+esc(v.tagline||'')+'</div>';
