@@ -85,6 +85,22 @@
   .pos:active { opacity:.9; }
   textarea#json { width:100%; height:150px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11px; resize:vertical; }
   .note { font-size:11px; color:var(--muted); border-top:1px solid var(--line); margin-top:30px; padding-top:14px; }
+  /* voices carousel — set your intention before casting */
+  .intention { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin:0 0 18px; }
+  .intention h2 { font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--accent); margin:0 0 6px; }
+  .intention .creed { font-size:13.5px; color:#cbc6e0; line-height:1.55; margin:0 0 8px; }
+  .intention ul.principles { margin:0; padding-left:18px; color:var(--muted); font-size:12.5px; line-height:1.55; }
+  .voices { display:flex; gap:10px; overflow-x:auto; padding:6px 2px 8px; margin-top:12px; scrollbar-width:thin; }
+  .voice { flex:0 0 auto; min-width:104px; max-width:122px; background:#14121a; border:1px solid var(--line);
+    border-radius:12px; padding:10px; cursor:pointer; text-align:center; transition:border-color .15s, transform .1s; }
+  .voice:hover { transform:translateY(-2px); }
+  .voice.on { border-color:var(--vc,var(--accent)); box-shadow:0 0 0 1px var(--vc,var(--accent)); }
+  .voice .g { font-size:24px; line-height:1; }
+  .voice .vn { font-size:12px; font-weight:700; color:#f0ecff; margin-top:5px; }
+  .voice .vt { font-size:10.5px; color:var(--muted); }
+  .voice-detail { margin-top:10px; font-size:13px; color:#cbc6e0; line-height:1.55; border-top:1px solid var(--line); padding-top:10px; display:none; }
+  .voice-detail.on { display:block; }
+  .voice-detail .vd-name { font-weight:700; }
   footer.site { padding:18px; border-top:1px solid var(--line); color:#6b7280; font-size:12px; text-align:center; }
 </style>
 </head>
@@ -95,6 +111,14 @@
 <div class="wrap">
   <h1>Tarot Caster <span style="font-size:13px;font-weight:400;color:var(--muted);vertical-align:middle;margin-left:6px;">— free, open-source</span></h1>
   <p class="sub">Draw three cards from any historical deck — or across every deck at once. Positions: <b>Structures · Process · Possibilities</b>. This is the simple version: it draws; <a href="https://flow.recursive.eco/" target="_blank" rel="noopener">recursive.eco</a> interprets with AI, renders Oracle cards, keeps a Journal, and lets you <strong>edit the cards</strong> in your own grammar library.</p>
+
+  <div class="intention" id="intention" style="display:none">
+    <h2 id="intentionTitle">Before you cast</h2>
+    <p class="creed" id="intentionCreed"></p>
+    <ul class="principles" id="intentionPrinciples"></ul>
+    <div class="voices" id="voices" aria-label="Reading orientations — tap one to hear how it reads"></div>
+    <div class="voice-detail" id="voiceDetail"></div>
+  </div>
 
   <div class="controls">
     <div class="field">
@@ -158,11 +182,30 @@
 <script>
 const META_URL = '../tarot/all-decks-many-lenses/grammar.json';
 const ALL = '__all__';
-const POSITIONS = [
+let POSITIONS = [
   { name:'Structures',    prompt:"What's already built — the patterns, conditions, and forms holding this situation in place." },
   { name:'Process',       prompt:"What's moving — the work underway, the change in motion right now." },
   { name:'Possibilities', prompt:"What could emerge — the openings and futures not yet committed." },
 ];
+let SPREAD_NAME = 'Structures / Process / Possibilities';
+
+// Custom spread handed over from the Spread Builder (?spread=<base64url JSON>).
+(function loadCustomSpread(){
+  const sp = new URLSearchParams(location.search).get('spread');
+  if (!sp) return;
+  try {
+    const json = decodeURIComponent(escape(atob(sp.replace(/-/g,'+').replace(/_/g,'/'))));
+    const obj = JSON.parse(json);
+    if (obj && Array.isArray(obj.positions) && obj.positions.length){
+      POSITIONS = obj.positions.map(p => ({ name: p.label || 'Position', prompt: p.meaning || '' }));
+      SPREAD_NAME = obj.name || 'Custom spread';
+      const h = document.querySelector('h1');
+      if (h) h.innerHTML = esc(SPREAD_NAME) + ' <span style="font-size:13px;font-weight:400;color:var(--muted);vertical-align:middle;margin-left:6px;">— custom spread</span>';
+      const sub = document.querySelector('.sub');
+      if (sub) sub.innerHTML = 'Casting your custom spread — <b>' + esc(POSITIONS.map(p=>p.name).join(' · ')) + '</b>. <a href="../pages/spread-builder.html">Edit spreads →</a>';
+    }
+  } catch(e){ /* ignore a malformed param and fall back to the default spread */ }
+})();
 
 let leaves = [];          // all castable leaf cards from the meta
 let byDeck = {};          // source_deck slug -> [cards]
@@ -234,16 +277,17 @@ function updateDeckMeta(){
   else { el.textContent = `${(byDeck[v]||[]).length} castable cards in this deck.`; }
 }
 
-function draw3(){
+function drawN(n){
   const pool = currentPool().slice();
-  // Fisher–Yates, take 3 distinct.
+  // Fisher–Yates, take n distinct.
   for (let i = pool.length - 1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
-  return pool.slice(0, 3);
+  return pool.slice(0, n);
 }
 
 function cast(){
-  const cards = draw3();
-  if (cards.length < 3){ return; }
+  const n = POSITIONS.length;
+  const cards = drawN(n);
+  if (cards.length < n){ alert('This deck has only ' + cards.length + ' castable cards — fewer than this spread needs (' + n + '). Try "All Decks" or a larger deck.'); return; }
   const allowRev = document.getElementById('reversals').checked;
   const deckVal = document.getElementById('deck').value;
   const deckName = deckVal === ALL ? 'All Decks (cross-deck)' : (deckLabels[deckVal] || deckVal);
@@ -252,7 +296,7 @@ function cast(){
     _type: 'recursive-tarot-cast',
     _version: 1,
     _source: 'https://playfulprocess.github.io/recursive-tarot/viewers/caster.html',
-    spread: 'Structures / Process / Possibilities',
+    spread: SPREAD_NAME,
     deck: deckName,
     cast_at: new Date().toISOString(),
     question: document.getElementById('question').value.trim() || null,
@@ -407,6 +451,34 @@ function downloadJson(){
   a.click();
   URL.revokeObjectURL(a.href);
 }
+
+// ─── Voices: set your intention before casting (the "consult the voices" device) ───
+(async function loadVoices(){
+  let data; try { data = await (await fetch('voices.json')).json(); } catch(e){ return; }
+  const si = data.shared_intention || {};
+  document.getElementById('intentionTitle').textContent = si.title || 'Before you cast';
+  document.getElementById('intentionCreed').textContent = si.creed || '';
+  document.getElementById('intentionPrinciples').innerHTML = (si.principles||[]).map(p=>'<li>'+esc(p)+'</li>').join('');
+  const vbox = document.getElementById('voices');
+  const detail = document.getElementById('voiceDetail');
+  (data.voices||[]).forEach(v => {
+    const el = document.createElement('div');
+    el.className = 'voice'; el.style.setProperty('--vc', v.color || 'var(--accent)');
+    el.innerHTML = '<div class="g">'+esc(v.glyph||'•')+'</div><div class="vn">'+esc(v.name)+'</div><div class="vt">'+esc(v.tagline||'')+'</div>';
+    el.addEventListener('click', () => {
+      const wasOn = el.classList.contains('on');
+      vbox.querySelectorAll('.voice').forEach(n=>n.classList.remove('on'));
+      if (wasOn){ detail.classList.remove('on'); return; }
+      el.classList.add('on');
+      detail.innerHTML = '<span class="vd-name" style="color:'+esc(v.color||'#fff')+'">'+esc(v.name)+'</span> — '+esc(v.how)
+        + (v.link ? ' <a href="'+esc(v.link)+'">Read the course →</a>'
+                  : (v.persona ? ' <span style="color:#6b6488">· a voice you can consult on recursive.eco</span>' : ''));
+      detail.classList.add('on');
+    });
+    vbox.appendChild(el);
+  });
+  document.getElementById('intention').style.display = 'block';
+})();
 </script>
 </body>
 </html>
