@@ -219,6 +219,7 @@ def build():
         "creator_link": "https://recursive.eco",
         "default_view": "tree",
         "default_preview": "tree",
+        "provenance": "reference",  # apparatus grammar — see docs/DESIGN-two-wings-provenance.md
         "_generated": True,
         "_do_not_hand_edit": True,
         "_built_by": "scripts/build_people_grammar.py",
