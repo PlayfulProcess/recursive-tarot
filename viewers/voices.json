@@ -1,7 +1,7 @@
 {
   "_type": "recursive-tarot-voices",
   "_version": 1,
-  "_note": "The orientations you can consult before a reading — the 'pause and listen' device made into data. Each voice has a glyph (no copyrighted portraits — abstract marks only), a one-line tagline, and 'how' (how to read in this voice). Voices with a `link` open a course; the others map to persona skills (jung / wallis / andreotti / bayo) you can converse with on recursive.eco. Every voice obeys shared_intention — gate, not fate: a prompt, never a prophecy. The Golden Dawn is the esoteric register kept honest (pathworking, not prediction). PD/own content only; author PlayfulProcess.",
+  "_note": "The orientations you can consult before a reading — the 'pause and listen' device made into data. Each voice has a glyph (no copyrighted portraits — abstract marks only), a one-line tagline, and 'how' (how to read in this voice). Every voice's `link` opens the Intention Setting course at its own subsection (?course=intention-setting#<id>); the four that also carry a `persona` (jung / wallis / andreotti / bayo) can be conversed with on recursive.eco. Every voice obeys shared_intention — gate, not fate: a prompt, never a prophecy. The Golden Dawn is the esoteric register kept honest (pathworking, not prediction). PD/own content only; author PlayfulProcess.",
   "shared_intention": {
     "title": "Before you cast — the one intention",
     "creed": "Read to know yourself, not to be told your fate. A card starts a conversation with what is already alive in you — so hold what you find loosely, author its meaning yourself, and keep the choice your own. Be honest about what you see and kind in what you make it mean. Relate to the card; never obey it.",
@@ -21,7 +21,7 @@
       "glyph": "⚖",
       "color": "#a78bfa",
       "how": "Read from duty — the duty to know yourself — never to outsource your will. The card prompts; you legislate. Keep your autonomy, and refuse to be deceived, even by yourself.",
-      "link": "../pages/course-viewer.html?course=kant-and-the-tarot"
+      "link": "../pages/course-viewer.html?course=intention-setting#kant"
     },
     {
       "id": "linehan",
@@ -30,7 +30,7 @@
       "glyph": "◐",
       "color": "#60a5fa",
       "how": "Read from wise mind — reason and feeling together. Let the card hold two true things at once. Ask the three filters: is this reading useful, does it fit my life, is it kind? Relate to it; don't pass a verdict.",
-      "link": "../pages/course-viewer.html?course=marsha-linehan-reads-the-tarot"
+      "link": "../pages/course-viewer.html?course=intention-setting#linehan"
     },
     {
       "id": "ecosystem",
@@ -39,7 +39,7 @@
       "glyph": "🌿",
       "color": "#4ade80",
       "how": "Read humbly. There is more than one healthy way to be. Tend, don't legislate — your reading is one wood among many, answerable only to whether it helps the whole of your life flourish.",
-      "link": "../pages/course-viewer.html?course=morality-is-an-ecosystem"
+      "link": "../pages/course-viewer.html?course=intention-setting#the-ecosystem"
     },
     {
       "id": "jung",
@@ -48,7 +48,7 @@
       "glyph": "☉",
       "color": "#fbbf24",
       "how": "Read as a mirror of the unconscious. The card you turn is the part of you not yet lived — the shadow, the archetype pressing to be seen. Don't explain it away; let it ask you what wants integrating.",
-      "link": null,
+      "link": "../pages/course-viewer.html?course=intention-setting#jung",
       "persona": "jung"
     },
     {
@@ -58,7 +58,7 @@
       "glyph": "🔱",
       "color": "#22d3ee",
       "how": "Read as līlā — the play of consciousness meeting itself. Hold the card with delight, not dread; lightly, not gravely. You are not being told anything; you are playing, and the play is the point.",
-      "link": null,
+      "link": "../pages/course-viewer.html?course=intention-setting#wallis",
       "persona": "wallis"
     },
     {
@@ -68,7 +68,7 @@
       "glyph": "🐌",
       "color": "#fb923c",
       "how": "Slow down; the times are urgent. Let the card make a sanctuary for what is monstrous, stuck, or unspeakable. The crack is where something new gets in — resist the rush to resolve it.",
-      "link": null,
+      "link": "../pages/course-viewer.html?course=intention-setting#bayo-akomolafe",
       "persona": "bayo"
     },
     {
@@ -78,7 +78,7 @@
       "glyph": "🌀",
       "color": "#c084fc",
       "how": "Read to sit with complexity and your own complicity. Some of what the card shows is dying and wants hospicing; some is being born and wants midwifing. Stay with it; do not look away.",
-      "link": null,
+      "link": "../pages/course-viewer.html?course=intention-setting#andreotti",
       "persona": "andreotti"
     },
     {
@@ -88,7 +88,7 @@
       "glyph": "△",
       "color": "#d4af37",
       "how": "Read as the Order did — pathworking. Each trump is a gate on the Tree of Life, a step between two sephiroth in the soul's ascent toward the light. Enter the card as an image and walk its path in contemplation; the Hebrew letter, the planet, the two spheres it joins are a map for the climb.",
-      "link": "../pages/course-viewer.html?course=walking-the-golden-dawn-path"
+      "link": "../pages/course-viewer.html?course=intention-setting#the-golden-dawn"
     }
   ]
 }
