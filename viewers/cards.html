@@ -2239,6 +2239,20 @@
         // State
         let grammarType = 'tarot';
         let grammarData = null;
+        let ecoIds = null; // tarot/_eco_ids.json — repo deck slug -> recursive.eco deck UUID
+        // Resolve the recursive.eco deck UUID for the deck currently shown, so "Get a Reading" /
+        // copy / edit open Flow with THIS deck. Static (?src=) views carry no id param, so map the
+        // slug from the src path via _eco_ids.json (fetched + cached on first use).
+        async function resolveDeckFlowId() {
+            const params = new URLSearchParams(location.search);
+            const direct = params.get('id') || params.get('deckId') || params.get('bookId');
+            if (direct) return direct;
+            const m = (params.get('src') || '').match(/tarot\/([^/]+)\/grammar\.json/);
+            const slug = m ? m[1] : null;
+            if (!slug) return null;
+            if (!ecoIds) { try { ecoIds = await (await fetch('../tarot/_eco_ids.json')).json(); } catch (_) { ecoIds = { ids: {} }; } }
+            return (ecoIds.ids || {})[slug] || null;
+        }
         let grammarSource = null; // 'user_documents' or 'tools'
         let grammarToolId = null; // Tool ID if from tools table
         let githubSourceUrl = null; // GitHub source URL for sync feature
@@ -2389,9 +2403,14 @@
             });
 
             try {
-                // Check auth state
-                const { data: { user } } = await supabaseClient.auth.getUser();
-                currentUser = user;
+                // Check auth state — read the REAL shared session exposed by auth-widget.js
+                // (window.recursiveAuth reads the .recursive.eco cookie the app sets, so a
+                // sign-in on flow.recursive.eco is seen here too). The static stub
+                // (window.RecursiveAuth) always returns null — that is why "Sign in to copy"
+                // never picked up the login. Wait briefly for the async widget to attach.
+                for (let _i = 0; _i < 40 && !window.recursiveAuth; _i++) { await new Promise(r => setTimeout(r, 100)); }
+                try { currentUser = window.recursiveAuth ? await window.recursiveAuth.getUser() : null; }
+                catch (_) { currentUser = null; }
                 updateEditCopyButtons();
 
                 // Detect grammar type and ID from URL
@@ -3310,30 +3329,27 @@
             // grammar — data shape > type stamp).
             const readingBtn = document.getElementById('reading-btn');
             if (readingBtn) {
-                const params = new URLSearchParams(window.location.search);
-                const id = params.get('id') || params.get('deckId') || params.get('bookId');
-                const flowBaseUrl = getFlowBaseUrl();
-                if (id) {
-                    const typeStr = String(grammarType || '').toLowerCase();
-                    const items = grammarData && grammarData.items ? grammarData.items : [];
-                    // Detect I Ching by type string OR by item shape
-                    // (items have number 1–64 + binary/king_wen → hexagram).
-                    const looksLikeIching = typeStr.includes('iching') || typeStr.includes('i-ching') || typeStr.includes('hex')
-                        || items.some(it => typeof it.number === 'number' && it.number >= 1 && it.number <= 64 && (it.binary || it.king_wen || it.trigram_above));
-                    // Detect astrology by type string OR by presence of birth chart data.
-                    const looksLikeAstro = typeStr.includes('astro') || typeStr.includes('birthchart') || typeStr.includes('birth_chart')
-                        || (grammarData && Array.isArray(grammarData.birth_charts) && grammarData.birth_charts.length > 0);
-                    if (looksLikeIching) {
-                        readingBtn.href = `${flowBaseUrl}/?bookId=${id}`;
-                    } else if (looksLikeAstro) {
-                        readingBtn.href = `${flowBaseUrl}/?astroGrammarId=${id}`;
-                    } else {
-                        readingBtn.href = `${flowBaseUrl}/?deckId=${id}`;
-                    }
-                } else {
-                    readingBtn.href = flowBaseUrl;
-                }
                 readingBtn.target = '_blank';
+                readingBtn.href = getFlowBaseUrl();   // sensible default; the deck is resolved on click
+                readingBtn.addEventListener('click', async (e) => {
+                    e.preventDefault();
+                    const flowBaseUrl = getFlowBaseUrl();
+                    const id = await resolveDeckFlowId();   // ?id=/?deckId= OR slug -> _eco_ids.json
+                    let url = flowBaseUrl;
+                    if (id) {
+                        const typeStr = String(grammarType || '').toLowerCase();
+                        const items = grammarData && grammarData.items ? grammarData.items : [];
+                        // I Ching by type string OR item shape (number 1–64 + binary/king_wen → hexagram).
+                        const looksLikeIching = typeStr.includes('iching') || typeStr.includes('i-ching') || typeStr.includes('hex')
+                            || items.some(it => typeof it.number === 'number' && it.number >= 1 && it.number <= 64 && (it.binary || it.king_wen || it.trigram_above));
+                        const looksLikeAstro = typeStr.includes('astro') || typeStr.includes('birthchart') || typeStr.includes('birth_chart')
+                            || (grammarData && Array.isArray(grammarData.birth_charts) && grammarData.birth_charts.length > 0);
+                        url = looksLikeIching ? `${flowBaseUrl}/?bookId=${id}`
+                            : looksLikeAstro ? `${flowBaseUrl}/?astroGrammarId=${id}`
+                            : `${flowBaseUrl}/?deckId=${id}`;
+                    }
+                    window.open(url, '_blank', 'noopener');
+                });
             }
 
             // Set up view mode dropdown (shared component)
@@ -3681,12 +3697,12 @@
             let list = [];
             try {
                 const c = await (await fetch('../tarot/_collection.json')).json();
-                list = (c.grammars || c.collection || c.decks || []).map(d => ({ slug: d.slug, name: d.name || d.slug, meta: !!d.is_meta })).filter(d => d.slug);
+                list = (c.grammars || c.collection || c.decks || []).map(d => ({ slug: d.slug, name: d.name || d.slug, meta: !!d.is_meta, year: d.year })).filter(d => d.slug);
             } catch (e) { sel.style.display = 'none'; return; }
             // ensure the fat meta is always offered, even if not listed in _collection
             if (!list.some(d => d.slug === 'all-decks-many-lenses')) list.unshift({ slug: 'all-decks-many-lenses', name: 'All Decks (the meta)', meta: true });
             const metaItem = list.find(d => d.slug === 'all-decks-many-lenses') || list.find(d => d.meta) || { slug: 'all-decks-many-lenses', name: 'All Decks (the meta)' };
-            const decks = list.filter(d => d.slug !== metaItem.slug).sort((a, b) => a.name.localeCompare(b.name));
+            const decks = list.filter(d => d.slug !== metaItem.slug).sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || (a.name || '').localeCompare(b.name || ''));
             const srcFor = s => '../tarot/' + s + '/grammar.json';
             const opt = (s, label) => `<option value="${srcFor(s)}"${curSrc.includes('/' + s + '/') ? ' selected' : ''}>${label.replace(/\s+[—–-]\s+.*/, '')}</option>`;
             sel.innerHTML = opt(metaItem.slug, '✦ All Decks (the meta)') + decks.map(d => opt(d.slug, d.name)).join('');
@@ -4798,7 +4814,7 @@
         }
 
         // Edit community grammar - SUPABASE-FIRST: prefer ?id= over ?community=
-        function editCommunityGrammar(cardId = null) {
+        async function editCommunityGrammar(cardId = null) {
             if (!currentUser) {
                 // Save card ID for after auth completes
                 pendingEditCardId = cardId;
@@ -4809,7 +4825,7 @@
 
             const offerBaseUrl = getOfferBaseUrl();
             const params = new URLSearchParams(window.location.search);
-            const docId = params.get('id') || params.get('deckId') || params.get('bookId');
+            const docId = await resolveDeckFlowId();
 
             let editUrl;
             // SUPABASE-FIRST: Prefer ?id= when we have document ID
@@ -4830,7 +4846,7 @@
         }
 
         // Copy grammar to user's drafts - opens editor with ?forkId= or ?copyFrom= param
-        function copyToMyGrammars(cardId = null) {
+        async function copyToMyGrammars(cardId = null) {
             if (!currentUser) {
                 // Save card ID for after auth completes
                 pendingForkCardId = cardId;
@@ -4840,7 +4856,7 @@
             }
 
             const params = new URLSearchParams(window.location.search);
-            const id = params.get('id') || params.get('deckId') || params.get('bookId');
+            const id = await resolveDeckFlowId();
             const githubParam = params.get('github');
             const offerBaseUrl = getOfferBaseUrl();
 
