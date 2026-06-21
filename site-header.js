@@ -80,6 +80,7 @@
       ['walking-the-golden-dawn-path',    'Walking the Golden Dawn Path'],
     ]],
     ['🛠 How to Contribute', [
+      ['how-to-contribute',               'How to Contribute'],
       ['build-a-tarot-deck-with-claude',  'Contribute to the Commons'],
     ]],
   ];
