@@ -1,10 +1,31 @@
 {
   "_note": "Hardcoded map: repo deck slug -> its recursive.eco grammar UUID (the deckId). Used to build per-deck links: open/read = https://flow.recursive.eco/?deckId=<id> ; edit/fork = https://flow.recursive.eco/create/dashboard/unified/new?forkId=<id>. Sourced from the recursive.eco DB (user_documents) on 2026-06-20 by _community_slug / exact name match. UUIDs are stable across publish; a link only resolves for visitors once that deck is is_public=true on recursive.eco.",
   "_public_now": [
-    "visconti-sforza-tarot",
     "all-decks-many-lenses",
+    "belgian-tarot",
     "books-of-tarot",
-    "people-of-tarot"
+    "cary-yale-visconti-tarot",
+    "charles-vi-tarot",
+    "court-de-gebelin-tarot",
+    "este-tarot",
+    "etteilla-i-livre-de-thot",
+    "etteilla-ii-egyptian",
+    "etteilla-iii-oracle-des-dames",
+    "golden-dawn-book-t-tarot",
+    "madiao-money-cards",
+    "mamluk-deck",
+    "mantegna-tarocchi",
+    "minchiate-florence-tarot",
+    "oswald-wirth-tarot",
+    "paris-anonymous-tarot",
+    "people-of-tarot",
+    "sola-busca-tarot",
+    "tarocchino-bologna",
+    "tarot-de-besancon",
+    "tarot-de-marseille-conver",
+    "tree-of-tarot",
+    "vieville-tarot",
+    "visconti-sforza-tarot"
   ],
   "ids": {
     "visconti-sforza-tarot": "6dc092b0-9972-43f0-b493-ff6c2a61dcfc",
