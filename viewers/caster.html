@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -6,87 +6,25 @@
 <title>Recursive Tarot — Caster</title>
 <!--
   Self-contained tarot caster for GitHub Pages. No backend.
-  - Reads this repo's meta-grammar (tarot/all-decks-many-lenses/grammar.json),
-    which already aggregates every public-domain deck's cards with provenance.
-  - Cast from a single historical deck OR across ALL decks at once (the meta's
-    unique power: a cross-deck draw the printed decks could never give you).
-  - Spread positions are Structures / Process / Possibilities — NOT past/present/
-    future. We read the shape a situation is in, not a fortune.
-  - The cast exports as JSON that recursive.eco's Journal imports, so the AI
-    reading happens there. This page draws; recursive.eco interprets.
+  - Pick a DECK (one historical deck, or All Decks = the cross-deck meta) and a SPREAD
+    (well-known layouts from spreads.json, incl. the Celtic Cross, or build a Custom one).
+  - Cast draws one card per position onto a board laid out by each position's x/y; drag to
+    rearrange. Set an intention first via the voices carousel (voices.json).
+  - Save the cast locally, contribute a spread on GitHub, or open it in recursive.eco's Journal
+    (this page draws; recursive.eco interprets with AI, renders Oracle cards, keeps a Journal).
 -->
 <style>
-  :root { --bg:#14121a; --panel:#1d1b26; --ink:#ece9f3; --muted:#a59fb5; --line:#2c2937; --accent:#8b5cf6; }
+  :root { --bg:#14121a; --panel:#1d1b26; --ink:#ece9f3; --muted:#a59fb5; --line:#2c2937; --accent:#8b5cf6; --cw:clamp(58px,9vw,94px); }
   * { box-sizing:border-box; }
   html,body { margin:0; min-height:100%; background:var(--bg); color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
   a { color:#b794f6; }
-  header.site { display:flex; align-items:center; gap:18px; padding:12px 18px; border-bottom:1px solid var(--line); font-size:14px; }
-  header.site .brand { color:#c4b5fd; text-decoration:none; font-weight:600; }
-  header.site a.nav { color:var(--muted); text-decoration:none; }
-  header.site .sp { margin-left:auto; }
-  .wrap { max-width:1100px; margin:0 auto; padding:22px 18px 60px; }
+  .wrap { max-width:1080px; margin:0 auto; padding:22px 18px 60px; }
   h1 { font-size:22px; margin:0 0 4px; font-weight:600; }
-  .sub { color:var(--muted); font-size:14px; margin:0 0 22px; }
-  .controls { display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; }
-  .field { display:flex; flex-direction:column; gap:5px; }
-  .field label { font-size:12px; color:var(--muted); }
-  select, input[type=text], textarea { background:#14121a; color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:8px 10px; font-size:14px; font-family:inherit; }
-  select { min-width:260px; }
-  input#question { min-width:300px; }
-  .checkbox { display:flex; align-items:center; gap:6px; font-size:13px; color:var(--muted); }
-  button { background:var(--accent); color:#fff; border:none; border-radius:8px; padding:9px 18px; font-size:14px; font-weight:600; cursor:pointer; }
-  button.ghost { background:#2c2937; color:#d8d3e6; }
-  button:disabled { opacity:.5; cursor:default; }
-  .deckmeta { color:var(--muted); font-size:12px; margin-top:8px; }
-  .spread { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:26px; }
-  @media (max-width:760px){ .spread { grid-template-columns:1fr; } }
-  .pos { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:16px; display:flex; flex-direction:column; }
-  .pos .pname { font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--accent); font-weight:700; }
-  .pos .pprompt { font-size:12px; color:var(--muted); margin:4px 0 12px; line-height:1.4; }
-  .card-img { width:100%; aspect-ratio:3/5; object-fit:contain; background:#0a0910; border-radius:10px; border:1px solid var(--line); }
-  .card-img.placeholder { display:flex; align-items:center; justify-content:center; color:#4a4660; font-size:42px; }
-  .card-name { font-size:15px; font-weight:600; margin:12px 0 2px; }
-  .card-deck { font-size:12px; color:var(--muted); }
-  .reversed { color:#e0a458; font-size:11px; font-weight:600; margin-top:4px; }
-  .empty { color:var(--muted); font-size:14px; margin-top:26px; text-align:center; padding:40px 0; }
-  .export { margin-top:30px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; display:none; }
-  .export h2 { font-size:15px; margin:0 0 4px; }
-  .export p { color:var(--muted); font-size:13px; margin:0 0 12px; line-height:1.5; }
-  .export .btnrow { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
-  .export .journal-cta { display:block; width:100%; text-align:center; padding:14px 18px; font-size:16px;
-    font-weight:700; background:linear-gradient(135deg,#7c3aed,#9333ea); border-radius:10px;
-    color:#fff; text-decoration:none; letter-spacing:.02em; margin-bottom:14px;
-    box-shadow:0 4px 18px rgba(147,51,234,.35); transition:box-shadow .2s,transform .15s; }
-  .export .journal-cta:hover { box-shadow:0 6px 24px rgba(147,51,234,.55); transform:translateY(-1px); }
-  .export .cta-sub { font-size:11.5px; color:var(--muted); text-align:center; margin:-8px 0 12px; }
+  .sub { color:var(--muted); font-size:14px; margin:0 0 18px; }
 
-  /* card detail modal */
-  .cdm-backdrop { position:fixed; inset:0; background:rgba(10,8,20,.85); z-index:1000;
-    display:flex; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(4px); }
-  .cdm-box { background:#1a1726; border:1px solid #3a3450; border-radius:16px; max-width:540px;
-    width:100%; max-height:88vh; overflow-y:auto; position:relative; }
-  .cdm-header { display:flex; align-items:flex-start; gap:14px; padding:18px 18px 14px; border-bottom:1px solid #2a2440; }
-  .cdm-img { width:72px; flex-shrink:0; border-radius:8px; border:1px solid #2a2440; background:#0a0910; }
-  .cdm-close { position:absolute; top:12px; right:14px; background:none; border:none;
-    color:#7c7596; font-size:20px; cursor:pointer; line-height:1; padding:4px; }
-  .cdm-close:hover { color:#ece8f5; }
-  .cdm-pos { font-size:10px; text-transform:uppercase; letter-spacing:.1em; color:#8b5cf6; font-weight:700; }
-  .cdm-name { font-size:17px; font-weight:700; color:#f0ecff; margin:4px 0 2px; }
-  .cdm-deck { font-size:12px; color:#9b94b3; }
-  .cdm-body { padding:16px 18px 20px; }
-  .cdm-section { margin-bottom:14px; }
-  .cdm-sec-label { font-size:10.5px; text-transform:uppercase; letter-spacing:.11em;
-    color:#6d5a9c; font-weight:700; margin-bottom:5px; }
-  .cdm-sec-text { font-size:13.5px; color:#cbc6e0; line-height:1.6; }
-  .cdm-loading { text-align:center; color:#6b6488; font-size:13px; padding:30px 0; }
-  .cdm-dblclick-hint { font-size:11px; color:#4a4660; text-align:center; margin-top:6px; }
-  .pos { cursor:pointer; }
-  .pos:active { opacity:.9; }
-  textarea#json { width:100%; height:150px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11px; resize:vertical; }
-  .note { font-size:11px; color:var(--muted); border-top:1px solid var(--line); margin-top:30px; padding-top:14px; }
   /* voices carousel — set your intention before casting */
-  .intention { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin:0 0 18px; }
+  .intention { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin:0 0 16px; }
   .intention h2 { font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--accent); margin:0 0 6px; }
   .intention .creed { font-size:13.5px; color:#cbc6e0; line-height:1.55; margin:0 0 8px; }
   .intention ul.principles { margin:0; padding-left:18px; color:var(--muted); font-size:12.5px; line-height:1.55; }
@@ -101,6 +39,83 @@
   .voice-detail { margin-top:10px; font-size:13px; color:#cbc6e0; line-height:1.55; border-top:1px solid var(--line); padding-top:10px; display:none; }
   .voice-detail.on { display:block; }
   .voice-detail .vd-name { font-weight:700; }
+
+  .controls { display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; }
+  .field { display:flex; flex-direction:column; gap:5px; }
+  .field label { font-size:12px; color:var(--muted); }
+  select, input[type=text] { background:#14121a; color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:8px 10px; font-size:14px; font-family:inherit; }
+  select { min-width:200px; }
+  input#question { min-width:240px; }
+  .checkbox { display:flex; align-items:center; gap:6px; font-size:13px; color:var(--muted); }
+  button { background:var(--accent); color:#fff; border:none; border-radius:8px; padding:9px 18px; font-size:14px; font-weight:600; cursor:pointer; }
+  button.ghost { background:#2c2937; color:#d8d3e6; }
+  button:disabled { opacity:.5; cursor:default; }
+  .deckmeta { color:var(--muted); font-size:12px; margin-top:8px; }
+  .spreadmeta { color:var(--muted); font-size:12px; }
+
+  /* the board — positions placed by x/y fraction */
+  .board { position:relative; width:100%; aspect-ratio:16/10; margin-top:20px; border:1px solid var(--line);
+    border-radius:16px; overflow:hidden; background:radial-gradient(circle at 50% 45%, #1b1828 0%, #110f18 100%);
+    box-shadow:inset 0 0 60px rgba(0,0,0,.4); touch-action:none; }
+  @media (max-width:640px){ .board { aspect-ratio:3/4; } }
+  .slot { position:absolute; transform:translate(-50%,-50%); width:var(--cw); cursor:grab; user-select:none; touch-action:none; }
+  .slot.dragging { cursor:grabbing; opacity:.92; z-index:10; }
+  .slot .num { position:absolute; top:-8px; left:-8px; width:18px; height:18px; border-radius:50%;
+    background:var(--accent); color:#fff; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; z-index:3; }
+  .slot .plabel { font-size:10.5px; font-weight:700; color:#cbb9f5; text-align:center; line-height:1.2; margin-bottom:3px;
+    text-shadow:0 1px 3px #000; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .slot .card { width:100%; aspect-ratio:3/5; border-radius:8px; border:1px dashed #3a3450; background:#0a0910;
+    display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .slot .card.filled { border-style:solid; }
+  .slot .card img { width:100%; height:100%; object-fit:contain; }
+  .slot .card .ph { color:#4a4660; font-size:11px; text-align:center; padding:4px; line-height:1.3; }
+  .slot .cname { font-size:10.5px; color:#e9e4f6; text-align:center; margin-top:3px; line-height:1.2; }
+  .slot .cdeck { font-size:9.5px; color:var(--muted); text-align:center; }
+  .slot .rev { color:#e0a458; font-size:9px; text-align:center; }
+  .empty { color:var(--muted); font-size:14px; text-align:center; padding:40px 0; }
+
+  /* custom spread editor (shown only for Custom) */
+  .custombar { display:none; gap:10px; align-items:center; margin-top:14px; flex-wrap:wrap; }
+  .custombar.on { display:flex; }
+  .clist { display:none; flex-direction:column; gap:8px; margin-top:12px; }
+  .clist.on { display:flex; }
+  .clist .row { display:flex; gap:10px; align-items:center; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:10px; }
+  .clist .row .rn { width:22px; height:22px; flex:0 0 22px; border-radius:50%; background:var(--accent); color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .clist .row .ff { flex:1; display:flex; flex-direction:column; gap:5px; }
+  .clist .row .ff input { width:100%; }
+  .clist .row .del { background:#2c2937; color:#caa; border:none; border-radius:8px; padding:6px 10px; cursor:pointer; font-size:12px; }
+
+  /* save / contribute */
+  .export { margin-top:24px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px; display:none; }
+  .export.on { display:block; }
+  .export h2 { font-size:15px; margin:0 0 4px; }
+  .export p { color:var(--muted); font-size:13px; margin:0 0 12px; line-height:1.5; }
+  .export .journal-cta { display:block; width:100%; text-align:center; padding:14px 18px; font-size:16px; font-weight:700;
+    background:linear-gradient(135deg,#7c3aed,#9333ea); border-radius:10px; color:#fff; text-decoration:none; margin-bottom:12px;
+    box-shadow:0 4px 18px rgba(147,51,234,.35); }
+  .export .journal-cta:hover { box-shadow:0 6px 24px rgba(147,51,234,.55); }
+  .export .btnrow { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+  .export .btnrow a.btn, .export .btnrow button { background:#2c2937; color:#d8d3e6; border:none; border-radius:8px; padding:9px 14px; font-size:13px; font-weight:600; text-decoration:none; cursor:pointer; display:inline-flex; align-items:center; }
+  textarea#json { width:100%; height:130px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11px; resize:vertical;
+    background:#14121a; color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:8px; }
+  .note { font-size:11px; color:var(--muted); border-top:1px solid var(--line); margin-top:28px; padding-top:14px; }
+
+  /* card detail modal */
+  .cdm-backdrop { position:fixed; inset:0; background:rgba(10,8,20,.85); z-index:1000; display:flex; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(4px); }
+  .cdm-box { background:#1a1726; border:1px solid #3a3450; border-radius:16px; max-width:540px; width:100%; max-height:88vh; overflow-y:auto; position:relative; }
+  .cdm-header { display:flex; align-items:flex-start; gap:14px; padding:18px 18px 14px; border-bottom:1px solid #2a2440; }
+  .cdm-img { width:72px; flex-shrink:0; border-radius:8px; border:1px solid #2a2440; background:#0a0910; }
+  .cdm-close { position:absolute; top:12px; right:14px; background:none; border:none; color:#7c7596; font-size:20px; cursor:pointer; }
+  .cdm-pos { font-size:10px; text-transform:uppercase; letter-spacing:.1em; color:#8b5cf6; font-weight:700; }
+  .cdm-name { font-size:17px; font-weight:700; color:#f0ecff; margin:4px 0 2px; }
+  .cdm-deck { font-size:12px; color:#9b94b3; }
+  .cdm-actions { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+  .cdm-actions a { font-size:12px; font-weight:600; background:#241d3a; border:1px solid #3a3450; color:#cbb9f5; border-radius:8px; padding:6px 11px; text-decoration:none; }
+  .cdm-body { padding:16px 18px 20px; }
+  .cdm-section { margin-bottom:14px; }
+  .cdm-sec-label { font-size:10.5px; text-transform:uppercase; letter-spacing:.11em; color:#6d5a9c; font-weight:700; margin-bottom:5px; }
+  .cdm-sec-text { font-size:13.5px; color:#cbc6e0; line-height:1.6; }
+  .cdm-loading { text-align:center; color:#6b6488; font-size:13px; padding:30px 0; }
   footer.site { padding:18px; border-top:1px solid var(--line); color:#6b7280; font-size:12px; text-align:center; }
 </style>
 </head>
@@ -109,8 +124,8 @@
 <site-header active="play"></site-header>
 
 <div class="wrap">
-  <h1>Tarot Caster <span style="font-size:13px;font-weight:400;color:var(--muted);vertical-align:middle;margin-left:6px;">— free, open-source</span></h1>
-  <p class="sub">Draw three cards from any historical deck — or across every deck at once. Positions: <b>Structures · Process · Possibilities</b>. This is the simple version: it draws; <a href="https://flow.recursive.eco/" target="_blank" rel="noopener">recursive.eco</a> interprets with AI, renders Oracle cards, keeps a Journal, and lets you <strong>edit the cards</strong> in your own grammar library.</p>
+  <h1>Tarot Caster <span style="font-size:13px;font-weight:400;color:var(--muted);">— free, open-source</span></h1>
+  <p class="sub">Set an intention, pick a deck and a spread, and cast. This page draws; <a href="https://flow.recursive.eco/" target="_blank" rel="noopener">recursive.eco</a> interprets with AI, renders Oracle cards, and keeps a Journal.</p>
 
   <div class="intention" id="intention" style="display:none">
     <h2 id="intentionTitle">Before you cast</h2>
@@ -127,38 +142,45 @@
       <div class="deckmeta" id="deckmeta"></div>
     </div>
     <div class="field">
+      <label for="spread">Spread</label>
+      <select id="spread"><option>Loading…</option></select>
+      <div class="spreadmeta" id="spreadmeta"></div>
+    </div>
+    <div class="field">
       <label for="question">Your question (optional)</label>
       <input type="text" id="question" placeholder="What is this situation made of?" />
     </div>
-    <label class="checkbox"><input type="checkbox" id="reversals" /> allow reversals</label>
+    <label class="checkbox"><input type="checkbox" id="reversals" /> reversals</label>
     <button id="cast" disabled>Cast</button>
     <button id="reshuffle" class="ghost" style="display:none">Re-cast</button>
-    <label class="ghost" id="importLabel" title="Load a previously exported cast .json" style="display:inline-flex;align-items:center;background:#2c2937;color:#d8d3e6;border-radius:8px;padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer;">Import cast<input type="file" id="importFile" accept=".json,application/json" style="display:none"></label>
+    <label class="ghost" id="importLabel" title="Load a previously exported cast .json" style="display:inline-flex;align-items:center;background:#2c2937;color:#d8d3e6;border-radius:8px;padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer;">Import<input type="file" id="importFile" accept=".json,application/json" style="display:none"></label>
   </div>
 
-  <div id="spread" class="spread" style="display:none"></div>
-  <div id="empty" class="empty">Pick a deck and cast.</div>
+  <div class="custombar" id="custombar">
+    <button id="addPos">+ Add position</button>
+    <span class="spreadmeta">Drag positions on the board; edit labels &amp; meanings below. Or <a href="../pages/spread-builder.html" target="_blank" rel="noopener">open the full Spread Builder ↗</a>.</span>
+  </div>
+
+  <div id="board" class="board"></div>
+  <div class="clist" id="clist"></div>
 
   <div class="export" id="export">
-    <h2>Take this reading further</h2>
-    <p>This page draws from historical decks. On recursive.eco, your cast becomes Oracle cards — each rendered with provenance, AI interpretation, and saved to your Journal. You can also <strong>edit the cards</strong> directly in your own grammar library.</p>
-    <a id="journalLink" class="journal-cta" href="https://flow.recursive.eco/" target="_blank" rel="noopener">
-      Open in recursive.eco Journal ↗
-    </a>
-    <p class="cta-sub">Free account · AI reading · Oracle card layout · edit cards · keep your cast</p>
+    <h2>Take this reading further — or save it</h2>
+    <p>On recursive.eco your cast becomes Oracle cards, each with provenance, AI interpretation, and a Journal entry.</p>
+    <a id="journalLink" class="journal-cta" href="https://flow.recursive.eco/" target="_blank" rel="noopener">Open in recursive.eco Journal ↗</a>
     <div class="btnrow">
-      <button id="copyJson">Copy JSON</button>
-      <button id="downloadJson" class="ghost">Download .json</button>
+      <button id="downloadJson">⤓ Download (save locally)</button>
+      <a id="contributeLink" class="btn" href="https://github.com/PlayfulProcess/recursive-tarot/new/dev?filename=spreads/my-spread.json" target="_blank" rel="noopener" title="Add your spread to the shared library via a GitHub pull request">↗ Contribute a spread on GitHub</a>
+      <a class="btn" href="course-viewer.html?course=build-a-tarot-deck-with-claude" target="_blank" rel="noopener" title="How to contribute a deck, spread, or course">How to contribute →</a>
+      <button id="copyJson" class="ghost">Copy JSON</button>
     </div>
     <textarea id="json" readonly></textarea>
   </div>
 
   <div class="note">
-    Data: this repo's <code>tarot/all-decks-many-lenses/grammar.json</code> — a generated index of every deck's cards with provenance. Cross-deck casts sample the whole pool; single-deck casts sample one deck. Cards are public domain.
-    <div class="cdm-dblclick-hint">Double-click any card to see its full description, Scene &amp; Symbol.</div>
+    Data: this repo's <code>tarot/all-decks-many-lenses/grammar.json</code> (cards + provenance) and <code>viewers/spreads.json</code> (layouts). Cross-deck casts sample the whole pool; single-deck casts sample one deck. Cards are public domain. Click any card for its Scene &amp; Symbol.
   </div>
 
-  <!-- card detail modal (hidden until double-click) -->
   <div id="cardDetailModal" class="cdm-backdrop" style="display:none" role="dialog" aria-modal="true">
     <div class="cdm-box">
       <button class="cdm-close" id="cdmClose" aria-label="Close">✕</button>
@@ -168,6 +190,7 @@
           <div id="cdmPos" class="cdm-pos"></div>
           <div id="cdmName" class="cdm-name"></div>
           <div id="cdmDeck" class="cdm-deck"></div>
+          <div id="cdmActions" class="cdm-actions"></div>
         </div>
       </div>
       <div class="cdm-body" id="cdmBody"><div class="cdm-loading">Loading card details…</div></div>
@@ -175,313 +198,267 @@
   </div>
 </div>
 
-<footer class="site">
-  Public-domain tarot data · <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">recursive-tarot</a> · companion to <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a>
-</footer>
+<footer class="site">Public-domain tarot data · <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">recursive-tarot</a> · companion to <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a></footer>
 
 <script>
 const META_URL = '../tarot/all-decks-many-lenses/grammar.json';
 const ALL = '__all__';
-let POSITIONS = [
-  { name:'Structures',    prompt:"What's already built — the patterns, conditions, and forms holding this situation in place." },
-  { name:'Process',       prompt:"What's moving — the work underway, the change in motion right now." },
-  { name:'Possibilities', prompt:"What could emerge — the openings and futures not yet committed." },
-];
-let SPREAD_NAME = 'Structures / Process / Possibilities';
+const FLOW = 'https://flow.recursive.eco';
 
-// Custom spread handed over from the Spread Builder (?spread=<base64url JSON>).
-(function loadCustomSpread(){
-  const sp = new URLSearchParams(location.search).get('spread');
-  if (!sp) return;
-  try {
-    const json = decodeURIComponent(escape(atob(sp.replace(/-/g,'+').replace(/_/g,'/'))));
-    const obj = JSON.parse(json);
-    if (obj && Array.isArray(obj.positions) && obj.positions.length){
-      POSITIONS = obj.positions.map(p => ({ name: p.label || 'Position', prompt: p.meaning || '' }));
-      SPREAD_NAME = obj.name || 'Custom spread';
-      const h = document.querySelector('h1');
-      if (h) h.innerHTML = esc(SPREAD_NAME) + ' <span style="font-size:13px;font-weight:400;color:var(--muted);vertical-align:middle;margin-left:6px;">— custom spread</span>';
-      const sub = document.querySelector('.sub');
-      if (sub) sub.innerHTML = 'Casting your custom spread — <b>' + esc(POSITIONS.map(p=>p.name).join(' · ')) + '</b>. <a href="../pages/spread-builder.html">Edit spreads →</a>';
-    }
-  } catch(e){ /* ignore a malformed param and fall back to the default spread */ }
-})();
-
-let leaves = [];          // all castable leaf cards from the meta
-let byDeck = {};          // source_deck slug -> [cards]
-let deckLabels = {};      // slug -> label
+let leaves = [], byDeck = {}, deckLabels = {};
+let spreadsById = {};        // id -> spread def
+let positions = [];          // active positions [{label,meaning,x,y, card?}]
+let curSpreadId = 'spp';
+let ecoIds = null;           // slug -> recursive.eco deck UUID
 let lastCast = null;
+let seq = 0;
 
-function castableName(it){
-  const m = it.metadata || {};
-  return m.deck || deckLabels[m.source_deck] || 'Unknown deck';
-}
+const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $ = id => document.getElementById(id);
 
+// ── init ──
 (async function init(){
   let meta;
   try { meta = await (await fetch(META_URL)).json(); }
-  catch(e){ document.getElementById('empty').textContent = 'Could not load the deck index. Serve the repo so '+META_URL+' is reachable.'; return; }
+  catch(e){ $('board').innerHTML = '<div class="empty">Could not load the deck index. Serve the repo so '+META_URL+' is reachable.</div>'; return; }
 
   (meta._decks || []).forEach(d => { deckLabels[d.slug] = d.label; });
-
-  // Castable = leaf cards (no composite_of) that have a source deck + arcana (real tarot cards).
   leaves = (meta.items || []).filter(i => !i.composite_of && i.metadata && i.metadata.source_deck && i.metadata.arcana);
-  leaves.forEach(c => {
-    const s = c.metadata.source_deck;
-    (byDeck[s] ||= []).push(c);
-  });
+  leaves.forEach(c => { (byDeck[c.metadata.source_deck] ||= []).push(c); });
 
-  // Build dropdown: cross-deck first, then each deck with >=3 castable cards, ordered like the meta.
-  const sel = document.getElementById('deck');
-  sel.innerHTML = '';
-  const optAll = document.createElement('option');
-  optAll.value = ALL;
-  optAll.textContent = `All Decks — cross-deck draw (${leaves.length} cards)`;
-  sel.appendChild(optAll);
+  // Deck dropdown — All Decks first, then each deck (>=3 castable) in chronological order.
+  const dsel = $('deck'); dsel.innerHTML = '';
+  const optAll = document.createElement('option'); optAll.value = ALL;
+  optAll.textContent = `All Decks — cross-deck draw (${leaves.length} cards)`; dsel.appendChild(optAll);
   const _yr = d => { const m = String(d.date || d.era || '').match(/\d{4}/); return m ? +m[0] : 9999; };
   [...(meta._decks || [])]
-    .sort((a, b) => (a.era_sort ?? 99) - (b.era_sort ?? 99) || _yr(a) - _yr(b) || (a.label || '').localeCompare(b.label || ''))
-    .forEach(d => {
-    const n = (byDeck[d.slug] || []).length;
-    if (n < 3) return;
-    const o = document.createElement('option');
-    o.value = d.slug;
-    o.textContent = `${d.label} · ${d.date || d.era || ''} (${n})`;
-    sel.appendChild(o);
-  });
+    .sort((a,b) => (a.era_sort ?? 99) - (b.era_sort ?? 99) || _yr(a) - _yr(b) || (a.label||'').localeCompare(b.label||''))
+    .forEach(d => { const n = (byDeck[d.slug]||[]).length; if (n < 3) return;
+      const o = document.createElement('option'); o.value = d.slug;
+      o.textContent = `${d.label} · ${d.date || d.era || ''} (${n})`; dsel.appendChild(o); });
 
-  document.getElementById('cast').disabled = false;
-  updateDeckMeta();
-  sel.addEventListener('change', updateDeckMeta);
-  document.getElementById('cast').addEventListener('click', cast);
-  document.getElementById('reshuffle').addEventListener('click', cast);
-  document.getElementById('copyJson').addEventListener('click', copyJson);
-  document.getElementById('downloadJson').addEventListener('click', downloadJson);
-  document.getElementById('importFile').addEventListener('change', async (e) => {
-    const f = e.target.files && e.target.files[0]; if (!f) return;
+  // Spread dropdown — from spreads.json, plus Custom.
+  let sdoc; try { sdoc = await (await fetch('spreads.json')).json(); } catch(e){ sdoc = { spreads: [] }; }
+  const ssel = $('spread'); ssel.innerHTML = '';
+  (sdoc.spreads || []).forEach(s => { spreadsById[s.id] = s;
+    const o = document.createElement('option'); o.value = s.id; o.textContent = s.name; ssel.appendChild(o); });
+  const oc = document.createElement('option'); oc.value = 'custom'; oc.textContent = '✎ Custom (build your own)'; ssel.appendChild(oc);
+  // ?spread= : a known preset id, OR a base64url spread JSON handed over from the Spread Builder.
+  const spParam = new URLSearchParams(location.search).get('spread');
+  let loadedFromParam = false;
+  if (spParam && spreadsById[spParam]) { curSpreadId = spParam; }
+  else if (spParam) {
     try {
-      const obj = JSON.parse(await f.text());
-      if (!obj || !Array.isArray(obj.cards)) throw new Error('not a cast file (missing cards[])');
-      lastCast = obj; renderCast(obj);
-      document.getElementById('export').scrollIntoView({ behavior: 'smooth' });
-    } catch (err) { alert('Could not import this file: ' + err.message); }
-    e.target.value = '';
-  });
+      const obj = JSON.parse(decodeURIComponent(escape(atob(spParam.replace(/-/g,'+').replace(/_/g,'/')))));
+      if (obj && Array.isArray(obj.positions) && obj.positions.length) {
+        positions = obj.positions.map(p => ({ id:'p'+(++seq), label:p.label, meaning:p.meaning, x:p.x==null?0.5:p.x, y:p.y==null?0.5:p.y }));
+        curSpreadId = 'custom'; $('spreadmeta').textContent = obj.name || 'Custom spread'; loadedFromParam = true;
+      }
+    } catch(_){ /* malformed param → fall through to default */ }
+  }
+  if (!spreadsById[curSpreadId] && curSpreadId !== 'custom') curSpreadId = spreadsById['spp'] ? 'spp' : ((sdoc.spreads[0] && sdoc.spreads[0].id) || 'custom');
+  ssel.value = curSpreadId;
+
+  $('cast').disabled = false;
+  if (loadedFromParam) { $('custombar').classList.add('on'); $('clist').classList.add('on'); renderBoard(); renderCustomList(); }
+  else setSpread(curSpreadId);
+  updateDeckMeta();
+  dsel.addEventListener('change', updateDeckMeta);
+  ssel.addEventListener('change', e => setSpread(e.target.value));
+  $('cast').addEventListener('click', cast);
+  $('reshuffle').addEventListener('click', cast);
+  $('addPos').addEventListener('click', () => { const n = positions.length;
+    addPosition('Position ' + (n+1), '', 0.5 + ((n%3)-1)*0.18, 0.4 + Math.floor(n/3)*0.22); });
+  $('copyJson').addEventListener('click', copyJson);
+  $('downloadJson').addEventListener('click', downloadJson);
+  $('importFile').addEventListener('change', onImport);
+
+  loadVoices();
+  // preload the deck-id map (for the per-card "View on recursive.eco" links)
+  try { ecoIds = await (await fetch('../tarot/_eco_ids.json')).json(); } catch(_){ ecoIds = { ids:{} }; }
 })();
 
-function currentPool(){
-  const v = document.getElementById('deck').value;
-  return v === ALL ? leaves : (byDeck[v] || []);
-}
-function updateDeckMeta(){
-  const v = document.getElementById('deck').value;
-  const el = document.getElementById('deckmeta');
-  if (v === ALL) { el.textContent = 'One card may come from each of several centuries — only the meta can do this.'; }
-  else { el.textContent = `${(byDeck[v]||[]).length} castable cards in this deck.`; }
+function currentPool(){ const v = $('deck').value; return v === ALL ? leaves : (byDeck[v] || []); }
+function updateDeckMeta(){ const v = $('deck').value;
+  $('deckmeta').textContent = v === ALL ? 'One card may come from each of several centuries — only the meta can do this.' : `${(byDeck[v]||[]).length} castable cards in this deck.`; }
+
+function setSpread(id){
+  curSpreadId = id;
+  const custom = id === 'custom';
+  $('custombar').classList.toggle('on', custom);
+  $('clist').classList.toggle('on', custom);
+  if (custom) {
+    if (!positions.length) { addPosition('Position 1','',0.5,0.5); return; }
+  } else {
+    const s = spreadsById[id]; positions = (s ? s.positions : []).map((p,i) => ({ id:'p'+(++seq), label:p.label, meaning:p.meaning, x:p.x, y:p.y }));
+    $('spreadmeta').textContent = s ? (s.description || '') : '';
+  }
+  $('reshuffle').style.display = 'none';
+  $('export').classList.remove('on');
+  renderBoard(); renderCustomList();
 }
 
-function drawN(n){
-  const pool = currentPool().slice();
-  // Fisher–Yates, take n distinct.
-  for (let i = pool.length - 1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
-  return pool.slice(0, n);
+function addPosition(label, meaning, x, y){
+  positions.push({ id:'p'+(++seq), label, meaning, x: x==null?0.5:x, y: y==null?0.5:y });
+  renderBoard(); renderCustomList(); syncJson();
 }
+
+function renderBoard(){
+  const board = $('board'); board.innerHTML = '';
+  if (!positions.length) { board.innerHTML = '<div class="empty">Add a position to begin.</div>'; return; }
+  positions.forEach((p, i) => {
+    const slot = document.createElement('div'); slot.className = 'slot'; slot.dataset.i = i;
+    slot.style.left = (p.x*100)+'%'; slot.style.top = (p.y*100)+'%';
+    const c = p.card;
+    const cardInner = c
+      ? (c.image_url ? `<img src="${esc(c.image_url)}" alt="${esc(c.name)}" style="${c.reversed?'transform:rotate(180deg);':''}" onerror="this.outerHTML='<div class=ph>'+${JSON.stringify('?')}+'</div>'">` : '<div class="ph">★</div>')
+      : `<div class="ph">${esc(p.meaning||'').slice(0,60) || '—'}</div>`;
+    slot.innerHTML = `<div class="num">${i+1}</div>`
+      + `<div class="plabel" title="${esc(p.meaning||'')}">${esc(p.label)}</div>`
+      + `<div class="card${c?' filled':''}">${cardInner}</div>`
+      + (c ? `<div class="cname">${esc(c.name)}</div><div class="cdeck">${esc(c.deck||'')}</div>${c.reversed?'<div class="rev">reversed</div>':''}` : '');
+    attachSlot(slot, p, i);
+    board.appendChild(slot);
+  });
+}
+
+function attachSlot(slot, p, i){
+  let dragging=false, moved=false, sx=0, sy=0;
+  slot.addEventListener('pointerdown', ev => { dragging=true; moved=false; sx=ev.clientX; sy=ev.clientY;
+    slot.setPointerCapture(ev.pointerId); slot.classList.add('dragging'); });
+  slot.addEventListener('pointermove', ev => { if(!dragging) return;
+    if (Math.abs(ev.clientX-sx)>4 || Math.abs(ev.clientY-sy)>4) moved=true;
+    const r = $('board').getBoundingClientRect();
+    p.x = Math.min(1,Math.max(0,(ev.clientX-r.left)/r.width)); p.y = Math.min(1,Math.max(0,(ev.clientY-r.top)/r.height));
+    slot.style.left=(p.x*100)+'%'; slot.style.top=(p.y*100)+'%'; });
+  const end = ev => { if(!dragging) return; dragging=false; slot.classList.remove('dragging');
+    try{ slot.releasePointerCapture(ev.pointerId); }catch(_){}
+    if (moved) { syncJson(); return; }
+    if (p.card) openCardDetail(p);                                  // tap a cast card → detail
+    else if (curSpreadId==='custom') { const r=$('clist').querySelector('input[data-f="label"][data-i="'+i+'"]'); if(r) r.focus(); }
+  };
+  slot.addEventListener('pointerup', end); slot.addEventListener('pointercancel', end);
+}
+
+function renderCustomList(){
+  const cl = $('clist'); if (curSpreadId !== 'custom') { cl.innerHTML=''; return; }
+  cl.innerHTML = positions.map((p,i) =>
+    `<div class="row"><div class="rn">${i+1}</div><div class="ff">`
+    + `<input type="text" data-f="label" data-i="${i}" value="${esc(p.label)}" placeholder="Label (e.g. The Root)">`
+    + `<input type="text" data-f="meaning" data-i="${i}" value="${esc(p.meaning)}" placeholder="The question this position asks">`
+    + `</div><button class="del" data-i="${i}">Delete</button></div>`).join('');
+  cl.querySelectorAll('input').forEach(inp => inp.addEventListener('input', e => {
+    const p = positions[+e.target.dataset.i]; if(!p) return; p[e.target.dataset.f] = e.target.value;
+    const slot = $('board').querySelector('.slot[data-i="'+e.target.dataset.i+'"]');
+    if (slot) { slot.querySelector('.plabel').textContent = p.label; slot.querySelector('.plabel').title = p.meaning||'';
+      if (!p.card) slot.querySelector('.ph') && (slot.querySelector('.ph').textContent = (p.meaning||'').slice(0,60)||'—'); }
+    syncJson();
+  }));
+  cl.querySelectorAll('.del').forEach(b => b.addEventListener('click', e => {
+    positions.splice(+e.target.dataset.i,1); renderBoard(); renderCustomList(); syncJson(); }));
+}
+
+function drawN(n){ const pool = currentPool().slice();
+  for (let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
+  return pool.slice(0,n); }
 
 function cast(){
-  const n = POSITIONS.length;
+  if (!positions.length) { alert('Add at least one position.'); return; }
+  const n = positions.length;
   const cards = drawN(n);
   if (cards.length < n){ alert('This deck has only ' + cards.length + ' castable cards — fewer than this spread needs (' + n + '). Try "All Decks" or a larger deck.'); return; }
-  const allowRev = document.getElementById('reversals').checked;
-  const deckVal = document.getElementById('deck').value;
-  const deckName = deckVal === ALL ? 'All Decks (cross-deck)' : (deckLabels[deckVal] || deckVal);
+  const allowRev = $('reversals').checked;
+  positions.forEach((p, i) => { const c = cards[i], m = c.metadata||{};
+    p.card = { name:c.name, deck:(m.deck||deckLabels[m.source_deck]||''), arcana:m.arcana||null, number:(m.number??null),
+      reversed: allowRev ? Math.random()<0.5 : false, image_url:c.image_url||null,
+      source_deck:m.source_deck||null, source_item_id:m.source_item_id||null }; });
+  $('reshuffle').style.display = 'inline-block';
+  renderBoard(); syncJson(); $('export').classList.add('on');
+}
 
-  const cast = {
-    _type: 'recursive-tarot-cast',
-    _version: 1,
-    _source: 'https://playfulprocess.github.io/recursive-tarot/viewers/caster.html',
-    spread: SPREAD_NAME,
-    deck: deckName,
+function buildCast(){
+  const deckVal = $('deck').value;
+  const s = spreadsById[curSpreadId];
+  return {
+    _type:'recursive-tarot-cast', _version:2,
+    _source:'https://tarot.recursive.eco/viewers/caster.html',
+    spread: curSpreadId==='custom' ? ($('question').value ? 'Custom' : 'Custom') : (s ? s.name : 'Custom'),
+    spread_id: curSpreadId,
+    positions: positions.map((p,i) => ({ n:i+1, label:p.label, meaning:p.meaning, x:Math.round(p.x*1000)/1000, y:Math.round(p.y*1000)/1000 })),
+    deck: deckVal===ALL ? 'All Decks (cross-deck)' : (deckLabels[deckVal]||deckVal),
     cast_at: new Date().toISOString(),
-    question: document.getElementById('question').value.trim() || null,
-    cards: cards.map((c, i) => {
-      const m = c.metadata || {};
-      const reversed = allowRev ? Math.random() < 0.5 : false;
-      return {
-        position: POSITIONS[i].name,
-        prompt: POSITIONS[i].prompt,
-        name: c.name,
-        deck: castableName(c),
-        arcana: m.arcana || null,
-        number: (m.number ?? null),
-        reversed,
-        image_url: c.image_url || null,
-        source_deck: m.source_deck || null,
-        source_item_id: m.source_item_id || null,
-      };
-    }),
+    question: $('question').value.trim() || null,
+    cards: positions.map((p,i) => Object.assign({ position:p.label, prompt:p.meaning }, p.card || {})),
   };
-  lastCast = cast;
-  renderCast(cast);
 }
-
-function renderCast(cast){
-  document.getElementById('empty').style.display = 'none';
-  document.getElementById('reshuffle').style.display = 'inline-block';
-  const spread = document.getElementById('spread');
-  spread.style.display = 'grid';
-  spread.innerHTML = cast.cards.map(card => {
-    const img = card.image_url
-      ? `<img class="card-img" src="${card.image_url}" alt="${esc(card.name)}" style="${card.reversed?'transform:rotate(180deg);':''}" onerror="this.outerHTML='<div class=\\'card-img placeholder\\'>?</div>'">`
-      : `<div class="card-img placeholder">★</div>`;
-    return `<div class="pos">
-      <div class="pname">${esc(card.position)}</div>
-      <div class="pprompt">${esc(card.prompt)}</div>
-      ${img}
-      <div class="card-name">${esc(card.name)}</div>
-      <div class="card-deck">${esc(card.deck)}</div>
-      ${card.reversed?'<div class="reversed">reversed</div>':''}
-    </div>`;
-  }).join('');
-
-  const json = JSON.stringify(cast, null, 2);
-  document.getElementById('json').value = json;
-  document.getElementById('export').style.display = 'block';
-
-  // Encode cast for flow.recursive.eco
+function syncJson(){ lastCast = buildCast(); const json = JSON.stringify(lastCast, null, 2);
+  $('json').value = json;
   const enc = btoa(unescape(encodeURIComponent(json))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
-  document.getElementById('journalLink').href = 'https://flow.recursive.eco/?d=' + enc;
+  $('journalLink').href = FLOW + '/?d=' + enc; }
 
-  // Attach double-click detail handlers
-  spread.querySelectorAll('.pos').forEach((el, i) => {
-    el.addEventListener('dblclick', () => openCardDetail(cast.cards[i]));
-  });
-}
-
-// ─── Card detail modal ────────────────────────────────────────────────────────
-
-const grammarCache = {};
-
-async function fetchGrammarItem(sourceDeck, sourceItemId) {
-  if (!sourceDeck || !sourceItemId) return null;
-  if (!grammarCache[sourceDeck]) {
-    try {
-      const url = `../tarot/${sourceDeck}/grammar.json`;
-      const r = await fetch(url);
-      if (!r.ok) throw new Error(r.status);
-      grammarCache[sourceDeck] = await r.json();
-    } catch(e) {
-      grammarCache[sourceDeck] = null;
+function copyJson(){ const ta=$('json'); ta.select();
+  navigator.clipboard?.writeText(ta.value).then(()=>{ const b=$('copyJson'); b.textContent='Copied ✓'; setTimeout(()=>b.textContent='Copy JSON',1400); }).catch(()=>document.execCommand('copy')); }
+function downloadJson(){ if(!lastCast) syncJson();
+  const blob=new Blob([JSON.stringify(lastCast,null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='tarot-cast-'+(lastCast.cast_at||'').replace(/[:.]/g,'-')+'.json'; a.click(); URL.revokeObjectURL(a.href); }
+async function onImport(e){ const f=e.target.files&&e.target.files[0]; if(!f) return;
+  try { const obj=JSON.parse(await f.text()); if(!obj||!Array.isArray(obj.cards)) throw new Error('not a cast file');
+    if (Array.isArray(obj.positions) && obj.positions.length===obj.cards.length) {
+      positions = obj.positions.map((p,i)=>({ id:'p'+(++seq), label:p.label, meaning:p.meaning, x:p.x??0.5, y:p.y??0.5, card:obj.cards[i] }));
+      $('spread').value='custom'; curSpreadId='custom'; $('custombar').classList.remove('on'); $('clist').classList.remove('on');
+      renderBoard(); $('reshuffle').style.display='inline-block'; syncJson(); $('export').classList.add('on');
     }
-  }
-  const g = grammarCache[sourceDeck];
-  if (!g) return null;
-  return (g.items || []).find(it => it.id === sourceItemId) || null;
-}
+  } catch(err){ alert('Could not import this file: '+err.message); }
+  e.target.value=''; }
 
-async function openCardDetail(card) {
-  const modal = document.getElementById('cardDetailModal');
-  const body = document.getElementById('cdmBody');
-
-  document.getElementById('cdmPos').textContent = card.position || '';
-  document.getElementById('cdmName').textContent = card.name + (card.reversed ? ' (reversed)' : '');
-  document.getElementById('cdmDeck').textContent = card.deck || '';
-
-  const img = document.getElementById('cdmImg');
-  if (card.image_url) {
-    img.src = card.image_url;
-    img.alt = card.name;
-    img.style.display = 'block';
-    if (card.reversed) img.style.transform = 'rotate(180deg)';
-    else img.style.transform = '';
-  } else {
-    img.style.display = 'none';
-  }
-
-  body.innerHTML = '<div class="cdm-loading">Loading card details…</div>';
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-
-  const item = await fetchGrammarItem(card.source_deck, card.source_item_id);
-  if (!item) {
-    body.innerHTML = '<div class="cdm-loading">No additional details available.</div>';
-    return;
-  }
-
-  const SECTION_ORDER = ['Scene','Symbol','Figure','Tradition Note','Research note'];
-  const sections = item.sections || {};
-  const keys = [...SECTION_ORDER.filter(k => sections[k]), ...Object.keys(sections).filter(k => !SECTION_ORDER.includes(k))];
-
-  if (keys.length === 0) {
-    body.innerHTML = '<div class="cdm-loading">No sections found for this card.</div>';
-    return;
-  }
-
-  body.innerHTML = keys.map(k =>
-    `<div class="cdm-section"><div class="cdm-sec-label">${esc(k)}</div><div class="cdm-sec-text">${esc(sections[k])}</div></div>`
-  ).join('');
-}
-
-function closeCardDetail() {
-  document.getElementById('cardDetailModal').style.display = 'none';
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('cdmClose').addEventListener('click', closeCardDetail);
-  document.getElementById('cardDetailModal').addEventListener('click', e => {
-    if (e.target === e.currentTarget) closeCardDetail();
-  });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeCardDetail();
-  });
-});
-
-function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-
-function copyJson(){
-  const ta = document.getElementById('json');
-  ta.select();
-  navigator.clipboard?.writeText(ta.value).then(()=>{
-    const b = document.getElementById('copyJson'); const t=b.textContent; b.textContent='Copied ✓'; setTimeout(()=>b.textContent=t,1400);
-  }).catch(()=>{ document.execCommand('copy'); });
-}
-function downloadJson(){
-  if (!lastCast) return;
-  const blob = new Blob([JSON.stringify(lastCast,null,2)], {type:'application/json'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'tarot-cast-' + lastCast.cast_at.replace(/[:.]/g,'-') + '.json';
-  a.click();
-  URL.revokeObjectURL(a.href);
-}
-
-// ─── Voices: set your intention before casting (the "consult the voices" device) ───
-(async function loadVoices(){
+// ── voices carousel ──
+async function loadVoices(){
   let data; try { data = await (await fetch('voices.json')).json(); } catch(e){ return; }
   const si = data.shared_intention || {};
-  document.getElementById('intentionTitle').textContent = si.title || 'Before you cast';
-  document.getElementById('intentionCreed').textContent = si.creed || '';
-  document.getElementById('intentionPrinciples').innerHTML = (si.principles||[]).map(p=>'<li>'+esc(p)+'</li>').join('');
-  const vbox = document.getElementById('voices');
-  const detail = document.getElementById('voiceDetail');
-  (data.voices||[]).forEach(v => {
-    const el = document.createElement('div');
-    el.className = 'voice'; el.style.setProperty('--vc', v.color || 'var(--accent)');
+  $('intentionTitle').textContent = si.title || 'Before you cast';
+  $('intentionCreed').textContent = si.creed || '';
+  $('intentionPrinciples').innerHTML = (si.principles||[]).map(p=>'<li>'+esc(p)+'</li>').join('');
+  const vbox = $('voices'), detail = $('voiceDetail');
+  (data.voices||[]).forEach(v => { const el=document.createElement('div'); el.className='voice'; el.style.setProperty('--vc', v.color||'var(--accent)');
     el.innerHTML = '<div class="g">'+esc(v.glyph||'•')+'</div><div class="vn">'+esc(v.name)+'</div><div class="vt">'+esc(v.tagline||'')+'</div>';
-    el.addEventListener('click', () => {
-      const wasOn = el.classList.contains('on');
+    el.addEventListener('click', () => { const wasOn=el.classList.contains('on');
       vbox.querySelectorAll('.voice').forEach(n=>n.classList.remove('on'));
       if (wasOn){ detail.classList.remove('on'); return; }
       el.classList.add('on');
       detail.innerHTML = '<span class="vd-name" style="color:'+esc(v.color||'#fff')+'">'+esc(v.name)+'</span> — '+esc(v.how)
-        + (v.link ? ' <a href="'+esc(v.link)+'">Read the course →</a>'
-                  : (v.persona ? ' <span style="color:#6b6488">· a voice you can consult on recursive.eco</span>' : ''));
-      detail.classList.add('on');
-    });
-    vbox.appendChild(el);
-  });
-  document.getElementById('intention').style.display = 'block';
-})();
+        + (v.link ? ' <a href="'+esc(v.link)+'">Read more →</a>' : (v.persona ? ' <span style="color:#6b6488">· a voice you can consult on recursive.eco</span>' : ''));
+      detail.classList.add('on'); });
+    vbox.appendChild(el); });
+  $('intention').style.display='block';
+}
+
+// ── card detail modal ──
+const grammarCache = {};
+async function fetchGrammarItem(sourceDeck, sourceItemId){ if(!sourceDeck||!sourceItemId) return null;
+  if(!grammarCache[sourceDeck]){ try{ grammarCache[sourceDeck]=await (await fetch('../tarot/'+sourceDeck+'/grammar.json')).json(); }catch(e){ grammarCache[sourceDeck]=null; } }
+  const g=grammarCache[sourceDeck]; return g ? (g.items||[]).find(it=>it.id===sourceItemId)||null : null; }
+async function openCardDetail(p){ const c=p.card; if(!c) return;
+  const modal=$('cardDetailModal'), body=$('cdmBody');
+  $('cdmPos').textContent=p.label||''; $('cdmName').textContent=c.name+(c.reversed?' (reversed)':''); $('cdmDeck').textContent=c.deck||'';
+  const img=$('cdmImg'); if(c.image_url){ img.src=c.image_url; img.style.display='block'; img.style.transform=c.reversed?'rotate(180deg)':''; } else img.style.display='none';
+  // per-card actions → recursive.eco (Phase 5 seed: View deck / Edit card)
+  const uuid = (ecoIds && ecoIds.ids && c.source_deck) ? ecoIds.ids[c.source_deck] : null;
+  $('cdmActions').innerHTML = uuid
+    ? `<a href="${FLOW}/?deckId=${uuid}" target="_blank" rel="noopener">View deck ↗</a>`
+      + `<a href="${FLOW}/create/dashboard/unified/new?forkId=${uuid}${c.source_item_id?'&card='+encodeURIComponent(c.source_item_id):''}" target="_blank" rel="noopener">Edit card ↗</a>`
+    : '';
+  body.innerHTML='<div class="cdm-loading">Loading card details…</div>'; modal.style.display='flex'; document.body.style.overflow='hidden';
+  const item=await fetchGrammarItem(c.source_deck,c.source_item_id);
+  if(!item){ body.innerHTML='<div class="cdm-loading">No additional details available.</div>'; return; }
+  const ORDER=['Scene','Symbol','Figure','Tradition Note','Research note']; const sections=item.sections||{};
+  const keys=[...ORDER.filter(k=>sections[k]),...Object.keys(sections).filter(k=>!ORDER.includes(k))];
+  body.innerHTML = keys.length ? keys.map(k=>`<div class="cdm-section"><div class="cdm-sec-label">${esc(k)}</div><div class="cdm-sec-text">${esc(sections[k])}</div></div>`).join('') : '<div class="cdm-loading">No sections for this card.</div>';
+}
+function closeCardDetail(){ $('cardDetailModal').style.display='none'; document.body.style.overflow=''; }
+document.addEventListener('DOMContentLoaded',()=>{ $('cdmClose').addEventListener('click',closeCardDetail);
+  $('cardDetailModal').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeCardDetail(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeCardDetail(); }); });
 </script>
 </body>
 </html>
