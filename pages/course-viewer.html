@@ -1276,6 +1276,14 @@
                 // Generate navigation from headers
                 generateNavigation();
 
+                // Deep-link: if the URL carries a #section, scroll to it now that the
+                // headings have been assigned ids (content is injected by JS, so the
+                // browser's native hash-scroll fired before the element existed).
+                if (location.hash && location.hash.length > 1) {
+                    const _t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+                    if (_t) setTimeout(() => _t.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+                }
+
                 // Setup scroll spy
                 setupScrollSpy();
 
