@@ -16,6 +16,7 @@
   "creator_link": "https://recursive.eco",
   "default_view": "tree",
   "default_preview": "tree",
+  "provenance": "reference",
   "_generated": true,
   "_do_not_hand_edit": true,
   "_built_by": "scripts/build_people_grammar.py",
@@ -59,13 +60,19 @@
           "golden-dawn-book-t-tarot"
         ],
         "confidence": "high",
-        "research": "research\\people\\a-e-waite.md"
+        "research": "research/people/a-e-waite.md",
+        "url": "https://en.wikipedia.org/wiki/Arthur_Edward_Waite",
+        "image_credit": "Arthur Edward Waite portrait — Wikimedia Commons (public domain)",
+        "source_deck": "books-of-tarot",
+        "source_item_id": "book-waite-pictorial-key",
+        "deck": "Books Behind the Tarot"
       },
       "sections": {
         "Who": "**Arthur Edward Waite** (2 October **1857** – 19 May **1942**), known as **A. E. Waite**, was an\nAmerican-born British mystic and scholar of the occult, a Golden Dawn initiate who became the\n**directing mind of the Rider-Waite-Smith tarot**. In 1909 he commissioned the artist **Pamela\nColman Smith** to execute a \"rectified\" tarot pack to his specifications, and in 1910/1911 he\npublished *The Pictorial Key to the Tarot* as its companion text. The essential precision: **Waite\ndesigned the symbolic *scheme* and wrote the book — he did not draw the cards.** That work was\nSmith's [@web_pkt_wp; @decker2002; @waite1910].",
         "Claim vs the record": "- **Common conflation: \"the Rider-Waite deck\" as Waite's solo creation.** **The record:** Waite\n  authored the *programme*; **Pamela Colman Smith drew every one of the 78 cards.** The very name\n  the collection uses — **Rider-Waite-*Smith*** — exists to correct a century of crediting Waite\n  (and the publisher Rider) while erasing the artist [@web_pcs_wp; @web_rws_wopc].\n- **Myth: the deck encodes recovered ancient wisdom.** **The record:** its symbolism is a\n  knowing **Golden-Dawn-era construction**, popularised for a general audience; its \"antiquity\" is\n  inherited rhetoric, not pedigree [@decker2002].",
         "In this collection": "Within `golden-dawn-book-t-tarot`, Waite is the **scheme/author node** for the RWS imagery the\ngrammar borrows: the designer of the symbolic programme and author of its reading book. His leaf\nmust state plainly that he **designed but did not draw** the cards, pairing him with Smith on the\nart and pointing to Mathers/the Order for the underlying correspondences."
-      }
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Arthur_Waite_Author.JPG/330px-Arthur_Waite_Author.JPG"
     },
     {
       "id": "person-andrea-mantegna",
@@ -87,13 +94,16 @@
           "engraver (attributed, disputed)"
         ],
         "confidence": "high",
-        "research": "research\\people\\andrea-mantegna.md"
+        "research": "research/people/andrea-mantegna.md",
+        "url": "https://en.wikipedia.org/wiki/Andrea_Mantegna",
+        "image_credit": "Probable self-portrait, Andrea Mantegna — Wikimedia Commons (public domain)"
       },
       "sections": {
         "Who": "Andrea Mantegna was one of the foremost painters of the early Italian Renaissance, court\nartist to the Gonzaga in Mantua. His name survives in tarot history only through an\n**error**: the set of 50 engravings long called the **\"Mantegna Tarocchi\"** was neither\nengraved by Mantegna nor a tarot. The collection catalogues that deck honestly under that\ntraditional-but-wrong name, then debunks it.",
         "Claim vs the record": "- **Myth:** Andrea Mantegna engraved a \"tarot\" of 50 cards.\n- **Record:** The **\"Mantegna Tarocchi\"** (c. 1465, two series — the earlier *E-series* and a\n  copy *S-series*) is a didactic set of **50 engravings in five decades** (estates of man,\n  Apollo and the Muses, the liberal arts, the genii/virtues and sciences, the planets and\n  spheres) — **a ladder of being, not a card game**, and **not by Mantegna**. It is attributed\n  to an anonymous Ferrarese or Bolognese hand (the \"Master of the E-series\"). The Mantegna\n  label is a traditional convenience, repeatedly rejected by scholarship [@dummett1980;\n  @web_mantegna_wopc; @web_mantegna_wp].",
         "In this collection": "As the **debunked** namesake of `mantegna-tarocchi`. The deck grammar keeps the familiar name\nfor findability but states plainly that it is neither Mantegna's nor a tarot. See\n`research/decks/mantegna-tarocchi.md`."
-      }
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Andrea_Mantegna_049_detail_possible_self-portrait.jpg"
     },
     {
       "id": "person-bonifacio-bembo",
@@ -121,7 +131,11 @@
           "cary-yale-visconti-tarot"
         ],
         "confidence": "medium",
-        "research": "research\\people\\bonifacio-bembo.md"
+        "research": "research/people/bonifacio-bembo.md",
+        "url": "https://en.wikipedia.org/wiki/Bonifacio_Bembo",
+        "source_deck": "visconti-sforza-tarot",
+        "source_item_id": "major-00-il-matto",
+        "deck": "Visconti-Sforza Tarot"
       },
       "sections": {
         "Who": "**Bonifacio Bembo** was a mid-15th-century painter from a family of artists active in\n**Cremona** and **Milan**, documented in the service of the Sforza dukes from roughly the\nlate 1440s into the 1470s [@web_bembo_wp]. He matters to tarot because the great\nhand-painted **Visconti-Sforza** luxury packs — the headwaters of surviving tarot — are\n**traditionally attributed to Bembo or his workshop** [@web_bembo_wp; @web_met_bembo;\n@web_wopc_vs]. The attribution is **load-bearing but not secure**: the rival candidate is\nthe **Zavattari** workshop (Francesco Zavattari), and even Bembo's wider oeuvre has been\nquestioned by art historians [@web_vs_wp; @web_bembo_wp]. Treat \"Bembo\" as the conventional\nlabel for the painter(s) behind these decks, not a settled fact.",
@@ -153,7 +167,7 @@
           "amateur esotericist"
         ],
         "confidence": "high",
-        "research": "research\\people\\comte-de-mellet.md"
+        "research": "research/people/comte-de-mellet.md"
       },
       "sections": {
         "Who": "The **Comte de Mellet** — full name **Louis-Raphaël-Lucrèce de Fayolle** (1727–1804) — wrote\nthe *second*, often-overlooked tarot essay bundled into Court de Gébelin's *Le Monde primitif*,\nvol. 8 (1781). While Gébelin supplied the Egyptian *origin myth*, it was **Mellet** who first\nin print (a) explicitly paired the **22 trumps-plus-Fool with the 22 letters of the Hebrew\nalphabet**, (b) read the trumps in an **inverted order** (from the World down to the Fool) as\nthe Three Ages of the World, and (c) described a concrete **divination method** — arguably the\noldest published tarot *spread*. He is the quiet hinge between Gébelin's theory and Etteilla's\npractice [@decker1996; @web_place_mellet; @web_hrmtc_first].",
@@ -190,13 +204,19 @@
           "court-de-gebelin-tarot"
         ],
         "confidence": "high",
-        "research": "research\\people\\court-de-gebelin.md"
+        "research": "research/people/court-de-gebelin.md",
+        "url": "https://en.wikipedia.org/wiki/Antoine_Court_de_G%C3%A9belin",
+        "image_credit": "Antoine Court de Gebelin portrait — Wikimedia Commons (public domain)",
+        "source_deck": "books-of-tarot",
+        "source_item_id": "book-court-de-gebelin-monde-primitif",
+        "deck": "Books Behind the Tarot"
       },
       "sections": {
         "Who": "**Antoine Court de Gébelin** (c. 1725 – 1784) is the hinge of the entire \"occult turn.\" In\n**1781**, in volume 8 of his vast encyclopedia *Le Monde primitif*, the Protestant pastor and\nFreemason published an essay declaring the Tarot de Marseille a survival of the ancient\nEgyptian **Book of Thoth**. He offered **no evidence**, and was **wrong** — but he converted a\ncard game into a \"sacred text\" and launched two centuries of esoteric tarot. Bundled with his\nessay was a second piece by the **Comte de Mellet**, which first proposed actually *reading*\nthe cards and tying them to the Hebrew alphabet [@decker1996; @web_wopc_monde].",
         "Claim vs the record": "- **Myth: tarot is the ancient Egyptian \"Book of Thoth.\"** **The record: FALSE.** Tarot is a\n  15th-century North-Italian invention (the *trionfi* / tarocchi card game, first documented in\n  the courts of Milan and Ferrara). Gébelin wrote in 1781, **four decades before Champollion\n  deciphered hieroglyphs** (Lettre à M. Dacier, 1822); his \"Egyptian\" reading was pure\n  imagination projected onto Italian Christian imagery. The verdict of the document-first\n  scholarship is unequivocal: the Egyptian genealogy is **invented, not recovered**\n  [@dummett1980; @decker1996].\n- **Myth: he recovered \"suppressed\" esoteric knowledge.** **The record:** he announced his\n  theory *openly*, under his own name, in a prestigious subscription encyclopedia read by the\n  Parisian elite. The occult overlay was born not in secrecy but as a **high-status\n  Enlightenment fad** — fashionable erudition about an imagined Egypt, not a transmitted\n  tradition [@decker1996].\n- **Important caveat.** Debunking Gébelin removes a false *pedigree*; it does **not** debunk the\n  real, later history of divinatory practice (Etteilla onward) or its persecuted practitioners.\n  Separate the false antiquity from the genuine 18th-century practice [@decker1996].",
         "In this collection": "Gébelin is the maker of the deck slug **`court-de-gebelin-tarot`** (the 1781 redrawn plates),\nwhich the grammar should treat strictly as **origin-myth**, dated 1781, and **never** as\nevidence about the cards' real 15th-century origin. In a \"people of tarot\" set he is the figure\non whom the **myth-vs-record** split is most load-bearing: state the Egyptian claim, then the\nDummett-spine correction, on his card and on any card descended from his plates (esp. those he\nre-Egyptianised). He pairs naturally with the **comte-de-mellet** card as the two halves of the\n1781 turn."
-      }
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/AntoineCourtdeGebelin.jpg/330px-AntoineCourtdeGebelin.jpg"
     },
     {
       "id": "person-eliphas-levi",
@@ -222,13 +242,19 @@
           "ex-seminarian"
         ],
         "confidence": "high",
-        "research": "research\\people\\eliphas-levi.md"
+        "research": "research/people/eliphas-levi.md",
+        "url": "https://en.wikipedia.org/wiki/%C3%89liphas_L%C3%A9vi",
+        "image_credit": "Eliphas Levi portrait — Wikimedia Commons (public domain)",
+        "source_deck": "books-of-tarot",
+        "source_item_id": "book-levi-dogme-et-rituel",
+        "deck": "Books Behind the Tarot"
       },
       "sections": {
         "Who": "**Éliphas Lévi** — born **Alphonse-Louis Constant** (8 February 1810 – 31 May 1875) — is the\nhinge of the *modern* occult tarot. In *Dogme et rituel de la haute magie* (two volumes,\n**1854 and 1856**) he was the first to **systematically** weld the **22 tarot trumps to the 22\nletters of the Hebrew alphabet** and to the Kabbalah, embedding the tarot in a complete magical\nphilosophy. He **designed no deck** of his own — but everything downstream (Wirth and de Guaita\nin France, the Golden Dawn and Waite–Smith in England) builds on the framework he set. He is the\npivot from the 18th-century salon theorists (Gébelin, Mellet) to the 1889 occult deck\n[@decker2002; @tarot_heritage; @levi1856].",
         "Claim vs the record": "- **Myth: the tarot–Hebrew–Kabbalah correspondence is an ancient, recovered key.** **The\n  record:** Lévi's specific assignment of trumps to Hebrew letters is an **invention of the\n  1850s**, an interpretive construction laid over a 15th-century Italian card game — not a\n  medieval survival. It is powerful and generative, but its antiquity is asserted, not\n  documented [@decker2002; @dummett1980].\n- **Myth: \"TAROT comes from Egyptian/Hebrew *ROTA*.\"** **The record:** the ROTA/TARO word-play\n  is a mnemonic conceit Lévi popularised, not an etymology supported by the history of the word\n  *tarocchi/tarot* [@web_levi_rota; @decker2002].\n- **He is honest about being a *builder*, not always about being a *recoverer*.** Unlike the\n  flat-false Egyptian-origin claim, Lévi's contribution is genuinely original synthesis; the\n  caveat is only that he framed his new system as ancient wisdom. The grammar should record a\n  **deliberate, dated esoteric construction (1850s)**, not a transmission [@decker2002].",
         "In this collection": "Lévi carries **no deck slug** (he made no cards) but is a **central person node**: the author\nof the correspondence system the esoteric decks rely on. He should feature wherever the\ncollection narrates the **trump↔Hebrew-letter** mapping and the **Tree of Life** overlay — and\nspecifically behind the **Wheel of Fortune** (his ROTA/TARO play), the **Devil/Baphomet**\nimagery, and as the named source \"restored\" by the **`oswald-wirth-tarot`** deck. A \"people of\ntarot\" card should frame him as **the man who made tarot Kabbalistic — in the 1850s, by\nconstruction.**"
-      }
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Eliphas_Levi.png/330px-Eliphas_Levi.png"
     },
     {
       "id": "person-este-family",
@@ -253,7 +279,10 @@
           "este-tarot"
         ],
         "confidence": "medium",
-        "research": "research\\people\\este-family.md"
+        "research": "research/people/este-family.md",
+        "source_deck": "este-tarot",
+        "source_item_id": "card-01",
+        "deck": "d'Este Tarocchi"
       },
       "sections": {
         "Who": "The **Este dynasty** ruled Ferrara from 1240 to 1597 and were among the most important\n**early tarot patrons** in documented history. Their court at Ferrara was a centre of\n**Quattrocento humanist culture** — the same milieu that produced the Mantegna Tarocchi\nand the Ferrarese style of luxury card-making — and the **Este tarot** (c. 1441–1461)\nis named for them. A **1457 Este inventory** lists tarot cards among the court's\npossessions, providing one of the earliest dated references to tarot in any archival\nsource [@dummett1980; @web_este_wp].",
@@ -289,13 +318,19 @@
           "etteilla-iii-oracle-des-dames"
         ],
         "confidence": "high",
-        "research": "research\\people\\etteilla.md"
+        "research": "research/people/etteilla.md",
+        "url": "https://en.wikipedia.org/wiki/Etteilla",
+        "image_credit": "Jean-Baptiste Alliette (Etteilla) portrait — Wikimedia Commons (public domain)",
+        "source_deck": "books-of-tarot",
+        "source_item_id": "book-etteilla-cartomancy",
+        "deck": "Books Behind the Tarot"
       },
       "sections": {
         "Who": "**Jean-Baptiste Alliette** (1 March 1738 – 12 December 1791), who reversed his surname to\nsign himself **\"Etteilla,\"** was the first person known to history to earn his living by\nreading cards, the author of the first self-instruction manuals for it, and the maker of the\n**first tarot deck purpose-built for divination** (1788–89). Where Court de Gébelin supplied a\n*theory* (the cards as an Egyptian \"Book of Thoth\") and the Comte de Mellet sketched a\n*method*, Etteilla industrialised both into a working practice, a printed deck, and a\ncorrespondence *school*. His system outlived him as a 19th-century commercial brand through two\nposthumous editions (Etteilla II and III) produced by his followers and later publishers\n[@decker1996; @tarot_heritage].",
         "Claim vs the record": "- **Myth: the deck transmits ancient Egyptian wisdom (the \"Book of Thoth\").** Etteilla took\n  this framing wholesale from Court de Gébelin (1781) and marketed his deck under it. **The\n  record:** the Egyptian pedigree is invented. Tarot is a 15th-century North-Italian card game;\n  hieroglyphs were undeciphered until Champollion (1820s). Etteilla *founded a real and durable\n  divinatory practice* but sold it under a *false antiquity* — both are true, and the dossier\n  honours the practice while flagging the pedigree [@decker1996; @dummett1980].\n- **Myth: \"the first tarot fortune-teller is ancient/timeless.\"** **The record:** the\n  documentary trail for systematic tarot divination begins, concretely, with Etteilla's printed\n  books (1770 for cards, 1783–85 for tarot) and his 1788–89 deck — a dated 18th-century\n  invention, not a recovered tradition [@decker1996].\n- **Etteilla II and III are *not* his work.** They are posthumous continuations by his school\n  and by later commercial publishers (Blocquel/\"Orsini\"; Régamey/Lequart-Mignot/Grimaud).\n  Attributing them to Alliette himself is a common error [@web_grand_etteilla; @web_druidcraft].",
         "In this collection": "Etteilla is the maker behind three deck slugs in this repo: **`etteilla-i-livre-de-thot`**\n(his own 1788–89 deck), **`etteilla-ii-egyptian`**, and **`etteilla-iii-oracle-des-dames`**\n(posthumous). He should feature prominently on the cards his system *renumbered or invented* —\nabove all the **querent/significator and element cards** that have no Marseille parent, and the\n**Death** card (renumbered away from XIII), where his departure from the Marseille tradition is\nsharpest. Any \"people of tarot\" card should frame him as **the first professional cartomancer**\nand the bridge from Gébelin's theory to a working deck."
-      }
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/ALLIETTE.jpg/330px-ALLIETTE.jpg"
     },
     {
       "id": "person-filippo-maria-visconti",
@@ -317,12 +352,15 @@
           "commissioner"
         ],
         "confidence": "high",
-        "research": "research\\people\\filippo-maria-visconti.md"
+        "research": "research/people/filippo-maria-visconti.md",
+        "url": "https://en.wikipedia.org/wiki/Filippo_Maria_Visconti",
+        "image_credit": "Pisanello, Codex Vallardi 2484 — Wikimedia Commons (public domain)"
       },
       "sections": {
         "Who": "**Filippo Maria Visconti** was the **third and last Visconti Duke of Milan** (r. 1412–1447),\nson of Gian Galeazzo Visconti who built the dynasty to its greatest extent. He is the\n**patron behind the earliest documented tarot trump programme**: his secretary\n**Marziano da Tortona** designed a bespoke sixteen-trump deck for him, and the luxury\nhand-painted Visconti tarots — though made after his death for the Sforza who succeeded\nhim — belong to the world his court created [@dummett1980; @pratesi_marziano].",
         "Claim vs the record": "- **Common assumption**: \"The Visconti tarot\" was made for Filippo Maria Visconti.\n- **The precise record**: The surviving luxury packs (Visconti-Sforza, Cary-Yale) are more\n  plausibly dated **after 1450** and associated with the Sforza who succeeded him. The\n  Cary-Yale deck is sometimes linked to the **1441 marriage** of his daughter Bianca Maria\n  to Francesco Sforza. Filippo Maria himself commissioned the earlier *Marziano* trump\n  series, which did not survive physically.\n- **Scholarly consensus** (Dummett, Pratesi): Filippo Maria is the earliest documented\n  tarot patron, but the surviving luxury decks are Sforza-era objects, not his."
-      }
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Pisanello_-_Codex_Vallardi_2484.jpg"
     },
     {
       "id": "person-franco-pratesi",
@@ -346,7 +384,7 @@
           "archivist"
         ],
         "confidence": "high",
-        "research": "research\\people\\franco-pratesi.md"
+        "research": "research/people/franco-pratesi.md"
       },
       "sections": {
         "Who": "**Franco Pratesi** is a retired Florentine physicist who became one of the most\nimportant **archival researchers in tarot history** — not through synthesis or theory,\nbut through direct excavation of **Italian Renaissance account books, guild records,\nand inventories**. His discoveries in Florentine, Ferrarese, and Bolognese archives\nhave repeatedly pushed back or complicated the accepted chronology of early tarot,\nand his work has been essential to the careers of every subsequent tarot historian\n[@pratesi_marziano; @pratesi_ferrara; @web_pratesi_site].",
@@ -377,7 +415,7 @@
           "cary-yale-visconti-tarot"
         ],
         "confidence": "high",
-        "research": "research\\people\\gertrude-moakley.md"
+        "research": "research/people/gertrude-moakley.md"
       },
       "sections": {
         "Who": "A cataloguer at the New York Public Library for some four decades, Gertrude Moakley produced\nthe decisive iconographic insight of modern tarot history: the 22 trumps are a **procession\nof triumphs** in the manner of **Petrarch's _I Trionfi_** and the carnival *trionfo* — Love,\nChastity, Death, Fame, Time, Eternity — not a coded Egyptian or kabbalistic book. Her reading\ngrounded the trumps in the actual visual culture of 15th-century Italy.",
@@ -410,7 +448,10 @@
           "golden-dawn-book-t-tarot"
         ],
         "confidence": "high",
-        "research": "research\\people\\golden-dawn.md"
+        "research": "research/people/golden-dawn.md",
+        "source_deck": "golden-dawn-book-t-tarot",
+        "source_item_id": "major-00-the-fool",
+        "deck": "Golden Dawn Tarot"
       },
       "sections": {
         "Who": "The **Hermetic Order of the Golden Dawn** is the single most important engine of the modern\nesoteric tarot. Founded in London on **1 March 1888**, this small, oath-bound magical society\nfused tarot, Kabbalah, astrology, alchemy and Hermetic imagery into one graded, internally\nconsistent system, recorded in a confidential teaching paper called **Book T**. Book T\nassigned every card a place in a master grid of **astrological, elemental and decanic\ncorrespondences**, and — to keep that grid tidy — **swapped the traditional numbers of\nStrength and Justice (VIII↔XI)**. Crucially, the Order **never published a deck of its own**:\nmembers hand-copied their cards from Mathers' specimen under the secrecy of the lodge. The\n*public* realisation of its system came later and from outside the Order's control — the\n**Rider-Waite-Smith** deck of 1909 [@decker1996; @decker2002; @tarot_heritage].",
@@ -436,7 +477,7 @@
           "card painter"
         ],
         "confidence": "high",
-        "research": "research\\people\\gringonneur.md"
+        "research": "research/people/gringonneur.md"
       },
       "sections": {
         "Who": "Jacquemin Gringonneur is a real but shadowy figure: a Paris painter recorded in a **1392**\nroyal account paying him **56 sols** for **\"three packs of cards, gilded and coloured and\nornamented with various designs, for the amusement of our lord the king\"** (Charles VI of\nFrance). Those were **ordinary playing cards**, now lost. His name became famous through a\n**19th-century error** that tied this payment to a surviving hand-painted tarot — a deck that\nis actually **Italian, c. 1450–80**, not French and not from 1392.",
@@ -467,7 +508,10 @@
           "vieville-tarot"
         ],
         "confidence": "medium",
-        "research": "research\\people\\jacques-vieville.md"
+        "research": "research/people/jacques-vieville.md",
+        "source_deck": "vieville-tarot",
+        "source_item_id": "trump-01",
+        "deck": "Jacques Viéville Tarot"
       },
       "sections": {
         "Who": "**Jacques Viéville** was a Paris cardmaker active around **1650** — the same city and decade\nas **Jean Noblet** — but his tarot is **not** in the Marseille line. It belongs to a\n**divergent tradition**, the so-called **\"Rouen-Brussels\" (Rouen-Bruxelles)** pattern, and is\nthe French **ancestor of the later Belgian / Flemish tarot** [@web_th_rouen_bruxelles;\n@web_belgian_wp]. The only known copy is preserved in the **Bibliothèque nationale de France**\n[@web_letarot_vieville]. He is, like Noblet, **thinly documented as a person** — known chiefly\nthrough his deck — so this dossier is short and floruit-only (confidence: medium).",
@@ -498,7 +542,10 @@
           "noblet-tarot"
         ],
         "confidence": "medium",
-        "research": "research\\people\\jean-noblet.md"
+        "research": "research/people/jean-noblet.md",
+        "source_deck": "noblet-tarot",
+        "source_item_id": "overview",
+        "deck": "Jean Noblet Tarot"
       },
       "sections": {
         "Who": "**Jean Noblet** was a Paris cardmaker whose pack — surviving in a **single copy in the\nBibliothèque nationale de France** — is the **oldest known near-complete Tarot de\nMarseille**, conventionally classed as **\"Type I\"** [@web_bnf_noblet; @web_wopc_noblet].\nWorking *\"au faubourg St Germain\"* around the **mid-17th century (c. 1650; the BnF dates the\nsurviving deck 1659, and his activity c. 1659–1681)**, Noblet made the earliest object that\nconforms to the graphic type later called *tarot de Marseille* because Marseille came to\nspecialise in it [@web_bnf_noblet]. He is **barely documented as a person** — known mainly\nthrough his name and address printed on the cards themselves — so this dossier stays short\nand the biography is floruit-only (confidence: medium).",
@@ -529,7 +576,7 @@
           "mamluk-deck"
         ],
         "confidence": "high",
-        "research": "research\\people\\la-mayer.md"
+        "research": "research/people/la-mayer.md"
       },
       "sections": {
         "Who": "Leo Aryeh Mayer was an Israeli scholar of Islamic art who, in the 1930s, recognised a set\nof richly decorated cards in the Topkapı Sarayı, Istanbul, as a **Mamluk-era playing pack** —\nthe *Mulūk wa-nuwwāb* (\"Kings and Deputies\"). His identification supplied the missing link\nbetween Chinese money-suited cards and the European four-suit pack that became tarot.",
@@ -566,13 +613,19 @@
           "golden-dawn-book-t-tarot"
         ],
         "confidence": "high",
-        "research": "research\\people\\macgregor-mathers.md"
+        "research": "research/people/macgregor-mathers.md",
+        "url": "https://en.wikipedia.org/wiki/Samuel_Liddell_MacGregor_Mathers",
+        "image_credit": "S. L. MacGregor Mathers — Wikimedia Commons (public domain)",
+        "source_deck": "books-of-tarot",
+        "source_item_id": "book-mathers-book-t",
+        "deck": "Books Behind the Tarot"
       },
       "sections": {
         "Who": "**Samuel Liddell MacGregor Mathers** (8 January **1854** – November **1918**) was the creative\nengine of the Hermetic Order of the Golden Dawn and the **chief author of its tarot teaching,\nBook T**. While **Westcott** supplied the Cipher Manuscripts and the order's (forged) pedigree,\nMathers wrote most of the rituals and built the **correspondence system** — Hebrew letters,\nTree-of-Life paths, and the astrological/decanic attributions — that still underlies how almost\neveryone reads tarot today. He produced **no published deck**; his cards survived as a lodge\nspecimen to be hand-copied by initiates [@web_mathers_wp; @decker1996; @tarot_heritage].",
         "Claim vs the record": "- **Myth: Book T transmits an ancient Egyptian/Hermetic tarot key.** **The record:** Mathers'\n  attributions are a **constructed synthesis of the 1880s–90s**, built on Lévi's trump↔Hebrew\n  scheme and the Order's astrology, then projected backward as ancient wisdom [@decker2002].\n- **Precision: he authored a *scheme*, not a marketed deck.** Mathers wrote the correspondences\n  and painted a lodge specimen; the cards were **hand-copied in secret**, never published. The\n  famous *public* cards are Smith's RWS art — a separate, later object [@web_gd_nodeck].\n- **The schism candour.** In 1900 Mathers told Florence Farr that **Westcott had forged the\n  Sprengel letters** — effectively admitting the Order's foundation legend was fraudulent, even as\n  he defended his own authority [@decker1996].",
         "In this collection": "Mathers is the **author node** for `golden-dawn-book-t-tarot`: the titles, Hebrew letters, Tree\npaths and decanic meanings rendered in that grammar are his. A \"people of tarot\" leaf should name\nhim **the architect of the Book-T correspondences** and stress that he built, did not recover,\nthem — and that he published no deck."
-      }
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Samuel_Liddell_MacGregor_Mathers_in_Egyptian_getup.jpg"
     },
     {
       "id": "person-marziano-da-tortona",
@@ -596,7 +649,7 @@
           "tarot designer (programme)"
         ],
         "confidence": "high",
-        "research": "research\\people\\marziano-da-tortona.md"
+        "research": "research/people/marziano-da-tortona.md"
       },
       "sections": {
         "Who": "**Marziano da Tortona** (fl. early 15th century) was a **humanist secretary** to\n**Filippo Maria Visconti**, Duke of Milan, and the **earliest named tarot designer in\nhistory** — perhaps the earliest named designer of any card trump series. Around\n**c. 1415–1425** he wrote a Latin treatise, *Tractatus de deificatione sexdecim heroum*,\ndescribing a set of **sixteen trump cards** he had designed for the duke's personal use,\neach depicting a Roman god above a bird sacred to that deity [@dummett1980;\n@pratesi_marziano; @web_marziano_wp].",
@@ -626,7 +679,10 @@
           "mantegna-tarocchi"
         ],
         "confidence": "medium",
-        "research": "research\\people\\master-of-the-e-series.md"
+        "research": "research/people/master-of-the-e-series.md",
+        "source_deck": "mantegna-tarocchi",
+        "source_item_id": "plate-01",
+        "deck": "The 'Mantegna Tarocchi'"
       },
       "sections": {
         "Who": "The **Master of the E-series** is the conventional name given to the anonymous North\nItalian engraver who produced the **earlier and finer set** of the so-called\n*Mantegna Tarocchi* — a sequence of **50 didactic engravings** depicting a cosmic\nhierarchy from the lowest social estate (the beggar) to the highest sphere (the First\nMover). The name \"E-series\" comes from the series designation used in early print\ncatalogues; the companion *S-series* is a slightly later copy, probably by a different\nhand [@web_mantegna_wp; @web_mantegna_wopc].\n\n**The attribution to Andrea Mantegna is wrong** — this has been the consensus of art\nhistorians since the early 20th century — but the label persists as a convenient\nshorthand.",
@@ -656,7 +712,10 @@
           "sola-busca-tarot"
         ],
         "confidence": "medium",
-        "research": "research\\people\\master-of-the-sola-busca.md"
+        "research": "research/people/master-of-the-sola-busca.md",
+        "source_deck": "sola-busca-tarot",
+        "source_item_id": "major-00-mato",
+        "deck": "Sola Busca Tarot"
       },
       "sections": {
         "Who": "The **Master of the Sola Busca** is the conventional name for the anonymous\n**North Italian engraver** who produced the **Sola Busca tarot** (c. 1491) —\nthe **first known fully pictorial 78-card tarot deck**, meaning every card including\nthe pip minors carries a narrative scene rather than geometric suit symbols.\nSeveral cards bear the monogram **\"MS\"** which is presumed to indicate the\nengraver's initials, but no historical individual has been securely identified\n[@web_sb_wp; @web_sb_ciompi].",
@@ -693,13 +752,19 @@
           "etteilla-i-livre-de-thot"
         ],
         "confidence": "high",
-        "research": "research\\people\\michael-dummett.md"
+        "research": "research/people/michael-dummett.md",
+        "url": "https://en.wikipedia.org/wiki/Michael_Dummett",
+        "image_credit": "Michael Dummett (2004), photo Klaus Reisinger / R. S. Kissel — Wikimedia Commons, CC BY-SA 4.0",
+        "source_deck": "books-of-tarot",
+        "source_item_id": "book-dummett-game-of-tarot",
+        "deck": "Books Behind the Tarot"
       },
       "sections": {
         "Who": "One of the major analytic philosophers of the 20th century (Wykeham Professor of Logic at\nOxford), Michael Dummett was also the most important modern historian of tarot — not as a\ndivinatory system but as a **trick-taking card game**. His trilogy is the documentary\nbaseline this collection defaults to: tarot is a 15th-century Italian game; the\noccult/Egyptian/divinatory readings are a learned **overlay imposed after c. 1781**.",
         "Claim vs the record": "Dummett **is** the record here. Where a deck's own tradition claims ancient Egyptian,\nHebrew-kabbalistic, or \"suppressed wisdom\" origins, this collection states the claim fairly\nand then weighs it against Dummett's documentary findings. The collection does **not** treat\nhim as infallible — later scholars (Depaulis, Pratesi, Vitali) refine dates and the A/B/C\npicture — but it treats the burden of proof as his framework sets it.",
         "In this collection": "Not a maker — a **lens**. He is cited across nearly every deck dossier as the document-first\nauthority (`[@dummett1980]`, `[@decker1996]`, `[@dummett2004]`). He does not \"feature\" in\ncard art; he features in the collection's *method*."
-      }
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Michael_Dummett_September_2004.jpg"
     },
     {
       "id": "person-nicolas-conver",
@@ -724,7 +789,10 @@
           "tarot-de-marseille-conver"
         ],
         "confidence": "medium",
-        "research": "research\\people\\nicolas-conver.md"
+        "research": "research/people/nicolas-conver.md",
+        "source_deck": "tarot-de-marseille-conver",
+        "source_item_id": "major-00-le-mat",
+        "deck": "Tarot de Marseille"
       },
       "sections": {
         "Who": "**Nicolas Conver** is the name signed on the most famous single witness of the **Tarot de\nMarseille**: a woodblock-and-stencil pack **dated 1760** and printed in **Marseille**, which\nbecame the canonical **\"Type II\"** Marseille pattern — the reference layout copied by\nFrench cardmakers for more than a century [@web_camoin_conver1760; @web_vs_conver_heritage;\n@dummett1980; @depaulis1984]. His official style was *maître cartier* (master cardmaker) of\nMarseille [@web_camoin_conver]. **The catch:** the man documented as \"Nicolas Conver,\ncartier\" in the **BnF authority record lived 1784–1833** — making it physically impossible\nfor *that* Nicolas Conver to have engraved blocks in 1760 [@web_bnf_conver]. The 1760 date\nis therefore either inherited from older blocks, or attaches to an earlier/different Conver;\nthe standard practice was for cardmakers to buy or inherit pearwood moulds, erase the\nprevious *cartier*'s name, and substitute their own while **leaving the original date**\n[@web_vs_conver_heritage]. So \"1760\" is a real engraving date; \"Nicolas Conver, its author\"\nis the contested part.",
@@ -759,13 +827,19 @@
           "oswald-wirth-tarot"
         ],
         "confidence": "high",
-        "research": "research\\people\\oswald-wirth.md"
+        "research": "research/people/oswald-wirth.md",
+        "url": "https://en.wikipedia.org/wiki/Oswald_Wirth",
+        "image_credit": "Oswald Wirth portrait — Wikimedia Commons, CC BY-SA 3.0 (la-rose-bleue.org)",
+        "source_deck": "oswald-wirth-tarot",
+        "source_item_id": "arcanum-00-le-fou",
+        "deck": "Oswald Wirth Tarot"
       },
       "sections": {
         "Who": "**Joseph Paul Oswald Wirth** (5 August 1860 – 9 March 1943) was a Swiss-born occultist,\nillustrator and Freemason who, under the direction of the Kabbalist **Stanislas de Guaita**,\n**drew the first overtly occult tarot deck**: the **22 trumps (Major Arcana only)** of *Les 22\nArcanes du Tarot Kabbalistique*, **1889**. He turned **Éliphas Lévi's** tarot–Hebrew–Kabbalah\nprogram into actual *cards*, and decades later issued a revised, far better-known version\nalongside his book *Le Tarot des imagiers du Moyen Âge* (**1927**). He is the Continental\ncounterpart to the Golden Dawn's English work, and the bridge from Lévi's text to the modern\nesoteric deck [@web_wirth_wp; @decker2002; @web_harrington_wirth].",
         "Claim vs the record": "- **Myth: the deck *restores* an ancient symbolic tarot.** **The record:** the deck is an\n  **honest construction**. Wirth openly builds a *new* symbolic system **on top of the\n  Marseille**, following **Lévi's 1850s** Hebrew-letter scheme — itself a 19th-century invention.\n  Unlike Gébelin's flat-false Egyptian *antiquity* claim, the Wirth deck is transparent about\n  being a designed esoteric overlay; the grammar should record it as a **well-documented\n  construction (1889 / 1926)**, not a recovered tradition [@decker2002; @web_wirth_wp].\n- **Caveat on the correspondence.** Wirth's Hebrew-letter / trump assignments are **Lévi's\n  Continental scheme**, which **differs** from the **Golden Dawn's** English system. Do **not**\n  conflate the two correspondence systems [@decker2002; @web_wirth_wp].\n- **Two distinct editions.** The **1889** de-Guaita-directed deck and Wirth's **1926** mature\n  revision are different objects (e.g. the revised La Papesse) and should be distinguished in\n  the grammar [@web_harrington_wirth; @web_wirth_wp].",
         "In this collection": "Wirth is the maker of the deck slug **`oswald-wirth-tarot`** (1889 / 1926, **22 trumps only**).\nHe should feature on the trumps where his esoteric overlay is most visible — the **Magician**\n(alchemical/Hermetic emblems), **La Papesse** (the card he most revised between editions), the\n**Hebrew-lettered** trumps generally, and the **Wheel of Fortune** (Lévi's ROTA program made\nvisual). In a \"people of tarot\" set he is **\"the man who first drew the occult tarot,\"** the\nillustrator who turned Lévi's theory into cards under de Guaita's direction."
-      }
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Oswald_Wirth.jpg"
     },
     {
       "id": "person-pamela-colman-smith",
@@ -803,13 +877,19 @@
           "golden-dawn-book-t-tarot:pentacles-08"
         ],
         "confidence": "high",
-        "research": "research\\people\\pamela-colman-smith.md"
+        "research": "research/people/pamela-colman-smith.md",
+        "url": "https://en.wikipedia.org/wiki/Pamela_Colman_Smith",
+        "image_credit": "Pamela Colman Smith (1904), The Brooklyn Daily Eagle — Wikimedia Commons (public domain)",
+        "source_deck": "golden-dawn-book-t-tarot",
+        "source_item_id": "wands-02",
+        "deck": "Golden Dawn Tarot"
       },
       "sections": {
         "Who": "**Pamela Colman Smith** (16 February **1878** – 18 September **1951**), nicknamed **\"Pixie,\"** was\nthe artist who **illustrated all 78 cards of the Rider-Waite-Smith tarot** (1909). Her decisive\ninnovation was the **fully scenic Minor Arcana**: where earlier packs left the pips as bare\narrangements of suit-signs, Smith drew **narrative scenes with figures** on every numbered card —\nthe move that made the deck readable at a glance and set the template for most modern tarot. For\nnearly a century she went **uncredited**, the deck called simply \"Rider-Waite\"; restoring her name\nis one of the clearest documented cases of an erased maker in tarot's record\n[@web_pcs_wp; @web_rws_wopc; @web_pcs_artnet].",
         "Claim vs the record": "- **The erasure to correct: \"Rider-Waite\" leaves Smith out.** She received a **flat fee — and a\n  small one — instead of any share of copyright or royalties**, **no formal credit** on the deck or\n  packaging, and was written out of its fame for most of a century while the publisher (Rider) and\n  the scheme's author (Waite) were named. The collection's use of **Rider-Waite-*Smith*** is the\n  deliberate correction; her name belongs on the art [@web_pcs_wp; @web_pcs_artnet].\n- **Precision on division of labour:** Waite set the symbolic programme; **Smith drew the cards**,\n  and on the Minor Arcana she **invented** as much as she illustrated. The intuitive imagery a modern\n  reader \"reads\" is largely Smith's design choice [@web_rws_wopc].",
         "In this collection": "In `golden-dawn-book-t-tarot`, the rendered imagery is **Smith's RWS art**, so she should feature\nprominently — and **specifically on the Minor Arcana (pip) cards**, since her fully scenic pips are\nher signal innovation and the reason the deck reads the way it does. The grammar **does** expose\nper-card ids, so she is linked in `features_cards` to representative pips —\n`golden-dawn-book-t-tarot:wands-02`, `:cups-03`, `:swords-03`, `:swords-10`, `:pentacles-08`\n(the suit-prefixed pip ids: `wands-02`…`wands-10`, `cups-02`…, `swords-02`…, `pentacles-02`…).\nA \"people of tarot\" leaf should name her **the artist who gave tarot its pictures** — and note that\nshe was long denied the credit."
-      }
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Pamela_Colman_Smith%2C_%22In_Private_life%22_%281904%29.jpg"
     },
     {
       "id": "person-petrarch",
@@ -833,12 +913,15 @@
           "source text author"
         ],
         "confidence": "high",
-        "research": "research\\people\\petrarch.md"
+        "research": "research/people/petrarch.md",
+        "url": "https://en.wikipedia.org/wiki/Petrarch",
+        "image_credit": "Petrarch by Andrea del Castagno — Wikimedia Commons (public domain)"
       },
       "sections": {
         "Who": "**Francesco Petrarca** (Petrarch) was the defining figure of early Italian humanism —\npoet, scholar, collector of ancient manuscripts, and the author of the *Trionfi*\n(*Triumphs*), an allegorical poem sequence whose **procession of allegorical figures**\nis almost certainly the **primary literary source** for the tarot major arcana\n[@moakley1966; @dummett1980; @web_petrarch_wp].\n\nPetrarch had no connection to tarot cards, which emerged roughly 50 years after his\ndeath. But his *Trionfi* created the **cultural grammar** — a hierarchical parade of\ncosmic forces in which higher powers capture and defeat lower ones — that the tarot\ntrump designers translated into visual form.",
         "Claim vs the record": "- **The claim**: Petrarch \"invented tarot.\"\n- **The correct framing**: Petrarch provided the **literary framework** — the allegoric\n  triumph procession with a fixed hierarchy of cosmic forces — that tarot trump designers\n  adapted. He did not design or know about tarot cards. The tarot is a *reception* of\n  his allegory, not his creation.\n- **The scholarly consensus** (Moakley, Dummett, Kaplan): the *Trionfi* connection is\n  well-supported and explains both the word *trionfi* for trump cards and the thematic\n  logic of the major arcana sequence. But tarot also incorporated **Christian allegory,\n  astrological symbolism, and court-game traditions** not found in Petrarch — it was not\n  a simple translation of the poem."
-      }
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Petrarch_by_Bargilla.jpg"
     },
     {
       "id": "person-pierre-madenie",
@@ -862,7 +945,7 @@
           "printer"
         ],
         "confidence": "medium",
-        "research": "research\\people\\pierre-madenié.md"
+        "research": "research/people/pierre-madenié.md"
       },
       "sections": {
         "Who": "**Pierre Madenié** was a Dijon cardmaker whose **1709 Tarot de Marseille** (complete\ndeck, signed and dated) is one of the **earliest intact surviving examples** of the\nTarot de Marseille pattern — the woodcut-engraved, stencil-coloured printed tarot that\nbecame the standard European form. The Madenié deck is a critical document in the history\nof **TdM standardisation**: it shows the trump iconography in a relatively early form,\npredating the 1760 Conver deck that the collection uses as the canonical TdM reference\n[@web_tdm_wp; @web_tdm_wopc; @dummett1980].",
@@ -894,7 +977,10 @@
           "golden-dawn-book-t-tarot"
         ],
         "confidence": "high",
-        "research": "research\\people\\stuart-kaplan.md"
+        "research": "research/people/stuart-kaplan.md",
+        "source_deck": "books-of-tarot",
+        "source_item_id": "book-kaplan-encyclopedia",
+        "deck": "Books Behind the Tarot"
       },
       "sections": {
         "Who": "Stuart Kaplan founded **U.S. Games Systems** (1968) and, more than anyone, drove tarot's\nlate-20th-century popular revival in the United States. As a collector-cataloguer he compiled\nthe four-volume **_Encyclopedia of Tarot_**, the most comprehensive descriptive catalogue of\nhistorical decks; as a publisher he reissued the **Rider-Waite-Smith** deck and many others.",
@@ -925,7 +1011,10 @@
           "belgian-tarot"
         ],
         "confidence": "medium",
-        "research": "research\\people\\vandenborre.md"
+        "research": "research/people/vandenborre.md",
+        "source_deck": "belgian-tarot",
+        "source_item_id": "trump-01",
+        "deck": "Belgian Tarot"
       },
       "sections": {
         "Who": "**F. I. Vandenborre** was a **Brussels** card-manufacturer whose name attaches to the\nstandard **Belgian / Flemish tarot** (*Tarot Flamand*), conventionally dated **c. 1780**\n(sources give 1770 or 1780; the firm was active **c. 1762–1803**) [@web_wopc_vandenborre;\n@web_belgian_wp]. The deck is famous for its **anticlerical substitutions**: card II, the\n**Popess (La Papesse)**, is replaced by **the Spanish Captain** (*Le Spagnol Capitano\nEracasse* / Captain Fracasse), and card V, the **Pope (Le Pape)**, by **Bacchus** (*Bacus*),\nthe god of wine astride a barrel [@web_wopc_vandenborre; @web_th_spanish_captain]. Like the\nMarseille deck it has illustrated trumps and **pip** minor cards [@web_wopc_vandenborre].\nVandenborre is a **firm/imprint** more than a richly documented individual; treat as a\nmaker-node (confidence: medium).",
@@ -955,7 +1044,7 @@
           "condottiero / patron"
         ],
         "confidence": "high",
-        "research": "research\\people\\visconti-sforza-patrons.md"
+        "research": "research/people/visconti-sforza-patrons.md"
       },
       "sections": {
         "Who": "The oldest surviving tarots were **commissioned by the ruling house of Milan**: **Filippo\nMaria Visconti**, last Visconti Duke; his only (illegitimate but legitimised) daughter\n**Bianca Maria Visconti**; and the *condottiero* she married, **Francesco Sforza**, who\nbecame the first Sforza Duke of Milan [@web_vs_wp; @web_filippo_wp; @web_bianca_wp;\n@web_francesco_wp]. Their patronage produced the hand-painted, gold-leafed **trionfi** packs —\nthe **Cary-Yale / Visconti di Modrone** and the **Pierpont-Morgan–Bergamo (Visconti-Sforza)**\ndecks — that anchor the entire history of surviving tarot, and whose dating is unusually\nsecure *because* the dynastic heraldry is painted right onto the cards [@web_vs_wp;\n@web_wopc_vs].",
@@ -983,7 +1072,7 @@
           "occult press"
         ],
         "confidence": "high",
-        "research": "research\\people\\william-rider.md"
+        "research": "research/people/william-rider.md"
       },
       "sections": {
         "Who": "**William Rider & Son** was the London publishing house that issued the **Rider-Waite-Smith tarot\ndeck in 1909** and **A. E. Waite's *Pictorial Key to the Tarot* (1910/1911)** — the \"**Rider**\" in\nthe deck's tripartite name. In the early twentieth century it was **the foremost British publisher\nof occult, mystical and esoteric literature**, and its commercial release of the Waite–Smith deck\nis the moment esoteric tarot crossed from the secret lodge into the open marketplace. The firm\n**commissioned neither the artwork nor the symbolic scheme** — those were Smith's and Waite's; its\ncontribution was publication and distribution [@web_rws_wopc; @web_rider_wp; @web_pkt_wp].",
@@ -1017,13 +1106,16 @@
           "Theosophist"
         ],
         "confidence": "high",
-        "research": "research\\people\\wynn-westcott.md"
+        "research": "research/people/wynn-westcott.md",
+        "url": "https://en.wikipedia.org/wiki/William_Wynn_Westcott",
+        "image_credit": "William Wynn Westcott (photo before 1897) — Wikimedia Commons (public domain)"
       },
       "sections": {
         "Who": "**Dr. William Wynn Westcott** (17 December **1848** – 30 July **1925**) was a London coroner,\nFreemason and Rosicrucian who, with **Mathers** and **Woodman**, co-founded the Hermetic Order\nof the Golden Dawn in 1888. His distinctive contribution was documentary, not artistic: he\nbrought the **Cipher Manuscripts** to light and decoded them, and produced the supposed\nauthorising correspondence with the German adept **Anna Sprengel** — the warrant that gave the\nOrder its Continental pedigree, and which later scholarship holds he **fabricated**. He designed\n**no deck** and is not a maker of tarot cards [@web_westcott_wp; @decker1996; @web_gd_swap].",
         "Claim vs the record": "- **Myth: the Sprengel correspondence proves an authentic German Rosicrucian descent.** **The\n  record:** while the Cipher Manuscripts themselves are genuine documents, the **Sprengel letters\n  are a fabrication** — in 1900 Mathers publicly stated that Westcott had forged them, and the\n  scholarly consensus (Decker, Depaulis, Dummett) agrees the page and the correspondence were\n  invented to manufacture a lineage [@decker1996; @web_westcott_wp].\n- **Precision: Westcott is the Order's founder-administrator, not a tarot maker.** Any tarot\n  authority attributed to him belongs properly to Mathers' Book T [@web_mathers_wp].",
         "In this collection": "Westcott is a **context node** for the `golden-dawn` institution: the co-founder whose Cipher\nManuscripts and forged warrant explain *how* the Order came to exist and *why* its claimed\nantiquity is a fiction. He should appear in the founding narrative, explicitly **not** credited\nwith any card or deck."
-      }
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/William_Wynn_Westcott_PNG.png"
     },
     {
       "id": "grp-makers",

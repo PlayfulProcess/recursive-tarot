@@ -12,6 +12,10 @@ lifespan: "1854–1918"
 roles: ["occultist", "ceremonial magician", "translator", "ritual author", "tarot system-builder"]
 made: ["golden-dawn-book-t-tarot"]
 features_cards: []
+image: "https://upload.wikimedia.org/wikipedia/commons/7/77/Samuel_Liddell_MacGregor_Mathers_in_Egyptian_getup.jpg"
+image_credit: "S. L. MacGregor Mathers — Wikimedia Commons (public domain)"
+wikipedia: "https://en.wikipedia.org/wiki/Samuel_Liddell_MacGregor_Mathers"
+book: "book-mathers-book-t"
 ---
 
 # Samuel Liddell MacGregor Mathers

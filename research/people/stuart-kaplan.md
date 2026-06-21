@@ -12,6 +12,7 @@ roles: ["publisher", "collector", "cataloguer"]
 summary: "Founder of U.S. Games Systems; his four-volume Encyclopedia of Tarot is the standard catalogue, and he revived the Rider-Waite-Smith deck for the modern American market."
 studied: ["golden-dawn-book-t-tarot"]
 made: []
+book: "book-kaplan-encyclopedia"
 ---
 
 # Stuart R. Kaplan (1932–2021)

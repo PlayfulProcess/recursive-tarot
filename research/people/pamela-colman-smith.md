@@ -17,6 +17,9 @@ features_cards:
   - "golden-dawn-book-t-tarot:swords-03"
   - "golden-dawn-book-t-tarot:swords-10"
   - "golden-dawn-book-t-tarot:pentacles-08"
+image: "https://upload.wikimedia.org/wikipedia/commons/3/35/Pamela_Colman_Smith%2C_%22In_Private_life%22_%281904%29.jpg"
+image_credit: "Pamela Colman Smith (1904), The Brooklyn Daily Eagle — Wikimedia Commons (public domain)"
+wikipedia: "https://en.wikipedia.org/wiki/Pamela_Colman_Smith"
 ---
 
 # Pamela Colman Smith ('Pixie')
