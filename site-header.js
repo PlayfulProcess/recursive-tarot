@@ -71,6 +71,7 @@
     ['tarot-and-the-crack',             'Tarot & the Crack'],
     ['kant-and-the-tarot',              'Kant Reads the Tarot'],
     ['marsha-linehan-reads-the-tarot',  'Marsha Linehan Reads the Tarot'],
+    ['morality-is-an-ecosystem',        'Morality Is an Ecosystem'],
     ['build-a-tarot-deck-with-claude',  'Contribute to the Commons'],
   ];
 
