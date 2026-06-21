@@ -1,5 +1,12 @@
 # CLAUDE.md — recursive-tarot
 
+## The spine: voices & the one intention
+
+1. **The creed is the spine.** The project turns on `viewers/voices.json` → `shared_intention`: *"Read to know yourself, not to be told your fate… relate to the card; never obey it."* The history, the why-it-works lenses, the two wings, the courses, and the Caster all exist to serve that one creed.
+2. **Gate, not fate.** Any voice, course, or feature that touches divination or esoterica must stay autonomy-preserving — *a prompt, not a prophecy.* Never reintroduce "the card reveals / determines your fate," even when rendering an occult tradition (Golden Dawn, Etteilla, Lévi) faithfully. Render the tradition; correct the fatalism.
+3. **Consolidate, don't multiply.** Prefer turning a new idea into something we already have — a **voice** (`voices.json`), a **deck**, a **source** (`books-of-tarot` / `people-of-tarot`), or a **journey** (the four doors: Player · Historian · Practitioner · Contributor) — over a parallel structure. The Golden Dawn is the worked example: it became a *voice* + a short pathworking course, not a separate sub-site.
+4. **Voice vs Source (the two wings).** A tradition's *reading stance* is the **Living/practice** layer (voices, courses, the Golden Dawn Path); its *people, books, and decks* are the **Record/evidence** layer (`docs/DESIGN-two-wings-provenance.md`). Keep them in their own places and cross-link with the one pill pattern below — never let a practice claim masquerade as a historical one.
+
 ## Core architecture
 
 - Grammar files live in `tarot/<slug>/grammar.json`. Never hand-edit `tarot/all-decks-many-lenses/grammar.json` or `tarot/people-of-tarot/grammar.json` — both are generated.

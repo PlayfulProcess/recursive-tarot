@@ -1,7 +1,7 @@
 {
   "_type": "recursive-tarot-voices",
   "_version": 1,
-  "_note": "The orientations you can consult before a reading — the 'pause and listen' device made into data. Each voice has a glyph (no copyrighted portraits — abstract marks only), a one-line tagline, and 'how' (how to read in this voice). The three with a course link map to the live courses; the rest map to the persona skills (jung / wallis / andreotti / bayo) you can converse with on recursive.eco. PD/own content only; author PlayfulProcess.",
+  "_note": "The orientations you can consult before a reading — the 'pause and listen' device made into data. Each voice has a glyph (no copyrighted portraits — abstract marks only), a one-line tagline, and 'how' (how to read in this voice). Voices with a `link` open a course; the others map to persona skills (jung / wallis / andreotti / bayo) you can converse with on recursive.eco. Every voice obeys shared_intention — gate, not fate: a prompt, never a prophecy. The Golden Dawn is the esoteric register kept honest (pathworking, not prediction). PD/own content only; author PlayfulProcess.",
   "shared_intention": {
     "title": "Before you cast — the one intention",
     "creed": "Read to know yourself, not to be told your fate. A card starts a conversation with what is already alive in you — so hold what you find loosely, author its meaning yourself, and keep the choice your own. Be honest about what you see and kind in what you make it mean. Relate to the card; never obey it.",
@@ -80,6 +80,15 @@
       "how": "Read to sit with complexity and your own complicity. Some of what the card shows is dying and wants hospicing; some is being born and wants midwifing. Stay with it; do not look away.",
       "link": null,
       "persona": "andreotti"
+    },
+    {
+      "id": "golden-dawn",
+      "name": "The Golden Dawn",
+      "tagline": "the ascent",
+      "glyph": "△",
+      "color": "#d4af37",
+      "how": "Read as pathworking — the card is a gate, not a fortune. Each trump is a step on the Tree of Life, a threshold you choose to cross; walk through the image in contemplation and let it initiate, not dictate. The correspondences are a map to walk, never a fate to obey.",
+      "link": "../pages/course-viewer.html?course=walking-the-golden-dawn-path"
     }
   ]
 }
