@@ -60,9 +60,10 @@
 
   /* Synopsis — no inner column scroll (page scrolls); sticky images */
   .cols{display:flex;gap:14px;overflow-x:auto;padding-bottom:8px;align-items:flex-start}
-  .col{flex:0 0 320px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  .col h3{margin:0;padding:10px 12px;font-size:13px;background:var(--panel2);border-bottom:1px solid var(--line);position:sticky;top:64px;z-index:2}
-  .col .colimg{height:160px;background:#0a0712 center/contain no-repeat;position:sticky;top:104px;z-index:1}
+  .col{flex:0 0 320px;background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    overflow-y:auto;max-height:calc(100vh - 132px)}
+  .col h3{margin:0;padding:10px 12px;font-size:13px;background:var(--panel2);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:2}
+  .col .colimg{height:160px;background:#0a0712 center/contain no-repeat;position:sticky;top:39px;z-index:1}
   .col .secs{padding:10px 12px}
   .sec{margin:0 0 12px}
   .sec .st{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);margin:0 0 3px}
@@ -118,7 +119,7 @@
 </style>
 </head>
 <body>
-<script src="../../site-header.js?v=16"></script>
+<script src="../../site-header.js?v=21"></script>
 <site-header active="lenses"></site-header>
 <header>
   <h1>Lens prototypes <span style="color:var(--muted);font-weight:400">· five ways to see the same data</span></h1>
@@ -139,6 +140,19 @@ const TRUMP_LABELS={fool:'Fool',magician:'Magician','high-priestess':'High Pries
  hermit:'Hermit','wheel-of-fortune':'Wheel of Fortune',justice:'Justice','hanged-man':'Hanged Man',
  death:'Death',temperance:'Temperance',devil:'Devil',tower:'Tower',star:'Star',moon:'Moon',sun:'Sun',
  judgement:'Judgement',world:'World'};
+
+// ── Minor-arcana cross-deck keys (metadata.minor_key, e.g. "ten-of-swords") ────
+const RANK_ORDER={ace:1,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,
+ page:11,knave:11,jack:11,valet:11,fante:11,maid:11,princess:11,knight:12,cavalier:12,cavaliere:12,prince:12,
+ queen:13,reina:13,regina:13,king:14,re:14,roi:14};
+const SUIT_ORDER={coins:0,pentacles:0,disks:0,denari:0,cups:1,coppe:1,swords:2,spade:2,batons:3,wands:3,staves:3,clubs:3,bastoni:3};
+const SUITS_DISPLAY=['Coins','Cups','Swords','Batons'];
+const SUIT_NORM={coins:'Coins',pentacles:'Coins',disks:'Coins',denari:'Coins',cups:'Cups',coppe:'Cups',
+ swords:'Swords',spade:'Swords',batons:'Batons',wands:'Batons',staves:'Batons',clubs:'Batons',bastoni:'Batons'};
+const minorParts=mk=>{const m=String(mk).split('-of-');return{rank:(m[0]||'').toLowerCase(),suit:(m[1]||'').toLowerCase()};};
+const minorOrder=mk=>{const{rank,suit}=minorParts(mk);return 100+((SUIT_ORDER[suit]!=null?SUIT_ORDER[suit]:9)*20)+(RANK_ORDER[rank]||15);};
+const minorSuitLabel=mk=>{const{suit}=minorParts(mk);return SUIT_NORM[suit]||(suit?suit[0].toUpperCase()+suit.slice(1):'Other');};
+const cardLabel=key=>TRUMP_LABELS[key]||String(key).split('-').map(w=>w==='of'?'of':(w?w[0].toUpperCase()+w.slice(1):w)).join(' ');
 
 // ── helpers (shared Section Lens contract) ────────────────────────────────────
 const STOP=new Set(['the','a','an','this','that','these','those','it','its']);
@@ -176,9 +190,14 @@ async function load(){
         const md_=it.metadata||{};
         const hasText=Object.values(secs).some(v=>typeof v==='string'&&v.trim());
         if(!hasText && !it.image_url) continue;
+        const tkey=md_.trump_key||null, mkey=md_.minor_key||null;
+        const cardKey=tkey||mkey||null;
+        const cardOrder = tkey!=null ? (md_.trump_number!=null?+md_.trump_number:99)
+                        : (mkey ? minorOrder(mkey) : 99999);
         out.push({deck:d.slug,label:d.label,year:d.year,id:it.id,name:it.name||it.id,
           sections:secs,image:it.image_url||md_.image_url||'',
-          trump:md_.trump_key||null, trumpNum:(md_.trump_number!=null?md_.trump_number:99)});
+          trump:tkey, trumpNum:(md_.trump_number!=null?md_.trump_number:99),
+          cardKey, cardOrder});
       }
     }catch(e){ console.warn('skip',d.slug,e); }
   }));
@@ -201,10 +220,20 @@ const activeDecks=()=>DECKS.filter(d=>SELECTED.has(d.slug));
 const activeItems=()=>ITEMS.filter(i=>SELECTED.has(i.deck));
 const secOf=(it,key)=>{ for(const [k,v] of Object.entries(it.sections)){ if(typeof v==='string'&&v.trim()&&lensNorm(k)===key) return {raw:k,val:v}; } return null; };
 // cards present (by trump_key) across the selected decks, ordered by trump number
-function trumpOptions(){
+function cardOptions(){
   const m=new Map();
-  for(const it of activeItems()) if(it.trump){ if(!m.has(it.trump)) m.set(it.trump,it.trumpNum); }
+  for(const it of activeItems()) if(it.cardKey){ if(!m.has(it.cardKey)) m.set(it.cardKey,it.cardOrder); }
   return [...m.entries()].sort((a,b)=>a[1]-b[1]).map(([k])=>k);
+}
+// grouped <optgroup> options for the card picker: Majors, then by suit
+function cardOptionsHTML(sel){
+  const keys=cardOptions(); const groups={Majors:[]};
+  for(const k of keys){ if(TRUMP_LABELS[k]) groups.Majors.push(k);
+    else { const s=minorSuitLabel(k); (groups[s]=groups[s]||[]).push(k); } }
+  let h='';
+  for(const g of ['Majors',...SUITS_DISPLAY,'Other']){ const arr=groups[g]; if(!arr||!arr.length) continue;
+    h+=`<optgroup label="${esc(g)}">`+arr.map(k=>`<option value="${esc(k)}"${k===sel?' selected':''}>${esc(cardLabel(k))}</option>`).join('')+`</optgroup>`; }
+  return h;
 }
 const trumpLabel=k=>TRUMP_LABELS[k]||k;
 
@@ -250,9 +279,9 @@ function viewMatrix(){
 // ── VIEW 2: SYNOPSIS (by deck OR transposed by section) ───────────────────────
 let synMode='deck';
 function viewSynopsis(sel){
-  const opts=trumpOptions(); const card=opts.includes(sel)?sel:opts[0];
-  const decksWith=activeDecks().map(d=>activeItems().find(i=>i.deck===d.slug && i.trump===card)).filter(Boolean);
-  let h=`<div class="ctl"><label class="lbl">Card</label><select id="syn-sel">${opts.map(o=>`<option value="${o}"${o===card?' selected':''}>${esc(trumpLabel(o))}</option>`).join('')}</select>
+  const opts=cardOptions(); const card=opts.includes(sel)?sel:opts[0];
+  const decksWith=activeDecks().map(d=>activeItems().find(i=>i.deck===d.slug && i.cardKey===card)).filter(Boolean);
+  let h=`<div class="ctl"><label class="lbl">Card</label><select id="syn-sel">${cardOptionsHTML(card)}</select>
     <span class="seg"><button data-m="deck" class="${synMode==='deck'?'on':''}">By deck</button><button data-m="section" class="${synMode==='section'?'on':''}">By section</button></span>
     <span style="color:var(--muted);font-size:12px">${decksWith.length} decks have this card</span></div>`;
   h+=synthHTML(card);
@@ -294,10 +323,10 @@ function viewSynopsis(sel){
 
 // ── VIEW 3: PROVENANCE RIBBON (with label-collision dodging) ───────────────────
 function viewRibbon(sel){
-  const opts=trumpOptions(); const card=opts.includes(sel)?sel:(opts.includes('death')?'death':opts[0]);
+  const opts=cardOptions(); const card=opts.includes(sel)?sel:(opts.includes('death')?'death':opts[0]);
   const pts=[];
   for(const d of activeDecks()){
-    const it=activeItems().find(i=>i.deck===d.slug && i.trump===card); if(!it)continue;
+    const it=activeItems().find(i=>i.deck===d.slug && i.cardKey===card); if(!it)continue;
     pts.push({year:d.year,kind:'native',label:d.label,img:it.image,text:`**${d.label}** (${d.year}) — the card as depicted in this deck.`});
     for(const [k,v] of Object.entries(it.sections)){
       const a=lensAttr(v); if(!a)continue; const y=attrYear(a); if(y===Infinity)continue;
@@ -322,7 +351,7 @@ function viewRibbon(sel){
       <div class="pt" data-i="${i}"></div>
       <div class="lbl" style="top:${labY}px">${esc((p.kind==='later'?p.label:p.label)).slice(0,16)}<div class="yr">${p.year}</div></div></div>`;
   });
-  let h=`<div class="ctl"><label class="lbl">Card</label><select id="rib-sel">${opts.map(o=>`<option value="${o}"${o===card?' selected':''}>${esc(trumpLabel(o))}</option>`).join('')}</select>
+  let h=`<div class="ctl"><label class="lbl">Card</label><select id="rib-sel">${cardOptionsHTML(card)}</select>
     <span style="color:var(--muted);font-size:12px">— one card's whole life: each deck's depiction (green) + each dated commentary (purple). Click a point.</span></div>
     ${synthHTML(card)}
     <div class="ribbon"><div class="axis"></div>${ticks}</div>
@@ -332,14 +361,14 @@ function viewRibbon(sel){
 
 // ── VIEW 4: SMALL MULTIPLES ───────────────────────────────────────────────────
 function viewMultiples(sel){
-  const opts=trumpOptions(); const card=opts.includes(sel)?sel:opts[0];
+  const opts=cardOptions(); const card=opts.includes(sel)?sel:opts[0];
   let tiles='';
   for(const d of activeDecks()){
-    const matches=activeItems().filter(i=>i.deck===d.slug && i.trump===card);
+    const matches=activeItems().filter(i=>i.deck===d.slug && i.cardKey===card);
     const it=matches.find(m=>m.image)||matches[0]; if(!it)continue;
     tiles+=`<div class="mtile"><div class="mimg" style="background-image:url('${esc(it.image||'')}')"></div><div class="mcap"><b>${esc(d.label)}</b>${d.year<9999?d.year:''} · ${esc(it.name).slice(0,30)}</div></div>`;
   }
-  return `<div class="ctl"><label class="lbl">Card</label><select id="mul-sel">${opts.map(o=>`<option value="${o}"${o===card?' selected':''}>${esc(trumpLabel(o))}</option>`).join('')}</select>
+  return `<div class="ctl"><label class="lbl">Card</label><select id="mul-sel">${cardOptionsHTML(card)}</select>
     <span style="color:var(--muted);font-size:12px">— the same card rendered by every selected tradition.</span></div><div class="multiples">${tiles||'<span style="color:var(--muted)">No images.</span>'}</div>`;
 }
 
@@ -397,7 +426,7 @@ function buildTabs(){
   db.onclick=()=>document.getElementById('deckpanel').classList.toggle('open');
   // Deep-link: ?card=<trump_key> lands on that card in the Synopsis (the book's "across decks" link)
   const deep=new URLSearchParams(location.search).get('card');
-  if(deep && trumpOptions().includes(deep)){ cur='synopsis'; buildTabs(); render(deep); }
+  if(deep && cardOptions().includes(deep)){ cur='synopsis'; buildTabs(); render(deep); }
   else render();
 })();
 </script>

@@ -12,6 +12,7 @@ summary: "Cremonese court painter to the Visconti and Sforza of Milan; the luxur
 roles: ["painter", "miniaturist", "court artist"]
 made: ["visconti-sforza-tarot", "cary-yale-visconti-tarot"]
 features_cards: []
+wikipedia: "https://en.wikipedia.org/wiki/Bonifacio_Bembo"
 ---
 
 # Bonifacio Bembo

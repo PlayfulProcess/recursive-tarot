@@ -62,14 +62,14 @@
     [PFX + 'pages/games/madiao.html',     '🀄 Ma Diao 馬吊'],
     [PFX + 'pages/games/trionfi.html',    '♛ Trionfi'],
     [PFX + 'viewers/caster.html',         '🔮 Caster'],
-    ['https://flow.recursive.eco/cast',   '✦ Oracle ↗', true],
+    ['https://flow.recursive.eco/',   '✦ Oracle ↗', true],
     [PFX + 'pages/play.html',             'All games & readings →'],
   ];
   // Courses — a dropdown under one "Courses" pill (each is a course-viewer ?course=…).
   const COURSES = [
     ['history-of-tarot',                'A History of Tarot'],
     ['tarot-and-the-crack',             'Tarot & the Crack'],
-    ['build-a-tarot-deck-with-claude',  'Build a Tarot Deck with Claude'],
+    ['build-a-tarot-deck-with-claude',  'Contribute to the Commons'],
   ];
 
   function autoActive() {
@@ -95,6 +95,11 @@
       const root = this.attachShadow({ mode: 'open' });
       const tab = ([key, label, href, cls, ext]) =>
         `<a class="tab ${cls || ''}${key === active ? ' active' : ''}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`;
+      // Dropdown menu item (used inside the Views menu) — highlights the current page.
+      const menuItem = ([key, label, href, cls, ext]) =>
+        `<a class="${key === active ? 'on' : ''}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`;
+      const VIEW_KEYS = ['explorer', 'cards', 'lenses', 'tree', 'treeoflife', 'timeline', 'genealogy'];
+      const viewActive = VIEW_KEYS.includes(active);
       root.innerHTML = `
         <style>
           :host{ display:block; position:sticky; top:0; z-index:50;
@@ -107,12 +112,12 @@
             border-bottom:1px solid #2a2440;
             font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
           }
-          .brand{ display:flex; flex-direction:row; align-items:center; gap:8px; text-decoration:none; margin-right:4px; }
-          .brand .wordmark{ display:flex; flex-direction:column; line-height:1.05; }
-          .brand .name{ font-size:15px; font-weight:800; letter-spacing:.3px; color:#ece8f5; white-space:nowrap; }
-          .brand .name .gold{ color:#d4af37; }
-          .brand .sub{ font-size:10px; color:#7c7596; letter-spacing:.02em; }
-          .brand .sub a{ color:#9b8fc4; text-decoration:none; }
+          .brand{ display:flex; flex-direction:row; align-items:center; gap:9px; margin-right:4px; }
+          .brand-logo, .brand-name{ display:inline-flex; align-items:center; text-decoration:none; }
+          .brand-logo{ border-radius:50%; }
+          .brand-name .name{ font-size:15px; font-weight:800; letter-spacing:.3px; color:#ece8f5; white-space:nowrap; }
+          .brand-name:hover .name{ color:#fff; }
+          .brand-name .name .gold{ color:#d4af37; }
           .brand svg{ flex-shrink:0; }
           .spacer{ flex:1 1 auto; }
           nav{ display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
@@ -147,6 +152,10 @@
           .dd-menu a{ display:block; color:#cdbff0; text-decoration:none; font-size:13px;
             padding:8px 10px; border-radius:7px; white-space:nowrap; }
           .dd-menu a:hover{ background:#241e38; color:#fff; }
+          .dd-menu a.on{ color:#fff; background:#2b2442; font-weight:600; }
+          .dd-cap{ display:block; font-size:9px; text-transform:uppercase; letter-spacing:.14em;
+            color:#5f5878; padding:8px 10px 3px; user-select:none; }
+          .dd-cap:first-child{ padding-top:2px; }
           @media (max-width:680px){
             .brand .sub{ display:none; }
             .tab{ padding:5px 8px; font-size:12px; }
@@ -154,25 +163,30 @@
           }
         </style>
         <div class="bar">
-          <a class="brand" href="${PFX}index.html">
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#fff;border-radius:50%;flex-shrink:0"><img src="${PFX}recursive-logo.svg" width="30" height="30" alt="" aria-hidden="true" style="display:block"></span>
-            <span class="wordmark">
+          <span class="brand">
+            <a class="brand-logo" href="https://recursive.eco" target="_blank" rel="noopener" title="Part of recursive.eco — the parent project" aria-label="recursive.eco — the parent project">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#fff;border-radius:50%;flex-shrink:0"><img src="${PFX}recursive-logo.svg" width="30" height="30" alt="" aria-hidden="true" style="display:block"></span>
+            </a>
+            <a class="brand-name" href="${PFX}index.html" title="The Recursive Tarot — home">
               <span class="name">The <span class="gold">Recursive Tarot</span></span>
-              <span class="sub">part of <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a></span>
-            </span>
-          </a>
+            </a>
+          </span>
           <span class="spacer"></span>
           <nav aria-label="Site sections">
-            <span class="cap card-cap" title="Browse individual cards">🃏 card</span>
-            ${CARD_VIEWS.map(tab).join('')}
-            <span class="sep"></span>
-            <span class="cap gram-cap" title="Analyse patterns across the whole collection">⊞ grammar</span>
-            ${GRAMMAR_VIEWS.map(tab).join('')}
-            <span class="sep"></span>
+            <span class="dd">
+              <a class="tab dd-btn${viewActive ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Views menu">⊞ Views ▾</a>
+              <span class="dd-menu">
+                <span class="dd-cap">🃏 By card</span>
+                ${CARD_VIEWS.map(menuItem).join('')}
+                <span class="dd-cap">⊞ Across the collection</span>
+                ${GRAMMAR_VIEWS.map(menuItem).join('')}
+              </span>
+            </span>
             <span class="dd">
               <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Courses menu">📓 Courses ▾</a>
               <span class="dd-menu">
                 ${COURSES.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')}
+                <a href="${PFX}pages/sources.html" style="border-top:1px solid #3a3450;margin-top:4px;padding-top:9px">📚 All courses &amp; sources →</a>
               </span>
             </span>
             <span class="dd">

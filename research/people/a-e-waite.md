@@ -12,6 +12,10 @@ lifespan: "1857–1942"
 roles: ["occultist", "mystic", "author", "tarot designer (scheme)", "translator"]
 made: ["golden-dawn-book-t-tarot"]
 features_cards: []
+image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Arthur_Waite_Author.JPG/330px-Arthur_Waite_Author.JPG"
+image_credit: "Arthur Edward Waite portrait — Wikimedia Commons (public domain)"
+wikipedia: "https://en.wikipedia.org/wiki/Arthur_Edward_Waite"
+book: "book-waite-pictorial-key"
 ---
 
 # Arthur Edward Waite (A. E. Waite)

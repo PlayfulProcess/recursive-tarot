@@ -12,6 +12,10 @@ roles: ["philosopher", "tarot historian", "card-game historian"]
 summary: "The Oxford philosopher whose document-first scholarship is the spine of this whole collection — tarot was a card game first, the occult reading a post-1781 overlay."
 studied: ["visconti-sforza-tarot", "tarocchino-bologna", "minchiate-florence-tarot", "tarot-de-marseille-conver", "court-de-gebelin-tarot", "etteilla-i-livre-de-thot"]
 made: []
+image: "https://upload.wikimedia.org/wikipedia/commons/0/07/Michael_Dummett_September_2004.jpg"
+image_credit: "Michael Dummett (2004), photo Klaus Reisinger / R. S. Kissel — Wikimedia Commons, CC BY-SA 4.0"
+wikipedia: "https://en.wikipedia.org/wiki/Michael_Dummett"
+book: "book-dummett-game-of-tarot"
 ---
 
 # Sir Michael Dummett (1925–2011)

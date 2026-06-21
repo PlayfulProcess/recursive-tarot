@@ -12,6 +12,9 @@ lifespan: "1848–1925"
 roles: ["occultist", "coroner", "Freemason", "Rosicrucian", "Theosophist"]
 made: []
 features_cards: []
+image: "https://upload.wikimedia.org/wikipedia/commons/5/54/William_Wynn_Westcott_PNG.png"
+image_credit: "William Wynn Westcott (photo before 1897) — Wikimedia Commons (public domain)"
+wikipedia: "https://en.wikipedia.org/wiki/William_Wynn_Westcott"
 ---
 
 # William Wynn Westcott

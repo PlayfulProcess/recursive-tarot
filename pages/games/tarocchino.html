@@ -31,13 +31,21 @@
   h1{font-size:22px;margin:.2em 0 .1em} h1 .sub{font-size:13px;font-weight:400;color:var(--muted)}
   .lede{color:var(--muted);font-size:14px;line-height:1.55;max-width:84ch;margin:.3em 0 14px}
   .lede a{color:var(--accent)}
-  .rules-hero{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 16px;margin-bottom:14px}
+  .rules-hero{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px 16px;margin-bottom:14px}
+  .rules-hero>summary{cursor:pointer;list-style:none;padding:8px 0;font-size:13px;font-weight:700;color:var(--ink)}
+  .rules-hero>summary::-webkit-details-marker{display:none}
+  .rules-hero>summary::before{content:'▸ ';color:var(--accent)}
+  .rules-hero[open]>summary::before{content:'▾ '}
+  .rules-hero>summary .hintf{font-weight:400;color:var(--muted);font-size:12px;margin-left:6px}
+  .rules-hero[open]>summary{border-bottom:1px solid var(--line);margin-bottom:11px}
   .rh-row{display:flex;flex-wrap:wrap;gap:10px 22px}
   .rh-item{font-size:13px;color:var(--muted);max-width:48ch} .rh-item b{color:var(--ink)}
-  .rh-order{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-top:11px;padding-top:11px;
-    border-top:1px solid var(--line);font-size:12px;color:var(--ink)}
-  .rh-order .lab{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-right:2px}
-  .pill{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:2px 6px;white-space:nowrap}
+  .rh-order{margin-top:11px;padding-top:11px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink)}
+  .ord-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 8px;line-height:1.9}
+  .ord-line:last-child{margin-bottom:0}
+  .rh-order .lab{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-right:4px}
+  .rh-order .sep{color:var(--muted)}
+  .pill{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:3px 9px;white-space:nowrap;font-size:12px}
   .pill.t{border-color:var(--accent);color:var(--accent)}
 
   .toolbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
@@ -65,20 +73,20 @@
   .backs{display:flex;gap:2px} .back-s{width:15px;height:23px;border-radius:3px;border:1px solid var(--line);
     background:repeating-linear-gradient(45deg,#241c3a,#241c3a 4px,#1a1430 4px,#1a1430 8px)}
   @media (prefers-color-scheme: light){ .back-s{background:repeating-linear-gradient(45deg,#d9d0f0,#d9d0f0 4px,#cdc2ea 4px,#cdc2ea 8px)} }
-  .play-slot{min-height:74px;display:flex;align-items:center;justify-content:center}
+  .play-slot{min-height:158px;display:flex;align-items:center;justify-content:center}
   .play-slot .ph{color:var(--muted);font-size:22px;opacity:.4}
 
-  .card{width:60px;border-radius:6px;border:1px solid var(--line);background:var(--panel2);overflow:hidden;
+  .card{width:84px;border-radius:7px;border:1px solid var(--line);background:var(--panel2);overflow:hidden;
     position:relative;display:block;flex:0 0 auto;padding:0;font:inherit;color:inherit}
-  .card img{width:100%;height:90px;object-fit:contain;display:block;background:var(--panel2)}
-  .card .cap{font-size:8.5px;text-align:center;padding:2px 1px;color:var(--muted);line-height:1.1;height:20px;overflow:hidden}
+  .card img{width:100%;height:128px;object-fit:contain;display:block;background:var(--panel2)}
+  .card .cap{font-size:9.5px;text-align:center;padding:2px 1px;color:var(--muted);line-height:1.1;height:22px;overflow:hidden}
   .card.trump{border-color:var(--accent)}
-  .play-slot .card{width:66px} .play-slot .card img{height:100px}
+  .play-slot .card{width:96px} .play-slot .card img{height:146px}
   .card.win{box-shadow:0 0 0 2px var(--accent)}
   .honour-badge{position:absolute;top:2px;left:2px;background:var(--accent);color:#1a1206;font-size:8px;font-weight:800;padding:0 3px;border-radius:3px}
 
   .status{font-size:14px;margin:12px 0 6px;min-height:20px;color:var(--ink);font-weight:600}
-  .hand{display:flex;gap:7px;flex-wrap:wrap;align-items:center;min-height:130px}
+  .hand{display:flex;gap:9px;flex-wrap:wrap;align-items:center;min-height:180px}
   .hand .card.play{cursor:pointer;transition:transform .12s,box-shadow .12s}
   .hand .card.play:hover{transform:translateY(-7px);box-shadow:0 9px 22px rgba(147,51,234,.35)}
   .hand .card.illegal{opacity:.32;filter:grayscale(.65);cursor:not-allowed}
@@ -89,10 +97,17 @@
   .logpanel h3{margin:0 0 4px;font-size:15px} .logpanel h4{margin:14px 0 5px;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent)}
   .logpanel .hint{font-size:12px;color:var(--muted);margin:0 0 10px}
   .logpanel p{font-size:12.5px;color:var(--muted);line-height:1.55;margin:.4em 0}
-  #log{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px;max-height:300px;overflow:auto}
-  .log-row{font-size:11.5px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--panel2);line-height:1.4}
-  .log-row .ln{color:var(--muted);font-weight:700;margin-right:4px}
-  .log-row .wn{display:block;margin-top:2px;font-weight:700}
+  #log{max-height:440px;overflow:auto}
+  table.logT{border-collapse:collapse;width:100%;font-size:11px}
+  table.logT th,table.logT td{border:1px solid var(--line);padding:4px 5px;text-align:center;vertical-align:top}
+  table.logT thead th{background:var(--panel2);color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.04em;position:sticky;top:0;z-index:1}
+  table.logT thead th.you{color:var(--us)}
+  table.logT td.rnd{color:var(--muted);font-weight:700;font-variant-numeric:tabular-nums}
+  table.logT td.cell img{width:40px;height:60px;object-fit:contain;display:block;margin:0 auto}
+  table.logT td.cell .cl{font-size:9px;color:var(--muted);line-height:1.1;margin-top:2px}
+  table.logT td.cell .led{font-size:8px;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-top:1px}
+  table.logT td.cell.win{background:rgba(212,175,55,.14);box-shadow:inset 0 0 0 2px var(--accent)}
+  table.logT td.took{font-weight:700;font-size:10.5px;white-space:nowrap}
   .log-empty{font-size:12px;color:var(--muted)}
   #err{color:var(--them);padding:24px}
   @media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important}
@@ -100,7 +115,7 @@
 </style>
 </head>
 <body>
-<script src="../../site-header.js?v=16"></script>
+<script src="../../site-header.js?v=21"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">
@@ -110,7 +125,8 @@
   South; <strong>North is your partner</strong>. It is the most faithful surviving witness to Dummett's
   <strong>A-order</strong> of the trumps. You win by capturing <strong>card points</strong>, not tricks.</p>
 
-  <div class="rules-hero">
+  <details class="rules-hero" open>
+    <summary>How to play<span class="hintf">· rules &amp; trump order — click to fold for more table space</span></summary>
     <div class="rh-row">
       <div class="rh-item"><b>Teams.</b> You + North vs. West + East. Play goes clockwise; the trick winner leads next.</div>
       <div class="rh-item"><b>Follow, then trump.</b> Follow the led suit if you can. Void in it, you <em>must</em> play a trump if you hold one; only then may you discard.</div>
@@ -118,14 +134,11 @@
       <div class="rh-item"><b>Win by points.</b> Honours (Matto · Bagattino · Angel · World) & Kings = 5, Queens 4, Knights 3, Knaves 2; all else 0. Take over half of the 76.</div>
     </div>
     <div class="rh-order">
-      <span class="lab">A-order, low→high</span>
-      <span class="pill t">Bagattino</span><span class="pill t">4 Moors</span><span class="pill t">Love</span><span class="pill t">Chariot</span>
-      <span class="pill t">Temp.</span><span class="pill t">Just.</span><span class="pill t">Str.</span><span class="pill t">Wheel</span>
-      <span class="pill t">…</span><span class="pill t">Star</span><span class="pill t">Moon</span><span class="pill t">Sun</span><span class="pill t">World</span><span class="pill t">Angel</span>
-      <span style="margin:0 4px;color:var(--muted)">·</span>
-      <span class="lab">Suits</span> round: Ace→10; long (swords/batons): <b>inverted</b>, Ace high · courts on top
+      <div class="ord-line"><span class="lab">Trumps · low → high</span>
+        <span class="pill t">Bagattino</span><span class="sep">›</span><span class="pill t">4 Moors</span><span class="sep">›</span><span class="pill t">Love</span><span class="sep">›</span><span class="pill t">Chariot</span><span class="sep">›</span><span class="pill t">Temperance</span><span class="sep">›</span><span class="pill t">Justice</span><span class="sep">›</span><span class="pill t">Strength</span><span class="sep">›</span><span class="pill t">Wheel</span><span class="sep">› … ›</span><span class="pill t">Star</span><span class="sep">›</span><span class="pill t">Moon</span><span class="sep">›</span><span class="pill t">Sun</span><span class="sep">›</span><span class="pill t">World</span><span class="sep">›</span><span class="pill t">Angel</span></div>
+      <div class="ord-line"><span class="lab">Suits</span> Coins &amp; Cups rank Ace→10; Swords &amp; Batons are <b>inverted</b> (Ace high). <span class="sep">·</span> <span class="lab">Courts on top</span> King › Queen › Knight › Page.</div>
     </div>
-  </div>
+  </details>
 
   <div class="toolbar">
     <label>Deck <select id="deck"></select></label>
@@ -184,11 +197,15 @@
   const cardPoints=c=>c.kind==='trump'?(HONOUR.has(c.tkey)?5:0):({king:5,queen:4,knight:3,page:2}[c.court]||0);
   const imgOf=i=>i.image_url||(i.metadata||{}).image_url;
 
+  // Prefer the trump's NAME over its printed numeral (decks number trumps differently
+  // from the Bolognese A-order this game ranks by, so a bare number is misleading).
+  const trumpName=nm=>{ const p=String(nm).split(/\s+[—–-]\s+/);
+    return (p.length>1 && /^[0-9ivxlc]+$/i.test(p[0].trim())) ? p.slice(1).join(' — ').trim() : p[0].trim(); };
   function buildDeck(g){
     const T=[], seen=new Set();
     for(const i of g.items){ const k=(i.metadata||{}).trump_key; if(!k||!imgOf(i)||seen.has(k))continue;
       if(k==='fool'){ seen.add(k); T.push({kind:'trump',tkey:'fool',matto:true,rank:null,honour:true,img:imgOf(i),label:'Fool · Matto'}); }
-      else if(k in AORDER){ seen.add(k); T.push({kind:'trump',tkey:k,rank:AORDER[k],honour:HONOUR.has(k),img:imgOf(i),label:i.name.split(/\s+[—–-]\s+/)[0]}); } }
+      else if(k in AORDER){ seen.add(k); T.push({kind:'trump',tkey:k,rank:AORDER[k],honour:HONOUR.has(k),img:imgOf(i),label:trumpName(i.name)}); } }
     const WORDS=['ace','six','seven','eight','nine','ten','page','knight','queen','king'];
     const S=[], seen2=new Set();
     for(const s of SUITS) for(const i of g.items){ const mk=(i.metadata||{}).minor_key; if(!mk||!imgOf(i)||!mk.endsWith('-of-'+s))continue;
@@ -268,6 +285,7 @@
 
   // ───────────────────────────────── browser UI ─────────────────────────────────
   const $=id=>document.getElementById(id);
+  const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const PLAYABLE=['tarot-de-marseille-conver','golden-dawn-book-t-tarot','visconti-sforza-tarot'];
   const SEATNAME=['You','West','Partner','East'];
   let DECK=[], CURNAME='', turn=0, busy=false;
@@ -302,13 +320,26 @@
   }
   const setStatus=t=>$('status').textContent=t;
   function logTrick(out){
-    const nm=s=>SEATNAME[s]; const side=x=>`${nm(x.seat)} ${x.card.label}`;
-    const cardsTxt=out.cards.map(side).join(' · ');
-    const team=teamOf(out.seat)===0?'your team':'the opponents';
-    const cls=teamOf(out.seat)===0?'us':'them';
-    const row=`<div class="log-row"><span class="ln">${played}.</span> ${cardsTxt}`
-      +`<span class="wn" style="color:var(--${cls})">${nm(out.seat)} wins for ${team}</span></div>`;
-    const log=$('log'); if(log.querySelector('.log-empty')) log.innerHTML=''; log.insertAdjacentHTML('afterbegin',row);
+    const cards={}; out.cards.forEach(x=>cards[x.seat]=x.card);
+    const leaderSeat=out.cards[0].seat;
+    const pts=out.cards.reduce((a,x)=>a+(x.card.matto?0:cardPoints(x.card)),0); // captured by winner
+    logRows.push({n:played, cards, leaderSeat, winSeat:out.seat, pts});
+    renderLog();
+  }
+  // Emergent table: tricks in rows, the four seats in columns, card + subtitle per cell.
+  function renderLog(){
+    const log=$('log');
+    if(!logRows.length){ log.innerHTML='<div class="log-empty">No tricks yet.</div>'; return; }
+    const head=`<tr><th>#</th>${SEATNAME.map((n,s)=>`<th class="${s===0?'you':''}">${esc(n)}</th>`).join('')}<th>Took</th></tr>`;
+    const body=logRows.slice().reverse().map(r=>{
+      const cells=[0,1,2,3].map(seat=>{ const c=r.cards[seat];
+        return `<td class="cell${r.winSeat===seat?' win':''}">`
+          +(c?`<img loading="lazy" src="${esc(c.img)}" alt=""><div class="cl">${esc(c.label)}</div>`:'')
+          +(r.leaderSeat===seat?'<div class="led">led</div>':'')+`</td>`; }).join('');
+      const cls=teamOf(r.winSeat)===0?'us':'them';
+      return `<tr><td class="rnd">${r.n}</td>${cells}<td class="took" style="color:var(--${cls})">${esc(SEATNAME[r.winSeat])}<br>+${r.pts}</td></tr>`;
+    }).join('');
+    log.innerHTML=`<table class="logT"><thead>${head}</thead><tbody>${body}</tbody></table>`;
   }
 
   function step(){

@@ -11,6 +11,9 @@ lifespan: "c. 1431–1506"
 roles: ["painter", "engraver (attributed, disputed)"]
 summary: "The great Paduan painter whose name was wrongly attached to the so-called 'Mantegna Tarocchi' — which he did not make, and which is not a tarot."
 made: []
+image: "https://upload.wikimedia.org/wikipedia/commons/0/00/Andrea_Mantegna_049_detail_possible_self-portrait.jpg"
+image_credit: "Probable self-portrait, Andrea Mantegna — Wikimedia Commons (public domain)"
+wikipedia: "https://en.wikipedia.org/wiki/Andrea_Mantegna"
 ---
 
 # Andrea Mantegna (c. 1431–1506) — the misattribution

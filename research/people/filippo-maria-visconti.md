@@ -12,6 +12,9 @@ summary: "Third and last Visconti Duke of Milan; his court produced the first do
 roles: ["patron", "commissioner"]
 made: []
 features_cards: []
+image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Pisanello_-_Codex_Vallardi_2484.jpg"
+image_credit: "Pisanello, Codex Vallardi 2484 — Wikimedia Commons (public domain)"
+wikipedia: "https://en.wikipedia.org/wiki/Filippo_Maria_Visconti"
 ---
 
 # Filippo Maria Visconti (1392–1447)

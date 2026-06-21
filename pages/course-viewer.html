@@ -716,7 +716,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- recursive-tarot drift: shared dark header instead of the recursive.eco shell. -->
-    <script src="../site-header.js?v=16"></script>
+    <script src="../site-header.js?v=21"></script>
     <site-header active="course"></site-header>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -936,11 +936,15 @@
                 // Convert markdown to HTML
                 let html = marked.parse(content);
 
-                // Fix image paths: make relative paths absolute for both local and grammar-loaded content
+                // Fix image paths. Course images live in pages/courses/images/ and the
+                // MDX authors them as images/<name>.png. The base differs per load mode:
+                //  - grammar-loaded: absolute URL to the landing site origin.
+                //  - local course/ file: this viewer lives in pages/, so courses/images/.
                 html = html.replace(/src="\.\.\/images\//g, 'src="images/');
                 if (grammarId) {
-                    // When loaded from grammar, images need absolute paths to the landing site
-                    html = html.replace(/src="images\//g, 'src="https://recursive.eco/pages/courses/images/');
+                    html = html.replace(/src="images\//g, 'src="' + location.origin + '/pages/courses/images/');
+                } else {
+                    html = html.replace(/src="images\//g, 'src="courses/images/');
                 }
 
                 document.getElementById('course-content').innerHTML = html;
