@@ -62,6 +62,7 @@
     [PFX + 'pages/games/madiao.html',     '🀄 Ma Diao 馬吊'],
     [PFX + 'pages/games/trionfi.html',    '♛ Trionfi'],
     [PFX + 'viewers/caster.html',         '🔮 Caster'],
+    [PFX + 'pages/spread-builder.html',   '🧩 Spread Builder'],
     ['https://flow.recursive.eco/',   '✦ Oracle ↗', true],
     [PFX + 'pages/play.html',             'All games & readings →'],
   ];
