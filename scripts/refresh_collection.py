@@ -67,6 +67,10 @@ def main():
         }
         if e["slug"] in YEARS:
             new["year"], new["year_label"] = YEARS[e["slug"]]
+        # Two Wings: derive provenance from the grammar file when present (the file
+        # is the source of truth); leave the registry value untouched otherwise.
+        if g.get("provenance"):
+            new["provenance"] = g["provenance"]
         for k, v in new.items():
             if e.get(k) != v:
                 changed.append(f"{e['slug']}.{k}")
