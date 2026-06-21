@@ -11,6 +11,10 @@ maintainer_note: "AI-assisted; web-checked against Tarot Heritage, Decker–Dumm
 lifespan: "1810–1875"
 roles: ["occultist", "magician", "author", "ex-seminarian"]
 made: []
+image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Eliphas_Levi.png/330px-Eliphas_Levi.png"
+image_credit: "Eliphas Levi portrait — Wikimedia Commons (public domain)"
+wikipedia: "https://en.wikipedia.org/wiki/%C3%89liphas_L%C3%A9vi"
+book: "book-levi-dogme-et-rituel"
 ---
 
 # Éliphas Lévi (Alphonse-Louis Constant)

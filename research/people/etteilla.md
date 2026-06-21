@@ -11,6 +11,10 @@ maintainer_note: "AI-assisted; web-checked against Tarot Heritage, WOPC, Villa R
 lifespan: "1738–1791"
 roles: ["cartomancer", "deck designer", "occult entrepreneur", "teacher"]
 made: ["etteilla-i-livre-de-thot", "etteilla-ii-egyptian", "etteilla-iii-oracle-des-dames"]
+image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/ALLIETTE.jpg/330px-ALLIETTE.jpg"
+image_credit: "Jean-Baptiste Alliette (Etteilla) portrait — Wikimedia Commons (public domain)"
+wikipedia: "https://en.wikipedia.org/wiki/Etteilla"
+book: "book-etteilla-cartomancy"
 ---
 
 # Jean-Baptiste Alliette — "Etteilla"
