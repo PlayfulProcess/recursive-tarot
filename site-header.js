@@ -69,6 +69,7 @@
   const COURSES = [
     ['history-of-tarot',                'A History of Tarot'],
     ['tarot-and-the-crack',             'Tarot & the Crack'],
+    ['kant-and-the-tarot',              'Kant Reads the Tarot'],
     ['build-a-tarot-deck-with-claude',  'Contribute to the Commons'],
   ];
 
