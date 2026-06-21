@@ -14,7 +14,7 @@
     (this page draws; recursive.eco interprets with AI, renders Oracle cards, keeps a Journal).
 -->
 <style>
-  :root { --bg:#14121a; --panel:#1d1b26; --ink:#ece9f3; --muted:#a59fb5; --line:#2c2937; --accent:#8b5cf6; --cw:clamp(58px,9vw,94px); }
+  :root { --bg:#14121a; --panel:#1d1b26; --ink:#ece9f3; --muted:#a59fb5; --line:#2c2937; --accent:#8b5cf6; --cw:clamp(54px,8vw,82px); }
   * { box-sizing:border-box; }
   html,body { margin:0; min-height:100%; background:var(--bg); color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
@@ -54,7 +54,7 @@
   .spreadmeta { color:var(--muted); font-size:12px; }
 
   /* the board — positions placed by x/y fraction */
-  .board { position:relative; width:100%; aspect-ratio:16/10; margin-top:20px; border:1px solid var(--line);
+  .board { position:relative; width:100%; aspect-ratio:16/13; margin-top:20px; border:1px solid var(--line);
     border-radius:16px; overflow:hidden; background:radial-gradient(circle at 50% 45%, #1b1828 0%, #110f18 100%);
     box-shadow:inset 0 0 60px rgba(0,0,0,.4); touch-action:none; }
   @media (max-width:640px){ .board { aspect-ratio:3/4; } }
@@ -69,8 +69,9 @@
   .slot .card.filled { border-style:solid; }
   .slot .card img { width:100%; height:100%; object-fit:contain; }
   .slot .card .ph { color:#4a4660; font-size:11px; text-align:center; padding:4px; line-height:1.3; }
-  .slot .cname { font-size:10.5px; color:#e9e4f6; text-align:center; margin-top:3px; line-height:1.2; }
-  .slot .cdeck { font-size:9.5px; color:var(--muted); text-align:center; }
+  .slot .cname { font-size:10.5px; color:#e9e4f6; text-align:center; margin-top:3px; line-height:1.2;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .slot .cdeck { font-size:9.5px; color:var(--muted); text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .slot .rev { color:#e0a458; font-size:9px; text-align:center; }
   .empty { color:var(--muted); font-size:14px; text-align:center; padding:40px 0; }
 
@@ -429,7 +430,7 @@ async function loadVoices(){
       if (wasOn){ detail.classList.remove('on'); return; }
       el.classList.add('on');
       detail.innerHTML = '<span class="vd-name" style="color:'+esc(v.color||'#fff')+'">'+esc(v.name)+'</span> — '+esc(v.how)
-        + (v.link ? ' <a href="'+esc(v.link)+'">Read more →</a>' : (v.persona ? ' <span style="color:#6b6488">· a voice you can consult on recursive.eco</span>' : ''));
+        + ((v.essay||v.link) ? ' <a href="'+esc(v.essay||v.link)+'">Read more →</a>' : (v.persona ? ' <span style="color:#6b6488">· a voice you can consult on recursive.eco</span>' : ''));
       detail.classList.add('on'); });
     vbox.appendChild(el); });
   $('intention').style.display='block';
