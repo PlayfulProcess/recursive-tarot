@@ -238,7 +238,10 @@ function castableName(it){
   optAll.value = ALL;
   optAll.textContent = `All Decks — cross-deck draw (${leaves.length} cards)`;
   sel.appendChild(optAll);
-  (meta._decks || []).forEach(d => {
+  const _yr = d => { const m = String(d.date || d.era || '').match(/\d{4}/); return m ? +m[0] : 9999; };
+  [...(meta._decks || [])]
+    .sort((a, b) => (a.era_sort ?? 99) - (b.era_sort ?? 99) || _yr(a) - _yr(b) || (a.label || '').localeCompare(b.label || ''))
+    .forEach(d => {
     const n = (byDeck[d.slug] || []).length;
     if (n < 3) return;
     const o = document.createElement('option');
