@@ -12,6 +12,9 @@ summary: "Italian poet and humanist whose allegoric poem sequence *Trionfi* (c.1
 roles: ["poet", "humanist", "source text author"]
 made: []
 features_cards: []
+image: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Petrarch_by_Bargilla.jpg"
+image_credit: "Petrarch by Andrea del Castagno — Wikimedia Commons (public domain)"
+wikipedia: "https://en.wikipedia.org/wiki/Petrarch"
 ---
 
 # Francesco Petrarca ('Petrarch', 1304–1374)

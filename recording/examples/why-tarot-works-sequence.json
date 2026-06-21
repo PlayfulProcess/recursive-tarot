@@ -1,0 +1,292 @@
+{
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "url": "https://recursive.eco",
+        "date": "2026-06-20",
+        "note": "Curated 'why the tarot works' program — title/concept cards we wrote, plus links to third-party YouTube videos (not our content). Every video ID was verified embeddable via YouTube oEmbed on 2026-06-20."
+      }
+    ]
+  },
+  "name": "The Recursive Tarot — Why Does the Tarot Work?",
+  "description": "A program that answers the honest question: why does a tarot reading so often feel true? Not because the cards predict — but because of how minds make meaning. Five lenses: (1) conceptual blending, (2) the Barnum/Forer effect, (3) cold reading, (4) depth psychology (Jung), and (5) narrative & art therapy. Title and concept cards are ours; the embedded videos are public YouTube material, each verified embeddable via oEmbed on 2026-06-20. Our commentary sits under every clip (green = where we agree, amber = where we differ). Videos play full (start_sec:0); add an end_sec to crop any into a tight beat.",
+  "cover_image_url": "https://i.ytimg.com/vi/_dKdR2SYBHo/hqdefault.jpg",
+  "tags": [
+    "tarot",
+    "psychology",
+    "skepticism",
+    "meaning-making",
+    "conceptual-blending",
+    "playlist"
+  ],
+  "grammar_type": "custom",
+  "items": [
+    {
+      "id": "ww00-why-tarot-works",
+      "name": "Why does the tarot work?",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1e1b4b",
+        "card_subtitle": "Not because it predicts — because of how minds make meaning. Five lenses: blending, the Barnum effect, cold reading, depth psychology, and narrative. Our commentary sits under each clip.",
+        "card_hold_sec": 13
+      },
+      "sections": {},
+      "sort_order": 0
+    },
+    {
+      "id": "ww-sec-01-mechanism",
+      "name": "① The mechanism — meaning, not prediction",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0f3d3a",
+        "card_subtitle": "How a spread becomes a story",
+        "card_hold_sec": 7
+      },
+      "sections": {},
+      "sort_order": 1
+    },
+    {
+      "id": "ww02-_dKdR2SYBHo",
+      "name": "The Art of Tarot Divination — Vincent Pitisci",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "_dKdR2SYBHo",
+        "channel": "Theosophical Society"
+      },
+      "sections": {
+        "Our take": "Pitisci gives the cleanest account of the real mechanism: a reading is an act of **conceptual blending**. You hold two mental spaces at once — the card's image and your own situation — and the mind automatically fuses them into a third, new meaning. Nothing supernatural is required; this is how metaphor and insight work all the time.",
+        "Where we agree": "The card doesn't *contain* the answer; it **provokes** one. The reader's skill is in the blend, not in the cards' 'powers.' This is exactly our thesis: the tarot is a mirror for meaning-making, not a fortune-telling machine.",
+        "Read further": "Gilles Fauconnier & Mark Turner, *The Way We Think* (2002) — the cognitive-science account of blending Pitisci is drawing on. See **Books Behind the Tarot**."
+      },
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 2
+    },
+    {
+      "id": "ww03-blending-explained",
+      "name": "Conceptual blending, in one minute",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#14303f",
+        "card_subtitle": "Two spaces in, a third meaning out",
+        "card_hold_sec": 13
+      },
+      "sections": {
+        "The four-space model": "Fauconnier & Turner: take two **input spaces** (the card; your life), find a **generic space** of what they share, and project both into a **blend** — which grows *emergent structure* the inputs never had alone. That emergent meaning is the 'aha' of a reading.",
+        "Why it feels uncanny": "The blend arrives in your mind as a single vivid whole — so it feels *given*, as if it came from the card, not made by you. That felt-givenness is the engine of every divinatory tool.",
+        "Read further": "Fauconnier & Turner, *The Way We Think* (2002)."
+      },
+      "sort_order": 3
+    },
+    {
+      "id": "ww-sec-02-skeptic",
+      "name": "② The skeptic's lens — how a reading can seem to know you",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#3d2b0f",
+        "card_subtitle": "The Barnum effect & cold reading — the strategies a reader (honest or not) is using",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 4
+    },
+    {
+      "id": "ww05-NQnUvKZlXVQ",
+      "name": "The Forer (Barnum) Effect — PsychExamReview",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "NQnUvKZlXVQ",
+        "channel": "PsychExamReview"
+      },
+      "sections": {
+        "Our take": "In 1948 Bertram Forer gave his whole class the *same* vague personality profile, and each student rated it about 85% accurate — about themselves. That's the **Barnum/Forer effect**: we accept general statements as personal. It is the single biggest reason a generic card meaning can feel piercingly specific.",
+        "Where we agree": "Any reader — sincere or fraudulent — benefits from this. Naming it doesn't kill the tarot; it tells you *where the meaning is coming from*: you.",
+        "Read further": "B. R. Forer, 'The Fallacy of Personal Validation' (1949)."
+      },
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 5
+    },
+    {
+      "id": "ww06-pabhv0CBLko",
+      "name": "The secret behind horoscopes — the Barnum Effect",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "pabhv0CBLko",
+        "channel": "Cogito Creative"
+      },
+      "sections": {
+        "Our take": "A pop-essay version applied to horoscopes — the same mechanism that powers a cold tarot reading, in a register that's easy to share.",
+        "Where we differ": "It leans toward debunking *all* symbolic practice. We don't: the Barnum effect explains why a reading lands, not whether reflecting on your life through an image is worthwhile."
+      },
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 6
+    },
+    {
+      "id": "ww07-ENS8_3XdRFw",
+      "name": "What is cold reading — Derren Brown",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "ENS8_3XdRFw",
+        "channel": "Derren Brown (clip)"
+      },
+      "sections": {
+        "Our take": "Cold reading is the **set of techniques** that turns the Barnum effect into a live performance: high-probability guesses, Barnum statements, fishing, the 'rainbow ruse,' reading reactions, and crediting hits while quietly burying misses. This is the honest answer to 'how did they *know* that?'",
+        "Where we agree": "These are real, documented techniques. A tarot reader can use them knowingly (fraud) or unknowingly (sincere). Either way, the cards supply the prompt and the *sitter* supplies the truth.",
+        "Read further": "Ian Rowland, *The Full Facts Book of Cold Reading*; Ray Hyman, 'Cold Reading' (1977)."
+      },
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 7
+    },
+    {
+      "id": "ww08-9PxHe01mNDQ",
+      "name": "Talking to the Dead (Part 1) — Derren Brown",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "9PxHe01mNDQ",
+        "channel": "Derren Brown"
+      },
+      "sections": {
+        "Our take": "A demonstration, not an exposé-from-outside: Brown openly uses cold reading to convince people he speaks to the dead, then reveals the method. Watch the *sitters* do the work of making it true.",
+        "Why we include it": "Honesty about the trick is part of taking the tarot seriously. A mirror you understand is more powerful than a crystal ball you don't."
+      },
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      },
+      "sort_order": 8
+    },
+    {
+      "id": "ww09-our-position",
+      "name": "Our position: name the trick, keep the mirror",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#2a2440",
+        "card_subtitle": "Skepticism and meaning aren't enemies",
+        "card_hold_sec": 13
+      },
+      "sections": {
+        "The move": "We refuse two cheap endings — 'it's magic' and 'it's just a trick.' Both are exits from the interesting question. The tarot reliably produces meaning *because* of blending, the Barnum effect, and projection — and that meaning can still be real, useful, even therapeutic.",
+        "From prediction to reflection": "Drop the claim that the cards know the future, and everything actually valuable survives: a structured prompt that gets you to say the thing you already half-knew."
+      },
+      "sort_order": 9
+    },
+    {
+      "id": "ww-sec-03-depth",
+      "name": "③ The depth-psychology lens — the cards as projection",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#2b0f3d",
+        "card_subtitle": "Jung: archetypes, projection, active imagination",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 10
+    },
+    {
+      "id": "ww11-jung-projection",
+      "name": "Jung — the cards as projection holders",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#241038",
+        "card_subtitle": "Why images pull the unconscious into view",
+        "card_hold_sec": 14
+      },
+      "sections": {
+        "Projection & archetypes": "Jung: the trumps work as **projection holders** — screens onto which the psyche casts its autonomous contents (the archetypes). The Fool, Death, the Tower aren't predictions; they're recognizable shapes the unconscious already speaks in.",
+        "Active imagination": "Rather than 'decode' a card, you *enter* it — dialogue with the figure, let the image move. Jung's active imagination turns a card from an oracle into a doorway.",
+        "Synchronicity (carefully)": "Jung's 'acausal connecting principle' is often used to justify divination. We treat it as a *description of how meaningful coincidence feels*, not as proof the cards cause anything.",
+        "Read further": "Sallie Nichols, *Jung and Tarot: An Archetypal Journey* (1980); C. G. Jung, *Synchronicity* (1952)."
+      },
+      "sort_order": 11
+    },
+    {
+      "id": "ww-sec-04-narrative",
+      "name": "④ Art therapy & narrative — the structured prompt",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#0f2d3d",
+        "card_subtitle": "The cards as a clinical & creative tool",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 12
+    },
+    {
+      "id": "ww13-narrative-art-therapy",
+      "name": "The cards as a projective & narrative tool",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#102d33",
+        "card_subtitle": "What therapists already do with images",
+        "card_hold_sec": 14
+      },
+      "sections": {
+        "Projective tools": "Clinicians have long used ambiguous images (Rorschach, the TAT, therapeutic card decks like the OH cards) precisely because we project onto them. The tarot is a rich, pre-loaded projective deck.",
+        "Narrative therapy": "White & Epston's move — **externalize** the problem, then re-author the story. A spread is a ready-made externalizing device: 'if this card were the obstacle, what would it say?'",
+        "The honest frame": "Used this way, the question isn't 'is it true?' but 'is it useful?' — and a good prompt that helps you re-author your story often is.",
+        "Read further": "Michael White & David Epston, *Narrative Means to Therapeutic Ends* (1990)."
+      },
+      "sort_order": 13
+    },
+    {
+      "id": "ww14-so-does-it-work",
+      "name": "So — does it work?",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1e1b4b",
+        "card_subtitle": "Yes: as a mirror, not a window. The cards don't know your future — they help you read your present.",
+        "card_hold_sec": 15
+      },
+      "sections": {
+        "Our answer": "The tarot 'works' the way a good question works. Blending makes the meaning; the Barnum effect and cold reading explain why it lands; projection and narrative make it therapeutic. None of that requires the supernatural — and none of it makes the practice worthless. It makes it *understandable*, which is better.",
+        "Where next": "See **Books Behind the Tarot** for the sources behind each lens, and **A History of Tarot** for how a card game became this mirror."
+      },
+      "sort_order": 14
+    }
+  ]
+}

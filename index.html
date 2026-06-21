@@ -97,11 +97,32 @@
 </style>
 </head>
 <body>
-<script src="site-header.js?v=16"></script>
+<script src="site-header.js?v=21"></script>
 <site-header active="home"></site-header>
-<header class="site"><div class="wrap">
-  <h1><a href="index.html">The <span class="gold">Recursive Tarot</span></a></h1>
-</div></header>
+<header class="brandhero">
+  <style>
+    .brandhero{ text-align:center; padding:34px 18px 8px; max-width:860px; margin:0 auto; }
+    .brandhero .bh-logo{ display:inline-flex; align-items:center; justify-content:center;
+      width:80px; height:80px; background:#fff; border-radius:50%; box-shadow:0 6px 30px rgba(147,51,234,.3); }
+    .brandhero .bh-logo img{ width:66px; height:66px; display:block; }
+    .brandhero h1{ font-size:clamp(30px,6vw,48px); margin:16px 0 0; letter-spacing:.4px; line-height:1.08; }
+    .brandhero h1 .gold{ color:#d4af37; }
+    .brandhero .bh-tag{ color:#b3aacb; font-size:clamp(14px,2.4vw,17px); line-height:1.5; max-width:48ch; margin:13px auto 0; }
+    .brandhero .bh-cta{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:22px 0 6px; }
+    .brandhero .bh-btn{ text-decoration:none; font-weight:700; font-size:14.5px; padding:11px 22px; border-radius:11px; transition:box-shadow .2s,transform .15s,border-color .15s,color .15s; }
+    .brandhero .bh-btn.primary{ background:linear-gradient(135deg,#7c3aed,#9333ea); color:#fff; box-shadow:0 4px 18px rgba(147,51,234,.4); }
+    .brandhero .bh-btn.primary:hover{ box-shadow:0 6px 24px rgba(147,51,234,.6); transform:translateY(-1px); }
+    .brandhero .bh-btn.ghost{ color:#cdbff0; border:1px solid #3a3450; }
+    .brandhero .bh-btn.ghost:hover{ border-color:#9333ea; color:#fff; }
+  </style>
+  <span class="bh-logo"><img src="recursive-logo.svg" width="66" height="66" alt="" aria-hidden="true"></span>
+  <h1>The <span class="gold">Recursive Tarot</span></h1>
+  <p class="bh-tag">A free, public-domain history of the cards — how a game became a mirror.</p>
+  <div class="bh-cta">
+    <a class="bh-btn primary" href="pages/course-viewer.html?course=history-of-tarot">Read the history</a>
+    <a class="bh-btn ghost" href="viewers/cards.html">Browse the decks</a>
+  </div>
+</header>
 
 <main class="wrap">
   <p class="lede">A free, <strong>public-domain</strong> collection of historical tarot decks —
@@ -130,7 +151,7 @@
     <div class="hc-spread">Positions: <strong style="color:#c4b5fd">Structures · Process · Possibilities</strong></div>
     <p class="hc-desc">This is the simple version: it draws. <strong style="color:#ece8f5">recursive.eco</strong> interprets with AI, renders Oracle cards, keeps a Journal, and lets you edit the cards directly in your own grammar library.</p>
     <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px">
-      <a class="hc-cta" href="https://flow.recursive.eco/cast" target="_blank" rel="noopener">Open in recursive.eco ↗</a>
+      <a class="hc-cta" href="https://flow.recursive.eco/" target="_blank" rel="noopener">Open in recursive.eco ↗</a>
       <span class="hc-or">or draw locally first →</span>
       <a href="viewers/caster.html" style="font-size:13px;color:#9b8fc4;text-decoration:none;border:1px solid #3a3450;border-radius:8px;padding:7px 13px">Local Caster</a>
     </div>
@@ -161,7 +182,7 @@
         <span class="desc">Flip through 25 historical decks, card by card — with Scene, Symbol, and Research sections</span>
       </div>
     </a>
-    <a class="big" href="https://flow.recursive.eco/cast" target="_blank" rel="noopener">
+    <a class="big" href="https://flow.recursive.eco/" target="_blank" rel="noopener">
       <div class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-wikimedia/Sola%20Busca%20tarot%20card%2027.jpg" alt=""></div>
       <div class="body">
         <div class="badge item">🔮 Reading</div>

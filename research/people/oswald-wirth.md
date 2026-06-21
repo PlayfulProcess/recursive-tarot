@@ -11,6 +11,9 @@ maintainer_note: "AI-assisted; web-checked against WOPC/Wikipedia, Tarot Heritag
 lifespan: "1860–1943"
 roles: ["occultist", "illustrator", "Freemason", "author"]
 made: ["oswald-wirth-tarot"]
+image: "https://upload.wikimedia.org/wikipedia/commons/0/09/Oswald_Wirth.jpg"
+image_credit: "Oswald Wirth portrait — Wikimedia Commons, CC BY-SA 3.0 (la-rose-bleue.org)"
+wikipedia: "https://en.wikipedia.org/wiki/Oswald_Wirth"
 ---
 
 # Oswald Wirth

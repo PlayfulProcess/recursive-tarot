@@ -11,6 +11,10 @@ maintainer_note: "AI-assisted; web-checked against WOPC, Tarot Heritage, Decker�
 lifespan: "1725–1784"
 roles: ["scholar", "Protestant pastor", "Freemason", "encyclopedist", "origin-mythographer"]
 made: ["court-de-gebelin-tarot"]
+image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/AntoineCourtdeGebelin.jpg/330px-AntoineCourtdeGebelin.jpg"
+image_credit: "Antoine Court de Gebelin portrait — Wikimedia Commons (public domain)"
+wikipedia: "https://en.wikipedia.org/wiki/Antoine_Court_de_G%C3%A9belin"
+book: "book-court-de-gebelin-monde-primitif"
 ---
 
 # Antoine Court de Gébelin

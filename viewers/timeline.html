@@ -59,7 +59,7 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=16"></script>
+<script src="../site-header.js?v=21"></script>
 <script src="../view-switcher.js?v=9"></script>
 <site-header active="timeline"></site-header>
 <div class="wrap">
@@ -192,7 +192,7 @@ function draw(){
   const g=svg.append('g').selectAll('g.rowg').data(placed).join('g').attr('class','rowg')
     .attr('transform',d=>`translate(${d.px},${d.py})`);
   g.append('circle').attr('class','node').attr('r',6).attr('fill',d=>colorOf[d.lv]||'#7a7290');
-  g.append('text').attr('class','dname').attr('x',10).attr('dy','0.32em').text(d=>d.name.replace(/\s+[—–-]\s+.*/,'').slice(0,17));
+  g.append('text').attr('class','dname').attr('x',10).attr('dy','0.32em').text(d=>d.name.replace(/\s+[—–-]\s+.*/,'').replace(/\s*\([^)]*\)/g,'').trim().slice(0,30));
   g.append('text').attr('class','dyear').attr('x',10).attr('y',-9).text(d=>d.year);
   g.on('click',(ev,d)=>{ev.stopPropagation();showDetail(d);})
    .on('mouseenter',(ev,d)=>trace(d.id,g))

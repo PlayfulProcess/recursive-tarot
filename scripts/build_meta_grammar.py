@@ -503,6 +503,7 @@ def build():
             "Kaplan, *Encyclopedia of Tarot*; Andrea Vitali, *Le Tarot* (letarot.it); Teikemeier, trionfi.com."
         ),
         "grammar_type": "tarot", "creator_name": "PlayfulProcess", "default_view": "tree", "default_preview": "tree",
+        "provenance": "reference",  # apparatus/meta grammar — see docs/DESIGN-two-wings-provenance.md
         "_generated": True, "_do_not_hand_edit": True, "_built_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "_built_by": "scripts/build_meta_grammar.py",
         "_decks": deck_summary,
