@@ -66,14 +66,22 @@
     ['https://flow.recursive.eco/',   '✦ Oracle ↗', true],
     [PFX + 'pages/play.html',             'All games & readings →'],
   ];
-  // Courses — a dropdown under one "Courses" pill (each is a course-viewer ?course=…).
-  const COURSES = [
-    ['history-of-tarot',                'A History of Tarot'],
-    ['tarot-and-the-crack',             'Tarot & the Crack'],
-    ['kant-and-the-tarot',              'Kant Reads the Tarot'],
-    ['marsha-linehan-reads-the-tarot',  'Marsha Linehan Reads the Tarot'],
-    ['morality-is-an-ecosystem',        'Morality Is an Ecosystem'],
-    ['build-a-tarot-deck-with-claude',  'Contribute to the Commons'],
+  // Courses — grouped into three topics; each is a course-viewer ?course=… (deep-linkable with #section).
+  const COURSE_GROUPS = [
+    ['📜 History', [
+      ['history-of-tarot',                'A History of Tarot'],
+    ]],
+    ['🕯 Intention Setting', [
+      ['intention-setting',               'Intention Setting — the voices'],
+      ['tarot-and-the-crack',             'Tarot & the Crack'],
+      ['kant-and-the-tarot',              'Kant Reads the Tarot'],
+      ['marsha-linehan-reads-the-tarot',  'Marsha Linehan Reads the Tarot'],
+      ['morality-is-an-ecosystem',        'Morality Is an Ecosystem'],
+      ['walking-the-golden-dawn-path',    'Walking the Golden Dawn Path'],
+    ]],
+    ['🛠 How to Contribute', [
+      ['build-a-tarot-deck-with-claude',  'Contribute to the Commons'],
+    ]],
   ];
 
   function autoActive() {
@@ -189,7 +197,7 @@
             <span class="dd">
               <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Courses menu">📓 Courses ▾</a>
               <span class="dd-menu">
-                ${COURSES.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')}
+                ${COURSE_GROUPS.map(([cap, items]) => `<span class="dd-cap">${cap}</span>` + items.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')).join('')}
                 <a href="${PFX}pages/sources.html" style="border-top:1px solid #3a3450;margin-top:4px;padding-top:9px">📚 All courses &amp; sources →</a>
               </span>
             </span>
