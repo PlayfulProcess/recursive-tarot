@@ -303,12 +303,19 @@ profound **even when held entirely as a human, meaning-making art.**
   the load-bearing, high-confidence claims.
 - **Genuinely refuted (1 claim, 1–2):** tarot as an *established/validated* projective
   *instrument* equal to Rorschach/TAT — corrected in §1.
-- **○ Rate-limited, not re-verified:** ~14 "killed" claims were actually
-  **`0-0 (3 abstain)`** — the verifier hit API/session limits, *not* a real
-  refutation. These are standard reference facts (yarrow-stalk method, babalawo role,
-  Forer's 1948 numbers, Urim binary/restricted-access, Whitson–Galinsky control→pattern
-  link). Reliable as background; **re-check the primary source before quoting exact
-  figures.**
+- **○ → ✔︎ Rate-limited, then re-verified 2026-06-22:** ~14 "killed" claims were
+  actually **`0-0 (3 abstain)`** — the verifier hit API/session limits, *not* a real
+  refutation. A focused re-verification run (8 key claims × 2 adversarial web-search
+  voters, refute-by-default) **confirmed all eight at high confidence (2–0):** the
+  **yarrow-stalk method** (50 stalks, 1 set aside, 49 manipulated); the
+  **babaláwo/ìyánífá** trained-priest role; the **256 Odu / 16 books /
+  Ọ̀pẹ̀lẹ̀ + Ikin** corpus; **Forer 1948** (39 students, ~4.3/5, astrology-sourced
+  sketch); the **Barnum vagueness mechanism**; **Urim & Thummim** as a restricted
+  binary oracle; **Whitson & Galinsky 2008** (*Science* 322:115–117, control →
+  illusory pattern perception); and **Oblique Strategies** as a documented aleatory
+  method. Raw output: `reverification-2026-06-22.json`. The inline ○ marks below can
+  now be read as ✔︎ for these eight. (A handful of minor details not in the re-run set
+  remain ○ — re-check the primary before quoting exact figures.)
 - **◆ Synthesis/interpretation by Claude:** cross-tradition patterns, the
   oracle-vs-mirror table, somatic-salience reading of the "chill," and the integrative
   argument — reasoned from the verified claims + established knowledge in the parent
