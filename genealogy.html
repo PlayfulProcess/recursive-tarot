@@ -17,10 +17,10 @@
 -->
 <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
 <style>
-  :root { --bg:#14121a; --panel:#1d1b26; --ink:#ece9f3; --muted:#a59fb5; --line:#2c2937; }
+  :root { --bg:#f4f1ea; --panel:#ffffff; --ink:#221f1a; --muted:#6b6457; --line:#d8d2c6; }
   * { box-sizing:border-box; }
   html,body { margin:0; height:100%; background:var(--bg); color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+    font-family:Inter,system-ui,-apple-system,sans-serif; }
   header { padding:14px 18px; border-bottom:1px solid var(--line); display:flex; gap:18px; align-items:baseline; flex-wrap:wrap; }
   header h1 { font-size:18px; margin:0; font-weight:600; }
   header h1 a { color:inherit; text-decoration:none; }
@@ -66,7 +66,7 @@
 <script>
 const META_URL = 'tarot/all-decks-many-lenses/grammar.json';
 // "tier" = ancestor status (upstream) OR tarot trump-order. Ancestors share the top lane.
-const TIER = { 'direct-ancestor':'#d4af37', 'ancestral':'#c9a227', 'cousin':'#8d99ae',
+const TIER = { 'direct-ancestor':'#9a7322', 'ancestral':'#c9a227', 'cousin':'#8d99ae',
   A:'#e07a5f', B:'#81b29a', C:'#5c6bc0', occult:'#9c47d1' };
 const TIER_NAME = { 'direct-ancestor':'Direct ancestor', 'ancestral':'Ancestral', 'cousin':'Cousin (not a parent)',
   A:'A-order · Florence/Bologna', B:'B-order · Ferrara', C:'C-order · Milan→Marseille', occult:'Occult turn (post-1781)' };
@@ -130,7 +130,7 @@ function legendHTML(mode){
     elements: { nodes, edges },
     layout: { name:'preset' },
     style: [
-      { selector:'node', style:{ 'label':'data(label)', 'color':'#ece9f3', 'font-size':'11px',
+      { selector:'node', style:{ 'label':'data(label)', 'color':'#221f1a', 'font-size':'11px',
         'text-wrap':'wrap', 'text-max-width':'120px', 'text-valign':'bottom', 'text-margin-y':4,
         'width':'data(_w)', 'height':'data(_w)', 'background-color':'data(_color)',
         'border-width':2, 'border-color':'#00000055' } },
@@ -169,7 +169,7 @@ function legendHTML(mode){
       <div class="row"><b>Function</b> · ${FUNC_NAME[d.function]||d.function||'—'}</div>
       <div class="row"><b>Cards</b> · ${d.count}</div>
       ${d.slug ? `<div class="row" style="margin-top:10px"><a href="viewers/cards.html?src=${encodeURIComponent('../tarot/'+d.slug+'/grammar.json')}" target="_blank" rel="noopener">open cards ↗</a></div>
-      <div class="row"><a href="tarot/${d.slug}/grammar.json" target="_blank" rel="noopener">raw JSON ↗</a></div>` : '<div class="row" style="margin-top:10px;color:#a59fb5">No card-level deck in the repo yet for this node.</div>'}
+      <div class="row"><a href="tarot/${d.slug}/grammar.json" target="_blank" rel="noopener">raw JSON ↗</a></div>` : '<div class="row" style="margin-top:10px;color:#6b6457">No card-level deck in the repo yet for this node.</div>'}
       <div class="legend" id="lg" style="margin-top:16px"></div>`;
     document.getElementById('lg').innerHTML = legendHTML(activeMode());
   });
