@@ -15,23 +15,22 @@
   /* ── Editorial homepage ── */
   main.wrap{max-width:1120px}
 
-  /* hero / cover */
-  .cover{text-align:center;padding:26px 18px 6px;max-width:780px;margin:0 auto}
-  .cover h1{font-family:var(--serif-display);font-weight:600;font-size:clamp(36px,7vw,64px);
-    line-height:1.03;letter-spacing:.4px;margin:0}
-  .cover h1 .gold{color:#9a7322}
-  .cover .tag{font-family:var(--serif-body);font-style:italic;color:var(--ink-soft);
-    font-size:clamp(16px,2.7vw,21px);line-height:1.5;margin:16px auto 0;max-width:36ch}
-
-  /* the single framed hero card — large, the centerpiece */
-  .plate{margin:26px auto 6px;width:fit-content;text-align:center}
+  /* hero — card on the left, text on the right */
+  .herowrap{display:flex;gap:clamp(28px,5vw,56px);align-items:center;max-width:1060px;margin:18px auto 0;padding:8px}
+  .herowrap .plate{margin:0;flex:0 0 auto;text-align:center}
+  .herowrap .htext{flex:1 1 auto;min-width:0;text-align:left}
   .plate .mat{display:inline-block;background:#fff;border:1px solid var(--line-soft);border-radius:3px;
-    padding:14px;box-shadow:0 34px 64px -34px rgba(60,45,20,.55)}
-  .plate .mat img{display:block;height:clamp(380px,60vh,580px);width:auto;border:1px solid var(--line);background:var(--thumb-bg)}
+    padding:13px;box-shadow:0 34px 64px -34px rgba(60,45,20,.55)}
+  .plate .mat img{display:block;height:clamp(300px,52vh,500px);width:auto;border:1px solid var(--line);background:var(--thumb-bg)}
   .plate .cap{font-family:var(--sans);font-size:11px;letter-spacing:.08em;color:var(--mut);
-    text-transform:uppercase;margin-top:14px}
+    text-transform:uppercase;margin-top:13px}
+  .htext h1{font-family:var(--serif-display);font-weight:600;font-size:clamp(34px,5.2vw,56px);
+    line-height:1.04;letter-spacing:.3px;margin:0}
+  .htext h1 .gold{color:#9a7322}
+  .htext .subtitle{font-family:var(--serif-body);font-style:italic;color:var(--ink-soft);
+    font-size:clamp(16px,2.3vw,21px);line-height:1.5;margin:14px 0 0;max-width:42ch}
 
-  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:26px 0 4px}
+  .cta{display:flex;gap:12px;justify-content:flex-start;flex-wrap:wrap;margin:24px 0 4px}
   .btn{font-family:var(--sans);text-decoration:none;font-weight:600;font-size:14.5px;
     padding:12px 24px;border-radius:8px;transition:background .15s,transform .15s,border-color .15s,color .15s}
   .btn.primary{background:var(--gold);color:#fff}
@@ -39,11 +38,18 @@
   .btn.ghost{color:var(--ink-soft);border:1px solid var(--line-soft)}
   .btn.ghost:hover{border-color:#9a7322;color:#9a7322}
 
-  .lede{font-family:var(--serif-body);font-size:19px;line-height:1.66;color:var(--ink-soft);
-    max-width:64ch;margin:40px auto 0;text-align:center}
+  .lede{font-family:var(--serif-body);font-size:17.5px;line-height:1.62;color:var(--ink-soft);
+    max-width:56ch;margin:22px 0 0;text-align:left}
   .lede strong{color:var(--ink)}
 
-  hr.div{border:0;border-top:1px solid var(--line);max-width:120px;margin:44px auto}
+  @media(max-width:780px){
+    .herowrap{flex-direction:column;text-align:center}
+    .herowrap .htext{text-align:center}
+    .htext .subtitle{margin-left:auto;margin-right:auto}
+    .cta{justify-content:center}
+    .lede{text-align:center;margin-left:auto;margin-right:auto}
+    .scrolldown{text-align:center;display:block}
+  }
 
   /* three ways in */
   .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:8px 0}
@@ -72,7 +78,7 @@
   ul.mis li b{color:var(--ink);font-weight:600}
 
   /* scroll affordance under the cover CTAs */
-  .scrolldown{display:block;text-align:center;font-family:var(--sans);font-size:12.5px;
+  .scrolldown{display:inline-block;text-align:left;font-family:var(--sans);font-size:12.5px;
     letter-spacing:.04em;color:var(--mut);text-decoration:none;margin:18px 0 0}
   .scrolldown:hover{color:#9a7322}
 
@@ -82,6 +88,9 @@
     margin:0 0 .25em;text-align:center}
   .gallery .sub{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
     color:#8a6414;text-align:center;margin:0 0 22px}
+  .gallery .glabel{display:flex;align-items:center;gap:12px;font-family:var(--sans);font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;color:#8a6414;margin:0 0 14px;text-align:left}
+  .gallery .glabel::after{content:'';flex:1;height:1px;background:var(--line)}
 
   .viewgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:0 0 12px}
   .vcard{display:block;background:var(--surface);border:1px solid var(--line-soft);border-radius:10px;
@@ -128,30 +137,28 @@
 
 <main class="wrap">
 
-  <!-- ── COVER ── -->
-  <section class="cover">
-    <h1>The <span class="gold">Recursive Tarot</span></h1>
-    <p class="tag">How a card game became a mirror — six centuries, twenty-five historical decks, every image public domain.</p>
-  </section>
-
-  <figure class="plate">
-    <div class="mat">
-      <img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-21-world.jpg" alt="Il Mondo (The World), Visconti-Sforza tarot, Milan, c. 1450">
+  <!-- ── HERO: card left, text right ── -->
+  <section class="herowrap">
+    <figure class="plate">
+      <div class="mat">
+        <img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-21-world.jpg" alt="Il Mondo (The World), Visconti-Sforza tarot, Milan, c. 1450">
+      </div>
+      <figcaption class="cap">Il Mondo · Visconti-Sforza · Milan, c. 1450</figcaption>
+    </figure>
+    <div class="htext">
+      <h1>The <span class="gold">Recursive Tarot</span></h1>
+      <p class="subtitle">How a card game became a mirror — six centuries, twenty-five historical decks, every image public domain.</p>
+      <div class="cta">
+        <a class="btn primary" href="pages/historian.html">Read the history</a>
+        <a class="btn ghost" href="pages/play.html">Draw a reading</a>
+        <a class="btn ghost" href="pages/course-viewer.html?course=how-to-contribute">Contribute</a>
+      </div>
+      <p class="lede">A free, <strong>public-domain</strong> library of historical tarot — from the 1440s
+      Milanese card <em>game</em>, through the printed Tarot de Marseille, to the 1781 occult reframing that
+      invented divination. Each deck kept in <strong>its own tradition</strong>; every file open and forkable.</p>
+      <a class="scrolldown" href="#explore">↓  Every view &amp; all 25 decks</a>
     </div>
-    <figcaption class="cap">Il Mondo · Visconti-Sforza · Milan, c. 1450</figcaption>
-  </figure>
-
-  <div class="cta">
-    <a class="btn primary" href="pages/historian.html">Read the history</a>
-    <a class="btn ghost" href="pages/play.html">Draw a reading</a>
-    <a class="btn ghost" href="pages/course-viewer.html?course=how-to-contribute">Contribute</a>
-  </div>
-
-  <p class="lede">A free, <strong>public-domain</strong> library of historical tarot — from the 1440s Milanese
-  card <em>game</em>, through the printed Tarot de Marseille, to the 1781 occult reframing that invented
-  divination. Each deck kept in <strong>its own tradition</strong>; every file open and forkable.</p>
-
-  <a class="scrolldown" href="#explore">↓  Every view &amp; all 25 decks</a>
+  </section>
 
   <!-- ── THREE WAYS IN ── -->
   <div class="ways">
@@ -234,15 +241,25 @@
       or follow the <a href="pages/course-viewer.html?course=how-to-contribute">contributor's guide</a>. CC-BY-SA-4.0.</p>
   </aside>
 
-  <!-- ── GALLERY: every view ── -->
+  <!-- ── GALLERY: every view, classified by level ── -->
   <section id="explore" class="gallery">
     <h2>Every view</h2>
-    <p class="sub">Same open data, six different lenses</p>
+    <p class="sub">Same open data, two levels of lens</p>
+
+    <p class="glabel">Card level · read individual cards</p>
     <div class="viewgrid">
       <a class="vcard" href="viewers/cards.html">
         <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-00-fool.jpg')"></div>
         <div class="vb"><div class="vt">Cards</div><div class="vd">One card at a time, every deck — Scene, Symbol &amp; Research notes.</div></div>
       </a>
+      <a class="vcard" href="viewers/caster.html">
+        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot/RWS_Tarot_00_Fool.jpg')"></div>
+        <div class="vb"><div class="vt">Caster</div><div class="vd">Draw a spread held as a mirror — then read it with AI on recursive.eco.</div></div>
+      </a>
+    </div>
+
+    <p class="glabel" style="margin-top:26px">Grammar level · analyse the whole collection</p>
+    <div class="viewgrid">
       <a class="vcard" href="viewers/explorer.html">
         <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mantegna-tarocchi-plate-01.jpg')"></div>
         <div class="vb"><div class="vt">Explorer</div><div class="vd">Pivot any field by any field — every grouping is an emergence.</div></div>
@@ -251,54 +268,51 @@
         <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/LE%20MAT%20Nicolas%20Conver%20Tarot%201760.jpg')"></div>
         <div class="vb"><div class="vt">Timeline</div><div class="vd">All decks across six centuries, by lineage and era.</div></div>
       </a>
-      <a class="vcard" href="viewers/genealogy-tree.html">
-        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-21-world.jpg')"></div>
-        <div class="vb"><div class="vt">Tree of Life</div><div class="vd">A radial root → branch → deck view of the family tree.</div></div>
-      </a>
       <a class="vcard" href="genealogy.html">
         <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Fool%20tarot%20charles6.jpg')"></div>
         <div class="vb"><div class="vt">Genealogy</div><div class="vd">Which deck descended from which — the lineage as a tree.</div></div>
       </a>
-      <a class="vcard" href="viewers/caster.html">
-        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot/RWS_Tarot_00_Fool.jpg')"></div>
-        <div class="vb"><div class="vt">Caster</div><div class="vd">Draw a spread held as a mirror — then read it with AI on recursive.eco.</div></div>
+      <a class="vcard" href="viewers/genealogy-tree.html">
+        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-21-world.jpg')"></div>
+        <div class="vb"><div class="vt">Tree of Life</div><div class="vd">A radial root → branch → deck view of the family tree.</div></div>
       </a>
     </div>
 
-    <h2 style="margin-top:48px">The 25 historical decks</h2>
+    <h2 style="margin-top:50px">The 25 historical decks</h2>
     <p class="sub">Every image public domain · click any deck to read it card by card</p>
     <div id="deckgrid" class="deckgrid"><p class="sub" style="grid-column:1/-1">Loading decks…</p></div>
 
-    <p class="links">
-      <a href="pages/course-viewer.html?course=history-of-tarot">History course</a> ·
-      <a href="pages/play.html">Play the games</a> ·
-      <a href="pages/sources.html">Sources &amp; courses</a> ·
-      <a href="pages/shop.html">Print a deck</a> ·
-      <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">The repo ↗</a>
-    </p>
+    <div id="contemporary-wrap" hidden>
+      <h2 style="margin-top:50px">Contemporary decks</h2>
+      <p class="sub">Living-tradition grammars grown on recursive.eco — beyond the historical canon</p>
+      <div id="deckgrid-contemporary" class="deckgrid"></div>
+    </div>
   </section>
 
 </main>
 
 <script>
-  // Render the deck gallery from the open collection manifest (always current).
+  // Render the deck galleries from the open collection manifest (always current).
   (function(){
-    const EXCLUDE = new Set(['ontoject-illustrated','thirty-six-tattvas']);
+    const CONTEMP = new Set(['ontoject-illustrated','thirty-six-tattvas']);
+    const esc = s => String(s).replace(/</g,'&lt;');
+    const card = g => {
+      const name = (g.name||g.slug).split(' — ')[0];
+      const year = g.year_label || (g.year||'');
+      const href = 'viewers/cards.html?src=../tarot/'+encodeURIComponent(g.slug)+'/grammar.json';
+      return '<a class="dcard" href="'+href+'">'
+        +'<div class="dthumb" style="background-image:url(\''+g.cover_image_url.replace(/'/g,"%27")+'\')"></div>'
+        +'<div class="dn">'+esc(name)+'</div><div class="dy">'+esc(year)+'</div></a>';
+    };
     fetch('tarot/_collection.json').then(r=>r.json()).then(c=>{
-      const decks = (c.grammars||[])
-        .filter(g=>!g.is_meta && !EXCLUDE.has(g.slug) && g.cover_image_url)
-        .sort((a,b)=>(a.year||9999)-(b.year||9999));
-      const grid = document.getElementById('deckgrid');
-      if(!decks.length){ grid.innerHTML=''; return; }
-      grid.innerHTML = decks.map(g=>{
-        const name = (g.name||g.slug).split(' — ')[0];
-        const year = g.year_label || (g.year||'');
-        const href = 'viewers/cards.html?src=../tarot/'+encodeURIComponent(g.slug)+'/grammar.json';
-        return '<a class="dcard" href="'+href+'">'
-          +'<div class="dthumb" style="background-image:url(\''+g.cover_image_url.replace(/'/g,"%27")+'\')"></div>'
-          +'<div class="dn">'+name.replace(/</g,'&lt;')+'</div>'
-          +'<div class="dy">'+String(year).replace(/</g,'&lt;')+'</div></a>';
-      }).join('');
+      const all = (c.grammars||[]).filter(g=>!g.is_meta && g.cover_image_url);
+      const historical = all.filter(g=>!CONTEMP.has(g.slug)).sort((a,b)=>(a.year||9999)-(b.year||9999));
+      const contemporary = all.filter(g=>CONTEMP.has(g.slug));
+      document.getElementById('deckgrid').innerHTML = historical.map(card).join('');
+      if(contemporary.length){
+        document.getElementById('deckgrid-contemporary').innerHTML = contemporary.map(card).join('');
+        document.getElementById('contemporary-wrap').hidden = false;
+      }
     }).catch(()=>{ document.getElementById('deckgrid').innerHTML='<p class="sub" style="grid-column:1/-1">Open the <a href="viewers/cards.html">Cards view</a> to browse all decks.</p>'; });
   })();
 </script>
