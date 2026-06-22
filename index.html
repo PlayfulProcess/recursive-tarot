@@ -71,13 +71,38 @@
     padding:12px 0;border-top:1px solid var(--line)}
   ul.mis li b{color:var(--ink);font-weight:600}
 
-  /* demoted "all views & courses" */
-  .more{margin:46px auto 0;max-width:900px;text-align:center}
-  .more .sub{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin:0 0 16px}
-  .morelinks{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-  .morelinks a{font-family:var(--sans);font-size:12.5px;color:var(--ink-soft);text-decoration:none;
-    border:1px solid var(--line);border-radius:999px;padding:6px 14px;transition:border-color .15s,color .15s}
-  .morelinks a:hover{border-color:var(--gold);color:#9a7322}
+  /* scroll affordance under the cover CTAs */
+  .scrolldown{display:block;text-align:center;font-family:var(--sans);font-size:12.5px;
+    letter-spacing:.04em;color:var(--mut);text-decoration:none;margin:18px 0 0}
+  .scrolldown:hover{color:#9a7322}
+
+  /* ── gallery: all views + all decks ── */
+  .gallery{margin:56px auto 0;max-width:1120px}
+  .gallery h2{font-family:var(--serif-display);font-weight:600;font-size:28px;color:var(--ink);
+    margin:0 0 .25em;text-align:center}
+  .gallery .sub{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    color:#8a6414;text-align:center;margin:0 0 22px}
+
+  .viewgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:0 0 12px}
+  .vcard{display:block;background:var(--surface);border:1px solid var(--line-soft);border-radius:10px;
+    overflow:hidden;text-decoration:none;color:var(--ink);transition:transform .15s,border-color .15s,box-shadow .15s}
+  .vcard:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 16px 32px -24px rgba(60,45,20,.5)}
+  .vcard .vthumb{aspect-ratio:16/10;background:var(--thumb-bg) center/contain no-repeat;border-bottom:1px solid var(--line)}
+  .vcard .vb{padding:13px 15px 15px}
+  .vcard .vt{font-family:var(--serif-display);font-weight:600;font-size:18px;color:var(--ink);margin:0 0 3px}
+  .vcard .vd{font-family:var(--serif-body);font-size:14px;line-height:1.5;color:var(--mut);margin:0}
+
+  .deckgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(146px,1fr));gap:14px}
+  .dcard{display:block;text-decoration:none;color:var(--ink)}
+  .dcard .dthumb{aspect-ratio:3/4;background:var(--thumb-bg) center/contain no-repeat;
+    border:1px solid var(--line-soft);border-radius:4px;transition:transform .15s,box-shadow .15s,border-color .15s}
+  .dcard:hover .dthumb{transform:translateY(-4px);box-shadow:0 16px 30px -22px rgba(60,45,20,.55);border-color:var(--gold)}
+  .dcard .dn{font-family:var(--serif-display);font-weight:600;font-size:14.5px;line-height:1.2;margin:9px 0 1px;color:var(--ink)}
+  .dcard .dy{font-family:var(--sans);font-size:11px;letter-spacing:.06em;color:var(--mut)}
+
+  .gallery .links{text-align:center;margin:34px 0 0;font-family:var(--sans);font-size:12.5px}
+  .gallery .links a{color:var(--ink-soft);text-decoration:none;margin:0 10px;white-space:nowrap}
+  .gallery .links a:hover{color:#9a7322}
 </style>
 </head>
 <body>
@@ -108,6 +133,8 @@
   <p class="lede">A free, <strong>public-domain</strong> library of historical tarot — from the 1440s Milanese
   card <em>game</em>, through the printed Tarot de Marseille, to the 1781 occult reframing that invented
   divination. Each deck kept in <strong>its own tradition</strong>; every file open and forkable.</p>
+
+  <a class="scrolldown" href="#explore">↓  Every view &amp; all 25 decks</a>
 
   <!-- ── THREE WAYS IN ── -->
   <div class="ways">
@@ -182,26 +209,74 @@
     public domain with attribution; every meaning stays in its source tradition.</p>
   </section>
 
-  <!-- ── DEMOTED: all views & courses ── -->
-  <div class="more">
-    <p class="sub">All views &amp; courses</p>
-    <div class="morelinks">
-      <a href="viewers/cards.html">Cards</a>
-      <a href="viewers/explorer.html">Explorer</a>
-      <a href="viewers/genealogy-tree.html">Tree of Life</a>
-      <a href="viewers/timeline.html">Timeline</a>
-      <a href="genealogy.html">Genealogy</a>
-      <a href="viewers/caster.html">Caster</a>
-      <a href="pages/play.html">Play the games</a>
-      <a href="pages/course-viewer.html?course=history-of-tarot">History course</a>
-      <a href="pages/course-viewer.html?course=how-tarot-works">How the cards can work</a>
-      <a href="pages/sources.html">Sources &amp; courses</a>
-      <a href="pages/shop.html">Print a deck</a>
-      <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">The repo ↗</a>
+  <!-- ── GALLERY: every view ── -->
+  <section id="explore" class="gallery">
+    <h2>Every view</h2>
+    <p class="sub">Same open data, six different lenses</p>
+    <div class="viewgrid">
+      <a class="vcard" href="viewers/cards.html">
+        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-00-fool.jpg')"></div>
+        <div class="vb"><div class="vt">Cards</div><div class="vd">One card at a time, every deck — Scene, Symbol &amp; Research notes.</div></div>
+      </a>
+      <a class="vcard" href="viewers/explorer.html">
+        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mantegna-tarocchi-plate-01.jpg')"></div>
+        <div class="vb"><div class="vt">Explorer</div><div class="vd">Pivot any field by any field — every grouping is an emergence.</div></div>
+      </a>
+      <a class="vcard" href="viewers/timeline.html">
+        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/LE%20MAT%20Nicolas%20Conver%20Tarot%201760.jpg')"></div>
+        <div class="vb"><div class="vt">Timeline</div><div class="vd">All decks across six centuries, by lineage and era.</div></div>
+      </a>
+      <a class="vcard" href="viewers/genealogy-tree.html">
+        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-21-world.jpg')"></div>
+        <div class="vb"><div class="vt">Tree of Life</div><div class="vd">A radial root → branch → deck view of the family tree.</div></div>
+      </a>
+      <a class="vcard" href="genealogy.html">
+        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Fool%20tarot%20charles6.jpg')"></div>
+        <div class="vb"><div class="vt">Genealogy</div><div class="vd">Which deck descended from which — the lineage as a tree.</div></div>
+      </a>
+      <a class="vcard" href="viewers/caster.html">
+        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot/RWS_Tarot_00_Fool.jpg')"></div>
+        <div class="vb"><div class="vt">Caster</div><div class="vd">Draw a spread held as a mirror — then read it with AI on recursive.eco.</div></div>
+      </a>
     </div>
-  </div>
+
+    <h2 style="margin-top:48px">The 25 historical decks</h2>
+    <p class="sub">Every image public domain · click any deck to read it card by card</p>
+    <div id="deckgrid" class="deckgrid"><p class="sub" style="grid-column:1/-1">Loading decks…</p></div>
+
+    <p class="links">
+      <a href="pages/course-viewer.html?course=history-of-tarot">History course</a> ·
+      <a href="pages/play.html">Play the games</a> ·
+      <a href="pages/sources.html">Sources &amp; courses</a> ·
+      <a href="pages/shop.html">Print a deck</a> ·
+      <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">The repo ↗</a>
+    </p>
+  </section>
 
 </main>
+
+<script>
+  // Render the deck gallery from the open collection manifest (always current).
+  (function(){
+    const EXCLUDE = new Set(['ontoject-illustrated','thirty-six-tattvas']);
+    fetch('tarot/_collection.json').then(r=>r.json()).then(c=>{
+      const decks = (c.grammars||[])
+        .filter(g=>!g.is_meta && !EXCLUDE.has(g.slug) && g.cover_image_url)
+        .sort((a,b)=>(a.year||9999)-(b.year||9999));
+      const grid = document.getElementById('deckgrid');
+      if(!decks.length){ grid.innerHTML=''; return; }
+      grid.innerHTML = decks.map(g=>{
+        const name = (g.name||g.slug).split(' — ')[0];
+        const year = g.year_label || (g.year||'');
+        const href = 'viewers/cards.html?src=../tarot/'+encodeURIComponent(g.slug)+'/grammar.json';
+        return '<a class="dcard" href="'+href+'">'
+          +'<div class="dthumb" style="background-image:url(\''+g.cover_image_url.replace(/'/g,"%27")+'\')"></div>'
+          +'<div class="dn">'+name.replace(/</g,'&lt;')+'</div>'
+          +'<div class="dy">'+String(year).replace(/</g,'&lt;')+'</div></a>';
+      }).join('');
+    }).catch(()=>{ document.getElementById('deckgrid').innerHTML='<p class="sub" style="grid-column:1/-1">Open the <a href="viewers/cards.html">Cards view</a> to browse all decks.</p>'; });
+  })();
+</script>
 
 <footer class="site"><div class="wrap">
   Built openly with Claude Code. All data &amp; images live in the
