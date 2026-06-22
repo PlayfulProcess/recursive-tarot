@@ -8,14 +8,14 @@
   --shadow-card:0 14px 30px -20px rgba(60,45,20,.55);
   --shadow-lift:0 26px 46px -22px rgba(60,45,20,.6);
   --thumb-bg:#faf8f3;             /* light neutral behind contained card art (never crop) */
-  --serif-display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
-  --serif-body:"EB Garamond",Georgia,serif;
+  --serif-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --serif-body:"Fraunces",Georgia,serif;
   --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);
-  font:18px/1.6 var(--serif-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  font:18px/1.6 var(--serif-body);font-optical-sizing:auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:var(--gold);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
