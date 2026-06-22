@@ -72,7 +72,7 @@
       ['history-of-tarot',                'A History of Tarot'],
     ]],
     ['Intention Setting', [
-      ['why-tarot-works',                 'Why the Cards Work'],
+      ['why-tarot-works',                 'How the Cards Can Work'],
       ['intention-setting',               'Intention Setting — the voices'],
       ['tarot-and-the-crack',             'Tarot & the Crack'],
       ['kant-and-the-tarot',              'Kant Reads the Tarot'],
