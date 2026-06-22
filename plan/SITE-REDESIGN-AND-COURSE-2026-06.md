@@ -81,6 +81,27 @@ ties to "gate, not fate" + GD pathworking + safer-containers' "the refusals are 
 prism, still-pool. STILL TODO: add the palantír (Denethor vs Aragorn) as the failure-mode
 illustration in `how-tarot-works.mdx`; apply the gate metaphor where chosen.
 
+## ☐ QUEUE — homepage IA + path pages (Jun 22, from feedback)
+
+- **Four doors** done: Historian · Practitioner (`?course=reading-the-cards`) · Player (play.html) ·
+  Contributor. Hero CTAs removed (were duplicated by the doors). Views gallery re-classified to match
+  site-header: **card level** = Cards, Explorer, Lenses, Tree; **grammar level** = Tree of Life,
+  Timeline, Genealogy (Caster dropped from gallery — it's the Play door's draw-a-reading tool).
+- ☐ **Play page = mirror the Historian page**: a "how to play" course banner on top (source:
+  `booklets/games-of-the-tarot.mdx`) + the play content (games + draw-a-reading) below. Make the Play
+  door's page match `pages/historian.html`'s outline (course banner → content → decks/games thumbs).
+- ☐ **Contribute page** (new, same pattern): the contribute course on top + the recursive.eco **Create**
+  page + the Claude/GitHub-MCP course sessions (`build-a-tarot-deck-with-claude`) as thumbnails.
+- ☐ **Real view thumbnails**: either screenshots (capture via connected Chrome) OR **live `?embed=1`
+  iframes scaled down** (user's idea, "like in the course") — replace the representative card-art thumbs.
+- ☐ **Contemporary decks**: list MORE than ontoject — pull the PD decks published in **recursive.eco's
+  tarot channel** (live data; needs the platform API / grammar MCP, not just `_collection.json`). Also
+  give `thirty-six-tattvas` a cover so it shows.
+- **TERMINOLOGY (open):** user leaning toward calling a deck/card a **"grammar"** (recursive.eco's own
+  term) — the noun for *what it is* — with **gate, not fate** as the *stance* (how to hold it). Two
+  levels, not competing. Hero subtitle already nudged to "a grammar for meaning". Mirror→gate propagation
+  + palantír passage still pending.
+
 ## ☐ QUEUE (not done — in rough priority)
 
 1. **Icons → clean SVG library (de-emoji).** `icons.js` (`rt-icon`) exists (~15 icons). Extend it
