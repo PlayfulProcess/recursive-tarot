@@ -103,6 +103,23 @@
   .gallery .links{text-align:center;margin:34px 0 0;font-family:var(--sans);font-size:12.5px}
   .gallery .links a{color:var(--ink-soft);text-decoration:none;margin:0 10px;white-space:nowrap}
   .gallery .links a:hover{color:#9a7322}
+
+  /* ── recursive.eco "tree" callout (reusable: copy this block + .ecotree styles) ── */
+  .ecotree{margin:52px auto 0;max-width:760px;background:var(--surface);border:1px solid var(--line-soft);
+    border-radius:14px;padding:30px 34px;text-align:center}
+  .ecotree .spiral{display:block;margin:0 auto 10px}
+  .ecotree h2{font-family:var(--serif-display);font-weight:600;font-size:25px;color:var(--ink);margin:0 0 .4em}
+  .ecotree p{font-family:var(--serif-body);font-size:16px;line-height:1.65;color:var(--ink-soft);margin:0 auto .9em;max-width:62ch}
+  .ecotree p strong{color:var(--ink)}
+  .ecotree .eco-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+  .ecotree .eco-cta a{font-family:var(--sans);font-weight:600;font-size:14px;text-decoration:none;
+    padding:11px 22px;border-radius:8px;transition:background .15s,border-color .15s,color .15s,transform .15s}
+  .ecotree .eco-cta a.solid{background:var(--gold);color:#fff}
+  .ecotree .eco-cta a.solid:hover{background:#7c5b18;transform:translateY(-1px)}
+  .ecotree .eco-cta a.line{color:var(--ink-soft);border:1px solid var(--line-soft)}
+  .ecotree .eco-cta a.line:hover{border-color:#9a7322;color:#9a7322}
+  .ecotree .fine{font-family:var(--sans);font-size:12px;color:var(--mut);margin-top:16px}
+  .ecotree .fine a{color:var(--gold);text-decoration:none}
 </style>
 </head>
 <body>
@@ -193,21 +210,29 @@
     </ul>
   </section>
 
-  <!-- ── OPEN LIBRARY ── -->
-  <section class="story">
-    <p class="sub">How it's built</p>
-    <h2>An open library, not an app</h2>
-    <p><a href="https://recursive.eco" target="_blank" rel="noopener"><strong>recursive.eco</strong></a> is a
-    platform where people make sense together using <em>grammars</em> — symbolic systems like tarot decks,
-    I Ching books, and story frameworks. This repository is the open library: each deck is a plain JSON file
-    in <code>tarot/</code>, public and forkable. The viewers here are thin, backend-free static pages on
-    GitHub Pages — the richness lives in the data and in the app.</p>
-    <p>It's a public commons. Spot an error, add a public-domain deck, improve a description — fork
-    <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">the repo</a>
-    and open a pull request, or follow the
-    <a href="pages/course-viewer.html?course=how-to-contribute">contributor's guide</a>. Every image must be
-    public domain with attribution; every meaning stays in its source tradition.</p>
-  </section>
+  <!-- ── RECURSIVE.ECO — the tree this grows from (reusable block) ── -->
+  <aside class="ecotree">
+    <svg class="spiral" width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">
+      <path d="M53 47 a4 4 0 1 0 4 6 a11 11 0 1 0 -13 -3 a18 18 0 1 0 24 7 a26 26 0 1 0 -37 -11 a34 34 0 1 0 50 16"
+        fill="none" stroke="#9a7322" stroke-width="5" stroke-linecap="round"/>
+    </svg>
+    <h2>One branch of a larger tree</h2>
+    <p><a href="https://recursive.eco" target="_blank" rel="noopener"><strong>recursive.eco</strong></a> is the
+    trunk this library grows from — an open platform where any public-domain symbolic system (a tarot deck, an
+    I&nbsp;Ching, a story grammar) becomes something people can read, play, and make meaning with together.
+    A site like this one is a <strong>branch</strong>: narrower, but able to render the deep, domain-specific
+    richness — the history, the scholarship, the per-card research — that a general platform never could.</p>
+    <p>The trunk gives every branch more than it could grow alone: an AI <strong>Oracle</strong> that reads
+    your spread in context, a journal, accounts, and the power to build your own deck and use it as a living
+    library.</p>
+    <div class="eco-cta">
+      <a class="solid" href="https://flow.recursive.eco/" target="_blank" rel="noopener">Read in the Oracle ↗</a>
+      <a class="line" href="https://recursive.eco" target="_blank" rel="noopener">Create your own ↗</a>
+    </div>
+    <p class="fine">It's a public commons — fork
+      <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">the repo</a>
+      or follow the <a href="pages/course-viewer.html?course=how-to-contribute">contributor's guide</a>. CC-BY-SA-4.0.</p>
+  </aside>
 
   <!-- ── GALLERY: every view ── -->
   <section id="explore" class="gallery">
