@@ -48,17 +48,17 @@
     background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.05)}
   .fgroup .sep{font-size:10px;color:var(--muted);opacity:.8;user-select:none}
   .zone{background:rgba(0,0,0,.25);border:1.5px dashed var(--chipline);border-radius:10px;min-height:54px;padding:8px}
-  .zone.dragover{border-color:var(--accent);background:rgba(212,175,55,.06)}
+  .zone.dragover{border-color:var(--accent);background:rgba(154,115,34,.06)}
   .zone .zlab{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 6px 2px}
   .zone .chips{display:flex;flex-wrap:wrap;gap:6px}
   .chip{display:inline-flex;align-items:center;gap:6px;background:var(--chip);border:1px solid var(--chipline);
     border-radius:999px;padding:4px 10px;font-size:12px;cursor:grab;user-select:none;white-space:nowrap}
   .chip:hover{border-color:var(--violet)}
-  .chip.inzone{border-color:var(--violet);background:rgba(139,92,246,.14)}
+  .chip.inzone{border-color:var(--violet);background:rgba(154,115,34,.14)}
   .chip .x{cursor:pointer;color:var(--muted);font-weight:700}
   .chip .x:hover{color:#e07a5f}
   .chip .n{color:var(--muted);font-size:10.5px}
-  .chip.filter-active{border-color:var(--accent);background:rgba(212,175,55,.1)}
+  .chip.filter-active{border-color:var(--accent);background:rgba(154,115,34,.1)}
 
   /* ── popover (filters + deck multiselect) ──────────────── */
   #pop{position:absolute;z-index:60;background:var(--panel);border:1px solid var(--chipline);border-radius:10px;
@@ -133,7 +133,7 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=21"></script>
+<script src="../site-header.js?v=23"></script>
 <site-header active="explorer"></site-header>
 
 <div class="toolbar">
@@ -276,7 +276,7 @@ function cellHTML(rs){
   if (mode === 'counts'){
     const max = window.__cellmax || 1;
     const a = Math.min(.85, .1 + .75*rs.length/max);
-    return `<td class="ccount" style="background:rgba(139,92,246,${a.toFixed(2)})">${rs.length}</td>`;
+    return `<td class="ccount" style="background:rgba(154,115,34,${a.toFixed(2)})">${rs.length}</td>`;
   }
   // emergence pills surface FIRST (they label the cell), sample cards after
   const N = 6;

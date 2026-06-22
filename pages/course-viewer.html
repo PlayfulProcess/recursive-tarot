@@ -128,7 +128,7 @@
             color: white;
             border: none;
             border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(147, 51, 234, 0.4);
+            box-shadow: 0 4px 12px rgba(154,115,34, 0.4);
             cursor: pointer;
             z-index: 50;
             display: none;
@@ -653,12 +653,12 @@
         .bio-name{ font-weight:700; }
         .bio-life{ font-weight:400; color:#6b6457; font-size:.85em; }
         .bio-text{ font-size:.95rem; }
-        .synthbox{ background:linear-gradient(135deg,rgba(147,51,234,.08),rgba(196,167,255,.05));
+        .synthbox{ background:linear-gradient(135deg,rgba(154,115,34,.08),rgba(196,167,255,.05));
             border:1px solid #d8c8f5; border-radius:12px; padding:1rem 1.1rem; margin:.6rem 0; }
         .strip{ display:grid; grid-template-columns:repeat(auto-fill,minmax(96px,1fr)); gap:.55rem; padding:.4rem 0; }
         .strip .c{ text-align:center; font-size:.65rem; color:#6b6457; text-decoration:none; }
         .strip a.c img{ transition:transform .12s, box-shadow .12s; }
-        .strip a.c:hover img{ transform:scale(1.7); z-index:9; position:relative; box-shadow:0 6px 22px rgba(147,51,234,.35); }
+        .strip a.c:hover img{ transform:scale(1.7); z-index:9; position:relative; box-shadow:0 6px 22px rgba(154,115,34,.35); }
         .strip .c img{ width:100%; max-width:104px; aspect-ratio:88/142; object-fit:contain; border-radius:6px; border:1px solid #d8d2c6; background:#faf8f3; }
         @media print{ .strip{ grid-template-columns:repeat(2,1fr); } }
         .card-chapter{ margin:1.6rem 0; }
@@ -682,7 +682,7 @@
         .indeck-row.flip{ flex-direction:row-reverse; }
         .indeck-row .cardthumb{ flex:0 0 96px; }
         .indeck-row .cardthumb img{ width:96px; height:155px; object-fit:contain; border-radius:6px; border:1px solid #d8d2c6; background:#faf8f3; display:block; transition:transform .12s, box-shadow .12s; }
-        .indeck-row .cardthumb:hover img{ transform:translateY(-2px); box-shadow:0 4px 14px rgba(147,51,234,.3); }
+        .indeck-row .cardthumb:hover img{ transform:translateY(-2px); box-shadow:0 4px 14px rgba(154,115,34,.3); }
         .indeck-row .indeck-text{ font-size:.92rem; }
         /* minor (pip/court) cards: prominent rank number + scene + a card image below */
         .minor-card{ margin:.9rem 0; padding:.6rem .75rem; border:1px solid #e8e0d2; border-radius:10px; background:#faf8f3; font-size:.94em; }
@@ -716,7 +716,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- recursive-tarot drift: shared dark header instead of the recursive.eco shell. -->
-    <script src="../site-header.js?v=21"></script>
+    <script src="../site-header.js?v=23"></script>
     <site-header active="course"></site-header>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -1821,7 +1821,7 @@
         .assistant-toggle {
             position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 40;
             background: #9a7322; color: white; border: none; border-radius: 9999px;
-            width: 56px; height: 56px; cursor: pointer; box-shadow: 0 4px 12px rgba(147,51,234,0.4);
+            width: 56px; height: 56px; cursor: pointer; box-shadow: 0 4px 12px rgba(154,115,34,0.4);
             display: flex; align-items: center; justify-content: center; transition: all 0.2s;
         }
         .assistant-toggle:hover { background: #7c5b18; transform: scale(1.05); }
