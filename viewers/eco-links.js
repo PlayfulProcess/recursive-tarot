@@ -1,8 +1,8 @@
 /* Recursive.eco per-deck links — shared across viewers.
  * Reads the hardcoded slug -> deckId map (tarot/_eco_ids.json) and builds three
  * links for any deck that's in the map:
- *   🔮 Cast  → https://flow.recursive.eco/?deckId=<id>                (open the deck for a reading)
- *   👁 View  → https://recursive.eco/pages/grammar-viewer.html?type=<type>&id=<id>[&item=<n>]
+ *   <rt-icon name="oracle"></rt-icon> Cast  → https://flow.recursive.eco/?deckId=<id>                (open the deck for a reading)
+ *   <rt-icon name="eye"></rt-icon> View  → https://recursive.eco/pages/grammar-viewer.html?type=<type>&id=<id>[&item=<n>]
  *   ✏️ Edit  → https://flow.recursive.eco/create/dashboard/unified/new?forkId=<id>
  * Links only RESOLVE for visitors once that deck is is_public on recursive.eco —
  * but they're shown regardless (stable UUIDs), so they light up as decks publish.
@@ -47,8 +47,8 @@
     if (!u) return '';
     const a = (cls, href, label) => `<a class="eco-btn ${cls}" href="${href}" target="_blank" rel="noopener">${label}</a>`;
     return '<div class="eco-links" title="Open this deck on recursive.eco">'
-      + a('eco-cast', u.cast, '🔮 Cast')
-      + a('eco-view', u.view, '👁 View')
+      + a('eco-cast', u.cast, '<rt-icon name="oracle"></rt-icon> Cast')
+      + a('eco-view', u.view, '<rt-icon name="eye"></rt-icon> View')
       + a('eco-edit', u.edit, '✏️ Edit')
       + '</div>';
   }
@@ -61,11 +61,11 @@
       '.eco-links{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 4px}' +
       '.eco-btn{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;' +
       'text-decoration:none;padding:8px 14px;border-radius:9px;border:1px solid transparent;transition:filter .15s,background .15s}' +
-      '.eco-cast{background:linear-gradient(135deg,#7c3aed,#9333ea);color:#fff;box-shadow:0 3px 14px rgba(147,51,234,.35)}' +
-      '.eco-view{background:transparent;color:#b9a3f5;border-color:rgba(147,51,234,.45)}' +
+      '.eco-cast{background:linear-gradient(135deg,#7c5b18,#9a7322);color:#fff;box-shadow:0 3px 14px rgba(154,115,34,.35)}' +
+      '.eco-view{background:transparent;color:#b9a3f5;border-color:rgba(154,115,34,.45)}' +
       '.eco-edit{background:transparent;color:#9ad0b5;border-color:rgba(129,178,154,.45)}' +
       '.eco-btn:hover{filter:brightness(1.12)}' +
-      '.eco-view:hover{background:rgba(147,51,234,.12)} .eco-edit:hover{background:rgba(129,178,154,.10)}';
+      '.eco-view:hover{background:rgba(154,115,34,.12)} .eco-edit:hover{background:rgba(129,178,154,.10)}';
     document.head.appendChild(s);
   })();
 

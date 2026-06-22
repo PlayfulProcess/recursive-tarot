@@ -6,15 +6,12 @@
 <title>Tarot Timeline — Decks Through Time · Recursive Tarot</title>
 <style>
   :root{
-    --bg:#0f0d17; --panel:#1a1726; --ink:#ece8f5; --ink-strong:#fff; --muted:#9b94b3; --accent:#b8860b; --line:#2a2440;
+    --bg:#f4f1ea; --panel:#ffffff; --ink:#221f1a; --ink-strong:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6;
     --roots:#c9a24b; --a:#e07a5f; --b:#81b29a; --c:#6d8ec9; --occult:#9b6dc9; --sui:#c96d9b;
   }
-  @media (prefers-color-scheme: light){
-    :root{ --bg:#fbfaff; --panel:#ffffff; --ink:#241b3a; --ink-strong:#0c0817; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
-  }
   *{box-sizing:border-box}
-  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);color-scheme:light dark;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);color-scheme:light;
+    font-family:Inter,system-ui,-apple-system,sans-serif}
   .wrap{display:flex;height:calc(100vh - 52px);min-height:0}
   #stage{flex:1;display:flex;flex-direction:column;min-width:0}
   .toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;border-bottom:1px solid var(--line)}
@@ -41,7 +38,7 @@
   .legend .sw{width:11px;height:11px;border-radius:3px}
   aside#detail{width:330px;max-width:84vw;background:var(--panel);border-left:1px solid var(--line);padding:18px;overflow:auto;display:none}
   aside#detail.open{display:block}
-  aside#detail img{width:100%;max-height:240px;object-fit:contain;background:#0a0810;border-radius:8px;margin-bottom:12px}
+  aside#detail img{width:100%;max-height:240px;object-fit:contain;background:#f4f1ea;border-radius:8px;margin-bottom:12px}
   aside#detail h2{margin:.2em 0 .1em;font-size:18px}
   aside#detail .when{color:var(--accent);font-size:13px;margin-bottom:10px}
   aside#detail .sec{margin:12px 0;font-size:13.5px;line-height:1.55;color:var(--ink)}
@@ -55,12 +52,12 @@
   body.embed #stage{display:block}
   body.embed #scroll{overflow:visible;flex:none}
   /* in the (light) book, force the embed light regardless of the reader's OS theme */
-  body.embed{ --bg:#fbfaff; --panel:#ffffff; --ink:#241b3a; --ink-strong:#0c0817; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
+  body.embed{ --bg:#f4f1ea; --panel:#ffffff; --ink:#221f1a; --ink-strong:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; }
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=21"></script>
-<script src="../view-switcher.js?v=9"></script>
+<script src="../site-header.js?v=25"></script>
+<script src="../view-switcher.js?v=10"></script>
 <site-header active="timeline"></site-header>
 <div class="wrap">
   <div id="stage">
@@ -81,7 +78,7 @@
 <script>
 const BRANCH_RAW={'branch-roots':'#c9a24b','branch-a':'#e07a5f','branch-b':'#81b29a','branch-c':'#6d8ec9','branch-occult':'#9b6dc9','branch-sui':'#c96d9b'};
 const BRANCH_LABEL={'branch-roots':'Roots (Milan)','branch-a':'Southern (A-order)','branch-b':'Eastern (B-order)','branch-c':'Western (C-order)','branch-occult':'Occult','branch-sui':'Sui generis'};
-const PALETTE=['#c9a24b','#e07a5f','#81b29a','#6d8ec9','#9b6dc9','#c96d9b','#d4af37','#7a7290','#4db6ac','#e57373'];
+const PALETTE=['#c9a24b','#e07a5f','#81b29a','#6d8ec9','#9b6dc9','#c96d9b','#9a7322','#6b6457','#4db6ac','#e57373'];
 const SLUG_MAP={'deck-visconti-sforza':'visconti-sforza-tarot','deck-cary-yale':'cary-yale-visconti-tarot','deck-tarocchino-bologna':'tarocchino-bologna','deck-minchiate':'minchiate-florence-tarot','deck-charles-vi':'charles-vi-tarot','deck-marseille-conver':'tarot-de-marseille-conver','deck-marseille-type1':'noblet-tarot','deck-besancon':'tarot-de-besancon','deck-court-de-gebelin':'court-de-gebelin-tarot','deck-etteilla-i':'etteilla-i-livre-de-thot','deck-etteilla-iii':'etteilla-iii-oracle-des-dames','deck-oswald-wirth':'oswald-wirth-tarot','deck-golden-dawn':'golden-dawn-book-t-tarot','deck-sola-busca':'sola-busca-tarot','deck-mantegna':'mantegna-tarocchi'};
 
 const params=new URLSearchParams(location.search);
@@ -109,7 +106,7 @@ function buildLaneFromField(){
   laneValues=vals.length?vals:['—'];
   colorOf={};
   laneValues.forEach((v,i)=>{ colorOf[v]=laneField==='branch'?(BRANCH_RAW[v]||PALETTE[i%PALETTE.length]):PALETTE[i%PALETTE.length]; });
-  colorOf['—']='#7a7290';
+  colorOf['—']='#6b6457';
 }
 
 (async function init(){
@@ -165,12 +162,12 @@ function draw(){
     .call(d3.axisLeft(y).tickFormat(d3.format('d')).ticks(nTicks));
   // lane headers (discovered field values)
   svg.append('g').selectAll('text').data(lanes).join('text')
-    .attr('x',v=>laneX(v)).attr('y',20).attr('fill',v=>colorOf[v]||'#7a7290')
+    .attr('x',v=>laneX(v)).attr('y',20).attr('fill',v=>colorOf[v]||'#6b6457')
     .style('font-size','11px').style('font-weight','700')
     .text(v=>(laneField==='branch'?(BRANCH_LABEL[v]||v):v).replace(/\s*\(.*\)/,'').slice(0,14));
   svg.append('g').selectAll('rect').data(lanes).join('rect')   // faint lane tint
     .attr('x',v=>axisW+lanes.indexOf(v)*laneW).attr('y',padTop-8).attr('width',laneW-2).attr('height',innerH+16)
-    .attr('fill',v=>colorOf[v]||'#7a7290').attr('opacity',0.04);
+    .attr('fill',v=>colorOf[v]||'#6b6457').attr('opacity',0.04);
 
   // collision-avoid only within a lane (keeps the time axis honest)
   const minGap=18, laneLast={}; const placed=[];
@@ -191,7 +188,7 @@ function draw(){
 
   const g=svg.append('g').selectAll('g.rowg').data(placed).join('g').attr('class','rowg')
     .attr('transform',d=>`translate(${d.px},${d.py})`);
-  g.append('circle').attr('class','node').attr('r',6).attr('fill',d=>colorOf[d.lv]||'#7a7290');
+  g.append('circle').attr('class','node').attr('r',6).attr('fill',d=>colorOf[d.lv]||'#6b6457');
   g.append('text').attr('class','dname').attr('x',10).attr('dy','0.32em').text(d=>d.name.replace(/\s+[—–-]\s+.*/,'').replace(/\s*\([^)]*\)/g,'').trim().slice(0,30));
   g.append('text').attr('class','dyear').attr('x',10).attr('y',-9).text(d=>d.year);
   g.on('click',(ev,d)=>{ev.stopPropagation();showDetail(d);})
@@ -218,14 +215,14 @@ function showDetail(d){
   html+=`<h2>${esc(d.name)}</h2><div class="when">${esc(d.when)} · ${d.year}</div>`;
   for(const [k,v] of Object.entries(d.sections)){ if(v) html+=`<div class="sec"><h4>${esc(k)}</h4>${mdToHtml(String(v))}</div>`; }
   if(slug) html+=`<a class="opencards" href="cards.html?src=${encodeURIComponent('../tarot/'+slug+'/grammar.json')}">Open ${esc(d.name.replace(/\s+[—–-].*/,''))} cards →</a>`;
-  else html+=`<div class="sec" style="color:#9b94b3">No card-level deck in the repo yet for this node.</div>`;
+  else html+=`<div class="sec" style="color:#6b6457">No card-level deck in the repo yet for this node.</div>`;
   el.innerHTML=html; el.classList.add('open');
 }
 function buildLegend(){
   const lg=document.getElementById('legend'); lg.innerHTML='';
   laneValues.forEach(v=>{ const row=document.createElement('div'); row.className='row'+(hidden.has(v)?' off':'');
     const label=laneField==='branch'?(BRANCH_LABEL[v]||v):v;
-    row.innerHTML=`<span class="sw" style="background:${colorOf[v]||'#7a7290'}"></span><span>${label}</span>`;
+    row.innerHTML=`<span class="sw" style="background:${colorOf[v]||'#6b6457'}"></span><span>${label}</span>`;
     row.onclick=()=>{hidden.has(v)?hidden.delete(v):hidden.add(v);buildLegend();draw();}; lg.appendChild(row); });
 }
 </script>

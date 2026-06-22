@@ -20,8 +20,8 @@
         // Header comes from the shared ../site-header.js (loaded below).
         class RTFooter extends HTMLElement {
             connectedCallback() {
-                this.innerHTML = `<footer style="padding:18px;border-top:1px solid rgba(0,0,0,.1);color:#6b7280;font-size:12px;text-align:center;">
-                    Public-domain tarot data · <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener" style="color:#7c3aed;">recursive-tarot</a> · companion to <a href="https://recursive.eco" target="_blank" rel="noopener" style="color:#7c3aed;">recursive.eco</a>
+                this.innerHTML = `<footer style="padding:18px;border-top:1px solid rgba(0,0,0,.1);color:#6b6457;font-size:12px;text-align:center;">
+                    Public-domain tarot data · <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener" style="color:#7c5b18;">recursive-tarot</a> · companion to <a href="https://recursive.eco" target="_blank" rel="noopener" style="color:#7c5b18;">recursive.eco</a>
                 </footer>`;
             }
         }
@@ -37,52 +37,53 @@
         };
     })();
     </script>
-    <script src="../site-header.js?v=21"></script>
-    <script src="../view-switcher.js?v=9"></script>
+    <script src="../site-header.js?v=25"></script>
+    <script src="../view-switcher.js?v=10"></script>
     <style>
         /* Unified Grammar Theme - adapts based on grammar type */
         :root {
-            --grammar-bg-dark: #0f0f14;
-            --grammar-bg-light: #1a1a24;
-            --grammar-accent: #8b5cf6;
-            --grammar-accent-dark: #6d28d9;
-            --grammar-text: #e5e5e5;
-            --grammar-text-muted: #9ca3af;
+            --grammar-bg-dark: #f4f1ea;
+            --grammar-bg-light: #ffffff;
+            --grammar-accent: #9a7322;
+            --grammar-accent-dark: #7c5b18;
+            --grammar-text: #221f1a;
+            --grammar-text-muted: #6b6457;
         }
 
         /* Tarot theme */
         .theme-tarot {
-            --grammar-accent: #d4af37;
-            --grammar-accent-dark: #b8960f;
-            --grammar-bg-dark: #0a0a0f;
-            --grammar-bg-light: #1a1a2e;
+            --grammar-accent: #9a7322;
+            --grammar-accent-dark: #7c5b18;
+            --grammar-bg-dark: #f4f1ea;
+            --grammar-bg-light: #ffffff;
         }
 
         /* I Ching theme */
         .theme-iching {
-            --grammar-accent: #d4a574;
-            --grammar-accent-dark: #8b7355;
-            --grammar-bg-dark: #1a1612;
-            --grammar-bg-light: #2d2520;
+            --grammar-accent: #9a7322;
+            --grammar-accent-dark: #7c5b18;
+            --grammar-bg-dark: #f4f1ea;
+            --grammar-bg-light: #ffffff;
         }
 
         /* Astrology theme */
         .theme-astrology {
-            --grammar-accent: #6366f1;
-            --grammar-accent-dark: #4f46e5;
-            --grammar-bg-dark: #0f0f1a;
-            --grammar-bg-light: #1a1a2e;
+            --grammar-accent: #9a7322;
+            --grammar-accent-dark: #7c5b18;
+            --grammar-bg-dark: #f4f1ea;
+            --grammar-bg-light: #ffffff;
         }
 
         /* Course theme */
         .theme-course {
-            --grammar-accent: #10b981;
-            --grammar-accent-dark: #059669;
-            --grammar-bg-dark: #0f1410;
-            --grammar-bg-light: #1a2e20;
+            --grammar-accent: #9a7322;
+            --grammar-accent-dark: #7c5b18;
+            --grammar-bg-dark: #f4f1ea;
+            --grammar-bg-light: #ffffff;
         }
 
         body {
+            font-family: "Fraunces", Georgia, serif;
             background: linear-gradient(135deg, var(--grammar-bg-dark) 0%, var(--grammar-bg-light) 100%);
             min-height: 100vh;
             color: var(--grammar-text);
@@ -97,7 +98,7 @@
             color: inherit;
         }
         site-header a, site-header button {
-            color: #4b5563; /* gray-600 */
+            color: #6b6457; /* gray-600 */
         }
         site-header a:hover, site-header button:hover {
             color: #111827; /* gray-900 */
@@ -153,11 +154,11 @@
         }
         .sidebar-resize-handle:hover,
         .sidebar-resize-handle.active {
-            background: rgba(139, 92, 246, 0.25);
+            background: rgba(154,115,34, 0.25);
         }
         .sidebar-resize-handle:hover::before,
         .sidebar-resize-handle.active::before {
-            background: var(--grammar-accent, #8b5cf6);
+            background: var(--grammar-accent, #9a7322);
             height: 44px;
         }
 
@@ -206,7 +207,7 @@
         }
 
         .sidebar-section-header.active {
-            background: rgba(139, 92, 246, 0.2);
+            background: rgba(154,115,34, 0.2);
             border-left: 3px solid var(--grammar-accent);
         }
 
@@ -261,7 +262,7 @@
         }
 
         .sidebar-item.active {
-            background: rgba(139, 92, 246, 0.15);
+            background: rgba(154,115,34, 0.15);
             color: var(--grammar-accent);
         }
 
@@ -314,19 +315,19 @@
         .sidebar-thumb {
             width: 16px;
             height: 23px;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 3px;
             margin: 0 5px 0 1px;
             flex-shrink: 0;
-            opacity: 0.92;
-            border: 1px solid rgba(255,255,255,0.08);
-            background: #0a0810;
+            opacity: 1;
+            border: 1px solid var(--grammar-line, #d8d2c6);
+            background: var(--grammar-thumb-bg, #faf8f3);
         }
 
         .sidebar-l2-list {
             margin-left: 1rem;
             padding-left: 0.5rem;
-            border-left: 1px solid rgba(139, 92, 246, 0.2);
+            border-left: 1px solid rgba(154,115,34, 0.2);
         }
 
         .sidebar-nested-item {
@@ -345,7 +346,7 @@
             gap: 0.75rem;
             padding: 0.75rem 1rem;
             margin-bottom: 1rem;
-            background: linear-gradient(90deg, rgba(139, 92, 246, 0.2) 0%, transparent 100%);
+            background: linear-gradient(90deg, rgba(154,115,34, 0.2) 0%, transparent 100%);
             border-left: 3px solid var(--grammar-accent);
             border-radius: 0 8px 8px 0;
         }
@@ -356,13 +357,13 @@
         }
 
         .hierarchy-group-header.l2 {
-            background: linear-gradient(90deg, rgba(139, 92, 246, 0.2) 0%, transparent 100%);
-            border-left-color: #8b5cf6;
+            background: linear-gradient(90deg, rgba(154,115,34, 0.2) 0%, transparent 100%);
+            border-left-color: #9a7322;
         }
 
         .hierarchy-group-header.l1 {
             background: linear-gradient(90deg, rgba(107, 114, 128, 0.2) 0%, transparent 100%);
-            border-left-color: #6b7280;
+            border-left-color: #6b6457;
         }
 
         .hierarchy-group-badge {
@@ -378,13 +379,13 @@
         }
 
         .hierarchy-group-badge.l2 {
-            background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+            background: linear-gradient(135deg, #9a7322 0%, #7c5b18 100%);
             color: white;
         }
 
         .hierarchy-group-badge.l1 {
             background: rgba(107, 114, 128, 0.5);
-            color: #d1d5db;
+            color: #4a4439;
         }
 
         .hierarchy-group-title {
@@ -416,7 +417,7 @@
         }
 
         .sidebar-show-all.active {
-            background: rgba(139, 92, 246, 0.2);
+            background: rgba(154,115,34, 0.2);
             border-color: var(--grammar-accent);
             color: var(--grammar-accent);
         }
@@ -652,7 +653,7 @@
         }
 
         .source-popup-info a:hover {
-            color: #a78bfa;
+            color: #b8902f;
         }
 
         .source-badge {
@@ -665,12 +666,12 @@
 
         .source-badge.community {
             background: rgba(16, 185, 129, 0.2);
-            color: #10b981;
+            color: #9a7322;
         }
 
         .source-badge.personal {
-            background: rgba(139, 92, 246, 0.2);
-            color: #8b5cf6;
+            background: rgba(154,115,34, 0.2);
+            color: #9a7322;
         }
 
         .source-popup-actions {
@@ -691,13 +692,13 @@
         }
 
         .source-popup-actions .sync-action {
-            background: #10b981;
+            background: #9a7322;
             border: none;
             color: white;
         }
 
         .source-popup-actions .sync-action:hover {
-            background: #059669;
+            background: #7c5b18;
         }
 
         .source-popup-actions .sync-action:disabled {
@@ -884,17 +885,17 @@
             font-size: 0.75rem;
             padding: 0.375rem 0.6rem;
             border-radius: 9999px;
-            border: 1px solid var(--grammar-accent, #8b5cf6);
-            background: #221b38;
-            color: #d6c8ff;
+            border: 1px solid var(--grammar-accent, #9a7322);
+            background: rgba(154,115,34,.1);
+            color: #8a6414;
             cursor: pointer;
             font-weight: 600;
-            color-scheme: dark;            /* darken the native dropdown popup */
+            color-scheme: light;
         }
         .groupby-select:focus { outline: none; }
         .groupby-select option {
-            background: #1a1430;
-            color: #ece8f5;
+            background: #ffffff;
+            color: #221f1a;
         }
 
         /* Explanation of the chosen axis (and the active child) */
@@ -905,12 +906,12 @@
             font-size: 0.82rem;
             line-height: 1.5;
             color: var(--grammar-text-muted);
-            background: rgba(139, 92, 246, 0.07);
-            border: 1px solid rgba(139, 92, 246, 0.22);
+            background: rgba(154,115,34, 0.07);
+            border: 1px solid rgba(154,115,34, 0.22);
             border-radius: 8px;
             text-align: center;
         }
-        .axis-explainer b { color: var(--grammar-accent, #c4b5fd); }
+        .axis-explainer b { color: var(--grammar-accent, #b8902f); }
 
         .filter-pill {
             padding: 0.375rem 0.75rem;
@@ -956,8 +957,8 @@
         @media (min-width: 1024px) { .item-grid.thumbnails-layout { grid-template-columns: repeat(3, 1fr); } }
 
         .thumbnail-card {
-            background: linear-gradient(135deg, rgba(45, 45, 55, 0.95) 0%, rgba(26, 26, 36, 0.98) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #faf8f3;
+            border: 1px solid #d8d2c6;
             border-radius: 0.75rem;
             overflow: hidden;
             cursor: pointer;
@@ -972,13 +973,13 @@
            cards (ToolCard): object-contain on a letterbox so full covers /
            album art / card art show without cropping. The viewer is
            dark-themed, so the letterbox is black — matching ToolCard's
-           `object-contain ... dark:bg-black`. (Was a light #f3f4f6 box, which
+           `object-contain ... dark:bg-black`. (Was a light #faf8f3 box, which
            read as a white rectangle on the dark page — author flagged
            Jun 3 2026.) */
         .thumbnail-card .thumb-image {
             height: 12rem;
             overflow: hidden;
-            background: #000;
+            background: #faf8f3;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1004,13 +1005,13 @@
         .thumbnail-card .thumb-body h3 {
             font-size: 1rem;
             font-weight: 600;
-            color: #e5e5e5;
+            color: #221f1a;
             margin: 0 0 0.375rem 0;
             line-height: 1.3;
         }
         .thumbnail-card .thumb-body p {
             font-size: 0.8125rem;
-            color: #9ca3af;
+            color: #6b6457;
             margin: 0 0 0.5rem 0;
             line-height: 1.5;
             display: -webkit-box;
@@ -1033,7 +1034,7 @@
             line-height: 1.55;
         }
         .thumbnail-card .thumb-description a {
-            color: #c084fc;
+            color: #9a7322;
             text-decoration: underline;
             text-underline-offset: 2px;
         }
@@ -1041,7 +1042,7 @@
             color: #d8b4fe;
         }
         .thumbnail-card .thumb-description strong {
-            color: #e5e5e5;
+            color: #221f1a;
             font-weight: 600;
         }
         .thumbnail-card .thumb-external-link {
@@ -1052,7 +1053,7 @@
             padding: 0.375rem 0.75rem;
             font-size: 0.75rem;
             font-weight: 500;
-            color: #c084fc;
+            color: #9a7322;
             background: rgba(192, 132, 252, 0.1);
             border: 1px solid rgba(192, 132, 252, 0.3);
             border-radius: 0.375rem;
@@ -1073,7 +1074,7 @@
             padding: 0.125rem 0.5rem;
             border-radius: 9999px;
             background: rgba(255, 255, 255, 0.08);
-            color: #9ca3af;
+            color: #6b6457;
         }
 
         /* Item Card */
@@ -1126,7 +1127,7 @@
 
         /* Delicate, neutral "no image yet" mark — override the accent colour so it
            reads as a quiet black-and-white line drawing, not a bright glyph. */
-        .noimg-svg { color: var(--grammar-text-muted, #9b94b3); opacity: 0.55; }
+        .noimg-svg { color: var(--grammar-text-muted, #6b6457); opacity: 0.55; }
         .thumb-icon .noimg-svg { opacity: 1; } /* .thumb-icon already dims to 0.5 */
 
         /* Item info */
@@ -1155,7 +1156,7 @@
             position: absolute;
             top: 4px;
             left: 4px;
-            background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+            background: linear-gradient(135deg, #9a7322 0%, #7c5b18 100%);
             color: white;
             font-size: 0.6rem;
             font-weight: 700;
@@ -1169,7 +1170,7 @@
         }
 
         .l4-badge {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            background: linear-gradient(135deg, #9a7322 0%, #7c5b18 100%);
         }
 
         .l5-badge {
@@ -1181,15 +1182,15 @@
         .l2-components {
             margin-top: 1.5rem;
             padding: 1rem;
-            background: rgba(139, 92, 246, 0.1);
-            border: 1px solid rgba(139, 92, 246, 0.3);
+            background: rgba(154,115,34, 0.1);
+            border: 1px solid rgba(154,115,34, 0.3);
             border-radius: 0.5rem;
         }
 
         .l2-components-header {
             font-size: 0.875rem;
             font-weight: 600;
-            color: #a78bfa;
+            color: #b8902f;
             margin-bottom: 0.75rem;
             display: flex;
             align-items: center;
@@ -1214,7 +1215,7 @@
 
         .l2-component-card:hover {
             border-color: var(--grammar-accent);
-            background: rgba(139, 92, 246, 0.2);
+            background: rgba(154,115,34, 0.2);
         }
 
         .l2-component-icon {
@@ -1289,7 +1290,7 @@
             border-radius: 50%;
             background: rgba(255,255,255,.1);
             border: 1px solid rgba(255,255,255,.2);
-            color: #e5e5e5;
+            color: #221f1a;
             font-size: 1.4rem;
             cursor: pointer;
             display: flex;
@@ -1298,7 +1299,7 @@
             transition: background .15s, opacity .15s;
             flex-shrink: 0;
         }
-        .modal-nav-btn:hover { background: rgba(147,51,234,.4); border-color: #9333ea; }
+        .modal-nav-btn:hover { background: rgba(154,115,34,.4); border-color: #9a7322; }
         .modal-nav-btn:disabled { opacity: .25; cursor: default; }
 
         /* Card counter badge in the modal */
@@ -1312,7 +1313,7 @@
             border-radius: 20px;
             padding: 2px 12px;
             font-size: 11px;
-            color: #9ca3af;
+            color: #6b6457;
             white-space: nowrap;
             pointer-events: none;
             z-index: 11;
@@ -1389,7 +1390,7 @@
         .modal-visual .icon {
             font-size: 6rem;
             color: var(--grammar-accent);
-            text-shadow: 0 0 40px rgba(139, 92, 246, 0.3);
+            text-shadow: 0 0 40px rgba(154,115,34, 0.3);
         }
 
         /* Modal content sections */
@@ -1419,7 +1420,7 @@
 
         .keyword-tag {
             padding: 0.25rem 0.75rem;
-            background: rgba(139, 92, 246, 0.2);
+            background: rgba(154,115,34, 0.2);
             color: var(--grammar-accent);
             border-radius: 9999px;
             font-size: 0.75rem;
@@ -1453,7 +1454,7 @@
         /* Questions/Affirmation box */
         .highlight-box {
             padding: 1rem;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(107, 70, 193, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(154,115,34, 0.15) 0%, rgba(107, 70, 193, 0.1) 100%);
             border-radius: 0.5rem;
             border-left: 3px solid var(--grammar-accent);
         }
@@ -1559,7 +1560,7 @@
         .spinner {
             width: 48px;
             height: 48px;
-            border: 3px solid rgba(139, 92, 246, 0.3);
+            border: 3px solid rgba(154,115,34, 0.3);
             border-top-color: var(--grammar-accent);
             border-radius: 50%;
             animation: spin 1s linear infinite;
@@ -1671,7 +1672,7 @@
         }
 
         .item-card.selected {
-            border-color: #22c55e;
+            border-color: #9a7322;
             box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3);
         }
 
@@ -1686,7 +1687,7 @@
             right: 0.5rem;
             width: 1.5rem;
             height: 1.5rem;
-            background: #22c55e;
+            background: #9a7322;
             color: white;
             border-radius: 50%;
             font-size: 0.75rem;
@@ -1973,32 +1974,32 @@
         }
         .section-lens-bar.hidden { display: none; }
         .lens-bar-label { font-size: 11px; letter-spacing: .04em; text-transform: uppercase;
-            color: var(--grammar-text-muted, #9b93b5); margin-right: 2px; }
+            color: var(--grammar-text-muted, #6b6457); margin-right: 2px; }
         .lens-display-select {
-            background: #1d1830; color: #e9e4f6; border: 1px solid #3a3450;
+            background: #f4f1ea; color: #221f1a; border: 1px solid #d8d2c6;
             border-radius: 8px; padding: 5px 9px; font-size: 12px; font-weight: 600; cursor: pointer;
         }
         .lens-chip {
             display: inline-flex; align-items: center; gap: 5px;
             padding: 4px 9px; border-radius: 999px; cursor: pointer; user-select: none;
             font-size: 12px; line-height: 1; border: 1px solid rgba(255,255,255,.16);
-            background: rgba(255,255,255,.06); color: var(--grammar-text, #e9e4f6);
+            background: rgba(255,255,255,.06); color: var(--grammar-text, #221f1a);
             transition: opacity .12s, background .12s;
         }
         .lens-chip:hover { background: rgba(255,255,255,.12); }
         .lens-chip.off { opacity: .38; text-decoration: line-through; }
-        .lens-chip .lens-cov { font-size: 10px; opacity: .6; }
+        .lens-chip .lens-cov { font-size: 11.5px; opacity: .7; }
         .lens-chip.attributed { border-color: rgba(196,167,255,.5); }
         .lens-chip .lens-later {
-            font-size: 9px; text-transform: uppercase; letter-spacing: .03em;
-            color: #c4a7ff; border: 1px solid rgba(196,167,255,.4);
+            font-size: 11px; text-transform: uppercase; letter-spacing: .03em;
+            color: #b8902f; border: 1px solid rgba(196,167,255,.4);
             border-radius: 4px; padding: 1px 3px;
         }
         .lens-master {
-            margin-left: auto; font-size: 11px; color: var(--grammar-text-muted, #9b93b5);
+            margin-left: auto; font-size: 11px; color: var(--grammar-text-muted, #6b6457);
             display: inline-flex; align-items: center; gap: 5px; cursor: pointer; user-select: none;
         }
-        .lens-master input { accent-color: #c4a7ff; cursor: pointer; }
+        .lens-master input { accent-color: #b8902f; cursor: pointer; }
         /* lens-flip text in grid cells (both card + thumbnail layouts) — a clean
            clamped snippet that fades out (no per-cell scrollbars); click the card
            to read the full text in the modal. */
@@ -2006,14 +2007,14 @@
             display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 11;
             position: relative; width: 100%; max-height: 230px; overflow: hidden; cursor: pointer;
             padding: 10px 11px; text-align: left; font-size: 11.5px; line-height: 1.5;
-            color: var(--grammar-text, #e9e4f6); background: rgba(12,9,22,.55);
+            color: var(--grammar-text, #221f1a); background: rgba(12,9,22,.55);
         }
         .item-visual .lens-text::after, .thumb-image .lens-text::after {
             content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 30px;
             background: linear-gradient(transparent, rgba(12,9,22,.92)); pointer-events: none;
         }
         .item-visual .lens-text p, .thumb-image .lens-text p { margin: 0 0 .5em; }
-        .lens-text .lens-attr { display: block; font-size: 10px; opacity: .65;
+        .lens-text .lens-attr { display: block; font-size: 11.5px; opacity: .75;
             font-style: italic; margin-bottom: 6px; }
         .lens-empty { display: flex; align-items: center; justify-content: center;
             width: 100%; min-height: 90px; padding: 14px; text-align: center;
@@ -2037,8 +2038,8 @@
     <!-- Shared grammar loading component (local copy) -->
     <script src="grammar-loader.js"></script>
     <script src="dimension-engine.js?v=1"></script>
-    <script src="deck-picker.js?v=1"></script>
-    <script src="eco-links.js?v=1"></script>
+    <script src="deck-picker.js?v=2"></script>
+    <script src="eco-links.js?v=2"></script>
     <script>window.RecursiveEcoLinks && RecursiveEcoLinks.ready();</script>
 
     <!-- Site Header -->
@@ -2062,7 +2063,7 @@
             <!-- Header -->
             <div class="grammar-header">
                 <select id="deck-switcher" onchange="switchDeck(this.value)" title="Switch deck — or back to All Decks"
-                    style="margin-bottom:10px;background:#1d1830;color:#e9e4f6;border:1px solid #3a3450;border-radius:8px;padding:7px 12px;font-size:14px;font-weight:600;cursor:pointer;max-width:340px;">
+                    style="margin-bottom:10px;background:#f4f1ea;color:#221f1a;border:1px solid #d8d2c6;border-radius:8px;padding:7px 12px;font-size:14px;font-weight:600;cursor:pointer;max-width:340px;">
                     <option value="">Loading decks…</option>
                 </select>
                 <h1 id="grammar-title" class="grammar-title">Grammar Viewer</h1>
@@ -2088,7 +2089,7 @@
                              tooltip (`title` + `aria-label`) tells the
                              user what it does on hover or long-press. -->
                         <button id="copy-btn" class="edit-btn" onclick="copyToMyGrammars()" title="Copy this grammar to your drafts — fork it and make it your own" aria-label="Copy this grammar to your drafts" style="display:inline-flex;align-items:center;justify-content:center;padding:6px 8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-                        <button id="report-btn" class="report-btn" onclick="openReportModal()" title="Report issue with this grammar">⚑ Report</button>
+                        <button id="report-btn" class="report-btn" onclick="openReportModal()" title="Report issue with this grammar"><rt-icon name="flag"></rt-icon> Report</button>
                     </span>
                 </div>
             </div>
@@ -2169,7 +2170,7 @@
     <!-- Report Modal -->
     <div id="report-modal" class="report-modal hidden">
         <div class="report-modal-content">
-            <h3>⚑ Report an Inaccuracy</h3>
+            <h3><rt-icon name="flag"></rt-icon> Report an Inaccuracy</h3>
             <p style="color: var(--grammar-text-muted); font-size: 0.875rem; margin-bottom: 1rem; line-height:1.5;">
                 Describe what's wrong — a wrong date, misattribution, incorrect card identity, etc. We'll open a pre-filled GitHub issue you can submit (free account required).
             </p>
@@ -2239,6 +2240,20 @@
         // State
         let grammarType = 'tarot';
         let grammarData = null;
+        let ecoIds = null; // tarot/_eco_ids.json — repo deck slug -> recursive.eco deck UUID
+        // Resolve the recursive.eco deck UUID for the deck currently shown, so "Get a Reading" /
+        // copy / edit open Flow with THIS deck. Static (?src=) views carry no id param, so map the
+        // slug from the src path via _eco_ids.json (fetched + cached on first use).
+        async function resolveDeckFlowId() {
+            const params = new URLSearchParams(location.search);
+            const direct = params.get('id') || params.get('deckId') || params.get('bookId');
+            if (direct) return direct;
+            const m = (params.get('src') || '').match(/tarot\/([^/]+)\/grammar\.json/);
+            const slug = m ? m[1] : null;
+            if (!slug) return null;
+            if (!ecoIds) { try { ecoIds = await (await fetch('../tarot/_eco_ids.json')).json(); } catch (_) { ecoIds = { ids: {} }; } }
+            return (ecoIds.ids || {})[slug] || null;
+        }
         let grammarSource = null; // 'user_documents' or 'tools'
         let grammarToolId = null; // Tool ID if from tools table
         let githubSourceUrl = null; // GitHub source URL for sync feature
@@ -2389,9 +2404,14 @@
             });
 
             try {
-                // Check auth state
-                const { data: { user } } = await supabaseClient.auth.getUser();
-                currentUser = user;
+                // Check auth state — read the REAL shared session exposed by auth-widget.js
+                // (window.recursiveAuth reads the .recursive.eco cookie the app sets, so a
+                // sign-in on flow.recursive.eco is seen here too). The static stub
+                // (window.RecursiveAuth) always returns null — that is why "Sign in to copy"
+                // never picked up the login. Wait briefly for the async widget to attach.
+                for (let _i = 0; _i < 40 && !window.recursiveAuth; _i++) { await new Promise(r => setTimeout(r, 100)); }
+                try { currentUser = window.recursiveAuth ? await window.recursiveAuth.getUser() : null; }
+                catch (_) { currentUser = null; }
                 updateEditCopyButtons();
 
                 // Detect grammar type and ID from URL
@@ -2617,7 +2637,7 @@
                 const chip = document.createElement('span');
                 chip.draggable = true;
                 chip.dataset.field = f.name;
-                chip.style.cssText = `display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:14px;font-size:12px;cursor:grab;border:1px solid rgba(255,255,255,.18);background:${deckGroupField===f.name?'#9333ea':'rgba(255,255,255,.07)'};color:${deckGroupField===f.name?'#fff':'var(--grammar-text-muted)'};user-select:none;`;
+                chip.style.cssText = `display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:14px;font-size:12px;cursor:grab;border:1px solid rgba(255,255,255,.18);background:${deckGroupField===f.name?'#9a7322':'rgba(255,255,255,.07)'};color:${deckGroupField===f.name?'#fff':'var(--grammar-text-muted)'};user-select:none;`;
                 chip.textContent = f.name + ' (' + f.count + ')';
                 chip.addEventListener('dragstart', e => {
                     e.dataTransfer.setData('text/plain', JSON.stringify({ field: f.name }));
@@ -2662,10 +2682,10 @@
             // Drop zone at the top of the sidebar
             const dropZone = document.createElement('div');
             dropZone.style.cssText = `padding:6px 8px;border-radius:6px;border:1.5px dashed rgba(255,255,255,.18);font-size:11.5px;color:var(--grammar-text-muted);margin-bottom:8px;text-align:center;transition:border-color .15s,background .15s;`;
-            dropZone.textContent = deckGroupField ? ('Grouped by: ' + deckGroupField + ' ✕') : '⊸ Drop a dimension here';
+            dropZone.textContent = deckGroupField ? ('Grouped by: ' + deckGroupField + ' <rt-icon name="x"></rt-icon>') : '⊸ Drop a dimension here';
             dropZone.title = deckGroupField ? 'Click to clear grouping' : 'Drag a dimension chip here to group cards';
-            if (deckGroupField) { dropZone.style.borderColor = '#9333ea'; dropZone.style.color = '#c4b5fd'; dropZone.style.cursor = 'pointer'; dropZone.addEventListener('click', () => applyDeckGroupField(deckGroupField)); }
-            dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.style.background = 'rgba(147,51,234,.18)'; dropZone.style.borderColor = '#9333ea'; });
+            if (deckGroupField) { dropZone.style.borderColor = '#9a7322'; dropZone.style.color = '#b8902f'; dropZone.style.cursor = 'pointer'; dropZone.addEventListener('click', () => applyDeckGroupField(deckGroupField)); }
+            dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.style.background = 'rgba(154,115,34,.18)'; dropZone.style.borderColor = '#9a7322'; });
             dropZone.addEventListener('dragleave', () => { dropZone.style.background = ''; dropZone.style.borderColor = 'rgba(255,255,255,.18)'; });
             dropZone.addEventListener('drop', e => {
                 e.preventDefault(); dropZone.style.background = ''; dropZone.style.borderColor = 'rgba(255,255,255,.18)';
@@ -2716,7 +2736,7 @@
                 lastSyncedAt = null;
                 return data;
             } catch (error) {
-                console.error('❌ Error loading from src:', error);
+                console.error('<rt-icon name="x"></rt-icon> Error loading from src:', error);
                 return null;
             }
         }
@@ -2736,7 +2756,7 @@
                 }
 
                 const { data, url, isCommunity } = result;
-                console.log('📦 Fetched GitHub grammar:', data);
+                console.log('<rt-icon name="package"></rt-icon> Fetched GitHub grammar:', data);
 
                 // Update grammar type from data if available
                 if (data.grammar_type) {
@@ -2752,7 +2772,7 @@
 
                 return data;
             } catch (error) {
-                console.error('❌ Error loading from GitHub:', error);
+                console.error('<rt-icon name="x"></rt-icon> Error loading from GitHub:', error);
                 return null;
             }
         }
@@ -2800,7 +2820,7 @@
                 metaCategories = data.meta_categories.map(mc => ({
                     id: mc.id || `l3-${mc.name?.toLowerCase().replace(/\s+/g, '-')}`,
                     name: mc.name || 'Unnamed Category',
-                    symbol: mc.symbol || '📁',
+                    symbol: mc.symbol || '<rt-icon name="folder"></rt-icon>',
                     description: mc.description || '',
                     color: mc.color || null,
                     children: mc.children || [] // IDs of L2 items that belong to this L3
@@ -2944,7 +2964,7 @@
                         metaCategories = l3Items.map(l3 => ({
                             id: l3.id,
                             name: l3.name,
-                            symbol: l3.icon || '📁',
+                            symbol: l3.icon || '<rt-icon name="folder"></rt-icon>',
                             description: l3.sections?.Interpretation || l3.sections?.Description || '',
                             color: null,
                             children: l3.composite_of || [], // L2 item IDs
@@ -3178,7 +3198,7 @@
         function getLinkIcon(link, size) {
             size = size || 16;
             if (isInternalLink(link)) {
-                return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 100 100"><path d="' + getDefaultSpiralPath() + '" fill="none" stroke="#9333ea" stroke-width="3" stroke-linecap="round" opacity="0.8"/></svg>';
+                return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 100 100"><path d="' + getDefaultSpiralPath() + '" fill="none" stroke="#9a7322" stroke-width="3" stroke-linecap="round" opacity="0.8"/></svg>';
             }
             return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
         }
@@ -3310,30 +3330,27 @@
             // grammar — data shape > type stamp).
             const readingBtn = document.getElementById('reading-btn');
             if (readingBtn) {
-                const params = new URLSearchParams(window.location.search);
-                const id = params.get('id') || params.get('deckId') || params.get('bookId');
-                const flowBaseUrl = getFlowBaseUrl();
-                if (id) {
-                    const typeStr = String(grammarType || '').toLowerCase();
-                    const items = grammarData && grammarData.items ? grammarData.items : [];
-                    // Detect I Ching by type string OR by item shape
-                    // (items have number 1–64 + binary/king_wen → hexagram).
-                    const looksLikeIching = typeStr.includes('iching') || typeStr.includes('i-ching') || typeStr.includes('hex')
-                        || items.some(it => typeof it.number === 'number' && it.number >= 1 && it.number <= 64 && (it.binary || it.king_wen || it.trigram_above));
-                    // Detect astrology by type string OR by presence of birth chart data.
-                    const looksLikeAstro = typeStr.includes('astro') || typeStr.includes('birthchart') || typeStr.includes('birth_chart')
-                        || (grammarData && Array.isArray(grammarData.birth_charts) && grammarData.birth_charts.length > 0);
-                    if (looksLikeIching) {
-                        readingBtn.href = `${flowBaseUrl}/?bookId=${id}`;
-                    } else if (looksLikeAstro) {
-                        readingBtn.href = `${flowBaseUrl}/?astroGrammarId=${id}`;
-                    } else {
-                        readingBtn.href = `${flowBaseUrl}/?deckId=${id}`;
-                    }
-                } else {
-                    readingBtn.href = flowBaseUrl;
-                }
                 readingBtn.target = '_blank';
+                readingBtn.href = getFlowBaseUrl();   // sensible default; the deck is resolved on click
+                readingBtn.addEventListener('click', async (e) => {
+                    e.preventDefault();
+                    const flowBaseUrl = getFlowBaseUrl();
+                    const id = await resolveDeckFlowId();   // ?id=/?deckId= OR slug -> _eco_ids.json
+                    let url = flowBaseUrl;
+                    if (id) {
+                        const typeStr = String(grammarType || '').toLowerCase();
+                        const items = grammarData && grammarData.items ? grammarData.items : [];
+                        // I Ching by type string OR item shape (number 1–64 + binary/king_wen → hexagram).
+                        const looksLikeIching = typeStr.includes('iching') || typeStr.includes('i-ching') || typeStr.includes('hex')
+                            || items.some(it => typeof it.number === 'number' && it.number >= 1 && it.number <= 64 && (it.binary || it.king_wen || it.trigram_above));
+                        const looksLikeAstro = typeStr.includes('astro') || typeStr.includes('birthchart') || typeStr.includes('birth_chart')
+                            || (grammarData && Array.isArray(grammarData.birth_charts) && grammarData.birth_charts.length > 0);
+                        url = looksLikeIching ? `${flowBaseUrl}/?bookId=${id}`
+                            : looksLikeAstro ? `${flowBaseUrl}/?astroGrammarId=${id}`
+                            : `${flowBaseUrl}/?deckId=${id}`;
+                    }
+                    window.open(url, '_blank', 'noopener');
+                });
             }
 
             // Set up view mode dropdown (shared component)
@@ -3681,12 +3698,12 @@
             let list = [];
             try {
                 const c = await (await fetch('../tarot/_collection.json')).json();
-                list = (c.grammars || c.collection || c.decks || []).map(d => ({ slug: d.slug, name: d.name || d.slug, meta: !!d.is_meta })).filter(d => d.slug);
+                list = (c.grammars || c.collection || c.decks || []).map(d => ({ slug: d.slug, name: d.name || d.slug, meta: !!d.is_meta, year: d.year })).filter(d => d.slug);
             } catch (e) { sel.style.display = 'none'; return; }
             // ensure the fat meta is always offered, even if not listed in _collection
             if (!list.some(d => d.slug === 'all-decks-many-lenses')) list.unshift({ slug: 'all-decks-many-lenses', name: 'All Decks (the meta)', meta: true });
             const metaItem = list.find(d => d.slug === 'all-decks-many-lenses') || list.find(d => d.meta) || { slug: 'all-decks-many-lenses', name: 'All Decks (the meta)' };
-            const decks = list.filter(d => d.slug !== metaItem.slug).sort((a, b) => a.name.localeCompare(b.name));
+            const decks = list.filter(d => d.slug !== metaItem.slug).sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || (a.name || '').localeCompare(b.name || ''));
             const srcFor = s => '../tarot/' + s + '/grammar.json';
             const opt = (s, label) => `<option value="${srcFor(s)}"${curSrc.includes('/' + s + '/') ? ' selected' : ''}>${label.replace(/\s+[—–-]\s+.*/, '')}</option>`;
             sel.innerHTML = opt(metaItem.slug, '✦ All Decks (the meta)') + decks.map(d => opt(d.slug, d.name)).join('');
@@ -3697,9 +3714,9 @@
         function showLensMenu(item, anchor) {
             document.querySelectorAll('.lens-menu-pop').forEach(m => m.remove());
             const opts = [
-                ['▦ Filter the grid to this', 'filter'],
+                ['<rt-icon name="grid"></rt-icon> Filter the grid to this', 'filter'],
                 ['☰ Expand in sidebar', 'sidebar'],
-                ['✕ Show all (clear filter)', 'clear'],
+                ['<rt-icon name="x"></rt-icon> Show all (clear filter)', 'clear'],
                 ['—', 'sep'],
                 ['⸬ View as Genealogy', 'genealogy'],
                 ['↧ View as Timeline', 'timeline'],
@@ -3708,15 +3725,15 @@
             const NAV = { genealogy: '../genealogy.html', timeline: 'timeline.html', tree: 'tree-viewer.html' };
             const menu = document.createElement('div');
             menu.className = 'lens-menu-pop';
-            menu.style.cssText = 'position:fixed;z-index:9999;background:#161227;border:1px solid #3a3450;border-radius:9px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.55);min-width:190px;';
+            menu.style.cssText = 'position:fixed;z-index:9999;background:#f4f1ea;border:1px solid #d8d2c6;border-radius:9px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.55);min-width:190px;';
             const r = anchor.getBoundingClientRect();
             menu.style.left = Math.min(r.left, window.innerWidth - 210) + 'px';
             menu.style.top = (r.bottom + 4) + 'px';
             opts.forEach(([label, mode]) => {
-                if (mode === 'sep') { const hr = document.createElement('div'); hr.style.cssText = 'height:1px;background:#3a3450;margin:5px 4px;'; menu.appendChild(hr); return; }
+                if (mode === 'sep') { const hr = document.createElement('div'); hr.style.cssText = 'height:1px;background:#d8d2c6;margin:5px 4px;'; menu.appendChild(hr); return; }
                 const a = document.createElement('div');
                 a.textContent = label;
-                a.style.cssText = 'padding:7px 11px;border-radius:6px;cursor:pointer;color:#cfc8e2;font-size:13px;';
+                a.style.cssText = 'padding:7px 11px;border-radius:6px;cursor:pointer;color:#4a4439;font-size:13px;';
                 a.onmouseenter = () => a.style.background = '#241d3a';
                 a.onmouseleave = () => a.style.background = '';
                 a.onclick = (ev) => {
@@ -4325,7 +4342,7 @@
                 ${subtitle ? `<p class="modal-subtitle">${escapeHtml(subtitle)}</p>` : ''}
             `;
 
-            // recursive.eco per-deck links (🔮 Cast · 👁 View · ✏️ Edit) — shown when this deck is in the map
+            // recursive.eco per-deck links (<rt-icon name="oracle"></rt-icon> Cast · <rt-icon name="eye"></rt-icon> View · <rt-icon name="pencil"></rt-icon>️ Edit) — shown when this deck is in the map
             try {
                 const _ecoSlug = item._deckSlug || (function () {
                     const s = new URLSearchParams(location.search).get('src') || '';
@@ -4440,10 +4457,10 @@
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                                 <span>View as</span>
                             </summary>
-                            <div style="position: absolute; top: calc(100% + 4px); left: 0; min-width: 160px; background: #1f2937; border: 1px solid #4b5563; border-radius: 6px; padding: 4px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.4); z-index: 50;">
+                            <div style="position: absolute; top: calc(100% + 4px); left: 0; min-width: 160px; background: #1f2937; border: 1px solid #6b6457; border-radius: 6px; padding: 4px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.4); z-index: 50;">
                                 ${viewModeOptions
                                     .filter(([, url]) => !!url)
-                                    .map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener noreferrer" style="display: block; padding: 6px 12px; font-size: 0.75rem; color: #d1d5db; text-decoration: none; transition: background 0.15s;" onmouseover="this.style.background='#374151';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#d1d5db'">${label}</a>`)
+                                    .map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener noreferrer" style="display: block; padding: 6px 12px; font-size: 0.75rem; color: #4a4439; text-decoration: none; transition: background 0.15s;" onmouseover="this.style.background='#4a4439';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4439'">${label}</a>`)
                                     .join('')}
                             </div>
                         </details>`;
@@ -4458,7 +4475,7 @@
                            class="modal-action-btn"
                            title="Copy this grammar to your drafts so you can edit or fork it"
                            aria-label="Copy this grammar to your drafts so you can edit or fork it"
-                           style="display: inline-flex; align-items: center; justify-content: center; padding: 0.35rem 0.5rem; background: rgba(75, 85, 99, 0.3); border: 1px solid rgba(75, 85, 99, 0.5); border-radius: 4px; color: #d1d5db; cursor: pointer; transition: all 0.2s;"
+                           style="display: inline-flex; align-items: center; justify-content: center; padding: 0.35rem 0.5rem; background: rgba(75, 85, 99, 0.3); border: 1px solid rgba(75, 85, 99, 0.5); border-radius: 4px; color: #4a4439; cursor: pointer; transition: all 0.2s;"
                            onmouseover="this.style.background='rgba(75, 85, 99, 0.5)'" onmouseout="this.style.background='rgba(75, 85, 99, 0.3)'">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                         </button>`;
@@ -4581,7 +4598,7 @@
                     bodyHtml += `
                         <div class="l2-components">
                             <div class="l2-components-header">
-                                <span>🔗</span>
+                                <span><rt-icon name="link"></rt-icon></span>
                                 <span>Emerges from ${componentItems.length} items</span>
                             </div>
                             <div class="l2-components-grid">
@@ -4620,6 +4637,14 @@
                     </div>
                 `;
             }
+
+            // Always-visible recursive.eco actions for the open card: Edit this card →
+            // the recursive.eco editor (this card pre-selected); View deck → the deck on Flow.
+            bodyHtml += `
+                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)">
+                    <a href="#" onclick="editCommunityGrammar(selectedItem &amp;&amp; selectedItem.id);return false;" title="Open this card in the recursive.eco editor" style="font-size:12.5px;color:var(--grammar-accent,#b8902f);text-decoration:none;padding:6px 11px;border-radius:7px;border:1px solid rgba(255,255,255,.12);background:rgba(154,115,34,.08)"><rt-icon name="pencil"></rt-icon> Edit this card on recursive.eco →</a>
+                    <a href="#" onclick="openDeckOnEco();return false;" title="Open this whole deck on recursive.eco" style="font-size:12.5px;color:var(--grammar-accent,#b8902f);text-decoration:none;padding:6px 11px;border-radius:7px;border:1px solid rgba(255,255,255,.12);background:rgba(154,115,34,.08)"><rt-icon name="grid"></rt-icon> View deck on recursive.eco →</a>
+                </div>`;
 
             modalBody.innerHTML = bodyHtml;
             modalBackdrop.classList.add('open');
@@ -4798,7 +4823,7 @@
         }
 
         // Edit community grammar - SUPABASE-FIRST: prefer ?id= over ?community=
-        function editCommunityGrammar(cardId = null) {
+        async function editCommunityGrammar(cardId = null) {
             if (!currentUser) {
                 // Save card ID for after auth completes
                 pendingEditCardId = cardId;
@@ -4809,7 +4834,7 @@
 
             const offerBaseUrl = getOfferBaseUrl();
             const params = new URLSearchParams(window.location.search);
-            const docId = params.get('id') || params.get('deckId') || params.get('bookId');
+            const docId = await resolveDeckFlowId();
 
             let editUrl;
             // SUPABASE-FIRST: Prefer ?id= when we have document ID
@@ -4829,8 +4854,27 @@
             window.open(editUrl, '_blank');
         }
 
+        // Open the whole deck on recursive.eco — same deck resolution as "Get a Reading".
+        async function openDeckOnEco() {
+            const flowBaseUrl = getFlowBaseUrl();
+            const id = await resolveDeckFlowId();
+            let url = flowBaseUrl;
+            if (id) {
+                const typeStr = String(grammarType || '').toLowerCase();
+                const items = grammarData && grammarData.items ? grammarData.items : [];
+                const looksLikeIching = typeStr.includes('iching') || typeStr.includes('i-ching') || typeStr.includes('hex')
+                    || items.some(it => typeof it.number === 'number' && it.number >= 1 && it.number <= 64 && (it.binary || it.king_wen || it.trigram_above));
+                const looksLikeAstro = typeStr.includes('astro') || typeStr.includes('birthchart') || typeStr.includes('birth_chart')
+                    || (grammarData && Array.isArray(grammarData.birth_charts) && grammarData.birth_charts.length > 0);
+                url = looksLikeIching ? `${flowBaseUrl}/?bookId=${id}`
+                    : looksLikeAstro ? `${flowBaseUrl}/?astroGrammarId=${id}`
+                    : `${flowBaseUrl}/?deckId=${id}`;
+            }
+            window.open(url, '_blank', 'noopener');
+        }
+
         // Copy grammar to user's drafts - opens editor with ?forkId= or ?copyFrom= param
-        function copyToMyGrammars(cardId = null) {
+        async function copyToMyGrammars(cardId = null) {
             if (!currentUser) {
                 // Save card ID for after auth completes
                 pendingForkCardId = cardId;
@@ -4840,7 +4884,7 @@
             }
 
             const params = new URLSearchParams(window.location.search);
-            const id = params.get('id') || params.get('deckId') || params.get('bookId');
+            const id = await resolveDeckFlowId();
             const githubParam = params.get('github');
             const offerBaseUrl = getOfferBaseUrl();
 
@@ -5683,8 +5727,8 @@ ${reason}
     <style>
         .assistant-toggle {
             position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 40;
-            background: #9333ea; color: white; border: none; border-radius: 9999px;
-            width: 56px; height: 56px; cursor: pointer; box-shadow: 0 4px 12px rgba(147,51,234,0.4);
+            background: #9a7322; color: white; border: none; border-radius: 9999px;
+            width: 56px; height: 56px; cursor: pointer; box-shadow: 0 4px 12px rgba(154,115,34,0.4);
             display: flex; align-items: center; justify-content: center; transition: all 0.2s;
         }
         .assistant-toggle:hover { background: #7e22ce; transform: scale(1.05); }
@@ -5692,7 +5736,7 @@ ${reason}
             position: fixed; bottom: 5.5rem; right: 1.5rem; z-index: 40;
             width: 384px; max-width: calc(100vw - 2rem); height: 500px; max-height: 70vh;
             border-radius: 0.75rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            border: 1px solid #374151; display: none;
+            border: 1px solid #4a4439; display: none;
         }
         .assistant-frame-container.open { display: block; }
         .assistant-frame-container iframe { width: 100%; height: 100%; border: none; }
@@ -5713,10 +5757,10 @@ ${reason}
             let user = null;
             try { user = await window.recursiveAuth?.getUser?.(); } catch (e) {}
             if (!user) {
-                frame.innerHTML = `<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#16121f;color:#cfc8e2;font-family:-apple-system,'Segoe UI',sans-serif;font-size:14px;text-align:center;padding:24px">
-                    <div style="font-size:28px">💬</div>
+                frame.innerHTML = `<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#faf8f3;color:#4a4439;font-family:-apple-system,'Segoe UI',sans-serif;font-size:14px;text-align:center;padding:24px">
+                    <div style="font-size:28px"><rt-icon name="message"></rt-icon></div>
                     <div>The Library Assistant needs a free<br><b>recursive.eco</b> account.</div>
-                    <a href="${getFlowBaseUrl()}/?signin=1" target="_blank" rel="noopener" style="background:#9333ea;color:#fff;text-decoration:none;padding:8px 18px;border-radius:8px;font-weight:600">Sign in ↗</a>
+                    <a href="${getFlowBaseUrl()}/?signin=1" target="_blank" rel="noopener" style="background:#9a7322;color:#fff;text-decoration:none;padding:8px 18px;border-radius:8px;font-weight:600">Sign in ↗</a>
                     <small style="color:#7c7596">Sign in, then reopen this bubble.</small></div>`;
                 return;
             }
