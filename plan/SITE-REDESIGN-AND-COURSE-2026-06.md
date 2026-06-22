@@ -64,6 +64,23 @@ on a neutral mat), cache-bust with `style.css?v=N` + `site-header.js?v=N`.
 
 ---
 
+## Metaphor arc — "game → crystal ball → gate" (decided Jun 22)
+
+The way to hold the cards is framed as a 3-station arch (now a coda in `intention-setting.mdx`):
+**game** (1440s play) → **crystal ball** (Etteilla's 1780s oracle — read as fate, *obey*) →
+**gate, not fate** (autonomy-preserving present; threshold you cross with your will intact;
+reflects + lets you imagine). The **palantír** (Tolkien) is the named *failure mode* shared by
+the cards AND AI — the seeing-stone that destroys whoever obeys it; the Palantir company is the
+misread-of-Tolkien surveillance/AI version. This mirrors recursive.eco's own
+`apps/landing/pages/safer-containers.html` ("AI Risks & Safer Containers": sycophancy,
+dependency, loss of agency, fluency-mistaken-for-accuracy…). The discipline against fake-news /
+the AI oracle = the discipline of gate-not-fate reading. **Open decision:** whether to replace
+"mirror" with "gate" site-wide (creed/voices/essays) or keep mirror as anchor + gate as the
+resolution. Candidate good-object names considered: window-at-dusk, threshold/gate (front-runner,
+ties to "gate, not fate" + GD pathworking + safer-containers' "the refusals are the gates"),
+prism, still-pool. STILL TODO: add the palantír (Denethor vs Aragorn) as the failure-mode
+illustration in `how-tarot-works.mdx`; apply the gate metaphor where chosen.
+
 ## ☐ QUEUE (not done — in rough priority)
 
 1. **Icons → clean SVG library (de-emoji).** `icons.js` (`rt-icon`) exists (~15 icons). Extend it
