@@ -106,21 +106,21 @@
         renderSection(EXTRA_VIEWS, active);
       sr.innerHTML = `
         <style>
-          :host{ display:inline-block; position:relative; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+          :host{ display:inline-block; position:relative; font-family:Inter,system-ui,-apple-system,sans-serif; }
           details{ position:relative; }
           summary{ list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px;
-            padding:6px 11px; border:1px solid #3a3450; border-radius:8px; background:#1d1830; color:#cfc8e2;
+            padding:6px 11px; border:1px solid #d8d2c6; border-radius:8px; background:#ffffff; color:#4a4439;
             font-size:13px; font-weight:600; user-select:none; }
           summary::-webkit-details-marker{ display:none; }
-          summary:hover{ border-color:#9333ea; color:#c4b5fd; }
+          summary:hover{ border-color:#9a7322; color:#b8902f; }
           summary .cap{ font-size:12px; opacity:.85; }
           .menu{ position:absolute; top:calc(100% + 6px); left:0; z-index:60; min-width:170px;
-            background:#161227; border:1px solid #3a3450; border-radius:10px; padding:6px; box-shadow:0 8px 24px rgba(0,0,0,.5); }
-          .vs-section-label{ padding:4px 10px 2px; font-size:10px; letter-spacing:.07em; text-transform:uppercase; color:#6b5fa0; font-weight:600; }
-          .vs-divider{ margin:4px 0; border-top:1px solid #2a2240; }
-          .vs-item{ display:block; padding:7px 12px; border-radius:7px; text-decoration:none; color:#cfc8e2; font-size:13px; }
-          .vs-item:hover{ background:#241d3a; color:#ece8f5; }
-          .vs-item.active{ background:#9333ea; color:#fff; font-weight:700; }
+            background:#f4f1ea; border:1px solid #d8d2c6; border-radius:10px; padding:6px; box-shadow:0 8px 24px rgba(60,45,20,.5); }
+          .vs-section-label{ padding:4px 10px 2px; font-size:10px; letter-spacing:.07em; text-transform:uppercase; color:#6b6457; font-weight:600; }
+          .vs-divider{ margin:4px 0; border-top:1px solid #f1ece1; }
+          .vs-item{ display:block; padding:7px 12px; border-radius:7px; text-decoration:none; color:#4a4439; font-size:13px; }
+          .vs-item:hover{ background:#faf3e6; color:#221f1a; }
+          .vs-item.active{ background:#9a7322; color:#fff; font-weight:700; }
         </style>
         <details>
           <summary title="Switch view">${EYE}<span class="cap">View</span></summary>

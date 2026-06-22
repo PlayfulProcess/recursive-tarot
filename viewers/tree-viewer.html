@@ -25,8 +25,8 @@
         // Header comes from the shared ../site-header.js (loaded below).
         class RTFooter extends HTMLElement {
             connectedCallback() {
-                this.innerHTML = `<footer style="padding:18px;border-top:1px solid rgba(255,255,255,.1);color:#6b7280;font-size:12px;text-align:center;">
-                    Public-domain tarot data · <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener" style="color:#8b5cf6;">recursive-tarot</a> · companion to <a href="https://recursive.eco" target="_blank" rel="noopener" style="color:#8b5cf6;">recursive.eco</a>
+                this.innerHTML = `<footer style="padding:18px;border-top:1px solid rgba(255,255,255,.1);color:#6b6457;font-size:12px;text-align:center;">
+                    Public-domain tarot data · <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener" style="color:#9a7322;">recursive-tarot</a> · companion to <a href="https://recursive.eco" target="_blank" rel="noopener" style="color:#9a7322;">recursive.eco</a>
                 </footer>`;
             }
         }
@@ -41,16 +41,16 @@
         };
     })();
     </script>
-    <script src="../site-header.js?v=21"></script>
-    <script src="../view-switcher.js?v=9"></script>
+    <script src="../site-header.js?v=25"></script>
+    <script src="../view-switcher.js?v=10"></script>
     <style>
         :root {
-            --tree-bg: #0f0f14;
-            --tree-bg-light: #1a1a24;
-            --tree-accent: #8b5cf6;
-            --tree-text: #e5e5e5;
-            --tree-text-muted: #9ca3af;
-            --tree-line: rgba(255, 255, 255, 0.15);
+            --tree-bg: #f4f1ea;
+            --tree-bg-light: #ffffff;
+            --tree-accent: #9a7322;
+            --tree-text: #221f1a;
+            --tree-text-muted: #6b6457;
+            --tree-line: rgba(60,45,20,0.12);
         }
 
         body {
@@ -61,8 +61,8 @@
 
         site-header, site-footer { color: initial; }
         site-header *, site-footer * { color: inherit; }
-        site-header a, site-header button { color: #4b5563; }
-        site-header a:hover, site-header button:hover { color: #111827; }
+        site-header a, site-header button { color: #6b6457; }
+        site-header a:hover, site-header button:hover { color: #221f1a; }
 
         .main-content {
             max-width: 1400px;
@@ -179,7 +179,7 @@
             transition: background 0.2s;
         }
         .breadcrumb-item:hover {
-            background: rgba(139, 92, 246, 0.15);
+            background: rgba(154,115,34, 0.15);
         }
         .breadcrumb-separator {
             color: var(--tree-text-muted);
@@ -231,7 +231,7 @@
         .pill-bar.hidden { display: none; }
         .pill-group { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
         .pill-group-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.4); margin-right: 4px; }
-        .pill-chip { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; cursor: pointer; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.85); border: 1px solid rgba(255,255,255,0.15); transition: all 0.15s; }
+        .pill-chip { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; cursor: pointer; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.85); border: 1px solid rgba(60,45,20,0.12); transition: all 0.15s; }
         .pill-chip:hover { border-color: hsl(270,60%,65%); color: #fff; }
         .pill-chip.active { background: hsl(270,60%,55%); color: #fff; border-color: hsl(270,60%,55%); }
         .pill-count { font-size: 0.62rem; padding: 0 5px; border-radius: 999px; background: rgba(0,0,0,0.25); }
@@ -298,7 +298,7 @@
             opacity: 1;
         }
         .tree-node.node-highlighted .node-visual {
-            box-shadow: 0 0 16px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 0 16px rgba(154,115,34, 0.4);
             border-color: var(--tree-accent);
         }
 
@@ -309,14 +309,14 @@
             align-items: center;
             margin-bottom: 1.5rem;
             padding: 1.5rem;
-            background: rgba(139, 92, 246, 0.06);
+            background: rgba(154,115,34, 0.06);
             border-radius: 0.75rem;
-            border: 1px solid rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(154,115,34, 0.15);
             cursor: pointer;
             transition: background 0.2s;
         }
         .focused-root:hover {
-            background: rgba(139, 92, 246, 0.1);
+            background: rgba(154,115,34, 0.1);
         }
         .focused-root .focused-symbol {
             font-size: 2.5rem;
@@ -338,7 +338,7 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 0.5rem;
-            border: 2px solid rgba(139, 92, 246, 0.4);
+            border: 2px solid rgba(154,115,34, 0.4);
         }
 
         /* ── Node ── */
@@ -360,14 +360,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(60,45,20,0.12);
             background: rgba(0, 0, 0, 0.4);
             transition: border-color 0.2s, box-shadow 0.2s;
             overflow: hidden;
         }
         .tree-node:hover .node-visual {
             border-color: var(--tree-accent);
-            box-shadow: 0 0 12px rgba(139, 92, 246, 0.3);
+            box-shadow: 0 0 12px rgba(154,115,34, 0.3);
         }
 
         .node-visual img {
@@ -403,7 +403,7 @@
         /* Composite indicator */
         .node-has-children {
             font-size: 0.55rem;
-            color: rgba(139, 92, 246, 0.6);
+            color: rgba(154,115,34, 0.6);
             margin-top: 0.125rem;
         }
         .node-details-link {
@@ -470,7 +470,7 @@
 
         /* Higher-level nodes get accent border */
         .tree-node.is-composite .node-visual {
-            border-color: rgba(139, 92, 246, 0.35);
+            border-color: rgba(154,115,34, 0.35);
         }
 
         /* ── Detail Modal ── */
@@ -547,7 +547,7 @@
             cursor: pointer;
         }
         .modal-component-chip:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(60,45,20,0.12);
             color: var(--tree-text);
         }
         .modal-item-image {
@@ -563,14 +563,14 @@
             padding: 0.375rem 0.75rem;
             font-size: 0.75rem;
             color: var(--tree-accent);
-            border: 1px solid rgba(139, 92, 246, 0.3);
+            border: 1px solid rgba(154,115,34, 0.3);
             border-radius: 0.375rem;
             background: transparent;
             cursor: pointer;
             transition: all 0.2s;
         }
         .modal-focus-btn:hover {
-            background: rgba(139, 92, 246, 0.1);
+            background: rgba(154,115,34, 0.1);
             border-color: var(--tree-accent);
         }
 
@@ -628,14 +628,14 @@
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div id="view-mode-container"></div>
-                        <a id="reading-btn" href="#" style="display:inline-flex;align-items:center;gap:4px;padding:6px 14px;background:#7c3aed;color:#fff;border-radius:8px;text-decoration:none;font-size:13px;font-weight:500;" title="Get a reading with this grammar">Get a Reading</a>
-                        <button id="github-btn" style="display:none;padding:6px;background:#374151;color:#d1d5db;border:none;border-radius:8px;cursor:pointer;" title="View GitHub source">
+                        <a id="reading-btn" href="#" style="display:inline-flex;align-items:center;gap:4px;padding:6px 14px;background:#7c5b18;color:#fff;border-radius:8px;text-decoration:none;font-size:13px;font-weight:500;" title="Get a reading with this grammar">Get a Reading</a>
+                        <button id="github-btn" style="display:none;padding:6px;background:#4a4439;color:#d1d5db;border:none;border-radius:8px;cursor:pointer;" title="View GitHub source">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                         </button>
-                        <button id="copy-btn" style="display:inline-flex;align-items:center;gap:4px;padding:6px 14px;background:#374151;color:#d1d5db;border:none;border-radius:8px;cursor:pointer;font-size:13px;" onclick="copyToMyGrammars()" title="Copy to your drafts">
+                        <button id="copy-btn" style="display:inline-flex;align-items:center;gap:4px;padding:6px 14px;background:#4a4439;color:#d1d5db;border:none;border-radius:8px;cursor:pointer;font-size:13px;" onclick="copyToMyGrammars()" title="Copy to your drafts">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy to My Grammars
                         </button>
-                        <button id="report-btn" style="display:inline-flex;align-items:center;gap:4px;padding:6px 10px;background:transparent;color:#6b7280;border:1px solid #374151;border-radius:8px;cursor:pointer;font-size:12px;" onclick="openReportModal()" title="Report issue">⚑ Report</button>
+                        <button id="report-btn" style="display:inline-flex;align-items:center;gap:4px;padding:6px 10px;background:transparent;color:#6b6457;border:1px solid #4a4439;border-radius:8px;cursor:pointer;font-size:12px;" onclick="openReportModal()" title="Report issue"><rt-icon name="flag"></rt-icon> Report</button>
                     </div>
                 </div>
             </div>
@@ -1559,8 +1559,8 @@
     <style>
         .assistant-toggle {
             position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 40;
-            background: #9333ea; color: white; border: none; border-radius: 9999px;
-            width: 56px; height: 56px; cursor: pointer; box-shadow: 0 4px 12px rgba(147,51,234,0.4);
+            background: #9a7322; color: white; border: none; border-radius: 9999px;
+            width: 56px; height: 56px; cursor: pointer; box-shadow: 0 4px 12px rgba(154,115,34,0.4);
             display: flex; align-items: center; justify-content: center; transition: all 0.2s;
         }
         .assistant-toggle:hover { background: #7e22ce; transform: scale(1.05); }
@@ -1568,7 +1568,7 @@
             position: fixed; bottom: 5.5rem; right: 1.5rem; z-index: 40;
             width: 384px; max-width: calc(100vw - 2rem); height: 500px; max-height: 70vh;
             border-radius: 0.75rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            border: 1px solid #374151; display: none;
+            border: 1px solid #4a4439; display: none;
         }
         .assistant-frame-container.open { display: block; }
         .assistant-frame-container iframe { width: 100%; height: 100%; border: none; }
@@ -1604,10 +1604,10 @@
             let user = null;
             try { user = await window.recursiveAuth?.getUser?.(); } catch (e) {}
             if (!user) {
-                frame.innerHTML = `<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#16121f;color:#cfc8e2;font-family:-apple-system,'Segoe UI',sans-serif;font-size:14px;text-align:center;padding:24px">
-                    <div style="font-size:28px">💬</div>
+                frame.innerHTML = `<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#faf8f3;color:#4a4439;border:1px solid #d8d2c6;border-radius:12px;font-family:-apple-system,'Segoe UI',sans-serif;font-size:14px;text-align:center;padding:24px">
+                    <div style="font-size:28px"><rt-icon name="message"></rt-icon></div>
                     <div>The Library Assistant needs a free<br><b>recursive.eco</b> account.</div>
-                    <a href="${getFlowBaseUrl()}/?signin=1" target="_blank" rel="noopener" style="background:#9333ea;color:#fff;text-decoration:none;padding:8px 18px;border-radius:8px;font-weight:600">Sign in ↗</a>
+                    <a href="${getFlowBaseUrl()}/?signin=1" target="_blank" rel="noopener" style="background:#9a7322;color:#fff;text-decoration:none;padding:8px 18px;border-radius:8px;font-weight:600">Sign in ↗</a>
                     <small style="color:#7c7596">Sign in, then reopen this bubble.</small></div>`;
                 return;
             }

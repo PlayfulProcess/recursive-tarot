@@ -1,0 +1,64 @@
+{
+  "_type": "recursive-tarot-spreads",
+  "_version": 1,
+  "_note": "Well-known spreads offered in the Caster dropdown. Each position has x/y as fractions of the board (0–1) so the layout is recognisable (the Celtic Cross looks like a cross). Meanings lean toward 'the shape a situation is in' rather than hard fortune — the house style — while keeping the classic names. Author PlayfulProcess; CC-BY-SA-4.0. Add your own via the Spread Builder and contribute the JSON.",
+  "spreads": [
+    {
+      "id": "spp",
+      "name": "Structures · Process · Possibilities",
+      "description": "The house spread — read the shape of a situation, not a fortune.",
+      "positions": [
+        { "label": "Structures", "meaning": "What's already built — the patterns and conditions holding this in place.", "x": 0.22, "y": 0.5 },
+        { "label": "Process", "meaning": "What's moving — the change underway right now.", "x": 0.5, "y": 0.5 },
+        { "label": "Possibilities", "meaning": "What could emerge — the openings not yet committed.", "x": 0.78, "y": 0.5 }
+      ]
+    },
+    {
+      "id": "single",
+      "name": "Single Card",
+      "description": "One card. A mirror for the day, or one clear question.",
+      "positions": [
+        { "label": "The Card", "meaning": "What is already alive in you, asking to be looked at.", "x": 0.5, "y": 0.5 }
+      ]
+    },
+    {
+      "id": "ppf",
+      "name": "Past · Present · Future",
+      "description": "The classic three — read as a current, not a prophecy.",
+      "positions": [
+        { "label": "Past", "meaning": "What this grew from — the ground just behind you.", "x": 0.22, "y": 0.5 },
+        { "label": "Present", "meaning": "Where you stand now — the heart of it.", "x": 0.5, "y": 0.5 },
+        { "label": "Future", "meaning": "Where the shape is tending if nothing turns.", "x": 0.78, "y": 0.5 }
+      ]
+    },
+    {
+      "id": "cross5",
+      "name": "The Five-Card Cross",
+      "description": "A situation and its four pressures — heart, above, below, and either side.",
+      "positions": [
+        { "label": "The Heart", "meaning": "The centre of the matter, where you stand.", "x": 0.5, "y": 0.5 },
+        { "label": "Above", "meaning": "What you aspire to, or what oversees this.", "x": 0.5, "y": 0.18 },
+        { "label": "Below", "meaning": "The root it grows from, often unspoken.", "x": 0.5, "y": 0.82 },
+        { "label": "Behind", "meaning": "What is passing, just leaving the frame.", "x": 0.26, "y": 0.5 },
+        { "label": "Before", "meaning": "What is approaching, just entering it.", "x": 0.74, "y": 0.5 }
+      ]
+    },
+    {
+      "id": "celtic-cross",
+      "name": "The Celtic Cross",
+      "description": "The famous ten — a cross of the situation and a staff of the self. Classic names; read for shape and tendency, not certainty.",
+      "positions": [
+        { "label": "1 · Present", "meaning": "The heart of it — where you stand now.", "x": 0.2, "y": 0.5 },
+        { "label": "2 · Challenge", "meaning": "What crosses you — the obstacle, or the help in disguise.", "x": 0.34, "y": 0.5 },
+        { "label": "3 · Foundation", "meaning": "The root it grows from — the deeper past.", "x": 0.2, "y": 0.86 },
+        { "label": "4 · Recent past", "meaning": "What is passing, just behind you.", "x": 0.06, "y": 0.5 },
+        { "label": "5 · Crown", "meaning": "What you aim at, or what oversees the situation.", "x": 0.2, "y": 0.14 },
+        { "label": "6 · Near future", "meaning": "What approaches next.", "x": 0.5, "y": 0.5 },
+        { "label": "7 · You", "meaning": "Yourself in it — your stance and posture.", "x": 0.82, "y": 0.86 },
+        { "label": "8 · Environment", "meaning": "Others and the setting around you.", "x": 0.82, "y": 0.62 },
+        { "label": "9 · Hopes & fears", "meaning": "What you long for and what you dread (often the same).", "x": 0.82, "y": 0.38 },
+        { "label": "10 · Outcome", "meaning": "Where this shape is tending, all things held.", "x": 0.82, "y": 0.14 }
+      ]
+    }
+  ]
+}

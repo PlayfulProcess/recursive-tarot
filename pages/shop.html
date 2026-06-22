@@ -6,40 +6,40 @@
 <title>Shop — Recursive Tarot</title>
 <meta name="description" content="Printed editions of public-domain historical tarot decks — authentic scans, archival card stock, printed on demand. Each deck links to its free digital twin.">
 <style>
-  :root{--bg:#0f0d17;--ink:#ece8f5;--muted:#9b94b3;--accent:#d4af37;--line:#2a2440;--card:#1a1726}
+  :root{--bg:#f4f1ea;--ink:#221f1a;--muted:#6b6457;--accent:#9a7322;--line:#d8d2c6;--card:#ffffff}
   *{box-sizing:border-box}
-  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif}
   .wrap{max-width:1080px;margin:0 auto;padding:26px 18px 80px}
   h1{color:var(--accent);font-size:28px;margin:.4em 0 .2em}
   .lede{color:var(--muted);font-size:15px;line-height:1.6;max-width:720px}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin-top:26px}
   .prod{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
-  .prod .img{aspect-ratio:3/4;background:#0a0810;display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .prod img{width:100%;height:100%;object-fit:cover}
+  .prod .img{aspect-ratio:3/4;background:#faf8f3;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .prod img{width:100%;height:100%;object-fit:contain}
   .prod .body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:7px;flex:1}
   .prod h2{font-size:15.5px;margin:0;line-height:1.3}
   .prod .meta{font-size:12px;color:var(--muted)}
   .badge{display:inline-block;font-size:10.5px;padding:2px 8px;border-radius:999px;margin-right:5px}
-  .b-bleed{background:#1e3328;color:#81b29a}.b-border{background:#332a1e;color:#e0c35f}.b-sampler{background:#2a1e33;color:#b794f6}
+  .b-bleed{background:rgba(63,122,92,.12);color:#3f7a5c}.b-border{background:rgba(154,115,34,.12);color:#8a6414}.b-sampler{background:rgba(108,74,182,.1);color:#5b3a9e}
   .row{display:flex;gap:8px;margin-top:auto;flex-wrap:wrap}
   .btn{flex:1;text-align:center;padding:8px 10px;border-radius:8px;font-size:12.5px;font-weight:700;text-decoration:none;white-space:nowrap}
-  .buy{background:var(--accent);color:#0f0d17}
-  .buy.soon{background:#39324d;color:#9b94b3;pointer-events:none}
-  .ghost{background:#272036;color:#cfc8e2}
-  .note{margin-top:30px;padding:14px 16px;background:#161227;border:1px solid var(--line);border-radius:10px;font-size:13px;color:#b9b2d2;line-height:1.6}
-  .note a{color:#b794f6}
+  .buy{background:var(--accent);color:#f4f1ea}
+  .buy.soon{background:#d8d2c6;color:#6b6457;pointer-events:none}
+  .ghost{background:#f1ece1;color:#4a4439;border:1px solid var(--line)}
+  .note{margin-top:30px;padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:13px;color:var(--muted);line-height:1.6}
+  .note a{color:#9a7322}
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=21"></script>
+<script src="../site-header.js?v=25"></script>
 <site-header active="shop"></site-header>
 <main class="wrap">
   <h1>Printed Decks</h1>
   <p class="lede">Authentic public-domain scans, printed on demand on archival 320gsm card stock
   (2.75×4.75″ tarot size) with aged-paper margins matched to each card. Every printed deck has a
-  free digital twin in the <a href="../viewers/cards.html" style="color:#b794f6">library</a> —
+  free digital twin in the <a href="../viewers/cards.html" style="color:#9a7322">library</a> —
   buying a deck supports the commons, but nothing here is paywalled.</p>
-  <div class="grid" id="grid"><p style="color:#9b94b3">Loading products…</p></div>
+  <div class="grid" id="grid"><p style="color:#6b6457">Loading products…</p></div>
   <div class="note">
     <b>How it works:</b> checkout happens at The Game Crafter (they print and ship worldwide;
     buyers outside the US pay local import tax — Brazil ~20–60% + ICMS). Decks marked
@@ -78,11 +78,11 @@
           <div class="meta"><span class="badge ${full?'b-bleed':'b-border'}">${full?'full art':'bordered'}</span>${g.items||'?'} cards · ${esc(p.note||'')}</div>
           <div class="row">
             <a class="btn buy ${live?'':'soon'}" href="${live?esc(p.product_url):'#'}" ${live?'target="_blank" rel="noopener"':''}>${live?'Buy printed ↗':'Coming soon (proofing)'}</a>
-            <a class="btn ghost" href="${BOOKLET_URL[slug]||('print-viewer.html?src='+src+'&layout=booklet')}" title="Free companion booklet">📓 Booklet</a>
+            <a class="btn ghost" href="${BOOKLET_URL[slug]||('print-viewer.html?src='+src+'&layout=booklet')}" title="Free companion booklet"><rt-icon name="book"></rt-icon> Booklet</a>
           </div>
         </div></div>`;
     }
-    grid.innerHTML=html||'<p style="color:#9b94b3">No products configured.</p>';
+    grid.innerHTML=html||'<p style="color:#6b6457">No products configured.</p>';
   }catch(e){ grid.innerHTML='<p style="color:#e07a5f">Could not load products: '+e.message+'</p>'; }
 })();
 </script>

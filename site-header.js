@@ -43,7 +43,7 @@
   const CARD_VIEWS = [
     ['explorer', 'Explorer', PFX + 'viewers/explorer.html'],
     ['cards',    'Cards',    PFX + 'viewers/cards.html'],
-    ['lenses',   '⚗ Lenses', PFX + 'viewers/prototypes/lenses.html'],
+    ['lenses',   'Lenses', PFX + 'viewers/prototypes/lenses.html'],
     ['tree',     'Tree',     PFX + 'viewers/tree-viewer.html'],
   ];
   const GRAMMAR_VIEWS = [
@@ -53,23 +53,31 @@
   ];
   // [key, label, href, cssClass, external?]
   const TOOLS = [
-    ['shop',   '🛒 Shop',    PFX + 'pages/shop.html',          't-shop'],
+    ['shop',   'Shop',    PFX + 'pages/shop.html',          't-shop'],
     ['github', 'GitHub ↗',  'https://github.com/PlayfulProcess/recursive-tarot', 't-github', true],
   ];
   // Play — a dropdown of the games + readings (the pill itself links to the Play hub).
   const PLAY_MENU = [
-    [PFX + 'pages/games/tarocchino.html', '♛ Tarocchino di Bologna'],
-    [PFX + 'pages/games/madiao.html',     '🀄 Ma Diao 馬吊'],
-    [PFX + 'pages/games/trionfi.html',    '♛ Trionfi'],
-    [PFX + 'viewers/caster.html',         '🔮 Caster'],
-    ['https://flow.recursive.eco/',   '✦ Oracle ↗', true],
+    [PFX + 'pages/games/tarocchino.html', 'Tarocchino di Bologna'],
+    [PFX + 'pages/games/madiao.html',     'Ma Diao 馬吊'],
+    [PFX + 'pages/games/trionfi.html',    'Trionfi'],
+    [PFX + 'viewers/caster.html',         'Caster'],
+    [PFX + 'pages/spread-builder.html',   'Spread Builder'],
+    ['https://flow.recursive.eco/',   'Oracle ↗', true],
     [PFX + 'pages/play.html',             'All games & readings →'],
   ];
-  // Courses — a dropdown under one "Courses" pill (each is a course-viewer ?course=…).
-  const COURSES = [
-    ['history-of-tarot',                'A History of Tarot'],
-    ['tarot-and-the-crack',             'Tarot & the Crack'],
-    ['build-a-tarot-deck-with-claude',  'Contribute to the Commons'],
+  // Courses — grouped into three topics; each is a course-viewer ?course=… (deep-linkable with #section).
+  const COURSE_GROUPS = [
+    ['History', [
+      ['history-of-tarot',                'A History of Tarot'],
+    ]],
+    ['Reading the cards', [
+      ['reading-the-cards',               'The full course — all 12 chapters'],
+    ]],
+    ['How to Contribute', [
+      ['how-to-contribute',               'How to Contribute'],
+      ['build-a-tarot-deck-with-claude',  'Contribute to the Commons'],
+    ]],
   ];
 
   function autoActive() {
@@ -91,6 +99,18 @@
     connectedCallback() {
       // Embedded (iframed into a course/book): render no header at all.
       if (new URLSearchParams(location.search).get('embed') === '1') { this.style.display = 'none'; return; }
+      // Museum/Editorial webfonts — injected once into the document head so every page
+      // (light DOM and this shadow DOM) renders in Cormorant / Fraunces / Inter.
+      if (!document.getElementById('rt-fonts')) {
+        const fl = document.createElement('link'); fl.id = 'rt-fonts'; fl.rel = 'stylesheet';
+        fl.href = 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap';
+        document.head.appendChild(fl);
+      }
+      // The shared SVG icon library — one source, available as <rt-icon name="…"> on every page.
+      if (!document.getElementById('rt-icons-lib')) {
+        const si = document.createElement('script'); si.id = 'rt-icons-lib'; si.src = PFX + 'icons.js';
+        document.head.appendChild(si);
+      }
       const active = this.getAttribute('active') || autoActive();
       const root = this.attachShadow({ mode: 'open' });
       const tab = ([key, label, href, cls, ext]) =>
@@ -103,58 +123,57 @@
       root.innerHTML = `
         <style>
           :host{ display:block; position:sticky; top:0; z-index:50;
-                 background:#0f0d17; padding:0; margin:0; border:0; font-size:14px;
+                 background:#fbf9f3; padding:0; margin:0; border:0; font-size:14px;
                  transition:transform .25s ease; will-change:transform; }
           @media (prefers-reduced-motion: reduce){ :host{ transition:none; } .tab, .dd-menu a, .brand{ transition:none !important; } }
           .bar{
             display:flex; align-items:center; gap:14px; flex-wrap:wrap;
-            padding:11px 18px; background:#0f0d17;
-            border-bottom:1px solid #2a2440;
-            font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+            padding:13px 20px; background:#fbf9f3;
+            border-bottom:1px solid #d8d2c6;
+            font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
           }
-          .brand{ display:flex; flex-direction:row; align-items:center; gap:9px; margin-right:4px; }
+          .brand{ display:flex; flex-direction:row; align-items:center; gap:10px; margin-right:4px; }
           .brand-logo, .brand-name{ display:inline-flex; align-items:center; text-decoration:none; }
           .brand-logo{ border-radius:50%; }
-          .brand-name .name{ font-size:15px; font-weight:800; letter-spacing:.3px; color:#ece8f5; white-space:nowrap; }
-          .brand-name:hover .name{ color:#fff; }
-          .brand-name .name .gold{ color:#d4af37; }
+          .brand-name .name{ font-family:"Fraunces",Georgia,serif; font-size:21px; font-weight:600; letter-spacing:.4px; color:#221f1a; white-space:nowrap; }
+          .brand-name:hover .name{ color:#000; }
+          .brand-name .name .gold{ color:#9a7322; }
           .brand svg{ flex-shrink:0; }
           .spacer{ flex:1 1 auto; }
-          nav{ display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
-          .cap{ font-size:9.5px; text-transform:uppercase; letter-spacing:.14em;
-                color:#5f5878; margin:0 2px 0 6px; user-select:none; }
-          .cap.card-cap{ color:#b8860b; }
-          .cap.gram-cap{ color:#6d4fa8; }
-          .sep{ width:1px; height:20px; background:#2a2440; margin:0 6px; }
+          nav{ display:flex; gap:4px; flex-wrap:wrap; align-items:center; }
+          .cap{ font-size:9.5px; text-transform:uppercase; letter-spacing:.16em;
+                color:#8a8273; margin:0 2px 0 6px; user-select:none; }
+          .cap.card-cap{ color:#9a7322; }
+          .cap.gram-cap{ color:#6b6457; }
+          .sep{ width:1px; height:20px; background:#d8d2c6; margin:0 6px; }
+          /* one restrained editorial language for every nav item — text links,
+             gold on hover, a hairline underline when active. No pills, no per-tool colour. */
           .tab{
-            color:#a99fc6; text-decoration:none; font-size:13px; font-weight:500;
-            padding:6px 11px; border-radius:8px; white-space:nowrap; transition:.15s;
-            border:1px solid transparent;
+            color:#6b6457; text-decoration:none; font-size:13px; font-weight:500;
+            padding:7px 9px; white-space:nowrap; transition:color .15s;
+            border:0; border-bottom:1.5px solid transparent; border-radius:0;
           }
-          .tab:hover{ color:#ece8f5; background:#1d1830; }
-          .tab.active{ color:#fff !important; background:#9333ea; font-weight:700; border-color:#9333ea; }
-          /* tools — colour-coded, pill-outlined (a different nature than the views) */
-          .t-caster{ color:#b9a3f5; border-color:rgba(139,92,246,.45); }
-          .t-caster:hover{ color:#d4c5ff; background:rgba(139,92,246,.12); }
-          .t-course{ color:#9ad0b5; border-color:rgba(129,178,154,.45); }
-          .t-course:hover{ color:#bfe8d2; background:rgba(129,178,154,.10); }
-          .t-shop{ color:#e7c96a; border-color:rgba(212,175,55,.5); }
-          .t-shop:hover{ color:#f4dd92; background:rgba(212,175,55,.10); }
-          .t-github{ color:#8f87a8; border-color:transparent; border-bottom:1px dashed #3a3450; border-radius:0; }
-          .t-github:hover{ color:#cfc8e2; background:transparent; }
-          /* Courses dropdown */
+          .tab:hover{ color:#9a7322; }
+          .tab.active{ color:#9a7322; font-weight:600; border-bottom-color:#9a7322; }
+          .t-caster,.t-course,.t-shop,.t-github{ color:#6b6457; border:0; border-bottom:1.5px solid transparent; border-radius:0; }
+          .t-caster:hover,.t-course:hover,.t-shop:hover,.t-github:hover{ color:#9a7322; background:transparent; }
+          /* dropdowns */
           .dd{ position:relative; }
           .dd-btn{ background:none; font-family:inherit; cursor:pointer; }
-          .dd-menu{ position:absolute; top:calc(100% + 6px); right:0; min-width:230px;
-            background:#15101f; border:1px solid #3a3450; border-radius:10px; padding:6px;
-            box-shadow:0 12px 32px rgba(0,0,0,.5); display:none; z-index:60; }
+          .dd-btn::after{ content:""; display:inline-block; width:5px; height:5px; margin-left:7px;
+            border-right:1.4px solid currentColor; border-bottom:1.4px solid currentColor;
+            transform:rotate(45deg) translateY(-2px); opacity:.5; }
+          .dd-menu{ position:absolute; top:calc(100% + 8px); right:0; min-width:220px;
+            max-width:min(300px,calc(100vw - 24px)); background:#ffffff; border:1px solid #d8d2c6;
+            border-radius:8px; padding:7px; box-shadow:0 16px 44px -18px rgba(60,45,20,.45); display:none; z-index:60; }
+          @media (max-width:760px){ .dd-menu{ position:fixed; left:12px; right:12px; top:54px; min-width:0; max-width:none; } }
           .dd:hover .dd-menu, .dd:focus-within .dd-menu{ display:block; }
-          .dd-menu a{ display:block; color:#cdbff0; text-decoration:none; font-size:13px;
+          .dd-menu a{ display:block; color:#4a4439; text-decoration:none; font-size:13px;
             padding:8px 10px; border-radius:7px; white-space:nowrap; }
-          .dd-menu a:hover{ background:#241e38; color:#fff; }
-          .dd-menu a.on{ color:#fff; background:#2b2442; font-weight:600; }
-          .dd-cap{ display:block; font-size:9px; text-transform:uppercase; letter-spacing:.14em;
-            color:#5f5878; padding:8px 10px 3px; user-select:none; }
+          .dd-menu a:hover{ background:#f1ece1; color:#221f1a; }
+          .dd-menu a.on{ color:#221f1a; background:#f1ece1; font-weight:600; }
+          .dd-cap{ display:block; font-family:Inter,sans-serif; font-size:9px; text-transform:uppercase; letter-spacing:.16em;
+            color:#8a8273; padding:8px 10px 3px; user-select:none; }
           .dd-cap:first-child{ padding-top:2px; }
           @media (max-width:680px){
             .brand .sub{ display:none; }
@@ -174,23 +193,23 @@
           <span class="spacer"></span>
           <nav aria-label="Site sections">
             <span class="dd">
-              <a class="tab dd-btn${viewActive ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Views menu">⊞ Views ▾</a>
+              <a class="tab dd-btn${viewActive ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Views menu">Views</a>
               <span class="dd-menu">
-                <span class="dd-cap">🃏 By card</span>
+                <span class="dd-cap">By card</span>
                 ${CARD_VIEWS.map(menuItem).join('')}
-                <span class="dd-cap">⊞ Across the collection</span>
+                <span class="dd-cap">Across the collection</span>
                 ${GRAMMAR_VIEWS.map(menuItem).join('')}
               </span>
             </span>
             <span class="dd">
-              <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Courses menu">📓 Courses ▾</a>
+              <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Courses menu">Courses</a>
               <span class="dd-menu">
-                ${COURSES.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')}
-                <a href="${PFX}pages/sources.html" style="border-top:1px solid #3a3450;margin-top:4px;padding-top:9px">📚 All courses &amp; sources →</a>
+                ${COURSE_GROUPS.map(([cap, items]) => `<span class="dd-cap">${cap}</span>` + items.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')).join('')}
+                <a href="${PFX}pages/sources.html" style="border-top:1px solid #d8d2c6;margin-top:4px;padding-top:9px">All courses &amp; sources →</a>
               </span>
             </span>
             <span class="dd">
-              <a class="tab t-caster dd-btn${active === 'play' ? ' active' : ''}" href="${PFX}pages/play.html" aria-haspopup="true" aria-expanded="false" aria-label="Play menu">🎴 Play ▾</a>
+              <a class="tab t-caster dd-btn${active === 'play' ? ' active' : ''}" href="${PFX}pages/play.html" aria-haspopup="true" aria-expanded="false" aria-label="Play menu">Play</a>
               <span class="dd-menu">
                 ${PLAY_MENU.map(([href, label, ext]) => `<a href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`).join('')}
               </span>

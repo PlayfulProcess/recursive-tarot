@@ -24,8 +24,8 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: #1a1a24;
-            color: #e5e5e5;
+            background: #ffffff;
+            color: #d8d2c6;
             padding: 12px 20px;
             display: flex;
             align-items: center;
@@ -36,7 +36,7 @@
         .back-btn {
             background: none;
             border: none;
-            color: #e5e5e5;
+            color: #d8d2c6;
             cursor: pointer;
             padding: 6px 10px;
             border-radius: 6px;
@@ -57,21 +57,21 @@
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: #9ca3af;
+            color: #6b6457;
         }
         .control-select {
             padding: 6px 10px;
             background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.15);
             border-radius: 6px;
-            color: #e5e5e5;
+            color: #d8d2c6;
             font-size: 13px;
             cursor: pointer;
         }
-        .control-select option { background: #1a1a24; color: #e5e5e5; }
+        .control-select option { background: #ffffff; color: #d8d2c6; }
         .grammar-name {
             font-size: 13px;
-            color: #9ca3af;
+            color: #6b6457;
             font-style: italic;
             max-width: 180px;
             white-space: nowrap;
@@ -81,7 +81,7 @@
         .print-btn {
             margin-left: auto;
             padding: 8px 24px;
-            background: #8b5cf6;
+            background: #9a7322;
             color: white;
             border: none;
             border-radius: 6px;
@@ -90,7 +90,7 @@
             cursor: pointer;
             transition: background 0.15s;
         }
-        .print-btn:hover { background: #7c3aed; }
+        .print-btn:hover { background: #7c5b18; }
 
         /* ============================================================
            PAGES CONTAINER
@@ -158,7 +158,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #fafafa;
+            background: #faf8f3;
         }
         .card-image img {
             width: 100%;
@@ -169,7 +169,7 @@
         .card-footer {
             padding: 2px 4px;
             border-top: 1px solid #e8e8e8;
-            background: #fafafa;
+            background: #faf8f3;
         }
         .card-name {
             font-size: 6.5pt;
@@ -294,7 +294,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #fafafa;
+            background: #faf8f3;
         }
         .mem-card-image img { width: 100%; height: 100%; object-fit: contain; }
         .mem-card-symbol { font-size: 18pt; color: #bbb; }
@@ -332,7 +332,7 @@
             position: relative;
         }
         .card-num { position: absolute; top: 3px; left: 5px; font-size: 7pt; color: #bbb; font-weight: 600; z-index: 1; }
-        .sb-card-image { height: 1.6in; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #fafafa; }
+        .sb-card-image { height: 1.6in; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #faf8f3; }
         .sb-card-image img { width: 100%; height: 100%; object-fit: contain; }
         .sb-card-symbol { font-size: 22pt; color: #ccc; }
         .sb-card-info { padding: 3px 6px 1px; border-top: 1px solid #eee; }
@@ -370,7 +370,7 @@
             font-size: 14px;
             gap: 12px;
         }
-        .empty-state a { color: #8b5cf6; text-decoration: none; }
+        .empty-state a { color: #9a7322; text-decoration: none; }
         .page-number {
             position: absolute;
             bottom: 0.2in;
@@ -402,9 +402,9 @@
     </style>
 </head>
 <body>
-    <script src="../site-header.js?v=21"></script>
+    <script src="../site-header.js?v=25"></script>
     <site-header active="print"></site-header>
-    <script src="../view-switcher.js?v=9"></script>
+    <script src="../view-switcher.js?v=10"></script>
     <style>@media print { site-header, view-switcher, .controls-bar, #buy-panel { display: none !important; } }</style>
     <div class="controls-bar" id="controls-bar">
         <view-switcher active="print"></view-switcher>
@@ -444,16 +444,16 @@
     </div>
 
     <!-- Buy-a-printed-deck panel (recursive-tarot drift). Reads ../print-products.json. -->
-    <div id="buy-panel" style="display:none;max-width:920px;margin:14px auto;padding:14px 18px;background:#161227;border:1px solid #3a3450;border-radius:12px;color:#e9e4f6;">
+    <div id="buy-panel" style="display:none;max-width:920px;margin:14px auto;padding:14px 18px;background:#f4f1ea;border:1px solid #cfc8ba;border-radius:12px;color:#221f1a;">
         <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between">
             <div style="min-width:240px;flex:1">
                 <div style="font-weight:700;font-size:15px;margin-bottom:4px">🖨 Order a printed deck</div>
                 <div id="buy-quality" style="font-size:13px;color:#b9b2d2;line-height:1.5"></div>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap">
-                <label style="font-size:12px;color:#9b94b3">Copies<br><input id="buy-copies" type="number" min="1" max="50" value="1" style="width:64px;margin-top:3px;background:#1d1830;color:#e9e4f6;border:1px solid #3a3450;border-radius:7px;padding:6px 8px;font-size:14px"></label>
-                <label id="buy-back-wrap" style="display:none;font-size:12px;color:#9b94b3">Deck back<br><span style="display:inline-flex;align-items:center;gap:7px;margin-top:3px"><select id="buy-back" onchange="updateBackPreview()" style="background:#1d1830;color:#e9e4f6;border:1px solid #3a3450;border-radius:7px;padding:6px 8px;font-size:14px;max-width:230px"></select><img id="buy-back-preview" alt="" style="width:26px;height:38px;object-fit:cover;border-radius:4px;border:1px solid #3a3450;display:none"></span></label>
-                <a id="buy-link" href="#" target="_blank" rel="noopener" style="background:#d4af37;color:#0f0d17;border-radius:9px;padding:10px 18px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Buy a printed deck ↗</a>
+                <label style="font-size:12px;color:#6b6457">Copies<br><input id="buy-copies" type="number" min="1" max="50" value="1" style="width:64px;margin-top:3px;background:#f4f1ea;color:#221f1a;border:1px solid #cfc8ba;border-radius:7px;padding:6px 8px;font-size:14px"></label>
+                <label id="buy-back-wrap" style="display:none;font-size:12px;color:#6b6457">Deck back<br><span style="display:inline-flex;align-items:center;gap:7px;margin-top:3px"><select id="buy-back" onchange="updateBackPreview()" style="background:#f4f1ea;color:#221f1a;border:1px solid #cfc8ba;border-radius:7px;padding:6px 8px;font-size:14px;max-width:230px"></select><img id="buy-back-preview" alt="" style="width:26px;height:38px;object-fit:cover;border-radius:4px;border:1px solid #cfc8ba;display:none"></span></label>
+                <a id="buy-link" href="#" target="_blank" rel="noopener" style="background:#9a7322;color:#f4f1ea;border-radius:9px;padding:10px 18px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Buy a printed deck ↗</a>
             </div>
         </div>
         <div style="font-size:11px;color:#6f688a;margin-top:9px">Quality is auto-measured per card (300 DPI = 2.5×3.5″). Public-domain art, free to print. Checkout happens on the vendor's site.</div>

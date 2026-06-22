@@ -9,8 +9,8 @@
   'use strict';
 
   const POP_STYLE = [
-    'position:fixed', 'z-index:9001', 'background:#1d1830',
-    'border:1px solid #3a3450', 'border-radius:10px', 'padding:10px',
+    'position:fixed', 'z-index:9001', 'background:#f4f1ea',
+    'border:1px solid #cfc8ba', 'border-radius:10px', 'padding:10px',
     'box-shadow:0 8px 24px rgba(0,0,0,.55)', 'min-width:260px',
     'max-height:60vh', 'display:flex', 'flex-direction:column', 'gap:6px'
   ].join(';');
@@ -32,25 +32,25 @@
     pop.style.top = (r.bottom + 6) + 'px';
 
     const hint = document.createElement('p');
-    hint.style.cssText = 'margin:0;font-size:11.5px;color:#9ca3af;line-height:1.45;max-width:240px';
+    hint.style.cssText = 'margin:0;font-size:11.5px;color:#6b6457;line-height:1.45;max-width:240px';
     hint.innerHTML = 'Tick <b>several decks</b> and Load — patterns appear when collections overlap.';
     pop.appendChild(hint);
 
     const search = document.createElement('input');
     search.type = 'text'; search.placeholder = 'search decks…';
-    search.style.cssText = 'width:100%;padding:5px 8px;background:#110e1d;border:1px solid #3a3450;border-radius:6px;color:#e9e4f6;font-size:12px;box-sizing:border-box;flex-shrink:0';
+    search.style.cssText = 'width:100%;padding:5px 8px;background:#110e1d;border:1px solid #cfc8ba;border-radius:6px;color:#221f1a;font-size:12px;box-sizing:border-box;flex-shrink:0';
     pop.appendChild(search);
 
     const list = document.createElement('div');
     list.style.cssText = 'overflow-y:auto;flex:1;';
     decks.forEach(g => {
       const label = document.createElement('label');
-      label.style.cssText = 'display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:4px;cursor:pointer;font-size:12.5px;color:#cfc8e2;';
-      label.onmouseenter = () => { label.style.background = '#241d3a'; };
+      label.style.cssText = 'display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:4px;cursor:pointer;font-size:12.5px;color:#4a4439;';
+      label.onmouseenter = () => { label.style.background = '#faf3e6'; };
       label.onmouseleave = () => { label.style.background = ''; };
       const cb = document.createElement('input');
       cb.type = 'checkbox'; cb.value = g.slug; cb.checked = sel.has(g.slug);
-      cb.style.accentColor = '#9333ea';
+      cb.style.accentColor = '#9a7322';
       const name = document.createElement('span');
       name.textContent = g.name.split(' — ')[0].slice(0, 34);
       label.append(cb, name);
@@ -78,7 +78,7 @@
       const b = document.createElement('button');
       b.textContent = text;
       b.style.cssText = `flex:1;padding:5px 8px;border-radius:6px;font-size:12px;cursor:pointer;${
-        isPrimary ? 'background:#9333ea;border:none;color:#fff;' : 'background:#241d3a;border:1px solid #3a3450;color:#cfc8e2;'
+        isPrimary ? 'background:#9a7322;border:none;color:#fff;' : 'background:#faf3e6;border:1px solid #cfc8ba;color:#4a4439;'
       }`;
       b.onclick = fn;
       return b;

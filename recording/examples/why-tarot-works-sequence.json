@@ -8,12 +8,12 @@
         "name": "PlayfulProcess",
         "url": "https://recursive.eco",
         "date": "2026-06-20",
-        "note": "Curated 'why the tarot works' program — title/concept cards we wrote, plus links to third-party YouTube videos (not our content). Every video ID was verified embeddable via YouTube oEmbed on 2026-06-20."
+        "note": "Curated 'how a tarot reading works' program — title/concept cards we wrote, plus links to third-party YouTube videos (not our content). Every video ID was verified embeddable via YouTube oEmbed on 2026-06-20."
       }
     ]
   },
-  "name": "The Recursive Tarot — Why Does the Tarot Work?",
-  "description": "A program that answers the honest question: why does a tarot reading so often feel true? Not because the cards predict — but because of how minds make meaning. Five lenses: (1) conceptual blending, (2) the Barnum/Forer effect, (3) cold reading, (4) depth psychology (Jung), and (5) narrative & art therapy. Title and concept cards are ours; the embedded videos are public YouTube material, each verified embeddable via oEmbed on 2026-06-20. Our commentary sits under every clip (green = where we agree, amber = where we differ). Videos play full (start_sec:0); add an end_sec to crop any into a tight beat.",
+  "name": "The Recursive Tarot — How Does a Tarot Reading Work?",
+  "description": "A program that answers the honest question: how does a tarot reading so often feel true? Not because the cards predict — but because of how minds make meaning. Seven lenses: (1) conceptual blending, (2) the Barnum/Forer effect & cold reading, (3) depth psychology (Jung & projection), (4) art therapy & narrative, (5) ritual & expectancy, (6) productive randomness (Oblique Strategies; the lot as bias-refusal), and (7) the long human practice of divination across cultures. Title and concept cards are ours; embedded videos are public YouTube material. Our commentary sits under every clip. Footage slots for lenses 5–7 fill in over time.",
   "cover_image_url": "https://i.ytimg.com/vi/_dKdR2SYBHo/hqdefault.jpg",
   "tags": [
     "tarot",
@@ -27,7 +27,7 @@
   "items": [
     {
       "id": "ww00-why-tarot-works",
-      "name": "Why does the tarot work?",
+      "name": "How does a tarot reading work?",
       "level": 1,
       "category": "card",
       "keywords": [],
@@ -272,6 +272,99 @@
       "sort_order": 13
     },
     {
+      "id": "ww-sec-05-ritual",
+      "name": "⑤ The ritual lens — the ceremony is the medicine",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#2a331e",
+        "card_subtitle": "Why the frame itself helps",
+        "card_hold_sec": 7
+      },
+      "sections": {},
+      "sort_order": 14
+    },
+    {
+      "id": "ww-ritual-ceremony",
+      "name": "The ceremony is the medicine",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#243018",
+        "card_subtitle": "Expectancy, attention, a bounded container",
+        "card_hold_sec": 13
+      },
+      "sections": {
+        "The move": "Shuffling, laying the spread, holding the question, setting aside the time — the ceremony is not decoration. It supplies the same scaffolding that makes **rituals and placebos** genuinely effective: expectancy, focused attention, and a bounded container for reflection. Rituals reliably lower anxiety and restore a felt sense of control whether or not anything supernatural occurs.",
+        "Where we agree": "This is not a debunking — it is a real psychological effect. The frame is part of the medicine. See the course **How the Cards Can Work** for the four mechanisms a reading runs on."
+      },
+      "sort_order": 15
+    },
+    {
+      "id": "ww-sec-06-randomness",
+      "name": "⑥ The randomness lens — the shuffle that breaks your defaults",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1e2a3d",
+        "card_subtitle": "Chance as a tool, not a flaw",
+        "card_hold_sec": 7
+      },
+      "sections": {},
+      "sort_order": 16
+    },
+    {
+      "id": "ww-randomness-oblique",
+      "name": "Oblique strategies — randomness as method",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#182338",
+        "card_subtitle": "The card you did not choose",
+        "card_hold_sec": 14
+      },
+      "sections": {
+        "The move": "Your mind has grooves; asked a hard question it runs the same three answers. The shuffle breaks the groove. Brian Eno & Peter Schmidt built a whole creative method — **Oblique Strategies**, a deck drawn at random — on exactly this: introduce chance to dislodge habit and force a thought you would not otherwise have had.",
+        "The deeper version": "The Hebrew scriptures cast lots not to predict but to **remove bias** — *the lot is cast into the lap, but its every decision is from the Lord.* Read without the theology: randomness as a deliberate refusal of your own bias. The card you did not choose can tell you something the card you would have chosen never could."
+      },
+      "sort_order": 17
+    },
+    {
+      "id": "ww-sec-07-divination",
+      "name": "⑦ The long human practice — divination across cultures",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#33231e",
+        "card_subtitle": "Tarot keeps very old company",
+        "card_hold_sec": 7
+      },
+      "sections": {},
+      "sort_order": 18
+    },
+    {
+      "id": "ww-divination-castlots",
+      "name": "Humans have always cast lots",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#2b1d18",
+        "card_subtitle": "Ifá · I Ching · Delphi · the casting of lots",
+        "card_hold_sec": 15
+      },
+      "sections": {
+        "The move": "Long before tarot, nearly every culture reached for structured randomness at the edge of knowledge — Ifá's palm-nuts, the I Ching's yarrow stalks, Delphi's oracle, the Norse rune-staves, the Hebrew casting of lots. Two purposes recur everywhere: **to decide when reasoning runs out**, and **to refuse one's own bias**.",
+        "Where we land": "None of it proves the cards work. All of it shows humans have always made meaning this way — and that the reaching can be profound while held entirely as a human art. Tarot inherits the structure without needing the metaphysics. Full chapter: **How Humans Have Always Cast Lots**."
+      },
+      "sort_order": 19
+    },
+    {
       "id": "ww14-so-does-it-work",
       "name": "So — does it work?",
       "level": 1,
@@ -283,10 +376,10 @@
         "card_hold_sec": 15
       },
       "sections": {
-        "Our answer": "The tarot 'works' the way a good question works. Blending makes the meaning; the Barnum effect and cold reading explain why it lands; projection and narrative make it therapeutic. None of that requires the supernatural — and none of it makes the practice worthless. It makes it *understandable*, which is better.",
-        "Where next": "See **Books Behind the Tarot** for the sources behind each lens, and **A History of Tarot** for how a card game became this mirror."
+        "Our answer": "The tarot 'works' the way a good question works. Blending makes the meaning; the Barnum effect and cold reading explain why it lands; projection and narrative make it therapeutic; **ritual** steadies it; and **structured randomness** — the move humans have always made — keeps it honest. None of that requires the supernatural — and none of it makes the practice worthless. It makes it *understandable*, which is better.",
+        "Where next": "See the course **How the Cards Can Work** for the four mechanisms, **How Humans Have Always Cast Lots** for the divination traditions, **Books Behind the Tarot** for the sources, and **A History of Tarot** for how a card game became this mirror."
       },
-      "sort_order": 14
+      "sort_order": 20
     }
   ]
 }
