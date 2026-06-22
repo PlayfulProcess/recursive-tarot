@@ -1,0 +1,111 @@
+# Site redesign + course arc — master status (June 2026)
+
+The single anchor for the editorial-redesign + practitioner-course work so nothing is
+lost between sessions. All of this is on **`dev`** (Pages serves dev → https://tarot.recursive.eco).
+Git identity for pushes: `PlayfulProcess <17236172+PlayfulProcess@users.noreply.github.com>`
+(the gmail address is blocked by GitHub email-privacy). Conventions: **light only** (no
+dark mode), **Fraunces** (serif) + **Inter** (sans), **never crop card art** (object-contain
+on a neutral mat), cache-bust with `style.css?v=N` + `site-header.js?v=N`.
+
+---
+
+## ✅ DONE (this arc)
+
+### Book II — the practitioner course "Reading the Cards" (12 chapters, complete)
+- Manifest `books/how-to-read-the-cards/book.json`; individual essays in `course/*.mdx` are
+  the source of truth. **Collapsed** into one course `course/reading-the-cards.mdx` via
+  `scripts/build_reading_course.py` (run it after editing any chapter); the Courses menu shows
+  one "Reading the cards" entry with a collapsible section outline.
+- Chapters: `how-tarot-works` (spine; was "why-tarot-works" — renamed so it doesn't assume it
+  works for everyone → **"How the Cards Can Work"**), `tarot-and-the-crack`, `intention-setting`,
+  `kant-` / `marsha-linehan-` / `morality-is-an-ecosystem` / `jung-` / `non-dual-tantra-` /
+  `post-activism-` / `hospicing-modernity-reads-the-tarot`, `walking-the-golden-dawn-path`,
+  `divination-traditions`. (Living teachers = school-titled + "inspired by"; Jung named.)
+- Research backing in `research/why-tarot-works/` (REPORT + raw deep-research + reverification).
+
+### "Tarot & the Crack" — philosophy enrichment (Jun 22)
+- Added 4 sections weaving the author's developed position (drawn from her own book-repo, see
+  source map below): **deconflation** (belief in a transcendental realm ≠ the empirically-grounded
+  openness to "more than we can perceive"), **the altar + speaking to the invisible** (relationship
+  as showing-up/reciprocity, not belief), **the numinous borrows our language** (it can only reach
+  us through structures we already have — English, Christian icons, the Tower — so tarot is
+  *eligible* as a language for negotiating with the mysterious), **faith + curiosity + the skeptic
+  you keep at the table** (Aquinas: divine law changed because the eternal law is unknowable →
+  hold the sacred seriously *and* loosely).
+
+### Homepage — editorial-cover redesign (iterated heavily per feedback)
+- `index.html`: card-left / text-right hero with the large matted **Visconti World ("Il Mondo")**;
+  three doors = **Read the history → `pages/historian.html`** · **Draw a reading → `pages/play.html`**
+  · **Contribute**; "Every view" gallery **classified** Card-level (Cards, Caster) vs Grammar-level
+  (Explorer, Timeline, Genealogy, Tree of Life); **historical decks + contemporary decks** rendered
+  dynamically from `tarot/_collection.json`; **recursive.eco "tree" callout** (reusable: `.ecotree`).
+- Fixes folded in: tagline "pill border" was a `.tag` class collision with style.css → renamed
+  `.subtitle`; dropped the links footer; never-crop everywhere; "ancient Egyptian" misconception
+  corrected (Mamluk Egypt is real; the Thoth occult myth is the 1781 invention).
+
+### New page
+- `pages/historian.html` — the Historian path: course banner + lineage views + 25 contained deck thumbs.
+
+### Dark-mode sweep (partial — see queue)
+- Fixed: `pages/play.html`, `pages/sources.html` (dark `--panel:#161226` default removed),
+  `pages/shop.html` (dark badges + dark `.ghost` "Booklet" button + low-contrast note + uncropped
+  covers), `viewers/timeline.html` (invisible white `--ink-strong` in OS dark), `viewers/cards.html`
+  (sidebar-thumb uncropped + smallest fonts bumped — partial).
+
+### Typography
+- Adopted recursive.eco's **Fraunces** serif site-wide (was Cormorant Garamond + EB Garamond),
+  keeping Inter. `font-optical-sizing:auto`. Bumped `style.css?v=3` + `site-header.js?v=25` on 24 pages.
+
+### Video program (`recording/examples/why-tarot-works-sequence.json`)
+- Renamed display → "How Does a Tarot Reading Work?". **Enriched from 4 → 7 lenses**: added
+  ⑤ ritual & expectancy, ⑥ productive randomness (Oblique Strategies + the lot as bias-refusal),
+  ⑦ the long human practice (divination across cultures). New ones are **our concept cards**;
+  real video footage slots for lenses 5–7 still need sourcing (see queue).
+
+---
+
+## ☐ QUEUE (not done — in rough priority)
+
+1. **Icons → clean SVG library (de-emoji).** `icons.js` (`rt-icon`) exists (~15 icons). Extend it
+   (mirror, film, play-triangle, document, people, branch…) and replace every colored emoji
+   (`▶ 🪞 🎬 ✦ ⌥` …) across ~10 pages with `<rt-icon name="…">`. NOTE: some emojis read as mojibake
+   in tooling — do it carefully per-file, not by blind script. User: "colored emojis seem less serious."
+2. **Broader dark-mode audit.** Still carrying dark leftovers: `viewers/explorer.html` (dark `rgba`
+   zones), `viewers/tree-viewer.html`, `viewers/prototypes/lenses.html`, the game pages
+   (`pages/games/*`), the sequence viewers (`viewers/sequence*.html`, `recording/player/`).
+3. **cards.html real light-theme pass.** The dark empty-card slots + dense controls; needs visual
+   verification (the built-in preview screenshot tool hangs on these pages; use connected Chrome).
+4. **Real view screenshots** for the gallery thumbnails. Blocked: capture tool exposes no saved path
+   + heavy files. Representative card-art thumbnails kept for now.
+5. **Verified video IDs** for video lenses 5–7 (ritual/placebo talk; Brian Eno on Oblique Strategies;
+   I Ching / Ifá / casting-lots clips). Must be oEmbed-embeddable — research + verify, don't fabricate.
+6. **Contribute home page** (third path, to match Historian).
+7. **Series preface + About page**, then **EPUB/PDF build** (pandoc, reuse `book-repo/epub-build`).
+
+---
+
+## Book-repo source map (the author's own prior writing — for course/essay work)
+
+Found via search of `book-repo/`. Use these for future essay enrichment (the author's voice):
+- `books/axiom-beneath-the-ground/chapters/ch11-the-invisible-world.md` — "more than we can
+  perceive" as the *conservative inference*; cross-cultural consensus; "neither belief nor disbelief."
+- `…/ch12-relationship-to-what-cannot-be-seen.md` — reciprocity/showing-up as the grammar of relating
+  to the invisible (libations, candle, puja).
+- `…/v5/ch01a-interlude-the-cracks.md` + `…/v5/ch06a-where-the-maps-crack.md` — the crack as
+  composting / a system's integrity (it admits it is a map).
+- `…/v5/ch05a-the-unowned-dimension.md` — better-vs-worse maps; the three-filter epistemology.
+- `…/v2-ch03-the-mandala-of-blessings.md` — altar as live practice; skeptics as necessary infrastructure;
+  form serves the community (the icon is a pointer, not a vessel).
+- `…/v5/ch00a-prelude-first-encounter.md` + `…/v5/ch00b-prelude-lilac-dance.md` — Paradevi/Gaia/
+  ayahuasca thread; Krishnamurti/Bohm; līlā.
+- `books/fire-before-responsibility-essay/chapters/09-the-hospicing.md` — Andreotti/Akomolafe;
+  holding the crack without alarm.
+
+---
+
+## Key files
+- `index.html` · `style.css` (tokens + Fraunces) · `site-header.js` (nav + injected webfont + rt-icons)
+- `icons.js` (rt-icon SVG library — to extend) · `scripts/build_reading_course.py`
+- `course/*.mdx` (chapters) → `course/reading-the-cards.mdx` (generated collapsed course)
+- `recording/examples/why-tarot-works-sequence.json` (the video program)
+- `tarot/_collection.json` (deck list + `cover_image_url`, drives the home/Historian galleries)
