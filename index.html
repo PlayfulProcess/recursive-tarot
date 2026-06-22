@@ -12,88 +12,85 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="style.css?v=2">
 <style>
-  main.wrap{max-width:860px}
-  .lede{font-size:17px;line-height:1.65;color:#d8d2ea}
+  main.wrap{max-width:1180px}
+  .lede{font-size:18px;line-height:1.65;color:var(--ink-soft);max-width:74ch}
 
   /* ── hero card strip ── */
-  .card-strip{display:flex;gap:8px;margin:18px 0 24px;overflow:hidden;height:110px;mask-image:linear-gradient(to right,transparent,black 6%,black 94%,transparent)}
-  .card-strip img{height:110px;width:auto;border-radius:6px;object-fit:cover;flex-shrink:0;opacity:.88;transition:opacity .2s}
-  .card-strip img:hover{opacity:1}
+  .card-strip{display:flex;gap:8px;margin:18px 0 24px;overflow:hidden;height:120px}
+  .card-strip img{height:120px;width:auto;border-radius:4px;object-fit:cover;flex-shrink:0;transition:opacity .2s}
+  .card-strip img:hover{opacity:.85}
 
   /* ── level badge ── */
   .badge{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;
     text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;border-radius:999px;margin-bottom:6px}
-  .badge.item{background:rgba(154,115,34,.12);color:#c9a24b;border:1px solid rgba(154,115,34,.3)}
-  .badge.grammar{background:rgba(154,115,34,.12);color:#a78bfa;border:1px solid rgba(154,115,34,.3)}
+  .badge.item{background:rgba(154,115,34,.1);color:#8a6414;border:1px solid rgba(154,115,34,.35)}
+  .badge.grammar{background:rgba(108,74,182,.1);color:#5b3a9e;border:1px solid rgba(108,74,182,.3)}
 
   /* ── start here ── */
   .starthere{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:20px 0 8px}
-  .starthere a.big{display:flex;align-items:stretch;gap:0;background:#f4f1ea;border:1px solid #cfc8ba;
-    border-radius:14px;text-decoration:none;color:#221f1a;transition:border-color .15s,transform .15s;overflow:hidden}
-  .starthere a.big:hover{border-color:var(--gold,#9a7322);transform:translateY(-2px)}
-  .starthere a.big .thumb{width:72px;flex-shrink:0;overflow:hidden;position:relative}
-  .starthere a.big .thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;opacity:.85}
+  .starthere a.big{display:flex;align-items:stretch;gap:0;background:var(--surface);border:1px solid var(--line-soft);
+    border-radius:10px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s;overflow:hidden}
+  .starthere a.big:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .starthere a.big .thumb{width:78px;flex-shrink:0;overflow:hidden;position:relative;background:var(--thumb-bg)}
+  .starthere a.big .thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
   .starthere a.big .body{padding:14px 14px 14px 12px;flex:1;display:flex;flex-direction:column;gap:3px}
-  .starthere a.big b{font-size:16px;color:#f0e7c8}
-  .starthere a.big span.desc{font-size:12.5px;color:#6b6457;line-height:1.45}
+  .starthere a.big b{font-size:16px;color:var(--ink)}
+  .starthere a.big span.desc{font-size:12.5px;color:var(--mut);line-height:1.45}
 
   /* ── viewer grid ── */
   .viewer-group{margin:10px 0 6px}
   .viewer-group .group-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;
     font-weight:700;margin:0 0 8px;display:flex;align-items:center;gap:8px}
-  .viewer-group .group-label.lbl-item{color:#9a7322}
-  .viewer-group .group-label.lbl-grammar{color:#7c5cbf}
-  .viewer-group .group-label::after{content:'';flex:1;height:1px;background:currentColor;opacity:.2}
-  .vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-bottom:14px}
-  .vgrid a{display:flex;align-items:stretch;gap:0;background:#ffffff;border:1px solid #d8d2c6;
-    border-radius:10px;text-decoration:none;color:#221f1a;overflow:hidden;transition:border-color .15s}
-  .vgrid a:hover{border-color:var(--gold,#9a7322)}
-  .vgrid a.grammar-link:hover{border-color:#7c5b18}
-  .vgrid a .vthumb{width:52px;flex-shrink:0;overflow:hidden;background:#faf8f3}
-  .vgrid a .vthumb img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;opacity:.75}
-  .vgrid a .vbody{padding:10px 10px 10px 9px;flex:1}
-  .vgrid a .t{font-weight:700;font-size:13.5px}
-  .vgrid a .d{font-size:11.5px;color:#6b6457;margin-top:3px;line-height:1.4}
+  .viewer-group .group-label.lbl-item{color:#8a6414}
+  .viewer-group .group-label.lbl-grammar{color:#5b3a9e}
+  .viewer-group .group-label::after{content:'';flex:1;height:1px;background:var(--line)}
+  .vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:14px}
+  .vgrid a{display:flex;align-items:stretch;gap:0;background:var(--surface);border:1px solid var(--line);
+    border-radius:8px;text-decoration:none;color:var(--ink);overflow:hidden;transition:border-color .15s}
+  .vgrid a:hover{border-color:var(--gold)}
+  .vgrid a.grammar-link:hover{border-color:#6d4ab6}
+  .vgrid a .vthumb{width:56px;flex-shrink:0;overflow:hidden;background:var(--thumb-bg);display:flex;align-items:center;justify-content:center;color:var(--faint)}
+  .vgrid a .vthumb img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+  .vgrid a .vbody{padding:10px 10px 10px 12px;flex:1}
+  .vgrid a .t{font-weight:700;font-size:13.5px;color:var(--ink)}
+  .vgrid a .d{font-size:11.5px;color:var(--mut);margin-top:3px;line-height:1.4}
 
-  section.block{margin:32px 0;padding-top:6px;border-top:1px solid rgba(154,115,34,.15)}
-  section.block h2{color:var(--gold,#9a7322);font-size:20px;margin:.2em 0 .5em}
-  section.block p{line-height:1.65;color:#d8d2ea}
-  ul.mis li{margin:.4em 0;line-height:1.55;color:#d8d2ea}
-  ul.mis li b{color:#221f1a}
-  .links a{color:#9a7322}
-  .three{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:14px 0}
-  .three div{background:#f4f1ea;border:1px solid #d8d2c6;border-radius:10px;padding:14px}
-  .three h3{margin:.1em 0 .3em;font-size:15px;color:#9a7322}
-  .three p{font-size:13.5px;margin:0;color:#4a4439}
+  section.block{margin:36px 0;padding-top:20px;border-top:1px solid var(--line)}
+  section.block h2{color:var(--ink);font-family:var(--serif-display);font-weight:600;font-size:25px;margin:.2em 0 .5em}
+  section.block p{line-height:1.65;color:var(--ink-soft);max-width:74ch}
+  ul.mis li{margin:.4em 0;line-height:1.55;color:var(--ink-soft)}
+  ul.mis li b{color:var(--ink)}
+  .links a{color:var(--gold)}
+  .three{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:14px 0}
+  .three div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px}
+  .three h3{margin:.1em 0 .3em;font-size:15px;color:#8a6414}
+  .three p{font-size:13.5px;margin:0;color:var(--ink-soft)}
 
   /* recursive.eco native features */
-  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:14px 0}
-  .feat{background:#f4f1ea;border:1px solid #d8d2c6;border-radius:10px;padding:14px}
-  .feat .ico{font-size:22px;margin-bottom:6px}
-  .feat h3{margin:0 0 4px;font-size:14px;color:#221f1a}
-  .feat p{font-size:12.5px;color:#6b6457;margin:0;line-height:1.45}
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:14px 0}
+  .feat{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px}
+  .feat .ico{font-size:22px;margin-bottom:6px;color:#8a6414}
+  .feat h3{margin:0 0 4px;font-size:14px;color:var(--ink)}
+  .feat p{font-size:12.5px;color:var(--mut);margin:0;line-height:1.45}
   .feat .tag{display:inline-block;font-size:10px;color:#9a7322;border:1px solid rgba(154,115,34,.4);
     border-radius:999px;padding:1px 7px;margin-top:6px;text-transform:uppercase;letter-spacing:.07em}
 
-  /* hero cast CTA */
-  .hero-cast{margin:22px 0 10px;background:linear-gradient(135deg,#1a1133 0%,#120d20 100%);
-    border:1px solid rgba(154,115,34,.35);border-radius:16px;padding:22px 24px;position:relative;overflow:hidden}
-  .hero-cast::before{content:'';position:absolute;top:0;right:0;width:180px;height:100%;
-    background:linear-gradient(270deg,rgba(154,115,34,.08),transparent);pointer-events:none}
+  /* hero cast CTA — light, flat */
+  .hero-cast{margin:24px 0 10px;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:12px;padding:24px 26px}
   .hero-cast .hc-label{font-size:10px;text-transform:uppercase;letter-spacing:.13em;
-    color:#9a7322;font-weight:700;margin-bottom:8px}
-  .hero-cast h2{font-size:18px;font-weight:700;color:#f0ecff;margin:0 0 6px;line-height:1.3}
-  .hero-cast .hc-spread{font-size:13px;color:#a099c0;margin:0 0 14px}
-  .hero-cast .hc-desc{font-size:13.5px;color:#cbc6e0;line-height:1.55;margin:0 0 16px}
+    color:#8a6414;font-weight:700;margin-bottom:8px}
+  .hero-cast h2{font-family:var(--serif-display);font-size:23px;font-weight:600;color:var(--ink);margin:0 0 6px;line-height:1.25}
+  .hero-cast .hc-spread{font-size:13px;color:var(--mut);margin:0 0 14px}
+  .hero-cast .hc-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin:0 0 16px;max-width:66ch}
   .hero-cast .hc-cta{display:inline-flex;align-items:center;gap:7px;
-    background:linear-gradient(135deg,#7c5b18,#9a7322);color:#fff;text-decoration:none;
-    font-size:14px;font-weight:700;padding:10px 20px;border-radius:10px;
-    box-shadow:0 4px 18px rgba(154,115,34,.35);transition:box-shadow .2s,transform .15s}
-  .hero-cast .hc-cta:hover{box-shadow:0 6px 24px rgba(154,115,34,.55);transform:translateY(-1px)}
-  .hero-cast .hc-or{font-size:12px;color:#6b6488;margin-left:14px}
+    background:var(--gold);color:#fff;text-decoration:none;
+    font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;transition:background .15s,transform .15s}
+  .hero-cast .hc-cta:hover{background:#7c5b18;transform:translateY(-1px)}
+  .hero-cast .hc-or{font-size:12px;color:var(--mut);margin-left:14px}
   .hero-cast .hc-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-  .hero-cast .hc-pill{font-size:11px;color:#9b8fc4;background:rgba(154,115,34,.1);
-    border:1px solid rgba(154,115,34,.2);border-radius:999px;padding:3px 10px}
+  .hero-cast .hc-pill{font-size:11px;color:var(--mut);background:var(--thumb-bg);
+    border:1px solid var(--line-soft);border-radius:999px;padding:3px 10px}
 </style>
 </head>
 <body>
@@ -101,19 +98,19 @@
 <site-header active="home"></site-header>
 <header class="brandhero">
   <style>
-    .brandhero{ text-align:center; padding:34px 18px 8px; max-width:860px; margin:0 auto; }
+    .brandhero{ text-align:center; padding:34px 18px 8px; max-width:780px; margin:0 auto; }
     .brandhero .bh-logo{ display:inline-flex; align-items:center; justify-content:center;
-      width:80px; height:80px; background:#fff; border-radius:50%; box-shadow:0 6px 30px rgba(154,115,34,.3); }
+      width:80px; height:80px; background:#fff; border-radius:50%; box-shadow:0 2px 14px rgba(60,45,20,.12); }
     .brandhero .bh-logo img{ width:66px; height:66px; display:block; }
-    .brandhero h1{ font-size:clamp(30px,6vw,48px); margin:16px 0 0; letter-spacing:.4px; line-height:1.08; }
+    .brandhero h1{ font-family:var(--serif-display); font-weight:600; font-size:clamp(30px,6vw,48px); margin:16px 0 0; letter-spacing:.4px; line-height:1.08; }
     .brandhero h1 .gold{ color:#9a7322; }
-    .brandhero .bh-tag{ color:#b3aacb; font-size:clamp(14px,2.4vw,17px); line-height:1.5; max-width:48ch; margin:13px auto 0; }
+    .brandhero .bh-tag{ color:var(--ink-soft); font-size:clamp(14px,2.4vw,17px); line-height:1.5; max-width:48ch; margin:13px auto 0; }
     .brandhero .bh-cta{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:22px 0 6px; }
-    .brandhero .bh-btn{ text-decoration:none; font-weight:700; font-size:14.5px; padding:11px 22px; border-radius:11px; transition:box-shadow .2s,transform .15s,border-color .15s,color .15s; }
-    .brandhero .bh-btn.primary{ background:linear-gradient(135deg,#7c5b18,#9a7322); color:#fff; box-shadow:0 4px 18px rgba(154,115,34,.4); }
-    .brandhero .bh-btn.primary:hover{ box-shadow:0 6px 24px rgba(154,115,34,.6); transform:translateY(-1px); }
-    .brandhero .bh-btn.ghost{ color:#cdbff0; border:1px solid #cfc8ba; }
-    .brandhero .bh-btn.ghost:hover{ border-color:#9a7322; color:#fff; }
+    .brandhero .bh-btn{ text-decoration:none; font-weight:700; font-size:14.5px; padding:11px 22px; border-radius:9px; transition:background .15s,transform .15s,border-color .15s,color .15s; }
+    .brandhero .bh-btn.primary{ background:var(--gold); color:#fff; }
+    .brandhero .bh-btn.primary:hover{ background:#7c5b18; transform:translateY(-1px); }
+    .brandhero .bh-btn.ghost{ color:var(--ink-soft); border:1px solid var(--line-soft); }
+    .brandhero .bh-btn.ghost:hover{ border-color:#9a7322; color:#9a7322; }
   </style>
   <span class="bh-logo"><img src="recursive-logo.svg" width="66" height="66" alt="" aria-hidden="true"></span>
   <h1>The <span class="gold">Recursive Tarot</span></h1>
@@ -148,12 +145,12 @@
   <div class="hero-cast">
     <div class="hc-label"><rt-icon name="oracle"></rt-icon> Draw a spread</div>
     <h2>Draw three cards from any historical deck — or across every deck at once.</h2>
-    <div class="hc-spread">Positions: <strong style="color:#c4b5fd">Structures · Process · Possibilities</strong></div>
+    <div class="hc-spread">Positions: <strong style="color:#8a6414">Structures · Process · Possibilities</strong></div>
     <p class="hc-desc">This is the simple version: it draws. <strong style="color:#221f1a">recursive.eco</strong> interprets with AI, renders Oracle cards, keeps a Journal, and lets you edit the cards directly in your own grammar library.</p>
     <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px">
       <a class="hc-cta" href="https://flow.recursive.eco/" target="_blank" rel="noopener">Open in recursive.eco ↗</a>
       <span class="hc-or">or draw locally first →</span>
-      <a href="viewers/caster.html" style="font-size:13px;color:#9b8fc4;text-decoration:none;border:1px solid #cfc8ba;border-radius:8px;padding:7px 13px">Local Caster</a>
+      <a href="viewers/caster.html" style="font-size:13px;color:var(--ink-soft);text-decoration:none;border:1px solid #cfc8ba;border-radius:8px;padding:7px 13px">Local Caster</a>
     </div>
     <div class="hc-pills">
       <span class="hc-pill">Free account</span>
@@ -191,8 +188,8 @@
       </div>
     </a>
     <a class="big" href="viewers/explorer.html">
-      <div class="thumb" style="background:linear-gradient(160deg,#1d1434,#f4f1ea);display:flex;align-items:center;justify-content:center">
-        <span style="font-size:28px;opacity:.6"><rt-icon name="grid"></rt-icon></span>
+      <div class="thumb" style="background:var(--thumb-bg);display:flex;align-items:center;justify-content:center">
+        <span style="font-size:28px;color:var(--faint)"><rt-icon name="grid"></rt-icon></span>
       </div>
       <div class="body">
         <div class="badge grammar"><rt-icon name="grid"></rt-icon> Grammar view</div>
@@ -235,31 +232,31 @@
     <div class="group-label lbl-grammar"><rt-icon name="grid"></rt-icon> Grammar-level — analyse patterns across the whole collection</div>
     <div class="vgrid">
       <a class="grammar-link" href="viewers/explorer.html">
-        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5"><rt-icon name="grid"></rt-icon></span></div>
+        <div class="vthumb" style="background:var(--thumb-bg);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;color:var(--faint)"><rt-icon name="grid"></rt-icon></span></div>
         <div class="vbody"><div class="t"><rt-icon name="grid"></rt-icon> Explorer</div><div class="d">Pivot any dimension × any dimension — every grouping is an emergence</div></div>
       </a>
       <a class="grammar-link" href="viewers/timeline.html">
-        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">↧</span></div>
+        <div class="vthumb" style="background:var(--thumb-bg);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;color:var(--faint)">↧</span></div>
         <div class="vbody"><div class="t">↧ Timeline</div><div class="d">All decks across the centuries, by lineage and era</div></div>
       </a>
       <a class="grammar-link" href="genealogy.html">
-        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">⸬</span></div>
+        <div class="vthumb" style="background:var(--thumb-bg);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;color:var(--faint)">⸬</span></div>
         <div class="vbody"><div class="t">⸬ Genealogy</div><div class="d">The family tree — which deck descended from which</div></div>
       </a>
       <a class="grammar-link" href="viewers/genealogy-tree.html">
-        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">✦</span></div>
+        <div class="vthumb" style="background:var(--thumb-bg);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;color:var(--faint)">✦</span></div>
         <div class="vbody"><div class="t">✦ Tree of Life</div><div class="d">Radial root → branch → deck visualisation</div></div>
       </a>
       <a class="grammar-link" href="pages/course-viewer.html?course=history-of-tarot">
-        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5"><rt-icon name="book"></rt-icon></span></div>
+        <div class="vthumb" style="background:var(--thumb-bg);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;color:var(--faint)"><rt-icon name="book"></rt-icon></span></div>
         <div class="vbody"><div class="t"><rt-icon name="book"></rt-icon> The Recursive Tarot</div><div class="d">The full illustrated history — card by card, deck by deck</div></div>
       </a>
       <a class="grammar-link" href="pages/course-viewer.html?course=build-a-tarot-deck-with-claude">
-        <div class="vthumb" style="background:linear-gradient(160deg,#0f1a10,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5"><rt-icon name="book"></rt-icon></span></div>
+        <div class="vthumb" style="background:var(--thumb-bg);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;color:var(--faint)"><rt-icon name="book"></rt-icon></span></div>
         <div class="vbody"><div class="t"><rt-icon name="book"></rt-icon> Course</div><div class="d">Build your own grammar-deck with Claude Code</div></div>
       </a>
       <a class="grammar-link" href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">
-        <div class="vthumb" style="background:linear-gradient(160deg,#101010,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">⌥</span></div>
+        <div class="vthumb" style="background:var(--thumb-bg);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;color:var(--faint)">⌥</span></div>
         <div class="vbody"><div class="t">⌥ The repo</div><div class="d">Every deck is an open JSON grammar — fork, correct, extend ↗</div></div>
       </a>
     </div>
