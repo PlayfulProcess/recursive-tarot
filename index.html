@@ -355,7 +355,7 @@
         +'<div class="dthumb" style="background-image:url(\''+g.cover_image_url.replace(/'/g,"%27")+'\')"></div>'
         +'<div class="dn">'+esc(name)+'</div><div class="dy">'+esc(year)+'</div></a>';
     };
-    fetch('tarot/_collection.json').then(r=>r.json()).then(c=>{
+    fetch('tarot/_collection.json',{cache:'no-cache'}).then(r=>r.json()).then(c=>{
       const all = (c.grammars||[]).filter(g=>!g.is_meta && g.cover_image_url);
       const historical = all.filter(g=>!CONTEMP.has(g.slug)).sort((a,b)=>(a.year||9999)-(b.year||9999));
       const contemporary = all.filter(g=>CONTEMP.has(g.slug));
