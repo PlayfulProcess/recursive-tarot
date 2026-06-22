@@ -52,9 +52,9 @@
         <style>
           a{ display:inline-flex; align-items:center; gap:6px; text-decoration:none;
              font-size:12.5px; padding:5px 11px; border-radius:999px; white-space:nowrap;
-             font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-             color:#a99fc6; border:1px solid #3a3450; transition:.15s }
-          a:hover{ color:#ece8f5; border-color:#d4af37 }
+             font-family:Inter,system-ui,-apple-system,sans-serif;
+             color:#a99fc6; border:1px solid #cfc8ba; transition:.15s }
+          a:hover{ color:#221f1a; border-color:#9a7322 }
           .dot{ width:7px; height:7px; border-radius:50%; background:#81b29a }
           .in{ color:#9ad0b5; border-color:rgba(129,178,154,.45) }
           .in:hover{ color:#bfe8d2 }
