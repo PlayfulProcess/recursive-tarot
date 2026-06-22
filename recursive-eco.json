@@ -1,0 +1,31 @@
+{
+  "_note": "Channel manifest for recursive.eco. This makes the repo self-describing: recursive.eco can 'import this repo as a channel' by reading this file from raw.githubusercontent.com/<owner>/<repo>/<branch>/recursive-eco.json. It declares the channel's identity (rendered as a channel-document, document_data.is_channel=true), where its grammars live, and who maintains it. Membership lives in `tools` (channel_slug). See recursive-eco/docs/DESIGN-import-channel-from-github.md and recursive-eco/docs/DESIGN-channel-as-document.md.",
+  "schema_version": 1,
+  "channel": {
+    "slug": "recursive-tarot",
+    "name": "The Recursive Tarot",
+    "type": "repo",
+    "icon": "🃏",
+    "gradient": "from-indigo-50 to-violet-100 dark:from-indigo-950 dark:to-violet-900",
+    "description": "The open, public-domain tarot library — decks, people, books, and courses — bound to its GitHub repo.",
+    "landing_url": "https://tarot.recursive.eco",
+    "hero": {
+      "title": "The Recursive Tarot",
+      "subtitle": "An open, public-domain tarot library — held to the historical record, read as a mirror.",
+      "body_md": "Every deck here is dated and attributed; the history is corrected, not mythologized. Built in the open and bound to its GitHub repo — fork it, correct it, or cast with it.\n\nA card is a prompt, not a prophecy: read to know yourself, not to be told your fate."
+    }
+  },
+  "grammars": {
+    "paths": ["tarot/*/grammar.json"],
+    "exclude": [
+      "tarot/all-decks-many-lenses/grammar.json",
+      "tarot/tree-of-tarot/grammar.json",
+      "tarot/people-of-tarot/grammar.json",
+      "tarot/books-of-tarot/grammar.json"
+    ],
+    "_exclude_note": "all-decks/tree/people/books are generated meta or reference apparatus (provenance:reference), not castable decks. Only public, complete deck grammars are imported as channel members; drafts/stubs are skipped on import.",
+    "id_map": "tarot/_eco_ids.json"
+  },
+  "maintainers": ["pp@playfulprocess.com"],
+  "default_branch": "main"
+}
