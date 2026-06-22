@@ -103,11 +103,23 @@ illustration in `how-tarot-works.mdx`; apply the gate metaphor where chosen.
   `prefers-color-scheme` block is a redundant no-op). **sequence viewers** use `#000` intentionally
   (video-player context) — leave dark.
 
+## ✅ Icons → SVG library (de-emoji) — DONE (Jun 22)
+- Extended `icons.js` (rt-icon) +10: person, play, film, chart, tree, crack, sefirot, crown,
+  device, printer. Converted every colored emoji to rt-icons across sources.html, play.html,
+  course-viewer.html (QR), explorer.html, print-viewer.html, book/intro.html, and cards.html's
+  JS fallbacks. Verified in Chrome/DOM (sources + play badges render SVG; cards.html no console
+  errors). KEPT (content/typographic, not "colored emoji"): I Ching trigrams (☰☷…), astrology
+  glyphs (♈⛢…), arrows (→↗↓…), geometric glyphs (▸▾✦…), the Alice-karaoke 🐇 (thematic), and one
+  course-viewer 📺 in a code comment. Final scan: zero colored emoji on the main pages/viewers.
+
+## ✅ Channel manifest on main (Jun 22)
+- `recursive-eco.json` is on **origin/main** (and dev) — verified live at
+  raw.githubusercontent.com/.../main/recursive-eco.json. Channel import resolves with default branch.
+
 ## ☐ STILL BLOCKED / needs live data or a bigger build
 - **Live-iframe or screenshot view thumbnails** (preview screenshot tool hangs; iframes need perf test).
 - **recursive.eco tarot-channel contemporary decks** (live API/MCP) + **ontoject cover** is `None` in
   `_collection.json` (so only the 36-Tattvas shows in the contemporary band).
-- **Icons → SVG library (de-emoji)** — big + mojibake risk; do per-file with verification.
 - **Verified embeddable video IDs** for sequence lenses 5–7. **Series preface + about + EPUB build.**
 
 ## ☐ QUEUE — homepage IA + path pages (Jun 22, from feedback)
