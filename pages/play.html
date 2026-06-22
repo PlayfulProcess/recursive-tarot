@@ -7,14 +7,11 @@
 <meta property="og:title" content="Play, read, contribute — Recursive Tarot">
 <meta property="og:description" content="Play the historical card games, sit with the cards as a mirror, or help keep this open commons alive.">
 <style>
-  :root{ --bg:#f4f1ea; --panel:#161226; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; --violet:#9a7322; }
-  @media (prefers-color-scheme: light){
-    :root{ --bg:#f4f1ea; --panel:#fff; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; }
-  }
+  :root{ --bg:#f4f1ea; --surface:#fff; --panel:#fff; --ink:#221f1a; --ink-soft:#4a4439; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; --line-soft:#cfc8ba; }
   *{box-sizing:border-box}
-  html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
+  html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light;
     font-family:Inter,system-ui,-apple-system,sans-serif}
-  .wrap{max-width:1040px;margin:0 auto;padding:22px 18px 80px}
+  .wrap{max-width:1180px;margin:0 auto;padding:22px 26px 80px}
   h1{font-size:26px;margin:.2em 0 .15em}
   .lede{color:var(--muted);font-size:15px;line-height:1.6;max-width:74ch}
 
@@ -32,22 +29,22 @@
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:8px}
   .tile{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:14px;
     overflow:hidden;text-decoration:none;color:inherit;transition:transform .14s,box-shadow .14s,border-color .14s}
-  .tile:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.35);border-color:var(--accent)}
+  .tile:hover{transform:translateY(-4px);box-shadow:0 16px 34px -22px rgba(60,45,20,.5);border-color:var(--accent)}
   .thumb{height:170px;background:#faf8f3;display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:38px}
   .thumb img{width:100%;height:100%;object-fit:contain}
   .tbody{padding:14px 16px 18px}
   .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .b-game{background:rgba(154,115,34,.14);color:var(--accent);border:1px solid rgba(154,115,34,.4)}
-  .b-cast{background:rgba(154,115,34,.14);color:#b9a3f5;border:1px solid rgba(154,115,34,.4)}
-  .b-oracle{background:rgba(129,178,154,.14);color:#9ad0b5;border:1px solid rgba(129,178,154,.4)}
-  .b-make{background:rgba(109,142,201,.16);color:#9db8e6;border:1px solid rgba(109,142,201,.45)}
-  .b-give{background:rgba(224,122,95,.14);color:#e89a82;border:1px solid rgba(224,122,95,.4)}
+  .b-game{background:rgba(154,115,34,.12);color:#8a6414;border:1px solid rgba(154,115,34,.4)}
+  .b-cast{background:rgba(108,74,182,.1);color:#5b3a9e;border:1px solid rgba(108,74,182,.35)}
+  .b-oracle{background:rgba(63,122,92,.12);color:#3f7a5c;border:1px solid rgba(63,122,92,.4)}
+  .b-make{background:rgba(63,95,158,.1);color:#3f5f9e;border:1px solid rgba(63,95,158,.4)}
+  .b-give{background:rgba(181,81,47,.1);color:#b5512f;border:1px solid rgba(181,81,47,.4)}
   .tile b{display:block;font-size:17px;margin:2px 0 5px}
   .tile .desc{font-size:13.5px;color:var(--muted);line-height:1.5}
   .ext{color:var(--muted);font-size:12px}
-  .thumb.gr-make{background:linear-gradient(150deg,#16224a,#f4f1ea)}
-  .thumb.gr-give{background:linear-gradient(150deg,#3a1f1a,#f4f1ea)}
-  .thumb.gr-git{background:linear-gradient(150deg,#16161c,#f4f1ea)}
+  .thumb.gr-make{background:#eef1f6}
+  .thumb.gr-give{background:#f4ece8}
+  .thumb.gr-git{background:#eeeef0}
 </style>
 </head>
 <body>
