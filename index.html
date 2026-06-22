@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tarot.recursive.eco/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 <style>
   main.wrap{max-width:860px}
   .lede{font-size:17px;line-height:1.65;color:#d8d2ea}
@@ -23,97 +23,97 @@
   /* ── level badge ── */
   .badge{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;
     text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;border-radius:999px;margin-bottom:6px}
-  .badge.item{background:rgba(212,175,55,.12);color:#c9a24b;border:1px solid rgba(212,175,55,.3)}
-  .badge.grammar{background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.3)}
+  .badge.item{background:rgba(154,115,34,.12);color:#c9a24b;border:1px solid rgba(154,115,34,.3)}
+  .badge.grammar{background:rgba(154,115,34,.12);color:#a78bfa;border:1px solid rgba(154,115,34,.3)}
 
   /* ── start here ── */
   .starthere{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:20px 0 8px}
-  .starthere a.big{display:flex;align-items:stretch;gap:0;background:#161227;border:1px solid #3a3450;
-    border-radius:14px;text-decoration:none;color:#ece8f5;transition:border-color .15s,transform .15s;overflow:hidden}
-  .starthere a.big:hover{border-color:var(--gold,#d4af37);transform:translateY(-2px)}
+  .starthere a.big{display:flex;align-items:stretch;gap:0;background:#f4f1ea;border:1px solid #cfc8ba;
+    border-radius:14px;text-decoration:none;color:#221f1a;transition:border-color .15s,transform .15s;overflow:hidden}
+  .starthere a.big:hover{border-color:var(--gold,#9a7322);transform:translateY(-2px)}
   .starthere a.big .thumb{width:72px;flex-shrink:0;overflow:hidden;position:relative}
   .starthere a.big .thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;opacity:.85}
   .starthere a.big .body{padding:14px 14px 14px 12px;flex:1;display:flex;flex-direction:column;gap:3px}
   .starthere a.big b{font-size:16px;color:#f0e7c8}
-  .starthere a.big span.desc{font-size:12.5px;color:#9b94b3;line-height:1.45}
+  .starthere a.big span.desc{font-size:12.5px;color:#6b6457;line-height:1.45}
 
   /* ── viewer grid ── */
   .viewer-group{margin:10px 0 6px}
   .viewer-group .group-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;
     font-weight:700;margin:0 0 8px;display:flex;align-items:center;gap:8px}
-  .viewer-group .group-label.lbl-item{color:#b8860b}
+  .viewer-group .group-label.lbl-item{color:#9a7322}
   .viewer-group .group-label.lbl-grammar{color:#7c5cbf}
   .viewer-group .group-label::after{content:'';flex:1;height:1px;background:currentColor;opacity:.2}
   .vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-bottom:14px}
-  .vgrid a{display:flex;align-items:stretch;gap:0;background:#1a1726;border:1px solid #2a2440;
-    border-radius:10px;text-decoration:none;color:#ece8f5;overflow:hidden;transition:border-color .15s}
-  .vgrid a:hover{border-color:var(--gold,#d4af37)}
-  .vgrid a.grammar-link:hover{border-color:#7c3aed}
-  .vgrid a .vthumb{width:52px;flex-shrink:0;overflow:hidden;background:#0a0810}
+  .vgrid a{display:flex;align-items:stretch;gap:0;background:#ffffff;border:1px solid #d8d2c6;
+    border-radius:10px;text-decoration:none;color:#221f1a;overflow:hidden;transition:border-color .15s}
+  .vgrid a:hover{border-color:var(--gold,#9a7322)}
+  .vgrid a.grammar-link:hover{border-color:#7c5b18}
+  .vgrid a .vthumb{width:52px;flex-shrink:0;overflow:hidden;background:#faf8f3}
   .vgrid a .vthumb img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;opacity:.75}
   .vgrid a .vbody{padding:10px 10px 10px 9px;flex:1}
   .vgrid a .t{font-weight:700;font-size:13.5px}
-  .vgrid a .d{font-size:11.5px;color:#9b94b3;margin-top:3px;line-height:1.4}
+  .vgrid a .d{font-size:11.5px;color:#6b6457;margin-top:3px;line-height:1.4}
 
-  section.block{margin:32px 0;padding-top:6px;border-top:1px solid rgba(212,175,55,.15)}
-  section.block h2{color:var(--gold,#d4af37);font-size:20px;margin:.2em 0 .5em}
+  section.block{margin:32px 0;padding-top:6px;border-top:1px solid rgba(154,115,34,.15)}
+  section.block h2{color:var(--gold,#9a7322);font-size:20px;margin:.2em 0 .5em}
   section.block p{line-height:1.65;color:#d8d2ea}
   ul.mis li{margin:.4em 0;line-height:1.55;color:#d8d2ea}
-  ul.mis li b{color:#ece8f5}
-  .links a{color:#b794f6}
+  ul.mis li b{color:#221f1a}
+  .links a{color:#9a7322}
   .three{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:14px 0}
-  .three div{background:#161227;border:1px solid #2a2440;border-radius:10px;padding:14px}
-  .three h3{margin:.1em 0 .3em;font-size:15px;color:#d4af37}
-  .three p{font-size:13.5px;margin:0;color:#cfc8e2}
+  .three div{background:#f4f1ea;border:1px solid #d8d2c6;border-radius:10px;padding:14px}
+  .three h3{margin:.1em 0 .3em;font-size:15px;color:#9a7322}
+  .three p{font-size:13.5px;margin:0;color:#4a4439}
 
   /* recursive.eco native features */
   .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:14px 0}
-  .feat{background:#161227;border:1px solid #2a2440;border-radius:10px;padding:14px}
+  .feat{background:#f4f1ea;border:1px solid #d8d2c6;border-radius:10px;padding:14px}
   .feat .ico{font-size:22px;margin-bottom:6px}
-  .feat h3{margin:0 0 4px;font-size:14px;color:#ece8f5}
-  .feat p{font-size:12.5px;color:#9b94b3;margin:0;line-height:1.45}
-  .feat .tag{display:inline-block;font-size:10px;color:#9333ea;border:1px solid rgba(147,51,234,.4);
+  .feat h3{margin:0 0 4px;font-size:14px;color:#221f1a}
+  .feat p{font-size:12.5px;color:#6b6457;margin:0;line-height:1.45}
+  .feat .tag{display:inline-block;font-size:10px;color:#9a7322;border:1px solid rgba(154,115,34,.4);
     border-radius:999px;padding:1px 7px;margin-top:6px;text-transform:uppercase;letter-spacing:.07em}
 
   /* hero cast CTA */
   .hero-cast{margin:22px 0 10px;background:linear-gradient(135deg,#1a1133 0%,#120d20 100%);
-    border:1px solid rgba(147,51,234,.35);border-radius:16px;padding:22px 24px;position:relative;overflow:hidden}
+    border:1px solid rgba(154,115,34,.35);border-radius:16px;padding:22px 24px;position:relative;overflow:hidden}
   .hero-cast::before{content:'';position:absolute;top:0;right:0;width:180px;height:100%;
-    background:linear-gradient(270deg,rgba(147,51,234,.08),transparent);pointer-events:none}
+    background:linear-gradient(270deg,rgba(154,115,34,.08),transparent);pointer-events:none}
   .hero-cast .hc-label{font-size:10px;text-transform:uppercase;letter-spacing:.13em;
-    color:#9333ea;font-weight:700;margin-bottom:8px}
+    color:#9a7322;font-weight:700;margin-bottom:8px}
   .hero-cast h2{font-size:18px;font-weight:700;color:#f0ecff;margin:0 0 6px;line-height:1.3}
   .hero-cast .hc-spread{font-size:13px;color:#a099c0;margin:0 0 14px}
   .hero-cast .hc-desc{font-size:13.5px;color:#cbc6e0;line-height:1.55;margin:0 0 16px}
   .hero-cast .hc-cta{display:inline-flex;align-items:center;gap:7px;
-    background:linear-gradient(135deg,#7c3aed,#9333ea);color:#fff;text-decoration:none;
+    background:linear-gradient(135deg,#7c5b18,#9a7322);color:#fff;text-decoration:none;
     font-size:14px;font-weight:700;padding:10px 20px;border-radius:10px;
-    box-shadow:0 4px 18px rgba(147,51,234,.35);transition:box-shadow .2s,transform .15s}
-  .hero-cast .hc-cta:hover{box-shadow:0 6px 24px rgba(147,51,234,.55);transform:translateY(-1px)}
+    box-shadow:0 4px 18px rgba(154,115,34,.35);transition:box-shadow .2s,transform .15s}
+  .hero-cast .hc-cta:hover{box-shadow:0 6px 24px rgba(154,115,34,.55);transform:translateY(-1px)}
   .hero-cast .hc-or{font-size:12px;color:#6b6488;margin-left:14px}
   .hero-cast .hc-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-  .hero-cast .hc-pill{font-size:11px;color:#9b8fc4;background:rgba(139,92,246,.1);
-    border:1px solid rgba(139,92,246,.2);border-radius:999px;padding:3px 10px}
+  .hero-cast .hc-pill{font-size:11px;color:#9b8fc4;background:rgba(154,115,34,.1);
+    border:1px solid rgba(154,115,34,.2);border-radius:999px;padding:3px 10px}
 </style>
 </head>
 <body>
-<script src="site-header.js?v=21"></script>
+<script src="site-header.js?v=23"></script>
 <site-header active="home"></site-header>
 <header class="brandhero">
   <style>
     .brandhero{ text-align:center; padding:34px 18px 8px; max-width:860px; margin:0 auto; }
     .brandhero .bh-logo{ display:inline-flex; align-items:center; justify-content:center;
-      width:80px; height:80px; background:#fff; border-radius:50%; box-shadow:0 6px 30px rgba(147,51,234,.3); }
+      width:80px; height:80px; background:#fff; border-radius:50%; box-shadow:0 6px 30px rgba(154,115,34,.3); }
     .brandhero .bh-logo img{ width:66px; height:66px; display:block; }
     .brandhero h1{ font-size:clamp(30px,6vw,48px); margin:16px 0 0; letter-spacing:.4px; line-height:1.08; }
-    .brandhero h1 .gold{ color:#d4af37; }
+    .brandhero h1 .gold{ color:#9a7322; }
     .brandhero .bh-tag{ color:#b3aacb; font-size:clamp(14px,2.4vw,17px); line-height:1.5; max-width:48ch; margin:13px auto 0; }
     .brandhero .bh-cta{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:22px 0 6px; }
     .brandhero .bh-btn{ text-decoration:none; font-weight:700; font-size:14.5px; padding:11px 22px; border-radius:11px; transition:box-shadow .2s,transform .15s,border-color .15s,color .15s; }
-    .brandhero .bh-btn.primary{ background:linear-gradient(135deg,#7c3aed,#9333ea); color:#fff; box-shadow:0 4px 18px rgba(147,51,234,.4); }
-    .brandhero .bh-btn.primary:hover{ box-shadow:0 6px 24px rgba(147,51,234,.6); transform:translateY(-1px); }
-    .brandhero .bh-btn.ghost{ color:#cdbff0; border:1px solid #3a3450; }
-    .brandhero .bh-btn.ghost:hover{ border-color:#9333ea; color:#fff; }
+    .brandhero .bh-btn.primary{ background:linear-gradient(135deg,#7c5b18,#9a7322); color:#fff; box-shadow:0 4px 18px rgba(154,115,34,.4); }
+    .brandhero .bh-btn.primary:hover{ box-shadow:0 6px 24px rgba(154,115,34,.6); transform:translateY(-1px); }
+    .brandhero .bh-btn.ghost{ color:#cdbff0; border:1px solid #cfc8ba; }
+    .brandhero .bh-btn.ghost:hover{ border-color:#9a7322; color:#fff; }
   </style>
   <span class="bh-logo"><img src="recursive-logo.svg" width="66" height="66" alt="" aria-hidden="true"></span>
   <h1>The <span class="gold">Recursive Tarot</span></h1>
@@ -152,14 +152,14 @@
 
   <!-- hero cast CTA -->
   <div class="hero-cast">
-    <div class="hc-label">🔮 Draw a spread</div>
+    <div class="hc-label"><rt-icon name="oracle"></rt-icon> Draw a spread</div>
     <h2>Draw three cards from any historical deck — or across every deck at once.</h2>
     <div class="hc-spread">Positions: <strong style="color:#c4b5fd">Structures · Process · Possibilities</strong></div>
-    <p class="hc-desc">This is the simple version: it draws. <strong style="color:#ece8f5">recursive.eco</strong> interprets with AI, renders Oracle cards, keeps a Journal, and lets you edit the cards directly in your own grammar library.</p>
+    <p class="hc-desc">This is the simple version: it draws. <strong style="color:#221f1a">recursive.eco</strong> interprets with AI, renders Oracle cards, keeps a Journal, and lets you edit the cards directly in your own grammar library.</p>
     <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px">
       <a class="hc-cta" href="https://flow.recursive.eco/" target="_blank" rel="noopener">Open in recursive.eco ↗</a>
       <span class="hc-or">or draw locally first →</span>
-      <a href="viewers/caster.html" style="font-size:13px;color:#9b8fc4;text-decoration:none;border:1px solid #3a3450;border-radius:8px;padding:7px 13px">Local Caster</a>
+      <a href="viewers/caster.html" style="font-size:13px;color:#9b8fc4;text-decoration:none;border:1px solid #cfc8ba;border-radius:8px;padding:7px 13px">Local Caster</a>
     </div>
     <div class="hc-pills">
       <span class="hc-pill">Free account</span>
@@ -175,7 +175,7 @@
     <a class="big" href="pages/course-viewer.html?course=history-of-tarot">
       <div class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/LE%20MAT%20Nicolas%20Conver%20Tarot%201760.jpg" alt=""></div>
       <div class="body">
-        <div class="badge grammar">📖 Read</div>
+        <div class="badge grammar"><rt-icon name="book"></rt-icon> Read</div>
         <b>The Recursive Tarot</b>
         <span class="desc">The full illustrated history — how a card game became a cosmos, card by card across 25 decks</span>
       </div>
@@ -183,7 +183,7 @@
     <a class="big" href="viewers/cards.html">
       <div class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-14-temperance.jpg" alt=""></div>
       <div class="body">
-        <div class="badge item">🃏 Card view</div>
+        <div class="badge item"><rt-icon name="cards"></rt-icon> Card view</div>
         <b>Browse the decks</b>
         <span class="desc">Flip through 25 historical decks, card by card — with Scene, Symbol, and Research sections</span>
       </div>
@@ -191,17 +191,17 @@
     <a class="big" href="https://flow.recursive.eco/" target="_blank" rel="noopener">
       <div class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-wikimedia/Sola%20Busca%20tarot%20card%2027.jpg" alt=""></div>
       <div class="body">
-        <div class="badge item">🔮 Reading</div>
+        <div class="badge item"><rt-icon name="oracle"></rt-icon> Reading</div>
         <b>Pull a reading on recursive.eco</b>
         <span class="desc">AI interpretation, Oracle card layout, Journal — edit cards in your own library ↗</span>
       </div>
     </a>
     <a class="big" href="viewers/explorer.html">
-      <div class="thumb" style="background:linear-gradient(160deg,#1d1434,#0f0d17);display:flex;align-items:center;justify-content:center">
-        <span style="font-size:28px;opacity:.6">⊞</span>
+      <div class="thumb" style="background:linear-gradient(160deg,#1d1434,#f4f1ea);display:flex;align-items:center;justify-content:center">
+        <span style="font-size:28px;opacity:.6"><rt-icon name="grid"></rt-icon></span>
       </div>
       <div class="body">
-        <div class="badge grammar">⊞ Grammar view</div>
+        <div class="badge grammar"><rt-icon name="grid"></rt-icon> Grammar view</div>
         <b>Emergence Explorer</b>
         <span class="desc">Pivot the whole collection — group any field by any field to find emergent patterns</span>
       </div>
@@ -209,7 +209,7 @@
     <a class="big" href="pages/shop.html">
       <div class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-21-world.jpg" alt=""></div>
       <div class="body">
-        <div class="badge item" style="background:rgba(212,175,55,.1);color:#d4af37;border-color:rgba(212,175,55,.4)">🛒 Print</div>
+        <div class="badge item" style="background:rgba(154,115,34,.1);color:#9a7322;border-color:rgba(154,115,34,.4)"><rt-icon name="shop"></rt-icon> Print</div>
         <b>Print a deck</b>
         <span class="desc">Order a printed copy, or download the PDF — public domain and yours to keep</span>
       </div>
@@ -220,52 +220,52 @@
   <p class="small muted" style="margin:20px 0 4px">All viewers:</p>
 
   <div class="viewer-group">
-    <div class="group-label lbl-item">🃏 Card-level — browse and read individual cards</div>
+    <div class="group-label lbl-item"><rt-icon name="cards"></rt-icon> Card-level — browse and read individual cards</div>
     <div class="vgrid">
       <a href="viewers/cards.html">
         <div class="vthumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-00-fool.jpg" alt=""></div>
-        <div class="vbody"><div class="t">🃏 Cards</div><div class="d">One card at a time, all decks, with full research sections</div></div>
+        <div class="vbody"><div class="t"><rt-icon name="cards"></rt-icon> Cards</div><div class="d">One card at a time, all decks, with full research sections</div></div>
       </a>
       <a href="viewers/caster.html">
         <div class="vthumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/LE%20MAT%20Nicolas%20Conver%20Tarot%201760.jpg" alt=""></div>
-        <div class="vbody"><div class="t">🔮 Caster</div><div class="d">Draw a spread · bring to recursive.eco · read with AI</div></div>
+        <div class="vbody"><div class="t"><rt-icon name="oracle"></rt-icon> Caster</div><div class="d">Draw a spread · bring to recursive.eco · read with AI</div></div>
       </a>
       <a href="pages/shop.html">
         <div class="vthumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot/RWS_Tarot_00_Fool.jpg" alt=""></div>
-        <div class="vbody"><div class="t">🛒 Shop</div><div class="d">Printed decks — public-domain editions you can own</div></div>
+        <div class="vbody"><div class="t"><rt-icon name="shop"></rt-icon> Shop</div><div class="d">Printed decks — public-domain editions you can own</div></div>
       </a>
     </div>
   </div>
 
   <div class="viewer-group">
-    <div class="group-label lbl-grammar">⊞ Grammar-level — analyse patterns across the whole collection</div>
+    <div class="group-label lbl-grammar"><rt-icon name="grid"></rt-icon> Grammar-level — analyse patterns across the whole collection</div>
     <div class="vgrid">
       <a class="grammar-link" href="viewers/explorer.html">
-        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#0f0d17);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">⊞</span></div>
-        <div class="vbody"><div class="t">⊞ Explorer</div><div class="d">Pivot any dimension × any dimension — every grouping is an emergence</div></div>
+        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5"><rt-icon name="grid"></rt-icon></span></div>
+        <div class="vbody"><div class="t"><rt-icon name="grid"></rt-icon> Explorer</div><div class="d">Pivot any dimension × any dimension — every grouping is an emergence</div></div>
       </a>
       <a class="grammar-link" href="viewers/timeline.html">
-        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#0f0d17);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">↧</span></div>
+        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">↧</span></div>
         <div class="vbody"><div class="t">↧ Timeline</div><div class="d">All decks across the centuries, by lineage and era</div></div>
       </a>
       <a class="grammar-link" href="genealogy.html">
-        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#0f0d17);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">⸬</span></div>
+        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">⸬</span></div>
         <div class="vbody"><div class="t">⸬ Genealogy</div><div class="d">The family tree — which deck descended from which</div></div>
       </a>
       <a class="grammar-link" href="viewers/genealogy-tree.html">
-        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#0f0d17);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">✦</span></div>
+        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">✦</span></div>
         <div class="vbody"><div class="t">✦ Tree of Life</div><div class="d">Radial root → branch → deck visualisation</div></div>
       </a>
       <a class="grammar-link" href="pages/course-viewer.html?course=history-of-tarot">
-        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#0f0d17);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">📖</span></div>
-        <div class="vbody"><div class="t">📖 The Recursive Tarot</div><div class="d">The full illustrated history — card by card, deck by deck</div></div>
+        <div class="vthumb" style="background:linear-gradient(160deg,#1a1040,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5"><rt-icon name="book"></rt-icon></span></div>
+        <div class="vbody"><div class="t"><rt-icon name="book"></rt-icon> The Recursive Tarot</div><div class="d">The full illustrated history — card by card, deck by deck</div></div>
       </a>
       <a class="grammar-link" href="pages/course-viewer.html?course=build-a-tarot-deck-with-claude">
-        <div class="vthumb" style="background:linear-gradient(160deg,#0f1a10,#0f0d17);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">📓</span></div>
-        <div class="vbody"><div class="t">📓 Course</div><div class="d">Build your own grammar-deck with Claude Code</div></div>
+        <div class="vthumb" style="background:linear-gradient(160deg,#0f1a10,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5"><rt-icon name="book"></rt-icon></span></div>
+        <div class="vbody"><div class="t"><rt-icon name="book"></rt-icon> Course</div><div class="d">Build your own grammar-deck with Claude Code</div></div>
       </a>
       <a class="grammar-link" href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">
-        <div class="vthumb" style="background:linear-gradient(160deg,#101010,#0f0d17);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">⌥</span></div>
+        <div class="vthumb" style="background:linear-gradient(160deg,#101010,#f4f1ea);display:flex;align-items:center;justify-content:center"><span style="font-size:22px;opacity:.5">⌥</span></div>
         <div class="vbody"><div class="t">⌥ The repo</div><div class="d">Every deck is an open JSON grammar — fork, correct, extend ↗</div></div>
       </a>
     </div>
@@ -276,7 +276,7 @@
       <a href="https://recursive.eco" target="_blank" rel="noopener" title="recursive.eco" style="display:inline-flex;text-decoration:none">
         <svg width="24" height="24" viewBox="0 0 100 100" aria-label="recursive.eco spiral">
           <path d="M53 47 a4 4 0 1 0 4 6 a11 11 0 1 0 -13 -3 a18 18 0 1 0 24 7 a26 26 0 1 0 -37 -11 a34 34 0 1 0 50 16"
-            fill="none" stroke="#d4af37" stroke-width="5" stroke-linecap="round"/>
+            fill="none" stroke="#9a7322" stroke-width="5" stroke-linecap="round"/>
         </svg>
       </a>
       This site + <a class="links" href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a></h2>
@@ -294,13 +294,13 @@
         <span class="tag">recursive.eco native</span>
       </div>
       <div class="feat">
-        <div class="ico">⊞</div>
+        <div class="ico"><rt-icon name="grid"></rt-icon></div>
         <h3>Emergence Explorer</h3>
         <p>Pivot any field × any field across all decks. Every grouping that isn't just a list reveals an emergence — a pattern the cards carry that no single tradition named.</p>
         <span class="tag">recursive.eco native</span>
       </div>
       <div class="feat">
-        <div class="ico">🔮</div>
+        <div class="ico"><rt-icon name="oracle"></rt-icon></div>
         <h3>Readings with AI</h3>
         <p>Cast a spread in the Caster, then bring it to recursive.eco — each card lands in context, with Scene, Symbol and Research sections backing the reading.</p>
         <span class="tag">recursive.eco native</span>
