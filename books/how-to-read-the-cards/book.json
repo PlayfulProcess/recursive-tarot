@@ -1,0 +1,84 @@
+{
+  "id": "how-to-read-the-cards",
+  "series": "The Recursive Tarot",
+  "book_number": 2,
+  "title": "A Mirror, Not a Fate",
+  "subtitle": "How to Read the Tarot",
+  "title_note": "Working title — series is 'The Recursive Tarot' (Book I = the history volume, currently titled 'The Recursive Tarot'; Book III = the contributor volume). Final titles TBD by PlayfulProcess.",
+  "author": "PlayfulProcess",
+  "license": "CC-BY-SA-4.0",
+  "language": "en",
+  "creed": "Read to know yourself, not to be told your fate. A card starts a conversation with what is already alive in you — so hold what you find loosely, author its meaning yourself, and keep the choice your own. Be honest about what you see and kind in what you make it mean. Relate to the card; never obey it.",
+
+  "note": "Single source of truth: every chapter below IS the live course MDX in ../../course/. The website renders these; this manifest re-orders the same files into a book and exports to EPUB/PDF. Never fork chapter prose into this folder — edit the .mdx, rebuild.",
+  "source_dir": "../../course",
+  "bibliography": "../../research/bibliography.bib",
+  "research_dir": "../../research/why-tarot-works",
+
+  "front_matter": [
+    { "kind": "title_page" },
+    { "kind": "creed_page", "title": "Before you cast — the one intention" },
+    { "kind": "preface", "status": "to-write", "note": "Series preface: the trilogy as one argument — game → mirror → contribution. ~800 words." }
+  ],
+
+  "parts": [
+    {
+      "title": "Part I — Why read at all",
+      "chapters": [
+        { "src": "why-tarot-works.mdx", "title": "Why the Cards Work", "status": "written", "role": "spine", "note": "The mechanism chapter — weaves in the deep-research synthesis." },
+        { "src": "tarot-and-the-crack.mdx", "title": "Tarot & the Crack", "status": "written", "role": "confession", "note": "The personal disappointment → turn that earns the mirror stance." }
+      ]
+    },
+    {
+      "title": "Part II — Setting the intention",
+      "chapters": [
+        { "src": "intention-setting.mdx", "title": "Intention Setting", "status": "written", "role": "hub", "note": "Mirror vs. oracle; open vs. closed questions; the 'chill in the spine' as somatic salience. The lenses open from here." }
+      ]
+    },
+    {
+      "title": "Part III — The lenses: an ecosystem of conscience",
+      "note": "Canonical voice order from viewers/voices.json. Each lens is presented faithfully in its own terms; any disagreement with a tradition lives here in the long form, never in the short intention. Living-teacher voices are titled by their school and say 'inspired by'.",
+      "chapters": [
+        { "src": "kant-and-the-tarot.mdx", "title": "Kant Reads the Tarot", "status": "written", "voice": "kant" },
+        { "src": "marsha-linehan-reads-the-tarot.mdx", "title": "Marsha Linehan Reads the Tarot", "status": "written", "voice": "dbt" },
+        { "src": "morality-is-an-ecosystem.mdx", "title": "Morality Is an Ecosystem", "status": "written", "voice": "ecosystem", "note": "The methodological root: why the good is gardened, not legislated — and why autonomy must be respected." },
+        { "src": "jung-reads-the-tarot.mdx", "title": "Jung Reads the Tarot", "status": "to-write", "voice": "jung", "note": "Archetypes, active imagination, synchronicity-as-framing (not causal claim)." },
+        { "src": "non-dual-tantra-reads-the-tarot.mdx", "title": "The Non-Dual Tantra Lens", "status": "to-write", "voice": "non-dual-tantra", "note": "Inspired by Christopher Wallis. School-titled, 'inspired by'." },
+        { "src": "post-activism-reads-the-tarot.mdx", "title": "The Post-Activism Lens", "status": "to-write", "voice": "post-activism", "note": "Inspired by Bayo Akomolafe. School-titled, 'inspired by'." },
+        { "src": "hospicing-modernity-reads-the-tarot.mdx", "title": "The Hospicing-Modernity Lens", "status": "to-write", "voice": "hospicing-modernity", "note": "Inspired by Vanessa Andreotti. School-titled, 'inspired by'." }
+      ]
+    },
+    {
+      "title": "Part IV — A ritual to walk",
+      "chapters": [
+        { "src": "walking-the-golden-dawn-path.mdx", "title": "Walking the Golden Dawn Path", "status": "written", "voice": "golden-dawn", "note": "Pathworking as the practitioner ritual — gate, not fate. Candidate for an added step-by-step pathworking appendix (the 'ritual for Golden Dawn stuff')." }
+      ]
+    },
+    {
+      "title": "Part V — The long human practice",
+      "chapters": [
+        { "src": "divination-traditions.mdx", "title": "How Humans Have Always Cast Lots", "status": "to-write", "role": "bridge", "note": "Bridge chapter from the research: protocol / who / purpose / theology-of-randomness across I Ching, Ifá, Delphi, Urim & Thummim and casting lots, runes, Roman augury, oracle bones, Tibetan Mo, Christian sortes. Two recurring purposes (decision under uncertainty; impartial arbitration) and two theologies of randomness (voice of the more-than-human; guaranteed fairness). Waves at Book I's history." }
+      ]
+    }
+  ],
+
+  "back_matter": [
+    { "kind": "sources", "title": "Sources & Honesty", "from": "../../research/why-tarot-works/REPORT.md", "note": "Provenance flags carried over: verified / rate-limited / interpretation." },
+    { "kind": "bibliography", "from": "../../research/bibliography.bib" },
+    { "kind": "about", "title": "About PlayfulProcess", "status": "to-write", "note": "Author identity privacy: PlayfulProcess only, never a real name." },
+    { "kind": "license", "text": "CC-BY-SA-4.0 — the decks, the spreads, and these courses are public, open data in one GitHub repo." }
+  ],
+
+  "export": {
+    "pipeline": "pandoc",
+    "targets": ["epub", "pdf"],
+    "epub": { "cover": "to-source", "css": "to-write", "note": "MDX → strip frontmatter + rewrite course-viewer links to internal anchors → pandoc → EPUB." },
+    "pdf": { "trim": "6x9", "target": "KDP print-on-demand", "note": "EPUB → KDP-ready PDF, mirroring the book-repo epub-build pipeline." },
+    "shared_with_book_repo": "../../../book-repo/epub-build"
+  },
+
+  "status": {
+    "summary": "Skeleton complete. 6 of 11 chapters written; 5 to write (4 lens essays + the divination-traditions bridge). Front/back connective tissue to write.",
+    "next_step": "Write the divination-traditions.mdx bridge chapter from research/why-tarot-works/REPORT.md §4, then the series preface."
+  }
+}
