@@ -71,19 +71,8 @@
     ['History', [
       ['history-of-tarot',                'A History of Tarot'],
     ]],
-    ['Intention Setting', [
-      ['why-tarot-works',                 'How the Cards Can Work'],
-      ['intention-setting',               'Intention Setting — the voices'],
-      ['tarot-and-the-crack',             'Tarot & the Crack'],
-      ['kant-and-the-tarot',              'Kant Reads the Tarot'],
-      ['marsha-linehan-reads-the-tarot',  'Marsha Linehan Reads the Tarot'],
-      ['morality-is-an-ecosystem',        'Morality Is an Ecosystem'],
-      ['jung-reads-the-tarot',            'Jung Reads the Tarot'],
-      ['non-dual-tantra-reads-the-tarot', 'The Non-Dual Tantra Lens'],
-      ['post-activism-reads-the-tarot',   'The Post-Activism Lens'],
-      ['hospicing-modernity-reads-the-tarot', 'The Hospicing-Modernity Lens'],
-      ['walking-the-golden-dawn-path',    'Walking the Golden Dawn Path'],
-      ['divination-traditions',           'How Humans Have Always Cast Lots'],
+    ['Reading the cards', [
+      ['reading-the-cards',               'The full course — all 12 chapters'],
     ]],
     ['How to Contribute', [
       ['how-to-contribute',               'How to Contribute'],
