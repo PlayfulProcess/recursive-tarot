@@ -34,7 +34,7 @@
     border-radius:12px; padding:10px; cursor:pointer; text-align:center; transition:border-color .15s, transform .1s; }
   .voice:hover { transform:translateY(-2px); }
   .voice.on { border-color:var(--vc,var(--accent)); box-shadow:0 0 0 1px var(--vc,var(--accent)); }
-  .voice .g { font-size:24px; line-height:1; }
+  .voice .g { font-size:24px; line-height:1; color:var(--accent); }
   .voice .vn { font-family:var(--serif-display); font-size:15px; font-weight:600; color:#221f1a; margin-top:6px; }
   .voice .vt { font-size:10.5px; color:var(--muted); }
   .voice-detail { margin-top:10px; font-size:13px; color:#4a4439; line-height:1.55; border-top:1px solid var(--line); padding-top:10px; display:none; }
@@ -122,7 +122,8 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=22"></script>
+<script src="../site-header.js?v=23"></script>
+<script src="../icons.js"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">
@@ -425,7 +426,7 @@ async function loadVoices(){
   $('intentionNote').textContent = si.interpretation_note || '';
   const vbox = $('voices'), detail = $('voiceDetail');
   (data.voices||[]).forEach(v => { const el=document.createElement('div'); el.className='voice'; el.style.setProperty('--vc', v.color||'var(--accent)');
-    el.innerHTML = '<div class="g">'+esc(v.glyph||'•')+'</div><div class="vn">'+esc(v.name)+'</div><div class="vt">'+esc(v.tagline||'')+'</div>';
+    el.innerHTML = '<div class="g">'+(window.rtIcon?window.rtIcon(v.glyph,28):esc(v.glyph||'•'))+'</div><div class="vn">'+esc(v.name)+'</div><div class="vt">'+esc(v.tagline||'')+'</div>';
     el.addEventListener('click', () => { const wasOn=el.classList.contains('on');
       vbox.querySelectorAll('.voice').forEach(n=>n.classList.remove('on'));
       if (wasOn){ detail.classList.remove('on'); return; }
