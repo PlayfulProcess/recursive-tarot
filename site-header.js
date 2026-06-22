@@ -100,10 +100,10 @@
       // Embedded (iframed into a course/book): render no header at all.
       if (new URLSearchParams(location.search).get('embed') === '1') { this.style.display = 'none'; return; }
       // Museum/Editorial webfonts — injected once into the document head so every page
-      // (light DOM and this shadow DOM) renders in Cormorant / EB Garamond / Inter.
+      // (light DOM and this shadow DOM) renders in Cormorant / Fraunces / Inter.
       if (!document.getElementById('rt-fonts')) {
         const fl = document.createElement('link'); fl.id = 'rt-fonts'; fl.rel = 'stylesheet';
-        fl.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=EB+Garamond:ital@0;1&family=Inter:wght@400;500;600&display=swap';
+        fl.href = 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap';
         document.head.appendChild(fl);
       }
       // The shared SVG icon library — one source, available as <rt-icon name="…"> on every page.
@@ -135,7 +135,7 @@
           .brand{ display:flex; flex-direction:row; align-items:center; gap:10px; margin-right:4px; }
           .brand-logo, .brand-name{ display:inline-flex; align-items:center; text-decoration:none; }
           .brand-logo{ border-radius:50%; }
-          .brand-name .name{ font-family:"Cormorant Garamond",Georgia,serif; font-size:21px; font-weight:600; letter-spacing:.4px; color:#221f1a; white-space:nowrap; }
+          .brand-name .name{ font-family:"Fraunces",Georgia,serif; font-size:21px; font-weight:600; letter-spacing:.4px; color:#221f1a; white-space:nowrap; }
           .brand-name:hover .name{ color:#000; }
           .brand-name .name .gold{ color:#9a7322; }
           .brand svg{ flex-shrink:0; }
