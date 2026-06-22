@@ -111,6 +111,11 @@
         fl.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=EB+Garamond:ital@0;1&family=Inter:wght@400;500;600&display=swap';
         document.head.appendChild(fl);
       }
+      // The shared SVG icon library — one source, available as <rt-icon name="…"> on every page.
+      if (!document.getElementById('rt-icons-lib')) {
+        const si = document.createElement('script'); si.id = 'rt-icons-lib'; si.src = PFX + 'icons.js';
+        document.head.appendChild(si);
+      }
       const active = this.getAttribute('active') || autoActive();
       const root = this.attachShadow({ mode: 'open' });
       const tab = ([key, label, href, cls, ext]) =>
