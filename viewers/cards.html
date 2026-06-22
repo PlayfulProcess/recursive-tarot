@@ -3062,7 +3062,7 @@
                         name: p.name || 'Unknown Planet',
                         number: index,
                         sort_order: index,
-                        icon: p.symbol || '⚫',
+                        icon: p.symbol || '○',
                         image_url: p.image_url,
                         keywords: p.keywords || [],
                         categories: { type: 'planet' },
@@ -3150,8 +3150,8 @@
 
         // The fallback visual when an item has no image, by grammar type.
         function noImageVisual(gt) {
-            if (gt === 'course') return '📖';
-            if (gt === 'iching') return '☯️';
+            if (gt === 'course') return '<rt-icon name="book"></rt-icon>';
+            if (gt === 'iching') return '☯';
             if (gt === 'tarot') return NO_IMAGE_SVG;
             return '<svg width="24" height="24" viewBox="0 0 100 100" style="display:inline-block;vertical-align:middle"><path d="' + getDefaultSpiralPath() + '" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.5"/></svg>';
         }
