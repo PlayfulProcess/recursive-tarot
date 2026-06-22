@@ -116,10 +116,19 @@ illustration in `how-tarot-works.mdx`; apply the gate metaphor where chosen.
 - `recursive-eco.json` is on **origin/main** (and dev) — verified live at
   raw.githubusercontent.com/.../main/recursive-eco.json. Channel import resolves with default branch.
 
+## ✅ Contemporary-decks band: The Ontoject cover (Jun 22)
+- The homepage "Contemporary decks" band filters on `cover_image_url`; `ontoject-illustrated`
+  had none, so only the 36-Tattvas showed. Added the deck's **title card** ("The Void / The
+  Ontoject", the 0 card — `…/grammars/1772430325995-o2090q7x03.png`) as top-level
+  `cover_image_url` in `tarot/ontoject-illustrated/grammar.json` (durable — `refresh_collection.py`
+  reads it from there) → regenerated `_collection.json`. Also made `index.html`'s manifest fetch
+  revalidate (`cache:'no-cache'`) so the band is always current. Verified in preview DOM: band
+  renders **both** "The Ontoject" + "The 36 Tattvas". On dev + main.
+- **recursive.eco MCP is LIVE** (479 grammars, server `6b361191…`) — `list_grammars`, `get_grammar`,
+  `set_item_image`, `cast`, `commons_image_search`, etc. all available for future deck work.
+
 ## ☐ STILL BLOCKED / needs live data or a bigger build
 - **Live-iframe or screenshot view thumbnails** (preview screenshot tool hangs; iframes need perf test).
-- **recursive.eco tarot-channel contemporary decks** (live API/MCP) + **ontoject cover** is `None` in
-  `_collection.json` (so only the 36-Tattvas shows in the contemporary band).
 - **Verified embeddable video IDs** for sequence lenses 5–7. **Series preface + about + EPUB build.**
 
 ## ☐ QUEUE — homepage IA + path pages (Jun 22, from feedback)
