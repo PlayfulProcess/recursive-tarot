@@ -11,14 +11,14 @@
   the opponent does goes by too fast to follow. Public-domain images.
 -->
 <style>
-  :root{ --bg:#0f0d17; --panel:#1a1726; --panel2:#16121f; --ink:#ece8f5; --muted:#9b94b3; --accent:#d4af37; --line:#2a2440;
+  :root{ --bg:#f4f1ea; --panel:#ffffff; --panel2:#faf8f3; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6;
          --win:#81b29a; --lose:#e07a5f; }
   @media (prefers-color-scheme: light){
-    :root{ --bg:#fbfaff; --panel:#fff; --panel2:#f4f1fb; --ink:#241b3a; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
+    :root{ --bg:#f4f1ea; --panel:#fff; --panel2:#faf8f3; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; }
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    font-family:Inter,system-ui,-apple-system,sans-serif}
   .wrap{max-width:1180px;margin:0 auto;padding:18px 16px 60px}
   h1{font-size:22px;margin:.2em 0 .1em}
   h1 .sub{font-size:13px;font-weight:400;color:var(--muted)}
@@ -42,7 +42,7 @@
   .toolbar label{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}
   select{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13px;font-family:inherit;cursor:pointer}
   .deck-note{font-size:12px;color:var(--muted)}
-  button{background:var(--accent);color:#1a1206;border:0;border-radius:9px;padding:9px 16px;font-size:14px;font-weight:700;cursor:pointer}
+  button{background:var(--accent);color:#f4f1ea;border:0;border-radius:9px;padding:9px 16px;font-size:14px;font-weight:700;cursor:pointer}
 
   .layout{display:flex;flex-direction:column;gap:16px}
   .board{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
@@ -54,8 +54,8 @@
   .label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
   #ai-hand{display:flex;gap:4px}
   .back-s{width:30px;height:46px;border-radius:4px;border:1px solid var(--line);
-    background:repeating-linear-gradient(45deg,#241c3a,#241c3a 5px,#1a1430 5px,#1a1430 10px)}
-  @media (prefers-color-scheme: light){ .back-s{background:repeating-linear-gradient(45deg,#d9d0f0,#d9d0f0 5px,#cdc2ea 5px,#cdc2ea 10px)} }
+    background:repeating-linear-gradient(45deg,#ffffff,#ffffff 5px,#ffffff 5px,#ffffff 10px)}
+  @media (prefers-color-scheme: light){ .back-s{background:repeating-linear-gradient(45deg,#e8e0d2,#e8e0d2 5px,#e8e0d2 5px,#e8e0d2 10px)} }
 
   .table-zone{display:flex;justify-content:center;gap:46px;min-height:210px;align-items:center;
     margin:10px 0;background:var(--panel2);border-radius:12px;padding:14px}
@@ -71,7 +71,7 @@
   .card .cap{font-size:10px;text-align:center;padding:3px 2px;color:var(--muted);line-height:1.15;height:26px;overflow:hidden}
   .card.trump{border-color:var(--accent)}
   .hand .card.play{cursor:pointer;transition:transform .12s,box-shadow .12s}
-  .hand .card.play:hover{transform:translateY(-8px);box-shadow:0 10px 24px rgba(147,51,234,.35)}
+  .hand .card.play:hover{transform:translateY(-8px);box-shadow:0 10px 24px rgba(154,115,34,.35)}
   .hand .card.illegal{opacity:.34;filter:grayscale(.65);cursor:not-allowed}
   .hand .card.legal{box-shadow:0 0 0 2px var(--accent)}
   .table-zone .card{width:124px}
@@ -91,7 +91,7 @@
   .log-row .wn{display:block;margin-top:3px;font-weight:700}
   .log-empty{font-size:12px;color:var(--muted)}
 
-  .trump-badge{position:absolute;top:3px;left:3px;background:var(--accent);color:#1a1206;font-size:9px;
+  .trump-badge{position:absolute;top:3px;left:3px;background:var(--accent);color:#f4f1ea;font-size:9px;
     font-weight:800;padding:1px 4px;border-radius:4px}
   #err{color:var(--lose);padding:24px}
   @media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important}
