@@ -93,14 +93,21 @@ illustration in `how-tarot-works.mdx`; apply the gate metaphor where chosen.
 - **`pages/contribute.html`** built (mirrors historian): course banner + ways-in + Claude/MCP callout.
 - **`pages/play.html`**: "Play the cards" + a "Games of the Tarot" course banner on top.
 
-## ☐ STILL BLOCKED / needs a verified or live-data session
+## ✅ Dark-mode audit (Chrome-verified, Jun 22)
+- **lenses.html** migrated dark → light (was `--bg:#0c0916`).
+- **cards.html** light card tiles: `.thumbnail-card` dark charcoal gradient → `#faf8f3` mat; empty
+  letterbox `#000` → `#faf8f3`; 'Group: Levels' dropdown `#221b38` → light gold pill. Verified across
+  the 900-card grid. (2 truly image-less cards still show a faint placeholder — negligible.)
+- **tree-viewer.html**: the login-prompt panel `#16121f` → light.
+- **Games** (trionfi/tarocchino/madiao) are already light (light `:root` default; the
+  `prefers-color-scheme` block is a redundant no-op). **sequence viewers** use `#000` intentionally
+  (video-player context) — leave dark.
+
+## ☐ STILL BLOCKED / needs live data or a bigger build
 - **Live-iframe or screenshot view thumbnails** (preview screenshot tool hangs; iframes need perf test).
 - **recursive.eco tarot-channel contemporary decks** (live API/MCP) + **ontoject cover** is `None` in
   `_collection.json` (so only the 36-Tattvas shows in the contemporary band).
-- **`viewers/prototypes/lenses.html` is dark-themed** (`--bg:#0c0916`) — now linked from home; needs a
-  light migration (verify via connected Chrome, don't do blind).
 - **Icons → SVG library (de-emoji)** — big + mojibake risk; do per-file with verification.
-- **cards.html light-theme pass** (dark empty-card slots) — verify via Chrome.
 - **Verified embeddable video IDs** for sequence lenses 5–7. **Series preface + about + EPUB build.**
 
 ## ☐ QUEUE — homepage IA + path pages (Jun 22, from feedback)
