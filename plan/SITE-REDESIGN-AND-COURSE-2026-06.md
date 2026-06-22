@@ -81,6 +81,28 @@ ties to "gate, not fate" + GD pathworking + safer-containers' "the refusals are 
 prism, still-pool. STILL TODO: add the palantír (Denethor vs Aragorn) as the failure-mode
 illustration in `how-tarot-works.mdx`; apply the gate metaphor where chosen.
 
+## ✅ CLEARED in the autonomous pass (Jun 22)
+
+- **Grammar + gate through-line**: defined "grammar" (linked to recursive.eco) in the hero + the
+  ecotree block; retired "mirror" as the headline in `intention-setting` ("the deck as a grammar held
+  as a gate, not a fate"); wove the arch (game → crystal ball → gate) into `history-of-tarot`.
+- **Palantír passage** added to `how-tarot-works` ("A warning from Tolkien" — Denethor vs Aragorn;
+  crystal ball = obeyed palantír, gate = Aragorn's; ties grammar + the AI/safer-containers vow).
+- **Four doors** on home (Historian · Practitioner · Player · Contributor); hero CTAs removed; views
+  re-classified (card: Cards/Explorer/Lenses/Tree · grammar: Tree of Life/Timeline/Genealogy).
+- **`pages/contribute.html`** built (mirrors historian): course banner + ways-in + Claude/MCP callout.
+- **`pages/play.html`**: "Play the cards" + a "Games of the Tarot" course banner on top.
+
+## ☐ STILL BLOCKED / needs a verified or live-data session
+- **Live-iframe or screenshot view thumbnails** (preview screenshot tool hangs; iframes need perf test).
+- **recursive.eco tarot-channel contemporary decks** (live API/MCP) + **ontoject cover** is `None` in
+  `_collection.json` (so only the 36-Tattvas shows in the contemporary band).
+- **`viewers/prototypes/lenses.html` is dark-themed** (`--bg:#0c0916`) — now linked from home; needs a
+  light migration (verify via connected Chrome, don't do blind).
+- **Icons → SVG library (de-emoji)** — big + mojibake risk; do per-file with verification.
+- **cards.html light-theme pass** (dark empty-card slots) — verify via Chrome.
+- **Verified embeddable video IDs** for sequence lenses 5–7. **Series preface + about + EPUB build.**
+
 ## ☐ QUEUE — homepage IA + path pages (Jun 22, from feedback)
 
 - **Four doors** done: Historian · Practitioner (`?course=reading-the-cards`) · Player (play.html) ·
