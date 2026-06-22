@@ -7,13 +7,13 @@
 <meta property="og:title" content="Play, read, contribute — Recursive Tarot">
 <meta property="og:description" content="Play the historical card games, sit with the cards as a mirror, or help keep this open commons alive.">
 <style>
-  :root{ --bg:#0f0d17; --panel:#161226; --ink:#ece8f5; --muted:#9b94b3; --accent:#d4af37; --line:#2a2440; --violet:#9333ea; }
+  :root{ --bg:#f4f1ea; --panel:#161226; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; --violet:#9a7322; }
   @media (prefers-color-scheme: light){
-    :root{ --bg:#fbfaff; --panel:#fff; --ink:#241b3a; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
+    :root{ --bg:#f4f1ea; --panel:#fff; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; }
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    font-family:Inter,system-ui,-apple-system,sans-serif}
   .wrap{max-width:1040px;margin:0 auto;padding:22px 18px 80px}
   h1{font-size:26px;margin:.2em 0 .15em}
   .lede{color:var(--muted);font-size:15px;line-height:1.6;max-width:74ch}
@@ -33,21 +33,21 @@
   .tile{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:14px;
     overflow:hidden;text-decoration:none;color:inherit;transition:transform .14s,box-shadow .14s,border-color .14s}
   .tile:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.35);border-color:var(--accent)}
-  .thumb{height:170px;background:#0a0712;display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:38px}
+  .thumb{height:170px;background:#faf8f3;display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:38px}
   .thumb img{width:100%;height:100%;object-fit:contain}
   .tbody{padding:14px 16px 18px}
   .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .b-game{background:rgba(212,175,55,.14);color:var(--accent);border:1px solid rgba(212,175,55,.4)}
-  .b-cast{background:rgba(147,51,234,.14);color:#b9a3f5;border:1px solid rgba(147,51,234,.4)}
+  .b-game{background:rgba(154,115,34,.14);color:var(--accent);border:1px solid rgba(154,115,34,.4)}
+  .b-cast{background:rgba(154,115,34,.14);color:#b9a3f5;border:1px solid rgba(154,115,34,.4)}
   .b-oracle{background:rgba(129,178,154,.14);color:#9ad0b5;border:1px solid rgba(129,178,154,.4)}
   .b-make{background:rgba(109,142,201,.16);color:#9db8e6;border:1px solid rgba(109,142,201,.45)}
   .b-give{background:rgba(224,122,95,.14);color:#e89a82;border:1px solid rgba(224,122,95,.4)}
   .tile b{display:block;font-size:17px;margin:2px 0 5px}
   .tile .desc{font-size:13.5px;color:var(--muted);line-height:1.5}
   .ext{color:var(--muted);font-size:12px}
-  .thumb.gr-make{background:linear-gradient(150deg,#16224a,#0f0d17)}
-  .thumb.gr-give{background:linear-gradient(150deg,#3a1f1a,#0f0d17)}
-  .thumb.gr-git{background:linear-gradient(150deg,#16161c,#0f0d17)}
+  .thumb.gr-make{background:linear-gradient(150deg,#16224a,#f4f1ea)}
+  .thumb.gr-give{background:linear-gradient(150deg,#3a1f1a,#f4f1ea)}
+  .thumb.gr-git{background:linear-gradient(150deg,#16161c,#f4f1ea)}
 </style>
 </head>
 <body>
@@ -110,7 +110,7 @@
     <div class="grid">
       <a class="tile" href="../viewers/caster.html">
         <div class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-14-temperance.jpg" alt=""></div>
-        <div class="tbody"><span class="badge b-cast">🔮 Caster</span><b>Draw a spread</b>
+        <div class="tbody"><span class="badge b-cast"><rt-icon name="oracle"></rt-icon> Caster</span><b>Draw a spread</b>
           <span class="desc">Pull three cards from any historical deck — or across every deck at once. Structures · Process · Possibilities. The simple version: it just draws.</span></div>
       </a>
       <a class="tile" href="https://flow.recursive.eco/" target="_blank" rel="noopener">
@@ -120,7 +120,7 @@
       </a>
       <a class="tile" href="https://flow.recursive.eco/create/dashboard/unified/new" target="_blank" rel="noopener">
         <div class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-01-magician.jpg" alt=""></div>
-        <div class="tbody"><span class="badge b-make">⊞ Make</span><b>Create your own deck <span class="ext">↗</span></b>
+        <div class="tbody"><span class="badge b-make"><rt-icon name="grid"></rt-icon> Make</span><b>Create your own deck <span class="ext">↗</span></b>
           <span class="desc">Author meaning yourself — build a personal grammar on recursive.eco, or turn a deck you love into one with <b style="color:var(--accent);font-weight:600">Claude Code</b> (see the course).</span></div>
       </a>
     </div>
@@ -168,7 +168,7 @@
       </a>
       <a class="tile" href="course-viewer.html?course=build-a-tarot-deck-with-claude">
         <div class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/VIIII%20L%27HERMITE%20Nicolas%20Conver%20Tarot%201760.jpg" alt=""></div>
-        <div class="tbody"><span class="badge b-make">📓 Learn how</span><b>The contributor's course</b>
+        <div class="tbody"><span class="badge b-make"><rt-icon name="book"></rt-icon> Learn how</span><b>The contributor's course</b>
           <span class="desc">A walkthrough for turning a deck you love into a grammar with Claude Code, and committing it back to the commons.</span></div>
       </a>
     </div>

@@ -6,18 +6,18 @@
 <title>Tree of Tarot — Radial Genealogy · Recursive Tarot</title>
 <style>
   :root{
-    --bg:#0f0d17; --panel:#1a1726; --ink:#ece8f5; --muted:#9b94b3;
-    --accent:#b8860b; --line:#39324d;
+    --bg:#f4f1ea; --panel:#ffffff; --ink:#221f1a; --muted:#6b6457;
+    --accent:#9a7322; --line:#d8d2c6;
     --roots:#c9a24b; --a:#e07a5f; --b:#81b29a; --c:#6d8ec9; --occult:#9b6dc9; --sui:#c96d9b;
   }
   @media (prefers-color-scheme: light){
-    :root{ --bg:#fbfaff; --panel:#ffffff; --ink:#241b3a; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
+    :root{ --bg:#f4f1ea; --panel:#ffffff; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; }
   }
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);color-scheme:light dark;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    font-family:Inter,system-ui,-apple-system,sans-serif}
   header.site{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line);
-    flex-wrap:wrap;background:linear-gradient(180deg,#141120,transparent)}
+    flex-wrap:wrap;background:linear-gradient(180deg,#f1ece1,transparent)}
   header.site h1{font-size:16px;margin:0;font-weight:700;letter-spacing:.3px}
   header.site h1 .gold{color:var(--accent)}
   header.site nav{display:flex;gap:14px;flex-wrap:wrap}
@@ -41,7 +41,7 @@
   aside#detail{width:340px;max-width:84vw;background:var(--panel);border-left:1px solid var(--line);
     padding:18px;overflow:auto;display:none}
   aside#detail.open{display:block}
-  aside#detail img{width:100%;max-height:260px;object-fit:contain;background:#0a0810;border-radius:8px;margin-bottom:12px}
+  aside#detail img{width:100%;max-height:260px;object-fit:contain;background:#f4f1ea;border-radius:8px;margin-bottom:12px}
   aside#detail h2{margin:.2em 0 .1em;font-size:18px}
   aside#detail .when{color:var(--accent);font-size:13px;margin-bottom:10px}
   aside#detail .sec{margin:12px 0;font-size:13.5px;line-height:1.55;color:var(--ink)}
@@ -73,7 +73,7 @@
   body.embed header.site, body.embed site-header, body.embed view-switcher, body.embed .hint{display:none}
   body.embed .wrap{height:600px}
   /* in the (light) book, force the embed light regardless of the reader's OS theme */
-  body.embed{ --bg:#fbfaff; --panel:#ffffff; --ink:#241b3a; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
+  body.embed{ --bg:#f4f1ea; --panel:#ffffff; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; }
 </style>
 </head>
 <body>
@@ -106,7 +106,7 @@ const RAW_COLORS = {
   'branch-roots':'#c9a24b','branch-a':'#e07a5f','branch-b':'#81b29a',
   'branch-c':'#6d8ec9','branch-occult':'#9b6dc9','branch-sui':'#c96d9b'
 };
-const PALETTE = ['#c9a24b','#e07a5f','#81b29a','#6d8ec9','#9b6dc9','#c96d9b','#d4af37','#7a7290','#4db6ac','#e57373'];
+const PALETTE = ['#c9a24b','#e07a5f','#81b29a','#6d8ec9','#9b6dc9','#c96d9b','#9a7322','#6b6457','#4db6ac','#e57373'];
 let hubField = 'branch'; // discoverable field that drives hub/node color
 let hubColorOf = {}; // value → color
 // map a tree-of-tarot deck node id -> the repo deck slug (so "Open cards" can deep-link)
@@ -232,8 +232,8 @@ function draw(nested){
   node.append('circle')
     .attr('r',d=>d.depth===0?9:d.depth===1?7:5)
     .attr('fill',d=>{
-      if(d.depth===0) return '#d4af37';
-      const v=hubValueOf(d.data.data); return hubColorOf[v]||'#7a7290';
+      if(d.depth===0) return '#9a7322';
+      const v=hubValueOf(d.data.data); return hubColorOf[v]||'#6b6457';
     });
 
   node.append('text')
@@ -311,7 +311,7 @@ function showDetail(it){
     html+=`<div class="sec"><h4>${esc(k)}</h4>${mdToHtml(String(v))}</div>`;
   }
   if(slug) html+=`<a class="opencards" href="cards.html?src=${encodeURIComponent('../tarot/'+slug+'/grammar.json')}">Open ${esc(it.name.replace(/\s+[—–-].*/,''))} cards →</a>`;
-  else html+=`<div class="sec" style="color:#9b94b3">No card-level deck in the repo yet for this node.</div>`;
+  else html+=`<div class="sec" style="color:#6b6457">No card-level deck in the repo yet for this node.</div>`;
   el.innerHTML=html; el.classList.add('open');
 }
 
