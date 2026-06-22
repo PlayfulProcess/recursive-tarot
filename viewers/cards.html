@@ -894,7 +894,7 @@
         }
         .groupby-select:focus { outline: none; }
         .groupby-select option {
-            background: #1a1430;
+            background: #ffffff;
             color: #221f1a;
         }
 
@@ -1127,7 +1127,7 @@
 
         /* Delicate, neutral "no image yet" mark — override the accent colour so it
            reads as a quiet black-and-white line drawing, not a bright glyph. */
-        .noimg-svg { color: var(--grammar-text-muted, #9b94b3); opacity: 0.55; }
+        .noimg-svg { color: var(--grammar-text-muted, #6b6457); opacity: 0.55; }
         .thumb-icon .noimg-svg { opacity: 1; } /* .thumb-icon already dims to 0.5 */
 
         /* Item info */
@@ -2038,8 +2038,8 @@
     <!-- Shared grammar loading component (local copy) -->
     <script src="grammar-loader.js"></script>
     <script src="dimension-engine.js?v=1"></script>
-    <script src="deck-picker.js?v=1"></script>
-    <script src="eco-links.js?v=1"></script>
+    <script src="deck-picker.js?v=2"></script>
+    <script src="eco-links.js?v=2"></script>
     <script>window.RecursiveEcoLinks && RecursiveEcoLinks.ready();</script>
 
     <!-- Site Header -->
@@ -3725,7 +3725,7 @@
             const NAV = { genealogy: '../genealogy.html', timeline: 'timeline.html', tree: 'tree-viewer.html' };
             const menu = document.createElement('div');
             menu.className = 'lens-menu-pop';
-            menu.style.cssText = 'position:fixed;z-index:9999;background:#161227;border:1px solid #d8d2c6;border-radius:9px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.55);min-width:190px;';
+            menu.style.cssText = 'position:fixed;z-index:9999;background:#f4f1ea;border:1px solid #d8d2c6;border-radius:9px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.55);min-width:190px;';
             const r = anchor.getBoundingClientRect();
             menu.style.left = Math.min(r.left, window.innerWidth - 210) + 'px';
             menu.style.top = (r.bottom + 4) + 'px';
