@@ -63,6 +63,22 @@
   .way h3{font-family:var(--serif-display);font-weight:600;font-size:22px;margin:0 0 6px;color:var(--ink)}
   .way p{font-family:var(--serif-body);font-size:15px;line-height:1.55;color:var(--ink-soft);margin:0}
 
+  /* the arch: game -> crystal ball -> gate (adaptive / maladaptive) */
+  .arch{margin:54px auto 0;max-width:1000px}
+  .arch h2{font-family:var(--serif-display);font-weight:600;font-size:28px;color:var(--ink);margin:0 0 .25em;text-align:center}
+  .arch .sub{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8a6414;text-align:center;margin:0 0 22px}
+  .archrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .archcard{background:var(--surface);border:1px solid var(--line-soft);border-radius:10px;padding:20px 20px 22px;text-align:center}
+  .archcard.now{border-color:var(--gold);box-shadow:0 16px 34px -26px rgba(60,45,20,.45)}
+  .archcard .an{font-family:var(--serif-display);font-weight:600;font-size:21px;color:var(--ink);margin:0 0 9px}
+  .archcard .atag{display:inline-block;font-family:var(--sans);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-bottom:11px}
+  .atag.ok{background:rgba(63,122,92,.12);color:#3f7a5c}
+  .atag.bad{background:rgba(181,81,47,.1);color:#b5512f}
+  .archcard .ag{font-family:var(--serif-body);font-size:14.5px;line-height:1.55;color:var(--ink-soft);margin:0}
+  .arch .archnote{font-family:var(--serif-body);font-size:15px;line-height:1.6;color:var(--ink-soft);text-align:center;max-width:62ch;margin:22px auto 0}
+  .arch .archnote a{color:var(--gold)}
+  @media(max-width:680px){ .archrow{grid-template-columns:1fr} }
+
   /* editorial prose sections */
   section.story{margin:40px auto 0;max-width:680px}
   section.story h2{font-family:var(--serif-display);font-weight:600;font-size:28px;color:var(--ink);
@@ -187,6 +203,30 @@
       </div>
     </a>
   </div>
+
+  <!-- ── THE ARCH: how to hold the cards ── -->
+  <section class="arch">
+    <h2>How to hold the cards</h2>
+    <p class="sub">Game → Crystal ball → Gate, not fate</p>
+    <div class="archrow">
+      <div class="archcard">
+        <div class="an">Game</div>
+        <span class="atag ok">Adaptive · within limits</span>
+        <p class="ag">Play it for the play — sociable, skilled, free. Healthy, as long as it never curdles into greed.</p>
+      </div>
+      <div class="archcard">
+        <div class="an">Crystal ball</div>
+        <span class="atag bad">Maladaptive</span>
+        <p class="ag">Read it as fate and you obey the slice it shows you. Tolkien named the object — the <em>palantír</em>, which never lies and still ruins whoever obeys it.</p>
+      </div>
+      <div class="archcard now">
+        <div class="an">Gate, not fate</div>
+        <span class="atag ok">Adaptive</span>
+        <p class="ag">Cross it with your judgment intact. The card reflects what's already in you and lets you imagine the step you haven't taken.</p>
+      </div>
+    </div>
+    <p class="archnote">This site teaches the third — and keeps the first. Why a card held as a gate is practice for a world full of oracles is in <a href="pages/course-viewer.html?course=intention-setting">Intention Setting</a>.</p>
+  </section>
 
   <!-- ── A SHORT HONEST HISTORY ── -->
   <section class="story">
