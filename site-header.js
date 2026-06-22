@@ -72,12 +72,14 @@
       ['history-of-tarot',                'A History of Tarot'],
     ]],
     ['Intention Setting', [
+      ['why-tarot-works',                 'Why the Cards Work'],
       ['intention-setting',               'Intention Setting — the voices'],
       ['tarot-and-the-crack',             'Tarot & the Crack'],
       ['kant-and-the-tarot',              'Kant Reads the Tarot'],
       ['marsha-linehan-reads-the-tarot',  'Marsha Linehan Reads the Tarot'],
       ['morality-is-an-ecosystem',        'Morality Is an Ecosystem'],
       ['walking-the-golden-dawn-path',    'Walking the Golden Dawn Path'],
+      ['divination-traditions',           'How Humans Have Always Cast Lots'],
     ]],
     ['How to Contribute', [
       ['how-to-contribute',               'How to Contribute'],
