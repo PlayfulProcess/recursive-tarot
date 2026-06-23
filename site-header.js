@@ -66,6 +66,11 @@
     ['https://flow.recursive.eco/',   'Oracle ↗', true],
     [PFX + 'pages/play.html',             'All games & readings →'],
   ];
+  // Home — a dropdown that uncollapses to About (the pill itself links to the homepage).
+  const HOME_MENU = [
+    [PFX + 'index.html',        'Home'],
+    [PFX + 'pages/about.html',  'About'],
+  ];
   // Courses — grouped into three topics; each is a course-viewer ?course=… (deep-linkable with #section).
   const COURSE_GROUPS = [
     ['History', [
@@ -76,7 +81,6 @@
     ]],
     ['How to Contribute', [
       ['how-to-contribute',               'How to Contribute'],
-      ['build-a-tarot-deck-with-claude',  'Contribute to the Commons'],
     ]],
   ];
 
@@ -192,6 +196,12 @@
           </span>
           <span class="spacer"></span>
           <nav aria-label="Site sections">
+            <span class="dd">
+              <a class="tab dd-btn${active === 'home' ? ' active' : ''}" href="${PFX}index.html" aria-haspopup="true" aria-expanded="false" aria-label="Home menu">Home</a>
+              <span class="dd-menu">
+                ${HOME_MENU.map(([href, label]) => `<a href="${href}">${label}</a>`).join('')}
+              </span>
+            </span>
             <span class="dd">
               <a class="tab dd-btn${viewActive ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Views menu">Views</a>
               <span class="dd-menu">
