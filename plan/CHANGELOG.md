@@ -1,0 +1,26 @@
+# Recursive Tarot — changelog
+
+Newest first. One line per shipped item; reference the TODO id when there is one.
+Open work lives in [TODO.md](TODO.md).
+
+## 2026-06-23
+
+### Tracking + this session's later pass (in progress)
+- Created `plan/TODO.md` + this changelog so nothing is dropped (per request to log everything).
+- **Spiral (U):** copied recursive.eco's `spiral/spiral.js` + `hero-spiral.js` **verbatim** (md5-matched). The About-page hero now runs the real recursive.eco spiral — purple `#9333ea`, the building/rebuilding **draw** + breathe + rotate, with **WHY/HOW/WHAT: Sense/Recursive/Make Belief** — at ~4× size (320px). The home ecotree box renders a **static** purple spiral. `spiral-mark.svg` → static purple.
+- **Header icon (T):** brand mark → the static **gold** recursive spiral (`spiral-gold.svg`).
+- **Purple redirects (X-PURPLE):** every link to recursive.eco / flow.recursive.eco renders in platform purple `#9333ea` (theme.css rule, app-wide) including the **Oracle ↗** item in the header Play dropdown.
+- **Play parity (V):** added the poetic opener — *"Tarot has always been play — first a game, then a divination practice or trick, and now a play of sense-making belief"* — and surfaced the course's named mechanisms (conceptual blending, Barnum, cold reading, depth psychology, narrative therapy) on the Play page.
+- Answered inline: meta-grammar **can** be the deck index (Q-INDEX); the **>38 of 76** point math (Q-76); the correct **follow→trump→discard** rule (Q-TRUMP-RULE).
+
+### Earlier 2026-06-23 (verified in preview, pushed to `dev`)
+- Newsletter footer confirmed working end-to-end: `you@email.com` stored with `subscribed_from='recursive-tarot'`, `subscribed=true`.
+- `spiral-mark.svg` rebuilt from recursive.eco's own golden-ratio algorithm (superseded later this session — see TODO note about copying the file verbatim).
+- Cards viewer readability: transparent + borderless cards, transparent thumbnail mat, black lighter-weight numbers & names (fixes the Shaiva Tantra deck). Description now shows a full paragraph.
+- Footer propagated app-wide (18 pages) + hides itself in embed mode.
+- Community grammars (Ontoject, 36 Tattvas): disclaimer — objects of study by PlayfulProcess, may contain errors, contributions welcome.
+- About "How to Contribute" → Contribute page; contribute "Create your own" → flow.recursive.eco/create; removed sources' "See the whole collection"; eye icon retired site-wide.
+- Play page: course banner moved under the title; added Tolkien/sub-creation lens; "Watch the history" reordered (documentaries first) + a "Contribute a video" course section; "Help keep it alive" rebuilt on Kelty's *recursive public* + Contribute link.
+- Header: Contribute tab; Home▾ dropdown → About. Homepage: dropped the redundant Practitioner door; arch rebuilt as a dated, clickable timeline.
+- Timeline: year now inline after the title in readable dark gold.
+- Consolidated the contributor guide into one course (how-to-contribute); favicon → gold spiral.
