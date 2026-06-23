@@ -84,6 +84,14 @@ grammar.json (the deck's images + the pages they feed) and regenerates `plan/IMA
 flags every cross-page repeat. Keep it up to date — it's how we spread unique cards and render the
 most of the library. (Prefer the Star / courts / Empress over yet another Visconti World.)
 
+## Course images — one home, one convention
+
+Course figures/screenshots live in **`pages/courses/images/`** — the single canonical location.
+In an MDX course, author them as `images/<name>.ext` (e.g. `![caption](images/01-library.png)`);
+the course-viewer rewrites `images/` → `courses/images/` at render time. Don't scatter course
+images elsewhere (the old `course/img/` folder was consolidated here Jun 23 2026). Card art still
+comes from R2 (see the Image pattern above); this folder is only for course-authored figures.
+
 ## Scripts cheat-sheet
 
 | Script | What it does |
