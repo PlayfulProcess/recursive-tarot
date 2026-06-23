@@ -80,6 +80,9 @@
     ['Reading the cards', [
       ['reading-the-cards',               'The full course — all 12 chapters'],
     ]],
+    ['Tarot today', [
+      ['tarot-today',                     'Tarot Today — a living question'],
+    ]],
     ['How to Contribute', [
       ['how-to-contribute',               'How to Contribute'],
     ]],

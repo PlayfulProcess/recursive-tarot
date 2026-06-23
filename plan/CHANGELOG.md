@@ -7,6 +7,10 @@ Open work lives in [TODO.md](TODO.md).
 
 ### Tracking + this session's later pass (in progress)
 - Created `plan/TODO.md` + this changelog so nothing is dropped (per request to log everything).
+- **Purple wayfinding (round 2):** header mark flipped back to purple; recursive.eco/flow.recursive.eco **buttons** render purple (filled + outline, `!important`); the "One branch of a larger tree" spiral links out to recursive.eco.
+- **Caster (SB-BTNS, SB-IMPORT):** Re-cast merged into Cast (the Cast button re-casts on repeat clicks); "Import" → "Import Spread".
+- **Tarocchino (TG-76):** rules now explain why the target is 76 (all card-points in the pack) and that you win with >38.
+- **New course (COURSE-TAROT-TODAY):** *Tarot Today — a living question* — the phenomenon, a Google-Trends figure (recreated as inline SVG), the "license to create" hypothesis (meaning attributed later; honouring shadowed artists like Pamela Colman Smith), open threads, and a paste-ready Claude research prompt + contribute link. Establishes the **COURSE-ENDINGS** pattern (open questions → Claude prompt → contribute). Registered in the header Courses menu.
 - **Spiral (U):** copied recursive.eco's `spiral/spiral.js` + `hero-spiral.js` **verbatim** (md5-matched). The About-page hero now runs the real recursive.eco spiral — purple `#9333ea`, the building/rebuilding **draw** + breathe + rotate, with **WHY/HOW/WHAT: Sense/Recursive/Make Belief** — at ~4× size (320px). The home ecotree box renders a **static** purple spiral. `spiral-mark.svg` → static purple.
 - **Header icon (T):** brand mark → the static **gold** recursive spiral (`spiral-gold.svg`).
 - **Purple redirects (X-PURPLE):** every link to recursive.eco / flow.recursive.eco renders in platform purple `#9333ea` (theme.css rule, app-wide) including the **Oracle ↗** item in the header Play dropdown.

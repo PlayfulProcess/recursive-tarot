@@ -46,7 +46,7 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 - [x] **X-PURPLE** — every redirect to recursive.eco renders PURPLE (incl. the "Oracle ↗" header dropdown item). (S)
 - [ ] **X-CHECKLIST** — before-launch checklist: "better integrate the local tester with the recursive.eco Oracle." (R)
 - [ ] **COURSE-ENDINGS** — every course ends with open questions + a paste-ready Claude research prompt + a link to contribute-via-GitHub. (W, pattern)
-- [ ] **COURSE-TAROT-TODAY** — new course "Tarot Today": the voices, the industry, Google-Trends popularity vs astrology, why a big cultural phenomenon tied to minorities yet mainstream. Frame as open investigation; hypothesis = meaning-made-later + shadowed artists (Pamela Colman Smith) → a license to create in these Western systems for anyone (while honouring the artists). Mine books-repo. Include research prompts. (W)
+- [x] **COURSE-TAROT-TODAY** (drafted; figure recreated as inline SVG — real screenshot can be dropped at pages/courses/images/ later) — new course "Tarot Today": the voices, the industry, Google-Trends popularity vs astrology, why a big cultural phenomenon tied to minorities yet mainstream. Frame as open investigation; hypothesis = meaning-made-later + shadowed artists (Pamela Colman Smith) → a license to create in these Western systems for anyone (while honouring the artists). Mine books-repo. Include research prompts. (W)
 
 ## Index / data
 - [ ] **IDX-META-AS-INDEX** — implement Q-INDEX: enrich each deck grammar's `metadata` with `common_name`/`category`/`year`; surface common names everywhere (e.g. "Rider-Waite-Smith", not "Golden Dawn"); point index/timeline/sources at the meta. (#1)
