@@ -7,6 +7,7 @@ Open work lives in [TODO.md](TODO.md).
 
 ### Tracking + this session's later pass (in progress)
 - Created `plan/TODO.md` + this changelog so nothing is dropped (per request to log everything).
+- **Tarot Today figures + image consistency:** used the real Google Trends screenshot — cropped it to a clean **full time-series** and a **recent zoom**, rendered both *below* the built bar charts. Added an honest 'the gap closes' section (in this 5-topic pull tarot is the lowest line and astrology sits above it, but recently the two **converge**; a clean 2-topic pull is the real test). Consolidated the stray `course/img/` into the canonical `pages/courses/images/` (CLAUDE.md documents the one-home/one-convention rule).
 - **Spiral, corrected (U, round 2):** dropped my hand-rolled init and reproduced the landing EXACTLY — the About hero now uses recursive.eco's placeholder pattern + a verbatim copy of its hero CSS (spiral/hero-spiral.css). The SVG breathes (spiral-size-breath 30s) AND each line animates on its own rhythm: WHY:Sense 36s, HOW:Recursive 22.5s, WHAT:Make Belief 13.5s. The text animations that were missing now render.
 - **Purple wayfinding (round 2):** header mark flipped back to purple; recursive.eco/flow.recursive.eco **buttons** render purple (filled + outline, `!important`); the "One branch of a larger tree" spiral links out to recursive.eco.
 - **Caster (SB-BTNS, SB-IMPORT):** Re-cast merged into Cast (the Cast button re-casts on repeat clicks); "Import" → "Import Spread".
