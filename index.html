@@ -357,8 +357,10 @@
     };
     fetch('tarot/_collection.json',{cache:'no-cache'}).then(r=>r.json()).then(c=>{
       const all = (c.grammars||[]).filter(g=>!g.is_meta && g.cover_image_url);
-      const historical = all.filter(g=>!CONTEMP.has(g.slug)).sort((a,b)=>(a.year||9999)-(b.year||9999));
-      const contemporary = all.filter(g=>CONTEMP.has(g.slug));
+      // Contemporary = any living (CC-BY-SA) deck; the historical genealogy stays the default cut.
+      const isContemp = g => g.provenance==='living' || CONTEMP.has(g.slug);
+      const historical = all.filter(g=>!isContemp(g)).sort((a,b)=>(a.year||9999)-(b.year||9999));
+      const contemporary = all.filter(isContemp);
       document.getElementById('deckgrid').innerHTML = historical.map(card).join('');
       if(contemporary.length){
         document.getElementById('deckgrid-contemporary').innerHTML = contemporary.map(card).join('');
