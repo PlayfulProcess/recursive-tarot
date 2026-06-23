@@ -29,6 +29,8 @@
   .tile .ext{color:var(--muted);font-size:11px}
   .badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;padding:2px 8px;border-radius:999px;
     margin-bottom:6px;background:rgba(154,115,34,.14);color:var(--accent);border:1px solid rgba(154,115,34,.4)}
+  .tile .thumb{flex:0 0 auto;width:46px;height:70px;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:var(--thumb-bg)}
+  .tile .thumb img{width:100%;height:100%;object-fit:contain;display:block}
 </style>
 </head>
 <body>
@@ -54,11 +56,13 @@
     <p class="sintro">Read the history, sit with the question, or learn to contribute.</p>
     <div class="grid">
       <a class="tile" href="course-viewer.html?course=history-of-tarot">
-        <span class="ico"><rt-icon name="book"></rt-icon></span><span><b>A History of Tarot</b><span class="d">Game to gate — how a card game became a cosmos, with the myths corrected.</span></span></a>
+        <span class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/XXI%20LE%20MONDE%20Nicolas%20Conver%20Tarot%201760.jpg" alt="" loading="lazy"></span><span><b>A History of Tarot</b><span class="d">Game to gate — how a card game became a cosmos, with the myths corrected.</span></span></a>
+      <a class="tile" href="course-viewer.html?course=tarot-today">
+        <span class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-18-moon.jpg" alt="" loading="lazy"></span><span><span class="badge">New</span><b>Tarot Today</b><span class="d">Why tarot is everywhere now — the data, the artists, and how meaning gets made (an open investigation).</span></span></a>
       <a class="tile" href="course-viewer.html?course=tarot-and-the-crack">
-        <span class="ico"><rt-icon name="crack"></rt-icon></span><span><b>Tarot & the Crack</b><span class="d">The cards as a symbolic grammar for meaning-making, not fortune-telling.</span></span></a>
+        <span class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-wikimedia/Sola%20Busca%20tarot%20card%2027.jpg" alt="" loading="lazy"></span><span><b>Tarot & the Crack</b><span class="d">The cards as a symbolic grammar for meaning-making, not fortune-telling.</span></span></a>
       <a class="tile" href="course-viewer.html?course=how-to-contribute">
-        <span class="ico"><rt-icon name="pencil"></rt-icon></span><span><b>Contribute to the Commons</b><span class="d">Five ways to correct and add to the open library — in-app to MCP.</span></span></a>
+        <span class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/VIIII%20L%27HERMITE%20Nicolas%20Conver%20Tarot%201760.jpg" alt="" loading="lazy"></span><span><b>Contribute to the Commons</b><span class="d">Five ways to correct and add to the open library — in-app to MCP.</span></span></a>
     </div>
   </section>
 
@@ -70,11 +74,11 @@
     free full text; in-copyright works are cited and linked.</p>
     <div class="grid">
       <a class="tile" href="../viewers/cards.html?src=../tarot/books-of-tarot/grammar.json">
-        <span class="ico"><rt-icon name="book"></rt-icon></span><span><span class="badge">Sources</span><b>Books Behind the Tarot</b><span class="d">The occult-revival classics, the foundations, and the modern scholarship — with our take on each.</span></span></a>
+        <span class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-02-popess.jpg" alt="" loading="lazy"></span><span><span class="badge">Sources</span><b>Books Behind the Tarot</b><span class="d">The occult-revival classics, the foundations, and the modern scholarship — with our take on each.</span></span></a>
       <a class="tile" href="../viewers/cards.html?src=../tarot/people-of-tarot/grammar.json">
-        <span class="ico"><rt-icon name="person"></rt-icon></span><span><span class="badge">Sources</span><b>People & Institutions of Tarot</b><span class="d">The hands behind the cards — makers, occultists, scholars — claim vs. the record.</span></span></a>
+        <span class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/I%20LE%20BATELEUR%20Nicolas%20Conver%20Tarot%201760.jpg" alt="" loading="lazy"></span><span><span class="badge">Sources</span><b>People & Institutions of Tarot</b><span class="d">The hands behind the cards — makers, occultists, scholars — claim vs. the record.</span></span></a>
       <a class="tile" href="https://github.com/PlayfulProcess/recursive-tarot/tree/dev/research" target="_blank" rel="noopener">
-        <span class="ico"><rt-icon name="folder"></rt-icon></span><span><b>Research dossiers <span class="ext">↗</span></b><span class="d">The sourced notes the grammars are built from — decks, people, cards — on GitHub.</span></span></a>
+        <span class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/XVII%20L%27ETOILE%20Nicolas%20Conver%20Tarot%201760.jpg" alt="" loading="lazy"></span><span><b>Research dossiers <span class="ext">↗</span></b><span class="d">The sourced notes the grammars are built from — decks, people, cards — on GitHub.</span></span></a>
     </div>
   </section>
 
@@ -84,11 +88,11 @@
     <p class="sintro">Short illustrated programs — title cards and cropped clips — with our commentary under each.</p>
     <div class="grid">
       <a class="tile" href="../viewers/sequence-v2.html?src=../recording/examples/history-of-tarot-sequence.json">
-        <span class="ico"><rt-icon name="play"></rt-icon></span><span><b>The history of tarot</b><span class="d">Mamluk origins to the modern gate, as a card-and-clip program.</span></span></a>
+        <span class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/13%20XIII%20Nicolas%20Conver%20Tarot%201760.jpg" alt="" loading="lazy"></span><span><b>The history of tarot</b><span class="d">Mamluk origins to the modern gate, as a card-and-clip program.</span></span></a>
       <a class="tile" href="../viewers/sequence-v2.html?src=../recording/examples/why-tarot-works-sequence.json">
-        <span class="ico"><rt-icon name="cards"></rt-icon></span><span><span class="badge">New</span><b>How does a tarot reading work?</b><span class="d">Five lenses — blending, the Barnum effect, cold reading, Jung, narrative — on why a reading feels true. With our take.</span></span></a>
+        <span class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-10-fortune.jpg" alt="" loading="lazy"></span><span><span class="badge">New</span><b>How does a tarot reading work?</b><span class="d">Five lenses — blending, the Barnum effect, cold reading, Jung, narrative — on why a reading feels true. With our take.</span></span></a>
       <a class="tile" href="../viewers/sequence-v2.html?src=../recording/examples/history-of-tarot-watchlist-sequence.json">
-        <span class="ico"><rt-icon name="film"></rt-icon></span><span><b>Further watching — documentaries</b><span class="d">A curated playlist of public YouTube docs, with our agree/disagree notes.</span></span></a>
+        <span class="thumb"><img src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Cary-Yale%20Tarot%20deck%20-%20Knight%20of%20Coins.jpg" alt="" loading="lazy"></span><span><b>Further watching — documentaries</b><span class="d">A curated playlist of public YouTube docs, with our agree/disagree notes.</span></span></a>
     </div>
   </section>
 </div>

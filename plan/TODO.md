@@ -40,7 +40,7 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 - [ ] **TL-CONTEMP** — include contemporary decks + their descent (needs `deck-*` nodes w/ `when`+`derives_from` in `tree-of-tarot/grammar.json`; leans on Q-INDEX). (prior #3)
 
 ## Sources (`pages/sources.html`)
-- [ ] **SRC-THUMBS** — prettify with card thumbnails; confirm it reflects the current library. (prior #13)
+- [x] **SRC-THUMBS** — prettify with card thumbnails; confirm it reflects the current library. (prior #13)
 
 ## Cross-cutting
 - [x] **X-PURPLE** — every redirect to recursive.eco renders PURPLE (incl. the "Oracle ↗" header dropdown item). (S)
