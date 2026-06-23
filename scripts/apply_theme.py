@@ -33,9 +33,8 @@ def proc_css(css):
 
 def norm(p): return p.replace(os.sep, '/')
 
-files = ['index.html', 'style.css'] + glob.glob('viewers/**/*.html', recursive=True) + \
-        glob.glob('pages/**/*.html', recursive=True) + \
-        ['recording/player/perform.html', 'recording/karaoke/alice-karaoke.html']
+files = glob.glob('*.html') + ['style.css'] + glob.glob('viewers/**/*.html', recursive=True) + \
+        glob.glob('pages/**/*.html', recursive=True) + glob.glob('recording/**/*.html', recursive=True)
 files = sorted(set(norm(f) for f in files))
 
 report = []
