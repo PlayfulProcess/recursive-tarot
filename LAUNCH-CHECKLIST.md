@@ -47,3 +47,15 @@ For each: button appears → logged-out shows the sign-in prompt → logged-in l
 ## 5. Content honesty
 - [ ] Generated vs. historical images clearly labeled (especially if MCP-made decks get published — historical decks here are scanned public-domain art, not generated).
 - [ ] Game-vs-divination framing intact across pages.
+
+---
+
+## Scholarly integrity — before publishing the contemporary-tarot thesis
+
+The *Tarot Today* course leans on Judith Butler's performativity (resignification, performativity-≠-performance). Butler is one of the most systematically *misread* theorists alive — most summaries reproduce the "you choose your gender like an outfit" voluntarism error, which is close to the opposite of the argument. **If we keep this thesis as a public reading, do this homework first** (paraphrase-with-attribution is fine from summaries; a *quotation* is a promise you read the original):
+
+- [ ] **"Critically Queer"** — final chapter of *Bodies That Matter* (1993). The core text: "queer" as a reclaimed, resignifiable performative. Read this one if you read nothing else.
+- [ ] **The 1999 Preface to *Gender Trouble*** (anniversary edition). Short; Butler personally correcting the voluntarism misreading. Highest value-to-length.
+- [ ] **A chapter of *Excitable Speech* (1997)** on injurious speech + reclamation — the engine for "taking back a sign used against you."
+- [ ] Optional scaffold: **Sara Salih, *The Judith Butler Reader*** (verified primary excerpts) + her *Judith Butler* (Routledge Critical Thinkers) on-ramp.
+- [ ] Nail the one distinction in the course prose: **performativity is compelled citation, not sovereign choice** — the self is the *residue* of the citations, not their author. (Source: research/17-contemporary-tarot.txt.)
