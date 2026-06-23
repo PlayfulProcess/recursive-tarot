@@ -53,6 +53,7 @@
   ];
   // [key, label, href, cssClass, external?]
   const TOOLS = [
+    ['contribute', 'Contribute', PFX + 'pages/contribute.html', 't-contribute'],
     ['shop',   'Shop',    PFX + 'pages/shop.html',          't-shop'],
     ['github', 'GitHub ↗',  'https://github.com/PlayfulProcess/recursive-tarot', 't-github', true],
   ];
@@ -96,6 +97,7 @@
     if (f.startsWith('genealogy')) return 'genealogy';
     if (f.startsWith('course')) return 'course';
     if (f.startsWith('shop')) return 'shop';
+    if (f.startsWith('contribute')) return 'contribute';
     return 'home';
   }
 
@@ -159,8 +161,8 @@
           }
           .tab:hover{ color:#9a7322; }
           .tab.active{ color:#9a7322; font-weight:600; border-bottom-color:#9a7322; }
-          .t-caster,.t-course,.t-shop,.t-github{ color:#6b6457; border:0; border-bottom:1.5px solid transparent; border-radius:0; }
-          .t-caster:hover,.t-course:hover,.t-shop:hover,.t-github:hover{ color:#9a7322; background:transparent; }
+          .t-caster,.t-course,.t-shop,.t-github,.t-contribute{ color:#6b6457; border:0; border-bottom:1.5px solid transparent; border-radius:0; }
+          .t-caster:hover,.t-course:hover,.t-shop:hover,.t-github:hover,.t-contribute:hover{ color:#9a7322; background:transparent; }
           /* dropdowns */
           .dd{ position:relative; }
           .dd-btn{ background:none; font-family:inherit; cursor:pointer; }
