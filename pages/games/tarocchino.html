@@ -349,7 +349,7 @@
         if(played>=ntricks){ endGame(); return; } setStatus((SEATNAME[leader]==='You'?'You lead':SEATNAME[leader]+' leads')+' the next trick.'); setTimeout(step,650); }, 950); return; }
     const seat=(leader+trick.length)%4; turn=seat;
     if(seat===0){ busy=false; renderSeats(); renderHand();
-      setStatus(ledSuit===null?'Your lead — play any card.':(legalMoves(0).some(c=>!c.matto&&((ledSuit==='trump'&&c.kind==='trump')||c.suit===ledSuit))?'Your turn — follow '+(ledSuit==='trump'?'with a trump':cap(ledSuit))+'.':'Your turn — you are void, play a trump or discard.')); return; }
+      setStatus(ledSuit===null?'Your lead — play any card (no card is forced).':(legalMoves(0).some(c=>!c.matto&&((ledSuit==='trump'&&c.kind==='trump')||c.suit===ledSuit))?'Your turn — follow '+(ledSuit==='trump'?'with a trump':cap(ledSuit))+'.':(hands[0].some(c=>c.kind==='trump'&&!c.matto)?'Your turn — void in '+cap(ledSuit)+', so you must play a trump (highlighted).':'Your turn — void and no trump: play any card.'))); return; }
     busy=true; renderSeats(); renderHand();
     setTimeout(()=>{ play(seat,aiChoose(seat)); step(); }, 700);
   }
