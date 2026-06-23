@@ -35,10 +35,10 @@
       var base=this.getAttribute('base')||'';
       this.innerHTML='<style>'+css+'</style>'+
         '<div class="rtf">'+
-        '<div class="uc">Under construction</div>'+
+        '<div class="uc">Recursively under construction</div>'+
         '<span class="spinwrap"><svg class="spin" viewBox="0 0 100 100" aria-hidden="true"><path pathLength="1" d="'+SPIRAL+'"/></svg></span>'+
         '<h3>One branch of a larger tree</h3>'+
-        '<p>The work so far of <strong>one solo developer</strong> — passionate about the tarot and meaning systems, and built with a great deal of help from AI. The hope is that <strong>real human collaborators</strong> will make the whole thing better. <a href="'+base+'pages/about.html">Read more →</a></p>'+
+        '<p>The work so far of <strong>one solo developer</strong> — passionate about the tarot and meaning systems, and built with a great deal of help from AI. The hope is that <strong>real human collaborators</strong> will make the whole thing better.</p>'+
         '<p>Part of <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a> — grammars for sense-making. Get an occasional note as it grows:</p>'+
         '<form id="rtf-news"><input id="rtf-email" type="email" required placeholder="you@email.com" aria-label="Email"><button type="submit">Sign up</button></form>'+
         '<div class="msg" id="rtf-msg"></div>'+
@@ -55,7 +55,7 @@
         try{
           var r=await fetch(SUPA+'/rest/v1/newsletter_subscribers',{method:'POST',
             headers:{'apikey':ANON,'Authorization':'Bearer '+ANON,'Content-Type':'application/json','Prefer':'return=minimal'},
-            body:JSON.stringify({email:email,subscribed_from:'tarot',subscribed:true})});
+            body:JSON.stringify({email:email,subscribed_from:'recursive-tarot',subscribed:true})});
           if(r.ok){msg.style.color='#3f7a5c';msg.textContent='✓ Welcome to the recursive public!';f.querySelector('#rtf-email').value='';}
           else if(r.status===409){msg.style.color='#3f7a5c';msg.textContent='✓ You\'re already signed up!';}
           else{throw new Error('status '+r.status);}
