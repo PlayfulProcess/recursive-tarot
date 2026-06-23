@@ -1,5 +1,21 @@
 # Yve Lepkowski decks — import resume plan
 
+## ✅ STATUS (Jun 23 2026): 5 of 6 imported, on dev, verified
+- Tarocchino Arlecchino (64), Clown Town Tarot (78), Anecdotes Tarot (78),
+  Petit Lenormand (36, gap fixed), Arlecchino's Augmented Arcana (84) — all live in the
+  homepage "Contemporary decks" band, all with her own guidebook text + CC-BY-SA attribution,
+  archetype-mapped, historical genealogy cut unchanged (25). Verified in the preview:
+  homepage band shows all 7 contemporary decks; Clown Town viewer reports "Interpretation 100%
+  / The card 100%", images load, console clean.
+- REMAINING: only **Clown Town Playing Cards (54)** — a French-suited playing-card art deck,
+  NOT on the platform, no card meanings, images only in her downloadable files. Doesn't fit the
+  grammar/meaning pattern; would need a manual image-sourcing approach. Deferred.
+- Follow-ups: CDN-mirror images (Drive → recursive.eco CDN) for all 5; the 2 Tarocchino
+  Significators' art + the 2 Lenormand cards (Cosmia/Bouquet) images; Augmented added-card meanings (her PDF).
+
+---
+
+
 Status of importing Yve Lepkowski's 6 CC-BY-SA decks (stolen-thyme.com) into recursive-tarot
 as contemporary grammars with her **own guidebook text** (not the platform's paraphrase).
 Licensing: all CC-BY-SA-4.0 (= repo license); attribution carried in `_grammar_commons`.
