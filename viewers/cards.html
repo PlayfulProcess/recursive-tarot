@@ -968,7 +968,7 @@
         .thumbnail-card:hover {
             transform: translateY(-4px);
             border-color: var(--grammar-accent);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 28px -18px rgba(60,45,20,.4);
         }
         /* Resized, not cropped — render thumbnails like the Library channel
            cards (ToolCard): object-contain on a letterbox so full covers /
@@ -1080,8 +1080,8 @@
 
         /* Item Card */
         .item-card {
-            background: linear-gradient(135deg, rgba(45, 45, 55, 0.9) 0%, rgba(26, 26, 36, 0.95) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: transparent;
+            border: 1px solid transparent;
             border-radius: 0.75rem;
             overflow: hidden;
             cursor: pointer;
@@ -1105,7 +1105,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--panel2);
+            background: transparent;
             overflow: hidden;
         }
 
@@ -1118,7 +1118,7 @@
             width: 100%;
             height: 100%;
             object-fit: contain; /* Scale to fit, don't crop */
-            background: var(--thumb-bg); /* light mat for transparent images */
+            background: transparent; /* no mat — card sits on the light page */
         }
 
         .item-visual .icon {
@@ -1138,14 +1138,15 @@
         }
 
         .item-number {
-            font-size: 0.65rem;
-            color: var(--grammar-accent);
-            font-weight: 600;
+            font-size: 0.68rem;
+            color: var(--ink);
+            font-weight: 400;
         }
 
         .item-name {
             font-size: 0.82rem;
-            color: #fff;
+            color: var(--ink);
+            font-weight: 400;
             line-height: 1.25;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -4345,7 +4346,7 @@
                 ${subtitle ? `<p class="modal-subtitle">${escapeHtml(subtitle)}</p>` : ''}
             `;
 
-            // recursive.eco per-deck links (<rt-icon name="oracle"></rt-icon> Cast · <rt-icon name="eye"></rt-icon> View · <rt-icon name="pencil"></rt-icon>️ Edit) — shown when this deck is in the map
+            // recursive.eco per-deck links (<rt-icon name="oracle"></rt-icon> Cast · <rt-icon name="cards"></rt-icon> View · <rt-icon name="pencil"></rt-icon>️ Edit) — shown when this deck is in the map
             try {
                 const _ecoSlug = item._deckSlug || (function () {
                     const s = new URLSearchParams(location.search).get('src') || '';
