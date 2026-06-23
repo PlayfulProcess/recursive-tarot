@@ -23,6 +23,7 @@ For each: button appears → logged-out shows the sign-in prompt → logged-in l
 - [ ] **Oracle** (`flow.recursive.eco/cast`) opens and reads when signed in.
 - [ ] **Create your own deck** (`flow.recursive.eco/create/...`) opens the editor.
 - [ ] **recursive.eco MCP** — run the MCP test prompt (create grammar / generate image / import) to confirm Course Part 9 only advertises capabilities that actually work.
+- [ ] **Integrate the local tester with the Oracle (do this better).** The local Caster (`viewers/caster.html`) draws a spread but stops there — handing it off to the recursive.eco Oracle is currently just a one-way link. Build a real bridge so a local draw can carry its cards/question into the Oracle and become a saved, AI-read Journal entry on the platform (and ideally come back). This is the seam between the static tester and the live product; it should feel seamless before launch.
 
 ## 2. Shop — rewire with the print API (after print-quality check)
 `pages/shop.html` reads `print-products.json` and only links a product to its `product_url` when that product's `live` flag is `true` (otherwise the buy link is `#`).

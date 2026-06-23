@@ -13,7 +13,7 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 - [ ] **TG-TRUMPNUM** — trumps didn't historically carry numbers; we added them for convenience. Don't pill them silently — either write trump order in full or a popup that renders all trumps in full with their number. (B)
 - [ ] **TG-DECKS** — list all Tarocchino-able decks; source the deck dropdown from the shared meta-grammar index (see Q-INDEX). (C)
 - [ ] **TG-PEEK** — debug button: reveal opponents' hands (verify they're not "cheating"). (D)
-- [ ] **TG-TRUMPHL** — on your lead, stop highlighting trumps as if forced; highlight only legal plays per Q-TRUMP-RULE. (E)
+- [x] **TG-TRUMPHL** (logic was already correct — on your lead all cards are legal; trumps only highlight when void-and-must-trump; clarified the status text) — on your lead, stop highlighting trumps as if forced; highlight only legal plays per Q-TRUMP-RULE. (E)
 - [ ] **TG-AI** — opponent AI easy/medium/hard, algorithmic. v1: make opponents non-trivial (don't dump trumps; lead low; save high trumps; follow/trump correctly). Ship one better round as default "easy", add a "harder" toggle. (F)
 - [x] **TG-76** — explain "half of 76" in the UI (see Q-76). (G)
 - [ ] **TG-LOGDETAIL** — click a card in the Play log → open the SAME card-detail modal as the cards viewer (share code, don't rewrite). (H)
@@ -44,7 +44,7 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 
 ## Cross-cutting
 - [x] **X-PURPLE** — every redirect to recursive.eco renders PURPLE (incl. the "Oracle ↗" header dropdown item). (S)
-- [ ] **X-CHECKLIST** — before-launch checklist: "better integrate the local tester with the recursive.eco Oracle." (R)
+- [x] **X-CHECKLIST** — before-launch checklist: "better integrate the local tester with the recursive.eco Oracle." (R)
 - [ ] **COURSE-ENDINGS** — every course ends with open questions + a paste-ready Claude research prompt + a link to contribute-via-GitHub. (W, pattern)
 - [x] **COURSE-TAROT-TODAY** (drafted; figure recreated as inline SVG — real screenshot can be dropped at pages/courses/images/ later) — new course "Tarot Today": the voices, the industry, Google-Trends popularity vs astrology, why a big cultural phenomenon tied to minorities yet mainstream. Frame as open investigation; hypothesis = meaning-made-later + shadowed artists (Pamela Colman Smith) → a license to create in these Western systems for anyone (while honouring the artists). Mine books-repo. Include research prompts. (W)
 
