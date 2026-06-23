@@ -74,3 +74,9 @@
 
 /* recursive.eco redirects render in the platform purple, app-wide (wayfinding to the parent) */
 a[href^="https://recursive.eco"],a[href^="http://recursive.eco"],a[href^="https://flow.recursive.eco"],a[href^="https://kids.recursive.eco"]{color:#9333ea}
+
+/* recursive.eco redirect BUTTONS render purple too (wayfinding) — !important beats local button CSS */
+a.solid[href*="//recursive.eco"],a.solid[href*="//flow.recursive.eco"],a.btn.primary[href*="//recursive.eco"],a.btn.primary[href*="//flow.recursive.eco"]{background:#9333ea!important;border-color:#9333ea!important;color:#fff!important}
+a.solid[href*="//recursive.eco"]:hover,a.solid[href*="//flow.recursive.eco"]:hover{background:#7c2fd0!important}
+a.line[href*="//recursive.eco"],a.line[href*="//flow.recursive.eco"]{color:#9333ea!important;border-color:#c9a8f0!important}
+a.line[href*="//recursive.eco"]:hover,a.line[href*="//flow.recursive.eco"]:hover{border-color:#9333ea!important;color:#9333ea!important}

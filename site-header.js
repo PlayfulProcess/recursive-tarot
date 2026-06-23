@@ -191,7 +191,7 @@
         <div class="bar">
           <span class="brand">
             <a class="brand-logo" href="https://recursive.eco" target="_blank" rel="noopener" title="Part of recursive.eco — the parent project" aria-label="recursive.eco — the parent project">
-              <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#fff;border-radius:50%;flex-shrink:0"><img src="${PFX}spiral-gold.svg" width="30" height="30" alt="" aria-hidden="true" style="display:block"></span>
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#fff;border-radius:50%;flex-shrink:0"><img src="${PFX}spiral-purple.svg" width="30" height="30" alt="" aria-hidden="true" style="display:block"></span>
             </a>
             <a class="brand-name" href="${PFX}index.html" title="The Recursive Tarot — home">
               <span class="name">The <span class="gold">Recursive Tarot</span></span>
