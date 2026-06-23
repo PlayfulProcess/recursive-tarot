@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../theme.css?v=1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cards — Recursive Tarot</title>
@@ -42,44 +43,44 @@
     <style>
         /* Unified Grammar Theme - adapts based on grammar type */
         :root {
-            --grammar-bg-dark: #f4f1ea;
-            --grammar-bg-light: #ffffff;
-            --grammar-accent: #9a7322;
-            --grammar-accent-dark: #7c5b18;
-            --grammar-text: #221f1a;
-            --grammar-text-muted: #6b6457;
+            
+            
+            
+            
+            
+            
         }
 
         /* Tarot theme */
         .theme-tarot {
-            --grammar-accent: #9a7322;
-            --grammar-accent-dark: #7c5b18;
-            --grammar-bg-dark: #f4f1ea;
-            --grammar-bg-light: #ffffff;
+            
+            
+            
+            
         }
 
         /* I Ching theme */
         .theme-iching {
-            --grammar-accent: #9a7322;
-            --grammar-accent-dark: #7c5b18;
-            --grammar-bg-dark: #f4f1ea;
-            --grammar-bg-light: #ffffff;
+            
+            
+            
+            
         }
 
         /* Astrology theme */
         .theme-astrology {
-            --grammar-accent: #9a7322;
-            --grammar-accent-dark: #7c5b18;
-            --grammar-bg-dark: #f4f1ea;
-            --grammar-bg-light: #ffffff;
+            
+            
+            
+            
         }
 
         /* Course theme */
         .theme-course {
-            --grammar-accent: #9a7322;
-            --grammar-accent-dark: #7c5b18;
-            --grammar-bg-dark: #f4f1ea;
-            --grammar-bg-light: #ffffff;
+            
+            
+            
+            
         }
 
         body {
@@ -509,9 +510,9 @@
             margin-left: 0.5rem;
             padding: 0.25rem 0.5rem;
             font-size: 0.75rem;
-            color: #fff;
+            color: var(--ink-soft);
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid var(--line-soft);
             border-radius: 0.25rem;
             cursor: pointer;
             transition: all 0.2s;
@@ -519,8 +520,8 @@
         }
 
         .edit-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(60,45,20,0.05);
+            border-color: var(--gold);
         }
 
         /* View mode toggle - uses shared component from components.css */
@@ -532,17 +533,17 @@
             margin-left: 0.5rem;
             padding: 0.25rem 0.5rem;
             font-size: 0.75rem;
-            color: #fff;
+            color: var(--ink-soft);
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid var(--line-soft);
             border-radius: 0.25rem;
             cursor: pointer;
             transition: all 0.2s;
         }
 
         .report-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(60,45,20,0.05);
+            border-color: var(--gold);
         }
 
         /* GitHub source button */
@@ -550,9 +551,9 @@
             margin-left: 0.5rem;
             padding: 0.25rem 0.5rem;
             font-size: 0.875rem;
-            color: #fff;
+            color: var(--ink-soft);
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid var(--line-soft);
             border-radius: 0.25rem;
             cursor: pointer;
             transition: all 0.2s;
@@ -566,8 +567,8 @@
         }
 
         .github-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(60,45,20,0.05);
+            border-color: var(--gold);
         }
 
         .github-btn svg {

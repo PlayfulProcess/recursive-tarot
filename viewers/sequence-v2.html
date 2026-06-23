@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../theme.css?v=1">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sequence v2 · Recursive Tarot</title>
@@ -26,9 +27,9 @@
   at the bottom of this file. Load any program with ?src=<url>. See recording/docs/sequence-format.md.
 -->
 <style>
-  :root{ --bg:#f4f1ea; --panel:#ffffff; --stage:#000; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; }
+  :root{        }
   @media (prefers-color-scheme: light){
-    :root{ --bg:#f4f1ea; --panel:#fff; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; }
+    :root{       }
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
@@ -45,22 +46,22 @@
   /* Title card */
   .card-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
     text-align:center;padding:2rem;background-size:cover;background-position:center}
-  .card-face .ttl{color:#fff;font-size:clamp(1.6rem,5vw,3.4rem);font-weight:700;line-height:1.12;
-    white-space:pre-line;text-shadow:0 2px 14px rgba(0,0,0,.55)}
-  .card-face .sub{color:rgba(255,255,255,.88);font-size:clamp(.95rem,2.5vw,1.4rem);margin-top:.85rem;
-    text-shadow:0 1px 10px rgba(0,0,0,.45)}
+  .card-face .ttl{color:var(--ink);font-size:clamp(1.6rem,5vw,3.4rem);font-weight:700;line-height:1.12;
+    white-space:pre-line;text-shadow:0 1px 8px rgba(255,255,255,.7)}
+  .card-face .sub{color:var(--ink-soft);font-size:clamp(.95rem,2.5vw,1.4rem);margin-top:.85rem;
+    text-shadow:0 1px 6px rgba(255,255,255,.6)}
   /* image item */
-  .img-face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#000}
+  .img-face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--thumb-bg)}
   .img-face img{max-width:100%;max-height:100%;object-fit:contain}
   /* audio-only cover for video_visible:false */
-  .cover{position:absolute;inset:0;background:#000 center/cover;z-index:5;display:flex;align-items:center;justify-content:center}
+  .cover{position:absolute;inset:0;background:var(--thumb-bg) center/cover;z-index:5;display:flex;align-items:center;justify-content:center}
   .cover img{max-width:100%;max-height:100%;object-fit:contain}
   /* overlay layer (timed captions) */
   .ov-layer{position:absolute;inset:0;pointer-events:none;z-index:10}
   /* end-of-clip overlay */
   .endov{position:absolute;inset:0;z-index:20;display:none;flex-direction:column;align-items:center;justify-content:center;
-    gap:14px;background:rgba(0,0,0,.62);text-align:center;padding:1.5rem}
-  .endov b{color:#fff;font-size:clamp(1.1rem,3vw,1.7rem);font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+    gap:14px;background:rgba(244,241,234,.94);text-align:center;padding:1.5rem}
+  .endov b{color:var(--ink);font-size:clamp(1.1rem,3vw,1.7rem);font-weight:700}
   .endov .row{display:flex;gap:10px}
   .endov button{background:var(--accent);color:#f4f1ea;border:0;border-radius:8px;padding:9px 15px;font-weight:700;cursor:pointer;font-size:15px}
   /* card-progress sliver */
@@ -253,7 +254,7 @@ function show(i, autostart){
 
   const surface=$('surface');
   if(it.type==='card'){
-    surface.innerHTML='<div class="card-face" style="background:'+esc(it.card_bg)+'">'
+    surface.innerHTML='<div class="card-face" style="background:var(--thumb-bg)">'
       +'<div class="ttl">'+esc(it.title)+'</div>'
       +(it.card_subtitle?'<div class="sub">'+esc(it.card_subtitle)+'</div>':'')+'</div>';
     if(playing||autostart) startCardHold(it);

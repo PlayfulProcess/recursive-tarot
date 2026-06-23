@@ -1,13 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../theme.css?v=1">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.25">
 <title>Emergence Explorer — Pivot the Tarot · Recursive Tarot</title>
 <style>
   :root{
-    --bg:#f4f1ea; --panel:#ffffff; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6;
-    --chip:#faf3e6; --chipline:#cfc8ba; --violet:#9a7322;
+         
+      
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--ink);
@@ -27,7 +28,7 @@
   #z-filters .zlab{ color:#9a7322; }
   .fval-pill{ display:inline-flex; align-items:center; gap:5px; padding:3px 9px; border-radius:999px; font-size:11.5px;
     cursor:pointer; border:1px solid rgba(154,115,34,.4); color:#4a4439; background:rgba(154,115,34,.08); transition:.12s; }
-  .fval-pill.on{ background:rgba(154,115,34,.35); border-color:#9a7322; color:#fff; font-weight:600; }
+  .fval-pill.on{ background:var(--gold); border-color:var(--gold); color:#fff; font-weight:600; }
   .fval-pill:hover{ border-color:#9a7322; }
   .fpin-label{ font-size:11px; color:var(--muted); display:flex; align-items:center; gap:6px; margin-bottom:4px; }
   .fpin-label .rx{ cursor:pointer; color:var(--muted); font-weight:700; font-size:13px; }
@@ -36,7 +37,7 @@
   .fpinned-group:last-child{ border-bottom:none; margin-bottom:0; }
   #presets{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding-bottom:8px;margin-bottom:6px;border-bottom:1px solid var(--line)}
   #presets .lab{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:2px}
-  button.preset{background:rgba(154,115,34,.12);color:#e7defb;border:1px solid rgba(154,115,34,.4);
+  button.preset{background:rgba(154,115,34,.12);color:var(--ink-soft);border:1px solid rgba(154,115,34,.4);
     border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
   button.preset:hover{background:rgba(154,115,34,.28);border-color:#9a7322}
   button.preset-clear{background:rgba(255,255,255,.05);border-color:var(--line);color:var(--muted)}
@@ -45,9 +46,9 @@
   /* field-hierarchy groups: fields that nest (inferred from the data) render as a
      chain "arcana ▸ suit ▸ …" sharing a hue — coarsest first, finest last */
   .fgroup{display:inline-flex;align-items:center;gap:2px;padding:2px 4px;border-radius:10px;
-    background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.05)}
+    background:rgba(154,115,34,.04);border:1px solid var(--line-soft)}
   .fgroup .sep{font-size:10px;color:var(--muted);opacity:.8;user-select:none}
-  .zone{background:rgba(0,0,0,.25);border:1.5px dashed var(--chipline);border-radius:10px;min-height:54px;padding:8px}
+  .zone{background:rgba(60,45,20,.04);border:1.5px dashed var(--chipline);border-radius:10px;min-height:54px;padding:8px}
   .zone.dragover{border-color:var(--accent);background:rgba(154,115,34,.06)}
   .zone .zlab{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 6px 2px}
   .zone .chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -84,15 +85,15 @@
   /* emergence pills: hue = branch, gradient depth = level */
   .epill{display:inline-flex;align-items:center;gap:4px;border-radius:7px;padding:4px 8px;font-size:11px;
     color:#221f1a;cursor:pointer;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-    border:1px solid rgba(255,255,255,.12)}
+    border:1px solid var(--line)}
   .epill .lv{font-size:9px;opacity:.8;font-weight:700}
-  .epill:hover{border-color:#fff}
+  .epill:hover{border-color:var(--gold)}
   .more{font-size:11px;color:var(--muted);align-self:center;cursor:pointer}
   .ccount{font-size:13px;font-weight:700;text-align:center;min-width:40px}
   .empty{color:#d8d2c6}
   /* Sections render mode: a clamped section snippet per card */
   .esec{position:relative;display:block;width:150px;max-height:150px;overflow:hidden;cursor:pointer;
-    border-radius:7px;border:1px solid rgba(255,255,255,.12);background:rgba(12,9,22,.55);
+    border-radius:7px;border:1px solid var(--line);background:rgba(12,9,22,.55);
     padding:7px 9px;font-size:10.5px;line-height:1.45;color:#d8d2ec;text-align:left;
     -webkit-box-orient:vertical;-webkit-line-clamp:8;display:-webkit-box}
   .esec.later{border-color:rgba(196,167,255,.45)}
@@ -143,7 +144,7 @@
   <button id="mode-cards" class="active"><rt-icon name="cards"></rt-icon> Cards</button>
   <button id="mode-counts">∑ Counts</button>
   <button id="mode-sections">§ Sections</button>
-  <select id="section-pick" title="Which section to render" style="display:none;background:#1d1830;color:#e9e4f6;border:1px solid #cfc8ba;border-radius:7px;padding:5px 8px;font-size:12px;font-weight:600;cursor:pointer;max-width:200px;"></select>
+  <select id="section-pick" title="Which section to render" style="display:none;background:var(--surface);color:#e9e4f6;border:1px solid #cfc8ba;border-radius:7px;padding:5px 8px;font-size:12px;font-weight:600;cursor:pointer;max-width:200px;"></select>
   <label title="Card size" style="display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#6b6457;">
     <span>⊕</span>
     <input id="zoom-slider" type="range" min="32" max="620" value="62" step="8"

@@ -7,6 +7,18 @@
 3. **Consolidate, don't multiply.** Prefer turning a new idea into something we already have — a **voice** (`voices.json`), a **deck**, a **source** (`books-of-tarot` / `people-of-tarot`), or a **journey** (the four doors: Player · Historian · Practitioner · Contributor) — over a parallel structure. The Golden Dawn is the worked example: it became a *voice* + a short pathworking course, not a separate sub-site.
 4. **Voice vs Source (the two wings).** A tradition's *reading stance* is the **Living/practice** layer (voices, courses, the Golden Dawn Path); its *people, books, and decks* are the **Record/evidence** layer (`docs/DESIGN-two-wings-provenance.md`). Keep them in their own places and cross-link with the one pill pattern below — never let a practice claim masquerade as a historical one.
 
+## Theme & colour — ONE source (`theme.css`)
+
+- **All colour lives in `theme.css`** (a single `:root` of tokens), linked by every page and viewer.
+  **Never redeclare colour tokens locally** and never add a `@media(prefers-color-scheme:dark)` block —
+  that's what caused the recurring light-on-light bugs (each page had its own divergent palette).
+- **Light only.** Backgrounds are always light, text always dark enough to read on them. No dark stages
+  (video players / game tables are light too). Token names are unified but legacy aliases resolve:
+  `--panel`=`--surface`, `--muted`=`--mut`, `--accent`=`--gold`, `--ink-strong`/`--fg`/`--text`=`--ink`.
+- To change a colour, edit `theme.css` once. To re-apply the consolidation if a new file drifts:
+  `python scripts/apply_theme.py` (links theme.css, strips local colour tokens + dark blocks).
+- Bump `style.css?v=N` when style.css changes; `theme.css?v=N` likewise.
+
 ## Core architecture
 
 - Grammar files live in `tarot/<slug>/grammar.json`. Never hand-edit `tarot/all-decks-many-lenses/grammar.json` or `tarot/people-of-tarot/grammar.json` — both are generated.

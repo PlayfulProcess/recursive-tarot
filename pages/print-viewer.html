@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../theme.css?v=1">
     <script>if (new URLSearchParams(window.location.search).has('kiosk')) document.documentElement.classList.add('kiosk-mode');</script>
     <style>.kiosk-mode .empty-state a { display: none; }</style>
     <meta charset="UTF-8">
@@ -25,7 +26,7 @@
             top: 0;
             z-index: 100;
             background: #ffffff;
-            color: #d8d2c6;
+            color: var(--mut);
             padding: 12px 20px;
             display: flex;
             align-items: center;
@@ -36,7 +37,7 @@
         .back-btn {
             background: none;
             border: none;
-            color: #d8d2c6;
+            color: var(--mut);
             cursor: pointer;
             padding: 6px 10px;
             border-radius: 6px;
@@ -64,11 +65,11 @@
             background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.15);
             border-radius: 6px;
-            color: #d8d2c6;
+            color: var(--mut);
             font-size: 13px;
             cursor: pointer;
         }
-        .control-select option { background: #ffffff; color: #d8d2c6; }
+        .control-select option { background: #ffffff; color: var(--mut); }
         .grammar-name {
             font-size: 13px;
             color: #6b6457;
@@ -82,7 +83,7 @@
             margin-left: auto;
             padding: 8px 24px;
             background: #9a7322;
-            color: white;
+            color: var(--ink);
             border: none;
             border-radius: 6px;
             font-size: 14px;
@@ -165,7 +166,7 @@
             height: 100%;
             object-fit: contain;
         }
-        .card-symbol { font-size: 22pt; color: #aaa; }
+        .card-symbol { font-size: 22pt; color: var(--faint); }
         .card-footer {
             padding: 2px 4px;
             border-top: 1px solid #e8e8e8;
@@ -265,7 +266,7 @@
         .memory-instructions {
             text-align: center;
             font-size: 8pt;
-            color: #aaa;
+            color: var(--faint);
             font-style: italic;
             padding: 0 0.4in 0.15in;
         }
@@ -279,7 +280,7 @@
             border-bottom: 1px dashed #e0e0e0;
         }
         .pair-row:last-child { border-bottom: none; }
-        .pair-label { font-size: 7pt; color: #aaa; width: 0.3in; text-align: center; font-weight: 600; }
+        .pair-label { font-size: 7pt; color: var(--faint); width: 0.3in; text-align: center; font-weight: 600; }
         .mem-card {
             border: 1px dashed #ccc;
             border-radius: 5px;
@@ -297,7 +298,7 @@
             background: #faf8f3;
         }
         .mem-card-image img { width: 100%; height: 100%; object-fit: contain; }
-        .mem-card-symbol { font-size: 18pt; color: #bbb; }
+        .mem-card-symbol { font-size: 18pt; color: var(--faint); }
         .mem-card-name {
             font-size: 5.5pt;
             text-align: center;
@@ -308,7 +309,7 @@
             text-overflow: ellipsis;
             border-top: 1px solid #eee;
         }
-        .pair-connector { font-size: 12pt; color: #ccc; }
+        .pair-connector { font-size: 12pt; color: var(--faint); }
 
         /* ============================================================
            STORYBOARD
@@ -331,10 +332,10 @@
             background: #fff;
             position: relative;
         }
-        .card-num { position: absolute; top: 3px; left: 5px; font-size: 7pt; color: #bbb; font-weight: 600; z-index: 1; }
+        .card-num { position: absolute; top: 3px; left: 5px; font-size: 7pt; color: var(--faint); font-weight: 600; z-index: 1; }
         .sb-card-image { height: 1.6in; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #faf8f3; }
         .sb-card-image img { width: 100%; height: 100%; object-fit: contain; }
-        .sb-card-symbol { font-size: 22pt; color: #ccc; }
+        .sb-card-symbol { font-size: 22pt; color: var(--faint); }
         .sb-card-info { padding: 3px 6px 1px; border-top: 1px solid #eee; }
         .sb-card-name { font-size: 7pt; font-weight: 600; color: #333; }
         .sb-card-keywords { font-size: 5.5pt; color: #999; margin-top: 1px; }
@@ -376,7 +377,7 @@
             bottom: 0.2in;
             right: 0.3in;
             font-size: 7pt;
-            color: #ccc;
+            color: var(--faint);
         }
 
         /* ============================================================
