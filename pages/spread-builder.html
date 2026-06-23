@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../theme.css?v=1">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Spread Builder — Recursive Tarot</title>
@@ -15,7 +16,7 @@
     draws one card per position. People can contribute spreads by sharing/PRing the JSON.
 -->
 <style>
-  :root { --bg:#f4f1ea; --panel:#1d1b26; --ink:#ece9f3; --muted:#6b6457; --line:#d8d2c6; --accent:#9a7322; }
+  :root {       }
   * { box-sizing:border-box; }
   html,body { margin:0; min-height:100%; background:var(--bg); color:var(--ink);
     font-family:Inter,system-ui,-apple-system,sans-serif; }
@@ -28,9 +29,9 @@
   .field label { font-size:12px; color:var(--muted); }
   input[type=text], textarea { background:#f4f1ea; color:var(--ink); border:1px solid var(--line);
     border-radius:8px; padding:8px 10px; font-size:14px; font-family:inherit; width:100%; }
-  button { background:var(--accent); color:#fff; border:none; border-radius:8px; padding:9px 16px;
+  button { background:var(--accent); color:var(--ink); border:none; border-radius:8px; padding:9px 16px;
     font-size:14px; font-weight:600; cursor:pointer; }
-  button.ghost { background:#d8d2c6; color:#d8d3e6; }
+  button.ghost { background:#d8d2c6; color:var(--ink-soft); }
   .toolbar { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:12px; }
   .toolbar .hint { color:var(--muted); font-size:12px; }
 
@@ -41,13 +42,13 @@
   .board .empty-hint { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
     color:#4a4660; font-size:14px; pointer-events:none; text-align:center; padding:20px; }
   .pos { position:absolute; transform:translate(-50%,-50%); min-width:96px; max-width:150px;
-    background:#241f33; border:1px solid #cfc8ba; border-radius:12px; padding:8px 10px 9px;
+    background:var(--surface); border:1px solid #cfc8ba; border-radius:12px; padding:8px 10px 9px;
     cursor:grab; user-select:none; touch-action:none; box-shadow:0 4px 14px rgba(0,0,0,.35); }
   .pos.sel { border-color:var(--accent); box-shadow:0 0 0 2px rgba(154,115,34,.5), 0 6px 18px rgba(0,0,0,.45); }
   .pos.dragging { cursor:grabbing; opacity:.92; }
   .pos .num { position:absolute; top:-9px; left:-9px; width:20px; height:20px; border-radius:50%;
-    background:var(--accent); color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; }
-  .pos .lbl { font-size:12.5px; font-weight:700; color:#f0ecff; line-height:1.25; }
+    background:var(--accent); color:var(--ink); font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .pos .lbl { font-size:12.5px; font-weight:700; color:var(--ink-soft); line-height:1.25; }
   .pos .mng { font-size:11px; color:var(--muted); line-height:1.3; margin-top:2px; max-height:48px; overflow:hidden; }
 
   .list { margin-top:22px; display:flex; flex-direction:column; gap:10px; }
@@ -55,12 +56,12 @@
     border:1px solid var(--line); border-radius:12px; padding:12px; }
   .list .row.sel { border-color:var(--accent); }
   .list .row .rnum { width:24px; height:24px; flex:0 0 24px; border-radius:50%; background:var(--accent);
-    color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:2px; }
+    color:var(--ink); font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:2px; }
   .list .row .fields { flex:1; display:flex; flex-direction:column; gap:6px; }
   .list .row .fields input { font-weight:600; }
-  .list .row .del { background:#d8d2c6; color:#caa; border:none; border-radius:8px; padding:6px 10px;
+  .list .row .del { background:rgba(192,71,59,.08); color:var(--bad); border:none; border-radius:8px; padding:6px 10px;
     font-size:13px; cursor:pointer; align-self:center; }
-  .list .row .del:hover { color:#f88; }
+  .list .row .del:hover { color:#8f2f22; }
 
   .export { margin-top:26px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px; }
   .export h2 { font-size:15px; margin:0 0 4px; }
