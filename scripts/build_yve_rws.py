@@ -25,9 +25,15 @@ SUIT = {"batons":("wands","Fire"),"cups":("cups","Water"),"swords":("swords","Ai
 RANK_LABEL = {1:"Ace",2:"Two",3:"Three",4:"Four",5:"Five",6:"Six",7:"Seven",8:"Eight",9:"Nine",10:"Ten",
  11:"Page",12:"Knight",13:"Queen",14:"King"}
 
-def gb_key(slug):
-    """archetype key for a guidebook card slug."""
-    s = slug.strip().lower()
+def gb_key(c):
+    """archetype key for a guidebook card. Prefers explicit n / suit+rank; falls back to slug."""
+    if isinstance(c, dict):
+        if c.get("n") is not None: return ("M", c["n"])
+        if c.get("suit") and c.get("rank") and c["rank"].lower() in RANK:
+            return (c["suit"].lower(), RANK[c["rank"].lower()])
+        s = (c.get("slug") or "").strip().lower()
+    else:
+        s = c.strip().lower()
     if s in MAJOR_SLUG: return ("M", MAJOR_SLUG[s])
     m = re.match(r"(ace|two|three|four|five|six|seven|eight|nine|ten|page|knight|queen|king)-of-(batons|cups|swords|coins)", s)
     if m: return (m.group(2), RANK[m.group(1)])
@@ -37,14 +43,14 @@ def plat_key(it):
     if it.get("category") == "major" or it.get("suit") in (None,"",):
         n = it.get("arc_number")
         return ("M", n) if n is not None else None
-    return (it.get("suit"), it.get("arc_number"))
+    return (str(it.get("suit")).lower(), it.get("arc_number"))
 
 def build(cfg):
     plat = json.load(open(cfg["platform_file"], encoding="utf-8"))
     gb = {}
     for f in glob.glob(cfg["guidebook_glob"]):
         for c in json.load(open(f, encoding="utf-8")):
-            k = gb_key(c["slug"])
+            k = gb_key(c)
             if k: gb[k] = c
     items=[]; matched=0
     for i, p in enumerate(plat):
@@ -70,9 +76,9 @@ def build(cfg):
         sec = {}
         if g:
             matched += 1
+            if g.get("epigraph"): sec["Song reference"] = g["epigraph"]
             if g.get("image_description"): sec["The card"] = g["image_description"]
             if g.get("interpretation"): sec["Interpretation"] = g["interpretation"]
-            if g.get("epigraph"): sec["Epigraph"] = g["epigraph"]
             if g.get("selected_meanings"): sec["Selected meanings"] = g["selected_meanings"]
         img = p.get("image_url")
         if img:
@@ -113,6 +119,22 @@ CONFIGS = {
     modifications=("Restructured Yve Lepkowski's deck into the recursive.eco grammar schema with cross-deck "
         "archetype mappings + a genealogy link to the Tarot de Marseille. Each card's 'Interpretation' and "
         "'The card' sections are her own guidebook text (verbatim prose + image description). No meanings altered.")),
+ "anecdotes-tarot": dict(
+    slug="anecdotes-tarot", name="Anecdotes Tarot",
+    platform_file="research/yve-lepkowski/anecdotes-platform.json",
+    guidebook_glob="research/yve-lepkowski/anecdotes-raw/a*.json",
+    creator_link="https://stolen-thyme.com/anecdotes-tarot/", parent="tarot-de-marseille-conver",
+    description=("A 78-card tarot by Yve Lepkowski (stolen-thyme.com, 2020), CC-BY-SA-4.0, with every card "
+        "drawn from the music and lyrics of Joanna Newsom — each trump renamed after a song (0 Bridges and "
+        "Balloons → XXI Time, As a Symptom). Suits of Batons, Coins, Swords, Cups. **A contemporary deck**, "
+        "descending from the historical Tarot de Marseille in this library. Card text is the author's own "
+        "guidebook prose; the 'Song reference' notes the Newsom song (lyrics not reproduced)."),
+    tags=["tarot","joanna-newsom","music","literary","contemporary","cc-by-sa","yve-lepkowski"],
+    attrib_note="Anecdotes Tarot — original deck & guidebook, CC-BY-SA-4.0 (stolen-thyme.com/anecdotes-tarot); inspired by the music of Joanna Newsom.",
+    modifications=("Restructured Yve Lepkowski's deck into the recursive.eco grammar schema with cross-deck "
+        "archetype mappings + a genealogy link to the Tarot de Marseille. 'The card' and 'Interpretation' are her "
+        "own verbatim guidebook text; 'Song reference' names the Joanna Newsom song (copyrighted lyrics NOT "
+        "reproduced). No meanings altered.")),
 }
 
 if __name__ == "__main__":
