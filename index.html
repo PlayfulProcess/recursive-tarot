@@ -265,10 +265,8 @@
 
   <!-- ── RECURSIVE.ECO — the tree this grows from (reusable block) ── -->
   <aside class="ecotree">
-    <svg class="spiral" width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">
-      <path d="M53 47 a4 4 0 1 0 4 6 a11 11 0 1 0 -13 -3 a18 18 0 1 0 24 7 a26 26 0 1 0 -37 -11 a34 34 0 1 0 50 16"
-        fill="none" stroke="#9a7322" stroke-width="5" stroke-linecap="round"/>
-    </svg>
+    <img class="spiral" src="spiral-mark.svg" width="46" height="46" alt="" aria-hidden="true" style="display:block;margin:0 auto 10px">
+
     <h2>One branch of a larger tree</h2>
     <p><a href="https://recursive.eco" target="_blank" rel="noopener"><strong>recursive.eco</strong></a> is the
     trunk this library grows from — an open platform built on
@@ -334,9 +332,19 @@
     <p class="sub">Every image public domain · click any deck to read it card by card</p>
     <div id="deckgrid" class="deckgrid"><p class="sub" style="grid-column:1/-1">Loading decks…</p></div>
 
+    <style>
+      .dcard .status{display:inline-block;font-family:var(--sans);font-size:9.5px;letter-spacing:.1em;
+        text-transform:uppercase;color:#3f7a5c;background:rgba(63,122,92,.12);border-radius:999px;padding:3px 9px;margin-top:8px}
+      .dcard .note{font-family:var(--serif-body);font-size:12.5px;line-height:1.45;color:var(--ink-soft);margin-top:7px}
+    </style>
+    <div id="community-wrap" hidden>
+      <h2 style="margin-top:50px">From the Recursive Community</h2>
+      <p class="sub">PlayfulProcess's own grammars — objects of study, not claims of expertise · collaborators welcome</p>
+      <div id="deckgrid-community" class="deckgrid"></div>
+    </div>
     <div id="contemporary-wrap" hidden>
       <h2 style="margin-top:50px">Contemporary decks</h2>
-      <p class="sub">Living-tradition grammars grown on recursive.eco — beyond the historical canon</p>
+      <p class="sub">Living-tradition grammars under CC-BY-SA, by other makers — beyond the historical canon</p>
       <div id="deckgrid-contemporary" class="deckgrid"></div>
     </div>
   </section>
@@ -346,37 +354,39 @@
 <script>
   // Render the deck galleries from the open collection manifest (always current).
   (function(){
-    const CONTEMP = new Set(['ontoject-illustrated','thirty-six-tattvas']);
+    // PlayfulProcess's own grammars — shown apart, as objects of study (not expertise).
+    const COMMUNITY = {
+      'ontoject-illustrated': {status:'Looking for collaborators', note:'A creative, tattva-tinged deck still under process — my own study object. I am not an authority on the tradition.'},
+      'thirty-six-tattvas':   {status:'Looking for collaborators', note:'The 36 Tattvas of Shaiva Tantra as a grammar of consciousness — an object of study by PlayfulProcess, not an expert in the tradition.'}
+    };
     const esc = s => String(s).replace(/</g,'&lt;');
+    const thumb = g => '<div class="dthumb" style="background-image:url(\''+g.cover_image_url.replace(/'/g,"%27")+'\')"></div>';
     const card = g => {
-      const name = (g.name||g.slug).split(' — ')[0];
-      const year = g.year_label || (g.year||'');
+      const name = (g.name||g.slug).split(' — ')[0], year = g.year_label || (g.year||'');
       const href = 'viewers/cards.html?src=../tarot/'+encodeURIComponent(g.slug)+'/grammar.json';
-      return '<a class="dcard" href="'+href+'">'
-        +'<div class="dthumb" style="background-image:url(\''+g.cover_image_url.replace(/'/g,"%27")+'\')"></div>'
-        +'<div class="dn">'+esc(name)+'</div><div class="dy">'+esc(year)+'</div></a>';
+      return '<a class="dcard" href="'+href+'">'+thumb(g)+'<div class="dn">'+esc(name)+'</div><div class="dy">'+esc(year)+'</div></a>';
+    };
+    const communityCard = g => {
+      const c = COMMUNITY[g.slug]||{}, name = (g.name||g.slug).split(' — ')[0].split(':')[0];
+      const href = 'viewers/cards.html?src=../tarot/'+encodeURIComponent(g.slug)+'/grammar.json';
+      return '<a class="dcard" href="'+href+'">'+thumb(g)+'<div class="dn">'+esc(name)+'</div>'
+        +(c.status?'<span class="status">'+esc(c.status)+'</span>':'')
+        +(c.note?'<div class="note">'+esc(c.note)+'</div>':'')+'</a>';
     };
     fetch('tarot/_collection.json',{cache:'no-cache'}).then(r=>r.json()).then(c=>{
       const all = (c.grammars||[]).filter(g=>!g.is_meta && g.cover_image_url);
-      // Contemporary = any living (CC-BY-SA) deck; the historical genealogy stays the default cut.
-      const isContemp = g => g.provenance==='living' || CONTEMP.has(g.slug);
-      const historical = all.filter(g=>!isContemp(g)).sort((a,b)=>(a.year||9999)-(b.year||9999));
-      const contemporary = all.filter(isContemp);
+      const isLiving = g => g.provenance==='living';
+      const community    = all.filter(g=>COMMUNITY[g.slug]);
+      const contemporary = all.filter(g=>isLiving(g) && !COMMUNITY[g.slug]);
+      const historical   = all.filter(g=>!isLiving(g) && !COMMUNITY[g.slug]).sort((a,b)=>(a.year||9999)-(b.year||9999));
       document.getElementById('deckgrid').innerHTML = historical.map(card).join('');
-      if(contemporary.length){
-        document.getElementById('deckgrid-contemporary').innerHTML = contemporary.map(card).join('');
-        document.getElementById('contemporary-wrap').hidden = false;
-      }
+      if(community.length){ document.getElementById('deckgrid-community').innerHTML = community.map(communityCard).join(''); document.getElementById('community-wrap').hidden = false; }
+      if(contemporary.length){ document.getElementById('deckgrid-contemporary').innerHTML = contemporary.map(card).join(''); document.getElementById('contemporary-wrap').hidden = false; }
     }).catch(()=>{ document.getElementById('deckgrid').innerHTML='<p class="sub" style="grid-column:1/-1">Open the <a href="viewers/cards.html">Cards view</a> to browse all decks.</p>'; });
   })();
 </script>
 
-<footer class="site"><div class="wrap">
-  Built openly with Claude Code. All data &amp; images live in the
-  <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">recursive-tarot repo</a>
-  — companion to <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a>.
-  <span class="small muted">Source: this repo · updated June 2026 · CC-BY-SA-4.0.</span>
-  <br><span class="small muted">Scholarship consulted (facts only, no text reproduced): the Tarot History Forum.</span>
-</div></footer>
+<script src="site-footer.js"></script>
+<site-footer></site-footer>
 </body>
 </html>
