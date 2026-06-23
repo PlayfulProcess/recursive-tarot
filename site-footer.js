@@ -32,6 +32,8 @@
   `;
   class SiteFooter extends HTMLElement{
     connectedCallback(){
+      // Embedded (iframed into a course/book/print): render no footer.
+      if(new URLSearchParams(location.search).get('embed')==='1'){ this.style.display='none'; return; }
       var base=this.getAttribute('base')||'';
       this.innerHTML='<style>'+css+'</style>'+
         '<div class="rtf">'+
