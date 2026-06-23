@@ -8,7 +8,7 @@
   "creator_name": "Yve Lepkowski",
   "creator_link": "https://stolen-thyme.com/tarocchino-arlecchino/",
   "cover_image_url": "https://drive.google.com/uc?export=view&id=1eLd6Z1kWTfFJBpvPVa1adASBydp1ZX5p",
-  "image_credit": "Art by Yve Lepkowski (stolen-thyme.com), CC-BY-SA-4.0.",
+  "image_credit": "Art & card meanings by Yve Lepkowski (stolen-thyme.com), CC-BY-SA-4.0; meanings transcribed from her guidebook.",
   "description": "A 62-card Bolognese tarocchino deck featuring Harlequin (Arlecchino) from the Commedia dell'Arte tradition. Compiled by Y. Lepkowski MMXXII after the methods of Etteilla.\n\n**A contemporary deck.** Created by Yve Lepkowski (stolen-thyme.com) and released under CC-BY-SA-4.0; reproduced here under the same licence. A 64-card deck: the 62-card Bolognese tarocchino (21 numbered trumps, the Fool, and 40 suit cards) plus two unnumbered Etteilla-style Significators. It descends from the historical **Tarocchino di Bologna** in this library.",
   "tags": [
     "tarot",
@@ -47,7 +47,7 @@
         "link": "https://recursive.eco"
       }
     ],
-    "modifications": "Restructured Yve Lepkowski's deck into the recursive.eco grammar schema; added cross-deck archetype mappings and genealogy links; the two unnumbered Significators are represented as explicit items. No card meanings were altered."
+    "modifications": "Restructured Yve Lepkowski's deck into the recursive.eco grammar schema and added cross-deck archetype mappings + genealogy links. Card meanings, keywords and English names are transcribed VERBATIM from Yve Lepkowski's own Tarocchino Arlecchino guidebook (stolen-thyme.com) — her Etteilla-system upright/reversed meanings; 'The card' notes paraphrase her iconography text. The two unnumbered Significators are represented as explicit items. No card meanings were altered."
   },
   "items": [
     {
@@ -56,16 +56,25 @@
       "sort_order": 0,
       "category": "trump",
       "keywords": [
-        "illness of the body",
+        "Illness of the body",
         "disease",
         "physical affliction",
+        "infirmity",
+        "damage",
+        "bad state of health or affairs",
         "disruption",
-        "pain"
+        "pain",
+        "death throes",
+        "epidemic",
+        "poison",
+        "plague",
+        "infection"
       ],
       "sections": {
-        "Summary": "The Magician as trickster, surrounded by impish figures, representing illness and deception.",
-        "Reversed": "Illness of the mind or soul, indisposition, headache, heartache, worry, melancholy, affliction, lethargy, inconvenience, unhappy position, displeasure, anxiety, sorrow, woe, misfortune, medicine, remedy, charlatan, mage, empirical medicine.",
-        "Interpretation": "Illness of the body, disease, physical affliction, infirmity, damage, bad state of health or affairs, disruption, pain, death throes, epidemic, poison, plague, infection."
+        "Also called": "The Magician, The Juggler",
+        "The card": "A jester-like figure in a diamond-patterned costume of red, blue and green, with a pointed bell-tipped hat and black mask with red nose, stands at a table where four small red imp-figures in horned masks watch coins and inverted cups. He holds a striped wand and conceals something in his other hand.",
+        "Upright meaning (Etteilla system)": "Illness of the body, disease, physical affliction, infirmity, damage, bad state of health or affairs, disruption, pain, death throes, epidemic, poison, plague, infection.",
+        "Reversed meaning (Etteilla system)": "Illness of the mind or soul, indisposition, headache, heartache, worry, melancholy, affliction, lethargy, inconvenience, unhappy position, displeasure, anxiety, sorrow, woe, misfortune, medicine, remedy, charlatan, mage, empirical medicine."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1eLd6Z1kWTfFJBpvPVa1adASBydp1ZX5p",
       "metadata": {
@@ -82,7 +91,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Magician, The Juggler",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -91,16 +102,25 @@
       "sort_order": 1,
       "category": "trump",
       "keywords": [
-        "rest",
+        "Rest",
         "tranquility",
         "quiet",
         "retirement",
-        "withdrawal"
+        "withdrawal",
+        "private life",
+        "secret life",
+        "life of solitude",
+        "hermitage",
+        "religious life",
+        "silence",
+        "taciturnity",
+        "composure"
       ],
       "sections": {
-        "Summary": "Harlequin as Pope Joan, representing rest, solitude, and disguise.",
-        "Reversed": "Imitation, disguise, image, impersonation, pseudonym, mimicry, parody, camouflage, illusion, reflection, mirroring, replica, simulacrum, counterpart, counterfeit, apocryphal.",
-        "Interpretation": "Rest, tranquility, quiet, retirement, withdrawal, private life, secret life, life of solitude, hermitage, religious life, silence, taciturnity, composure."
+        "Also called": "The High Priestess, The Popess",
+        "The card": "A harlequin-costumed female pope in a three-tiered crown and veil, black mask with red nose, raises two fingers in benediction while holding crossed red and blue keys. The imagery references the legend of Pope Joan.",
+        "Upright meaning (Etteilla system)": "Rest, tranquility, quiet, retirement, withdrawal, private life, secret life, life of solitude, hermitage, religious life, silence, taciturnity, composure.",
+        "Reversed meaning (Etteilla system)": "Imitation, disguise, image, impersonation, pseudonym, mimicry, parody, camouflage, illusion, reflection, mirroring, replica, simulacrum, counterpart, counterfeit, apocryphal."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1PI4LVQ6vWTaBQgPm47k66-0zpc-J4m9E",
       "metadata": {
@@ -117,7 +137,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The High Priestess, The Popess",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -126,16 +148,26 @@
       "sort_order": 2,
       "category": "trump",
       "keywords": [
-        "night",
+        "Night",
         "darkness",
+        "eclipse",
+        "mist",
+        "obscurity",
         "mystery",
         "secret",
-        "hidden"
+        "hidden",
+        "unknown",
+        "clandestine",
+        "occult",
+        "parable",
+        "allegory",
+        "mystical meaning"
       ],
       "sections": {
-        "Summary": "The Elf-king's daughter wielding a spear, representing darkness, mystery, and hidden truths.",
-        "Reversed": "Day, light of day, brightness, clarity, truth, visible, enlighten, manifestation, demonstration, evidence, engender, give life to, uncover, bring light to, publish, come out, bloom, emerge, come to light, zodiac.",
-        "Interpretation": "Night, darkness, eclipse, mist, obscurity, mystery, secret, hidden, unknown, clandestine, occult, parable, allegory, mystical meaning, mask, veil, cover, sheath, envelop, unvoiced, blindness, oblivion, obfuscate."
+        "Also called": "The Empress",
+        "The card": "The Empress wears an alder-leaf crown and holds a globe with a crescent moon and seven-pointed star; her diamond-patterned attire is red, black, pink, yellow, blue and green, with a black-and-gold sun in the upper background.",
+        "Upright meaning (Etteilla system)": "Night, darkness, eclipse, mist, obscurity, mystery, secret, hidden, unknown, clandestine, occult, parable, allegory, mystical meaning, mask, veil, cover, sheath, envelop, unvoiced, blindness, oblivion, obfuscate, cover.",
+        "Reversed meaning (Etteilla system)": "Day, light of day, brightness, clarity, truth, visible, enlighten, manifestation, demonstration, evidence, engender, give life to, uncover, bring light to, publish, come out, bloom, emerge, come to light, zodiac."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1PRkrrBvMKHT_PXYm-x1zu9yHRQiyWKf9",
       "metadata": {
@@ -152,7 +184,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Empress",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -161,16 +195,26 @@
       "sort_order": 3,
       "category": "trump",
       "keywords": [
-        "support",
+        "Support",
+        "backing",
+        "holding up",
+        "column",
+        "base",
         "foundation",
-        "stability",
-        "confidence",
-        "security"
+        "basis",
+        "founding principles",
+        "hypothesis",
+        "reason",
+        "cause",
+        "subject",
+        "fixity",
+        "stability"
       ],
       "sections": {
-        "Summary": "King Herla with his hound, representing support, foundation, and protection.",
-        "Reversed": "Protection, defense, influence, benevolence, benefaction, charity, humaneness, goodness, shelter, preservation, aegis.",
-        "Interpretation": "Support, backing, holding up, column, base, foundation, basis, founding principles, hypothesis, reason, cause, subject, fixity, stability, assurance, persuasion, conviction, confidence, security, reliability, help, aid."
+        "Also called": "The Emperor",
+        "The card": "The Emperor in red and black diamond cloaks, a feathered collar and a tall crown holds a small hound and props a spear in his lap. The card illustrates King Herla, the legendary figure whose name connects to Harlequin's etymology and the Wild Hunt.",
+        "Upright meaning (Etteilla system)": "Support, backing, holding up, column, base, foundation, basis, founding principles, hypothesis, reason, cause, subject, fixity, stability, assurance, persuasion, conviction, confidence, security, reliability, help, aid.",
+        "Reversed meaning (Etteilla system)": "Protection, defense, influence, benevolence, benefaction, charity, humaneness, goodness, shelter, preservation, aegis."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1-qHWDIbYrUno6_y8e7--cwgunG8sbhd8",
       "metadata": {
@@ -187,7 +231,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Emperor",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -197,15 +243,21 @@
       "category": "trump",
       "keywords": [
         "God",
-        "spirit",
+        "spirit of God",
+        "all-powerful",
         "eternal",
+        "unique",
         "divinity",
-        "faithfulness"
+        "devotee",
+        "faithfulness",
+        "worship",
+        "master"
       ],
       "sections": {
-        "Summary": "The Pope with stigmata and sacred book, representing divinity, wisdom, and contemplation.",
-        "Reversed": "Philosopher, philosophical, philosophize, sage, wisdom, knowledge, tradition, thought, meditation, contemplation.",
-        "Interpretation": "God, spirit of God, all-powerful, eternal, unique, divinity, devotee, faithfulness, worship, master."
+        "Also called": "The Pope, The Hierophant",
+        "The card": "A robed religious figure holds a red book and a staff topped with a black cross with flaming tips; his hands show stigmata, he wears a three-tiered crown with red veil and a brooch with an inverted cross.",
+        "Upright meaning (Etteilla system)": "God, spirit of God, all-powerful, eternal, unique, divinity, devotee, faithfulness, worship, master.",
+        "Reversed meaning (Etteilla system)": "Philosopher, philosophical, philosophize, sage, wisdom, knowledge, tradition, thought, meditation, contemplation."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1wZuh6KOlaOw_mmTYVOeTAoHgJc5eR3nA",
       "metadata": {
@@ -222,7 +274,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Pope, The Hierophant",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -231,16 +285,26 @@
       "sort_order": 5,
       "category": "trump",
       "keywords": [
-        "marriage",
+        "Marriage",
         "wedding",
+        "nuptials",
         "alliance",
         "meeting",
-        "pledge"
+        "link",
+        "assembly",
+        "pledge",
+        "promise",
+        "oath",
+        "intimacy",
+        "liaison",
+        "junction",
+        "conjunction"
       ],
       "sections": {
-        "Summary": "Two Harlequins meeting at a fountain with Cupid above, representing marriage and union.",
-        "Reversed": "Union, society, contacts, cohabitation, adultery, incest, alloy, blending, mixing, amalgam, peace, concord, accord, harmony, coexistence, reconciliation, mending, patching things up.",
-        "Interpretation": "Marriage, wedding, nuptials, alliance, meeting, link, assembly, pledge, promise, oath, intimacy, liaison, junction, conjunction, copulation, coupling, chain, bondage, discomfort, captivity."
+        "Also called": "The Lovers",
+        "The card": "Two Harlequins, one in masculine and one in feminine dress, meet at an ornate fountain crowned by a winged Harlequin drawing a bow at the female figure. Corresponds to Trump VI; in the Etteilla system the Lovers concept was merged with the High Priest card.",
+        "Upright meaning (Etteilla system)": "Marriage, wedding, nuptials, alliance, meeting, link, assembly, pledge, promise, oath, intimacy, liaison, junction, conjunction, copulation, coupling, chain, bondage, discomfort, captivity.",
+        "Reversed meaning (Etteilla system)": "Union, society, contacts, cohabitation, adultery, incest, alloy, blending mixing, amalgam, peace, concord, accord, harmony, coexistence, reconciliation, mending, patching things up."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1C1XPiwkFTQF-UyYRvUFZi0O6dCFsvpcm",
       "metadata": {
@@ -257,7 +321,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Lovers",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -266,16 +332,26 @@
       "sort_order": 6,
       "category": "trump",
       "keywords": [
-        "dissension",
+        "Dissension",
         "discord",
-        "war",
-        "conflict",
-        "combat"
+        "disturbances",
+        "agitation",
+        "noise",
+        "nuisance",
+        "disorder",
+        "riots",
+        "insurrection",
+        "revolt",
+        "sedition",
+        "rebellion",
+        "defection",
+        "faction"
       ],
       "sections": {
-        "Summary": "A Harlequin warrior on a chariot pulled by opposing horses, representing conflict and pride.",
-        "Reversed": "Arrogance, pride, vanity, false glory, pomp, ostentation, audacity, temerity, presumption, insult, affront.",
-        "Interpretation": "Dissension, discord, disturbances, agitation, noise, nuisance, disorder, riots, insurrection, revolt, sedition, rebellion, defection, faction, conspiracy, war, battle, conflict, combat, duel, violence, impulse, outburst, anger, quarrel, dispute, debate, argumentation, struggle, vengeance."
+        "Also called": "The Chariot",
+        "The card": "A winged-helmeted Harlequin rides a high chariot, holding a cross-topped globe and a red-bladed sword, drawn by two horses straining in opposite directions with their necks twisted to face each other.",
+        "Upright meaning (Etteilla system)": "Dissension, discord, disturbances, agitation, noise, nuisance, disorder, riots, insurrection, revolt, sedition, rebellion, defection, faction, conspiracy, war, battle, conflict, combat, duel, violence, impulse, outburst, anger, quarrel, dispute, debate, argumentation, struggle, vengeance.",
+        "Reversed meaning (Etteilla system)": "Arrogance, pride, vanity, false glory, pomp, ostentation, audacity, temerity, presumption, insult, affront."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1xJGojvPmUNaUTskey6NKerNlhQ1cA8pd",
       "metadata": {
@@ -292,7 +368,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Chariot",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -301,16 +379,26 @@
       "sort_order": 7,
       "category": "trump",
       "keywords": [
-        "temperance",
+        "Temperance",
         "moderation",
+        "discretion",
+        "continence",
+        "abstinence",
+        "sobriety",
+        "frugality",
+        "chastity",
         "patience",
         "calm",
-        "restraint"
+        "restraint",
+        "accommodation",
+        "regard",
+        "consideration"
       ],
       "sections": {
-        "Summary": "Temperance pouring liquid between vessels, representing moderation and balance.",
-        "Reversed": "Priest, minister, performer of sacrifices, priesthood, clergy, church, council, synod, religion, sect.",
-        "Interpretation": "Temperance, moderation, discretion, continence, abstinence, sobriety, frugality, chastity, patience, calm, restraint, accommodation, regard, consideration, mending, mediation, softening, musical tempering, air temperature, climate, temperament."
+        "Also called": "Temperance",
+        "The card": "A seated figure pours liquid between two vessels, wearing a diamond-patterned dress with pink chest armor and gloves, a black mask with green border and a soft white hat.",
+        "Upright meaning (Etteilla system)": "Temperance, moderation, discretion, continence, abstinence, sobriety, frugality, chastity, patience, calm, restraint, accommodation, regard, consideration, mending, mediation, softening, musical tempering, air temperature, climate, temperament.",
+        "Reversed meaning (Etteilla system)": "Priest, minister, performer of sacrifices, priesthood, clergy, church, council, synod, religion, sect."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1ybyurH6eB5MT_ZRjSjgokAp4LZ4__aYT",
       "metadata": {
@@ -327,7 +415,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Temperance",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -336,16 +426,25 @@
       "sort_order": 8,
       "category": "trump",
       "keywords": [
-        "justice",
+        "Justice",
         "equity",
+        "probity",
+        "uprightness",
         "right",
+        "natural right",
+        "human right",
+        "moral right",
+        "public right",
+        "civil right",
+        "rectitude",
         "reason",
-        "rectitude"
+        "execution"
       ],
       "sections": {
-        "Summary": "Justice holding scales and sword, representing fairness, law, and moral order.",
-        "Reversed": "Jurist, legislator, legislation, tribunal, law, decree, code, order, statutes, precepts, commandment, constitution, domination, institution, natural laws, moral laws, religious laws, civil laws, political laws, laws of war.",
-        "Interpretation": "Justice, equity, probity, uprightness, right, natural right, human right, moral right, public right, civil right, rectitude, reason, execution."
+        "Also called": "Justice",
+        "The card": "Justice sits gazing at scales suspended from a globe in her left hand and an upright red sword in her right; black-and-white diamond pattern, pale blue bodice, black mask and a red bicorne hat.",
+        "Upright meaning (Etteilla system)": "Justice, equity, probity, uprightness, right, natural right, human right, moral right, public right, civil right, rectitude, reason, execution.",
+        "Reversed meaning (Etteilla system)": "Jurist, legislator, legislation, tribunal, law, decree, code, order, statutes, precepts, commandment, constitution, domination, institution, natural laws, moral laws, religious laws, civil laws, political laws, laws of war."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1vG16syOfBf2Bf_VZk0WleL-C0EgkFzcl",
       "metadata": {
@@ -362,7 +461,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Justice",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -371,16 +472,26 @@
       "sort_order": 9,
       "category": "trump",
       "keywords": [
-        "fortitude",
+        "Fortitude",
         "strength",
+        "advantage by strength",
+        "ability",
         "power",
-        "courage",
-        "perseverance"
+        "moral strength",
+        "greatness of soul",
+        "magnanimity",
+        "moral or spiritual work",
+        "perseverance",
+        "constancy",
+        "patience",
+        "resignation",
+        "heroism"
       ],
       "sections": {
-        "Summary": "Fortitude embracing a column with baton, representing inner strength and leadership.",
-        "Reversed": "Sovereign, kingdom, empire, republic, state, people, nation, government, administration, reign, despotism, sovereignty, authority, leadership, supreme power, absolute power, arbitrary power, king, emperor, general, commander, captain, chief superior, governor, authoritarian, driving force, regulator.",
-        "Interpretation": "Fortitude, strength, advantage by strength, ability, power, moral strength, greatness of soul, magnanimity, moral or spiritual work, perseverance, constancy, patience, resignation, heroism, courage."
+        "Also called": "Strength, Fortitude",
+        "The card": "A figure in classical garb with a red winged crown embraces a red-striped column with her right arm while gripping a red baton in her left, gazing away from the column.",
+        "Upright meaning (Etteilla system)": "Fortitude, strength, advantage by strength, ability, power, moral strength, greatness of soul, magnanimity, moral or spiritual work, perseverance, constancy, patience, resignation, heroism, courage.",
+        "Reversed meaning (Etteilla system)": "Sovereign, kingdom, empire, republic, state, people, nation, government, administration, reign, despotism, sovereignty, authority, leadership, supreme power, absolute power, arbitrary power, king, emperor, general, commander, captain, chief superior, governor, authoritarian, driving force, regulator."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1bvaroZOtiHkuJM07kwBTIfPmqr0TuQz6",
       "metadata": {
@@ -397,7 +508,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Strength, Fortitude",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -406,16 +519,26 @@
       "sort_order": 10,
       "category": "trump",
       "keywords": [
-        "fortune",
+        "Fortune",
         "luck",
         "happiness",
+        "joy",
+        "bliss",
+        "improvement",
         "prosperity",
-        "fate"
+        "bonus",
+        "blessing",
+        "benefits",
+        "graces",
+        "favors",
+        "goods",
+        "wealth"
       ],
       "sections": {
-        "Summary": "Four Harlequins riding a golden wheel, representing the cycles of fortune and destiny.",
-        "Reversed": "Augmentation, increase, enlargement, abundance, surfeit, growth, development, vegetation, production.",
-        "Interpretation": "Fortune, luck, happiness, joy, bliss, improvement, prosperity, bonus, blessing, benefits, graces, favors, goods, wealth, profits, lot, fate, destiny, adventure, good fortune."
+        "Also called": "The Wheel of Fortune",
+        "The card": "A golden wheel with red and green spokes mounted on a twisting green trunk; four Harlequins occupy ascending, crowned-summit, descending and clinging positions on the wheel.",
+        "Upright meaning (Etteilla system)": "Fortune, luck, happiness, joy, bliss, improvement, prosperity, bonus, blessing, benefits, graces, favors, goods, wealth, profits, lot, fate, destiny, adventure, good fortune.",
+        "Reversed meaning (Etteilla system)": "Augmentation, increase, enlargement, abundance, surfeit, growth, development, vegetation, production."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=10KZ9ua_3EjOyJUDeAZIddxG8q6uJ7Mts",
       "metadata": {
@@ -432,7 +555,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Wheel of Fortune",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -441,16 +566,26 @@
       "sort_order": 11,
       "category": "trump",
       "keywords": [
-        "time",
+        "Time",
         "chronos",
         "age",
-        "eternity",
-        "opportunity"
+        "elderly",
+        "generation",
+        "epoch",
+        "year",
+        "month",
+        "day",
+        "hour",
+        "minute",
+        "second",
+        "measure",
+        "tempo"
       ],
       "sections": {
-        "Summary": "A winged Old Man on crutches, combining Chronos and Kairos - accumulated and fleeting time.",
-        "Reversed": "Time, kairos, moment, instant, opportunity, occasion, juncture, fleeting, time to act, the right time.",
-        "Interpretation": "Time, chronos, age, elderly, generation, epoch, year, month, day, hour, minute, second, measure, tempo, duration, eternity, golden age, Saturn."
+        "Also called": "The Old Man, The Hermit, Time",
+        "The card": "A winged Harlequin with a long white beard walks on two crutches, in a patched jacket with long tails, a gold purse at his belt, a tall hexagonal column behind him.",
+        "Upright meaning (Etteilla system)": "Time, chronos, age, elderly, generation, epoch, year, month, day, hour, minute, second, measure, tempo, duration, eternity, golden age, Saturn.",
+        "Reversed meaning (Etteilla system)": "Time, kairos, moment, instant, opportunity, occasion, juncture, fleeting, time to act, the right time."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1LMDGQs9Uxvwm2ecSN8Fvw1LuEcLuQeO1",
       "metadata": {
@@ -467,7 +602,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Old Man, The Hermit, Time",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -476,16 +613,26 @@
       "sort_order": 12,
       "category": "trump",
       "keywords": [
-        "traitor",
+        "Traitor",
         "deceiver",
+        "dissimulation",
         "hypocrite",
+        "fanatic",
+        "hypocrisy",
+        "fanaticism",
         "impostor",
-        "trickery"
+        "disguise",
+        "imposture",
+        "corruptor",
+        "seducer",
+        "treason",
+        "craftiness"
       ],
       "sections": {
-        "Summary": "A Harlequin hanging between columns, representing treachery or noble sacrifice.",
-        "Reversed": "Sacrifice, penance, offering, devotion, renunciation, surrender, loss, abnegation, punishment, correction, penalty, atonement.",
-        "Interpretation": "Traitor, deceiver, dissimulation, hypocrite, fanatic, hypocrisy, fanaticism, impostor, disguise, imposture, corruptor, seducer, treason, craftiness, trickery."
+        "Also called": "The Hanged Man, The Traitor",
+        "The card": "A Harlequin hangs by one ankle between two ornamental columns, in a black mask with short horns, costume of red, blue, green and brown diamonds with gold puffed sleeves; his tied foot touches a half-red, half-green ceiling.",
+        "Upright meaning (Etteilla system)": "Traitor, deceiver, dissimulation, hypocrite, fanatic, hypocrisy, fanaticism, impostor, disguise, imposture, corruptor, seducer, treason, craftiness, trickery.",
+        "Reversed meaning (Etteilla system)": "Sacrifice, penance, offering, devotion, renunciation, surrender, loss, abnegation, punishment, correction, penalty, atonement."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1aat8300zIQlYGvgt_HLNDmt9BsFPr8k0",
       "metadata": {
@@ -502,7 +649,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Hanged Man, The Traitor",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -511,16 +660,26 @@
       "sort_order": 13,
       "category": "trump",
       "keywords": [
-        "mortality",
+        "Mortality",
         "death",
+        "passing",
         "end",
+        "extinguishing",
         "destruction",
-        "transformation"
+        "attack",
+        "murder",
+        "assassination",
+        "homicide",
+        "suicide",
+        "regicide",
+        "massacre",
+        "carnage"
       ],
       "sections": {
-        "Summary": "A skeletal Harlequin on horseback with scythe, representing death and endings.",
-        "Reversed": "Nothingness, inertia, paralysis, paralyze, sleep, lethargy, somnambulism, evanescence, negation, null, not at all, annihilate.",
-        "Interpretation": "Mortality, death, passing, end, extinguishing, destruction, attack, murder, assassination, homicide, suicide, regicide, massacre, carnage, butchery, slaughter, occision, poison, deterioration, rot, corruption, putrefaction."
+        "Also called": "Death",
+        "The card": "A thin Harlequin bearing a large golden scythe overhead rides a reared golden horse; the figure wears a mask with a round empty eye and striped red bristles, in black diamonds with pink, green and white sections.",
+        "Upright meaning (Etteilla system)": "Mortality, death, passing, end, extinguishing, destruction, attack, murder, assassination, homicide, suicide, regicide, massacre, carnage, butchery, slaughter, occision, poison, deterioration, rot, corruption, putrefaction.",
+        "Reversed meaning (Etteilla system)": "Nothingness, inertia, paralysis, paralyze, sleep, lethargy, somnambulism, evanescence, negation, null, not at all, annihilate."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1yQQlyP4Ml36bzhtuzVNEvOQb62N5MIqu",
       "metadata": {
@@ -537,7 +696,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Death",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -546,16 +707,26 @@
       "sort_order": 14,
       "category": "trump",
       "keywords": [
-        "strength",
-        "power",
+        "Strength",
+        "human strength",
+        "extraordinary power",
+        "physical strength",
+        "virtues",
+        "violent impetus",
+        "momentum of genius",
         "force of spirit",
+        "ravage",
         "violence",
-        "constraint"
+        "vehemence",
+        "constraint",
+        "firmness",
+        "manual or physical labor"
       ],
       "sections": {
-        "Summary": "A winged devil Harlequin with pitchfork, representing raw power and spiritual force.",
-        "Reversed": "Lightness, weakness, smallness, tenderness, weakening, dizziness, faint, despondency, depression, languor, collapse, sin, trespass, sacrilege.",
-        "Interpretation": "Strength, human strength, extraordinary power, physical strength, virtues, violent impetus, momentum of genius, force of spirit, ravage, violence, vehemence, constraint, firmness, manual or physical labor."
+        "Also called": "The Devil",
+        "The card": "A Harlequin with black-and-gold spread wings and a green tail holds a striped pitchfork, mask with green horns and ears, a long red tongue, colorful fires burning behind him.",
+        "Upright meaning (Etteilla system)": "Strength, human strength, extraordinary power, physical strength, virtues, violent impetus, momentum of genius, force of spirit, ravage, violence, vehemence, constraint, firmness, manual or physical labor.",
+        "Reversed meaning (Etteilla system)": "Lightness, weakness, smallness, tenderness, weakening, dizziness, faint, despondency, depression, languor, collapse, sin, trespass, sacrilege."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1JjSQCIYGrbg-N4uHqk5LZ7Hr_C_ZZv5j",
       "metadata": {
@@ -572,7 +743,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Devil",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -581,16 +754,26 @@
       "sort_order": 15,
       "category": "trump",
       "keywords": [
-        "destitution",
+        "Destitution",
+        "indigence",
         "poverty",
-        "calamity",
-        "misfortune",
-        "suffering"
+        "scarcity",
+        "need",
+        "necessity",
+        "distress",
+        "grief",
+        "pain",
+        "torment",
+        "suffering",
+        "affliction",
+        "unpleasantness",
+        "calamity"
       ],
       "sections": {
-        "Summary": "A burning castle with fallen Harlequins, representing catastrophe and imprisonment.",
-        "Reversed": "Prison, imprisonment, detention, arrest, captivity, slavery, servitude, subjection, constraint, oppression, tyranny, yoke, chains, dungeon, dependence.",
-        "Interpretation": "Destitution, indigence, poverty, scarcity, need, necessity, distress, grief, pain, torment, suffering, affliction, unpleasantness, calamity, adversity, misfortune, bad luck, divine punishment, setback, disgrace, severity, rigidity, harshness."
+        "Also called": "The Lightning, The Tower, The House of God",
+        "The card": "A burning, crumbling diamond-patterned castle; a tower tumbles from the top amid colorful flames erupting through the gate and from two solar discs, two Harlequins fallen in a heap below.",
+        "Upright meaning (Etteilla system)": "Destitution, indigence, poverty, scarcity, need, necessity, distress, grief, pain, torment, suffering, affliction, unpleasantness, calamity, adversity, misfortune, bad luck, divine punishment, setback, disgrace, severity, rigidity, harshness.",
+        "Reversed meaning (Etteilla system)": "Prison, imprisonment, detention, arrest, captivity, slavery, servitude, subjection, constraint, oppression, tyranny, yoke, chains, dungeon, dependence."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1aFvqMCuQQTTjbHKiWGbnbT1Icu-CLkQj",
       "metadata": {
@@ -607,7 +790,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Lightning, The Tower, The House of God",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -616,16 +801,26 @@
       "sort_order": 16,
       "category": "trump",
       "keywords": [
+        "A present",
         "gift",
         "donation",
         "generosity",
         "benefit",
-        "offering"
+        "good deed",
+        "service",
+        "homage",
+        "tribute",
+        "offering",
+        "legacy",
+        "loyalty",
+        "contribution",
+        "the color white"
       ],
       "sections": {
-        "Summary": "Three Magi beneath an eight-pointed star, representing gifts and generosity.",
-        "Reversed": "Stripping away, counting, sorting, separation, untangle, inspection, development, deepen, picking-over, remove, deprive, take away, abduct, dispossess, violence, privation, theft, larceny, swindling, fraud, infidelity.",
-        "Interpretation": "A present, gift, donation, generosity, benefit, good deed, service, homage, tribute, offering, legacy, loyalty, contribution, the color white, precious stone."
+        "Also called": "The Star",
+        "The card": "Three Harlequins gather beneath a large red-and-yellow eight-pointed star with a green aura; the left figure holds an elaborate crown.",
+        "Upright meaning (Etteilla system)": "A present, gift, donation, generosity, benefit, good deed, service, homage, tribute, offering, legacy, loyalty, contribution, the color white, precious stone.",
+        "Reversed meaning (Etteilla system)": "Stripping away, counting, sorting, separation, untangle, inspection, development, deepen, picking-over, remove, deprive, take away, abduct, dispossess, violence, privation, theft, larceny, swindling, fraud, infidelity."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1zx2YnshfSu5ioyxqW-OS4vapVK9BxVA9",
       "metadata": {
@@ -642,7 +837,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Star",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -651,16 +848,26 @@
       "sort_order": 17,
       "category": "trump",
       "keywords": [
+        "Aim",
+        "design",
         "intention",
+        "resolution",
         "will",
         "language",
+        "words",
         "speech",
-        "discourse"
+        "talk",
+        "discuss",
+        "babble",
+        "chat",
+        "gossip",
+        "idle talk"
       ],
       "sections": {
-        "Summary": "The Moon with astronomers below, representing intention, communication, and the fluid.",
-        "Reversed": "Water, fluid, humid, ablution, dew, rain, deluge, sea, river, torrent, stream, fountain, spring, lake, marsh, flat water, pond, waterfall, waves, inundation.",
-        "Interpretation": "Aim, design, intention, resolution, will, language, words, speech, talk, discuss, babble, chat, gossip, idle talk, reasoning, dialogue, discourse, moon."
+        "Also called": "The Moon",
+        "The card": "The Moon shows half a pink face behind a green horned crescent mask; two Harlequins below gaze up, the left holding a compass and a starry globe encircled by a gold ouroboros, the right an angled ruler.",
+        "Upright meaning (Etteilla system)": "Aim, design, intention, resolution, will, language, words, speech, talk, discuss, babble, chat, gossip, idle talk, reasoning, dialogue, discourse, moon.",
+        "Reversed meaning (Etteilla system)": "Water, fluid, humid, ablution, dew, rain, deluge, sea, river, torrent, stream, fountain, spring, lake, marsh, flat water, pond, waterfall, waves, inundation, spring."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1RlpdcUl8CLoYbBLxGBfCDAzQWswV8o7x",
       "metadata": {
@@ -677,7 +884,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Moon",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -686,16 +895,26 @@
       "sort_order": 18,
       "category": "trump",
       "keywords": [
-        "brightening",
-        "clarity",
+        "Brightening",
+        "clearing",
+        "explanation",
+        "development",
+        "instruction",
+        "interpretation",
+        "analysis",
+        "opening",
+        "discovery",
         "revelation",
+        "clarity",
+        "elucidation",
         "light",
         "fire"
       ],
       "sections": {
-        "Summary": "The Sun shining over a spinning woman, representing illumination and passion.",
-        "Reversed": "Fire, hot, heat, heat up, cook, heating, spark, ray of light, flow, inflammation, flame, blaze, burn, fires, meteors, lightning, thunderbolt, storm, electricity, St. Elmo's fire, ardor, embrace, fire of love, passion, light up, enflame, internal fire, magnetism, apple of discord.",
-        "Interpretation": "Brightening, clearing, explanation, development, instruction, interpretation, analysis, opening, discovery, revelation, clarity, elucidation, light, fire, sun, sky and earth, temple of heat."
+        "Also called": "The Sun",
+        "The card": "A sun with a red mask, twisting horns and gold-spiral cheeks radiates gold, black, red and green rays; a masked woman sits below on a decorative platform spinning with a distaff.",
+        "Upright meaning (Etteilla system)": "Brightening, clearing, explanation, development, instruction, interpretation, analysis, opening, discovery, revelation, clarity, elucidation, light, fire, sun, sky and earth, temple of heat.",
+        "Reversed meaning (Etteilla system)": "Fire, hot, heat, heat up, cook, heating, spark, ray of light, flow, inflammation, flame, blaze, burn, fires, meteors, lightning, thunderbolt, storm, electricity, St. Elmo's fire, ardor, embrace, fire of love, passion, light up, enflame, internal fire, magnetism, apple of discord."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1_6UpzLZ_Wb_iaS18BUu8BkjTGPRwx59F",
       "metadata": {
@@ -712,7 +931,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Sun",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -721,16 +942,26 @@
       "sort_order": 19,
       "category": "trump",
       "keywords": [
-        "voyage",
+        "Voyage",
         "pilgrimage",
+        "peregrination",
+        "tour",
+        "emigration",
+        "transmigration",
+        "change of scenery",
         "movement",
-        "journey",
-        "earth"
+        "steps",
+        "walking",
+        "running",
+        "rotation",
+        "circulation",
+        "route"
       ],
       "sections": {
-        "Summary": "Mercury-Harlequin atop a globe of four elements, representing travel and the material world.",
-        "Reversed": "Earth, matter, cold, thick, mud, sludge, lime, raw material, land, leaf, virgin earth, rural, pastures, orchards, fields, vineyards, terrain, landscape, world, state, realm, countries, regions, nearby, places, site, local, reptiles, quadrupeds, aspect, constancy, stagnation, banks, shore, beach, coasts, reef, rock, plains, mountains, hill, valley.",
-        "Interpretation": "Voyage, pilgrimage, peregrination, tour, emigration, transmigration, change of scenery, movement, steps, walking, running, rotation, circulation, route, reroute, change course, incursion, flight, escape."
+        "Also called": "The World",
+        "The card": "A Harlequin stands atop a globe in a winged helmet and winged slippers, holding a caduceus and a cross-topped globe; the globe's quadrants show clouds, waves, buildings and flames.",
+        "Upright meaning (Etteilla system)": "Voyage, pilgrimage, peregrination, tour, emigration, transmigration, change of scenery, movement, steps, walking, running, rotation, circulation, route, reroute, change course, incursion, flight, escape.",
+        "Reversed meaning (Etteilla system)": "Earth, matter, cold, thick, mud, sludge, lime, raw material, land, leaf, virgin earth, rural, pastures, orchards, fields, vineyards, terrain, landscape, world, state, realm, countries, regions, nearby, places, site, local, reptiles, quadrupeds, aspect, constancy, stagnation, banks, shore, beach, coasts, reef, rock, plains, mountains, hill, valley."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1N1_xquii7FI3QBLgfFnG4M8xUcVtGpFC",
       "metadata": {
@@ -747,7 +978,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The World",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -756,16 +989,26 @@
       "sort_order": 20,
       "category": "trump",
       "keywords": [
-        "judgement",
+        "Judgement",
+        "true judgement",
+        "good judgement",
+        "sane judgement",
+        "fair judgement",
         "discernment",
         "intelligence",
         "reason",
-        "understanding"
+        "understanding",
+        "conception",
+        "view",
+        "thought",
+        "comparison",
+        "deliberation"
       ],
       "sections": {
-        "Summary": "An angel Harlequin with trumpet over Commedia characters, representing judgement and decision.",
-        "Reversed": "Judgement, decision, decree, ruling, legal outcome, arbitration, pacification, weak judgement, weak spirit, pusillanimity, injustice, madness.",
-        "Interpretation": "Judgement, true judgement, good judgement, sane judgement, fair judgement, discernment, intelligence, reason, understanding, conception, view, thought, comparison, deliberation, opinion, feeling, false judgement, last judgement."
+        "Also called": "The Angel, Judgement",
+        "The card": "A winged Harlequin blowing a trumpet rises through the air with a halo-like circular hat; below stand three masked Commedia dell'Arte characters — Colombina, Pierrot in white and bearded Pantalon.",
+        "Upright meaning (Etteilla system)": "Judgement, true judgement, good judgement, sane judgement, fair judgement, discernment, intelligence, reason, understanding, conception, view, thought, comparison, deliberation, opinion, feeling, false judgement, last judgement.",
+        "Reversed meaning (Etteilla system)": "Judgement, decision, decree, ruling, legal outcome, arbitration, pacification, weak judgement, weak spirit, pusillanimity, injustice, madness."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1Gigtq5pomnVkIc3OoH6qg8pGrkqxrmWo",
       "metadata": {
@@ -782,7 +1025,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "The Angel, Judgement",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -791,16 +1036,26 @@
       "sort_order": 21,
       "category": "suit-wands",
       "keywords": [
-        "country man",
+        "Man of the country",
+        "country-dweller",
+        "rustic",
+        "villager",
+        "peasant",
+        "redneck",
         "farmer",
-        "honest",
-        "integrity",
-        "rural"
+        "plough-man",
+        "grower",
+        "agriculture",
+        "cultivation",
+        "rural",
+        "honest man",
+        "conscience"
       ],
       "sections": {
-        "Summary": "A rustic king on his throne, representing country life, honesty, and gentle severity.",
-        "Reversed": "Good and severe man, indulgent severity, leniency, indulgence, kindness, tolerance, condescension, his bark is worse than his bite.",
-        "Interpretation": "Man of the country, country-dweller, rustic, villager, peasant, redneck, farmer, plough-man, grower, agriculture, cultivation, rural, honest man, conscience, integrity, probity."
+        "Also called": "King of Batons/Wands",
+        "The card": "The King sits at the edge of his throne, in a brown fox-like mask and clothing patterned with apples and pine-bark sleeves, holding a baton topped by a pinecone and resting a hand on a shield reading 'Arlecchino.'",
+        "Upright meaning (Etteilla system)": "Man of the country, country-dweller, rustic, villager, peasant, redneck, farmer, plough-man, grower, agriculture, cultivation, rural, honest man, conscience, integrity, probity.",
+        "Reversed meaning (Etteilla system)": "Good and severe man, indulgent severity, leniency, indulgence, kindness, tolerance, condescension, 'his bark is worse than his bite.'"
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1VLDM-ny1MhC2u-p54ywL472rtyb8fsFk",
       "metadata": {
@@ -822,7 +1077,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "King of Batons/Wands",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -831,16 +1088,23 @@
       "sort_order": 22,
       "category": "suit-wands",
       "keywords": [
-        "country woman",
+        "Woman of the country",
+        "woman of the woods",
         "craftswoman",
-        "honest",
+        "thrifty housekeeper",
+        "hostess",
+        "honest woman",
+        "honesty",
         "honor",
-        "civility"
+        "civility",
+        "politeness",
+        "good manners"
       ],
       "sections": {
-        "Summary": "A woodland queen with acorn baton, representing rural virtue and charitable goodness.",
-        "Reversed": "Good woman, goodness, excellence, obliging, helpful, good deed, service, charity, alms, favor, obligation.",
-        "Interpretation": "Woman of the country, woman of the woods, craftswoman, thrifty housekeeper, hostess, honest woman, honesty, honor, civility, politeness, good manners."
+        "Also called": "Queen of Batons/Wands",
+        "The card": "In profile facing left, holding a baton topped with an acorn and an oak-leaf shield, wearing a winged leafed crown, Green Man epaulets and a brown mask with red and green foliage.",
+        "Upright meaning (Etteilla system)": "Woman of the country, woman of the woods, craftswoman, thrifty housekeeper, hostess, honest woman, honesty, honor, civility, politeness, good manners.",
+        "Reversed meaning (Etteilla system)": "Good woman, goodness, excellence, obliging, helpful, good deed, service, charity, alms, favor, obligation."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=12l8yht8Nwz9fOTY2NX8ADRNO-iLDerBs",
       "metadata": {
@@ -862,7 +1126,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Queen of Batons/Wands",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -871,16 +1137,26 @@
       "sort_order": 23,
       "category": "suit-wands",
       "keywords": [
-        "departure",
+        "Departure",
+        "to leave",
         "movement",
+        "transfer",
         "distance",
+        "remoteness",
+        "sending away",
         "absence",
-        "flight"
+        "abandonment",
+        "desertion",
+        "change",
+        "flight",
+        "escape",
+        "evasion"
       ],
       "sections": {
-        "Summary": "A knight looking back from his horse, representing departure, separation, and change.",
-        "Reversed": "Disunity, quarrel, rupture, disagreement, squabble, division, part, separation, partition, faction, party, break, cut off, fracture, discontinuity, interruption.",
-        "Interpretation": "Departure, to leave, movement, transfer, distance, remoteness, sending away, absence, abandonment, desertion, change, flight, escape, evasion, transmigration, emigration, transposition, translation, transplantation."
+        "Also called": "Knight of Batons/Wands",
+        "The card": "A mounted knight holds a thick baton topped with an acorn against his shoulder; both rider and horse wear large feathers, the horse walking right but turning its head left with the knight.",
+        "Upright meaning (Etteilla system)": "Departure, to leave, movement, transfer, distance, remoteness, sending away, absence, abandonment, desertion, change, flight, escape, evasion, transmigration, emigration, transposition, translation, transplantation.",
+        "Reversed meaning (Etteilla system)": "Disunity, quarrel, rupture, disagreement, squabble, division, part, separation, partition, faction, party, break, cut off, fracture, discontinuity, interruption."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=18AF0hPVdVvZvKkYSR5C0pFNCyM8u3ixr",
       "metadata": {
@@ -902,7 +1178,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Knight of Batons/Wands",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -911,16 +1189,26 @@
       "sort_order": 24,
       "category": "suit-wands",
       "keywords": [
-        "stranger",
+        "Stranger",
         "foreigner",
+        "strange",
         "unusual",
+        "rare",
+        "uncommon",
+        "unaccustomed",
+        "unknown",
+        "unheard of",
+        "incredible",
         "extraordinary",
-        "news"
+        "surprising",
+        "admirable",
+        "marvelous"
       ],
       "sections": {
-        "Summary": "A young page with autumn leaves, representing the strange, miraculous, and news from afar.",
-        "Reversed": "News, announcement, notice, warning, admonition, education, instruction, teaching, lesson, view, opinion, notions, anecdotes, chronicle, history, story, tales, fables.",
-        "Interpretation": "Stranger, foreigner, strange, unusual, rare, uncommon, unaccustomed, unknown, unheard of, incredible, extraordinary, surprising, admirable, marvelous, prodigy, miracle, episode, digression, anonymous."
+        "Also called": "Page/Valet of Batons/Wands",
+        "The card": "A figure stands with hand on hip, holding a baton and looking over his shoulder, in a black mask and tall red leaf-trimmed hat, leaning on a shield with a cross and acorns.",
+        "Upright meaning (Etteilla system)": "Stranger, foreigner, strange, unusual, rare, uncommon, unaccustomed, unknown, unheard of, incredible, extraordinary, surprising, admirable, marvelous, prodigy, miracle, episode, digression, anonymous.",
+        "Reversed meaning (Etteilla system)": "News, announcement, notice, warning, admonition, education, instruction, teaching, lesson, view, opinion, notions, anecdotes, chronicle, history, story, tales, fables."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1T7RenFYBqutbMvHv9-dMqp4UIKO2t7Xb",
       "metadata": {
@@ -942,7 +1230,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Page/Valet of Batons/Wands",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -951,16 +1241,26 @@
       "sort_order": 25,
       "category": "suit-wands",
       "keywords": [
-        "birth",
+        "Birth",
+        "nativity",
         "origin",
         "creation",
+        "source",
+        "spring",
         "beginning",
-        "family"
+        "principle",
+        "primacy",
+        "first-fruits",
+        "extraction",
+        "race",
+        "family",
+        "house"
       ],
       "sections": {
-        "Summary": "A crowned baton emerging from a hand, representing birth, origins, and new beginnings.",
-        "Reversed": "Fall, cascade, decline, descent, waste away, diminishment, dissipation, collapse, bankruptcy, ruin, destruction, demolition, damage, ravage, fault, error, mistake, abatement, dejection, despondency, discouragement, perdition, abyss, gulf, precipice, to perish, to fall, to wane, to break.",
-        "Interpretation": "Birth, nativity, origin, creation, source, spring, beginning, principle, primacy, first-fruits, extraction, race, family, house, line of descent, descendant, opportunity, occasion, cause, reason, presage, sign."
+        "Also called": "Ace of Batons/Wands",
+        "The card": "A green-gloved hand grasps a crowned baton with diamond patterning; the crown bears leaf-shaped points with falling red roses, leaves surround the arm, suns in both upper corners.",
+        "Upright meaning (Etteilla system)": "Birth, nativity, origin, creation, source, spring, beginning, principle, primacy, first-fruits, extraction, race, family, house, line of descent, descendant, opportunity, occasion, cause, reason, presage, sign.",
+        "Reversed meaning (Etteilla system)": "Fall, cascade, decline, descent, waste away, diminishment, dissipation, collapse, bankruptcy, ruin, destruction, demolition, damage, ravage, fault, error, mistake, abatement, dejection, despondency, discouragement, perdition, abyss, gulf, precipice, to perish, to fall, to wane, to break."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1zXmYe11jkXi6MVGZdP7n-p_Rb1SSSGiw",
       "metadata": {
@@ -982,7 +1282,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Ace of Batons/Wands",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -991,16 +1293,26 @@
       "sort_order": 26,
       "category": "suit-wands",
       "keywords": [
-        "treason",
+        "Treason",
+        "disloyalty",
         "betrayal",
+        "infidelity",
         "conspiracy",
         "corruption",
-        "deceit"
+        "malpractice",
+        "wrongdoing",
+        "crime",
+        "subversion",
+        "deceit",
+        "dissimulation",
+        "hypocrisy",
+        "duplicity"
       ],
       "sections": {
-        "Summary": "Ten crossed batons in an X pattern, representing treachery or hidden wealth.",
-        "Reversed": "Gold, wealth, opulence, sumptuousness, magnificence, radiance, luster, luxury, abundance, goods.",
-        "Interpretation": "Treason, disloyalty, betrayal, infidelity, conspiracy, corruption, malpractice, wrongdoing, crime, subversion, deceit, dissimulation, hypocrisy, duplicity, faithlessness."
+        "Also called": "Ten of Batons/Wands",
+        "The card": "Two sets of four batons arranged diagonally form interlocking X and diamond patterns, two brightly colored batons crossing through the center vertically and horizontally.",
+        "Upright meaning (Etteilla system)": "Treason, disloyalty, betrayal, infidelity, conspiracy, corruption, malpractice, wrongdoing, crime, subversion, deceit, dissimulation, hypocrisy, duplicity, faithlessness.",
+        "Reversed meaning (Etteilla system)": "Gold, wealth, opulence, sumptuousness, magnificence, radiance, luster, luxury, abundance, goods."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1LKIhNIXNsGc6g4WP5j117E9DAHmHD6Q2",
       "metadata": {
@@ -1022,7 +1334,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Ten of Batons/Wands",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1031,16 +1345,24 @@
       "sort_order": 27,
       "category": "suit-wands",
       "keywords": [
+        "Slow-down",
         "delay",
+        "putting-back",
         "tardiness",
+        "dismissal",
         "suspension",
+        "removal",
+        "send away",
+        "drawing out",
+        "lengthening",
         "slowness",
-        "initiative"
+        "reduce speed"
       ],
       "sections": {
-        "Summary": "Nine crossed batons, representing delays and obstacles or bold enterprise.",
-        "Reversed": "Business, initiative, to begin, to undertake, to start, to usurp, to seize, audacity, daring, temerity, boldness, hardness, imprudence, enterprising, resourceful, keen, adventurous, audacious, risk-taking.",
-        "Interpretation": "Slow-down, delay, putting-back, tardiness, dismissal, suspension, removal, send away, drawing out, lengthening, slowness, reduce speed."
+        "Also called": "Nine of Batons/Wands",
+        "The card": "Two sets of four batons in an interlocking X pattern with a central diamond, a blue baton crossing vertically crowned with an acorn and a pinecone.",
+        "Upright meaning (Etteilla system)": "Slow-down, delay, putting-back, tardiness, dismissal, suspension, removal, send away, drawing out, lengthening, slowness, reduce speed.",
+        "Reversed meaning (Etteilla system)": "Business, initiative, to begin, to undertake, to start, to usurp, to seize, audacity, daring, temerity, boldness, hardness, imprudence, enterprising, resourceful, keen, adventurous, audacious, risk-taking."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=136Ilw6mZJqPMV5DIeoxRslp1LTBmnyNl",
       "metadata": {
@@ -1062,7 +1384,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Nine of Batons/Wands",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1071,16 +1395,26 @@
       "sort_order": 28,
       "category": "suit-wands",
       "keywords": [
-        "countryside",
+        "Countryside",
+        "land",
         "agriculture",
+        "farming",
+        "cultivation",
+        "tillage",
+        "properties",
+        "building",
+        "farm",
+        "sheepfold",
         "garden",
-        "peace",
-        "pleasure"
+        "orchard",
+        "pasture",
+        "meadow"
       ],
       "sections": {
-        "Summary": "Eight crossed batons, representing rural tranquility or grief and melancholy.",
-        "Reversed": "Grief, sadness, affliction, displeasure, pain, desolation, hopelessness, bleakness, mortification, mood, spirits, tantrum, melancholy, vapors, somber ideas.",
-        "Interpretation": "Countryside, land, agriculture, farming, cultivation, tillage, properties, building, farm, sheepfold, garden, orchard, pasture, meadow, woods, grove, thicket, shade, forest, pleasure, entertainment, amusement, pastime, recreation, merrymaking, peace, calm, tranquility, innocence, rural or pastoral life."
+        "Also called": "Eight of Batons/Wands",
+        "The card": "Two sets of four batons crossing in an X formation, creating an interlocking diamond pattern, each baton topped with a black diamond.",
+        "Upright meaning (Etteilla system)": "Countryside, land, agriculture, farming, cultivation, tillage, properties, building, farm, sheepfold, garden, orchard, pasture, meadow, woods, grove, thicket, shade, forest, pleasure, entertainment, amusement, pastime, recreation, merrymaking, peace, calm tranquility, innocence, rural or pastoral life.",
+        "Reversed meaning (Etteilla system)": "Grief, sadness, affliction, displeasure, pain, desolation, hopelessness, bleakness, mortification, mood, spirits, tantrum, melancholy, vapors, somber ideas."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1jGweLfVrNAo_7Zv7JL4MwJ-magBU0CrJ",
       "metadata": {
@@ -1102,7 +1436,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Eight of Batons/Wands",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1111,16 +1447,26 @@
       "sort_order": 29,
       "category": "suit-wands",
       "keywords": [
-        "talk",
+        "Talk",
         "speech",
+        "interview",
+        "colloquy",
         "conversation",
-        "negotiation",
+        "lecture",
+        "dissertation",
+        "deliberation",
+        "discussion",
+        "word",
+        "pronunciation",
+        "grammar",
+        "dictionary",
         "language"
       ],
       "sections": {
-        "Summary": "Seven crossed batons, representing communication, commerce, and indecision.",
-        "Reversed": "Indecision, irresoluteness, uncertainty, perplexity, inconstancy, frivolity, fickleness, variety, diversity, variation, to hesitate, to dither, hesitation, to be unstable, to vacillate.",
-        "Interpretation": "Talk, speech, interview, colloquy, conversation, lecture, dissertation, deliberation, discussion, word, pronunciation, grammar, dictionary, language, idiom, jargon, dialect, negotiation, deal, exchange, measure, commerce, trafficking, correspondence, to speak, to say, to proclaim, to confer, to gossip, to chat, to converse, chatter, chitchat."
+        "Also called": "Seven of Batons/Wands",
+        "The card": "Six batons arranged diagonally in interlocking X patterns with a vertical blue baton topped with an acorn and bottomed with a pinecone, forming a centered diamond.",
+        "Upright meaning (Etteilla system)": "Talk, speech, interview, colloquy, conversation, lecture, dissertation, deliberation, discussion, word, pronunciation, grammar, dictionary, language, idiom, jargon, dialect, negotiation, deal, exchange, measure, commerce, trafficking, correspondence, to speak, to say, to proclaim, to confer, to gossip, to chat, to converse, chatter, chitchat.",
+        "Reversed meaning (Etteilla system)": "Indecision, irresoluteness, uncertainty, perplexity, inconstancy, frivolity, fickleness, variety, diversity, variation, to hesitate, to dither, hesitation, to be unstable, to vacillate."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1_DgD5R4kgzkr42gdSirMRj4B-wkydN-T",
       "metadata": {
@@ -1142,7 +1488,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Seven of Batons/Wands",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1151,16 +1499,26 @@
       "sort_order": 30,
       "category": "suit-wands",
       "keywords": [
+        "Domestic",
         "servant",
+        "valet",
+        "lackey",
+        "maidservant",
+        "mercenary",
+        "inferior",
+        "slave",
         "messenger",
-        "domestic",
+        "agent",
+        "message",
+        "announcement",
         "housework",
-        "waiting"
+        "home"
       ],
       "sections": {
-        "Summary": "Six crossed batons, representing service, messages, and patient expectation.",
-        "Reversed": "Wait, awaiting, expectation, expectancy, confidence, foresight, fear, apprehensiveness.",
-        "Interpretation": "Domestic, servant, valet, lackey, maidservant, mercenary, inferior, slave, messenger, agent, message, announcement, housework, home, servitude."
+        "Also called": "Six of Batons/Wands",
+        "The card": "Two sets of three batons arranged diagonally to form an interlocking X with a central diamond, each topped with a black diamond.",
+        "Upright meaning (Etteilla system)": "Domestic, servant, valet, lackey, maidservant, mercenary, inferior, slave, messenger, agent, message, announcement, housework, home, servitude.",
+        "Reversed meaning (Etteilla system)": "Wait, awaiting, expectation, expectancy, confidence, foresight, fear, apprehensiveness."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1WfpJdDmLjFkuMG3WNo0V_6dzR9fFrHrx",
       "metadata": {
@@ -1182,7 +1540,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Six of Batons/Wands",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1191,16 +1551,19 @@
       "sort_order": 31,
       "category": "suit-cups",
       "keywords": [
-        "blond man",
+        "Blond man",
         "probity",
         "equity",
         "integrity",
+        "principles",
+        "scientist",
         "artist"
       ],
       "sections": {
-        "Summary": "A king in starry robes with goblet, representing integrity or corruption.",
-        "Reversed": "Man of position, man of a high rank, dishonest man, scam, roguery, extortion, pillage, theft, brigand, rascal, corruption, waste, profligacy, squandering.",
-        "Interpretation": "Blond man, probity, equity, integrity, principles, scientist, artist."
+        "Also called": "King of Cups",
+        "The card": "A figure rests a gloved finger on a goblet's hexagonal rim, seated on a throne with one foot raised, in a blue-domed crown with pink stars and a robe with crescent moons and stars over a diamond dress.",
+        "Upright meaning (Etteilla system)": "Blond man, probity, equity, integrity, principles, scientist, artist.",
+        "Reversed meaning (Etteilla system)": "Man of position, man of a high rank, dishonest man, scam, roguery, extortion, pillage, theft, brigand, rascal, corruption, waste, profligacy, squandering."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1mcZvqV40c2_55pjOiQRWEGRHkDgo4MHB",
       "metadata": {
@@ -1222,7 +1585,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "King of Cups",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1231,16 +1596,21 @@
       "sort_order": 32,
       "category": "suit-cups",
       "keywords": [
-        "blonde woman",
-        "honest",
+        "Blonde woman",
+        "honest woman",
         "virtue",
         "ethics",
-        "wisdom"
+        "values",
+        "wisdom",
+        "honesty",
+        "trustworthiness",
+        "expert"
       ],
       "sections": {
-        "Summary": "A queen in moon-and-star cloak with goblet, representing virtue or scandal.",
-        "Reversed": "Woman of position, woman of a distinguished rank, dishonest woman, vice, dishonesty, depravity, debauchery, corruption, scandal.",
-        "Interpretation": "Blonde woman, honest woman, virtue, ethics, values, wisdom, honesty, trustworthiness, expert."
+        "Also called": "Queen of Cups",
+        "The card": "The Queen is seated holding a goblet, in a diamond dress of pink, red, white and green with a star-and-crescent cloak fastened by a pale blue heart medallion.",
+        "Upright meaning (Etteilla system)": "Blonde woman, honest woman, virtue, ethics, values, wisdom, honesty, trustworthiness, expert.",
+        "Reversed meaning (Etteilla system)": "Woman of position, woman of a distinguished rank, dishonest woman, vice, dishonesty, depravity, debauchery, corruption, scandal."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1ko0DTqHpzs5hI-VOAfI2m-W3a2b0pPEL",
       "metadata": {
@@ -1262,7 +1632,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Queen of Cups",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1271,16 +1643,26 @@
       "sort_order": 33,
       "category": "suit-cups",
       "keywords": [
-        "arrival",
+        "Arrival",
+        "coming",
         "approach",
+        "advent",
         "agreement",
         "reception",
-        "meeting"
+        "compliance",
+        "entrance",
+        "get closer",
+        "squeeze together",
+        "crowd",
+        "coming together",
+        "meeting",
+        "conformity"
       ],
       "sections": {
-        "Summary": "A knight on golden horse with goblet, representing arrival or trickery.",
-        "Reversed": "Scam, trickery, villainy, fraud, cheating, swindling, ruse, artifice, subtlety, delicacy, nuance, dexterity, suppleness.",
-        "Interpretation": "Arrival, coming, approach, advent, agreement, reception, compliance, entrance, get closer, squeeze together, crowd, coming together, meeting, conformity, approximation, accessory."
+        "Also called": "Knight of Cups",
+        "The card": "The Knight in profile on a golden horse points forward holding a goblet, in a crescent-moon helmet with feathers and a star-and-diamond jacket; the horse bears matching star and moon ribbons.",
+        "Upright meaning (Etteilla system)": "Arrival, coming, approach, advent, agreement, reception, compliance, entrance, get closer, squeeze together, crowd, coming together, meeting, conformity, approximation, accessory.",
+        "Reversed meaning (Etteilla system)": "Scam, trickery, villainy, fraud, cheating, swindling, ruse, artifice, subtlety, delicacy, nuance, dexterity, suppleness."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1qCU68gPSnMKWGrebU4bdcVb7ZD0tmfgv",
       "metadata": {
@@ -1302,7 +1684,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Knight of Cups",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1311,16 +1695,26 @@
       "sort_order": 34,
       "category": "suit-cups",
       "keywords": [
-        "blonde girl",
+        "Blonde girl",
+        "studious",
         "study",
         "diligence",
-        "meditation",
-        "attraction"
+        "application",
+        "work",
+        "activity",
+        "occupation",
+        "hobby",
+        "trade",
+        "employment",
+        "observation",
+        "reflection",
+        "consideration"
       ],
       "sections": {
-        "Summary": "A maid in stars and moons holding a goblet, representing study or seduction.",
-        "Reversed": "Liking, soft spot, inclination, slope, tendency, attraction, taste, passion, affection, attachment, friendship, heart, longing, desire, engagement, seduction, invitation, approval, flattery, cajolery, cuddling, fawning, adulation, praise, eulogy, courtier, sycophant, to coax, to tempt, to entice, siren-song.",
-        "Interpretation": "Blonde girl, studious, study, diligence, application, work, activity, occupation, hobby, trade, employment, observation, reflection, consideration, meditation, contemplation."
+        "Also called": "Maid of Cups (Knave/Page of Cups)",
+        "The card": "The Maid of Cups walks forward holding up a goblet, in a star-and-crescent dress with a long train, a round blue hat with a crescent moon and feathers, and a black mask.",
+        "Upright meaning (Etteilla system)": "Blonde girl, studious, study, diligence, application, work, activity, occupation, hobby, trade, employment, observation, reflection, consideration, meditation, contemplation.",
+        "Reversed meaning (Etteilla system)": "Liking, soft spot, inclination, slope, tendency, attraction, taste, passion, affection, attachment, friendship, heart, longing, desire, engagement, seduction, invitation, approval, flattery, cajolery, cuddling, fawning, adulation, praise, eulogy, courtier, sycophant, to coax, to tempt, to entice, siren-song."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=19mfEVzVcIvknsB0QP1VWNhLsiKkQUCjV",
       "metadata": {
@@ -1342,7 +1736,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Maid of Cups (Knave/Page of Cups)",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1351,16 +1747,26 @@
       "sort_order": 35,
       "category": "suit-cups",
       "keywords": [
-        "table",
+        "Table",
         "meal",
+        "treat to a meal",
+        "food",
+        "nutrients",
+        "nutrition",
         "feast",
+        "gala",
+        "invitation",
+        "guests",
+        "host",
+        "hotel",
         "hospitality",
-        "change"
+        "inn"
       ],
       "sections": {
-        "Summary": "A crowned cup flanked by birds, representing nourishment, hospitality, and transformation.",
-        "Reversed": "Change, mutation, permutation, transmutation, alternation, vicissitude, inconstancy, frivolity, variety, variation, exchange, swap, purchase, sale, market, trade, convention, metamorphosis, diversity, versatility, reversal, revolution, reversion, translation, interpretation, reading.",
-        "Interpretation": "Table, meal, treat to a meal, food, nutrients, nutrition, feast, gala, invitation, guests, host, hotel, hospitality, inn, tavern, abundance, tablets, portfolio, desk, altar, catalogue, data."
+        "Also called": "Ace of Cups",
+        "The card": "A pink cup with a gold vine design and hexagonal rim is flanked by two pointy-beaked birds with diamond breasts; above floats a crown of moons and suns with a central letter A and hanging red berries.",
+        "Upright meaning (Etteilla system)": "Table, meal, treat to a meal, food, nutrients, nutrition, feast, gala, invitation, guests, host, hotel, hospitality, inn, tavern, abundance, tablets, portfolio, desk, altar, catalogue, data.",
+        "Reversed meaning (Etteilla system)": "Change, mutation, permutation, transmutation, alternation, vicissitude, inconstancy, frivolity, variety, variation, exchange, swap, purchase, sale, market, trade, convention, metamorphosis, diversity, versatility, reversal, revolution, reversion, translation, interpretation, reading."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1Qmdwqfp3LAH4hcba0QSq6qdPf7LkqrYi",
       "metadata": {
@@ -1382,7 +1788,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Ace of Cups",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1391,16 +1799,25 @@
       "sort_order": 36,
       "category": "suit-cups",
       "keywords": [
-        "town",
+        "Town",
         "city",
         "homeland",
+        "country",
+        "village",
+        "place",
+        "site",
+        "location",
         "home",
-        "heritage"
+        "abode",
+        "dwelling",
+        "residence",
+        "citizens"
       ],
       "sections": {
-        "Summary": "Ten cups with flowers, representing home, community, and inheritance.",
-        "Reversed": "Heritage, inheritance, estate, legacy, holdings, gift, donation, dowry, jointure, provision, grant, legitimate, transmission, testament.",
-        "Interpretation": "Town, city, homeland, country, village, place, site, location, home, abode, dwelling, residence, citizens."
+        "Also called": "Ten of Cups",
+        "The card": "Two columns of four cups flank two central cups; each cup has pink and green scrollwork, a blue orb and a three-sided crescent-moon base, the center cups supporting pale blue five-petaled flowers.",
+        "Upright meaning (Etteilla system)": "Town, city, homeland, country, village, place, site, location, home, abode, dwelling, residence, citizens.",
+        "Reversed meaning (Etteilla system)": "Heritage, inheritance, estate, legacy, holdings, gift, donation, dowry, jointure, provision, grant, legitimate, transmission, testament."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1i9lBsFAVnx4V2PgL_p3L9PRTMOj9Kp6o",
       "metadata": {
@@ -1422,7 +1839,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Ten of Cups",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1431,16 +1850,26 @@
       "sort_order": 37,
       "category": "suit-cups",
       "keywords": [
-        "victory",
+        "Victory",
         "success",
-        "triumph",
         "accomplishment",
-        "boredom"
+        "advantage",
+        "gain",
+        "pomp",
+        "triumph",
+        "trophy",
+        "majesty",
+        "spectacle",
+        "parade",
+        "apparatus",
+        "gear",
+        "winner"
       ],
       "sections": {
-        "Summary": "Nine cups in rows, representing victory and triumph or displeasure and worry.",
-        "Reversed": "Boredom, displeasure, discontentment, disgust, aversion, worry, spiritual anguish, grief, affliction, difficult, annoying, vexing, unpleasant, distressing, causing grief, disappointing.",
-        "Interpretation": "Victory, success, accomplishment, advantage, gain, pomp, triumph, trophy, majesty, spectacle, parade, apparatus, gear, winner, upper hand, lead."
+        "Also called": "Nine of Cups",
+        "The card": "Three rows of three cups; each cup has pink and green scrollwork, a blue orb and a three-sided base with an upward-facing crescent moon, with a black-and-gold triangle rim and dark red interior.",
+        "Upright meaning (Etteilla system)": "Victory, success, accomplishment, advantage, gain, pomp, triumph, trophy, majesty, spectacle, parade, apparatus, gear, winner, upper hand, lead.",
+        "Reversed meaning (Etteilla system)": "Boredom, displeasure, discontentment, disgust, aversion, worry, spiritual anguish, grief, affliction, difficult, annoying, vexing, unpleasant, distressing, causing grief, disappointing."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1icglCnCvK60lB_Tr9okqc-C3WgVWNtxa",
       "metadata": {
@@ -1462,7 +1891,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Nine of Cups",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1471,16 +1902,22 @@
       "sort_order": 38,
       "category": "suit-cups",
       "keywords": [
-        "blond boy",
+        "Blond boy",
+        "honest boy",
+        "reserved boy",
         "honor",
+        "discretion",
         "modesty",
-        "sweetness",
-        "joy"
+        "restraint",
+        "timidity",
+        "apprehension",
+        "sweetness"
       ],
       "sections": {
-        "Summary": "Eight cups arranged in rows, representing modest honor or public celebration.",
-        "Reversed": "Satisfaction, pleasure, happiness, contentment, gaiety, joy, enthusiasm, rejoicing, entertainment, party, weekend, excuse, compensation, reparation, exoneration, public joy.",
-        "Interpretation": "Blond boy, honest boy, reserved boy, honor, discretion, modesty, restraint, timidity, apprehension, sweetness."
+        "Also called": "Eight of Cups",
+        "The card": "Three rows of cups (two, then three, then three), each with pink and green scrollwork, a blue orb and a crescent-moon base, black-and-gold triangle rim and dark red interior.",
+        "Upright meaning (Etteilla system)": "Blond boy, honest boy, reserved boy, honor, discretion, modesty, restraint, timidity, apprehension, sweetness.",
+        "Reversed meaning (Etteilla system)": "Satisfaction, pleasure, happiness, contentment, gaiety, joy, enthusiasm, rejoicing, entertainment, party, weekend, excuse, compensation, reparation, exoneration, public joy."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1RaWppAFUA7ytw6FR4AaU8S2GjDcMdhY-",
       "metadata": {
@@ -1502,7 +1939,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Eight of Cups",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1511,16 +1950,26 @@
       "sort_order": 39,
       "category": "suit-cups",
       "keywords": [
-        "thought",
+        "Thought",
         "mind",
         "soul",
+        "spirit",
+        "intelligence",
         "imagination",
-        "desire"
+        "understanding",
+        "idea",
+        "memory",
+        "conception",
+        "opinion",
+        "feeling",
+        "meditation",
+        "contemplation"
       ],
       "sections": {
-        "Summary": "Seven cups in rows, representing thought, imagination, and inner desires.",
-        "Reversed": "Desires, wish, vow, will, drive, urge, yearning, covetousness, cupidity, lust, jealousy, passion, pipe dream, appetite.",
-        "Interpretation": "Thought, mind, soul, spirit, intelligence, imagination, understanding, idea, memory, conception, opinion, feeling, meditation, contemplation, reflection, deliberation."
+        "Also called": "Seven of Cups",
+        "The card": "Cups arranged in a pyramidal pattern (one, then three, then three), each with pink and green scroll ornaments flanking a blue orb and a crescent-moon base.",
+        "Upright meaning (Etteilla system)": "Thought, mind, soul, spirit, intelligence, imagination, understanding, idea, memory, conception, opinion, feeling, meditation, contemplation, reflection, deliberation.",
+        "Reversed meaning (Etteilla system)": "Desires, wish, vow, will, drive, urge, yearning, covetousness, cupidity, lust, jealousy, passion, pipe dream, appetite."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1hC_iYWuVuREHHJ1WjmSr9duyOOAKY-px",
       "metadata": {
@@ -1542,7 +1991,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Seven of Cups",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1551,16 +2002,26 @@
       "sort_order": 40,
       "category": "suit-cups",
       "keywords": [
-        "the past",
+        "The past",
+        "faded",
+        "withered",
+        "desiccated",
+        "preserved",
+        "gone",
         "formerly",
-        "antiquity",
-        "the future",
-        "tomorrow"
+        "previously",
+        "before",
+        "in older days",
+        "once",
+        "in the past",
+        "old age",
+        "decrepitude"
       ],
       "sections": {
-        "Summary": "Six cups in columns, representing the past or the future.",
-        "Reversed": "The future, after, following, subsequently, later on, looking forward, tomorrow, next time, upcoming, hereafter.",
-        "Interpretation": "The past, faded, withered, desiccated, preserved, gone, formerly, previously, before, in older days, once, in the past, old age, decrepitude, antiquity, antiques."
+        "Also called": "Six of Cups",
+        "The card": "Two columns of three cups, each with pink and green scrollwork, a blue orb and a three-sided crescent-moon base, black-and-gold triangle rim and dark red interior.",
+        "Upright meaning (Etteilla system)": "The past, faded, withered, desiccated, preserved, gone, formerly, previously, before, in older days, once, in the past, old age, decrepitude, antiquity, antiques.",
+        "Reversed meaning (Etteilla system)": "The future, after, following, subsequently, later on, looking forward, tomorrow, next time, upcoming, hereafter."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1HilQDSgC0JAk7YMKDO1KJlmI00uwN5-3",
       "metadata": {
@@ -1582,7 +2043,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Six of Cups",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1591,16 +2054,26 @@
       "sort_order": 41,
       "category": "suit-swords",
       "keywords": [
-        "man of law",
+        "Man of the law",
         "judge",
+        "senator",
         "lawyer",
+        "prosecutor",
+        "jurist",
+        "defense lawyer",
+        "legal scholar",
+        "jurisprudence",
         "doctor",
-        "malice"
+        "physician",
+        "practitioner",
+        "to advise",
+        "consultant"
       ],
       "sections": {
-        "Summary": "A king with serpent chain and sword, representing law and justice or cruelty.",
-        "Reversed": "Mean man, malevolent, malice, perversity, perfidy, crime, cruelty, inhumanity, atrocity.",
-        "Interpretation": "Man of the law, judge, senator, lawyer, prosecutor, jurist, defense lawyer, legal scholar, jurisprudence, doctor, physician, practitioner, to advise, consultant."
+        "Also called": "King of Swords",
+        "The card": "The King sits with one foot forward, holding a tower-emblazoned shield and a blue-bladed sword, in a crown and black mask with green snake-scales and a large gold serpent chain.",
+        "Upright meaning (Etteilla system)": "Man of the law, judge, senator, lawyer, prosecutor, jurist, defense lawyer, legal scholar, jurisprudence, doctor, physician, practitioner, to advise, consultant.",
+        "Reversed meaning (Etteilla system)": "Mean man, malevolent, malice, perversity, perfidy, crime, cruelty, inhumanity, atrocity."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1uQiQF53je6u7TfpSK5MvM-BJXjWj7iKl",
       "metadata": {
@@ -1622,7 +2095,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "King of Swords",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1631,16 +2106,22 @@
       "sort_order": 42,
       "category": "suit-swords",
       "keywords": [
-        "widowhood",
+        "Widowhood",
         "widow",
         "privation",
+        "withdrawal",
         "absence",
-        "malice"
+        "scarcity",
+        "poverty",
+        "indigence",
+        "infertility",
+        "sterility"
       ],
       "sections": {
-        "Summary": "A queen with serpent epaulets and sword, representing loss, absence, or deception.",
-        "Reversed": "Mean woman, malignity, malice, deception, subtlety, artifice, mischief, bigotry, prudery, hypocrisy.",
-        "Interpretation": "Widowhood, widow, privation, withdrawal, absence, scarcity, poverty, indigence, infertility, sterility."
+        "Also called": "Queen of Swords",
+        "The card": "The Queen sits holding a blue-bladed sword with a red vine design, in a gold pointed crown, black mask with red/green swirls, coiled-serpent epaulets and a scaled abdomen.",
+        "Upright meaning (Etteilla system)": "Widowhood, widow, privation, withdrawal, absence, scarcity, poverty, indigence, infertility, sterility.",
+        "Reversed meaning (Etteilla system)": "Mean woman, malignity, malice, deception, subtlety, artifice, mischief, bigotry, prudery, hypocrisy."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1Ii5aKHO2dwzaiRyPk5obs_uuGoapy4Jj",
       "metadata": {
@@ -1662,7 +2143,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Queen of Swords",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1671,16 +2154,26 @@
       "sort_order": 43,
       "category": "suit-swords",
       "keywords": [
-        "military",
+        "Military",
+        "man of the sword",
+        "man-at-arms",
+        "fencing master",
+        "professional assassin",
+        "hunter",
+        "office",
         "soldier",
-        "war",
-        "combat",
-        "courage"
+        "combatant",
+        "enemy",
+        "hanger-on",
+        "briber",
+        "dispute",
+        "war"
       ],
       "sections": {
-        "Summary": "A knight with curved blade on diamond-patterned horse, representing war or ignorance.",
-        "Reversed": "Ignorance, incompetence, ineptitude, stupidity, nonsense, idiocy, imprudence, impertinence.",
-        "Interpretation": "Military, man of the sword, man-at-arms, fencing master, professional assassin, hunter, office, soldier, combatant, enemy, hanger-on, briber, dispute, war, combat, battle, duel, attack, defense, opposition, resistance, hostility, enmity, hate, choler, resentment, destruction, courage, valor, bravery."
+        "Also called": "Knight of Swords",
+        "The card": "The knight rides left on a diamond-patterned horse, wielding a massive curved blade overhead, with a serpent-headed handle and the horse's beaded mane crossed by a golden serpent ribbon.",
+        "Upright meaning (Etteilla system)": "Military, man of the sword, man-at-arms, fencing master, professional assassin, hunter, office, soldier, combatant, enemy, hanger-on, briber, dispute, war, combat, battle, duel, attack, defense, opposition, resistance, hostility, enmity, hate, choler, resentment, destruction, courage, valor, bravery.",
+        "Reversed meaning (Etteilla system)": "Ignorance, incompetence, ineptitude, stupidity, nonsense, idiocy, imprudence, impertinence."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1HTZzW1khi-w7YjqlZyjxapyCBo3RbJfG",
       "metadata": {
@@ -1702,7 +2195,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Knight of Swords",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1711,16 +2206,25 @@
       "sort_order": 44,
       "category": "suit-swords",
       "keywords": [
-        "spy",
+        "Spy",
+        "curious",
         "observer",
+        "searching",
+        "connoisseur",
         "guard",
+        "monitor",
+        "steward",
         "examination",
-        "surprise"
+        "note",
+        "remark",
+        "observations",
+        "annotations"
       ],
       "sections": {
-        "Summary": "A page with Herla shield and sword, representing observation or the unexpected.",
-        "Reversed": "Lack of foresight, unexpectedly, astonishing, surprising, undreamt of, unheard of, fortuitously, suddenly.",
-        "Interpretation": "Spy, curious, observer, searching, connoisseur, guard, monitor, steward, examination, note, remark, observations, annotations."
+        "Also called": "Page of Swords",
+        "The card": "The figure holds a blue sword and a shield marked 'Herla,' in diamond-patterned clothing with a golden serpent belt, a tall purple two-feathered hat and curling spade-design slippers.",
+        "Upright meaning (Etteilla system)": "Spy, curious, observer, searching, connoisseur, guard, monitor, steward, examination, note, remark, observations, annotations.",
+        "Reversed meaning (Etteilla system)": "Lack of foresight, unexpectedly, astonishing, surprising, undreamt of, unheard of, fortuitously, suddenly."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1-JKDI0ZiQJP4cYLP-HxOBS2D2Ah7_OJ5",
       "metadata": {
@@ -1742,7 +2246,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Page of Swords",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1751,16 +2257,26 @@
       "sort_order": 45,
       "category": "suit-swords",
       "keywords": [
-        "extreme",
+        "Extreme",
+        "large",
         "excessive",
+        "over-the-top",
+        "extremely",
+        "passionately",
+        "excessively",
+        "furious",
+        "choleric",
+        "fit of anger",
         "fury",
         "rage",
-        "pregnancy"
+        "quarreling",
+        "choler"
       ],
       "sections": {
-        "Summary": "A crowned serpent-sword, representing extremes, fury, or fertility and conception.",
-        "Reversed": "Pregnancy, engendering, conception, birthing, childbirth, production, composition, fertilization, pollination, increase, augmentation, multiplication.",
-        "Interpretation": "Extreme, large, excessive, over-the-top, extremely, passionately, excessively, furious, choleric, fit of anger, fury, rage, quarreling, choler, vehemence, animosity, transport, impulse, extremity, boundaries, confines, ends, limits, last, last extremity."
+        "Also called": "Ace of Swords",
+        "The card": "A pink-gloved hand holds a sword encircled by a crown; the blade forms a serpent biting itself, the hilt showing a small oval Harlequin portrait, suns in both upper corners.",
+        "Upright meaning (Etteilla system)": "Extreme, large, excessive, over-the-top, extremely, passionately, excessively, furious, choleric, fit of anger, fury, rage, quarreling, choler, vehemence, animosity, transport, impulse, extremity, boundaries, confines, ends, limits, last, last extremity.",
+        "Reversed meaning (Etteilla system)": "Pregnancy, engendering, conception, birthing, childbirth, production, composition, fertilization, pollination, increase, augmentation, multiplication."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1faHlBwuD6x7R2Acas9GLCetmL44syx0R",
       "metadata": {
@@ -1782,7 +2298,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Ace of Swords",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1791,16 +2309,26 @@
       "sort_order": 46,
       "category": "suit-swords",
       "keywords": [
-        "tears",
+        "Tears",
+        "sobs",
+        "whines",
+        "sighs",
+        "moans",
+        "lamentations",
+        "grievances",
+        "afflictions",
         "grief",
         "sadness",
         "pain",
-        "losses"
+        "sorrow",
+        "droplets",
+        "dew"
       ],
       "sections": {
-        "Summary": "Swords in an almond shape with crying Harlequin, representing sorrow and loss.",
-        "Reversed": "Losses, damages, harm, disadvantage, failure, defeat, rout, setback, ruin, theft, abduction, plagiarism, opprobrium, disgrace, waste.",
-        "Interpretation": "Tears, sobs, whines, sighs, moans, lamentations, grievances, afflictions, grief, sadness, pain, sorrow, droplets, dew, condensation, bleeding."
+        "Also called": "Ten of Swords",
+        "The card": "Eight curved swords with black blades and red tips form an almond shape; gold plates at the crossings show a crying Harlequin above and a diamond-patterned tombstone marked 'A' below.",
+        "Upright meaning (Etteilla system)": "Tears, sobs, whines, sighs, moans, lamentations, grievances, afflictions, grief, sadness, pain, sorrow, droplets, dew, condensation, bleeding.",
+        "Reversed meaning (Etteilla system)": "Losses, damages, harm, disadvantage, failure, defeat, rout, setback, ruin, theft, abduction, plagiarism, opprobrium, disgrace, waste."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1Fd4Snm8W04ox3plU0eU99Kphemdfb9bD",
       "metadata": {
@@ -1822,7 +2350,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Ten of Swords",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1831,16 +2361,26 @@
       "sort_order": 47,
       "category": "suit-swords",
       "keywords": [
-        "ecclesiastic",
+        "Ecclesiastic",
+        "apostle",
+        "pope",
+        "cardinal",
+        "bishop",
+        "abbot",
         "priest",
-        "religion",
-        "piety",
-        "mistrust"
+        "monk",
+        "hermit",
+        "nun",
+        "recluse",
+        "anchorite",
+        "vestal",
+        "religious"
       ],
       "sections": {
-        "Summary": "Swords with bishop Harlequin, representing religious devotion or justified suspicion.",
-        "Reversed": "Justifiable mistrust, well-founded suspicion, legitimate fear, mistrust, doubt, misgiving, qualm, timorous conscience, timidity, modesty, shame, conjecture.",
-        "Interpretation": "Ecclesiastic, apostle, pope, cardinal, bishop, abbot, priest, monk, hermit, nun, recluse, anchorite, vestal, religious, piety, devotion, celibate, virginity, cult, religion, temple, church, monastery, convent, hermitage, sanctuary, rite, ceremonies, ritual."
+        "Also called": "Nine of Swords",
+        "The card": "Eight curved swords form an almond shape; the upper gold plate depicts a bishop-costumed Harlequin and the lower a baton-wielding Harlequin looking back, a large diamond-patterned sword crossing down the center.",
+        "Upright meaning (Etteilla system)": "Ecclesiastic, apostle, pope, cardinal, bishop, abbot, priest, monk, hermit, nun, recluse, anchorite, vestal, religious, piety, devotion, celibate, virginity, cult, religion, temple, church, monastery, convent, hermitage, sanctuary, rite, ceremonies, ritual.",
+        "Reversed meaning (Etteilla system)": "Justifiable mistrust, well-founded suspicion, legitimate fear, mistrust, doubt, misgiving, qualm, timorous conscience, timidity, modesty, shame, conjecture."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1yRDG6aUCx0SnceHx_DGmJSuwcl3bCbGf",
       "metadata": {
@@ -1862,7 +2402,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Nine of Swords",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1871,16 +2413,26 @@
       "sort_order": 48,
       "category": "suit-swords",
       "keywords": [
+        "Critical",
         "critical moment",
+        "decisive instant",
+        "difficult position",
+        "delicate circumstance",
         "crisis",
         "examination",
+        "discussion",
+        "research",
+        "inspection",
         "criticism",
-        "accident"
+        "blame",
+        "censure",
+        "disapproval"
       ],
       "sections": {
-        "Summary": "Eight swords in an almond shape, representing crisis, criticism, or unexpected events.",
-        "Reversed": "Incident, difficulty, complication, objection, contestation, unforeseen, unexpected, accident, fortuitous event, adventure, occurrence, destiny, fatality, bad luck, symptom, sign.",
-        "Interpretation": "Critical, critical moment, decisive instant, difficult position, delicate circumstance, crisis, examination, discussion, research, inspection, criticism, blame, censure, disapproval, condemnation, contempt, commentary, annotation, epilogue, analysis."
+        "Also called": "Eight of Swords",
+        "The card": "Eight curved swords in an almond shape with black blades and red tips; the upper plate shows a Harlequin in a bicorne hat, the lower a Harlequin in a conical hat.",
+        "Upright meaning (Etteilla system)": "Critical, critical moment, decisive instant, difficult position, delicate circumstance, crisis, examination, discussion, research, inspection, criticism, blame, censure, disapproval, condemnation, contempt, commentary, annotation, epilogue, analysis.",
+        "Reversed meaning (Etteilla system)": "Incident, difficulty, complication, objection, contestation, unforeseen, unexpected, accident, fortuitous event, adventure, occurrence, destiny, fatality, bad luck, symptom, sign."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=13d4RZglSWduXfgFGP4_op3QLgPxjXGJQ",
       "metadata": {
@@ -1902,7 +2454,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Eight of Swords",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1911,16 +2465,22 @@
       "sort_order": 49,
       "category": "suit-swords",
       "keywords": [
-        "hope",
+        "Hope",
+        "await",
         "expectation",
         "desire",
+        "will",
         "wish",
-        "friendship"
+        "vow",
+        "longing",
+        "taste",
+        "fantasy"
       ],
       "sections": {
-        "Summary": "Seven swords with Harlequin profiles, representing hope and desire or friendship.",
-        "Reversed": "Friendship, attachment, affection, tenderness, benevolence, liking, affinity, attraction, rapport, relationship, intimacy, similarity, connection, conformity, sympathy, interest.",
-        "Interpretation": "Hope, await, expectation, desire, will, wish, vow, longing, taste, fantasy."
+        "Also called": "Seven of Swords",
+        "The card": "Six curved swords in an almond formation with gold plates featuring Harlequin profiles, a large central sword with a red, blue and green diamond pattern crossing downward.",
+        "Upright meaning (Etteilla system)": "Hope, await, expectation, desire, will, wish, vow, longing, taste, fantasy.",
+        "Reversed meaning (Etteilla system)": "Friendship, attachment, affection, tenderness, benevolence, liking, affinity, attraction, rapport, relationship, intimacy, similarity, connection, conformity, sympathy, interest."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1hxPIAE4kgE-wjaaPRopH-Mz-sh6G19cU",
       "metadata": {
@@ -1942,7 +2502,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Seven of Swords",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1951,16 +2513,26 @@
       "sort_order": 50,
       "category": "suit-swords",
       "keywords": [
-        "route",
+        "Route",
         "path",
         "way",
-        "journey",
-        "revelation"
+        "road",
+        "step",
+        "walk",
+        "promenade",
+        "means",
+        "medium",
+        "manner",
+        "fashion",
+        "expedient",
+        "race",
+        "career"
       ],
       "sections": {
-        "Summary": "Six swords in an almond shape, representing paths, journeys, or public revelation.",
-        "Reversed": "Declaration, publication, proclamation, poster, bill, publicity, notoriety, conspicuousness, authenticity, permit, license, denunciation, approval, denotation, designation, knowledge, discovery, unveiling, revelation, vision, apparition, appearance, confession, avowal, admission, profession.",
-        "Interpretation": "Route, path, way, road, step, walk, promenade, means, medium, manner, fashion, expedient, race, career, delivery, send, broker."
+        "Also called": "Six of Swords",
+        "The card": "Six curved swords create an almond shape; gold plates at the intersections display Harlequins, one pointing upper-right and one waving in profile.",
+        "Upright meaning (Etteilla system)": "Route, path, way, road, step, walk, promenade, means, medium, manner, fashion, expedient, race, career, delivery, send, broker.",
+        "Reversed meaning (Etteilla system)": "Declaration, publication, proclamation, poster, bill, publicity, notoriety, conspicuousness, authenticity, permit, license, denunciation, approval, denotation, designation, knowledge, discovery, unveiling, revelation, vision, apparition, appearance, confession, avowal, admission, profession."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1rTr6f6hzj-h-9GL2VO7gFp2LQA9RWE_f",
       "metadata": {
@@ -1982,7 +2554,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Six of Swords",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -1991,16 +2565,26 @@
       "sort_order": 51,
       "category": "suit-coins",
       "keywords": [
-        "brunet man",
+        "Brunet man",
         "trader",
+        "storekeeper",
         "merchant",
         "banker",
-        "vice"
+        "foreign exchange broker",
+        "calculating person",
+        "speculator",
+        "physicist",
+        "geometer",
+        "mathematics",
+        "science",
+        "master",
+        "professor"
       ],
       "sections": {
-        "Summary": "A fur-trimmed king with coins, representing commerce and science or corruption.",
-        "Reversed": "Perverted man, vice, defect, weakness, deficiency, misshapen, misbehavior, debauchery, vileness, ugliness, deformity, corruption, stench.",
-        "Interpretation": "Brunet man, trader, storekeeper, merchant, banker, foreign exchange broker, calculating person, speculator, physicist, geometer, mathematics, science, master, professor."
+        "Also called": "King of Coins",
+        "The card": "A seated figure rests a coin on his knee with coins floating beside his head, in a diamond robe with fur trim and fox-fur shoulders, a loose black mask and a white-fur crown.",
+        "Upright meaning (Etteilla system)": "Brunet man, trader, storekeeper, merchant, banker, foreign exchange broker, calculating person, speculator, physicist, geometer, mathematics, science, master, professor.",
+        "Reversed meaning (Etteilla system)": "Perverted man, vice, defect, weakness, deficiency, misshapen, misbehavior, debauchery, vileness, ugliness, deformity, corruption, stench."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1-2fyOpSyxdWcf8Qr9b0kUgKr0APlfThu",
       "metadata": {
@@ -2022,7 +2606,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "King of Coins",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -2031,16 +2617,26 @@
       "sort_order": 52,
       "category": "suit-coins",
       "keywords": [
-        "brunette woman",
+        "Brunette woman",
         "opulence",
         "richness",
+        "splendor",
+        "luxury",
+        "sumptuousness",
+        "assurance",
+        "surety",
         "confidence",
-        "doubt"
+        "certitude",
+        "assertion",
+        "safety",
+        "audacity",
+        "liberty"
       ],
       "sections": {
-        "Summary": "A queen with dragon shield and coin, representing wealth and confidence or uncertainty.",
-        "Reversed": "Not certain, doubtful, dubious, uncertain, unsettled, doubt, indecision, uncertainty, fear, timidity, apprehension, vacillation, hesitation.",
-        "Interpretation": "Brunette woman, opulence, richness, splendor, luxury, sumptuousness, assurance, surety, confidence, certitude, assertion, safety, audacity, liberty, boldness, candor, outspokenness, frankness."
+        "Also called": "Queen of Coins",
+        "The card": "In profile facing left, resting an arm on a dragon-emblazoned shield and holding a stick supporting a radiating coin, in a winged helmet, full black mask and fur-trimmed diamond dress.",
+        "Upright meaning (Etteilla system)": "Brunette woman, opulence, richness, splendor, luxury, sumptuousness, assurance, surety, confidence, certitude, assertion, safety, audacity, liberty, boldness, candor, outspokenness, frankness.",
+        "Reversed meaning (Etteilla system)": "Not certain, doubtful, dubious, uncertain, unsettled, doubt, indecision, uncertainty, fear, timidity, apprehension, vacillation, hesitation."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1K8DsOXL4528bSy6izDFyn_ZFo1K3JV3n",
       "metadata": {
@@ -2062,7 +2658,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Queen of Coins",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -2071,16 +2669,26 @@
       "sort_order": 53,
       "category": "suit-coins",
       "keywords": [
-        "usefulness",
+        "Usefulness",
         "advantage",
-        "profit",
         "gain",
-        "inaction"
+        "profit",
+        "interest",
+        "useful",
+        "practical",
+        "profitable",
+        "interesting",
+        "advantageous",
+        "important",
+        "necessary",
+        "obliging",
+        "officious"
       ],
       "sections": {
-        "Summary": "A knight on golden horse with coin, representing practical gain or peaceful rest.",
-        "Reversed": "Inaction, peace, tranquility, repose, sleep, apathy, indolence, inertia, stagnation, inactivity, idleness, laziness, leisure, pastime, recreation, break, insouciance, carefree, nonchalance, numbness, despondency, depression.",
-        "Interpretation": "Usefulness, advantage, gain, profit, interest, useful, practical, profitable, interesting, advantageous, important, necessary, obliging, officious."
+        "Also called": "Knight of Coins",
+        "The card": "A knight on a golden blue-maned horse holds a coin aloft, in a black balaclava mask and green bicorne with a gold trefoil, a hunting horn at his belt.",
+        "Upright meaning (Etteilla system)": "Usefulness, advantage, gain, profit, interest, useful, practical, profitable, interesting, advantageous, important, necessary, obliging, officious.",
+        "Reversed meaning (Etteilla system)": "Inaction, peace, tranquility, repose, sleep, apathy, indolence, inertia, stagnation, inactivity, idleness, laziness, leisure, pastime, recreation, break, insouciance, carefree, nonchalance, numbness, despondency, depression."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1KevEzj1l9JfSellKW2t3Vj6jnWsWc7Kc",
       "metadata": {
@@ -2102,7 +2710,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Knight of Coins",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -2111,16 +2721,26 @@
       "sort_order": 54,
       "category": "suit-coins",
       "keywords": [
-        "brunette girl",
+        "Brunette girl",
         "study",
+        "instruction",
         "diligence",
         "learning",
-        "generosity"
+        "meditation",
+        "reflection",
+        "work",
+        "occupation",
+        "apprenticeship",
+        "schoolchild",
+        "pupil",
+        "student",
+        "apprentice"
       ],
       "sections": {
-        "Summary": "A maid with two coins, representing study and learning or generous abundance.",
-        "Reversed": "Prodigality, profusion, superfluity, abundance, multiplicity, luxury, sumptuousness, magnificence, largesse, liberality, benefit, generosity, charity, crowd, multitude, depredation, squandering, dissipation.",
-        "Interpretation": "Brunette girl, study, instruction, diligence, learning, meditation, reflection, work, occupation, apprenticeship, schoolchild, pupil, student, apprentice, amateur."
+        "Also called": "Maid of Coins (Knave/Page of Coins)",
+        "The card": "The figure holds coins in both hands — one lifted, one lowered behind her back — gazing down toward the lower coin, in a red balaclava mask and fox-fur cap with tail.",
+        "Upright meaning (Etteilla system)": "Brunette girl, study, instruction, diligence, learning, meditation, reflection, work, occupation, apprenticeship, schoolchild, pupil, student, apprentice, amateur.",
+        "Reversed meaning (Etteilla system)": "Prodigality, profusion, superfluity, abundance, multiplicity, luxury, sumptuousness, magnificence, largesse, liberality, benefit, generosity, charity, crowd, multitude, depredation, squandering, dissipation."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1r85AHTdSP5ZEeG5XJO5U3_IyEec6eDeU",
       "metadata": {
@@ -2142,7 +2762,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Maid of Coins (Knave/Page of Coins)",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -2151,16 +2773,25 @@
       "sort_order": 55,
       "category": "suit-coins",
       "keywords": [
-        "money",
+        "Money purse",
+        "sum",
+        "capital",
+        "principal",
         "treasure",
         "wealth",
+        "opulence",
+        "prize",
+        "wallet",
+        "rare",
+        "dear",
         "precious",
-        "nobility"
+        "priceless"
       ],
       "sections": {
-        "Summary": "A coin with Harlequin portrait, hare and dragon, representing wealth or noble conduct.",
-        "Reversed": "Nobility, noble, substantial, important, grand, major, extensive, vast, magnificent, sublime, renowned, famous, illustrious, powerful, high, of quality, esteem, greatness of soul, noble conduct, generous actions.",
-        "Interpretation": "Money purse, sum, capital, principal, treasure, wealth, opulence, prize, wallet, rare, dear, precious, priceless."
+        "Also called": "Ace of Coins",
+        "The card": "A central disc holds a masked Harlequin in motley; above runs a golden hare with a human face through reeds, below a pink dragon with a forked tongue stretches upward.",
+        "Upright meaning (Etteilla system)": "Money purse, sum, capital, principal, treasure, wealth, opulence, prize, wallet, rare, dear, precious, priceless.",
+        "Reversed meaning (Etteilla system)": "Nobility, noble, substantial, important, grand, major, extensive, vast, magnificent, sublime, renowned, famous, illustrious, powerful, high, of quality, esteem, greatness of soul, noble conduct, generous actions."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1kzJoGDHCrTSCQb58jtgVeMEyPh_x1nE8",
       "metadata": {
@@ -2182,7 +2813,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Ace of Coins",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -2191,16 +2824,26 @@
       "sort_order": 56,
       "category": "suit-coins",
       "keywords": [
-        "house",
-        "home",
-        "family",
+        "House",
+        "housework",
+        "economy",
+        "savings",
         "dwelling",
-        "love"
+        "domicile",
+        "habitation",
+        "abode",
+        "housing",
+        "building",
+        "manor",
+        "hotel",
+        "palace",
+        "boutique"
       ],
       "sections": {
-        "Summary": "Ten coins in columns with vine pattern, representing home and family or romantic love.",
-        "Reversed": "Lover, in love with, amorous, gallant, husband, wife, spouse, boyfriend, girlfriend, to love, to cherish, to adore, assortment, agreement, liking, rapport, fitting, propriety, seemliness.",
-        "Interpretation": "House, housework, economy, savings, dwelling, domicile, habitation, abode, housing, building, manor, hotel, palace, boutique, bungalow, lodge, shack, castle, inn, cabaret, tavern, barn, vessel, base, archive, religious house, monastery, convent, hermitage, burial, tomb, sepulcher, family, lair, cavern, hideout, retreat."
+        "Also called": "Ten of Coins",
+        "The card": "Two columns of five coins, each a diamond within a circle in red, green and blue with a black ring and gold wave design; a red vine pattern between the coins.",
+        "Upright meaning (Etteilla system)": "House, housework, economy, savings, dwelling, domicile, habitation, abode, housing, building, manor, hotel, palace, boutique, bungalow, lodge, shack, castle, inn, cabaret, tavern, barn, vessel, base, archive, religious house, monastery, convent, hermitage, burial, tomb, sepulcher, family, lair, cavern, hideout, retreat.",
+        "Reversed meaning (Etteilla system)": "Lover, in love with, amorous, gallant, husband, wife, spouse, boyfriend, girlfriend, to love, to cherish, to adore, assortment, agreement, liking, rapport, fitting, propriety, seemliness."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1HKR2iFLnf15hNGjEayePc1qw7pLWK77i",
       "metadata": {
@@ -2222,7 +2865,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Ten of Coins",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -2231,16 +2876,26 @@
       "sort_order": 57,
       "category": "suit-coins",
       "keywords": [
-        "effect",
-        "consequence",
+        "Effect",
+        "next consequence",
         "result",
         "evidence",
-        "trickery"
+        "demonstrability",
+        "conviction",
+        "conclusion",
+        "event",
+        "execution",
+        "accomplishment",
+        "achievement",
+        "perfection",
+        "effective",
+        "personal effects"
       ],
       "sections": {
-        "Summary": "Nine coins with central black and gold coin, representing results or deception.",
-        "Reversed": "Dupery, trickery, ploy, lure, fraud, con, deception, ruse, surprise, error, sleight of hand, swindle, cheat, infidelity.",
-        "Interpretation": "Effect, next consequence, result, evidence, demonstrability, conviction, conclusion, event, execution, accomplishment, achievement, perfection, effective, personal effects, goods, furniture."
+        "Also called": "Nine of Coins",
+        "The card": "Two columns of four coins with a ninth centered between them; the central coin is black and gold, the rest red, green and blue, with red vine patterns in the background. (Grand Etteilla card 69; Petit Etteilla Nine of Clubs.)",
+        "Upright meaning (Etteilla system)": "Effect, next consequence, result, evidence, demonstrability, conviction, conclusion, event, execution, accomplishment, achievement, perfection, effective, personal effects, goods, furniture.",
+        "Reversed meaning (Etteilla system)": "Dupery, trickery, ploy, lure, fraud, con, deception, ruse, surprise, error, sleight of hand, swindle, cheat, infidelity."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1Ou4qIaNVlv9WuEEm-iU2wv846vwmeaKe",
       "metadata": {
@@ -2262,7 +2917,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Nine of Coins",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -2271,16 +2928,26 @@
       "sort_order": 58,
       "category": "suit-coins",
       "keywords": [
-        "brunet boy",
-        "honest",
+        "Brunet boy",
+        "honest boy",
+        "obliging",
+        "welcoming",
+        "thoughtfulness",
         "politeness",
+        "civility",
+        "honesty",
         "kindness",
-        "usury"
+        "condescension",
+        "hospitality",
+        "customs",
+        "character",
+        "nature"
       ],
       "sections": {
-        "Summary": "Eight coins in columns, representing honest hospitality or greedy excess.",
-        "Reversed": "Usury, exorbitant, exaction, extortion, usurious, avarice, more, a lot, copiously, abundantly, advantage, augmentation, majority, more than, more of, again.",
-        "Interpretation": "Brunet boy, honest boy, obliging, welcoming, thoughtfulness, politeness, civility, honesty, kindness, condescension, hospitality, customs, character, nature."
+        "Also called": "Eight of Coins",
+        "The card": "Two columns of four coins, each a diamond within a circle in red, green, blue and pink, framed by a black ring with gold wave design; red vine patterns between the coins.",
+        "Upright meaning (Etteilla system)": "Brunet boy, honest boy, obliging, welcoming, thoughtfulness, politeness, civility, honesty, kindness, condescension, hospitality, customs, character, nature.",
+        "Reversed meaning (Etteilla system)": "Usury, exorbitant, exaction, extortion, usurious, avarice, more, a lot, copiously, abundantly, advantage, augmentation, majority, more than, more of, again."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=17M8_wBbR4KHl3vFjlYx1ehtdEoEtJcsh",
       "metadata": {
@@ -2302,7 +2969,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Eight of Coins",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -2311,16 +2980,26 @@
       "sort_order": 59,
       "category": "suit-coins",
       "keywords": [
-        "silver",
+        "Silver",
+        "whiteness",
         "purity",
+        "purgation",
+        "purification",
+        "moon",
+        "candor",
         "innocence",
+        "ingenuousness",
+        "naïveté",
+        "silverware",
         "money",
-        "obstacle"
+        "wealth",
+        "sum"
       ],
       "sections": {
-        "Summary": "Seven coins with central black and gold coin, representing purity or obstacles.",
-        "Reversed": "Embarrassment, predicament, obstacle, blockage, congestion, obstruction, cloudy, muddled, trouble, emotion, agitation, inquietude, perplexity.",
-        "Interpretation": "Silver, whiteness, purity, purgation, purification, moon, candor, innocence, ingenuousness, naïveté, silverware, money, wealth, sum."
+        "Also called": "Seven of Coins",
+        "The card": "Two columns of three coins with a seventh centered below; the seventh is black and gold, the rest red, green and blue, with red vine patterns between the coins.",
+        "Upright meaning (Etteilla system)": "Silver, whiteness, purity, purgation, purification, moon, candor, innocence, ingenuousness, naïveté, silverware, money, wealth, sum.",
+        "Reversed meaning (Etteilla system)": "Embarrassment, predicament, obstacle, blockage, congestion, obstruction, cloudy, muddled, trouble, emotion, agitation, inquietude, perplexity."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1daExn8SPUFehSaJ6nJvUPm0mEsQhdzvO",
       "metadata": {
@@ -2342,7 +3021,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Seven of Coins",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -2351,16 +3032,26 @@
       "sort_order": 60,
       "category": "suit-coins",
       "keywords": [
-        "the present",
+        "The present",
+        "currently",
+        "presently",
+        "at present",
         "now",
+        "here",
+        "suddenly",
+        "this instant",
         "immediately",
-        "contemporary",
-        "ambition"
+        "at once",
+        "right this minute",
+        "straight away",
+        "firstly",
+        "contemporary"
       ],
       "sections": {
-        "Summary": "Six coins in columns, representing the present moment or ambitious desires.",
-        "Reversed": "Ambition, aspiration, purpose, desire, wish, searches, cupidity, jealousy, yearning, passion, dream, illusion, pretension.",
-        "Interpretation": "The present, currently, presently, at present, now, here, suddenly, this instant, immediately, at once, right this minute, straight away, firstly, contemporary, modern, up-to-date, existent."
+        "Also called": "Six of Coins",
+        "The card": "Two columns of three coins, each a diamond within a circle in red, green, blue and pink, framed by a black ring with gold wave design; a red vine pattern between the coins.",
+        "Upright meaning (Etteilla system)": "The present, currently, presently, at present, now, here, suddenly, this instant, immediately, at once, right this minute, straight away, firstly, contemporary, modern, up-to-date, existent.",
+        "Reversed meaning (Etteilla system)": "Ambition, aspiration, purpose, desire, wish, searches, cupidity, jealousy, yearning, passion, dream, illusion, pretension."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1qmjnc-I5mTDl_vjGxFX7SGdRFOmiZ3lH",
       "metadata": {
@@ -2382,7 +3073,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Six of Coins",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
@@ -2391,16 +3084,26 @@
       "sort_order": 61,
       "category": "trump",
       "keywords": [
-        "madness",
+        "Madness",
         "insanity",
+        "insane",
         "eccentricity",
+        "enthusiasm",
+        "unreasonableness",
+        "blindness",
+        "ignorance",
+        "senseless",
         "confusion",
-        "negligence"
+        "wandering",
+        "drunkenness",
+        "delirium",
+        "fever"
       ],
       "sections": {
-        "Summary": "The Fool marching with drum and horn, representing madness, folly, or empty negligence.",
-        "Reversed": "Imbecility, ineptitude, insouciance, stupidity, imprudence, negligence, absence, absent-mindedness, apathy, nullity, empty, nothing, useless.",
-        "Interpretation": "Madness, insanity, insane, eccentricity, enthusiasm, unreasonableness, blindness, ignorance, senseless, confusion, wandering, drunkenness, delirium, fever, frenzy, rage, passion, fury, transport, innocent, simple, silly."
+        "Also called": "Folly / The Fool",
+        "The card": "The character marches playing a horn and red drum, in a turban with seven fluffy feathers and a colorful diamond mask; his patched outfit mixes diamonds, leaves, crescent moons, hearts and apples.",
+        "Upright meaning (Etteilla system)": "Madness, insanity, insane, eccentricity, enthusiasm, unreasonableness, blindness, ignorance, senseless, confusion, wandering, drunkenness, delirium, fever, frenzy, rage, passion, fury, transport, innocent, simple, silly.",
+        "Reversed meaning (Etteilla system)": "Imbecility, ineptitude, insouciance, stupidity, imprudence, negligence, absence, absent-mindedness, apathy, nullity, empty, nothing, useless."
       },
       "image_url": "https://drive.google.com/uc?export=view&id=1HoJfCJ_0V__rDvYizi-eMt0STbLKlM_7",
       "metadata": {
@@ -2417,7 +3120,9 @@
             "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
             "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
           }
-        ]
+        ],
+        "names_en": "Folly / The Fool",
+        "source": "https://stolen-thyme.com/tarocchino-arlecchino/guidebook/"
       }
     },
     {
