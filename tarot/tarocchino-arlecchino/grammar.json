@@ -1,0 +1,2470 @@
+{
+  "_community_slug": "tarocchino-arlecchino",
+  "name": "Tarocchino Arlecchino",
+  "slug": "tarocchino-arlecchino",
+  "grammar_type": "tarot",
+  "provenance": "living",
+  "worldview": "contemporary",
+  "creator_name": "Yve Lepkowski",
+  "creator_link": "https://stolen-thyme.com/tarocchino-arlecchino/",
+  "cover_image_url": "https://drive.google.com/uc?export=view&id=1eLd6Z1kWTfFJBpvPVa1adASBydp1ZX5p",
+  "image_credit": "Art by Yve Lepkowski (stolen-thyme.com), CC-BY-SA-4.0.",
+  "description": "A 62-card Bolognese tarocchino deck featuring Harlequin (Arlecchino) from the Commedia dell'Arte tradition. Compiled by Y. Lepkowski MMXXII after the methods of Etteilla.\n\n**A contemporary deck.** Created by Yve Lepkowski (stolen-thyme.com) and released under CC-BY-SA-4.0; reproduced here under the same licence. A 64-card deck: the 62-card Bolognese tarocchino (21 numbered trumps, the Fool, and 40 suit cards) plus two unnumbered Etteilla-style Significators. It descends from the historical **Tarocchino di Bologna** in this library.",
+  "tags": [
+    "tarot",
+    "tarocchino",
+    "arlecchino",
+    "harlequin",
+    "commedia-dellarte",
+    "bolognese",
+    "etteilla",
+    "contemporary",
+    "cc-by-sa",
+    "yve-lepkowski"
+  ],
+  "roots": [
+    "western-esoteric"
+  ],
+  "lineages": [
+    "tarocchino-bologna"
+  ],
+  "parent_deck": "tarocchino-bologna",
+  "is_published": true,
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": [
+      {
+        "name": "Yve Lepkowski",
+        "role": "artist & deck creator",
+        "link": "https://stolen-thyme.com",
+        "note": "Tarocchino Arlecchino — original deck, CC-BY-SA-4.0 (stolen-thyme.com/tarocchino-arlecchino)."
+      },
+      {
+        "name": "PlayfulProcess",
+        "role": "compiled into this library as a recursive.eco grammar",
+        "link": "https://recursive.eco"
+      }
+    ],
+    "modifications": "Restructured Yve Lepkowski's deck into the recursive.eco grammar schema; added cross-deck archetype mappings and genealogy links; the two unnumbered Significators are represented as explicit items. No card meanings were altered."
+  },
+  "items": [
+    {
+      "id": "card-0",
+      "name": "Le Bateleur (The Magician)",
+      "sort_order": 0,
+      "category": "trump",
+      "keywords": [
+        "illness of the body",
+        "disease",
+        "physical affliction",
+        "disruption",
+        "pain"
+      ],
+      "sections": {
+        "Summary": "The Magician as trickster, surrounded by impish figures, representing illness and deception.",
+        "Reversed": "Illness of the mind or soul, indisposition, headache, heartache, worry, melancholy, affliction, lethargy, inconvenience, unhappy position, displeasure, anxiety, sorrow, woe, misfortune, medicine, remedy, charlatan, mage, empirical medicine.",
+        "Interpretation": "Illness of the body, disease, physical affliction, infirmity, damage, bad state of health or affairs, disruption, pain, death throes, epidemic, poison, plague, infection."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1eLd6Z1kWTfFJBpvPVa1adASBydp1ZX5p",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-magician",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1eLd6Z1kWTfFJBpvPVa1adASBydp1ZX5p",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-1",
+      "name": "La Papesse (The High Priestess)",
+      "sort_order": 1,
+      "category": "trump",
+      "keywords": [
+        "rest",
+        "tranquility",
+        "quiet",
+        "retirement",
+        "withdrawal"
+      ],
+      "sections": {
+        "Summary": "Harlequin as Pope Joan, representing rest, solitude, and disguise.",
+        "Reversed": "Imitation, disguise, image, impersonation, pseudonym, mimicry, parody, camouflage, illusion, reflection, mirroring, replica, simulacrum, counterpart, counterfeit, apocryphal.",
+        "Interpretation": "Rest, tranquility, quiet, retirement, withdrawal, private life, secret life, life of solitude, hermitage, religious life, silence, taciturnity, composure."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1PI4LVQ6vWTaBQgPm47k66-0zpc-J4m9E",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-high-priestess",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1PI4LVQ6vWTaBQgPm47k66-0zpc-J4m9E",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-2",
+      "name": "L'Imperatrice (The Empress)",
+      "sort_order": 2,
+      "category": "trump",
+      "keywords": [
+        "night",
+        "darkness",
+        "mystery",
+        "secret",
+        "hidden"
+      ],
+      "sections": {
+        "Summary": "The Elf-king's daughter wielding a spear, representing darkness, mystery, and hidden truths.",
+        "Reversed": "Day, light of day, brightness, clarity, truth, visible, enlighten, manifestation, demonstration, evidence, engender, give life to, uncover, bring light to, publish, come out, bloom, emerge, come to light, zodiac.",
+        "Interpretation": "Night, darkness, eclipse, mist, obscurity, mystery, secret, hidden, unknown, clandestine, occult, parable, allegory, mystical meaning, mask, veil, cover, sheath, envelop, unvoiced, blindness, oblivion, obfuscate."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1PRkrrBvMKHT_PXYm-x1zu9yHRQiyWKf9",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-empress",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1PRkrrBvMKHT_PXYm-x1zu9yHRQiyWKf9",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-3",
+      "name": "L'Empereur (The Emperor)",
+      "sort_order": 3,
+      "category": "trump",
+      "keywords": [
+        "support",
+        "foundation",
+        "stability",
+        "confidence",
+        "security"
+      ],
+      "sections": {
+        "Summary": "King Herla with his hound, representing support, foundation, and protection.",
+        "Reversed": "Protection, defense, influence, benevolence, benefaction, charity, humaneness, goodness, shelter, preservation, aegis.",
+        "Interpretation": "Support, backing, holding up, column, base, foundation, basis, founding principles, hypothesis, reason, cause, subject, fixity, stability, assurance, persuasion, conviction, confidence, security, reliability, help, aid."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1-qHWDIbYrUno6_y8e7--cwgunG8sbhd8",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-emperor",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1-qHWDIbYrUno6_y8e7--cwgunG8sbhd8",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-4",
+      "name": "Le Pape (The Hierophant)",
+      "sort_order": 4,
+      "category": "trump",
+      "keywords": [
+        "God",
+        "spirit",
+        "eternal",
+        "divinity",
+        "faithfulness"
+      ],
+      "sections": {
+        "Summary": "The Pope with stigmata and sacred book, representing divinity, wisdom, and contemplation.",
+        "Reversed": "Philosopher, philosophical, philosophize, sage, wisdom, knowledge, tradition, thought, meditation, contemplation.",
+        "Interpretation": "God, spirit of God, all-powerful, eternal, unique, divinity, devotee, faithfulness, worship, master."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1wZuh6KOlaOw_mmTYVOeTAoHgJc5eR3nA",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-hierophant",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1wZuh6KOlaOw_mmTYVOeTAoHgJc5eR3nA",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-5",
+      "name": "L'Amour (The Lovers)",
+      "sort_order": 5,
+      "category": "trump",
+      "keywords": [
+        "marriage",
+        "wedding",
+        "alliance",
+        "meeting",
+        "pledge"
+      ],
+      "sections": {
+        "Summary": "Two Harlequins meeting at a fountain with Cupid above, representing marriage and union.",
+        "Reversed": "Union, society, contacts, cohabitation, adultery, incest, alloy, blending, mixing, amalgam, peace, concord, accord, harmony, coexistence, reconciliation, mending, patching things up.",
+        "Interpretation": "Marriage, wedding, nuptials, alliance, meeting, link, assembly, pledge, promise, oath, intimacy, liaison, junction, conjunction, copulation, coupling, chain, bondage, discomfort, captivity."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1C1XPiwkFTQF-UyYRvUFZi0O6dCFsvpcm",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-lovers",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1C1XPiwkFTQF-UyYRvUFZi0O6dCFsvpcm",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-6",
+      "name": "Le Chariot (The Chariot)",
+      "sort_order": 6,
+      "category": "trump",
+      "keywords": [
+        "dissension",
+        "discord",
+        "war",
+        "conflict",
+        "combat"
+      ],
+      "sections": {
+        "Summary": "A Harlequin warrior on a chariot pulled by opposing horses, representing conflict and pride.",
+        "Reversed": "Arrogance, pride, vanity, false glory, pomp, ostentation, audacity, temerity, presumption, insult, affront.",
+        "Interpretation": "Dissension, discord, disturbances, agitation, noise, nuisance, disorder, riots, insurrection, revolt, sedition, rebellion, defection, faction, conspiracy, war, battle, conflict, combat, duel, violence, impulse, outburst, anger, quarrel, dispute, debate, argumentation, struggle, vengeance."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1xJGojvPmUNaUTskey6NKerNlhQ1cA8pd",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-chariot",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1xJGojvPmUNaUTskey6NKerNlhQ1cA8pd",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-7",
+      "name": "La Temperance (Temperance)",
+      "sort_order": 7,
+      "category": "trump",
+      "keywords": [
+        "temperance",
+        "moderation",
+        "patience",
+        "calm",
+        "restraint"
+      ],
+      "sections": {
+        "Summary": "Temperance pouring liquid between vessels, representing moderation and balance.",
+        "Reversed": "Priest, minister, performer of sacrifices, priesthood, clergy, church, council, synod, religion, sect.",
+        "Interpretation": "Temperance, moderation, discretion, continence, abstinence, sobriety, frugality, chastity, patience, calm, restraint, accommodation, regard, consideration, mending, mediation, softening, musical tempering, air temperature, climate, temperament."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1ybyurH6eB5MT_ZRjSjgokAp4LZ4__aYT",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:temperance",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1ybyurH6eB5MT_ZRjSjgokAp4LZ4__aYT",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-8",
+      "name": "La Justice (Justice)",
+      "sort_order": 8,
+      "category": "trump",
+      "keywords": [
+        "justice",
+        "equity",
+        "right",
+        "reason",
+        "rectitude"
+      ],
+      "sections": {
+        "Summary": "Justice holding scales and sword, representing fairness, law, and moral order.",
+        "Reversed": "Jurist, legislator, legislation, tribunal, law, decree, code, order, statutes, precepts, commandment, constitution, domination, institution, natural laws, moral laws, religious laws, civil laws, political laws, laws of war.",
+        "Interpretation": "Justice, equity, probity, uprightness, right, natural right, human right, moral right, public right, civil right, rectitude, reason, execution."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1vG16syOfBf2Bf_VZk0WleL-C0EgkFzcl",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:justice",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1vG16syOfBf2Bf_VZk0WleL-C0EgkFzcl",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-9",
+      "name": "La Force (Strength)",
+      "sort_order": 9,
+      "category": "trump",
+      "keywords": [
+        "fortitude",
+        "strength",
+        "power",
+        "courage",
+        "perseverance"
+      ],
+      "sections": {
+        "Summary": "Fortitude embracing a column with baton, representing inner strength and leadership.",
+        "Reversed": "Sovereign, kingdom, empire, republic, state, people, nation, government, administration, reign, despotism, sovereignty, authority, leadership, supreme power, absolute power, arbitrary power, king, emperor, general, commander, captain, chief superior, governor, authoritarian, driving force, regulator.",
+        "Interpretation": "Fortitude, strength, advantage by strength, ability, power, moral strength, greatness of soul, magnanimity, moral or spiritual work, perseverance, constancy, patience, resignation, heroism, courage."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1bvaroZOtiHkuJM07kwBTIfPmqr0TuQz6",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:strength",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1bvaroZOtiHkuJM07kwBTIfPmqr0TuQz6",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-10",
+      "name": "La Roue de Fortune (Wheel of Fortune)",
+      "sort_order": 10,
+      "category": "trump",
+      "keywords": [
+        "fortune",
+        "luck",
+        "happiness",
+        "prosperity",
+        "fate"
+      ],
+      "sections": {
+        "Summary": "Four Harlequins riding a golden wheel, representing the cycles of fortune and destiny.",
+        "Reversed": "Augmentation, increase, enlargement, abundance, surfeit, growth, development, vegetation, production.",
+        "Interpretation": "Fortune, luck, happiness, joy, bliss, improvement, prosperity, bonus, blessing, benefits, graces, favors, goods, wealth, profits, lot, fate, destiny, adventure, good fortune."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=10KZ9ua_3EjOyJUDeAZIddxG8q6uJ7Mts",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:wheel-of-fortune",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=10KZ9ua_3EjOyJUDeAZIddxG8q6uJ7Mts",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-11",
+      "name": "Le Vieillard (The Hermit)",
+      "sort_order": 11,
+      "category": "trump",
+      "keywords": [
+        "time",
+        "chronos",
+        "age",
+        "eternity",
+        "opportunity"
+      ],
+      "sections": {
+        "Summary": "A winged Old Man on crutches, combining Chronos and Kairos - accumulated and fleeting time.",
+        "Reversed": "Time, kairos, moment, instant, opportunity, occasion, juncture, fleeting, time to act, the right time.",
+        "Interpretation": "Time, chronos, age, elderly, generation, epoch, year, month, day, hour, minute, second, measure, tempo, duration, eternity, golden age, Saturn."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1LMDGQs9Uxvwm2ecSN8Fvw1LuEcLuQeO1",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-hermit",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1LMDGQs9Uxvwm2ecSN8Fvw1LuEcLuQeO1",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-12",
+      "name": "Le Pendu (The Hanged Man)",
+      "sort_order": 12,
+      "category": "trump",
+      "keywords": [
+        "traitor",
+        "deceiver",
+        "hypocrite",
+        "impostor",
+        "trickery"
+      ],
+      "sections": {
+        "Summary": "A Harlequin hanging between columns, representing treachery or noble sacrifice.",
+        "Reversed": "Sacrifice, penance, offering, devotion, renunciation, surrender, loss, abnegation, punishment, correction, penalty, atonement.",
+        "Interpretation": "Traitor, deceiver, dissimulation, hypocrite, fanatic, hypocrisy, fanaticism, impostor, disguise, imposture, corruptor, seducer, treason, craftiness, trickery."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1aat8300zIQlYGvgt_HLNDmt9BsFPr8k0",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-hanged-man",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1aat8300zIQlYGvgt_HLNDmt9BsFPr8k0",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-13",
+      "name": "La Mort (Death)",
+      "sort_order": 13,
+      "category": "trump",
+      "keywords": [
+        "mortality",
+        "death",
+        "end",
+        "destruction",
+        "transformation"
+      ],
+      "sections": {
+        "Summary": "A skeletal Harlequin on horseback with scythe, representing death and endings.",
+        "Reversed": "Nothingness, inertia, paralysis, paralyze, sleep, lethargy, somnambulism, evanescence, negation, null, not at all, annihilate.",
+        "Interpretation": "Mortality, death, passing, end, extinguishing, destruction, attack, murder, assassination, homicide, suicide, regicide, massacre, carnage, butchery, slaughter, occision, poison, deterioration, rot, corruption, putrefaction."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1yQQlyP4Ml36bzhtuzVNEvOQb62N5MIqu",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:death",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1yQQlyP4Ml36bzhtuzVNEvOQb62N5MIqu",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-14",
+      "name": "Le Diable (The Devil)",
+      "sort_order": 14,
+      "category": "trump",
+      "keywords": [
+        "strength",
+        "power",
+        "force of spirit",
+        "violence",
+        "constraint"
+      ],
+      "sections": {
+        "Summary": "A winged devil Harlequin with pitchfork, representing raw power and spiritual force.",
+        "Reversed": "Lightness, weakness, smallness, tenderness, weakening, dizziness, faint, despondency, depression, languor, collapse, sin, trespass, sacrilege.",
+        "Interpretation": "Strength, human strength, extraordinary power, physical strength, virtues, violent impetus, momentum of genius, force of spirit, ravage, violence, vehemence, constraint, firmness, manual or physical labor."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1JjSQCIYGrbg-N4uHqk5LZ7Hr_C_ZZv5j",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-devil",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1JjSQCIYGrbg-N4uHqk5LZ7Hr_C_ZZv5j",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-15",
+      "name": "Le Foudre (The Tower)",
+      "sort_order": 15,
+      "category": "trump",
+      "keywords": [
+        "destitution",
+        "poverty",
+        "calamity",
+        "misfortune",
+        "suffering"
+      ],
+      "sections": {
+        "Summary": "A burning castle with fallen Harlequins, representing catastrophe and imprisonment.",
+        "Reversed": "Prison, imprisonment, detention, arrest, captivity, slavery, servitude, subjection, constraint, oppression, tyranny, yoke, chains, dungeon, dependence.",
+        "Interpretation": "Destitution, indigence, poverty, scarcity, need, necessity, distress, grief, pain, torment, suffering, affliction, unpleasantness, calamity, adversity, misfortune, bad luck, divine punishment, setback, disgrace, severity, rigidity, harshness."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1aFvqMCuQQTTjbHKiWGbnbT1Icu-CLkQj",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-tower",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1aFvqMCuQQTTjbHKiWGbnbT1Icu-CLkQj",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-16",
+      "name": "L'Étoile (The Star)",
+      "sort_order": 16,
+      "category": "trump",
+      "keywords": [
+        "gift",
+        "donation",
+        "generosity",
+        "benefit",
+        "offering"
+      ],
+      "sections": {
+        "Summary": "Three Magi beneath an eight-pointed star, representing gifts and generosity.",
+        "Reversed": "Stripping away, counting, sorting, separation, untangle, inspection, development, deepen, picking-over, remove, deprive, take away, abduct, dispossess, violence, privation, theft, larceny, swindling, fraud, infidelity.",
+        "Interpretation": "A present, gift, donation, generosity, benefit, good deed, service, homage, tribute, offering, legacy, loyalty, contribution, the color white, precious stone."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1zx2YnshfSu5ioyxqW-OS4vapVK9BxVA9",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-star",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1zx2YnshfSu5ioyxqW-OS4vapVK9BxVA9",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-17",
+      "name": "La Lune (The Moon)",
+      "sort_order": 17,
+      "category": "trump",
+      "keywords": [
+        "intention",
+        "will",
+        "language",
+        "speech",
+        "discourse"
+      ],
+      "sections": {
+        "Summary": "The Moon with astronomers below, representing intention, communication, and the fluid.",
+        "Reversed": "Water, fluid, humid, ablution, dew, rain, deluge, sea, river, torrent, stream, fountain, spring, lake, marsh, flat water, pond, waterfall, waves, inundation.",
+        "Interpretation": "Aim, design, intention, resolution, will, language, words, speech, talk, discuss, babble, chat, gossip, idle talk, reasoning, dialogue, discourse, moon."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1RlpdcUl8CLoYbBLxGBfCDAzQWswV8o7x",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-moon",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1RlpdcUl8CLoYbBLxGBfCDAzQWswV8o7x",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-18",
+      "name": "Le Soleil (The Sun)",
+      "sort_order": 18,
+      "category": "trump",
+      "keywords": [
+        "brightening",
+        "clarity",
+        "revelation",
+        "light",
+        "fire"
+      ],
+      "sections": {
+        "Summary": "The Sun shining over a spinning woman, representing illumination and passion.",
+        "Reversed": "Fire, hot, heat, heat up, cook, heating, spark, ray of light, flow, inflammation, flame, blaze, burn, fires, meteors, lightning, thunderbolt, storm, electricity, St. Elmo's fire, ardor, embrace, fire of love, passion, light up, enflame, internal fire, magnetism, apple of discord.",
+        "Interpretation": "Brightening, clearing, explanation, development, instruction, interpretation, analysis, opening, discovery, revelation, clarity, elucidation, light, fire, sun, sky and earth, temple of heat."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1_6UpzLZ_Wb_iaS18BUu8BkjTGPRwx59F",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-sun",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1_6UpzLZ_Wb_iaS18BUu8BkjTGPRwx59F",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-19",
+      "name": "Le Monde (The World)",
+      "sort_order": 19,
+      "category": "trump",
+      "keywords": [
+        "voyage",
+        "pilgrimage",
+        "movement",
+        "journey",
+        "earth"
+      ],
+      "sections": {
+        "Summary": "Mercury-Harlequin atop a globe of four elements, representing travel and the material world.",
+        "Reversed": "Earth, matter, cold, thick, mud, sludge, lime, raw material, land, leaf, virgin earth, rural, pastures, orchards, fields, vineyards, terrain, landscape, world, state, realm, countries, regions, nearby, places, site, local, reptiles, quadrupeds, aspect, constancy, stagnation, banks, shore, beach, coasts, reef, rock, plains, mountains, hill, valley.",
+        "Interpretation": "Voyage, pilgrimage, peregrination, tour, emigration, transmigration, change of scenery, movement, steps, walking, running, rotation, circulation, route, reroute, change course, incursion, flight, escape."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1N1_xquii7FI3QBLgfFnG4M8xUcVtGpFC",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-world",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1N1_xquii7FI3QBLgfFnG4M8xUcVtGpFC",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-20",
+      "name": "L'Ange (Judgement)",
+      "sort_order": 20,
+      "category": "trump",
+      "keywords": [
+        "judgement",
+        "discernment",
+        "intelligence",
+        "reason",
+        "understanding"
+      ],
+      "sections": {
+        "Summary": "An angel Harlequin with trumpet over Commedia characters, representing judgement and decision.",
+        "Reversed": "Judgement, decision, decree, ruling, legal outcome, arbitration, pacification, weak judgement, weak spirit, pusillanimity, injustice, madness.",
+        "Interpretation": "Judgement, true judgement, good judgement, sane judgement, fair judgement, discernment, intelligence, reason, understanding, conception, view, thought, comparison, deliberation, opinion, feeling, false judgement, last judgement."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1Gigtq5pomnVkIc3OoH6qg8pGrkqxrmWo",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:judgement",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1Gigtq5pomnVkIc3OoH6qg8pGrkqxrmWo",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-21",
+      "name": "Le Roi de Baton (King of Batons)",
+      "sort_order": 21,
+      "category": "suit-wands",
+      "keywords": [
+        "country man",
+        "farmer",
+        "honest",
+        "integrity",
+        "rural"
+      ],
+      "sections": {
+        "Summary": "A rustic king on his throne, representing country life, honesty, and gentle severity.",
+        "Reversed": "Good and severe man, indulgent severity, leniency, indulgence, kindness, tolerance, condescension, his bark is worse than his bite.",
+        "Interpretation": "Man of the country, country-dweller, rustic, villager, peasant, redneck, farmer, plough-man, grower, agriculture, cultivation, rural, honest man, conscience, integrity, probity."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1VLDM-ny1MhC2u-p54ywL472rtyb8fsFk",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "suit_italian": "Bastoni",
+        "element": "Fire",
+        "rank": "King",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1VLDM-ny1MhC2u-p54ywL472rtyb8fsFk",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-22",
+      "name": "La Reine de Baton (Queen of Batons)",
+      "sort_order": 22,
+      "category": "suit-wands",
+      "keywords": [
+        "country woman",
+        "craftswoman",
+        "honest",
+        "honor",
+        "civility"
+      ],
+      "sections": {
+        "Summary": "A woodland queen with acorn baton, representing rural virtue and charitable goodness.",
+        "Reversed": "Good woman, goodness, excellence, obliging, helpful, good deed, service, charity, alms, favor, obligation.",
+        "Interpretation": "Woman of the country, woman of the woods, craftswoman, thrifty housekeeper, hostess, honest woman, honesty, honor, civility, politeness, good manners."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=12l8yht8Nwz9fOTY2NX8ADRNO-iLDerBs",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "suit_italian": "Bastoni",
+        "element": "Fire",
+        "rank": "Queen",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=12l8yht8Nwz9fOTY2NX8ADRNO-iLDerBs",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-23",
+      "name": "Le Chevalier de Baton (Knight of Batons)",
+      "sort_order": 23,
+      "category": "suit-wands",
+      "keywords": [
+        "departure",
+        "movement",
+        "distance",
+        "absence",
+        "flight"
+      ],
+      "sections": {
+        "Summary": "A knight looking back from his horse, representing departure, separation, and change.",
+        "Reversed": "Disunity, quarrel, rupture, disagreement, squabble, division, part, separation, partition, faction, party, break, cut off, fracture, discontinuity, interruption.",
+        "Interpretation": "Departure, to leave, movement, transfer, distance, remoteness, sending away, absence, abandonment, desertion, change, flight, escape, evasion, transmigration, emigration, transposition, translation, transplantation."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=18AF0hPVdVvZvKkYSR5C0pFNCyM8u3ixr",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "suit_italian": "Bastoni",
+        "element": "Fire",
+        "rank": "Knight",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=18AF0hPVdVvZvKkYSR5C0pFNCyM8u3ixr",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-24",
+      "name": "Le Valet de Baton (Page of Batons)",
+      "sort_order": 24,
+      "category": "suit-wands",
+      "keywords": [
+        "stranger",
+        "foreigner",
+        "unusual",
+        "extraordinary",
+        "news"
+      ],
+      "sections": {
+        "Summary": "A young page with autumn leaves, representing the strange, miraculous, and news from afar.",
+        "Reversed": "News, announcement, notice, warning, admonition, education, instruction, teaching, lesson, view, opinion, notions, anecdotes, chronicle, history, story, tales, fables.",
+        "Interpretation": "Stranger, foreigner, strange, unusual, rare, uncommon, unaccustomed, unknown, unheard of, incredible, extraordinary, surprising, admirable, marvelous, prodigy, miracle, episode, digression, anonymous."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1T7RenFYBqutbMvHv9-dMqp4UIKO2t7Xb",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "suit_italian": "Bastoni",
+        "element": "Fire",
+        "rank": "Page",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1T7RenFYBqutbMvHv9-dMqp4UIKO2t7Xb",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-25",
+      "name": "L'As de Baton (Ace of Batons)",
+      "sort_order": 25,
+      "category": "suit-wands",
+      "keywords": [
+        "birth",
+        "origin",
+        "creation",
+        "beginning",
+        "family"
+      ],
+      "sections": {
+        "Summary": "A crowned baton emerging from a hand, representing birth, origins, and new beginnings.",
+        "Reversed": "Fall, cascade, decline, descent, waste away, diminishment, dissipation, collapse, bankruptcy, ruin, destruction, demolition, damage, ravage, fault, error, mistake, abatement, dejection, despondency, discouragement, perdition, abyss, gulf, precipice, to perish, to fall, to wane, to break.",
+        "Interpretation": "Birth, nativity, origin, creation, source, spring, beginning, principle, primacy, first-fruits, extraction, race, family, house, line of descent, descendant, opportunity, occasion, cause, reason, presage, sign."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1zXmYe11jkXi6MVGZdP7n-p_Rb1SSSGiw",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "suit_italian": "Bastoni",
+        "element": "Fire",
+        "rank": "Ace",
+        "court": false,
+        "archetype": "card:ace-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1zXmYe11jkXi6MVGZdP7n-p_Rb1SSSGiw",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-26",
+      "name": "Le Dix de Baton (Ten of Batons)",
+      "sort_order": 26,
+      "category": "suit-wands",
+      "keywords": [
+        "treason",
+        "betrayal",
+        "conspiracy",
+        "corruption",
+        "deceit"
+      ],
+      "sections": {
+        "Summary": "Ten crossed batons in an X pattern, representing treachery or hidden wealth.",
+        "Reversed": "Gold, wealth, opulence, sumptuousness, magnificence, radiance, luster, luxury, abundance, goods.",
+        "Interpretation": "Treason, disloyalty, betrayal, infidelity, conspiracy, corruption, malpractice, wrongdoing, crime, subversion, deceit, dissimulation, hypocrisy, duplicity, faithlessness."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1LKIhNIXNsGc6g4WP5j117E9DAHmHD6Q2",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "suit_italian": "Bastoni",
+        "element": "Fire",
+        "rank": "Ten",
+        "court": false,
+        "archetype": "card:ten-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1LKIhNIXNsGc6g4WP5j117E9DAHmHD6Q2",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-27",
+      "name": "Le Neuf de Baton (Nine of Batons)",
+      "sort_order": 27,
+      "category": "suit-wands",
+      "keywords": [
+        "delay",
+        "tardiness",
+        "suspension",
+        "slowness",
+        "initiative"
+      ],
+      "sections": {
+        "Summary": "Nine crossed batons, representing delays and obstacles or bold enterprise.",
+        "Reversed": "Business, initiative, to begin, to undertake, to start, to usurp, to seize, audacity, daring, temerity, boldness, hardness, imprudence, enterprising, resourceful, keen, adventurous, audacious, risk-taking.",
+        "Interpretation": "Slow-down, delay, putting-back, tardiness, dismissal, suspension, removal, send away, drawing out, lengthening, slowness, reduce speed."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=136Ilw6mZJqPMV5DIeoxRslp1LTBmnyNl",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "suit_italian": "Bastoni",
+        "element": "Fire",
+        "rank": "Nine",
+        "court": false,
+        "archetype": "card:nine-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=136Ilw6mZJqPMV5DIeoxRslp1LTBmnyNl",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-28",
+      "name": "Le Huit de Baton (Eight of Batons)",
+      "sort_order": 28,
+      "category": "suit-wands",
+      "keywords": [
+        "countryside",
+        "agriculture",
+        "garden",
+        "peace",
+        "pleasure"
+      ],
+      "sections": {
+        "Summary": "Eight crossed batons, representing rural tranquility or grief and melancholy.",
+        "Reversed": "Grief, sadness, affliction, displeasure, pain, desolation, hopelessness, bleakness, mortification, mood, spirits, tantrum, melancholy, vapors, somber ideas.",
+        "Interpretation": "Countryside, land, agriculture, farming, cultivation, tillage, properties, building, farm, sheepfold, garden, orchard, pasture, meadow, woods, grove, thicket, shade, forest, pleasure, entertainment, amusement, pastime, recreation, merrymaking, peace, calm, tranquility, innocence, rural or pastoral life."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1jGweLfVrNAo_7Zv7JL4MwJ-magBU0CrJ",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "suit_italian": "Bastoni",
+        "element": "Fire",
+        "rank": "Eight",
+        "court": false,
+        "archetype": "card:eight-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1jGweLfVrNAo_7Zv7JL4MwJ-magBU0CrJ",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-29",
+      "name": "Le Sept de Baton (Seven of Batons)",
+      "sort_order": 29,
+      "category": "suit-wands",
+      "keywords": [
+        "talk",
+        "speech",
+        "conversation",
+        "negotiation",
+        "language"
+      ],
+      "sections": {
+        "Summary": "Seven crossed batons, representing communication, commerce, and indecision.",
+        "Reversed": "Indecision, irresoluteness, uncertainty, perplexity, inconstancy, frivolity, fickleness, variety, diversity, variation, to hesitate, to dither, hesitation, to be unstable, to vacillate.",
+        "Interpretation": "Talk, speech, interview, colloquy, conversation, lecture, dissertation, deliberation, discussion, word, pronunciation, grammar, dictionary, language, idiom, jargon, dialect, negotiation, deal, exchange, measure, commerce, trafficking, correspondence, to speak, to say, to proclaim, to confer, to gossip, to chat, to converse, chatter, chitchat."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1_DgD5R4kgzkr42gdSirMRj4B-wkydN-T",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "suit_italian": "Bastoni",
+        "element": "Fire",
+        "rank": "Seven",
+        "court": false,
+        "archetype": "card:seven-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1_DgD5R4kgzkr42gdSirMRj4B-wkydN-T",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-30",
+      "name": "Le Six de Baton (Six of Batons)",
+      "sort_order": 30,
+      "category": "suit-wands",
+      "keywords": [
+        "servant",
+        "messenger",
+        "domestic",
+        "housework",
+        "waiting"
+      ],
+      "sections": {
+        "Summary": "Six crossed batons, representing service, messages, and patient expectation.",
+        "Reversed": "Wait, awaiting, expectation, expectancy, confidence, foresight, fear, apprehensiveness.",
+        "Interpretation": "Domestic, servant, valet, lackey, maidservant, mercenary, inferior, slave, messenger, agent, message, announcement, housework, home, servitude."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1WfpJdDmLjFkuMG3WNo0V_6dzR9fFrHrx",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "suit_italian": "Bastoni",
+        "element": "Fire",
+        "rank": "Six",
+        "court": false,
+        "archetype": "card:six-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1WfpJdDmLjFkuMG3WNo0V_6dzR9fFrHrx",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-31",
+      "name": "Le Roi de Coupe (King of Cups)",
+      "sort_order": 31,
+      "category": "suit-cups",
+      "keywords": [
+        "blond man",
+        "probity",
+        "equity",
+        "integrity",
+        "artist"
+      ],
+      "sections": {
+        "Summary": "A king in starry robes with goblet, representing integrity or corruption.",
+        "Reversed": "Man of position, man of a high rank, dishonest man, scam, roguery, extortion, pillage, theft, brigand, rascal, corruption, waste, profligacy, squandering.",
+        "Interpretation": "Blond man, probity, equity, integrity, principles, scientist, artist."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1mcZvqV40c2_55pjOiQRWEGRHkDgo4MHB",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "suit_italian": "Coppe",
+        "element": "Water",
+        "rank": "King",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1mcZvqV40c2_55pjOiQRWEGRHkDgo4MHB",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-32",
+      "name": "La Reine de Coupe (Queen of Cups)",
+      "sort_order": 32,
+      "category": "suit-cups",
+      "keywords": [
+        "blonde woman",
+        "honest",
+        "virtue",
+        "ethics",
+        "wisdom"
+      ],
+      "sections": {
+        "Summary": "A queen in moon-and-star cloak with goblet, representing virtue or scandal.",
+        "Reversed": "Woman of position, woman of a distinguished rank, dishonest woman, vice, dishonesty, depravity, debauchery, corruption, scandal.",
+        "Interpretation": "Blonde woman, honest woman, virtue, ethics, values, wisdom, honesty, trustworthiness, expert."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1ko0DTqHpzs5hI-VOAfI2m-W3a2b0pPEL",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "suit_italian": "Coppe",
+        "element": "Water",
+        "rank": "Queen",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1ko0DTqHpzs5hI-VOAfI2m-W3a2b0pPEL",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-33",
+      "name": "Le Chevalier de Coupe (Knight of Cups)",
+      "sort_order": 33,
+      "category": "suit-cups",
+      "keywords": [
+        "arrival",
+        "approach",
+        "agreement",
+        "reception",
+        "meeting"
+      ],
+      "sections": {
+        "Summary": "A knight on golden horse with goblet, representing arrival or trickery.",
+        "Reversed": "Scam, trickery, villainy, fraud, cheating, swindling, ruse, artifice, subtlety, delicacy, nuance, dexterity, suppleness.",
+        "Interpretation": "Arrival, coming, approach, advent, agreement, reception, compliance, entrance, get closer, squeeze together, crowd, coming together, meeting, conformity, approximation, accessory."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1qCU68gPSnMKWGrebU4bdcVb7ZD0tmfgv",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "suit_italian": "Coppe",
+        "element": "Water",
+        "rank": "Knight",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1qCU68gPSnMKWGrebU4bdcVb7ZD0tmfgv",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-34",
+      "name": "La Servante de Coupe (Maid of Cups)",
+      "sort_order": 34,
+      "category": "suit-cups",
+      "keywords": [
+        "blonde girl",
+        "study",
+        "diligence",
+        "meditation",
+        "attraction"
+      ],
+      "sections": {
+        "Summary": "A maid in stars and moons holding a goblet, representing study or seduction.",
+        "Reversed": "Liking, soft spot, inclination, slope, tendency, attraction, taste, passion, affection, attachment, friendship, heart, longing, desire, engagement, seduction, invitation, approval, flattery, cajolery, cuddling, fawning, adulation, praise, eulogy, courtier, sycophant, to coax, to tempt, to entice, siren-song.",
+        "Interpretation": "Blonde girl, studious, study, diligence, application, work, activity, occupation, hobby, trade, employment, observation, reflection, consideration, meditation, contemplation."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=19mfEVzVcIvknsB0QP1VWNhLsiKkQUCjV",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "suit_italian": "Coppe",
+        "element": "Water",
+        "rank": "Maid",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=19mfEVzVcIvknsB0QP1VWNhLsiKkQUCjV",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-35",
+      "name": "L'As de Coupe (Ace of Cups)",
+      "sort_order": 35,
+      "category": "suit-cups",
+      "keywords": [
+        "table",
+        "meal",
+        "feast",
+        "hospitality",
+        "change"
+      ],
+      "sections": {
+        "Summary": "A crowned cup flanked by birds, representing nourishment, hospitality, and transformation.",
+        "Reversed": "Change, mutation, permutation, transmutation, alternation, vicissitude, inconstancy, frivolity, variety, variation, exchange, swap, purchase, sale, market, trade, convention, metamorphosis, diversity, versatility, reversal, revolution, reversion, translation, interpretation, reading.",
+        "Interpretation": "Table, meal, treat to a meal, food, nutrients, nutrition, feast, gala, invitation, guests, host, hotel, hospitality, inn, tavern, abundance, tablets, portfolio, desk, altar, catalogue, data."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1Qmdwqfp3LAH4hcba0QSq6qdPf7LkqrYi",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "suit_italian": "Coppe",
+        "element": "Water",
+        "rank": "Ace",
+        "court": false,
+        "archetype": "card:ace-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1Qmdwqfp3LAH4hcba0QSq6qdPf7LkqrYi",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-36",
+      "name": "Le Dix de Coupe (Ten of Cups)",
+      "sort_order": 36,
+      "category": "suit-cups",
+      "keywords": [
+        "town",
+        "city",
+        "homeland",
+        "home",
+        "heritage"
+      ],
+      "sections": {
+        "Summary": "Ten cups with flowers, representing home, community, and inheritance.",
+        "Reversed": "Heritage, inheritance, estate, legacy, holdings, gift, donation, dowry, jointure, provision, grant, legitimate, transmission, testament.",
+        "Interpretation": "Town, city, homeland, country, village, place, site, location, home, abode, dwelling, residence, citizens."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1i9lBsFAVnx4V2PgL_p3L9PRTMOj9Kp6o",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "suit_italian": "Coppe",
+        "element": "Water",
+        "rank": "Ten",
+        "court": false,
+        "archetype": "card:ten-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1i9lBsFAVnx4V2PgL_p3L9PRTMOj9Kp6o",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-37",
+      "name": "Le Neuf de Coupe (Nine of Cups)",
+      "sort_order": 37,
+      "category": "suit-cups",
+      "keywords": [
+        "victory",
+        "success",
+        "triumph",
+        "accomplishment",
+        "boredom"
+      ],
+      "sections": {
+        "Summary": "Nine cups in rows, representing victory and triumph or displeasure and worry.",
+        "Reversed": "Boredom, displeasure, discontentment, disgust, aversion, worry, spiritual anguish, grief, affliction, difficult, annoying, vexing, unpleasant, distressing, causing grief, disappointing.",
+        "Interpretation": "Victory, success, accomplishment, advantage, gain, pomp, triumph, trophy, majesty, spectacle, parade, apparatus, gear, winner, upper hand, lead."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1icglCnCvK60lB_Tr9okqc-C3WgVWNtxa",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "suit_italian": "Coppe",
+        "element": "Water",
+        "rank": "Nine",
+        "court": false,
+        "archetype": "card:nine-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1icglCnCvK60lB_Tr9okqc-C3WgVWNtxa",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-38",
+      "name": "Le Huit de Coupe (Eight of Cups)",
+      "sort_order": 38,
+      "category": "suit-cups",
+      "keywords": [
+        "blond boy",
+        "honor",
+        "modesty",
+        "sweetness",
+        "joy"
+      ],
+      "sections": {
+        "Summary": "Eight cups arranged in rows, representing modest honor or public celebration.",
+        "Reversed": "Satisfaction, pleasure, happiness, contentment, gaiety, joy, enthusiasm, rejoicing, entertainment, party, weekend, excuse, compensation, reparation, exoneration, public joy.",
+        "Interpretation": "Blond boy, honest boy, reserved boy, honor, discretion, modesty, restraint, timidity, apprehension, sweetness."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1RaWppAFUA7ytw6FR4AaU8S2GjDcMdhY-",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "suit_italian": "Coppe",
+        "element": "Water",
+        "rank": "Eight",
+        "court": false,
+        "archetype": "card:eight-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1RaWppAFUA7ytw6FR4AaU8S2GjDcMdhY-",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-39",
+      "name": "Le Sept de Coupe (Seven of Cups)",
+      "sort_order": 39,
+      "category": "suit-cups",
+      "keywords": [
+        "thought",
+        "mind",
+        "soul",
+        "imagination",
+        "desire"
+      ],
+      "sections": {
+        "Summary": "Seven cups in rows, representing thought, imagination, and inner desires.",
+        "Reversed": "Desires, wish, vow, will, drive, urge, yearning, covetousness, cupidity, lust, jealousy, passion, pipe dream, appetite.",
+        "Interpretation": "Thought, mind, soul, spirit, intelligence, imagination, understanding, idea, memory, conception, opinion, feeling, meditation, contemplation, reflection, deliberation."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1hC_iYWuVuREHHJ1WjmSr9duyOOAKY-px",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "suit_italian": "Coppe",
+        "element": "Water",
+        "rank": "Seven",
+        "court": false,
+        "archetype": "card:seven-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1hC_iYWuVuREHHJ1WjmSr9duyOOAKY-px",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-40",
+      "name": "Le Six de Coupe (Six of Cups)",
+      "sort_order": 40,
+      "category": "suit-cups",
+      "keywords": [
+        "the past",
+        "formerly",
+        "antiquity",
+        "the future",
+        "tomorrow"
+      ],
+      "sections": {
+        "Summary": "Six cups in columns, representing the past or the future.",
+        "Reversed": "The future, after, following, subsequently, later on, looking forward, tomorrow, next time, upcoming, hereafter.",
+        "Interpretation": "The past, faded, withered, desiccated, preserved, gone, formerly, previously, before, in older days, once, in the past, old age, decrepitude, antiquity, antiques."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1HilQDSgC0JAk7YMKDO1KJlmI00uwN5-3",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "suit_italian": "Coppe",
+        "element": "Water",
+        "rank": "Six",
+        "court": false,
+        "archetype": "card:six-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1HilQDSgC0JAk7YMKDO1KJlmI00uwN5-3",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-41",
+      "name": "Le Roi d'Épée (King of Swords)",
+      "sort_order": 41,
+      "category": "suit-swords",
+      "keywords": [
+        "man of law",
+        "judge",
+        "lawyer",
+        "doctor",
+        "malice"
+      ],
+      "sections": {
+        "Summary": "A king with serpent chain and sword, representing law and justice or cruelty.",
+        "Reversed": "Mean man, malevolent, malice, perversity, perfidy, crime, cruelty, inhumanity, atrocity.",
+        "Interpretation": "Man of the law, judge, senator, lawyer, prosecutor, jurist, defense lawyer, legal scholar, jurisprudence, doctor, physician, practitioner, to advise, consultant."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1uQiQF53je6u7TfpSK5MvM-BJXjWj7iKl",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "suit_italian": "Spade",
+        "element": "Air",
+        "rank": "King",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1uQiQF53je6u7TfpSK5MvM-BJXjWj7iKl",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-42",
+      "name": "La Reine d'Épée (Queen of Swords)",
+      "sort_order": 42,
+      "category": "suit-swords",
+      "keywords": [
+        "widowhood",
+        "widow",
+        "privation",
+        "absence",
+        "malice"
+      ],
+      "sections": {
+        "Summary": "A queen with serpent epaulets and sword, representing loss, absence, or deception.",
+        "Reversed": "Mean woman, malignity, malice, deception, subtlety, artifice, mischief, bigotry, prudery, hypocrisy.",
+        "Interpretation": "Widowhood, widow, privation, withdrawal, absence, scarcity, poverty, indigence, infertility, sterility."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1Ii5aKHO2dwzaiRyPk5obs_uuGoapy4Jj",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "suit_italian": "Spade",
+        "element": "Air",
+        "rank": "Queen",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1Ii5aKHO2dwzaiRyPk5obs_uuGoapy4Jj",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-43",
+      "name": "Le Chevalier d'Épée (Knight of Swords)",
+      "sort_order": 43,
+      "category": "suit-swords",
+      "keywords": [
+        "military",
+        "soldier",
+        "war",
+        "combat",
+        "courage"
+      ],
+      "sections": {
+        "Summary": "A knight with curved blade on diamond-patterned horse, representing war or ignorance.",
+        "Reversed": "Ignorance, incompetence, ineptitude, stupidity, nonsense, idiocy, imprudence, impertinence.",
+        "Interpretation": "Military, man of the sword, man-at-arms, fencing master, professional assassin, hunter, office, soldier, combatant, enemy, hanger-on, briber, dispute, war, combat, battle, duel, attack, defense, opposition, resistance, hostility, enmity, hate, choler, resentment, destruction, courage, valor, bravery."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1HTZzW1khi-w7YjqlZyjxapyCBo3RbJfG",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "suit_italian": "Spade",
+        "element": "Air",
+        "rank": "Knight",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1HTZzW1khi-w7YjqlZyjxapyCBo3RbJfG",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-44",
+      "name": "Le Valet d'Épée (Page of Swords)",
+      "sort_order": 44,
+      "category": "suit-swords",
+      "keywords": [
+        "spy",
+        "observer",
+        "guard",
+        "examination",
+        "surprise"
+      ],
+      "sections": {
+        "Summary": "A page with Herla shield and sword, representing observation or the unexpected.",
+        "Reversed": "Lack of foresight, unexpectedly, astonishing, surprising, undreamt of, unheard of, fortuitously, suddenly.",
+        "Interpretation": "Spy, curious, observer, searching, connoisseur, guard, monitor, steward, examination, note, remark, observations, annotations."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1-JKDI0ZiQJP4cYLP-HxOBS2D2Ah7_OJ5",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "suit_italian": "Spade",
+        "element": "Air",
+        "rank": "Page",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1-JKDI0ZiQJP4cYLP-HxOBS2D2Ah7_OJ5",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-45",
+      "name": "L'As d'Épée (Ace of Swords)",
+      "sort_order": 45,
+      "category": "suit-swords",
+      "keywords": [
+        "extreme",
+        "excessive",
+        "fury",
+        "rage",
+        "pregnancy"
+      ],
+      "sections": {
+        "Summary": "A crowned serpent-sword, representing extremes, fury, or fertility and conception.",
+        "Reversed": "Pregnancy, engendering, conception, birthing, childbirth, production, composition, fertilization, pollination, increase, augmentation, multiplication.",
+        "Interpretation": "Extreme, large, excessive, over-the-top, extremely, passionately, excessively, furious, choleric, fit of anger, fury, rage, quarreling, choler, vehemence, animosity, transport, impulse, extremity, boundaries, confines, ends, limits, last, last extremity."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1faHlBwuD6x7R2Acas9GLCetmL44syx0R",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "suit_italian": "Spade",
+        "element": "Air",
+        "rank": "Ace",
+        "court": false,
+        "archetype": "card:ace-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1faHlBwuD6x7R2Acas9GLCetmL44syx0R",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-46",
+      "name": "Le Dix d'Épée (Ten of Swords)",
+      "sort_order": 46,
+      "category": "suit-swords",
+      "keywords": [
+        "tears",
+        "grief",
+        "sadness",
+        "pain",
+        "losses"
+      ],
+      "sections": {
+        "Summary": "Swords in an almond shape with crying Harlequin, representing sorrow and loss.",
+        "Reversed": "Losses, damages, harm, disadvantage, failure, defeat, rout, setback, ruin, theft, abduction, plagiarism, opprobrium, disgrace, waste.",
+        "Interpretation": "Tears, sobs, whines, sighs, moans, lamentations, grievances, afflictions, grief, sadness, pain, sorrow, droplets, dew, condensation, bleeding."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1Fd4Snm8W04ox3plU0eU99Kphemdfb9bD",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "suit_italian": "Spade",
+        "element": "Air",
+        "rank": "Ten",
+        "court": false,
+        "archetype": "card:ten-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1Fd4Snm8W04ox3plU0eU99Kphemdfb9bD",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-47",
+      "name": "Le Neuf d'Épée (Nine of Swords)",
+      "sort_order": 47,
+      "category": "suit-swords",
+      "keywords": [
+        "ecclesiastic",
+        "priest",
+        "religion",
+        "piety",
+        "mistrust"
+      ],
+      "sections": {
+        "Summary": "Swords with bishop Harlequin, representing religious devotion or justified suspicion.",
+        "Reversed": "Justifiable mistrust, well-founded suspicion, legitimate fear, mistrust, doubt, misgiving, qualm, timorous conscience, timidity, modesty, shame, conjecture.",
+        "Interpretation": "Ecclesiastic, apostle, pope, cardinal, bishop, abbot, priest, monk, hermit, nun, recluse, anchorite, vestal, religious, piety, devotion, celibate, virginity, cult, religion, temple, church, monastery, convent, hermitage, sanctuary, rite, ceremonies, ritual."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1yRDG6aUCx0SnceHx_DGmJSuwcl3bCbGf",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "suit_italian": "Spade",
+        "element": "Air",
+        "rank": "Nine",
+        "court": false,
+        "archetype": "card:nine-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1yRDG6aUCx0SnceHx_DGmJSuwcl3bCbGf",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-48",
+      "name": "Le Huit d'Épée (Eight of Swords)",
+      "sort_order": 48,
+      "category": "suit-swords",
+      "keywords": [
+        "critical moment",
+        "crisis",
+        "examination",
+        "criticism",
+        "accident"
+      ],
+      "sections": {
+        "Summary": "Eight swords in an almond shape, representing crisis, criticism, or unexpected events.",
+        "Reversed": "Incident, difficulty, complication, objection, contestation, unforeseen, unexpected, accident, fortuitous event, adventure, occurrence, destiny, fatality, bad luck, symptom, sign.",
+        "Interpretation": "Critical, critical moment, decisive instant, difficult position, delicate circumstance, crisis, examination, discussion, research, inspection, criticism, blame, censure, disapproval, condemnation, contempt, commentary, annotation, epilogue, analysis."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=13d4RZglSWduXfgFGP4_op3QLgPxjXGJQ",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "suit_italian": "Spade",
+        "element": "Air",
+        "rank": "Eight",
+        "court": false,
+        "archetype": "card:eight-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=13d4RZglSWduXfgFGP4_op3QLgPxjXGJQ",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-49",
+      "name": "Le Sept d'Épée (Seven of Swords)",
+      "sort_order": 49,
+      "category": "suit-swords",
+      "keywords": [
+        "hope",
+        "expectation",
+        "desire",
+        "wish",
+        "friendship"
+      ],
+      "sections": {
+        "Summary": "Seven swords with Harlequin profiles, representing hope and desire or friendship.",
+        "Reversed": "Friendship, attachment, affection, tenderness, benevolence, liking, affinity, attraction, rapport, relationship, intimacy, similarity, connection, conformity, sympathy, interest.",
+        "Interpretation": "Hope, await, expectation, desire, will, wish, vow, longing, taste, fantasy."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1hxPIAE4kgE-wjaaPRopH-Mz-sh6G19cU",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "suit_italian": "Spade",
+        "element": "Air",
+        "rank": "Seven",
+        "court": false,
+        "archetype": "card:seven-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1hxPIAE4kgE-wjaaPRopH-Mz-sh6G19cU",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-50",
+      "name": "Le Six d'Épée (Six of Swords)",
+      "sort_order": 50,
+      "category": "suit-swords",
+      "keywords": [
+        "route",
+        "path",
+        "way",
+        "journey",
+        "revelation"
+      ],
+      "sections": {
+        "Summary": "Six swords in an almond shape, representing paths, journeys, or public revelation.",
+        "Reversed": "Declaration, publication, proclamation, poster, bill, publicity, notoriety, conspicuousness, authenticity, permit, license, denunciation, approval, denotation, designation, knowledge, discovery, unveiling, revelation, vision, apparition, appearance, confession, avowal, admission, profession.",
+        "Interpretation": "Route, path, way, road, step, walk, promenade, means, medium, manner, fashion, expedient, race, career, delivery, send, broker."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1rTr6f6hzj-h-9GL2VO7gFp2LQA9RWE_f",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "suit_italian": "Spade",
+        "element": "Air",
+        "rank": "Six",
+        "court": false,
+        "archetype": "card:six-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1rTr6f6hzj-h-9GL2VO7gFp2LQA9RWE_f",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-51",
+      "name": "Le Roi de Denier (King of Coins)",
+      "sort_order": 51,
+      "category": "suit-coins",
+      "keywords": [
+        "brunet man",
+        "trader",
+        "merchant",
+        "banker",
+        "vice"
+      ],
+      "sections": {
+        "Summary": "A fur-trimmed king with coins, representing commerce and science or corruption.",
+        "Reversed": "Perverted man, vice, defect, weakness, deficiency, misshapen, misbehavior, debauchery, vileness, ugliness, deformity, corruption, stench.",
+        "Interpretation": "Brunet man, trader, storekeeper, merchant, banker, foreign exchange broker, calculating person, speculator, physicist, geometer, mathematics, science, master, professor."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1-2fyOpSyxdWcf8Qr9b0kUgKr0APlfThu",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "suit_italian": "Denari",
+        "element": "Earth",
+        "rank": "King",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1-2fyOpSyxdWcf8Qr9b0kUgKr0APlfThu",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-52",
+      "name": "La Reine de Denier (Queen of Coins)",
+      "sort_order": 52,
+      "category": "suit-coins",
+      "keywords": [
+        "brunette woman",
+        "opulence",
+        "richness",
+        "confidence",
+        "doubt"
+      ],
+      "sections": {
+        "Summary": "A queen with dragon shield and coin, representing wealth and confidence or uncertainty.",
+        "Reversed": "Not certain, doubtful, dubious, uncertain, unsettled, doubt, indecision, uncertainty, fear, timidity, apprehension, vacillation, hesitation.",
+        "Interpretation": "Brunette woman, opulence, richness, splendor, luxury, sumptuousness, assurance, surety, confidence, certitude, assertion, safety, audacity, liberty, boldness, candor, outspokenness, frankness."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1K8DsOXL4528bSy6izDFyn_ZFo1K3JV3n",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "suit_italian": "Denari",
+        "element": "Earth",
+        "rank": "Queen",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1K8DsOXL4528bSy6izDFyn_ZFo1K3JV3n",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-53",
+      "name": "Le Chevalier de Denier (Knight of Coins)",
+      "sort_order": 53,
+      "category": "suit-coins",
+      "keywords": [
+        "usefulness",
+        "advantage",
+        "profit",
+        "gain",
+        "inaction"
+      ],
+      "sections": {
+        "Summary": "A knight on golden horse with coin, representing practical gain or peaceful rest.",
+        "Reversed": "Inaction, peace, tranquility, repose, sleep, apathy, indolence, inertia, stagnation, inactivity, idleness, laziness, leisure, pastime, recreation, break, insouciance, carefree, nonchalance, numbness, despondency, depression.",
+        "Interpretation": "Usefulness, advantage, gain, profit, interest, useful, practical, profitable, interesting, advantageous, important, necessary, obliging, officious."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1KevEzj1l9JfSellKW2t3Vj6jnWsWc7Kc",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "suit_italian": "Denari",
+        "element": "Earth",
+        "rank": "Knight",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1KevEzj1l9JfSellKW2t3Vj6jnWsWc7Kc",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-54",
+      "name": "La Servante de Denier (Maid of Coins)",
+      "sort_order": 54,
+      "category": "suit-coins",
+      "keywords": [
+        "brunette girl",
+        "study",
+        "diligence",
+        "learning",
+        "generosity"
+      ],
+      "sections": {
+        "Summary": "A maid with two coins, representing study and learning or generous abundance.",
+        "Reversed": "Prodigality, profusion, superfluity, abundance, multiplicity, luxury, sumptuousness, magnificence, largesse, liberality, benefit, generosity, charity, crowd, multitude, depredation, squandering, dissipation.",
+        "Interpretation": "Brunette girl, study, instruction, diligence, learning, meditation, reflection, work, occupation, apprenticeship, schoolchild, pupil, student, apprentice, amateur."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1r85AHTdSP5ZEeG5XJO5U3_IyEec6eDeU",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "suit_italian": "Denari",
+        "element": "Earth",
+        "rank": "Maid",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1r85AHTdSP5ZEeG5XJO5U3_IyEec6eDeU",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-55",
+      "name": "L'As de Denier (Ace of Coins)",
+      "sort_order": 55,
+      "category": "suit-coins",
+      "keywords": [
+        "money",
+        "treasure",
+        "wealth",
+        "precious",
+        "nobility"
+      ],
+      "sections": {
+        "Summary": "A coin with Harlequin portrait, hare and dragon, representing wealth or noble conduct.",
+        "Reversed": "Nobility, noble, substantial, important, grand, major, extensive, vast, magnificent, sublime, renowned, famous, illustrious, powerful, high, of quality, esteem, greatness of soul, noble conduct, generous actions.",
+        "Interpretation": "Money purse, sum, capital, principal, treasure, wealth, opulence, prize, wallet, rare, dear, precious, priceless."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1kzJoGDHCrTSCQb58jtgVeMEyPh_x1nE8",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "suit_italian": "Denari",
+        "element": "Earth",
+        "rank": "Ace",
+        "court": false,
+        "archetype": "card:ace-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1kzJoGDHCrTSCQb58jtgVeMEyPh_x1nE8",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-56",
+      "name": "Le Dix de Denier (Ten of Coins)",
+      "sort_order": 56,
+      "category": "suit-coins",
+      "keywords": [
+        "house",
+        "home",
+        "family",
+        "dwelling",
+        "love"
+      ],
+      "sections": {
+        "Summary": "Ten coins in columns with vine pattern, representing home and family or romantic love.",
+        "Reversed": "Lover, in love with, amorous, gallant, husband, wife, spouse, boyfriend, girlfriend, to love, to cherish, to adore, assortment, agreement, liking, rapport, fitting, propriety, seemliness.",
+        "Interpretation": "House, housework, economy, savings, dwelling, domicile, habitation, abode, housing, building, manor, hotel, palace, boutique, bungalow, lodge, shack, castle, inn, cabaret, tavern, barn, vessel, base, archive, religious house, monastery, convent, hermitage, burial, tomb, sepulcher, family, lair, cavern, hideout, retreat."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1HKR2iFLnf15hNGjEayePc1qw7pLWK77i",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "suit_italian": "Denari",
+        "element": "Earth",
+        "rank": "Ten",
+        "court": false,
+        "archetype": "card:ten-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1HKR2iFLnf15hNGjEayePc1qw7pLWK77i",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-57",
+      "name": "Le Neuf de Denier (Nine of Coins)",
+      "sort_order": 57,
+      "category": "suit-coins",
+      "keywords": [
+        "effect",
+        "consequence",
+        "result",
+        "evidence",
+        "trickery"
+      ],
+      "sections": {
+        "Summary": "Nine coins with central black and gold coin, representing results or deception.",
+        "Reversed": "Dupery, trickery, ploy, lure, fraud, con, deception, ruse, surprise, error, sleight of hand, swindle, cheat, infidelity.",
+        "Interpretation": "Effect, next consequence, result, evidence, demonstrability, conviction, conclusion, event, execution, accomplishment, achievement, perfection, effective, personal effects, goods, furniture."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1Ou4qIaNVlv9WuEEm-iU2wv846vwmeaKe",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "suit_italian": "Denari",
+        "element": "Earth",
+        "rank": "Nine",
+        "court": false,
+        "archetype": "card:nine-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1Ou4qIaNVlv9WuEEm-iU2wv846vwmeaKe",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-58",
+      "name": "Le Huit de Denier (Eight of Coins)",
+      "sort_order": 58,
+      "category": "suit-coins",
+      "keywords": [
+        "brunet boy",
+        "honest",
+        "politeness",
+        "kindness",
+        "usury"
+      ],
+      "sections": {
+        "Summary": "Eight coins in columns, representing honest hospitality or greedy excess.",
+        "Reversed": "Usury, exorbitant, exaction, extortion, usurious, avarice, more, a lot, copiously, abundantly, advantage, augmentation, majority, more than, more of, again.",
+        "Interpretation": "Brunet boy, honest boy, obliging, welcoming, thoughtfulness, politeness, civility, honesty, kindness, condescension, hospitality, customs, character, nature."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=17M8_wBbR4KHl3vFjlYx1ehtdEoEtJcsh",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "suit_italian": "Denari",
+        "element": "Earth",
+        "rank": "Eight",
+        "court": false,
+        "archetype": "card:eight-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=17M8_wBbR4KHl3vFjlYx1ehtdEoEtJcsh",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-59",
+      "name": "Le Sept de Denier (Seven of Coins)",
+      "sort_order": 59,
+      "category": "suit-coins",
+      "keywords": [
+        "silver",
+        "purity",
+        "innocence",
+        "money",
+        "obstacle"
+      ],
+      "sections": {
+        "Summary": "Seven coins with central black and gold coin, representing purity or obstacles.",
+        "Reversed": "Embarrassment, predicament, obstacle, blockage, congestion, obstruction, cloudy, muddled, trouble, emotion, agitation, inquietude, perplexity.",
+        "Interpretation": "Silver, whiteness, purity, purgation, purification, moon, candor, innocence, ingenuousness, naïveté, silverware, money, wealth, sum."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1daExn8SPUFehSaJ6nJvUPm0mEsQhdzvO",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "suit_italian": "Denari",
+        "element": "Earth",
+        "rank": "Seven",
+        "court": false,
+        "archetype": "card:seven-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1daExn8SPUFehSaJ6nJvUPm0mEsQhdzvO",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-60",
+      "name": "Le Six de Denier (Six of Coins)",
+      "sort_order": 60,
+      "category": "suit-coins",
+      "keywords": [
+        "the present",
+        "now",
+        "immediately",
+        "contemporary",
+        "ambition"
+      ],
+      "sections": {
+        "Summary": "Six coins in columns, representing the present moment or ambitious desires.",
+        "Reversed": "Ambition, aspiration, purpose, desire, wish, searches, cupidity, jealousy, yearning, passion, dream, illusion, pretension.",
+        "Interpretation": "The present, currently, presently, at present, now, here, suddenly, this instant, immediately, at once, right this minute, straight away, firstly, contemporary, modern, up-to-date, existent."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1qmjnc-I5mTDl_vjGxFX7SGdRFOmiZ3lH",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "suit_italian": "Denari",
+        "element": "Earth",
+        "rank": "Six",
+        "court": false,
+        "archetype": "card:six-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1qmjnc-I5mTDl_vjGxFX7SGdRFOmiZ3lH",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "card-61",
+      "name": "La Folie (The Fool)",
+      "sort_order": 61,
+      "category": "trump",
+      "keywords": [
+        "madness",
+        "insanity",
+        "eccentricity",
+        "confusion",
+        "negligence"
+      ],
+      "sections": {
+        "Summary": "The Fool marching with drum and horn, representing madness, folly, or empty negligence.",
+        "Reversed": "Imbecility, ineptitude, insouciance, stupidity, imprudence, negligence, absence, absent-mindedness, apathy, nullity, empty, nothing, useless.",
+        "Interpretation": "Madness, insanity, insane, eccentricity, enthusiasm, unreasonableness, blindness, ignorance, senseless, confusion, wandering, drunkenness, delirium, fever, frenzy, rage, passion, fury, transport, innocent, simple, silly."
+      },
+      "image_url": "https://drive.google.com/uc?export=view&id=1HoJfCJ_0V__rDvYizi-eMt0STbLKlM_7",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-fool",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://drive.google.com/uc?export=view&id=1HoJfCJ_0V__rDvYizi-eMt0STbLKlM_7",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/",
+            "note": "Image currently hot-linked from the platform mirror (Google Drive); mirror to R2 in a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "significator-62",
+      "name": "Significator I — The Querent",
+      "sort_order": 62,
+      "category": "significator",
+      "keywords": [
+        "significator",
+        "querent",
+        "the self"
+      ],
+      "sections": {
+        "Summary": "An unnumbered Significator representing the consultant who lays the cards. Yve Lepkowski's Tarocchino Arlecchino keeps two unnumbered Significators in the Etteilla tradition (the Fool sits at no. 61; the two Significators carry no number), which is why the deck is 64 cards rather than the standard 62-card tarocchino.",
+        "Note": "Card art to be sourced from Yve Lepkowski's deck files (stolen-thyme.com) in a follow-up; added here so the deck's count is faithful to the source (64)."
+      },
+      "image_url": null,
+      "metadata": {
+        "arcana": "significator",
+        "archetype": null,
+        "mapping_confidence": "none",
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary"
+      }
+    },
+    {
+      "id": "significator-63",
+      "name": "Significator II — The Querent",
+      "sort_order": 63,
+      "category": "significator",
+      "keywords": [
+        "significator",
+        "querent",
+        "the self"
+      ],
+      "sections": {
+        "Summary": "An unnumbered Significator representing a second consultant / the person enquired about. Yve Lepkowski's Tarocchino Arlecchino keeps two unnumbered Significators in the Etteilla tradition (the Fool sits at no. 61; the two Significators carry no number), which is why the deck is 64 cards rather than the standard 62-card tarocchino.",
+        "Note": "Card art to be sourced from Yve Lepkowski's deck files (stolen-thyme.com) in a follow-up; added here so the deck's count is faithful to the source (64)."
+      },
+      "image_url": null,
+      "metadata": {
+        "arcana": "significator",
+        "archetype": null,
+        "mapping_confidence": "none",
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary"
+      }
+    }
+  ]
+}
