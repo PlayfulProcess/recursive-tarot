@@ -45,7 +45,7 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 ## Cross-cutting
 - [x] **X-PURPLE** — every redirect to recursive.eco renders PURPLE (incl. the "Oracle ↗" header dropdown item). (S)
 - [x] **X-CHECKLIST** — before-launch checklist: "better integrate the local tester with the recursive.eco Oracle." (R)
-- [ ] **COURSE-ENDINGS** — every course ends with open questions + a paste-ready Claude research prompt + a link to contribute-via-GitHub. (W, pattern)
+- [x] **COURSE-ENDINGS** (done for history-of-tarot, how-tarot-works, intention-setting, games-of-the-tarot, tarot-today; reading-the-cards already had a strong close) — every course ends with open questions + a paste-ready Claude research prompt + a link to contribute-via-GitHub. (W, pattern)
 - [x] **COURSE-TAROT-TODAY** (live; uses the real Google Trends screenshot, cropped to full + recent time series below the built bars; honest convergence framing)
 
 ## Index / data
