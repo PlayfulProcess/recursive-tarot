@@ -4,13 +4,14 @@ Where each card image appears in the site chrome. Keep unique within a page, and
 reusing the same image across sibling pages (Home / Play / About) so the library shows its
 range. Regenerate after editing any page's imagery.
 
-**24 images used across 14 pages.** 7 image(s) appear on more than one page:
+**25 images used across 14 pages.** 8 image(s) appear on more than one page:
 
 - `Fool tarot charles6.jpg` — index.html, pages/historian.html
 - `mantegna-tarocchi-plate-01.jpg` — index.html, pages/contribute.html, pages/historian.html
 - `LE MAT Nicolas Conver Tarot 1760.jpg` — pages/historian.html, pages/play.html
 - `Sola Busca tarot card 27.jpg` — pages/contribute.html, pages/play.html
-- `Visconti-sforza-10-fortune.jpg` — pages/historian.html, pages/play.html
+- `Visconti-sforza-01-magician.jpg` — index.html, pages/play.html
+- `Visconti-sforza-10-fortune.jpg` — index.html, pages/historian.html, pages/play.html
 - `Visconti-sforza-14-temperance.jpg` — index.html, pages/play.html
 - `Visconti-sforza-21-world.jpg` — index.html, pages/contribute.html, pages/historian.html
 
@@ -42,10 +43,11 @@ range. Regenerate after editing any page's imagery.
 - `Bembo-Visconti-tarot-coins-13-queen.jpg` → index.html
 - `Cary-Yale Tarot deck - Knight of Coins.jpg` → index.html
 - `Visconti-sforza-00-fool.jpg` → index.html
-- `Visconti-sforza-01-magician.jpg` → pages/play.html
+- `Visconti-sforza-01-magician.jpg` → index.html, pages/play.html
 - `Visconti-sforza-02-popess.jpg` → pages/play.html
 - `Visconti-sforza-03-empress.jpg` → index.html
-- `Visconti-sforza-10-fortune.jpg` → pages/historian.html, pages/play.html
+- `Visconti-sforza-06-love.jpg` → index.html
+- `Visconti-sforza-10-fortune.jpg` → index.html, pages/historian.html, pages/play.html
 - `Visconti-sforza-14-temperance.jpg` → index.html, pages/play.html
 - `Visconti-sforza-17-star.jpg` → index.html
 - `Visconti-sforza-18-moon.jpg` → index.html
