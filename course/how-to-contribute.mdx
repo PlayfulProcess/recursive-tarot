@@ -250,3 +250,12 @@ Whatever you contribute answers to the same values as the rest of this project:
 - **Name a school, not a living person** if you add a reading "voice" — and say you were *inspired by* them, never that you speak for them.
 
 That's it. Pick the smallest thing that bothers you, fix it, and propose it. The commons grows one small correction at a time.
+
+
+## Contribute a video
+
+The **Watch the history** page is fed by public-domain documentaries and talks framed as accounts of the history of tarot. You don't need to touch JSON by hand to add one — give Claude Code a one-line prompt like:
+
+> Add this public-domain YouTube documentary to the "Further watching" watchlist on the Play page: `<paste the URL>`. Check it's public-domain or appropriately licensed, write a one-sentence description framed as an account of tarot history, slot it into the watchlist sequence, and open a pull request.
+
+Claude Code will place it in the sequence and commit it back to the repo. Later we'll grow this into richer programs — the beta "performances" you see on the page — and a course on building those.
