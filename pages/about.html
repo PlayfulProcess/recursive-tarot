@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="../theme.css?v=1">
+<link rel="stylesheet" href="../theme.css?v=2">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About · The Recursive Tarot</title>
@@ -26,12 +26,15 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=27"></script>
+<script src="../site-header.js?v=28"></script>
 <site-header active=""></site-header>
 
 <main class="wrap">
   <section class="hero">
-    <img src="../spiral-mark.svg" width="58" height="58" alt="" aria-hidden="true" style="display:block;margin:0 auto 14px">
+    <!-- recursive.eco's own hero spiral, copied verbatim (spiral/spiral.js + hero-spiral.js): the
+         building/rebuilding draw + WHY/HOW/WHAT, in recursive.eco purple. ~4x the old mark. -->
+    <div id="about-hero-spiral" aria-hidden="true"
+         style="width:min(320px,64vw);height:min(320px,64vw);margin:6px auto 16px;position:relative"></div>
     <p class="kick">About this library</p>
     <h1>The work so far</h1>
     <p class="sub">An open, unfinished study — offered in the hope that human hands make it better.</p>
@@ -69,6 +72,24 @@
   </section>
 </main>
 
+<!-- recursive.eco hero spiral (verbatim files) — animated draw/breathe/rotate + WHY/HOW/WHAT, purple -->
+<script src="../spiral/spiral.js"></script>
+<script src="../spiral/hero-spiral.js"></script>
+<script>
+  (function(){
+    var host=document.getElementById('about-hero-spiral');
+    if(!host||typeof createSpiral!=='function') return;
+    createSpiral(host,{color:'#9333ea',size:100,turns:6,strokeWidth:0.8,opacity:0.85,animated:true,
+      rhythms:{breathe:{duration:30000,timing:'ease-in-out'},draw:{duration:45000,timing:'ease-in-out'},rotate:{duration:60000,timing:'ease-in-out'}},
+      enableRotation:true});
+    var ov=document.createElement('div');
+    ov.style.cssText='position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;pointer-events:none;font-family:Inter,-apple-system,sans-serif;color:#9333ea;letter-spacing:.02em';
+    ov.innerHTML='<div style="position:absolute;top:23%;font-size:clamp(12px,3vw,17px);opacity:.82"><b>HOW:</b> Recursive</div>'+
+      '<div style="position:absolute;font-size:clamp(16px,4vw,24px);opacity:.95"><b>WHY:</b> Sense</div>'+
+      '<div style="position:absolute;bottom:21%;font-size:clamp(11px,2.8vw,16px);opacity:.74"><b>WHAT:</b> Make&nbsp;Belief</div>';
+    host.appendChild(ov);
+  })();
+</script>
 <script src="../site-footer.js"></script>
 <site-footer base="../"></site-footer>
 </body>

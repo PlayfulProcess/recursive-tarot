@@ -177,6 +177,7 @@
           .dd-menu a{ display:block; color:#4a4439; text-decoration:none; font-size:13px;
             padding:8px 10px; border-radius:7px; white-space:nowrap; }
           .dd-menu a:hover{ background:#f1ece1; color:#221f1a; }
+          .dd-menu a[href*="recursive.eco"]{ color:#9333ea; }
           .dd-menu a.on{ color:#221f1a; background:#f1ece1; font-weight:600; }
           .dd-cap{ display:block; font-family:Inter,sans-serif; font-size:9px; text-transform:uppercase; letter-spacing:.16em;
             color:#8a8273; padding:8px 10px 3px; user-select:none; }
@@ -190,7 +191,7 @@
         <div class="bar">
           <span class="brand">
             <a class="brand-logo" href="https://recursive.eco" target="_blank" rel="noopener" title="Part of recursive.eco — the parent project" aria-label="recursive.eco — the parent project">
-              <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#fff;border-radius:50%;flex-shrink:0"><img src="${PFX}recursive-logo.svg" width="30" height="30" alt="" aria-hidden="true" style="display:block"></span>
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#fff;border-radius:50%;flex-shrink:0"><img src="${PFX}spiral-gold.svg" width="30" height="30" alt="" aria-hidden="true" style="display:block"></span>
             </a>
             <a class="brand-name" href="${PFX}index.html" title="The Recursive Tarot — home">
               <span class="name">The <span class="gold">Recursive Tarot</span></span>

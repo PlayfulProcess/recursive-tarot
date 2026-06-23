@@ -71,3 +71,6 @@
   --serif-body:"Fraunces",Georgia,serif;
   --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
 }
+
+/* recursive.eco redirects render in the platform purple, app-wide (wayfinding to the parent) */
+a[href^="https://recursive.eco"],a[href^="http://recursive.eco"],a[href^="https://flow.recursive.eco"],a[href^="https://kids.recursive.eco"]{color:#9333ea}
