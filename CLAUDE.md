@@ -74,6 +74,16 @@ To write Scene/Symbol sections: download images from R2 to a temp dir, use Read 
 card hides the very iconography the thumbnail exists to show. Applies to every card thumbnail:
 play tiles, course strips/detail, game cards, deck covers, viewers.
 
+## Image usage across the site (render the most of the library)
+
+Card images appear in site chrome (Home / Play / Historian / Contribute / games). Show the deck's
+**range** — keep images **unique within a page**, and avoid reusing the same image across sibling
+pages (especially **Home ↔ About ↔ Play**). After editing any page's imagery, run
+`python scripts/audit_image_usage.py`: it writes a top-level `_image_usage` onto each deck's
+grammar.json (the deck's images + the pages they feed) and regenerates `plan/IMAGE-USAGE.md`, which
+flags every cross-page repeat. Keep it up to date — it's how we spread unique cards and render the
+most of the library. (Prefer the Star / courts / Empress over yet another Visconti World.)
+
 ## Scripts cheat-sheet
 
 | Script | What it does |
