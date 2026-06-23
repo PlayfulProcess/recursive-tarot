@@ -52,7 +52,7 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 - [ ] **IDX-META-AS-INDEX** — implement Q-INDEX: enrich each deck grammar's `metadata` with `common_name`/`category`/`year`; surface common names everywhere (e.g. "Rider-Waite-Smith", not "Golden Dawn"); point index/timeline/sources at the meta. (#1)
 
 ## recursive.eco brand + logo (from research/17 direction)
-- [ ] **BRAND-REVIEW** — log a recursive.eco brand-proposition review grounded in the contemporary-tarot research (bricolage / resignification / found-by-making → positioning + logo v2 direction). `plan/RECURSIVE-ECO-BRAND-REVIEW.md`.
-- [ ] **LOGO-V2** — keep the current hero spiral live; build a *candidate* v2 logo at the bottom of the About page to iterate from.
+- [x] **BRAND-REVIEW** — log a recursive.eco brand-proposition review grounded in the contemporary-tarot research (bricolage / resignification / found-by-making → positioning + logo v2 direction). `plan/RECURSIVE-ECO-BRAND-REVIEW.md`.
+- [x] **LOGO-V2** — keep the current hero spiral live; build a *candidate* v2 logo at the bottom of the About page to iterate from.
 - [x] **LAUNCH-BUTLER** — pre-launch checklist gate: read/list the Butler primary texts before publishing the queer-performativity thesis.
 - [x] **COURSE-READINGS** — essential-readings 'bricoleur's bench' at course end + frontmatter maintenance rule (kept updated on every revision).
