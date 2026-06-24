@@ -129,6 +129,7 @@
 </style>
 </head>
 <body>
+<script src="game-card-detail.js?v=1"></script>
 <script src="../../site-header.js?v=31"></script>
 <site-header active="play"></site-header>
 
@@ -328,13 +329,23 @@
   const $=id=>document.getElementById(id);
   const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const SEATNAME=['You','West','Partner','East'];
-  let DECK=[], CURNAME='', turn=0, busy=false;
+  let DECK=[], CURNAME='', CURSLUG='', turn=0, busy=false;
+  const DETMAP={};   // label -> card object, for the shared card-detail modal (TG-LOGDETAIL)
 
   async function loadDeck(slug){
     const g=await (await fetch('../../tarot/'+slug+'/grammar.json')).json();
-    CURNAME=(g.metadata&&g.metadata.common_name)||(g.name||slug).split(/\s+[—–-]\s+/)[0]; DECK=buildDeck(g);
+    CURNAME=(g.metadata&&g.metadata.common_name)||(g.name||slug).split(/\s+[—–-]\s+/)[0]; CURSLUG=slug; DECK=buildDeck(g);
     if(DECK.length<40) throw new Error('“'+CURNAME+'” lacks enough card images for the 62-card pack.');
+    for(const k in DETMAP) delete DETMAP[k]; DECK.forEach(c=>{ DETMAP[c.label]=c; });
   }
+  // TG-LOGDETAIL: open the shared card-detail modal for a game card (image + game facts + deck link).
+  function inspectCard(c){ if(!c||!window.GameCard) return;
+    GameCard.show({ img:c.img, title:c.label,
+      lines:[ c.kind==='trump'?['Trump #', c.rank] : ['Suit', cap(c.suit||'—')],
+              c.court?['Court', cap(c.court)] : null,
+              ['Card points', cardPoints(c)] ].filter(Boolean),
+      href: CURSLUG ? '../../viewers/cards.html?src=../tarot/'+CURSLUG+'/grammar.json' : null,
+      linkText:'See this deck in the cards viewer →' }); }
   function cardEl(c,opts={}){
     const el=document.createElement(opts.play?'button':'div');
     el.className='card'+(c.kind==='trump'?' trump':'')+(opts.play?' play':'')+(opts.illegal?' illegal':'')+(opts.legalHint?' legal':'')+(opts.win?' win':'');
@@ -377,7 +388,7 @@
     const head=`<tr><th>#</th>${SEATNAME.map((n,s)=>`<th class="${s===0?'you':''}">${esc(n)}</th>`).join('')}<th>Took</th></tr>`;
     const body=logRows.slice().reverse().map(r=>{
       const cells=[0,1,2,3].map(seat=>{ const c=r.cards[seat];
-        return `<td class="cell${r.winSeat===seat?' win':''}">`
+        return `<td class="cell${r.winSeat===seat?' win':''}"${c?` data-card="${esc(c.label)}" style="cursor:pointer" title="Click to inspect this card"`:''}>`
           +(c?`<img loading="lazy" src="${esc(c.img)}" alt=""><div class="cl">${c.kind==='trump'&&c.rank!=null?`<b>${c.rank}</b> `:''}${esc(c.label)}${cardPoints(c)?` <span class="pts">+${cardPoints(c)}</span>`:''}</div>`:'')
           +(r.leaderSeat===seat?'<div class="led">led</div>':'')+`</td>`; }).join('');
       const cls=teamOf(r.winSeat)===0?'us':'them';
@@ -452,6 +463,7 @@
   $('aihard').addEventListener('change',e=>{ aiHard=e.target.checked; });
   $('peek').addEventListener('change',e=>{ peek=e.target.checked; renderSeats(); });
   $('all-trumps').addEventListener('click',showTrumpModal);
+  $('log').addEventListener('click',e=>{ const td=e.target.closest('td[data-card]'); if(td) inspectCard(DETMAP[td.getAttribute('data-card')]); });
 })();
 </script>
 

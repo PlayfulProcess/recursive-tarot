@@ -9,18 +9,18 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 - [x] **Q-76** — "half of 76": the 62-card Bolognese pack carries **76 total card-points** (honours/courts summed: 4 five-point honours=20, 4 Kings=20, 4 Queens=16, 4 Knights=12, 4 Knaves=8 → 76). Win by taking **>38**. Add this explanation to the UI. (→ TG-76)
 
 ## Tarocchino game viewer (`pages/games/tarocchino.html`)
-- [ ] **TG-RULES** — make the rules explanation prettier & clearer (A).
+- [x] **TG-RULES** — DONE (already in good shape): the rules are a clean collapsible `.rules-hero` ("How to play") — teams, follow-then-trump, the Excuse, the "Why 76? → take more than 38" points explanation, and the low→high trump-order pills + the "trumps carried no printed numbers" note with the See-all-22 button. Madiao & Trionfi carry the same `.rules-hero` pattern. (A)
 - [x] **TG-TRUMPNUM** — trumps didn't historically carry numbers; we added them for convenience. Don't pill them silently — either write trump order in full or a popup that renders all trumps in full with their number. (B)
 - [x] **TG-DECKS** — list all Tarocchino-able decks; source the deck dropdown from the shared meta-grammar index (see Q-INDEX). (C)
 - [x] **TG-PEEK** — debug button: reveal opponents' hands (verify they're not "cheating"). (D)
 - [x] **TG-TRUMPHL** (logic was already correct — on your lead all cards are legal; trumps only highlight when void-and-must-trump; clarified the status text) — on your lead, stop highlighting trumps as if forced; highlight only legal plays per Q-TRUMP-RULE. (E)
 - [x] **TG-AI** — opponent AI easy/medium/hard, algorithmic. v1: make opponents non-trivial (don't dump trumps; lead low; save high trumps; follow/trump correctly). Ship one better round as default "easy", add a "harder" toggle. (F)
 - [x] **TG-76** — explain "half of 76" in the UI (see Q-76). (G)
-- [ ] **TG-LOGDETAIL** — click a card in the Play log → open the SAME card-detail modal as the cards viewer (share code, don't rewrite). (H)
+- [x] **TG-LOGDETAIL** — DONE: a new shared `pages/games/game-card-detail.js` exposes one light-themed `GameCard.show(...)` modal; clicking any card in the Tarocchino Play log opens it (card image + trump#/suit + points + a "See this deck in the cards viewer →" deep-link). One module, not a rewrite. (H)
 - [x] **TG-HANDNUM** — trumps in hand show their trump-number (same as the description) so you know which wins. (J)
 - [x] **TG-LOGNUM** — Play log renders trump # inline before the name (same pattern as cards) + the points each card is worth. (K)
 - [x] **TG-LOGRESIZE** — Play log shouldn't collapse; let it resize (it can't grow unbounded). (L)
-- [ ] **TG-REUSE** — reuse these patterns (rules block, log, card-detail share, AI) in the other games (madiao, trionfi). (M)
+- [x] **TG-REUSE** — DONE: the shared `game-card-detail.js` modal is now wired into all three games — Tarocchino, Trionfi (log + table cards open the modal with image + suit/rank), and Ma Diao (type-rendered money cards open the modal with suit/face/trick-rank + the reversed-Cash note). Rules block, play log and a non-trivial AI were already present in madiao & trionfi; this closes the missing shared pattern (card-detail). Verified in all three. (M)
 
 ## Spread builder (`pages/spread-builder.html`)
 - [x] **SB-CAST** — casting is available via the spread-builder "Cast with this spread ↗" button, which hands the layout to the Caster and draws a card per position. (N)
