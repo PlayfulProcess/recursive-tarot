@@ -80,7 +80,7 @@ Card images appear in site chrome (Home / Play / Historian / Contribute / games)
 **range** — keep images **unique within a page**, and avoid reusing the same image across sibling
 pages (especially **Home ↔ About ↔ Play**). After editing any page's imagery, run
 `python scripts/audit_image_usage.py`: it writes a top-level `_image_usage` onto each deck's
-grammar.json (the deck's images + the pages they feed) and regenerates `plan/IMAGE-USAGE.md`, which
+grammar.json (the deck's images + the pages they feed) and regenerates `docs/plan/IMAGE-USAGE.md`, which
 flags every cross-page repeat. Keep it up to date — it's how we spread unique cards and render the
 most of the library. (Prefer the Star / courts / Empress over yet another Visconti World.)
 
