@@ -3,6 +3,10 @@
 Newest first. One line per shipped item; reference the TODO id when there is one.
 Open work lives in [TODO.md](TODO.md).
 
+## 2026-06-24
+
+- **Tarocchino (TG-HANDNUM, TG-LOGNUM, TG-LOGRESIZE):** trumps in hand now show their A-order number (higher wins) as a badge distinct from the honour star; the Play log renders the trump # inline before the name plus a points chip (e.g. "19 The World +5"); and the log is now resize:vertical (taller default) instead of a fixed scroll. Verified in preview.
+
 ## 2026-06-23
 
 ### Tracking + this session's later pass (in progress)
