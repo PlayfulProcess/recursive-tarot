@@ -444,6 +444,16 @@
             color: var(--grammar-accent);
             margin-bottom: 0.5rem;
         }
+        /* CV-TITLEDROP: the title IS the deck dropdown (no more name shown twice). */
+        .title-dd{background:none;border:none;padding:0;margin:0;cursor:pointer;display:inline-flex;align-items:center;gap:9px;text-align:left;max-width:100%}
+        .title-dd .grammar-title{margin-bottom:0}
+        .title-caret{font-size:1.1rem;color:var(--grammar-text-muted,#8a8273);flex:0 0 auto;transition:transform .12s}
+        .title-dd[aria-expanded="true"] .title-caret{transform:rotate(180deg)}
+        .title-dd:hover .grammar-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+        .title-menu{position:absolute;top:100%;left:0;margin-top:4px;background:var(--bg,#fff);border:1px solid var(--line,#d8d2c6);border-radius:10px;box-shadow:0 14px 34px -12px rgba(60,45,20,.45);max-height:60vh;overflow:auto;z-index:60;min-width:min(300px,90vw);padding:5px}
+        .title-menu a{display:block;padding:7px 11px;border-radius:7px;color:var(--ink,#221f1a);text-decoration:none;font-size:14px;white-space:nowrap}
+        .title-menu a:hover{background:var(--panel2,#f1ece1)}
+        .title-menu a.on{font-weight:700;color:var(--grammar-accent,#9a7322)}
 
         .grammar-description {
             color: var(--grammar-text-muted);
@@ -2066,11 +2076,16 @@
         <div id="grammar-content" class="hidden">
             <!-- Header -->
             <div class="grammar-header">
-                <select id="deck-switcher" onchange="switchDeck(this.value)" title="Switch deck — or back to All Decks"
-                    style="margin-bottom:10px;background:#f4f1ea;color:#221f1a;border:1px solid #d8d2c6;border-radius:8px;padding:7px 12px;font-size:14px;font-weight:600;cursor:pointer;max-width:340px;">
+                <select id="deck-switcher" onchange="switchDeck(this.value)" title="Switch deck — or back to All Decks" style="display:none">
                     <option value="">Loading decks…</option>
                 </select>
-                <h1 id="grammar-title" class="grammar-title">Grammar Viewer</h1>
+                <div class="title-dd-wrap" style="position:relative;margin-bottom:10px">
+                  <button type="button" id="title-dd" class="title-dd" aria-haspopup="true" aria-expanded="false" onclick="toggleTitleMenu(event)" title="Click to switch deck">
+                    <h1 id="grammar-title" class="grammar-title">Grammar Viewer</h1>
+                    <span class="title-caret" aria-hidden="true">▾</span>
+                  </button>
+                  <div id="title-menu" class="title-menu" role="menu" hidden></div>
+                </div>
                 <div id="description-container" class="hidden">
                     <p id="grammar-description" class="grammar-description collapsed"></p>
                     <button id="description-toggle" class="description-toggle hidden" onclick="toggleDescription()">Read more</button>
@@ -3696,6 +3711,22 @@
         // Deck switcher — toggle between decks (and "All Decks" = the meta) without
         // leaving the cards view. Reads the repo's _collection.json.
         function switchDeck(val) { if (val) window.location.href = 'cards.html?src=' + encodeURIComponent(val); }
+        // CV-TITLEDROP: clicking the title opens the deck list (built from the hidden deck-switcher).
+        function toggleTitleMenu(ev){
+            if(ev){ ev.preventDefault(); ev.stopPropagation(); }
+            const menu=document.getElementById('title-menu'); const btn=document.getElementById('title-dd');
+            if(!menu||!btn) return;
+            if(!menu.hidden){ menu.hidden=true; btn.setAttribute('aria-expanded','false'); return; }
+            const opts=[...(document.getElementById('deck-switcher')?.options||[])].filter(o=>o.value);
+            menu.innerHTML = opts.length
+                ? opts.map(o=>`<a role="menuitem" href="cards.html?src=${encodeURIComponent(o.value)}" class="${o.selected?'on':''}">${o.textContent}</a>`).join('')
+                : '<span style="display:block;padding:8px 11px;color:var(--muted);font-size:13px">Loading decks…</span>';
+            menu.hidden=false; btn.setAttribute('aria-expanded','true');
+            const onDoc=e=>{ if(!document.querySelector('.title-dd-wrap')?.contains(e.target)){ menu.hidden=true; btn.setAttribute('aria-expanded','false'); cleanup(); } };
+            const onEsc=e=>{ if(e.key==='Escape'){ menu.hidden=true; btn.setAttribute('aria-expanded','false'); cleanup(); } };
+            function cleanup(){ document.removeEventListener('click',onDoc); document.removeEventListener('keydown',onEsc); }
+            setTimeout(()=>{ document.addEventListener('click',onDoc); document.addEventListener('keydown',onEsc); },0);
+        }
         async function populateDeckSwitcher() {
             const sel = document.getElementById('deck-switcher'); if (!sel) return;
             const curSrc = new URLSearchParams(location.search).get('src') || '';
