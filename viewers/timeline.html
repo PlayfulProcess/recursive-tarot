@@ -77,10 +77,10 @@
 <script src="dimension-engine.js?v=1"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script>
-const BRANCH_RAW={'branch-roots':'#c9a24b','branch-a':'#e07a5f','branch-b':'#81b29a','branch-c':'#6d8ec9','branch-occult':'#9b6dc9','branch-sui':'#c96d9b'};
-const BRANCH_LABEL={'branch-roots':'Roots (Milan)','branch-a':'Southern (A-order)','branch-b':'Eastern (B-order)','branch-c':'Western (C-order)','branch-occult':'Occult','branch-sui':'Sui generis'};
+const BRANCH_RAW={'branch-roots':'#c9a24b','branch-a':'#e07a5f','branch-b':'#81b29a','branch-c':'#6d8ec9','branch-occult':'#9b6dc9','branch-sui':'#c96d9b','branch-contemporary':'#4db6ac'};
+const BRANCH_LABEL={'branch-roots':'Roots (Milan)','branch-a':'Southern (A-order)','branch-b':'Eastern (B-order)','branch-c':'Western (C-order)','branch-occult':'Occult','branch-sui':'Sui generis','branch-contemporary':'Contemporary'};
 const PALETTE=['#c9a24b','#e07a5f','#81b29a','#6d8ec9','#9b6dc9','#c96d9b','#9a7322','#6b6457','#4db6ac','#e57373'];
-const SLUG_MAP={'deck-visconti-sforza':'visconti-sforza-tarot','deck-cary-yale':'cary-yale-visconti-tarot','deck-tarocchino-bologna':'tarocchino-bologna','deck-minchiate':'minchiate-florence-tarot','deck-charles-vi':'charles-vi-tarot','deck-marseille-conver':'tarot-de-marseille-conver','deck-marseille-type1':'noblet-tarot','deck-besancon':'tarot-de-besancon','deck-court-de-gebelin':'court-de-gebelin-tarot','deck-etteilla-i':'etteilla-i-livre-de-thot','deck-etteilla-iii':'etteilla-iii-oracle-des-dames','deck-oswald-wirth':'oswald-wirth-tarot','deck-golden-dawn':'golden-dawn-book-t-tarot','deck-sola-busca':'sola-busca-tarot','deck-mantegna':'mantegna-tarocchi'};
+const SLUG_MAP={'deck-visconti-sforza':'visconti-sforza-tarot','deck-cary-yale':'cary-yale-visconti-tarot','deck-tarocchino-bologna':'tarocchino-bologna','deck-minchiate':'minchiate-florence-tarot','deck-charles-vi':'charles-vi-tarot','deck-marseille-conver':'tarot-de-marseille-conver','deck-marseille-type1':'noblet-tarot','deck-besancon':'tarot-de-besancon','deck-court-de-gebelin':'court-de-gebelin-tarot','deck-etteilla-i':'etteilla-i-livre-de-thot','deck-etteilla-iii':'etteilla-iii-oracle-des-dames','deck-oswald-wirth':'oswald-wirth-tarot','deck-golden-dawn':'golden-dawn-book-t-tarot','deck-sola-busca':'sola-busca-tarot','deck-mantegna':'mantegna-tarocchi','deck-ontoject':'ontoject-illustrated','deck-anecdotes':'anecdotes-tarot'};
 
 const params=new URLSearchParams(location.search);
 const SRC=params.get('src')||'../tarot/tree-of-tarot/grammar.json';
