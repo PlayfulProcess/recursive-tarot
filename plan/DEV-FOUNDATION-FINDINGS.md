@@ -49,3 +49,21 @@ code changed; no write actions performed.** Logged at the builder's request.
    - Also worth checking in the panel: is there a **"Repo/GitHub official"** option (the *opposite*
      direction, repo→Supabase)? That direction is safe for the repo and may prove the App-commit path
      just as well.
+
+## UPDATE — opened the Channel settings (read-only) and found the drift
+
+With the window foregrounded I opened **The Recursive Tarot → Settings** (viewing only, nothing saved).
+- **Channel: Published ✅**, description present → Door 2's home renders fine.
+- **Sync status: 27 grammars · 26 in sync · 1 drifted.** The 26 historical decks are all green **In sync**
+  (so the sync machinery generally works — good sign).
+- **The 1 drift = "The 36 Tattvas: A Grammar of Consciousness"** (`thirty-six-tattvas`) — **one of the two
+  community grammars I added the disclaimer to THIS session.** Row offers **"GitHub official"** (repo→Supabase)
+  and **"Supabase official"** (Supabase→repo).
+
+### Do NOT tap either button on the 36 Tattvas row
+- **"Supabase official"** → Supabase (last edited Jun 17, pre-disclaimer) overwrites the repo → **wipes my
+  Jun 23 disclaimer edit.** This is the exact risk I flagged, now concrete.
+- **"GitHub official"** → repo → Supabase. Safe for the repo, BUT the repo's `thirty-six-tattvas/grammar.json`
+  likely lacks the platform-side **`ai_personality_prompt` / Wallis RAG config** (per recursive-eco CLAUDE.md
+  that grammar carries sensitive RAG), so pushing repo→Supabase could **wipe the RAG on the platform.**
+- → **The 36 Tattvas is the worst possible deck to test on.** Use a disposable TEST grammar (builder's instinct).
