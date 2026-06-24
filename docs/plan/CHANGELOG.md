@@ -5,6 +5,8 @@ Open work lives in [TODO.md](TODO.md).
 
 ## 2026-06-24
 
+- **Cards viewer (CV-TITLEDROP):** the deck name no longer appears twice — the separate deck-switcher dropdown is hidden and the **title itself is now the dropdown** (a caret + click opens the full deck menu, current deck marked, each item navigates). Verified: select hidden, title-click opens 36 decks.
+
 - **Caster (SB-CARDS):** cast cards now render cleanly like the cards viewer — the verbose cross-deck meta name ("Name — Deck") has its trailing deck stripped (the deck already shows separately below), and the label wraps within the card border (overflow-wrap:anywhere). Verified: no name still carries its deck suffix, nothing overflows. (SB-CAST is already available via the spread-builder Cast-with-this-spread button.) Also marked the dev write-back foundation test RESOLVED — the builder confirmed the App commits to the repo.
 
 - **Tarocchino (TG-DECKS):** the deck dropdown is no longer 3 hardcoded slugs — it now discovers every tarot-branch deck in the index (_collection.json) that actually builds a full 62-card pack, and lists all 9 (Cary-Yale, Etteilla I/II/III, Golden Dawn, Minchiate, Sola Busca, Marseille, Visconti). Self-correcting: a new complete deck appears automatically; fragments are excluded.
