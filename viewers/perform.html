@@ -11,7 +11,7 @@
   { start_sec, end_sec, overlays[] {kind,content,start_sec,end_sec,x_pct,y_pct,width_pct} }.
   A global clock drives image swaps + timed karaoke overlays; intermission items (no image_url)
   render their text centred. Audio optional: metadata.audio (single track) drives the clock if set,
-  else an internal clock auto-advances. ?src=../data/performances/<id>.json (default: Death demo).
+  else an internal clock auto-advances. ?src=../recording/performances/<id>.json (default: Death demo).
 -->
 <style>
   :root{        }
@@ -75,7 +75,7 @@
 <script>
 const $=id=>document.getElementById(id);
 const params=new URLSearchParams(location.search);
-const SRC=params.get('src')||'../data/performances/death-across-the-centuries.json';
+const SRC=params.get('src')||'../recording/performances/death-across-the-centuries.json';
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
 
