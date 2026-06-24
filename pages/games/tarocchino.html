@@ -146,6 +146,7 @@
   <div class="toolbar">
     <label>Deck <select id="deck"></select></label>
     <button id="newgame">New deal</button>
+    <label title="Harder opponents secure point-rich tricks, feed a winning partner, and pull trumps. Uncheck for the gentler original."><input type="checkbox" id="aihard" checked> Harder opponents</label>
     <span class="deck-note" id="deck-note"></span>
   </div>
 
@@ -263,16 +264,40 @@
     const w=winnerEntry(hypo); return w&&w.seat===seat; }
   const byRank=a=>a.slice().sort((x,y)=>(x.rank??0)-(y.rank??0));
   const byVal =a=>a.slice().sort((x,y)=>cardPoints(x)-cardPoints(y)||(x.rank??0)-(y.rank??0));
+  // Opponent AI. EASY (the original) leads low, wins cheaply, dumps low. HARD (default) adds three
+  // standard tactics that stop the human winning every hand: lead trumps when trump-heavy to pull
+  // them, secure point-rich tricks by winning HIGH when not last, and feed a sure-winning partner.
+  let aiHard = true;
   function aiChoose(seat){
     const legal=legalMoves(seat);
-    if(trick.length===0){ const nt=legal.filter(c=>c.kind==='suit'&&!c.matto);
-      return byRank(nt.length?nt:legal.filter(c=>!c.matto)).slice(-1)[0]?byRank(nt.length?nt:legal.filter(c=>!c.matto))[0]:legal[0]; }
+    const nonMatto=legal.filter(c=>!c.matto);
+    const lead=trick.length===0, last=trick.length===3;
+    if(lead){
+      const nt=legal.filter(c=>c.kind==='suit'&&!c.matto);
+      if(aiHard){
+        const trumps=hands[seat].filter(c=>c.kind==='trump'&&!c.matto);
+        // trump-heavy → lead a LOW trump to draw out opponents' trumps before cashing courts
+        if(trumps.length>=5 || (trumps.length>=4 && nt.length<=2)){
+          const lt=byRank(legal.filter(c=>c.kind==='trump'&&!c.matto)); if(lt.length) return lt[0];
+        }
+      }
+      return byRank(nt.length?nt:nonMatto)[0] || legal[0];                       // else lead the lowest suit card
+    }
     const cw=curWinnerSeat();
     const partnerWinning = cw!=null && teamOf(cw)===teamOf(seat);
     const wins=legal.filter(c=>!c.matto && wouldWin(seat,c));
-    if(partnerWinning){ const safe=legal.filter(c=>!c.matto); return byVal(safe.length?safe:legal)[0]; }   // don't overtake partner
-    if(wins.length) return byRank(wins)[0];                                                                // win as cheaply as possible
-    const dump=legal.filter(c=>!c.matto); return byVal(dump.length?dump:legal)[0];                          // can't win → throw least value
+    const trickPts=trick.reduce((a,x)=>a+(x.card.matto?0:cardPoints(x.card)),0);
+    if(partnerWinning){
+      const safe=nonMatto.length?nonMatto:legal;
+      // HARD: if I'm last, the trick is my partner's for sure → throw my highest point card to them
+      return (aiHard && last) ? byVal(safe).slice(-1)[0] : byVal(safe)[0];       // else keep points safe
+    }
+    if(wins.length){
+      const sorted=byRank(wins);
+      // HARD: on a point-rich trick, win HIGH when not last so a later seat can't overtake cheaply
+      return (aiHard && trickPts>=4 && !last) ? sorted.slice(-1)[0] : sorted[0]; // else win as cheaply as possible
+    }
+    const dump=nonMatto.length?nonMatto:legal; return byVal(dump)[0];            // can't win → throw least value
   }
 
   function playGameHeadless(deck){
@@ -381,6 +406,7 @@
     }catch(e){ $('err').style.display='block'; $('err').textContent='Could not load the decks: '+e.message; }
   })();
   $('newgame').addEventListener('click',()=>start($('deck').value));
+  $('aihard').addEventListener('change',e=>{ aiHard=e.target.checked; });
 })();
 </script>
 
