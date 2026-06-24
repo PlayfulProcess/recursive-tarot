@@ -1,3 +1,5 @@
+> **RESOLVED (Jun 24 2026):** the builder ran the write-back test herself (channel sync → Supabase official) and confirmed the App commits to the repo. The write tests below are done; this doc is kept for the foundation recon only.
+
 # dev.flow.recursive.eco foundation test — findings (Jun 23 2026)
 
 Read-only reconnaissance via Claude-in-Chrome on `dev.flow.recursive.eco/account`. **No recursive-eco

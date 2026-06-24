@@ -23,8 +23,8 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 - [ ] **TG-REUSE** — reuse these patterns (rules block, log, card-detail share, AI) in the other games (madiao, trionfi). (M)
 
 ## Spread builder (`pages/spread-builder.html`)
-- [ ] **SB-CAST** — allow casting cards in the spread builder. (N)
-- [ ] **SB-CARDS** — render cards cleanly like the cards viewer (text currently overflows the card border). (O)
+- [x] **SB-CAST** — casting is available via the spread-builder "Cast with this spread ↗" button, which hands the layout to the Caster and draws a card per position. (N)
+- [x] **SB-CARDS** — render cards cleanly like the cards viewer (text currently overflows the card border). (O)
 - [x] **SB-BTNS** — "Cast" + "Re-cast" are the same action → just "Cast". (P)
 - [x] **SB-IMPORT** — rename "Import" → "Import Spread". (Q)
 
