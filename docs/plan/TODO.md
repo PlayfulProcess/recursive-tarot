@@ -37,7 +37,7 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 - [ ] **EX-SECTIONS** — section dropdown like the cards viewer; render section text in FULL, resizable to a good chunk of screen; fix the dark-theme sections. (prior #2)
 
 ## Timeline (`viewers/timeline.html`)
-- [ ] **TL-CONTEMP** — include contemporary decks + their descent (needs `deck-*` nodes w/ `when`+`derives_from` in `tree-of-tarot/grammar.json`; leans on Q-INDEX). (prior #3)
+- [x] **TL-CONTEMP** — DONE: added a `deck-italian-trionfi` **game-root** node (it was referenced 6× as the parent of the A/B/sui decks but never existed — the edges were silently dropped; now it renders and connects them) + two finished contemporary decks on a new **Contemporary** lane: **The Ontoject** descends from the game root (playful, no esoteric claim → NOT from RWS, per the builder's rule), **Anecdotes** descends from RWS (poetic/interpretive overlay). The unfinished community decks (Tarocchino Arlecchino → Tarocchino di Bologna, Clown Town & Arlecchino's Augmented → game root) are documented in `_pending_decks` with their intended descent, ready to drop into `items[]` when finished — per the builder: community decks don't enter the maps until done. Verified in preview: 29 nodes, Contemporary lane, no errors. (prior #3)
 
 ## Sources (`pages/sources.html`)
 - [x] **SRC-THUMBS** — prettify with card thumbnails; confirm it reflects the current library. (prior #13)
