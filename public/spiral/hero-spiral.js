@@ -47,7 +47,7 @@ function createHeroSpiral(className = '', color = 'currentColor') {
     // WHY - Center text (Meaning) - Slowest breathing
     const whyText = document.createElement('div');
     whyText.className = 'hero-text-why';
-    whyText.innerHTML = '<span style="font-weight: 600;">WHY:</span> Sense';
+    whyText.innerHTML = '<span style="font-weight: 600;">WHY:</span> Make sense';
     whyText.style.position = 'absolute';
     whyText.style.fontSize = '28px';
     whyText.style.color = color;
