@@ -73,7 +73,7 @@
   .slot .card img { width:100%; height:100%; object-fit:contain; }
   .slot .card .ph { color:#8a8273; font-size:11px; text-align:center; padding:4px; line-height:1.3; }
   .slot .cname { font-size:10.5px; color:#4a4439; text-align:center; margin-top:3px; line-height:1.2;
-    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; overflow-wrap:anywhere; }
   .slot .cdeck { font-size:9.5px; color:var(--muted); text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .slot .rev { color:#9a7322; font-size:9px; text-align:center; }
   .empty { color:var(--muted); font-size:14px; text-align:center; padding:40px 0; }
@@ -220,6 +220,11 @@ let lastCast = null;
 let seq = 0;
 
 const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+// Cross-deck (All Decks) cast names arrive as "Name — Deck" (or "rank — Name — Deck"). The deck is
+// shown separately in .cdeck, so strip a trailing " — <deck>" so the label reads cleanly under the card.
+const shortCardName = (nm, deck) => { let s = String(nm||'');
+  if (deck) { const d = String(deck).replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); s = s.replace(new RegExp('\\s*[—–-]\\s*'+d+'\\s*$'), ''); }
+  return s.trim(); };
 const $ = id => document.getElementById(id);
 
 // ── init ──
@@ -322,7 +327,7 @@ function renderBoard(){
     slot.innerHTML = `<div class="num">${i+1}</div>`
       + `<div class="plabel" title="${esc(p.meaning||'')}">${esc(p.label)}</div>`
       + `<div class="card${c?' filled':''}">${cardInner}</div>`
-      + (c ? `<div class="cname">${esc(c.name)}</div><div class="cdeck">${esc(c.deck||'')}</div>${c.reversed?'<div class="rev">reversed</div>':''}` : '');
+      + (c ? `<div class="cname">${esc(shortCardName(c.name, c.deck))}</div><div class="cdeck">${esc(c.deck||'')}</div>${c.reversed?'<div class="rev">reversed</div>':''}` : '');
     attachSlot(slot, p, i);
     board.appendChild(slot);
   });
