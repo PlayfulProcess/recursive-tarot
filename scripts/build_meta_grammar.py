@@ -202,8 +202,8 @@ def build():
         for ord_, it in enumerate(g.get("items", []), 1):
             # Only aggregate real L1 cards. Skip emergence/axis nodes (anything with
             # composite_of, e.g. suit/keyword pills) so they don't leak in as bogus cards.
-            if it.get("composite_of") or it.get("category") in ("axis", "keyword-emergence"):
-                continue
+            if it.get("composite_of") or it.get("category") in ("axis", "keyword-emergence", "overview"):
+                continue  # "overview" = the deck's cover/intro item, not a real card — don't leak it into the card tree
             m = it.get("metadata", {}) or {}
             name = it.get("name") or ""
             suit = suit_norm(m.get("suit"))
