@@ -10,7 +10,7 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 
 ## Tarocchino game viewer (`pages/games/tarocchino.html`)
 - [ ] **TG-RULES** — make the rules explanation prettier & clearer (A).
-- [ ] **TG-TRUMPNUM** — trumps didn't historically carry numbers; we added them for convenience. Don't pill them silently — either write trump order in full or a popup that renders all trumps in full with their number. (B)
+- [x] **TG-TRUMPNUM** — trumps didn't historically carry numbers; we added them for convenience. Don't pill them silently — either write trump order in full or a popup that renders all trumps in full with their number. (B)
 - [ ] **TG-DECKS** — list all Tarocchino-able decks; source the deck dropdown from the shared meta-grammar index (see Q-INDEX). (C)
 - [x] **TG-PEEK** — debug button: reveal opponents' hands (verify they're not "cheating"). (D)
 - [x] **TG-TRUMPHL** (logic was already correct — on your lead all cards are legal; trumps only highlight when void-and-must-trump; clarified the status text) — on your lead, stop highlighting trumps as if forced; highlight only legal plays per Q-TRUMP-RULE. (E)
