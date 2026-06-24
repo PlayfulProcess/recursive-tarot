@@ -30,7 +30,7 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 
 ## Cards viewer (`viewers/cards.html`)
 - [ ] **CV-TITLEDROP** — make the title itself the deck dropdown so the deck name isn't shown twice. (prior #11)
-- [ ] **CV-SYNC** — the "open in recursive.eco" / redirect buttons in card detail are out of sync between grammars — audit & normalise. (I)
+- [~] **CV-SYNC** — AUDITED: card-detail always shows 2 eco buttons (Edit this card / View deck); 31/37 decks are mapped to a recursive.eco UUID in `tarot/_eco_ids.json` and get correct deep-links, but 6 are unmapped (anecdotes-tarot, arlecchinos-augmented-arcana, clown-town-tarot, petit-lenormand, tarocchino-arlecchino, test) so their "View deck" falls back to the flow HOMEPAGE (not broken, but inconsistent). FIX OPTIONS: (a) publish those decks to recursive.eco so they get UUIDs [platform action — builder], or (b) UI fallback: send unmapped "View deck" to the deck'''s GitHub page instead of the homepage. `test` looks like a stray deck to remove. (I)
 
 ## Emergence Explorer (`viewers/explorer.html`)
 - [ ] **EX-CATALOGUE** — 33 cards uncatalogued/mis-keyed so same cards (e.g. Sola Busca ↔ RWS) won't pair on a shared dimension. Catalogue rank/suit/trump keys. (prior #2)
