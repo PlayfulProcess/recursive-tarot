@@ -5,6 +5,8 @@ Open work lives in [TODO.md](TODO.md).
 
 ## 2026-06-24
 
+- **Tarocchino (TG-AI):** opponents got smarter so the human stops winning every hand — on a point-rich trick they win HIGH when not last (so a later seat cannot overtake cheaply), feed a sure-winning partner their highest point card when last, and lead a low trump when trump-heavy to pull trumps. Added a **Harder opponents** toggle (default on; uncheck for the gentler original). The AI only ever returns cards from legalMoves, so it cannot play illegally; a full hand resolves with no console errors.
+
 - **Tarocchino (TG-HANDNUM, TG-LOGNUM, TG-LOGRESIZE):** trumps in hand now show their A-order number (higher wins) as a badge distinct from the honour star; the Play log renders the trump # inline before the name plus a points chip (e.g. "19 The World +5"); and the log is now resize:vertical (taller default) instead of a fixed scroll. Verified in preview.
 
 ## 2026-06-23
