@@ -17,9 +17,9 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 - [ ] **TG-AI** — opponent AI easy/medium/hard, algorithmic. v1: make opponents non-trivial (don't dump trumps; lead low; save high trumps; follow/trump correctly). Ship one better round as default "easy", add a "harder" toggle. (F)
 - [x] **TG-76** — explain "half of 76" in the UI (see Q-76). (G)
 - [ ] **TG-LOGDETAIL** — click a card in the Play log → open the SAME card-detail modal as the cards viewer (share code, don't rewrite). (H)
-- [ ] **TG-HANDNUM** — trumps in hand show their trump-number (same as the description) so you know which wins. (J)
-- [ ] **TG-LOGNUM** — Play log renders trump # inline before the name (same pattern as cards) + the points each card is worth. (K)
-- [ ] **TG-LOGRESIZE** — Play log shouldn't collapse; let it resize (it can't grow unbounded). (L)
+- [x] **TG-HANDNUM** — trumps in hand show their trump-number (same as the description) so you know which wins. (J)
+- [x] **TG-LOGNUM** — Play log renders trump # inline before the name (same pattern as cards) + the points each card is worth. (K)
+- [x] **TG-LOGRESIZE** — Play log shouldn't collapse; let it resize (it can't grow unbounded). (L)
 - [ ] **TG-REUSE** — reuse these patterns (rules block, log, card-detail share, AI) in the other games (madiao, trionfi). (M)
 
 ## Spread builder (`pages/spread-builder.html`)

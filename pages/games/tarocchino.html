@@ -85,6 +85,7 @@
   .play-slot .card{width:96px} .play-slot .card img{height:146px}
   .card.win{box-shadow:0 0 0 2px var(--accent)}
   .honour-badge{position:absolute;top:2px;left:2px;background:var(--accent);color:#f4f1ea;font-size:8px;font-weight:800;padding:0 3px;border-radius:3px}
+  .trump-num{position:absolute;top:2px;right:2px;background:#2d2a3a;color:#fff;font-size:8.5px;font-weight:800;padding:0 4px;border-radius:3px;min-width:11px;text-align:center}
 
   .status{font-size:14px;margin:12px 0 6px;min-height:20px;color:var(--ink);font-weight:600}
   .hand{display:flex;gap:9px;flex-wrap:wrap;align-items:center;min-height:180px}
@@ -98,7 +99,7 @@
   .logpanel h3{margin:0 0 4px;font-size:15px} .logpanel h4{margin:14px 0 5px;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent)}
   .logpanel .hint{font-size:12px;color:var(--muted);margin:0 0 10px}
   .logpanel p{font-size:12.5px;color:var(--muted);line-height:1.55;margin:.4em 0}
-  #log{max-height:440px;overflow:auto}
+  #log{max-height:78vh;min-height:160px;overflow:auto;resize:vertical}
   table.logT{border-collapse:collapse;width:100%;font-size:11px}
   table.logT th,table.logT td{border:1px solid var(--line);padding:4px 5px;text-align:center;vertical-align:top}
   table.logT thead th{background:var(--panel2);color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.04em;position:sticky;top:0;z-index:1}
@@ -107,6 +108,7 @@
   table.logT td.cell img{width:40px;height:60px;object-fit:contain;display:block;margin:0 auto}
   table.logT td.cell .cl{font-size:9px;color:var(--muted);line-height:1.1;margin-top:2px}
   table.logT td.cell .led{font-size:8px;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-top:1px}
+  table.logT td.cell .cl b{color:var(--ink)} table.logT td.cell .cl .pts{color:var(--accent);font-weight:700}
   table.logT td.cell.win{background:rgba(154,115,34,.14);box-shadow:inset 0 0 0 2px var(--accent)}
   table.logT td.took{font-weight:700;font-size:10.5px;white-space:nowrap}
   .log-empty{font-size:12px;color:var(--muted)}
@@ -301,7 +303,9 @@
     el.className='card'+(c.kind==='trump'?' trump':'')+(opts.play?' play':'')+(opts.illegal?' illegal':'')+(opts.legalHint?' legal':'')+(opts.win?' win':'');
     if(opts.play){ el.type='button'; el.disabled=!!opts.illegal; if(!opts.illegal) el.onclick=()=>humanPlay(c);
       else el.title='You must follow '+(ledSuit==='trump'?'with a trump':cap(ledSuit)); }
-    el.innerHTML=(c.honour?`<span class="honour-badge">★</span>`:'')+`<img loading="lazy" src="${c.img}" alt=""><div class="cap">${c.label}</div>`;
+    el.innerHTML=(c.honour?`<span class="honour-badge">★</span>`:'')
+      +(c.kind==='trump'&&c.rank!=null?`<span class="trump-num" title="Trump ${c.rank} — higher wins">${c.rank}</span>`:'')
+      +`<img loading="lazy" src="${c.img}" alt=""><div class="cap">${c.label}</div>`;
     return el;
   }
   function renderSeats(winSeat){
@@ -335,7 +339,7 @@
     const body=logRows.slice().reverse().map(r=>{
       const cells=[0,1,2,3].map(seat=>{ const c=r.cards[seat];
         return `<td class="cell${r.winSeat===seat?' win':''}">`
-          +(c?`<img loading="lazy" src="${esc(c.img)}" alt=""><div class="cl">${esc(c.label)}</div>`:'')
+          +(c?`<img loading="lazy" src="${esc(c.img)}" alt=""><div class="cl">${c.kind==='trump'&&c.rank!=null?`<b>${c.rank}</b> `:''}${esc(c.label)}${cardPoints(c)?` <span class="pts">+${cardPoints(c)}</span>`:''}</div>`:'')
           +(r.leaderSeat===seat?'<div class="led">led</div>':'')+`</td>`; }).join('');
       const cls=teamOf(r.winSeat)===0?'us':'them';
       return `<tr><td class="rnd">${r.n}</td>${cells}<td class="took" style="color:var(--${cls})">${esc(SEATNAME[r.winSeat])}<br>+${r.pts}</td></tr>`;
