@@ -175,13 +175,15 @@ No command line needed. In **claude.ai**, open **Settings → Connectors** — t
 
 Hit **Add** and you'll be redirected to **log in to recursive.eco** — that sign-in is what lets the MCP read and write *your* library, and draw on *your* credits if you reach for a paid tool. The same URL works in **Claude Desktop**, **Claude Code**, or any MCP-capable client.
 
-![claude.ai → Settings → Connectors → open Customize.](images/mcp-connect-1.png)
+### Allow the tools (the one gotcha)
 
-![Customize → Connectors → the + (Add connector) button.](images/mcp-connect-2.png)
+The first time you connect, claude.ai asks **when Claude may use each tool**. If a tool is left on **Ask** and that approval prompt never reaches you, the call simply stalls — you'll see *"No approval received"* and nothing happens. That's claude.ai's own connector gate, **not** a recursive.eco error, and it's the single most common reason "the MCP doesn't work." The fix is one screen.
 
-![The + menu → Add custom connector.](images/mcp-connect-3.png)
+In **Customize → Connectors → recursive.eco → Tool permissions**, set the tools to **Always allow** — the dropdown at the top right does all of them at once, or flip each one with the green check.
 
-![Name it recursive.eco, paste https://flow.recursive.eco/api/mcp, and click Add.](images/mcp-connect-4.png)
+![claude.ai → Connectors → recursive.eco → Tool permissions: set the tools to "Always allow" (or Ask / Never per tool).](images/mcp-always-allow.jpg)
+
+**What you're granting — worth reading.** "Always allow" lets Claude run that tool on *your* library without asking again. The browse-and-read tools (*Cast*, *Commons image search*, list/get) are safe to always-allow. The ones that **spend credits or change things** — *Create grammar*, *Generate image*, *Delete grammar* — you can leave on **Ask** so you confirm each one. Nothing here touches a *shared* deck without your own `set_grammar_visibility`; the permission is only ever about your account and your credits. Allow what you understand; leave the rest on Ask.
 
 **What actually costs credits?** Reading, listing, drawing a spread, publishing, and sourcing public-domain art with `commons_image_search` are all **free**. Credits are only spent on the paid services — **AI image generation, TTS narration, and R2 image hosting**. A free account starts with **$1**, plenty to try them, and you can contribute public-domain work all day without spending a cent. (Power users can read the [full MCP docs](https://code.claude.com/docs/en/mcp), but the paste-the-URL path above is all you need.)
 
