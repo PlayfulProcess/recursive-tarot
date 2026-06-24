@@ -71,7 +71,8 @@
   .seat .nm{font-weight:700;color:var(--ink);font-size:12px}
   .seat .nm.turn{color:var(--accent)}
   .seat .nm .you-c{color:var(--us)} .seat .nm .them-c{color:var(--them)}
-  .backs{display:flex;gap:2px} .back-s{width:15px;height:23px;border-radius:3px;border:1px solid var(--line);
+  .backs{display:flex;gap:2px;flex-wrap:wrap;justify-content:center;max-width:150px}
+  .peek-card{width:15px;height:23px;border-radius:3px;object-fit:contain;background:var(--panel2);border:1px solid var(--line)} .peek-card.t{border-color:var(--accent)} .back-s{width:15px;height:23px;border-radius:3px;border:1px solid var(--line);
     background:repeating-linear-gradient(45deg,#ffffff,#ffffff 4px,#ffffff 4px,#ffffff 8px)}
   @media (prefers-color-scheme: light){ .back-s{background:repeating-linear-gradient(45deg,#e8e0d2,#e8e0d2 4px,#e8e0d2 4px,#e8e0d2 8px)} }
   .play-slot{min-height:158px;display:flex;align-items:center;justify-content:center}
@@ -147,6 +148,7 @@
     <label>Deck <select id="deck"></select></label>
     <button id="newgame">New deal</button>
     <label title="Harder opponents secure point-rich tricks, feed a winning partner, and pull trumps. Uncheck for the gentler original."><input type="checkbox" id="aihard" checked> Harder opponents</label>
+    <label title="Reveal opponents' hands — a fairness/debug check that they only play legal cards."><input type="checkbox" id="peek"> Peek</label>
     <span class="deck-note" id="deck-note"></span>
   </div>
 
@@ -267,7 +269,7 @@
   // Opponent AI. EASY (the original) leads low, wins cheaply, dumps low. HARD (default) adds three
   // standard tactics that stop the human winning every hand: lead trumps when trump-heavy to pull
   // them, secure point-rich tricks by winning HIGH when not last, and feed a sure-winning partner.
-  let aiHard = true;
+  let aiHard = true, peek = false;
   function aiChoose(seat){
     const legal=legalMoves(seat);
     const nonMatto=legal.filter(c=>!c.matto);
@@ -335,7 +337,9 @@
   }
   function renderSeats(winSeat){
     for(let s=0;s<4;s++){ const nm=$('nm-'+s); if(nm) nm.className='nm'+(turn===s&&!busy?' turn':'');
-      if(s!==0){ const hb=$('h-'+s); hb.innerHTML=''; for(let n=0;n<hands[s].length;n++){const b=document.createElement('div');b.className='back-s';hb.appendChild(b);} }
+      if(s!==0){ const hb=$('h-'+s); hb.innerHTML='';
+        if(peek){ for(const c of hands[s]){ const im=document.createElement('img'); im.className='peek-card'+(c.kind==='trump'?' t':''); im.loading='lazy'; im.src=c.img; im.title=(c.kind==='trump'&&c.rank!=null?c.rank+' · ':'')+c.label; hb.appendChild(im); } }
+        else { for(let n=0;n<hands[s].length;n++){const b=document.createElement('div');b.className='back-s';hb.appendChild(b);} } }
       const slot=$('t-'+s); if(slot){ slot.innerHTML=''; const e=trick.find(x=>x.seat===s);
         if(e) slot.appendChild(cardEl(e.card,{win:winSeat===s})); else slot.innerHTML='<span class="ph">·</span>'; } }
     $('us-pts').textContent=teamPts[0]; $('them-pts').textContent=teamPts[1];
@@ -407,6 +411,7 @@
   })();
   $('newgame').addEventListener('click',()=>start($('deck').value));
   $('aihard').addEventListener('change',e=>{ aiHard=e.target.checked; });
+  $('peek').addEventListener('change',e=>{ peek=e.target.checked; renderSeats(); });
 })();
 </script>
 
