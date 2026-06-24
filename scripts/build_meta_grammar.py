@@ -192,13 +192,26 @@ def rank_from_name(name):
     return None
 
 # ---------------------------------------------------------------------------
+def _deck_md(slug):
+    """Top-level metadata of a deck grammar (common_name/category/year live here —
+    seeded by scripts/seed_deck_index.py; the grammar file is the source of truth)."""
+    path = os.path.join(TAROT, slug, "grammar.json")
+    if not os.path.exists(path):
+        return {}
+    try:
+        return json.load(open(path, encoding="utf-8")).get("metadata") or {}
+    except Exception:
+        return {}
+
 def build():
     cards = []   # normalized card dicts
+    deck_meta = {}   # slug -> grammar top-level metadata (carries common_name/category)
     for slug, dk in DECKS.items():
         path = os.path.join(TAROT, slug, "grammar.json")
         if not os.path.exists(path):
             print("  ! missing", slug); continue
         g = json.load(open(path, encoding="utf-8"))
+        deck_meta[slug] = g.get("metadata") or {}
         for ord_, it in enumerate(g.get("items", []), 1):
             # Only aggregate real L1 cards. Skip emergence/axis nodes (anything with
             # composite_of, e.g. suit/keyword pills) so they don't leak in as bogus cards.
@@ -452,16 +465,24 @@ def build():
         if not dcards:
             continue
         cl = CLASS.get(slug, {})
+        md = deck_meta.get(slug, {})
+        # common_name (seeded into the grammar metadata) is the canonical short label;
+        # fall back to the build-script label if a grammar wasn't seeded.
+        common = md.get("common_name") or dk["label"]
         deck_summary.append({
-            "slug": slug, "label": dk["label"], "node_id": "deck-" + slug.replace("-", ""),
+            "slug": slug, "label": common, "common_name": common, "node_id": "deck-" + slug.replace("-", ""),
+            "category": md.get("category", "historical"), "year": md.get("year"),
             "era": dk["era"], "era_sort": dk["era_sort"], "date": dk["ed"]["date"],
             "order": cl.get("order"), "function": cl.get("function"), "count": len(dcards),
             "ancestry": "tarot", "tier": cl.get("order"),  # tarot decks lane by trump-order
         })
     # Upstream ancestors / cousins (separate grammars) on the same timeline.
     for a in ANCESTORS:
+        md = _deck_md(a["slug"])
+        common = md.get("common_name") or a["label"]
         deck_summary.append({
-            "slug": a["slug"], "label": a["label"], "node_id": a["node_id"],
+            "slug": a["slug"], "label": common, "common_name": common, "node_id": a["node_id"],
+            "category": md.get("category", "historical"), "year": md.get("year"),
             "era": a["era"], "era_sort": 0, "date": a["date"], "timeline_year": a["timeline_year"],
             "order": None, "function": "game", "count": a["count"],
             "ancestry": a["ancestry"], "tier": a["ancestry"],  # ancestors lane by ancestry status

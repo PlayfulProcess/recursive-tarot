@@ -30,7 +30,7 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 
 ## Cards viewer (`viewers/cards.html`)
 - [x] **CV-TITLEDROP** — make the title itself the deck dropdown so the deck name isn't shown twice. (prior #11)
-- [~] **CV-SYNC** — AUDITED: card-detail always shows 2 eco buttons (Edit this card / View deck); 31/37 decks are mapped to a recursive.eco UUID in `tarot/_eco_ids.json` and get correct deep-links, but 6 are unmapped (anecdotes-tarot, arlecchinos-augmented-arcana, clown-town-tarot, petit-lenormand, tarocchino-arlecchino, test) so their "View deck" falls back to the flow HOMEPAGE (not broken, but inconsistent). FIX OPTIONS: (a) publish those decks to recursive.eco so they get UUIDs [platform action — builder], or (b) UI fallback: send unmapped "View deck" to the deck'''s GitHub page instead of the homepage. `test` looks like a stray deck to remove. (I)
+- [x] **CV-SYNC** — DONE via the recursive.eco MCP: the 5 real unmapped decks (anecdotes-tarot, arlecchinos-augmented-arcana, clown-town-tarot, petit-lenormand, tarocchino-arlecchino) are all `is_public=true` on recursive.eco; looked up their UUIDs with `list_grammars` and added them to `tarot/_eco_ids.json` (+ `_public_now`). Their "View deck on recursive.eco" now deep-links. The 6th ("test") was a stray platform-only deck with no local folder — nothing to map. (I)
 
 ## Emergence Explorer (`viewers/explorer.html`)
 - [~] **EX-CATALOGUE** — AUDITED (docs/plan/EX-CATALOGUE-AUDIT.md): most "uncatalogued" cards are legitimately sui-generis (non-tarot grammars + extra historical trumps with no standard equivalent) — NOT a data bug. FIXED the real bug: deck-cover ("overview") items were leaking in as cards (build now skips them). The pairing pain is the Explorer UI -> EX-SECTIONS, not more cataloguing.
@@ -49,7 +49,7 @@ Single source of truth for outstanding work. When an item ships, move a one-line
 - [x] **COURSE-TAROT-TODAY** (live; uses the real Google Trends screenshot, cropped to full + recent time series below the built bars; honest convergence framing)
 
 ## Index / data
-- [ ] **IDX-META-AS-INDEX** — implement Q-INDEX: enrich each deck grammar's `metadata` with `common_name`/`category`/`year`; surface common names everywhere (e.g. "Rider-Waite-Smith", not "Golden Dawn"); point index/timeline/sources at the meta. (#1)
+- [x] **IDX-META-AS-INDEX** — DONE: `scripts/seed_deck_index.py` writes `common_name`/`category`/`year` onto every deck grammar's top-level `metadata` (the grammar is the source of truth). Both generators read them back — `build_meta_grammar.py` emits `common_name`/`category`/`year` into the meta `_decks[]`, `refresh_collection.py` carries them into `_collection.json`. The cards-viewer deck dropdown + the Tarocchino deck picker now show the SAME curated short name the timeline/index use (long grammar name stays only as the page header). NOTE: Golden Dawn ≠ Rider-Waite-Smith and RWS isn't in the library, so the common_name stays "Golden Dawn (Book T)". (#1)
 
 ## recursive.eco brand + logo (from research/17 direction)
 - [x] **BRAND-REVIEW** — log a recursive.eco brand-proposition review grounded in the contemporary-tarot research (bricolage / resignification / found-by-making → positioning + logo v2 direction). `plan/RECURSIVE-ECO-BRAND-REVIEW.md`.

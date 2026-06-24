@@ -5,6 +5,10 @@ Open work lives in [TODO.md](TODO.md).
 
 ## 2026-06-24
 
+- **Deck index (IDX-META-AS-INDEX):** every deck grammar now carries `common_name` + `category` (historical / contemporary / community / reference) + `year` on its top-level `metadata` (seeded by `scripts/seed_deck_index.py`, the grammar staying the source of truth). Both generators read them back — the meta `_decks[]` and `_collection.json` both carry the curated short name — so the cards-viewer deck dropdown and the Tarocchino deck picker now show the SAME short name the timeline uses (e.g. "Golden Dawn (Book T)", "Tarot de Marseille (Conver)"), with the long scholarly name kept only as the page header. Verified in preview.
+
+- **CV-SYNC:** mapped the 5 public community decks (Anecdotes, Clown Town, both Arlecchinos, Petit Lenormand) to their recursive.eco UUIDs via the recursive.eco MCP (all `is_public=true`); their card-detail "View deck on recursive.eco" button now deep-links instead of bouncing to the flow homepage.
+
 - **Cards viewer (CV-TITLEDROP):** the deck name no longer appears twice — the separate deck-switcher dropdown is hidden and the **title itself is now the dropdown** (a caret + click opens the full deck menu, current deck marked, each item navigates). Verified: select hidden, title-click opens 36 decks.
 
 - **Caster (SB-CARDS):** cast cards now render cleanly like the cards viewer — the verbose cross-deck meta name ("Name — Deck") has its trailing deck stripped (the deck already shows separately below), and the label wraps within the card border (overflow-wrap:anywhere). Verified: no name still carries its deck suffix, nothing overflows. (SB-CAST is already available via the spread-builder Cast-with-this-spread button.) Also marked the dev write-back foundation test RESOLVED — the builder confirmed the App commits to the repo.
