@@ -5,6 +5,8 @@ Open work lives in [TODO.md](TODO.md).
 
 ## 2026-06-24
 
+- **Tarocchino (TG-TRUMPNUM):** the rules now state that Tarocchino trumps carried no printed numbers (we add the A-order rank for convenience), with a **See all 22 trumps** button that opens a popup rendering every trump in full — image + number — sorted low->high, the four Moors sharing rank 2, the Matto shown as the Excuse star. Verified: 22 cards, numbers correct.
+
 - **Tarocchino (TG-PEEK):** a Peek checkbox reveals the opponents' hands as small face-up cards (trump # in the tooltip) so you can verify the AI only plays legal cards. Off by default; toggles cleanly back to card backs. Verified: 45 backs <-> 45 face-up cards.
 
 - **Tarocchino (TG-AI):** opponents got smarter so the human stops winning every hand — on a point-rich trick they win HIGH when not last (so a later seat cannot overtake cheaply), feed a sure-winning partner their highest point card when last, and lead a low trump when trump-heavy to pull trumps. Added a **Harder opponents** toggle (default on; uncheck for the gentler original). The AI only ever returns cards from legalMoves, so it cannot play illegally; a full hand resolves with no console errors.
