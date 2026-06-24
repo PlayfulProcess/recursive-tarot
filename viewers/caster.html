@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="../theme.css?v=3">
+<link rel="stylesheet" href="../theme.css?v=4">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Recursive Tarot — Caster</title>
@@ -457,8 +457,8 @@ async function openCardDetail(p){ const c=p.card; if(!c) return;
   // per-card actions → recursive.eco (Phase 5 seed: View deck / Edit card)
   const uuid = (ecoIds && ecoIds.ids && c.source_deck) ? ecoIds.ids[c.source_deck] : null;
   $('cdmActions').innerHTML = uuid
-    ? `<a href="${FLOW}/?deckId=${uuid}" target="_blank" rel="noopener">View deck ↗</a>`
-      + `<a href="${FLOW}/create/dashboard/unified/new?forkId=${uuid}${c.source_item_id?'&card='+encodeURIComponent(c.source_item_id):''}" target="_blank" rel="noopener">Edit card ↗</a>`
+    ? `<a class="eco-chip" href="${FLOW}/?deckId=${uuid}" target="_blank" rel="noopener">Open in recursive.eco ↗</a>`
+      + `<a class="eco-chip" href="${FLOW}/create/dashboard/unified/new?forkId=${uuid}${c.source_item_id?'&card='+encodeURIComponent(c.source_item_id):''}" target="_blank" rel="noopener">Edit in recursive.eco ↗</a>`
     : '';
   body.innerHTML='<div class="cdm-loading">Loading card details…</div>'; modal.style.display='flex'; document.body.style.overflow='hidden';
   const item=await fetchGrammarItem(c.source_deck,c.source_item_id);
