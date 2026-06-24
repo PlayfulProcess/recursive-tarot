@@ -5,6 +5,8 @@ Open work lives in [TODO.md](TODO.md).
 
 ## 2026-06-24
 
+- **Tarocchino (TG-DECKS):** the deck dropdown is no longer 3 hardcoded slugs — it now discovers every tarot-branch deck in the index (_collection.json) that actually builds a full 62-card pack, and lists all 9 (Cary-Yale, Etteilla I/II/III, Golden Dawn, Minchiate, Sola Busca, Marseille, Visconti). Self-correcting: a new complete deck appears automatically; fragments are excluded.
+
 - **Tarocchino (TG-TRUMPNUM):** the rules now state that Tarocchino trumps carried no printed numbers (we add the A-order rank for convenience), with a **See all 22 trumps** button that opens a popup rendering every trump in full — image + number — sorted low->high, the four Moors sharing rank 2, the Matto shown as the Excuse star. Verified: 22 cards, numbers correct.
 
 - **Tarocchino (TG-PEEK):** a Peek checkbox reveals the opponents' hands as small face-up cards (trump # in the tooltip) so you can verify the AI only plays legal cards. Off by default; toggles cleanly back to card backs. Verified: 45 backs <-> 45 face-up cards.
