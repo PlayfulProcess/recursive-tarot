@@ -4,7 +4,7 @@
 most of the library. Writes:
   - a top-level `_image_usage` array onto each deck's grammar.json (the deck's own images
     that appear in site chrome, with the pages they feed) — "metadata in the grammar";
-  - a human registry at plan/IMAGE-USAGE.md (with cross-page duplicate flags).
+  - a human registry at docs/plan/IMAGE-USAGE.md (with cross-page duplicate flags).
 Re-run after editing any page's imagery (CLAUDE.md notes the upkeep rule). Idempotent.
 Run from repo root: python scripts/audit_image_usage.py
 """
@@ -64,8 +64,8 @@ for deck in sorted(by_deck):
     for fn, pg in sorted(by_deck[deck]):
         lines.append(f"- `{fn}` → {', '.join(pg)}")
     lines.append("")
-open(os.path.join(ROOT, "plan", "IMAGE-USAGE.md"), "w", encoding="utf-8").write("\n".join(lines))
-print(f"_image_usage written to {wrote} grammars; {len(usage)} images, {len(dupes)} cross-page repeats; plan/IMAGE-USAGE.md updated")
+open(os.path.join(ROOT, "docs", "plan", "IMAGE-USAGE.md"), "w", encoding="utf-8").write("\n".join(lines))
+print(f"_image_usage written to {wrote} grammars; {len(usage)} images, {len(dupes)} cross-page repeats; docs/plan/IMAGE-USAGE.md updated")
 
 if __name__ == "__main__":
     pass
