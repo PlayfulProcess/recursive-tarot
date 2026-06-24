@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="../theme.css?v=3">
+<link rel="stylesheet" href="../theme.css?v=4">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cards — Recursive Tarot</title>
@@ -4679,8 +4679,8 @@
             // the recursive.eco editor (this card pre-selected); View deck → the deck on Flow.
             bodyHtml += `
                 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)">
-                    <a href="#" onclick="editCommunityGrammar(selectedItem &amp;&amp; selectedItem.id);return false;" title="Open this card in the recursive.eco editor" style="font-size:12.5px;color:var(--grammar-accent,#b8902f);text-decoration:none;padding:6px 11px;border-radius:7px;border:1px solid rgba(255,255,255,.12);background:rgba(154,115,34,.08)"><rt-icon name="pencil"></rt-icon> Edit this card on recursive.eco →</a>
-                    <a href="#" onclick="openDeckOnEco();return false;" title="Open this whole deck on recursive.eco" style="font-size:12.5px;color:var(--grammar-accent,#b8902f);text-decoration:none;padding:6px 11px;border-radius:7px;border:1px solid rgba(255,255,255,.12);background:rgba(154,115,34,.08)"><rt-icon name="grid"></rt-icon> View deck on recursive.eco →</a>
+                    <a href="#" onclick="editCommunityGrammar(selectedItem &amp;&amp; selectedItem.id);return false;" class="eco-chip" title="Open this card in the recursive.eco editor">Edit in recursive.eco ↗</a>
+                    <a href="#" onclick="openDeckOnEco();return false;" class="eco-chip" title="Open this whole deck on recursive.eco">Open in recursive.eco ↗</a>
                 </div>`;
 
             modalBody.innerHTML = bodyHtml;
