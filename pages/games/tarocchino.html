@@ -332,7 +332,7 @@
 
   async function loadDeck(slug){
     const g=await (await fetch('../../tarot/'+slug+'/grammar.json')).json();
-    CURNAME=(g.name||slug).split(/\s+[—–-]\s+/)[0]; DECK=buildDeck(g);
+    CURNAME=(g.metadata&&g.metadata.common_name)||(g.name||slug).split(/\s+[—–-]\s+/)[0]; DECK=buildDeck(g);
     if(DECK.length<40) throw new Error('“'+CURNAME+'” lacks enough card images for the 62-card pack.');
   }
   function cardEl(c,opts={}){
@@ -437,7 +437,7 @@
       const cands=col.grammars.filter(g=>String(g.is_meta)!=='True' && g.branch && g.branch!=='None');
       const checked=await Promise.all(cands.map(async g=>{
         try{ const gg=await (await fetch('../../'+(g.path||('tarot/'+g.slug+'/grammar.json')))).json();
-          return buildDeck(gg).length>=40 ? {slug:g.slug, name:(g.name||g.slug).split(/\s+[—–-]\s+/)[0]} : null;
+          return buildDeck(gg).length>=40 ? {slug:g.slug, name:g.common_name||(g.name||g.slug).split(/\s+[—–-]\s+/)[0]} : null;
         }catch(e){ return null; }
       }));
       const decks=checked.filter(Boolean).sort((a,b)=>a.name.localeCompare(b.name));
