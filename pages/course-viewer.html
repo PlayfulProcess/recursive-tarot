@@ -470,6 +470,20 @@
             line-height: 1.45;
         }
 
+        /* Compact QR chip (replaces the big block) — a small "open on phone"
+           pill in the hero row; click pops the scannable QR via the lightbox. */
+        .course-qr-chip {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 4px 13px 4px 5px; border: 1px solid #e3ddcf;
+            border-radius: 999px; background: #fff; color: #2a2622;
+            font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+            transition: border-color .15s, background .15s;
+        }
+        .course-qr-chip:hover { border-color: #9a7322; background: rgba(154,115,34,.07); }
+        .course-qr-chip:focus-visible { outline: 2px solid #7c5b18; outline-offset: 2px; }
+        .course-qr-chip-thumb { display: inline-flex; width: 26px; height: 26px; border-radius: 5px; overflow: hidden; background: #fff; }
+        .course-qr-chip-thumb canvas, .course-qr-chip-thumb img { display: block; width: 26px; height: 26px; }
+
         .qr-code-inline {
             display: inline-block;
             vertical-align: middle;
@@ -1640,37 +1654,28 @@
         // your phone" — so attendees can follow along without typing
         // the URL. Click to enlarge via the existing lightbox.
         function paintCoursePageQr() {
+            const pills = document.getElementById('course-hero-pills');
             const courseContent = document.getElementById('course-content');
-            if (!courseContent) return;
-            if (courseContent.querySelector('.course-page-qr-block')) return; // already painted
+            if (!pills && !courseContent) return;
+            if (document.querySelector('.course-qr-chip')) return; // already painted
             const courseUrl = window.location.href
                 .replace('://dev.recursive.eco', '://recursive.eco')
                 .replace('://dev.flow.recursive.eco', '://flow.recursive.eco');
-            const wrap = document.createElement('div');
-            wrap.className = 'course-page-qr-block';
-            wrap.innerHTML = `
-                <div class="course-page-qr-inner">
-                    <div class="course-page-qr-target"></div>
-                    <div class="course-page-qr-label">
-                        <div class="course-page-qr-label-main"><rt-icon name="device"></rt-icon> Scan to open this course on your phone</div>
-                        <div class="course-page-qr-label-sub">Point your camera here, or click to enlarge for the back of a room.</div>
-                    </div>
-                </div>
-            `;
-            const target = wrap.querySelector('.course-page-qr-target');
-            new QRCode(target, { text: courseUrl, width: 140, height: 140, correctLevel: QRCode.CorrectLevel.M });
-            const open = (e) => { e.preventDefault(); e.stopPropagation(); openQrLightbox(courseUrl); };
-            wrap.style.cursor = 'pointer';
-            wrap.setAttribute('role', 'button');
-            wrap.setAttribute('tabindex', '0');
-            wrap.setAttribute('aria-label', 'Open course-page QR code at scannable size');
-            wrap.title = 'Click to enlarge for the back row';
-            wrap.addEventListener('click', open);
-            wrap.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') open(e); });
-            courseContent.insertBefore(wrap, courseContent.firstChild);
+            // A small "open on phone" chip with a tiny QR thumbnail. Clicking pops the
+            // scannable QR (the lightbox). Lives in the hero pill row, not a big block.
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'course-qr-chip';
+            btn.setAttribute('aria-label', 'Show a QR code to open this course on your phone');
+            btn.title = 'Open on your phone — show a QR code';
+            btn.innerHTML = '<span class="course-qr-chip-thumb" aria-hidden="true"></span><span>Open on phone</span>';
+            new QRCode(btn.querySelector('.course-qr-chip-thumb'), { text: courseUrl, width: 26, height: 26, correctLevel: QRCode.CorrectLevel.L });
+            btn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); openQrLightbox(courseUrl); });
+            if (pills) pills.appendChild(btn);
+            else courseContent.insertBefore(btn, courseContent.firstChild);
         }
         function removeCoursePageQr() {
-            document.querySelectorAll('.course-page-qr-block').forEach(el => el.remove());
+            document.querySelectorAll('.course-qr-chip, .course-page-qr-block').forEach(el => el.remove());
         }
 
         // Paint inline QRs after every external link in `container`. Skips
