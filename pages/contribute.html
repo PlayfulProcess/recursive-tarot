@@ -42,6 +42,32 @@
   .vcard .vt{font-family:var(--serif-display);font-weight:600;font-size:19px;color:var(--ink);margin:0 0 4px}
   .vcard .vd{font-family:var(--serif-body);font-size:14px;line-height:1.5;color:var(--mut);margin:0}
 
+  /* The five-rung ladder — gentlest route first; each rung is a real section of the course. */
+  .ladder{display:grid;grid-template-columns:repeat(auto-fill,minmax(216px,1fr));gap:14px}
+  .lcard{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line-soft);border-radius:10px;overflow:hidden;
+    text-decoration:none;color:var(--ink);transition:transform .15s,border-color .15s,box-shadow .15s}
+  .lcard:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 16px 32px -24px rgba(60,45,20,.5)}
+  .lcard.feat{border:2px solid #b8902f}
+  .lthumb{aspect-ratio:16/10;border-bottom:1px solid var(--line);position:relative}
+  .lthumb.shot{background:#f4f1ea center/cover no-repeat;background-position:top center}
+  .lthumb.shot .shot-tag{position:absolute;left:7px;bottom:7px;font-family:var(--sans);font-size:9px;letter-spacing:.04em;
+    background:rgba(28,22,12,.72);color:#fff;padding:2px 7px;border-radius:5px}
+  .lthumb.tile{display:flex;flex-direction:column;background:#f4f1ea}
+  .lbar{display:flex;align-items:center;gap:4px;padding:6px 9px;border-bottom:1px solid var(--line);background:var(--surface)}
+  .lbar b{width:6px;height:6px;border-radius:50%;background:#d3ccba;display:inline-block}
+  .lbar span{margin-left:7px;font-family:var(--sans);font-size:9.5px;color:var(--mut);letter-spacing:.02em}
+  .ltile-mid{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px 12px;
+    font-family:var(--serif-display);font-weight:600;font-size:15px;color:#8a6414;line-height:1.25}
+  .lbody{padding:12px 15px 14px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .lbadge{align-self:flex-start;font-family:var(--sans);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;
+    padding:2px 9px;border-radius:20px;background:rgba(154,115,34,.1);color:#8a6414}
+  .lbadge.easy{background:rgba(70,120,55,.13);color:#3f6d27}
+  .lbadge.feat{background:#b8902f;color:#fff}
+  .lcard .lnum{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--mut)}
+  .lcard .lt{font-family:var(--serif-display);font-weight:600;font-size:17px;color:var(--ink);margin:0}
+  .lcard .ld{font-family:var(--serif-body);font-size:13.5px;line-height:1.5;color:var(--mut);margin:0}
+  .llink{margin-top:auto;padding-top:7px;font-family:var(--sans);font-size:12px;font-weight:600;color:#8a6414;display:flex;align-items:center;gap:5px}
+
   /* recursive.eco tree callout (reused) */
   .ecotree{margin:52px auto 0;max-width:760px;background:var(--surface);border:1px solid var(--line-soft);border-radius:14px;padding:30px 34px;text-align:center}
   .ecotree h2{font-family:var(--serif-display);font-weight:600;font-size:23px;color:var(--ink);margin:0 0 .4em}
@@ -73,21 +99,79 @@
   </a>
 
   <section class="band">
-    <h2>Ways in</h2>
-    <p class="sub">From a one-click fix to building your own grammar</p>
-    <div class="viewgrid">
-      <a class="vcard" href="course-viewer.html?course=how-to-contribute">
-        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot/RWS_Tarot_00_Fool.jpg')"></div>
-        <div class="vb"><div class="vk">Course</div><div class="vt">Build a deck with Claude</div><div class="vd">Five ways to contribute, from an in-app edit to the full recursive.eco MCP — climb only as high as you like.</div></div>
+    <h2>Ways in — the ladder</h2>
+    <p class="sub">Gentlest route first · climb only as high as you like</p>
+    <div class="ladder">
+
+      <a class="lcard" href="https://flow.recursive.eco" target="_blank" rel="noopener">
+        <div class="lthumb tile">
+          <div class="lbar"><b></b><b></b><b></b><span>recursive.eco</span></div>
+          <div class="ltile-mid">Edit a card<br>in the app</div>
+        </div>
+        <div class="lbody">
+          <span class="lbadge easy">Easiest · no git</span>
+          <div class="lnum">RUNG 1</div>
+          <div class="lt">Fix it in the app</div>
+          <div class="ld">Open any card on recursive.eco and save your change — no files, no JSON.</div>
+          <div class="llink">Open the app ↗</div>
+        </div>
       </a>
-      <a class="vcard" href="https://flow.recursive.eco/create" target="_blank" rel="noopener">
-        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mantegna-tarocchi-plate-01.jpg')"></div>
-        <div class="vb"><div class="vk">recursive.eco ↗</div><div class="vt">Create your own grammar</div><div class="vd">Build any public-domain symbolic system on the platform and use it as a living library — bring your own repo.</div></div>
+
+      <a class="lcard" href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">
+        <div class="lthumb tile">
+          <div class="lbar"><b></b><b></b><b></b><span>github.com</span></div>
+          <div class="ltile-mid">Edit the JSON,<br>open a PR</div>
+        </div>
+        <div class="lbody">
+          <span class="lbadge">GitHub login</span>
+          <div class="lnum">RUNG 2</div>
+          <div class="lt">Edit on GitHub</div>
+          <div class="ld">Change the deck's JSON in the browser and open a pull request — no other tools.</div>
+          <div class="llink">Open the repo ↗</div>
+        </div>
       </a>
-      <a class="vcard" href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">
-        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-21-world.jpg')"></div>
-        <div class="vb"><div class="vk">GitHub ↗</div><div class="vt">Fork the open repo</div><div class="vd">Every deck is plain JSON. Correct an error, add a deck, open a pull request — or just file an issue.</div></div>
+
+      <a class="lcard" href="course-viewer.html?course=how-to-contribute#rung-3-work-the-repo-in-claude-ai">
+        <div class="lthumb tile">
+          <div class="lbar"><b></b><b></b><b></b><span>claude.ai</span></div>
+          <div class="ltile-mid">Point Claude<br>at the repo</div>
+        </div>
+        <div class="lbody">
+          <span class="lbadge">Claude.ai</span>
+          <div class="lnum">RUNG 3</div>
+          <div class="lt">Work it in Claude.ai</div>
+          <div class="ld">Connect the repo to Claude.ai and let it draft the change for you to review.</div>
+          <div class="llink">Read the steps →</div>
+        </div>
       </a>
+
+      <a class="lcard" href="course-viewer.html?course=how-to-contribute#rung-4-claude-desktop-on-the-repo">
+        <div class="lthumb tile">
+          <div class="lbar"><b></b><b></b><b></b><span>Claude Desktop</span></div>
+          <div class="ltile-mid">Run the repo<br>locally</div>
+        </div>
+        <div class="lbody">
+          <span class="lbadge">Desktop app</span>
+          <div class="lnum">RUNG 4</div>
+          <div class="lt">Claude Desktop</div>
+          <div class="ld">Work the whole repo on your machine with the Claude Desktop app.</div>
+          <div class="llink">Read the steps →</div>
+        </div>
+      </a>
+
+      <a class="lcard feat" href="course-viewer.html?course=how-to-contribute#rung-5-the-recursive-eco-mcp-the-full-toolkit">
+        <div class="lthumb shot" style="background-image:url('courses/images/mcp-audit-01-commons-search.png')">
+          <span class="shot-tag">Real screen · MCP audit</span>
+        </div>
+        <div class="lbody">
+          <span class="lbadge feat">Full toolkit · flagship</span>
+          <div class="lnum">RUNG 5</div>
+          <div class="lt">The recursive.eco MCP</div>
+          <div class="ld">Just ask Claude — find public-domain images, fix the source, verify, and publish.</div>
+          <div class="llink">Read the steps →</div>
+        </div>
+      </a>
+
     </div>
   </section>
 
