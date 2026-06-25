@@ -81,11 +81,10 @@ a.solid[href*="//recursive.eco"]:hover,a.solid[href*="//flow.recursive.eco"]:hov
 a.line[href*="//recursive.eco"],a.line[href*="//flow.recursive.eco"]{color:#9333ea!important;border-color:#c9a8f0!important}
 a.line[href*="//recursive.eco"]:hover,a.line[href*="//flow.recursive.eco"]:hover{border-color:#9333ea!important;color:#9333ea!important}
 
-/* Canonical "open / edit in recursive.eco" chip — the spiral mark + platform purple.
-   ONE recognizable affordance, used in every viewer (cards, caster). Pair with the
-   wording "Open in recursive.eco ↗" / "Edit in recursive.eco ↗". */
-.eco-chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:12.5px;font-weight:600;
+/* Canonical recursive.eco action chip — platform purple, carries its own action icon
+   (pencil = Edit, play = Play). ONE affordance across the cards viewer + the Caster. */
+.eco-chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:12.5px;font-weight:600;
   text-decoration:none;color:#9333ea;padding:6px 12px;border-radius:8px;border:1px solid #c9a8f0;background:#fff;
   transition:border-color .15s,background .15s}
 .eco-chip:hover{border-color:#9333ea;background:#faf5ff}
-.eco-chip::before{content:"";width:15px;height:15px;flex-shrink:0;background:url("public/spiral-purple.svg") center/contain no-repeat}
+.eco-chip svg{width:15px;height:15px;flex-shrink:0}
