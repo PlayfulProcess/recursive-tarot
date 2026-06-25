@@ -1,491 +1,502 @@
 {
   "name": "Tarot de Paris — Anonymous (BnF, c. 1600–1650)",
-  "slug": "paris-anonymous-tarot",
-  "cover_image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c21.jpg",
-  "description": "# Anonymous Parisian Tarot de Marseille (BnF)\n\n## At a glance\n\nAn **anonymous early Parisian tarot** (BnF, *c. 1600–1650*) held at the Bibliothèque nationale de France and freely on **Gallica** (ark:/12148/btv1b105109624) — the unsigned companion to our **Jean Noblet** (c. 1650) and **Jacques Viéville** decks. Unlike the outlier Viéville, this pack sits squarely in the **C-order (Marseille)** mainstream: a fully **named** French Tarot de Marseille, every trump captioned on the card in period spelling (LE BATELEVR, LA IVSTICE, ATREMPANCE…). 78 woodcut cards, hand-coloured, shown here from the BnF scan.\n\n## Why it matters\n\nWith Noblet and Viéville, it shows that the **named, numbered Marseille pattern was already standardised in Paris a century before Nicolas Conver's 1760 Marseille** — the printed standard our library also holds. It is a clean witness to the C-order line in its Parisian form.\n\n## What you're looking at\n\n- **22 atouts (trumps):** 21 numbered + the unnumbered **Mat**, with the card names read directly from the scans.\n- **56 suit cards:** **Deniers** (Coins), **Coupes** (Cups), **Bâtons** (Batons), **Épées** (Swords), each with ten pips and four courts (Valet, Cavalier, Reine, Roi).\n\n## Honesty notes\n\nThe maker is anonymous, but the **BnF catalogue dates it 1600–1650** (shelfmark RESERVE KH-34, titled *Jeu de tarot parisien anonyme à enseignes italiennes*). It is one of *several* early Parisian tarots — note it is **not** the famous idiosyncratic *Tarot de Paris* of the same years, but a captioned, mainstream C-order pack. The trumps are named from their printed captions; suit cards are shown in **BnF folio order** and pip ranks are assigned by position (corrections welcome).\n\n## Game, not divination\n\nA playing pack; the cartomantic readings attached to the Marseille came later, with the 18th-century occult revival.\n\n## Sources\n\nBnF / Gallica (ark:/12148/btv1b105109624), public domain; Thierry Depaulis on the Parisian cartiers; Dummett, *The Game of Tarot*.\n\n**RESEARCH NOTE (2026-06-13) — identity correction owed.** The BnF object cited here (ark:/12148/btv1b105109624) is the idiosyncratic **Tarot de Paris**, a pattern of its OWN — NOT a mainstream C-order Tarot de Marseille. Its cards carry broken period captions (LAN PEREUT, LER MITE, A TREMPANCE, LES TOILLES, LA FOUDRE), figural animal Aces, and a Hell-mouth at XVI (La Foudre, not La Maison-Dieu). The deck name/description and trump titles need a reframe; confidence medium (Gallica scan not read card-by-card). See [research/decks/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/decks/paris-anonymous-tarot.md).\n\n**EDITORIAL CALL (2026-06-13):** reframed as the **Tarot de Paris**, a distinct pattern of its own (NOT a mainstream Marseille). Per-card trump CAPTIONS (the broken period spellings, Hell-mouth Foudre at XVI, figural animal Aces) still need card-by-card correction from the Gallica scan — deferred to a session with image access. [@web_pollett_paris; @web_th_paris]\n",
-  "grammar_type": "tarot",
-  "provenance": "record",
-  "creator_name": "PlayfulProcess",
-  "license": "CC-BY-SA-4.0",
-  "default_view": "cards",
-  "metadata": {
-    "year": 1625,
-    "tradition": "Tarot de Paris — its own 17th-c. Parisian pattern (Italian-suited)",
-    "branch": "paris",
-    "order": "C-order",
-    "common_name": "Tarot de Paris",
-    "category": "historical",
-    "year_label": "c. 1600–50"
-  },
-  "_source": "BnF / Gallica ark:/12148/btv1b105109624 — public domain.",
   "items": [
     {
       "id": "trump-01",
       "name": "I · Le Bateleur",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c01.jpg",
       "metadata": {
-        "number": "I",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-01.jpg",
           "source_px": [
             1100,
             1951
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-01.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "I",
         "trump_key": "magician",
-        "trump_number": 1,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-01-le-bateleur",
-        "deck": "Tarot de Marseille"
+        "trump_number": 1,
+        "source_item_id": "major-01-le-bateleur"
       },
       "sections": {
         "About": "Le Bateleur (atout I) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** the Marseille Bateleur is a lone tradesman behind his cups-and-balls table; the Paris card turns him into a **satirical gaming scene** with ass's ears and animals — a comic, carnival reading absent from Marseille [@web_pollett_paris]. \n\n*Sources:* [@web_pollett_paris], [@web_spiritone_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "Le Bateleur is reimagined as a satirical carnival scene — the conjurer wears ass's ears, and animals or comic figures crowd the composition alongside the standard table of cups-and-balls paraphernalia. The Paris card turns the lone tradesman of the Marseille tradition into a collective scene of mockery and play, embedding the magician within a social comedy rather than staging him in solitary dexterity.",
-        "Symbol": "Conjurer in ass's ears amid animals — skill inverted into satire, the master of appearances revealed as himself a figure of foolishness and festival."
-      }
+        "Symbol": "Conjurer in ass's ears amid animals — skill inverted into satire, the master of appearances revealed as himself a figure of foolishness and festival.",
+        "Research note": "**What changed (vs. its parent):** the Marseille Bateleur is a lone tradesman behind his cups-and-balls table; the Paris card turns him into a **satirical gaming scene** with ass's ears and animals — a comic, carnival reading absent from Marseille [@web_pollett_paris]. \n\n*Sources:* [@web_pollett_paris], [@web_spiritone_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c01.jpg",
+      "sort_order": 0,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-02",
       "name": "II · La Papesse",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c02.jpg",
       "metadata": {
-        "number": "II",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-02.jpg",
           "source_px": [
             1100,
             2020
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-02.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "II",
         "trump_key": "high-priestess",
-        "trump_number": 2,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-02-la-papesse",
-        "deck": "Tarot de Marseille"
+        "trump_number": 2,
+        "source_item_id": "major-02-la-papesse"
       },
       "sections": {
         "About": "La Papesse (atout II) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** Marseille's Popess cradles book and reads calmly; the Paris gesture is **pointedly aversive**, an editorial flourish unique to this deck. \n\n*Sources:* [@web_pollett_paris], [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "The Papesse makes a pointedly aversive gesture — an editorial flourish unique to this deck, as if the spiritual woman turns her face or hand away from the viewer with deliberate refusal. Where the Marseille Papesse reads calmly from a book, the Paris figure expresses active rejection, making her secret knowledge feel not merely hidden but withheld.",
-        "Symbol": "Papesse in aversive gesture — hidden doctrine expressed as refusal, the feminine spiritual authority that turns its face away rather than merely concealing."
-      }
+        "Symbol": "Papesse in aversive gesture — hidden doctrine expressed as refusal, the feminine spiritual authority that turns its face away rather than merely concealing.",
+        "Research note": "**What changed (vs. its parent):** Marseille's Popess cradles book and reads calmly; the Paris gesture is **pointedly aversive**, an editorial flourish unique to this deck. \n\n*Sources:* [@web_pollett_paris], [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c02.jpg",
+      "sort_order": 1,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-03",
       "name": "III · L'Impératrice",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c03.jpg",
       "metadata": {
-        "number": "III",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-03.jpg",
           "source_px": [
             1100,
             2021
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-03.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "III",
         "trump_key": "empress",
-        "trump_number": 3,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-03-limperatrice",
-        "deck": "Tarot de Marseille"
+        "trump_number": 3,
+        "source_item_id": "major-03-limperatrice"
       },
       "sections": {
         "About": "L'Impératrice (atout III) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** broadly comparable subject; specific staging not securely described here. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "L'Impératrice appears as an enthroned empress in the conventional Italian-suited French tarot manner — eagle shield, sceptre, and crown. The Paris version is broadly comparable to other early French Marseille-tradition cards, the imperial woman seated in authority. The specific staging of this particular card was not separately distinguished in early sources, placing it within the shared visual grammar of 17th-century Parisian tarots.",
-        "Symbol": "Enthroned empress with eagle and sceptre — imperial authority in its feminine form, sovereignty as lawful inheritance and heraldic display."
-      }
+        "Symbol": "Enthroned empress with eagle and sceptre — imperial authority in its feminine form, sovereignty as lawful inheritance and heraldic display.",
+        "Research note": "**What changed (vs. its parent):** broadly comparable subject; specific staging not securely described here. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c03.jpg",
+      "sort_order": 2,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-04",
       "name": "IIII · L'Empereur",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c04.jpg",
       "metadata": {
-        "number": "IIII",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-04.jpg",
           "source_px": [
             1100,
             1990
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-04.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "IIII",
         "trump_key": "emperor",
-        "trump_number": 4,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-04-lempereur",
-        "deck": "Tarot de Marseille"
+        "trump_number": 4,
+        "source_item_id": "major-04-lempereur"
       },
       "sections": {
         "About": "L'Empereur (atout IIII) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** the Marseille Emperor sits in robes with an eagle shield; the Paris Emperor is **militarised, mailed head-to-foot** [@web_pollett_paris]. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "The Empereur appears head-to-foot in full military armour rather than the robe-and-orb of the Marseille tradition. Where other decks seat the Emperor in courtly regalia, the Paris version militarises him completely — a figure not of civic governance but of armed command, the emperor as soldier rather than sovereign.",
-        "Symbol": "Fully mailed Emperor — imperial power expressed as military readiness, governance identified with the capacity for war rather than the apparatus of court."
-      }
+        "Symbol": "Fully mailed Emperor — imperial power expressed as military readiness, governance identified with the capacity for war rather than the apparatus of court.",
+        "Research note": "**What changed (vs. its parent):** the Marseille Emperor sits in robes with an eagle shield; the Paris Emperor is **militarised, mailed head-to-foot** [@web_pollett_paris]. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c04.jpg",
+      "sort_order": 3,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-05",
       "name": "V · Le Pape",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c05.jpg",
       "metadata": {
-        "number": "V",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-05.jpg",
           "source_px": [
             1100,
             2007
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-05.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "V",
         "trump_key": "hierophant",
-        "trump_number": 5,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-05-le-pape",
-        "deck": "Tarot de Marseille"
+        "trump_number": 5,
+        "source_item_id": "major-05-le-pape"
       },
       "sections": {
         "About": "Le Pape (atout V) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** broadly comparable; staging not securely described here. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "Le Pape sits enthroned between two pillars in the standard Marseille manner, blessing two kneeling petitioners. The Paris anonymous version is broadly comparable to the common Marseille type — the papal tiara, the raised hand of benediction, the hierarchical arrangement of pope above acolytes — without the specific iconographic departures that mark other cards in this deck.",
-        "Symbol": "Enthroned pope between pillars — spiritual hierarchy and sacramental transmission, the blessing that flows downward through institutional form."
-      }
+        "Symbol": "Enthroned pope between pillars — spiritual hierarchy and sacramental transmission, the blessing that flows downward through institutional form.",
+        "Research note": "**What changed (vs. its parent):** broadly comparable; staging not securely described here. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c05.jpg",
+      "sort_order": 4,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-06",
       "name": "VI · L'Amoureux",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c06.jpg",
       "metadata": {
-        "number": "VI",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-06.jpg",
           "source_px": [
             1100,
             1995
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-06.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "VI",
         "trump_key": "lovers",
-        "trump_number": 6,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-06-lamoureux",
-        "deck": "Tarot de Marseille"
+        "trump_number": 6,
+        "source_item_id": "major-06-lamoureux"
       },
       "sections": {
         "About": "L'Amoureux (atout VI) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** the Marseille \"L'Amoureux\" stages a choice between figures under a shooting Cupid; the Paris card **strips out the elder figure**, leaving the pair [@web_th_paris]. \n\n*Sources:* [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "L'Amoureux shows a pair of figures under a shooting Cupid, but the elder figure present in the standard Marseille three-person 'choice' composition has been removed. The Paris card reduces the Lovers to a dyad — two figures and Cupid — stripping out the triangular tension of the morality-choice scene and suggesting encounter or mutual attraction rather than a forced decision.",
-        "Symbol": "Two figures under Cupid, elder removed — love as pure encounter, the scene of choice simplified to the moment of feeling itself."
-      }
+        "Symbol": "Two figures under Cupid, elder removed — love as pure encounter, the scene of choice simplified to the moment of feeling itself.",
+        "Research note": "**What changed (vs. its parent):** the Marseille \"L'Amoureux\" stages a choice between figures under a shooting Cupid; the Paris card **strips out the elder figure**, leaving the pair [@web_th_paris]. \n\n*Sources:* [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c06.jpg",
+      "sort_order": 5,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-07",
       "name": "VII · Le Chariot",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c07.jpg",
       "metadata": {
-        "number": "VII",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-07.jpg",
           "source_px": [
             1100,
             2010
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-07.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "VII",
         "trump_key": "chariot",
-        "trump_number": 7,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-07-le-chariot",
-        "deck": "Tarot de Marseille"
+        "trump_number": 7,
+        "source_item_id": "major-07-le-chariot"
       },
       "sections": {
         "About": "Le Chariot (atout VII) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** Marseille's Chariot is horse-drawn (two steeds); the Paris **goose-drawn chariot with a child rider** is one of the deck's most famous oddities [@web_th_paris]. \n\n*Sources:* [@web_pollett_paris], [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "Le Chariot is drawn by a goose rather than horses, with a child riding in the car rather than the crowned triumphator of the Marseille tradition. This is one of the deck's most famous and peculiar departures — the chariot of triumph reduced to a farmyard comedy, the child-and-goose substituting for the warrior-and-steeds in a scene that inverts conventional triumph entirely.",
-        "Symbol": "Goose-drawn chariot with child rider — triumph recast as absurdist pastoral, the vehicle of victory made ridiculous through its cargo and its beast."
-      }
+        "Symbol": "Goose-drawn chariot with child rider — triumph recast as absurdist pastoral, the vehicle of victory made ridiculous through its cargo and its beast.",
+        "Research note": "**What changed (vs. its parent):** Marseille's Chariot is horse-drawn (two steeds); the Paris **goose-drawn chariot with a child rider** is one of the deck's most famous oddities [@web_th_paris]. \n\n*Sources:* [@web_pollett_paris], [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c07.jpg",
+      "sort_order": 6,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-08",
       "name": "VIII · La Justice",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c08.jpg",
       "metadata": {
-        "number": "VIII",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-08.jpg",
           "source_px": [
             1100,
             1977
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-08.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "VIII",
         "trump_key": "justice",
-        "trump_number": 11,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-08-la-justice",
-        "deck": "Tarot de Marseille"
+        "trump_number": 11,
+        "source_item_id": "major-08-la-justice"
       },
       "sections": {
         "About": "La Justice (atout VIII) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** Marseille's Justice is a single seated woman; the Paris card's **double (Janus-like) face** is unique [@web_pollett_paris]. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "La Justice bears a double or Janus-like face — two faces looking in opposite directions on a single head. This is unique to the Paris anonymous deck and transforms Justice from the single-faced weigher-of-evidence into a figure who simultaneously looks both ways, suggesting not impartiality but the doubled vision of a deity who sees past and future, accuser and accused.",
-        "Symbol": "Janus-faced Justice — the weigher of evidence who looks both ways simultaneously, law that confronts both the act and its consequence in a single gaze."
-      }
+        "Symbol": "Janus-faced Justice — the weigher of evidence who looks both ways simultaneously, law that confronts both the act and its consequence in a single gaze.",
+        "Research note": "**What changed (vs. its parent):** Marseille's Justice is a single seated woman; the Paris card's **double (Janus-like) face** is unique [@web_pollett_paris]. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c08.jpg",
+      "sort_order": 7,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-09",
       "name": "VIIII · L'Hermite",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c09.jpg",
       "metadata": {
-        "number": "VIIII",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-09.jpg",
           "source_px": [
             1100,
             2012
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-09.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "VIIII",
         "trump_key": "hermit",
-        "trump_number": 9,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-09-lhermite",
-        "deck": "Tarot de Marseille"
+        "trump_number": 9,
+        "source_item_id": "major-09-lhermite"
       },
       "sections": {
         "About": "L'Hermite (atout VIIII) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** broadly comparable figure; the **garbled caption** is the distinctive note. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "L'Hermite is broadly comparable to the standard Marseille figure — a bearded man with lantern and staff, withdrawn from the world. The Paris version is noted for a garbled or damaged caption, making the written identification of the card unreliable while the image itself remains within the expected hermit iconography. The solitary elder with his lantern marks the card as a retreat from engagement.",
-        "Symbol": "Lantern-bearing hermit with garbled caption — solitude and inner light, the wisdom figure whose written identification has been worn away by time."
-      }
+        "Symbol": "Lantern-bearing hermit with garbled caption — solitude and inner light, the wisdom figure whose written identification has been worn away by time.",
+        "Research note": "**What changed (vs. its parent):** broadly comparable figure; the **garbled caption** is the distinctive note. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c09.jpg",
+      "sort_order": 8,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-10",
       "name": "X · La Roue de Fortune",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c10.jpg",
       "metadata": {
-        "number": "X",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-10.jpg",
           "source_px": [
             1100,
             1987
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-10.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "X",
         "trump_key": "wheel-of-fortune",
-        "trump_number": 10,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-10-la-roue",
-        "deck": "Tarot de Marseille"
+        "trump_number": 10,
+        "source_item_id": "major-10-la-roue"
       },
       "sections": {
         "About": "La Roue de Fortune (atout X) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** broadly comparable; details owed from the scan. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "La Roue de Fortune shows the standard rotating wheel with figures ascending and descending on its rim, a crowned figure at the top and fallen ones at the sides. The Paris card is broadly comparable to the Marseille type — the mechanical wheel as a figure of Fortune's indifference. Specific details of the Paris version await fuller analysis of the original scan.",
-        "Symbol": "The turning wheel of Fortune — cyclical rise and fall, the mechanical emblem of inversion that crowns and casts down without preference."
-      }
+        "Symbol": "The turning wheel of Fortune — cyclical rise and fall, the mechanical emblem of inversion that crowns and casts down without preference.",
+        "Research note": "**What changed (vs. its parent):** broadly comparable; details owed from the scan. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c10.jpg",
+      "sort_order": 9,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-11",
       "name": "XI · La Force",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c11.jpg",
       "metadata": {
-        "number": "XI",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-11.jpg",
           "source_px": [
             1100,
             2007
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-11.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "XI",
         "trump_key": "strength",
-        "trump_number": 8,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-11-la-force",
-        "deck": "Tarot de Marseille"
+        "trump_number": 8,
+        "source_item_id": "major-11-la-force"
       },
       "sections": {
         "About": "La Force (atout XI) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** unremarkable relative to the deck's wilder cards; staging owed. \n\n*Sources:* [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "La Force shows a figure subduing a lion — the standard Marseille scene of human mastery over bestial instinct. The Paris card is unremarkable relative to the deck's wilder departures, presenting the woman opening the lion's mouth or restraining the animal in the conventional way. Force here is quiet virtue within an otherwise turbulent deck.",
-        "Symbol": "Woman and lion — the mastery of instinct through gentle persistence, courage expressed as patient dominance rather than violent conquest."
-      }
+        "Symbol": "Woman and lion — the mastery of instinct through gentle persistence, courage expressed as patient dominance rather than violent conquest.",
+        "Research note": "**What changed (vs. its parent):** unremarkable relative to the deck's wilder cards; staging owed. \n\n*Sources:* [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c11.jpg",
+      "sort_order": 10,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-12",
       "name": "XII · Le Pendu",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c12.jpg",
       "metadata": {
-        "number": "XII",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-12.jpg",
           "source_px": [
             1100,
             1996
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-12.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "XII",
         "trump_key": "hanged-man",
-        "trump_number": 12,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-12-le-pendu",
-        "deck": "Tarot de Marseille"
+        "trump_number": 12,
+        "source_item_id": "major-12-le-pendu"
       },
       "sections": {
         "About": "Le Pendu (atout XII) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** comparable to the standard inverted hanging figure; nothing exotic noted. \n\n*Sources:* [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "Le Pendu shows the inverted hanging figure of the Marseille tradition — a man suspended upside-down from a gallows or scaffold, his legs forming an inverted cross. The Paris card is comparable to the standard type without the exotic departures seen elsewhere in the deck. The Hanged Man's enforced reversal suggests patience, suspension, and the altered perspective of one who sees the world from a position of powerlessness.",
-        "Symbol": "Inverted hanging figure — enforced suspension and altered perspective, the world seen from upside-down as a form of involuntary enlightenment."
-      }
+        "Symbol": "Inverted hanging figure — enforced suspension and altered perspective, the world seen from upside-down as a form of involuntary enlightenment.",
+        "Research note": "**What changed (vs. its parent):** comparable to the standard inverted hanging figure; nothing exotic noted. \n\n*Sources:* [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c12.jpg",
+      "sort_order": 11,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-13",
       "name": "XIII · La Mort",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c13.jpg",
       "metadata": {
-        "number": "XIII",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-13.jpg",
           "source_px": [
             1100,
             1995
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-13.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "XIII",
         "trump_key": "death",
-        "trump_number": 13,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-13-la-mort",
-        "deck": "Tarot de Marseille"
+        "trump_number": 13,
+        "source_item_id": "major-13-la-mort"
       },
       "sections": {
         "About": "La Mort (atout XIII) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** the Marseille XIII reaps a field of hands/heads/crowns; the Paris Death **omits the royal/papal heads** [@web_th_paris]. \n\n*Sources:* [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "La Mort shows Death's skeleton with scythe harvesting the field of the living, but the Paris card omits the royal and papal heads that appear among the severed parts in the standard Marseille composition. The absence of crowns and mitres from the field of the dead removes Death's traditional claim to equality — kings and popes are no longer explicitly shown as subject to the common harvest.",
-        "Symbol": "Death's skeleton without royal heads — the harvest that continues even when shorn of its equalizing message, destruction without the explicit commentary on power."
-      }
+        "Symbol": "Death's skeleton without royal heads — the harvest that continues even when shorn of its equalizing message, destruction without the explicit commentary on power.",
+        "Research note": "**What changed (vs. its parent):** the Marseille XIII reaps a field of hands/heads/crowns; the Paris Death **omits the royal/papal heads** [@web_th_paris]. \n\n*Sources:* [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c13.jpg",
+      "sort_order": 12,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-14",
       "name": "XIIII · Tempérance",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c14.jpg",
       "metadata": {
-        "number": "XIIII",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-14.jpg",
           "source_px": [
             1100,
             1993
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-14.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "XIIII",
         "trump_key": "temperance",
-        "trump_number": 14,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-14-temperance",
-        "deck": "Tarot de Marseille"
+        "trump_number": 14,
+        "source_item_id": "major-14-temperance"
       },
       "sections": {
         "About": "Tempérance (atout XIIII) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** broadly comparable figure (angel/woman pouring); distinctive for the **garbled caption**. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "Tempérance shows an angelic or female figure pouring liquid between two vessels — the standard Marseille image of moderation and temperance. The Paris card is noted for a garbled or damaged caption, a textual peculiarity it shares with the Hermit. The visual content of temperate pouring remains legible even where the written identification has been worn or misprinted.",
-        "Symbol": "Pouring angel with garbled caption — moderation and the mixing of extremes, virtue whose label has been damaged but whose image persists."
-      }
+        "Symbol": "Pouring angel with garbled caption — moderation and the mixing of extremes, virtue whose label has been damaged but whose image persists.",
+        "Research note": "**What changed (vs. its parent):** broadly comparable figure (angel/woman pouring); distinctive for the **garbled caption**. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c14.jpg",
+      "sort_order": 13,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-15",
       "name": "XV · Le Diable",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c15.jpg",
       "metadata": {
-        "number": "XV",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-15.jpg",
           "source_px": [
             1100,
             1957
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-15.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "XV",
         "trump_key": "devil",
-        "trump_number": 15,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-15-le-diable",
-        "deck": "Tarot de Marseille"
+        "trump_number": 15,
+        "source_item_id": "major-15-le-diable"
       },
       "sections": {
         "About": "Le Diable (atout XV) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** Marseille's Devil stands on a pedestal with two bound imps; the Paris Devil scene is uncertain here — **disambiguate from the scan**. \n\n*Sources:* [@web_pollett_paris], [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "Le Diable stands as the card most in need of direct examination in the Paris anonymous deck — the specific iconography of the Parisian devil scene is uncertain, and early sources did not resolve whether it follows the Marseille pedestal-and-bound-imps type or diverges. The card awaits fuller analysis. What is established is the presence of a devil figure in a scene that may carry the deck's satirical energy into its most demonic register.",
-        "Symbol": "The Devil in uncertain scene — supernatural dominion whose specific form awaits the image, the force that binds and corrupts in whatever shape it takes."
-      }
+        "Symbol": "The Devil in uncertain scene — supernatural dominion whose specific form awaits the image, the force that binds and corrupts in whatever shape it takes.",
+        "Research note": "**What changed (vs. its parent):** Marseille's Devil stands on a pedestal with two bound imps; the Paris Devil scene is uncertain here — **disambiguate from the scan**. \n\n*Sources:* [@web_pollett_paris], [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c15.jpg",
+      "sort_order": 14,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-16",
       "name": "XVI · La Maison-Dieu",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c16.jpg",
       "metadata": {
-        "number": "XVI",
-        "arcana": "major",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-16.jpg",
           "source_px": [
             1100,
             1992
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-16.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "XVI",
         "trump_key": "tower",
         "trump_number": 16
       },
@@ -493,500 +504,549 @@
         "About": "La Maison-Dieu (atout XVI) — the name is printed on the card.",
         "Scene": "La Maison-Dieu (the Tower) shows the celestial blow — lightning or divine force striking a tower or structure and sending figures falling. The Paris card belongs to the early French tarot tradition where the Maison-Dieu presents catastrophic rupture as cosmological event. The specific form of the falling structure and the number and type of figures ejected follows the 17th-century Parisian woodcut conventions that shaped this deck's production.",
         "Symbol": "Tower struck by celestial force, figures falling — catastrophic rupture imposed from above, the structure of presumption shattered by the divine blow."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c16.jpg",
+      "sort_order": 15,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-17",
       "name": "XVII · L'Étoile",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c17.jpg",
       "metadata": {
-        "number": "XVII",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-17.jpg",
           "source_px": [
             1100,
             2017
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-17.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "XVII",
         "trump_key": "star",
-        "trump_number": 17,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-17-letoile",
-        "deck": "Tarot de Marseille"
+        "trump_number": 17,
+        "source_item_id": "major-17-letoile"
       },
       "sections": {
         "About": "L'Étoile (atout XVII) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** the Marseille Star is a nude woman pouring two ewers beneath stars; the Paris Star is **a scholar measuring the heavens** — a wholly different scene [@web_th_paris]. \n\n*Sources:* [@web_pollett_paris], [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "L'Étoile replaces the conventional nude woman pouring water beneath stars with a male scholar measuring or contemplating the heavens — an astronomer or natural philosopher in an interior or observational setting. This is one of the Paris deck's most celebrated departures, transforming a scene of devotional openness into one of scientific inquiry, the star as object of study rather than source of grace.",
-        "Symbol": "Scholar measuring the heavens — the Star as celestial object of rational inquiry, divine light received through the instruments of observation rather than through open devotion."
-      }
+        "Symbol": "Scholar measuring the heavens — the Star as celestial object of rational inquiry, divine light received through the instruments of observation rather than through open devotion.",
+        "Research note": "**What changed (vs. its parent):** the Marseille Star is a nude woman pouring two ewers beneath stars; the Paris Star is **a scholar measuring the heavens** — a wholly different scene [@web_th_paris]. \n\n*Sources:* [@web_pollett_paris], [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c17.jpg",
+      "sort_order": 16,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-18",
       "name": "XVIII · La Lune",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c18.jpg",
       "metadata": {
-        "number": "XVIII",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-18.jpg",
           "source_px": [
             1100,
             1966
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-18.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "XVIII",
         "trump_key": "moon",
-        "trump_number": 18,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-18-la-lune",
-        "deck": "Tarot de Marseille"
+        "trump_number": 18,
+        "source_item_id": "major-18-la-lune"
       },
       "sections": {
         "About": "La Lune (atout XVIII) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** the Marseille Moon has two dogs/towers and a crayfish in a pool; the Paris Moon is **a romantic serenade**, unrelated to the Marseille emblem [@web_pollett_paris]. \n\n*Sources:* [@web_pollett_paris], [@web_spiritone_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "La Lune shows a romantic serenade — a figure beneath the moon making music or performing an amorous gesture for another. Where the Marseille Moon deploys towers, dogs, and a crayfish in a pool of water, the Paris card offers an entirely human domestic scene of courtship under moonlight, associating the moon not with danger and night-dread but with the emotions of love and longing.",
-        "Symbol": "Romantic serenade under the moon — the lunation as witness to love rather than harbinger of darkness, the night sky as stage for the heart's declarations."
-      }
+        "Symbol": "Romantic serenade under the moon — the lunation as witness to love rather than harbinger of darkness, the night sky as stage for the heart's declarations.",
+        "Research note": "**What changed (vs. its parent):** the Marseille Moon has two dogs/towers and a crayfish in a pool; the Paris Moon is **a romantic serenade**, unrelated to the Marseille emblem [@web_pollett_paris]. \n\n*Sources:* [@web_pollett_paris], [@web_spiritone_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c18.jpg",
+      "sort_order": 17,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-19",
       "name": "XVIIII · Le Soleil",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c19.jpg",
       "metadata": {
-        "number": "XVIIII",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-19.jpg",
           "source_px": [
             1100,
             1949
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-19.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "XVIIII",
         "trump_key": "sun",
-        "trump_number": 19,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-19-le-soleil",
-        "deck": "Tarot de Marseille"
+        "trump_number": 19,
+        "source_item_id": "major-19-le-soleil"
       },
       "sections": {
         "About": "Le Soleil (atout XVIIII) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** the Marseille Sun shows two children (or a child on a horse) beneath a rayed sun; the Paris Sun is **a vanity/mirror scene with a monkey** — entirely different [@web_pollett_paris]. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "Le Soleil shows a vanity scene with a mirror and a monkey — a woman admiring herself in a mirror while a monkey watches, in place of the Marseille children beneath a rayed sun. The Paris Sun is one of the most iconographically divergent cards in the deck, replacing solar joy and childhood innocence with the moral emblem of vanitas and simian imitation.",
-        "Symbol": "Vanity mirror scene with monkey — solar clarity recast as its comic shadow, the light of day revealing pride and imitation rather than innocent joy."
-      }
+        "Symbol": "Vanity mirror scene with monkey — solar clarity recast as its comic shadow, the light of day revealing pride and imitation rather than innocent joy.",
+        "Research note": "**What changed (vs. its parent):** the Marseille Sun shows two children (or a child on a horse) beneath a rayed sun; the Paris Sun is **a vanity/mirror scene with a monkey** — entirely different [@web_pollett_paris]. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c19.jpg",
+      "sort_order": 18,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-20",
       "name": "XX · Le Jugement",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c20.jpg",
       "metadata": {
-        "number": "XX",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-20.jpg",
           "source_px": [
             1100,
             1940
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-20.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "XX",
         "trump_key": "judgement",
-        "trump_number": 20,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-20-le-jugement",
-        "deck": "Tarot de Marseille"
+        "trump_number": 20,
+        "source_item_id": "major-20-le-jugement"
       },
       "sections": {
         "About": "Le Jugement (atout XX) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** broadly comparable subject; specifics owed from the scan. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "Le Jugement shows the angel of resurrection — a winged figure with trumpet above the rising dead — in a composition broadly comparable to the Marseille tradition. Figures emerge from coffins or graves in response to the heavenly summons. The Paris card's specific staging follows the standard eschatological scene without the unusual departures found elsewhere in the deck.",
-        "Symbol": "Angel with trumpet above the rising dead — the final awakening, the divine call that summons all who have been buried to rise and be judged."
-      }
+        "Symbol": "Angel with trumpet above the rising dead — the final awakening, the divine call that summons all who have been buried to rise and be judged.",
+        "Research note": "**What changed (vs. its parent):** broadly comparable subject; specifics owed from the scan. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c20.jpg",
+      "sort_order": 19,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-21",
       "name": "XXI · Le Monde",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c21.jpg",
       "metadata": {
-        "number": "XXI",
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-21.jpg",
           "source_px": [
             1100,
             1985
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-21.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "XXI",
         "trump_key": "world",
-        "trump_number": 21,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-21-le-monde",
-        "deck": "Tarot de Marseille"
+        "trump_number": 21,
+        "source_item_id": "major-21-le-monde"
       },
       "sections": {
         "About": "Le Monde (atout XXI) — the name is printed on the card.",
-        "Research note": "**What changed (vs. its parent):** the Marseille World is a dancer in an oval wreath flanked by the four beasts; the Paris card hews to the **older mandorla/four-evangelist-beasts** type [@web_th_paris]. (Confidence: medium — exact Paris figure not securely described here.). \n\n*Sources:* [@web_pollett_paris], [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "Le Monde shows a central haloed figure within a mandorla or oval, flanked by the four evangelist beasts at the corners — the older iconographic type that predates the Marseille dancer-in-wreath convention. The Paris card's four-beast framing places it within the medieval mandorla tradition, associating the World with Christ in glory or the completed cosmos rather than with the dancing anima mundi of later Marseille decks.",
-        "Symbol": "Mandorla figure with four evangelist beasts — the completed cosmos in its older sacred form, the World framed by the creatures of the four gospels."
-      }
+        "Symbol": "Mandorla figure with four evangelist beasts — the completed cosmos in its older sacred form, the World framed by the creatures of the four gospels.",
+        "Research note": "**What changed (vs. its parent):** the Marseille World is a dancer in an oval wreath flanked by the four beasts; the Paris card hews to the **older mandorla/four-evangelist-beasts** type [@web_th_paris]. (Confidence: medium — exact Paris figure not securely described here.). \n\n*Sources:* [@web_pollett_paris], [@web_th_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c21.jpg",
+      "sort_order": 20,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-22",
       "name": "As de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c22.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-22.jpg",
           "source_px": [
             1100,
             2004
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-22.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "As of Coins (BnF folio order).",
         "Scene": "The Roi de Deniers is the King of Coins in the Italian-suited Paris anonymous tarot. He appears enthroned with the large coin or denier as his suit emblem, the conventional seated king of the Italian pip-card tradition. The Paris court figures follow the standard Marseille-derived conventions for the coin suit's highest court rank.",
         "Symbol": "Coin King enthroned — material authority and the governance of earthly wealth, the king who holds the suit's round emblem as his sceptre."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c22.jpg",
+      "sort_order": 21,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-23",
       "name": "Deux de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c23.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-23.jpg",
           "source_px": [
             1100,
             1970
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-23.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Deux of Coins (BnF folio order).",
         "Scene": "The Reine de Deniers appears as the enthroned Queen of Coins. She holds or displays the coin emblem in the conventional seated-queen posture of the Italian-suited French tarot tradition. The Paris anonymous queen of coins follows the standard Marseille-derived iconography for the suit's feminine court rank.",
         "Symbol": "Coin Queen enthroned — the fertile stewardship of material resources, wealth held in the feminine mode of reception and cultivation."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c23.jpg",
+      "sort_order": 22,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-24",
       "name": "Trois de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c24.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-24.jpg",
           "source_px": [
             1100,
             1980
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-24.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Trois of Coins (BnF folio order).",
         "Scene": "The Cavalier de Deniers appears as a mounted knight with the coin emblem — a horseman displaying the suit's round disc in the conventional posture of the Italian-suited cavalier card. The mounted position distinguishes the cavalier from the standing valet in the Paris anonymous deck's Italian-tradition court hierarchy.",
         "Symbol": "Coin Knight on horseback — material ambition in motion, wealth as an active pursuit carried forward on horseback."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c24.jpg",
+      "sort_order": 23,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-25",
       "name": "Quatre de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c25.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-25.jpg",
           "source_px": [
             1100,
             2026
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-25.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Quatre of Coins (BnF folio order).",
         "Scene": "The Valet de Deniers is the page or jack of coins — a standing young figure holding or presenting the coin emblem. In the Italian-suited tradition this figure is the lowest of the four court ranks, a youth whose standing posture contrasts with the mounted cavalier and the enthroned senior courts above him.",
         "Symbol": "Coin Valet standing — the apprentice of material affairs, youth in service to the suit's earthly values."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c25.jpg",
+      "sort_order": 24,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-26",
       "name": "Cinq de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c26.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-26.jpg",
           "source_px": [
             1100,
             1976
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-26.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Cinq of Coins (BnF folio order).",
         "Scene": "The Dix de Deniers shows ten coin emblems distributed across the card in the conventional Italian pip arrangement. In the Paris anonymous tarot the coin pip cards follow the standard symmetrical distribution typical of 17th-century Italian-suited French playing cards, the circular coin shapes arranged in two-column or stacked formations.",
         "Symbol": "Ten coins in full field — the suit at its most abundant, completed material wealth distributed across the card's full space."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c26.jpg",
+      "sort_order": 25,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-27",
       "name": "Six de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c27.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-27.jpg",
           "source_px": [
             1100,
             2013
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-27.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Six of Coins (BnF folio order).",
         "Scene": "The Neuf de Deniers shows nine coins in their conventional pip arrangement. The nine-coin card approaches but does not reach the completeness of the ten, the nine circular emblems arranged in the standard Italian pip convention of the Paris anonymous tarot.",
         "Symbol": "Nine coins approaching fullness — material near-completion, abundance one step from its final expression."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c27.jpg",
+      "sort_order": 26,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-28",
       "name": "Sept de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c28.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-28.jpg",
           "source_px": [
             1100,
             2000
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-28.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Sept of Coins (BnF folio order).",
         "Scene": "The Huit de Deniers shows eight coins in a symmetrical pip arrangement. The eight-coin card has the geometric balance characteristic of even-number pip cards in the Italian-suited tradition, two columns of four or two rows of four evoking the stability of even distribution.",
         "Symbol": "Eight coins in symmetric arrangement — the suit's measured and stable mid-range, material in its most organized form."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c28.jpg",
+      "sort_order": 27,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-29",
       "name": "Huit de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c29.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-29.jpg",
           "source_px": [
             1100,
             1932
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-29.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Huit of Coins (BnF folio order).",
         "Scene": "The Sept de Deniers shows seven coins in the conventional pip arrangement. The odd number gives this card a slight visual asymmetry — one coin must sit off-center or alone — and in the Italian pip tradition the seven often places one coin above or below the central line to accommodate the odd count.",
         "Symbol": "Seven coins in slight asymmetry — material abundance approaching its higher registers, the odd-number arrangement that marks an active rather than settled state."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c29.jpg",
+      "sort_order": 28,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-30",
       "name": "Neuf de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c30.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-30.jpg",
           "source_px": [
             1100,
             2006
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-30.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Neuf of Coins (BnF folio order).",
         "Scene": "The Six de Deniers shows six coins in a balanced arrangement, typically two columns of three. The six-coin card is among the more open pip compositions of the suit, the even number allowing a harmonious distribution without the density of the higher pip counts.",
         "Symbol": "Six coins in balanced columns — equitable distribution, material wealth at its point of harmonious measure and exchange."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c30.jpg",
+      "sort_order": 29,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-31",
       "name": "Dix de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c31.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-31.jpg",
           "source_px": [
             1100,
             1977
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-31.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Dix of Coins (BnF folio order).",
         "Scene": "The Cinq de Deniers shows five coins in a cross or quincunx arrangement — four at the corners and one at center. The five-coin card introduces the odd-number instability characteristic of pip fives, the central coin establishing a focal point around which the other four cluster.",
         "Symbol": "Five coins in cross arrangement — material asymmetry, the suit's tension concentrated in the odd central coin."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c31.jpg",
+      "sort_order": 30,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-32",
       "name": "Valet de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c32.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-32.jpg",
           "source_px": [
             1100,
             1992
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-32.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Valet of Coins (BnF folio order).",
         "Scene": "The Quatre de Deniers shows four coins in a square formation. The four-coin pip card is among the most stable of the suit — the four-fold arrangement provides symmetry in both axes, evoking solidity and foundation in the Italian pip tradition.",
         "Symbol": "Four coins in square — material stability and containment, the suit's four-fold structure as a foundation."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c32.jpg",
+      "sort_order": 31,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-33",
       "name": "Cavalier de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c33.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-33.jpg",
           "source_px": [
             1100,
             1994
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-33.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Cavalier of Coins (BnF folio order).",
         "Scene": "The Trois de Deniers shows three coins in a triangular arrangement. The three-coin card introduces the minimal complexity of the Italian pip tradition — three is the first number that creates a spatial relationship beyond line or pair, the triangle of coins suggesting beginning organization.",
         "Symbol": "Three coins in triangle — the beginning of organized material pattern, three points of wealth in active relation."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c33.jpg",
+      "sort_order": 32,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-34",
       "name": "Reine de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c34.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-34.jpg",
           "source_px": [
             1100,
             2031
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-34.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Reine of Coins (BnF folio order).",
         "Scene": "The Deux de Deniers shows two coins placed vertically or diagonally in simple correspondence. In the Italian pip tradition the two-coin card is sometimes embellished with a ribbon or decorative flourish connecting the coins, the pairing of two circular emblems being the suit's most elemental statement of duality.",
         "Symbol": "Two coins in correspondence — the primal material dyad, exchange and duality at its most elemental."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c34.jpg",
+      "sort_order": 33,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-35",
       "name": "Roi de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c35.jpg",
       "metadata": {
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-35.jpg",
           "source_px": [
             1100,
             2024
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-35.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Roi of Coins (BnF folio order).",
         "Scene": "The As de Deniers shows a single large coin as the suit's foundational emblem. In the Italian-suited tradition the aces often carry additional decorative treatment — the single coin given an elaborate surround or ornamental context that marks it as the seed of the suit. The Paris anonymous ace of coins is the concentrated essence of the denier symbol.",
         "Symbol": "One coin as seed — the undivided material potential of the suit, wealth before it divides into distribution or exchange."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c35.jpg",
+      "sort_order": 34,
+      "grammar_type": "custom"
     },
     {
       "id": "suit-deniers",
       "name": "Deniers · Coins",
-      "level": 3,
+      "level": 2,
       "category": "axis",
+      "sections": {
+        "Scene": "The suit of Deniers (Coins) in the Paris anonymous tarot uses the Italian-suited circular coin emblem with French court names: Roi, Reine, Cavalier, Valet. The pip cards follow standard Italian pip conventions with coin shapes in symmetrical distributions. This suit is part of the deck's Italian-suited structure within an otherwise distinctively French 17th-century production.",
+        "Symbol": "Coins as the suit of material wealth and earthly value — the circular emblem that measures and mediates human exchange, here within a deck that otherwise reimagines the Marseille tradition at every turn.",
+        "Render As": "pill-group",
+        "What it is": "The Deniers (Coins) suit — ten pips plus Valet, Cavalier, Reine and Roi."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c22.jpg",
       "render_as": "pill-group",
+      "sort_order": 35,
       "composite_of": [
         "deniers-22",
         "deniers-23",
@@ -1003,355 +1063,386 @@
         "deniers-34",
         "deniers-35"
       ],
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c22.jpg",
-      "sections": {
-        "What it is": "The Deniers (Coins) suit — ten pips plus Valet, Cavalier, Reine and Roi.",
-        "Scene": "The suit of Deniers (Coins) in the Paris anonymous tarot uses the Italian-suited circular coin emblem with French court names: Roi, Reine, Cavalier, Valet. The pip cards follow standard Italian pip conventions with coin shapes in symmetrical distributions. This suit is part of the deck's Italian-suited structure within an otherwise distinctively French 17th-century production.",
-        "Symbol": "Coins as the suit of material wealth and earthly value — the circular emblem that measures and mediates human exchange, here within a deck that otherwise reimagines the Marseille tradition at every turn."
-      }
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-36",
       "name": "As de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c36.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-36.jpg",
           "source_px": [
             1100,
             1993
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-36.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "As of Cups (BnF folio order).",
         "Scene": "The Roi de Coupes is the King of Cups in the Italian-suited Paris anonymous tarot. He appears enthroned with a chalice or cup as his suit emblem, the conventional seated king of the Italian pip-card tradition adapted to the cups suit. The cup king in the Paris anonymous deck follows the Marseille-derived iconography for the suit's highest court rank.",
         "Symbol": "Cup King enthroned — emotional authority and the governance of inner life, the king who holds the chalice as his emblem of feeling and reception."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c36.jpg",
+      "sort_order": 36,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-37",
       "name": "Deux de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c37.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-37.jpg",
           "source_px": [
             1100,
             1971
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-37.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Deux of Cups (BnF folio order).",
         "Scene": "The Reine de Coupes appears as the enthroned Queen of Cups, holding or displaying the chalice emblem in the conventional seated-queen posture. She is the feminine sovereign of the suit of feeling and inner life, the cups suit's highest feminine rank in the Paris anonymous tarot's Italian-suited court hierarchy.",
         "Symbol": "Cup Queen enthroned — the feminine mastery of emotional intelligence, the queen who holds the chalice as both vessel and authority."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c37.jpg",
+      "sort_order": 37,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-38",
       "name": "Trois de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c38.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-38.jpg",
           "source_px": [
             1100,
             1998
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-38.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Trois of Cups (BnF folio order).",
         "Scene": "The Cavalier de Coupes is the mounted Knight of Cups, a horseman holding or presenting the cup emblem. The cavalier's mounted position marks his active engagement with the suit's emotional sphere, the cup borne forward on horseback as an act of pursuit or offering.",
         "Symbol": "Cup Knight on horseback — emotional quest in motion, feeling pursued and carried forward through the active mode of the mounted knight."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c38.jpg",
+      "sort_order": 38,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-39",
       "name": "Quatre de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c39.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-39.jpg",
           "source_px": [
             1100,
             1975
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-39.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Quatre of Cups (BnF folio order).",
         "Scene": "The Valet de Coupes is the standing Page of Cups, a young figure presenting or holding the chalice. The valet is the lowest court rank in the Italian-suited hierarchy, his standing posture and youth marking him as servant rather than sovereign of the suit.",
         "Symbol": "Cup Valet standing — the apprentice of emotional life, youth in service to the suit's depths of feeling and inner experience."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c39.jpg",
+      "sort_order": 39,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-40",
       "name": "Cinq de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c40.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-40.jpg",
           "source_px": [
             1100,
             2000
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-40.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Cinq of Cups (BnF folio order).",
         "Scene": "The Dix de Coupes shows ten cups in the conventional Italian pip arrangement, the chalice or cup shapes distributed across the card in symmetrical formation. The ten-cup card marks the suit's fullness — all cups present, the emotional field complete.",
         "Symbol": "Ten cups in full field — emotional completion, the suit at its most encompassing and abundant expression."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c40.jpg",
+      "sort_order": 40,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-41",
       "name": "Six de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c41.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-41.jpg",
           "source_px": [
             1100,
             1973
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-41.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Six of Cups (BnF folio order).",
         "Scene": "The Neuf de Coupes shows nine cups in their conventional arrangement. The nine-cup card approaches the suit's fullness without completing it, a near-total field of chalices that suggests satisfaction held just short of its final form.",
         "Symbol": "Nine cups approaching fullness — emotional near-fulfillment, the suit one step from its completed expression."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c41.jpg",
+      "sort_order": 41,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-42",
       "name": "Sept de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c42.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-42.jpg",
           "source_px": [
             1100,
             1969
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-42.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Sept of Cups (BnF folio order).",
         "Scene": "The Huit de Coupes shows eight cups in a symmetrical pip arrangement. The even number allows a balanced two-column or two-row distribution of chalice emblems, the eight-cup card presenting the suit in its organized, stable mid-range.",
         "Symbol": "Eight cups in balanced arrangement — emotional equilibrium, the suit's mid-point where feeling is held in stable and symmetric form."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c42.jpg",
+      "sort_order": 42,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-43",
       "name": "Huit de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c43.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-43.jpg",
           "source_px": [
             1100,
             1973
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-43.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Huit of Cups (BnF folio order).",
         "Scene": "The Sept de Coupes shows seven cups distributed with the characteristic slight asymmetry of odd-number pip cards. Seven chalice shapes occupy the card's field, their odd count preventing perfect two-column symmetry and giving the card a quality of active emotional distribution.",
         "Symbol": "Seven cups in slight asymmetry — emotional multiplicity, feeling distributed among seven distinct vessels that resist easy pairing."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c43.jpg",
+      "sort_order": 43,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-44",
       "name": "Neuf de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c44.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-44.jpg",
           "source_px": [
             1100,
             1989
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-44.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Neuf of Cups (BnF folio order).",
         "Scene": "The Six de Coupes shows six cups in a balanced two-column arrangement. The open, even distribution of the six-cup card gives the suit a quality of harmonious exchange — six chalices sharing the field with generous spacing between them.",
         "Symbol": "Six cups in balanced columns — emotional harmony and mutual exchange, the suit at its most open and receptive mid-point."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c44.jpg",
+      "sort_order": 44,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-45",
       "name": "Dix de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c45.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-45.jpg",
           "source_px": [
             1100,
             1972
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-45.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Dix of Cups (BnF folio order).",
         "Scene": "The Cinq de Coupes shows five cups in a cross or quincunx arrangement. The odd-number asymmetry of the five cups introduces an element of instability or loss into the suit's emotional field — something spilled or absent, the quincunx suggesting both fullness and gap.",
         "Symbol": "Five cups in cross arrangement — emotional asymmetry, the suit's tension around what is held and what is lost."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c45.jpg",
+      "sort_order": 45,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-46",
       "name": "Valet de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c46.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-46.jpg",
           "source_px": [
             1100,
             2014
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-46.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Valet of Cups (BnF folio order).",
         "Scene": "The Quatre de Coupes shows four cups in a square formation. The four-cup card is the suit's most stable pip composition — the square arrangement of four chalices suggesting emotional containment and security, feeling held in a firm four-fold structure.",
         "Symbol": "Four cups in square — emotional stability and containment, the suit's four-fold structure as a vessel of security."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c46.jpg",
+      "sort_order": 46,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-47",
       "name": "Cavalier de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c47.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-47.jpg",
           "source_px": [
             1100,
             1978
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-47.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Cavalier of Cups (BnF folio order).",
         "Scene": "The Trois de Coupes shows three cups in a triangular arrangement. Three chalices in an implied triangle create the suit's first multi-point spatial relationship, the three cups suggesting a community or shared emotional ground rather than mere pairing.",
         "Symbol": "Three cups in triangle — the beginning of emotional community, three vessels sharing a common field."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c47.jpg",
+      "sort_order": 47,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-48",
       "name": "Reine de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c48.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-48.jpg",
           "source_px": [
             1100,
             1967
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-48.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Reine of Cups (BnF folio order).",
         "Scene": "The Deux de Coupes shows two cups placed in vertical or diagonal correspondence. The two-cup card is the suit's primal emotional dyad — two chalices facing or echoing each other, the minimal expression of emotional exchange and reciprocity.",
         "Symbol": "Two cups in correspondence — the primal emotional dyad, exchange and reciprocity at their most elemental."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c48.jpg",
+      "sort_order": 48,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-49",
       "name": "Roi de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c49.jpg",
       "metadata": {
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-49.jpg",
           "source_px": [
             1100,
             1965
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-49.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Roi of Cups (BnF folio order).",
         "Scene": "The As de Coupes shows a single large chalice as the suit's foundational emblem. In the Italian pip tradition the cup ace is often the most ornate of the suit's pip cards, the single chalice given decorative treatment that marks it as the undivided potential of the emotional realm.",
         "Symbol": "One cup as seed — the undivided emotional potential of the suit, receptivity held in its most concentrated and generative form."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c49.jpg",
+      "sort_order": 49,
+      "grammar_type": "custom"
     },
     {
       "id": "suit-coupes",
       "name": "Coupes · Cups",
-      "level": 3,
+      "level": 2,
       "category": "axis",
+      "sections": {
+        "Scene": "The suit of Coupes (Cups) in the Paris anonymous tarot uses the Italian-suited chalice emblem with French court names: Roi, Reine, Cavalier, Valet. The pip cards follow standard Italian conventions with cup shapes in symmetrical distributions. Within a deck famous for its unusual trumps, the cups suit carries the more conventional iconography of the Italian pip tradition.",
+        "Symbol": "Cups as the suit of emotion, reception, and inner life — the chalice that holds feeling as surely as it holds liquid, within a deck that reimagines the world of the trumps while maintaining convention in its suits.",
+        "Render As": "pill-group",
+        "What it is": "The Coupes (Cups) suit — ten pips plus Valet, Cavalier, Reine and Roi."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c36.jpg",
       "render_as": "pill-group",
+      "sort_order": 50,
       "composite_of": [
         "coupes-36",
         "coupes-37",
@@ -1368,355 +1459,386 @@
         "coupes-48",
         "coupes-49"
       ],
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c36.jpg",
-      "sections": {
-        "What it is": "The Coupes (Cups) suit — ten pips plus Valet, Cavalier, Reine and Roi.",
-        "Scene": "The suit of Coupes (Cups) in the Paris anonymous tarot uses the Italian-suited chalice emblem with French court names: Roi, Reine, Cavalier, Valet. The pip cards follow standard Italian conventions with cup shapes in symmetrical distributions. Within a deck famous for its unusual trumps, the cups suit carries the more conventional iconography of the Italian pip tradition.",
-        "Symbol": "Cups as the suit of emotion, reception, and inner life — the chalice that holds feeling as surely as it holds liquid, within a deck that reimagines the world of the trumps while maintaining convention in its suits."
-      }
+      "grammar_type": "custom"
     },
     {
       "id": "batons-50",
       "name": "As de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c50.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-50.jpg",
           "source_px": [
             1100,
             1994
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-50.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "As of Batons (BnF folio order).",
         "Scene": "The Roi de Bâtons is the King of Batons in the Italian-suited Paris anonymous tarot. He appears enthroned holding the baton or staff as his suit emblem, the king of wands in the Italian pip tradition adapted to the French court context. The baton king's authority is associated with fire and creative energy.",
         "Symbol": "Baton King enthroned — creative authority and the governance of will and enterprise, the king who holds the staff as both weapon and sceptre."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c50.jpg",
+      "sort_order": 51,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-51",
       "name": "Deux de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c51.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-51.jpg",
           "source_px": [
             1100,
             1943
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-51.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Deux of Batons (BnF folio order).",
         "Scene": "The Reine de Bâtons appears as the enthroned Queen of Batons, holding or displaying the staff emblem in the conventional seated-queen posture. She is the feminine sovereign of the suit of fire and creative enterprise in the Paris anonymous tarot's Italian-suited court hierarchy.",
         "Symbol": "Baton Queen enthroned — the feminine mastery of creative will, the queen who holds the staff as emblem of her generative authority."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c51.jpg",
+      "sort_order": 52,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-52",
       "name": "Trois de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c52.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-52.jpg",
           "source_px": [
             1100,
             1996
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-52.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Trois of Batons (BnF folio order).",
         "Scene": "The Cavalier de Bâtons is the mounted Knight of Batons, a horseman holding or brandishing the staff. The mounted knight of the baton suit in the Italian pip tradition embodies fiery forward momentum — the wand-bearer whose charge carries creative force into active expression.",
         "Symbol": "Baton Knight on horseback — creative impulsion in motion, the will that charges forward carrying its staff as both weapon and wand."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c52.jpg",
+      "sort_order": 53,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-53",
       "name": "Quatre de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c53.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-53.jpg",
           "source_px": [
             1100,
             1964
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-53.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Quatre of Batons (BnF folio order).",
         "Scene": "The Valet de Bâtons is the standing Page of Batons, a young figure holding or presenting the staff. The valet of the baton suit is the suit's most youthful and immediate expression — a page who carries the wand's creative potential without yet having directed it toward a specific enterprise.",
         "Symbol": "Baton Valet standing — youth in possession of creative potential, the apprentice of enterprise and will."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c53.jpg",
+      "sort_order": 54,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-54",
       "name": "Cinq de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c54.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-54.jpg",
           "source_px": [
             1100,
             1981
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-54.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Cinq of Batons (BnF folio order).",
         "Scene": "The Dix de Bâtons shows ten staff shapes in the dense interlocking arrangement typical of the baton suit's highest pip card. In the Italian-suited convention the ten batons are crowded and overlapping, the suit's energy accumulated to a point of burdensome fullness. The ten-baton card is the most heavily loaded of the suit's pip compositions.",
         "Symbol": "Ten batons in dense interlace — creative energy at its most burdensome accumulation, the suit's force piled to its maximum weight."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c54.jpg",
+      "sort_order": 55,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-55",
       "name": "Six de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c55.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-55.jpg",
           "source_px": [
             1100,
             1931
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-55.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Six of Batons (BnF folio order).",
         "Scene": "The Neuf de Bâtons shows nine staff shapes approaching the density of the ten. The nine batons carry the suit near its maximum load without yet completing it, an arrangement that suggests energy still active and unresolved rather than simply accumulated.",
         "Symbol": "Nine batons approaching density — creative force near its peak, the suit's energy gathered toward its final expression."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c55.jpg",
+      "sort_order": 56,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-56",
       "name": "Sept de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c56.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-56.jpg",
           "source_px": [
             1100,
             1960
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-56.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Sept of Batons (BnF folio order).",
         "Scene": "The Huit de Bâtons shows eight staff shapes in a symmetrical crossing arrangement. The even number allows the batons to form a geometric pattern, the eight staves crossing in pairs or groups to create an organized visual field that suggests the suit's energy channeled rather than merely accumulated.",
         "Symbol": "Eight batons in crossing arrangement — creative force organized through geometry, the suit's energy structured into active pattern."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c56.jpg",
+      "sort_order": 57,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-57",
       "name": "Huit de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c57.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-57.jpg",
           "source_px": [
             1100,
             1959
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-57.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Huit of Batons (BnF folio order).",
         "Scene": "The Sept de Bâtons shows seven staff shapes in a slightly asymmetric arrangement, the odd number preventing perfect bilateral symmetry. The seven batons in contest or in slight imbalance suggest an active, contested moment within the suit's energetic field.",
         "Symbol": "Seven batons in active imbalance — creative tension at its most dynamic, the odd number that forces engagement."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c57.jpg",
+      "sort_order": 58,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-58",
       "name": "Neuf de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c58.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-58.jpg",
           "source_px": [
             1100,
             1994
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-58.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Neuf of Batons (BnF folio order).",
         "Scene": "The Six de Bâtons shows six staff shapes in a balanced arrangement, the even distribution of the baton suit at its mid-range. Six staves crossed or arranged in pairs create a composition that suggests equilibrium rather than contest within the suit's domain of creative energy.",
         "Symbol": "Six batons in balanced arrangement — creative equilibrium, the suit's fire in a moment of stable and organized correspondence."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c58.jpg",
+      "sort_order": 59,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-59",
       "name": "Dix de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c59.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-59.jpg",
           "source_px": [
             1100,
             2025
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-59.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Dix of Batons (BnF folio order).",
         "Scene": "The Cinq de Bâtons shows five staff shapes with the characteristic tension of the suit's odd-number pip cards. Five batons in a contest arrangement suggest active encounter — the suit's energy at a point of competitive engagement, the five staves implied in motion against each other.",
         "Symbol": "Five batons in contest arrangement — creative contest and vitality, the suit at its most dynamically engaged point."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c59.jpg",
+      "sort_order": 60,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-60",
       "name": "Valet de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c60.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-60.jpg",
           "source_px": [
             1100,
             2013
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-60.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Valet of Batons (BnF folio order).",
         "Scene": "The Quatre de Bâtons shows four staff shapes in a square or cross formation. The four-baton card is among the most stable of the suit's pip compositions — four staves at four corners suggest the foundation of creative enterprise, a structure that supports further building.",
         "Symbol": "Four batons in cross or square — creative foundation and structure, the suit's four-fold form as a basis for enterprise."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c60.jpg",
+      "sort_order": 61,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-61",
       "name": "Cavalier de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c61.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-61.jpg",
           "source_px": [
             1100,
             2036
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-61.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Cavalier of Batons (BnF folio order).",
         "Scene": "The Trois de Bâtons shows three staff shapes in a triangular arrangement. The three batons suggest creative momentum — three staves in relation rather than mere pairing, the triangle of force that marks the beginning of organized enterprise.",
         "Symbol": "Three batons in triangular relation — the beginning of creative momentum, three points of force defining direction."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c61.jpg",
+      "sort_order": 62,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-62",
       "name": "Reine de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c62.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-62.jpg",
           "source_px": [
             1100,
             2010
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-62.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Reine of Batons (BnF folio order).",
         "Scene": "The Deux de Bâtons shows two staff shapes in crossing or parallel correspondence. The two batons are the suit's primal pairing — two wands in initial relation, the minimal expression of creative force meeting itself or its complement.",
         "Symbol": "Two batons in initial crossing — the first meeting of creative forces, the suit's energy at its most elemental dyadic form."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c62.jpg",
+      "sort_order": 63,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-63",
       "name": "Roi de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c63.jpg",
       "metadata": {
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-63.jpg",
           "source_px": [
             1100,
             2000
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-63.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Roi of Batons (BnF folio order).",
         "Scene": "The As de Bâtons shows a single large staff as the suit's foundational emblem. In the Italian pip tradition the baton ace is typically the most unadorned and direct expression of the suit — a single wand or staff, the creative force undivided.",
         "Symbol": "One baton as seed — the undivided creative force of the suit, fire and will before they divide into contest or enterprise."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c63.jpg",
+      "sort_order": 64,
+      "grammar_type": "custom"
     },
     {
       "id": "suit-batons",
       "name": "Bâtons · Batons",
-      "level": 3,
+      "level": 2,
       "category": "axis",
+      "sections": {
+        "Scene": "The suit of Bâtons (Batons) in the Paris anonymous tarot uses the Italian-suited staff or wand emblem with French court names: Roi, Reine, Cavalier, Valet. The pip cards follow standard Italian conventions with stave shapes in crossing and symmetrical arrangements. Within a deck famous for its unusual trumps, the batons suit carries the more conventional iconography of the Italian pip tradition.",
+        "Symbol": "Batons as the suit of fire, will, and creative enterprise — the staff that strikes and seeds, within a deck that reserves its most daring reimagination for the world of the major arcana.",
+        "Render As": "pill-group",
+        "What it is": "The Bâtons (Batons) suit — ten pips plus Valet, Cavalier, Reine and Roi."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c50.jpg",
       "render_as": "pill-group",
+      "sort_order": 65,
       "composite_of": [
         "batons-50",
         "batons-51",
@@ -1733,355 +1855,386 @@
         "batons-62",
         "batons-63"
       ],
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c50.jpg",
-      "sections": {
-        "What it is": "The Bâtons (Batons) suit — ten pips plus Valet, Cavalier, Reine and Roi.",
-        "Scene": "The suit of Bâtons (Batons) in the Paris anonymous tarot uses the Italian-suited staff or wand emblem with French court names: Roi, Reine, Cavalier, Valet. The pip cards follow standard Italian conventions with stave shapes in crossing and symmetrical arrangements. Within a deck famous for its unusual trumps, the batons suit carries the more conventional iconography of the Italian pip tradition.",
-        "Symbol": "Batons as the suit of fire, will, and creative enterprise — the staff that strikes and seeds, within a deck that reserves its most daring reimagination for the world of the major arcana."
-      }
+      "grammar_type": "custom"
     },
     {
       "id": "epees-64",
       "name": "As de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c64.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-64.jpg",
           "source_px": [
             1100,
             1967
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-64.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "As of Swords (BnF folio order).",
         "Scene": "The Roi d'Épées is the King of Swords in the Italian-suited Paris anonymous tarot. He appears enthroned with a long sword as his suit emblem, the king of blades in the Italian pip tradition. The sword king's authority is associated with intellect, judgment, and the power of decisive action.",
         "Symbol": "Sword King enthroned — intellectual authority and the governance of judgment, the king who holds the blade as both tool of discernment and emblem of command."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c64.jpg",
+      "sort_order": 66,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-65",
       "name": "Deux de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c65.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-65.jpg",
           "source_px": [
             1100,
             1977
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-65.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Deux of Swords (BnF folio order).",
         "Scene": "The Reine d'Épées appears as the enthroned Queen of Swords, holding or displaying the sword emblem in the conventional seated-queen posture. She is the feminine sovereign of the suit of thought and discernment in the Paris anonymous tarot's Italian-suited court hierarchy.",
         "Symbol": "Sword Queen enthroned — the feminine mastery of intellectual clarity, the queen who holds the blade as emblem of her discerning authority."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c65.jpg",
+      "sort_order": 67,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-66",
       "name": "Trois de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c66.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-66.jpg",
           "source_px": [
             1100,
             2002
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-66.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Trois of Swords (BnF folio order).",
         "Scene": "The Cavalier d'Épées is the mounted Knight of Swords, a horseman charging with sword raised or extended. The sword knight's mounted posture embodies the suit's decisive, cutting energy in motion — the blade carried forward on horseback as an act of swift judgment or attack.",
         "Symbol": "Sword Knight charging — intellectual impulsion in motion, the blade of discernment carried forward at speed."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c66.jpg",
+      "sort_order": 68,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-67",
       "name": "Quatre de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c67.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-67.jpg",
           "source_px": [
             1100,
             1997
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-67.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Quatre of Swords (BnF folio order).",
         "Scene": "The Valet d'Épées is the standing Page of Swords, a young figure holding or presenting the sword. The valet of the sword suit is the suit's youthful bearer — a page who carries the blade's potential for precision and challenge without yet having exercised it in full.",
         "Symbol": "Sword Valet standing — youth in possession of the blade, the apprentice of judgment and discernment."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c67.jpg",
+      "sort_order": 69,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-68",
       "name": "Cinq de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c68.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-68.jpg",
           "source_px": [
             1100,
             2012
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-68.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Cinq of Swords (BnF folio order).",
         "Scene": "The Dix d'Épées shows ten sword shapes in the conventional Italian pip arrangement. In the Italian-suited tradition the ten of swords is among the densest pip compositions, the ten blades interlocking or crossing in a field that suggests the suit's accumulated cutting force at its maximum.",
         "Symbol": "Ten swords in dense field — the suit's maximum cutting force, mental energy or conflict accumulated to its limit."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c68.jpg",
+      "sort_order": 70,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-69",
       "name": "Six de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c69.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-69.jpg",
           "source_px": [
             1100,
             2011
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-69.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Six of Swords (BnF folio order).",
         "Scene": "The Neuf d'Épées shows nine sword shapes approaching the density of the ten. The nine blades fill the card's field without yet reaching the ten's completeness, the suit's accumulated sharpness near its peak.",
         "Symbol": "Nine swords approaching density — the suit near its maximum, mental force gathered toward its most concentrated expression."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c69.jpg",
+      "sort_order": 71,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-70",
       "name": "Sept de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c70.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-70.jpg",
           "source_px": [
             1100,
             1983
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-70.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Sept of Swords (BnF folio order).",
         "Scene": "The Huit d'Épées shows eight sword shapes in a symmetrical arrangement. The even number allows the eight blades to form balanced crossing patterns, the suit's energy organized through geometric symmetry in the Italian pip convention.",
         "Symbol": "Eight swords in symmetric arrangement — the suit's energy organized through bilateral structure, discernment channeled into pattern."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c70.jpg",
+      "sort_order": 72,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-71",
       "name": "Huit de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c71.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-71.jpg",
           "source_px": [
             1100,
             1981
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-71.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Huit of Swords (BnF folio order).",
         "Scene": "The Sept d'Épées shows seven sword shapes in a slightly asymmetric arrangement. Seven blades resist perfect bilateral symmetry, giving the card an active, slightly off-balance quality that suggests contest or alert readiness within the suit's intellectual domain.",
         "Symbol": "Seven swords in slight imbalance — the suit at an active point of tension, seven blades that resist symmetry and suggest readiness."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c71.jpg",
+      "sort_order": 73,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-72",
       "name": "Neuf de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c72.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-72.jpg",
           "source_px": [
             1100,
             1998
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-72.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Neuf of Swords (BnF folio order).",
         "Scene": "The Six d'Épées shows six sword shapes in a balanced arrangement of the Italian pip convention. The six blades are distributed in pairs or columns, the even number allowing a harmonious and readable composition within the suit's field of cutting clarity.",
         "Symbol": "Six swords in balanced pairs — the suit at equilibrium, discernment held in a stable and organized arrangement."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c72.jpg",
+      "sort_order": 74,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-73",
       "name": "Dix de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c73.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-73.jpg",
           "source_px": [
             1100,
             1969
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-73.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Dix of Swords (BnF folio order).",
         "Scene": "The Cinq d'Épées shows five sword shapes with the characteristic asymmetry of odd-number pip cards. Five blades arranged with a central dominant sword suggest contested division — the suit's energy at a point of active conflict rather than settled arrangement.",
         "Symbol": "Five swords in contested arrangement — the suit's active conflict, five blades that cannot achieve symmetry and therefore remain in dynamic tension."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c73.jpg",
+      "sort_order": 75,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-74",
       "name": "Valet de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c74.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-74.jpg",
           "source_px": [
             1100,
             1970
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-74.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Valet of Swords (BnF folio order).",
         "Scene": "The Quatre d'Épées shows four sword shapes in a square or cross formation. The four-sword card is among the more stable pip compositions of the suit — four blades at four points suggest rest or structured positioning, the suit's energy held in a firm four-fold arrangement.",
         "Symbol": "Four swords in cross or square — the suit in its most stable and organized expression, blades held in structured rest."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c74.jpg",
+      "sort_order": 76,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-75",
       "name": "Cavalier de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c75.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-75.jpg",
           "source_px": [
             1100,
             2010
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-75.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Cavalier of Swords (BnF folio order).",
         "Scene": "The Trois d'Épées shows three sword shapes crossing at or near the card's center. Three blades in crossing or triangular arrangement create the suit's minimal field of intersection — three points of sharpness in relation, the first multi-point crossing of the Italian sword pip.",
         "Symbol": "Three swords at central crossing — the suit's minimal conflict made spatial, three blades whose intersection defines both tension and the possibility of resolution."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c75.jpg",
+      "sort_order": 77,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-76",
       "name": "Reine de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c76.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-76.jpg",
           "source_px": [
             1100,
             1949
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-76.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Reine of Swords (BnF folio order).",
         "Scene": "The Deux d'Épées shows two sword shapes crossed in X formation. The two blades in crossing are the suit's primal opposition — the simplest visible expression of the conflict, judgment, and discernment that define the sword suit in the Italian pip tradition.",
         "Symbol": "Two swords crossed — the primal opposition, conflict and discernment reduced to their most elemental visible form."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c76.jpg",
+      "sort_order": 78,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-77",
       "name": "Roi de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c77.jpg",
       "metadata": {
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-77.jpg",
           "source_px": [
             1100,
             1963
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-77.jpg"
-        }
+          ]
+        },
+        "arcana": "minor"
       },
       "sections": {
         "About": "Roi of Swords (BnF folio order).",
         "Scene": "The As d'Épées shows a single large sword as the suit's foundational emblem. In the Italian pip tradition the sword ace is typically bold and heraldic, the single blade — often shown with a crown or decorative surround — as the undivided potential of the suit's cutting clarity.",
         "Symbol": "One sword as seed — the undivided force of the suit, discernment and clarity before they divide into conflict or judgment."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c77.jpg",
+      "sort_order": 79,
+      "grammar_type": "custom"
     },
     {
       "id": "suit-epees",
       "name": "Épées · Swords",
-      "level": 3,
+      "level": 2,
       "category": "axis",
+      "sections": {
+        "Scene": "The suit of Épées (Swords) in the Paris anonymous tarot uses the Italian-suited long sword emblem with French court names: Roi, Reine, Cavalier, Valet. The pip cards follow standard Italian conventions with blade shapes in crossing and symmetrical arrangements. The sword suit's Italian-tradition iconography carries the conventional pip vocabulary within a deck whose trumps are among the most unusual in the Marseille tradition.",
+        "Symbol": "Swords as the suit of thought, conflict, and discernment — the blade that cuts clean, within a deck that applies its own cutting intellect to the reimagination of the entire trump sequence.",
+        "Render As": "pill-group",
+        "What it is": "The Épées (Swords) suit — ten pips plus Valet, Cavalier, Reine and Roi."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c64.jpg",
       "render_as": "pill-group",
+      "sort_order": 80,
       "composite_of": [
         "epees-64",
         "epees-65",
@@ -2098,48 +2251,53 @@
         "epees-76",
         "epees-77"
       ],
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c64.jpg",
-      "sections": {
-        "What it is": "The Épées (Swords) suit — ten pips plus Valet, Cavalier, Reine and Roi.",
-        "Scene": "The suit of Épées (Swords) in the Paris anonymous tarot uses the Italian-suited long sword emblem with French court names: Roi, Reine, Cavalier, Valet. The pip cards follow standard Italian conventions with blade shapes in crossing and symmetrical arrangements. The sword suit's Italian-tradition iconography carries the conventional pip vocabulary within a deck whose trumps are among the most unusual in the Marseille tradition.",
-        "Symbol": "Swords as the suit of thought, conflict, and discernment — the blade that cuts clean, within a deck that applies its own cutting intellect to the reimagination of the entire trump sequence."
-      }
+      "grammar_type": "custom"
     },
     {
       "id": "trump-mat",
       "name": "Le Mat (The Fool)",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c78.jpg",
       "metadata": {
-        "arcana": "major",
+        "deck": "Tarot de Marseille",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-mat.jpg",
           "source_px": [
             1100,
             1997
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-mat.jpg"
+          ]
         },
+        "arcana": "major",
         "trump_key": "fool",
-        "trump_number": 0,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-00-le-mat",
-        "deck": "Tarot de Marseille"
+        "trump_number": 0,
+        "source_item_id": "major-00-le-mat"
       },
       "sections": {
         "About": "The unnumbered Fool, last in the BnF scan.",
-        "Research note": "**What changed (vs. its parent):** broadly comparable vagabond figure; specific Paris detail owed. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md).",
         "Scene": "Le Mat is the unnumbered Fool of the Paris anonymous deck — a vagabond or wandering figure broadly comparable to the Marseille Fool with his bundle and torn clothes. The Paris Fool occupies the conventional social position of the outcast without rank who travels outside the sequence of numbered trumps, his freedom from number signaling his exemption from the structured world the other cards represent.",
-        "Symbol": "Unnumbered vagabond Fool — freedom from rank and sequence, the figure who travels beyond the world's counting and therefore beyond its constraints."
-      }
+        "Symbol": "Unnumbered vagabond Fool — freedom from rank and sequence, the figure who travels beyond the world's counting and therefore beyond its constraints.",
+        "Research note": "**What changed (vs. its parent):** broadly comparable vagabond figure; specific Paris detail owed. \n\n*Sources:* [@web_pollett_paris].\n\n*Full card-by-card research:* [research/cards/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/paris-anonymous-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c78.jpg",
+      "sort_order": 81,
+      "grammar_type": "custom"
     },
     {
       "id": "axis-atouts",
       "name": "Les Atouts (22 Trumps)",
-      "level": 3,
+      "level": 2,
       "category": "axis",
+      "sections": {
+        "Scene": "A navigational axis grouping all twenty-two Paris anonymous trump cards together. Among the most celebrated departures from the Marseille tradition: a goose-drawn chariot with child rider at VII, a Janus-faced Justice at VIII, a scholar measuring the heavens for the Star, a romantic serenade for the Moon, and a monkey vanity scene for the Sun. The Paris anonymous tarot is one of the earliest and most distinctive surviving French tarots.",
+        "Symbol": "The twenty-two major arcana of the Paris Anonymous tarot — a field of early 17th-century Parisian reimagination, where the Marseille vocabulary is inherited and then transformed through satire, science, and the comic inversion of triumph.",
+        "Render As": "pill-group",
+        "What it is": "The 22 named trumps — 21 numbered atouts plus the Mat."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c01.jpg",
       "render_as": "pill-group",
+      "sort_order": 82,
       "composite_of": [
         "trump-01",
         "trump-02",
@@ -2164,17 +2322,22 @@
         "trump-21",
         "trump-mat"
       ],
-      "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c01.jpg",
-      "sections": {
-        "What it is": "The 22 named trumps — 21 numbered atouts plus the Mat.",
-        "Scene": "A navigational axis grouping all twenty-two Paris anonymous trump cards together. Among the most celebrated departures from the Marseille tradition: a goose-drawn chariot with child rider at VII, a Janus-faced Justice at VIII, a scholar measuring the heavens for the Star, a romantic serenade for the Moon, and a monkey vanity scene for the Sun. The Paris anonymous tarot is one of the earliest and most distinctive surviving French tarots.",
-        "Symbol": "The twenty-two major arcana of the Paris Anonymous tarot — a field of early 17th-century Parisian reimagination, where the Marseille vocabulary is inherited and then transformed through satire, science, and the comic inversion of triumph."
-      }
+      "grammar_type": "custom"
     }
   ],
-  "_research": {
-    "deck": "research/decks/paris-anonymous-tarot.md",
-    "bibliography": "research/bibliography.bib"
-  },
-  "image_credit": "Bibliothèque nationale de France, Paris (the 'Tarot de Paris', early 17th c.)"
+  "description": "# Anonymous Parisian Tarot de Marseille (BnF)\n\n## At a glance\n\nAn **anonymous early Parisian tarot** (BnF, *c. 1600–1650*) held at the Bibliothèque nationale de France and freely on **Gallica** (ark:/12148/btv1b105109624) — the unsigned companion to our **Jean Noblet** (c. 1650) and **Jacques Viéville** decks. Unlike the outlier Viéville, this pack sits squarely in the **C-order (Marseille)** mainstream: a fully **named** French Tarot de Marseille, every trump captioned on the card in period spelling (LE BATELEVR, LA IVSTICE, ATREMPANCE…). 78 woodcut cards, hand-coloured, shown here from the BnF scan.\n\n## Why it matters\n\nWith Noblet and Viéville, it shows that the **named, numbered Marseille pattern was already standardised in Paris a century before Nicolas Conver's 1760 Marseille** — the printed standard our library also holds. It is a clean witness to the C-order line in its Parisian form.\n\n## What you're looking at\n\n- **22 atouts (trumps):** 21 numbered + the unnumbered **Mat**, with the card names read directly from the scans.\n- **56 suit cards:** **Deniers** (Coins), **Coupes** (Cups), **Bâtons** (Batons), **Épées** (Swords), each with ten pips and four courts (Valet, Cavalier, Reine, Roi).\n\n## Honesty notes\n\nThe maker is anonymous, but the **BnF catalogue dates it 1600–1650** (shelfmark RESERVE KH-34, titled *Jeu de tarot parisien anonyme à enseignes italiennes*). It is one of *several* early Parisian tarots — note it is **not** the famous idiosyncratic *Tarot de Paris* of the same years, but a captioned, mainstream C-order pack. The trumps are named from their printed captions; suit cards are shown in **BnF folio order** and pip ranks are assigned by position (corrections welcome).\n\n## Game, not divination\n\nA playing pack; the cartomantic readings attached to the Marseille came later, with the 18th-century occult revival.\n\n## Sources\n\nBnF / Gallica (ark:/12148/btv1b105109624), public domain; Thierry Depaulis on the Parisian cartiers; Dummett, *The Game of Tarot*.\n\n---\n*AI-assisted first-pass: faces from the BnF scan, trumps from their printed captions, suits by symbol. Corrections welcome.*\n\n**RESEARCH NOTE (2026-06-13) — identity correction owed.** The BnF object cited here (ark:/12148/btv1b105109624) is the idiosyncratic **Tarot de Paris**, a pattern of its OWN — NOT a mainstream C-order Tarot de Marseille. Its cards carry broken period captions (LAN PEREUT, LER MITE, A TREMPANCE, LES TOILLES, LA FOUDRE), figural animal Aces, and a Hell-mouth at XVI (La Foudre, not La Maison-Dieu). The deck name/description and trump titles need a reframe; confidence medium (Gallica scan not read card-by-card). See [research/decks/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/decks/paris-anonymous-tarot.md).\n\n**EDITORIAL CALL (2026-06-13, maintainer-delegated):** reframed as the **Tarot de Paris**, a distinct pattern of its own (NOT a mainstream Marseille). Per-card trump CAPTIONS (the broken period spellings, Hell-mouth Foudre at XVI, figural animal Aces) still need card-by-card correction from the Gallica scan — deferred to a session with image access. [@web_pollett_paris; @web_th_paris]",
+  "creator_name": "PlayfulProcess",
+  "grammar_type": "tarot",
+  "is_published": true,
+  "cover_image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c01.jpg",
+  "_backup_repo_url": "https://github.com/playfulprocess/recursive-tarot/blob/main/tarot/paris-anonymous-tarot/grammar.json",
+  "_forked_from_url": "https://raw.githubusercontent.com/playfulprocess/recursive-tarot/main/tarot/paris-anonymous-tarot/grammar.json",
+  "open_to_community": true,
+  "_detected_categories": [
+    "trump",
+    "suit-card",
+    "axis"
+  ],
+  "_recursive_eco_url": "https://flow.recursive.eco/play?id=cd170781-33d7-44f3-b5e5-23e50c52ba7e",
+  "_recursive_eco_edit_url": "https://flow.recursive.eco/create/dashboard/unified/new?id=cd170781-33d7-44f3-b5e5-23e50c52ba7e"
 }
