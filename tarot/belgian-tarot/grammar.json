@@ -1,678 +1,717 @@
 {
   "name": "Belgian Tarot — Vandenborre / 'Tarot Flamand' (Brussels, c. 1780)",
-  "slug": "belgian-tarot",
-  "cover_image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t21.jpg",
-  "description": "# Belgian Tarot — the Vandenborre / Flemish pattern\n\n## At a glance\n\nThe **Flemish tarot** (*Tarot flamand*), printed in Brussels in the later 18th century by makers such as **F. I. Vandenborre** and Jacques/Jean Galler. It keeps the whole **Tarot de Marseille** structure but is famous for **two substitutions** in the trumps — a quiet response to Catholic sensibilities:\n\n- **II · Le Capitaine** — a braggart soldier replaces **La Papesse** (the Popess).\n- **V · Bacchus** — the wine-god on a barrel replaces **Le Pape** (the Pope).\n\nWith both clergy gone, the deck could be sold without offence in a region pulled between Catholic and Protestant authority. It is the **Eastern/Belgian branch** of the family — the same current the earlier **Viéville** (1650) pointed toward.\n\n## What you're looking at\n\nThe **22 Major Arcana** (atouts) of the Vandenborre pattern, from the public-domain c. 1780 set on Wikimedia Commons. The 56 suit cards are not included here — clean public-domain scans of the Flemish minors have not yet been located at usable resolution; this is therefore a **trumps-only** grammar (like our Oswald Wirth), and the images are **display resolution**, not print.\n\n## Game, not divination\n\nThe Flemish tarot was a **card game**; the cartomantic readings attached to tarot belong to the later French occult tradition, not to this Brussels playing pack.\n\n## Sources\n\nWikimedia Commons 'Tarot Belgijski' set (public domain, c. 1780); Thierry Depaulis on the Belgian/Flemish cartiers; Dummett, *The Game of Tarot*. Trump identifications follow the standard Vandenborre order.\n",
-  "grammar_type": "tarot",
-  "provenance": "record",
-  "creator_name": "PlayfulProcess",
-  "license": "CC-BY-SA-4.0",
-  "default_view": "cards",
-  "metadata": {
-    "year": 1780,
-    "tradition": "Rouen-Brussels / Belgian line (Flemish)",
-    "branch": "belgian-line",
-    "order": "Eastern/Belgian",
-    "common_name": "Belgian (Vandenborre)",
-    "category": "historical",
-    "year_label": "c. 1780"
-  },
-  "_source": "Wikimedia Commons 'Tarot Belgijski' (public domain, c. 1780).",
   "items": [
     {
       "id": "trump-01",
       "name": "I · Le Bateleur",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t01.jpg",
       "metadata": {
-        "number": "I",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-01.jpg",
           "source_px": [
             354,
             620
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-01.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "I",
         "trump_key": "magician",
-        "trump_number": 1
+        "source_deck": "people-of-tarot",
+        "trump_number": 1,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The mountebank — the Magician.",
         "Scene": "A conjurer stands behind a table spread with small objects — cups, balls, a knife. He wears a wide-brimmed hat and a belted tunic. One hand gestures toward the table; the other holds a wand. The composition follows the standard Marseille Bateleur closely.",
         "Symbol": "The mountebank or street magician: skill, dexterity, the boundary between illusion and reality. His table of tools represents the four suit elements under human control."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t01.jpg",
+      "sort_order": 0,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-02",
       "name": "II · Le Capitaine Fracasse",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t02.jpg",
       "metadata": {
-        "number": "II",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-02.jpg",
           "source_px": [
             354,
             611
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-02.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "II",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions"
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "**A Belgian substitution.** Where the Marseille has La Papesse (the Popess), the Flemish tarot puts a swaggering soldier — the *Capitaine* of farce and commedia dell'arte. Avoiding the female 'pope' sidesteps a figure the Counter-Reformation found scandalous. (The card's actual inscription is *L'Espagnol Capitano Eracasse*; 'Fracasse' is the later Commedia dell'arte name.) [research 2026-06-13]",
         "Scene": "A swaggering soldier in plumed hat, half-armour, and long cloak stands with one hand on his hip and the other on the hilt of a broad sword. His exaggerated posture and martial dress identify him as Le Capitaine Fracasse, the blustering commedia dell'arte captain.",
         "Symbol": "The substitution of the Popess by a military braggart reflects Protestant Belgian resistance to Catholic imagery. Capitaine Fracasse signifies bluster without substance, the performance of authority."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t02.jpg",
+      "sort_order": 1,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-03",
       "name": "III · L'Impératrice",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t03.jpg",
       "metadata": {
-        "number": "III",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-03.jpg",
           "source_px": [
             354,
             617
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-03.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "III",
         "trump_key": "empress",
-        "trump_number": 3
+        "source_deck": "people-of-tarot",
+        "trump_number": 3,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The Empress.",
         "Scene": "A crowned empress is seated on a throne, wearing an ermine-trimmed gown. She holds a sceptre in one hand and an eagle-blazoned shield rests beside her. Her wings, common in many Marseille versions, spread behind the throne.",
         "Symbol": "Imperial feminine authority; the fertile earth. The eagle on the shield invokes the Holy Roman Empire and temporal sovereignty."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t03.jpg",
+      "sort_order": 2,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-04",
       "name": "IIII · L'Empereur",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t04.jpg",
       "metadata": {
-        "number": "IIII",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-04.jpg",
           "source_px": [
             354,
             613
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-04.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "IIII",
         "trump_key": "emperor",
-        "trump_number": 4
+        "source_deck": "people-of-tarot",
+        "trump_number": 4,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The Emperor.",
-        "Research note": "**What changed (vs. its parent):** Unchanged from Viéville/Marseille [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "A crowned emperor sits on a stone throne in near-profile, wearing armour and an imperial mantle. He holds an orb or sceptre. The throne is shown at a three-quarter angle typical of the Belgian/French Marseille tradition.",
-        "Symbol": "Masculine temporal authority, law, and structure. The orb signifies dominion over the world."
-      }
+        "Symbol": "Masculine temporal authority, law, and structure. The orb signifies dominion over the world.",
+        "Research note": "**What changed (vs. its parent):** Unchanged from Viéville/Marseille [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t04.jpg",
+      "sort_order": 3,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-05",
       "name": "V · Bacchus",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t05.jpg",
       "metadata": {
-        "number": "V",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-05.jpg",
           "source_px": [
             354,
             619
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-05.jpg"
+          ]
         },
+        "arcana": "major",
+        "number": "V",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions"
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "**The second Belgian substitution.** In place of Le Pape (the Pope), the wine-god **Bacchus** rides a barrel — a playful, anticlerical swap that, with the Captain, removes both Catholic clergy from the trumps.",
-        "Research note": "**What changed (vs. its parent):** **The second signature Belgian substitution.** The Pope (*Le Pape*) is replaced by the wine-god on his barrel; with the Spanish Captain at II, **both Catholic clergy are edited out of the trumps** — usually read as an anticlerical / market-widening move for the confessionally divided southern Netherlands (motive interpretive). Like the Captain, this is a Belgian-pattern addition not found in Viéville's deck [@web_ipcs_belgian; @web_th_spanish_captain; @web_cartes_de_suisses_wp]. \n\n*Sources:* [@web_cartes_de_suisses_wp], [@web_ipcs_belgian], [@web_th_spanish_captain].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "A portly, wine-flushed Bacchus sits astride or beside a wine barrel, raising a goblet. He wears a wreath of vine leaves, and grapes cluster around him. The scene is festive and deliberately secular, replacing the hierarchical Pope figure.",
-        "Symbol": "The substitution of the Pope with Bacchus — god of wine, festivity, and dissolution of hierarchy — removes ecclesiastical authority and replaces it with abundance and pleasure."
-      }
+        "Symbol": "The substitution of the Pope with Bacchus — god of wine, festivity, and dissolution of hierarchy — removes ecclesiastical authority and replaces it with abundance and pleasure.",
+        "Research note": "**What changed (vs. its parent):** **The second signature Belgian substitution.** The Pope (*Le Pape*) is replaced by the wine-god on his barrel; with the Spanish Captain at II, **both Catholic clergy are edited out of the trumps** — usually read as an anticlerical / market-widening move for the confessionally divided southern Netherlands (motive interpretive). Like the Captain, this is a Belgian-pattern addition not found in Viéville's deck [@web_ipcs_belgian; @web_th_spanish_captain; @web_cartes_de_suisses_wp]. \n\n*Sources:* [@web_cartes_de_suisses_wp], [@web_ipcs_belgian], [@web_th_spanish_captain].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t05.jpg",
+      "sort_order": 4,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-06",
       "name": "VI · L'Amoureux",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t06.jpg",
       "metadata": {
-        "number": "VI",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-06.jpg",
           "source_px": [
             354,
             608
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-06.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "VI",
         "trump_key": "lovers",
-        "trump_number": 6
+        "source_deck": "people-of-tarot",
+        "trump_number": 6,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The Lovers.",
         "Scene": "A young man stands between two women; a winged Cupid above aims an arrow downward. The scene depicts the moment of choice or the pangs of love. The figures are dressed in Flemish-influenced costume.",
         "Symbol": "Love, choice, and the crossroads between virtue and pleasure. Cupid's arrow descends as divine compulsion."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t06.jpg",
+      "sort_order": 5,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-07",
       "name": "VII · Le Chariot",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t07.jpg",
       "metadata": {
-        "number": "VII",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-07.jpg",
           "source_px": [
             354,
             608
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-07.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "VII",
         "trump_key": "chariot",
-        "trump_number": 7
+        "source_deck": "people-of-tarot",
+        "trump_number": 7,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The Chariot.",
-        "Research note": "**What changed (vs. its parent):** Held at **VII** in the Belgian/Vandenborre running order (matching Marseille). Note that the **Viéville** ancestor ordered the virtue/Chariot block differently (the Chariot fell at a different number in Viéville); the Vandenborre pattern sits closer to the Marseille numbering here [@web_aeclectic_flamand; @web_pollett_vieville]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "A crowned warrior rides in a canopied chariot drawn by two horses. He holds a sceptre or sword. The canopy is decorated with stars; the two horses may differ in colour, pulling in divergent directions yet controlled by the charioteer.",
-        "Symbol": "Willpower over opposing forces; triumph and forward motion. The two horses represent contrary impulses yoked to a single purpose."
-      }
+        "Symbol": "Willpower over opposing forces; triumph and forward motion. The two horses represent contrary impulses yoked to a single purpose.",
+        "Research note": "**What changed (vs. its parent):** Held at **VII** in the Belgian/Vandenborre running order (matching Marseille). Note that the **Viéville** ancestor ordered the virtue/Chariot block differently (the Chariot fell at a different number in Viéville); the Vandenborre pattern sits closer to the Marseille numbering here [@web_aeclectic_flamand; @web_pollett_vieville]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t07.jpg",
+      "sort_order": 6,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-08",
       "name": "VIII · La Justice",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t08.jpg",
       "metadata": {
-        "number": "VIII",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-08.jpg",
           "source_px": [
             354,
             613
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-08.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "VIII",
         "trump_key": "justice",
-        "trump_number": 11
+        "source_deck": "people-of-tarot",
+        "trump_number": 11,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "Justice.",
-        "Research note": "**What changed (vs. its parent):** Justice is **VIII** and Strength **XI** — the pre-Golden-Dawn C order, as in Marseille (the Golden Dawn/RWS swap is much later and external to this game pack) [@web_aeclectic_flamand; @web_belgian_wp]. \n\n*Sources:* [@web_aeclectic_flamand], [@web_belgian_wp].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "A crowned woman sits on a throne, holding an upright sword in her right hand and a set of scales in her left. She is shown frontally in the standard Belgian/Marseille Justice pose.",
-        "Symbol": "Equitable judgment and moral balance. The sword is the power to cut and decide; the scales weigh evidence impartially."
-      }
+        "Symbol": "Equitable judgment and moral balance. The sword is the power to cut and decide; the scales weigh evidence impartially.",
+        "Research note": "**What changed (vs. its parent):** Justice is **VIII** and Strength **XI** — the pre-Golden-Dawn C order, as in Marseille (the Golden Dawn/RWS swap is much later and external to this game pack) [@web_aeclectic_flamand; @web_belgian_wp]. \n\n*Sources:* [@web_aeclectic_flamand], [@web_belgian_wp].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t08.jpg",
+      "sort_order": 7,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-09",
       "name": "VIIII · L'Ermite",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t09.jpg",
       "metadata": {
-        "number": "VIIII",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-09.jpg",
           "source_px": [
             354,
             616
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-09.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "VIIII",
         "trump_key": "hermit",
-        "trump_number": 9
+        "source_deck": "people-of-tarot",
+        "trump_number": 9,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The Hermit.",
-        "Research note": "**What changed (vs. its parent):** Role unchanged; held at VIIII in the Belgian running order [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "A robed elder walks slowly, bent over his staff, carrying a lantern in his raised hand. He is shown in profile or slight three-quarter view, moving across a plain ground.",
-        "Symbol": "Solitary wisdom, withdrawal from the world, and the guide who carries light in darkness. The lantern illuminates only the next step."
-      }
+        "Symbol": "Solitary wisdom, withdrawal from the world, and the guide who carries light in darkness. The lantern illuminates only the next step.",
+        "Research note": "**What changed (vs. its parent):** Role unchanged; held at VIIII in the Belgian running order [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t09.jpg",
+      "sort_order": 8,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-10",
       "name": "X · La Roue de Fortune",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t10.jpg",
       "metadata": {
-        "number": "X",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-10.jpg",
           "source_px": [
             354,
             614
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-10.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "X",
         "trump_key": "wheel-of-fortune",
-        "trump_number": 10
+        "source_deck": "people-of-tarot",
+        "trump_number": 10,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The Wheel of Fortune.",
-        "Research note": "**What changed (vs. its parent):** Unchanged in substance from Viéville/Marseille [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "A large wheel turns in the centre of the card. Figures cling to or are attached to the rim — one rising, one at the top, one falling. A sphinx or crowned figure may sit atop the wheel.",
-        "Symbol": "The cyclical nature of fortune; rise and fall are inevitable. No position on the wheel is permanent."
-      }
+        "Symbol": "The cyclical nature of fortune; rise and fall are inevitable. No position on the wheel is permanent.",
+        "Research note": "**What changed (vs. its parent):** Unchanged in substance from Viéville/Marseille [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t10.jpg",
+      "sort_order": 9,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-11",
       "name": "XI · La Force",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t11.jpg",
       "metadata": {
-        "number": "XI",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-11.jpg",
           "source_px": [
             354,
             617
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-11.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "XI",
         "trump_key": "strength",
-        "trump_number": 8
+        "source_deck": "people-of-tarot",
+        "trump_number": 8,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "Strength.",
-        "Research note": "**What changed (vs. its parent):** Strength at **XI** (paired with Justice VIII) — the C order [@web_aeclectic_flamand; @web_belgian_wp]. \n\n*Sources:* [@web_aeclectic_flamand], [@web_belgian_wp].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "A crowned woman in flowing robes gently opens or closes the jaws of a lion, her hands placed calmly on the animal's muzzle. The lion does not resist. The scene is tranquil despite the apparent danger.",
-        "Symbol": "Moral strength and courageous gentleness overcoming brute force. The woman tames power through calm mastery rather than violence."
-      }
+        "Symbol": "Moral strength and courageous gentleness overcoming brute force. The woman tames power through calm mastery rather than violence.",
+        "Research note": "**What changed (vs. its parent):** Strength at **XI** (paired with Justice VIII) — the C order [@web_aeclectic_flamand; @web_belgian_wp]. \n\n*Sources:* [@web_aeclectic_flamand], [@web_belgian_wp].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t11.jpg",
+      "sort_order": 10,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-12",
       "name": "XII · Le Pendu",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t12.jpg",
       "metadata": {
-        "number": "XII",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-12.jpg",
           "source_px": [
             354,
             627
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-12.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "XII",
         "trump_key": "hanged-man",
-        "trump_number": 12
+        "source_deck": "people-of-tarot",
+        "trump_number": 12,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The Hanged Man — hangs **right-side-up** in the Belgian line (the card inscription is the misspelt *Lepen-du*). [research 2026-06-13]",
         "Scene": "A man hangs upside-down by one ankle from a wooden gallows or horizontal bar supported by two trimmed trees. His free leg crosses behind the suspended one, his arms are relaxed behind his back, and his expression is serene.",
         "Symbol": "Suspension, sacrifice, and seeing the world from an inverted perspective. The hanged man's calm suggests voluntary surrender rather than punishment."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t12.jpg",
+      "sort_order": 11,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-13",
       "name": "XIII · La Mort",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t13.jpg",
       "metadata": {
-        "number": "XIII",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-13.jpg",
           "source_px": [
             354,
             616
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-13.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "XIII",
         "trump_key": "death",
-        "trump_number": 13
+        "source_deck": "people-of-tarot",
+        "trump_number": 13,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "Death. (The Belgian card IS named 'La Mort'; it is the Marseille XIII that is left unnamed.)",
         "Scene": "A skeleton in armour swings a great scythe across a field, mowing down severed heads, hands, and limbs that grow from the ground. The figure moves relentlessly across the card.",
         "Symbol": "Death as the great leveller, sparing neither rank nor youth. The harvest of lives underlines the inescapability of mortality."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t13.jpg",
+      "sort_order": 12,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-14",
       "name": "XIIII · Tempérance",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t14.jpg",
       "metadata": {
-        "number": "XIIII",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-14.jpg",
           "source_px": [
             354,
             615
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-14.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "XIIII",
         "trump_key": "temperance",
-        "trump_number": 14
+        "source_deck": "people-of-tarot",
+        "trump_number": 14,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "Temperance.",
-        "Research note": "**What changed (vs. its parent):** Unchanged from Viéville/Marseille [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "A winged angel pours liquid between two vessels — from one raised pitcher into another — without spilling a drop. The figure is standing, shown in a long-skirted tunic.",
-        "Symbol": "Balance, moderation, and the careful blending of opposites. The act of pouring represents measured combination and the middle path."
-      }
+        "Symbol": "Balance, moderation, and the careful blending of opposites. The act of pouring represents measured combination and the middle path.",
+        "Research note": "**What changed (vs. its parent):** Unchanged from Viéville/Marseille [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t14.jpg",
+      "sort_order": 13,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-15",
       "name": "XV · Le Diable",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t15.jpg",
       "metadata": {
-        "number": "XV",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-15.jpg",
           "source_px": [
             354,
             626
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-15.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "XV",
         "trump_key": "devil",
-        "trump_number": 15
+        "source_deck": "people-of-tarot",
+        "trump_number": 15,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The Devil.",
-        "Research note": "**What changed (vs. its parent):** Unchanged in substance from Viéville/Marseille [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "A horned, winged devil sits or stands on a pedestal. Two smaller demons are chained to the base. The devil displays bat wings and a grim or leering expression. A torch may be shown inverted.",
-        "Symbol": "Bondage to material desire, obsession, and shadow forces. The chained figures represent those enslaved by their own compulsions."
-      }
+        "Symbol": "Bondage to material desire, obsession, and shadow forces. The chained figures represent those enslaved by their own compulsions.",
+        "Research note": "**What changed (vs. its parent):** Unchanged in substance from Viéville/Marseille [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t15.jpg",
+      "sort_order": 14,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-16",
       "name": "XVI · La Foudre (La Maison-Dieu)",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t16.jpg",
       "metadata": {
-        "number": "XVI",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-16.jpg",
           "source_px": [
             354,
             620
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-16.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "XVI",
         "trump_key": "tower",
-        "trump_number": 16
+        "source_deck": "people-of-tarot",
+        "trump_number": 16,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "La Foudre — a **tree** struck by lightning with a shepherd beneath (the Belgian-line design), NOT a struck **tower**; 'Maison-Dieu' is the Marseille name, not this card's. [research 2026-06-13]",
         "Scene": "A tall tower on a rocky outcrop is struck by a bolt from the sky; the crenellated crown is blasted off and flames erupt from the windows. Two figures fall headlong from the tower's height.",
         "Symbol": "Sudden catastrophic upheaval that dismantles false structures. The lightning reveals what was built on unstable foundations."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t16.jpg",
+      "sort_order": 15,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-17",
       "name": "XVII · L'Étoile",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t17.jpg",
       "metadata": {
-        "number": "XVII",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-17.jpg",
           "source_px": [
             354,
             618
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-17.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "XVII",
         "trump_key": "star",
-        "trump_number": 17
+        "source_deck": "people-of-tarot",
+        "trump_number": 17,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The Star.",
         "Scene": "A nude or lightly draped woman kneels beside a pool of water, pouring from two pitchers — one onto the earth, one into the water. Above her, a large central star is flanked by seven smaller stars.",
         "Symbol": "Renewal, hope, and the restoration of equilibrium after crisis. The star is a guide; the water nourishes the earth."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t17.jpg",
+      "sort_order": 16,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-18",
       "name": "XVIII · La Lune",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t18.jpg",
       "metadata": {
-        "number": "XVIII",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-18.jpg",
           "source_px": [
             354,
             623
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-18.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "XVIII",
         "trump_key": "moon",
-        "trump_number": 18
+        "source_deck": "people-of-tarot",
+        "trump_number": 18,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The Moon.",
-        "Research note": "**What changed (vs. its parent):** The Rouen-Brussels Moon differs from the Marseille twin-towers-and- crayfish treatment (the Viéville line's celestial cards diverge); precise figure not closely verified at this resolution (confidence: medium) [@web_aeclectic_flamand; @web_th_rouen_bruxelles]. \n\n*Sources:* [@web_aeclectic_flamand], [@web_th_rouen_bruxelles].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "A crescent moon, with a face, hangs in the sky above a path that winds between two towers toward distant mountains. A crayfish or crab emerges from a pool at the bottom. Two dogs or wolves howl at the moon.",
-        "Symbol": "The unconscious, illusion, and the peril of night-wandering. The crayfish rising from the deep represents instinct emerging from the depths."
-      }
+        "Symbol": "The unconscious, illusion, and the peril of night-wandering. The crayfish rising from the deep represents instinct emerging from the depths.",
+        "Research note": "**What changed (vs. its parent):** The Rouen-Brussels Moon differs from the Marseille twin-towers-and- crayfish treatment (the Viéville line's celestial cards diverge); precise figure not closely verified at this resolution (confidence: medium) [@web_aeclectic_flamand; @web_th_rouen_bruxelles]. \n\n*Sources:* [@web_aeclectic_flamand], [@web_th_rouen_bruxelles].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t18.jpg",
+      "sort_order": 17,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-19",
       "name": "XVIIII · Le Soleil",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t19.jpg",
       "metadata": {
-        "number": "XVIIII",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-19.jpg",
           "source_px": [
             354,
             626
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-19.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "XVIIII",
         "trump_key": "sun",
-        "trump_number": 19
+        "source_deck": "people-of-tarot",
+        "trump_number": 19,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The Sun.",
-        "Research note": "**What changed (vs. its parent):** The Belgian/Viéville-line Sun differs from the Marseille twin- children image; precise figure not closely verified (confidence: medium) [@web_aeclectic_flamand; @web_th_rouen_bruxelles]. \n\n*Sources:* [@web_aeclectic_flamand], [@web_th_rouen_bruxelles].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "A large radiant sun with a human face shines down on two small children playing in a walled garden or open meadow. The children hold hands or embrace beneath sunflowers or stars.",
-        "Symbol": "Clarity, joy, and the blessings of conscious life. The sun's warmth sustains growth; the children embody renewal and innocence."
-      }
+        "Symbol": "Clarity, joy, and the blessings of conscious life. The sun's warmth sustains growth; the children embody renewal and innocence.",
+        "Research note": "**What changed (vs. its parent):** The Belgian/Viéville-line Sun differs from the Marseille twin- children image; precise figure not closely verified (confidence: medium) [@web_aeclectic_flamand; @web_th_rouen_bruxelles]. \n\n*Sources:* [@web_aeclectic_flamand], [@web_th_rouen_bruxelles].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t19.jpg",
+      "sort_order": 18,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-20",
       "name": "XX · Le Jugement",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t20.jpg",
       "metadata": {
-        "number": "XX",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-20.jpg",
           "source_px": [
             354,
             606
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-20.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "XX",
         "trump_key": "judgement",
-        "trump_number": 20
+        "source_deck": "people-of-tarot",
+        "trump_number": 20,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The Judgement.",
-        "Research note": "**What changed (vs. its parent):** Unchanged in substance from Viéville/Marseille [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "An angel blows a trumpet from a cloud above; from tombs below, three figures rise — man, woman, and child — with arms outstretched toward the angel. The figures are typically coloured red, flesh, and blue.",
-        "Symbol": "Awakening, transformation, and the call to a new life. Resurrection is depicted as emergence from the tomb of the former self."
-      }
+        "Symbol": "Awakening, transformation, and the call to a new life. Resurrection is depicted as emergence from the tomb of the former self.",
+        "Research note": "**What changed (vs. its parent):** Unchanged in substance from Viéville/Marseille [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t20.jpg",
+      "sort_order": 19,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-21",
       "name": "XXI · Le Monde",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t21.jpg",
       "metadata": {
-        "number": "XXI",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-21.jpg",
           "source_px": [
             354,
             628
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-21.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "XXI",
         "trump_key": "world",
-        "trump_number": 21
+        "source_deck": "people-of-tarot",
+        "trump_number": 21,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The World.",
-        "Research note": "**What changed (vs. its parent):** The Rouen-Brussels World diverges in detail from the Marseille dancer-in-mandorla with the four living creatures; precise figure not closely verified at this resolution (confidence: medium) [@web_aeclectic_flamand; @web_th_rouen_bruxelles]. \n\n*Sources:* [@web_aeclectic_flamand], [@web_th_rouen_bruxelles].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "A dancing figure — commonly understood as androgynous or female — is enclosed within an oval wreath of laurel. At the four corners of the card are the four tetramorph symbols: angel, eagle, lion, and bull.",
-        "Symbol": "Completion, wholeness, and the integration of all elements. The dancing figure within the wreath embodies the fully realised self at the centre of the cosmos."
-      }
+        "Symbol": "Completion, wholeness, and the integration of all elements. The dancing figure within the wreath embodies the fully realised self at the centre of the cosmos.",
+        "Research note": "**What changed (vs. its parent):** The Rouen-Brussels World diverges in detail from the Marseille dancer-in-mandorla with the four living creatures; precise figure not closely verified at this resolution (confidence: medium) [@web_aeclectic_flamand; @web_th_rouen_bruxelles]. \n\n*Sources:* [@web_aeclectic_flamand], [@web_th_rouen_bruxelles].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t21.jpg",
+      "sort_order": 20,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-22",
       "name": "Le Fou (The Fool)",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t22.jpg",
       "metadata": {
-        "number": "",
-        "arcana": "major",
+        "deck": "F.I. Vandenborre · People & Institutions",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-22.jpg",
           "source_px": [
             354,
             608
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-22.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions",
+        "arcana": "major",
+        "number": "",
         "trump_key": "fool",
-        "trump_number": 0
+        "source_deck": "people-of-tarot",
+        "trump_number": 0,
+        "source_item_id": "person-vandenborre"
       },
       "sections": {
         "About": "The unnumbered Fool / Mat — the wandering jester.",
-        "Research note": "**What changed (vs. its parent):** Unchanged in role; numberless, as throughout the tradition [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md).",
         "Scene": "A ragged, carefree figure in colourful patchwork costume walks toward the edge of a precipice, a bundle on a stick over his shoulder. A small dog or cat nips at his heels. He gazes upward or forward, oblivious to the drop ahead.",
-        "Symbol": "The unnumbered beginning and end; pure potential uncontained by the numbered sequence. The Fool represents freedom from convention and the willingness to step into the unknown."
-      }
+        "Symbol": "The unnumbered beginning and end; pure potential uncontained by the numbered sequence. The Fool represents freedom from convention and the willingness to step into the unknown.",
+        "Research note": "**What changed (vs. its parent):** Unchanged in role; numberless, as throughout the tradition [@web_aeclectic_flamand]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_flamand].\n\n*Full card-by-card research:* [research/cards/belgian-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/belgian-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t22.jpg",
+      "sort_order": 21,
+      "grammar_type": "custom"
     },
     {
       "id": "axis-atouts",
       "name": "Les Atouts (22 Trumps)",
-      "level": 3,
+      "level": 2,
       "category": "axis",
+      "metadata": {
+        "deck": "F.I. Vandenborre · People & Institutions",
+        "source_deck": "people-of-tarot",
+        "source_item_id": "person-vandenborre"
+      },
+      "sections": {
+        "Scene": "The twenty-two trumps of the Belgian Tarot laid out together. The sequence follows standard Marseille ordering with the two Protestant substitutions — Capitaine Fracasse in place of the Papesse, and Bacchus in place of the Pope — both rendered in vivid hand-coloured line engraving.",
+        "Symbol": "The Belgian substitutions reflect a Reformed Protestant cultural context: ecclesiastical authority replaced by secular archetypes — the swaggering soldier and the festive wine god.",
+        "Render As": "pill-group",
+        "What it is": "The 22 trumps of the Flemish tarot — the Marseille sequence with the Captain and Bacchus swapped in for the Popess and the Pope."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t05.jpg",
       "render_as": "pill-group",
+      "sort_order": 22,
       "composite_of": [
         "trump-01",
         "trump-02",
@@ -697,22 +736,21 @@
         "trump-21",
         "trump-22"
       ],
-      "image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t05.jpg",
-      "sections": {
-        "What it is": "The 22 trumps of the Flemish tarot — the Marseille sequence with the Captain and Bacchus swapped in for the Popess and the Pope.",
-        "Scene": "The twenty-two trumps of the Belgian Tarot laid out together. The sequence follows standard Marseille ordering with the two Protestant substitutions — Capitaine Fracasse in place of the Papesse, and Bacchus in place of the Pope — both rendered in vivid hand-coloured line engraving.",
-        "Symbol": "The Belgian substitutions reflect a Reformed Protestant cultural context: ecclesiastical authority replaced by secular archetypes — the swaggering soldier and the festive wine god."
-      },
-      "metadata": {
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-vandenborre",
-        "deck": "F.I. Vandenborre · People & Institutions"
-      }
+      "grammar_type": "custom"
     }
   ],
-  "_research": {
-    "deck": "research/decks/belgian-tarot.md",
-    "bibliography": "research/bibliography.bib"
-  },
-  "image_credit": "Reproductions in the public domain (Vandenborre / Belgian type)"
+  "description": "# Belgian Tarot — the Vandenborre / Flemish pattern\n\n## At a glance\n\nThe **Flemish tarot** (*Tarot flamand*), printed in Brussels in the later 18th century by makers such as **F. I. Vandenborre** and Jacques/Jean Galler. It keeps the whole **Tarot de Marseille** structure but is famous for **two substitutions** in the trumps — a quiet response to Catholic sensibilities:\n\n- **II · Le Capitaine** — a braggart soldier replaces **La Papesse** (the Popess).\n- **V · Bacchus** — the wine-god on a barrel replaces **Le Pape** (the Pope).\n\nWith both clergy gone, the deck could be sold without offence in a region pulled between Catholic and Protestant authority. It is the **Eastern/Belgian branch** of the family — the same current the earlier **Viéville** (1650) pointed toward.\n\n## What you're looking at\n\nThe **22 Major Arcana** (atouts) of the Vandenborre pattern, from the public-domain c. 1780 set on Wikimedia Commons. The 56 suit cards are not included here — clean public-domain scans of the Flemish minors have not yet been located at usable resolution; this is therefore a **trumps-only** grammar (like our Oswald Wirth), and the images are **display resolution**, not print.\n\n## Game, not divination\n\nThe Flemish tarot was a **card game**; the cartomantic readings attached to tarot belong to the later French occult tradition, not to this Brussels playing pack.\n\n## Sources\n\nWikimedia Commons 'Tarot Belgijski' set (public domain, c. 1780); Thierry Depaulis on the Belgian/Flemish cartiers; Dummett, *The Game of Tarot*. Trump identifications follow the standard Vandenborre order.\n\n---\n*AI-assisted first-pass: 22 trumps from the PD Commons set, named in the standard order with the two documented Flemish substitutions flagged. Corrections welcome.*",
+  "creator_name": "PlayfulProcess",
+  "grammar_type": "tarot",
+  "is_published": true,
+  "cover_image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t01.jpg",
+  "_backup_repo_url": "https://github.com/playfulprocess/recursive-tarot/blob/main/tarot/belgian-tarot/grammar.json",
+  "_forked_from_url": "https://raw.githubusercontent.com/playfulprocess/recursive-tarot/main/tarot/belgian-tarot/grammar.json",
+  "open_to_community": true,
+  "_detected_categories": [
+    "trump",
+    "axis"
+  ],
+  "_recursive_eco_url": "https://flow.recursive.eco/play?id=9e364631-d879-4c5a-84a6-79b2c5263d97",
+  "_recursive_eco_edit_url": "https://flow.recursive.eco/create/dashboard/unified/new?id=9e364631-d879-4c5a-84a6-79b2c5263d97"
 }
