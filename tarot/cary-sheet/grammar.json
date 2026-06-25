@@ -1,49 +1,27 @@
 {
-  "_grammar_commons": {
-    "schema_version": "1.0",
-    "license": "CC-BY-SA-4.0",
-    "attribution": [
-      {
-        "name": "PlayfulProcess"
-      }
-    ]
-  },
   "name": "The Cary Sheet — Earliest Marseille Pattern (Milan, c. 1500)",
-  "slug": "cary-sheet",
-  "grammar_type": "custom",
-  "provenance": "record",
-  "creator_name": "PlayfulProcess",
-  "default_view": "tree",
-  "default_preview": "tree",
-  "description": "An uncut sheet of Milanese tarot **woodcuts**, c. 1500 — the **earliest surviving evidence of the Tarot de Marseille pattern itself**, a full century before Nicolas Conver's 1760 edition. Held at the **Beinecke Rare Book & Manuscript Library, Yale** (the Cary Collection of Playing Cards). If you want the missing link between the hand-painted Italian court decks (Visconti-Sforza) and the printed Marseille standard, this is it: the same trump designs, already woodcut for mass printing.\n\nANCESTRAL STATUS: **ancestral** to the standard tarot (the printed C-order line), not an ancestor of card-playing itself.\n\nSOURCES: Beinecke Library, Yale (digitised in their collections); Michael Dummett, *The Game of Tarot* (1980).\n",
-  "metadata": {
-    "ancestry": "ancestral",
-    "tradition": "Milanese woodcut / proto-Marseille (C-order)",
-    "order": "C",
-    "function": "game",
-    "common_name": "Cary Sheet",
-    "category": "historical",
-    "year": 1500,
-    "year_label": "c. 1500"
-  },
   "items": [
     {
       "id": "overview",
       "name": "The Cary Sheet",
       "level": 1,
       "category": "overview",
-      "sort_order": 0,
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/cary-sheet/Tarot-cary-collection-ita-sheet-3s-c1500..jpg",
       "sections": {
         "What it is": "An uncut woodcut sheet showing several trumps in the Marseille arrangement, c. 1500 — the earliest witness to the pattern Conver later standardised."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/cary-sheet/Tarot-cary-collection-ita-sheet-3s-c1500..jpg",
+      "sort_order": 0
     }
   ],
+  "description": "An uncut sheet of Milanese tarot **woodcuts**, c. 1500 — the **earliest surviving evidence of the Tarot de Marseille pattern itself**, a full century before Nicolas Conver's 1760 edition. Held at the **Beinecke Rare Book & Manuscript Library, Yale** (the Cary Collection of Playing Cards). If you want the missing link between the hand-painted Italian court decks (Visconti-Sforza) and the printed Marseille standard, this is it: the same trump designs, already woodcut for mass printing.\n\nANCESTRAL STATUS: **ancestral** to the standard tarot (the printed C-order line), not an ancestor of card-playing itself.\n\nSOURCES: Beinecke Library, Yale (digitised in their collections); Michael Dummett, *The Game of Tarot* (1980).\n\n---\n*AI-assisted first-pass draft, pending review by the maintainer and the Tarot History Forum. Corrections welcome via pending edit.*",
+  "creator_name": "PlayfulProcess",
+  "grammar_type": "custom",
   "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/cary-sheet-cover.jpg",
-  "_research": {
-    "deck": "research/decks/cary-sheet.md",
-    "cards": "research/cards/cary-sheet.md",
-    "bibliography": "research/bibliography.bib"
-  },
-  "image_credit": "Beinecke Rare Book & Manuscript Library, Yale University (Cary Collection)"
+  "_backup_repo_url": "https://github.com/playfulprocess/recursive-tarot/blob/main/tarot/cary-sheet/grammar.json",
+  "_forked_from_url": "https://raw.githubusercontent.com/playfulprocess/recursive-tarot/main/tarot/cary-sheet/grammar.json",
+  "_detected_categories": [
+    "overview"
+  ],
+  "_recursive_eco_url": "https://flow.recursive.eco/play?id=faf18aec-7e90-4a02-bb22-58a6dece0110",
+  "_recursive_eco_edit_url": "https://flow.recursive.eco/create/dashboard/unified/new?id=faf18aec-7e90-4a02-bb22-58a6dece0110"
 }
