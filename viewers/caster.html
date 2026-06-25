@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="../theme.css?v=4">
+<link rel="stylesheet" href="../theme.css?v=5">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Recursive Tarot — Caster</title>
@@ -456,9 +456,11 @@ async function openCardDetail(p){ const c=p.card; if(!c) return;
   const img=$('cdmImg'); if(c.image_url){ img.src=c.image_url; img.style.display='block'; img.style.transform=c.reversed?'rotate(180deg)':''; } else img.style.display='none';
   // per-card actions → recursive.eco (Phase 5 seed: View deck / Edit card)
   const uuid = (ecoIds && ecoIds.ids && c.source_deck) ? ecoIds.ids[c.source_deck] : null;
+  const _pen='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';
+  const _play='<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z"/></svg>';
   $('cdmActions').innerHTML = uuid
-    ? `<a class="eco-chip" href="${FLOW}/?deckId=${uuid}" target="_blank" rel="noopener">Open in recursive.eco ↗</a>`
-      + `<a class="eco-chip" href="${FLOW}/create/dashboard/unified/new?forkId=${uuid}${c.source_item_id?'&card='+encodeURIComponent(c.source_item_id):''}" target="_blank" rel="noopener">Edit in recursive.eco ↗</a>`
+    ? `<a class="eco-chip" href="${FLOW}/create/dashboard/unified/new?forkId=${uuid}${c.source_item_id?'&card='+encodeURIComponent(c.source_item_id):''}" target="_blank" rel="noopener">${_pen} Edit in recursive.eco ↗</a>`
+      + `<a class="eco-chip" href="${FLOW}/?deckId=${uuid}" target="_blank" rel="noopener">${_play} Play in recursive.eco ↗</a>`
     : '';
   body.innerHTML='<div class="cdm-loading">Loading card details…</div>'; modal.style.display='flex'; document.body.style.overflow='hidden';
   const item=await fetchGrammarItem(c.source_deck,c.source_item_id);
