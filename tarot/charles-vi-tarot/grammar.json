@@ -1,39 +1,5 @@
 {
-  "_github_url": "https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/charles-vi-tarot/grammar.json",
-  "_github_source_url": "https://raw.githubusercontent.com/PlayfulProcess/recursive-tarot/main/tarot/charles-vi-tarot/grammar.json",
-  "_grammar_commons": {
-    "schema_version": "1.0",
-    "license": "CC-BY-SA-4.0",
-    "attribution": [
-      {
-        "name": "North Italian (Ferrarese?) workshop",
-        "date": "c. 1450–1480",
-        "note": "Painter of the 'Charles VI' / Gringonneur tarot"
-      },
-      {
-        "name": "Bibliothèque nationale de France",
-        "date": "holding institution",
-        "note": "Holds the 17 surviving cards (Cabinet des Estampes)"
-      },
-      {
-        "name": "Wikimedia Commons",
-        "date": "public domain",
-        "note": "Card images, Category:Le tarot dit de Charles VI"
-      },
-      {
-        "name": "PlayfulProcess",
-        "date": "2026",
-        "note": "Grammar architecture and summaries"
-      }
-    ]
-  },
   "name": "The 'Charles VI' Tarot (Gringonneur) — c. 1450–1480",
-  "description": "# \"Charles VI\" Tarot (Gringonneur)\n\n## At a glance\n\nSeventeen surviving hand-painted trumps held at the Bibliothèque nationale de France,\nhistorically — and **wrongly** — said to be French cards painted in 1392 for King\nCharles VI. They are in fact **Italian**, late-15th-century, and a key witness to the\n**B-order** (Ferrarese) trump sequence. A textbook case of a name preserving an\nexploded myth.\n\n## Origin & dating\n\nThe legend comes from a real account-book entry: a 1392 payment to **Jacquemin\nGringonneur** for three gilded card packs for Charles VI of France. Nineteenth-century\nwriters attached that entry to these cards. But the surviving deck is a **Northern\nItalian** product (Ferrara or possibly Florence), dated to roughly **1450–1480** — about\na century too late to be Gringonneur's. The names \"Charles VI\" and \"Gringonneur\" survive\nonly as labels of convenience.\n\n## Provenance & evidence\n\n17 trumps in the BnF, hand-painted and gilded. Style and iconography place it in the\nFerrarese orbit; its trump order is the main reason it matters — this library places it in the\n**B-order** that Dummett distinguishes from Bologna's A-order and Milan's C-order, **but the classification is genuinely debated**: the cards carry no numerals, and Dummett's own later analysis (*Il Mondo e l'Angelo*) argued the sequence is actually closer to the southern **A-order**, despite the Ferrarese style. It is genuinely debated in the literature.\n\n## Game or divination?\n\n**Game.** No cartomantic use; the divinatory association is, again, a post-1781 import.\n\n## The fear question\n\n**No fear.** A gilded court object of the same luxury class as the Visconti decks. The\nonly \"deception\" in its history is scholarly, not social — the mis-dating, not any\nhidden practice.\n\n## Counter-voices\n\nThe bogus 1392 French date was itself an early piece of **mythmaking** that made tarot\nlook older and more mysterious than it is — a reminder that romantic over-dating (toward\nEgypt, toward medieval France) has repeatedly run ahead of the documents. Correcting it\nis not \"suppressing\" an occult past; it is removing a 19th-century embellishment.\n\n## Open questions / corrections owed\n\n- Ferrara vs. Florence origin is unresolved; date range c.1430s–1470s is still argued.\n- The deck is a fragment; the full original trump set is reconstructed, not observed.\n\n## Sources & further reading\n\n- \"The Fifteenth-Century Charles VI Deck Recreated,\" Tarot Heritage.\n- trionfi.com, \"Origin of Tarot\" notes on the Gringonneur entry.\n- Dummett, *The Game of Tarot* (1980), on A/B/C orders.\n\n**RESEARCH NOTE (2026-06-13) — attribution debate.** This catalogue follows the older Dummett classification (Ferrarese / B-order). Newer scholarship (BnF *Catalogue général*) attributes the deck to the **Florentine** workshop of Apollonio di Giovanni & Marco del Buono (c. 1460), an A-leaning sequence (all virtues below Death). Genuinely debated — both views are live. Also: 16 trumps + 1 Page of Swords = 17 surviving cards (not 17 trumps). See [research/decks/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/decks/charles-vi-tarot.md).\n\n**EDITORIAL CALL (2026-06-13):** attribution set to **Florentine** (Apollonio di Giovanni & Marco del Buono workshop, c. 1450–70) per the current BnF Catalogue général; the trump-ORDER (A vs B) remains genuinely contested, so the genealogy branch is left unchanged pending a tree review. [@dummett1980; @web_charlesvi_th]\n",
-  "grammar_type": "tarot",
-  "provenance": "record",
-  "creator_name": "PlayfulProcess",
-  "creator_link": "https://recursive.eco",
-  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot-cover.jpg",
   "tags": [
     "tarot",
     "charles-vi",
@@ -45,26 +11,12 @@
     "public-domain",
     "b-order"
   ],
-  "roots": [
-    "western-esoteric",
-    "renaissance"
-  ],
-  "shelves": [
-    "wonder",
-    "mirror"
-  ],
-  "lineages": [
-    "Andreotti"
-  ],
-  "worldview": "historical",
-  "is_published": true,
   "items": [
     {
       "id": "card-fool",
       "name": "0 — The Fool",
-      "sort_order": 0,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "the fool",
         "il matto",
@@ -73,52 +25,52 @@
         "ferrara",
         "arcana:the-fool"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Fool%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 0,
-        "italian_name": "Il Matto",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fool%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "The Fool",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:the-fool",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-fool.jpg",
           "source_px": [
             303,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-fool.jpg"
+          ]
         },
-        "trump_key": "fool"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:the-fool",
+        "trump_key": "fool",
+        "italian_name": "Il Matto",
+        "trump_number": 0,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fool%20tarot%20charles6.jpg",
+            "scene": "The Fool",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "A bearded man in belled motley with a club, children or dogs about his legs — the licensed fool.",
+        "Scene": "A ragged jester in a parti-coloured garment waves a staff. A small animal (cat or dog) clings to or nips at his lower garments. His posture is erratic, head thrown back. The figure is painted on gilt vellum with extraordinary fineness.",
+        "Symbol": "The untethered spirit who moves outside the numbered sequence; beginning, end, and the space between structures.",
         "History": "Survives at the BnF. Unnumbered, outside the trump sequence.",
         "Reading": "Folly and freedom, the figure who stands apart from the order of estates.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "A bearded man in belled motley with a club, children or dogs about his legs — the licensed fool.",
         "Research note": "A bearded man in belled motley with a club, with children or small figures about his legs — the licensed court fool [@web_bnf_essentiels_charlesvi; @web_gallica_charlesvi_fou]. \n\n*Sources:* [@dummett1980], [@web_bnf_essentiels_charlesvi], [@web_gallica_charlesvi_fou].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A ragged jester in a parti-coloured garment waves a staff. A small animal (cat or dog) clings to or nips at his lower garments. His posture is erratic, head thrown back. The figure is painted on gilt vellum with extraordinary fineness.",
-        "Symbol": "The untethered spirit who moves outside the numbered sequence; beginning, end, and the space between structures."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Fool%20tarot%20charles6.jpg",
+      "sort_order": 0
     },
     {
       "id": "card-emperor",
       "name": "4 — The Emperor",
-      "sort_order": 1,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "the emperor",
         "l'imperatore",
@@ -127,52 +79,52 @@
         "ferrara",
         "arcana:the-emperor"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Empereur%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 4,
-        "italian_name": "L'Imperatore",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Empereur%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "The Emperor",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:the-emperor",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-emperor.jpg",
           "source_px": [
             305,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-emperor.jpg"
+          ]
         },
-        "trump_key": "emperor"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:the-emperor",
+        "trump_key": "emperor",
+        "italian_name": "L'Imperatore",
+        "trump_number": 4,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Empereur%20tarot%20charles6.jpg",
+            "scene": "The Emperor",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "A crowned, bearded emperor enthroned with orb and sceptre, attendants below.",
+        "Scene": "An armoured emperor sits in near-profile on a stone seat, wearing a jewelled crown and an ermine-trimmed crimson mantle. He holds a sceptre or orb; a sword may rest at his side. The background is plain gilded vellum.",
+        "Symbol": "Temporal masculine authority and the ordering power of law.",
         "History": "One of the 17 survivors. Temporal majesty rendered in gold leaf.",
         "Reading": "Worldly authority, the throne, the order of empire.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "A crowned, bearded emperor enthroned with orb and sceptre, attendants below.",
         "Research note": "A crowned, bearded emperor enthroned with orb and sceptre, attendants below — temporal majesty in gold leaf [@web_tarotgarden_charlesvi]. \n\n*Sources:* [@web_pollett_orders], [@web_tarotgarden_charlesvi].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "An armoured emperor sits in near-profile on a stone seat, wearing a jewelled crown and an ermine-trimmed crimson mantle. He holds a sceptre or orb; a sword may rest at his side. The background is plain gilded vellum.",
-        "Symbol": "Temporal masculine authority and the ordering power of law."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Empereur%20tarot%20charles6.jpg",
+      "sort_order": 1
     },
     {
       "id": "card-pope",
       "name": "5 — The Pope",
-      "sort_order": 2,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "the pope",
         "il papa",
@@ -181,52 +133,52 @@
         "ferrara",
         "arcana:the-hierophant"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Pope%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 5,
-        "italian_name": "Il Papa",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pope%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "The Pope",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:the-hierophant",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-pope.jpg",
           "source_px": [
             311,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-pope.jpg"
+          ]
         },
-        "trump_key": "hierophant"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:the-hierophant",
+        "trump_key": "hierophant",
+        "italian_name": "Il Papa",
+        "trump_number": 5,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pope%20tarot%20charles6.jpg",
+            "scene": "The Pope",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "A tiara'd pope enthroned, hand raised in blessing, cardinals at his feet.",
+        "Scene": "A pope in white pontifical vestments and triple tiara is enthroned and raises his right hand in blessing. Two tonsured kneeling clerics are visible at lower left and right. The background is richly gilded.",
+        "Symbol": "Spiritual hierarchy and the transmission of sacred teaching. The papal blessing confers grace from above.",
         "History": "Survives at the BnF. The spiritual power answering the Emperor.",
         "Reading": "Spiritual authority, blessing, the sanctioned hierophant.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "A tiara'd pope enthroned, hand raised in blessing, cardinals at his feet.",
         "Research note": "A tiara'd pope enthroned, hand raised in blessing, cardinals/clerics at his feet — the spiritual power answering the Emperor [@web_tarotgarden_charlesvi]. \n\n*Sources:* [@web_pollett_orders], [@web_tarotgarden_charlesvi].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A pope in white pontifical vestments and triple tiara is enthroned and raises his right hand in blessing. Two tonsured kneeling clerics are visible at lower left and right. The background is richly gilded.",
-        "Symbol": "Spiritual hierarchy and the transmission of sacred teaching. The papal blessing confers grace from above."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Pope%20tarot%20charles6.jpg",
+      "sort_order": 2
     },
     {
       "id": "card-lovers",
       "name": "6 — The Lovers",
-      "sort_order": 3,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "the lovers",
         "l'amore",
@@ -235,52 +187,52 @@
         "ferrara",
         "arcana:the-lovers"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/L%27Amoureux%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 6,
-        "italian_name": "L'Amore",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27Amoureux%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "The Lovers",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:the-lovers",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-lovers.jpg",
           "source_px": [
             315,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-lovers.jpg"
+          ]
         },
-        "trump_key": "lovers"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:the-lovers",
+        "trump_key": "lovers",
+        "italian_name": "L'Amore",
+        "trump_number": 6,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27Amoureux%20tarot%20charles6.jpg",
+            "scene": "The Lovers",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "A couple beneath a winged Cupid who draws his bow — a courtly betrothal scene.",
+        "Scene": "Two elegantly dressed young figures — a man and a woman — stand facing each other beneath a winged Cupid or angel who aims an arrow between them. The costumes reflect North Italian courtly fashion of the 1470s.",
+        "Symbol": "Love, union, and the intersection of earthly desire with divine compulsion.",
         "History": "One of the survivors; a richly dressed dynastic-marriage image.",
         "Reading": "Union, love, the binding of two houses.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "A couple beneath a winged Cupid who draws his bow — a courtly betrothal scene.",
         "Research note": "A richly dressed couple beneath a winged Cupid drawing his bow — a courtly betrothal / dynastic-marriage scene [@web_tarotgarden_charlesvi; @web_intomystery_oldest]. \n\n*Sources:* [@web_intomystery_oldest], [@web_pollett_orders], [@web_tarotgarden_charlesvi].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "Two elegantly dressed young figures — a man and a woman — stand facing each other beneath a winged Cupid or angel who aims an arrow between them. The costumes reflect North Italian courtly fashion of the 1470s.",
-        "Symbol": "Love, union, and the intersection of earthly desire with divine compulsion."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/L%27Amoureux%20tarot%20charles6.jpg",
+      "sort_order": 3
     },
     {
       "id": "card-chariot",
       "name": "7 — The Chariot",
-      "sort_order": 4,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "the chariot",
         "il carro",
@@ -289,52 +241,52 @@
         "ferrara",
         "arcana:the-chariot"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Chariot%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 7,
-        "italian_name": "Il Carro",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chariot%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "The Chariot",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:the-chariot",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-chariot.jpg",
           "source_px": [
             304,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-chariot.jpg"
+          ]
         },
-        "trump_key": "chariot"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:the-chariot",
+        "trump_key": "chariot",
+        "italian_name": "Il Carro",
+        "trump_number": 7,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chariot%20tarot%20charles6.jpg",
+            "scene": "The Chariot",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "A crowned lady stands in a triumphal car drawn by two horses.",
+        "Scene": "A crowned triumphator stands erect in a canopied chariot, holding a sceptre or sword. Two horses (often of contrasting colours) draw the chariot. The scene evokes a Roman triumph.",
+        "Symbol": "Victory and mastery of opposing forces; willpower directing contrary energies toward a single goal.",
         "History": "Survives at the BnF — the 'triumph' that names the game.",
         "Reading": "Victory, the self carried forward in triumph.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "A crowned lady stands in a triumphal car drawn by two horses.",
         "Research note": "A crowned lady standing in a triumphal car drawn by two horses — the *trionfo* that names the game [@web_tarotgarden_charlesvi; @web_th_charlesvi_benedetti]. \n\n*Sources:* [@dummett1980], [@web_pollett_orders], [@web_tarotgarden_charlesvi].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A crowned triumphator stands erect in a canopied chariot, holding a sceptre or sword. Two horses (often of contrasting colours) draw the chariot. The scene evokes a Roman triumph.",
-        "Symbol": "Victory and mastery of opposing forces; willpower directing contrary energies toward a single goal."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Chariot%20tarot%20charles6.jpg",
+      "sort_order": 4
     },
     {
       "id": "card-justice",
       "name": "8 — Justice",
-      "sort_order": 5,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "justice",
         "la giustizia",
@@ -343,52 +295,52 @@
         "ferrara",
         "arcana:justice"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Justice%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 11,
-        "italian_name": "La Giustizia",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Justice%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "Justice",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:justice",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-justice.jpg",
           "source_px": [
             312,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-justice.jpg"
+          ]
         },
-        "trump_key": "justice"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:justice",
+        "trump_key": "justice",
+        "italian_name": "La Giustizia",
+        "trump_number": 11,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Justice%20tarot%20charles6.jpg",
+            "scene": "Justice",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "An enthroned woman with raised sword and balance.",
+        "Scene": "A crowned female figure sits on a throne, holding a drawn sword upright in her right hand and a set of scales in her left. She is frontally posed in the standard allegorical Justice composition.",
+        "Symbol": "Impartial judgement; the scales of equity and the sword of decision.",
         "History": "A surviving cardinal virtue. In the B-order the virtues sit at particular ranks.",
         "Reading": "Balance, judgment, the weighing of each act.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "An enthroned woman with raised sword and balance.",
         "Research note": "An enthroned woman with raised sword and balance — the cardinal virtue [@web_tarotgarden_charlesvi]. \n\n*Sources:* [@web_pollett_orders], [@web_tarotgarden_charlesvi], [@web_thf_charlesvi].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A crowned female figure sits on a throne, holding a drawn sword upright in her right hand and a set of scales in her left. She is frontally posed in the standard allegorical Justice composition.",
-        "Symbol": "Impartial judgement; the scales of equity and the sword of decision."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Justice%20tarot%20charles6.jpg",
+      "sort_order": 5
     },
     {
       "id": "card-hermit",
       "name": "9 — The Hermit (Time)",
-      "sort_order": 6,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "the hermit (time)",
         "il tempo",
@@ -397,52 +349,52 @@
         "ferrara",
         "arcana:the-hermit"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Hermit%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 9,
-        "italian_name": "Il Tempo",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hermit%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "The Hermit (Time)",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:the-hermit",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-hermit.jpg",
           "source_px": [
             308,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-hermit.jpg"
+          ]
         },
-        "trump_key": "hermit"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:the-hermit",
+        "trump_key": "hermit",
+        "italian_name": "Il Tempo",
+        "trump_number": 9,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hermit%20tarot%20charles6.jpg",
+            "scene": "The Hermit (Time)",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "An old bearded man with a staff and an hourglass — Time, the Old Man.",
+        "Scene": "An elderly robed man walks hunched over his staff, holding an hourglass before him. In some versions a lantern replaces the hourglass. He is shown in isolation, moving across a plain ground. The Charles VI Hermit famously holds an hourglass rather than a lantern.",
+        "Symbol": "Time, patience, and withdrawal from the world for contemplation. The hourglass marks the passage that cannot be halted.",
         "History": "Survives at the BnF; the hourglass (not a lantern) marks him as 'Il Tempo'.",
         "Reading": "Time, age, the solitary measure of hours.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "An old bearded man with a staff and an hourglass — Time, the Old Man.",
         "Research note": "An old bearded man with a staff and an **hourglass** — Time / the Old Man, not yet the later lantern-bearing Hermit [@web_th_charlesvi_benedetti; @web_tarotgarden_charlesvi]. \n\n*Sources:* [@web_tarotgarden_charlesvi], [@web_th_charlesvi_benedetti].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "An elderly robed man walks hunched over his staff, holding an hourglass before him. In some versions a lantern replaces the hourglass. He is shown in isolation, moving across a plain ground. The Charles VI Hermit famously holds an hourglass rather than a lantern.",
-        "Symbol": "Time, patience, and withdrawal from the world for contemplation. The hourglass marks the passage that cannot be halted."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Hermit%20tarot%20charles6.jpg",
+      "sort_order": 6
     },
     {
       "id": "card-strength",
       "name": "11 — Strength",
-      "sort_order": 7,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "strength",
         "la forza",
@@ -451,52 +403,52 @@
         "ferrara",
         "arcana:strength"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Force%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 8,
-        "italian_name": "La Forza",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Force%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "Strength",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:strength",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-strength.jpg",
           "source_px": [
             310,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-strength.jpg"
+          ]
         },
-        "trump_key": "strength"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:strength",
+        "trump_key": "strength",
+        "italian_name": "La Forza",
+        "trump_number": 8,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Force%20tarot%20charles6.jpg",
+            "scene": "Strength",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "A woman calmly breaks a stone column (a Samson/Fortitude image), or masters a beast.",
+        "Scene": "A crowned woman in a long gown gently opens the jaws of a lion with her bare hands. The lion does not resist; the woman's posture is calm and assured.",
+        "Symbol": "Moral courage and the power of gentleness to subdue raw force.",
         "History": "A surviving cardinal virtue.",
         "Reading": "Fortitude, courage, strength of soul over force.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "A woman calmly breaks a stone column (a Samson/Fortitude image), or masters a beast.",
         "Research note": "A woman mastering a beast or breaking a column (the Fortitude / Samson type) — the cardinal virtue [@web_tarotgarden_charlesvi; @web_th_charlesvi_benedetti]. \n\n*Sources:* [@web_pollett_orders], [@web_tarotgarden_charlesvi].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A crowned woman in a long gown gently opens the jaws of a lion with her bare hands. The lion does not resist; the woman's posture is calm and assured.",
-        "Symbol": "Moral courage and the power of gentleness to subdue raw force."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Force%20tarot%20charles6.jpg",
+      "sort_order": 7
     },
     {
       "id": "card-hanged-man",
       "name": "12 — The Hanged Man",
-      "sort_order": 8,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "the hanged man",
         "l'appeso",
@@ -505,52 +457,52 @@
         "ferrara",
         "arcana:the-hanged-man"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Pendu%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 12,
-        "italian_name": "L'Appeso",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pendu%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "The Hanged Man",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:the-hanged-man",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-hanged-man.jpg",
           "source_px": [
             299,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-hanged-man.jpg"
+          ]
         },
-        "trump_key": "hanged-man"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:the-hanged-man",
+        "trump_key": "hanged-man",
+        "italian_name": "L'Appeso",
+        "trump_number": 12,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pendu%20tarot%20charles6.jpg",
+            "scene": "The Hanged Man",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "A youth suspended by one ankle from a frame, the shaming 'pittura infamante' of a traitor.",
+        "Scene": "A male figure hangs by one foot from a gallows or cross-bar, his free leg crossed behind the suspended one. His arms hang loosely or are clasped behind his back. The face is tranquil.",
+        "Symbol": "Sacrificial suspension; an altered perspective achieved through surrender.",
         "History": "Survives at the BnF.",
         "Reading": "Suspension, reversal, the punished betrayer; the world seen upside-down.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "A youth suspended by one ankle from a frame, the shaming 'pittura infamante' of a traitor.",
         "Research note": "A youth suspended by one ankle from a frame — a *pittura infamante*, the shaming portrait of a traitor hung upside-down [@web_th_charlesvi_benedetti; @web_intomystery_oldest]. \n\n*Sources:* [@web_intomystery_oldest], [@web_pollett_orders], [@web_th_charlesvi_benedetti].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A male figure hangs by one foot from a gallows or cross-bar, his free leg crossed behind the suspended one. His arms hang loosely or are clasped behind his back. The face is tranquil.",
-        "Symbol": "Sacrificial suspension; an altered perspective achieved through surrender."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Pendu%20tarot%20charles6.jpg",
+      "sort_order": 8
     },
     {
       "id": "card-death",
       "name": "13 — Death",
-      "sort_order": 9,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "death",
         "la morte",
@@ -559,52 +511,52 @@
         "ferrara",
         "arcana:death"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Death%20tarot%20charles6.jpeg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 13,
-        "italian_name": "La Morte",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Death%20tarot%20charles6.jpeg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "Death",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:death",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-death.jpg",
           "source_px": [
             365,
             713
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-death.jpg"
+          ]
         },
-        "trump_key": "death"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:death",
+        "trump_key": "death",
+        "italian_name": "La Morte",
+        "trump_number": 13,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Death%20tarot%20charles6.jpeg",
+            "scene": "Death",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "A skeletal figure on a horse rides over fallen kings and commoners.",
+        "Scene": "A skeleton brandishes a scythe or sword above fallen and kneeling figures of various social ranks — a crowned king, a bishop, a commoner. The skeleton's movement is relentless across a barren field.",
+        "Symbol": "Death levels all rank and privilege. No earthly station protects against mortality.",
         "History": "A survivor — the mounted Death of the danse macabre.",
         "Reading": "The great leveller, transformation, the end that spares no estate.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "A skeletal figure on a horse rides over fallen kings and commoners.",
         "Research note": "A skeletal figure **on horseback** riding over fallen kings and commoners — the mounted Death of the *danse macabre* [@web_th_charlesvi_benedetti; @web_tarotgarden_charlesvi]. \n\n*Sources:* [@dummett1980], [@web_pollett_orders], [@web_th_charlesvi_benedetti].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A skeleton brandishes a scythe or sword above fallen and kneeling figures of various social ranks — a crowned king, a bishop, a commoner. The skeleton's movement is relentless across a barren field.",
-        "Symbol": "Death levels all rank and privilege. No earthly station protects against mortality."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Death%20tarot%20charles6.jpeg",
+      "sort_order": 9
     },
     {
       "id": "card-temperance",
       "name": "14 — Temperance",
-      "sort_order": 10,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "temperance",
         "la temperanza",
@@ -613,52 +565,52 @@
         "ferrara",
         "arcana:temperance"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Temperance%20tarot%20charles6.jpeg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 14,
-        "italian_name": "La Temperanza",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Temperance%20tarot%20charles6.jpeg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "Temperance",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:temperance",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-temperance.jpg",
           "source_px": [
             314,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-temperance.jpg"
+          ]
         },
-        "trump_key": "temperance"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:temperance",
+        "trump_key": "temperance",
+        "italian_name": "La Temperanza",
+        "trump_number": 14,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Temperance%20tarot%20charles6.jpeg",
+            "scene": "Temperance",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "A winged woman pours liquid between two vessels.",
+        "Scene": "A winged angel pours liquid between two vessels — one elevated, one lower — without spilling. The figure is standing or gently kneeling, wearing a long gown in blue and white.",
+        "Symbol": "Moderation, the blending of opposites, and the virtue of measured exchange.",
         "History": "A surviving cardinal virtue.",
         "Reading": "Tempering, moderation, the patient blending of waters.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "A winged woman pours liquid between two vessels.",
         "Research note": "A winged woman pouring liquid between two vessels — the cardinal virtue [@web_tarotgarden_charlesvi]. \n\n*Sources:* [@web_pollett_orders], [@web_tarotgarden_charlesvi].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A winged angel pours liquid between two vessels — one elevated, one lower — without spilling. The figure is standing or gently kneeling, wearing a long gown in blue and white.",
-        "Symbol": "Moderation, the blending of opposites, and the virtue of measured exchange."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Temperance%20tarot%20charles6.jpeg",
+      "sort_order": 10
     },
     {
       "id": "card-tower",
       "name": "16 — The Tower (House of the Devil)",
-      "sort_order": 11,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "the tower (house of the devil)",
         "la casa del diavolo",
@@ -667,52 +619,52 @@
         "ferrara",
         "arcana:the-tower"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Maison-Dieu%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 15,
-        "italian_name": "La Casa del Diavolo",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maison-Dieu%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "The Tower (House of the Devil)",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:the-tower",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-tower.jpg",
           "source_px": [
             311,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-tower.jpg"
+          ]
         },
-        "trump_key": "devil"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:the-tower",
+        "trump_key": "devil",
+        "italian_name": "La Casa del Diavolo",
+        "trump_number": 15,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maison-Dieu%20tarot%20charles6.jpg",
+            "scene": "The Tower (House of the Devil)",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "Figures fall from a burning structure — the 'House of the Devil' / God, the early Tower.",
+        "Scene": "A stone tower on rocky ground is struck by fire from above; its crenellated crown is shattered and two figures fall from the windows. Flames issue from the battlements.",
+        "Symbol": "Catastrophic collapse of false or proud structures; the dismantling blow of sudden truth.",
         "History": "A rare survival of the Tower from a 15th-century deck.",
         "Reading": "Sudden ruin, the breaking of false structures.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "Figures fall from a burning structure — the 'House of the Devil' / God, the early Tower.",
         "Research note": "Figures falling from a burning/breaking structure — the early \"House of the Devil\" (Maison-Dieu) Tower; a rare 15th-century survival of this subject [@web_bnf_essentiels_charlesvi; @web_intomystery_oldest]. \n\n*Sources:* [@web_bnf_essentiels_charlesvi], [@web_intomystery_oldest], [@web_pollett_orders].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A stone tower on rocky ground is struck by fire from above; its crenellated crown is shattered and two figures fall from the windows. Flames issue from the battlements.",
-        "Symbol": "Catastrophic collapse of false or proud structures; the dismantling blow of sudden truth."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Maison-Dieu%20tarot%20charles6.jpg",
+      "sort_order": 11
     },
     {
       "id": "card-moon",
       "name": "18 — The Moon",
-      "sort_order": 12,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "the moon",
         "la luna",
@@ -721,52 +673,52 @@
         "ferrara",
         "arcana:the-moon"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Moon%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 18,
-        "italian_name": "La Luna",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Moon%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "The Moon",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:the-moon",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-moon.jpg",
           "source_px": [
             361,
             707
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-moon.jpg"
+          ]
         },
-        "trump_key": "moon"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:the-moon",
+        "trump_key": "moon",
+        "italian_name": "La Luna",
+        "trump_number": 18,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Moon%20tarot%20charles6.jpg",
+            "scene": "The Moon",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "Two astronomers with compasses measure beneath a crescent moon.",
+        "Scene": "A crescent moon face hangs above a darkened landscape with two towers in the background. A crayfish or lobster emerges from water in the foreground; two dogs stand below.",
+        "Symbol": "The unconscious, illusion, and nocturnal uncertainties; the instincts rising from murky depths.",
         "History": "Survives at the BnF; an unusual 'astronomers' Moon, not the later dogs-and-crayfish scene.",
         "Reading": "Reflection, the measured night, the sciences of the heavens.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "Two astronomers with compasses measure beneath a crescent moon.",
         "Research note": "**Two astronomers measuring with compasses** beneath a crescent moon — an astronomers' Moon, NOT the later dogs-towers-and-crayfish scene [@web_th_charlesvi_benedetti; @web_intomystery_oldest]. \n\n*Sources:* [@web_intomystery_oldest], [@web_pollett_orders], [@web_th_charlesvi_benedetti].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A crescent moon face hangs above a darkened landscape with two towers in the background. A crayfish or lobster emerges from water in the foreground; two dogs stand below.",
-        "Symbol": "The unconscious, illusion, and nocturnal uncertainties; the instincts rising from murky depths."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Moon%20tarot%20charles6.jpg",
+      "sort_order": 12
     },
     {
       "id": "card-sun",
       "name": "19 — The Sun",
-      "sort_order": 13,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "the sun",
         "il sole",
@@ -775,52 +727,52 @@
         "ferrara",
         "arcana:the-sun"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Sun%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 19,
-        "italian_name": "Il Sole",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sun%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "The Sun",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:the-sun",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-sun.jpg",
           "source_px": [
             301,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-sun.jpg"
+          ]
         },
-        "trump_key": "sun"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:the-sun",
+        "trump_key": "sun",
+        "italian_name": "Il Sole",
+        "trump_number": 19,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sun%20tarot%20charles6.jpg",
+            "scene": "The Sun",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "A woman with a distaff sits beneath a great rayed sun.",
+        "Scene": "A radiant sun with a face shines above. Below, two children or a male and female figure stand or play in a garden beneath the solar disc.",
+        "Symbol": "Clarity, warmth, and the joy of conscious life; two figures united in the light of shared understanding.",
         "History": "A survivor; the spinning woman under the sun is unique to this deck.",
         "Reading": "Daylight, vitality, the lit and ordinary world.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "A woman with a distaff sits beneath a great rayed sun.",
         "Research note": "A **woman with a distaff** seated beneath a great rayed sun — an image distinctive to this deck [@web_th_charlesvi_benedetti; @web_tarotgarden_charlesvi]. \n\n*Sources:* [@web_pollett_orders], [@web_tarotgarden_charlesvi], [@web_th_charlesvi_benedetti].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A radiant sun with a face shines above. Below, two children or a male and female figure stand or play in a garden beneath the solar disc.",
-        "Symbol": "Clarity, warmth, and the joy of conscious life; two figures united in the light of shared understanding."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Sun%20tarot%20charles6.jpg",
+      "sort_order": 13
     },
     {
       "id": "card-judgement",
       "name": "20 — Judgement",
-      "sort_order": 14,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "judgement",
         "il giudizio",
@@ -829,52 +781,52 @@
         "ferrara",
         "arcana:judgement"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Jugement%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 20,
-        "italian_name": "Il Giudizio",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jugement%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "Judgement",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:judgement",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-judgement.jpg",
           "source_px": [
             318,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-judgement.jpg"
+          ]
         },
-        "trump_key": "judgement"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:judgement",
+        "trump_key": "judgement",
+        "italian_name": "Il Giudizio",
+        "trump_number": 20,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jugement%20tarot%20charles6.jpg",
+            "scene": "Judgement",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "An angel sounds a trumpet; the dead rise from their tombs.",
+        "Scene": "A trumpet-blowing angel emerges from a cloud above while three figures — man, woman, child — rise from tombs with arms raised toward the angel. The composition is the standard Judgement iconography.",
+        "Symbol": "Awakening and the call to transformation; emergence from the former life into a new existence.",
         "History": "Survives at the BnF.",
         "Reading": "The call and the reckoning, awakening, the dead risen to answer.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "An angel sounds a trumpet; the dead rise from their tombs.",
         "Research note": "An angel sounding a trumpet as the dead rise from their tombs — the Last Judgement [@web_tarotgarden_charlesvi]. \n\n*Sources:* [@web_pollett_orders], [@web_tarotgarden_charlesvi].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A trumpet-blowing angel emerges from a cloud above while three figures — man, woman, child — rise from tombs with arms raised toward the angel. The composition is the standard Judgement iconography.",
-        "Symbol": "Awakening and the call to transformation; emergence from the former life into a new existence."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Jugement%20tarot%20charles6.jpg",
+      "sort_order": 14
     },
     {
       "id": "card-world",
       "name": "21 — The World",
-      "sort_order": 15,
-      "category": "trump",
       "level": 1,
+      "category": "trump",
       "keywords": [
         "the world",
         "il mondo",
@@ -883,52 +835,52 @@
         "ferrara",
         "arcana:the-world"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/World%20tarot%20charles6.jpeg",
       "metadata": {
-        "arcana": "trump",
-        "trump_number": 21,
-        "italian_name": "Il Mondo",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/World%20tarot%20charles6.jpeg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "The World",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": "arcana:the-world",
-        "mapping_confidence": "exact",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-world.jpg",
           "source_px": [
             321,
             637
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-world.jpg"
+          ]
         },
-        "trump_key": "world"
+        "arcana": "trump",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": "arcana:the-world",
+        "trump_key": "world",
+        "italian_name": "Il Mondo",
+        "trump_number": 21,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/World%20tarot%20charles6.jpeg",
+            "scene": "The World",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "exact"
       },
       "sections": {
-        "Iconography": "A standing figure (Fame, or a woman) holds a globe showing a walled city over water.",
+        "Scene": "A nude or lightly draped androgynous figure dances at the centre of a laurel wreath. In the four corners appear the four tetramorph creatures: angel, eagle, lion, and bull.",
+        "Symbol": "Completion and cosmic integration; the dancer at the centre of all things signifies the fully realised self.",
         "History": "A survivor — the highest triumph, here a panorama of the world.",
         "Reading": "Completion, the cosmos surveyed, the journey closed.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "A standing figure (Fame, or a woman) holds a globe showing a walled city over water.",
         "Research note": "A **standing female figure holding a globe/orb** (sources also describe a censer in the other hand), a panorama of a walled city over water shown on the globe — the highest triumph [@web_th_charlesvi_benedetti; @web_intomystery_oldest]. \n\n*Sources:* [@web_intomystery_oldest], [@web_pollett_orders], [@web_th_charlesvi_benedetti].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A nude or lightly draped androgynous figure dances at the centre of a laurel wreath. In the four corners appear the four tetramorph creatures: angel, eagle, lion, and bull.",
-        "Symbol": "Completion and cosmic integration; the dancer at the centre of all things signifies the fully realised self."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/World%20tarot%20charles6.jpeg",
+      "sort_order": 15
     },
     {
       "id": "card-page-swords",
       "name": "Page of Swords",
-      "sort_order": 16,
-      "category": "court",
       "level": 1,
+      "category": "court",
       "keywords": [
         "page of swords",
         "fante di spade",
@@ -936,51 +888,59 @@
         "trionfi",
         "ferrara"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Valet%20d%27epees%20tarot%20charles6.jpg",
       "metadata": {
-        "arcana": "minor",
-        "trump_number": null,
-        "italian_name": "Fante di Spade",
-        "status": "surviving",
-        "museum": "Bibliothèque nationale de France",
-        "illustrations": [
-          {
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Valet%20d%27epees%20tarot%20charles6.jpg",
-            "artist": "North Italian (Ferrarese?) workshop",
-            "artist_dates": "c. 1450–1480",
-            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
-            "scene": "Page of Swords",
-            "license": "Public Domain",
-            "is_primary": true
-          }
-        ],
-        "archetype": null,
-        "mapping_confidence": "none",
         "print": {
           "quality": "web",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-page-swords.jpg",
           "source_px": [
             302,
             600
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/charles-vi-tarot/card-page-swords.jpg"
-        }
+          ]
+        },
+        "arcana": "minor",
+        "museum": "Bibliothèque nationale de France",
+        "status": "surviving",
+        "archetype": null,
+        "italian_name": "Fante di Spade",
+        "trump_number": null,
+        "illustrations": [
+          {
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Valet%20d%27epees%20tarot%20charles6.jpg",
+            "scene": "Page of Swords",
+            "artist": "North Italian (Ferrarese?) workshop",
+            "edition": "The 'Charles VI' (Gringonneur) Tarot, c. 1450–80",
+            "license": "Public Domain",
+            "is_primary": true,
+            "artist_dates": "c. 1450–1480"
+          }
+        ],
+        "mapping_confidence": "none"
       },
       "sections": {
-        "Iconography": "A young courtier holds an upright sword — the one surviving suit card of the deck.",
+        "Scene": "A youthful page stands in a landscape, wearing a fitted tunic and holding a drawn sword. The pose suggests alertness and readiness. The figure is painted on vellum with fine detail in the costume.",
+        "Symbol": "Vigilance and the early exercise of intellect; the sword-bearing page represents intelligence in its formative, agile phase.",
         "History": "The sole surviving MINOR card, showing the deck's suit cards were as richly painted as the trumps.",
         "Reading": "The student of the sword-suit: vigilance, a sharp message, the mind learning.",
-        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay.",
+        "Iconography": "A young courtier holds an upright sword — the one surviving suit card of the deck.",
         "Research note": "A young courtier holding an upright sword — the **sole surviving suit card** of the pack, showing the minors were painted to the same luxury standard as the trumps [@web_bnf_cat_charlesvi; @web_intomystery_oldest]. \n\n*Sources:* [@web_bnf_cat_charlesvi], [@web_intomystery_oldest].\n\n*Full card-by-card research:* [research/cards/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/charles-vi-tarot.md).",
-        "Scene": "A youthful page stands in a landscape, wearing a fitted tunic and holding a drawn sword. The pose suggests alertness and readiness. The figure is painted on vellum with fine detail in the costume.",
-        "Symbol": "Vigilance and the early exercise of intellect; the sword-bearing page represents intelligence in its formative, agile phase."
-      }
+        "Tradition Note": "These cards were made to play a game — the Italian *trionfi* / *tarocchi* card game — not for divination, which arrived centuries later. The notes here are historical and iconographic; any reading is a modern interpretive overlay."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Valet%20d%27epees%20tarot%20charles6.jpg",
+      "sort_order": 16
     },
     {
       "id": "emg-surviving-trumps",
       "name": "The 16 Surviving Trumps",
-      "sort_order": 17,
-      "category": "emergence",
       "level": 2,
+      "category": "emergence",
+      "sections": {
+        "Scene": "Sixteen cards from what was once a complete Italian tarot set, painted on vellum with gold leaf by an unknown Milanese or Lombard master c. 1470–1480. The cards survived as a group in the Bibliothèque nationale de France, misattributed for centuries to Charles VI (r. 1380–1422) and to the painter Jacquemin Gringonneur.",
+        "Symbol": "The set represents the finest surviving example of luxury Italian hand-painted tarot from the quattrocento. The gold ground, courtly costumes, and refined figure style locate it within the same workshop tradition as the Visconti-Sforza deck.",
+        "About these Cards": "Sixteen trumps and a single suit card survive of this once-complete deck — missing are the Magician, Popess, Empress, Wheel of Fortune, Devil, and Star. What remains is among the finest gold-ground tarot painting of the 15th century.",
+        "Setting the record straight": "The deck is named for a 1392 payment by Charles VI of France to the painter Gringonneur — but that attribution was disproved long ago. These cards are North Italian (probably Ferrarese), c. 1450–1480: a cornerstone of the eastern, Dummett B-order tradition, not a French royal commission."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Death%20tarot%20charles6.jpeg",
+      "sort_order": 17,
       "composite_of": [
         "card-fool",
         "card-emperor",
@@ -999,62 +959,45 @@
         "card-judgement",
         "card-world"
       ],
-      "relationship_type": "emergence",
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Death%20tarot%20charles6.jpeg",
-      "metadata": {},
-      "sections": {
-        "About these Cards": "Sixteen trumps and a single suit card survive of this once-complete deck — missing are the Magician, Popess, Empress, Wheel of Fortune, Devil, and Star. What remains is among the finest gold-ground tarot painting of the 15th century.",
-        "Setting the record straight": "The deck is named for a 1392 payment by Charles VI of France to the painter Gringonneur — but that attribution was disproved long ago. These cards are North Italian (probably Ferrarese), c. 1450–1480: a cornerstone of the eastern, Dummett B-order tradition, not a French royal commission.",
-        "Scene": "Sixteen cards from what was once a complete Italian tarot set, painted on vellum with gold leaf by an unknown Milanese or Lombard master c. 1470–1480. The cards survived as a group in the Bibliothèque nationale de France, misattributed for centuries to Charles VI (r. 1380–1422) and to the painter Jacquemin Gringonneur.",
-        "Symbol": "The set represents the finest surviving example of luxury Italian hand-painted tarot from the quattrocento. The gold ground, courtly costumes, and refined figure style locate it within the same workshop tradition as the Visconti-Sforza deck."
-      }
+      "relationship_type": "emergence"
     }
   ],
-  "_community_folder": "tarot",
-  "_community_slug": "charles-vi-tarot",
-  "_original_creator": "f18e2415-315c-43b7-ae93-d09c8892e181",
+  "roots": [
+    "western-esoteric",
+    "renaissance"
+  ],
   "editors": [
     {
+      "action": "created",
       "user_id": "f18e2415-315c-43b7-ae93-d09c8892e181",
-      "timestamp": "2026-06-03T04:23:59.515120+00:00",
-      "action": "created"
+      "timestamp": "2026-06-03T04:23:59.515120+00:00"
     }
   ],
-  "_enriched_from": "research/03-charles-vi-gringonneur.mdx",
-  "print_readiness": {
-    "cards": 17,
-    "imaged": 17,
-    "dpi_ready": 0,
-    "bleed_ready": 0,
-    "verdict": "web_res",
-    "spec": {
-      "card_in": "2.5x3.5",
-      "dpi": 300,
-      "ready_px": [
-        750,
-        1050
-      ],
-      "bleed_px": [
-        825,
-        1125
-      ]
-    }
+  "shelves": [
+    "wonder",
+    "mirror"
+  ],
+  "lineages": [
+    "Andreotti"
+  ],
+  "metadata": {
+    "year": 1455,
+    "order": "A/B (debated)",
+    "category": "historical",
+    "tradition": "Florentine — workshop of Apollonio di Giovanni & Marco del Buono (current BnF attribution)",
+    "year_label": "c. 1450–80",
+    "attribution": "Florence (Apollonio di Giovanni); the older Ferrara/B-order view is superseded on workshop",
+    "common_name": "'Charles VI' (Ferrara)"
   },
   "_research": {
     "deck": "research/decks/charles-vi-tarot.md",
     "cards": "research/cards/charles-vi-tarot.md",
     "bibliography": "research/bibliography.bib"
   },
-  "metadata": {
-    "year": 1455,
-    "tradition": "Florentine — workshop of Apollonio di Giovanni & Marco del Buono (current BnF attribution)",
-    "attribution": "Florence (Apollonio di Giovanni); the older Ferrara/B-order view is superseded on workshop",
-    "order": "A/B (debated)",
-    "common_name": "'Charles VI' (Ferrara)",
-    "category": "historical",
-    "year_label": "c. 1450–80"
-  },
-  "image_credit": "Bibliothèque nationale de France, Paris (Cabinet des Estampes)",
+  "worldview": "historical",
+  "provenance": "record",
+  "_github_url": "https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/charles-vi-tarot/grammar.json",
+  "description": "# \"Charles VI\" Tarot (Gringonneur)\n\n## At a glance\n\nSeventeen surviving hand-painted trumps held at the Bibliothèque nationale de France,\nhistorically — and **wrongly** — said to be French cards painted in 1392 for King\nCharles VI. They are in fact **Italian**, late-15th-century, and a key witness to the\n**B-order** (Ferrarese) trump sequence. A textbook case of a name preserving an\nexploded myth.\n\n## Origin & dating\n\nThe legend comes from a real account-book entry: a 1392 payment to **Jacquemin\nGringonneur** for three gilded card packs for Charles VI of France. Nineteenth-century\nwriters attached that entry to these cards. But the surviving deck is a **Northern\nItalian** product (Ferrara or possibly Florence), dated to roughly **1450–1480** — about\na century too late to be Gringonneur's. The names \"Charles VI\" and \"Gringonneur\" survive\nonly as labels of convenience.\n\n## Provenance & evidence\n\n17 trumps in the BnF, hand-painted and gilded. Style and iconography place it in the\nFerrarese orbit; its trump order is the main reason it matters — this library places it in the\n**B-order** that Dummett distinguishes from Bologna's A-order and Milan's C-order, **but the classification is genuinely debated**: the cards carry no numerals, and Dummett's own later analysis (*Il Mondo e l'Angelo*) argued the sequence is actually closer to the southern **A-order**, despite the Ferrarese style. It is genuinely debated in the literature.\n\n## Game or divination?\n\n**Game.** No cartomantic use; the divinatory association is, again, a post-1781 import.\n\n## The fear question\n\n**No fear.** A gilded court object of the same luxury class as the Visconti decks. The\nonly \"deception\" in its history is scholarly, not social — the mis-dating, not any\nhidden practice.\n\n## Counter-voices\n\nThe bogus 1392 French date was itself an early piece of **mythmaking** that made tarot\nlook older and more mysterious than it is — a reminder that romantic over-dating (toward\nEgypt, toward medieval France) has repeatedly run ahead of the documents. Correcting it\nis not \"suppressing\" an occult past; it is removing a 19th-century embellishment.\n\n## Open questions / corrections owed\n\n- Ferrara vs. Florence origin is unresolved; date range c.1430s–1470s is still argued.\n- The deck is a fragment; the full original trump set is reconstructed, not observed.\n\n## Sources & further reading\n\n- \"The Fifteenth-Century Charles VI Deck Recreated,\" Tarot Heritage.\n- trionfi.com, \"Origin of Tarot\" notes on the Gringonneur entry.\n- Dummett, *The Game of Tarot* (1980), on A/B/C orders.\n\n**RESEARCH NOTE (2026-06-13) — attribution debate.** This catalogue follows the older Dummett classification (Ferrarese / B-order). Newer scholarship (BnF *Catalogue général*) attributes the deck to the **Florentine** workshop of Apollonio di Giovanni & Marco del Buono (c. 1460), an A-leaning sequence (all virtues below Death). Genuinely debated — both views are live. Also: 16 trumps + 1 Page of Swords = 17 surviving cards (not 17 trumps). See [research/decks/charles-vi-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/decks/charles-vi-tarot.md).\n\n**EDITORIAL CALL (2026-06-13):** attribution set to **Florentine** (Apollonio di Giovanni & Marco del Buono workshop, c. 1450–70) per the current BnF Catalogue général; the trump-ORDER (A vs B) remains genuinely contested, so the genealogy branch is left unchanged pending a tree review. [@dummett1980; @web_charlesvi_th]\n",
   "_image_usage": [
     {
       "image": "Fool tarot charles6.jpg",
@@ -1063,5 +1006,72 @@
         "pages/historian.html"
       ]
     }
-  ]
+  ],
+  "creator_link": "https://recursive.eco",
+  "creator_name": "PlayfulProcess",
+  "default_view": "cards",
+  "grammar_type": "tarot",
+  "image_credit": "Bibliothèque nationale de France, Paris (Cabinet des Estampes)",
+  "is_published": true,
+  "_enriched_from": "research/03-charles-vi-gringonneur.mdx",
+  "_community_slug": "charles-vi-tarot",
+  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot-cover.jpg",
+  "print_readiness": {
+    "spec": {
+      "dpi": 300,
+      "card_in": "2.5x3.5",
+      "bleed_px": [
+        825,
+        1125
+      ],
+      "ready_px": [
+        750,
+        1050
+      ]
+    },
+    "cards": 17,
+    "imaged": 17,
+    "verdict": "web_res",
+    "dpi_ready": 0,
+    "bleed_ready": 0
+  },
+  "_backup_repo_url": "https://github.com/playfulprocess/recursive-tarot/blob/main/tarot/charles-vi-tarot/grammar.json",
+  "_forked_from_url": "https://raw.githubusercontent.com/playfulprocess/recursive-tarot/main/tarot/charles-vi-tarot/grammar.json",
+  "_grammar_commons": {
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "date": "c. 1450–1480",
+        "name": "North Italian (Ferrarese?) workshop",
+        "note": "Painter of the 'Charles VI' / Gringonneur tarot"
+      },
+      {
+        "date": "holding institution",
+        "name": "Bibliothèque nationale de France",
+        "note": "Holds the 17 surviving cards (Cabinet des Estampes)"
+      },
+      {
+        "date": "public domain",
+        "name": "Wikimedia Commons",
+        "note": "Card images, Category:Le tarot dit de Charles VI"
+      },
+      {
+        "date": "2026",
+        "name": "PlayfulProcess",
+        "note": "Grammar architecture and summaries"
+      }
+    ],
+    "schema_version": "1.0"
+  },
+  "_community_folder": "tarot",
+  "_original_creator": "f18e2415-315c-43b7-ae93-d09c8892e181",
+  "open_to_community": true,
+  "_github_source_url": "https://raw.githubusercontent.com/PlayfulProcess/recursive-tarot/main/tarot/charles-vi-tarot/grammar.json",
+  "_recursive_eco_url": "https://flow.recursive.eco/play?id=cc5bda4c-f47b-43e9-aa35-d3164f7c3c0e",
+  "_detected_categories": [
+    "trump",
+    "court",
+    "emergence"
+  ],
+  "_recursive_eco_edit_url": "https://flow.recursive.eco/create/dashboard/unified/new?id=cc5bda4c-f47b-43e9-aa35-d3164f7c3c0e"
 }
