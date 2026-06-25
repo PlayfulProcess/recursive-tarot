@@ -1,47 +1,27 @@
 {
-  "_grammar_commons": {
-    "schema_version": "1.0",
-    "license": "CC-BY-SA-4.0",
-    "attribution": [
-      {
-        "name": "PlayfulProcess"
-      }
-    ]
-  },
   "name": "Ganjifa — Persian & Mughal Cards (the Cousin, not the Parent)",
-  "slug": "ganjifa",
-  "grammar_type": "custom",
-  "provenance": "record",
-  "creator_name": "PlayfulProcess",
-  "default_view": "tree",
-  "default_preview": "tree",
-  "description": "Gorgeous **circular, hand-painted, lacquered** cards whose very name — *ganjifa* / Arabic *kanjifah* — is the **same word** as the Mamluk game. Persia from the 16th century, then richly developed in **Mughal India** (Dashavatara and other sets). **A cousin branch, NOT a parent of tarot** — it shows the Islamic-world card tradition that flourished but did *not* cross into Europe to become the four-suit pack. Filed honestly as adjacent card art, not ancestry.\n\nANCESTRAL STATUS: **cousin** — beautiful and related, but off the line that became tarot.\n\nSOURCES: LACMA open access (lacma.org); PICRYL public-domain aggregates; Ashmolean Museum.\n",
-  "metadata": {
-    "ancestry": "cousin",
-    "tradition": "Islamic-world circular cards (Persia → Mughal India)",
-    "common_name": "Ganjifa",
-    "category": "historical",
-    "year": 1520,
-    "year_label": "16th c.+"
-  },
   "items": [
     {
       "id": "overview",
       "name": "Ganjifa Cards",
       "level": 1,
       "category": "overview",
-      "sort_order": 0,
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/ganjifa/Ten%20Playing%20Cards%20(Ganjifa)%20LACMA%20M.2001.210.4.1-.10.jpg",
       "sections": {
         "What it is": "Circular lacquered Persian/Mughal cards — the same word as Mamluk *kanjifah*, a stunning cousin of the European pack, not its ancestor."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/ganjifa/Ten%20Playing%20Cards%20(Ganjifa)%20LACMA%20M.2001.210.4.1-.10.jpg",
+      "sort_order": 0
     }
   ],
+  "description": "Gorgeous **circular, hand-painted, lacquered** cards whose very name — *ganjifa* / Arabic *kanjifah* — is the **same word** as the Mamluk game. Persia from the 16th century, then richly developed in **Mughal India** (Dashavatara and other sets). **A cousin branch, NOT a parent of tarot** — it shows the Islamic-world card tradition that flourished but did *not* cross into Europe to become the four-suit pack. Filed honestly as adjacent card art, not ancestry.\n\nANCESTRAL STATUS: **cousin** — beautiful and related, but off the line that became tarot.\n\nSOURCES: LACMA open access (lacma.org); PICRYL public-domain aggregates; Ashmolean Museum.\n\n---\n*AI-assisted first-pass draft, pending review by the maintainer and the Tarot History Forum. Corrections welcome via pending edit.*",
+  "creator_name": "PlayfulProcess",
+  "grammar_type": "custom",
   "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/ganjifa-cover.jpg",
-  "_research": {
-    "deck": "research/decks/ganjifa.md",
-    "cards": "research/cards/ganjifa.md",
-    "bibliography": "research/bibliography.bib"
-  },
-  "image_credit": "Various collections; reproductions in the public domain"
+  "_backup_repo_url": "https://github.com/playfulprocess/recursive-tarot/blob/main/tarot/ganjifa/grammar.json",
+  "_forked_from_url": "https://raw.githubusercontent.com/playfulprocess/recursive-tarot/main/tarot/ganjifa/grammar.json",
+  "_detected_categories": [
+    "overview"
+  ],
+  "_recursive_eco_url": "https://flow.recursive.eco/play?id=aacf7645-23da-442b-9125-29c4ca7ce91d",
+  "_recursive_eco_edit_url": "https://flow.recursive.eco/create/dashboard/unified/new?id=aacf7645-23da-442b-9125-29c4ca7ce91d"
 }
