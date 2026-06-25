@@ -39,6 +39,20 @@ PLATES_EMBEDS = [
 ]
 EMBEDS = {"plates": PLATES_EMBEDS}  # add decks/suits/trumps/etc. here to bake the rest
 
+def _expand_essay():
+    """<div data-embed="essay"> → the meta-grammar's 'Divination Question' essay, baked as
+    markdown into the lesson (it's text, so we inline it; the card galleries are different —
+    they're computed aggregations and belong in the renderer, not baked here)."""
+    p = os.path.join(ROOT, "tarot", "all-decks-many-lenses", "grammar.json")
+    try:
+        mg = json.load(io.open(p, encoding="utf-8"))
+    except Exception:
+        return ""
+    e = next((i for i in mg.get("items", []) if i.get("id") == "essay-divination-question"), None)
+    if not e:
+        return ""
+    return "\n\n".join("### " + k + "\n\n" + str(v) for k, v in (e.get("sections") or {}).items())
+
 def convert(mdx_id, out_slug, name=None):
     src = os.path.join(ROOT, "course", mdx_id + ".mdx")
     text = io.open(src, encoding="utf-8").read()
@@ -69,14 +83,17 @@ def convert(mdx_id, out_slug, name=None):
     if head is not None:
         sections.append((head, "\n".join(buf).strip()))
 
+    essay_md = _expand_essay()
     items = []
     for i, (h, content) in enumerate(sections, 1):
         # Bake known <div data-embed="NAME"> galleries into item.metadata.embeds (card
-        # references the renderer resolves); strip ALL inert data-embed markers from the prose.
+        # references the renderer resolves); inline the essay text; strip the rest.
         meta = {}
         for nm in set(re.findall(r'data-embed="([a-z-]+)"', content)):
             if nm in EMBEDS:
                 meta["embeds"] = EMBEDS[nm]
+        if essay_md and 'data-embed="essay"' in content:
+            content = content.replace('<div data-embed="essay"></div>', essay_md)
         content = re.sub(r'\s*<div data-embed="[^"]+"></div>\s*', "\n\n", content).strip()
         if not content and not meta:
             continue

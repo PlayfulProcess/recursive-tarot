@@ -5,6 +5,9 @@ Open work lives in [TODO.md](TODO.md).
 
 ## 2026-06-24
 
+- **Course embed — essay baked:** the converter now inlines the meta-grammar's "Divination Question" essay (text) into that lesson at convert time. Finding while scoping the rest: the 6 "galleries" (decks/suits/numbers/trumps) are NOT curated lists like plates — they are computed aggregations (synthesis-research prose + maker bios + card strips over the whole library), so they belong in a shared embed-renderer, not baked references.
+
+
 - **Grammar-course layout:** centred the page (`margin:0 auto` + page padding) so it's no longer left-pinned with an empty right half, widened it a touch (1120px), and gave the Contents sidebar breathing room from the page edge.
 
 - **Course embeds via cross-grammar references (prototype, the model the builder proposed):** a course grammar now declares its card galleries as **references** to items in other grammars — `metadata.embeds: [{deck, ref, caption}]` where `ref` is `tk:<trump_key>` or `item:<id>` (plus `{heading}` to title a sub-gallery). `grammar-course.html` resolves each (fetches that deck grammar once, pulls the card's `image_url`) and renders the strip with captions + click-through to the card. So the **course grammar is the whole spec — edit it and it just renders**, no code, your existing cross-link contract extended from *link* to *embed*. Proved on History-of-Tarot's "A Few Plates" (Death across the centuries + iconic cards — 11 cards across 6 decks), baked by `course_to_grammar.py` (`PLATES_EMBEDS`); the other `data-embed` galleries (decks/suits/trumps) bake the same way via the `EMBEDS` table.
