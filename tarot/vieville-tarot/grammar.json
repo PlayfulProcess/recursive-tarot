@@ -1,1039 +1,1103 @@
 {
   "name": "Jacques Viéville Tarot — Paris, c. 1650 (BnF)",
-  "slug": "vieville-tarot",
-  "cover_image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c21.jpg",
-  "description": "# Jacques Viéville Tarot (Paris, c. 1650)\n\n## At a glance\n\nOne of the **three oldest surviving named Tarots de Marseille-family decks**, printed in Paris around 1650 by the *maître-cartier* **Jacques Viéville** — a near-contemporary of **Jean Noblet** (whose deck this library also holds). The single known copy is at the **Bibliothèque nationale de France** and is on **Gallica** (ark:/12148/btv1b10510963k), fully public domain. Its 78 woodcut cards are shown here from the BnF scan, at high resolution.\n\n## Why it matters — the road not taken\n\nViéville's pack is the great **outlier** of the early Parisian tarots. Where Noblet sits squarely in the **C-order (Marseille)** line that became standard, Viéville's trump imagery leans toward the **Eastern/Belgian** branch: its figures face the other way, several trumps (the Popess, the Sun, the World, the Star) carry markedly different designs, and the pack is a key witness to the family that later surfaces in the **Vandenborre / 'Tarot Flamand'** decks rather than the Marseille mainstream. It shows that c. 1650 Paris held *two* competing tarot patterns at once.\n\n## What you're looking at\n\n- **22 atouts (trumps):** 21 carry printed Roman numerals (read directly from the scans here) plus the unnumbered **Mat** (Fool).\n- **56 suit cards:** four Italian suits — **Épées** (Swords), **Deniers** (Coins), **Bâtons** (Batons), **Coupes** (Cups) — each with King, Queen, Cavalier, Valet and ten pips.\n- The even-numbered canvases of the BnF scan are the cards' **patterned backs**; only the faces are shown.\n\n## Honesty notes\n\nThe trumps are identified by their **printed numerals AND their scenes** — and the two together reveal a key feature: the Viéville follows the older **Eastern trump order**, not the later Marseille standard. Here **Justice is VII, the Chariot VIII, Strength VIIII, and the Hermit XI** — exactly the cards the Marseille (Conver) sequence reorders. This non-standard order is itself the evidence for the deck's Eastern/Belgian-leaning lineage. Suit cards are shown in **BnF folio order**; courts are identified by figure, and **pip ranks are assigned by position and may warrant correction** — corrections welcome, as everywhere in this library.\n\n## Game, not divination\n\nLike Noblet, this is a **playing-and-trick-taking** pack from a century before tarot was attached to fortune-telling; no cartomantic meaning is native to it.\n\n## Sources\n\nBnF / Gallica (ark:/12148/btv1b10510963k), public domain; Thierry Depaulis on the early Parisian cartiers; Dummett, *The Game of Tarot*.\n",
-  "grammar_type": "tarot",
-  "provenance": "record",
-  "creator_name": "PlayfulProcess",
-  "license": "CC-BY-SA-4.0",
-  "default_view": "cards",
-  "metadata": {
-    "year": 1650,
-    "tradition": "Rouen-Brussels / Belgian line (Paris, c. 1650)",
-    "branch": "belgian-line",
-    "order": "Eastern/Belgian-leaning",
-    "_celestial_note": "Viéville's Star = an astronomer with compasses; Moon = a woman with a spindle under a tree; Sun = a youth on horseback — celestial designs that diverge from the Marseille (Belgian-line). See research/cards/vieville-tarot.md.",
-    "common_name": "Jacques Viéville",
-    "category": "historical",
-    "year_label": "c. 1650"
-  },
-  "_source": "BnF / Gallica ark:/12148/btv1b10510963k — public domain.",
   "items": [
     {
       "id": "trump-01",
       "name": "I · Le Bateleur",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c01.jpg",
       "metadata": {
-        "number": "I",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-01.jpg",
           "source_px": [
             1100,
             1951
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-01.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "I",
         "trump_key": "magician",
-        "trump_number": 1
+        "source_deck": "people-of-tarot",
+        "trump_number": 1,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The mountebank at his table — the deck opens, as the Parisian pattern does, with the conjuror.",
-        "Research note": "**What changed (vs. its parent):** Substantially the same subject and position as Marseille's I; the low trumps are the most shared territory between the two patterns [@web_th_french_connection]. \n\n*Sources:* [@dummett1980], [@web_pollett_vieville], [@web_th_french_connection].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A conjurer stands at a small three-legged table, his wide-brimmed red hat shading his face. He holds a wand or baton in his right hand and gestures over the objects spread before him. The figure is compact and confident, rendered in the flat woodcut style typical of 17th-century Parisian playing cards.",
-        "Symbol": "The conjurer/magician at his table — skill and dexterity made visible, the one who commands attention by manipulating what lies in plain sight."
-      }
+        "Symbol": "The conjurer/magician at his table — skill and dexterity made visible, the one who commands attention by manipulating what lies in plain sight.",
+        "Research note": "**What changed (vs. its parent):** Substantially the same subject and position as Marseille's I; the low trumps are the most shared territory between the two patterns [@web_th_french_connection]. \n\n*Sources:* [@dummett1980], [@web_pollett_vieville], [@web_th_french_connection].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c01.jpg",
+      "sort_order": 0,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-02",
       "name": "II · La Papesse",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c02.jpg",
       "metadata": {
-        "number": "II",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-02.jpg",
           "source_px": [
             1100,
             1956
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-02.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "II",
         "trump_key": "high-priestess",
-        "trump_number": 2
+        "source_deck": "people-of-tarot",
+        "trump_number": 2,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "A seated, winged figure with the papal tiara — the Viéville's idiosyncratic Popess.",
-        "Research note": "**What changed (vs. its parent):** Same trump *role* as Marseille's Papesse, but the figure's treatment is idiosyncratic; in the later Belgian descendants this slot is replaced entirely (by the \"Spanish Captain\" in Vandenborre), so the Papesse here marks Viéville as *earlier/more conservative* than the mature Belgian pattern [@web_th_spanish_captain; @web_th_french_connection]. \n\n*Sources:* [@web_pollett_vieville], [@web_th_spanish_captain].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A winged crowned figure sits frontally, large dark wings spread behind them, reading or holding an open book. Unlike the standard seated Papesse of Marseille tradition, this figure has an angelic or supernatural quality — crown and wings together suggesting celestial authority rather than a church office.",
-        "Symbol": "Winged crowned reader — spiritual knowledge in a form that transcends institutional religion, doctrine held by one who is neither nun nor pope but something between."
-      }
+        "Symbol": "Winged crowned reader — spiritual knowledge in a form that transcends institutional religion, doctrine held by one who is neither nun nor pope but something between.",
+        "Research note": "**What changed (vs. its parent):** Same trump *role* as Marseille's Papesse, but the figure's treatment is idiosyncratic; in the later Belgian descendants this slot is replaced entirely (by the \"Spanish Captain\" in Vandenborre), so the Papesse here marks Viéville as *earlier/more conservative* than the mature Belgian pattern [@web_th_spanish_captain; @web_th_french_connection]. \n\n*Sources:* [@web_pollett_vieville], [@web_th_spanish_captain].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c02.jpg",
+      "sort_order": 1,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-03",
       "name": "III · L'Impératrice",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c03.jpg",
       "metadata": {
-        "number": "III",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-03.jpg",
           "source_px": [
             1100,
             1946
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-03.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "III",
         "trump_key": "empress",
-        "trump_number": 3
+        "source_deck": "people-of-tarot",
+        "trump_number": 3,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Enthroned with the eagle shield and a cross-staff — the Empress.",
-        "Research note": "**What changed (vs. its parent):** Broadly concordant with Marseille's Empress. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A winged empress sits enthroned, holding an imperial sceptre topped with a cross in one hand and an eagle-emblazoned shield in the other. The wings and the heraldic eagle mark her as both earthly ruler and celestial power, a figure of imperium that blends military and divine authority.",
-        "Symbol": "Winged empress with eagle-shield — sovereignty that reaches beyond earthly bounds, the union of imperial command and divine protection."
-      }
+        "Symbol": "Winged empress with eagle-shield — sovereignty that reaches beyond earthly bounds, the union of imperial command and divine protection.",
+        "Research note": "**What changed (vs. its parent):** Broadly concordant with Marseille's Empress. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c03.jpg",
+      "sort_order": 2,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-04",
       "name": "IIII · L'Empereur",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c04.jpg",
       "metadata": {
-        "number": "IIII",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-04.jpg",
           "source_px": [
             1100,
             1957
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-04.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "IIII",
         "trump_key": "emperor",
-        "trump_number": 4
+        "source_deck": "people-of-tarot",
+        "trump_number": 4,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The crowned Emperor.",
-        "Research note": "**What changed (vs. its parent):** Broadly concordant with Marseille's Emperor (replaced by \"Bacus\" in the later Belgian pattern, but not here) [@web_th_bodet]. \n\n*Sources:* [@web_pollett_vieville], [@web_th_bodet].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A bearded emperor stands in strict profile, holding an orb topped with a cross. Below him an eagle spreads its wings at the card's base, grounding the image in heraldic tradition. Unlike the frontally seated emperor of standard Marseille decks, this standing profile figure conveys active authority rather than static dominion.",
-        "Symbol": "Standing emperor in profile with orb and heraldic eagle — authority in motion, imperial command expressed through stance rather than throne."
-      }
+        "Symbol": "Standing emperor in profile with orb and heraldic eagle — authority in motion, imperial command expressed through stance rather than throne.",
+        "Research note": "**What changed (vs. its parent):** Broadly concordant with Marseille's Emperor (replaced by \"Bacus\" in the later Belgian pattern, but not here) [@web_th_bodet]. \n\n*Sources:* [@web_pollett_vieville], [@web_th_bodet].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c04.jpg",
+      "sort_order": 3,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-05",
       "name": "V · Le Pape",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c05.jpg",
       "metadata": {
-        "number": "V",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-05.jpg",
           "source_px": [
             1100,
             1971
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-05.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "V",
         "trump_key": "hierophant",
-        "trump_number": 5
+        "source_deck": "people-of-tarot",
+        "trump_number": 5,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The Pope / Hierophant.",
-        "Research note": "**What changed (vs. its parent):** Same role as Marseille's Pape; like the Papesse, this papal card survives in Viéville where the mature Belgian decks later swap it out [@web_th_french_connection; @web_th_bodet]. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "An enthroned pope sits between two decorated pillars, raising a hand in blessing. Two smaller figures kneel before him in the lower portion of the card, their heads bowed in reverence. The composition follows the standard Marseille papal model with the Viéville's characteristic woodcut economy.",
-        "Symbol": "Enthroned pope between pillars with kneeling petitioners — hierarchical spiritual authority, the transmission of sacred blessing through institutional form."
-      }
+        "Symbol": "Enthroned pope between pillars with kneeling petitioners — hierarchical spiritual authority, the transmission of sacred blessing through institutional form.",
+        "Research note": "**What changed (vs. its parent):** Same role as Marseille's Pape; like the Papesse, this papal card survives in Viéville where the mature Belgian decks later swap it out [@web_th_french_connection; @web_th_bodet]. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c05.jpg",
+      "sort_order": 4,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-06",
       "name": "VI · L'Amoureux",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c06.jpg",
       "metadata": {
-        "number": "VI",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-06.jpg",
           "source_px": [
             1100,
             1978
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-06.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "VI",
         "trump_key": "lovers",
-        "trump_number": 6
+        "source_deck": "people-of-tarot",
+        "trump_number": 6,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The Lovers, under the radiant cupid.",
-        "Research note": "**What changed (vs. its parent):** Concordant in subject with Marseille's L'Amoureux. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "Three young men stand together in close proximity, their faces turned slightly toward one another. Above them hovers a large radiant Cupid putto with wings spread, aiming downward. Unusually, there are no women in this image — the Viéville L'Amoureux depicts a homosocial trio under love's influence rather than the more common scene of a man choosing between two women.",
-        "Symbol": "Three young men under Cupid's arrow — love as a social bond and mutual pull, desire among companions rather than between suitor and beloved."
-      }
+        "Symbol": "Three young men under Cupid's arrow — love as a social bond and mutual pull, desire among companions rather than between suitor and beloved.",
+        "Research note": "**What changed (vs. its parent):** Concordant in subject with Marseille's L'Amoureux. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c06.jpg",
+      "sort_order": 5,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-07",
       "name": "VII · La Justice",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c07.jpg",
       "metadata": {
-        "number": "VII",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-07.jpg",
           "source_px": [
             1100,
             1921
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-07.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "VII",
         "trump_key": "justice",
-        "trump_number": 11
+        "source_deck": "people-of-tarot",
+        "trump_number": 11,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Justice — sword and scales — numbered VII. The Viéville keeps the older Eastern order, where Justice sits at 7, not the Marseille-standard 8.",
-        "Research note": "**What changed (vs. its parent):** **Order divergence.** Marseille places Justice at **VIII**; Viéville puts it at **VII**. The four-card virtue/Chariot/Hermit reshuffle (Justice VII, Chariot VIII, Force VIIII, Hermite XI) is a fingerprint of the non-Marseille, Bologna-derived lineage [@dummett1980; @web_th_french_connection; @web_aeclectic_vieville]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A winged crowned woman holds an upright sword in her right hand and scales in her left, Justice personified. She is placed at position VII — before the Chariot — in the Viéville ordering, an arrangement that differs from many Marseille variants and reflects an older numbering tradition.",
-        "Symbol": "Winged Justice with sword and scales at position VII — the classical equilibrium between force and measure, placed ahead of the chariot of victory."
-      }
+        "Symbol": "Winged Justice with sword and scales at position VII — the classical equilibrium between force and measure, placed ahead of the chariot of victory.",
+        "Research note": "**What changed (vs. its parent):** **Order divergence.** Marseille places Justice at **VIII**; Viéville puts it at **VII**. The four-card virtue/Chariot/Hermit reshuffle (Justice VII, Chariot VIII, Force VIIII, Hermite XI) is a fingerprint of the non-Marseille, Bologna-derived lineage [@dummett1980; @web_th_french_connection; @web_aeclectic_vieville]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c07.jpg",
+      "sort_order": 6,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-08",
       "name": "VIII · Le Chariot",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c08.jpg",
       "metadata": {
-        "number": "VIII",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-08.jpg",
           "source_px": [
             1100,
             1961
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-08.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "VIII",
         "trump_key": "chariot",
-        "trump_number": 7
+        "source_deck": "people-of-tarot",
+        "trump_number": 7,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The Chariot under its canopy, numbered VIII — the position the Marseille standard gives to Justice.",
-        "Research note": "**What changed (vs. its parent):** **Order divergence** — VIII here is the slot Marseille gives to Justice. Plus an **iconographic divergence**: the human-faced/sphinx draught animals instead of Marseille's horses [@web_aeclectic_vieville]. \n\n*Sources:* [@web_aeclectic_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A canopied baldachin structure shelters a crowned figure seated within it, while two smaller crowned figures stand or kneel below. The Viéville Le Chariot at position VIII is entirely architectural — no horses, no wheels, the throne itself serving as the vehicle of authority.",
-        "Symbol": "Canopied throne with attendant crowned figures — triumph as ceremony and shelter rather than movement, the chariot reconceived as a seat of power."
-      }
+        "Symbol": "Canopied throne with attendant crowned figures — triumph as ceremony and shelter rather than movement, the chariot reconceived as a seat of power.",
+        "Research note": "**What changed (vs. its parent):** **Order divergence** — VIII here is the slot Marseille gives to Justice. Plus an **iconographic divergence**: the human-faced/sphinx draught animals instead of Marseille's horses [@web_aeclectic_vieville]. \n\n*Sources:* [@web_aeclectic_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c08.jpg",
+      "sort_order": 7,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-09",
       "name": "VIIII · La Force",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c09.jpg",
       "metadata": {
-        "number": "VIIII",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-09.jpg",
           "source_px": [
             1100,
             1972
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-09.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "VIIII",
         "trump_key": "strength",
-        "trump_number": 8
+        "source_deck": "people-of-tarot",
+        "trump_number": 8,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Strength — the figure mastering the lion — at VIIII (9), its Eastern-order position.",
-        "Research note": "**What changed (vs. its parent):** **Order divergence.** Marseille places Strength at **XI**; Viéville at **VIIII**. (The much later Golden Dawn/RWS swap is a *different*, third re-ordering; Viéville's is the older Belgian-line arrangement, unrelated to it) [@dummett1980; @web_aeclectic_vieville]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A figure in a plumed hat grasps a lion from above, subduing it with both hands. The struggle is energetic — La Force at position IX in the Viéville uses the classical image of man dominating beast, but the plumed hat gives the figure a hunter's or soldier's aspect rather than the graceful lady of later tradition.",
-        "Symbol": "Plumed figure wrestling a lion at position IX — courage and mastery over instinct, force applied through skill rather than brute strength."
-      }
+        "Symbol": "Plumed figure wrestling a lion at position IX — courage and mastery over instinct, force applied through skill rather than brute strength.",
+        "Research note": "**What changed (vs. its parent):** **Order divergence.** Marseille places Strength at **XI**; Viéville at **VIIII**. (The much later Golden Dawn/RWS swap is a *different*, third re-ordering; Viéville's is the older Belgian-line arrangement, unrelated to it) [@dummett1980; @web_aeclectic_vieville]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c09.jpg",
+      "sort_order": 8,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-10",
       "name": "X · La Roue de Fortune",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c10.jpg",
       "metadata": {
-        "number": "X",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-10.jpg",
           "source_px": [
             1100,
             1945
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-10.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "X",
         "trump_key": "wheel-of-fortune",
-        "trump_number": 10
+        "source_deck": "people-of-tarot",
+        "trump_number": 10,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The Wheel of Fortune.",
-        "Research note": "**What changed (vs. its parent):** Concordant in position and subject with Marseille's X. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A large circular wheel mechanism fills the card, its spokes and rim clearly rendered as a spinning device. A crowned figure perches at the top, while other figures cling to the descending sides. Fortune is rendered as a literal turning wheel rather than an allegorical emblem, mechanical and inexorable.",
-        "Symbol": "The turning wheel of Fortune with crowned figure at apex — cyclical rise and fall, the mechanical inevitability of change."
-      }
+        "Symbol": "The turning wheel of Fortune with crowned figure at apex — cyclical rise and fall, the mechanical inevitability of change.",
+        "Research note": "**What changed (vs. its parent):** Concordant in position and subject with Marseille's X. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c10.jpg",
+      "sort_order": 9,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-11",
       "name": "XI · L'Hermite",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c11.jpg",
       "metadata": {
-        "number": "XI",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-11.jpg",
           "source_px": [
             1100,
             1936
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-11.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "XI",
         "trump_key": "hermit",
-        "trump_number": 9
+        "source_deck": "people-of-tarot",
+        "trump_number": 9,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The Hermit, the cloaked old man — at XI, where the Marseille standard puts Strength.",
-        "Research note": "**What changed (vs. its parent):** **Order divergence.** Marseille places the Hermit at **VIIII** and Strength at XI; Viéville reverses this (Force VIIII, Hermite XI), completing the four-card virtue reshuffle [@web_aeclectic_vieville; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A bearded man in a long robe gathers or opens a large cloak or mantle around himself, his body partly concealed in its folds. No lantern is visible — the Viéville Hermite at position XI expresses his solitude through his relationship with cloth rather than light, the gesture of wrapping suggesting concealment and revelation simultaneously.",
-        "Symbol": "Bearded figure shrouded in a cloak at position XI — solitude and self-enclosure, wisdom that protects itself from exposure rather than illuminating outward."
-      }
+        "Symbol": "Bearded figure shrouded in a cloak at position XI — solitude and self-enclosure, wisdom that protects itself from exposure rather than illuminating outward.",
+        "Research note": "**What changed (vs. its parent):** **Order divergence.** Marseille places the Hermit at **VIIII** and Strength at XI; Viéville reverses this (Force VIIII, Hermite XI), completing the four-card virtue reshuffle [@web_aeclectic_vieville; @dummett1980]. \n\n*Sources:* [@dummett1980], [@web_aeclectic_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c11.jpg",
+      "sort_order": 10,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-12",
       "name": "XII · Le Pendu",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c12.jpg",
       "metadata": {
-        "number": "XII",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-12.jpg",
           "source_px": [
             1100,
             1960
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-12.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "XII",
         "trump_key": "hanged-man",
-        "trump_number": 12
+        "source_deck": "people-of-tarot",
+        "trump_number": 12,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The Hanged Man — in the Viéville/Belgian line the figure hangs **right-side-up** (a key divergence from the Marseille, where he hangs by one ankle, inverted). [research 2026-06-13]",
-        "Research note": "**What changed (vs. its parent):** **Posture divergence.** Marseille's Pendu hangs inverted by one ankle; the Viéville figure is **upright** — one of the deck's signature departures [@web_aeclectic_vieville]. \n\n*Sources:* [@web_aeclectic_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A young figure stands upright between two tall decorated poles, feet planted firmly on the ground. In direct contrast to the inverted Hanged Man of other Marseille decks, there is no inversion here — the figure stands, not hangs. The two poles and the figure's position between them suggest suspension or liminal state without the dramatic reversal.",
-        "Symbol": "Upright figure between two poles — a Hanged Man who stands, suggesting willing pause rather than enforced reversal, suspension without inversion."
-      }
+        "Symbol": "Upright figure between two poles — a Hanged Man who stands, suggesting willing pause rather than enforced reversal, suspension without inversion.",
+        "Research note": "**What changed (vs. its parent):** **Posture divergence.** Marseille's Pendu hangs inverted by one ankle; the Viéville figure is **upright** — one of the deck's signature departures [@web_aeclectic_vieville]. \n\n*Sources:* [@web_aeclectic_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c12.jpg",
+      "sort_order": 11,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-13",
       "name": "XIII · La Mort",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c13.jpg",
       "metadata": {
-        "number": "XIII",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-13.jpg",
           "source_px": [
             1100,
             1972
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-13.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "XIII",
         "trump_key": "death",
-        "trump_number": 13
+        "source_deck": "people-of-tarot",
+        "trump_number": 13,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Death — the scything skeleton (the card itself is unnamed, as usual).",
-        "Research note": "**What changed (vs. its parent):** Concordant — unnamed Death at XIII, shared with Marseille [@dummett1980]. \n\n*Sources:* [@dummett1980], [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "An energetic skeleton moves across the field, wielding a large red scythe in a sweeping arc. From the ground beneath the blade, severed hands and limbs emerge. The skeleton's posture is dynamic, almost dancing, and the red scythe lends the image both violence and a vivid chromatic intensity unusual in cards of this period.",
-        "Symbol": "Dancing skeleton with red scythe over severed limbs — Death as relentless motion, the harvest of all things already underway."
-      }
+        "Symbol": "Dancing skeleton with red scythe over severed limbs — Death as relentless motion, the harvest of all things already underway.",
+        "Research note": "**What changed (vs. its parent):** Concordant — unnamed Death at XIII, shared with Marseille [@dummett1980]. \n\n*Sources:* [@dummett1980], [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c13.jpg",
+      "sort_order": 12,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-14",
       "name": "XIIII · Tempérance",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c14.jpg",
       "metadata": {
-        "number": "XIIII",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-14.jpg",
           "source_px": [
             1100,
             1952
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-14.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "XIIII",
         "trump_key": "temperance",
-        "trump_number": 14
+        "source_deck": "people-of-tarot",
+        "trump_number": 14,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Temperance, pouring between two vessels.",
-        "Research note": "**What changed (vs. its parent):** Concordant with Marseille's Tempérance. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A standing crowned woman holds a torch or flaming object in one hand and an ornate vessel in the other. A banner associated with the image appears to bear 'FAMA' text, linking this card to the personification of Fame or Renown. Unlike the standard two-vessel pouring of Temperance, this Viéville figure is more heraldic, her attributes transformed into emblems of proclamation.",
-        "Symbol": "Crowned woman with torch and vessel, FAMA banner — Temperance recast as the herald of fame, moderation as a public and proclaimed virtue."
-      }
+        "Symbol": "Crowned woman with torch and vessel, FAMA banner — Temperance recast as the herald of fame, moderation as a public and proclaimed virtue.",
+        "Research note": "**What changed (vs. its parent):** Concordant with Marseille's Tempérance. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c14.jpg",
+      "sort_order": 13,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-15",
       "name": "XV · Le Diable",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c15.jpg",
       "metadata": {
-        "number": "XV",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-15.jpg",
           "source_px": [
             1100,
             1949
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-15.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "XV",
         "trump_key": "devil",
-        "trump_number": 15
+        "source_deck": "people-of-tarot",
+        "trump_number": 15,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The Devil.",
-        "Research note": "**What changed (vs. its parent):** Same role/position as Marseille's XV; treatment varies but the subject is shared. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A large hairy bestial creature with green-tinged fur and broad bat wings fills the upper portion of the card, its arms clutching smaller human figures. There is no pedestal and no chained couple — the Viéville Devil is wilder and more feral than many Marseille counterparts, a creature of abduction rather than bondage.",
-        "Symbol": "Hairy winged beast carrying human figures — the Devil as creature of capture, supernatural predation without the contractual chains of later traditions."
-      }
+        "Symbol": "Hairy winged beast carrying human figures — the Devil as creature of capture, supernatural predation without the contractual chains of later traditions.",
+        "Research note": "**What changed (vs. its parent):** Same role/position as Marseille's XV; treatment varies but the subject is shared. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c15.jpg",
+      "sort_order": 14,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-16",
       "name": "XVI · La Maison-Dieu",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c16.jpg",
       "metadata": {
-        "number": "XVI",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-16.jpg",
           "source_px": [
             1100,
             1953
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-16.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "XVI",
         "trump_key": "tower",
-        "trump_number": 16
+        "source_deck": "people-of-tarot",
+        "trump_number": 16,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "La Foudre — in the Viéville pack a **tree** struck by fire/hail with a shepherd figure beneath, NOT the Marseille struck **tower** (despite the 'Maison-Dieu' label). A signature marker of the Rouen-Brussels/Belgian line. [research 2026-06-13]",
-        "Research note": "**What changed (vs. its parent):** **The signature divergence.** Marseille's XVI is *La Maison-Dieu*, a **tower struck by celestial fire**, figures tumbling. Viéville substitutes a **tree** and a **shepherd** under a rain of fire — a tree, not a tower [@web_th_rouen_bruxelles; @web_belgian_wp]. (The grammar's card text still gives the Marseille \"tower struck and falling\" reading — flagged for correction.). \n\n*Sources:* [@web_belgian_wp], [@web_th_french_connection], [@web_th_rouen_bruxelles].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A large leafy tree stands at center, struck from above by a radiant disc or sun-burst. Small coins or drops fall from the branches, and two small human figures stand at the base looking up. The Viéville does not depict a tower struck by lightning — a tree is the locus of the celestial blow, one of the deck's most distinctive iconographic substitutions.",
-        "Symbol": "Tree struck by heavenly disc, drops falling, two witnesses below — the cosmic blow falls on natural growth rather than human construction, ruin without architectural hubris."
-      }
+        "Symbol": "Tree struck by heavenly disc, drops falling, two witnesses below — the cosmic blow falls on natural growth rather than human construction, ruin without architectural hubris.",
+        "Research note": "**What changed (vs. its parent):** **The signature divergence.** Marseille's XVI is *La Maison-Dieu*, a **tower struck by celestial fire**, figures tumbling. Viéville substitutes a **tree** and a **shepherd** under a rain of fire — a tree, not a tower [@web_th_rouen_bruxelles; @web_belgian_wp]. (The grammar's card text still gives the Marseille \"tower struck and falling\" reading — flagged for correction.). \n\n*Sources:* [@web_belgian_wp], [@web_th_french_connection], [@web_th_rouen_bruxelles].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c16.jpg",
+      "sort_order": 15,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-17",
       "name": "XVII · L'Étoile",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c17.jpg",
       "metadata": {
-        "number": "XVII",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-17.jpg",
           "source_px": [
             1100,
             1982
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-17.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "XVII",
         "trump_key": "star",
-        "trump_number": 17
+        "source_deck": "people-of-tarot",
+        "trump_number": 17,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The Star.",
-        "Research note": "**What changed (vs. its parent):** **Iconographic divergence.** Marseille's Star is a **kneeling woman pouring water** from two ewers under a great star. Viéville shows instead a **standing astronomer measuring with compasses** — a learned, not a pastoral/nude, figure [@web_tarotforum_vieville_sms; @web_th_celestial]. \n\n*Sources:* [@web_tarotforum_vieville_sms], [@web_th_celestial].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A bearded scholarly man sits before a building or architectural backdrop, holding a plant branch extended toward a large central star. Small drops fall around him. The Viéville L'Étoile replaces the conventional nude woman pouring water at a riverbank with a male figure in a semi-interior setting — the star is studied, not bathed under.",
-        "Symbol": "Bearded man with plant branch reaching toward a star — the Star as an object of contemplation and study, celestial guidance mediated through learning rather than devotion."
-      }
+        "Symbol": "Bearded man with plant branch reaching toward a star — the Star as an object of contemplation and study, celestial guidance mediated through learning rather than devotion.",
+        "Research note": "**What changed (vs. its parent):** **Iconographic divergence.** Marseille's Star is a **kneeling woman pouring water** from two ewers under a great star. Viéville shows instead a **standing astronomer measuring with compasses** — a learned, not a pastoral/nude, figure [@web_tarotforum_vieville_sms; @web_th_celestial]. \n\n*Sources:* [@web_tarotforum_vieville_sms], [@web_th_celestial].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c17.jpg",
+      "sort_order": 16,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-18",
       "name": "XVIII · La Lune",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c18.jpg",
       "metadata": {
-        "number": "XVIII",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-18.jpg",
           "source_px": [
             1100,
             1951
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-18.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "XVIII",
         "trump_key": "moon",
-        "trump_number": 18
+        "source_deck": "people-of-tarot",
+        "trump_number": 18,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The Moon.",
-        "Research note": "**What changed (vs. its parent):** **Iconographic divergence.** Marseille's Moon shows two towers, two dogs/wolves baying, and a crayfish in a pool. Viéville shows a **spinning woman** — an image Tarot Heritage traces to a **Bolognese Sun card**, transferred onto the Viéville *Moon* (concrete support for the Bologna ancestry Dummett posits) [@web_th_celestial; @dummett1980]. \n\n*Sources:* [@web_tarotforum_vieville_sms], [@web_th_celestial].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A large round full-faced moon shines with radiating beams above a leafy tree. Below it, a woman sits and spins using a distaff, her domestic labor placed under the moon's watch. There are no dogs, no crayfish, no towers — the Viéville Moon is a domestic night scene, the lunation presiding over textile work and the rhythms of household time.",
-        "Symbol": "Full moon above a spinning woman and tree — the Moon as domestic timekeeper, lunation governing craft and feminine labor within the household."
-      }
+        "Symbol": "Full moon above a spinning woman and tree — the Moon as domestic timekeeper, lunation governing craft and feminine labor within the household.",
+        "Research note": "**What changed (vs. its parent):** **Iconographic divergence.** Marseille's Moon shows two towers, two dogs/wolves baying, and a crayfish in a pool. Viéville shows a **spinning woman** — an image Tarot Heritage traces to a **Bolognese Sun card**, transferred onto the Viéville *Moon* (concrete support for the Bologna ancestry Dummett posits) [@web_th_celestial; @dummett1980]. \n\n*Sources:* [@web_tarotforum_vieville_sms], [@web_th_celestial].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c18.jpg",
+      "sort_order": 17,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-19",
       "name": "XVIIII · Le Soleil",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c19.jpg",
       "metadata": {
-        "number": "XVIIII",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-19.jpg",
           "source_px": [
             1100,
             1948
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-19.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "XVIIII",
         "trump_key": "sun",
-        "trump_number": 19
+        "source_deck": "people-of-tarot",
+        "trump_number": 19,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The Sun, with figures beneath.",
-        "Research note": "**What changed (vs. its parent):** **Iconographic divergence.** Marseille's Sun shows **two children** (twins) before a wall under a rayed sun. Viéville shows a **single horseman** — a different scene entirely [@web_tarotforum_vieville_sms; @web_th_french_connection]. \n\n*Sources:* [@web_tarotforum_vieville_sms], [@web_th_french_connection].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A radiant human-faced sun shines from the upper portion of the card, its face expressive and personified. Below, a semi-nude young figure rides a horse sidesaddle, holding a red banner or flag. The Viéville Soleil is unusually dynamic — the rider on horseback with a banner suggests solar procession and triumph rather than the playful children of other traditions.",
-        "Symbol": "Human-faced sun above a banner-carrying rider — the Sun as triumphant procession, solar glory made mobile through the figure of a herald on horseback."
-      }
+        "Symbol": "Human-faced sun above a banner-carrying rider — the Sun as triumphant procession, solar glory made mobile through the figure of a herald on horseback.",
+        "Research note": "**What changed (vs. its parent):** **Iconographic divergence.** Marseille's Sun shows **two children** (twins) before a wall under a rayed sun. Viéville shows a **single horseman** — a different scene entirely [@web_tarotforum_vieville_sms; @web_th_french_connection]. \n\n*Sources:* [@web_tarotforum_vieville_sms], [@web_th_french_connection].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c19.jpg",
+      "sort_order": 18,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-20",
       "name": "XX · Le Jugement",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c20.jpg",
       "metadata": {
-        "number": "XX",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-20.jpg",
           "source_px": [
             1100,
             1929
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-20.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "XX",
         "trump_key": "judgement",
-        "trump_number": 20
+        "source_deck": "people-of-tarot",
+        "trump_number": 20,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The Judgement — the angel and the rising dead.",
-        "Research note": "**What changed (vs. its parent):** Broadly concordant with Marseille's Jugement in subject. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A chubby putto sits in the clouds playing a lute, its small wings spread. Below, two bearded men kneel on the ground, looking upward toward the musical angel. The Viéville Jugement replaces the traditional trumpet-blowing angel with a lute-playing cherub — music rather than apocalypse, intimate rather than eschatological.",
-        "Symbol": "Lute-playing putto above two kneeling men — the call to awakening sounded in music rather than a trumpet blast, the divine summons as melody."
-      }
+        "Symbol": "Lute-playing putto above two kneeling men — the call to awakening sounded in music rather than a trumpet blast, the divine summons as melody.",
+        "Research note": "**What changed (vs. its parent):** Broadly concordant with Marseille's Jugement in subject. \n\n*Sources:* [@web_pollett_vieville].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c20.jpg",
+      "sort_order": 19,
+      "grammar_type": "custom"
     },
     {
       "id": "trump-21",
       "name": "XXI · Le Monde",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c21.jpg",
       "metadata": {
-        "number": "XXI",
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-21.jpg",
           "source_px": [
             1100,
             1906
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-21.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
+        "number": "XXI",
         "trump_key": "world",
-        "trump_number": 21
+        "source_deck": "people-of-tarot",
+        "trump_number": 21,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The World.",
-        "Research note": "**What changed (vs. its parent):** **Iconographic divergence.** Marseille's World is a **dancing figure in a mandorla/wreath, ringed by the four living creatures** (man, lion, ox, eagle). The Viéville/Belgian-line World departs from this composition (the grammar records only \"The World\" and should be expanded once the BnF scan is described in detail) [@web_aeclectic_vieville; @web_th_french_connection]. \n\n*Sources:* [@web_aeclectic_vieville], [@web_th_french_connection].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md).",
         "Scene": "A haloed central figure stands within a wreath of laurel, arms slightly spread. In the upper corners, two winged angels hover. In the lower corners, a lion appears at left and a bull or ox at lower right — two of the four evangelist symbols framing the mandorla of the World figure.",
-        "Symbol": "Haloed World figure in laurel wreath, angel and beast guardians at corners — completion and cosmos, the animate world held within its symbolic frame."
-      }
+        "Symbol": "Haloed World figure in laurel wreath, angel and beast guardians at corners — completion and cosmos, the animate world held within its symbolic frame.",
+        "Research note": "**What changed (vs. its parent):** **Iconographic divergence.** Marseille's World is a **dancing figure in a mandorla/wreath, ringed by the four living creatures** (man, lion, ox, eagle). The Viéville/Belgian-line World departs from this composition (the grammar records only \"The World\" and should be expanded once the BnF scan is described in detail) [@web_aeclectic_vieville; @web_th_french_connection]. \n\n*Sources:* [@web_aeclectic_vieville], [@web_th_french_connection].\n\n*Full card-by-card research:* [research/cards/vieville-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/vieville-tarot.md)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c21.jpg",
+      "sort_order": 20,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-22",
       "name": "Roi de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c22.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-22.jpg",
           "source_px": [
             1100,
             1958
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-22.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Roi of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "An armored king sits on a low decorated pedestal, wearing a large wide-brimmed hat with a golden crown topping it. His dark purple cape falls over blue-gray plate armor with red accents and gold decorative buckles at the waist. A long sword extends diagonally to his right, blade tall. Small foliage marks the base.",
         "Symbol": "Armored Sword King in brimmed crown — authority expressed through military bearing, the king who wears war's regalia even in repose."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c22.jpg",
+      "sort_order": 21,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-23",
       "name": "Reine de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c23.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-23.jpg",
           "source_px": [
             1100,
             1970
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-23.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Reine of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "A crowned queen sits on a golden throne with curved armrests. Her long red gown is overlaid with a dark purple-black mantle, and her fair hair falls loose beneath the crown. She holds a long vertical sword at her right side, blade pointing upward. Her expression is composed and frontal.",
         "Symbol": "Sword Queen enthroned with vertical blade — composed judgment, the queen who holds the sword upright as principle rather than as threat."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c23.jpg",
+      "sort_order": 22,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-24",
       "name": "Cavalier de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c24.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-24.jpg",
           "source_px": [
             1100,
             1981
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-24.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Cavalier of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "An armored knight rides a tan horse with red decorative caparison and red bridle. He wears a golden helmet and holds a long diagonal sword over his shoulder, blade angling upward. The horse's hooves and the rider's posture convey controlled forward motion. Decorative flowers appear at the card's base.",
         "Symbol": "Sword Knight on caparisoned horse — swift decisive action, the mounted emissary of the suit's cutting clarity."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c24.jpg",
+      "sort_order": 23,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-25",
       "name": "Valet de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c25.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-25.jpg",
           "source_px": [
             1100,
             1979
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-25.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Valet of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "A young standing figure wears a flat red beret with a small gold ornament and a colorful doublet in red, purple, and gold. He holds one sword by the hilt in his left hand, the blade angling diagonally across his body. His right hand rests at his belt. Ground-level foliage frames his feet.",
         "Symbol": "Sword Valet in colorful doublet — youthful readiness, the page who carries the blade but has not yet swung it."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c25.jpg",
+      "sort_order": 24,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-26",
       "name": "Dix de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c26.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-26.jpg",
           "source_px": [
             1100,
             1933
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-26.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Dix of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "A single large sword is gripped at its decorated hilt in the lower portion of the card, its long blade rising diagonally. Red oval and teardrop shapes are scattered around the blade, suggesting falling drops or scattered sparks. The ten of swords is reduced to one dominant blade rather than an array of ten.",
         "Symbol": "One large sword with scattered red drops — the ten rendered as concentrated force, maximum sword energy compressed into a single point of impact."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c26.jpg",
+      "sort_order": 25,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-27",
       "name": "Neuf de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c27.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-27.jpg",
           "source_px": [
             1100,
             1983
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-27.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Neuf of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "Nine sword blades are arranged in the Marseille convention, their hilts and tips distributed in a pattern of crossed and parallel arrangements. Red and gold accents at the hilts break the gray of the blades. Decorative foliage or small floral elements fill the interstices.",
         "Symbol": "Nine swords in arranged field — accumulation near the limit, the suit approaching its fullest expression before the final dispersal."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c27.jpg",
+      "sort_order": 26,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-28",
       "name": "Huit de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c28.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-28.jpg",
           "source_px": [
             1100,
             1967
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-28.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Huit of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "Eight sword blades are distributed in a symmetrical interlace pattern typical of Viéville pip cards. The hilts carry red and gold detailing, and the overall arrangement is dense and geometric. Small decorative elements appear at the card's margins.",
         "Symbol": "Eight swords in geometric interlace — ordered complexity, the suit's energy structured through bilateral symmetry."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c28.jpg",
+      "sort_order": 27,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-29",
       "name": "Sept de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c29.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-29.jpg",
           "source_px": [
             1100,
             1954
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-29.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Sept of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "Seven sword blades are arranged in an asymmetric but balanced formation. The central blade is typically longer or more prominent. Red and gold hilt details and small foliage elements complete the composition in the Viéville's characteristic palette.",
         "Symbol": "Seven swords in asymmetric arrangement — active imbalance, the suit's tension expressed in an arrangement that leans without falling."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c29.jpg",
+      "sort_order": 28,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-30",
       "name": "Six de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c30.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-30.jpg",
           "source_px": [
             1100,
             1943
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-30.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Six of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "Six sword blades are distributed in two trios or a three-by-two arrangement, their hilts marked with red and gold. The design is more open than the higher pip numbers, with decorative elements given more space between the blades.",
         "Symbol": "Six swords in balanced pairs — equilibrium within the suit, the mid-range where competing blades hold each other in check."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c30.jpg",
+      "sort_order": 29,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-31",
       "name": "Cinq de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c31.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-31.jpg",
           "source_px": [
             1100,
             1945
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-31.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Cinq of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "Five sword blades are arranged with one at center and two flanking each side. The Viéville five of swords carries a slight imbalance to its composition, the central blade asserting dominance over the flanking pairs. Red and gold hilt details animate the gray blades.",
         "Symbol": "Five swords with prominent center blade — contested arrangement, the suit's tension concentrated in the odd number that resists easy pairing."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c31.jpg",
+      "sort_order": 30,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-32",
       "name": "Quatre de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c32.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-32.jpg",
           "source_px": [
             1100,
             1976
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-32.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Quatre of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "Four sword blades are arranged in a cross or square pattern, their hilts meeting toward the center. The composition is more spacious than the higher numbers, each blade given room. Red and gold accents at guard and pommel mark the Viéville style.",
         "Symbol": "Four swords in cross arrangement — stable structure within the suit, the four-fold symmetry that suggests rest or strategic positioning."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c32.jpg",
+      "sort_order": 31,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-33",
       "name": "Trois de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c33.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-33.jpg",
           "source_px": [
             1100,
             1973
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-33.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Trois of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "Three sword blades cross at or near the card's center, their hilts at three corners. The crossing of three blades creates a focal point of intersection. Small decorative elements in red and gold animate the spaces between.",
         "Symbol": "Three swords at central crossing — the minimal conflict of the suit, three blades whose meeting point defines both tension and resolution."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c33.jpg",
+      "sort_order": 32,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-34",
       "name": "Deux de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c34.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-34.jpg",
           "source_px": [
             1100,
             1881
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-34.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Deux of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "Two sword blades cross in an X formation at the card's center. Red and gold hilt details mark each blade's end. Small decorative elements fill the four quadrants formed by the crossing, this being the most elemental pip image of the suit.",
         "Symbol": "Two swords crossed in X — the primal opposition, conflict and exchange reduced to its simplest visible form."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c34.jpg",
+      "sort_order": 33,
+      "grammar_type": "custom"
     },
     {
       "id": "epees-35",
       "name": "As de Épées",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c35.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Swords",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-35.jpg",
           "source_px": [
             1100,
             1939
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-35.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "As of Swords, from the Viéville pack (BnF folio order).",
         "Scene": "Two swords cross in a starburst arrangement at the card's center, forming a dominant diamond shape with decorative elements radiating outward and small shapes scattered at the margins. The Viéville ace of swords is bold and heraldic, the suit's essential force concentrated in its most elemental emblem.",
         "Symbol": "Crowned sword ace with radiating energy — the undivided force of the suit, the blade before it divides into conflict or purpose."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c35.jpg",
+      "sort_order": 34,
+      "grammar_type": "custom"
     },
     {
       "id": "suit-epees",
       "name": "Épées · Swords",
-      "level": 3,
+      "level": 2,
       "category": "axis",
+      "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
+        "source_deck": "people-of-tarot",
+        "source_item_id": "person-jacques-vieville"
+      },
+      "sections": {
+        "Scene": "The suit of Épées (Swords) in the Viéville Tarot spans fourteen ranks from Roi to As. The court figures follow standard Marseille conventions — seated king, enthroned queen, mounted knight, standing valet — while the pip cards arrange silver-gray blades in symmetrical formations characteristic of the 17th-century Parisian woodcut tradition.",
+        "Symbol": "Swords as the suit of thought, conflict, and discernment — mental clarity and its shadow, the blade that cuts clean and the blade that wounds.",
+        "Render As": "pill-group",
+        "What it is": "The Épées (Swords) suit — King, Queen, Cavalier, Valet and ten pips."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c22.jpg",
       "render_as": "pill-group",
+      "sort_order": 35,
       "composite_of": [
         "epees-22",
         "epees-23",
@@ -1050,402 +1114,433 @@
         "epees-34",
         "epees-35"
       ],
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c22.jpg",
-      "sections": {
-        "What it is": "The Épées (Swords) suit — King, Queen, Cavalier, Valet and ten pips.",
-        "Scene": "The suit of Épées (Swords) in the Viéville Tarot spans fourteen ranks from Roi to As. The court figures follow standard Marseille conventions — seated king, enthroned queen, mounted knight, standing valet — while the pip cards arrange silver-gray blades in symmetrical formations characteristic of the 17th-century Parisian woodcut tradition.",
-        "Symbol": "Swords as the suit of thought, conflict, and discernment — mental clarity and its shadow, the blade that cuts clean and the blade that wounds."
-      },
-      "metadata": {
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
-      }
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-36",
       "name": "Roi de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c36.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-36.jpg",
           "source_px": [
             1100,
             1962
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-36.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Roi of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "A large golden coin fills the center of the card, bearing an ornate cross-and-clover design within a ring of alternating red and gold triangular rays. Above and below the coin, several lines of old French verse are inscribed in bold medieval lettering, beginning 'PERE SAINCT EAIT MOYVVRTICE DE CE...' and ending with references to the Pope, Papesse, Emperor, and Sun. This is one of the most textually unusual cards in the deck.",
         "Symbol": "Inscribed golden coin with verse — the king of coins as proclamation, a monetary emblem surrounded by rhetoric of public fame and civic cry."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c36.jpg",
+      "sort_order": 36,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-37",
       "name": "Reine de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c37.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-37.jpg",
           "source_px": [
             1100,
             1989
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-37.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Reine of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "A large S-shaped scroll or ribbon curves vertically through the card, its golden body bearing the maker's inscription 'IACQUE VIEVIL A PARIS.' Two small coin circles are embedded in the upper and lower loops of the S. Decorative elements — arrows, vines, or scrollwork — appear at the sides. This is the Viéville deck's remarkable self-identification card.",
         "Symbol": "Maker's S-scroll with 'IACQUE VIEVIL A PARIS' — the queen of coins as the artisan's signature, identity and ownership inscribed within the suit of wealth."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c37.jpg",
+      "sort_order": 37,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-38",
       "name": "Cavalier de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c38.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-38.jpg",
           "source_px": [
             1100,
             1946
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-38.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Cavalier of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "Three golden starburst coins are arranged among dense interlacing red and gold vine-and-leaf foliage. The coins' surfaces bear radiating petal or ray designs. The entire composition is lush and ornamental, the three deniers nested within elaborate botanical surround.",
         "Symbol": "Three coins in leafy interlace — abundance in motion, wealth embedded in natural growth and organic pattern."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c38.jpg",
+      "sort_order": 38,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-39",
       "name": "Valet de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c39.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-39.jpg",
           "source_px": [
             1100,
             1923
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-39.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Valet of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "Eight elongated cylindrical objects in red are arranged in two overlapping diamond or oval crosshatch formations, creating a dense geometric pattern. The composition is abstract and heraldic rather than figurative, unusual for a court card. The Viéville valet de deniers expresses rank through pattern rather than person.",
         "Symbol": "Eight crossed rods in diamond formation — the valet of coins as structural pattern, rank expressed through arrangement rather than figured image."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c39.jpg",
+      "sort_order": 39,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-40",
       "name": "Dix de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c40.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-40.jpg",
           "source_px": [
             1100,
             1944
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-40.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Dix of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "Ten golden starburst coins are arranged in a symmetrical pattern across the card. Interlacing red and gold vine elements fill the spaces between the coins, typical of the suit's ornamental pip treatment. The ten-coin card represents the suit at its fullest extension.",
         "Symbol": "Ten coins in full symmetrical field — the suit at its most abundant, the completed measure of worldly wealth."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c40.jpg",
+      "sort_order": 40,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-41",
       "name": "Neuf de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c41.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-41.jpg",
           "source_px": [
             1100,
             1978
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-41.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Neuf of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "Nine golden starburst coins are distributed across the card in the Viéville Marseille convention, balanced across upper and lower halves. Red and gold vine elements complete the interstices. The nine-coin card is rich and dense without yet reaching the fullness of the ten.",
         "Symbol": "Nine coins approaching fullness — material near-completion, the suit one step from its fulfilled expression."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c41.jpg",
+      "sort_order": 41,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-42",
       "name": "Huit de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c42.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-42.jpg",
           "source_px": [
             1100,
             1951
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-42.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Huit of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "Eight golden coins are arranged in two rows of four or in a symmetrical interlocking pattern. The Viéville eight of coins has the balance and geometric elegance common to the suit's mid-range pips, the starburst coins evenly spaced among vine-and-leaf ornaments.",
         "Symbol": "Eight coins in balanced rows — measured accumulation, the suit in its stable middle register."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c42.jpg",
+      "sort_order": 42,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-43",
       "name": "Sept de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c43.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-43.jpg",
           "source_px": [
             1100,
             1982
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-43.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Sept of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "Seven golden starburst coins are distributed in an asymmetric but visually weighted arrangement. Red and gold decorative elements animate the spaces between the coins in the Viéville ornamental tradition. The seven-coin card has a quality of active rather than settled accumulation.",
         "Symbol": "Seven coins in weighted asymmetry — wealth accumulating without yet settling into pattern, the suit at a point of active imbalance."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c43.jpg",
+      "sort_order": 43,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-44",
       "name": "Six de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c44.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-44.jpg",
           "source_px": [
             1100,
             1857
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-44.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Six of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "Six golden starburst coins are arranged in two trios or a two-by-three grid, with ample space between them for the vine-and-leaf ornaments characteristic of the Viéville coins suit. The six-coin card is orderly and readable, the suit's ornamental vocabulary given room to breathe.",
         "Symbol": "Six coins in open arrangement — balanced exchange, the suit at its most transparent and equitable mid-point."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c44.jpg",
+      "sort_order": 44,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-45",
       "name": "Cinq de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c45.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-45.jpg",
           "source_px": [
             1100,
             1898
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-45.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Cinq of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "Five golden coins are placed with a central coin surrounded by four others, or in a cross formation. The Viéville five of coins uses the same starburst coin design as the rest of the suit, set against the characteristic red and gold ornamental interlace filling the card's field.",
         "Symbol": "Five coins with central emphasis — the suit's odd-number instability, the central coin marking a question of distribution or loss."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c45.jpg",
+      "sort_order": 45,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-46",
       "name": "Quatre de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c46.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-46.jpg",
           "source_px": [
             1100,
             1955
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-46.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Quatre of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "Four golden starburst coins are arranged in a square or two-by-two pattern. The spacious composition of the four-coin card leaves room for elaborate vine-and-leaf ornaments in the Viéville manner, giving the card a calm, architectural quality.",
         "Symbol": "Four coins in square arrangement — stability and foundation, the suit's four-fold structure as a platform for material security."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c46.jpg",
+      "sort_order": 46,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-47",
       "name": "Trois de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c47.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-47.jpg",
           "source_px": [
             1100,
             1961
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-47.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Trois of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "Three golden starburst coins are placed at three corners of an implied triangle, connected by red vine stems. The Viéville three of coins has a triangular tension that the rest of the suit lacks — three coins in active relation suggesting relationship and dynamic rather than static accumulation.",
         "Symbol": "Three coins in triangular field — the beginning of organized pattern within the suit, three points of wealth in active relation."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c47.jpg",
+      "sort_order": 47,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-48",
       "name": "Deux de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c48.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-48.jpg",
           "source_px": [
             1100,
             1922
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-48.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Deux of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "Two golden coins are placed at upper and lower portions of the card, flanked by ornamental vine work. The Viéville two of coins holds the suit's primal duality — two starburst discs in vertical correspondence, the simplest expression of exchange and balance.",
         "Symbol": "Two coins in vertical arrangement — the primal duality of the suit, exchange and balance between two equal points."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c48.jpg",
+      "sort_order": 48,
+      "grammar_type": "custom"
     },
     {
       "id": "deniers-49",
       "name": "As de Deniers",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c49.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Coins",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-49.jpg",
           "source_px": [
             1100,
             1988
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-49.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "As of Coins, from the Viéville pack (BnF folio order).",
         "Scene": "A single large golden coin occupies the card's center, its starburst or sunflower-ray design rendered with particular care. Ornamental elements surround it, giving this ace an emblem-like quality — both the seed of the suit and its essential visual statement.",
         "Symbol": "One coin as emblem — the undivided potential of the suit, material force held in its most concentrated and generative form."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c49.jpg",
+      "sort_order": 49,
+      "grammar_type": "custom"
     },
     {
       "id": "suit-deniers",
       "name": "Deniers · Coins",
-      "level": 3,
+      "level": 2,
       "category": "axis",
+      "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
+        "source_deck": "people-of-tarot",
+        "source_item_id": "person-jacques-vieville"
+      },
+      "sections": {
+        "Scene": "The suit of Deniers (Coins) in the Viéville Tarot is among the most textually and iconographically distinctive in the surviving Marseille tradition. The Roi de Deniers bears a verse inscription, the Reine carries the maker's S-scroll 'IACQUE VIEVIL A PARIS,' and the pip cards display golden starburst coins in ornate red-and-gold vine interlace throughout.",
+        "Symbol": "Coins as the suit of material wealth, craft, and earthly value — here uniquely marked by the maker's own signature, embedding the artisan's identity within the suit of tangible worth.",
+        "Render As": "pill-group",
+        "What it is": "The Deniers (Coins) suit — King, Queen, Cavalier, Valet and ten pips."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c36.jpg",
       "render_as": "pill-group",
+      "sort_order": 50,
       "composite_of": [
         "deniers-36",
         "deniers-37",
@@ -1462,402 +1557,433 @@
         "deniers-48",
         "deniers-49"
       ],
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c36.jpg",
-      "sections": {
-        "What it is": "The Deniers (Coins) suit — King, Queen, Cavalier, Valet and ten pips.",
-        "Scene": "The suit of Deniers (Coins) in the Viéville Tarot is among the most textually and iconographically distinctive in the surviving Marseille tradition. The Roi de Deniers bears a verse inscription, the Reine carries the maker's S-scroll 'IACQUE VIEVIL A PARIS,' and the pip cards display golden starburst coins in ornate red-and-gold vine interlace throughout.",
-        "Symbol": "Coins as the suit of material wealth, craft, and earthly value — here uniquely marked by the maker's own signature, embedding the artisan's identity within the suit of tangible worth."
-      },
-      "metadata": {
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
-      }
+      "grammar_type": "custom"
     },
     {
       "id": "batons-50",
       "name": "Roi de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c50.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-50.jpg",
           "source_px": [
             1100,
             1922
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-50.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Roi of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "A standing figure in a broad-brimmed hat with gold-and-red doublet and red hose holds up a single large golden coin in his raised right hand. A second coin lies at his feet on the grassy ground. The figure is depicted frontally without a throne, his standing posture and coins distinguishing this unusual Viéville king from the typically enthroned Roi of other Marseille decks.",
         "Symbol": "Standing king holding coin aloft — the king of batons as merchant-king or herald-king, authority expressed through display and offering rather than enthroned command."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c50.jpg",
+      "sort_order": 51,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-51",
       "name": "Reine de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c51.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-51.jpg",
           "source_px": [
             1100,
             1934
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-51.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Reine of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "A bearded man in profile strides forward, a feathered cap on his head. Three red batons are slung diagonally across his back and chest. A small dog follows at his left heel, and a bundle or sack is visible at his back. The Viéville Reine de Bâtons is depicted as a wandering figure in motion rather than a court figure in repose.",
         "Symbol": "Striding man with batons and dog — the queen of batons as journeying figure, the suit's rank embodied in motion, companionship, and the road."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c51.jpg",
+      "sort_order": 52,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-52",
       "name": "Cavalier de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c52.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-52.jpg",
           "source_px": [
             1100,
             1955
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-52.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Cavalier of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "Eight elongated blue-gray baton shafts, each marked with red oval nodes, are arranged in two overlapping diamond formations creating a complex crosshatch pattern. Gold foliage and small blue flowers occupy the spaces between the batons. The cavalier of batons is rendered as pure geometric ornament rather than figured scene.",
         "Symbol": "Eight batons in diamond crosshatch — the cavalier of batons as woven pattern, movement and complexity encoded in interlace rather than figure."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c52.jpg",
+      "sort_order": 53,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-53",
       "name": "Valet de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c53.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-53.jpg",
           "source_px": [
             1100,
             1944
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-53.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Valet of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "Nine blue-gray or gray baton shafts with red oval nodes and gold finials radiate outward from intersecting crossing points. Red acanthus or vine bands cross the shafts at nodes, and gold leaf motifs fill the spaces. The composition approaches the density of the ten while retaining visual distinction for each shaft.",
         "Symbol": "Nine batons in radiating pattern — the valet of batons as near-fullness, the suit's energy approaching but not yet achieving its complete dispersal."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c53.jpg",
+      "sort_order": 54,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-54",
       "name": "Dix de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c54.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-54.jpg",
           "source_px": [
             1100,
             1934
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-54.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Dix of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "Ten red baton shafts are arranged in the dense interlocking pattern typical of the Viéville batons suit, their cylindrical forms overlapping and crossing. Gold and red ornamental elements fill the interstices. The ten of batons is the most crowded of the suit's pip cards, a testament to accumulated energy reaching its limit.",
         "Symbol": "Ten batons in dense interlace — the suit at its most burdensome fullness, the maximum of baton energy accumulated in a single field."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c54.jpg",
+      "sort_order": 55,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-55",
       "name": "Neuf de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c55.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-55.jpg",
           "source_px": [
             1100,
             1931
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-55.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Neuf of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "Nine red baton shafts are distributed in a crossing arrangement with decorative foliage between them. The nine of batons approaches the density of the ten but retains slightly more breathing room, the arrangement active and near its peak. Red and gold animate the design.",
         "Symbol": "Nine batons approaching density — energy near its peak, the suit gathering toward its final expression."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c55.jpg",
+      "sort_order": 56,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-56",
       "name": "Huit de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c56.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-56.jpg",
           "source_px": [
             1100,
             1951
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-56.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Huit of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "Eight red baton shafts cross in two groups of four, creating interlocking X shapes with ornamental elements between. The geometric clarity of the eight-fold arrangement gives this card a symmetrical, organized quality. Gold and decorative details mark the nodes.",
         "Symbol": "Eight batons in double-cross symmetry — the suit in its structured middle register, force organized through geometric pattern."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c56.jpg",
+      "sort_order": 57,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-57",
       "name": "Sept de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c57.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-57.jpg",
           "source_px": [
             1100,
             1972
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-57.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Sept of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "Seven red baton shafts are arranged in a slightly asymmetric pattern, with one typically dominant over the others. The Viéville seven of batons has the characteristic tension of odd-number cards, the visual imbalance suggesting active engagement rather than settled arrangement.",
         "Symbol": "Seven batons in active imbalance — the suit in creative tension, the odd number that forces engagement rather than rest."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c57.jpg",
+      "sort_order": 58,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-58",
       "name": "Six de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c58.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-58.jpg",
           "source_px": [
             1100,
             1948
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-58.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Six of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "Six red baton shafts are arranged in two groups of three or in a symmetrical pattern with open spacing. The mid-range six of batons has a quality of equilibrium, the suit's energy at a point of potential balance, the red cylinders spaced with room for decorative elements to show.",
         "Symbol": "Six batons in balanced arrangement — the suit at equilibrium, fire and growth in a moment of stable correspondence."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c58.jpg",
+      "sort_order": 59,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-59",
       "name": "Cinq de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c59.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-59.jpg",
           "source_px": [
             1100,
             1967
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-59.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Cinq of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "Five red baton shafts are arranged with a central dominant baton and two flanking each side. The five of batons carries the suit's characteristic vitality, the five-fold arrangement suggesting encounter or contest between multiple active forces. Gold decorative elements fill the card.",
         "Symbol": "Five batons with central dominance — contest and vitality, the suit at its most actively contested and energetic point."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c59.jpg",
+      "sort_order": 60,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-60",
       "name": "Quatre de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c60.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-60.jpg",
           "source_px": [
             1100,
             1979
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-60.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Quatre of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "Four red baton shafts are arranged in a square or cross pattern, their cylindrical forms clearly spaced. The four of batons is among the more open pip cards of the suit, the arrangement stable and grounded. Gold and red decorative elements fill the generous spaces between.",
         "Symbol": "Four batons in square or cross — the suit in its most stable four-fold expression, a foundation of energy rather than a burst of it."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c60.jpg",
+      "sort_order": 61,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-61",
       "name": "Trois de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c61.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-61.jpg",
           "source_px": [
             1100,
             1928
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-61.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Trois of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "Three red baton shafts are arranged at three points, their placement suggesting a triangle of force. The Viéville three of batons has a dynamic triangular quality, the three cylinders in active relation with ornamental elements occupying the spaces between them.",
         "Symbol": "Three batons in triangular relation — the beginning of organized force, three points of energy defining direction and momentum."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c61.jpg",
+      "sort_order": 62,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-62",
       "name": "Deux de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c62.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-62.jpg",
           "source_px": [
             1100,
             1975
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-62.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Deux of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "Two red baton shafts cross or stand in parallel relation in the card's field, flanked by ornamental elements. The two of batons is the suit's primal crossing or pairing — two forces in initial relation, the minimal expression of active energy.",
         "Symbol": "Two batons in primary crossing — the first meeting of forces, the suit's energy at its most elemental dyadic form."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c62.jpg",
+      "sort_order": 63,
+      "grammar_type": "custom"
     },
     {
       "id": "batons-63",
       "name": "As de Bâtons",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c63.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Batons",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-63.jpg",
           "source_px": [
             1100,
             1980
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-63.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "As of Batons, from the Viéville pack (BnF folio order).",
         "Scene": "A single large red baton shaft dominates the card, its cylindrical form rising from base to tip with ornamental elements framing it on either side. The Viéville ace of batons is bold and direct, the suit's fundamental energy expressed in one concentrated emblem.",
         "Symbol": "One baton as emblem — the undivided fire and creative force of the suit, energy before it divides into contest or purpose."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c63.jpg",
+      "sort_order": 64,
+      "grammar_type": "custom"
     },
     {
       "id": "suit-batons",
       "name": "Bâtons · Batons",
-      "level": 3,
+      "level": 2,
       "category": "axis",
+      "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
+        "source_deck": "people-of-tarot",
+        "source_item_id": "person-jacques-vieville"
+      },
+      "sections": {
+        "Scene": "The suit of Bâtons (Batons) in the Viéville Tarot is rendered in deep red for the baton shafts, with gold and blue-gray ornamental interlace throughout the pip cards. The court figures are iconographically unusual — a standing man holding coins serves as king, a striding man with dog as queen — while the pip cards arrange red cylindrical batons in dense crossing formations.",
+        "Symbol": "Batons as the suit of fire, growth, and creative will — here rendered in bold red cylinders that suggest both the peasant's staff and the wand of creative authority.",
+        "Render As": "pill-group",
+        "What it is": "The Bâtons (Batons) suit — King, Queen, Cavalier, Valet and ten pips."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c50.jpg",
       "render_as": "pill-group",
+      "sort_order": 65,
       "composite_of": [
         "batons-50",
         "batons-51",
@@ -1874,402 +2000,433 @@
         "batons-62",
         "batons-63"
       ],
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c50.jpg",
-      "sections": {
-        "What it is": "The Bâtons (Batons) suit — King, Queen, Cavalier, Valet and ten pips.",
-        "Scene": "The suit of Bâtons (Batons) in the Viéville Tarot is rendered in deep red for the baton shafts, with gold and blue-gray ornamental interlace throughout the pip cards. The court figures are iconographically unusual — a standing man holding coins serves as king, a striding man with dog as queen — while the pip cards arrange red cylindrical batons in dense crossing formations.",
-        "Symbol": "Batons as the suit of fire, growth, and creative will — here rendered in bold red cylinders that suggest both the peasant's staff and the wand of creative authority."
-      },
-      "metadata": {
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
-      }
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-64",
       "name": "Roi de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c64.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-64.jpg",
           "source_px": [
             1100,
             1992
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-64.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Roi of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "An elaborate architectural chalice or grail rises from a stepped and decorated base, its rounded bowl richly ornamented with crosshatch patterns and a central motif. From the rim of the cup rise multiple turret-like or candle-like forms in alternating blue-gray and gold, giving the vessel a castle-like quality. The Viéville king of cups is one of the most elaborate objects in the suit.",
         "Symbol": "Castle-chalice with multiple turrets — the king of cups as architectural vessel, emotional authority rendered as a structure both contained and towering."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c64.jpg",
+      "sort_order": 66,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-65",
       "name": "Reine de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c65.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-65.jpg",
           "source_px": [
             1100,
             2013
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-65.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Reine of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "Three golden cups with rounded lower bodies are arranged on vine stems, the upper portions of two side cups bearing dragon or animal-head forms. Below the cups, a verse is inscribed in bold old French lettering referencing the moon, the stars, lightning, force, hanging, and the devil. The Viéville queen of cups carries a cryptic narrative text alongside its three cups.",
         "Symbol": "Three cups with dragon heads and verse inscription — the queen of cups as a card that speaks, the emotional suit's feminine rank carrying the deck's riddling voice."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c65.jpg",
+      "sort_order": 67,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-66",
       "name": "Cavalier de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c66.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-66.jpg",
           "source_px": [
             1100,
             1989
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-66.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Cavalier of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "Three golden cups with fluted lower bowls and rounded upper forms are arranged among dense interlacing red and gold foliage. The cups' interiors show red and their exteriors are gold with detailed surface patterning. The cavalier of cups is rendered as a lush botanical arrangement of cups nested in ornamental vines.",
         "Symbol": "Three cups in leafy interlace — the cavalier of cups as abundance in motion, emotional generosity embedded in living ornament."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c66.jpg",
+      "sort_order": 68,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-67",
       "name": "Valet de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c67.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-67.jpg",
           "source_px": [
             1100,
             2035
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-67.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Valet of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "A young figure in a red-and-gold plumed cap stands facing left, holding a large tall baton or lance at his left side while his right arm is raised or gesturing. The card is labeled Valet de Coupes but depicts a figure whose visible attribute is a baton rather than a cup — one of the Viéville deck's characteristic iconographic crossings between suits.",
         "Symbol": "Valet of cups with baton — the page at the threshold between suits, youth in possession of an attribute that crosses the boundary between water and fire."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c67.jpg",
+      "sort_order": 69,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-68",
       "name": "Dix de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c68.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-68.jpg",
           "source_px": [
             1100,
             1926
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-68.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Dix of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "Ten golden cups are arranged across the card in the Viéville pip convention, their fluted forms distributed in a symmetric pattern. The suit's characteristic ornamental foliage fills the spaces between the cups. The ten of cups marks the suit's fullness, all cups present in a completed field.",
         "Symbol": "Ten cups in full field — emotional completion, the suit at its most abundant and encompassing expression."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c68.jpg",
+      "sort_order": 70,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-69",
       "name": "Neuf de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c69.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-69.jpg",
           "source_px": [
             1100,
             1966
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-69.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Neuf of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "Nine golden cups are distributed across the card, approaching the density and fullness of the ten but retaining slightly more visual breathing room. Red and gold vine ornaments fill the interstices. The nine of cups carries a quality of near-satisfaction, the suit almost complete.",
         "Symbol": "Nine cups approaching fullness — emotional near-fulfillment, the suit one step from its final expression."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c69.jpg",
+      "sort_order": 71,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-70",
       "name": "Huit de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c70.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-70.jpg",
           "source_px": [
             1100,
             1973
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-70.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Huit of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "Eight golden cups are arranged in two groups of four or in a symmetrical pattern across the card. The Viéville eight of cups has the geometric balance characteristic of the suit's mid-range pips, the fluted cup forms evenly distributed with ornamental elements between them.",
         "Symbol": "Eight cups in balanced arrangement — emotional equilibrium at the suit's stable middle point, cups in structured correspondence."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c70.jpg",
+      "sort_order": 72,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-71",
       "name": "Sept de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c71.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-71.jpg",
           "source_px": [
             1100,
             1959
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-71.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Sept of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "Seven golden cups are distributed in an asymmetric but visually weighted arrangement. The Viéville seven of cups carries the slight imbalance of odd-number cards, the arrangement suggesting multiple emotional channels rather than a single directed flow.",
         "Symbol": "Seven cups in asymmetric field — emotional multiplicity, the suit's energy distributed among seven distinct receptacles."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c71.jpg",
+      "sort_order": 73,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-72",
       "name": "Six de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c72.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-72.jpg",
           "source_px": [
             1100,
             1982
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-72.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Six of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "Six golden cups are arranged in two trios or a three-by-two pattern, with ornamental elements given generous space between them. The six of cups in the Viéville is open and harmonious, the suit's characteristic warmth expressed in a balanced arrangement that invites reception.",
         "Symbol": "Six cups in open arrangement — emotional balance and exchange, the suit at its most harmonious and mutually receptive point."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c72.jpg",
+      "sort_order": 74,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-73",
       "name": "Cinq de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c73.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-73.jpg",
           "source_px": [
             1100,
             1945
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-73.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Cinq of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "Five golden cups are placed with a central cup prominent and two flanking each side, set against the red-and-gold ornamental interlace. The odd-number instability of the five suggests a moment of emotional imbalance or questioning within the field of abundance.",
         "Symbol": "Five cups with central emphasis — emotional asymmetry, the suit's odd-number tension concentrated around the question of what is held and what is spilled."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c73.jpg",
+      "sort_order": 75,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-74",
       "name": "Quatre de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c74.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-74.jpg",
           "source_px": [
             1100,
             1996
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-74.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Quatre of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "Four golden cups are arranged in a square or two-by-two formation, their fluted forms clearly spaced with ornamental elements between them. The four of cups has a quality of stable containment — the suit at a structural four-fold point, emotions held in a firm and regular arrangement.",
         "Symbol": "Four cups in square arrangement — emotional stability and interiority, the suit's four-fold structure as a container rather than an overflow."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c74.jpg",
+      "sort_order": 76,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-75",
       "name": "Trois de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c75.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-75.jpg",
           "source_px": [
             1100,
             1966
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-75.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Trois of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "Three golden cups are arranged at three points, their forms connected by vine stems or ornamental interlace. The three of cups has a triangular vitality — three vessels in active relation, the suit's emotional energy distributed among three distinct but connected forms.",
         "Symbol": "Three cups in triangular arrangement — the beginning of emotional community, three vessels sharing a common ornamental ground."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c75.jpg",
+      "sort_order": 77,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-76",
       "name": "Deux de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c76.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-76.jpg",
           "source_px": [
             1100,
             1924
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-76.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "Deux of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "Two golden cups stand at upper and lower positions in the card, flanked or connected by ornamental elements. The Viéville two of cups holds the primal emotional dyad — two vessels in simple vertical correspondence, the beginning of exchange and reciprocity.",
         "Symbol": "Two cups in vertical correspondence — the primal emotional dyad, two vessels in relation, the beginning of exchange and reciprocity."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c76.jpg",
+      "sort_order": 78,
+      "grammar_type": "custom"
     },
     {
       "id": "coupes-77",
       "name": "As de Coupes",
       "level": 1,
       "category": "suit-card",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c77.jpg",
       "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
         "suit": "Cups",
-        "arcana": "minor",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-77.jpg",
           "source_px": [
             1100,
             1979
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-77.jpg"
+          ]
         },
+        "arcana": "minor",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "As of Cups, from the Viéville pack (BnF folio order).",
         "Scene": "A single large golden cup occupies the center of the card, its form decorated with the suit's characteristic surface patterning and ornamental elements surrounding it. The Viéville ace of cups is the most concentrated expression of the suit — one vessel, fully present, awaiting what it will receive or bestow.",
         "Symbol": "One cup as emblem — the undivided emotional potential of the suit, receptivity and feeling held in their most essential and generative form."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c77.jpg",
+      "sort_order": 79,
+      "grammar_type": "custom"
     },
     {
       "id": "suit-coupes",
       "name": "Coupes · Cups",
-      "level": 3,
+      "level": 2,
       "category": "axis",
+      "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
+        "source_deck": "people-of-tarot",
+        "source_item_id": "person-jacques-vieville"
+      },
+      "sections": {
+        "Scene": "The suit of Coupes (Cups) in the Viéville Tarot ranges across fourteen ranks from Roi to As. The cup forms are distinctive throughout — architectural and multi-tiered in the king's chalice, dragon-crowned in the queen's three-cup arrangement, and fluted in gold throughout the pip cards. Several cards in the suit bear old French inscriptions or verse, giving the Viéville cups their unique narrative character.",
+        "Symbol": "Cups as the suit of emotion, reception, and inner life — here given an unusual ornamental depth and textual voice, the suit that in the Viéville speaks as well as holds.",
+        "Render As": "pill-group",
+        "What it is": "The Coupes (Cups) suit — King, Queen, Cavalier, Valet and ten pips."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c64.jpg",
       "render_as": "pill-group",
+      "sort_order": 80,
       "composite_of": [
         "coupes-64",
         "coupes-65",
@@ -2286,52 +2443,57 @@
         "coupes-76",
         "coupes-77"
       ],
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c64.jpg",
-      "sections": {
-        "What it is": "The Coupes (Cups) suit — King, Queen, Cavalier, Valet and ten pips.",
-        "Scene": "The suit of Coupes (Cups) in the Viéville Tarot ranges across fourteen ranks from Roi to As. The cup forms are distinctive throughout — architectural and multi-tiered in the king's chalice, dragon-crowned in the queen's three-cup arrangement, and fluted in gold throughout the pip cards. Several cards in the suit bear old French inscriptions or verse, giving the Viéville cups their unique narrative character.",
-        "Symbol": "Cups as the suit of emotion, reception, and inner life — here given an unusual ornamental depth and textual voice, the suit that in the Viéville speaks as well as holds."
-      },
-      "metadata": {
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
-      }
+      "grammar_type": "custom"
     },
     {
       "id": "trump-mat",
       "name": "Le Mat (The Fool)",
       "level": 1,
       "category": "trump",
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c78.jpg",
       "metadata": {
-        "arcana": "major",
+        "deck": "Jacques Viéville · People & Institutions",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-mat.jpg",
           "source_px": [
             1100,
             1956
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-mat.jpg"
+          ]
         },
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions",
+        "arcana": "major",
         "trump_key": "fool",
-        "trump_number": 0
+        "source_deck": "people-of-tarot",
+        "trump_number": 0,
+        "source_item_id": "person-jacques-vieville"
       },
       "sections": {
         "About": "The unnumbered Fool, the wandering figure — placed last in the BnF scan.",
         "Scene": "A walking figure in a red hat strides forward, carrying in both hands a large ornate golden cup or grail. This is an extraordinary departure from the standard Marseille Fool with stick and bundle — the Viéville Le Mat holds a magnificent chalice, associating foolishness with wealth or sacred vessel rather than vagabondage.",
         "Symbol": "Walking fool carrying a golden grail-cup — the Fool as a bearer of hidden treasure, wandering without social rank but freighted with extraordinary cargo."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c78.jpg",
+      "sort_order": 81,
+      "grammar_type": "custom"
     },
     {
       "id": "axis-atouts",
       "name": "Les Atouts (22 Trumps)",
-      "level": 3,
+      "level": 2,
       "category": "axis",
+      "metadata": {
+        "deck": "Jacques Viéville · People & Institutions",
+        "source_deck": "people-of-tarot",
+        "source_item_id": "person-jacques-vieville"
+      },
+      "sections": {
+        "Scene": "A navigational axis grouping all twenty-two Viéville trumps together — from Le Bateleur through Le Monde, with Le Mat at the unnumbered threshold. The axis invites reading across this deck's many iconographic departures: the standing Pendu, the tree-struck Maison-Dieu, the lute-playing Jugement, the grail-carrying Fou, and the domestic Moon.",
+        "Symbol": "The twenty-two major arcana of the Viéville deck as a collective field — a map of the soul's journey expressed through the most iconographically divergent surviving Marseille variant.",
+        "Render As": "pill-group",
+        "What it is": "The 22 trumps (atouts) of the Viéville — 21 numbered cards plus the unnumbered Mat."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c01.jpg",
       "render_as": "pill-group",
+      "sort_order": 82,
       "composite_of": [
         "trump-01",
         "trump-02",
@@ -2356,23 +2518,22 @@
         "trump-21",
         "trump-mat"
       ],
-      "image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c01.jpg",
-      "sections": {
-        "What it is": "The 22 trumps (atouts) of the Viéville — 21 numbered cards plus the unnumbered Mat.",
-        "Scene": "A navigational axis grouping all twenty-two Viéville trumps together — from Le Bateleur through Le Monde, with Le Mat at the unnumbered threshold. The axis invites reading across this deck's many iconographic departures: the standing Pendu, the tree-struck Maison-Dieu, the lute-playing Jugement, the grail-carrying Fou, and the domestic Moon.",
-        "Symbol": "The twenty-two major arcana of the Viéville deck as a collective field — a map of the soul's journey expressed through the most iconographically divergent surviving Marseille variant."
-      },
-      "metadata": {
-        "source_deck": "people-of-tarot",
-        "source_item_id": "person-jacques-vieville",
-        "deck": "Jacques Viéville · People & Institutions"
-      }
+      "grammar_type": "custom"
     }
   ],
-  "_research": {
-    "deck": "research/decks/vieville-tarot.md",
-    "cards": "research/cards/vieville-tarot.md",
-    "bibliography": "research/bibliography.bib"
-  },
-  "image_credit": "Bibliothèque nationale de France, Paris (Jacques Viéville, c. 1650)"
+  "description": "# Jacques Viéville Tarot (Paris, c. 1650)\n\n## At a glance\n\nOne of the **three oldest surviving named Tarots de Marseille-family decks**, printed in Paris around 1650 by the *maître-cartier* **Jacques Viéville** — a near-contemporary of **Jean Noblet** (whose deck this library also holds). The single known copy is at the **Bibliothèque nationale de France** and is on **Gallica** (ark:/12148/btv1b10510963k), fully public domain. Its 78 woodcut cards are shown here from the BnF scan, at high resolution.\n\n## Why it matters — the road not taken\n\nViéville's pack is the great **outlier** of the early Parisian tarots. Where Noblet sits squarely in the **C-order (Marseille)** line that became standard, Viéville's trump imagery leans toward the **Eastern/Belgian** branch: its figures face the other way, several trumps (the Popess, the Sun, the World, the Star) carry markedly different designs, and the pack is a key witness to the family that later surfaces in the **Vandenborre / 'Tarot Flamand'** decks rather than the Marseille mainstream. It shows that c. 1650 Paris held *two* competing tarot patterns at once.\n\n## What you're looking at\n\n- **22 atouts (trumps):** 21 carry printed Roman numerals (read directly from the scans here) plus the unnumbered **Mat** (Fool).\n- **56 suit cards:** four Italian suits — **Épées** (Swords), **Deniers** (Coins), **Bâtons** (Batons), **Coupes** (Cups) — each with King, Queen, Cavalier, Valet and ten pips.\n- The even-numbered canvases of the BnF scan are the cards' **patterned backs**; only the faces are shown.\n\n## Honesty notes\n\nThe trumps are identified by their **printed numerals AND their scenes** — and the two together reveal a key feature: the Viéville follows the older **Eastern trump order**, not the later Marseille standard. Here **Justice is VII, the Chariot VIII, Strength VIIII, and the Hermit XI** — exactly the cards the Marseille (Conver) sequence reorders. This non-standard order is itself the evidence for the deck's Eastern/Belgian-leaning lineage. Suit cards are shown in **BnF folio order**; courts are identified by figure, and **pip ranks are assigned by position and may warrant correction** — corrections welcome, as everywhere in this library.\n\n## Game, not divination\n\nLike Noblet, this is a **playing-and-trick-taking** pack from a century before tarot was attached to fortune-telling; no cartomantic meaning is native to it.\n\n## Sources\n\nBnF / Gallica (ark:/12148/btv1b10510963k), public domain; Thierry Depaulis on the early Parisian cartiers; Dummett, *The Game of Tarot*.\n\n---\n*AI-assisted first-pass: card faces from the BnF scan, trumps read from their numerals, suits/courts identified by symbol. Corrections welcome.*",
+  "creator_name": "PlayfulProcess",
+  "grammar_type": "tarot",
+  "is_published": true,
+  "cover_image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c01.jpg",
+  "_backup_repo_url": "https://github.com/playfulprocess/recursive-tarot/blob/main/tarot/vieville-tarot/grammar.json",
+  "_forked_from_url": "https://raw.githubusercontent.com/playfulprocess/recursive-tarot/main/tarot/vieville-tarot/grammar.json",
+  "open_to_community": true,
+  "_detected_categories": [
+    "trump",
+    "suit-card",
+    "axis"
+  ],
+  "_recursive_eco_url": "https://flow.recursive.eco/play?id=748bd669-1a0b-4f71-b5fa-b7c15601fda5",
+  "_recursive_eco_edit_url": "https://flow.recursive.eco/create/dashboard/unified/new?id=748bd669-1a0b-4f71-b5fa-b7c15601fda5"
 }
