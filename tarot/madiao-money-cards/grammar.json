@@ -1,22 +1,5 @@
 {
   "name": "Ma Diao (馬吊) — Chinese Money-Suited Cards (the Deep Root)",
-  "slug": "madiao-money-cards",
-  "cover_image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102351.jpg",
-  "description": "# Ma Diao (馬吊) — Chinese money-suited cards\n\n## At a glance\n\nThe **deepest root of the playing-card form itself** — and, deliberately, *not* a direct ancestor of tarot. Paper playing cards are usually traced to **Tang-dynasty China** (618–907 CE) — though the famous 9th-c. 'leaf game' reference is disputed (it may describe a book or board game), and the earliest *unambiguous* paper playing cards are Yuan-era, c. 1294; by the time of the Song and Ming they had developed into **money-suited** packs whose suits are denominations of currency. **Ma Diao** (馬吊, 'hanging horse') is the best-documented of these games, codified in the **late Ming** (16th–17th c.) and described in period manuals. This library includes it to show where the *idea* of a suited pack of cards begins, several removes upstream of anything European.\n\n## The money suits\n\nFour ascending money denominations: **cash → strings of cash → myriads → tens-of-myriads** (文 · 索 · 萬 · 十萬). The suits are not abstract pips but units of money — the structural signature of the East-Asian tradition. The **myriad (萬) suit** was, in many sets, illustrated with the 108 bandit-heroes of the novel *Water Margin* (水滸傳), so painted 'Water Margin cards' (水滸牌) are a famous money-suited variety still made in folk workshops today.\n\n## Relationship to tarot — a deep root, not a parent\n\nThe standard scholarly thesis (Wilkinson, Needham, Lo) is that the playing-card *form* diffused **westward out of China**, reaching Europe through the **Islamic world**, where the **Mamluk pack** (Egypt/Syria) is the deck Europe directly copied. So the line to tarot runs **China → (centuries, many intermediaries) → Mamluk → Italian/Spanish suits → trionfi/tarot**. Ma Diao is a **cousin and a deep root**, like Ganjifa — it shows the origin of the form, but no card here descends by a clean line into a tarot trump. The detail of the transmission is genuinely debated; what is not debated is that paper cards are a Chinese invention.\n\n## Game, never divination\n\nMa Diao is a **trick-and-draw gambling game** for four players, played with a 40-card money-suited pack. There is no cartomantic tradition attached to it — it sits in this library purely as the upstream of the *object*, not of any reading practice.\n\n## Provenance & evidence\n\nThe cards shown are the **public-domain holdings at Skokloster Castle, Sweden** (high-resolution museum scans on Wikimedia Commons), a European collection of an East-Asian pack. Twelve items survive there. Individual suit/value identification is left open rather than guessed.\n\n## Sources\n\n- W. H. Wilkinson, 'Chinese Origin of Playing Cards' (1895); Joseph Needham, *Science and Civilisation in China*, vol. 5; Andrew Lo on Ma Diao and Water Margin cards; Dummett, *The Game of Tarot* (1980), and Dummett & McLeod, *A History of Games Played with the Tarot Pack* (2004) (on the China→Islam→Europe diffusion). Card images: Skokloster Castle / Wikimedia Commons, public domain.\n\n**RESEARCH NOTE (2026-06-13).** The money-suited form is firmly attested from Lu Rong (1436–94, late 15th c.); Ma Diao itself is codified in the late Ming (16th–17th c.). The 'c. 1600' date and the 17th–18th-c. European (Skokloster) collection reference are loosely sourced — treat the dating as approximate. See [research/decks/madiao-money-cards.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/decks/madiao-money-cards.md).\n",
-  "grammar_type": "tarot",
-  "provenance": "record",
-  "creator_name": "PlayfulProcess",
-  "license": "CC-BY-SA-4.0",
-  "default_view": "cards",
-  "metadata": {
-    "year": 1400,
-    "tradition": "Chinese money-suited cards",
-    "branch": "ancestors",
-    "common_name": "Ma Diao",
-    "category": "historical",
-    "year_label": "money cards, 14th–15th c."
-  },
-  "_source": "Wikimedia Commons (Skokloster Castle), public domain. Hotlinked with attribution.",
   "items": [
     {
       "id": "suit-cash",
@@ -24,10 +7,12 @@
       "level": 1,
       "category": "suit",
       "sections": {
-        "What it is": "The lowest money suit: single copper coins (wén). The coin is the ancestor of the European 'Coins/Pentacles' suit — the one suit that survived the long diffusion west more or less recognisably.",
         "Scene": "Cards of the 文錢 (wénqián) cash suit, representing individual copper coins with a square hole at the centre. Pip cards show the coin symbol — a round disc with square opening — in numerical arrangements. No surviving image in this grammar.",
-        "Symbol": "The cash coin was the basic monetary unit of Ming-dynasty China. In the card suits it corresponds to the single coin, the irreducible monetary atom."
-      }
+        "Symbol": "The cash coin was the basic monetary unit of Ming-dynasty China. In the card suits it corresponds to the single coin, the irreducible monetary atom.",
+        "What it is": "The lowest money suit: single copper coins (wén). The coin is the ancestor of the European 'Coins/Pentacles' suit — the one suit that survived the long diffusion west more or less recognisably."
+      },
+      "sort_order": 0,
+      "grammar_type": "custom"
     },
     {
       "id": "suit-strings",
@@ -35,11 +20,13 @@
       "level": 1,
       "category": "suit",
       "sections": {
-        "What it is": "Strings or ropes (suǒ) on which coins were threaded — each string a bundle of one hundred cash. A denomination, not an abstract pip: the suits of this pack are literally units of money.",
-        "Research note": "Ropes or strings on which coins were threaded — each string a bundle of (about) a hundred cash. A denomination, not an abstract pip (9 cards, 1–9) [@web_madiao_wiki]. \n\n*Sources:* [@web_madiao_wiki], [@web_suit_wiki].\n\n*Full card-by-card research:* [research/cards/madiao-money-cards.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/madiao-money-cards.md).",
         "Scene": "Cards of the 索子 (suǒzǐ) strings-of-cash suit, representing multiple coins strung together on a cord. Pip cards show string or bundle symbols. No surviving image in this grammar.",
-        "Symbol": "Strung coins — the standard way of transporting and counting large amounts of cash in Ming China — gave the suit its name and symbol."
-      }
+        "Symbol": "Strung coins — the standard way of transporting and counting large amounts of cash in Ming China — gave the suit its name and symbol.",
+        "What it is": "Strings or ropes (suǒ) on which coins were threaded — each string a bundle of one hundred cash. A denomination, not an abstract pip: the suits of this pack are literally units of money.",
+        "Research note": "Ropes or strings on which coins were threaded — each string a bundle of (about) a hundred cash. A denomination, not an abstract pip (9 cards, 1–9) [@web_madiao_wiki]. \n\n*Sources:* [@web_madiao_wiki], [@web_suit_wiki].\n\n*Full card-by-card research:* [research/cards/madiao-money-cards.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/madiao-money-cards.md)."
+      },
+      "sort_order": 1,
+      "grammar_type": "custom"
     },
     {
       "id": "suit-myriads",
@@ -47,10 +34,12 @@
       "level": 1,
       "category": "suit",
       "sections": {
-        "What it is": "Ten-thousand-cash units (wàn). In many money-card sets this suit was illustrated with the 108 bandit-heroes of the novel *Water Margin* (水滸傳) — so 'Water Margin cards' (水滸牌) are a famous money-suited variety.",
         "Scene": "Cards of the 萬貫 (wànguàn) myriads suit, representing ten thousand strings of cash — an abstract denomination of extraordinary wealth. No surviving image in this grammar.",
-        "Symbol": "The myriads suit encodes large-scale wealth, moving the deck into the realm of abstract monetary value beyond physical cash."
-      }
+        "Symbol": "The myriads suit encodes large-scale wealth, moving the deck into the realm of abstract monetary value beyond physical cash.",
+        "What it is": "Ten-thousand-cash units (wàn). In many money-card sets this suit was illustrated with the 108 bandit-heroes of the novel *Water Margin* (水滸傳) — so 'Water Margin cards' (水滸牌) are a famous money-suited variety."
+      },
+      "sort_order": 2,
+      "grammar_type": "custom"
     },
     {
       "id": "suit-tens",
@@ -58,324 +47,361 @@
       "level": 1,
       "category": "suit",
       "sections": {
-        "What it is": "The top suit (the 'decade' / tens-of-myriads), carrying the honour cards. The four ascending money denominations — cash → strings → myriads → tens-of-myriads — are the whole structure of the game.",
-        "Research note": "The highest suit, carrying the honour cards; in the Madiao pack it runs from 20-myriad up through hundred-, thousand-, and myriad-myriad (11 cards) [@web_madiao_wiki]. \n\n*Sources:* [@web00c_islamic_chinese], [@web_madiao_wiki].\n\n*Full card-by-card research:* [research/cards/madiao-money-cards.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/madiao-money-cards.md).",
         "Scene": "Cards of the 十萬 (shíwàn) tens-of-myriads suit, representing hundreds of thousands of cash. No surviving image in this grammar.",
-        "Symbol": "The fourth suit operates at the highest abstract monetary denomination, completing the progression from single coin to inconceivable wealth."
-      }
+        "Symbol": "The fourth suit operates at the highest abstract monetary denomination, completing the progression from single coin to inconceivable wealth.",
+        "What it is": "The top suit (the 'decade' / tens-of-myriads), carrying the honour cards. The four ascending money denominations — cash → strings → myriads → tens-of-myriads — are the whole structure of the game.",
+        "Research note": "The highest suit, carrying the honour cards; in the Madiao pack it runs from 20-myriad up through hundred-, thousand-, and myriad-myriad (11 cards) [@web_madiao_wiki]. \n\n*Sources:* [@web00c_islamic_chinese], [@web_madiao_wiki].\n\n*Full card-by-card research:* [research/cards/madiao-money-cards.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/cards/madiao-money-cards.md)."
+      },
+      "sort_order": 3,
+      "grammar_type": "custom"
     },
     {
       "id": "axis-money-suits",
       "name": "The Four Money Suits",
-      "level": 3,
+      "level": 2,
       "category": "axis",
+      "sections": {
+        "Scene": "The four suits of the Ma Diao pack together encode a monetary ladder: cash (individual coins), strings (coin bundles), myriads (ten thousand strings), and tens of myriads. No composite image survives; this is a conceptual grouping.",
+        "Symbol": "The four-suit money structure of Ma Diao is proposed as one pathway through which suit-card structure (later mapped onto cups, coins, swords, and batons in Europe) may have disseminated westward via trade routes.",
+        "Render As": "pill-group",
+        "What it is": "Ma Diao is a *money-suited* pack: its four suits are ascending denominations of cash, not the cups/swords/coins/batons of the Mamluk and European line. This is the structural signature of the East-Asian card tradition."
+      },
       "render_as": "pill-group",
+      "sort_order": 4,
       "composite_of": [
         "suit-cash",
         "suit-strings",
         "suit-myriads",
         "suit-tens"
       ],
-      "sections": {
-        "What it is": "Ma Diao is a *money-suited* pack: its four suits are ascending denominations of cash, not the cups/swords/coins/batons of the Mamluk and European line. This is the structural signature of the East-Asian card tradition.",
-        "Scene": "The four suits of the Ma Diao pack together encode a monetary ladder: cash (individual coins), strings (coin bundles), myriads (ten thousand strings), and tens of myriads. No composite image survives; this is a conceptual grouping.",
-        "Symbol": "The four-suit money structure of Ma Diao is proposed as one pathway through which suit-card structure (later mapped onto cups, coins, swords, and batons in Europe) may have disseminated westward via trade routes."
-      }
+      "grammar_type": "custom"
     },
     {
       "id": "card-102351",
       "name": "Ma Diao card — Skokloster 102351",
       "level": 1,
-      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102351.jpg",
       "metadata": {
-        "collection": "Skokloster Castle, Sweden",
-        "inventory": "102351",
-        "source": "Wikimedia Commons (public domain)",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102351.jpg",
           "source_px": [
             1000,
             1250
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102351.jpg"
-        }
+          ]
+        },
+        "source": "Wikimedia Commons (public domain)",
+        "inventory": "102351",
+        "collection": "Skokloster Castle, Sweden"
       },
       "sections": {
         "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading.",
         "Scene": "A woodblock-printed card on thick paper. The upper third contains a panel with bold Chinese characters. The centre shows a stylised radiating sun-like or face-like form rendered in black ink, surrounded by radiating lines. The lower third has angular geometric patterns — repeated arrowhead and diagonal shapes — in a grid.",
         "Symbol": "This card belongs to the money suits (likely a high pip or court card). The radiating sun-form in the centre and the angular lower border are characteristic of the expressive woodblock printing style of 17th century Chinese playing cards."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102351.jpg",
+      "sort_order": 5,
+      "grammar_type": "custom"
     },
     {
       "id": "card-102352",
       "name": "Ma Diao card — Skokloster 102352",
       "level": 1,
-      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102352.jpg",
       "metadata": {
-        "collection": "Skokloster Castle, Sweden",
-        "inventory": "102352",
-        "source": "Wikimedia Commons (public domain)",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102352.jpg",
           "source_px": [
             1000,
             1250
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102352.jpg"
-        }
+          ]
+        },
+        "source": "Wikimedia Commons (public domain)",
+        "inventory": "102352",
+        "collection": "Skokloster Castle, Sweden"
       },
       "sections": {
         "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading.",
         "Scene": "A woodblock card with a Chinese character panel at the upper left (including the character 五 — five). The centre shows a crescent or curved shape with hatched internal geometry and angular surrounding decoration. The lower portion has dotted and triangular border patterns.",
         "Symbol": "The character 五 (five) identifies this as a five-pip card, likely in the strings suit. The curved central motif may represent a string bundle or a suit symbol in abstracted form."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102352.jpg",
+      "sort_order": 6,
+      "grammar_type": "custom"
     },
     {
       "id": "card-102353",
       "name": "Ma Diao card — Skokloster 102353",
       "level": 1,
-      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102353.jpg",
       "metadata": {
-        "collection": "Skokloster Castle, Sweden",
-        "inventory": "102353",
-        "source": "Wikimedia Commons (public domain)",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102353.jpg",
           "source_px": [
             1000,
             1250
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102353.jpg"
-        }
+          ]
+        },
+        "source": "Wikimedia Commons (public domain)",
+        "inventory": "102353",
+        "collection": "Skokloster Castle, Sweden"
       },
       "sections": {
         "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading.",
         "Scene": "A woodblock-printed card showing a human figure — a court official or deity — rendered in frontal bust view. The face is detailed with clear features; the head bears a distinctive cap or hat. The lower body is shown in linear abstract style, surrounded by geometric hatching.",
         "Symbol": "This is a court card in the Ma Diao system, depicting a historical or mythological figure. The Ming-era money card courts often depicted famous generals, officials, or characters from popular literature."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102353.jpg",
+      "sort_order": 7,
+      "grammar_type": "custom"
     },
     {
       "id": "card-102354",
       "name": "Ma Diao card — Skokloster 102354",
       "level": 1,
-      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102354.jpg",
       "metadata": {
-        "collection": "Skokloster Castle, Sweden",
-        "inventory": "102354",
-        "source": "Wikimedia Commons (public domain)",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102354.jpg",
           "source_px": [
             1000,
             1250
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102354.jpg"
-        }
+          ]
+        },
+        "source": "Wikimedia Commons (public domain)",
+        "inventory": "102354",
+        "collection": "Skokloster Castle, Sweden"
       },
       "sections": {
         "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading.",
         "Scene": "A woodblock card with a Chinese character panel at top (including 石有 or similar). Below, a court figure is shown in a three-quarter or frontal view, wearing a distinctive official hat. Chinese characters appear on the body of the figure, identifying them by name or title.",
         "Symbol": "A named official card: the text on the body of court figures in Ma Diao identifies them specifically, connecting the game to historical memory and vernacular storytelling traditions."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102354.jpg",
+      "sort_order": 8,
+      "grammar_type": "custom"
     },
     {
       "id": "card-102355",
       "name": "Ma Diao card — Skokloster 102355",
       "level": 1,
-      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102355.jpg",
       "metadata": {
-        "collection": "Skokloster Castle, Sweden",
-        "inventory": "102355",
-        "source": "Wikimedia Commons (public domain)",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102355.jpg",
           "source_px": [
             1000,
             1250
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102355.jpg"
-        }
+          ]
+        },
+        "source": "Wikimedia Commons (public domain)",
+        "inventory": "102355",
+        "collection": "Skokloster Castle, Sweden"
       },
       "sections": {
         "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading.",
         "Scene": "A woodblock pip card with three geometric motifs arranged vertically — each a nested diamond or square set within concentric lines, suggesting a stylised coin or token symbol. The card has no character panel; it is a pure pip.",
         "Symbol": "Three abstract coin-symbols: a pip card in the cash or strings suit, its value communicated entirely through geometric repetition."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102355.jpg",
+      "sort_order": 9,
+      "grammar_type": "custom"
     },
     {
       "id": "card-102356",
       "name": "Ma Diao card — Skokloster 102356",
       "level": 1,
-      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102356.jpg",
       "metadata": {
-        "collection": "Skokloster Castle, Sweden",
-        "inventory": "102356",
-        "source": "Wikimedia Commons (public domain)",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102356.jpg",
           "source_px": [
             1000,
             1250
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102356.jpg"
-        }
+          ]
+        },
+        "source": "Wikimedia Commons (public domain)",
+        "inventory": "102356",
+        "collection": "Skokloster Castle, Sweden"
       },
       "sections": {
         "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading.",
         "Scene": "A woodblock pip card showing six round coin symbols arranged in a 2×3 grid. Each coin shows concentric circles with a square or geometric centre — the standard Chinese cash coin motif. The coins are clearly differentiated by their interior patterns.",
         "Symbol": "Six cash coins: a 六 (six) pip card in the cash suit. The coin motif preserves the circular form of actual metal currency, making the card a direct visual analogue of money."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102356.jpg",
+      "sort_order": 10,
+      "grammar_type": "custom"
     },
     {
       "id": "card-102357",
       "name": "Ma Diao card — Skokloster 102357",
       "level": 1,
-      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102357.jpg",
       "metadata": {
-        "collection": "Skokloster Castle, Sweden",
-        "inventory": "102357",
-        "source": "Wikimedia Commons (public domain)",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102357.jpg",
           "source_px": [
             1000,
             1250
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102357.jpg"
-        }
+          ]
+        },
+        "source": "Wikimedia Commons (public domain)",
+        "inventory": "102357",
+        "collection": "Skokloster Castle, Sweden"
       },
       "sections": {
         "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading.",
         "Scene": "An abstract woodblock card with two distinct zones: the upper half carries a dense angular star or cross pattern of intersecting diagonal lines; the lower half shows concentric arc or rainbow-shaped lines. There is no figure or character panel.",
         "Symbol": "A pip or decorative element card whose meaning depends on the game's internal rules. The two-zone composition — angular above, concentric below — may encode a specific suit combination or card type."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102357.jpg",
+      "sort_order": 11,
+      "grammar_type": "custom"
     },
     {
       "id": "card-102358",
       "name": "Ma Diao card — Skokloster 102358",
       "level": 1,
-      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102358.jpg",
       "metadata": {
-        "collection": "Skokloster Castle, Sweden",
-        "inventory": "102358",
-        "source": "Wikimedia Commons (public domain)",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102358.jpg",
           "source_px": [
             1000,
             1250
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102358.jpg"
-        }
+          ]
+        },
+        "source": "Wikimedia Commons (public domain)",
+        "inventory": "102358",
+        "collection": "Skokloster Castle, Sweden"
       },
       "sections": {
         "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading.",
         "Scene": "A woodblock pip card showing six oval or rounded coin symbols arranged in a 2×3 grid. The coins are rendered in slightly rounder, more fluid form than the square-centred cash coins on card 102356, suggesting a different suit or denomination.",
         "Symbol": "Six coins of a different suit denomination — the oval form may represent 'strings' of cash rather than individual coins, giving this a 六索 (six of strings) reading."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102358.jpg",
+      "sort_order": 12,
+      "grammar_type": "custom"
     },
     {
       "id": "card-102359",
       "name": "Ma Diao card — Skokloster 102359",
       "level": 1,
-      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102359.jpg",
       "metadata": {
-        "collection": "Skokloster Castle, Sweden",
-        "inventory": "102359",
-        "source": "Wikimedia Commons (public domain)",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102359.jpg",
           "source_px": [
             1000,
             1250
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102359.jpg"
-        }
+          ]
+        },
+        "source": "Wikimedia Commons (public domain)",
+        "inventory": "102359",
+        "collection": "Skokloster Castle, Sweden"
       },
       "sections": {
         "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading.",
         "Scene": "A woodblock card showing a single large abstract composition: the upper half features a concentric square or rectangular pattern (nested squares converging to a centre), while the lower half is filled with cross-hatch geometric lines. The design fills the entire card field.",
         "Symbol": "This card's geometric abstraction suggests a special function card — possibly a wild card, a high-value trump, or a boundary marker within the Ma Diao game structure."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102359.jpg",
+      "sort_order": 13,
+      "grammar_type": "custom"
     },
     {
       "id": "card-102360",
       "name": "Ma Diao card — Skokloster 102360",
       "level": 1,
-      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102360.jpg",
       "metadata": {
-        "collection": "Skokloster Castle, Sweden",
-        "inventory": "102360",
-        "source": "Wikimedia Commons (public domain)",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102360.jpg",
           "source_px": [
             1000,
             1250
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102360.jpg"
-        }
+          ]
+        },
+        "source": "Wikimedia Commons (public domain)",
+        "inventory": "102360",
+        "collection": "Skokloster Castle, Sweden"
       },
       "sections": {
         "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading.",
         "Scene": "A woodblock card showing a stylised animal or creature figure rendered in bold linear strokes. The form suggests a dragon or mythological beast — sinuous body, legs visible at bottom, energetic movement conveyed through diagonal brushwork.",
         "Symbol": "Figurative court cards in Ma Diao sometimes depict mythological creatures alongside historical officials. The dragon is the supreme symbol of imperial power in Chinese culture."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102360.jpg",
+      "sort_order": 14,
+      "grammar_type": "custom"
     },
     {
       "id": "card-102361",
       "name": "Ma Diao card — Skokloster 102361",
       "level": 1,
-      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102361.jpg",
       "metadata": {
-        "collection": "Skokloster Castle, Sweden",
-        "inventory": "102361",
-        "source": "Wikimedia Commons (public domain)",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102361.jpg",
           "source_px": [
             1000,
             1250
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-102361.jpg"
-        }
+          ]
+        },
+        "source": "Wikimedia Commons (public domain)",
+        "inventory": "102361",
+        "collection": "Skokloster Castle, Sweden"
       },
       "sections": {
         "About": "One of the surviving Ma Diao cards in the Chinese holdings at Skokloster Castle, Sweden — a 17th–18th-century European collection of an East-Asian money-suited pack. The individual suit and value are not separately catalogued here; the card is shown as a physical survivor of the tradition, not assigned a reading.",
         "Scene": "A damaged card — the upper-left corner is torn away. Two rounded coin symbols are visible at the top register and a third in the centre, above horizontal stripe patterns in the lower half. The design is consistent with a low-value pip card.",
         "Symbol": "Even in its damaged state the card preserves the coin motif. The damage itself records the cards' age and use: they were played with hands until they wore."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102361.jpg",
+      "sort_order": 15,
+      "grammar_type": "custom"
     },
     {
       "id": "card-sheet-13617",
       "name": "Ma Diao cards (sheet) — Skokloster 13617",
       "level": 1,
-      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/sheet-13617.jpg",
       "metadata": {
-        "collection": "Skokloster Castle, Sweden",
-        "inventory": "13617",
-        "source": "Wikimedia Commons (public domain)",
         "print": {
           "quality": "print",
+          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-sheet-13617.jpg",
           "source_px": [
             1000,
             1250
-          ],
-          "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/madiao-money-cards/card-sheet-13617.jpg"
-        }
+          ]
+        },
+        "source": "Wikimedia Commons (public domain)",
+        "inventory": "13617",
+        "collection": "Skokloster Castle, Sweden"
       },
       "sections": {
         "About": "Several Ma Diao cards together (catalogued as 'Mo Diao') from the same Skokloster holdings.",
         "Scene": "A museum photograph showing all eleven surviving Skokloster Ma Diao cards spread on a surface, accompanied by a folded paper wrapper inscribed in Swedish 'Kinesiska kort' (Chinese cards). The variety of designs is visible: coin-pip grids, court figures with character labels, geometric abstracts, and decorative cards in one ensemble.",
         "Symbol": "The Swedish inscription confirms the cards arrived at Skokloster Castle (Sweden) as curiosities, probably via Dutch East India Company trade networks. Their preservation in a European collection — rather than being played to destruction in China — explains why they survive."
-      }
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/sheet-13617.jpg",
+      "sort_order": 16,
+      "grammar_type": "custom"
     },
     {
       "id": "skokloster-set",
       "name": "The Skokloster Surviving Set",
-      "level": 3,
+      "level": 2,
       "category": "axis",
+      "sections": {
+        "Scene": "The complete Skokloster Ma Diao set: eleven individual cards (accession numbers 102351–102361) plus a separate sheet (13617), all held at Skokloster Castle, Sweden. The cards are woodblock-printed on heavy paper, showing a mix of pip cards (coin grids, geometric abstracts) and court cards (figural representations of officials or deities).",
+        "Symbol": "The Skokloster set is among the oldest surviving East Asian playing cards held in a European institution, and the most important physical evidence for the Ma Diao money-card tradition. The set demonstrates the full iconographic range of the genre: abstract pip cards, figured courts, and possibly special-function cards.",
+        "Render As": "pill-group",
+        "What it is": "The twelve Ma Diao items that survive in Sweden at Skokloster Castle — a fragmentary but high-resolution, openly public-domain witness to a money-suited Chinese pack."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102351.jpg",
       "render_as": "pill-group",
+      "sort_order": 17,
       "composite_of": [
         "card-102351",
         "card-102352",
@@ -390,18 +416,21 @@
         "card-102361",
         "card-sheet-13617"
       ],
-      "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102351.jpg",
-      "sections": {
-        "What it is": "The twelve Ma Diao items that survive in Sweden at Skokloster Castle — a fragmentary but high-resolution, openly public-domain witness to a money-suited Chinese pack.",
-        "Scene": "The complete Skokloster Ma Diao set: eleven individual cards (accession numbers 102351–102361) plus a separate sheet (13617), all held at Skokloster Castle, Sweden. The cards are woodblock-printed on heavy paper, showing a mix of pip cards (coin grids, geometric abstracts) and court cards (figural representations of officials or deities).",
-        "Symbol": "The Skokloster set is among the oldest surviving East Asian playing cards held in a European institution, and the most important physical evidence for the Ma Diao money-card tradition. The set demonstrates the full iconographic range of the genre: abstract pip cards, figured courts, and possibly special-function cards."
-      }
+      "grammar_type": "custom"
     }
   ],
-  "_research": {
-    "deck": "research/decks/madiao-money-cards.md",
-    "cards": "research/cards/madiao-money-cards.md",
-    "bibliography": "research/bibliography.bib"
-  },
-  "image_credit": "Skokloster Castle, Sweden"
+  "description": "# Ma Diao (馬吊) — Chinese money-suited cards\n\n## At a glance\n\nThe **deepest root of the playing-card form itself** — and, deliberately, *not* a direct ancestor of tarot. Paper playing cards are usually traced to **Tang-dynasty China** (618–907 CE) — though the famous 9th-c. 'leaf game' reference is disputed (it may describe a book or board game), and the earliest *unambiguous* paper playing cards are Yuan-era, c. 1294; by the time of the Song and Ming they had developed into **money-suited** packs whose suits are denominations of currency. **Ma Diao** (馬吊, 'hanging horse') is the best-documented of these games, codified in the **late Ming** (16th–17th c.) and described in period manuals. This library includes it to show where the *idea* of a suited pack of cards begins, several removes upstream of anything European.\n\n## The money suits\n\nFour ascending money denominations: **cash → strings of cash → myriads → tens-of-myriads** (文 · 索 · 萬 · 十萬). The suits are not abstract pips but units of money — the structural signature of the East-Asian tradition. The **myriad (萬) suit** was, in many sets, illustrated with the 108 bandit-heroes of the novel *Water Margin* (水滸傳), so painted 'Water Margin cards' (水滸牌) are a famous money-suited variety still made in folk workshops today.\n\n## Relationship to tarot — a deep root, not a parent\n\nThe standard scholarly thesis (Wilkinson, Needham, Lo) is that the playing-card *form* diffused **westward out of China**, reaching Europe through the **Islamic world**, where the **Mamluk pack** (Egypt/Syria) is the deck Europe directly copied. So the line to tarot runs **China → (centuries, many intermediaries) → Mamluk → Italian/Spanish suits → trionfi/tarot**. Ma Diao is a **cousin and a deep root**, like Ganjifa — it shows the origin of the form, but no card here descends by a clean line into a tarot trump. The detail of the transmission is genuinely debated; what is not debated is that paper cards are a Chinese invention.\n\n## Game, never divination\n\nMa Diao is a **trick-and-draw gambling game** for four players, played with a 40-card money-suited pack. There is no cartomantic tradition attached to it — it sits in this library purely as the upstream of the *object*, not of any reading practice.\n\n## Provenance & evidence\n\nThe cards shown are the **public-domain holdings at Skokloster Castle, Sweden** (high-resolution museum scans on Wikimedia Commons), a European collection of an East-Asian pack. Twelve items survive there. Individual suit/value identification is left open rather than guessed.\n\n## Sources\n\n- W. H. Wilkinson, 'Chinese Origin of Playing Cards' (1895); Joseph Needham, *Science and Civilisation in China*, vol. 5; Andrew Lo on Ma Diao and Water Margin cards; Dummett, *The Game of Tarot* (1980), and Dummett & McLeod, *A History of Games Played with the Tarot Pack* (2004) (on the China→Islam→Europe diffusion). Card images: Skokloster Castle / Wikimedia Commons, public domain.\n\n---\n*AI-assisted first-pass draft in the house evidence-first style — claims hedged, transmission flagged as debated. Corrections welcome.*\n\n**RESEARCH NOTE (2026-06-13).** The money-suited form is firmly attested from Lu Rong (1436–94, late 15th c.); Ma Diao itself is codified in the late Ming (16th–17th c.). The 'c. 1600' date and the 17th–18th-c. European (Skokloster) collection reference are loosely sourced — treat the dating as approximate. See [research/decks/madiao-money-cards.md](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/decks/madiao-money-cards.md).",
+  "creator_name": "PlayfulProcess",
+  "grammar_type": "tarot",
+  "is_published": true,
+  "cover_image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102351.jpg",
+  "_backup_repo_url": "https://github.com/playfulprocess/recursive-tarot/blob/main/tarot/madiao-money-cards/grammar.json",
+  "_forked_from_url": "https://raw.githubusercontent.com/playfulprocess/recursive-tarot/main/tarot/madiao-money-cards/grammar.json",
+  "open_to_community": true,
+  "_detected_categories": [
+    "suit",
+    "axis"
+  ],
+  "_recursive_eco_url": "https://flow.recursive.eco/play?id=51858640-0605-4428-b6b0-633b115f642e",
+  "_recursive_eco_edit_url": "https://flow.recursive.eco/create/dashboard/unified/new?id=51858640-0605-4428-b6b0-633b115f642e"
 }
