@@ -1,8 +1,8 @@
 /* Shared "eye" view-switcher for the Recursive Tarot static site.
- * One eye icon that flips the current grammar through every view (Cards, Tree,
- * Thumbnails, Timeline, Tree of Life, Genealogy, Print). Preserves the loaded
- * grammar (?src / ?github / ?id). Course is intentionally NOT here (it lives in
- * the header nav). Style-isolated via Shadow DOM.
+ * One eye icon that flips the current grammar through every view (Cards, Course,
+ * Explorer, Tree, Thumbnails, Timeline, Tree of Life, Genealogy, Print). Preserves
+ * the loaded grammar (?src / ?github / ?id). Course = the same grammar rendered as a
+ * readable course (grammar-course.html), each item a lesson. Style-isolated via Shadow DOM.
  *
  * Usage:  <script src="<path>/view-switcher.js"></script>
  *         <view-switcher active="cards"></view-switcher>
@@ -47,6 +47,7 @@
   // • Grammar-level: render whole decks (one node per grammar)
   const CARD_VIEWS = [
     ['cards',      'Cards',        root + 'viewers/cards.html' + qs + cardSpec],
+    ['course',     'Course',       root + 'viewers/grammar-course.html' + qs],
     ['explorer',   'Explorer',     root + 'viewers/explorer.html' + qs + explorerSpec],
     ['tree',       'Tree',         root + 'viewers/tree-viewer.html' + qs + cardSpec],
   ];
@@ -68,6 +69,7 @@
   // Which view is THIS page? (so ?lens to the current view is a no-op, not a loop)
   function autoActive() {
     const f = (location.pathname.split('/').pop() || '').toLowerCase();
+    if (f.startsWith('grammar-course')) return 'course';
     if (f.startsWith('tree-viewer')) return 'tree';
     if (f.startsWith('genealogy-tree')) return 'treeoflife';
     if (f.startsWith('timeline')) return 'timeline';
