@@ -19,6 +19,26 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 def slugify(s):
     return re.sub(r"[^a-z0-9]+", "-", (s or "").lower()).strip("-")[:40] or "x"
 
+# Named card galleries baked from <div data-embed="NAME"> into item.metadata.embeds —
+# references the renderer resolves to images (deck slug + ref `tk:<trump_key>` / `item:<id>`).
+# A {"heading": ...} entry starts a sub-gallery. Mirrors the course-viewer's live galleries.
+PLATES_EMBEDS = [
+    {"heading": "One card across the centuries — Death"},
+    {"deck": "visconti-sforza-tarot", "ref": "tk:death", "caption": "Death — Visconti-Sforza, Milan, c. 1451. The earliest clear tarot Death: a white skeleton standing frontally on a gold ground, holding a bow and arrow."},
+    {"deck": "tarot-de-marseille-conver", "ref": "tk:death", "caption": "Death — Tarot de Marseille (Conver), 1760. Three centuries on, the same skeleton now mows a field of severed body parts with a scythe — and the card is left pointedly untitled."},
+    {"deck": "golden-dawn-book-t-tarot", "ref": "tk:death", "caption": "Death — Rider-Waite-Smith line, 1909. The skeleton survives the whole journey but is restaged once more: an armoured rider on a pale horse beneath a rising sun."},
+    {"heading": "Continuity & diversity — a few iconic cards"},
+    {"deck": "visconti-sforza-tarot", "ref": "tk:fool", "caption": "The Fool — Visconti-Sforza, c. 1451. A ragged wanderer; the figure scarcely changes for five centuries."},
+    {"deck": "tarot-de-marseille-conver", "ref": "tk:fool", "caption": "Le Mat — Marseille (Conver), 1760. The same vagabond and his nipping dog, now in woodcut."},
+    {"deck": "golden-dawn-book-t-tarot", "ref": "tk:fool", "caption": "The Fool — Rider-Waite-Smith line, 1909. Still the wanderer, stepping off a cliff into the modern deck."},
+    {"deck": "mamluk-deck", "ref": "item:cups-king", "caption": "Mamluk card, 14th–15th c. Egypt/Syria — the four-suit ancestor that reached Europe in the 1370s."},
+    {"deck": "sola-busca-tarot", "ref": "item:cups-05", "caption": "Sola Busca, 1491 — the first deck to give every numbered pip a figured scene, four centuries before the RWS."},
+    {"deck": "mantegna-tarocchi", "ref": "item:plate-01", "caption": "The “Mantegna Tarocchi”, c. 1465 — a humanist set of ranks and virtues, not a tarot at all: a cousin, not a parent."},
+    {"deck": "visconti-sforza-tarot", "ref": "tk:world", "caption": "The World — Visconti-Sforza, c. 1451. Tooled gold leaf for a ducal court: tarot began as luxury, not occultism."},
+    {"deck": "tarot-de-marseille-conver", "ref": "tk:moon", "caption": "The Moon — Marseille, 1760. The uncanny scene of towers, dogs, and crayfish the occultists inherited whole."},
+]
+EMBEDS = {"plates": PLATES_EMBEDS}  # add decks/suits/trumps/etc. here to bake the rest
+
 def convert(mdx_id, out_slug, name=None):
     src = os.path.join(ROOT, "course", mdx_id + ".mdx")
     text = io.open(src, encoding="utf-8").read()
@@ -51,15 +71,23 @@ def convert(mdx_id, out_slug, name=None):
 
     items = []
     for i, (h, content) in enumerate(sections, 1):
-        if not content and not h:
+        # Bake known <div data-embed="NAME"> galleries into item.metadata.embeds (card
+        # references the renderer resolves); strip ALL inert data-embed markers from the prose.
+        meta = {}
+        for nm in set(re.findall(r'data-embed="([a-z-]+)"', content)):
+            if nm in EMBEDS:
+                meta["embeds"] = EMBEDS[nm]
+        content = re.sub(r'\s*<div data-embed="[^"]+"></div>\s*', "\n\n", content).strip()
+        if not content and not meta:
             continue
-        items.append({
+        it = {
             "id": "lesson-%02d-%s" % (i, slugify(h)),
-            "name": h,
-            "category": "lesson",
-            "keywords": [],
+            "name": h, "category": "lesson", "keywords": [],
             "sections": {"Content": content},
-        })
+        }
+        if meta:
+            it["metadata"] = meta
+        items.append(it)
 
     grammar = {
         "_grammar_commons": {"schema_version": "1.0", "license": "CC-BY-SA-4.0",
