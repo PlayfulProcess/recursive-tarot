@@ -62,6 +62,12 @@
   .prose strong{font-weight:600} .prose em{font-style:italic}
   .prose hr{border:none;border-top:1px solid var(--line);margin:1.5em 0}
   .prose table{border-collapse:collapse;margin:1em 0;font-size:14.5px} .prose th,.prose td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+  /* embedded card galleries (item.metadata.embeds → cards resolved from other grammars) */
+  .embeds{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start;margin:18px 0 4px}
+  .embeds .plates-h{flex-basis:100%;font-family:var(--sans);font-size:13px;font-weight:700;color:#8a6414;letter-spacing:.02em;margin:8px 0 0}
+  .embeds figure.plate{margin:0;width:150px}
+  .embeds figure.plate img{width:100%;border-radius:6px;border:1px solid var(--line);background:#f4f1ea;display:block}
+  .embeds figure.plate figcaption{font-family:var(--serif-body);font-size:11.5px;line-height:1.42;color:var(--mut);margin-top:5px}
   #err{color:#a3402d;padding:24px;font-family:var(--sans)}
   @media (max-width:760px){ .cgrid{grid-template-columns:1fr} .toc{position:static} }
 </style>
@@ -115,6 +121,30 @@
   }
   const slug = s => 'x-' + String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
+  // Resolve an item's metadata.embeds (cross-grammar references) into a card gallery.
+  // Each entry is {heading} (a sub-gallery title) or {deck, ref, caption}; ref is
+  // `tk:<trump_key>` or `item:<id>`. The deck grammar is fetched once and the card's
+  // image_url pulled in — the course grammar is the whole spec; this "just renders" it.
+  const _deckCache = {};
+  async function _getDeck(slug2){ if (!(slug2 in _deckCache)){ try { _deckCache[slug2] = await (await fetch('../tarot/' + slug2 + '/grammar.json')).json(); } catch(_){ _deckCache[slug2] = null; } } return _deckCache[slug2]; }
+  function _resolveItem(dg, ref){
+    ref = String(ref || '');
+    if (ref.indexOf('tk:') === 0) return (dg.items || []).find(i => (i.metadata || {}).trump_key === ref.slice(3));
+    if (ref.indexOf('item:') === 0) return (dg.items || []).find(i => i.id === ref.slice(5));
+    return (dg.items || []).find(i => i.image_url || (i.metadata || {}).image_url);
+  }
+  async function renderEmbeds(embeds){
+    let h = '';
+    for (const e of (embeds || [])){
+      if (e.heading){ h += `<div class="plates-h">${esc(e.heading)}</div>`; continue; }
+      const dg = await _getDeck(e.deck); if (!dg) continue;
+      const it = _resolveItem(dg, e.ref); const img = it && (it.image_url || (it.metadata || {}).image_url); if (!img) continue;
+      const href = 'cards.html?src=' + encodeURIComponent('../tarot/' + e.deck + '/grammar.json') + '&item=' + encodeURIComponent(it.id);
+      h += `<figure class="plate"><a href="${href}"><img loading="lazy" src="${esc(img)}" alt=""></a>${e.caption ? `<figcaption>${esc(e.caption)}</figcaption>` : ''}</figure>`;
+    }
+    return h;
+  }
+
   // discover groupable metadata fields: string values, >1 distinct, not an internal *_label/needs.
   function groupFields(items){
     const counts = {};
@@ -130,8 +160,9 @@
   const labelFor = (it, field) => (it.metadata || {})[field + '_label'] || (it.metadata || {})[field] || '—';
 
   function render(){
-    const items = (GRAMMAR.items || []).filter(it => it.sections && Object.keys(it.sections).length);
+    const items = (GRAMMAR.items || []).filter(it => (it.sections && Object.keys(it.sections).length) || (it.metadata && it.metadata.embeds));
     $('content').innerHTML = ''; $('toc').innerHTML = '';
+    const pendingEmbeds = [];
     let chapters;
     if (groupField){
       const by = {};
@@ -157,13 +188,17 @@
             ? `<div class="sec"><div class="prose">${richMd(v)}</div></div>`
             : `<div class="sec"><div class="lab">${esc(lab)}</div><div class="prose">${richMd(v)}</div></div>`).join('');
         const img = it.image_url ? `<img loading="lazy" src="${esc(it.image_url)}" alt="">` : '';
+        const embHtml = (m.embeds && m.embeds.length) ? `<div class="embeds" id="emb-${id}"></div>` : '';
         const lEl = document.createElement('div'); lEl.className = 'lesson'; lEl.id = id;
-        lEl.innerHTML = `<h3>${esc(it.name || 'Untitled')}</h3>${badges ? `<div class="badges">${badges}</div>` : ''}${img}${secs}`;
+        lEl.innerHTML = `<h3>${esc(it.name || 'Untitled')}</h3>${badges ? `<div class="badges">${badges}</div>` : ''}${img}${secs}${embHtml}`;
         cEl.appendChild(lEl);
+        if (m.embeds && m.embeds.length) pendingEmbeds.push({ elId: 'emb-' + id, embeds: m.embeds });
         const a = document.createElement('a'); a.href = '#' + id; a.textContent = (it.name || 'Untitled'); $('toc').appendChild(a);
       }
       $('content').appendChild(cEl);
     }
+    // resolve cross-grammar embeds (card galleries) after the page paints
+    pendingEmbeds.forEach(async pe => { const el = document.getElementById(pe.elId); if (el) el.innerHTML = await renderEmbeds(pe.embeds); });
   }
 
   function setGroup(v){ groupField = v; const u = new URL(location); v ? u.searchParams.set('group', v) : u.searchParams.delete('group'); history.replaceState(null, '', u); render(); }
