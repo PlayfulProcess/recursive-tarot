@@ -1,49 +1,27 @@
 {
-  "_grammar_commons": {
-    "schema_version": "1.0",
-    "license": "CC-BY-SA-4.0",
-    "attribution": [
-      {
-        "name": "PlayfulProcess"
-      }
-    ]
-  },
   "name": "The Rosenwald Sheet — Early Florentine (A-order), c. 1500",
-  "slug": "rosenwald-sheet",
-  "grammar_type": "custom",
-  "provenance": "record",
-  "creator_name": "PlayfulProcess",
-  "default_view": "tree",
-  "default_preview": "tree",
-  "description": "Uncut sheets of an early **Florentine (A-order)** tarot, late 15th–early 16th century, in the **National Gallery of Art, Washington** (the Lessing J. Rosenwald Collection). The NGA's open-access policy places the images firmly in the public domain — austere, woodcut, and genuinely early. A southern (A-order) counterpart to the northern C-order Cary Sheet.\n\nANCESTRAL STATUS: **ancestral** to the standard tarot (the Florentine A-order line).\n\nIMAGE: National Gallery of Art open access (NGA object 41321, Rosenwald Collection), rehosted to R2. SOURCES: NGA collection; Dummett, *The Game of Tarot* (1980).\n",
-  "metadata": {
-    "ancestry": "ancestral",
-    "tradition": "Florentine / A-order",
-    "order": "A",
-    "function": "game",
-    "common_name": "Rosenwald Sheet",
-    "category": "historical",
-    "year": 1500,
-    "year_label": "c. 1500"
-  },
   "items": [
     {
       "id": "overview",
       "name": "The Rosenwald Sheet",
       "level": 1,
       "category": "overview",
-      "sort_order": 0,
       "sections": {
         "What it is": "Uncut Florentine tarot sheets, c. 1500, at the NGA (Rosenwald Collection); the early A-order pattern."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/rosenwald-sheet/rosenwald-tarocchi-sheet.jpg"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/rosenwald-sheet/rosenwald-tarocchi-sheet.jpg",
+      "sort_order": 0
     }
   ],
+  "description": "Uncut sheets of an early **Florentine (A-order)** tarot, late 15th–early 16th century, in the **National Gallery of Art, Washington** (the Lessing J. Rosenwald Collection). The NGA's open-access policy places the images firmly in the public domain — austere, woodcut, and genuinely early. A southern (A-order) counterpart to the northern C-order Cary Sheet.\n\nANCESTRAL STATUS: **ancestral** to the standard tarot (the Florentine A-order line).\n\nIMAGE: National Gallery of Art open access (NGA object 41321, Rosenwald Collection), rehosted to R2. SOURCES: NGA collection; Dummett, *The Game of Tarot* (1980).\n\n---\n*AI-assisted first-pass draft, pending review by the maintainer and the Tarot History Forum. Corrections welcome via pending edit.*",
+  "creator_name": "PlayfulProcess",
+  "grammar_type": "custom",
   "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/rosenwald-sheet/rosenwald-tarocchi-sheet.jpg",
-  "_research": {
-    "deck": "research/decks/rosenwald-sheet.md",
-    "cards": "research/cards/rosenwald-sheet.md",
-    "bibliography": "research/bibliography.bib"
-  },
-  "image_credit": "National Gallery of Art, Washington (Rosenwald Collection)"
+  "_backup_repo_url": "https://github.com/playfulprocess/recursive-tarot/blob/main/tarot/rosenwald-sheet/grammar.json",
+  "_forked_from_url": "https://raw.githubusercontent.com/playfulprocess/recursive-tarot/main/tarot/rosenwald-sheet/grammar.json",
+  "_detected_categories": [
+    "overview"
+  ],
+  "_recursive_eco_url": "https://flow.recursive.eco/play?id=dd401525-d08a-4741-961c-42ce2e4f01ae",
+  "_recursive_eco_edit_url": "https://flow.recursive.eco/create/dashboard/unified/new?id=dd401525-d08a-4741-961c-42ce2e4f01ae"
 }
