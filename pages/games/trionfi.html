@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../../theme.css?v=3">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trionfi — Play the Tarot Game · Recursive Tarot</title>
@@ -11,10 +12,10 @@
   the opponent does goes by too fast to follow. Public-domain images.
 -->
 <style>
-  :root{ --bg:#f4f1ea; --panel:#ffffff; --panel2:#faf8f3; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6;
-         --win:#81b29a; --lose:#e07a5f; }
+  :root{       
+           }
   @media (prefers-color-scheme: light){
-    :root{ --bg:#f4f1ea; --panel:#fff; --panel2:#faf8f3; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; }
+    :root{        }
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
@@ -99,7 +100,8 @@
 </style>
 </head>
 <body>
-<script src="../../site-header.js?v=25"></script>
+<script src="game-card-detail.js?v=1"></script>
+<script src="../../site-header.js?v=31"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">
@@ -168,7 +170,8 @@ const SUITNAME={coins:'Coins',cups:'Cups',swords:'Swords',batons:'Batons',trump:
 const PLAYABLE=['tarot-de-marseille-conver','visconti-sforza-tarot','golden-dawn-book-t-tarot',
   'minchiate-florence-tarot','cary-yale-visconti-tarot','sola-busca-tarot',
   'etteilla-i-livre-de-thot','etteilla-ii-egyptian','etteilla-iii-oracle-des-dames'];
-let DECK=[], CURNAME='', hands={you:[],ai:[]}, tricks={you:0,ai:0};
+let DECK=[], CURNAME='', CURSLUG='', hands={you:[],ai:[]}, tricks={you:0,ai:0};
+const DETMAP={};   // label -> card, for the shared card-detail modal (TG-LOGDETAIL)
 let table=[], ledSuit=null, lead='you', turn='you', busy=false, played=0;
 const $=id=>document.getElementById(id);
 const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
@@ -178,7 +181,7 @@ const isMajor=md=>md.arcana==='major'||md.trump_key||/^(major|trump)/.test(Strin
 
 async function loadDeck(slug){
   const g=await (await fetch('../../tarot/'+slug+'/grammar.json')).json();
-  CURNAME=(g.name||slug).split(/\s+[—–-]\s+/)[0];
+  CURNAME=(g.metadata&&g.metadata.common_name)||(g.name||slug).split(/\s+[—–-]\s+/)[0]; CURSLUG=slug;
   // each trump keeps its REAL number (from its key — e.g. the Emperor is IV); take the six lowest
   // available, rank by that number (higher wins). Fall back to the deck's own number, then order.
   let majors=g.items.filter(i=>isMajor(i.metadata||{})&&img(i))
@@ -198,7 +201,15 @@ async function loadDeck(slug){
       return {kind:s,rank:PIP[w]||COURT[w],img:img(i),label:cap(w)+' of '+SUITNAME[s]};});
   DECK=[...trumps,...suitsPick.flatMap(suit)];
   if(DECK.length<16) throw new Error('“'+CURNAME+'” doesn’t have enough card images to deal a game.');
+  for(const k in DETMAP) delete DETMAP[k]; DECK.forEach(c=>{ DETMAP[c.label]=c; });
 }
+// TG-LOGDETAIL / card-detail share: shared modal for a played card (image + game facts + deck link).
+function inspectCard(c){ if(!c||!window.GameCard) return;
+  GameCard.show({ img:c.img, title:c.label,
+    lines:[ c.kind==='trump'?['Trump', c.badge] : ['Suit', SUITNAME[c.kind]||cap(c.kind)],
+            ['Rank', c.rank] ],
+    href: CURSLUG ? '../../viewers/cards.html?src=../tarot/'+CURSLUG+'/grammar.json' : null,
+    linkText:'See this deck in the cards viewer →' }); }
 
 function shuffle(a){ for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]];} return a; }
 function sortHand(h){ const ord={};['coins','cups','swords','batons'].forEach((s,i)=>ord[s]=i); ord.trump=9;
@@ -264,7 +275,8 @@ function finishTrick(){
 }
 function logTrick(w){
   const a=table[0], b=table[1];
-  const side=x=>`<b>${x.by==='you'?'You':'Them'}</b> ${x.card.label}`;
+  const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const side=x=>`<b>${x.by==='you'?'You':'Them'}</b> <span class="lcard" data-card="${esc(x.card.label)}" style="cursor:pointer;text-decoration:underline dotted" title="Inspect this card">${esc(x.card.label)}</span>`;
   const row=`<div class="log-row"><span class="ln">${played}</span>`
     +`${side(a)}<span class="led">led</span> · ${side(b)}`
     +`<span class="wn ${w==='you'?'you-c':'ai-c'}">${w==='you'?'You win the trick':'They win the trick'}</span></div>`;
@@ -287,6 +299,7 @@ function cardEl(c, opts={}){
     +(opts.illegal?' illegal':'')+(opts.legalHint?' legal':'');
   if(opts.play){ el.type='button'; el.disabled=!!opts.illegal;
     if(!opts.illegal) el.onclick=()=>playerPlay(c); else el.title='You must follow '+(SUITNAME[ledSuit]||ledSuit); }
+  else { el.style.cursor='pointer'; el.title='Click to inspect this card'; el.onclick=()=>inspectCard(c); }
   el.innerHTML=(c.kind==='trump'?`<span class="trump-badge">${c.badge||'T'}</span>`:'')
     +`<img loading="lazy" src="${c.img}" alt=""><div class="cap">${c.label}</div>`;
   return el;
@@ -328,6 +341,10 @@ async function start(slug){
   }catch(e){ $('err').style.display='block'; $('err').textContent='Could not load the decks: '+e.message; }
 })();
 $('newgame').addEventListener('click',()=>start($('deck').value));
+$('log').addEventListener('click',e=>{ const s=e.target.closest('[data-card]'); if(s) inspectCard(DETMAP[s.getAttribute('data-card')]); });
 </script>
+
+<script src="../../site-footer.js"></script>
+<site-footer base="../../"></site-footer>
 </body>
 </html>

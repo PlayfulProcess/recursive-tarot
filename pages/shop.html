@@ -1,12 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../theme.css?v=3">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shop — Recursive Tarot</title>
 <meta name="description" content="Printed editions of public-domain historical tarot decks — authentic scans, archival card stock, printed on demand. Each deck links to its free digital twin.">
 <style>
-  :root{--bg:#f4f1ea;--ink:#221f1a;--muted:#6b6457;--accent:#9a7322;--line:#d8d2c6;--card:#ffffff}
+  :root{}
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif}
   .wrap{max-width:1080px;margin:0 auto;padding:26px 18px 80px}
@@ -31,7 +32,7 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=25"></script>
+<script src="../site-header.js?v=31"></script>
 <site-header active="shop"></site-header>
 <main class="wrap">
   <h1>Printed Decks</h1>
@@ -60,8 +61,8 @@
     const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
     // booklet per product: written companions for traditions that have one;
     // Golden Dawn gets the per-card Book T booklet (print-viewer Booklet layout).
-    const ETTEILLA='course.html?src='+encodeURIComponent('../booklets/etteilla-intro.mdx');
-    const GAMES='course.html?src='+encodeURIComponent('../booklets/games-of-the-tarot.mdx');
+    const ETTEILLA='course.html?src='+encodeURIComponent('../course/booklets/etteilla-intro.mdx');
+    const GAMES='course.html?src='+encodeURIComponent('../course/booklets/games-of-the-tarot.mdx');
     const BOOKLET_URL={'etteilla-i-livre-de-thot':ETTEILLA,'etteilla-ii-egyptian':ETTEILLA,'etteilla-iii-oracle-des-dames':ETTEILLA,
       'minchiate-florence-tarot':GAMES,'tarot-de-marseille-conver':GAMES,'mantegna-tarocchi':GAMES};
     let html='';
@@ -86,5 +87,8 @@
   }catch(e){ grid.innerHTML='<p style="color:#e07a5f">Could not load products: '+e.message+'</p>'; }
 })();
 </script>
+
+<script src="../site-footer.js"></script>
+<site-footer base="../"></site-footer>
 </body>
 </html>

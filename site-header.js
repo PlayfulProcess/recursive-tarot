@@ -53,6 +53,7 @@
   ];
   // [key, label, href, cssClass, external?]
   const TOOLS = [
+    ['contribute', 'Contribute', PFX + 'pages/contribute.html', 't-contribute'],
     ['shop',   'Shop',    PFX + 'pages/shop.html',          't-shop'],
     ['github', 'GitHub ↗',  'https://github.com/PlayfulProcess/recursive-tarot', 't-github', true],
   ];
@@ -66,6 +67,11 @@
     ['https://flow.recursive.eco/',   'Oracle ↗', true],
     [PFX + 'pages/play.html',             'All games & readings →'],
   ];
+  // Home — a dropdown that uncollapses to About (the pill itself links to the homepage).
+  const HOME_MENU = [
+    [PFX + 'index.html',        'Home'],
+    [PFX + 'pages/about.html',  'About'],
+  ];
   // Courses — grouped into three topics; each is a course-viewer ?course=… (deep-linkable with #section).
   const COURSE_GROUPS = [
     ['History', [
@@ -74,9 +80,11 @@
     ['Reading the cards', [
       ['reading-the-cards',               'The full course — all 12 chapters'],
     ]],
+    ['Tarot today', [
+      ['tarot-today',                     'Tarot Today — a living question'],
+    ]],
     ['How to Contribute', [
       ['how-to-contribute',               'How to Contribute'],
-      ['build-a-tarot-deck-with-claude',  'Contribute to the Commons'],
     ]],
   ];
 
@@ -92,6 +100,7 @@
     if (f.startsWith('genealogy')) return 'genealogy';
     if (f.startsWith('course')) return 'course';
     if (f.startsWith('shop')) return 'shop';
+    if (f.startsWith('contribute')) return 'contribute';
     return 'home';
   }
 
@@ -155,8 +164,8 @@
           }
           .tab:hover{ color:#9a7322; }
           .tab.active{ color:#9a7322; font-weight:600; border-bottom-color:#9a7322; }
-          .t-caster,.t-course,.t-shop,.t-github{ color:#6b6457; border:0; border-bottom:1.5px solid transparent; border-radius:0; }
-          .t-caster:hover,.t-course:hover,.t-shop:hover,.t-github:hover{ color:#9a7322; background:transparent; }
+          .t-caster,.t-course,.t-shop,.t-github,.t-contribute{ color:#6b6457; border:0; border-bottom:1.5px solid transparent; border-radius:0; }
+          .t-caster:hover,.t-course:hover,.t-shop:hover,.t-github:hover,.t-contribute:hover{ color:#9a7322; background:transparent; }
           /* dropdowns */
           .dd{ position:relative; }
           .dd-btn{ background:none; font-family:inherit; cursor:pointer; }
@@ -171,6 +180,7 @@
           .dd-menu a{ display:block; color:#4a4439; text-decoration:none; font-size:13px;
             padding:8px 10px; border-radius:7px; white-space:nowrap; }
           .dd-menu a:hover{ background:#f1ece1; color:#221f1a; }
+          .dd-menu a[href*="recursive.eco"]{ color:#9333ea; }
           .dd-menu a.on{ color:#221f1a; background:#f1ece1; font-weight:600; }
           .dd-cap{ display:block; font-family:Inter,sans-serif; font-size:9px; text-transform:uppercase; letter-spacing:.16em;
             color:#8a8273; padding:8px 10px 3px; user-select:none; }
@@ -184,7 +194,7 @@
         <div class="bar">
           <span class="brand">
             <a class="brand-logo" href="https://recursive.eco" target="_blank" rel="noopener" title="Part of recursive.eco — the parent project" aria-label="recursive.eco — the parent project">
-              <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#fff;border-radius:50%;flex-shrink:0"><img src="${PFX}recursive-logo.svg" width="30" height="30" alt="" aria-hidden="true" style="display:block"></span>
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#fff;border-radius:50%;flex-shrink:0"><img src="${PFX}public/spiral-purple.svg" width="30" height="30" alt="" aria-hidden="true" style="display:block"></span>
             </a>
             <a class="brand-name" href="${PFX}index.html" title="The Recursive Tarot — home">
               <span class="name">The <span class="gold">Recursive Tarot</span></span>
@@ -192,6 +202,12 @@
           </span>
           <span class="spacer"></span>
           <nav aria-label="Site sections">
+            <span class="dd">
+              <a class="tab dd-btn${active === 'home' ? ' active' : ''}" href="${PFX}index.html" aria-haspopup="true" aria-expanded="false" aria-label="Home menu">Home</a>
+              <span class="dd-menu">
+                ${HOME_MENU.map(([href, label]) => `<a href="${href}">${label}</a>`).join('')}
+              </span>
+            </span>
             <span class="dd">
               <a class="tab dd-btn${viewActive ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Views menu">Views</a>
               <span class="dd-menu">

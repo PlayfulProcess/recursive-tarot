@@ -2,12 +2,12 @@
    The visual system lives here: :root tokens + reusable classes. Every root page
    (index, deck, genealogy) consumes these. Fonts are injected by site-header.js. */
 :root{
-  --bg:#f4f1ea; --surface:#ffffff; --ink:#221f1a; --ink-soft:#4a4439;
-  --mut:#6b6457; --faint:#8a8273; --line:#d8d2c6; --line-soft:#cfc8ba;
-  --gold:#9a7322;                 /* restrained, for light bg — accent only, never a fill */
+     
+     
+                   /* restrained, for light bg — accent only, never a fill */
   --shadow-card:0 14px 30px -20px rgba(60,45,20,.55);
   --shadow-lift:0 26px 46px -22px rgba(60,45,20,.6);
-  --thumb-bg:#faf8f3;             /* light neutral behind contained card art (never crop) */
+               /* light neutral behind contained card art (never crop) */
   --serif-display:"Fraunces",Georgia,"Times New Roman",serif;
   --serif-body:"Fraunces",Georgia,serif;
   --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;

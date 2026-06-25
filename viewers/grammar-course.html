@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../theme.css?v=3">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grammar as a course · Recursive Tarot</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<!--
+  grammar-course.html — render ANY grammar as a readable course.
+  ?src=<grammar.json>   the grammar to read (default: how-to-contribute)
+  ?group=<field>        chapter the items by an item.metadata field (e.g. what / how);
+                        omit to read straight through in item order.
+  Each item becomes a section (its name = heading, its `sections` map = the prose). When a
+  group field X has an item.metadata[X_label], that label titles the chapter. Light-only,
+  theme.css. This is the proof that a grammar can BE a course — the same move we want on
+  recursive.eco's "course" view.
+-->
+<style>
+  main.wrap{max-width:1120px;margin:0 auto;padding:0 34px}
+  .chero{padding:26px 0 6px;max-width:820px}
+  .chero h1{font-family:var(--serif-display);font-weight:600;font-size:clamp(28px,5vw,44px);line-height:1.06;margin:0;color:var(--ink)}
+  .chero .intro{font-family:var(--serif-body);font-size:16px;line-height:1.6;color:var(--ink-soft);margin:14px 0 0}
+  .chero .intro a{color:#8a6414}
+  .organize{display:flex;align-items:center;gap:9px;margin:18px 0 4px;font-family:var(--sans);font-size:13px;color:var(--mut)}
+  .organize select{font-family:inherit;font-size:13px;background:var(--surface);color:var(--ink);border:1px solid var(--line-soft);border-radius:8px;padding:6px 10px;cursor:pointer}
+
+  .cgrid{display:grid;grid-template-columns:240px 1fr;gap:46px;margin-top:18px;align-items:start}
+  .toc{position:sticky;top:18px;font-family:var(--sans);padding-right:8px}
+  .toc h3{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8a6414;margin:0 0 10px}
+  .toc a{display:block;font-size:13px;color:var(--ink-soft);text-decoration:none;padding:4px 0 4px 10px;border-left:2px solid var(--line);line-height:1.35}
+  .toc a:hover{color:#9a7322;border-left-color:#9a7322}
+  .toc a.chap{font-weight:600;color:var(--ink);border-left-color:var(--line-soft);margin-top:8px;padding-left:8px}
+
+  .content{min-width:0}
+  .chapter{margin:0 0 10px}
+  .chapter > h2{font-family:var(--serif-display);font-weight:600;font-size:26px;color:var(--ink);margin:34px 0 4px;
+    padding-bottom:7px;border-bottom:1px solid var(--line-soft)}
+  .chapter > .chap-sub{font-family:var(--sans);font-size:12px;color:var(--mut);margin:0 0 6px}
+  .lesson{padding:28px 0;border-bottom:1px solid var(--line)}
+  .lesson:last-child{border-bottom:none}
+  .lesson > h3{font-family:var(--serif-display);font-weight:600;font-size:24px;color:var(--ink);margin:0 0 12px;line-height:1.15}
+  .lesson .badges{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+  .lesson .badge{font-family:var(--sans);font-size:10.5px;letter-spacing:.04em;padding:2px 9px;border-radius:20px;
+    background:rgba(154,115,34,.1);color:#8a6414}
+  .lesson > img{max-width:340px;width:60%;border-radius:8px;border:1px solid var(--line);margin:4px 0 12px;display:block}
+  .sec{margin:0 0 14px}
+  .sec .lab{font-family:var(--sans);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:0 0 4px}
+  /* rich course prose (marked output) — editorial typography, like our course pages */
+  .prose{font-family:var(--serif-body);font-size:16.5px;line-height:1.72;color:var(--ink)}
+  .prose > :first-child{margin-top:0}
+  .prose p{margin:0 0 1em}
+  .prose h2{font-family:var(--serif-display);font-size:22px;font-weight:600;margin:1.4em 0 .4em;color:var(--ink);line-height:1.2}
+  .prose h3{font-family:var(--serif-display);font-size:18px;font-weight:600;margin:1.2em 0 .3em;color:var(--ink)}
+  .prose a{color:#8a6414}
+  .prose ul,.prose ol{margin:0 0 1em;padding-left:1.4em}
+  .prose li{margin:.3em 0}
+  .prose blockquote{margin:1.1em 0;padding:.5em 1.1em;border-left:3px solid #9a7322;background:rgba(154,115,34,.06);font-style:italic;color:var(--ink-soft)}
+  .prose blockquote p{margin:.4em 0}
+  .prose img{max-width:100%;border-radius:8px;border:1px solid var(--line);margin:.7em 0}
+  .prose code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em;background:var(--chip,#f1ece1);padding:1px 5px;border-radius:4px}
+  .prose strong{font-weight:600} .prose em{font-style:italic}
+  .prose hr{border:none;border-top:1px solid var(--line);margin:1.5em 0}
+  .prose table{border-collapse:collapse;margin:1em 0;font-size:14.5px} .prose th,.prose td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+  /* embedded card galleries (item.metadata.embeds → cards resolved from other grammars) */
+  .embeds{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start;margin:18px 0 4px}
+  .embeds .plates-h{flex-basis:100%;font-family:var(--sans);font-size:13px;font-weight:700;color:#8a6414;letter-spacing:.02em;margin:8px 0 0}
+  .embeds figure.plate{margin:0;width:150px}
+  .embeds figure.plate img{width:100%;border-radius:6px;border:1px solid var(--line);background:#f4f1ea;display:block}
+  .embeds figure.plate figcaption{font-family:var(--serif-body);font-size:11.5px;line-height:1.42;color:var(--mut);margin-top:5px}
+  #err{color:#a3402d;padding:24px;font-family:var(--sans)}
+  @media (max-width:760px){ .cgrid{grid-template-columns:1fr} .toc{position:static} }
+</style>
+</head>
+<body>
+<script src="../site-header.js?v=31"></script>
+<script src="../view-switcher.js?v=11"></script>
+<site-header active="course"></site-header>
+
+<main class="wrap">
+  <div id="err" style="display:none"></div>
+  <header class="chero">
+    <view-switcher active="course" style="display:inline-block;margin-bottom:12px"></view-switcher>
+    <h1 id="ctitle">Loading…</h1>
+    <div id="cintro" class="intro"></div>
+    <div class="organize" id="organize" style="display:none">
+      <span>Organize by</span>
+      <select id="grp" onchange="setGroup(this.value)"></select>
+    </div>
+  </header>
+  <div class="cgrid">
+    <aside class="toc"><h3>Contents</h3><nav id="toc"></nav></aside>
+    <article class="content" id="content"></article>
+  </div>
+</main>
+
+<script>
+  const $ = id => document.getElementById(id);
+  const qs = new URLSearchParams(location.search);
+  const SRC = qs.get('src') || '../tarot/how-to-contribute/grammar.json';
+  let GRAMMAR = null, groupField = qs.get('group') || '';
+
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
+  // minimal markdown: **bold**, `code`, [text](url), paragraphs on blank lines
+  function md(s){
+    if (!s) return '';
+    return s.split(/\n{2,}/).map(p => {
+      let t = esc(p.trim());
+      t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+           .replace(/`([^`]+)`/g, '<code>$1</code>')
+           .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+      return '<p>' + t + '</p>';
+    }).join('');
+  }
+  // full markdown via marked when available (headings, lists, blockquotes, images, tables);
+  // falls back to the tiny md(). Course figures authored as images/<n> live in pages/courses/images/.
+  function richMd(s){
+    if (!s) return '';
+    const html = window.marked ? (marked.parse ? marked.parse(String(s)) : marked(String(s))) : md(String(s));
+    return html.replace(/(<img[^>]+src=")images\//g, '$1../pages/courses/images/');
+  }
+  const slug = s => 'x-' + String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  // Resolve an item's metadata.embeds (cross-grammar references) into a card gallery.
+  // Each entry is {heading} (a sub-gallery title) or {deck, ref, caption}; ref is
+  // `tk:<trump_key>` or `item:<id>`. The deck grammar is fetched once and the card's
+  // image_url pulled in — the course grammar is the whole spec; this "just renders" it.
+  const _deckCache = {};
+  async function _getDeck(slug2){ if (!(slug2 in _deckCache)){ try { _deckCache[slug2] = await (await fetch('../tarot/' + slug2 + '/grammar.json')).json(); } catch(_){ _deckCache[slug2] = null; } } return _deckCache[slug2]; }
+  function _resolveItem(dg, ref){
+    ref = String(ref || '');
+    if (ref.indexOf('tk:') === 0) return (dg.items || []).find(i => (i.metadata || {}).trump_key === ref.slice(3));
+    if (ref.indexOf('item:') === 0) return (dg.items || []).find(i => i.id === ref.slice(5));
+    return (dg.items || []).find(i => i.image_url || (i.metadata || {}).image_url);
+  }
+  async function renderEmbeds(embeds){
+    let h = '';
+    for (const e of (embeds || [])){
+      if (e.heading){ h += `<div class="plates-h">${esc(e.heading)}</div>`; continue; }
+      const dg = await _getDeck(e.deck); if (!dg) continue;
+      const it = _resolveItem(dg, e.ref); const img = it && (it.image_url || (it.metadata || {}).image_url); if (!img) continue;
+      const href = 'cards.html?src=' + encodeURIComponent('../tarot/' + e.deck + '/grammar.json') + '&item=' + encodeURIComponent(it.id);
+      h += `<figure class="plate"><a href="${href}"><img loading="lazy" src="${esc(img)}" alt=""></a>${e.caption ? `<figcaption>${esc(e.caption)}</figcaption>` : ''}</figure>`;
+    }
+    return h;
+  }
+
+  // discover groupable metadata fields: string values, >1 distinct, not an internal *_label/needs.
+  function groupFields(items){
+    const counts = {};
+    for (const it of items){
+      const m = it.metadata || {};
+      for (const [k, v] of Object.entries(m)){
+        if (typeof v !== 'string' || k.endsWith('_label') || k === 'needs') continue;
+        (counts[k] = counts[k] || new Set()).add(v);
+      }
+    }
+    return Object.entries(counts).filter(([, s]) => s.size > 1).map(([k]) => k);
+  }
+  const labelFor = (it, field) => (it.metadata || {})[field + '_label'] || (it.metadata || {})[field] || '—';
+
+  function render(){
+    const items = (GRAMMAR.items || []).filter(it => (it.sections && Object.keys(it.sections).length) || (it.metadata && it.metadata.embeds));
+    $('content').innerHTML = ''; $('toc').innerHTML = '';
+    const pendingEmbeds = [];
+    let chapters;
+    if (groupField){
+      const by = {};
+      for (const it of items){ const key = (it.metadata || {})[groupField] || '—';
+        (by[key] = by[key] || { label: labelFor(it, groupField), items: [] }).items.push(it); }
+      chapters = Object.values(by);
+    } else {
+      chapters = [{ label: null, items }];
+    }
+    for (const ch of chapters){
+      const cEl = document.createElement('section'); cEl.className = 'chapter';
+      if (ch.label){
+        const cid = slug('chap-' + ch.label);
+        cEl.innerHTML = `<h2 id="${cid}">${esc(ch.label)}</h2><div class="chap-sub">${ch.items.length} ${ch.items.length === 1 ? 'lesson' : 'lessons'}</div>`;
+        const a = document.createElement('a'); a.className = 'chap'; a.href = '#' + cid; a.textContent = ch.label; $('toc').appendChild(a);
+      }
+      for (const it of ch.items){
+        const id = slug(it.id || it.name);
+        const m = it.metadata || {};
+        const badges = ['skill', 'cost', 'needs'].map(k => m[k] ? `<span class="badge">${esc(m[k])}</span>` : '').join('');
+        const secs = Object.entries(it.sections || {}).filter(([, v]) => v && String(v).trim())
+          .map(([lab, v]) => /^content$/i.test(lab)
+            ? `<div class="sec"><div class="prose">${richMd(v)}</div></div>`
+            : `<div class="sec"><div class="lab">${esc(lab)}</div><div class="prose">${richMd(v)}</div></div>`).join('');
+        const img = it.image_url ? `<img loading="lazy" src="${esc(it.image_url)}" alt="">` : '';
+        const embHtml = (m.embeds && m.embeds.length) ? `<div class="embeds" id="emb-${id}"></div>` : '';
+        const lEl = document.createElement('div'); lEl.className = 'lesson'; lEl.id = id;
+        lEl.innerHTML = `<h3>${esc(it.name || 'Untitled')}</h3>${badges ? `<div class="badges">${badges}</div>` : ''}${img}${secs}${embHtml}`;
+        cEl.appendChild(lEl);
+        if (m.embeds && m.embeds.length) pendingEmbeds.push({ elId: 'emb-' + id, embeds: m.embeds });
+        const a = document.createElement('a'); a.href = '#' + id; a.textContent = (it.name || 'Untitled'); $('toc').appendChild(a);
+      }
+      $('content').appendChild(cEl);
+    }
+    // resolve cross-grammar embeds (card galleries) after the page paints
+    pendingEmbeds.forEach(async pe => { const el = document.getElementById(pe.elId); if (el) el.innerHTML = await renderEmbeds(pe.embeds); });
+  }
+
+  function setGroup(v){ groupField = v; const u = new URL(location); v ? u.searchParams.set('group', v) : u.searchParams.delete('group'); history.replaceState(null, '', u); render(); }
+  window.setGroup = setGroup;
+
+  (async function(){
+    try {
+      const r = await fetch(SRC); if (!r.ok) throw new Error('Could not load ' + SRC + ' (' + r.status + ')');
+      GRAMMAR = await r.json();
+      document.title = (GRAMMAR.name || 'Grammar') + ' · a course';
+      $('ctitle').textContent = GRAMMAR.name || 'Grammar';
+      $('cintro').innerHTML = richMd(GRAMMAR.description || '');
+      const fields = groupFields(GRAMMAR.items || []);
+      if (fields.length){
+        $('organize').style.display = '';
+        $('grp').innerHTML = '<option value="">Read straight through</option>' +
+          fields.map(f => `<option value="${esc(f)}"${f === groupField ? ' selected' : ''}>${esc(f)}</option>`).join('');
+      }
+      render();
+    } catch (e){ $('err').style.display = 'block'; $('err').textContent = e.message; }
+  })();
+</script>
+
+<script src="../site-footer.js"></script>
+<site-footer base="../"></site-footer>
+</body>
+</html>

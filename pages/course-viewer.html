@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../theme.css?v=3">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="course-title">Course - Recursive.eco</title>
-    <link rel="icon" type="image/png" href="/public/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg?v=2">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Markdown parser -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -469,6 +470,20 @@
             line-height: 1.45;
         }
 
+        /* Compact QR chip (replaces the big block) — a small "open on phone"
+           pill in the hero row; click pops the scannable QR via the lightbox. */
+        .course-qr-chip {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 4px 13px 4px 5px; border: 1px solid #e3ddcf;
+            border-radius: 999px; background: #fff; color: #2a2622;
+            font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+            transition: border-color .15s, background .15s;
+        }
+        .course-qr-chip:hover { border-color: #9a7322; background: rgba(154,115,34,.07); }
+        .course-qr-chip:focus-visible { outline: 2px solid #7c5b18; outline-offset: 2px; }
+        .course-qr-chip-thumb { display: inline-flex; width: 26px; height: 26px; border-radius: 5px; overflow: hidden; background: #fff; }
+        .course-qr-chip-thumb canvas, .course-qr-chip-thumb img { display: block; width: 26px; height: 26px; }
+
         .qr-code-inline {
             display: inline-block;
             vertical-align: middle;
@@ -716,7 +731,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- recursive-tarot drift: shared dark header instead of the recursive.eco shell. -->
-    <script src="../site-header.js?v=25"></script>
+    <script src="../site-header.js?v=31"></script>
     <site-header active="course"></site-header>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -731,10 +746,8 @@
                      interactive pills and the content card leads straight into
                      the body. The old informative pills (duration / device /
                      no-coding) were removed Jun 5 2026 — they read as noise. -->
-                <button id="present-toggle" class="present-toggle" type="button" aria-pressed="false" title="Toggle Presentation Mode — adds QR codes next to every link so an audience can scan instead of typing URLs">
-                    <span aria-hidden="true">▦</span>
-                    <span id="present-toggle-label">Presentation Mode</span>
-                </button>
+                <!-- Presentation Mode (per-link QR toggle) retired Jun 23 2026 — the one course QR
+                     below is shown always instead. -->
             </div>
         </div>
 
@@ -1607,12 +1620,7 @@
                 });
             });
 
-            // If Presentation Mode is on, paint fresh QRs next to every
-            // external link inside the popup body (the cloned canvases
-            // wouldn't have rendered on mobile).
-            if (document.body.classList.contains('presentation-mode') && typeof QRCode !== 'undefined') {
-                paintQrCodesIn(body);
-            }
+            // (Per-link QRs retired Jun 23 2026 — Presentation Mode is gone.)
         }
         function closeCoursePopup() {
             if (coursePopupBackdrop) {
@@ -1646,37 +1654,28 @@
         // your phone" — so attendees can follow along without typing
         // the URL. Click to enlarge via the existing lightbox.
         function paintCoursePageQr() {
+            const pills = document.getElementById('course-hero-pills');
             const courseContent = document.getElementById('course-content');
-            if (!courseContent) return;
-            if (courseContent.querySelector('.course-page-qr-block')) return; // already painted
+            if (!pills && !courseContent) return;
+            if (document.querySelector('.course-qr-chip')) return; // already painted
             const courseUrl = window.location.href
                 .replace('://dev.recursive.eco', '://recursive.eco')
                 .replace('://dev.flow.recursive.eco', '://flow.recursive.eco');
-            const wrap = document.createElement('div');
-            wrap.className = 'course-page-qr-block';
-            wrap.innerHTML = `
-                <div class="course-page-qr-inner">
-                    <div class="course-page-qr-target"></div>
-                    <div class="course-page-qr-label">
-                        <div class="course-page-qr-label-main"><rt-icon name="device"></rt-icon> Scan to open this course on your phone</div>
-                        <div class="course-page-qr-label-sub">Project this slide so attendees can follow along — every external link below also gets a QR.</div>
-                    </div>
-                </div>
-            `;
-            const target = wrap.querySelector('.course-page-qr-target');
-            new QRCode(target, { text: courseUrl, width: 140, height: 140, correctLevel: QRCode.CorrectLevel.M });
-            const open = (e) => { e.preventDefault(); e.stopPropagation(); openQrLightbox(courseUrl); };
-            wrap.style.cursor = 'pointer';
-            wrap.setAttribute('role', 'button');
-            wrap.setAttribute('tabindex', '0');
-            wrap.setAttribute('aria-label', 'Open course-page QR code at scannable size');
-            wrap.title = 'Click to enlarge for the back row';
-            wrap.addEventListener('click', open);
-            wrap.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') open(e); });
-            courseContent.insertBefore(wrap, courseContent.firstChild);
+            // A small "open on phone" chip with a tiny QR thumbnail. Clicking pops the
+            // scannable QR (the lightbox). Lives in the hero pill row, not a big block.
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'course-qr-chip';
+            btn.setAttribute('aria-label', 'Show a QR code to open this course on your phone');
+            btn.title = 'Open on your phone — show a QR code';
+            btn.innerHTML = '<span class="course-qr-chip-thumb" aria-hidden="true"></span><span>Open on phone</span>';
+            new QRCode(btn.querySelector('.course-qr-chip-thumb'), { text: courseUrl, width: 26, height: 26, correctLevel: QRCode.CorrectLevel.L });
+            btn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); openQrLightbox(courseUrl); });
+            if (pills) pills.appendChild(btn);
+            else courseContent.insertBefore(btn, courseContent.firstChild);
         }
         function removeCoursePageQr() {
-            document.querySelectorAll('.course-page-qr-block').forEach(el => el.remove());
+            document.querySelectorAll('.course-qr-chip, .course-page-qr-block').forEach(el => el.remove());
         }
 
         // Paint inline QRs after every external link in `container`. Skips
@@ -1800,17 +1799,12 @@
             }
         }
 
+        // Presentation Mode (the per-link QR toggle) was retired Jun 23 2026 — it cluttered the
+        // course view and the QRs are auto-generated anyway. We keep exactly ONE: a "scan to open
+        // this course" QR at the top, shown always. Click it to enlarge for the back of a room.
         function initializePresentationMode() {
-            const btn = document.getElementById('present-toggle');
-            if (!btn) return;
-            btn.addEventListener('click', () => {
-                const isOn = document.body.classList.contains('presentation-mode');
-                setPresentationMode(!isOn);
-            });
-            // Restore the persisted choice. Runs once after content load.
-            let saved = null;
-            try { saved = localStorage.getItem('course-presentation-mode'); } catch { /* private */ }
-            if (saved === '1') setPresentationMode(true);
+            loadQrcodeLib().then(paintCoursePageQr).catch(err =>
+                console.error('[course-qr] QR lib failed to load', err));
         }
 
         // Load course on page load

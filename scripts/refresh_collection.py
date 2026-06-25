@@ -57,6 +57,7 @@ def main():
         if not os.path.exists(path):
             print("  MISSING grammar:", e["path"]); continue
         g = json.load(open(path, encoding="utf-8"))
+        md = g.get("metadata") or {}
         new = {
             "name": g.get("name"),
             "type": g.get("grammar_type"),
@@ -65,6 +66,13 @@ def main():
             "cover_image_url": g.get("cover_image_url"),
             "blurb": blurb_of(g),
         }
+        # Deck-index display fields — seeded onto grammar.metadata by seed_deck_index.py
+        # (the grammar is the source of truth). common_name is the SHORT name shown in
+        # every dropdown / pill; the long `name` stays for page headers.
+        if md.get("common_name"):
+            new["common_name"] = md["common_name"]
+        if md.get("category"):
+            new["category"] = md["category"]
         if e["slug"] in YEARS:
             new["year"], new["year_label"] = YEARS[e["slug"]]
         # Two Wings: derive provenance from the grammar file when present (the file

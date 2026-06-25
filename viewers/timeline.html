@@ -1,13 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../theme.css?v=3">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tarot Timeline — Decks Through Time · Recursive Tarot</title>
 <style>
   :root{
-    --bg:#f4f1ea; --panel:#ffffff; --ink:#221f1a; --ink-strong:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6;
-    --roots:#c9a24b; --a:#e07a5f; --b:#81b29a; --c:#6d8ec9; --occult:#9b6dc9; --sui:#c96d9b;
+          
+         
   }
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);color-scheme:light;
@@ -30,7 +31,7 @@
   .rowhit:hover + .rowg .dname, .rowg:hover .dname{fill:var(--ink-strong)}
   .node{stroke:var(--bg);stroke-width:2px;cursor:pointer}
   .dname{font-size:13.5px;fill:var(--ink);font-weight:600;cursor:pointer}
-  .dyear{font-size:12px;fill:var(--accent);font-weight:700}
+  .dyear{font-size:11px;fill:#8a6414;font-weight:600}
   .dbranch{font-size:11px;fill:var(--muted)}
   .dim{opacity:.16}.hot{opacity:1!important}
   .legend{padding:10px 12px;border-top:1px solid var(--line);display:flex;gap:14px;flex-wrap:wrap;font-size:12px}
@@ -52,12 +53,12 @@
   body.embed #stage{display:block}
   body.embed #scroll{overflow:visible;flex:none}
   /* in the (light) book, force the embed light regardless of the reader's OS theme */
-  body.embed{ --bg:#f4f1ea; --panel:#ffffff; --ink:#221f1a; --ink-strong:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; }
+  body.embed{        }
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=25"></script>
-<script src="../view-switcher.js?v=10"></script>
+<script src="../site-header.js?v=31"></script>
+<script src="../view-switcher.js?v=11"></script>
 <site-header active="timeline"></site-header>
 <div class="wrap">
   <div id="stage">
@@ -76,10 +77,10 @@
 <script src="dimension-engine.js?v=1"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script>
-const BRANCH_RAW={'branch-roots':'#c9a24b','branch-a':'#e07a5f','branch-b':'#81b29a','branch-c':'#6d8ec9','branch-occult':'#9b6dc9','branch-sui':'#c96d9b'};
-const BRANCH_LABEL={'branch-roots':'Roots (Milan)','branch-a':'Southern (A-order)','branch-b':'Eastern (B-order)','branch-c':'Western (C-order)','branch-occult':'Occult','branch-sui':'Sui generis'};
+const BRANCH_RAW={'branch-roots':'#c9a24b','branch-a':'#e07a5f','branch-b':'#81b29a','branch-c':'#6d8ec9','branch-occult':'#9b6dc9','branch-sui':'#c96d9b','branch-contemporary':'#4db6ac'};
+const BRANCH_LABEL={'branch-roots':'Roots (Milan)','branch-a':'Southern (A-order)','branch-b':'Eastern (B-order)','branch-c':'Western (C-order)','branch-occult':'Occult','branch-sui':'Sui generis','branch-contemporary':'Contemporary'};
 const PALETTE=['#c9a24b','#e07a5f','#81b29a','#6d8ec9','#9b6dc9','#c96d9b','#9a7322','#6b6457','#4db6ac','#e57373'];
-const SLUG_MAP={'deck-visconti-sforza':'visconti-sforza-tarot','deck-cary-yale':'cary-yale-visconti-tarot','deck-tarocchino-bologna':'tarocchino-bologna','deck-minchiate':'minchiate-florence-tarot','deck-charles-vi':'charles-vi-tarot','deck-marseille-conver':'tarot-de-marseille-conver','deck-marseille-type1':'noblet-tarot','deck-besancon':'tarot-de-besancon','deck-court-de-gebelin':'court-de-gebelin-tarot','deck-etteilla-i':'etteilla-i-livre-de-thot','deck-etteilla-iii':'etteilla-iii-oracle-des-dames','deck-oswald-wirth':'oswald-wirth-tarot','deck-golden-dawn':'golden-dawn-book-t-tarot','deck-sola-busca':'sola-busca-tarot','deck-mantegna':'mantegna-tarocchi'};
+const SLUG_MAP={'deck-visconti-sforza':'visconti-sforza-tarot','deck-cary-yale':'cary-yale-visconti-tarot','deck-tarocchino-bologna':'tarocchino-bologna','deck-minchiate':'minchiate-florence-tarot','deck-charles-vi':'charles-vi-tarot','deck-marseille-conver':'tarot-de-marseille-conver','deck-marseille-type1':'noblet-tarot','deck-besancon':'tarot-de-besancon','deck-court-de-gebelin':'court-de-gebelin-tarot','deck-etteilla-i':'etteilla-i-livre-de-thot','deck-etteilla-iii':'etteilla-iii-oracle-des-dames','deck-oswald-wirth':'oswald-wirth-tarot','deck-golden-dawn':'golden-dawn-book-t-tarot','deck-sola-busca':'sola-busca-tarot','deck-mantegna':'mantegna-tarocchi','deck-ontoject':'ontoject-illustrated','deck-anecdotes':'anecdotes-tarot'};
 
 const params=new URLSearchParams(location.search);
 const SRC=params.get('src')||'../tarot/tree-of-tarot/grammar.json';
@@ -189,8 +190,9 @@ function draw(){
   const g=svg.append('g').selectAll('g.rowg').data(placed).join('g').attr('class','rowg')
     .attr('transform',d=>`translate(${d.px},${d.py})`);
   g.append('circle').attr('class','node').attr('r',6).attr('fill',d=>colorOf[d.lv]||'#6b6457');
-  g.append('text').attr('class','dname').attr('x',10).attr('dy','0.32em').text(d=>d.name.replace(/\s+[—–-]\s+.*/,'').replace(/\s*\([^)]*\)/g,'').trim().slice(0,30));
-  g.append('text').attr('class','dyear').attr('x',10).attr('y',-9).text(d=>d.year);
+  const dn=g.append('text').attr('class','dname').attr('x',10).attr('dy','0.32em');
+  dn.append('tspan').text(d=>d.name.replace(/\s+[—–-]\s+.*/,'').replace(/\s*\([^)]*\)/g,'').trim().slice(0,30));
+  dn.append('tspan').attr('class','dyear').attr('dx','7').text(d=>d.year);
   g.on('click',(ev,d)=>{ev.stopPropagation();showDetail(d);})
    .on('mouseenter',(ev,d)=>trace(d.id,g))
    .on('mouseleave',()=>{g.classed('dim',false).classed('hot',false);svg.selectAll('.rail').classed('dim',false);});
@@ -226,5 +228,8 @@ function buildLegend(){
     row.onclick=()=>{hidden.has(v)?hidden.delete(v):hidden.add(v);buildLegend();draw();}; lg.appendChild(row); });
 }
 </script>
+
+<script src="../site-footer.js"></script>
+<site-footer base="../"></site-footer>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../../theme.css?v=3">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ma Diao 馬吊 — Play the Oldest Card Game · Recursive Tarot</title>
@@ -16,12 +17,12 @@
     the stock's role and the dealer-cut are simplified — noted in the panel.
 -->
 <style>
-  :root{ --bg:#f4f1ea; --panel:#ffffff; --panel2:#faf8f3; --felt:#1f2233; --ink:#221f1a; --muted:#6b6457;
-         --accent:#9a7322; --line:#d8d2c6; --good:#81b29a; --bad:#e07a5f;
-         --cash:#c8932f; --strings:#3a8a52; --myriads:#c0473b; --tens:#8a5fb0; }
+  :root{      
+            
+             }
   @media (prefers-color-scheme: light){
-    :root{ --bg:#f4f1ea; --panel:#fff; --panel2:#faf8f3; --felt:#eef0f7; --ink:#221f1a; --muted:#6b6457;
-           --accent:#9a7322; --line:#d8d2c6; }
+    :root{      
+             }
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
@@ -89,7 +90,8 @@
 </style>
 </head>
 <body>
-<script src="../../site-header.js?v=25"></script>
+<script src="game-card-detail.js?v=1"></script>
+<script src="../../site-header.js?v=31"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">
@@ -197,13 +199,24 @@
   // ───────── browser UI ─────────
   const $=id=>document.getElementById(id);
   const SUITVAR={cash:'var(--cash)',strings:'var(--strings)',myriads:'var(--myriads)',tens:'var(--tens)'};
+  const SUITNAME={cash:'Cash 文',strings:'Strings 索',myriads:'Myriads 萬',tens:'Tens-of-Myriads 十萬'};
   const SEATNAME=['You','West','North','East']; let turn=0, busy=false;
+  const DETMAP={};   // label -> card, for the shared card-detail modal (TG-LOGDETAIL)
+  const escH=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  // card-detail share: type-rendered money cards have no image, so we show their facts.
+  function inspectCard(c){ if(!c||!window.GameCard) return;
+    GameCard.show({ title:c.label,
+      lines:[ ['Suit', SUITNAME[c.suit]||c.suit], ['Face', c.val],
+              ['Trick rank', c.rank], c.suit==='cash'?['Note','Cash ranks reversed — Zero is highest']:null ].filter(Boolean),
+      href:'../../viewers/cards.html?src=../tarot/madiao-money-cards/grammar.json',
+      linkText:'See the Ma Diao deck in the cards viewer →' }); }
 
   function cardEl(c,opts={}){
     const el=document.createElement(opts.play?'button':'div');
     el.className='mcard'+(opts.play?'':'')+(opts.slough?' slough':'')+(opts.beats?' beats':'')+(opts.win?' win':'');
     el.style.setProperty('--c', SUITVAR[c.suit]);
     if(opts.play){ el.type='button'; el.onclick=()=>humanPlay(c); }
+    else { el.style.cursor='pointer'; el.title='Click to inspect this card'; el.onclick=()=>inspectCard(c); }
     el.innerHTML=`<div class="m-suit">${SUITC[c.suit]}</div><div class="m-val">${c.val}</div><div class="m-lbl">${c.label}</div>`;
     return el;
   }
@@ -225,12 +238,12 @@
   }
   const setStatus=t=>$('status').textContent=t;
   function logTrick(out){
-    const side=x=>`${SEATNAME[x.seat]} ${x.card.label}`;
-    const cls = out.seat===0?'good':'';
+    const side=x=>`${SEATNAME[x.seat]} <span class="lcard" data-card="${escH(x.card.label)}" style="cursor:pointer;text-decoration:underline dotted" title="Inspect this card">${escH(x.card.label)}</span>`;
     const row=`<div class="log-row"><b>${played}.</b> ${out.cards.map(side).join(' · ')}`
       +`<span class="wn" style="color:${out.seat===0?'var(--good)':'var(--ink)'}">${SEATNAME[out.seat]} takes it</span></div>`;
     const log=$('log'); if(log.querySelector('.log-empty')) log.innerHTML=''; log.insertAdjacentHTML('afterbegin',row);
   }
+  document.getElementById('log').addEventListener('click',e=>{ const s=e.target.closest('[data-card]'); if(s) inspectCard(DETMAP[s.getAttribute('data-card')]); });
   function step(){
     if(trick.length===4){ busy=true; render(true);
       setTimeout(()=>{ const out=resolveTrick(); logTrick(out); busy=false;
@@ -248,12 +261,15 @@
               : `You took only ${mine} — you'd pay the banker this round.`;
     $('center').innerHTML=`<div class="result" style="color:${mine>=2?'var(--good)':'var(--bad)'}">${msg}</div>`;
   }
-  function newDeal(){ deal(); $('log').innerHTML='<div class="log-empty">No tricks yet.</div>';
+  function newDeal(){ deal(); buildDeck().forEach(c=>{ DETMAP[c.label]=c; }); $('log').innerHTML='<div class="log-empty">No tricks yet.</div>';
     busy=false; $('deck-note').textContent='40-card money pack · 8 tricks · '+stock.length+' in the stock';
     setStatus('You lead the first trick.'); render(); step(); }
   try{ newDeal(); $('newgame').addEventListener('click',newDeal); }
   catch(e){ $('err').style.display='block'; $('err').textContent='Could not start: '+e.message; }
 })();
 </script>
+
+<script src="../../site-footer.js"></script>
+<site-footer base="../../"></site-footer>
 </body>
 </html>

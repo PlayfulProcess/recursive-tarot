@@ -1,0 +1,1232 @@
+{
+  "_community_slug": "petit-lenormand",
+  "name": "Petit Lenormand",
+  "slug": "petit-lenormand",
+  "grammar_type": "tarot",
+  "provenance": "living",
+  "worldview": "contemporary",
+  "creator_name": "Yve Lepkowski",
+  "creator_link": "https://stolen-thyme.com/petit-lenormand/",
+  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272315704-huaade3psqs.png",
+  "image_credit": "Art & card text by Yve Lepkowski (stolen-thyme.com), CC-BY-SA-4.0.",
+  "description": "A 36-card Petit Lenormand oracle by Yve Lepkowski (stolen-thyme.com), CC-BY-SA-4.0, with imagery drawn from the lyrics of Joanna Newsom. **A contemporary deck** — a cartomancy oracle, distinct from the tarot proper, so it sits apart from the historical tarot genealogy. A few card titles are her own (8 Cosmia for Coffin, 17 Goose for Stork, 22 Roads, 23 Rabbits, 30 Dove). 'The card' is her image text; 'Song reference' names the Newsom song (lyrics not reproduced); 'Traditional meaning' is the standard Lenormand reading. The two cards the earlier import had dropped (8 Cosmia, 9 Bouquet) are restored.\n",
+  "tags": [
+    "lenormand",
+    "oracle",
+    "cartomancy",
+    "joanna-newsom",
+    "contemporary",
+    "cc-by-sa",
+    "yve-lepkowski"
+  ],
+  "roots": [
+    "western-esoteric"
+  ],
+  "lineages": [],
+  "is_published": true,
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": [
+      {
+        "name": "Yve Lepkowski",
+        "role": "artist & deck creator",
+        "link": "https://stolen-thyme.com",
+        "note": "Petit Lenormand — original deck, CC-BY-SA-4.0 (stolen-thyme.com/petit-lenormand); inspired by Joanna Newsom."
+      },
+      {
+        "name": "PlayfulProcess",
+        "role": "compiled into this library as a recursive.eco grammar",
+        "link": "https://recursive.eco"
+      }
+    ],
+    "modifications": "Built the full 36-card set (the earlier import had 34 — restored 8 Cosmia and 9 Bouquet). 'The card' + 'Song reference' are her own text; 'Traditional meaning' is standard Lenormand, not hers. No meanings altered."
+  },
+  "items": [
+    {
+      "id": "lenormand-01",
+      "name": "Rider",
+      "sort_order": 0,
+      "category": "lenormand",
+      "keywords": [
+        "news",
+        "messages",
+        "visitor",
+        "speed",
+        "movement"
+      ],
+      "sections": {
+        "The card": "A person in a wide-brimmed hat rides a leaping horse along the seashore. In the background, a noose hangs from a scaffold near some small houses, and seagulls fly over the water.",
+        "Song reference": "Song: “You and Me, Bess”",
+        "Traditional meaning": "The Rider brings news, messages, and visitors. Something is approaching quickly. Expect communication or a new development arriving soon."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272315704-huaade3psqs.png",
+      "metadata": {
+        "lenormand_number": 1,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272315704-huaade3psqs.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-02",
+      "name": "Clover",
+      "sort_order": 1,
+      "category": "lenormand",
+      "keywords": [
+        "luck",
+        "opportunity",
+        "small fortune",
+        "brief happiness",
+        "gamble"
+      ],
+      "sections": {
+        "The card": "A four-leafed clover standing in the grass, with a smaller three-leafed clover on either side. Underground, a horned dragon is curled up, surrounded by swirls which come from its mouth.",
+        "Song reference": "Song: “Only Skin”",
+        "Traditional meaning": "The Clover represents small strokes of luck and fleeting opportunities. Not major fortune, but pleasant surprises and moments of good luck. Take the chance when it appears."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272316811-n2i1kj40ode.png",
+      "metadata": {
+        "lenormand_number": 2,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272316811-n2i1kj40ode.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-03",
+      "name": "Ship",
+      "sort_order": 2,
+      "category": "lenormand",
+      "keywords": [
+        "travel",
+        "journey",
+        "commerce",
+        "foreign matters",
+        "movement"
+      ],
+      "sections": {
+        "The card": "A four-masted ship floats on ocean waves. A birdcage hangs from its bowsprit, and its largest sail is decorated with a flying bird. Two hot air balloons rise in the sky behind the ship.",
+        "Song reference": "Song: “Bridges and Balloons”",
+        "Traditional meaning": "The Ship represents travel, journeys, and foreign affairs. It can indicate physical travel, commerce, or something coming from afar. Movement toward distant goals."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272316628-cuxvjqomcir.png",
+      "metadata": {
+        "lenormand_number": 3,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272316628-cuxvjqomcir.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-04",
+      "name": "Home",
+      "sort_order": 3,
+      "category": "lenormand",
+      "keywords": [
+        "home",
+        "family",
+        "security",
+        "property",
+        "traditions"
+      ],
+      "sections": {
+        "The card": "A one-story house with a chimney, in a field of poppies. Pine trees and mountains in the background cradle the house.",
+        "Song reference": "Song: “Emily”",
+        "Traditional meaning": "The Home represents your dwelling, family, security, and comfort. It speaks to domestic matters, property, and the foundation of your life."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272316765-uyvqi80kleb.png",
+      "metadata": {
+        "lenormand_number": 4,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "traditional_name": "House",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272316765-uyvqi80kleb.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-05",
+      "name": "Tree",
+      "sort_order": 4,
+      "category": "lenormand",
+      "keywords": [
+        "health",
+        "growth",
+        "longevity",
+        "patience",
+        "roots"
+      ],
+      "sections": {
+        "The card": "A rabbit crouches next to a small birch tree with falling leaves.",
+        "Song reference": "Song: “Baby Birch”",
+        "Traditional meaning": "The Tree represents health, slow growth, and deep roots. Things take time like a tree growing. It can indicate physical health or spiritual/karmic matters."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272316601-u6tmli2l9dm.png",
+      "metadata": {
+        "lenormand_number": 5,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272316601-u6tmli2l9dm.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-06",
+      "name": "Clouds",
+      "sort_order": 5,
+      "category": "lenormand",
+      "keywords": [
+        "confusion",
+        "doubt",
+        "uncertainty",
+        "unclear",
+        "temporary"
+      ],
+      "sections": {
+        "The card": "The crenellated towers and walls of a castle rise through swirling clouds. There are some scrubby grasses in the foreground.",
+        "Song reference": "Song: “En Gallop”",
+        "Traditional meaning": "The Clouds represent confusion, uncertainty, and things not being clear. Like weather, this state is temporary. The dark side brings more confusion than the light side."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272318620-4avg4auqy98.png",
+      "metadata": {
+        "lenormand_number": 6,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272318620-4avg4auqy98.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-07",
+      "name": "Serpent",
+      "sort_order": 6,
+      "category": "lenormand",
+      "keywords": [
+        "complications",
+        "detours",
+        "rival",
+        "wisdom",
+        "betrayal"
+      ],
+      "sections": {
+        "The card": "A coiled serpent with fangs and a spade-shaped tail, surrounded by flames.",
+        "Song reference": "Song: “Kingfisher”",
+        "Traditional meaning": "The Serpent represents complications, detours, and sometimes a rival or enemy (often female). The path is not straight—expect twists and turns. Can also represent wisdom through experience."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272318419-97nji8u5koh.png",
+      "metadata": {
+        "lenormand_number": 7,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "traditional_name": "Snake",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272318419-97nji8u5koh.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-08",
+      "name": "Cosmia",
+      "sort_order": 7,
+      "category": "lenormand",
+      "keywords": [],
+      "sections": {
+        "Song reference": "Song: “Cosmia”"
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782191048480-mbpg83agouo.png",
+      "metadata": {
+        "lenormand_number": 8,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "traditional_name": "Coffin",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782191048480-mbpg83agouo.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-09",
+      "name": "Bouquet",
+      "sort_order": 8,
+      "category": "lenormand",
+      "keywords": [],
+      "sections": {
+        "The card": "A frog in fancy clothing holds a bouquet of daisies.",
+        "Song reference": "Song: “Easy”"
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782191067646-uoiv4jtikwj.png",
+      "metadata": {
+        "lenormand_number": 9,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782191067646-uoiv4jtikwj.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-10",
+      "name": "Scythe",
+      "sort_order": 9,
+      "category": "lenormand",
+      "keywords": [
+        "sudden ending",
+        "cutting away",
+        "harvest",
+        "danger",
+        "surgery"
+      ],
+      "sections": {
+        "The card": "A scythe rests on a pile of hay. Five black birds circle overhead.",
+        "Song reference": "Song: “Make Hay”",
+        "Traditional meaning": "The Scythe cuts suddenly and decisively. It can represent sudden endings, accidents, surgery, or harvesting what you've sown. Cuts both good and bad ties."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272318689-vpcdnrdxrco.png",
+      "metadata": {
+        "lenormand_number": 10,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272318689-vpcdnrdxrco.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-11",
+      "name": "Whip",
+      "sort_order": 10,
+      "category": "lenormand",
+      "keywords": [
+        "conflict",
+        "arguments",
+        "repetition",
+        "exercise",
+        "passion"
+      ],
+      "sections": {
+        "The card": "A woman brandishes a whip between two lines of hooded monks. A spider hangs from a large bow on the back of the woman’s dress.",
+        "Song reference": "Song: “Have One On Me”",
+        "Traditional meaning": "The Whip represents arguments, conflict, and repetitive actions. It can indicate sports, exercise, or passionate encounters. Something happens again and again."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272318792-vrmcqg4zjq.png",
+      "metadata": {
+        "lenormand_number": 11,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272318792-vrmcqg4zjq.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-12",
+      "name": "Birds",
+      "sort_order": 11,
+      "category": "lenormand",
+      "keywords": [
+        "communication",
+        "gossip",
+        "couples",
+        "anxiety",
+        "meetings"
+      ],
+      "sections": {
+        "The card": "Two nightjars with tiny beaks and big eyes sit on branches.",
+        "Song reference": "Song: “Anecdotes”",
+        "Traditional meaning": "The Birds represent communication, conversations, and often gossip. They can indicate a couple (elderly or business partners) or nervous, chattering energy."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272318632-0blropxyyq1l.png",
+      "metadata": {
+        "lenormand_number": 12,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272318632-0blropxyyq1l.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-13",
+      "name": "Child",
+      "sort_order": 12,
+      "category": "lenormand",
+      "keywords": [
+        "new beginning",
+        "child",
+        "innocence",
+        "small",
+        "inexperience"
+      ],
+      "sections": {
+        "The card": "A swaddled baby encircled by two leafy stems. There is a kite shape below the baby and stems with two blackberries and heart-shaped leaves above the baby.",
+        "Song reference": "Song: “Esme”",
+        "Traditional meaning": "The Child represents new beginnings, actual children, or something small and innocent. Can indicate inexperience or something in early stages needing care."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272320375-60xyogd3mx2.png",
+      "metadata": {
+        "lenormand_number": 13,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272320375-60xyogd3mx2.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-14",
+      "name": "Fox",
+      "sort_order": 13,
+      "category": "lenormand",
+      "keywords": [
+        "cunning",
+        "employment",
+        "self-interest",
+        "strategy",
+        "caution"
+      ],
+      "sections": {
+        "The card": "A fox prances by the side of a fishpond, with a fish in its mouth. There are pine trees in the background and decorative flourishes in the air.",
+        "Song reference": "Song: “In California”",
+        "Traditional meaning": "The Fox represents cunning, self-interest, and often employment. It warns of deception but also encourages smart strategies. Can indicate job or work situations."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272320513-m669ba82owr.png",
+      "metadata": {
+        "lenormand_number": 14,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272320513-m669ba82owr.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-15",
+      "name": "Bear",
+      "sort_order": 14,
+      "category": "lenormand",
+      "keywords": [
+        "strength",
+        "boss",
+        "authority",
+        "finances",
+        "mother"
+      ],
+      "sections": {
+        "The card": "A bear stands waist-deep in the ocean. She looks up at the “big dipper” constellation in the sky.",
+        "Song reference": "Song: “Monkey & Bear”",
+        "Traditional meaning": "The Bear represents strength, power, and authority figures—often a boss or mother. Can indicate finances, investments, and the need for strength."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272320454-qozipfc7omc.png",
+      "metadata": {
+        "lenormand_number": 15,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272320454-qozipfc7omc.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-16",
+      "name": "Stars",
+      "sort_order": 15,
+      "category": "lenormand",
+      "keywords": [
+        "hope",
+        "inspiration",
+        "guidance",
+        "technology",
+        "clarity"
+      ],
+      "sections": {
+        "The card": "The constellation Cassiopeia, which is made up of five stars in the shape of a W.",
+        "Song reference": "Song: “Cassiopeia”",
+        "Traditional meaning": "The Stars bring hope, inspiration, and guidance. They light the way forward. Can indicate technology, the internet, or spiritual guidance. A very positive card."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272320718-znq5ahwcosc.png",
+      "metadata": {
+        "lenormand_number": 16,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272320718-znq5ahwcosc.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-17",
+      "name": "Goose",
+      "sort_order": 16,
+      "category": "lenormand",
+      "keywords": [
+        "change",
+        "improvement",
+        "moving",
+        "transition",
+        "pregnancy"
+      ],
+      "sections": {
+        "The card": "A flying Canada goose. There are decorative flourishes in the air around the goose.",
+        "Song reference": "Song: “Goose Eggs”",
+        "Traditional meaning": "The Goose (traditionally Stork) represents changes and transitions—usually positive. Associated with moving, improvement, and sometimes pregnancy or birth of new projects."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272320415-5tey0u23q3p.png",
+      "metadata": {
+        "lenormand_number": 17,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "traditional_name": "Stork",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272320415-5tey0u23q3p.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-18",
+      "name": "Dog",
+      "sort_order": 17,
+      "category": "lenormand",
+      "keywords": [
+        "friendship",
+        "loyalty",
+        "trust",
+        "support",
+        "faithful friend"
+      ],
+      "sections": {
+        "The card": "A dog playfully lifts her tail in the air with her front legs and head low to the ground. She has a bone in her mouth and holds a pinecone between her front paws. There are decorative flourishes in the air around the dog.",
+        "Song reference": "Song: “Sadie”",
+        "Traditional meaning": "The Dog represents a loyal friend, trust, and faithfulness. It can indicate a specific friend or the quality of loyalty in a situation. Reliable support."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272322325-53r665r10yg.png",
+      "metadata": {
+        "lenormand_number": 18,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272322325-53r665r10yg.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-19",
+      "name": "Tower",
+      "sort_order": 18,
+      "category": "lenormand",
+      "keywords": [
+        "authority",
+        "institutions",
+        "isolation",
+        "ambition",
+        "boundaries"
+      ],
+      "sections": {
+        "The card": "A crenellated tower with two pointed arched windows. The tower has two legs, in pointy-toed boots. It stands on an assortment of bones, including a human skull.",
+        "Song reference": "Song: “What We Have Known”",
+        "Traditional meaning": "The Tower represents authority, institutions (government, corporations, hospitals), and sometimes isolation. It can indicate ambition or the need for boundaries."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272322250-b4z2twh3w9a.png",
+      "metadata": {
+        "lenormand_number": 19,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272322250-b4z2twh3w9a.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-20",
+      "name": "Garden",
+      "sort_order": 19,
+      "category": "lenormand",
+      "keywords": [
+        "social events",
+        "public",
+        "networking",
+        "reputation",
+        "groups"
+      ],
+      "sections": {
+        "The card": "A horned dragon and a person sit on a blanket in a garden. The person wears a cloak decorated with a cross. Behind them, there are rows of flowers and a low wall covered in heart-shaped ivy leaves. There is an arched door in the middle of the wall.",
+        "Song reference": "Song: “’81”",
+        "Traditional meaning": "The Garden represents social gatherings, the public, and your reputation. It can indicate parties, networking, or how you're perceived by society."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272322237-xsz5xluuouj.png",
+      "metadata": {
+        "lenormand_number": 20,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272322237-xsz5xluuouj.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-21",
+      "name": "Mountain",
+      "sort_order": 20,
+      "category": "lenormand",
+      "keywords": [
+        "obstacles",
+        "delays",
+        "challenges",
+        "blockage",
+        "enemy"
+      ],
+      "sections": {
+        "The card": "A domed observatory with a telescope sits on the side of a mountain whose base is enveloping in swirling clouds. A crescent moon hangs in the sky on the left side of the mountain, the sun is on the other side.",
+        "Song reference": "Song: “Waltz of the 101st Lightborne”",
+        "Traditional meaning": "The Mountain represents obstacles, delays, and blockages. Something stands in your way. It can also represent a stubborn enemy or the need for patience and persistence."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272322262-xlpziiizze9.png",
+      "metadata": {
+        "lenormand_number": 21,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272322262-xlpziiizze9.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-22",
+      "name": "Roads",
+      "sort_order": 21,
+      "category": "lenormand",
+      "keywords": [
+        "choices",
+        "decisions",
+        "options",
+        "directions",
+        "freedom"
+      ],
+      "sections": {
+        "The card": "A road in the foreground splits in two, traveling over rolling hills. On the left side of the card the road leads toward a city skyline. On the right side of the card the road leads toward a barn and trees.",
+        "Song reference": "Song: “Leaving the City”",
+        "Traditional meaning": "The Roads represent choices, decisions, and multiple options. You're at a crossroads and must choose a direction. Can indicate important decisions or freedom of choice."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272322227-3d7bbyywa7q.png",
+      "metadata": {
+        "lenormand_number": 22,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "traditional_name": "Crossroads",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272322227-3d7bbyywa7q.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-23",
+      "name": "Rabbits",
+      "sort_order": 22,
+      "category": "lenormand",
+      "keywords": [
+        "losses",
+        "stress",
+        "theft",
+        "worry",
+        "depletion"
+      ],
+      "sections": {
+        "The card": "Two running rabbits with bows around their necks. Decorative flourishes surround the rabbits.",
+        "Song reference": "Song: “Jackrabbits”",
+        "Traditional meaning": "The Rabbits (traditionally Mice) represent small losses, theft, and things being nibbled away. Stress and worry deplete resources. Watch for things slowly disappearing."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272323993-jctp14x936.png",
+      "metadata": {
+        "lenormand_number": 23,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "traditional_name": "Mice",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272323993-jctp14x936.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-24",
+      "name": "Heart",
+      "sort_order": 23,
+      "category": "lenormand",
+      "keywords": [
+        "love",
+        "romance",
+        "emotion",
+        "passion",
+        "happiness"
+      ],
+      "sections": {
+        "The card": "A white heart is in the center of a starry night sky. At the bottom of the picture, there are outlines of buildings and mountains, and a ladder leads up to the heart.",
+        "Song reference": "Song: “You Will Not Take My Heart Alive”",
+        "Traditional meaning": "The Heart represents love, romance, and matters of the heart. It brings emotional warmth, passion, and happiness. A very positive card for love questions."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272323947-27azouur24i.png",
+      "metadata": {
+        "lenormand_number": 24,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272323947-27azouur24i.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-25",
+      "name": "Ring",
+      "sort_order": 24,
+      "category": "lenormand",
+      "keywords": [
+        "commitment",
+        "contracts",
+        "cycles",
+        "partnership",
+        "marriage"
+      ],
+      "sections": {
+        "The card": "A ring with a knotted string around its top. Below the ring, there is a small circle and two spiraling stems with leaves on their ends.",
+        "Song reference": "Song: “Sprout and the Bean”",
+        "Traditional meaning": "The Ring represents commitment, contracts, and binding agreements. It can indicate marriage, business partnerships, or the completion of a cycle. What goes around comes around."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272323891-qahvf451l3k.png",
+      "metadata": {
+        "lenormand_number": 25,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272323891-qahvf451l3k.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-26",
+      "name": "Book",
+      "sort_order": 25,
+      "category": "lenormand",
+      "keywords": [
+        "secrets",
+        "knowledge",
+        "education",
+        "mystery",
+        "research"
+      ],
+      "sections": {
+        "The card": "A book with the title “Right On” and an image of a sun on its cover.",
+        "Song reference": "Song: “The Book of Right-On”",
+        "Traditional meaning": "The Book represents secrets, hidden knowledge, and education. Something is unknown or being concealed. Can indicate studies, research, or discovering hidden information."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272324158-y5a4cemmd6e.png",
+      "metadata": {
+        "lenormand_number": 26,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272324158-y5a4cemmd6e.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-27",
+      "name": "Letter",
+      "sort_order": 26,
+      "category": "lenormand",
+      "keywords": [
+        "documents",
+        "messages",
+        "communication",
+        "news",
+        "paperwork"
+      ],
+      "sections": {
+        "The card": "A person sits at a desk in the dark, writing on a scroll with a feather pen. The scroll is surrounded by a many-pointed star shape. There is a pointed arched window in the wall which looks out on a crescent moon and stars.",
+        "Song reference": "Song: “Inflammatory Writ”",
+        "Traditional meaning": "The Letter represents documents, written communication, and official messages. Expect news in writing—emails, texts, contracts, or certificates."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272323912-u4y5wk9nyoi.png",
+      "metadata": {
+        "lenormand_number": 27,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272323912-u4y5wk9nyoi.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-28",
+      "name": "Man",
+      "sort_order": 27,
+      "category": "lenormand",
+      "keywords": [
+        "man",
+        "male person",
+        "significant male",
+        "self",
+        "partner"
+      ],
+      "sections": {
+        "The card": "A man wearing a hooded jacket and large boots stands in front of a mill wheel in  a creek, with his thumb hooked in his belt.",
+        "Song reference": "Song: “Same Old Man”",
+        "Traditional meaning": "The Man is a significator representing a significant male person in the reading—the querent if male, a partner, father, son, or important man in the situation."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272326283-053zq6oh2ozt.png",
+      "metadata": {
+        "lenormand_number": 28,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272326283-053zq6oh2ozt.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-29",
+      "name": "Lady",
+      "sort_order": 28,
+      "category": "lenormand",
+      "keywords": [
+        "woman",
+        "female person",
+        "significant female",
+        "self",
+        "partner"
+      ],
+      "sections": {
+        "The card": "A woman wearing a hooded jacket, large boots, and a kerchief around her hair stands with a basket near a washing line, where a dress hangs.",
+        "Song reference": "Song: “Same Old Man”",
+        "Traditional meaning": "The Lady is a significator representing a significant female person in the reading—the querent if female, a partner, mother, daughter, or important woman in the situation."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272325974-p3xnrxnoti.png",
+      "metadata": {
+        "lenormand_number": 29,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272325974-p3xnrxnoti.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-30",
+      "name": "Dove",
+      "sort_order": 29,
+      "category": "lenormand",
+      "keywords": [
+        "peace",
+        "purity",
+        "harmony",
+        "wisdom",
+        "sexuality"
+      ],
+      "sections": {
+        "The card": "A stuffed dove with a heart-shaped patch sewn on its chest. Its wing is made of a glove, the fingers of the glove forming the feathers.",
+        "Song reference": "Song: “Sawdust & Diamonds”",
+        "Traditional meaning": "The Dove (traditionally Lily) represents peace, purity, and harmony. It can indicate mature wisdom, peaceful resolution, or in some traditions, sexuality and sensuality."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272325963-okmw3ll92y.png",
+      "metadata": {
+        "lenormand_number": 30,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "traditional_name": "Lily",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272325963-okmw3ll92y.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-31",
+      "name": "Sun",
+      "sort_order": 30,
+      "category": "lenormand",
+      "keywords": [
+        "success",
+        "happiness",
+        "energy",
+        "victory",
+        "positivity"
+      ],
+      "sections": {
+        "The card": "The sun has both triangular and wavy rays. Below the sun, a black kettle decorated with a heart sits on a round cloth.",
+        "Song reference": "Song: “Anecdotes”",
+        "Traditional meaning": "The Sun is one of the most positive cards—success, happiness, energy, and warmth. It illuminates whatever it touches with positive energy. Victory and achievement."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272325905-9ykbo2ilib.png",
+      "metadata": {
+        "lenormand_number": 31,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272325905-9ykbo2ilib.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-32",
+      "name": "Moon",
+      "sort_order": 31,
+      "category": "lenormand",
+      "keywords": [
+        "recognition",
+        "fame",
+        "emotions",
+        "intuition",
+        "subconscious"
+      ],
+      "sections": {
+        "The card": "Water flows from a crescent moon into a thimble.",
+        "Song reference": "Song: “Bridges and Balloons”",
+        "Traditional meaning": "The Moon represents recognition, fame, and emotional matters. It highlights deep feelings, intuition, and how others see you. Associated with creative and romantic pursuits."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272325937-o330n22f4id.png",
+      "metadata": {
+        "lenormand_number": 32,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272325937-o330n22f4id.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-33",
+      "name": "Key",
+      "sort_order": 32,
+      "category": "lenormand",
+      "keywords": [
+        "solutions",
+        "answers",
+        "importance",
+        "fate",
+        "unlocking"
+      ],
+      "sections": {
+        "The card": "A key with a heart drawn on its head is in the air over an open trunk. The trunk contains a high-heeled boot, three buttons, and a folded dress.",
+        "Song reference": "Song: “Does Not Suffice”",
+        "Traditional meaning": "The Key represents solutions, answers, and things of importance. It unlocks doors and indicates fate or destiny. Whatever it touches becomes significant or finds resolution."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272327875-ekz7tqosy4r.png",
+      "metadata": {
+        "lenormand_number": 33,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272327875-ekz7tqosy4r.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-34",
+      "name": "Fish",
+      "sort_order": 33,
+      "category": "lenormand",
+      "keywords": [
+        "money",
+        "business",
+        "abundance",
+        "independence",
+        "flow"
+      ],
+      "sections": {
+        "The card": "A narwhal with a long horn. The narwhal is surrounded by decorative flourishes.",
+        "Song reference": "Song: “Colleen”",
+        "Traditional meaning": "The Fish represent money, business, and material abundance. They indicate financial matters, independence, and the flow of resources. A positive card for material concerns."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272327772-sntcqqrjexl.png",
+      "metadata": {
+        "lenormand_number": 34,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272327772-sntcqqrjexl.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-35",
+      "name": "Anchor",
+      "sort_order": 34,
+      "category": "lenormand",
+      "keywords": [
+        "stability",
+        "work",
+        "perseverance",
+        "reaching goals",
+        "security"
+      ],
+      "sections": {
+        "The card": "A person with long hair swims down toward an anchor surrounded by oysters. One oyster shell is open to reveal a pearl.",
+        "Song reference": "Song: “Divers”",
+        "Traditional meaning": "The Anchor represents stability, work, and reaching your destination. It indicates perseverance paying off, job security, and finding safe harbor after a journey."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272327806-ymkzwl2qr69.png",
+      "metadata": {
+        "lenormand_number": 35,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272327806-ymkzwl2qr69.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lenormand-36",
+      "name": "Cross",
+      "sort_order": 35,
+      "category": "lenormand",
+      "keywords": [
+        "choices",
+        "decisions",
+        "options",
+        "directions",
+        "freedom"
+      ],
+      "sections": {
+        "The card": "A person’s ankles are wrapped in bandages. The ends of the two bandages trail down and cross each other, forming a X-shape.",
+        "Song reference": "Song: “Go Long”",
+        "Traditional meaning": "The Roads represent choices, decisions, and multiple options. You're at a crossroads and must choose a direction. Can indicate important decisions or freedom of choice."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272322227-3d7bbyywa7q.png",
+      "metadata": {
+        "lenormand_number": 36,
+        "tradition": "contemporary-lenormand",
+        "era": "contemporary",
+        "archetype": null,
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771272322227-3d7bbyywa7q.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/petit-lenormand/"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "common_name": "Petit Lenormand",
+    "category": "historical"
+  }
+}

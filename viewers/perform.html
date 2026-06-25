@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../theme.css?v=3">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Performance · Recursive Tarot</title>
@@ -10,12 +11,12 @@
   { start_sec, end_sec, overlays[] {kind,content,start_sec,end_sec,x_pct,y_pct,width_pct} }.
   A global clock drives image swaps + timed karaoke overlays; intermission items (no image_url)
   render their text centred. Audio optional: metadata.audio (single track) drives the clock if set,
-  else an internal clock auto-advances. ?src=../data/performances/<id>.json (default: Death demo).
+  else an internal clock auto-advances. ?src=../recording/performances/<id>.json (default: Death demo).
 -->
 <style>
-  :root{ --bg:#f4f1ea; --panel:#ffffff; --stage:#faf8f3; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; }
+  :root{        }
   @media (prefers-color-scheme: light){
-    :root{ --bg:#f4f1ea; --panel:#fff; --stage:#15121f; --ink:#221f1a; --muted:#6b6457; --accent:#9a7322; --line:#d8d2c6; }
+    :root{        }
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
@@ -50,7 +51,7 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=25"></script>
+<script src="../site-header.js?v=31"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">
@@ -74,7 +75,7 @@
 <script>
 const $=id=>document.getElementById(id);
 const params=new URLSearchParams(location.search);
-const SRC=params.get('src')||'../data/performances/death-across-the-centuries.json';
+const SRC=params.get('src')||'../recording/performances/death-across-the-centuries.json';
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
 
@@ -151,5 +152,8 @@ function bind(){
   });
 }
 </script>
+
+<script src="../site-footer.js"></script>
+<site-footer base="../"></site-footer>
 </body>
 </html>

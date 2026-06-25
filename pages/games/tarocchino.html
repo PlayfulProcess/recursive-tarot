@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../../theme.css?v=3">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tarocchino di Bologna — Play · Recursive Tarot</title>
@@ -18,11 +19,11 @@
   Simplifications noted in the rules panel (cricche/sequenze bonuses & the Matto exchange: TODO).
 -->
 <style>
-  :root{ --bg:#f4f1ea; --panel:#ffffff; --panel2:#faf8f3; --felt:#15321f; --ink:#221f1a; --muted:#6b6457;
-         --accent:#9a7322; --line:#d8d2c6; --us:#81b29a; --them:#e07a5f; }
+  :root{      
+            --them:#e07a5f; }
   @media (prefers-color-scheme: light){
-    :root{ --bg:#f4f1ea; --panel:#fff; --panel2:#faf8f3; --felt:#e7f0e9; --ink:#221f1a; --muted:#6b6457;
-           --accent:#9a7322; --line:#d8d2c6; }
+    :root{      
+             }
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
@@ -47,6 +48,16 @@
   .rh-order .sep{color:var(--muted)}
   .pill{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:3px 9px;white-space:nowrap;font-size:12px}
   .pill.t{border-color:var(--accent);color:var(--accent)}
+  #all-trumps{background:none;border:none;color:var(--accent);font-weight:600;font-size:12.5px;cursor:pointer;padding:0;text-decoration:underline}
+  .tmodal{position:fixed;inset:0;background:rgba(20,15,10,.55);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px}
+  .tmodal-box{background:var(--bg);border:1px solid var(--line);border-radius:14px;max-width:780px;width:100%;max-height:86vh;overflow:auto;padding:18px 20px;position:relative}
+  .tmodal-head b{font-size:15px} .tmodal-sub{font-size:12px;color:var(--muted);display:block;margin-top:3px;max-width:64ch}
+  .tmodal-x{position:absolute;top:10px;right:14px;background:none;border:none;color:var(--muted);font-size:26px;cursor:pointer;line-height:1}
+  .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr));gap:10px;margin-top:14px}
+  .tg-card{margin:0;text-align:center;position:relative}
+  .tg-card img{width:100%;aspect-ratio:3/5;object-fit:contain;background:var(--panel2);border:1px solid var(--line);border-radius:6px}
+  .tg-card figcaption{font-size:10px;color:var(--ink);margin-top:3px;line-height:1.15}
+  .tg-n{position:absolute;top:3px;right:3px;background:#2d2a3a;color:#fff;font-size:9px;font-weight:800;padding:0 4px;border-radius:3px;min-width:12px;text-align:center}
 
   .toolbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
   .toolbar label{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}
@@ -70,7 +81,8 @@
   .seat .nm{font-weight:700;color:var(--ink);font-size:12px}
   .seat .nm.turn{color:var(--accent)}
   .seat .nm .you-c{color:var(--us)} .seat .nm .them-c{color:var(--them)}
-  .backs{display:flex;gap:2px} .back-s{width:15px;height:23px;border-radius:3px;border:1px solid var(--line);
+  .backs{display:flex;gap:2px;flex-wrap:wrap;justify-content:center;max-width:150px}
+  .peek-card{width:15px;height:23px;border-radius:3px;object-fit:contain;background:var(--panel2);border:1px solid var(--line)} .peek-card.t{border-color:var(--accent)} .back-s{width:15px;height:23px;border-radius:3px;border:1px solid var(--line);
     background:repeating-linear-gradient(45deg,#ffffff,#ffffff 4px,#ffffff 4px,#ffffff 8px)}
   @media (prefers-color-scheme: light){ .back-s{background:repeating-linear-gradient(45deg,#e8e0d2,#e8e0d2 4px,#e8e0d2 4px,#e8e0d2 8px)} }
   .play-slot{min-height:158px;display:flex;align-items:center;justify-content:center}
@@ -84,6 +96,7 @@
   .play-slot .card{width:96px} .play-slot .card img{height:146px}
   .card.win{box-shadow:0 0 0 2px var(--accent)}
   .honour-badge{position:absolute;top:2px;left:2px;background:var(--accent);color:#f4f1ea;font-size:8px;font-weight:800;padding:0 3px;border-radius:3px}
+  .trump-num{position:absolute;top:2px;right:2px;background:#2d2a3a;color:#fff;font-size:8.5px;font-weight:800;padding:0 4px;border-radius:3px;min-width:11px;text-align:center}
 
   .status{font-size:14px;margin:12px 0 6px;min-height:20px;color:var(--ink);font-weight:600}
   .hand{display:flex;gap:9px;flex-wrap:wrap;align-items:center;min-height:180px}
@@ -97,7 +110,7 @@
   .logpanel h3{margin:0 0 4px;font-size:15px} .logpanel h4{margin:14px 0 5px;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent)}
   .logpanel .hint{font-size:12px;color:var(--muted);margin:0 0 10px}
   .logpanel p{font-size:12.5px;color:var(--muted);line-height:1.55;margin:.4em 0}
-  #log{max-height:440px;overflow:auto}
+  #log{max-height:78vh;min-height:160px;overflow:auto;resize:vertical}
   table.logT{border-collapse:collapse;width:100%;font-size:11px}
   table.logT th,table.logT td{border:1px solid var(--line);padding:4px 5px;text-align:center;vertical-align:top}
   table.logT thead th{background:var(--panel2);color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.04em;position:sticky;top:0;z-index:1}
@@ -106,6 +119,7 @@
   table.logT td.cell img{width:40px;height:60px;object-fit:contain;display:block;margin:0 auto}
   table.logT td.cell .cl{font-size:9px;color:var(--muted);line-height:1.1;margin-top:2px}
   table.logT td.cell .led{font-size:8px;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-top:1px}
+  table.logT td.cell .cl b{color:var(--ink)} table.logT td.cell .cl .pts{color:var(--accent);font-weight:700}
   table.logT td.cell.win{background:rgba(154,115,34,.14);box-shadow:inset 0 0 0 2px var(--accent)}
   table.logT td.took{font-weight:700;font-size:10.5px;white-space:nowrap}
   .log-empty{font-size:12px;color:var(--muted)}
@@ -115,7 +129,8 @@
 </style>
 </head>
 <body>
-<script src="../../site-header.js?v=25"></script>
+<script src="game-card-detail.js?v=1"></script>
+<script src="../../site-header.js?v=31"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">
@@ -131,18 +146,21 @@
       <div class="rh-item"><b>Teams.</b> You + North vs. West + East. Play goes clockwise; the trick winner leads next.</div>
       <div class="rh-item"><b>Follow, then trump.</b> Follow the led suit if you can. Void in it, you <em>must</em> play a trump if you hold one; only then may you discard.</div>
       <div class="rh-item"><b>The Fool is the Excuse.</b> The Matto can be played any time, never wins the trick, and stays with your side for its 5 points.</div>
-      <div class="rh-item"><b>Win by points.</b> Honours (Matto · Bagattino · Angel · World) & Kings = 5, Queens 4, Knights 3, Knaves 2; all else 0. Take over half of the 76.</div>
+      <div class="rh-item"><b>Win by points.</b> Honours (Matto · Bagattino · Angel · World) & Kings = 5, Queens 4, Knights 3, Knaves 2; all else 0. <b>Why 76?</b> That's every point in the pack: 4 honours + 4 Kings (5 each = 40) + 4 Queens (16) + 4 Knights (12) + 4 Knaves (8). Take <b>more than 38</b> to win.</div>
     </div>
     <div class="rh-order">
       <div class="ord-line"><span class="lab">Trumps · low → high</span>
         <span class="pill t">Bagattino</span><span class="sep">›</span><span class="pill t">4 Moors</span><span class="sep">›</span><span class="pill t">Love</span><span class="sep">›</span><span class="pill t">Chariot</span><span class="sep">›</span><span class="pill t">Temperance</span><span class="sep">›</span><span class="pill t">Justice</span><span class="sep">›</span><span class="pill t">Strength</span><span class="sep">›</span><span class="pill t">Wheel</span><span class="sep">› … ›</span><span class="pill t">Star</span><span class="sep">›</span><span class="pill t">Moon</span><span class="sep">›</span><span class="pill t">Sun</span><span class="sep">›</span><span class="pill t">World</span><span class="sep">›</span><span class="pill t">Angel</span></div>
       <div class="ord-line"><span class="lab">Suits</span> Coins &amp; Cups rank Ace→10; Swords &amp; Batons are <b>inverted</b> (Ace high). <span class="sep">·</span> <span class="lab">Courts on top</span> King › Queen › Knight › Page.</div>
+      <div class="ord-line"><span class="lab">On the numbers</span> Tarocchino trumps carried <b>no printed numbers</b> — we add the A-order rank (higher wins) for convenience. <button type="button" id="all-trumps">See all 22 trumps &amp; their numbers →</button></div>
     </div>
   </details>
 
   <div class="toolbar">
     <label>Deck <select id="deck"></select></label>
     <button id="newgame">New deal</button>
+    <label title="Harder opponents secure point-rich tricks, feed a winning partner, and pull trumps. Uncheck for the gentler original."><input type="checkbox" id="aihard" checked> Harder opponents</label>
+    <label title="Reveal opponents' hands — a fairness/debug check that they only play legal cards."><input type="checkbox" id="peek"> Peek</label>
     <span class="deck-note" id="deck-note"></span>
   </div>
 
@@ -260,16 +278,40 @@
     const w=winnerEntry(hypo); return w&&w.seat===seat; }
   const byRank=a=>a.slice().sort((x,y)=>(x.rank??0)-(y.rank??0));
   const byVal =a=>a.slice().sort((x,y)=>cardPoints(x)-cardPoints(y)||(x.rank??0)-(y.rank??0));
+  // Opponent AI. EASY (the original) leads low, wins cheaply, dumps low. HARD (default) adds three
+  // standard tactics that stop the human winning every hand: lead trumps when trump-heavy to pull
+  // them, secure point-rich tricks by winning HIGH when not last, and feed a sure-winning partner.
+  let aiHard = true, peek = false;
   function aiChoose(seat){
     const legal=legalMoves(seat);
-    if(trick.length===0){ const nt=legal.filter(c=>c.kind==='suit'&&!c.matto);
-      return byRank(nt.length?nt:legal.filter(c=>!c.matto)).slice(-1)[0]?byRank(nt.length?nt:legal.filter(c=>!c.matto))[0]:legal[0]; }
+    const nonMatto=legal.filter(c=>!c.matto);
+    const lead=trick.length===0, last=trick.length===3;
+    if(lead){
+      const nt=legal.filter(c=>c.kind==='suit'&&!c.matto);
+      if(aiHard){
+        const trumps=hands[seat].filter(c=>c.kind==='trump'&&!c.matto);
+        // trump-heavy → lead a LOW trump to draw out opponents' trumps before cashing courts
+        if(trumps.length>=5 || (trumps.length>=4 && nt.length<=2)){
+          const lt=byRank(legal.filter(c=>c.kind==='trump'&&!c.matto)); if(lt.length) return lt[0];
+        }
+      }
+      return byRank(nt.length?nt:nonMatto)[0] || legal[0];                       // else lead the lowest suit card
+    }
     const cw=curWinnerSeat();
     const partnerWinning = cw!=null && teamOf(cw)===teamOf(seat);
     const wins=legal.filter(c=>!c.matto && wouldWin(seat,c));
-    if(partnerWinning){ const safe=legal.filter(c=>!c.matto); return byVal(safe.length?safe:legal)[0]; }   // don't overtake partner
-    if(wins.length) return byRank(wins)[0];                                                                // win as cheaply as possible
-    const dump=legal.filter(c=>!c.matto); return byVal(dump.length?dump:legal)[0];                          // can't win → throw least value
+    const trickPts=trick.reduce((a,x)=>a+(x.card.matto?0:cardPoints(x.card)),0);
+    if(partnerWinning){
+      const safe=nonMatto.length?nonMatto:legal;
+      // HARD: if I'm last, the trick is my partner's for sure → throw my highest point card to them
+      return (aiHard && last) ? byVal(safe).slice(-1)[0] : byVal(safe)[0];       // else keep points safe
+    }
+    if(wins.length){
+      const sorted=byRank(wins);
+      // HARD: on a point-rich trick, win HIGH when not last so a later seat can't overtake cheaply
+      return (aiHard && trickPts>=4 && !last) ? sorted.slice(-1)[0] : sorted[0]; // else win as cheaply as possible
+    }
+    const dump=nonMatto.length?nonMatto:legal; return byVal(dump)[0];            // can't win → throw least value
   }
 
   function playGameHeadless(deck){
@@ -286,26 +328,39 @@
   // ───────────────────────────────── browser UI ─────────────────────────────────
   const $=id=>document.getElementById(id);
   const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  const PLAYABLE=['tarot-de-marseille-conver','golden-dawn-book-t-tarot','visconti-sforza-tarot'];
   const SEATNAME=['You','West','Partner','East'];
-  let DECK=[], CURNAME='', turn=0, busy=false;
+  let DECK=[], CURNAME='', CURSLUG='', turn=0, busy=false;
+  const DETMAP={};   // label -> card object, for the shared card-detail modal (TG-LOGDETAIL)
 
   async function loadDeck(slug){
     const g=await (await fetch('../../tarot/'+slug+'/grammar.json')).json();
-    CURNAME=(g.name||slug).split(/\s+[—–-]\s+/)[0]; DECK=buildDeck(g);
+    CURNAME=(g.metadata&&g.metadata.common_name)||(g.name||slug).split(/\s+[—–-]\s+/)[0]; CURSLUG=slug; DECK=buildDeck(g);
     if(DECK.length<40) throw new Error('“'+CURNAME+'” lacks enough card images for the 62-card pack.');
+    for(const k in DETMAP) delete DETMAP[k]; DECK.forEach(c=>{ DETMAP[c.label]=c; });
   }
+  // TG-LOGDETAIL: open the shared card-detail modal for a game card (image + game facts + deck link).
+  function inspectCard(c){ if(!c||!window.GameCard) return;
+    GameCard.show({ img:c.img, title:c.label,
+      lines:[ c.kind==='trump'?['Trump #', c.rank] : ['Suit', cap(c.suit||'—')],
+              c.court?['Court', cap(c.court)] : null,
+              ['Card points', cardPoints(c)] ].filter(Boolean),
+      href: CURSLUG ? '../../viewers/cards.html?src=../tarot/'+CURSLUG+'/grammar.json' : null,
+      linkText:'See this deck in the cards viewer →' }); }
   function cardEl(c,opts={}){
     const el=document.createElement(opts.play?'button':'div');
     el.className='card'+(c.kind==='trump'?' trump':'')+(opts.play?' play':'')+(opts.illegal?' illegal':'')+(opts.legalHint?' legal':'')+(opts.win?' win':'');
     if(opts.play){ el.type='button'; el.disabled=!!opts.illegal; if(!opts.illegal) el.onclick=()=>humanPlay(c);
       else el.title='You must follow '+(ledSuit==='trump'?'with a trump':cap(ledSuit)); }
-    el.innerHTML=(c.honour?`<span class="honour-badge">★</span>`:'')+`<img loading="lazy" src="${c.img}" alt=""><div class="cap">${c.label}</div>`;
+    el.innerHTML=(c.honour?`<span class="honour-badge">★</span>`:'')
+      +(c.kind==='trump'&&c.rank!=null?`<span class="trump-num" title="Trump ${c.rank} — higher wins">${c.rank}</span>`:'')
+      +`<img loading="lazy" src="${c.img}" alt=""><div class="cap">${c.label}</div>`;
     return el;
   }
   function renderSeats(winSeat){
     for(let s=0;s<4;s++){ const nm=$('nm-'+s); if(nm) nm.className='nm'+(turn===s&&!busy?' turn':'');
-      if(s!==0){ const hb=$('h-'+s); hb.innerHTML=''; for(let n=0;n<hands[s].length;n++){const b=document.createElement('div');b.className='back-s';hb.appendChild(b);} }
+      if(s!==0){ const hb=$('h-'+s); hb.innerHTML='';
+        if(peek){ for(const c of hands[s]){ const im=document.createElement('img'); im.className='peek-card'+(c.kind==='trump'?' t':''); im.loading='lazy'; im.src=c.img; im.title=(c.kind==='trump'&&c.rank!=null?c.rank+' · ':'')+c.label; hb.appendChild(im); } }
+        else { for(let n=0;n<hands[s].length;n++){const b=document.createElement('div');b.className='back-s';hb.appendChild(b);} } }
       const slot=$('t-'+s); if(slot){ slot.innerHTML=''; const e=trick.find(x=>x.seat===s);
         if(e) slot.appendChild(cardEl(e.card,{win:winSeat===s})); else slot.innerHTML='<span class="ph">·</span>'; } }
     $('us-pts').textContent=teamPts[0]; $('them-pts').textContent=teamPts[1];
@@ -333,8 +388,8 @@
     const head=`<tr><th>#</th>${SEATNAME.map((n,s)=>`<th class="${s===0?'you':''}">${esc(n)}</th>`).join('')}<th>Took</th></tr>`;
     const body=logRows.slice().reverse().map(r=>{
       const cells=[0,1,2,3].map(seat=>{ const c=r.cards[seat];
-        return `<td class="cell${r.winSeat===seat?' win':''}">`
-          +(c?`<img loading="lazy" src="${esc(c.img)}" alt=""><div class="cl">${esc(c.label)}</div>`:'')
+        return `<td class="cell${r.winSeat===seat?' win':''}"${c?` data-card="${esc(c.label)}" style="cursor:pointer" title="Click to inspect this card"`:''}>`
+          +(c?`<img loading="lazy" src="${esc(c.img)}" alt=""><div class="cl">${c.kind==='trump'&&c.rank!=null?`<b>${c.rank}</b> `:''}${esc(c.label)}${cardPoints(c)?` <span class="pts">+${cardPoints(c)}</span>`:''}</div>`:'')
           +(r.leaderSeat===seat?'<div class="led">led</div>':'')+`</td>`; }).join('');
       const cls=teamOf(r.winSeat)===0?'us':'them';
       return `<tr><td class="rnd">${r.n}</td>${cells}<td class="took" style="color:var(--${cls})">${esc(SEATNAME[r.winSeat])}<br>+${r.pts}</td></tr>`;
@@ -348,7 +403,7 @@
         if(played>=ntricks){ endGame(); return; } setStatus((SEATNAME[leader]==='You'?'You lead':SEATNAME[leader]+' leads')+' the next trick.'); setTimeout(step,650); }, 950); return; }
     const seat=(leader+trick.length)%4; turn=seat;
     if(seat===0){ busy=false; renderSeats(); renderHand();
-      setStatus(ledSuit===null?'Your lead — play any card.':(legalMoves(0).some(c=>!c.matto&&((ledSuit==='trump'&&c.kind==='trump')||c.suit===ledSuit))?'Your turn — follow '+(ledSuit==='trump'?'with a trump':cap(ledSuit))+'.':'Your turn — you are void, play a trump or discard.')); return; }
+      setStatus(ledSuit===null?'Your lead — play any card (no card is forced).':(legalMoves(0).some(c=>!c.matto&&((ledSuit==='trump'&&c.kind==='trump')||c.suit===ledSuit))?'Your turn — follow '+(ledSuit==='trump'?'with a trump':cap(ledSuit))+'.':(hands[0].some(c=>c.kind==='trump'&&!c.matto)?'Your turn — void in '+cap(ledSuit)+', so you must play a trump (highlighted).':'Your turn — void and no trump: play any card.'))); return; }
     busy=true; renderSeats(); renderHand();
     setTimeout(()=>{ play(seat,aiChoose(seat)); step(); }, 700);
   }
@@ -359,6 +414,22 @@
     $('center').innerHTML=`<div class="result" style="color:${tie?'var(--muted)':win?'var(--us)':'var(--them)'}">`
       +(tie?`Even — ${us}–${them} points.`:win?`Your team wins, ${us}–${them} points!`:`Opponents win, ${them}–${us}.`)+`</div>`;
   }
+  function showTrumpModal(){
+    if(!DECK.length) return;
+    const trumps=DECK.filter(c=>c.kind==='trump').slice().sort((a,b)=>(a.rank??-1)-(b.rank??-1));
+    const back=document.createElement('div'); back.className='tmodal';
+    back.innerHTML='<div class="tmodal-box"><button class="tmodal-x" aria-label="Close">×</button>'
+      +'<div class="tmodal-head"><b>The 22 trumps · low → high</b>'
+      +'<span class="tmodal-sub">The numbers are the A-order rank we add for convenience — higher beats lower; equal ranks (the four Moors) tie, later-played wins. The Matto (★) is the Excuse: it never wins and stays with your side for 5 points.</span></div>'
+      +'<div class="tgrid">'
+      +trumps.map(c=>`<figure class="tg-card"><span class="tg-n">${c.matto?'★':(c.rank??'')}</span><img loading="lazy" src="${esc(c.img)}" alt=""><figcaption>${esc(c.label)}</figcaption></figure>`).join('')
+      +'</div></div>';
+    const close=()=>{ back.remove(); document.removeEventListener('keydown',onKey); };
+    function onKey(e){ if(e.key==='Escape') close(); }
+    back.addEventListener('click',e=>{ if(e.target===back||e.target.classList.contains('tmodal-x')) close(); });
+    document.addEventListener('keydown',onKey);
+    document.body.appendChild(back);
+  }
   function newDeal(){ teamPts=[0,0]; deal(DECK); $('log').innerHTML='<div class="log-empty">No tricks yet.</div>';
     busy=false; setStatus('You lead the first trick.'); renderSeats(); renderHand(); step(); }
 
@@ -368,15 +439,35 @@
     catch(e){ $('game').style.display='none'; $('err').style.display='block'; $('err').textContent=e.message; }
   }
   (async function(){
+    const sel=$('deck');
     try{
+      sel.innerHTML='<option>Loading decks…</option>'; sel.disabled=true;
       const col=await (await fetch('../../tarot/_collection.json')).json();
-      const nameOf={}; col.grammars.forEach(g=>nameOf[g.slug]=(g.name||g.slug).split(/\s+[—–-]\s+/)[0]);
-      const sel=$('deck'); sel.innerHTML=PLAYABLE.map(s=>`<option value="${s}">${nameOf[s]||s}</option>`).join('');
-      sel.value=PLAYABLE[0]; sel.addEventListener('change',()=>start(sel.value)); await start(sel.value);
-    }catch(e){ $('err').style.display='block'; $('err').textContent='Could not load the decks: '+e.message; }
+      // TG-DECKS: list every tarot-branch deck in the index that actually builds a full 62-card pack,
+      // not a hardcoded few. Self-correcting — a new complete deck appears here automatically.
+      const cands=col.grammars.filter(g=>String(g.is_meta)!=='True' && g.branch && g.branch!=='None');
+      const checked=await Promise.all(cands.map(async g=>{
+        try{ const gg=await (await fetch('../../'+(g.path||('tarot/'+g.slug+'/grammar.json')))).json();
+          return buildDeck(gg).length>=40 ? {slug:g.slug, name:g.common_name||(g.name||g.slug).split(/\s+[—–-]\s+/)[0]} : null;
+        }catch(e){ return null; }
+      }));
+      const decks=checked.filter(Boolean).sort((a,b)=>a.name.localeCompare(b.name));
+      if(!decks.length) throw new Error('No playable decks found in the index.');
+      sel.disabled=false;
+      sel.innerHTML=decks.map(d=>`<option value="${d.slug}">${esc(d.name)}</option>`).join('');
+      const def=decks.find(d=>d.slug==='tarot-de-marseille-conver')||decks[0];
+      sel.value=def.slug; sel.addEventListener('change',()=>start(sel.value)); await start(sel.value);
+    }catch(e){ sel.disabled=false; $('err').style.display='block'; $('err').textContent='Could not load the decks: '+e.message; }
   })();
   $('newgame').addEventListener('click',()=>start($('deck').value));
+  $('aihard').addEventListener('change',e=>{ aiHard=e.target.checked; });
+  $('peek').addEventListener('change',e=>{ peek=e.target.checked; renderSeats(); });
+  $('all-trumps').addEventListener('click',showTrumpModal);
+  $('log').addEventListener('click',e=>{ const td=e.target.closest('td[data-card]'); if(td) inspectCard(DETMAP[td.getAttribute('data-card')]); });
 })();
 </script>
+
+<script src="../../site-footer.js"></script>
+<site-footer base="../../"></site-footer>
 </body>
 </html>

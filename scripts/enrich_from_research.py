@@ -12,9 +12,10 @@ ROOT = os.path.abspath(os.path.join(HERE, ".."))
 RESEARCH = os.path.join(ROOT, "research")
 TAROT = os.path.join(ROOT, "tarot")
 
-FOOTER = ("\n\n---\n*Research notes — AI-assisted first-pass draft, pending review by the "
-          "maintainer and the Tarot History Forum. Skeptical, document-first (Dummett spine). "
-          "Corrections welcome via pending edit.*")
+# No AI/Forum disclaimer is injected into grammars anymore — the authorship + AI disclosure
+# lives once on the About page, and the Tarot History Forum is credited only inside "Sources"
+# lists, never as a reviewer/guarantor (they are not responsible for this catalogue's errors).
+FOOTER = ""
 
 # deck slug -> research file
 MAP = {
