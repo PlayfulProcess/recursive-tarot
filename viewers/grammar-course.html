@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
 <link rel="stylesheet" href="../theme.css?v=3">
+<link rel="stylesheet" href="course-embeds.css?v=1">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grammar as a course · Recursive Tarot</title>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="course-embeds.js?v=1"></script>
 <!--
   grammar-course.html — render ANY grammar as a readable course.
   ?src=<grammar.json>   the grammar to read (default: how-to-contribute)
@@ -197,8 +199,12 @@
       }
       $('content').appendChild(cEl);
     }
-    // resolve cross-grammar embeds (card galleries) after the page paints
+    // resolve cross-grammar embeds (curated card galleries) after the page paints
     pendingEmbeds.forEach(async pe => { const el = document.getElementById(pe.elId); if (el) el.innerHTML = await renderEmbeds(pe.embeds); });
+    // expand computed [data-embed] galleries (decks/suits/numbers/trumps/lineage/timeline…)
+    // left inline in the prose — same shared expander the MDX course-viewer uses, so this
+    // grammar renders at parity with the whole course.
+    if (window.expandCourseEmbeds) expandCourseEmbeds($('content'));
   }
 
   function setGroup(v){ groupField = v; const u = new URL(location); v ? u.searchParams.set('group', v) : u.searchParams.delete('group'); history.replaceState(null, '', u); render(); }

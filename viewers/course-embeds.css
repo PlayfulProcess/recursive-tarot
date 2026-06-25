@@ -1,0 +1,62 @@
+/* course-embeds.css — styles for [data-embed] galleries. Copied from pages/course-viewer.html
+   so grammar-course renders embeds identically. (.course-content h4 also matched as .prose h4.) */
+/* ── Tarot embeds (filled by expandTarotEmbeds from [data-embed]) ── */
+.tarot-embed{ margin:1.6rem 0; }
+.viewer-frame{ width:100%; border:1px solid #d8d2c6; border-radius:12px; overflow:hidden; background:#faf8f3; }
+.viewer-frame iframe{ width:100%; height:560px; border:0; display:block; }
+.print-figure{ display:none; border:1px solid #cbd5e1; border-radius:12px; overflow:hidden; }
+.print-figure img{ display:block; width:100%; height:auto; }
+.tarot-embed figcaption, .strip + figcaption{ font-size:.8rem; color:#6b6457; text-align:center; margin-top:.4rem; }
+.plates-h{ font-size:.95rem; font-weight:700; color:#3f3a52; margin:1.3rem 0 .55rem; }
+.plate-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.plate-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:1rem; }
+.plate{ margin:0; }
+.plate a{ display:block; }
+.plate img{ width:100%; border-radius:8px; border:1px solid #d8d2c6; background:#faf8f3; display:block; }
+.plate-row .plate img{ height:300px; object-fit:contain; }
+.plate-grid .plate img{ height:210px; object-fit:contain; }
+.plate figcaption{ font-size:.78rem; color:#6b6457; margin-top:.45rem; line-height:1.45; text-align:left; }
+@media print{ .plate-row,.plate-grid{ grid-template-columns:repeat(2,1fr); } }
+.people-weave h3{ margin:1.2rem 0 .4rem; }
+.whoswho{ display:grid; gap:.9rem; }
+.bio{ border-left:3px solid #c4a7ff; padding:.2rem 0 .2rem .8rem; }
+.bio-name{ font-weight:700; }
+.bio-life{ font-weight:400; color:#6b6457; font-size:.85em; }
+.bio-text{ font-size:.95rem; }
+.synthbox{ background:linear-gradient(135deg,rgba(154,115,34,.08),rgba(196,167,255,.05));
+    border:1px solid #d8c8f5; border-radius:12px; padding:1rem 1.1rem; margin:.6rem 0; }
+.strip{ display:grid; grid-template-columns:repeat(auto-fill,minmax(96px,1fr)); gap:.55rem; padding:.4rem 0; }
+.strip .c{ text-align:center; font-size:.65rem; color:#6b6457; text-decoration:none; }
+.strip a.c img{ transition:transform .12s, box-shadow .12s; }
+.strip a.c:hover img{ transform:scale(1.7); z-index:9; position:relative; box-shadow:0 6px 22px rgba(154,115,34,.35); }
+.strip .c img{ width:100%; max-width:104px; aspect-ratio:88/142; object-fit:contain; border-radius:6px; border:1px solid #d8d2c6; background:#faf8f3; }
+@media print{ .strip{ grid-template-columns:repeat(2,1fr); } }
+.card-chapter{ margin:1.6rem 0; }
+.deck-chapter{ margin:1.8rem 0; }
+.prose h4, .course-content h4{ font-size:.8rem; text-transform:uppercase; letter-spacing:.04em; color:#7a5fb0; margin:1rem 0 .3rem; }
+.indeck{ font-size:.92rem; margin:.3rem 0; }
+.later{ border-left:2px solid #c9b8ee; padding-left:.6rem; margin:.5rem 0; }
+.later-src{ font-style:italic; font-size:.78rem; color:#777; }
+.deck-cover{ float:right; width:180px; margin:0 0 .6rem .9rem; border:1px solid #d8d2c6; border-radius:8px; }
+.deck-chapter .strip{ clear:both; }
+.minor-card{ margin:.35rem 0; font-size:.94em; }
+.minor-card .mscene{ color:#333; }
+.minor-card .mread{ color:#5a3fa0; }
+.made-by{ clear:both; margin:.6rem 0; background:#faf8f3; border:1px solid #e8e0d2; border-radius:8px; padding:.5rem .8rem; }
+.made-by .maker{ font-size:.92rem; margin:.25rem 0; }
+.card-links{ font-size:.85rem; margin-top:.5rem; }
+.card-links a{ color:#9a7322; text-decoration:none; font-weight:600; }
+.card-links a:hover{ text-decoration:underline; }
+/* detail cards: per-deck rows with a card thumbnail (alternating sides) */
+.indeck-row{ display:flex; gap:.9rem; align-items:flex-start; margin:.7rem 0; }
+.indeck-row.flip{ flex-direction:row-reverse; }
+.indeck-row .cardthumb{ flex:0 0 96px; }
+.indeck-row .cardthumb img{ width:96px; height:155px; object-fit:contain; border-radius:6px; border:1px solid #d8d2c6; background:#faf8f3; display:block; transition:transform .12s, box-shadow .12s; }
+.indeck-row .cardthumb:hover img{ transform:translateY(-2px); box-shadow:0 4px 14px rgba(154,115,34,.3); }
+.indeck-row .indeck-text{ font-size:.92rem; }
+/* minor (pip/court) cards: prominent rank number + scene + a card image below */
+.minor-card{ margin:.9rem 0; padding:.6rem .75rem; border:1px solid #e8e0d2; border-radius:10px; background:#faf8f3; font-size:.94em; }
+.minor-card .minor-head{ display:flex; align-items:center; gap:.55rem; margin-bottom:.3rem; }
+.minor-card .rank-num{ display:inline-flex; align-items:center; justify-content:center; min-width:1.9rem; height:1.9rem; padding:0 .4rem; border-radius:8px; background:#9a7322; color:#fff; font-weight:800; font-size:1.1rem; line-height:1; }
+.minor-card .minor-img{ margin-top:.45rem; }
+.minor-card .minor-img img{ width:120px; height:194px; object-fit:contain; border-radius:6px; border:1px solid #d8d2c6; background:#faf8f3; display:block; }
