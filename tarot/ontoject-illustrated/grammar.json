@@ -1,25 +1,5 @@
 {
-  "_grammar_commons": {
-    "schema_version": "1.0",
-    "license": "CC-BY-SA-4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "attribution": [
-      {
-        "name": "PlayfulProcess",
-        "url": "https://recursive.eco",
-        "note": "Living Tradition deck — a recursive.eco original / interpretive grammar, imported from the platform. Not a historical artifact."
-      }
-    ]
-  },
   "name": "The Ontoject — Illustrated",
-  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430325995-o2090q7x03.png",
-  "slug": "ontoject-illustrated",
-  "grammar_type": "tarot",
-  "creator_name": "PlayfulProcess",
-  "creator_link": "https://recursive.eco",
-  "default_view": "tree",
-  "default_preview": "tree",
-  "provenance": "living",
   "tags": [
     "ontoject",
     "playful-process",
@@ -29,14 +9,11 @@
     "oracle",
     "illustrated"
   ],
-  "description": "An existential tarot of Playful Process — the light of awareness (the Ontoject) moving from the Void to the Trickster, drawing on Tillich's 'The Courage to Be' and Parker Palmer's 'Let Your Life Speak.' This illustrated edition carries each card's Reflection, Poetic_Entry, Existential_Entry and Visual_Contemplation, plus a four-element Elemental_Play refraction (🔥 will · 💧 feeling · 🌬️ mind · 🌍 form) for every station from Structures onward, and Facet notes naming the twin faces of the recurring archetypes. Built entirely through the recursive.eco MCP as a dogfooding example. Source text: 'The Ontoject: A Tarot of Playful Process'; imagery from 'Playful Process: The Path of the Ontoject.'\n\nA note on this grammar: it is a community offering and an object of study by PlayfulProcess — the founder of recursive.eco — who is not an authority on this tradition. It may well contain errors; corrections and collaborators are warmly welcomed.",
   "items": [
     {
       "id": "fcf608da-8f7e-4008-a296-20097356c956",
       "name": "The Void (First Zero)",
       "level": 1,
-      "category": "card",
-      "sort_order": 1,
       "keywords": [
         "void",
         "unity",
@@ -53,14 +30,14 @@
         "Existential_Entry": "The Void represents what Tillich calls 'being-itself'—the ground of all existence before subject and object emerge. It is the courage to face absolute nonbeing, the abyss that precedes all form. This is not nothingness as lack but as pregnant potential. In Palmer's terms, this is the stillness before your life begins to speak, the silence that contains all possible voices.",
         "Visual_Contemplation": "Black emptiness. No light yet. No Ontoject visible because there is no distinction between awareness and what it might be aware of. Pure undifferentiated unity. Gaze into this darkness and feel the potential vibrating."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430325995-o2090q7x03.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430325995-o2090q7x03.png",
+      "sort_order": 0,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430325995-o2090q7x03.png"
     },
     {
       "id": "30ceb3fa-f252-4375-9c8b-380369ce7d3b",
       "name": "The Void Birthing Light (Second Zero)",
       "level": 1,
-      "category": "card",
-      "sort_order": 2,
       "keywords": [
         "emergence",
         "first-light",
@@ -75,14 +52,13 @@
         "Poetic_Entry": "Stillness was whole—too whole to move… until wholeness leaned over… and started to groove. This is the moment the Void shivers with the possibility of movement. The Ontoject appears as the first spark—Being recognizing that it can recognize. Light kissed its shadow and called it day.",
         "Existential_Entry": "The emergence of the Ontoject from the Void is the birth of consciousness, the first affirmation of being. Tillich's 'courage to be' begins here—the daring of existence to exist. This is the mystery: why is there something rather than nothing? The Ontoject is the light that Being uses to see itself, the first playful gesture of awareness.",
         "Visual_Contemplation": "Concentric circles ripple outward from darkness. At the center, a small sphere of light emerges—the Ontoject awakening. The circles are golden warmth spreading from a dark womb. This is creation as gentle stirring, not violent explosion. Watch the light birth itself from nothing."
-      }
+      },
+      "sort_order": 1
     },
     {
       "id": "fd175e5a-78da-48d3-ac90-b25b2f2a2ef6",
       "name": "Self-Realization",
       "level": 1,
-      "category": "card",
-      "sort_order": 3,
       "keywords": [
         "self-awareness",
         "consciousness",
@@ -97,14 +73,14 @@
         "Existential_Entry": "The birth of the subject—pure awareness becoming aware of its own awareness. This is what Palmer calls 'true self' beginning to know itself, and what Tillich describes as the self affirming its own being. The Ontoject glows at the brow as the light of mind beholding mind. Self-realization is not achievement but recognition: you always were, but now you know you are.",
         "Visual_Contemplation": "Golden warm tones. A figure faces its perfect reflection—whether in mirror, water, or golden sphere. At the third eye of both the person and the reflection, a tiny point of light (the Ontoject) glows. This is consciousness recognizing consciousness. The glow is the same in both—there is no separation yet, only self-meeting-self."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430325956-6hgfkph0aq2.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430325956-6hgfkph0aq2.png",
+      "sort_order": 2,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430325956-6hgfkph0aq2.png"
     },
     {
       "id": "c866f029-3f9b-4a0d-8196-19b31d76a0f3",
       "name": "Subject–Object Duality",
       "level": 1,
-      "category": "card",
-      "sort_order": 4,
       "keywords": [
         "duality",
         "I-and-Thou",
@@ -120,14 +96,14 @@
         "Existential_Entry": "The fundamental polarity of existence: the split between the one who experiences and what is experienced. Tillich sees this as the basic structure of being—finite beings exist in relation to what stands against them. The Ontoject here is relational awareness itself, the consciousness that holds both poles. This isn't loss of unity but its necessary unfolding. Without subject-object, no experience. Without separation, no meeting.",
         "Visual_Contemplation": "Two figures face each other across a thin golden plane or line of light. They are mirror images, twins, I and not-I. Between their foreheads, a single star of light hovers (the Ontoject)—the awareness that holds both subject and object in a single gaze. Neither owns this light; it exists in the relation between them. The warmth suggests this split is not tragic but generative."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430326106-612zugvcra3.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430326106-612zugvcra3.png",
+      "sort_order": 3,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430326106-612zugvcra3.png"
     },
     {
       "id": "bbcab951-aa46-4941-a8cd-780ac119e5a8",
       "name": "Time",
       "level": 1,
-      "category": "card",
-      "sort_order": 5,
       "keywords": [
         "time",
         "spiral",
@@ -143,14 +119,14 @@
         "Existential_Entry": "Tillich's insight: time is the synthesis of subject and object, the medium where being unfolds. The vertical axis represents eternal time (kairos)—timeless depth, the sacred now. The horizontal represents chronological time (chronos)—before and after, sequence and change. At their crossing, the Ontoject shines: the present moment where eternity touches the temporal. The cross rotating into spiral shows time as recursive return—you visit the same themes at deeper levels.",
         "Visual_Contemplation": "A glowing cross floats in golden space—vertical arm reaching up/down (eternity), horizontal arm left/right (past/future). At the nexus, brilliant Ontoject-light. But look closely: the cross is turning. Motion blur suggests it's beginning to spin, to become a spiral. This is time as both intersection and movement—the still point that also turns."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328337-traciyz7yrn.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328337-traciyz7yrn.png",
+      "sort_order": 4,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328337-traciyz7yrn.png"
     },
     {
       "id": "ec7c91aa-802a-4c20-9442-87b205dd5e9c",
       "name": "Structures",
       "level": 1,
-      "category": "card",
-      "sort_order": 6,
       "keywords": [
         "structure",
         "form",
@@ -167,14 +143,14 @@
         "Existential_Entry": "When experience solidifies into structure, time subjugates the subject. Past decisions become present constraints. What was fluid becomes rigid. The Ontoject—living awareness—finds itself caged in its own history. This is what Palmer warns against: living by the 'ought' instead of listening to what life speaks. The structures aren't evil—they're necessary. But they must remain transparent to the light, not block it.",
         "Visual_Contemplation": "Golden geometric patterns—crystalline lattice, nested circles, sacred geometry—enclose a small glowing center. The Ontoject-light is still there but dimmed, contained. The structure is beautiful but confining. Matter as memory: your body holds every meal, every trauma, every habit. The architecture of your life can become your prison. The light persists within but needs space to move."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328398-sxi0f01v9wl.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328398-sxi0f01v9wl.png",
+      "sort_order": 5,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328398-sxi0f01v9wl.png"
     },
     {
       "id": "f82e0d41-de6c-4ab2-bcb6-5c934bbf94d8",
       "name": "Inspiration from Eternity",
       "level": 1,
-      "category": "card",
-      "sort_order": 7,
       "keywords": [
         "inspiration",
         "eternal-now",
@@ -191,14 +167,14 @@
         "Existential_Entry": "Tillich's 'Eternal Now'—the kairos moment when vertical eternity intersects horizontal chronos. This is grace, not work. The courage to be receives its ground from beyond: you can't manufacture inspiration, only make space for it. The Ontoject here is divine breath, pneuma, the living spirit that affirms your being from the depths of Being-itself. Palmer's 'let your life speak' happens here—when you stop forcing and allow what wants to emerge.",
         "Visual_Contemplation": "A single beam of vertical light descends from above, piercing through a calm horizontal line (the horizon). At the exact point of intersection, the Ontoject burns brightly—the meeting of above and below, eternal and temporal. The vertical is not 'better' than horizontal; the power is in their crossing. Warm golden gradient suggests this is blessing, not violence. Grace descends."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328288-hzhzwjxlfq.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328288-hzhzwjxlfq.png",
+      "sort_order": 6,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328288-hzhzwjxlfq.png"
     },
     {
       "id": "010d9bf1-ef3a-4718-a7f5-1403b8edc7d0",
       "name": "The Cross",
       "level": 1,
-      "category": "card",
-      "sort_order": 8,
       "keywords": [
         "cross",
         "intersection",
@@ -215,14 +191,14 @@
         "Existential_Entry": "The Cross as existential symbol: where divine and human intersect. Tillich saw the cross not as suffering but as the structure of existence itself—finite being connected to infinite ground. Palmer's work asks: how do you stand at this intersection authentically? The horizontal is your embodied life in time; the vertical is your connection to meaning beyond time. The Ontoject shining at their crossing is consciousness that holds both simultaneously.",
         "Visual_Contemplation": "A luminous cross floats in dark space with subtle stars—one bar reaching up/down (vertical), one left/right (horizontal). The cross is perfectly still, not yet rotating. At the precise center where the bars meet, the Ontoject radiates brilliantly. This is equilibrium, integration, the spiritual materialized and the material spiritualized. The warmth suggests this balance is alive, not static."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328312-okl6tr16pu.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328312-okl6tr16pu.png",
+      "sort_order": 7,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328312-okl6tr16pu.png"
     },
     {
       "id": "180b54a8-45cd-4f27-b278-ce29f0ccd528",
       "name": "The Spiral",
       "level": 1,
-      "category": "card",
-      "sort_order": 9,
       "keywords": [
         "spiral",
         "becoming",
@@ -239,14 +215,14 @@
         "Existential_Entry": "The spiral represents becoming, the dynamic movement of existence. Tillich's 'courage to be' requires courage to become—to accept that life is process, not arrival. The spiral shows: you don't ascend directly to enlightenment but circle through your patterns, visiting them again and again with increasing consciousness. Palmer's vocation unfolds spirally—your calling reveals itself through recursive returns to core questions.",
         "Visual_Contemplation": "A golden spiral expands outward from the ghostly outline of a cross at its origin. The Ontoject appears as a bright moving point of light traveling along the spiral's curve—comet-like, dynamic. The spiral can be read both outward (expansion) and inward (deepening). It's the cross in motion, stability becoming dance. The warm palette suggests this movement is joyful, not anxious."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328326-kp595lzm96l.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328326-kp595lzm96l.png",
+      "sort_order": 8,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430328326-kp595lzm96l.png"
     },
     {
       "id": "fcb420ca-ed26-4f37-9329-3bccd4708d96",
       "name": "Balance",
       "level": 1,
-      "category": "card",
-      "sort_order": 10,
       "keywords": [
         "balance",
         "equilibrium",
@@ -264,14 +240,14 @@
         "Existential_Entry": "Tillich's courage to be requires balancing 'being as oneself' and 'being as a part.' Too much individuality becomes isolation; too much participation becomes loss of self. The Ontoject as fulcrum shows: consciousness is what balances these forces. Palmer asks us to listen to the balance between inner voice and outer demands. The sweet spot isn't compromise but integration—holding both fully.",
         "Visual_Contemplation": "Two orbs float in golden space—one lighter, one darker, perfectly balanced on either side of a thin line. At the exact center, a tiny bright point (the Ontoject) acts as fulcrum. The orbs could represent any polarity: light/dark, action/rest, self/other, time/eternity. The Ontoject doesn't choose sides—it holds the tension that allows both to exist. Weightless symmetry."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430330088-75fxlg3xq5t.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430330088-75fxlg3xq5t.png",
+      "sort_order": 9,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430330088-75fxlg3xq5t.png"
     },
     {
       "id": "0a1b76ee-41b7-4990-8f15-80bb6e1a7d6f",
       "name": "Silence",
       "level": 1,
-      "category": "card",
-      "sort_order": 11,
       "keywords": [
         "silence",
         "stillness",
@@ -288,14 +264,14 @@
         "Existential_Entry": "Silence as existential ground. Tillich: before words, before activity, before the anxious quest for meaning—there is being. The courage to be includes the courage to be still. The Ontoject in silence is pure awareness without content, consciousness at rest. This isn't emptiness but fullness so complete it doesn't need to prove itself through noise. Here, in the pause, your true self can finally be heard.",
         "Visual_Contemplation": "Multiple silhouettes or a single figure in meditation posture. Vast negative space surrounds them—the golden void of quiet. At the heart or third eye, a gentle glow (the Ontoject) radiates softly. Not bright like a spotlight but warm like embers. Concentric ripples or rings fade into the background, suggesting the subtle vibration of silence. This is active stillness—quietude that listens."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430330215-qklmqk6mdnf.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430330215-qklmqk6mdnf.png",
+      "sort_order": 10,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430330215-qklmqk6mdnf.png"
     },
     {
       "id": "8aaff42c-89fd-43af-bd35-459d451ab4be",
       "name": "Destiny",
       "level": 1,
-      "category": "card",
-      "sort_order": 12,
       "keywords": [
         "destiny",
         "calling",
@@ -312,14 +288,14 @@
         "Existential_Entry": "Tillich distinguishes fate from destiny: fate is what happens to you; destiny is how you respond. The courage to accept your destiny means embracing your finitude while affirming your unique existence. The Ontoject as guiding star shows: your destiny is the light of your own being projected forward. You're not walking toward something external—you're walking into yourself, meeting who you always were.",
         "Visual_Contemplation": "A small solitary figure walks along a path toward a distant horizon. The path is illuminated by warm golden light leading to a bright star (the Ontoject) shining at the far edge. The figure is tiny against the vast space—vulnerable, determined. The star isn't far away in distance but deep in time—it's the future meeting-point where you become who you are. The journey is both outward and inward."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430330577-6te9gt9o9kk.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430330577-6te9gt9o9kk.png",
+      "sort_order": 11,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430330577-6te9gt9o9kk.png"
     },
     {
       "id": "83ffe752-0bee-418d-905c-01c977370514",
       "name": "Strength",
       "level": 1,
-      "category": "card",
-      "sort_order": 13,
       "keywords": [
         "strength",
         "courage-to-be",
@@ -337,14 +313,14 @@
         "Existential_Entry": "Tillich's central insight: courage is self-affirmation 'in spite of'—in spite of death, meaninglessness, condemnation. True strength accepts finitude without despair. It says yes to being even knowing being ends. The Ontoject above the crown shows: this courage is gift, not achievement. You don't manufacture the strength to be; you receive it from the ground of being itself. Palmer adds: this strength comes from alignment with your true self, not from trying to be someone else.",
         "Visual_Contemplation": "A standing figure, calm and upright, head raised or eyes closed. Gentle rays of light rise from below or around them. Just above the crown, a small glowing halo or point (the Ontoject) hovers like a descending blessing. The light touches but doesn't overwhelm—this is grace meeting receptivity. The figure doesn't reach up; the light reaches down. Courage as gift received."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430332241-5mqw6xrgq3p.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430332241-5mqw6xrgq3p.png",
+      "sort_order": 12,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430332241-5mqw6xrgq3p.png"
     },
     {
       "id": "6c7ac9cf-b35e-4ae2-a3cc-2cb06f3b8e46",
       "name": "Sacrifice",
       "level": 1,
-      "category": "card",
-      "sort_order": 14,
       "keywords": [
         "sacrifice",
         "inversion",
@@ -362,14 +338,14 @@
         "Existential_Entry": "To flip subject-object polarity is to sacrifice the ego's claim to be separate and primary. Tillich: this is 'ecstatic' experience—standing outside yourself. You realize you're not just the subject experiencing the world but also the world experiencing itself through you. The Ontoject on the pivot shows: consciousness can hold both positions simultaneously. Palmer's wisdom: when you let go of who you think you should be, you become who you are. Sacrifice reveals this.",
         "Visual_Contemplation": "Two mirrored silhouettes rotating around a central vertical line. The Ontoject glows at the axis—the pivot point of transformation. As the figures rotate, they exchange positions: what was subject becomes object, what was above becomes below. The movement is fluid, not violent. Golden dual tones suggest both sides have value. This is the sacrificial flip that reveals: you and the world are one movement, not two separate things."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430332421-5rruct5k38w.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430332421-5rruct5k38w.png",
+      "sort_order": 13,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430332421-5rruct5k38w.png"
     },
     {
       "id": "c22f128b-c0ac-4cd2-b289-533114d945fd",
       "name": "Death",
       "level": 1,
-      "category": "card",
-      "sort_order": 15,
       "keywords": [
         "death",
         "dissolution",
@@ -387,14 +363,14 @@
         "Existential_Entry": "Tillich: the anxiety of death is really anxiety of nonbeing. But here, death reveals that separate being was illusion—what dies is the false boundary between self and other. The Ontoject expanding shows: consciousness wasn't trapped in one form. It was always the light holding all forms. Palmer: the false self must die so the true self can live. What dissolves is not you but your idea of being separate from everything else.",
         "Visual_Contemplation": "Two shapes or energies dissolving, merging, becoming one radiant field. The boundaries blur and fade. The Ontoject-light, which was perhaps small and contained before, now expands to fill the entire merging zone. What was two becomes one luminous whole. The dissolution is not violent but tender—a homecoming. Golden warmth suggests this death is also birth: birth into unity."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430332451-q3yfi7eapb.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430332451-q3yfi7eapb.png",
+      "sort_order": 14,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430332451-q3yfi7eapb.png"
     },
     {
       "id": "6c2cdec1-3562-4001-877a-1cdcb271eec5",
       "name": "Temperance",
       "level": 1,
-      "category": "card",
-      "sort_order": 16,
       "keywords": [
         "temperance",
         "balance",
@@ -411,14 +387,13 @@
         "Elemental_Play": "Temperance, refracted through the four plays of Being.\n\n🔥 Fire — tempered flame, heat made usable; the glassblower's exact warmth.\n\n💧 Water — the blending of waters, compassion that mediates between extremes.\n\n🌬️ Air — the middle way found by thought; harmony as understanding.\n\n🌍 Earth — the alloy, the right proportion made solid and lasting.",
         "Existential_Entry": "Tillich's 'Protestant Principle': no finite form can contain infinite meaning, yet finite forms are how we access the infinite. Temperance is the art of pouring eternal meaning into temporal vessels without breaking them. The Ontoject as mediator shows: consciousness is what allows transcendence and immanence to meet gracefully. Palmer: temperance is listening to both your soul's needs and others' needs, finding the blend that serves life.",
         "Visual_Contemplation": "Two flowing streams or rivers of golden light pour toward each other. They meet and blend in the center without losing their distinct qualities. Between them, a bright slender thread (the Ontoject) connects and balances—the mediating presence that allows harmony. The blending is gradual, patient, like watercolors mixing. This is alchemy, not violence. The integration creates something new while honoring what was."
-      }
+      },
+      "sort_order": 15
     },
     {
       "id": "853810c7-a53a-45bc-ac3e-fd54d02a02f7",
       "name": "Facing Existential Threats",
       "level": 1,
-      "category": "card",
-      "sort_order": 17,
       "keywords": [
         "existential-anxiety",
         "death",
@@ -436,14 +411,14 @@
         "Existential_Entry": "Tillich's existential analysis: we face three fundamental threats—death (anxiety of fate and death), condemnation (anxiety of guilt and condemnation), and meaninglessness (anxiety of emptiness and meaninglessness). These aren't problems to solve but realities to face. The Ontoject beyond the wave shows: even when existence feels like drowning, consciousness persists. The courage to be accepts these threats without denial or despair. Palmer adds: facing your own limitations is how you discover your authentic path.",
         "Visual_Contemplation": "A vast dark ocean wave crests, about to crash. The water is turbulent, threatening. But beyond the wave, on the horizon, a small persistent point of light (the Ontoject) glimmers steadily. The wave is massive; the light is tiny. Yet the light doesn't waver. This is the anxiety of existence meeting the ground of being. The sacred isn't protected from threat—it persists within and beyond threat."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430332402-4lbwudfke27.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430332402-4lbwudfke27.png",
+      "sort_order": 16,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430332402-4lbwudfke27.png"
     },
     {
       "id": "eab194e7-c3c0-4c29-a252-d3f1b9f49791",
       "name": "Impermanence",
       "level": 1,
-      "category": "card",
-      "sort_order": 18,
       "keywords": [
         "impermanence",
         "emptiness",
@@ -461,14 +436,14 @@
         "Existential_Entry": "Tillich: all finite being participates in nonbeing. Every structure contains its own dissolution. This isn't pessimism but realism—accepting that everything temporal is temporary. The Ontoject at the empty center shows: consciousness doesn't depend on the structures it builds. When the tower falls (and it will), awareness persists. Palmer: your true self isn't your achievements or your image—it's what remains when all that crumbles. The sacred exists in the spaces between the particles.",
         "Visual_Contemplation": "A tower made of golden stars or particles. Its edges are soft, dissolving, crumbling into individual points of light that scatter into the void. The form is clearly unstable, clearly temporary. But at the very center, in the hollow core of the collapsing structure, a small bright Ontoject-light remains completely intact. The dissolution reveals what was always true: the center was empty, and that emptiness is where light lives."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430334297-hs4edagg1mt.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430334297-hs4edagg1mt.png",
+      "sort_order": 17,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430334297-hs4edagg1mt.png"
     },
     {
       "id": "34ce150e-c362-483a-a697-36c7ca61971e",
       "name": "The Star",
       "level": 1,
-      "category": "card",
-      "sort_order": 19,
       "keywords": [
         "star",
         "courage-to-be-oneself",
@@ -485,14 +460,14 @@
         "Existential_Entry": "Tillich: the courage to be as oneself is self-affirmation despite the threat of nonbeing. After facing existential threats and experiencing the collapse of structures, you discover the star—your essential being that no collapse can extinguish. The Ontoject as star shows: you are not your thoughts, your roles, your achievements. You are the light of awareness itself. Palmer: your vocation is to shine as yourself, not to perform someone else's brightness.",
         "Visual_Contemplation": "A single brilliant star shines in a tranquil golden night sky above a calm horizon. The star is the Ontoject—pure consciousness, essential being, the courage to exist as yourself. The landscape is still after the storm. The star isn't striving or proving; it simply radiates. This is you after stripping away what isn't essential. The star that you are."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430334466-43i7mis6ssm.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430334466-43i7mis6ssm.png",
+      "sort_order": 18,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430334466-43i7mis6ssm.png"
     },
     {
       "id": "96aecae5-2127-4d12-8fba-18abf1b865f2",
       "name": "The Moon",
       "level": 1,
-      "category": "card",
-      "sort_order": 20,
       "keywords": [
         "fear",
         "anxiety",
@@ -510,14 +485,14 @@
         "Existential_Entry": "Tillich distinguishes fear (directed at specific threats) from anxiety (existential dread with no clear object). Under the Moon, both arise. The flickering Ontoject shows: even consciousness wavers when existential anxiety grips. You can't see clearly; you can't trust your perceptions. This is the shadow of existence that Palmer warns about—the false self's anxious grasping. Yet even here, the Ontoject persists, however faintly. The light hasn't gone out; it's just obscured.",
         "Visual_Contemplation": "A solitary figure stands under a night sky, facing a crescent moon that has a subtle, perhaps unsettling face. The moonlight casts long shadows behind the figure. Behind thin clouds or lunar haze, the Ontoject flickers weakly—a faint, uncertain glow. The atmosphere is mysterious, anxious, liminal. This is the space between knowing and not-knowing, the threshold where familiar things become strange."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430335007-qzfw46fs9u.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430335007-qzfw46fs9u.png",
+      "sort_order": 19,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430335007-qzfw46fs9u.png"
     },
     {
       "id": "5373c61d-0d68-4355-805b-cf9e97be0c0d",
       "name": "The Sun",
       "level": 1,
-      "category": "card",
-      "sort_order": 21,
       "keywords": [
         "sun",
         "grace",
@@ -534,14 +509,14 @@
         "Existential_Entry": "Tillich: the courage to be participates in the ground of being. The star (Being-itself) offers its light not as something external but as the very ground of your existence. The handshake or touch shows: grace is relational. The Ontoject flowing through the connection reveals that your courage to be doesn't come from isolated ego but from participating in something greater. Palmer: when you touch your true vocation, you're touching the divine. The Sun is that touch.",
         "Visual_Contemplation": "A human silhouette reaches toward or touches a radiant star-being. Their hands meet, clasp, or nearly touch. At the point of contact, the Ontoject-light flows between them—consciousness transferring, grace moving from star to human, or perhaps revealing they were always one. The warmth suggests this meeting is joyful, not overwhelming. The Sun as relationship, not isolation."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430334418-rp1w95nfdhc.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430334418-rp1w95nfdhc.png",
+      "sort_order": 20,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430334418-rp1w95nfdhc.png"
     },
     {
       "id": "b7d80fb4-5d5f-4e49-8b44-474570612911",
       "name": "Vitality",
       "level": 1,
-      "category": "card",
-      "sort_order": 22,
       "keywords": [
         "vitality",
         "vesica-pisces",
@@ -558,14 +533,14 @@
         "Existential_Entry": "Tillich: all finite being is the synthesis of being and nonbeing. You are not pure being (that's God) nor pure nonbeing (that's nothingness). You are the tension, the overlap, the place where being overcomes nonbeing moment by moment. The vesica pisces shows this geometrically: the bright center where two circles intersect is where life happens. The Ontoject concentrated there is awareness of this dynamic—you are the meeting point, the ongoing yes to existence.",
         "Visual_Contemplation": "Two circles—one perhaps representing being (light), one nonbeing (dark)—overlap to create the vesica pisces, the almond or mandorla shape at their intersection. The Ontoject burns brightly in this overlap. This is the most sacred geometry: the shape of vulvas, of eyes, of birth canals. The space where two become something new. Precise, mathematical, alive."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430334388-sdctwqssgor.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430334388-sdctwqssgor.png",
+      "sort_order": 21,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430334388-sdctwqssgor.png"
     },
     {
       "id": "67a9a86d-aa34-410c-ad55-063fa64b9438",
       "name": "Harmony (The Ontoject as Immanence)",
       "level": 1,
-      "category": "card",
-      "sort_order": 23,
       "keywords": [
         "harmony",
         "immanence",
@@ -582,14 +557,14 @@
         "Existential_Entry": "Tillich's final synthesis: the courage to be participates in being-itself, and being-itself is found not in escape from existence but in the depths of existence. Immanence, not transcendence. The Ontoject pulsing along the spiral shows: consciousness isn't separate from the world but is the world knowing itself. Palmer: your vocation isn't to leave earth for heaven but to bring them together right here. Harmony is wholeness recognizing itself in all its parts.",
         "Visual_Contemplation": "A vast spiral—golden, expansive, generous. Small human figures or silhouettes populate its curve, some ascending, some descending, all moving along the path. The Ontoject appears as a pulsing light traveling the spiral like a heartbeat, like breath, connecting all the figures. The spiral suggests endless process, not final arrival. This is the cosmic dance: Being playing all the parts, forgetting and remembering itself through every form."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430337390-s3z778u5buc.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430337390-s3z778u5buc.png",
+      "sort_order": 22,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1772430337390-s3z778u5buc.png"
     },
     {
       "id": "68f3a6a9-6a2d-484d-a1ab-c0576fa92590",
       "name": "The Trickster",
       "level": 1,
-      "category": "card",
-      "sort_order": 24,
       "keywords": [
         "trickster",
         "play",
@@ -607,11 +582,52 @@
         "Existential_Entry": "The Trickster isn't in Tillich's system, but it should be. The courage to be requires the courage to play—to recognize that meaning doesn't have to be heavy. Palmer's 'let your life speak' includes letting your life laugh. The Trickster dancing at the edge of the void shows: existence is precarious, but that's what makes it interesting. The Ontoject as tossed ball reveals: consciousness plays with itself, loses itself, finds itself. This is serious play—the most important kind.",
         "Visual_Contemplation": "A jester-like or whimsical cosmic figure dances at the edge of a starry void. Playful energy, light movement. The figure tosses a glowing orb (the Ontoject) from hand to hand—consciousness playing with consciousness. The image conveys humor, spontaneity, the divine not taking itself too seriously. This unnumbered card exists outside the sequence, able to appear anywhere. The cosmic wild card. The reminder to laugh."
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1772564947670-r6tculit6we.png"
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1772564947670-r6tculit6we.png",
+      "sort_order": 23,
+      "_original_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1772564947670-r6tculit6we.png"
+    },
+    {
+      "id": "img-1782404920124-aecj2b",
+      "name": "The Void (First Zero) — Full Item",
+      "level": 1,
+      "origin": {
+        "type": "ai_approved",
+        "timestamp": "2026-06-25T16:28:40.124Z"
+      },
+      "metadata": {
+        "play_group": "images",
+        "play_session": true,
+        "image_description": "Create an image for \"The Void (First Zero)\" — Full Item section.\nFull item:\nFacet: One of two facets of the Void. This is the Void **at rest** — undifferentiated unity before any stirring, the ground "
+      },
+      "sections": {
+        "Prompt": "Create an image for \"The Void (First Zero)\" — Full Item section.\nFull item:\nFacet: One of two facets of the Void. This is the Void **at rest** — undifferentiated unity before any stirring, the ground "
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1782404919298-8dht1e8bqz8.png",
+      "sort_order": 9999
+    },
+    {
+      "id": "img-1782408347080-14h3jr",
+      "name": "The Void (First Zero) — Full Item",
+      "origin": {
+        "type": "ai_approved",
+        "timestamp": "2026-06-25T17:25:47.080Z"
+      },
+      "metadata": {
+        "play_group": "images",
+        "play_session": true,
+        "image_description": "Create an image for \"The Void (First Zero)\" — Full Item section.\nFull item:\nFacet: One of two facets of the Void. This is the Void **at rest** — undifferentiated unity before any stirring, the ground "
+      },
+      "sections": {
+        "Prompt": "Create an image for \"The Void (First Zero)\" — Full Item section.\nFull item:\nFacet: One of two facets of the Void. This is the Void **at rest** — undifferentiated unity before any stirring, the ground "
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1782408346184-znc85puc0vd.png",
+      "sort_order": 9999
     }
   ],
-  "metadata": {
-    "common_name": "The Ontoject",
-    "category": "contemporary"
-  }
+  "description": "An existential tarot of Playful Process — the light of awareness (the Ontoject) moving from the Void to the Trickster, drawing on Tillich's 'The Courage to Be' and Parker Palmer's 'Let Your Life Speak.' This illustrated edition carries each card's Reflection, Poetic_Entry, Existential_Entry and Visual_Contemplation, plus a four-element Elemental_Play refraction (🔥 will · 💧 feeling · 🌬️ mind · 🌍 form) for every station from Structures onward, and Facet notes naming the twin faces of the recurring archetypes. Built entirely through the recursive.eco MCP as a dogfooding example. Source text: 'The Ontoject: A Tarot of Playful Process'; imagery from 'Playful Process: The Path of the Ontoject.'",
+  "creator_name": "",
+  "grammar_type": "tarot",
+  "cover_image_url": "",
+  "_recursive_eco_url": "https://flow.recursive.eco/play?id=e8c4ca59-7841-4b5d-ad56-584ff52c859d",
+  "_recursive_eco_edit_url": "https://flow.recursive.eco/create/dashboard/unified/new?id=e8c4ca59-7841-4b5d-ad56-584ff52c859d"
 }
