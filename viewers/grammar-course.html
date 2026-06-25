@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grammar as a course · Recursive Tarot</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <!--
   grammar-course.html — render ANY grammar as a readable course.
   ?src=<grammar.json>   the grammar to read (default: how-to-contribute)
@@ -36,18 +37,31 @@
   .chapter > h2{font-family:var(--serif-display);font-weight:600;font-size:26px;color:var(--ink);margin:34px 0 4px;
     padding-bottom:7px;border-bottom:1px solid var(--line-soft)}
   .chapter > .chap-sub{font-family:var(--sans);font-size:12px;color:var(--mut);margin:0 0 6px}
-  .lesson{padding:18px 0;border-bottom:1px solid var(--line)}
+  .lesson{padding:28px 0;border-bottom:1px solid var(--line)}
   .lesson:last-child{border-bottom:none}
-  .lesson h3{font-family:var(--serif-display);font-weight:600;font-size:19px;color:var(--ink);margin:0 0 3px}
-  .lesson .badges{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+  .lesson > h3{font-family:var(--serif-display);font-weight:600;font-size:24px;color:var(--ink);margin:0 0 12px;line-height:1.15}
+  .lesson .badges{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
   .lesson .badge{font-family:var(--sans);font-size:10.5px;letter-spacing:.04em;padding:2px 9px;border-radius:20px;
     background:rgba(154,115,34,.1);color:#8a6414}
-  .lesson img{max-width:340px;width:60%;border-radius:8px;border:1px solid var(--line);margin:4px 0 12px;display:block}
-  .sec{margin:0 0 12px}
-  .sec .lab{font-family:var(--sans);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:0 0 3px}
-  .sec p{font-family:var(--serif-body);font-size:15px;line-height:1.6;color:var(--ink);margin:0}
-  .sec p a{color:#8a6414}
-  .sec code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em;background:var(--chip,#f1ece1);padding:1px 5px;border-radius:4px}
+  .lesson > img{max-width:340px;width:60%;border-radius:8px;border:1px solid var(--line);margin:4px 0 12px;display:block}
+  .sec{margin:0 0 14px}
+  .sec .lab{font-family:var(--sans);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:0 0 4px}
+  /* rich course prose (marked output) — editorial typography, like our course pages */
+  .prose{font-family:var(--serif-body);font-size:16.5px;line-height:1.72;color:var(--ink)}
+  .prose > :first-child{margin-top:0}
+  .prose p{margin:0 0 1em}
+  .prose h2{font-family:var(--serif-display);font-size:22px;font-weight:600;margin:1.4em 0 .4em;color:var(--ink);line-height:1.2}
+  .prose h3{font-family:var(--serif-display);font-size:18px;font-weight:600;margin:1.2em 0 .3em;color:var(--ink)}
+  .prose a{color:#8a6414}
+  .prose ul,.prose ol{margin:0 0 1em;padding-left:1.4em}
+  .prose li{margin:.3em 0}
+  .prose blockquote{margin:1.1em 0;padding:.5em 1.1em;border-left:3px solid #9a7322;background:rgba(154,115,34,.06);font-style:italic;color:var(--ink-soft)}
+  .prose blockquote p{margin:.4em 0}
+  .prose img{max-width:100%;border-radius:8px;border:1px solid var(--line);margin:.7em 0}
+  .prose code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em;background:var(--chip,#f1ece1);padding:1px 5px;border-radius:4px}
+  .prose strong{font-weight:600} .prose em{font-style:italic}
+  .prose hr{border:none;border-top:1px solid var(--line);margin:1.5em 0}
+  .prose table{border-collapse:collapse;margin:1em 0;font-size:14.5px} .prose th,.prose td{border:1px solid var(--line);padding:6px 10px;text-align:left}
   #err{color:#a3402d;padding:24px;font-family:var(--sans)}
   @media (max-width:760px){ .cgrid{grid-template-columns:1fr} .toc{position:static} }
 </style>
@@ -92,6 +106,13 @@
       return '<p>' + t + '</p>';
     }).join('');
   }
+  // full markdown via marked when available (headings, lists, blockquotes, images, tables);
+  // falls back to the tiny md(). Course figures authored as images/<n> live in pages/courses/images/.
+  function richMd(s){
+    if (!s) return '';
+    const html = window.marked ? (marked.parse ? marked.parse(String(s)) : marked(String(s))) : md(String(s));
+    return html.replace(/(<img[^>]+src=")images\//g, '$1../pages/courses/images/');
+  }
   const slug = s => 'x-' + String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
   // discover groupable metadata fields: string values, >1 distinct, not an internal *_label/needs.
@@ -132,7 +153,9 @@
         const m = it.metadata || {};
         const badges = ['skill', 'cost', 'needs'].map(k => m[k] ? `<span class="badge">${esc(m[k])}</span>` : '').join('');
         const secs = Object.entries(it.sections || {}).filter(([, v]) => v && String(v).trim())
-          .map(([lab, v]) => `<div class="sec"><div class="lab">${esc(lab)}</div>${md(String(v))}</div>`).join('');
+          .map(([lab, v]) => /^content$/i.test(lab)
+            ? `<div class="sec"><div class="prose">${richMd(v)}</div></div>`
+            : `<div class="sec"><div class="lab">${esc(lab)}</div><div class="prose">${richMd(v)}</div></div>`).join('');
         const img = it.image_url ? `<img loading="lazy" src="${esc(it.image_url)}" alt="">` : '';
         const lEl = document.createElement('div'); lEl.className = 'lesson'; lEl.id = id;
         lEl.innerHTML = `<h3>${esc(it.name || 'Untitled')}</h3>${badges ? `<div class="badges">${badges}</div>` : ''}${img}${secs}`;
@@ -152,7 +175,7 @@
       GRAMMAR = await r.json();
       document.title = (GRAMMAR.name || 'Grammar') + ' · a course';
       $('ctitle').textContent = GRAMMAR.name || 'Grammar';
-      $('cintro').innerHTML = md(GRAMMAR.description || '');
+      $('cintro').innerHTML = richMd(GRAMMAR.description || '');
       const fields = groupFields(GRAMMAR.items || []);
       if (fields.length){
         $('organize').style.display = '';
