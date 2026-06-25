@@ -1,0 +1,376 @@
+{
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "note": "The contribute guide, dogfooded as a grammar."
+      }
+    ]
+  },
+  "name": "How to Contribute — a Grammar of Ways In",
+  "description": "The contribute guide as a grammar: every item is one way IN — a thing you can make (your own deck, a fix to a historic deck, a sequence/playlist, a course) by an avenue (the app, GitHub, an AI on the repo, or the recursive.eco MCP). Each item carries its `what` and `how` in metadata, so the Emergence Explorer can group by what you want to contribute OR by the skill/tool — the contribute matrix draws itself. Grammars work through every avenue; a course is an MDX file in the repo, so it's code-only. This guide is itself a grammar you can fork and edit — which is exactly its point.",
+  "grammar_type": "custom",
+  "creator_name": "PlayfulProcess",
+  "default_view": "study",
+  "provenance": "reference",
+  "metadata": {
+    "common_name": "How to Contribute",
+    "category": "reference"
+  },
+  "_generated": true,
+  "_built_by": "scripts/build_contribute_grammar.py",
+  "items": [
+    {
+      "id": "community-deck__app",
+      "name": "Your own deck — In the app",
+      "category": "how-to",
+      "keywords": [
+        "community-deck",
+        "app",
+        "free"
+      ],
+      "metadata": {
+        "what": "community-deck",
+        "what_label": "Your own deck",
+        "how": "app",
+        "how_label": "In the app",
+        "skill": "No tools — just the website",
+        "cost": "free",
+        "needs": "A free recursive.eco account"
+      },
+      "sections": {
+        "What you'll do": "Contribute a community grammar — your own deck (in the app). Example: Clown Town.",
+        "Steps": "Sign in to recursive.eco, open **Create**, and start a new grammar and add your cards. Save, then publish.",
+        "What you need": "A free recursive.eco account",
+        "Cost": "Free."
+      }
+    },
+    {
+      "id": "community-deck__github",
+      "name": "Your own deck — On GitHub",
+      "category": "how-to",
+      "keywords": [
+        "community-deck",
+        "github",
+        "free"
+      ],
+      "metadata": {
+        "what": "community-deck",
+        "what_label": "Your own deck",
+        "how": "github",
+        "how_label": "On GitHub",
+        "skill": "Git / GitHub — edit a file, open a PR",
+        "cost": "free",
+        "needs": "A free GitHub account"
+      },
+      "sections": {
+        "What you'll do": "Contribute a community grammar — your own deck (on github). Example: Clown Town.",
+        "Steps": "On github.com, add a new `tarot/<your-deck>/grammar.json`. Edit it, then **open a pull request** — the change is reviewed before it goes live.",
+        "What you need": "A free GitHub account",
+        "Cost": "Free."
+      }
+    },
+    {
+      "id": "community-deck__ai-repo",
+      "name": "Your own deck — An AI on the repo",
+      "category": "how-to",
+      "keywords": [
+        "community-deck",
+        "ai-repo",
+        "ai"
+      ],
+      "metadata": {
+        "what": "community-deck",
+        "what_label": "Your own deck",
+        "how": "ai-repo",
+        "how_label": "An AI on the repo",
+        "skill": "An AI assistant pointed at the repo",
+        "cost": "ai",
+        "needs": "Any AI assistant"
+      },
+      "sections": {
+        "What you'll do": "Contribute a community grammar — your own deck (an ai on the repo). Example: Clown Town.",
+        "Steps": "Point an AI assistant (Claude.ai, Claude Desktop, or Claude Code) at the repo and ask it to start a new grammar and add your cards. Review its draft and open a PR.",
+        "What you need": "Any AI assistant",
+        "Cost": "You pay your own AI provider's usage. See [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+      }
+    },
+    {
+      "id": "community-deck__mcp",
+      "name": "Your own deck — The recursive.eco MCP",
+      "category": "how-to",
+      "keywords": [
+        "community-deck",
+        "mcp",
+        "mcp"
+      ],
+      "metadata": {
+        "what": "community-deck",
+        "what_label": "Your own deck",
+        "how": "mcp",
+        "how_label": "The recursive.eco MCP",
+        "skill": "Claude Code, or your token in any MCP client",
+        "cost": "mcp",
+        "needs": "The MCP connected (Claude — or any MCP client)"
+      },
+      "sections": {
+        "What you'll do": "Contribute a community grammar — your own deck (the recursive.eco mcp). Example: Clown Town.",
+        "Steps": "With the recursive.eco MCP connected, just **ask** your assistant to start a new grammar and add your cards — it acts on your library directly, no files to touch.",
+        "What you need": "The MCP connected (Claude — or any MCP client)",
+        "Cost": "Free to connect. Generated images, audio and storage are billed — see [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+      }
+    },
+    {
+      "id": "edit-historic__app",
+      "name": "Fix a historic deck — In the app",
+      "category": "how-to",
+      "keywords": [
+        "edit-historic",
+        "app",
+        "free"
+      ],
+      "metadata": {
+        "what": "edit-historic",
+        "what_label": "Fix a historic deck",
+        "how": "app",
+        "how_label": "In the app",
+        "skill": "No tools — just the website",
+        "cost": "free",
+        "needs": "A free recursive.eco account"
+      },
+      "sections": {
+        "What you'll do": "Contribute a correction to a historic deck (in the app). Example: Visconti-Sforza.",
+        "Steps": "Sign in to recursive.eco, open **Create**, and open the deck and fix the card. Save, then publish.",
+        "What you need": "A free recursive.eco account",
+        "Cost": "Free."
+      }
+    },
+    {
+      "id": "edit-historic__github",
+      "name": "Fix a historic deck — On GitHub",
+      "category": "how-to",
+      "keywords": [
+        "edit-historic",
+        "github",
+        "free"
+      ],
+      "metadata": {
+        "what": "edit-historic",
+        "what_label": "Fix a historic deck",
+        "how": "github",
+        "how_label": "On GitHub",
+        "skill": "Git / GitHub — edit a file, open a PR",
+        "cost": "free",
+        "needs": "A free GitHub account"
+      },
+      "sections": {
+        "What you'll do": "Contribute a correction to a historic deck (on github). Example: Visconti-Sforza.",
+        "Steps": "On github.com, edit the deck's `grammar.json`. Edit it, then **open a pull request** — the change is reviewed before it goes live.",
+        "What you need": "A free GitHub account",
+        "Cost": "Free."
+      }
+    },
+    {
+      "id": "edit-historic__ai-repo",
+      "name": "Fix a historic deck — An AI on the repo",
+      "category": "how-to",
+      "keywords": [
+        "edit-historic",
+        "ai-repo",
+        "ai"
+      ],
+      "metadata": {
+        "what": "edit-historic",
+        "what_label": "Fix a historic deck",
+        "how": "ai-repo",
+        "how_label": "An AI on the repo",
+        "skill": "An AI assistant pointed at the repo",
+        "cost": "ai",
+        "needs": "Any AI assistant"
+      },
+      "sections": {
+        "What you'll do": "Contribute a correction to a historic deck (an ai on the repo). Example: Visconti-Sforza.",
+        "Steps": "Point an AI assistant (Claude.ai, Claude Desktop, or Claude Code) at the repo and ask it to open the deck and fix the card. Review its draft and open a PR.",
+        "What you need": "Any AI assistant",
+        "Cost": "You pay your own AI provider's usage. See [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+      }
+    },
+    {
+      "id": "edit-historic__mcp",
+      "name": "Fix a historic deck — The recursive.eco MCP",
+      "category": "how-to",
+      "keywords": [
+        "edit-historic",
+        "mcp",
+        "mcp"
+      ],
+      "metadata": {
+        "what": "edit-historic",
+        "what_label": "Fix a historic deck",
+        "how": "mcp",
+        "how_label": "The recursive.eco MCP",
+        "skill": "Claude Code, or your token in any MCP client",
+        "cost": "mcp",
+        "needs": "The MCP connected (Claude — or any MCP client)"
+      },
+      "sections": {
+        "What you'll do": "Contribute a correction to a historic deck (the recursive.eco mcp). Example: Visconti-Sforza.",
+        "Steps": "With the recursive.eco MCP connected, just **ask** your assistant to open the deck and fix the card — it acts on your library directly, no files to touch.",
+        "What you need": "The MCP connected (Claude — or any MCP client)",
+        "Cost": "Free to connect. Generated images, audio and storage are billed — see [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+      }
+    },
+    {
+      "id": "sequence__app",
+      "name": "A sequence / playlist — In the app",
+      "category": "how-to",
+      "keywords": [
+        "sequence",
+        "app",
+        "free"
+      ],
+      "metadata": {
+        "what": "sequence",
+        "what_label": "A sequence / playlist",
+        "how": "app",
+        "how_label": "In the app",
+        "skill": "No tools — just the website",
+        "cost": "free",
+        "needs": "A free recursive.eco account"
+      },
+      "sections": {
+        "What you'll do": "Contribute a sequence grammar — a karaoke or paired set (in the app). Example: Sing & Sing 2.",
+        "Steps": "Sign in to recursive.eco, open **Create**, and create a sequence grammar (a karaoke or a paired set). Save, then publish.",
+        "What you need": "A free recursive.eco account",
+        "Cost": "Free."
+      }
+    },
+    {
+      "id": "sequence__github",
+      "name": "A sequence / playlist — On GitHub",
+      "category": "how-to",
+      "keywords": [
+        "sequence",
+        "github",
+        "free"
+      ],
+      "metadata": {
+        "what": "sequence",
+        "what_label": "A sequence / playlist",
+        "how": "github",
+        "how_label": "On GitHub",
+        "skill": "Git / GitHub — edit a file, open a PR",
+        "cost": "free",
+        "needs": "A free GitHub account"
+      },
+      "sections": {
+        "What you'll do": "Contribute a sequence grammar — a karaoke or paired set (on github). Example: Sing & Sing 2.",
+        "Steps": "On github.com, add a sequence `grammar.json`. Edit it, then **open a pull request** — the change is reviewed before it goes live.",
+        "What you need": "A free GitHub account",
+        "Cost": "Free."
+      }
+    },
+    {
+      "id": "sequence__ai-repo",
+      "name": "A sequence / playlist — An AI on the repo",
+      "category": "how-to",
+      "keywords": [
+        "sequence",
+        "ai-repo",
+        "ai"
+      ],
+      "metadata": {
+        "what": "sequence",
+        "what_label": "A sequence / playlist",
+        "how": "ai-repo",
+        "how_label": "An AI on the repo",
+        "skill": "An AI assistant pointed at the repo",
+        "cost": "ai",
+        "needs": "Any AI assistant"
+      },
+      "sections": {
+        "What you'll do": "Contribute a sequence grammar — a karaoke or paired set (an ai on the repo). Example: Sing & Sing 2.",
+        "Steps": "Point an AI assistant (Claude.ai, Claude Desktop, or Claude Code) at the repo and ask it to create a sequence grammar (a karaoke or a paired set). Review its draft and open a PR.",
+        "What you need": "Any AI assistant",
+        "Cost": "You pay your own AI provider's usage. See [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+      }
+    },
+    {
+      "id": "sequence__mcp",
+      "name": "A sequence / playlist — The recursive.eco MCP",
+      "category": "how-to",
+      "keywords": [
+        "sequence",
+        "mcp",
+        "mcp"
+      ],
+      "metadata": {
+        "what": "sequence",
+        "what_label": "A sequence / playlist",
+        "how": "mcp",
+        "how_label": "The recursive.eco MCP",
+        "skill": "Claude Code, or your token in any MCP client",
+        "cost": "mcp",
+        "needs": "The MCP connected (Claude — or any MCP client)"
+      },
+      "sections": {
+        "What you'll do": "Contribute a sequence grammar — a karaoke or paired set (the recursive.eco mcp). Example: Sing & Sing 2.",
+        "Steps": "With the recursive.eco MCP connected, just **ask** your assistant to create a sequence grammar (a karaoke or a paired set) — it acts on your library directly, no files to touch.",
+        "What you need": "The MCP connected (Claude — or any MCP client)",
+        "Cost": "Free to connect. Generated images, audio and storage are billed — see [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+      }
+    },
+    {
+      "id": "course__github",
+      "name": "A course — On GitHub",
+      "category": "how-to",
+      "keywords": [
+        "course",
+        "github",
+        "free"
+      ],
+      "metadata": {
+        "what": "course",
+        "what_label": "A course",
+        "how": "github",
+        "how_label": "On GitHub",
+        "skill": "Git / GitHub — edit a file, open a PR",
+        "cost": "free",
+        "needs": "A free GitHub account"
+      },
+      "sections": {
+        "What you'll do": "Contribute a written course (MDX in the repo) (on github). Example: this guide.",
+        "Steps": "On github.com, add a course `.mdx` under `pages/courses/`. Edit it, then **open a pull request** — the change is reviewed before it goes live.",
+        "What you need": "A free GitHub account",
+        "Cost": "Free."
+      }
+    },
+    {
+      "id": "course__ai-repo",
+      "name": "A course — An AI on the repo",
+      "category": "how-to",
+      "keywords": [
+        "course",
+        "ai-repo",
+        "ai"
+      ],
+      "metadata": {
+        "what": "course",
+        "what_label": "A course",
+        "how": "ai-repo",
+        "how_label": "An AI on the repo",
+        "skill": "An AI assistant pointed at the repo",
+        "cost": "ai",
+        "needs": "Any AI assistant"
+      },
+      "sections": {
+        "What you'll do": "Contribute a written course (MDX in the repo) (an ai on the repo). Example: this guide.",
+        "Steps": "Point an AI assistant (Claude.ai, Claude Desktop, or Claude Code) at the repo and ask it to draft a new course. Review its draft and open a PR.",
+        "What you need": "Any AI assistant",
+        "Cost": "You pay your own AI provider's usage. See [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+      }
+    }
+  ]
+}

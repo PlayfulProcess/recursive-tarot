@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="theme.css?v=3">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Recursive Tarot — A Public-Domain Genealogy of the Cards</title>
@@ -9,8 +10,8 @@
 <meta property="og:description" content="25 historical tarot decks, an illustrated open history, JSON grammars, free viewers and courses — public domain, part of recursive.eco.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tarot.recursive.eco/">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="icon" type="image/svg+xml" href="public/favicon.svg?v=2">
+<link rel="stylesheet" href="style.css?v=4">
 <style>
   /* ── Editorial homepage ── */
   main.wrap{max-width:1120px}
@@ -80,6 +81,22 @@
   .arch .archnote{font-family:var(--serif-body);font-size:15px;line-height:1.6;color:var(--ink-soft);text-align:center;max-width:62ch;margin:22px auto 0}
   .arch .archnote a{color:var(--gold)}
   @media(max-width:680px){ .archrow{grid-template-columns:1fr} }
+  /* arch as a dated timeline (analogous to the lenses one) — clickable card thumbnails on an axis */
+  .archtl{margin-top:26px}
+  .axis{position:relative;display:grid;grid-template-columns:repeat(3,1fr)}
+  .axis::before{content:'';position:absolute;left:16.66%;right:16.66%;bottom:6px;height:2px;background:var(--line);z-index:0}
+  .axis .tk{position:relative;z-index:1;text-align:center;padding-bottom:18px}
+  .axis .ayr{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:9px}
+  .axis .adot{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;border:3px solid var(--bg)}
+  .axis .adot.ok{background:#3f7a5c}.axis .adot.bad{background:#b5512f}
+  .nodes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
+  .node{display:block;background:var(--surface);border:1px solid var(--line-soft);border-radius:10px;padding:16px 18px 20px;text-align:center;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s,box-shadow .15s}
+  .node:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 18px 38px -26px rgba(60,45,20,.5)}
+  .node.now{border-color:var(--gold);box-shadow:0 14px 30px -24px rgba(60,45,20,.4)}
+  .node .athumb{display:block;width:78px;height:120px;object-fit:contain;background:var(--thumb-bg);border:1px solid var(--line);border-radius:4px;margin:0 auto 12px}
+  .node .an{font-family:var(--serif-display);font-weight:600;font-size:19px;color:var(--ink);margin:0 0 8px}
+  .node .ag{font-family:var(--serif-body);font-size:13.5px;line-height:1.5;color:var(--ink-soft);margin:8px 0 0}
+  @media(max-width:680px){ .axis,.nodes{grid-template-columns:1fr} .axis::before{display:none} .axis .tk{padding-bottom:6px} .axis .adot{display:none} }
 
   /* editorial prose sections */
   section.story{margin:40px auto 0;max-width:680px}
@@ -150,7 +167,7 @@
 </style>
 </head>
 <body>
-<script src="site-header.js?v=25"></script>
+<script src="site-header.js?v=31"></script>
 <site-header active="home"></site-header>
 
 <main class="wrap">
@@ -173,26 +190,18 @@
     </div>
   </section>
 
-  <!-- ── FOUR DOORS (Historian · Practitioner · Player · Contributor) ── -->
+  <!-- ── THREE DOORS (Historian · Player · Contributor) ── -->
   <div class="ways">
     <a class="way" href="pages/historian.html">
-      <div class="top" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/LE%20MAT%20Nicolas%20Conver%20Tarot%201760.jpg')"></div>
+      <div class="top" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-03-empress.jpg')"></div>
       <div class="bd">
         <div class="lbl">Read · the historian</div>
         <h3>The illustrated history</h3>
         <p>How a card game became a grammar — the course, the timeline, the genealogy, every deck card by card.</p>
       </div>
     </a>
-    <a class="way" href="pages/course-viewer.html?course=reading-the-cards">
-      <div class="top" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-21-world.jpg')"></div>
-      <div class="bd">
-        <div class="lbl">Read · the practitioner</div>
-        <h3>Reading the cards</h3>
-        <p>Why a reading can help, how to set an intention, the lenses to read through — gate, not fate.</p>
-      </div>
-    </a>
     <a class="way" href="pages/play.html">
-      <div class="top" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot/RWS_Tarot_00_Fool.jpg')"></div>
+      <div class="top" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-18-moon.jpg')"></div>
       <div class="bd">
         <div class="lbl">Play · the player</div>
         <h3>Play the games</h3>
@@ -200,7 +209,7 @@
       </div>
     </a>
     <a class="way" href="pages/contribute.html">
-      <div class="top" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-wikimedia/Sola%20Busca%20tarot%20card%2027.jpg')"></div>
+      <div class="top" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-17-star.jpg')"></div>
       <div class="bd">
         <div class="lbl">Contribute · the commons</div>
         <h3>Add to the open library</h3>
@@ -212,22 +221,32 @@
   <!-- ── THE ARCH: how to hold the cards ── -->
   <section class="arch">
     <h2>How to hold the cards</h2>
-    <p class="sub">Game → Crystal ball → Gate, not fate</p>
-    <div class="archrow">
-      <div class="archcard">
-        <div class="an">Game</div>
-        <span class="atag ok">Adaptive · within limits</span>
-        <p class="ag">Play it for the play — sociable, skilled, free. Healthy, as long as it never curdles into greed.</p>
+    <p class="sub">One faculty, three stances — across six centuries · tap a card</p>
+    <div class="archtl">
+      <div class="axis">
+        <div class="tk"><span class="ayr">c. 1440</span><span class="adot ok"></span></div>
+        <div class="tk"><span class="ayr">1781</span><span class="adot bad"></span></div>
+        <div class="tk"><span class="ayr">now · ongoing</span><span class="adot ok"></span></div>
       </div>
-      <div class="archcard">
-        <div class="an">Crystal ball</div>
-        <span class="atag bad">Maladaptive</span>
-        <p class="ag">Read it as fate and you obey the slice it shows you. Tolkien named the object — the <em>palantír</em>, which never lies and still ruins whoever obeys it.</p>
-      </div>
-      <div class="archcard now">
-        <div class="an">Gate, not fate</div>
-        <span class="atag ok">Adaptive</span>
-        <p class="ag">Cross it with your judgment intact. The card reflects what's already in you and lets you imagine the step you haven't taken.</p>
+      <div class="nodes">
+        <a class="node" href="pages/course-viewer.html?course=games-of-the-tarot">
+          <img class="athumb" src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-01-magician.jpg" alt="">
+          <div class="an">Game</div>
+          <span class="atag ok">Adaptive · within limits</span>
+          <p class="ag">Play it for the play — sociable, skilled, free. Healthy, as long as it never curdles into greed.</p>
+        </a>
+        <a class="node" href="pages/course-viewer.html?course=how-tarot-works">
+          <img class="athumb" src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-10-fortune.jpg" alt="">
+          <div class="an">Crystal ball</div>
+          <span class="atag bad">Maladaptive</span>
+          <p class="ag">Read it as fate and you obey the slice it shows you. Tolkien named the object — the <em>palantír</em>, which never lies and still ruins whoever obeys it.</p>
+        </a>
+        <a class="node now" href="pages/course-viewer.html?course=intention-setting">
+          <img class="athumb" src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-06-love.jpg" alt="">
+          <div class="an">Gate, not fate</div>
+          <span class="atag ok">Adaptive</span>
+          <p class="ag">Cross it with your judgment intact. The card reflects what's already in you and lets you imagine the step you haven't taken.</p>
+        </a>
       </div>
     </div>
     <p class="archnote">This site teaches the third — and keeps the first. Why a card held as a gate is practice for a world full of oracles is in <a href="pages/course-viewer.html?course=intention-setting">Intention Setting</a>.</p>
@@ -264,10 +283,8 @@
 
   <!-- ── RECURSIVE.ECO — the tree this grows from (reusable block) ── -->
   <aside class="ecotree">
-    <svg class="spiral" width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">
-      <path d="M53 47 a4 4 0 1 0 4 6 a11 11 0 1 0 -13 -3 a18 18 0 1 0 24 7 a26 26 0 1 0 -37 -11 a34 34 0 1 0 50 16"
-        fill="none" stroke="#9a7322" stroke-width="5" stroke-linecap="round"/>
-    </svg>
+    <a href="https://recursive.eco" target="_blank" rel="noopener" aria-label="recursive.eco — the parent project"><img class="spiral" src="public/spiral-mark.svg" width="46" height="46" alt="" style="display:block;margin:0 auto 10px"></a>
+
     <h2>One branch of a larger tree</h2>
     <p><a href="https://recursive.eco" target="_blank" rel="noopener"><strong>recursive.eco</strong></a> is the
     trunk this library grows from — an open platform built on
@@ -281,7 +298,7 @@
     library.</p>
     <div class="eco-cta">
       <a class="solid" href="https://flow.recursive.eco/" target="_blank" rel="noopener">Read in the Oracle ↗</a>
-      <a class="line" href="https://recursive.eco" target="_blank" rel="noopener">Create your own ↗</a>
+      <a class="line" href="https://flow.recursive.eco/create" target="_blank" rel="noopener">Create your own ↗</a>
     </div>
     <p class="fine">It's a public commons — fork
       <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">the repo</a>
@@ -304,7 +321,7 @@
         <div class="vb"><div class="vt">Explorer</div><div class="vd">Pivot any field by any field — at card level and across lenses; every grouping is an emergence.</div></div>
       </a>
       <a class="vcard" href="viewers/prototypes/lenses.html">
-        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-wikimedia/Sola%20Busca%20tarot%20card%2027.jpg')"></div>
+        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/II%20LA%20PAPESSE%20Nicolas%20Conver%20Tarot%201760.jpg')"></div>
         <div class="vb"><div class="vt">Lenses</div><div class="vd">One card read through many traditions, side by side.</div></div>
       </a>
       <a class="vcard" href="viewers/tree-viewer.html">
@@ -316,11 +333,11 @@
     <p class="glabel" style="margin-top:26px">Grammar level · across the whole collection</p>
     <div class="viewgrid">
       <a class="vcard" href="viewers/genealogy-tree.html">
-        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-21-world.jpg')"></div>
+        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-19-sun.jpg')"></div>
         <div class="vb"><div class="vt">Tree of Life</div><div class="vd">A radial root → branch → deck view of the family tree.</div></div>
       </a>
       <a class="vcard" href="viewers/timeline.html">
-        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/LE%20MAT%20Nicolas%20Conver%20Tarot%201760.jpg')"></div>
+        <div class="vthumb" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Bembo-Visconti-tarot-coins-13-queen.jpg')"></div>
         <div class="vb"><div class="vt">Timeline</div><div class="vd">All decks across six centuries, by lineage and era.</div></div>
       </a>
       <a class="vcard" href="genealogy.html">
@@ -333,10 +350,20 @@
     <p class="sub">Every image public domain · click any deck to read it card by card</p>
     <div id="deckgrid" class="deckgrid"><p class="sub" style="grid-column:1/-1">Loading decks…</p></div>
 
+    <style>
+      .dcard .status{display:inline-block;font-family:var(--sans);font-size:9.5px;letter-spacing:.1em;
+        text-transform:uppercase;color:#3f7a5c;background:rgba(63,122,92,.12);border-radius:999px;padding:3px 9px;margin-top:8px}
+      .dcard .note{font-family:var(--serif-body);font-size:12.5px;line-height:1.45;color:var(--ink-soft);margin-top:7px}
+    </style>
     <div id="contemporary-wrap" hidden>
       <h2 style="margin-top:50px">Contemporary decks</h2>
-      <p class="sub">Living-tradition grammars grown on recursive.eco — beyond the historical canon</p>
+      <p class="sub">Living-tradition grammars under CC-BY-SA, by other makers — beyond the historical canon</p>
       <div id="deckgrid-contemporary" class="deckgrid"></div>
+    </div>
+    <div id="community-wrap" hidden>
+      <h2 style="margin-top:50px">From the Recursive Community</h2>
+      <p class="sub">PlayfulProcess's own grammars — objects of study, not claims of expertise · collaborators welcome · <a href="pages/course-viewer.html?course=how-to-contribute" style="color:var(--gold)">contribute one →</a></p>
+      <div id="deckgrid-community" class="deckgrid"></div>
     </div>
   </section>
 
@@ -345,35 +372,39 @@
 <script>
   // Render the deck galleries from the open collection manifest (always current).
   (function(){
-    const CONTEMP = new Set(['ontoject-illustrated','thirty-six-tattvas']);
+    // PlayfulProcess's own grammars — shown apart, as objects of study (not expertise).
+    const COMMUNITY = {
+      'ontoject-illustrated': {status:'Looking for collaborators', note:'A creative, tattva-tinged deck still under process — my own study object. I am not an authority on the tradition.'},
+      'thirty-six-tattvas':   {status:'Looking for collaborators', note:'The 36 Tattvas of Shaiva Tantra as a grammar of consciousness — an object of study by PlayfulProcess, not an expert in the tradition.'}
+    };
     const esc = s => String(s).replace(/</g,'&lt;');
+    const thumb = g => '<div class="dthumb" style="background-image:url(\''+g.cover_image_url.replace(/'/g,"%27")+'\')"></div>';
     const card = g => {
-      const name = (g.name||g.slug).split(' — ')[0];
-      const year = g.year_label || (g.year||'');
+      const name = (g.name||g.slug).split(' — ')[0], year = g.year_label || (g.year||'');
       const href = 'viewers/cards.html?src=../tarot/'+encodeURIComponent(g.slug)+'/grammar.json';
-      return '<a class="dcard" href="'+href+'">'
-        +'<div class="dthumb" style="background-image:url(\''+g.cover_image_url.replace(/'/g,"%27")+'\')"></div>'
-        +'<div class="dn">'+esc(name)+'</div><div class="dy">'+esc(year)+'</div></a>';
+      return '<a class="dcard" href="'+href+'">'+thumb(g)+'<div class="dn">'+esc(name)+'</div><div class="dy">'+esc(year)+'</div></a>';
+    };
+    const communityCard = g => {
+      const c = COMMUNITY[g.slug]||{}, name = (g.name||g.slug).split(' — ')[0].split(':')[0];
+      const href = 'viewers/cards.html?src=../tarot/'+encodeURIComponent(g.slug)+'/grammar.json';
+      return '<a class="dcard" href="'+href+'">'+thumb(g)+'<div class="dn">'+esc(name)+'</div>'
+        +(c.status?'<span class="status">'+esc(c.status)+'</span>':'')
+        +(c.note?'<div class="note">'+esc(c.note)+'</div>':'')+'</a>';
     };
     fetch('tarot/_collection.json',{cache:'no-cache'}).then(r=>r.json()).then(c=>{
       const all = (c.grammars||[]).filter(g=>!g.is_meta && g.cover_image_url);
-      const historical = all.filter(g=>!CONTEMP.has(g.slug)).sort((a,b)=>(a.year||9999)-(b.year||9999));
-      const contemporary = all.filter(g=>CONTEMP.has(g.slug));
+      const isLiving = g => g.provenance==='living';
+      const community    = all.filter(g=>COMMUNITY[g.slug]);
+      const contemporary = all.filter(g=>isLiving(g) && !COMMUNITY[g.slug]);
+      const historical   = all.filter(g=>!isLiving(g) && !COMMUNITY[g.slug]).sort((a,b)=>(a.year||9999)-(b.year||9999));
       document.getElementById('deckgrid').innerHTML = historical.map(card).join('');
-      if(contemporary.length){
-        document.getElementById('deckgrid-contemporary').innerHTML = contemporary.map(card).join('');
-        document.getElementById('contemporary-wrap').hidden = false;
-      }
+      if(community.length){ document.getElementById('deckgrid-community').innerHTML = community.map(communityCard).join(''); document.getElementById('community-wrap').hidden = false; }
+      if(contemporary.length){ document.getElementById('deckgrid-contemporary').innerHTML = contemporary.map(card).join(''); document.getElementById('contemporary-wrap').hidden = false; }
     }).catch(()=>{ document.getElementById('deckgrid').innerHTML='<p class="sub" style="grid-column:1/-1">Open the <a href="viewers/cards.html">Cards view</a> to browse all decks.</p>'; });
   })();
 </script>
 
-<footer class="site"><div class="wrap">
-  Built openly with Claude Code. All data &amp; images live in the
-  <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">recursive-tarot repo</a>
-  — companion to <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a>.
-  <span class="small muted">Source: this repo · updated June 2026 · CC-BY-SA-4.0.</span>
-  <br><span class="small muted">Scholarship consulted (facts only, no text reproduced): the Tarot History Forum.</span>
-</div></footer>
+<script src="site-footer.js"></script>
+<site-footer></site-footer>
 </body>
 </html>

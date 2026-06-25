@@ -23,7 +23,7 @@
     ]
   },
   "name": "The Tree of Tarot — A Grammar of Tarot Grammars",
-  "description": "The genealogy of tarot as a single explorable tree: the decks ARE the cards. Built to render in the recursive.eco tree-viewer, with L1 = individual decks/traditions, L2 = the branches (Michael Dummett's A / B / C trump-orders, plus the occult reframing and the sui-generis relatives), and L3 = the root 'The Tree of Tarot'.\n\nIt corrects a common misconception: the Tarot de Marseille is NOT descended from the Bolognese Tarocchino — they are cousins, both descending from the mid-1400s Italian trionfi. Each leaf links to its full deck in this library (built, live in Supabase, or planned).\n\nThis is the capstone of the tarot collection: a map you can walk from the 1440s Milanese game decks, through the three regional orders and the printed Marseille standard, into the occult reframing that invented divination and produced the modern decks.",
+  "description": "The genealogy of tarot as a single explorable tree: the decks ARE the cards. Built to render in the recursive.eco tree-viewer, with L1 = individual decks/traditions, L2 = the branches (Michael Dummett's A / B / C trump-orders, plus the occult reframing and the sui-generis relatives), and L3 = the root 'The Tree of Tarot'.\n\nIt corrects a common misconception: the Tarot de Marseille is NOT descended from the Bolognese Tarocchino — they are cousins, both descending from the mid-1400s Italian trionfi. Each leaf links to its full deck in this library (built, live in Supabase, or planned).\n\nThis is the capstone of the tarot collection: a map you can walk from the 1440s Milanese game decks, through the three regional orders and the printed Marseille standard, into the occult reframing that invented divination and produced the modern decks.\n",
   "grammar_type": "custom",
   "provenance": "reference",
   "creator_name": "PlayfulProcess",
@@ -955,6 +955,80 @@
         "How to read this tree": "Each branch is a lineage; each leaf is a deck. Crucially, the Marseille (C-order) and the Bolognese Tarocchino (A-order) are COUSINS — both children of the common Italian root — not parent and child. Follow a branch down to see what descends from what.",
         "Scene": "The Tree of Tarot maps six centuries of tarot history as a living genealogy — not a fixed timeline but an evolving tradition that branches, hybridises, and reinvents itself while remaining recognisably itself.\n\nTarot begins in the courts of northern Italy in the 1440s as a luxury card game for aristocrats. By the late 16th century it has spread across Europe and diverged into several regional families. In the late 18th century Parisian occultists seize on it as a system of secret wisdom, and in the early 20th century English initiates redesign it from the ground up. Today hundreds of variants are in circulation.\n\nThe tree has five main branches: the Roots (early Italian luxury decks), the Southern Way (Bologna and Florence), the Western Way (the great Marseille tradition), the Occult Reframing (Etteilla, Levi, Waite, Crowley), and the Sui Generis branch (decks that don't fit any lineage cleanly). Each branch is a distinct answer to the question: what is a tarot, and what is it for?"
       }
+    },
+    {
+      "id": "deck-italian-trionfi",
+      "name": "Italian Trionfi (the game)",
+      "sort_order": 0,
+      "category": "deck",
+      "level": 1,
+      "keywords": [
+        "tarot",
+        "history",
+        "game",
+        "root"
+      ],
+      "metadata": {
+        "branch": "branch-roots",
+        "derives_from": [],
+        "when": "Italy, c. 1440"
+      },
+      "sections": {
+        "What it is": "The original thing: a trick-taking card GAME invented in 1440s northern Italy, when a fifth suit of allegorical ‘triumphs’ (trionfi) was added to an ordinary four-suit pack so the trumps could beat the suits. Every later tarot — game or divinatory — descends from this.",
+        "Where & when": "Milan / Ferrara / Bologna, c. 1440.",
+        "Lineage": "The common root. The A (Florence/Bologna), B (Ferrara) and C (Milan→Marseille) trump-orders all branch from here; the occult reframing splits off the C line only after 1781.",
+        "In this library": "The conceptual root node — not a single surviving deck but the game all the dated decks below descend from."
+      }
+    },
+    {
+      "id": "deck-ontoject",
+      "name": "The Ontoject",
+      "sort_order": 25,
+      "category": "deck",
+      "level": 1,
+      "keywords": [
+        "tarot",
+        "contemporary",
+        "playful"
+      ],
+      "metadata": {
+        "branch": "branch-contemporary",
+        "derives_from": [
+          "deck-italian-trionfi"
+        ],
+        "when": "2024"
+      },
+      "sections": {
+        "What it is": "A contemporary, playful, philosophical deck (Playful Process). It borrows the 78-card shape but makes no esoteric or divinatory claim — so on this tree it descends from the GAME, not the occult line.",
+        "Where & when": "Contemporary (recursive.eco), 2020s.",
+        "Lineage": "Playful / non-esoteric. Placed off the Italian trionfi root rather than off Rider-Waite-Smith, because it does not inherit (or claim) the occult correspondence system.",
+        "In this library": "🟢 Live on recursive.eco (the Ontoject deck)."
+      }
+    },
+    {
+      "id": "deck-anecdotes",
+      "name": "Anecdotes",
+      "sort_order": 26,
+      "category": "deck",
+      "level": 1,
+      "keywords": [
+        "tarot",
+        "contemporary",
+        "poetic"
+      ],
+      "metadata": {
+        "branch": "branch-contemporary",
+        "derives_from": [
+          "deck-rws"
+        ],
+        "when": "2025"
+      },
+      "sections": {
+        "What it is": "A contemporary deck that lays a poetic, narrative reading over the familiar 78-card scenes — an interpretive overlay in the same spirit as the Rider-Waite-Smith pictures, so here it descends from RWS.",
+        "Where & when": "Contemporary (recursive.eco), 2020s.",
+        "Lineage": "Poetic / interpretive. Branches off Rider-Waite-Smith because it leans on RWS’s scenic, meaning-bearing image vocabulary.",
+        "In this library": "🟢 Live on recursive.eco (the Anecdotes deck)."
+      }
     }
   ],
   "_community_folder": "tarot",
@@ -965,6 +1039,39 @@
       "user_id": "f18e2415-315c-43b7-ae93-d09c8892e181",
       "timestamp": "2026-06-03T04:23:59.515120+00:00",
       "action": "created"
+    }
+  ],
+  "metadata": {
+    "common_name": "The Tree of Tarot",
+    "category": "reference"
+  },
+  "_pending_decks": [
+    {
+      "id": "deck-tarocchino-arlecchino",
+      "name": "Tarocchino Arlecchino",
+      "intended_branch": "branch-a",
+      "intended_derives_from": [
+        "deck-tarocchino-bologna"
+      ],
+      "note": "Descends from the Tarocchino di Bologna it is named for. Community deck; held until finished."
+    },
+    {
+      "id": "deck-clown-town",
+      "name": "Clown Town",
+      "intended_branch": "branch-contemporary",
+      "intended_derives_from": [
+        "deck-italian-trionfi"
+      ],
+      "note": "Playful, no esoteric claim → off the game root. Community deck; held until finished."
+    },
+    {
+      "id": "deck-arlecchino-augmented",
+      "name": "Arlecchino's Augmented Arcana",
+      "intended_branch": "branch-contemporary",
+      "intended_derives_from": [
+        "deck-italian-trionfi"
+      ],
+      "note": "Playful, no esoteric claim → off the game root. Community deck; held until finished."
     }
   ]
 }

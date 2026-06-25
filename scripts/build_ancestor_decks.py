@@ -60,7 +60,7 @@ DECKS = {
 for slug, d in DECKS.items():
     g = {
       "_grammar_commons": {"schema_version":"1.0","license":"CC-BY-SA-4.0",
-        "attribution":[{"name":"PlayfulProcess","note":"AI-assisted first-pass catalogue entry; for review."}]},
+        "attribution":[{"name":"PlayfulProcess","note":""}]},
       "name": d["name"], "slug": slug, "grammar_type":"custom", "creator_name":"PlayfulProcess",
       "default_view":"tree", "default_preview":"tree",
       "description": d["desc"] + FOOT,

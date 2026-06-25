@@ -1,6 +1,7 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="theme.css?v=3">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Recursive Tarot — Genealogy Graph</title>
@@ -17,7 +18,7 @@
 -->
 <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
 <style>
-  :root { --bg:#f4f1ea; --panel:#ffffff; --ink:#221f1a; --muted:#6b6457; --line:#d8d2c6; }
+  :root {      }
   * { box-sizing:border-box; }
   html,body { margin:0; height:100%; background:var(--bg); color:var(--ink);
     font-family:Inter,system-ui,-apple-system,sans-serif; }
@@ -43,7 +44,7 @@
 </style>
 </head>
 <body>
-<script src="site-header.js?v=25"></script>
+<script src="site-header.js?v=31"></script>
 <site-header active="genealogy"></site-header>
 <header>
   <div>
@@ -51,7 +52,7 @@
     <div class="sub">Public-domain decks placed by date × trump-order lineage. Click a deck.</div>
   </div>
   <div class="controls">
-    <script src="view-switcher.js?v=10"></script>
+    <script src="view-switcher.js?v=11"></script>
     <view-switcher active="genealogy"></view-switcher>
     <span>Colour by:</span>
     <button class="toggle active" id="byOrder">Lineage</button>
@@ -178,5 +179,8 @@ function legendHTML(mode){
   window.addEventListener('resize', () => cy.fit(undefined, 60));
 })();
 </script>
+
+<script src="site-footer.js"></script>
+<site-footer base=""></site-footer>
 </body>
 </html>

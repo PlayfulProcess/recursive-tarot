@@ -1,5 +1,5 @@
 {
-  "_note": "Hardcoded map: repo deck slug -> its recursive.eco grammar UUID (the deckId). Used to build per-deck links: open/read = https://flow.recursive.eco/?deckId=<id> ; edit/fork = https://flow.recursive.eco/create/dashboard/unified/new?forkId=<id>. Sourced from the recursive.eco DB (user_documents) on 2026-06-20 by _community_slug / exact name match. UUIDs are stable across publish; a link only resolves for visitors once that deck is is_public=true on recursive.eco.",
+  "_note": "Hardcoded map: repo deck slug -> its recursive.eco grammar UUID (the deckId). Used to build per-deck links: open/read = https://flow.recursive.eco/?deckId=<id> ; edit/fork = https://flow.recursive.eco/create/dashboard/unified/new?forkId=<id>. Sourced from the recursive.eco DB (user_documents) on 2026-06-20 by _community_slug / exact name match; the 5 community decks (anecdotes/arlecchino x2/clown-town/petit-lenormand) added 2026-06-24 via the recursive.eco MCP (list_grammars, all is_public=true). UUIDs are stable across publish; a link only resolves for visitors once that deck is is_public=true on recursive.eco.",
   "_public_now": [
     "all-decks-many-lenses",
     "belgian-tarot",
@@ -25,7 +25,14 @@
     "tarot-de-marseille-conver",
     "tree-of-tarot",
     "vieville-tarot",
-    "visconti-sforza-tarot"
+    "visconti-sforza-tarot",
+    "thirty-six-tattvas",
+    "anecdotes-tarot",
+    "arlecchinos-augmented-arcana",
+    "clown-town-tarot",
+    "petit-lenormand",
+    "tarocchino-arlecchino",
+    "how-to-contribute"
   ],
   "ids": {
     "visconti-sforza-tarot": "6dc092b0-9972-43f0-b493-ff6c2a61dcfc",
@@ -58,6 +65,12 @@
     "tree-of-tarot": "1aa29bd2-eb06-4cf4-b53d-ab46da5e2d43",
     "books-of-tarot": "7ff3ad23-6ceb-4b20-8c27-8bb04d0876ef",
     "ontoject-illustrated": "e8c4ca59-7841-4b5d-ad56-584ff52c859d",
-    "thirty-six-tattvas": "a41c5cdd-94f9-49c2-88e1-4fffad199289"
+    "thirty-six-tattvas": "a41c5cdd-94f9-49c2-88e1-4fffad199289",
+    "anecdotes-tarot": "58f8e047-417a-4a9f-bc1c-ea7fd43ecae2",
+    "arlecchinos-augmented-arcana": "67314102-eeff-4ccb-a155-e022378ccb03",
+    "clown-town-tarot": "bc1953b2-9e07-4f31-9635-d3968af49625",
+    "petit-lenormand": "b13cd9ca-e7c8-4639-a941-b1b63cda655a",
+    "tarocchino-arlecchino": "7ea72ae9-989c-4c2a-9d85-6b07fe08a70d",
+    "how-to-contribute": "368974ce-0718-4e9a-9351-bce7b2c053e4"
   }
 }

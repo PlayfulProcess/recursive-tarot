@@ -1,0 +1,3128 @@
+{
+  "_community_slug": "arlecchinos-augmented-arcana",
+  "name": "Arlecchino's Augmented Arcana",
+  "slug": "arlecchinos-augmented-arcana",
+  "grammar_type": "tarot",
+  "provenance": "living",
+  "worldview": "contemporary",
+  "creator_name": "Yve Lepkowski",
+  "creator_link": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/",
+  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185444886-axcu2b42f7w.png",
+  "image_credit": "Art & guidebook by Yve Lepkowski (stolen-thyme.com), CC-BY-SA-4.0.",
+  "description": "The 84-card expansion of Yve Lepkowski's Tarocchino Arlecchino (stolen-thyme.com), CC-BY-SA-4.0: the full Bolognese deck with complete pip cards, two Significators (Arlecchino & Colombina), and the four virtues — including **La Prudenza (Prudence)**, the cardinal virtue the historical tarot never depicted. **A contemporary deck**, descending from her own Tarocchino Arlecchino. 'The card' is her art description; Etteilla upright/reversed meanings are carried over from her Tarocchino guidebook where the cards overlap; meanings for the added cards live in her printed guidebook.\n",
+  "tags": [
+    "tarot",
+    "tarocchino",
+    "arlecchino",
+    "commedia-dellarte",
+    "bolognese",
+    "virtues",
+    "prudence",
+    "contemporary",
+    "cc-by-sa",
+    "yve-lepkowski"
+  ],
+  "roots": [
+    "western-esoteric"
+  ],
+  "lineages": [
+    "tarocchino-arlecchino"
+  ],
+  "parent_deck": "tarocchino-arlecchino",
+  "is_published": true,
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": [
+      {
+        "name": "Yve Lepkowski",
+        "role": "artist & deck creator",
+        "link": "https://stolen-thyme.com",
+        "note": "Arlecchino's Augmented Arcana — original deck, CC-BY-SA-4.0."
+      },
+      {
+        "name": "PlayfulProcess",
+        "role": "compiled into this library as a recursive.eco grammar",
+        "link": "https://recursive.eco"
+      }
+    ],
+    "modifications": "'The card' sections are her own art descriptions (from her per-card pages). Etteilla upright/reversed meanings are reused verbatim from her Tarocchino Arlecchino guidebook for overlapping cards; the 6 added majors and the 2-5 pips carry her art description only (their meanings are PDF-only). No meanings altered."
+  },
+  "items": [
+    {
+      "id": "augmented-matto",
+      "name": "Il Matto (The Fool)",
+      "sort_order": 0,
+      "category": "trump",
+      "keywords": [
+        "innocence",
+        "freedom",
+        "beginning",
+        "spontaneity",
+        "trust"
+      ],
+      "sections": {
+        "The card": "The Fool marches, blowing on a horn and playing a red drum strapped to his torso. The air around him is filled with red flourishes. He wears a turban with seven fluffy feathers and a red, green, and blue diamond-patterned mask that covers his face and neck. His outfit is covered in patches of various colors and shapes, including diamonds, leaves, crescent moons, hearts, and apples. He also has leafy trim around his shoulders and waist. He wears socks of the same pattern as his mask and blue slipped with curled toes.",
+        "Upright meaning (Etteilla system)": "Madness, insanity, insane, eccentricity, enthusiasm, unreasonableness, blindness, ignorance, senseless, confusion, wandering, drunkenness, delirium, fever, frenzy, rage, passion, fury, transport, innocent, simple, silly.",
+        "Reversed meaning (Etteilla system)": "Imbecility, ineptitude, insouciance, stupidity, imprudence, negligence, absence, absent-mindedness, apathy, nullity, empty, nothing, useless."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185444886-axcu2b42f7w.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Il Matto",
+        "arcana": "trump",
+        "archetype": "arcana:the-fool",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185444886-axcu2b42f7w.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-begato",
+      "name": "Il Begato (The Magician)",
+      "sort_order": 1,
+      "category": "trump",
+      "keywords": [
+        "skill",
+        "manifestation",
+        "power",
+        "action",
+        "resourcefulness"
+      ],
+      "sections": {
+        "The card": "The Magician wears a costume decorated with red, blue, and green diamonds, a pointy hat with a bell at the tip, and a black mask with a red nose. He stands at a table, surrounded by four small and impish figures dressed all in red with horned masks. They watch three coins and two upside down cups on the table. The Magician holds a striped wand in his right hand and appears to be hiding something in his left hand. Only his left leg is visible under the table. The air around the five figures is filled with swirling red flourishes.",
+        "Upright meaning (Etteilla system)": "Illness of the body, disease, physical affliction, infirmity, damage, bad state of health or affairs, disruption, pain, death throes, epidemic, poison, plague, infection.",
+        "Reversed meaning (Etteilla system)": "Illness of the mind or soul, indisposition, headache, heartache, worry, melancholy, affliction, lethargy, inconvenience, unhappy position, displeasure, anxiety, sorrow, woe, misfortune, medicine, remedy, charlatan, mage, empirical medicine."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185445907-0xqed6whc6de.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Il Begato",
+        "arcana": "trump",
+        "archetype": "arcana:the-magician",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185445907-0xqed6whc6de.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-01",
+      "name": "La Papessa (The Papess)",
+      "sort_order": 2,
+      "category": "trump",
+      "keywords": [
+        "intuition",
+        "mystery",
+        "wisdom",
+        "secrets",
+        "patience"
+      ],
+      "sections": {
+        "The card": "The Female Pope raises two fingers on her right hand (the sign of benediction) and holds two crossed keys in her left (St. Peter's Keys of Heaven, one red and one blue). She wears a three tiered crown with a veil, and a black mask with a red nose. Her dress has a red, yellow, and green diamond pattern and over it she wears a black and white cloak clasped with a red cross in the center of her chest. She is sitting and the toes of her blue shoes peek out from under her costume. Two black and gold discs radiate in the corners of the sky above her.",
+        "Upright meaning (Etteilla system)": "Rest, tranquility, quiet, retirement, withdrawal, private life, secret life, life of solitude, hermitage, religious life, silence, taciturnity, composure.",
+        "Reversed meaning (Etteilla system)": "Imitation, disguise, image, impersonation, pseudonym, mimicry, parody, camouflage, illusion, reflection, mirroring, replica, simulacrum, counterpart, counterfeit, apocryphal."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185446918-hhgaiigzpoi.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "La Papessa",
+        "arcana": "trump",
+        "archetype": "arcana:the-high-priestess",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185446918-hhgaiigzpoi.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-02",
+      "name": "L'Imperatrice (The Empress)",
+      "sort_order": 3,
+      "category": "trump",
+      "keywords": [
+        "abundance",
+        "creativity",
+        "nurturing",
+        "growth",
+        "beauty"
+      ],
+      "sections": {
+        "The card": "The Empress wears a crown decorated with alder leaves and catkins and shoes with the same motif. In her right hand she holds a globe with a crescent moon and a seven-pointed star. Her left hand supports a spear that rests across her body. Her costume includes red, black, pink, yellow, blue, and green diamonds and she wears a black mask. She sits and gazes slightly to the left, toward her spear and the red marks rising from its point. There are also winding red marks on the ground, and a black and gold sun in the upper corner behind her.",
+        "Upright meaning (Etteilla system)": "Night, darkness, eclipse, mist, obscurity, mystery, secret, hidden, unknown, clandestine, occult, parable, allegory, mystical meaning, mask, veil, cover, sheath, envelop, unvoiced, blindness, oblivion, obfuscate, cover.",
+        "Reversed meaning (Etteilla system)": "Day, light of day, brightness, clarity, truth, visible, enlighten, manifestation, demonstration, evidence, engender, give life to, uncover, bring light to, publish, come out, bloom, emerge, come to light, zodiac."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185448057-odvtlv6pvrd.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "L'Imperatrice",
+        "arcana": "trump",
+        "archetype": "arcana:the-empress",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185448057-odvtlv6pvrd.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-03",
+      "name": "L'Imperatore (The Emperor)",
+      "sort_order": 4,
+      "category": "trump",
+      "keywords": [
+        "authority",
+        "structure",
+        "stability",
+        "leadership",
+        "boundaries"
+      ],
+      "sections": {
+        "The card": "The Emperor wears a red and black diamond cloaks, a colorful feathered collar, a black mask with white fur trim, and a tall closed crown topped with a black tassel. He sits and holds a small hound dog in his right hand, and props up a spear in his lap with his left hand. He looks slightly to the right, toward a black and gold sun in the upper corner.",
+        "Upright meaning (Etteilla system)": "Support, backing, holding up, column, base, foundation, basis, founding principles, hypothesis, reason, cause, subject, fixity, stability, assurance, persuasion, conviction, confidence, security, reliability, help, aid.",
+        "Reversed meaning (Etteilla system)": "Protection, defense, influence, benevolence, benefaction, charity, humaneness, goodness, shelter, preservation, aegis."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185449295-tjs1jt0fag.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "L'Imperatore",
+        "arcana": "trump",
+        "archetype": "arcana:the-emperor",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185449295-tjs1jt0fag.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-04",
+      "name": "Il Papa (The Pope)",
+      "sort_order": 5,
+      "category": "trump",
+      "keywords": [
+        "tradition",
+        "guidance",
+        "teaching",
+        "conformity",
+        "wisdom"
+      ],
+      "sections": {
+        "The card": "The Pope sits and holds a red book in his lap with his left hand. His right hand is on a long staff that rests across his body, topped by a black cross with burning red tips. His hands display stigmata (red wounds). He wears a three-tiered crown with a red veil, red papal slippers decorated with gold crosses, and a brooch with an upside-down cross (the cross of St. Peter). His mask is black with a red nose and his cloak is patterned with red, yellow, and green diamonds. There is a red, black, and gold solar disk in the upper right corner, and he gazes in the opposite direction.",
+        "Upright meaning (Etteilla system)": "God, spirit of God, all-powerful, eternal, unique, divinity, devotee, faithfulness, worship, master.",
+        "Reversed meaning (Etteilla system)": "Philosopher, philosophical, philosophize, sage, wisdom, knowledge, tradition, thought, meditation, contemplation."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185450223-03v7j37x9275.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Il Papa",
+        "arcana": "trump",
+        "archetype": "arcana:the-hierophant",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185450223-03v7j37x9275.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-05",
+      "name": "L'Amore (Love)",
+      "sort_order": 6,
+      "category": "trump",
+      "keywords": [
+        "love",
+        "choice",
+        "values",
+        "partnership",
+        "harmony"
+      ],
+      "sections": {
+        "The card": "Two giggling Harlequins meet at an elaborate fountain. One wears a jacket and pants while the other wears a long dress. Both have the same red, black, white, and green pattern and carry red and blue batons decorated with gold leaves. At the top of the fountain, a small winged Harlequin in pink and black posts on one leg, holding a bow and aiming an arrow at the lady-Harlequin.",
+        "Upright meaning (Etteilla system)": "Marriage, wedding, nuptials, alliance, meeting, link, assembly, pledge, promise, oath, intimacy, liaison, junction, conjunction, copulation, coupling, chain, bondage, discomfort, captivity.",
+        "Reversed meaning (Etteilla system)": "Union, society, contacts, cohabitation, adultery, incest, alloy, blending mixing, amalgam, peace, concord, accord, harmony, coexistence, reconciliation, mending, patching things up."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185451316-3i1f4rcp37p.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "L'Amore",
+        "arcana": "trump",
+        "archetype": "arcana:the-lovers",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185451316-3i1f4rcp37p.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-06",
+      "name": "Il Carro (The Chariot)",
+      "sort_order": 7,
+      "category": "trump",
+      "keywords": [
+        "victory",
+        "willpower",
+        "determination",
+        "control",
+        "direction"
+      ],
+      "sections": {
+        "The card": "A Harlequin with a winged helmet sits atop a high chariot. He holds a globe topped by a cross in his right hand and bares red-bladed sword in his left hand. His mask is black, his costume is decorated with red and green diamonds, and his shoes feature large white bows. The chariot is drawn by two horses pulling in opposite directions, turning their necks around to face each other. The horses wear large feathers on their heads and are criss-crossed by red flourishes. There is a red, black, and gold disk radiating in each upper corner.",
+        "Upright meaning (Etteilla system)": "Dissension, discord, disturbances, agitation, noise, nuisance, disorder, riots, insurrection, revolt, sedition, rebellion, defection, faction, conspiracy, war, battle, conflict, combat, duel, violence, impulse, outburst, anger, quarrel, dispute, debate, argumentation, struggle, vengeance.",
+        "Reversed meaning (Etteilla system)": "Arrogance, pride, vanity, false glory, pomp, ostentation, audacity, temerity, presumption, insult, affront."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185452181-w0lud6fdisk.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Il Carro",
+        "arcana": "trump",
+        "archetype": "arcana:the-chariot",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185452181-w0lud6fdisk.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-07",
+      "name": "La Tempra (Temperance)",
+      "sort_order": 8,
+      "category": "trump",
+      "keywords": [
+        "balance",
+        "moderation",
+        "patience",
+        "healing",
+        "harmony"
+      ],
+      "sections": {
+        "The card": "Temperance sits and pours red liquid from one pitcher into another. One pitcher is in each hand, and the liquid flows in a long stream across her body. She wears a dress decorated with black and white diamonds, with pink armor on her chest and pink gloves. Her mask is black with a green border and she wears a soft white hat. A cloth with red, blue, green, and yellow diamonds is draped over her lap, and her black shoes are visible beneath her dress, with toes pointing toward each other. There are two red, black, and gold solar discs in the upper corners of the sky.",
+        "Upright meaning (Etteilla system)": "Temperance, moderation, discretion, continence, abstinence, sobriety, frugality, chastity, patience, calm, restraint, accommodation, regard, consideration, mending, mediation, softening, musical tempering, air temperature, climate, temperament.",
+        "Reversed meaning (Etteilla system)": "Priest, minister, performer of sacrifices, priesthood, clergy, church, council, synod, religion, sect."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185453070-fixd6e3n6nw.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "La Tempra",
+        "arcana": "trump",
+        "archetype": "arcana:temperance",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185453070-fixd6e3n6nw.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-08",
+      "name": "La Giusta (Justice)",
+      "sort_order": 9,
+      "category": "trump",
+      "keywords": [
+        "justice",
+        "truth",
+        "fairness",
+        "karma",
+        "accountability"
+      ],
+      "sections": {
+        "The card": "Justice sits and looks down at a set of scales hanging from a globe held in her left hand. In her right hand she holds a red sword upright. Her dress is patterned with black and white diamonds and has a pale blue bodice. Her mask is black with a green outline and she wears a red bicorne hat, decorated with a gold oval in the center and two baubles hanging from each corner. She has a cloth with red, blue, green, and yellow diamonds draped over her lap. There is a red, black, and gold disk in the upper right corner, and red marks on the ground.",
+        "Upright meaning (Etteilla system)": "Justice, equity, probity, uprightness, right, natural right, human right, moral right, public right, civil right, rectitude, reason, execution.",
+        "Reversed meaning (Etteilla system)": "Jurist, legislator, legislation, tribunal, law, decree, code, order, statutes, precepts, commandment, constitution, domination, institution, natural laws, moral laws, religious laws, civil laws, political laws, laws of war."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185454134-v6tmilcaolc.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "La Giusta",
+        "arcana": "trump",
+        "archetype": "arcana:justice",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185454134-v6tmilcaolc.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-09",
+      "name": "La Forza (Strength)",
+      "sort_order": 10,
+      "category": "trump",
+      "keywords": [
+        "strength",
+        "courage",
+        "patience",
+        "compassion",
+        "inner power"
+      ],
+      "sections": {
+        "The card": "Fortitude sits with her right arm wrapped around a red-striped column. With her left hand she grips a red baton that rests against her shoulder, with red flourishes rising from the top. She wears a red winged crown and a black mask with a green border. Her dress is patterned with black and white diamonds and she wears red armor on her chest. She has a cloth with red, blue, green, and yellow diamonds draped over her lap. Her dress covers her feet. She gazes to her left, away from the column.",
+        "Upright meaning (Etteilla system)": "Fortitude, strength, advantage by strength, ability, power, moral strength, greatness of soul, magnanimity, moral or spiritual work, perseverance, constancy, patience, resignation, heroism, courage.",
+        "Reversed meaning (Etteilla system)": "Sovereign, kingdom, empire, republic, state, people, nation, government, administration, reign, despotism, sovereignty, authority, leadership, supreme power, absolute power, arbitrary power, king, emperor, general, commander, captain, chief superior, governor, authoritarian, driving force, regulator."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185455144-2njavtf49av.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "La Forza",
+        "arcana": "trump",
+        "archetype": "arcana:strength",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185455144-2njavtf49av.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-10",
+      "name": "La Roda (Wheel of Fortune)",
+      "sort_order": 11,
+      "category": "trump",
+      "keywords": [
+        "cycles",
+        "change",
+        "fate",
+        "turning point",
+        "opportunity"
+      ],
+      "sections": {
+        "The card": "A gold wheel with red and green spokes is supported on a twisting green trunk. Four Harlequins in red and black ride on the wheel. One on the left, wearing a small crown, climbs upward. Another sits on top of the wheel wearing a tall crown and holding a globe and scepter. On the right, another without a crown descends. On the bottom, another crownless Harlequin hangs on to the wheel. Two black, red, and gold disks in the upper corner emit long red rays.",
+        "Upright meaning (Etteilla system)": "Fortune, luck, happiness, joy, bliss, improvement, prosperity, bonus, blessing, benefits, graces, favors, goods, wealth, profits, lot, fate, destiny, adventure, good fortune.",
+        "Reversed meaning (Etteilla system)": "Augmentation, increase, enlargement, abundance, surfeit, growth, development, vegetation, production."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185456285-9ttr5f8ca97.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "La Roda",
+        "arcana": "trump",
+        "archetype": "arcana:wheel-of-fortune",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185456285-9ttr5f8ca97.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-11",
+      "name": "Il Vecchio (The Old Man/Hermit)",
+      "sort_order": 12,
+      "category": "trump",
+      "keywords": [
+        "solitude",
+        "wisdom",
+        "guidance",
+        "introspection",
+        "searching"
+      ],
+      "sections": {
+        "The card": "A Harlequin with outspread wings walks on two crutches. A long white beard hangs down below his mask. He wears a round hat, a jacket with long tails, and pants, all decorated with irregular patches in both angular and round shapes. A gold purse hangs from his belt and there is a tall hexagonal column behind him.",
+        "Upright meaning (Etteilla system)": "Time, chronos, age, elderly, generation, epoch, year, month, day, hour, minute, second, measure, tempo, duration, eternity, golden age, Saturn.",
+        "Reversed meaning (Etteilla system)": "Time, kairos, moment, instant, opportunity, occasion, juncture, fleeting, time to act, the right time."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185457224-h2p8ym614fv.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Il Vecchio",
+        "arcana": "trump",
+        "archetype": "arcana:the-hermit",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185457224-h2p8ym614fv.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-12",
+      "name": "Il Traditore (The Traitor/Hanged Man)",
+      "sort_order": 13,
+      "category": "trump",
+      "keywords": [
+        "surrender",
+        "perspective",
+        "sacrifice",
+        "pause",
+        "letting go"
+      ],
+      "sections": {
+        "The card": "A Harlequin hangs from one ankle between two thick ornamental columns. He wears a black mask with brown spirals on the cheeks and short horns on the top. His costume is decorated with red, blue, green, and brown diamonds and features gold puffed sleeves and pants. His tied right foot touches the ceiling, which is half red and half green. His left leg is crossed behind his right, and his hands are hidden behind his back.",
+        "Upright meaning (Etteilla system)": "Traitor, deceiver, dissimulation, hypocrite, fanatic, hypocrisy, fanaticism, impostor, disguise, imposture, corruptor, seducer, treason, craftiness, trickery.",
+        "Reversed meaning (Etteilla system)": "Sacrifice, penance, offering, devotion, renunciation, surrender, loss, abnegation, punishment, correction, penalty, atonement."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185458482-09f5h7qgfm6h.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Il Traditore",
+        "arcana": "trump",
+        "archetype": "arcana:the-hanged-man",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185458482-09f5h7qgfm6h.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-13",
+      "name": "La Morte (Death)",
+      "sort_order": 14,
+      "category": "trump",
+      "keywords": [
+        "transformation",
+        "ending",
+        "change",
+        "renewal",
+        "release"
+      ],
+      "sections": {
+        "The card": "A thin Harlequin bears a large golden scythe overhead, riding a horse reared up on its hind legs. The Harlequin has long limbs and fingers and wears a mask with a round empty eye and striped red bristles haloing the top. His costume has black diamonds with pink, green, and white sections and he wears a large collar. The horse is gold with white legs and face and a round black eye. Red flourishes fill the air around and over the Harlequin and the horse.",
+        "Upright meaning (Etteilla system)": "Mortality, death, passing, end, extinguishing, destruction, attack, murder, assassination, homicide, suicide, regicide, massacre, carnage, butchery, slaughter, occision, poison, deterioration, rot, corruption, putrefaction.",
+        "Reversed meaning (Etteilla system)": "Nothingness, inertia, paralysis, paralyze, sleep, lethargy, somnambulism, evanescence, negation, null, not at all, annihilate."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185459464-g4fj08rkz6f.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "La Morte",
+        "arcana": "trump",
+        "archetype": "arcana:death",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185459464-g4fj08rkz6f.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-14",
+      "name": "Il Diavolo (The Devil)",
+      "sort_order": 15,
+      "category": "trump",
+      "keywords": [
+        "bondage",
+        "shadow",
+        "addiction",
+        "materialism",
+        "temptation"
+      ],
+      "sections": {
+        "The card": "A Harlequin with black and gold spread wings and a green tail holds a long striped pitchfork across his body. His mask has green horns and ears and a black spiral pattern on the cheeks. He sticks out a long red tongue as he looks up to the sky. He wears bows tied from striped snakes around his neck and on each shoe. Three colorful fires burn behind him and red flourishes fill the air. He wears a puffed-sleeve jacket with red, black, and green diamonds, black and gold diamonds-pattern puffed pans, and tall red and green socks.",
+        "Upright meaning (Etteilla system)": "Strength, human strength, extraordinary power, physical strength, virtues, violent impetus, momentum of genius, force of spirit, ravage, violence, vehemence, constraint, firmness, manual or physical labor.",
+        "Reversed meaning (Etteilla system)": "Lightness, weakness, smallness, tenderness, weakening, dizziness, faint, despondency, depression, languor, collapse, sin, trespass, sacrilege."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185460374-fstxtzk80k5.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Il Diavolo",
+        "arcana": "trump",
+        "archetype": "arcana:the-devil",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185460374-fstxtzk80k5.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-15",
+      "name": "La Saetta (The Lightning/Tower)",
+      "sort_order": 16,
+      "category": "trump",
+      "keywords": [
+        "upheaval",
+        "revelation",
+        "liberation",
+        "sudden change",
+        "truth"
+      ],
+      "sections": {
+        "The card": "A burning and crumbling castle decorated with a diamond pattern. A tower tumbles from the top where colorful flames erupt, and flames also stream from the sides, through the large arched gate, and from two solar discs in the upper corners. Two Harlequins are fallen in a heap in the foreground.",
+        "Upright meaning (Etteilla system)": "Destitution, indigence, poverty, scarcity, need, necessity, distress, grief, pain, torment, suffering, affliction, unpleasantness, calamity, adversity, misfortune, bad luck, divine punishment, setback, disgrace, severity, rigidity, harshness.",
+        "Reversed meaning (Etteilla system)": "Prison, imprisonment, detention, arrest, captivity, slavery, servitude, subjection, constraint, oppression, tyranny, yoke, chains, dungeon, dependence."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185461330-6xdjbpwmnpi.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "La Saetta",
+        "arcana": "trump",
+        "archetype": "arcana:the-tower",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185461330-6xdjbpwmnpi.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-16",
+      "name": "La Stella (The Star)",
+      "sort_order": 17,
+      "category": "trump",
+      "keywords": [
+        "hope",
+        "inspiration",
+        "faith",
+        "healing",
+        "serenity"
+      ],
+      "sections": {
+        "The card": "A trio of Harlequins gather beneath a large eight-pointed star. The star is red and yellow with a green aura, and joined by two red, black, and gold radiating disks in the upper corners. The Harlequin on the left of the card holds up an elaborate crown in his left hand and holds a baton behind his back with his right hand. The Harlequin in the middle of the card looks down with his hands behind his back. The Harlequin on the right looks over at the others with his hands at his sides, a baton hanging from his belt.",
+        "Upright meaning (Etteilla system)": "A present, gift, donation, generosity, benefit, good deed, service, homage, tribute, offering, legacy, loyalty, contribution, the color white, precious stone.",
+        "Reversed meaning (Etteilla system)": "Stripping away, counting, sorting, separation, untangle, inspection, development, deepen, picking-over, remove, deprive, take away, abduct, dispossess, violence, privation, theft, larceny, swindling, fraud, infidelity."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185462441-jxtey6divw.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "La Stella",
+        "arcana": "trump",
+        "archetype": "arcana:the-star",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185462441-jxtey6divw.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-17",
+      "name": "La Luna (The Moon)",
+      "sort_order": 18,
+      "category": "trump",
+      "keywords": [
+        "illusion",
+        "intuition",
+        "fear",
+        "unconscious",
+        "dreams"
+      ],
+      "sections": {
+        "The card": "The moon hides half of her pink face behind a green horned crescent mask. She is surrounded by two radiating black, red, gold, and green disks in the upper corners and three black six-pointed stars in the sky. Two Harlequins stand below and look up at her with astronomical instruments. The Harlequin on the left holds up a compass with his left hand and in his right hand he holds a blue starry globe encircled by a gold serpent biting its own tail. The Harlequin on the right points up with his right hand and holds an angled ruler in his left hand.",
+        "Upright meaning (Etteilla system)": "Aim, design, intention, resolution, will, language, words, speech, talk, discuss, babble, chat, gossip, idle talk, reasoning, dialogue, discourse, moon.",
+        "Reversed meaning (Etteilla system)": "Water, fluid, humid, ablution, dew, rain, deluge, sea, river, torrent, stream, fountain, spring, lake, marsh, flat water, pond, waterfall, waves, inundation, spring."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185463352-yofb21j9ji8.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "La Luna",
+        "arcana": "trump",
+        "archetype": "arcana:the-moon",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185463352-yofb21j9ji8.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-18",
+      "name": "Il Sole (The Sun)",
+      "sort_order": 19,
+      "category": "trump",
+      "keywords": [
+        "joy",
+        "success",
+        "clarity",
+        "vitality",
+        "confidence"
+      ],
+      "sections": {
+        "The card": "The sun wears a red mask with twisting horns and gold spirals on its cheeks. His rays are gold, black, red, and green, and there are red flourishes in the sky, imitating the shape of suns in the upper corners. Below, a masked woman sits spinning with a distaff on a decorative platform.",
+        "Upright meaning (Etteilla system)": "Brightening, clearing, explanation, development, instruction, interpretation, analysis, opening, discovery, revelation, clarity, elucidation, light, fire, sun, sky and earth, temple of heat.",
+        "Reversed meaning (Etteilla system)": "Fire, hot, heat, heat up, cook, heating, spark, ray of light, flow, inflammation, flame, blaze, burn, fires, meteors, lightning, thunderbolt, storm, electricity, St. Elmo's fire, ardor, embrace, fire of love, passion, light up, enflame, internal fire, magnetism, apple of discord."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185464316-kd6qirxbkah.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Il Sole",
+        "arcana": "trump",
+        "archetype": "arcana:the-sun",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185464316-kd6qirxbkah.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-19",
+      "name": "Il Mondo (The World)",
+      "sort_order": 20,
+      "category": "trump",
+      "keywords": [
+        "completion",
+        "integration",
+        "wholeness",
+        "achievement",
+        "fulfillment"
+      ],
+      "sections": {
+        "The card": "A Harlequin with the symbols of Mercury stands atop a globe. He wears a winged helmet, a red horned mask, and red winged slippers. In his right hand he holds the caduceus, a winged staff around which two snakes twine (one black and one white). In his left hand he holds a globe topped by a cross. His costume features red, black, blue, and green diamonds. Vine-like red flourishes surround him. The globe below him has an outer ring filled with red and green snake scales, with four evenly spaced white spirals. The center of the globe is divided in four quadrants. The upper left quadrant contains clouds, the upper right quadrant contains waves, the lower right quadrant contains buildings and towers, and the lower left quadrant contains flames.",
+        "Upright meaning (Etteilla system)": "Voyage, pilgrimage, peregrination, tour, emigration, transmigration, change of scenery, movement, steps, walking, running, rotation, circulation, route, reroute, change course, incursion, flight, escape.",
+        "Reversed meaning (Etteilla system)": "Earth, matter, cold, thick, mud, sludge, lime, raw material, land, leaf, virgin earth, rural, pastures, orchards, fields, vineyards, terrain, landscape, world, state, realm, countries, regions, nearby, places, site, local, reptiles, quadrupeds, aspect, constancy, stagnation, banks, shore, beach, coasts, reef, rock, plains, mountains, hill, valley."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185465336-h6ccku9rs8q.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Il Mondo",
+        "arcana": "trump",
+        "archetype": "arcana:the-world",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185465336-h6ccku9rs8q.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-20",
+      "name": "L'Angelo (The Angel/Judgment)",
+      "sort_order": 21,
+      "category": "trump",
+      "keywords": [
+        "judgment",
+        "awakening",
+        "calling",
+        "rebirth",
+        "reckoning"
+      ],
+      "sections": {
+        "The card": "A winged Harlequin blowing on a trumpet rises through the air. He wears a large circular hat that resembles a halo, a dark red mask, and a red and black diamond costume. Three other masked Commedia dell'Arte characters sit in a hold below and look up at him: Columbia in a red and black diamond-patterned dress with her hands on her chest, crying Pierrot in white, and bearded Pantalon reclining in his red cap and vest.",
+        "Upright meaning (Etteilla system)": "Judgement, true judgement, good judgement, sane judgement, fair judgement, discernment, intelligence, reason, understanding, conception, view, thought, comparison, deliberation, opinion, feeling, false judgement, last judgement.",
+        "Reversed meaning (Etteilla system)": "Judgement, decision, decree, ruling, legal outcome, arbitration, pacification, weak judgement, weak spirit, pusillanimity, injustice, madness."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185466345-ks6yyq4uv2l.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "L'Angelo",
+        "arcana": "trump",
+        "archetype": "arcana:judgement",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185466345-ks6yyq4uv2l.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-arlecchino",
+      "name": "Arlecchino (The Harlequin)",
+      "sort_order": 22,
+      "category": "trump",
+      "keywords": [
+        "trickster",
+        "transformation",
+        "play",
+        "wit",
+        "adaptability"
+      ],
+      "sections": {
+        "The card": "A Harlequin wearing puffed pants and a jacket with puffed sleeves, decorated with rainbow colored diamonds and white trim. He also has a wide-brimmed red hat, pink gloves, a black mask, and black slippers with curled toes. He is looking toward the right side of the card and waving with his left hand. In his right hand, he holds a long baton against his shoulder. The top of the baton is wide and red and decorated with the letter A.",
+        "Note": "An added card beyond the standard tarot (Arlecchino's own expansion). Yve Lepkowski's divinatory meaning for this card is in her printed guidebook (stolen-thyme.com), not published online."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185467253-6td2gpm98p9.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Arlecchino",
+        "arcana": "trump",
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185467253-6td2gpm98p9.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-colombina",
+      "name": "Colombina (The Dove)",
+      "sort_order": 23,
+      "category": "trump",
+      "keywords": [
+        "wit",
+        "loyalty",
+        "practicality",
+        "compassion",
+        "intelligence"
+      ],
+      "sections": {
+        "The card": "A lady wearing a gown with puffed sleeves and a lacy collar, decorated with rainbow colored diamonds and white trim. The curled black toe of her left slipper peeks out from under her dress. She also wears a wide-brimmed red hat, pink gloves, a black mask. She is looking toward the left side of the card and pointing with her right finger. In her left hand, she holds a long baton against her shoulder. The top of the baton is wide and red and decorated with the letter A.",
+        "Note": "An added card beyond the standard tarot (Arlecchino's own expansion). Yve Lepkowski's divinatory meaning for this card is in her printed guidebook (stolen-thyme.com), not published online."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185468675-73h7cpqqclq.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Colombina",
+        "arcana": "trump",
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185468675-73h7cpqqclq.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-fede",
+      "name": "La Fede (Faith)",
+      "sort_order": 24,
+      "category": "trump",
+      "keywords": [
+        "faith",
+        "trust",
+        "belief",
+        "hope",
+        "spirituality"
+      ],
+      "sections": {
+        "The card": "Faith holds a tall gold cross topped with heart-shaped red spikes in her left hand. In her right hand, she holds up a tall golden goblet, above which floats a golden disk marked with the letter A. She wears a black mask with curved horns. Her hat is red, round, and halo-like, and she also wears a black and white striped veil. Her dress is decorated with red and black diamonds. The outside of her cloak has a pattern of black and white diamonds, and the inside is gold and black. Her cloak has a round clasp with a cross on it. White cloth under her dress covers her feet. There are red flourishes in the air, circling the gold disk.",
+        "Note": "An added card beyond the standard tarot (Arlecchino's own expansion). Yve Lepkowski's divinatory meaning for this card is in her printed guidebook (stolen-thyme.com), not published online."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185469667-u0h24lelpw.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "La Fede",
+        "arcana": "trump",
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185469667-u0h24lelpw.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-speranza",
+      "name": "La Speranza (Hope)",
+      "sort_order": 25,
+      "category": "trump",
+      "keywords": [
+        "hope",
+        "optimism",
+        "expectation",
+        "future",
+        "resilience"
+      ],
+      "sections": {
+        "The card": "Hope is seen in profile, with her legs bent hand her hands joined in prayer as she looks up toward a floating crown on the top right side of the card. She wears a black mask with curved horns and green spirals on the cheeks. Her hat is red, round, and halo-like, and she also wears a black and white striped veil. Her dress is patterned with gold and black diamonds. The outside of her cloak has black and dark red diamonds, while the inside is bright red and green. Her cloak has an oval clasp with a cross on it. She wears pink gloves and socks. There are red flourishes in the air, and the inside of the crown is red.",
+        "Note": "An added card beyond the standard tarot (Arlecchino's own expansion). Yve Lepkowski's divinatory meaning for this card is in her printed guidebook (stolen-thyme.com), not published online."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185471139-ai5c330f0pe.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "La Speranza",
+        "arcana": "trump",
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185471139-ai5c330f0pe.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-carita",
+      "name": "La Carità (Charity)",
+      "sort_order": 26,
+      "category": "trump",
+      "keywords": [
+        "charity",
+        "love",
+        "generosity",
+        "compassion",
+        "giving"
+      ],
+      "sections": {
+        "The card": "Charity looks towards a flaming heart that she holds up in her right hand. She wears a black mask with curved horns. Her hat is red, round, and halo-like, and she also wears a black and white striped veil. The top of her dress is decorated with pale blue and black diamonds, the sleeves with black and white diamonds, and the bottom with black and green diamonds. She wears a gold belt shaped like a serpent biting its own tail. The outside of her cloak has a pattern of pink and black diamonds, and the inside is red, pink, and white. Her cloak has a round clasp with a cross on it. Her left foot emerges from under the dress, and she wears a black and white shoe decorated with a red diamond. There are red flourishes in the air around her. Her seat has a picture of a crane piercing its own breast with its beak.",
+        "Note": "An added card beyond the standard tarot (Arlecchino's own expansion). Yve Lepkowski's divinatory meaning for this card is in her printed guidebook (stolen-thyme.com), not published online."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185472135-dxmznncw2w.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "La Carità",
+        "arcana": "trump",
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185472135-dxmznncw2w.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-prudenza",
+      "name": "La Prudenza (Prudence)",
+      "sort_order": 27,
+      "category": "trump",
+      "keywords": [
+        "prudence",
+        "wisdom",
+        "foresight",
+        "caution",
+        "discernment"
+      ],
+      "sections": {
+        "The card": "Prudence gazes into a mirror that she holds in her right hand, engraved with the letter P on the back. In her left hand, she holds a red serpent up next to her head. She wears a white cloth hat and a black mask with a green border. Her dress is patterned with black and white diamonds and has a light green bodice. She has a cloth with red, blue, green, and yellow diamonds draped over her lap, and her black shoes are visible beneath her dress, with toes pointing forward. There are red flourishes on the ground and in the air, and coming out of the serpent's mouth.",
+        "Note": "An added card beyond the standard tarot (Arlecchino's own expansion). Yve Lepkowski's divinatory meaning for this card is in her printed guidebook (stolen-thyme.com), not published online."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185473071-mts3q9e0hcb.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "La Prudenza",
+        "arcana": "trump",
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185473071-mts3q9e0hcb.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-king",
+      "name": "Re di Bastoni (King of Batons)",
+      "sort_order": 28,
+      "category": "suit-wands",
+      "keywords": [
+        "leadership",
+        "vision",
+        "boldness",
+        "enterprise",
+        "charisma"
+      ],
+      "sections": {
+        "The card": "The Emperor wears a red and black diamond cloaks, a colorful feathered collar, a black mask with white fur trim, and a tall closed crown topped with a black tassel. He sits and holds a small hound dog in his right hand, and props up a spear in his lap with his left hand. He looks slightly to the right, toward a black and gold sun in the upper corner.",
+        "Upright meaning (Etteilla system)": "Man of the country, country-dweller, rustic, villager, peasant, redneck, farmer, plough-man, grower, agriculture, cultivation, rural, honest man, conscience, integrity, probity.",
+        "Reversed meaning (Etteilla system)": "Good and severe man, indulgent severity, leniency, indulgence, kindness, tolerance, condescension, 'his bark is worse than his bite.'"
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185474090-5rmshg3rn1p.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Re di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "King",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185474090-5rmshg3rn1p.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-queen",
+      "name": "Regina di Bastoni (Queen of Batons)",
+      "sort_order": 29,
+      "category": "suit-wands",
+      "keywords": [
+        "confidence",
+        "creativity",
+        "warmth",
+        "determination",
+        "vibrancy"
+      ],
+      "sections": {
+        "The card": "The Queen of Batons sits so that we see her in profile, looking toward the left of the card. She gazes at a large baton that she holds in her right hand, topped with an acorn. The description continues with details about her shield, helmet with winged crown, Green Man epaulets, masked face adorned with leaves and vines, and a dress patterned with acorns and oak leaves.",
+        "Upright meaning (Etteilla system)": "Woman of the country, woman of the woods, craftswoman, thrifty housekeeper, hostess, honest woman, honesty, honor, civility, politeness, good manners.",
+        "Reversed meaning (Etteilla system)": "Good woman, goodness, excellence, obliging, helpful, good deed, service, charity, alms, favor, obligation."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185475095-w1elg3hjz6h.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Regina di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "Queen",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185475095-w1elg3hjz6h.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-knight",
+      "name": "Cavaliere di Bastoni (Knight of Batons)",
+      "sort_order": 30,
+      "category": "suit-wands",
+      "keywords": [
+        "adventure",
+        "energy",
+        "passion",
+        "action",
+        "travel"
+      ],
+      "sections": {
+        "The card": "The Knight of Batons sits on a brown horse, resting a thick baton against his left shoulder. The top of the baton is shaped like an acorn and decorated with oak leaves. The knight's vest has a diamond pattern, while his sleeves have an oak leaf pattern. He wears a skirt decorated with leaves and red and green diamonds. The knight and his horse both wear large feathers on their heads. The horse seems to be walking to the right of the card, but turns his head to look with the knight toward the left side of the card.",
+        "Upright meaning (Etteilla system)": "Departure, to leave, movement, transfer, distance, remoteness, sending away, absence, abandonment, desertion, change, flight, escape, evasion, transmigration, emigration, transposition, translation, transplantation.",
+        "Reversed meaning (Etteilla system)": "Disunity, quarrel, rupture, disagreement, squabble, division, part, separation, partition, faction, party, break, cut off, fracture, discontinuity, interruption."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185476029-1k027l3qdjp.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Cavaliere di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "Knight",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185476029-1k027l3qdjp.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-knave",
+      "name": "Fante di Bastoni (Knave of Batons)",
+      "sort_order": 31,
+      "category": "suit-wands",
+      "keywords": [
+        "exploration",
+        "enthusiasm",
+        "discovery",
+        "messages",
+        "potential"
+      ],
+      "sections": {
+        "The card": "The Knave of Batons stands with his left hand on his hip, holding a baton and looking over his shoulder. With his right arm he leans on a shield featuring a cross and acorns. He wears a black mask and a tall red hat with leaves stuck in the brim, and the top of his baton is decorated with leaves. His jacket and puffed pants have a pattern of autumn leaves, and he wears green leaves as epaulets. His pointy shoes have dark red diamonds on the top.",
+        "Upright meaning (Etteilla system)": "Stranger, foreigner, strange, unusual, rare, uncommon, unaccustomed, unknown, unheard of, incredible, extraordinary, surprising, admirable, marvelous, prodigy, miracle, episode, digression, anonymous.",
+        "Reversed meaning (Etteilla system)": "News, announcement, notice, warning, admonition, education, instruction, teaching, lesson, view, opinion, notions, anecdotes, chronicle, history, story, tales, fables."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185477019-v8dj6arkjog.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Fante di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "Knave",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185477019-v8dj6arkjog.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-10",
+      "name": "Dieci di Bastoni (Ten of Batons)",
+      "sort_order": 32,
+      "category": "suit-wands",
+      "keywords": [
+        "burden",
+        "responsibility",
+        "hard work",
+        "stress",
+        "completion"
+      ],
+      "sections": {
+        "The card": "Two sets of four batons are arranged diagonally so that they cross each other in an X shape, formed an interlocking diamond pattern in the center of the card. The main colors of these batons are dark red and green, brown, white, and black, and each is topped by a black diamond. Two more brightly-colored batons cross vertically and horizontally through the center: brown with red, green, and blue. The vertical baton has a pinecone shape on its bottom point.",
+        "Upright meaning (Etteilla system)": "Treason, disloyalty, betrayal, infidelity, conspiracy, corruption, malpractice, wrongdoing, crime, subversion, deceit, dissimulation, hypocrisy, duplicity, faithlessness.",
+        "Reversed meaning (Etteilla system)": "Gold, wealth, opulence, sumptuousness, magnificence, radiance, luster, luxury, abundance, goods."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185477985-4pu2n6zt06w.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Dieci di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "Ten",
+        "court": false,
+        "archetype": "card:ten-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185477985-4pu2n6zt06w.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-09",
+      "name": "Nove di Bastoni (Nine of Batons)",
+      "sort_order": 33,
+      "category": "suit-wands",
+      "keywords": [
+        "resilience",
+        "persistence",
+        "defense",
+        "boundaries",
+        "courage"
+      ],
+      "sections": {
+        "The card": "Two sets of four batons are arranged diagonally so that they cross each other in an X shape, formed an interlocking diamond pattern in the center of the card. The main colors of these batons are dark red and green, brown, white, and black, and each is topped by a black diamond. Another blue baton crosses vertically through the center. It has an acorn shape on its top point and a pinecone shape on its bottom point.",
+        "Upright meaning (Etteilla system)": "Slow-down, delay, putting-back, tardiness, dismissal, suspension, removal, send away, drawing out, lengthening, slowness, reduce speed.",
+        "Reversed meaning (Etteilla system)": "Business, initiative, to begin, to undertake, to start, to usurp, to seize, audacity, daring, temerity, boldness, hardness, imprudence, enterprising, resourceful, keen, adventurous, audacious, risk-taking."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185478889-lzu7xkaqwy.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Nove di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "Nine",
+        "court": false,
+        "archetype": "card:nine-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185478889-lzu7xkaqwy.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-08",
+      "name": "Otto di Bastoni (Eight of Batons)",
+      "sort_order": 34,
+      "category": "suit-wands",
+      "keywords": [
+        "speed",
+        "action",
+        "movement",
+        "progress",
+        "communication"
+      ],
+      "sections": {
+        "The card": "Two sets of four batons are arranged diagonally so that they cross each other in an X shape, formed an interlocking diamond pattern in the center of the card. The main colors of the batons are dark red and green, brown, white, and black, and each is topped by a black diamond.",
+        "Upright meaning (Etteilla system)": "Countryside, land, agriculture, farming, cultivation, tillage, properties, building, farm, sheepfold, garden, orchard, pasture, meadow, woods, grove, thicket, shade, forest, pleasure, entertainment, amusement, pastime, recreation, merrymaking, peace, calm tranquility, innocence, rural or pastoral life.",
+        "Reversed meaning (Etteilla system)": "Grief, sadness, affliction, displeasure, pain, desolation, hopelessness, bleakness, mortification, mood, spirits, tantrum, melancholy, vapors, somber ideas."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185479921-puxers9zz.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Otto di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "Eight",
+        "court": false,
+        "archetype": "card:eight-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185479921-puxers9zz.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-07",
+      "name": "Sette di Bastoni (Seven of Batons)",
+      "sort_order": 35,
+      "category": "suit-wands",
+      "keywords": [
+        "defense",
+        "competition",
+        "perseverance",
+        "challenge",
+        "courage"
+      ],
+      "sections": {
+        "The card": "Two sets of three batons are arranged diagonally so that they cross each other in an X shape, formed an interlocking diamond pattern in the center of the card. The main colors of these batons are dark red and green, brown, white, and black, and each is topped by a black diamond. Another blue baton crosses vertically through the center. Its top point is shaped like an acorn and its bottom point is shaped like a pinecone.",
+        "Upright meaning (Etteilla system)": "Talk, speech, interview, colloquy, conversation, lecture, dissertation, deliberation, discussion, word, pronunciation, grammar, dictionary, language, idiom, jargon, dialect, negotiation, deal, exchange, measure, commerce, trafficking, correspondence, to speak, to say, to proclaim, to confer, to gossip, to chat, to converse, chatter, chitchat.",
+        "Reversed meaning (Etteilla system)": "Indecision, irresoluteness, uncertainty, perplexity, inconstancy, frivolity, fickleness, variety, diversity, variation, to hesitate, to dither, hesitation, to be unstable, to vacillate."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185480954-62vdxjjyq56.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Sette di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "Seven",
+        "court": false,
+        "archetype": "card:seven-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185480954-62vdxjjyq56.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-06",
+      "name": "Sei di Bastoni (Six of Batons)",
+      "sort_order": 36,
+      "category": "suit-wands",
+      "keywords": [
+        "victory",
+        "success",
+        "recognition",
+        "achievement",
+        "pride"
+      ],
+      "sections": {
+        "The card": "Two sets of three batons are arranged diagonally so that they cross each other in an X shape, formed an interlocking diamond pattern in the center of the card. The batons feature dark red, green, brown, white, and black coloring, with black diamonds topping each baton.",
+        "Upright meaning (Etteilla system)": "Domestic, servant, valet, lackey, maidservant, mercenary, inferior, slave, messenger, agent, message, announcement, housework, home, servitude.",
+        "Reversed meaning (Etteilla system)": "Wait, awaiting, expectation, expectancy, confidence, foresight, fear, apprehensiveness."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185481844-xt71hsm6x8.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Sei di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "Six",
+        "court": false,
+        "archetype": "card:six-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185481844-xt71hsm6x8.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-05",
+      "name": "Cinque di Bastoni (Five of Batons)",
+      "sort_order": 37,
+      "category": "suit-wands",
+      "keywords": [
+        "conflict",
+        "competition",
+        "tension",
+        "diversity",
+        "challenge"
+      ],
+      "sections": {
+        "The card": "Two sets of two batons are arranged diagonally so that they cross each other in an X shape, formed an interlocking diamond pattern in the center of the card. The main colors of these batons are dark red and green, brown, white, and black, and each is topped by a black diamond. Another blue baton crosses vertically through the center. Its top point is shaped like an acorn and its bottom point is shaped like a pinecone."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185482764-2r0ehfqh7uf.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Cinque di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "Five",
+        "court": false,
+        "archetype": "card:five-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185482764-2r0ehfqh7uf.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-04",
+      "name": "Quattro di Bastoni (Four of Batons)",
+      "sort_order": 38,
+      "category": "suit-wands",
+      "keywords": [
+        "celebration",
+        "harmony",
+        "homecoming",
+        "community",
+        "stability"
+      ],
+      "sections": {
+        "The card": "Two sets of two batons are arranged diagonally so that they cross each other in an X shape, formed an interlocking diamond pattern in the center of the card. The main colors of these batons are dark red and green, brown, white, and black, and each is topped by a black diamond."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185483689-ie9fx8vovu.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Quattro di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "Four",
+        "court": false,
+        "archetype": "card:four-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185483689-ie9fx8vovu.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-03",
+      "name": "Tre di Bastoni (Three of Batons)",
+      "sort_order": 39,
+      "category": "suit-wands",
+      "keywords": [
+        "expansion",
+        "foresight",
+        "exploration",
+        "progress",
+        "waiting"
+      ],
+      "sections": {
+        "The card": "Two batons cross each other in an X shape with a gold diamond in the center. The main colors of these batons are dark red and green, brown, white, and black, and each is topped by a black diamond. Another blue baton crosses vertically through the center. Its top point is shaped like an acorn and its bottom point is shaped like a pinecone."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185484566-txf5cmryeja.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Tre di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "Three",
+        "court": false,
+        "archetype": "card:three-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185484566-txf5cmryeja.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-02",
+      "name": "Due di Bastoni (Two of Batons)",
+      "sort_order": 40,
+      "category": "suit-wands",
+      "keywords": [
+        "planning",
+        "decisions",
+        "future",
+        "options",
+        "discovery"
+      ],
+      "sections": {
+        "The card": "Two batons cross each other in an X shape with a red diamond in the center. The main colors of these batons are blue, dark red and green, brown, white, and black, and each is topped by a red diamond."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185538833-9boh36v93l4.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Due di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "Two",
+        "court": false,
+        "archetype": "card:two-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185538833-9boh36v93l4.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-batons-01",
+      "name": "Asso di Bastoni (Ace of Batons)",
+      "sort_order": 41,
+      "category": "suit-wands",
+      "keywords": [
+        "inspiration",
+        "potential",
+        "new beginning",
+        "creativity",
+        "power"
+      ],
+      "sections": {
+        "The card": "Emerging from the right side of the card, a green-gloved hand grasps a baton encircled by a crown. The middle of the baton has a pattern of red, brown, green, and white diamonds. The top of the baton is rounded and decorated with green oak leaves. The bottom of the baton is red and marked with the letter A. The crown around the baton has points shaped like curling leaves, and a leafy stalk dangles in each side of the crown, with a falling red rose. The arm holding the baton is also surrounded by leaves. There is a sun in each of the card's upper corners.",
+        "Upright meaning (Etteilla system)": "Birth, nativity, origin, creation, source, spring, beginning, principle, primacy, first-fruits, extraction, race, family, house, line of descent, descendant, opportunity, occasion, cause, reason, presage, sign.",
+        "Reversed meaning (Etteilla system)": "Fall, cascade, decline, descent, waste away, diminishment, dissipation, collapse, bankruptcy, ruin, destruction, demolition, damage, ravage, fault, error, mistake, abatement, dejection, despondency, discouragement, perdition, abyss, gulf, precipice, to perish, to fall, to wane, to break."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185539759-scgzxdx315.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Asso di Bastoni",
+        "arcana": "minor",
+        "suit": "Batons",
+        "rank": "Ace",
+        "court": false,
+        "archetype": "card:ace-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185539759-scgzxdx315.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-king",
+      "name": "Re di Denari (King of Coins)",
+      "sort_order": 42,
+      "category": "suit-coins",
+      "keywords": [
+        "abundance",
+        "security",
+        "business",
+        "discipline",
+        "prosperity"
+      ],
+      "sections": {
+        "The card": "The Emperor wears a red and black diamond cloaks, a colorful feathered collar, a black mask with white fur trim, and a tall closed crown topped with a black tassel. He sits and holds a small hound dog in his right hand, and props up a spear in his lap with his left hand. He looks slightly to the right, toward a black and gold sun in the upper corner.",
+        "Upright meaning (Etteilla system)": "Brunet man, trader, storekeeper, merchant, banker, foreign exchange broker, calculating person, speculator, physicist, geometer, mathematics, science, master, professor.",
+        "Reversed meaning (Etteilla system)": "Perverted man, vice, defect, weakness, deficiency, misshapen, misbehavior, debauchery, vileness, ugliness, deformity, corruption, stench."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185540690-b0pjmw8b2yr.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Re di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "King",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185540690-b0pjmw8b2yr.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-queen",
+      "name": "Regina di Denari (Queen of Coins)",
+      "sort_order": 43,
+      "category": "suit-coins",
+      "keywords": [
+        "nurturing",
+        "practical",
+        "abundance",
+        "sensuality",
+        "security"
+      ],
+      "sections": {
+        "The card": "The Queen of Coins is seen in profile, facing the left side of the card. She sits resting her left arm on a shield with a golden dragon design. She looks toward a coin that radiates red and green triangles, supported on a stick that she holds in her right hand. She wears a winged helmet and a black mask that wraps all the way around her head. Her dress is patterned with red, blue, and green diamonds. The dress has fur trim, and she also wears furs around her shoulders, over her lap, and in puffs on her slippers.",
+        "Upright meaning (Etteilla system)": "Brunette woman, opulence, richness, splendor, luxury, sumptuousness, assurance, surety, confidence, certitude, assertion, safety, audacity, liberty, boldness, candor, outspokenness, frankness.",
+        "Reversed meaning (Etteilla system)": "Not certain, doubtful, dubious, uncertain, unsettled, doubt, indecision, uncertainty, fear, timidity, apprehension, vacillation, hesitation."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185541651-c3783xuvzqd.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Regina di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "Queen",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185541651-c3783xuvzqd.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-knight",
+      "name": "Cavaliere di Denari (Knight of Coins)",
+      "sort_order": 44,
+      "category": "suit-coins",
+      "keywords": [
+        "hard work",
+        "routine",
+        "persistence",
+        "reliability",
+        "patience"
+      ],
+      "sections": {
+        "The card": "The Knight of Coins rides a golden horse with a blue main, looking toward a coin that he holds up in his right hand. The horse wears feathers in his mane and his head is slightly turned as he steps toward the right side of the card. The knight wears a black balaclava-style mask and a green bicorne hat with a gold trefoil in the center. His costume is patterned with red, blue, and green diamonds and trimmed with white fur. A hunting horn hangs from his belt.",
+        "Upright meaning (Etteilla system)": "Usefulness, advantage, gain, profit, interest, useful, practical, profitable, interesting, advantageous, important, necessary, obliging, officious.",
+        "Reversed meaning (Etteilla system)": "Inaction, peace, tranquility, repose, sleep, apathy, indolence, inertia, stagnation, inactivity, idleness, laziness, leisure, pastime, recreation, break, insouciance, carefree, nonchalance, numbness, despondency, depression."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185542581-8dx3qz8xcdn.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Cavaliere di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "Knight",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185542581-8dx3qz8xcdn.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-knave",
+      "name": "Fante di Denari (Knave of Coins)",
+      "sort_order": 45,
+      "category": "suit-coins",
+      "keywords": [
+        "opportunity",
+        "study",
+        "skill building",
+        "diligence",
+        "manifestation"
+      ],
+      "sections": {
+        "The card": "The Maid of Coins stands and holds a coin in each hand. She lifts the one in her right hand up while the one in her left hand is lower and nearly going behinds her back. She looks toward this lower coin, down and to the right of the card. She wears a red balaclava-style mask and a fox fur cap with a tail. Her dress is patterned with red, blue, and green diamonds, with fur trim and gold puffed sleeves.",
+        "Upright meaning (Etteilla system)": "Brunette girl, study, instruction, diligence, learning, meditation, reflection, work, occupation, apprenticeship, schoolchild, pupil, student, apprentice, amateur.",
+        "Reversed meaning (Etteilla system)": "Prodigality, profusion, superfluity, abundance, multiplicity, luxury, sumptuousness, magnificence, largesse, liberality, benefit, generosity, charity, crowd, multitude, depredation, squandering, dissipation."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185543444-h0fqmufetv.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Fante di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "Knave",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185543444-h0fqmufetv.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-10",
+      "name": "Dieci di Denari (Ten of Coins)",
+      "sort_order": 46,
+      "category": "suit-coins",
+      "keywords": [
+        "legacy",
+        "inheritance",
+        "family",
+        "wealth",
+        "tradition"
+      ],
+      "sections": {
+        "The card": "Two columns of five coins each. The center of each coin has a diamond within a circle, in bright contrasting colors including red, green, and blue. This circle is contained in a black outer ring with a gold wave design, and all surrounded by an outer gold circle. There is a red vine pattern on the card between the coins.",
+        "Upright meaning (Etteilla system)": "House, housework, economy, savings, dwelling, domicile, habitation, abode, housing, building, manor, hotel, palace, boutique, bungalow, lodge, shack, castle, inn, cabaret, tavern, barn, vessel, base, archive, religious house, monastery, convent, hermitage, burial, tomb, sepulcher, family, lair, cavern, hideout, retreat.",
+        "Reversed meaning (Etteilla system)": "Lover, in love with, amorous, gallant, husband, wife, spouse, boyfriend, girlfriend, to love, to cherish, to adore, assortment, agreement, liking, rapport, fitting, propriety, seemliness."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185544354-fk9psqmkt5.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Dieci di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "Ten",
+        "court": false,
+        "archetype": "card:ten-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185544354-fk9psqmkt5.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-09",
+      "name": "Nove di Denari (Nine of Coins)",
+      "sort_order": 47,
+      "category": "suit-coins",
+      "keywords": [
+        "abundance",
+        "luxury",
+        "self-sufficiency",
+        "discipline",
+        "reward"
+      ],
+      "sections": {
+        "The card": "Two columns of four coins each, with a ninth coin in the center. The center of each coin in the two columns has a diamond within a circle, in bright contrasting colors including red, green, and blue. This circle is contained in a black outer ring with a gold wave design, and all surrounded by an outer gold circle. The central coin has the same design, but in black and gold only. There is a red vine pattern on the card between the coins.",
+        "Upright meaning (Etteilla system)": "Effect, next consequence, result, evidence, demonstrability, conviction, conclusion, event, execution, accomplishment, achievement, perfection, effective, personal effects, goods, furniture.",
+        "Reversed meaning (Etteilla system)": "Dupery, trickery, ploy, lure, fraud, con, deception, ruse, surprise, error, sleight of hand, swindle, cheat, infidelity."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185545231-a0ydojadgnk.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Nove di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "Nine",
+        "court": false,
+        "archetype": "card:nine-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185545231-a0ydojadgnk.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-08",
+      "name": "Otto di Denari (Eight of Coins)",
+      "sort_order": 48,
+      "category": "suit-coins",
+      "keywords": [
+        "craftsmanship",
+        "skill",
+        "diligence",
+        "apprenticeship",
+        "quality"
+      ],
+      "sections": {
+        "The card": "Two columns of four coins each. The center of each coin has a diamond within a circle, in bright contrasting colors including red, green, blue, and pink. This circle is contained in a black outer ring with a gold wave design, and all surrounded by an outer gold circle. There is a red vine pattern on the card between the coins.",
+        "Upright meaning (Etteilla system)": "Brunet boy, honest boy, obliging, welcoming, thoughtfulness, politeness, civility, honesty, kindness, condescension, hospitality, customs, character, nature.",
+        "Reversed meaning (Etteilla system)": "Usury, exorbitant, exaction, extortion, usurious, avarice, more, a lot, copiously, abundantly, advantage, augmentation, majority, more than, more of, again."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185546049-oi4ujphhb5h.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Otto di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "Eight",
+        "court": false,
+        "archetype": "card:eight-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185546049-oi4ujphhb5h.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-07",
+      "name": "Sette di Denari (Seven of Coins)",
+      "sort_order": 49,
+      "category": "suit-coins",
+      "keywords": [
+        "patience",
+        "investment",
+        "evaluation",
+        "reward",
+        "perseverance"
+      ],
+      "sections": {
+        "The card": "Two columns of three coins each. A seventh coin is below, in the center of the bottom of the card. The center of each coin in the two columns has a diamond within a circle, in bright contrasting colors including red, green, and blue. This circle is contained in a black outer ring with a gold wave design, and all surrounded by an outer gold circle. The seventh coin has the same pattern, but in black and gold only. There is a red vine pattern on the card between the coins.",
+        "Upright meaning (Etteilla system)": "Silver, whiteness, purity, purgation, purification, moon, candor, innocence, ingenuousness, naïveté, silverware, money, wealth, sum.",
+        "Reversed meaning (Etteilla system)": "Embarrassment, predicament, obstacle, blockage, congestion, obstruction, cloudy, muddled, trouble, emotion, agitation, inquietude, perplexity."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185546895-s7eua79yi69.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Sette di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "Seven",
+        "court": false,
+        "archetype": "card:seven-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185546895-s7eua79yi69.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-06",
+      "name": "Sei di Denari (Six of Coins)",
+      "sort_order": 50,
+      "category": "suit-coins",
+      "keywords": [
+        "generosity",
+        "charity",
+        "giving",
+        "receiving",
+        "balance"
+      ],
+      "sections": {
+        "The card": "Two columns of three coins each. The center of each coin in the two columns has a diamond within a circle, in bright contrasting colors including red, green, blue, and pink. This circle is contained in a black outer ring with a gold wave design, and all surrounded by an outer gold circle. There is a red vine pattern on the card between the coins.",
+        "Upright meaning (Etteilla system)": "The present, currently, presently, at present, now, here, suddenly, this instant, immediately, at once, right this minute, straight away, firstly, contemporary, modern, up-to-date, existent.",
+        "Reversed meaning (Etteilla system)": "Ambition, aspiration, purpose, desire, wish, searches, cupidity, jealousy, yearning, passion, dream, illusion, pretension."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185547753-0luz14i1g2s.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Sei di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "Six",
+        "court": false,
+        "archetype": "card:six-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185547753-0luz14i1g2s.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-05",
+      "name": "Cinque di Denari (Five of Coins)",
+      "sort_order": 51,
+      "category": "suit-coins",
+      "keywords": [
+        "poverty",
+        "hardship",
+        "isolation",
+        "worry",
+        "recovery"
+      ],
+      "sections": {
+        "The card": "Two columns of two coins each. A fifth coin is in the center. The center of each coin in the two columns has a diamond within a circle, in bright contrasting colors including red, green, pink, and blue. This circle is contained in a black outer ring with a gold wave design, and all surrounded by an outer gold circle. The fifth coin has the same pattern, but in black and gold only. There is a red vine pattern on the card between the coins."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185548671-cpj23neqwb.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Cinque di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "Five",
+        "court": false,
+        "archetype": "card:five-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185548671-cpj23neqwb.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-04",
+      "name": "Quattro di Denari (Four of Coins)",
+      "sort_order": 52,
+      "category": "suit-coins",
+      "keywords": [
+        "security",
+        "control",
+        "conservation",
+        "stability",
+        "possession"
+      ],
+      "sections": {
+        "The card": "Four coins in the four corners. The center of each coin has a diamond within a circle, in bright contrasting colors including red, green, pink, and blue. This circle is contained in a black outer ring with a gold wave design, and all surrounded by an outer gold circle. In the center of the card, there is a black, green, and gold shield. The center has a blue escutcheon with a picture of a red serpent in a circle, biting its own tail. There is a red vine pattern on the card between the coins."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185549944-pzotaxxu8x8.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Quattro di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "Four",
+        "court": false,
+        "archetype": "card:four-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185549944-pzotaxxu8x8.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-03",
+      "name": "Tre di Denari (Three of Coins)",
+      "sort_order": 53,
+      "category": "suit-coins",
+      "keywords": [
+        "teamwork",
+        "collaboration",
+        "skill",
+        "planning",
+        "learning"
+      ],
+      "sections": {
+        "The card": "Three coins arranged in a triangle. The center of each coin has a diamond within a circle. This circle is contained in a black outer ring with a gold wave design, and all surrounded by an outer gold circle. The top coin is black and gold only, while the two lower coins have red and blue centers. There is a red vine pattern on the card between the coins."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185550820-sxtd36uekib.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Tre di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "Three",
+        "court": false,
+        "archetype": "card:three-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185550820-sxtd36uekib.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-02",
+      "name": "Due di Denari (Two of Coins)",
+      "sort_order": 54,
+      "category": "suit-coins",
+      "keywords": [
+        "balance",
+        "adaptability",
+        "time management",
+        "priorities",
+        "change"
+      ],
+      "sections": {
+        "The card": "Two coins encircled by an S-shaped two-headed serpent. The serpent heads are gold with horns and red tongues hanging from the mouths. The necks have a pattern of red and green diamonds. The middle part is gold with the text HERLAKING 2022 YL, marked also with two black diamonds and the glyph of Mercury. The center of each coin in the two columns has a red diamond within a black circle. This circle is contained in a black outer ring with a gold wave design enclosing panes of different colors, and all surrounded by an outer gold circle. There is a red vine pattern on the card outside the coins."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185551701-wjj3z2p8dj.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Due di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "Two",
+        "court": false,
+        "archetype": "card:two-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185551701-wjj3z2p8dj.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-coins-01",
+      "name": "Asso di Denari (Ace of Coins)",
+      "sort_order": 55,
+      "category": "suit-coins",
+      "keywords": [
+        "opportunity",
+        "prosperity",
+        "new venture",
+        "manifestation",
+        "abundance"
+      ],
+      "sections": {
+        "The card": "In the center of the card, there is a disc with a profile portrait of a masked Harlequin in diamond motley, a ruffled color, and a soft white hat with feathers and fox tail in the brim. Above the disc, a golden hare with a human face runs through reeds. Below the disc, a pink dragon with a forked tongue stretches and looks upward.",
+        "Upright meaning (Etteilla system)": "Money purse, sum, capital, principal, treasure, wealth, opulence, prize, wallet, rare, dear, precious, priceless.",
+        "Reversed meaning (Etteilla system)": "Nobility, noble, substantial, important, grand, major, extensive, vast, magnificent, sublime, renowned, famous, illustrious, powerful, high, of quality, esteem, greatness of soul, noble conduct, generous actions."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185552583-724gh91u4nt.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Asso di Denari",
+        "arcana": "minor",
+        "suit": "Coins",
+        "rank": "Ace",
+        "court": false,
+        "archetype": "card:ace-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185552583-724gh91u4nt.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-king",
+      "name": "Re di Coppe (King of Cups)",
+      "sort_order": 56,
+      "category": "suit-cups",
+      "keywords": [
+        "emotional balance",
+        "compassion",
+        "diplomacy",
+        "wisdom",
+        "calm"
+      ],
+      "sections": {
+        "The card": "The Emperor wears a red and black diamond cloaks, a colorful feathered collar, a black mask with white fur trim, and a tall closed crown topped with a black tassel. He sits and holds a small hound dog in his right hand, and props up a spear in his lap with his left hand. He looks slightly to the right, toward a black and gold sun in the upper corner.",
+        "Upright meaning (Etteilla system)": "Blond man, probity, equity, integrity, principles, scientist, artist.",
+        "Reversed meaning (Etteilla system)": "Man of position, man of a high rank, dishonest man, scam, roguery, extortion, pillage, theft, brigand, rascal, corruption, waste, profligacy, squandering."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185555295-mzncou39g9e.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Re di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "King",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185555295-mzncou39g9e.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-queen",
+      "name": "Regina di Coppe (Queen of Cups)",
+      "sort_order": 57,
+      "category": "suit-cups",
+      "keywords": [
+        "intuition",
+        "compassion",
+        "nurturing",
+        "emotional depth",
+        "psychic"
+      ],
+      "sections": {
+        "The card": "The Queen of Cups is seated and looks at a goblet which she raises in her right hand. Over a dress with pink, red, white, and green diamonds, she wears a cloak decorated with crescent moons and stars and closed with a medallion featuring a pale blue heart. Her slippers and the points of her crown are decorated with crescent moons.",
+        "Upright meaning (Etteilla system)": "Blonde woman, honest woman, virtue, ethics, values, wisdom, honesty, trustworthiness, expert.",
+        "Reversed meaning (Etteilla system)": "Woman of position, woman of a distinguished rank, dishonest woman, vice, dishonesty, depravity, debauchery, corruption, scandal."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185556241-36wkv6hvy8k.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Regina di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "Queen",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185556241-36wkv6hvy8k.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-knight",
+      "name": "Cavaliere di Coppe (Knight of Cups)",
+      "sort_order": 58,
+      "category": "suit-cups",
+      "keywords": [
+        "romance",
+        "charm",
+        "imagination",
+        "invitation",
+        "dreams"
+      ],
+      "sections": {
+        "The card": "The Knight of Cups is seen in profile, riding a golden horse toward the left side of the card. He points forward with his left hand and holds a goblet in his right. He wears a black mask and a round helmet with a crescent moon on its side and feathers in the brim. His jacket has puffed sleeves and a lace collar and features a pattern of stars and diamonds. His skirt is trimmed with crescent moons and his shoe has a curly heart design. His horse wears ribbons with the same star and moon patterns.",
+        "Upright meaning (Etteilla system)": "Arrival, coming, approach, advent, agreement, reception, compliance, entrance, get closer, squeeze together, crowd, coming together, meeting, conformity, approximation, accessory.",
+        "Reversed meaning (Etteilla system)": "Scam, trickery, villainy, fraud, cheating, swindling, ruse, artifice, subtlety, delicacy, nuance, dexterity, suppleness."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185557049-23itjfv68nx.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Cavaliere di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "Knight",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185557049-23itjfv68nx.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-knave",
+      "name": "Fante di Coppe (Knave of Cups)",
+      "sort_order": 59,
+      "category": "suit-cups",
+      "keywords": [
+        "creativity",
+        "intuition",
+        "messages",
+        "inner child",
+        "sensitivity"
+      ],
+      "sections": {
+        "The card": "The Maid of Cups walks forward, holding up a goblet in her right hand. She wears a dress decorated with stars and crescent moons, with a long and wide skirt and lace on its train and high collar. In addition to her black mask, she wears a round blue hat with a crescent moon in its center and feathers attached to its side.",
+        "Upright meaning (Etteilla system)": "Blonde girl, studious, study, diligence, application, work, activity, occupation, hobby, trade, employment, observation, reflection, consideration, meditation, contemplation.",
+        "Reversed meaning (Etteilla system)": "Liking, soft spot, inclination, slope, tendency, attraction, taste, passion, affection, attachment, friendship, heart, longing, desire, engagement, seduction, invitation, approval, flattery, cajolery, cuddling, fawning, adulation, praise, eulogy, courtier, sycophant, to coax, to tempt, to entice, siren-song."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185557968-18iga0ks4ks.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Fante di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "Knave",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185557968-18iga0ks4ks.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-10",
+      "name": "Dieci di Coppe (Ten of Cups)",
+      "sort_order": 60,
+      "category": "suit-cups",
+      "keywords": [
+        "happiness",
+        "harmony",
+        "family",
+        "fulfillment",
+        "peace"
+      ],
+      "sections": {
+        "The card": "A column of four cups on either side of the card, and two additional cups in the middle. Each cup has pink and green scroll shapes on its side and a blue orb between the top and the base. The base has three sides visible with an upward-facing crescent moon in the middle. The rim has a black and gold triangle pattern and the inside is dark red. Each of the two cups in the center has a pale blue five-petaled flower growing from it, with black and dark red leaves and stems.",
+        "Upright meaning (Etteilla system)": "Town, city, homeland, country, village, place, site, location, home, abode, dwelling, residence, citizens.",
+        "Reversed meaning (Etteilla system)": "Heritage, inheritance, estate, legacy, holdings, gift, donation, dowry, jointure, provision, grant, legitimate, transmission, testament."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185558898-2rop4pi4xoa.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Dieci di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "Ten",
+        "court": false,
+        "archetype": "card:ten-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185558898-2rop4pi4xoa.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-09",
+      "name": "Nove di Coppe (Nine of Cups)",
+      "sort_order": 61,
+      "category": "suit-cups",
+      "keywords": [
+        "wishes",
+        "satisfaction",
+        "pleasure",
+        "contentment",
+        "gratitude"
+      ],
+      "sections": {
+        "The card": "Three rows of three cups each. Each cup has pink and green scroll shapes on its side and a blue orb between the top and the base. The base has three sides visible with an upward-facing crescent moon in the middle. The rim has a black and gold triangle pattern and the inside is dark red.",
+        "Upright meaning (Etteilla system)": "Victory, success, accomplishment, advantage, gain, pomp, triumph, trophy, majesty, spectacle, parade, apparatus, gear, winner, upper hand, lead.",
+        "Reversed meaning (Etteilla system)": "Boredom, displeasure, discontentment, disgust, aversion, worry, spiritual anguish, grief, affliction, difficult, annoying, vexing, unpleasant, distressing, causing grief, disappointing."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185559809-2g5yojzvhn4.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Nove di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "Nine",
+        "court": false,
+        "archetype": "card:nine-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185559809-2g5yojzvhn4.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-08",
+      "name": "Otto di Coppe (Eight of Cups)",
+      "sort_order": 62,
+      "category": "suit-cups",
+      "keywords": [
+        "departure",
+        "seeking",
+        "growth",
+        "disappointment",
+        "journey"
+      ],
+      "sections": {
+        "The card": "Three rows of cups. The first row has two cups. The other two rows have three cups each. Each cup has pink and green scroll shapes on its side and a blue orb between the top and the base. The base has three sides visible with an upward-facing crescent moon in the middle. The rim has a black and gold triangle pattern and the inside is dark red.",
+        "Upright meaning (Etteilla system)": "Blond boy, honest boy, reserved boy, honor, discretion, modesty, restraint, timidity, apprehension, sweetness.",
+        "Reversed meaning (Etteilla system)": "Satisfaction, pleasure, happiness, contentment, gaiety, joy, enthusiasm, rejoicing, entertainment, party, weekend, excuse, compensation, reparation, exoneration, public joy."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185560718-67kw1t8auu7.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Otto di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "Eight",
+        "court": false,
+        "archetype": "card:eight-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185560718-67kw1t8auu7.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-07",
+      "name": "Sette di Coppe (Seven of Cups)",
+      "sort_order": 63,
+      "category": "suit-cups",
+      "keywords": [
+        "choices",
+        "fantasy",
+        "illusion",
+        "wishful thinking",
+        "options"
+      ],
+      "sections": {
+        "The card": "Three rows of cups. The first row has one cup. The other two rows have three cups each. Each cup has pink and green scroll shapes on its side and a blue orb between the top and the base. The base has three sides visible with an upward-facing crescent moon in the middle. The rim has a black and gold triangle pattern and the inside is dark red.",
+        "Upright meaning (Etteilla system)": "Thought, mind, soul, spirit, intelligence, imagination, understanding, idea, memory, conception, opinion, feeling, meditation, contemplation, reflection, deliberation.",
+        "Reversed meaning (Etteilla system)": "Desires, wish, vow, will, drive, urge, yearning, covetousness, cupidity, lust, jealousy, passion, pipe dream, appetite."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185561644-qky5we1xnhk.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Sette di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "Seven",
+        "court": false,
+        "archetype": "card:seven-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185561644-qky5we1xnhk.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-06",
+      "name": "Sei di Coppe (Six of Cups)",
+      "sort_order": 64,
+      "category": "suit-cups",
+      "keywords": [
+        "nostalgia",
+        "memories",
+        "childhood",
+        "innocence",
+        "reunion"
+      ],
+      "sections": {
+        "The card": "Two columns of three cups each. Each cup has pink and green scroll shapes on its side and a blue orb between the top and the base. The base has three sides visible with an upward-facing crescent moon in the middle. The rim has a black and gold triangle pattern and the inside is dark red.",
+        "Upright meaning (Etteilla system)": "The past, faded, withered, desiccated, preserved, gone, formerly, previously, before, in older days, once, in the past, old age, decrepitude, antiquity, antiques.",
+        "Reversed meaning (Etteilla system)": "The future, after, following, subsequently, later on, looking forward, tomorrow, next time, upcoming, hereafter."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185562494-ua595hfz4z.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Sei di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "Six",
+        "court": false,
+        "archetype": "card:six-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185562494-ua595hfz4z.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-05",
+      "name": "Cinque di Coppe (Five of Cups)",
+      "sort_order": 65,
+      "category": "suit-cups",
+      "keywords": [
+        "loss",
+        "grief",
+        "disappointment",
+        "regret",
+        "perspective"
+      ],
+      "sections": {
+        "The card": "Three rows of cups. The first row has two cups. The center row has one cup. The lowest row has two cups. Each cup has pink and green scroll shapes on its side and a blue orb between the top and the base. The base has three sides visible with an upward-facing crescent moon in the middle. The rim has a black and gold triangle pattern and the inside is dark red. There is a plant peeking up from the center cup, with a spear-shaped pale blue leaf in the center surrounded by four other leaves of black, dark red, and pink."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185563343-2i8fslx1p8q.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Cinque di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "Five",
+        "court": false,
+        "archetype": "card:five-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185563343-2i8fslx1p8q.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-04",
+      "name": "Quattro di Coppe (Four of Cups)",
+      "sort_order": 66,
+      "category": "suit-cups",
+      "keywords": [
+        "apathy",
+        "contemplation",
+        "dissatisfaction",
+        "meditation",
+        "opportunity"
+      ],
+      "sections": {
+        "The card": "Two rows of two cups. Each cup has pink and green scroll shapes on its side and a blue orb between the top and the base. The base has three sides visible with an upward-facing crescent moon in the middle. The rim has a black and gold triangle pattern and the inside is dark red. A cross-shaped stalk grows between the cups. The stem and leaves are black, pink and green. The four ends have dark red fruits or petals."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185564179-26tr6hdl4bt.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Quattro di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "Four",
+        "court": false,
+        "archetype": "card:four-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185564179-26tr6hdl4bt.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-03",
+      "name": "Tre di Coppe (Three of Cups)",
+      "sort_order": 67,
+      "category": "suit-cups",
+      "keywords": [
+        "celebration",
+        "friendship",
+        "community",
+        "creativity",
+        "joy"
+      ],
+      "sections": {
+        "The card": "Three cups arranged in a triangle. Each cup has pink and green scroll shapes on its side and a blue orb between the top and the base. The base has three sides visible with an upward-facing crescent moon in the middle. The rim has a black and gold triangle pattern and the inside is dark red. A Y-shaped stalk grows between the cups. The stem is black with light blue, green, and dark red leaves. The ends of the stalks have pink and gold flowers."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185565172-yv77y0ktet.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Tre di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "Three",
+        "court": false,
+        "archetype": "card:three-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185565172-yv77y0ktet.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-02",
+      "name": "Due di Coppe (Two of Cups)",
+      "sort_order": 68,
+      "category": "suit-cups",
+      "keywords": [
+        "partnership",
+        "love",
+        "attraction",
+        "connection",
+        "harmony"
+      ],
+      "sections": {
+        "The card": "Two cups side by side on top of a gold rectangle engraved with the names HELLEQUIN ERLEQUIN. Each cup has pink and green scroll shapes on its side and a blue orb between the top and the base. The base has three sides visible with an upward-facing crescent moon in the middle. The rim has a black and gold triangle pattern and the inside is dark red. A black and dark red stalk grows up between the two cups. A light blue serpent's head with a pink tongue grows from a stem on either side. The two heads face a large fruit in the middle, with segments of green, pink and blue, and black and gold leaves on top."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185566039-9i1kbkmhmcc.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Due di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "Two",
+        "court": false,
+        "archetype": "card:two-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185566039-9i1kbkmhmcc.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-cups-01",
+      "name": "Asso di Coppe (Ace of Cups)",
+      "sort_order": 69,
+      "category": "suit-cups",
+      "keywords": [
+        "new love",
+        "emotional beginning",
+        "intuition",
+        "compassion",
+        "creativity"
+      ],
+      "sections": {
+        "The card": "A massive cup with a hexagonal rim, filled with water. The cup is pink with a gold vine design, while the stem features different patterns: waves, diamonds, and a sequence of lunar phases in an arc. The cup is flanked by two birds with pointy beaks and a diamond pattern on their breasts. Above the cup floats a crown. The crown is gold, pink, and blue with moons and suns on its points, and a letter A in the central sun. A leafy stem with a red berry dangles from either side of the crown.",
+        "Upright meaning (Etteilla system)": "Table, meal, treat to a meal, food, nutrients, nutrition, feast, gala, invitation, guests, host, hotel, hospitality, inn, tavern, abundance, tablets, portfolio, desk, altar, catalogue, data.",
+        "Reversed meaning (Etteilla system)": "Change, mutation, permutation, transmutation, alternation, vicissitude, inconstancy, frivolity, variety, variation, exchange, swap, purchase, sale, market, trade, convention, metamorphosis, diversity, versatility, reversal, revolution, reversion, translation, interpretation, reading."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185566989-kvg4u6afui.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Asso di Coppe",
+        "arcana": "minor",
+        "suit": "Cups",
+        "rank": "Ace",
+        "court": false,
+        "archetype": "card:ace-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185566989-kvg4u6afui.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-king",
+      "name": "Re di Spade (King of Swords)",
+      "sort_order": 70,
+      "category": "suit-swords",
+      "keywords": [
+        "authority",
+        "truth",
+        "intellect",
+        "judgment",
+        "ethics"
+      ],
+      "sections": {
+        "The card": "The Emperor wears a red and black diamond cloaks, a colorful feathered collar, a black mask with white fur trim, and a tall closed crown topped with a black tassel. He sits and holds a small hound dog in his right hand, and props up a spear in his lap with his left hand. He looks slightly to the right, toward a black and gold sun in the upper corner.",
+        "Upright meaning (Etteilla system)": "Man of the law, judge, senator, lawyer, prosecutor, jurist, defense lawyer, legal scholar, jurisprudence, doctor, physician, practitioner, to advise, consultant.",
+        "Reversed meaning (Etteilla system)": "Mean man, malevolent, malice, perversity, perfidy, crime, cruelty, inhumanity, atrocity."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185567970-gg4fumqdnum.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Re di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "King",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185567970-gg4fumqdnum.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-queen",
+      "name": "Regina di Spade (Queen of Swords)",
+      "sort_order": 71,
+      "category": "suit-swords",
+      "keywords": [
+        "perception",
+        "clarity",
+        "independence",
+        "boundaries",
+        "truth"
+      ],
+      "sections": {
+        "The card": "The Queen of Swords sits with a wide-legged stance, her hands on her thighs. She looks to the left side of the card, toward the sword that she holds in her right hand. Its blade is blue with a red vine motif. She wears a gold crown with tall points and a black mask with red and green swirls that matches her slippers. Her epaulets are shaped like coiled golden serpents and she wears a black breastplate with gold spirals. Her abdomen is covered with red, blue, and green scales and her skirt is patterned with diamonds in the same colors.",
+        "Upright meaning (Etteilla system)": "Widowhood, widow, privation, withdrawal, absence, scarcity, poverty, indigence, infertility, sterility.",
+        "Reversed meaning (Etteilla system)": "Mean woman, malignity, malice, deception, subtlety, artifice, mischief, bigotry, prudery, hypocrisy."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185568890-zptaxm6wwqi.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Regina di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "Queen",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185568890-zptaxm6wwqi.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-knight",
+      "name": "Cavaliere di Spade (Knight of Swords)",
+      "sort_order": 72,
+      "category": "suit-swords",
+      "keywords": [
+        "action",
+        "ambition",
+        "directness",
+        "speed",
+        "determination"
+      ],
+      "sections": {
+        "The card": "The Knight of Swords waves a massive curved blade over his head. Its handle, in his right hand, is shaped like a serpent's head. He is seen in profile, riding a horse toward the left side of the card. His costume, including a soft beret-style hat, is covered in red, blue, and green diamonds. His horse's coat is also diamond-patterned, in red, black, pink, and green. The horse has beads in his mane and wears a ribbon shaped like a golden snake around his body.",
+        "Upright meaning (Etteilla system)": "Military, man of the sword, man-at-arms, fencing master, professional assassin, hunter, office, soldier, combatant, enemy, hanger-on, briber, dispute, war, combat, battle, duel, attack, defense, opposition, resistance, hostility, enmity, hate, choler, resentment, destruction, courage, valor, bravery.",
+        "Reversed meaning (Etteilla system)": "Ignorance, incompetence, ineptitude, stupidity, nonsense, idiocy, imprudence, impertinence."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185569916-g1o1zn8zy65.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Cavaliere di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "Knight",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185569916-g1o1zn8zy65.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-knave",
+      "name": "Fante di Spade (Knave of Swords)",
+      "sort_order": 73,
+      "category": "suit-swords",
+      "keywords": [
+        "curiosity",
+        "vigilance",
+        "communication",
+        "truth-seeking",
+        "new ideas"
+      ],
+      "sections": {
+        "The card": "The Knave of Swords stands holding a blue sword in his right hand and a shield on his left arm, marked with the name Herla. He smiles and looks toward the left side of the card. He wears an outfit patterned with red, blue, and green diamonds and a belt shaped like a golden serpent. He also wears a tall purple hat with two feathers in its brim. His slippers have a curling spade design and he bends his left knee.",
+        "Upright meaning (Etteilla system)": "Spy, curious, observer, searching, connoisseur, guard, monitor, steward, examination, note, remark, observations, annotations.",
+        "Reversed meaning (Etteilla system)": "Lack of foresight, unexpectedly, astonishing, surprising, undreamt of, unheard of, fortuitously, suddenly."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185570752-8zh769o8vdp.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Fante di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "Knave",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185570752-8zh769o8vdp.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-10",
+      "name": "Dieci di Spade (Ten of Swords)",
+      "sort_order": 74,
+      "category": "suit-swords",
+      "keywords": [
+        "ending",
+        "betrayal",
+        "rock bottom",
+        "release",
+        "new beginning"
+      ],
+      "sections": {
+        "The card": "Eight curved swords form an almond shape, with four on each side. The swords have black blades with red tips, and a middle section decorated in gold with blue or green. Pink ribbons are woven through the swords at the top and the bottom. A gold plate covers each of the places where the swords cross, at the top and the bottom. The upper plate has a picture of a crying Harlequin. The lower plate has a picture of a Harlequin climbing up a staircase. A large sword with a red, blue, and green diamond pattern crosses through the almond, pointing downward. A pink ribbon bow around its middle ties it to another blue-bladed sword that points horizontally across the card.",
+        "Upright meaning (Etteilla system)": "Tears, sobs, whines, sighs, moans, lamentations, grievances, afflictions, grief, sadness, pain, sorrow, droplets, dew, condensation, bleeding.",
+        "Reversed meaning (Etteilla system)": "Losses, damages, harm, disadvantage, failure, defeat, rout, setback, ruin, theft, abduction, plagiarism, opprobrium, disgrace, waste."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185571803-efn7evg30e.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Dieci di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "Ten",
+        "court": false,
+        "archetype": "card:ten-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185571803-efn7evg30e.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-09",
+      "name": "Nove di Spade (Nine of Swords)",
+      "sort_order": 75,
+      "category": "suit-swords",
+      "keywords": [
+        "anxiety",
+        "worry",
+        "nightmares",
+        "guilt",
+        "despair"
+      ],
+      "sections": {
+        "The card": "Eight curved swords form an almond shape, with four on each side. The swords have black blades with red tips, and a middle section decorated in gold with blue or green. Pink ribbons are woven through the swords at the top and the bottom. A gold plate covers each of the places where the swords cross, at the top and the bottom. The upper plate has a picture of a Harlequin in a bishop's costume. The lower plate has a picture of baton-wielding Harlequin looking back over his shoulder. A large sword with a red, blue, and green diamond pattern crosses through the almond, pointing downward.",
+        "Upright meaning (Etteilla system)": "Ecclesiastic, apostle, pope, cardinal, bishop, abbot, priest, monk, hermit, nun, recluse, anchorite, vestal, religious, piety, devotion, celibate, virginity, cult, religion, temple, church, monastery, convent, hermitage, sanctuary, rite, ceremonies, ritual.",
+        "Reversed meaning (Etteilla system)": "Justifiable mistrust, well-founded suspicion, legitimate fear, mistrust, doubt, misgiving, qualm, timorous conscience, timidity, modesty, shame, conjecture."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185573235-oqbyeznkydi.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Nove di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "Nine",
+        "court": false,
+        "archetype": "card:nine-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185573235-oqbyeznkydi.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-08",
+      "name": "Otto di Spade (Eight of Swords)",
+      "sort_order": 76,
+      "category": "suit-swords",
+      "keywords": [
+        "restriction",
+        "imprisonment",
+        "victim mentality",
+        "fear",
+        "self-limiting"
+      ],
+      "sections": {
+        "The card": "Eight curved swords form an almond shape, with four on each side. The swords have black blades with red tips, and a middle section decorated in gold with blue or green. Pink ribbons are woven through the swords at the top and the bottom. A gold plate covers each of the places where the swords cross, at the top and the bottom. The upper plate has a picture of a Harlequin in a bicorne hat. The lower plate has a picture of a Harlequin in a conical hat, waving his hands and sticking out his tongue.",
+        "Upright meaning (Etteilla system)": "Critical, critical moment, decisive instant, difficult position, delicate circumstance, crisis, examination, discussion, research, inspection, criticism, blame, censure, disapproval, condemnation, contempt, commentary, annotation, epilogue, analysis.",
+        "Reversed meaning (Etteilla system)": "Incident, difficulty, complication, objection, contestation, unforeseen, unexpected, accident, fortuitous event, adventure, occurrence, destiny, fatality, bad luck, symptom, sign."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185574262-cajxm7edh88.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Otto di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "Eight",
+        "court": false,
+        "archetype": "card:eight-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185574262-cajxm7edh88.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-07",
+      "name": "Sette di Spade (Seven of Swords)",
+      "sort_order": 77,
+      "category": "suit-swords",
+      "keywords": [
+        "strategy",
+        "deception",
+        "stealth",
+        "cunning",
+        "betrayal"
+      ],
+      "sections": {
+        "The card": "Six curved swords form an almond shape, with three on each side. The swords have black blades with red tips, and a middle section decorated in gold with blue or green. Pink ribbons are woven through the swords at the top and the bottom. A gold plate covers each of the places where the swords cross, at the top and the bottom. The upper plate has a picture of a Harlequin in profile looking upward. The lower plate has a picture of two symmetrical Harlequin profiles, the noses of their masks touching. A large sword with a red, blue, and green diamond pattern crosses through the almond, pointing downward.",
+        "Upright meaning (Etteilla system)": "Hope, await, expectation, desire, will, wish, vow, longing, taste, fantasy.",
+        "Reversed meaning (Etteilla system)": "Friendship, attachment, affection, tenderness, benevolence, liking, affinity, attraction, rapport, relationship, intimacy, similarity, connection, conformity, sympathy, interest."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185575171-fw7bb9wrr3j.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Sette di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "Seven",
+        "court": false,
+        "archetype": "card:seven-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185575171-fw7bb9wrr3j.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-06",
+      "name": "Sei di Spade (Six of Swords)",
+      "sort_order": 78,
+      "category": "suit-swords",
+      "keywords": [
+        "transition",
+        "moving on",
+        "travel",
+        "healing",
+        "relief"
+      ],
+      "sections": {
+        "The card": "Six curved swords form an almond shape, with three on each side. The swords have black blades with red tips, and a middle section decorated in gold with blue or green. Pink ribbons are woven through the swords at the top and the bottom. A gold plate covers each of the places where the swords cross, at the top and the bottom. The upper plate has a picture of a Harlequin pointing a finger up and to the right. The lower plate has a picture of a Harlequin in profile waving his hand.",
+        "Upright meaning (Etteilla system)": "Route, path, way, road, step, walk, promenade, means, medium, manner, fashion, expedient, race, career, delivery, send, broker.",
+        "Reversed meaning (Etteilla system)": "Declaration, publication, proclamation, poster, bill, publicity, notoriety, conspicuousness, authenticity, permit, license, denunciation, approval, denotation, designation, knowledge, discovery, unveiling, revelation, vision, apparition, appearance, confession, avowal, admission, profession."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185576175-3wpyy09fdn4.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Sei di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "Six",
+        "court": false,
+        "archetype": "card:six-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185576175-3wpyy09fdn4.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-05",
+      "name": "Cinque di Spade (Five of Swords)",
+      "sort_order": 79,
+      "category": "suit-swords",
+      "keywords": [
+        "conflict",
+        "defeat",
+        "winning at cost",
+        "tension",
+        "hostility"
+      ],
+      "sections": {
+        "The card": "Four curved swords form an almond shape, with two on each side. The swords have black blades with red tips, and a middle section decorated in gold with blue or green. Pink ribbons are woven through the swords at the top and the bottom. A gold plate covers each of the places where the swords cross, at the top and the bottom. The upper plate has a picture of a diamond-patterned tombstone marked with the letter A. The lower plate has a picture of a Harlequin whose face is covered by a veil. A large sword with a red, blue, and green diamond pattern crosses through the almond, pointing downward."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185577003-rz5yxqz771c.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Cinque di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "Five",
+        "court": false,
+        "archetype": "card:five-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185577003-rz5yxqz771c.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-04",
+      "name": "Quattro di Spade (Four of Swords)",
+      "sort_order": 80,
+      "category": "suit-swords",
+      "keywords": [
+        "rest",
+        "recovery",
+        "contemplation",
+        "meditation",
+        "retreat"
+      ],
+      "sections": {
+        "The card": "Four curved swords form an almond shape, with two on each side. The swords have black blades with red tips, and a middle section decorated in gold with blue or green. Pink ribbons are woven through the swords at the top and the bottom. A gold plate covers each of the places where the swords cross, at the top and the bottom. The upper plate has a picture of a Harlequin seen from behind, with hands joined behind his back. The lower plate has a picture of letter A enclosed in a diamond enclosed in a square."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185577985-ybvbqlb95g.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Quattro di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "Four",
+        "court": false,
+        "archetype": "card:four-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185577985-ybvbqlb95g.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-03",
+      "name": "Tre di Spade (Three of Swords)",
+      "sort_order": 81,
+      "category": "suit-swords",
+      "keywords": [
+        "heartbreak",
+        "grief",
+        "sorrow",
+        "pain",
+        "truth"
+      ],
+      "sections": {
+        "The card": "Two curved swords form an almond shape. The swords have black blades with red tips, and a middle section decorated in gold with blue or green. Pink ribbons are woven through the swords at the top and the bottom. There are gold diamonds where the swords cross at the top and the bottom. A large sword with a red, blue, and green diamond pattern crosses through the almond, pointing downward."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185579017-nmdaxbsw1ug.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Tre di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "Three",
+        "court": false,
+        "archetype": "card:three-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185579017-nmdaxbsw1ug.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-02",
+      "name": "Due di Spade (Two of Swords)",
+      "sort_order": 82,
+      "category": "suit-swords",
+      "keywords": [
+        "indecision",
+        "stalemate",
+        "blocked",
+        "denial",
+        "balance"
+      ],
+      "sections": {
+        "The card": "Two curved swords form an almond shape. The blades of the swords are decorated with a red, blue, and green diamond pattern, and the middle section is black with gold, blue, and green decoration."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185580361-h3c2vx144gt.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Due di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "Two",
+        "court": false,
+        "archetype": "card:two-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185580361-h3c2vx144gt.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "augmented-swords-01",
+      "name": "Asso di Spade (Ace of Swords)",
+      "sort_order": 83,
+      "category": "suit-swords",
+      "keywords": [
+        "breakthrough",
+        "clarity",
+        "truth",
+        "new idea",
+        "mental power"
+      ],
+      "sections": {
+        "The card": "Emerging from the left side of the card, a pink-gloved hand holds a sword encircled by a crown. The black of the sword is shaped like a serpent that curves around in a circle to bite itself. It is patterned with red, blue, and green diamonds. The crown has ribbon bows and feathers tied to it. The sword hilt has a small oval portrait of a Harlequin at the bottom. There is a sun in each of the card's upper corners.",
+        "Upright meaning (Etteilla system)": "Extreme, large, excessive, over-the-top, extremely, passionately, excessively, furious, choleric, fit of anger, fury, rage, quarreling, choler, vehemence, animosity, transport, impulse, extremity, boundaries, confines, ends, limits, last, last extremity.",
+        "Reversed meaning (Etteilla system)": "Pregnancy, engendering, conception, birthing, childbirth, production, composition, fertilization, pollination, increase, augmentation, multiplication."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185581255-udiam7np62.png",
+      "metadata": {
+        "tradition": "contemporary-bolognese",
+        "era": "contemporary",
+        "italian_name": "Asso di Spade",
+        "arcana": "minor",
+        "suit": "Swords",
+        "rank": "Ace",
+        "court": false,
+        "archetype": "card:ace-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185581255-udiam7np62.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/tarocchino-arlecchino/arlecchinos-augmented-arcana/"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "common_name": "Arlecchino's Augmented Arcana",
+    "category": "community"
+  }
+}

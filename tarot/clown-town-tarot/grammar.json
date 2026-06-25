@@ -1,0 +1,2464 @@
+{
+  "_community_slug": "clown-town-tarot",
+  "name": "Clown Town Tarot",
+  "slug": "clown-town-tarot",
+  "grammar_type": "tarot",
+  "provenance": "living",
+  "worldview": "contemporary",
+  "creator_name": "Yve Lepkowski",
+  "creator_link": "https://stolen-thyme.com/clown-town-tarot/",
+  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185341070-v4uns7duyd.png",
+  "image_credit": "Art & guidebook text by Yve Lepkowski (stolen-thyme.com), CC-BY-SA-4.0.",
+  "description": "A whimsical 78-card tarot of clowns and circus life by Yve Lepkowski (stolen-thyme.com), CC-BY-SA-4.0. A full Marseille-structured deck (Justice VIII, Strength XI; suits of Coins, Batons, Swords, Cups) reimagined through vaudeville and the big top. **A contemporary deck**, descending from the historical Tarot de Marseille in this library. Card text is the author's own guidebook prose.\n",
+  "tags": [
+    "tarot",
+    "clown",
+    "circus",
+    "vaudeville",
+    "marseille-order",
+    "contemporary",
+    "cc-by-sa",
+    "yve-lepkowski"
+  ],
+  "roots": [
+    "western-esoteric"
+  ],
+  "lineages": [
+    "tarot-de-marseille-conver"
+  ],
+  "parent_deck": "tarot-de-marseille-conver",
+  "is_published": true,
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": [
+      {
+        "name": "Yve Lepkowski",
+        "role": "artist & deck creator",
+        "link": "https://stolen-thyme.com",
+        "note": "Clown Town Tarot — original deck & guidebook, CC-BY-SA-4.0 (stolen-thyme.com/clown-town-tarot)."
+      },
+      {
+        "name": "PlayfulProcess",
+        "role": "compiled into this library as a recursive.eco grammar",
+        "link": "https://recursive.eco"
+      }
+    ],
+    "modifications": "Restructured Yve Lepkowski's deck into the recursive.eco grammar schema with cross-deck archetype mappings + a genealogy link to the Tarot de Marseille. Each card's 'Interpretation' and 'The card' sections are her own guidebook text (verbatim prose + image description). No meanings altered."
+  },
+  "items": [
+    {
+      "id": "clown-00",
+      "name": "The Fool",
+      "sort_order": 0,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A clown dressed in a patchwork of different fabrics strides toward the right side of the card. She steps forward with one foot as a light blue capuchin monkey paws at her rear leg. The ground below her rear foot is yellow. The ground below her front foot is light blue.\n\nIn her right hand she holds a tall red walking stick topped with an upward-pointing triangle. In her right hand she holds a blue staff over her shoulder, which has a yellow five-pointed star on each end. A pouch shaped like a red and yellow striped circus tent hangs from this staff.\n\nThe clown has long pale hair. Her nose is painted red, and she has a light blue downward-pointing triangle painted on each cheek.\n\nHer costume contains elements of all the clown types shown throughout the deck, including jesters (from the Suit of Swords), Pierrot or white clowns (from the suit of Cups), hobo or tramp clowns (from the suit of Batons), and rodeo clowns (from the suit of Coins).\n\nShe wears a red hat with a curled and pointy top ending in a bell. She also wears a red, green, and blue jester's collar with bells on it. She wears a white glove on her left hand, the hand that holds the staff over her shoulder. Her right hand, which holds the walking stick, has a yellow glove. Underneath the collar, she has a cape that is half white lace and half yellow with purple and green polka-dot trim. An American flag also trails from her shoulder. Her shirt is red with a large puffed blue sleeve. Her rear pant leg is white and lacy, and she wears a narrow red shoe with a curled and pointed toe on her rear foot. Her front pant leg is green with a houndstooth pattern, and she wears a red striped sock and large red clown shoe with patches on this foot. A woven blanket hangs down over her legs near the monkey. The blanket is red, green, blue, and yellow, with a pattern of triangles and circles. A piece of blue and yellow polka dot fabric can also be seen hanging down on the other side of her legs.",
+        "Interpretation": "The Fool is the deck's wild card, and she is fittingly undefined. Her costume contains elements of all the clown types shown in the deck. Her pouch is in the shape of the big top, to contain the entire circus-universe."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185341070-v4uns7duyd.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-fool",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185341070-v4uns7duyd.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-01",
+      "name": "The Magician",
+      "sort_order": 1,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A smiling clown in a top hat sits in a casket, seeming to saw himself in half. He works the saw with his right hand and holds up a black and white magic wand in his left hand. The casket stands on three trapezoidal blue legs. The floor beneath it is a patchwork of different colors in triangles and quadrilaterals: red, green, blue, yellow, gold, and peach. The front panel of the casket is decorated with leaves and flowers. One side panel of the casket has a picture of three dice. Each die has three faces visible. The top face is a 4, the left face is a 1, and the right face is a 2. The other side panel of the casket shows a goblet, a knife with a curved blade, and a curled serpent-like shape. The clown's torso sticks up through a hole in the rear end of the casket. He has a white face and a red-painted nose and smile. He has curly yellow hair with eight orange dots in it. His top hat is green and has a four-petaled red flower stuck in a blue ribbon around it. He wears a suit jacket that is half red and half blue, with a yellow and green vest and a white ruffled shirt underneath. He has another red flower pinned to his jacket. He also wears white glove with red and green leaf decorations that resemble those of the casket. A pair of legs sticks out from two holes in the front panel of the casket. They wear fishnet stockings and yellow pointy-toed pumps.",
+        "Interpretation": "The Magician is a shameless trickster. Both you and he know that he's taking you for a ride, but everyone enjoys the show. His magic is so obviously fake that it is potentially real. Part of the clown's appeal is that one never knows who's under the makeup. Could it be a creature who can cut itself in half and regenerate? Why not?"
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185341998-j0suur0xy1.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-magician",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185341998-j0suur0xy1.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-02",
+      "name": "The Papess (High Priestess)",
+      "sort_order": 2,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A clown dressed in a suit made entirely of colorful hair leans on a bloody staff. The top of this staff is pointed and red, with two red ribbons twisting around it and red drops falling into a puddle at its base. She holds a white egg in her left hand, in front of her chest. Behind her, three small and distraught clowns are stuffed in a black cauldron over a fire.\n\nThe ground is sandy brown, and she has dirt on her bare feet and on her cheeks. Her nose is painted red. She smiles, but she has a pale blue tear painted on each cheek. Her outfit covers her head, arms, and legs, and is made of long straight hair in red, orange, yellow, green, blue, and white. She also wears a white cross in the center of her chest.",
+        "Interpretation": "The Papess is based on the character \"Mad Maudlin\" as well as Mary Magdalene, from whose name \"Maudlin\" derives. Mad Maudlin was the narrator of an 18th century sequel to the song \"Tom O' Bedlam\" (see V. The Pope). Like Tom, Maudlin is a crazed, wandering prophetic figure. She makes many wonderful claims in her song. My favorite is the one quoted above.\n\nThere are two relevant legends of Mary Magdalene. First, after Jesus's death, the story goes that Mary Magdalene wandered the desert until her clothes fell away and her hair grew to replace them. Second, Mary Magdalene created the first Easter egg. The egg, which is guarded by the Papess in the Camoin-Jodorowsky deck, is also symbolic in the clown world: in the 1940s, clowns began painting their unique faces onto emptied eggs to claim their identities. The Clown Egg Register lives at the Clowns Gallery-Museum in London. (It gets even better, the museum is in an active church popularly known as \"Clowns' Church\"!)"
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185342748-66v2noeffbp.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-high-priestess",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185342748-66v2noeffbp.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-03",
+      "name": "The Empress",
+      "sort_order": 3,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A smiling clown stands in front of a pale blue elephant with a white tusk. The clown has a purple crown with six rainbow-colored hearts on its points, and the elephant lifts this crown up with her trunk. The clown wears a wavy blonde wig, a round red nose, red lipstick, red blush, and long eyelashes on her closed eyes. She wears a ruffled red collar, loose white sleeves with rainbow polka dots, and purple gloves, but her torso is topless, and she wears only five-petaled yellow flowers on her breasts. She also wears a rainbow striped skirt that is short in front and long in back, and purple platform boots featuring red hearts with the glyph of Venus surrounded by rainbows. In her right arm, she holds a yellow shield with a picture of a red and yellow striped circus tent and two blue stars. With her left hand, she lifts up the front of her skirt to shake out thirteen white five-petaled flowers which fall onto the ground.",
+        "Interpretation": "The Empress is the Queen of the Big Top. She is the embodiment of nature and femininity. In fact, her feminine guise is so strong that it can become drag, or a parody of female stereotypes. She shakes 13 flowers from her skirt, symbolizing birth as well as referring to death (Trump XIII). The elephant who joins her roams free in the background, to represent her harmony with nature."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185343564-wzedwnnwvjl.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-empress",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185343564-wzedwnnwvjl.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-04",
+      "name": "The Emperor",
+      "sort_order": 4,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A bearded clown, seen in profile facing the left side of the card, leans against the back of a kneeling blue elephant wearing a red collar. He shakes his white-gloved right finger at a clown's head on the top of a scepter that the elephant lifts in his trunk. The scepter is yellow, and its bauble-head is topped with a yellow cross.\n\nThe Emperor wears a red nose and red blush and has shaggy, long, pale blue hair, eyebrows, mustache, and beard. He holds the end of his beard in his left hand, and a monkey peeks out from the middle of his beard to look at the viewer. The Emperor also wears a red and yellow striped helmet with red spikes around its brim and a white cape with black arrows pointing upward. He has a yellow and red striped shirt with crosses decorating its puffed green, blue, and red sleeve. He wears green and red stripped puffy pants with green, purple, and blue leggings with the glyph of Mars on the side. His shoes are red with long pointed and curled toes and two yellow bells hanging from each ankle.\n\nA shield also rests against the elephant's side, behind the clown's legs. The shield is yellow with a red border and a blue bow on top, decorated with a red and yellow striped circus tent and a blue star.",
+        "Interpretation": "The Emperor is the King of the Big Top. If the Empress is a drag queen, then the Emperor too is a drag king, or a parody of masculinity. His costume is based on the stereotype of old Russian royalty with insanely long beards. The elephant that accompanies him is tamed and bears his shield to represent the Emperor's imposition of order on nature. He chastises his subjects, represented by his scepter. But he is perhaps unaware that the animals do what they please."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185344419-m7zwnbyvb4d.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-emperor",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185344419-m7zwnbyvb4d.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-05",
+      "name": "The Pope (Hierophant)",
+      "sort_order": 5,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A clown dressed in rags stands in a graveyard, raising two fingers on his right hand in a sign of benediction and leaning on a tall staff in his left hand.\n\nThere are two gravestones in the foreground. The one on the left side of the card is topped with a cross and bears the name \"Abram\" under a five-pointed star. The one on the right side of the card has a picture of a five-pointed star and an upward-opening crescent moon emitting rays. A pale orange horned dragon sits on the left gravestone and looks up toward the clown. A brown owl with a white face sits on the right gravestone, turning its head backward to face the viewer.\n\nThe clown wears a wide-brimmed and scuffed brown hat with colorful ribbons and a brushy fox tail streaming from it. His hair is pale and ragged. His nose is painted red, his eyelids pale blue, and his cheeks brown with black triangles. He smiles slightly and looks to the right side of the card.\n\nHe wears a white horn tied with a red ribbon bow around his neck. He wears a rough tunic sewn in panels and patches of different colors and patterns: polka dots, stripes, and diamonds in brown, red, blue, green, yellow, and white. The ends of his clothing are all in long and jagged tatters. One of his skinny legs wearing a pointy red shoe is visible at the bottom of the card. The back of his right hand is marked with a cross. On his left hand he wears a blue glove and wrist cuff marked with the word \"Bedlam.\" The top of his staff is red and red, yellow, and green ribbons twist around it.",
+        "Interpretation": "The Pope is based on \"Tom O' Bedlam,\" the (anti)hero of a 17th century ballad. The entire poem, being super-old and anonymous, is freely published on the internet (read it at The HyperTexts). Tom was an archetype of the Bedlamites, or Abram-men – beggars who claimed to be lunatics released from the Abraham ward of Bedlam Hospital to make their way in the world off the alms of strangers. (Evidently, even if Bedlam did have such a program, the number of Bedlam beggars greatly exceeded the number of actual patients.) They would dress in eye-catchingly insane outfits, featuring ribbons, fox-tails, and ox-horns. The narrator Tom has the aura of a crazed prophet, and here he preaches in the graveyard to drake and owl."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185345221-67ctyejjeth.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-hierophant",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185345221-67ctyejjeth.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-06",
+      "name": "The Lover",
+      "sort_order": 6,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "Three characters stand looking at each other. In the center is Colombina. She is dressed in a knee-length dress with a wide skirt, a white ruffled collar, and a white apron. Her dress is red, green, gold, and black with different patterns. Her shoes are black with pointy toes and large blue bows. Her hair is curled and she wears a ruffled green headpiece. Her hands, in red gloves, rest on her skirt.\n\nColombina looks over to Arlecchino on her right (the left side of the card). Arlecchino wears a tight jacket and pants decorated with red, black, and green diamonds. He also wears a black hat, a red mask, black gloves and pointy black shoes with gold buckles. His back is toward the viewer and looks at Colombina, taking a step toward her. He rests his left hand on her arm and holds a large green, yellow, and red club behind his back in his right hand.\n\nOn the right side of the card, Pierrot stands behind Colombina, looking at her sadly and raising his left hand. He is dressed all in white. He wears a soft white hat and has a tear painted on his cheek. The hems of his cape and loose shirt and trousers have lacy patterns of moons, stars, and hearts.\n\nAbove the trio, a winged clown in a jumpsuit patterned with hearts holds a bow and aims an arrow between Colombina and Pierrot. This clown has curly yellow hair, a ruffled white collar, and oversized red shoes. He hangs in a circle of red and yellow triangular rays.",
+        "Interpretation": "This card is based on three characters from the Commedia dell'Arte. Colombina the saucy maid (center) is married to dour Pierrot (right) and is having an affair with slightly-demonic Arlecchino (left, see also XV. The Devil). Just like the ambiguously-related characters on the card in the Tarot de Marseille, these were stock characters who could be put in endless conflicting permutations in any performance."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185346061-tay0x4lzf.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-lovers",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185346061-tay0x4lzf.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-07",
+      "name": "The Chariot",
+      "sort_order": 7,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A smiling clown steps out of a small yellow car. Two jesters are on the ground in front of him, smiling at the viewer.\n\nThe clown has a round red nose, a red painted smile, and curly green hair. He wears a blue crown with red dots on its four spikes. He is dressed in a colorful jumpsuit with curly-toed green shoes. Four small yellow masks with different facial expressions hang from his collar. He holds a red balloon with a yellow five-pointed star on it in his left hand.\n\nThe jesters are both dressed in the same outfit: a jumpsuit that is half green and half red, blue pointy-toed shoes, yellow and blue jesters' caps with bells, red ruffled collars, and yellow gloves. Their faces are painted light blue and their noses are red. The jester on the left side of the card is down on hands and knees. The jester on the right side of the card lies on his side with his hand on his hip, kicking his right leg into the air and winking at the viewer.\n\nThe car is yellow and red and decorated with twelve light blue five-pointed stars. Its wheels have six red spokes. Three balloons are tied to both the hood and the trunk. In each set, there are two light blue balloons with red and green polka dots, and one red balloon with a yellow five-pointed star. Above the car, there hang blue streamers decorated with red hearts. Red and yellow flowers are strewn on the ground.",
+        "Interpretation": "The Chariot features the iconic clown car. Who needs a limousine? This is the ultimate party vehicle. The jesters tumble out to make way for the majestic Prince of Clowns. The circus is not truly in town until The Chariot comes."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185346919-fkcke54vpef.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-chariot",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185346919-fkcke54vpef.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-08",
+      "name": "Justice",
+      "sort_order": 8,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A beheaded clown lays down with her neck in a guillotine. She pulls a string connected to the blade with her left hand, and holds up her own head in her left hand.\n\nThe clown wears a dress with patches of red, blue, green, purple, yellow and orange. Her shoes are purple and red, and she wears white gloves. The red stump of her neck is visible in the guillotine, and a gold chain hangs around it. A light blue crown with a red and yellow circle in its center falls off to the side. Her face is painted with a red nose, red cheeks, and black eyelashes, and she wears a pale-colored curly wig. She is winking and sticking her tongue out.\n\nA white cloth with an ermine pattern hangs from the top of the guillotine, in front of its blue blade. A woven basket sits in front of the red base of the guillotine. The frame of the guillotine and the ground are both yellow.",
+        "Interpretation": "This clown is portraying a socially conscious aristocrat who, eager to help the cause, guillotines herself. Justice is all about making decisions and carrying them out, no matter how many red-nosed heads must roll."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185347902-x5efht39tuo.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:justice",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185347902-x5efht39tuo.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-09",
+      "name": "The Hermit",
+      "sort_order": 9,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A clown stands and looks toward the left side of the card, raising a lantern before him in his right hand and holding a rifle pointing downward in his left hand. The lantern is red with concentric circles on its panels. The rifle is also red, and a blue bubble of water comes out of its end. The clown is in a desert with yellow sand: two cacti and a tumbleweed can be seen in the background. He stands with his right leg lifted up on a small hill. The clown has a shaggy purple wig, a round red nose, and blue and white face paint. He wears a brown fur cap with a raccoon tail. He has a blue button-down shirt with red patches on its elbows and a red vest with fringe on the bottom, decorated with a yellow bucking horse on one side and a yellow lasso on the other side. He also wears a bolo tie and yellow gloves. His paints are green with a plaid pattern and red and yellow patches. His oversized lace-up shoes are red with purple heels and toes.",
+        "Interpretation": "The Hermit came from the East to explore the wild deserts of the West, with nothing but his lantern and his trusty water-rifle. He lives an isolated life, but he is more pioneer than misanthrope. If you run into him on your travels, he is an invaluable guide to the wasteland."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185348796-6radk9eylwo.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-hermit",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185348796-6radk9eylwo.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-10",
+      "name": "Wheel of Fortune",
+      "sort_order": 10,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "Three clowns are on a red Ferris wheel with some light blue details, round yellow lights on its main spokes, and a five-pointed yellow star in its center. On the right side of the card, a clown climbs up the wheel. He wears a dark blue jumpsuit decorated with yellow stars, red oversized shoes, an orange ruffled collar, white gloves, and a small green top hat. His nose is red and round and his wig is purple and curly. He smiles slightly. In the middle of the card, a smiling clown sits on top of the wheel. His right hand is on his hip and in his left hand he holds up a red flower that sprays drops of water. He wears a jumpsuit with an orange and blue wavy pattern, green curly-toed shoes with bells, a green ruffled collar, and a pointed red hat. His nose is painted red and his hair is yellow and wavy. On the left side of the card, a clown holds on as he goes downward on the wheel, frowning. This clown wears a light blue jumpsuit with multi-colored polka dots. He has oversized green and purple shoes, white gloves, and a red and purple bowler hat. His nose is round and red and his wig is shaggy and green.",
+        "Interpretation": "When you climb to the top of the Big Wheel, you have only a few moments to admire the view before you feel the drop in your stomach as you come down. The clown on the right reaches for the stars, the clown on the left falls like confetti. The smug jokester in the middle doesn't know what's coming to him."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185349688-4eo1a6jx7zk.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:wheel-of-fortune",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185349688-4eo1a6jx7zk.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-11",
+      "name": "Strength",
+      "sort_order": 11,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A clown lifts a lion over her head with both arms. She stands in a circus ring whose red wall is decorated with eleven light blue circles containing red hearts. She squats, legs bent and arms flexed. She wears a dark blue leotard and a yellow sash and skirt with a leopard print. She also wears tall lace-up boots with the same dark blue and leopard print design, and yellow tongues. She wears a thin black necklace. Her hair is yellow and curly with three red spikes on each side of her head. Her nose and smile are painted red. The lion is pale orange with a red nose and tongue and a curly mane. He is on his back and looks surprised.",
+        "Interpretation": "A thrilling double-act – the circus strongwoman and her fierce lion! The obvious interpretation is physical strength. But remember, they work as a team."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185350478-ofid3uvr07o.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:strength",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185350478-ofid3uvr07o.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-12",
+      "name": "The Hanged Man",
+      "sort_order": 12,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A clown puppet hangs upside down from strings in his hands and feet. The strings are connected to a wooden X-shape at the top of the card, with a twelve-pointed star in its center. The strings attached to the feet are tangled around the handle. Around the puppet in the four corners of the card there is ruffled fabric of green (in the bottom corners) and light blue with red trim (in the top corners). The clown wears a jumpsuit with two different patterns. Half has blue and white vertical stripes. The other has red, blue, yellow, and white diamonds. He has a light blue ruffled collar and ruffles around his wrists. His hands and green and his shoes are red. His hair is pale and curly and he has a red nose and red cheeks. He also wears a pointy hat, half red and half blue, with green, white, red, and yellow pom-poms in a line down the middle.",
+        "Interpretation": "This marionette is more than a little tangled up, but he's rallying to take control of his own strings."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185351239-77k6wptmg5b.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-hanged-man",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185351239-77k6wptmg5b.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-13",
+      "name": "Death",
+      "sort_order": 13,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A walking clown swings a scythe along the ground, looking back at the viewer over his shoulder with one eye. He walks toward the right side of the card. The clown is bald with a white face, a round red nose, and a painted red smile. He wears a pointed blue hat with three red buttons over a yellow cap. He wears a suit that is half white and half patterned with green and blue diamonds with yellow circles in their centers. The suit has a ruffled white collar, a red belt with yellow ruffles, and three red buttons. The clown also wears long oversized red lace-up shoes. His left hand, which rests on top of the scythe's handle, has a light blue glove. His right hand, which is in the middle of the handle, wears a red glove. The scythe's handle is yellow, and its crescent-shaped blade is light blue, with red on the outer edge. The ground is black, with some yellow and green grass and leaves sticking up. There are three clown heads on the ground. There is a frowning face with a pale blue skull cap beneath the shoe in the bottom left corner of the card. There is a crying face with a green wig and a tiny blue hat in the bottom right corner of the card. The third face, at the tip of the scythe blade, has a red wig and frowns slightly. Three hands and two feet also stick up from the ground. Two white bones lay on the ground. One bone has four holes along its side.",
+        "Interpretation": "When I die, show no pity. Send my soul to Juggalo City.\n— A Juggalo's Prayer\n\nThis is the first picture I drew for the deck, before I even thought I would make a whole deck. I don't know where he came from, but he's here."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185352040-xndz0bzwzg9.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:death",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185352040-xndz0bzwzg9.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-14",
+      "name": "Temperance",
+      "sort_order": 14,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A clown in a waitress uniform and roller skates with blue angel wings pours liquid between two cups: one containing a vanilla milkshake and one containing a chocolate milkshake. She is balanced on her left leg as she seems to roll toward the right side of the card. She wears a lacy orange dress with puffed sleeves and a matching apron with three red and white drinking straws, a blue pen, and a pad of paper in a pocket on its front. Her yellow hair is curled and she wears two green clips in it and a small cylindrical hat with a five-pointed red flower on top. She has a red-painted nose and smile and black painted eyelashes. Her roller skates are green with orange tongues and heels, on purple platforms with four red wheels. The sides of the skates show four yellow triangles and a yellow circle with a triangular slice removed from it. The floor where she skates is tiled in black and white checkers.",
+        "Interpretation": "Temperance is an angelic carhop, mixing shakes. She represents a purity that exists in only the finest of American diners."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185352918-j1jbxum9b4p.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:temperance",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185352918-j1jbxum9b4p.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-15",
+      "name": "The Devil",
+      "sort_order": 15,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "Harlequin stands holding a burning torch in the center of the card, between two tied-up clowns. He wears a red mask with two yellow eyes on its cheeks and a black bicorne hat with gold trim and a gold eye in the center. Red and blue balloons folded into the shape of antlers are stuck in his hat. He sticks his tongue out and holds his left hand up with the back of the hand to the viewer. His shirt and pants are decorated with red, yellow, and green diamonds. There are yellow eyes in the centers of the diamonds on his pants. There is a smiling face in the middle of his shirt, with a tongue of blue ribbon hanging from its mouth. He wears a green ruffled collar and rainbow-colored ribbons stream around him. The torch in his left hand is green with a red flame. He stands on a yellow and red globe with a five-pointed red star in its center. The two clowns are tied with ribbons around their necks that attach to a blue ring at the bottom of this globe. The two clowns wear ruffled outfits of white. They have round red noses and red clown shoes. They wear antlered clowns made of red and yellow balloons, with ears attached. The clown on the left has large black buttons on his outfit, and a triangle of black dots on his side. The ground is black, and there is a low wall of light blue in the background.",
+        "Interpretation": "Arlecchino or Harlequin is one of the world's most famous clown characters, though he is not really a clown himself. By some accounts, he came from the demonic leader of the 'Wild Hunt' which haunts many countries of Europe, including Germany (Erlkönig), the United Kingdom (Herla Cyning), and France (hellequin). The two clowns by his sides are dressed in pure white, wearing their ceremonial balloon antlers, ready to be joined to Harlequin's horde. Like many depictions of the Devil, Harlequin's wild clothing and mask are there to terrify and baffle. But remember that Harlequin can also be a source of uninhibited creativity, a way to tap into one's feral side. He is in a way primeval. If you join the clowns, you are never far from the spirit of Harlequin."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185353737-7dej7xgyh8r.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-devil",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185353737-7dej7xgyh8r.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-16",
+      "name": "The House (Tower)",
+      "sort_order": 16,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A yellow bolt of lightning strikes a tall red and yellow striped circus tent. Two clowns appear to be falling, one completely outside the tent and one with his legs inside, emerging from the tent flap. Red, yellow, green, and blue dots fly in the air, four circus peanuts lie on the ground, and four blue elephants hunch down in the background. The clown outside the tent grits his teeth as he dives downward, his legs flailing. He wears a blue shirt and green and yellow checkered pants, with white gloves and large red clown shoes. He also wears a red and green jester's collar with bells and a red and yellow pointed hat with a green pompom on top. His wig is blue and his nose is painted red. The clown who is half-outside the tent has a neutral expression as he faces directly downward. His shirt is green with red, yellow, and blue polka dots, and he also wears a blue ruffled collar, a tiny red bowler hat, and white gloves. His hair is green and shaggy, his nose is round and red, and he has stubble on his chin.",
+        "Interpretation": "Lightning strikes at the big top! As the clowns (and circus peanuts) hit the ground, the elephants look on impassively. Over the years this card has been restricted from the Marseille version to 'The Tower,' an icon of destruction. Its broader essence is that of some higher power acting on Earth. I tried to keep the freeing, and even celebratory aspects in this depiction. After all, if there's one thing a clown knows, it's how to take a pratfall."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185354483-4x7qyb6o1l.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-tower",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185354483-4x7qyb6o1l.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-17",
+      "name": "The Star",
+      "sort_order": 17,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A clown with a huge wig kneels down inside a large seashell, pouring out two jugs of liquid. A seagull sits next to her on the edge of the seashell. The clown is nude except for long green gloves, thigh-high red boots with red, green, and purple platforms, and two seashells on her breasts. Her nose is a red oval, she has three black lashes over each eye, and her smile and cheeks are painted red. Her hair sticks up around her in orange, yellow, and green waves. In the middle of her hair there is a large yellow eight-pointed star. There are also seven smaller stars in her hair: three blue eight-pointed stars, two yellow eight-pointed stars, and two yellow seven-pointed stars. The two jugs are yellow with red hearts painted on their sides. The jug in her right hand pours out yellow liquid, and the one in her left hand pours out blue liquid.",
+        "Interpretation": "This clown-lady is the Morning Star, the Groovy Goddess of Love, the one and only Venus! This card is all about hope, light, and generosity."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185355219-ls1e5ue5csi.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-star",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185355219-ls1e5ue5csi.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-18",
+      "name": "The Moon",
+      "sort_order": 18,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "Two smiling clowns dance by the side of a pool under the moon. The one on the left plays a blue banjo and the one on the right plays a red fiddle. A third clown leans back in a boat floating on the pool. Two circus tents are visible in the background: one on the left side with red and yellow stripes, and one on the right with blue and yellow stripes. The yellow crescent moon wears a pointy hat with blue and red stripes. She has a red triangle over her eye and a blue tear on her cheek. She is surrounded by a circle of red and yellow rays. Red, yellow, green, and blue drops fly through the air around the moon and there are some red drops on the ground. The clown playing the banjo is bald on top with a curly green wig and a round red nose. He wears a blue jump suit with red and orange dots, a white ruffled collar, and big red shoes. The clown playing the fiddle has wavy orange hair and a round red nose. He wears a white jumpsuit with red and green hearts on it, a blue ruffled collar, and big red clown shoes. The clown in the boat has a curly red wig and round red nose, and wears big red clown shoes with a red striped jumpsuit and a blue ruffled collar.",
+        "Interpretation": "I think of this card as the Circus Afterparty. Long after everyone's gone to bed in some nameless mid-west town, it's time for the clowns to come out and have a good old-fashioned hoedown by the light of the moon. The moon in her nightcap looks haunted: perhaps the unholy racket of banjo and fiddle woke her up."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185356029-9p9wccd65c.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-moon",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185356029-9p9wccd65c.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-19",
+      "name": "The Sun",
+      "sort_order": 19,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "Two clowns stand on the beach beneath a smiling sun. The clown on the left wears a curly yellow wig and green gloves. He is decked out in swimming gear: a blue and orange striped bathing suit, a blue and green mask and snorkel, an inner tube shaped like a red horse, and green flippers. The clown on the right wears a short dress and red lace-up shoes. The top of the dress is purple with red flowers, the skirt is red, green, and blue, the sleeves and green and blue, and she wears yellow gloves. She has a blue wig and holds blue cotton candy in her left hand as she reaches out her right arm to the other clown. The sun has a round red nose and red painted smile. It has yellow triangular rays and red wavy rays in between, and red, yellow and blue drops in the air surround it. In the background, there is a boardwalk with low colorful buildings and a Ferris wheel. On the sand, there are two seashells, and abandoned flip-flop, and a hermit crab. The ocean laps up on the sand at the very bottom of the card.",
+        "Interpretation": "This card is a tribute to the Jersey Shore, home to the world's biggest boardwalk. You can't have the glitz and glamour without the abandoned casinos and the toxic waste on the beach. But why worry – the Sun is shining, grab your floaties and your cotton candy and bask in the glow!"
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185357012-qh77zwhcx7p.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-sun",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185357012-qh77zwhcx7p.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-20",
+      "name": "Judgement",
+      "sort_order": 20,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A big red and yellow striped circus tent floats in the air, with a clown hanging down from its entrance and blowing a slide whistle. The top of the tent is circled with rolling blue clouds and the sky above it is dark blue with yellow stars. The clown too is dressed in dark blue with yellow dots, and wears a rainbow colored wig and a round red nose. Red, yellow, and blue ribbons also float down from the tent. Below, a clown in overalls sits in a dunk tank and looks up. He has ragged yellow hair, a round red rose, and red, white, and blue makeup, and wears a red and green checkered shirt. On either side of the tank, there are models of clown torsos with round open mouths meant as targets for tossing balls. The clowns have red, white, and blue makeup and wear red, yellow, and blue outfits with green ribbons around their necks and pointy yellow hats. The ground around them is checkered red and yellow. In the distance there are green and blue hills, with a Ferris wheel, a low building, and a tent nestled among them.",
+        "Interpretation": "On the ground stand the long-suffering clown denizens of the dunk tank and the ball-toss, looking up at a clown descending from a floating circus tent, blowing a slide whistle to summon them."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185357926-n389i5cpk9.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:judgement",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185357926-n389i5cpk9.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-21",
+      "name": "The World",
+      "sort_order": 21,
+      "category": "trump",
+      "keywords": [],
+      "sections": {
+        "The card": "A smiling clown struts in the middle of a wreath of red, yellow, green, and blue balloons. The clown's body is a red drum with the Earth painted in the middle of the drumskin, and she holds a double-headed drum stick in each hand. Her sleeves and pants are purple with yellow decorations: both arms have a pattern of five pointed stars, the right leg has a pattern of suns, the left leg has a pattern of moons. Her nose, mouth, and cheeks are painted red and her hair is long and yellow. She also wears a purple pointed hat with green and yellow pom-poms, a green and yellow ruffled collar, and red lace-up shoes. The wreath of balloons is surrounded by flying confetti, and there is a different clown in each of the four corners. The Knight of Swords is in the upper right corner, wearing a mostly black outfit with a green feather in his cap and a red cross on his sleeve. The Knight of Cups is in the upper left corner, dressed all in white lace and ruffles with a pointy black hat. The Knight of Coins is in the lower left corner, wearing an American flag jumpsuit and a yellow cowboy hat with a face on it. Finally, the Knight of Batons is in the lower right corner, wearing a ragged trench coat and crushed hat, with blue painted stubble on his face.",
+        "Interpretation": "The World is a mechanical drum-clown on parade. The earth is in the center, drummed upon by the Sun, Moon, and Stars. Like The Fool this card encompasses all four Suits, but here they appear as the four Knights. All clowns are welcome to take their place in the celestial procession."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185359534-uwppmzz8wy.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "trump",
+        "archetype": "arcana:the-world",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185359534-uwppmzz8wy.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-22",
+      "name": "Ace of Batons",
+      "sort_order": 22,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "A tramp clown ties a bundle to a baton. The baton, a long and gnarled green stick, is in the center of the card. The clown is off on the right side. He holds the bottom of the baton in his left hand, and reaches all the way to the top of the stick with his other hand to tie the knot. The bundle is checked in red, orange, and yellow. The clown wears a red and yellow coat with a blue scarf, a green hat, and white gloves. He has a round red nose and light blue stubble on his chin, and he is smiling. Around the clown's hand at the bottom of the baton, there is a wavy blue circle. All around the card in the white space there are wavy confetti-like shapes in red, yellow, and light blue.",
+        "Interpretation": "To start out the suit, a tramp clown ties his bindle to his stick as he gets ready to travel."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185360304-9co7ddk2fes.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "Ace",
+        "court": false,
+        "archetype": "card:ace-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185360304-9co7ddk2fes.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-23",
+      "name": "2 of Batons",
+      "sort_order": 23,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "A tramp clown kneels down on one knee, carving symbols into a fence-post with a knife. The symbol at the top of the fence post is a circle with a diagonal line through it. Below it, the clown is carving two parallel vertical lines. The clown has two yellow rubber chickens hanging from her belt. A purple tote bag decorated with gold flowers is at her side. A blue stick with a red and yellow striped bindle leans against the fence post. The clown's back is to the viewer. She wears a round green hat, a white vest with red polka dots, green houndstooth pants, a light blue shirt, white gloves, and scuffed red and yellow oversized shoes. She has a yellow wig and a red nose. The ground is sandy with small tufts of grass. A house and barn are visible in the distance, past the wire fence.",
+        "Interpretation": "Back in the day, hobos came up with a series of symbols to pass on tips and help other hobos out. This clown is carving some of those symbols on a fence-post to mark the house in the distance. The upper symbol means 'a good road to follow,' and the lower two-columned symbol that our tramp clown is carving means 'the sky's the limit!'"
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185361055-m19bqf7dikt.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "Two",
+        "court": false,
+        "archetype": "card:two-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185361055-m19bqf7dikt.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-24",
+      "name": "3 of Batons",
+      "sort_order": 24,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "A grinning clown on crutches dances with a dog holding a cane. The clown dances on one leg, one arm on a crutch and the other arm waving in the air. He wears a spiky blue wig, a round red nose, a big ragged red trench cost, a purple and yellow polka dot scarf, green plaid pants, and purple and yellow oxford shoes. The dog is spotted and yellow with tufty fur and pointy ears. He stands on his hind legs, holding the cane in one paw, and he is about the same height as the clown. He has his eyes closed and his tongue hanging out of his mouth. The two crutches and the cane are red and blue with yellow accents. The ground is pale blue.",
+        "Interpretation": "If you're a cynic, this tramp clown and his dog have been playing the sympathy card with their crutches and cane, but here they're dropping the act for a moment of spontaneous joy. If you're an optimist, then it's a miracle!"
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185362028-ef36wsllr1.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "Three",
+        "court": false,
+        "archetype": "card:three-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185362028-ef36wsllr1.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-25",
+      "name": "4 of Batons",
+      "sort_order": 25,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "A tramp clown eating brunch in a booth in a diner, reading a newspaper. The clown is dressed in ragged brown and yellow clothes, including a big trench coat and plaid pants. The shoe on his visible foot is untied and busted: his toes poke through the front. His hat hangs from a hook on the bench, and there is a hole in its crown. He is bald on top with spiky red hair. He has a round red nose and light blue stubble on the bottom half of his face. He spreads himself across the bench of the booth. He holds a steaming cup of coffee in his left hand and a newspaper in his right hand. The bottom of the newspaper drags through a puddle of red ketchup that spills out of an overturned bottle on the table. He sips a chocolate milkshake through a comically long straw, made of four interlocked red and green bendy straws. In front of him, there is a partially eaten hamburger and French fries. There is another plate with fried eggs, sausage, and bacon in a smiley face. The diner booths are green and plush, and the floor is black and white checkered tiles.",
+        "Interpretation": "Fours often relate to routine and stability. There isn't much constancy in a hobo clown's life. But even when you're out tramping, you can't forgo the ritual of a good Sunday brunch. This clown has rolled up to Temperance's diner to put his feet up and plan his next move."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185362881-1kyiuhzsdlu.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "Four",
+        "court": false,
+        "archetype": "card:four-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185362881-1kyiuhzsdlu.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-26",
+      "name": "5 of Batons",
+      "sort_order": 26,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "A pleased clown and a devil walk in opposite directions away from a crossroads. The clown walks toward the viewer. The clown is strumming a guitar and whistling, indicated by colorful music notes. His eyes are closed. He wears pale blue overalls and a hat with a visor, a patched yellow shirt and red shoes. He has a blue wig and a round red nose. The devil walks away from the viewer, looking over his shoulder. He is all red, with short horns, a pointy nose, a spade-shaped tail, and furry legs. He holds his hands out in front of him, cupping a light blue balloon with an alarmed face painted on it. The road is sandy and the ground in the four quadrants around it is yellow and green. There is a signpost at the crossroads with two light blue signs painted with red double-headed arrows.",
+        "Interpretation": "Legend has it that Robert Johnson sold his soul to the Devil at a Mississippi crossroads in exchange for his guitar skills. It sounds sinister, but both Devil and Clown are happy with the deal (at the moment). This card is about experimenting, breaking new creative ground, and taking artistic risks."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185363785-ivpsy15gcp.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "Five",
+        "court": false,
+        "archetype": "card:five-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185363785-ivpsy15gcp.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-27",
+      "name": "6 of Batons",
+      "sort_order": 27,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "Two young clown lovers getting kicked out of the house by a granny clown. Granny is wagging her finger and hitting the male clown on the head with a broom. She wears a sack-like brown dress with a purple and green ruffled collar and night-cap, and small half-moon glasses. The male clown is going down the steps, and the whack of the broom makes him close his eye, flail his arms, and drop his suitcase. He is wearing a green suit covered in patches and a puffy red wig. The female clown looks back in surprise. She carries another suitcase, and is wearing a floral orange and green dress and a yellow wig with roller curls. Each of the two suitcases that the lovers carry has a design of three crossed red, yellow, and blue batons on it. In the foreground, a pointy-hatted gnome crouches in the garden. In the background, a little girl clown with pigtails looks through the window and sticks out her tongue.",
+        "Interpretation": "The character in this card comes from a truly rich history of shady traveling salesman, from Dolly Parton's mother-daughter two-timing \"Traveling Man\" to Flannery O'Connor's prosthetic-fetishist Bible salesman (\"Good Country People\"). Some days you're one of the young lovers running away to forge a new life, some days you're the mother protecting her home from the swindler, and some days you're just the little sister laughing at the ruckus."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185364692-ypbtobjaaq.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "Six",
+        "court": false,
+        "archetype": "card:six-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185364692-ypbtobjaaq.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-28",
+      "name": "7 of Batons",
+      "sort_order": 28,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "Three tramp clowns sit around a campfire, where one clown is roasting a squirrel on a spit. The clown with the squirrel, on the left side of the card, is licking his chops. The clown in the middle leans back on a pack with his hat tipped over his eyes, sleeping with bubbles rising from his mouth. The clown on the right side of the card plays a harmonic. Behind the clowns, there is a red and white checkered tent. There is a river in the foreground and tall pine trees in the background. The seven batons are in the picture as follows. Three red, yellow, and blue logs support the fire. The squirrel is roasting on two batons. Another baton holds up the tent, and the last baton is stuck upright in the ground behind the harmonica player.",
+        "Interpretation": "In the spirit of the Star, three tramp clowns have come together to set up their own private paradise, a secluded campsite with enough roasted squirrel to go around."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185365595-ghbdvdpfnb6.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "Seven",
+        "court": false,
+        "archetype": "card:seven-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185365595-ghbdvdpfnb6.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-29",
+      "name": "8 of Batons",
+      "sort_order": 29,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "A clown wanders down the middle of a black road among green hills. She wears a red cow-girl outfit with yellow fringe and yellow baubles on the toes of her boots. She carries a red, yellow, and blue baton with a bindle hanging from it over her right shoulder. Seven more red, yellow, and blue batons form fence-posts on the sides of the road. The clown smiles slightly as she looks toward a weeping willow at the side of the road. The willow has a crying face on its trunk, with a red nose and three blue tears. A waning crescent moon is in the sky above, and reflected in a pool in the foreground.",
+        "Interpretation": "The Eight of Batons is a tribute to one of the greatest pieces of music, the anthem of all wanderers under the moonlight – Patsy Cline's 'Walkin' After Midnight.' This card suggests it's time to take a break from the harsh day, and instead step out under cool lunar light and trust your intuition."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185366386-u58yem0elb.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "Eight",
+        "court": false,
+        "archetype": "card:eight-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185366386-u58yem0elb.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-30",
+      "name": "9 of Batons",
+      "sort_order": 30,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "A tramp clown walks along a city street, looking discouraged with his head and arms hanging low. He is surrounded by barred windows. One of the windows is blocked with nine crossed red, blue, and yellow batons. Another window has a sign with an image of a crossed-out clown face. Behind him in a dark doorway, a person with an unhappy white face turns a hanging sign to an image of a red X. The clown wears a crushed brown hat and a ragged purple wig, with blue stubble painted on his face. He has a big, scuffed-up yellow and green trench coat, a long blue scarf, and brown plaid pants. His shoes are red with thick blue soles and the laces are missing.",
+        "Interpretation": "Nines typically signal a decline in energy, as the suit gets ready to wrap up. This tramp clown, rejected by polite society at every turn, is beginning to get downtrodden."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185367181-885wfj5w6x4.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "Nine",
+        "court": false,
+        "archetype": "card:nine-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185367181-885wfj5w6x4.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-31",
+      "name": "10 of Batons",
+      "sort_order": 31,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "A smiling and waving tramp clown rises through clouds in a hot air balloon. The balloon is red, green, and yellow, with a big smiling clown face on it. The basket is made of ten crossed red, yellow, and blue slats. The clown has a yellow wig and blue painted stubble on his chin, and wears a ragged brown and green trench coat with a purple scarf waving in the wind. There is a castle in the background among the puffy white clouds. In each of the upper corners, a clown face blows swirls of wind toward the balloon.",
+        "Interpretation": "The solution to the tramp clown's woes is to leave the rails behind and take to the sky! This card moves from Fire to Air, and the suit of Swords."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185368097-uxfylez1z4i.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "Ten",
+        "court": false,
+        "archetype": "card:ten-of-wands",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185368097-uxfylez1z4i.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-32",
+      "name": "Page of Batons",
+      "sort_order": 32,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "A tramp clown leans against a railroad sign-post with a newspaper under his arm and a small dog at his side. The clown has his back to the viewer and his slightly smiling face is seen in profile. He rests his white-gloved left hand against the sign-post. He has wavy green hair, a white face, a red nose and a red cheek. His right hand is in his pocket, and there is a folded newspaper under his right arm. He wears a crushed red hat with a yellow flower in the brim, a long orange coat with tails, red and black checkered pants, and oversized green and yellow Oxford shoes. His clothing is covered in various patches. On the right side of the card, there is a small yellow dog with floppy ears. He looks up at the clown, raising an ear and a paw. The railroad sign is a yellow circle with a red X and the letters RR on it. Small lines suggest that it is lighting up. There is orange grass at the base of the post, and the ground is light blue with dark blue circles representing rocks.",
+        "Interpretation": "The Page of Batons is a young tramp clown hanging around down at the depot, waiting to hop his first train. He's a bit of an idealist – hopeful and excited about the wandering life."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185368904-9mb956kgl0h.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "Page",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185368904-9mb956kgl0h.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-33",
+      "name": "Knight of Batons",
+      "sort_order": 33,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "A tramp clown holding a stick and bindle climbs into a freight train car as a little dog hops up to join him. The clown has a neutral, if slightly surprised, expression. His face is painted white with blue stubble on the lower half. He has a round red nose and wavy yellow hair under a crushed brown porkpie hat. He wears a large brown coat with yellow lapels, a blue scarf, green vest, purple pants with yellow cuffs, and pointy-toed red shoes. His clothing is covered in scuffs and dirt. He sits on the edge of a red train car, lifting his right leg up to enter the darkness inside the car. In his left hand, he holds up a green stick with red shoots and a yellow bundle tied on its end. A small, short-haired white dog with pointy ears jumps up on its hind legs toward the train car. The clown looks down at the dog. The train car has an eight-spoked yellow wheel with a heart at the center. The ground is orange with yellow spots.",
+        "Interpretation": "The Knight is based on the most famous of tramp clowns, Weary Willie. He is ready to blow this town, taking his little dog with him."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185369778-ll5osr5544.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "Knight",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185369778-ll5osr5544.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-34",
+      "name": "Queen of Batons",
+      "sort_order": 34,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "A smiling tramp clown holding a harmonica and a stick and bindle sits on a bench next to a small dog. The clown has bushy orange hair, a white face, and a round red nose. Her smile is painted red and she has black eyelashes painted below her eyes. She wears a blue and green newsboy cap with a green flower stuck to it. Her light blue shirt has a frilly collar that closes with an orange button. She also wears a red vest with a houndstooth pattern and four buttons shaped like yellow flowers. Her outfit is completed by puffy yellow plaid pants, round red shoes, and white gloves. She holds a purple and yellow harmonica in her lap with her left hand. In her right hand, she holds a green and yellow sticks with a polka-dotted bundle tied on the end. A brown down with pointy ears and a mustache sits next to her on the bench, looking straight ahead. The bench is red and yellow with a decorative heart shape motif in its arms. It is on the edge of a white path with brown rocks bordered by green grass.",
+        "Interpretation": "The Queen of Batons has set up camp on a park bench. If you sit down by her, she'll play you some harmonica tunes and tell you about all the places she's been."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185370612-lth0ei1uxz.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "Queen",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185370612-lth0ei1uxz.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-35",
+      "name": "King of Batons",
+      "sort_order": 35,
+      "category": "suit-wands",
+      "keywords": [],
+      "sections": {
+        "The card": "A worried-looking tramp clown stands with his hat out to collect money, accompanied by a dog. The clown has a white face with black stubble and a red-painted nose. He is bald on top and his red hair sticks out on the sides of his head. His eyebrows are raised. He wears a blue shirt and brown tweed pants with a green patch on the knee, held up with rope for a belt. Over this, he has a long yellow and orange checked coat with green lapels and a red flower on the breast. One of his red and white Oxford shoes is untied, the other has no laces at all. He stands leaning on a long green staff in his right hand, with his left foot up on a blue crate and his left hand on his hip. On the ground in front of the crate, there is a purple bowler hat with some money in it. A large white hound dog with blue spots sits next to the crate, looking at the viewer.",
+        "Interpretation": "The King of Batons is panhandling with his old hound dog. He's ready to either berate passersby or look forlorn, as the situation calls for."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185371477-is8hs1gyvd.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Batons",
+        "element": "Fire",
+        "rank": "King",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185371477-is8hs1gyvd.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-36",
+      "name": "Ace of Cups",
+      "sort_order": 36,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "A massive cup made of sand and shells. Colorful shards decorate the six-sided base, and there are three sand dollars around the stem. The top of the cup resembles a sandcastle, with bursts of water pouring out of the bottom. It has six towers, each decorated with shells and topped with a spiral snail shell. There is a window in the center of the castle where a clown's white face is visible.",
+        "Interpretation": "A clown gazes wistfully from the window of an elaborate cup-shaped sandcastle. The cup is ready to pour open into the world."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185372283-uap5v2tly5a.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "Ace",
+        "court": false,
+        "archetype": "card:ace-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185372283-uap5v2tly5a.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-37",
+      "name": "2 of Cups",
+      "sort_order": 37,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "Two Pierrots gaze at each other across a wrought iron fence by the seashore. The one in the background carries a white parasol and walks with a little white dog on a purple leash. Each Pierrot holds a yellow cup with a red interior.",
+        "Interpretation": "I titled this drawing \"The Lady with the Little Dog,\" after Anton Chekhov's story of a poetic affair in Yalta. No words, just a chance glance at a seaside resort – the moment of shy magnetism."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185373217-tjxdh10tkmb.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "Two",
+        "court": false,
+        "archetype": "card:two-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185373217-tjxdh10tkmb.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-38",
+      "name": "3 of Cups",
+      "sort_order": 38,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "Three Pierrot-morticians work on a fourth Pierrot who lies on a white-clothed table. One paints her face with a brush. Another reaches into a red cavity inside her shirt. A third carries off a jar of embalming fluid. There are three such jars: one contains a brain, another a heart, and the third a stomach.",
+        "Interpretation": "Three clowns prepare their companion for her journey into the next world, keeping the essence of her with them."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185374152-c5ocffq08k.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "Three",
+        "court": false,
+        "archetype": "card:three-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185374152-c5ocffq08k.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-39",
+      "name": "4 of Cups",
+      "sort_order": 39,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "Pierrot pours water from a teacup onto a large plant. Hands sprout from the top of the plant, one reaching down around the clown, and another holding a teacup. In the background, another Pierrot stands looking on, forlorn, with a bouquet of wilting stems.\n\nThe plant's pot matches the teapot and tea set next to it on the table: white china with a blue design featuring hearts and plant stems.",
+        "Interpretation": "My vegetable love should grow\nVaster than empires and more slow\n\nAndrew Marvell, \"To His Coy Mistress\"\n\nPerhaps not noticing her would-be suitor, a clown pours all her affection into a plant. The appreciative plant slowly gains consciousness, but the suitor is out in the cold for now."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185374948-3jdiwtk5uol.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "Four",
+        "court": false,
+        "archetype": "card:four-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185374948-3jdiwtk5uol.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-40",
+      "name": "5 of Cups",
+      "sort_order": 40,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "Four nuns dressed in all white gather around a statue of a white clothed saint with a powdered face. The nun on the far left leans back and yawns, a red book resting on her chest. The nun next to her kneels with her hands together in prayer, looking toward the statue. To the right of her, another kneeling nun lifts up the saint's skirt, pointing at the red area underneath and looking back over her shoulder toward another giggling nun. The statue has a gold halo and a gold cross hanging on a string by its arms. There are three niches in the blue walls on either side of the statue. Five of the niches contain gold cups, the sixth is empty.",
+        "Interpretation": "It's a natural jump from the very-French Pierrot to the Catholic nun clowns. For a little extracurricular activity, the nuns have decided to peek at what lies below their saint's robe. One cup is missing from the display – who is the thief?"
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185421738-5zme263tol4.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "Five",
+        "court": false,
+        "archetype": "card:five-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185421738-5zme263tol4.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-41",
+      "name": "6 of Cups",
+      "sort_order": 41,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "Pierrot stands smiling, ready to dive, on the edge of a sailboat. In the flowing water around him there are six swimming women. The sailboat is yellow and its single sail matches Pierrot's baggy white lacy outfit. Pierrot also wears a black skullcap and green gloves and shoes.",
+        "Interpretation": "Like the clowns of the House of God, Pierrot is ready to take a fall, all for the sake of six lovely sirens. Can he swim? No matter, his ideal of love will keep him afloat."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185422936-bjn8u5akhu.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "Six",
+        "court": false,
+        "archetype": "card:six-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185422936-bjn8u5akhu.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-42",
+      "name": "7 of Cups",
+      "sort_order": 42,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "Pierrot floats underwater to a coral reef, surrounded by sea creatures. Behind him there is a large blue whale, so big that only one eye can be seen. Seven gold fish swim among bubbles around Pierrot. A green ray and a red octopus swim near the ocean floor by Pierrot's feet. On the floor in the middle of the reef, there is a spiral of pebbles. Seven gold cups are arranged along this spiral.",
+        "Interpretation": "Following the scene of the Six of Cups, Pierrot plunges far below the surface, into the secret sacred depths of the ocean. He falls into one of the Star's rock gardens, a sanctuary of sea critters."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185424061-94rymjt14f4.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "Seven",
+        "court": false,
+        "archetype": "card:seven-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185424061-94rymjt14f4.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-43",
+      "name": "8 of Cups",
+      "sort_order": 43,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "Climbing on a step ladder, Pierrot holds up a cup to catch water flowing from a crescent moon. The sky is pale blue with white circular stars, and the large moon is yellow. On the black ground there are seven more cups filled with water.",
+        "Interpretation": "Continuing from Seven of Cups, Pierrot moves through the submerged world to find his lovely Moon… or its reflection. He fills up cups, as souvenirs and gifts."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185424973-kwly0kbpfgp.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "Eight",
+        "court": false,
+        "archetype": "card:eight-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185424973-kwly0kbpfgp.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-44",
+      "name": "9 of Cups",
+      "sort_order": 44,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "Pierrot is washed up on a sandy beach, his limbs spread out and his skullcap dislodged and covering one of his eyes. He surrounded by straggly pieces of red and green seaweed and nine clamshells, and the foamy tide rises up at edge of the card. His baggy white shirt has three blue buttons and one red button. He also wears blue gloves and shoes.",
+        "Interpretation": "Continuing from the Eight of Cups, the tide retreats and Pierrot finds himself washed up on shore. He will miss the ocean, but it is time to let go."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185425930-jtfd3spc54r.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "Nine",
+        "court": false,
+        "archetype": "card:nine-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185425930-jtfd3spc54r.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-45",
+      "name": "10 of Cups",
+      "sort_order": 45,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "One smiling Pierrot kneels down to work on a sandcastle, while another runs up to join in. He holds a tiny cup up in his hand triumphantly. This cup matches the nine cups already arranged in front of the sandcastle. The ocean tide is visible at the edge of the card. The Pierrot working on the castle has blue shoes and buttons, and green gloves. The other has green shoes and buttons, and blue gloves. The sandcastle is decorated with red, purple, and green shells.",
+        "Interpretation": "Two white clowns put the finishing touch on their collaborative sandcastle, racing against the tide. Now that they've begun building, they're ready to establish their kingdom with the help of the suit of Coins."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185426875-4rccwhgoo0a.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "Ten",
+        "court": false,
+        "archetype": "card:ten-of-cups",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185426875-4rccwhgoo0a.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-46",
+      "name": "Page of Cups",
+      "sort_order": 46,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "Pierrot, looking puzzled, holds a large cup in his right hand and its lid in his left hand. An orange kitten at his feet looks up at the cup. He wears baggy white clothing with a black skullcap and black shoes with curly toes. His shirt has three buttons: red, green, and blue, and there is a six-petaled blue flower on his chest. The cup is gold with a red interior and a purple and red bauble decorated with hearts on its stem. The floor is pale blue, and a lacy white curtain hangs from the ceiling behind Pierrot.",
+        "Interpretation": "The Page of Cups is ever hesitant, does he close his cup or leave it open?"
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185428003-0vb13fagobfk.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "Page",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185428003-0vb13fagobfk.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-47",
+      "name": "Knight of Cups",
+      "sort_order": 47,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "Pierrot walks through a field of yellow flowers, followed by a calico cat. He smiles, holding up a cup in his right hand and pointing to it with his left. He wears baggy white clothing with lacy trim and pointed black shoes. He has a small pointed black hat decorated with a blue crescent moon over long yellow hair. The cup is yellow and gold, with a hexagonal top and a red interior. There is a purple and red bauble around the stem, and the three visible sides of the hexagon each have a red heart on them.",
+        "Interpretation": "The Knight of Cups has a brighter outlook than the other court cards, ranging across the fields of sunflowers, guided by his heart."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185428943-da9u780pzfm.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "Knight",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185428943-da9u780pzfm.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-48",
+      "name": "Queen of Cups",
+      "sort_order": 48,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "Pierrot sits holding a lidded goblet in her right hand. She has a neutral expression. She wears an elaborately lacy white outfit with a cape and a cone-shaped hat over curly yellow hair. A white cat sleeps on a green cushion next to her chair. There are three buttons on her shirt, each decorated with a heart, in blue, red, and purple. She wears pale blue gloves and pointed red shoes, and there is a five-petaled blue flower on the tip of her hat. The cup is yellow with red decorations. The floor is tiled in black and white checkers.",
+        "Interpretation": "The Queen of Cups sits peacefully entrenched in lace, a living doll."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185430003-dcyzutsvkg.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "Queen",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185430003-dcyzutsvkg.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-49",
+      "name": "King of Cups",
+      "sort_order": 49,
+      "category": "suit-cups",
+      "keywords": [],
+      "sections": {
+        "The card": "Pierrot, sitting on a stool, raises his left hand to his forehead with a look of anguish. He holds a goblet in his right hand and a black and white cat climbs on his shoulders. He wears baggy white clothing and a white cone-shaped hat. His shoes are red and pointed, there are three blue buttons on his shirt, and four yellow buttons on his hat. The goblet is yellow with a red interior and a red band around it. The floor is tiled in black and white checkers and an ivory-colored curtain hangs behind him, partly covering a potted plant with pointed leaves.",
+        "Interpretation": "The King of Cups has the classic Pierrot posture of woe, but he loves his melancholy."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185430904-6w2dfxyz3bd.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Cups",
+        "element": "Water",
+        "rank": "King",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185430904-6w2dfxyz3bd.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-50",
+      "name": "Ace of Swords",
+      "sort_order": 50,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "A jester winks as she pierces the head of a doll with a sword.\n\nThe jester is off on the left side of the card. She wears a three-pointed red and green hat with yellow bells on it. Her jacket is half green and half patterned with red and blue diamonds and she wears a yellow collar. The sword, in the center of the card, has a red blade and yellow and green hilt. It pokes through the doll's head where the nose would be. The doll is a crude rag doll with a yellow crown and a purple cape with the suggestion of an ermine collar.\n\nSurrounding the jester's hand on the hilt of the sword, there is a wavy blue circle within another ring of yellow and red spikes. In the air around the sword, there are 25 pieces of confetti in red, yellow, orange, green, and blue.",
+        "Interpretation": "A jester drives a sword straight through the head of a doll of a King. She is not afraid to shock, and always ready to take down a tyrant."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185431729-ldc1cpqbld.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "Ace",
+        "court": false,
+        "archetype": "card:ace-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185431729-ldc1cpqbld.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-51",
+      "name": "2 of Swords",
+      "sort_order": 51,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "A jester dozes slouched in a chair, with legs crossed and head nodding down. A blue dog pulls one of his slippers off his foot. Four more dogs sleep on the floor in front of the jester: one red, one orange, one yellow, and one green. The jester's pointed hat hangs from a post next to the chair. Above the jester, two naked cherubs hang down, each holding a sword. The two swords cross in an X. The jester has yellow hair and wears a white outfit, with red and green stripes on the sleeves, a wide blue collar, and pointy red and green slippers. The floor is black.",
+        "Interpretation": "Most of the time, jesters didn't need to entertain, so they would take on other household duties. Here an off-duty jester dreams while watching the master's hounds."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185432762-t25d2f1cy.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "Two",
+        "court": false,
+        "archetype": "card:two-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185432762-t25d2f1cy.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-52",
+      "name": "3 of Swords",
+      "sort_order": 52,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "A jester, playing a lute, strides down in the middle of a banquet table, stepping his right foot into a pie. By his sides, two more jesters sit at the table, one playing a tambourine and the other playing a recorder. On the table, there is also a roast fowl with three knives stuck in it, and various dirty plates. The jesters wear mainly yellow. The table is blue and there are rainbow-colored music notes in the air. The jester on the left side wears polka dots and a red and blue striped hat with a single point ending in a yellow bell. She plays a tambourine decorated with a six-petaled daisy. The jester on the right side has a curled red hat with yellow buttons all the way up his side. He points one of his red-slipped feet in the air as he plays his recorder. The jester on the table has a three-pointed red and purple hat with bells, and he also has bells flying from his collar on purple and green ribbons. His pants are green and decorated with red hearts and his shoes are purple with bells on the toes. His orange and green lute has a flower motif on the front.",
+        "Interpretation": "A trio of jesters interrupt a presumably sedate banquet with a good olde-tymey jam band."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185433585-2ecyah9ceva.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "Three",
+        "court": false,
+        "archetype": "card:three-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185433585-2ecyah9ceva.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-53",
+      "name": "4 of Swords",
+      "sort_order": 53,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "A jester leans down to whisper into a king's ear.\n\nThe king sits on a throne whose legs are made of four upward-pointing swords. He wears a long red robe, green boots with red crosses on them, and a green tunic with an image of a golden eagle. He has blue hair and a beard, and a four-pointed crown. The jester wears a four-pointed hat of blue, orange, red, and green, with yellow bells. His jumpsuit is half purple and half red with a pattern of gold suns. He wears white shoes with long curly toes and bells on the end. The floor is tiled in black and white checkers and there is an orange semicircle behind the throne.",
+        "Interpretation": "Here the jester appears as an advisor to the King, enjoying a level of intimacy with political influence that few other positions provide."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185434440-4phm59qym4e.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "Four",
+        "court": false,
+        "archetype": "card:four-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185434440-4phm59qym4e.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-54",
+      "name": "5 of Swords",
+      "sort_order": 54,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "A smiling jester peers through a telescope.\n\nThe jester has orange hair and wears a blue robe covered in yellow five-pointed stars, with a matching conical hat. The telescope is green, blue, red, purple, and yellow, and the jester's eye is visible in the end. The telescope is supported by a tripod whose legs are shaped like red sword blades. It stands on a table covered in a green cloth, among various books and pieces of paper. There is a green quill pen in a blue inkwell, a small red knight, and a compass with a red sword as one of its points. Cut-outs of planets and stars hang from strings behind the jester.",
+        "Interpretation": "In her spare time, a jester studies the stars. A hobby like this is a luxury of being in a wealthy household and having time on one's hands, but who knows what the jester will gain by it on earth?"
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185435349-otdtl1sacz.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "Five",
+        "court": false,
+        "archetype": "card:five-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185435349-otdtl1sacz.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-55",
+      "name": "6 of Swords",
+      "sort_order": 55,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "A winking jester stands in front of a table of art supplies and paints the face of a puppet.\n\nThe jester wears a three-pointed red and green hat with bells. His outfit is half green and half patterned with red and blue diamonds. The hand-puppet has the same outfit. On the table in front of the jester, there is a palette, two more paint brushes, a needle in a heart-shaped pincushion, and two pairs of scissors lying on pieces of the same fabric from the costumes. A chair behind the jester has red cushions with a pattern of golden birds. The floor is dark blue.",
+        "Interpretation": "Turning to artistic pursuits, a jester creates a puppet resembling himself."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185436278-dzgmppfim9u.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "Six",
+        "court": false,
+        "archetype": "card:six-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185436278-dzgmppfim9u.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-56",
+      "name": "7 of Swords",
+      "sort_order": 56,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "A jester dressed in black tip-toes through a field, carrying a scroll. The jester walks toward the right side of the card, looking back over his shoulder. His outfit is mainly black, with some red trim and a short pointed hat. A yellow waning crescent moon hangs from strings behind him. The field where he walks is green and hilly. Seven spears stick up from the ground in the background. Tents and flags are also visible in the distance.",
+        "Interpretation": "Jesters also had duties in wartime. Here a jester carries a message across a battleground at night."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185437204-0ei2q4jkd8pr.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "Seven",
+        "court": false,
+        "archetype": "card:seven-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185437204-0ei2q4jkd8pr.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-57",
+      "name": "8 of Swords",
+      "sort_order": 57,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "Standing on one leg, a smiling jester juggles seven swords in a circle. An eighth sword lies on the ground. The swords all have red blades. The swords in the air have blue hilts, while the one on the ground has a green hilt. The jester has curly yellow hair under a green pointed cap with a white flower decoration and a bell on its tip. She also wears a green collar decorated with fluffy white flowers. She wears a green jumpsuit with a pattern of green, gold, red, and white leaves. Her shoes are purple with curled toes and bells.",
+        "Interpretation": "A feat of concentration, a jester juggles seven swords while one more lays down safely at her feet."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185438113-wy7fy790d7n.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "Eight",
+        "court": false,
+        "archetype": "card:eight-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185438113-wy7fy790d7n.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-58",
+      "name": "9 of Swords",
+      "sort_order": 58,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "A jester sits in a small cottage, writing with a quill and looking out a window toward a pond.\n\nIn the picture, there are nine swords with yellow blades. Five swords form fence posts in front of the cottage. Three more swords are the trunks of trees in the background. A ninth sword lies at the bottom of the pond.\n\nThe pond is surrounded by tall yellow and green grasses, and a white goose stands at its edge. The one-room cottage has a thatched roof and a blue door with a pale blue diamond on its top panel and a yellow and red flower on its lower panel. The jester wears mainly white and sits by a red curtain.",
+        "Interpretation": "Removed from court life, a jester writes at a table in a small cottage looking out on a still pond. This could be a picturesque exile, but I also thought of how 19th century aristocrats paid faux hermits to live in tiny houses on their grounds and add an extra level of quaintness to their gardens."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185439083-v93ofpqt6sk.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "Nine",
+        "court": false,
+        "archetype": "card:nine-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185439083-v93ofpqt6sk.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-59",
+      "name": "10 of Swords",
+      "sort_order": 59,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "A kneeling jester lifts a puppet up out of a trunk. Another jester, who looks exactly like the puppet, peeks out from behind a curtain. This is the same winking jester who was painting the puppet in the Six of Swords. The jester who holds the puppet wears a white outfit with red and green stripes, red shoes with bells on the toes, and a three-pointed orange and green hat. Her hair is red and she has a blue collar. The trunk is purple, painted with flowers and a cup. The curtain that hangs behind the trunk is dark blue. In front of a curtain, there is a hanging picture of the Ten of Swords from the Marseille tarot.",
+        "Interpretation": "A jester discovers the puppet in a trunk, while the original waits just behind a curtain. Jodorowsky wrote that the final degree of Swords is the discovery of the Other – the person behind the ideas. Then, it is time to move into the emotional unity of Cups. This card is also a tribute to Raymond Roussel's novel Locus Solus, which got me started drawing clowns in the first place."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185440205-1y9b56kqz07.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "Ten",
+        "court": false,
+        "archetype": "card:ten-of-swords",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185440205-1y9b56kqz07.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-60",
+      "name": "Page of Swords",
+      "sort_order": 60,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "A jester in a doublet and puffed pants with a cockatoo on his shoulder unsheathes a sword. The jester smiles slightly and looks to his right. He holds the sheath in his right hand and holds the sword with the blade straight up in his left hand. The cockatoo sits on his left shoulder. He has a green feather stuck in his short yellow hair. His outfit is mainly red, with flowers and multicolored stripes on his doublet. He wears tall blue boots with bells on the ends of their curled toes. A red and green banner with gold spots hangs behind him.",
+        "Interpretation": "The Page of Swords is based on Sir Jeffrey Hudson, a little person who found a place at French court and later had an even stranger life, going to war and being captured by pirates."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185441169-ia56w42rwh.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "Page",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185441169-ia56w42rwh.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-61",
+      "name": "Knight of Swords",
+      "sort_order": 61,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "A sword-wielding jester rides a horse, with a macaw flying behind him. The jester wears mostly black. His jacket has colorful stripes and a red cross on the sleeve, and his black leggings are decorated with yellow five-pointed stars. He also has a short red and blue cape and purple shoes with curled toes and bells. Bells swing from red and green ribbons attached to his saddle. He holds a red sword in his left hand. Facing the left side of the card, the horse jumps up on his hind legs. The horse is light blue with yellow mane and tail and a white star on his nose. He has a red bridle and an orange collar decorated with green stars.",
+        "Interpretation": "The Knight of Swords is based on João de Sá 'Panasco,' an African jester that rose in status in Portuguese court thanks to his military exploits."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185442200-2adnxvxdq38.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "Knight",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185442200-2adnxvxdq38.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-62",
+      "name": "Queen of Swords",
+      "sort_order": 62,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "A jester in overalls walks through fields, holding a lantern and accompanied by a raven. A yellow crescent moon hangs behind the clown from two strings, suggesting a play set. The clown holds a red sword in her right hand. The raven perches on her left hand where she holds the small red and yellow lantern. She has yellow braided hair under a large blue tam. Her overalls are green and covered in patches, and she also wears a floral shirt and big blue boots with untied yellow laces.",
+        "Interpretation": "The Queen of Swords is based on Jamie Fleeman, a Scottish jester also worked on the family farm and helped defend the home."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185443204-00msu8vdoyn7d.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "Queen",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185443204-00msu8vdoyn7d.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-63",
+      "name": "King of Swords",
+      "sort_order": 63,
+      "category": "suit-swords",
+      "keywords": [],
+      "sections": {
+        "The card": "A jester holding a sword sits in a chair in front of a curtain, looking back over his shoulder. The jester wears mainly red. He has a three-pointed hat with bells and a short cloak over a tight-fitting outfit. His red legging are buttoned over his pointy blue shoes. He holds a red sword up in his right hand, and has a white recorder in his left hand. To his right, there is a green table with a letter and a quill pen in an inkwell. An orange and purple lute rests against the left side of his chair. A magpie perches on the back of the chair over the jester's left shoulder.",
+        "Interpretation": "The King of Swords is based on Stańczyk, the celebrated medieval Polish hero. This depiction in particular is from Jan Matejko's painting."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185444278-jmkl4yufkre.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Swords",
+        "element": "Air",
+        "rank": "King",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185444278-jmkl4yufkre.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-64",
+      "name": "Ace of Coins",
+      "sort_order": 64,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "A clown stands in the desert, roping a gigantic coin in a lasso over his head. The clown wears a blue wig and a light-blue ten-gallon hat with a red five-pointed star on it. He also has a white and green button-down shirt and gloves, a bolo tie, wide blue pants with fringe down the sides, a red belt, and red pointy-toed shoes. He holds the coiled end of the rope at his waist with his right hand. His left hand is high in the air grasping the long winding rope that loops around the large coin. Around the clown there is a desert landscape of yellow mountains and green and blue cacti with red and yellow blossoms. The yellow coin is up in the sky, dominating the top half of the card. In the center of the coin there is a flower with four round blue petals, and four red leaf spikes between the petals. The middle of the flower is red with twelve black dots. The flower is contained in a round shape, resembling another flower with pointed petals or a stylized sun. Around this circle, there are sixteen green and gold triangles and sixteen red triangles.",
+        "Interpretation": "In the typical Marseille tarot, the Ace of Coins appears to be lying on the ground, among vines and roots. This version is the opposite, with the clown pulling the coin down from the sky. The lasso is a very literal take on \"harnessing potential.\""
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185445130-u4b5t50ekx.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "Ace",
+        "court": false,
+        "archetype": "card:ace-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185445130-u4b5t50ekx.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-65",
+      "name": "2 of Coins",
+      "sort_order": 65,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "In the foreground, a clown smiles as he sweeps up a coin and two banana peels with a wide red broom. In the background, another clown loses his grip on a coin as he slips on a banana peel and falls backward, looking surprised. The two clowns are in the same uniform. They both have red noses, orange and white checkered shirts, blue overalls, red and green boots, red and green visored hats, and red and green gloves. The clown in the background also has a yellow star on the bib of his overalls. The coins are orange, decorated with five-petaled flowers with pale blue centers. The ground is sandy and there is a fence in the background.",
+        "Interpretation": "One traditional reading of the Two of Coins is taking time to rest and restore, so I used the image of janitors sweeping up between the acts at the rodeo. (These clowns were inspired by the janitors at the Bread and Puppet Theater.) In other readings, such as the Etteilla system, this card relates to a mix-up or embarrassment, as illustrated by the poor gentleman in the back. Will you clean up, or slip on the great comic banana-peel of life?"
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185446715-vrhe4rfclio.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "Two",
+        "court": false,
+        "archetype": "card:two-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185446715-vrhe4rfclio.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-66",
+      "name": "3 of Coins",
+      "sort_order": 66,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "The bones of a clown in the desert. The smiling skull has a round red nose and coins in its eye sockets. It wears a blue cowboy hat with a red band. A hand with a red glove sticks out of the ground holding a third coin. Each of the three coins is black, with a yellow ring around the outside, and a yellow flower enclosing a four-petaled red flower in the middle. A red scorpion crawls by the jawbone, and the blue tail of a snake is visible on the right side of the card next to the bony arm. In the foreground rests a white bone with six holes drilled in it. The ground is yellow and sandy, with various small green plants.",
+        "Interpretation": "Small plants and animals spring up around the grinning skull of a clown lost in the desert (and the bone flute from Arcanum XIII). One skeletal hand reaches out of the ground to entice the explorer with a coin. This card is about new growth, and the constancy of the earth above all – the desert swallows clowns and gives up gold."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185447584-fx1smm5b08.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "Three",
+        "court": false,
+        "archetype": "card:three-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185447584-fx1smm5b08.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-67",
+      "name": "4 of Coins",
+      "sort_order": 67,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "A mustached clown in a white suit and ten-gallon hat stands with his hands on his hips in the middle of four oil rigs in a desert landscape. The clown wears a red shirt and pale blue tie, which matches his gloves and cowboy boots. He also has a gold belt buckle, and a dollar sign is drawn in the middle of his hat. The oil rigs are red and blue, and each has a yellow and black coin on it, decorated with an orange four-petaled flower.",
+        "Interpretation": "A good old Texas oil-clown stands content in the middle of his empire, a well-oiled machine! The Four of Coins signifies well-managed resources, as this successful gentleman clearly has. On the other hand, it can mean closedness, blocking off and hoarding resources for oneself."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185448592-w3zwfx1ql2b.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "Four",
+        "court": false,
+        "archetype": "card:four-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185448592-w3zwfx1ql2b.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-68",
+      "name": "5 of Coins",
+      "sort_order": 68,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "A smiling clown holds up a rattlesnake over a hole full of coins in the desert. The clown kneels on her right knee with her right hand on her hip, and she looks up at the yellow snake that she shakes in her left hand. The snake has a long forked tongue, small black fangs, and a rattle on her tail; her eye is open wide. The five coins in the snake's nest are all black, with a yellow outer ring and yellow and orange flowers in the center. The clown has a red painted nose and smile and a yellow wig. She wears a brown cowboy hat with a green five-pointed star in the center and a polka-dotted veil hanging from the brim to protect her neck from the sun. Her button-down shirt is pale blue, and her pants have red and blue checkers. She wears a green bolo tie with a star on it, green gloves, and a green belt. She also has a brown vest decorated with blue five-pointed stars and white horseshoes, with red and white fringe hanging from the bottom. She also wears classic red round-toed clown shoes.",
+        "Interpretation": "Tempted by gold, a clown dares to stick her hand right into a snake's nest. This card is about materialism and temptation: willingly and imprudently going into danger for the (slim) promise of a reward."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185449737-oxmnfbn4msf.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "Five",
+        "court": false,
+        "archetype": "card:five-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185449737-oxmnfbn4msf.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-69",
+      "name": "6 of Coins",
+      "sort_order": 69,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "With legs crossed, a clown leans back casually against a barrel, spitting three sunflower seeds in an arc in the air. His right elbow rests on the top of the yellow and blue barrel. He holds a cowboy hat in his right hand, which is red and decorated with a purple heart. He cradles a sack of seeds with a picture of a sunflower in his left arm. There is a circle of six coins on the ground in front of him. Each coin is black with an orange edge and a yellow flower encircling a four-petaled orange flower in the center. The ground is sandy and there is a blue fence in the background. The clown's face is painted white, with round red cheeks and blue triangles over his eyes, and he has a round red nose. He is bald on top with curly yellow hair around the sides of his head. His button-down shirt is red with green panels on top, with pictures of red prancing horses and stars. He wears a gold bolo tie and a purple belt with a yellow buckle holds up his pale blue jeans. His cowboy boots are green, with red accents and pictures of gold lassos on the sides.",
+        "Interpretation": "A rodeo clown takes a break to lay back and spit some seeds. By association with Arcanum VI, The Lover, the Sixes all relate to love, beauty, and other such pleasant things. The Six of Coins is about the simple earthly pleasures."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185450756-kao84g1b8wc.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "Six",
+        "court": false,
+        "archetype": "card:six-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185450756-kao84g1b8wc.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-70",
+      "name": "7 of Coins",
+      "sort_order": 70,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "A smiling clown in a dress and bonnet sits in a covered wagon moving through the desert. Six coins float around her head in the wagon. A larger, seventh coin is outside in the sky ahead of her. The clown wears a green dress with a pattern of small orange flowers and a lacy petticoat, with a white bonnet. Her nose and mouth are painted red, and she wears a red wig with braided pigtails. She is surrounded by colorful boxes. The wagon wheels are green with six red spokes and blue hubs. On the edge of the card the blue backs and yellow tails of the two horses drawing the wagon are visible. In the background there are yellow mountains and five green cactuses.",
+        "Interpretation": "A clown moves across the desert in her covered wagon. All of her earthly possessions are packed up and she is in search of a new place in the world. She is guided to the promise of new wealth, a seventh coin in the sky."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185451715-oiv6y1k2n3.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "Seven",
+        "court": false,
+        "archetype": "card:seven-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185451715-oiv6y1k2n3.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-71",
+      "name": "8 of Coins",
+      "sort_order": 71,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "A clown aims a rifle at an arrangement of targets on a blue curtain. Another clown peeks out from between the curtains in the middle of the targets.\n\nThe clown with the rifle is seen from behind, standing in the foreground near some barrels. She wears a wavy red wig and a white cowboy hat with a yellow crescent moon on it. She has a pale blue shirt and a short orange skirt patterned with red and blue flowers and yellow polka dots, and with four red hearts on its green waistband. Her leggings have blue and yellow checkers. She aims the green and yellow rifle with her left hand and has her right hand at the trigger.\n\nBefore her, there are eight targets total, arranged in a square in front of blue curtains. Each target is yellow with two red rings encircling a five petaled orange flower with a red center.\n\nThe other clown looks more like a circus clown, with a bushy blue wig, red and green face paint, a blue polka dot jumpsuit with a ruffled collar, and red gloves. He pulls the curtains apart with one hand, and looks out in the middle of the square of targets with a neutral expression. A red and white striped banner is tied to the top of the curtains with yellow bows and there are red and green dots of confetti on the sandy ground.",
+        "Interpretation": "In this card, an Annie-Oakley-type rodeo clown is ready to show off her shooting prowess. But another clown pops up in the middle of her targets – maybe to tease, and maybe to encourage. This card is about concentration, and an opportunity to show off the fruits of your labors."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185452786-ey9ovw1i7nb.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "Eight",
+        "court": false,
+        "archetype": "card:eight-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185452786-ey9ovw1i7nb.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-72",
+      "name": "9 of Coins",
+      "sort_order": 72,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "A clown bends down, dropping eight coins in a pile as he tries to gather them. Through the open gate behind him, a bull creeps up. The bull is pale blue with yellow hooves, a red nose, and red curly hair on top of his head. He has a yellow ring through his nose and snorts out plumes of smoke. His golden horns have two red rings around them, and a ninth coin floats between his horns. The bull's eyes are focused on the clown's backside, and the clown seems to be frozen in surprise as he realizes his situation. The clown's face is painted white, with a round red nose and blue cheeks. He wears a curly green wig and a jump suit with stars and stripes like an American flag. His boots are red with gold decorations – the right boot has a picture of fire, and the left boot has a picture of a cactus and the sun. The nine coins are yellow with red five-pointed stars in the center.",
+        "Interpretation": "The Camoin-Jodorowsky deck which was the main inspiration for Clown Town paints the Nines as crisis cards. The Nine of Coins says that sooner or later, you'll have to lose. In the material sense of Coins, losing can be losing your goods, getting beat up, or both like this clown has in store."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185453641-4gcte0hhui.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "Nine",
+        "court": false,
+        "archetype": "card:nine-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185453641-4gcte0hhui.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-73",
+      "name": "10 of Coins",
+      "sort_order": 73,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "Two smiling clowns ride away from the viewer on horseback toward a red setting sun. Ahead of them there are yellow and orange desert mountains with green cactuses sprinkled through them. In the foreground there is a red fence with eight small yellow coins along its top. Each clown carries another yellow coin in a saddle bag. Each coin has a four-petaled flower in its center. The clown on the left side of the card looks back over her shoulder and waves. She wears a dark blue cowboy hat and jeans with a tan shirt, a green bandana, and blue and red boots. Her horse smiles and prances forward. The clown on the right side of the card is turned backward on his horse, who has a more serious expression. He has one hand on his hip and the other hand shielding his eyes. He wears a red cowboy hat, red bandana, and red boots with a green and blue button-down shirt and blue pants.",
+        "Interpretation": "In this final card of the Suit of Coins, two rodeo clowns go out of the fence and ride off for the sunset. Each clown carries one coin as provisions in her saddlebag. The Camoin-Jodorowsky deck places the four suits in order, transitioning into each other: after Coins comes Batons. Accordingly, these two clowns are ready to go out wandering with the tramp clowns in that suit."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185454608-neoxd4qn8y.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "Ten",
+        "court": false,
+        "archetype": "card:ten-of-coins",
+        "mapping_confidence": "exact",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185454608-neoxd4qn8y.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-74",
+      "name": "Page of Coins",
+      "sort_order": 74,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "A proud rodeo clown holding up a gold coin. The clown has red, white, and blue face paint and wears a yellow wig with braided pigtails under a light blue cowboy hat. She wears an orange button-down shirt with scalloped collar and cuffs. The front of her shirt is decorated with red and yellow pictures of a horse's head, a bull's head, and six stars. She also wears cowboy boots with stars and stripes in red, blue, and yellow. Her pants are green with patches on the knees and her light-blue gloves match her hat. She holds a large coin up in her right hand. This coin is yellow with a red five-pointed star in the middle. The buckle of her red belt is a smaller but identical coin. Her left hand rests on her hip, holding a looped yellow rope. The ground is sandy and there is a pale blue fence in the background. A yellow horse and bull stand on the other side of the fence.",
+        "Interpretation": "The Page of Coins stands outside the gates of the rodeo, armed with one coin for spending and another saved on her belt buckle. She hasn't yet faced down the horse and bull who wait beyond, but she is eager to prove herself."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185455617-na5dgn8ygef.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "Page",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185455617-na5dgn8ygef.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-75",
+      "name": "Knight of Coins",
+      "sort_order": 75,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "A smiling rodeo clown holding a coin rides on a leaping bull. The clown has orange hair, red cheeks, and a round red nose. He wears a jumpsuit with a pattern of stars and stripes like a big American flag. He also has yellow gloves and yellow, red, and green cowboy boots with pointed toes. His cowboy hat is yellow with eyes and a nose drawn on it. The hat is tied around his neck with a yellow string, and is flying off his head as the bull jumps. In his right hand he holds a rope attached to the bull's horn. In his left hand, he holds up a coin. This coin is yellow with a five-pointed red star in the center, and a four-petaled yellow flower in the center of the star. The bull is pale blue. His nose and hoofs are red. His horns and the curly hair on top of his head are yellow. The ground is sandy and there is a green fence in the background.",
+        "Interpretation": "The Knight of Coins rides the wild bull, and makes a great show of it too. In the Camoin-Jodorowsky deck, the knights are meant to be the highest rank in the suit, so this guy is the one who has mastered his craft."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185456569-pe06fxl8a6.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "Knight",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185456569-pe06fxl8a6.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-76",
+      "name": "Queen of Coins",
+      "sort_order": 76,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "A rodeo clown holding a rifle and a coin.\n\nThe clown has red-painted nose, lips, and cheeks, and white eyeshadow. Her wig is yellow and curly, and she also wears a cowboy hat in purple, red, and yellow. She wears a lacy white blouse with an enormous red bow around her collar, and a short red skirt with polka dots in green, blue, and yellow. Her knee-high boots are red with yellow and purple decorations, and she also wears purple gloves with a heart-shaped cutout on the back.\n\nThe clown faces the left side of the card and leans back against a light blue bull with yellow horns, hair and hoofs, and a ring through her nose. The clown holds a rifle with a red star on it against her body with her left hand. She holds a coin in her right hand, looking up at it. The coin is yellow with a red five-pointed star in the middle, and a yellow six-petaled flower in the center of the star. The ground is sandy and there is a pale blue fence in the background.",
+        "Interpretation": "The Queen of Coins is at ease, and her nose-ringed bull seems tamed. She is confident and unafraid."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185457533-w0nlkdmf8l.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "Queen",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185457533-w0nlkdmf8l.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "clown-77",
+      "name": "King of Coins",
+      "sort_order": 77,
+      "category": "suit-coins",
+      "keywords": [],
+      "sections": {
+        "The card": "A rodeo clown sits with legs crossed on a barrel, holding a coin and a flag. The clown has red-painted nose, mouth, and cheeks. His hair is bushy and yellow, sticking out beneath a white cowboy hat decorated with a purple star. He wears blue jeans and a yellow button-down shirt covered in red, orange, green, and blue polka dots. He also wears a red fringed vest decorated with yellow cowboys, a purple belt with a star on its yellow buckle, and white gloves. His cowboy boots are green with yellow dollar symbols on the sides and yellow spurs. He sits on the edge of a pale blue barrel with his right leg crossed over his left. With his right hand he rests a yellow coin with a red star in the middle against his thigh. His left hand rests on his belt, and a flag flies from a stick that leans against his left shoulder. The flag is red, with a yellow circle in the center containing a green five-pointed star. The ground is sandy and there is a purple fence in the background.",
+        "Interpretation": "The King of Coins sits with his flag inside the fence, but there is no bull in sight. Perhaps he is staring it down right now."
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185458500-kathgd8qnq.png",
+      "metadata": {
+        "tradition": "contemporary",
+        "era": "contemporary",
+        "arcana": "minor",
+        "suit": "Coins",
+        "element": "Earth",
+        "rank": "King",
+        "court": true,
+        "archetype": null,
+        "mapping_confidence": "none",
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185458500-kathgd8qnq.png",
+            "artist": "Yve Lepkowski",
+            "license": "CC-BY-SA-4.0",
+            "source": "https://stolen-thyme.com/clown-town-tarot/",
+            "note": "Hot-linked from the platform mirror (Google Drive); CDN-mirror is a follow-up."
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "common_name": "Clown Town",
+    "category": "community"
+  }
+}

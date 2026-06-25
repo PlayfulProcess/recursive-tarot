@@ -7,6 +7,18 @@
 3. **Consolidate, don't multiply.** Prefer turning a new idea into something we already have — a **voice** (`voices.json`), a **deck**, a **source** (`books-of-tarot` / `people-of-tarot`), or a **journey** (the four doors: Player · Historian · Practitioner · Contributor) — over a parallel structure. The Golden Dawn is the worked example: it became a *voice* + a short pathworking course, not a separate sub-site.
 4. **Voice vs Source (the two wings).** A tradition's *reading stance* is the **Living/practice** layer (voices, courses, the Golden Dawn Path); its *people, books, and decks* are the **Record/evidence** layer (`docs/DESIGN-two-wings-provenance.md`). Keep them in their own places and cross-link with the one pill pattern below — never let a practice claim masquerade as a historical one.
 
+## Theme & colour — ONE source (`theme.css`)
+
+- **All colour lives in `theme.css`** (a single `:root` of tokens), linked by every page and viewer.
+  **Never redeclare colour tokens locally** and never add a `@media(prefers-color-scheme:dark)` block —
+  that's what caused the recurring light-on-light bugs (each page had its own divergent palette).
+- **Light only.** Backgrounds are always light, text always dark enough to read on them. No dark stages
+  (video players / game tables are light too). Token names are unified but legacy aliases resolve:
+  `--panel`=`--surface`, `--muted`=`--mut`, `--accent`=`--gold`, `--ink-strong`/`--fg`/`--text`=`--ink`.
+- To change a colour, edit `theme.css` once. To re-apply the consolidation if a new file drifts:
+  `python scripts/apply_theme.py` (links theme.css, strips local colour tokens + dark blocks).
+- Bump `style.css?v=N` when style.css changes; `theme.css?v=N` likewise.
+
 ## Core architecture
 
 - Grammar files live in `tarot/<slug>/grammar.json`. Never hand-edit `tarot/all-decks-many-lenses/grammar.json` or `tarot/people-of-tarot/grammar.json` — both are generated.
@@ -61,6 +73,24 @@ To write Scene/Symbol sections: download images from R2 to a temp dir, use Read 
 `object-fit:contain` (letterboxed on a neutral background), never `object-fit:cover`. A clipped
 card hides the very iconography the thumbnail exists to show. Applies to every card thumbnail:
 play tiles, course strips/detail, game cards, deck covers, viewers.
+
+## Image usage across the site (render the most of the library)
+
+Card images appear in site chrome (Home / Play / Historian / Contribute / games). Show the deck's
+**range** — keep images **unique within a page**, and avoid reusing the same image across sibling
+pages (especially **Home ↔ About ↔ Play**). After editing any page's imagery, run
+`python scripts/audit_image_usage.py`: it writes a top-level `_image_usage` onto each deck's
+grammar.json (the deck's images + the pages they feed) and regenerates `docs/plan/IMAGE-USAGE.md`, which
+flags every cross-page repeat. Keep it up to date — it's how we spread unique cards and render the
+most of the library. (Prefer the Star / courts / Empress over yet another Visconti World.)
+
+## Course images — one home, one convention
+
+Course figures/screenshots live in **`pages/courses/images/`** — the single canonical location.
+In an MDX course, author them as `images/<name>.ext` (e.g. `![caption](images/01-library.png)`);
+the course-viewer rewrites `images/` → `courses/images/` at render time. Don't scatter course
+images elsewhere (the old `course/img/` folder was consolidated here Jun 23 2026). Card art still
+comes from R2 (see the Image pattern above); this folder is only for course-authored figures.
 
 ## Scripts cheat-sheet
 
