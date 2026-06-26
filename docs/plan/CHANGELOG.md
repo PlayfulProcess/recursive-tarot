@@ -5,6 +5,8 @@ Open work lives in [TODO.md](TODO.md).
 
 ## 2026-06-25
 
+- **Wish List page + header link.** New `pages/wishlist.html` — a living roadmap in two bands (**On the workbench** / **Before launch**, with a Done lane), on-brand design (Fraunces + gold, card grid). Features the **course-as-a-grammar** with a "how it's made" panel and the wish behind it: recursive.eco's Library Assistant can *open* a course but can't read its content — as a grammar it could. Linked from the header **Home ▸ Wish List**; bumped `site-header.js?v=31→32` across all 27 pages.
+
 - **Course-grammar reaches full parity with the MDX course — shared embed renderer.** Extracted the course-viewer's `[data-embed]` expander into `viewers/course-embeds.js` (+ `course-embeds.css`), copied verbatim so the two render identically; relative paths (`../tarot`, `../research`, `../viewers/…`) resolve the same from `pages/` and `viewers/`, so the same module works in both. `grammar-course.html` now expands the **computed-aggregation** embeds live (decks · suits · numbers · trumps-synthesis · trumps-detail · suits-detail · lineage · timeline · apparatus); the converter keeps those markers inline in the prose, and only **plates** is baked to `metadata.embeds` (curated refs) and **essay** inlined as text. The grammar rendered as a course now shows 32 deck chapters with maker bios, 62 trump chapters, 73 minor cards, 2 live viewer iframes, and ~630 card images — matching the whole course. `course-viewer.html` left untouched (main was checkpointed first).
 - **Merged `dev` → `main`** as a checkpoint before the renderer work; resolved charles-vi by keeping the App's recursive.eco roundtrip metadata **and** dev's `_image_usage`, taking dev's editorial text.
 
