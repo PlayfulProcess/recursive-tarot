@@ -5,9 +5,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Historian · Recursive Tarot</title>
-<meta name="description" content="The history path: the illustrated history course, the lineage views (timeline, genealogy, Tree of Life), and all 25 historical decks card by card.">
+<meta name="description" content="The history path: the illustrated history course, the lineage views (timeline, genealogy, Tree of Life), and every historical deck card by card.">
 <meta property="og:title" content="The Historian — a public-domain history of tarot">
-<meta property="og:description" content="The illustrated history course, the lineage views, and 25 historical decks — every image public domain.">
+<meta property="og:description" content="The illustrated history course, the lineage views, and the historical decks card by card — every image public domain.">
 <link rel="icon" type="image/svg+xml" href="../public/favicon.svg?v=2">
 <link rel="stylesheet" href="../style.css?v=4">
 <style>
@@ -60,7 +60,7 @@
 
   <section class="hero">
     <h1>The <span class="gold">Historian's</span> path</h1>
-    <p class="tag">Six centuries of the cards — read the story, trace the lineage, and meet all 25 historical decks card by card.</p>
+    <p class="tag">Six centuries of the cards — read the story, trace the lineage, and meet every historical deck card by card.</p>
   </section>
 
   <a class="readcourse" href="course-viewer.html?course=history-of-tarot">
@@ -68,7 +68,7 @@
     <div class="rc-b">
       <div class="rc-k">Read · the illustrated history</div>
       <h2>How a card game became a grammar for meaning</h2>
-      <p>The full story, card by card across 25 decks — from the Mamluk suits and the 1440s trionfi to the 1781 occult reframing that invented divination. Scholarship-grounded, every image public domain.</p>
+      <p>The full story, card by card across the decks — from the Mamluk suits and the 1440s trionfi to the 1781 occult reframing that invented divination. Scholarship-grounded, every image public domain.</p>
     </div>
   </a>
 
@@ -96,7 +96,7 @@
   </section>
 
   <section class="band">
-    <h2>The 25 historical decks</h2>
+    <h2>The <span id="deck-count"></span>historical decks</h2>
     <p class="sub">Every image public domain · click any deck to read it card by card</p>
     <div id="deckgrid" class="deckgrid"><p class="sub" style="grid-column:1/-1">Loading decks…</p></div>
   </section>
@@ -110,12 +110,15 @@
 
 <script>
   (function(){
-    const EXCLUDE = new Set(['ontoject-illustrated','thirty-six-tattvas']);
     fetch('../tarot/_collection.json').then(r=>r.json()).then(c=>{
+      // Historical decks only — the Record wing (provenance 'record'); living-tradition
+      // grammars live on the Player/Contribute paths, not the Historian's.
       const decks = (c.grammars||[])
-        .filter(g=>!g.is_meta && !EXCLUDE.has(g.slug) && g.cover_image_url)
+        .filter(g=>!g.is_meta && g.provenance==='record' && g.cover_image_url)
         .sort((a,b)=>(a.year||9999)-(b.year||9999));
       const grid = document.getElementById('deckgrid');
+      const countEl = document.getElementById('deck-count');
+      if(countEl) countEl.textContent = decks.length + ' ';
       if(!decks.length){ grid.innerHTML=''; return; }
       grid.innerHTML = decks.map(g=>{
         const name = (g.name||g.slug).split(' — ')[0];
