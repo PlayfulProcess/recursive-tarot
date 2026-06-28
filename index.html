@@ -5,9 +5,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Recursive Tarot — A Public-Domain Genealogy of the Cards</title>
-<meta name="description" content="A public-domain, scholarship-grounded genealogy of historical tarot — how a card game became a grammar for meaning, an open library of 25 historical decks, free viewers and courses, part of recursive.eco.">
+<meta name="description" content="A public-domain, scholarship-grounded genealogy of historical tarot — how a card game became a grammar for meaning, an open library of historical tarot decks, free viewers and courses, part of recursive.eco.">
 <meta property="og:title" content="The Recursive Tarot — how a game became a grammar for meaning">
-<meta property="og:description" content="25 historical tarot decks, an illustrated open history, JSON grammars, free viewers and courses — public domain, part of recursive.eco.">
+<meta property="og:description" content="An open library of historical tarot decks, an illustrated open history, JSON grammars, free viewers and courses — public domain, part of recursive.eco.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tarot.recursive.eco/">
 <link rel="icon" type="image/svg+xml" href="public/favicon.svg?v=2">
@@ -112,11 +112,6 @@
     padding:12px 0;border-top:1px solid var(--line)}
   ul.mis li b{color:var(--ink);font-weight:600}
 
-  /* scroll affordance under the cover CTAs */
-  .scrolldown{display:inline-block;text-align:left;font-family:var(--sans);font-size:12.5px;
-    letter-spacing:.04em;color:var(--mut);text-decoration:none;margin:18px 0 0}
-  .scrolldown:hover{color:#9a7322}
-
   /* ── gallery: all views + all decks ── */
   .gallery{margin:56px auto 0;max-width:1120px}
   .gallery h2{font-family:var(--serif-display);font-weight:600;font-size:28px;color:var(--ink);
@@ -182,11 +177,10 @@
     </figure>
     <div class="htext">
       <h1>The <span class="gold">Recursive Tarot</span></h1>
-      <p class="subtitle">How a card game became a <a href="https://recursive.eco" target="_blank" rel="noopener" title="grammar — recursive.eco's word for a symbolic system you make meaning with">grammar</a> for meaning — six centuries, twenty-five historical decks, every image public domain.</p>
+      <p class="subtitle">How a card game became a <a href="https://recursive.eco" target="_blank" rel="noopener" title="grammar — recursive.eco's word for a symbolic system you make meaning with">grammar</a> for meaning — six centuries of historical decks, every image public domain.</p>
       <p class="lede">A free, <strong>public-domain</strong> library of historical tarot — from the 1440s
       Milanese card <em>game</em>, through the printed Tarot de Marseille, to the 1781 occult reframing that
       invented divination. Each deck kept in <strong>its own tradition</strong>; every file open and forkable.</p>
-      <a class="scrolldown" href="#explore">↓  Every view &amp; all 25 decks</a>
     </div>
   </section>
 
@@ -346,7 +340,7 @@
       </a>
     </div>
 
-    <h2 style="margin-top:50px">The 25 historical decks</h2>
+    <h2 style="margin-top:50px">The <span id="deck-count"></span>historical decks</h2>
     <p class="sub">Every image public domain · click any deck to read it card by card</p>
     <div id="deckgrid" class="deckgrid"><p class="sub" style="grid-column:1/-1">Loading decks…</p></div>
 
@@ -398,6 +392,7 @@
       const contemporary = all.filter(g=>isLiving(g) && !COMMUNITY[g.slug]);
       const historical   = all.filter(g=>!isLiving(g) && !COMMUNITY[g.slug]).sort((a,b)=>(a.year||9999)-(b.year||9999));
       document.getElementById('deckgrid').innerHTML = historical.map(card).join('');
+      document.getElementById('deck-count').textContent = historical.length + ' ';
       if(community.length){ document.getElementById('deckgrid-community').innerHTML = community.map(communityCard).join(''); document.getElementById('community-wrap').hidden = false; }
       if(contemporary.length){ document.getElementById('deckgrid-contemporary').innerHTML = contemporary.map(card).join(''); document.getElementById('contemporary-wrap').hidden = false; }
     }).catch(()=>{ document.getElementById('deckgrid').innerHTML='<p class="sub" style="grid-column:1/-1">Open the <a href="viewers/cards.html">Cards view</a> to browse all decks.</p>'; });
