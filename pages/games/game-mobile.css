@@ -1,0 +1,31 @@
+/* Shared mobile layout for the historical card games (trionfi, madiao, tarocchino).
+ * Mobile-only (<=640px) so desktop boards are never touched. Targets the class
+ * vocabulary common across the three games; per-game tweaks are guarded by the
+ * classes only that game uses (#ai-hand = trionfi, .table-zone = trionfi,
+ * .felt = madiao + tarocchino). Link AFTER each game's own <style>.
+ *
+ * The root cause it fixes: opponent "face-down peek" rows were nowrap flexes
+ * (#ai-hand, .backs) whose intrinsic width pushed the board past the viewport.
+ */
+@media (max-width: 640px) {
+  .wrap { padding: 12px 10px 48px; }
+  .board { padding: 11px; }
+
+  /* Face-down opponent hands must wrap and never force the board wider. */
+  #ai-hand, .backs { flex-wrap: wrap; justify-content: center; max-width: 100%; }
+
+  /* The 4-seat diamond (madiao + tarocchino): tighten so side seats fit. */
+  .felt { gap: 2px; padding: 6px; grid-template-columns: 1fr 1.15fr 1fr; }
+  .seat { min-width: 0; }
+
+  /* Trionfi's centre table: smaller played cards + tighter gap, allow wrap. */
+  .table-zone { gap: 16px; min-height: 0; flex-wrap: wrap; }
+  .table-zone .card { width: 92px; }
+  .table-zone .card img { height: 140px; }
+
+  /* Played card in the diamond centre — keep it from overflowing its column. */
+  .play-slot .card, .play-slot .mcard { max-width: 100%; }
+
+  /* Logs/score read fine stacked; let the scorebar breathe. */
+  .scorebar { gap: 10px 14px; }
+}

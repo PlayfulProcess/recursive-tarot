@@ -38,7 +38,7 @@
         };
     })();
     </script>
-    <script src="../site-header.js?v=32"></script>
+    <script src="../site-header.js?v=33"></script>
     <script src="../view-switcher.js?v=11"></script>
     <style>
         /* Unified Grammar Theme - adapts based on grammar type */
@@ -2645,7 +2645,7 @@
                 const layout = document.querySelector('.hierarchy-layout');
                 if (layout && layout.parentElement) layout.parentElement.insertBefore(tray, layout);
             }
-            tray.innerHTML = '<span style="font-size:11px;color:var(--grammar-text-muted);flex-basis:100%;margin-bottom:2px;">Drag a dimension to Group by ↓</span>';
+            tray.innerHTML = '<span style="font-size:11px;color:var(--grammar-text-muted);flex-basis:100%;margin-bottom:2px;">Tap a dimension to group by ↓ &nbsp;<span style="opacity:.7">(or drag it)</span></span>';
             fields.forEach(f => {
                 const chip = document.createElement('span');
                 chip.draggable = true;
@@ -2695,8 +2695,8 @@
             // Drop zone at the top of the sidebar
             const dropZone = document.createElement('div');
             dropZone.style.cssText = `padding:6px 8px;border-radius:6px;border:1.5px dashed rgba(255,255,255,.18);font-size:11.5px;color:var(--grammar-text-muted);margin-bottom:8px;text-align:center;transition:border-color .15s,background .15s;`;
-            dropZone.textContent = deckGroupField ? ('Grouped by: ' + deckGroupField + ' <rt-icon name="x"></rt-icon>') : '⊸ Drop a dimension here';
-            dropZone.title = deckGroupField ? 'Click to clear grouping' : 'Drag a dimension chip here to group cards';
+            dropZone.textContent = deckGroupField ? ('Grouped by: ' + deckGroupField + ' <rt-icon name="x"></rt-icon>') : '⊸ Tap a dimension above to group';
+            dropZone.title = deckGroupField ? 'Tap to clear grouping' : 'Tap a dimension chip above (or drag it here) to group cards';
             if (deckGroupField) { dropZone.style.borderColor = '#9a7322'; dropZone.style.color = '#b8902f'; dropZone.style.cursor = 'pointer'; dropZone.addEventListener('click', () => applyDeckGroupField(deckGroupField)); }
             dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.style.background = 'rgba(154,115,34,.18)'; dropZone.style.borderColor = '#9a7322'; });
             dropZone.addEventListener('dragleave', () => { dropZone.style.background = ''; dropZone.style.borderColor = 'rgba(255,255,255,.18)'; });
