@@ -39,7 +39,7 @@
     })();
     </script>
     <script src="../site-header.js?v=33"></script>
-    <script src="../view-switcher.js?v=11"></script>
+    <script src="../view-switcher.js?v=12"></script>
     <style>
         /* Unified Grammar Theme - adapts based on grammar type */
         :root {
@@ -4435,26 +4435,11 @@
             // current item id so the user lands on this item in the
             // chosen view. For others, the URL points at the whole
             // grammar.
+            // "View as" eye dropdown retired Jun 29 2026 — its links pointed at
+            // recursive.eco app routes (/pages/grammar-viewer.html, /view/…,
+            // flow.recursive.eco) that don't exist on the static site, so it never
+            // worked here. Left empty so the modal's action row simply omits it.
             const viewModeOptions = [];
-            if (grammarIdForStudy || githubUrlForStudy) {
-                const itemId = escapeHtml(item.id);
-                const idQs = githubUrlForStudy
-                    ? `type=${grammarTypeForStudy}&json=${encodeURIComponent(githubUrlForStudy)}`
-                    : `type=${grammarTypeForStudy}&id=${grammarIdForStudy}`;
-                const playId = grammarIdForStudy || ''; // /play needs a UUID; skip when only github
-                // Keep parity with React's ALL_VIEWER_OPTIONS order.
-                viewModeOptions.push(['Cards',      `/pages/grammar-viewer.html?${idQs}&item=${itemId}`,                    true]);
-                viewModeOptions.push(['Study',      `/pages/study-viewer.html?${idQs}&item=${itemId}`,                       true]);
-                viewModeOptions.push(['Sequence',   grammarIdForStudy ? `/view/${grammarIdForStudy}` : null,                  true]);
-                viewModeOptions.push(['Tree',       `/pages/tree-viewer.html?${idQs}`,                                        true]);
-                viewModeOptions.push(['Thumbnails', `/pages/grammar-viewer.html?${idQs}&layout=thumbnails`,                    true]);
-                viewModeOptions.push(['Print',      `/pages/print-viewer.html?${idQs}`,                                       true]);
-                if (playId) {
-                    viewModeOptions.push(['Listen', `https://flow.recursive.eco/play?id=${playId}`,                            true]);
-                    viewModeOptions.push(['Play',   `https://flow.recursive.eco/play?id=${playId}`,                            true]);
-                    viewModeOptions.push(['Build',  `https://flow.recursive.eco/create/dashboard/unified/${playId}`,           true]);
-                }
-            }
 
             const hasActions = currentUser || viewModeOptions.length > 0;
             if (hasActions) {
