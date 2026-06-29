@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Recursive Tarot — A Public-Domain Genealogy of the Cards</title>
-<meta name="description" content="A public-domain, scholarship-grounded genealogy of historical tarot — how a card game became a grammar for meaning, an open library of 25 historical decks, free viewers and courses, part of recursive.eco.">
+<meta name="description" content="A public-domain, scholarship-grounded genealogy of historical tarot — how a card game became a grammar for meaning, an open library of historical tarot decks, free viewers and courses, part of recursive.eco.">
 <meta property="og:title" content="The Recursive Tarot — how a game became a grammar for meaning">
-<meta property="og:description" content="25 historical tarot decks, an illustrated open history, JSON grammars, free viewers and courses — public domain, part of recursive.eco.">
+<meta property="og:description" content="An open library of historical tarot decks, an illustrated open history, JSON grammars, free viewers and courses — public domain, part of recursive.eco.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tarot.recursive.eco/">
 <link rel="icon" type="image/svg+xml" href="public/favicon.svg?v=2">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
   /* ── Editorial homepage ── */
   main.wrap{max-width:1120px}
@@ -70,33 +70,44 @@
   .arch{margin:54px auto 0;max-width:1000px}
   .arch h2{font-family:var(--serif-display);font-weight:600;font-size:28px;color:var(--ink);margin:0 0 .25em;text-align:center}
   .arch .sub{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8a6414;text-align:center;margin:0 0 22px}
-  .archrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .archcard{background:var(--surface);border:1px solid var(--line-soft);border-radius:10px;padding:20px 20px 22px;text-align:center}
-  .archcard.now{border-color:var(--gold);box-shadow:0 16px 34px -26px rgba(60,45,20,.45)}
-  .archcard .an{font-family:var(--serif-display);font-weight:600;font-size:21px;color:var(--ink);margin:0 0 9px}
-  .archcard .atag{display:inline-block;font-family:var(--sans);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-bottom:11px}
   .atag.ok{background:rgba(63,122,92,.12);color:#3f7a5c}
   .atag.bad{background:rgba(181,81,47,.1);color:#b5512f}
-  .archcard .ag{font-family:var(--serif-body);font-size:14.5px;line-height:1.55;color:var(--ink-soft);margin:0}
   .arch .archnote{font-family:var(--serif-body);font-size:15px;line-height:1.6;color:var(--ink-soft);text-align:center;max-width:62ch;margin:22px auto 0}
   .arch .archnote a{color:var(--gold)}
-  @media(max-width:680px){ .archrow{grid-template-columns:1fr} }
-  /* arch as a dated timeline (analogous to the lenses one) — clickable card thumbnails on an axis */
+  /* arch as a dated timeline — each "stop" pairs a year-dot with its card, so it reads as a
+     timeline horizontally on desktop and vertically on mobile (the dots stay on the line). */
   .archtl{margin-top:26px}
-  .axis{position:relative;display:grid;grid-template-columns:repeat(3,1fr)}
-  .axis::before{content:'';position:absolute;left:16.66%;right:16.66%;bottom:6px;height:2px;background:var(--line);z-index:0}
-  .axis .tk{position:relative;z-index:1;text-align:center;padding-bottom:18px}
-  .axis .ayr{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:9px}
-  .axis .adot{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;border:3px solid var(--bg)}
-  .axis .adot.ok{background:#3f7a5c}.axis .adot.bad{background:#b5512f}
-  .nodes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
+  .track{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+  .stop{display:grid;grid-template-rows:auto auto 1fr;text-align:center}
+  .stop .ayr{font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);white-space:nowrap;margin-bottom:9px}
+  .stop .rail{position:relative;height:14px;margin-bottom:14px}
+  .stop .adot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;border:3px solid var(--bg);z-index:1}
+  .adot.ok{background:#3f7a5c}.adot.bad{background:#b5512f}
+  /* horizontal connector running through the dots (desktop) */
+  .stop .rail::before{content:'';position:absolute;top:50%;left:-50%;right:-50%;height:2px;background:var(--line);transform:translateY(-50%);z-index:0}
+  .stop:first-child .rail::before{left:50%}
+  .stop:last-child .rail::before{right:50%}
   .node{display:block;background:var(--surface);border:1px solid var(--line-soft);border-radius:10px;padding:16px 18px 20px;text-align:center;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s,box-shadow .15s}
   .node:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 18px 38px -26px rgba(60,45,20,.5)}
   .node.now{border-color:var(--gold);box-shadow:0 14px 30px -24px rgba(60,45,20,.4)}
   .node .athumb{display:block;width:78px;height:120px;object-fit:contain;background:var(--thumb-bg);border:1px solid var(--line);border-radius:4px;margin:0 auto 12px}
   .node .an{font-family:var(--serif-display);font-weight:600;font-size:19px;color:var(--ink);margin:0 0 8px}
+  .node .atag{display:inline-block;font-family:var(--sans);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin:0 0 4px}
   .node .ag{font-family:var(--serif-body);font-size:13.5px;line-height:1.5;color:var(--ink-soft);margin:8px 0 0}
-  @media(max-width:680px){ .axis,.nodes{grid-template-columns:1fr} .axis::before{display:none} .axis .tk{padding-bottom:6px} .axis .adot{display:none} }
+  @media(max-width:680px){
+    .track{grid-template-columns:1fr;gap:0}
+    .stop{grid-template-columns:auto 1fr;grid-template-rows:auto 1fr;
+      grid-template-areas:"rail year" "rail node";column-gap:16px;text-align:left;padding-bottom:24px}
+    .stop:last-child{padding-bottom:0}
+    .stop .ayr{grid-area:year;margin:2px 0 10px}
+    .stop .rail{grid-area:rail;width:14px;height:auto;margin:0}
+    .stop .node{grid-area:node;text-align:left}
+    .stop .node .athumb{margin:0 0 12px}
+    /* vertical connector running down the rail to the next stop's dot */
+    .stop .adot{top:7px;left:7px;transform:translate(-50%,-50%)}
+    .stop .rail::before{top:7px;bottom:-31px;left:7px;right:auto;width:2px;height:auto;transform:translateX(-50%)}
+    .stop:last-child .rail::before{display:none}
+  }
 
   /* editorial prose sections */
   section.story{margin:40px auto 0;max-width:680px}
@@ -111,11 +122,6 @@
   ul.mis li{font-family:var(--serif-body);font-size:16px;line-height:1.6;color:var(--ink-soft);
     padding:12px 0;border-top:1px solid var(--line)}
   ul.mis li b{color:var(--ink);font-weight:600}
-
-  /* scroll affordance under the cover CTAs */
-  .scrolldown{display:inline-block;text-align:left;font-family:var(--sans);font-size:12.5px;
-    letter-spacing:.04em;color:var(--mut);text-decoration:none;margin:18px 0 0}
-  .scrolldown:hover{color:#9a7322}
 
   /* ── gallery: all views + all decks ── */
   .gallery{margin:56px auto 0;max-width:1120px}
@@ -182,11 +188,10 @@
     </figure>
     <div class="htext">
       <h1>The <span class="gold">Recursive Tarot</span></h1>
-      <p class="subtitle">How a card game became a <a href="https://recursive.eco" target="_blank" rel="noopener" title="grammar — recursive.eco's word for a symbolic system you make meaning with">grammar</a> for meaning — six centuries, twenty-five historical decks, every image public domain.</p>
+      <p class="subtitle">How a card game became a <a href="https://recursive.eco" target="_blank" rel="noopener" title="grammar — recursive.eco's word for a symbolic system you make meaning with">grammar</a> for meaning — six centuries of historical decks, every image public domain.</p>
       <p class="lede">A free, <strong>public-domain</strong> library of historical tarot — from the 1440s
       Milanese card <em>game</em>, through the printed Tarot de Marseille, to the 1781 occult reframing that
       invented divination. Each deck kept in <strong>its own tradition</strong>; every file open and forkable.</p>
-      <a class="scrolldown" href="#explore">↓  Every view &amp; all 25 decks</a>
     </div>
   </section>
 
@@ -195,23 +200,23 @@
     <a class="way" href="pages/historian.html">
       <div class="top" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-03-empress.jpg')"></div>
       <div class="bd">
-        <div class="lbl">Read · the historian</div>
+        <div class="lbl">Read · for those with a taste for history</div>
         <h3>The illustrated history</h3>
-        <p>How a card game became a grammar — the course, the timeline, the genealogy, every deck card by card.</p>
+        <p>Six centuries, from a 1440s card game to the occult reinvention of 1781 — an illustrated course, a timeline and a family tree, and every surviving deck read closely, image by image.</p>
       </div>
     </a>
     <a class="way" href="pages/play.html">
       <div class="top" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-18-moon.jpg')"></div>
       <div class="bd">
-        <div class="lbl">Play · the player</div>
+        <div class="lbl">Play · for game &amp; fiction lovers</div>
         <h3>Play the games</h3>
-        <p>The trick-taking games these cards were for three centuries — or draw a spread to read.</p>
+        <p>The trick-taking games these cards were for three centuries — or draw a spread and read it as fiction. Either way you're what Tolkien called a <em>sub-creator</em>: a maker of worlds you enter with your judgment intact, never a fate you obey.</p>
       </div>
     </a>
     <a class="way" href="pages/contribute.html">
       <div class="top" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-17-star.jpg')"></div>
       <div class="bd">
-        <div class="lbl">Contribute · the commons</div>
+        <div class="lbl">Contribute · for keepers of the commons</div>
         <h3>Add to the open library</h3>
         <p>Every deck is public-domain JSON anyone can correct, translate, or extend. Climb in by the gentlest route.</p>
       </div>
@@ -223,30 +228,37 @@
     <h2>How to hold the cards</h2>
     <p class="sub">One faculty, three stances — across six centuries · tap a card</p>
     <div class="archtl">
-      <div class="axis">
-        <div class="tk"><span class="ayr">c. 1440</span><span class="adot ok"></span></div>
-        <div class="tk"><span class="ayr">1781</span><span class="adot bad"></span></div>
-        <div class="tk"><span class="ayr">now · ongoing</span><span class="adot ok"></span></div>
-      </div>
-      <div class="nodes">
-        <a class="node" href="pages/course-viewer.html?course=games-of-the-tarot">
-          <img class="athumb" src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-01-magician.jpg" alt="">
-          <div class="an">Game</div>
-          <span class="atag ok">Adaptive · within limits</span>
-          <p class="ag">Play it for the play — sociable, skilled, free. Healthy, as long as it never curdles into greed.</p>
-        </a>
-        <a class="node" href="pages/course-viewer.html?course=how-tarot-works">
-          <img class="athumb" src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-10-fortune.jpg" alt="">
-          <div class="an">Crystal ball</div>
-          <span class="atag bad">Maladaptive</span>
-          <p class="ag">Read it as fate and you obey the slice it shows you. Tolkien named the object — the <em>palantír</em>, which never lies and still ruins whoever obeys it.</p>
-        </a>
-        <a class="node now" href="pages/course-viewer.html?course=intention-setting">
-          <img class="athumb" src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-06-love.jpg" alt="">
-          <div class="an">Gate, not fate</div>
-          <span class="atag ok">Adaptive</span>
-          <p class="ag">Cross it with your judgment intact. The card reflects what's already in you and lets you imagine the step you haven't taken.</p>
-        </a>
+      <div class="track">
+        <div class="stop">
+          <span class="ayr">c. 1440</span>
+          <div class="rail"><span class="adot ok"></span></div>
+          <a class="node" href="pages/course-viewer.html?course=games-of-the-tarot">
+            <img class="athumb" src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-01-magician.jpg" alt="">
+            <div class="an">Game</div>
+            <span class="atag ok">Adaptive · within limits</span>
+            <p class="ag">Play it for the play — sociable, skilled, free. Healthy, as long as it never curdles into greed.</p>
+          </a>
+        </div>
+        <div class="stop">
+          <span class="ayr">1781</span>
+          <div class="rail"><span class="adot bad"></span></div>
+          <a class="node" href="pages/course-viewer.html?course=how-tarot-works">
+            <img class="athumb" src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-10-fortune.jpg" alt="">
+            <div class="an">Crystal ball</div>
+            <span class="atag bad">Maladaptive</span>
+            <p class="ag">Read it as fate and you obey the slice it shows you. Tolkien named the object — the <em>palantír</em>, which never lies and still ruins whoever obeys it.</p>
+          </a>
+        </div>
+        <div class="stop now">
+          <span class="ayr">now · ongoing</span>
+          <div class="rail"><span class="adot ok"></span></div>
+          <a class="node now" href="pages/course-viewer.html?course=intention-setting">
+            <img class="athumb" src="https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-06-love.jpg" alt="">
+            <div class="an">Gate, not fate</div>
+            <span class="atag ok">Adaptive</span>
+            <p class="ag">Cross it with your judgment intact. The card reflects what's already in you and lets you imagine the step you haven't taken.</p>
+          </a>
+        </div>
       </div>
     </div>
     <p class="archnote">This site teaches the third — and keeps the first. Why a card held as a gate is practice for a world full of oracles is in <a href="pages/course-viewer.html?course=intention-setting">Intention Setting</a>.</p>
@@ -346,7 +358,7 @@
       </a>
     </div>
 
-    <h2 style="margin-top:50px">The 25 historical decks</h2>
+    <h2 style="margin-top:50px">The <span id="deck-count"></span>historical decks</h2>
     <p class="sub">Every image public domain · click any deck to read it card by card</p>
     <div id="deckgrid" class="deckgrid"><p class="sub" style="grid-column:1/-1">Loading decks…</p></div>
 
@@ -398,6 +410,7 @@
       const contemporary = all.filter(g=>isLiving(g) && !COMMUNITY[g.slug]);
       const historical   = all.filter(g=>!isLiving(g) && !COMMUNITY[g.slug]).sort((a,b)=>(a.year||9999)-(b.year||9999));
       document.getElementById('deckgrid').innerHTML = historical.map(card).join('');
+      document.getElementById('deck-count').textContent = historical.length + ' ';
       if(community.length){ document.getElementById('deckgrid-community').innerHTML = community.map(communityCard).join(''); document.getElementById('community-wrap').hidden = false; }
       if(contemporary.length){ document.getElementById('deckgrid-contemporary').innerHTML = contemporary.map(card).join(''); document.getElementById('contemporary-wrap').hidden = false; }
     }).catch(()=>{ document.getElementById('deckgrid').innerHTML='<p class="sub" style="grid-column:1/-1">Open the <a href="viewers/cards.html">Cards view</a> to browse all decks.</p>'; });

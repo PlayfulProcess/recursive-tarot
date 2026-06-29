@@ -18,6 +18,10 @@ body{background:var(--bg);color:var(--ink);
   font:18px/1.6 var(--serif-body);font-optical-sizing:auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:var(--gold);text-decoration:none}
 a:hover{text-decoration:underline}
+/* block "card" links are whole tiles, not prose — the hover underline above is for
+   inline links only; never let it streak across a card's heading + body text. */
+.way:hover,.node:hover,.vcard:hover,.dcard:hover,.lcard:hover,.mcard:hover,
+.play:hover,.readcourse:hover,.tile:hover,.deck a:hover{text-decoration:none}
 .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
 
 /* page title bar (the global nav is the <site-header> element above this) */
