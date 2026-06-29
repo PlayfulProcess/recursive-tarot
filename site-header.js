@@ -177,7 +177,8 @@
             max-width:min(300px,calc(100vw - 24px)); background:#ffffff; border:1px solid #d8d2c6;
             border-radius:8px; padding:7px; box-shadow:0 16px 44px -18px rgba(60,45,20,.45); display:none; z-index:60; }
           @media (max-width:760px){ .dd-menu{ position:fixed; left:12px; right:12px; top:54px; min-width:0; max-width:none; } }
-          .dd:hover .dd-menu, .dd:focus-within .dd-menu{ display:block; }
+          .dd:hover .dd-menu, .dd:focus-within .dd-menu, .dd.open .dd-menu{ display:block; }
+          .dd.open .dd-btn::after{ transform:rotate(225deg) translateY(2px); opacity:.85; }
           .dd-menu a{ display:block; color:#4a4439; text-decoration:none; font-size:13px;
             padding:8px 10px; border-radius:7px; white-space:nowrap; }
           .dd-menu a:hover{ background:#f1ece1; color:#221f1a; }
@@ -251,6 +252,22 @@
             const first = dd.querySelector('.dd-menu a'); if (first) { e.preventDefault(); set(true); first.focus(); }
           }
         });
+        // Touch / no-hover devices: tap the tab to toggle its menu (hover never fires).
+        // Desktop (hover-capable) keeps hover-to-open + click-to-follow-link untouched.
+        btn.addEventListener('click', e => {
+          if (window.matchMedia('(hover: hover)').matches) return;
+          e.preventDefault();
+          const willOpen = !dd.classList.contains('open');
+          root.querySelectorAll('.dd.open').forEach(o => { o.classList.remove('open'); const b = o.querySelector('.dd-btn'); if (b) b.setAttribute('aria-expanded', 'false'); });
+          if (willOpen) { dd.classList.add('open'); set(true); }
+        });
+      });
+
+      // Close any open menu when tapping outside the header (touch).
+      document.addEventListener('click', e => {
+        if (!e.composedPath().includes(this)) {
+          root.querySelectorAll('.dd.open').forEach(o => { o.classList.remove('open'); const b = o.querySelector('.dd-btn'); if (b) b.setAttribute('aria-expanded', 'false'); });
+        }
       });
 
       // Auto-hide on scroll down, reveal on scroll up — but never while the nav has keyboard focus.
