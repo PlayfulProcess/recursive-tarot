@@ -177,6 +177,9 @@
           .dd-menu{ position:absolute; top:calc(100% + 8px); right:0; min-width:220px;
             max-width:min(300px,calc(100vw - 24px)); background:#ffffff; border:1px solid #d8d2c6;
             border-radius:8px; padding:7px; box-shadow:0 16px 44px -18px rgba(60,45,20,.45); display:none; z-index:60; }
+          /* Invisible bridge across the 8px gap: keeps the menu open while the cursor
+             travels from the trigger down to a sub-item (no more disappearing dropdown). */
+          .dd-menu::before{ content:""; position:absolute; left:0; right:0; top:-10px; height:10px; }
           @media (max-width:760px){ .dd-menu{ position:fixed; left:12px; right:12px; top:54px; min-width:0; max-width:none; } }
           .dd:hover .dd-menu, .dd:focus-within .dd-menu, .dd.open .dd-menu{ display:block; }
           .dd.open .dd-btn::after{ transform:rotate(225deg) translateY(2px); opacity:.85; }
