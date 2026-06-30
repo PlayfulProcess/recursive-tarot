@@ -3360,7 +3360,7 @@
                             || (grammarData && Array.isArray(grammarData.birth_charts) && grammarData.birth_charts.length > 0);
                         url = looksLikeIching ? `${flowBaseUrl}/?bookId=${id}`
                             : looksLikeAstro ? `${flowBaseUrl}/?astroGrammarId=${id}`
-                            : `${flowBaseUrl}/?deckId=${id}`;
+                            : `${flowBaseUrl}/play?id=${id}`;
                     }
                     window.open(url, '_blank', 'noopener');
                 });
@@ -4642,12 +4642,11 @@
                 `;
             }
 
-            // Always-visible recursive.eco actions for the open card: Edit this card →
-            // the recursive.eco editor (this card pre-selected); View deck → the deck on Flow.
+            // One action for the open card: open its deck on recursive.eco's Play page,
+            // grammar loaded into the oracle, ready to cast (flow.recursive.eco/play?id=<uuid>).
             bodyHtml += `
                 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)">
-                    <a href="#" onclick="editCommunityGrammar(selectedItem &amp;&amp; selectedItem.id);return false;" class="eco-chip" title="Open this card in the recursive.eco editor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg> Edit in recursive.eco ↗</a>
-                    <a href="#" onclick="openDeckOnEco();return false;" class="eco-chip" title="Open this deck for a reading on recursive.eco (the Caster, deck loaded)"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z"/></svg> Play in recursive.eco ↗</a>
+                    <a href="#" onclick="openItemDeckOnEco();return false;" class="eco-chip" title="Open this deck on recursive.eco — loaded in the oracle, ready to cast"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z"/></svg> Open in recursive.eco ↗</a>
                 </div>`;
 
             modalBody.innerHTML = bodyHtml;
@@ -4871,6 +4870,21 @@
                     : looksLikeAstro ? `${flowBaseUrl}/?astroGrammarId=${id}`
                     : `${flowBaseUrl}/?deckId=${id}`;
             }
+            window.open(url, '_blank', 'noopener');
+        }
+
+        // One link: open THIS card's deck on recursive.eco's Play page — grammar loaded
+        // in the oracle sidebar, ready to cast (flow.recursive.eco/play?id=<uuid>).
+        async function openItemDeckOnEco() {
+            const flowBaseUrl = getFlowBaseUrl();
+            let id = null;
+            const slug = selectedItem && selectedItem._deckSlug;   // the open card's deck (multi-deck view)
+            if (slug) {
+                if (!ecoIds) { try { ecoIds = await (await fetch('../tarot/_eco_ids.json')).json(); } catch (_) { ecoIds = { ids: {} }; } }
+                id = (ecoIds.ids || {})[slug] || null;
+            }
+            if (!id) id = await resolveDeckFlowId();   // single-deck fallback (?src=/?id=)
+            const url = id ? `${flowBaseUrl}/play?id=${id}` : `${flowBaseUrl}/play`;
             window.open(url, '_blank', 'noopener');
         }
 
