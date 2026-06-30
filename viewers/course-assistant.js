@@ -1,26 +1,28 @@
-/* Course reading companion — a self-contained, static-only assistant.
+/* Course reading companion — uses the SAME recursive.eco assistant + credit system.
  *
- * Lives entirely in the tarot repo: it reads the course straight from the page
- * (no Supabase, no UUID, no webhook) and calls Claude directly from the browser
- * using a key the reader provides (stored only in their browser, never committed).
- * For the author's own read/edit use this is the whole "assistant flow" — no
- * recursive.eco involvement.
+ * No separate model, no BYO key. The course page is on tarot.recursive.eco, which
+ * carries the `.recursive.eco` login cookie, so we call the flow app's existing
+ * chat API cross-subdomain with `credentials:'include'` — exactly how the landing
+ * app links to flow. Auth + the credit wallet gate every call server-side
+ * (flow's `/api/ai/chat` already allow-lists tarot.recursive.eco via FRUIT_ORIGINS).
  *
- * Usage:  <script src="course-assistant.js?v=1"></script>  on any course page
- * that renders into #ctitle / #cintro / .content (grammar-course.html does).
+ * The course text is read straight from the rendered page and passed as `content`;
+ * a course-companion persona is passed as `aiPrompt`. Usage is billed to the signed-in
+ * user's recursive.eco credits, same as the Journal assistant.
+ *
+ * Usage:  <script src="course-assistant.js?v=2"></script>  on any course page that
+ * renders into #ctitle / #cintro / .content (grammar-course.html does).
  */
 (function () {
   if (window.__rtCourseAssistant) return;
   window.__rtCourseAssistant = true;
 
   // --- config ---------------------------------------------------------------
-  const API = 'https://api.anthropic.com/v1/messages';
-  const LS_KEY = 'rt-claude-key';                 // localStorage key (browser only)
-  const MODEL = 'claude-sonnet-4-6';              // cheap-but-good for Q&A.
-  //   swap to 'claude-opus-4-8' (best) or 'claude-haiku-4-5' (cheapest).
-  const MAX_TOKENS = 1024;
-  const CONTEXT_CAP = 500000;                     // chars of course text (~125k tokens) — fits 1M ctx;
-  //   the course prefix is prompt-cached, so follow-up questions in a session are ~0.1x the input cost.
+  const FLOW = 'https://flow.recursive.eco';
+  const ENDPOINT = FLOW + '/api/ai/chat';
+  const MODEL = 'gemini-2.5-flash';               // cheap-but-good; billed via recursive.eco credits
+  const MAX_TOKENS = 800;                          // concise
+  const CONTENT_CAP = 220000;                       // chars of course text passed as context
 
   const md = (t) => (window.marked ? window.marked.parse(t) : t.replace(/</g, '&lt;'));
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -31,17 +33,20 @@
     const intro = (document.getElementById('cintro') || {}).textContent || '';
     const body = ((document.querySelector('.content') || document.body) || {}).innerText || '';
     let t = `# ${title}\n\n${intro}\n\n${body}`.trim();
-    if (t.length > CONTEXT_CAP) t = t.slice(0, CONTEXT_CAP) + '\n\n[…course truncated for length…]';
+    if (t.length > CONTENT_CAP) t = t.slice(0, CONTENT_CAP) + '\n\n[…course truncated for length…]';
     return t;
   }
 
-  const SYSTEM_PREFIX =
-    'You are a warm, precise reading companion embedded inside a course, part of ' +
-    "recursive.eco's Recursive Tarot. Answer the reader's questions using ONLY the " +
-    'course text below. If the answer is not in the course, say so plainly and do not ' +
-    'invent history, dates, or sources. Be concise; when it helps, point to the relevant ' +
-    'section by its heading. This project reads the cards as a mirror, never as a ' +
-    'prediction — never tell the reader their fate or treat a card as something to obey.';
+  // The "content" we send is framed server-side as "Current journal content"; this
+  // persona reframes it as the course and sets the guardrails.
+  const PERSONA =
+    'You are a warm, precise reading companion for a course, part of recursive.eco’s ' +
+    'Recursive Tarot. The text provided to you (shown as the current content) is the COURSE ' +
+    'the reader is studying. Answer their questions using ONLY that course text. If the answer ' +
+    'is not in the course, say so plainly and do not invent history, dates, or sources. Be ' +
+    'concise; when it helps, point to the section by its heading. This project reads the cards ' +
+    'as a mirror, never as a prediction — never tell the reader their fate or treat a card ' +
+    'as something to obey.';
 
   const convo = []; // {role:'user'|'assistant', content:string}
 
@@ -62,7 +67,7 @@
         font-family:Inter,system-ui,sans-serif; color:#221f1a }
       .panel.open{ display:flex }
       .hd{ display:flex; align-items:center; gap:8px; padding:11px 13px; border-bottom:1px solid #e7e1d5; background:#fff }
-      .hd b{ font-size:13.5px } .hd .sp{ flex:1 }
+      .hd b{ font-size:13.5px } .hd .sp{ flex:1 } .hd .cr{ font-size:11px; color:#8a8273 }
       .hd button{ background:none; border:none; cursor:pointer; color:#6b6457; font-size:13px; padding:4px 6px; border-radius:6px }
       .hd button:hover{ background:#f1ece1; color:#221f1a }
       .log{ flex:1; overflow:auto; padding:13px; display:flex; flex-direction:column; gap:11px }
@@ -72,29 +77,29 @@
       .msg.a :first-child{ margin-top:0 } .msg.a :last-child{ margin-bottom:0 }
       .msg.a p{ margin:.4em 0 } .msg.a a{ color:#8a6414 }
       .msg.sys{ align-self:center; color:#6b6457; font-size:12px; text-align:center; max-width:100% }
+      .msg.sys a{ color:#8a6414 }
       .msg.err{ align-self:flex-start; color:#a3402d; font-size:12.5px }
       .ft{ border-top:1px solid #e7e1d5; padding:10px; background:#fff }
       .ft form{ display:flex; gap:7px }
-      .ft input,.ft textarea{ font-family:inherit; font-size:13.5px }
-      .ft textarea{ flex:1; resize:none; height:38px; padding:8px 10px; border:1px solid #d8d2c6; border-radius:8px; background:#fbf9f3 }
+      .ft textarea{ flex:1; resize:none; height:38px; padding:8px 10px; border:1px solid #d8d2c6; border-radius:8px;
+        background:#fbf9f3; font-family:inherit; font-size:13.5px }
       .ft .send{ background:#9a7322; color:#fff; border:none; border-radius:8px; padding:0 14px; font-weight:600; cursor:pointer }
       .ft .send:disabled{ background:#d8d2c6; cursor:default }
-      .keyrow{ display:flex; gap:7px; margin-bottom:8px }
-      .keyrow input{ flex:1; padding:8px 10px; border:1px solid #d8d2c6; border-radius:8px; background:#fbf9f3 }
-      .keynote{ font-size:11px; color:#6b6457; margin:0 0 8px; line-height:1.45 }
-      .keynote a{ color:#8a6414 }
     </style>
     <button class="fab" id="fab">✦ Ask about this course</button>
     <section class="panel" id="panel" aria-label="Course assistant">
-      <div class="hd"><b>Reading companion</b><span class="sp"></span>
+      <div class="hd"><b>Reading companion</b><span class="cr" id="cr"></span><span class="sp"></span>
         <button id="reset" title="Clear conversation">Clear</button>
         <button id="close" title="Close">✕</button></div>
       <div class="log" id="log"></div>
-      <div class="ft" id="ft"></div>
+      <div class="ft" id="ft">
+        <form id="form"><textarea id="q" placeholder="Ask anything about the course…" rows="1"></textarea>
+        <button class="send" id="send" type="submit">Send</button></form>
+      </div>
     </section>`;
 
   const $ = (id) => sr.getElementById(id);
-  const panel = $('panel'), log = $('log'), ft = $('ft');
+  const panel = $('panel'), log = $('log');
 
   function add(role, html) {
     const d = document.createElement('div');
@@ -105,92 +110,64 @@
     return d;
   }
 
-  function renderFooter() {
-    const hasKey = !!localStorage.getItem(LS_KEY);
-    if (!hasKey) {
-      ft.innerHTML =
-        `<p class="keynote">Paste an <b>Anthropic API key</b> to chat. It is stored only in this browser
-         (localStorage), sent directly to Anthropic, and never committed. Use a key with a low budget.
-         <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">Get a key →</a></p>
-         <div class="keyrow"><input id="key" type="password" placeholder="sk-ant-…" autocomplete="off">
-         <button class="send" id="savekey">Save</button></div>`;
-      $('savekey').onclick = () => {
-        const v = $('key').value.trim();
-        if (v) { localStorage.setItem(LS_KEY, v); renderFooter(); $('q') && $('q').focus(); }
-      };
-      $('key').addEventListener('keydown', e => { if (e.key === 'Enter') $('savekey').click(); });
-      return;
-    }
-    ft.innerHTML =
-      `<form id="form"><textarea id="q" placeholder="Ask anything about the course…" rows="1"></textarea>
-       <button class="send" id="send" type="submit">Send</button></form>`;
-    const form = $('form'), q = $('q');
-    form.onsubmit = (e) => { e.preventDefault(); send(q.value); };
-    q.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(q.value); } });
-    q.focus();
-  }
-
   async function send(text) {
     text = (text || '').trim();
     if (!text) return;
-    const key = localStorage.getItem(LS_KEY);
-    if (!key) return renderFooter();
-    $('q') && ($('q').value = '');
-    $('send') && ($('send').disabled = true);
+    $('q').value = '';
+    $('send').disabled = true;
     add('u', esc(text));
     convo.push({ role: 'user', content: text });
     const thinking = add('a', '<em style="color:#6b6457">thinking…</em>');
     try {
-      const res = await fetch(API, {
+      const res = await fetch(ENDPOINT, {
         method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-          'x-api-key': key,
-          'anthropic-version': '2023-06-01',
-          'anthropic-dangerous-direct-browser-access': 'true'
-        },
+        credentials: 'include',                  // sends the .recursive.eco login cookie
+        headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
+          message: text,
+          content: courseText(),                  // the course, as context
+          aiPrompt: PERSONA,                      // course-companion persona + guardrails
+          personalityName: 'Course companion',
           model: MODEL,
-          max_tokens: MAX_TOKENS,
-          // System as a cacheable block: the (large, stable) course text is prompt-cached,
-          // so each follow-up question in a ~5-min window pays ~0.1x for it.
-          system: [{
-            type: 'text',
-            text: SYSTEM_PREFIX + '\n\n=== COURSE TEXT ===\n' + courseText(),
-            cache_control: { type: 'ephemeral' }
-          }],
-          messages: convo
+          maxTokens: MAX_TOKENS,
+          history: convo.slice(0, -1)             // prior turns (current question is `message`)
         })
       });
-      const data = await res.json();
-      if (data.error) {
+      let data = {};
+      try { data = await res.json(); } catch (_) { /* non-JSON */ }
+      if (res.status === 401) {
+        thinking.className = 'msg sys';
+        thinking.innerHTML = 'Please <a href="' + FLOW + '" target="_blank" rel="noopener">sign in at recursive.eco</a> ' +
+          'to chat — the assistant uses your account’s AI credits.';
+        convo.pop();
+      } else if (!res.ok || data.error) {
         thinking.className = 'msg err';
-        thinking.textContent = data.error.message || 'Request failed.';
-        if (res.status === 401) { localStorage.removeItem(LS_KEY); renderFooter(); }
+        thinking.textContent = data.error || ('Request failed (' + res.status + ').');
         convo.pop();
       } else {
-        const out = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('').trim();
         thinking.className = 'msg a';
-        thinking.innerHTML = md(out || '(no answer)');
-        convo.push({ role: 'assistant', content: out });
+        thinking.innerHTML = md((data.response || '(no answer)').trim());
+        convo.push({ role: 'assistant', content: data.response || '' });
+        const left = data.usage && data.usage.credits_remaining;
+        if (typeof left === 'number') $('cr').textContent = '$' + left.toFixed(2) + ' left';
       }
     } catch (err) {
       thinking.className = 'msg err';
       thinking.textContent = 'Network error: ' + (err && err.message || err);
       convo.pop();
     } finally {
-      $('send') && ($('send').disabled = false);
+      $('send').disabled = false;
       log.scrollTop = log.scrollHeight;
     }
   }
 
+  $('form').onsubmit = (e) => { e.preventDefault(); send($('q').value); };
+  $('q').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send($('q').value); } });
   $('fab').onclick = () => {
     panel.classList.add('open');
     $('fab').style.display = 'none';
-    if (!log.children.length) {
-      add('sys', 'Ask about anything in this course — I read only from the page in front of you.');
-    }
-    renderFooter();
+    if (!log.children.length) add('sys', 'Ask about anything in this course — answered from the page in front of you, using your recursive.eco credits.');
+    $('q').focus();
   };
   $('close').onclick = () => { panel.classList.remove('open'); $('fab').style.display = ''; };
   $('reset').onclick = () => { convo.length = 0; log.innerHTML = ''; add('sys', 'Conversation cleared.'); };
