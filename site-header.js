@@ -76,17 +76,14 @@
   ];
   // Courses — grouped into three topics; each is a course-viewer ?course=… (deep-linkable with #section).
   const COURSE_GROUPS = [
-    ['History', [
+    ['Start here', [
       ['history-of-tarot',                'Recursiveness in Tarot History'],
+      ['the-light-of-tarot',              'The Light of Tarot'],
+      ['how-to-contribute',               'Ways to Contribute'],
     ]],
-    ['Reading the cards', [
-      ['reading-the-cards',               'The full course — all 12 chapters'],
-    ]],
-    ['Tarot today', [
-      ['tarot-today',                     'Tarot Today — a living question'],
-    ]],
-    ['How to Contribute', [
-      ['how-to-contribute',               'How to Contribute'],
+    ['More', [
+      ['reading-the-cards',               'Reading the Cards'],
+      ['tarot-today',                     'Tarot Today'],
     ]],
   ];
 
