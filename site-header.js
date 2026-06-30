@@ -70,6 +70,7 @@
   // Home — a dropdown that uncollapses to About (the pill itself links to the homepage).
   const HOME_MENU = [
     [PFX + 'index.html',        'Home'],
+    [PFX + 'pages/manifesto.html', 'Manifesto'],
     [PFX + 'pages/about.html',  'About'],
     [PFX + 'pages/wishlist.html', 'Wish List'],
   ];
