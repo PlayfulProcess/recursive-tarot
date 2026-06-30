@@ -60,7 +60,7 @@
   .cell{width:54px;height:32px;display:flex;align-items:center;justify-content:center;font-size:11px}
 
   /* Synopsis — no inner column scroll (page scrolls); sticky images */
-  .cols{display:flex;gap:14px;overflow-x:auto;padding-bottom:8px;align-items:flex-start}
+  .cols{display:flex;flex-wrap:wrap;gap:14px;padding-bottom:8px;align-items:flex-start}
   .col{flex:0 0 320px;background:var(--panel);border:1px solid var(--line);border-radius:12px;
     overflow-y:auto;max-height:calc(100vh - 132px)}
   .col h3{margin:0;padding:10px 12px;font-size:13px;background:var(--panel2);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:2}
@@ -120,7 +120,7 @@
 </style>
 </head>
 <body>
-<script src="../../site-header.js?v=37"></script>
+<script src="../../site-header.js?v=38"></script>
 <site-header active="lenses"></site-header>
 <header>
   <h1>Lens prototypes <span style="color:var(--muted);font-weight:400">· five ways to see the same data</span></h1>
@@ -396,9 +396,9 @@ function viewReader(){
 }
 
 // ── tabs + plumbing ───────────────────────────────────────────────────────────
-const VIEWS=[['matrix','Matrix',()=>viewMatrix()],['synopsis','Synopsis',s=>viewSynopsis(s)],
- ['ribbon','Provenance ribbon',s=>viewRibbon(s)],['multiples','Small multiples',s=>viewMultiples(s)],['reader','Reader',()=>viewReader()]];
-let cur='matrix';
+const VIEWS=[['ribbon','Provenance ribbon',s=>viewRibbon(s)],['synopsis','Synopsis',s=>viewSynopsis(s)],
+ ['multiples','Small multiples',s=>viewMultiples(s)],['matrix','Matrix',()=>viewMatrix()],['reader','Reader',()=>viewReader()]];
+let cur='ribbon';
 function render(arg){
   document.getElementById('main').innerHTML=VIEWS.find(v=>v[0]===cur)[2](arg);
   const on=(id,ev,fn)=>{const e=document.getElementById(id);if(e)e[ev]=fn;};
