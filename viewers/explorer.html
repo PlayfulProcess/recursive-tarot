@@ -80,8 +80,8 @@
   .pivot th.rowhead .cnt{color:var(--muted);font-weight:400;font-size:10.5px}
   :root { --card-h: 62px; }
   .cellwrap{display:flex;flex-wrap:wrap;gap:4px;align-items:flex-end;max-width:360px}
-  .cellwrap img{height:var(--card-h);border-radius:4px;background:#f4f1ea;cursor:pointer;transition:transform .12s,height .12s}
-  .cellwrap img:hover{transform:scale(1.6);z-index:9;position:relative}
+  .cellwrap img{height:var(--card-h);border-radius:4px;background:#f4f1ea;cursor:pointer;transition:outline .12s,height .12s}
+  .cellwrap img:hover{outline:2px solid #9a7322;outline-offset:1px;z-index:9;position:relative}
   /* emergence pills: hue = branch, gradient depth = level */
   .epill{display:inline-flex;align-items:center;gap:4px;border-radius:7px;padding:4px 8px;font-size:11px;
     color:#221f1a;cursor:pointer;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
@@ -130,6 +130,11 @@
   #lb{position:fixed;inset:0;background:rgba(8,6,14,.92);display:none;align-items:center;justify-content:center;z-index:99;flex-direction:column;gap:12px}
   #lb img{max-height:80vh;max-width:90vw;border-radius:8px}
   #lb .cap{color:var(--ink);font-size:14px}
+  /* hover preview — a quick large look at a card without clicking */
+  #hovprev{position:fixed;display:none;pointer-events:none;z-index:80}
+  #hovprev img{height:min(64vh,420px);width:auto;border-radius:8px;background:#f4f1ea;
+    border:1px solid #e3ddd0;box-shadow:0 18px 50px -12px rgba(20,12,4,.55);display:block}
+  @media (hover:none){ #hovprev{display:none!important} }
   @media (max-width:760px){ #builder{grid-template-columns:1fr} }
 </style>
 </head>
@@ -181,6 +186,7 @@
 <div id="pop"></div>
 <aside id="det"></aside>
 <div id="lb" onclick="this.style.display='none'"><img id="lbimg" src="" alt=""><div class="cap" id="lbcap"></div></div>
+<div id="hovprev"><img alt=""></div>
 
 <script src="dimension-engine.js?v=1"></script>
 <script>
@@ -387,6 +393,36 @@ document.addEventListener('click', e => {
   if (t) { openDetail(t.dataset.rid); }
 });
 window.__lb = (src,cap)=>{ $('#lbimg').src=src; $('#lbcap').textContent=cap; $('#lb').style.display='flex'; };
+
+/* hover preview — a large floating copy of the card under the cursor (desktop only) */
+(function(){
+  const hp = document.getElementById('hovprev'), hpImg = hp.querySelector('img');
+  const HEADPAD = 64;
+  function place(card){
+    const r = card.getBoundingClientRect();
+    hp.style.display = 'block';
+    const pw = hp.offsetWidth || 300, ph = hp.offsetHeight || 420, gap = 14;
+    let left = r.right + gap;
+    if (left + pw > window.innerWidth - 8) left = r.left - gap - pw;          // flip to the left
+    left = Math.max(8, Math.min(left, window.innerWidth - pw - 8));
+    let top = r.top + r.height/2 - ph/2;
+    top = Math.max(HEADPAD, Math.min(top, window.innerHeight - ph - 8));
+    hp.style.left = left + 'px'; hp.style.top = top + 'px';
+  }
+  document.addEventListener('mouseover', e => {
+    const card = e.target.closest('.cellwrap img[data-rid]');
+    if (!card || !card.getAttribute('src')) return;
+    if (hpImg.getAttribute('src') !== card.getAttribute('src')) hpImg.src = card.src;
+    if (hpImg.complete && hpImg.naturalWidth) place(card);
+    else hpImg.onload = () => place(card);
+  });
+  document.addEventListener('mouseout', e => {
+    const card = e.target.closest('.cellwrap img[data-rid]');
+    if (card && !(e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest('.cellwrap img[data-rid]')))
+      hp.style.display = 'none';
+  });
+  window.addEventListener('scroll', () => { hp.style.display = 'none'; }, true);
+})();
 
 /* ── 4. chips / zones / popover ────────────────────────── */
 function chipEl(f, zone){
