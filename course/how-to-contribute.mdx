@@ -23,16 +23,14 @@ For each there are two routes: the **easy route** — a button, no git knowledge
 
 A deck is a single file: `tarot/<deck-slug>/grammar.json`. To fix a date, rewrite a description, or add a source —
 
-- **Easy route — in the app.** Open any card on the [card browser](../viewers/cards.html) and use **✎ Edit this card on recursive.eco**. That opens the card in the recursive.eco editor; make your change and follow the editor's *save / contribute* flow — no git, no raw JSON.
+- **Easy route — in the app.** Open any card on the [card browser](../viewers/cards.html) and use the **↻ Open in recursive.eco** button. In the app, **Fork / Edit** the card, make your change, and follow the *save / contribute* flow — no git, no raw JSON.
 - **GitHub route.** Open the deck's `grammar.json` on GitHub, click the ✏️ pencil, edit the text, and choose **Propose changes** — GitHub opens the pull request for you.
-
-> 📷 **Screenshot:** the recursive.eco editor with a card open, the *Contribute / Save to GitHub* control highlighted.
 
 For the full range — from a one-click in-app fix all the way to building a whole new deck with AI and image generation — see the deep-dive: [Contribute to the Commons — Five Ways](course-viewer.html?course=build-a-tarot-deck-with-claude).
 
 ## Contribute a spread
 
-A spread is a named layout — where the cards land and what each position means. The [Caster](../viewers/caster.html) builds one for you:
+A spread is a named layout — where the cards land and what each position means. The [Caster](../viewers/caster.html) — or the [Spread Studio](../viewers/caster-studio.html), which also casts and sends the reading to recursive.eco for an AI interpretation — builds one for you:
 
 1. Open the **[Caster](../viewers/caster.html)**, choose **Custom**, and drag the positions where you want them (long-press to drag on mobile). Name each position and give it a meaning.
 2. Use **⤓ Download** to keep a copy, or **↗ Contribute a spread on GitHub** to offer it to the shared library. The button opens a pre-filled GitHub form — name the file, describe it, and choose **Propose new file**.
@@ -46,10 +44,8 @@ Spreads live in `viewers/spreads.json`; a maintainer folds your contribution int
 A course is one Markdown file in `course/` — with a little front-matter at the top — plus one line that registers it in the menu.
 
 1. Add `course/<your-course-id>.mdx`. Copy the top of any existing course for the front-matter (`id`, `title`, `description`, `author`, `date`), then write in plain Markdown. YouTube embeds and images work.
-2. Register it: add one line to the `COURSE_GROUPS` list in `site-header.js`, under the topic it belongs to — **History**, **Intention Setting**, or **How to Contribute**.
+2. Register it: add one line to the `COURSE_GROUPS` list in `site-header.js`, under the group it belongs to — **Start here** or **More**.
 3. Open a pull request.
-
-> 📷 **Screenshot:** a course `.mdx` file open in the GitHub editor, showing the front-matter block at the top.
 
 ## Every deck — and where to correct it
 
@@ -102,7 +98,7 @@ The gentlest path. No code, no git.
 1. **Sign in** at [recursive.eco](https://flow.recursive.eco) — a free account comes with **$1 of AI credits**.
 2. **Find your deck.** Simplest is the **table above** — click a deck's recursive.eco logo and it opens right there in the app. Or, inside recursive.eco, open **Library** and search it by name.
 
-> **Look for the spiral.** Anywhere you're reading a deck in this site — the [card browser](../viewers/cards.html), the [Caster](../viewers/caster.html) — every card carries a small **purple recursive.eco spiral** button: <span style="white-space:nowrap">↻ **Open in recursive.eco ↗**</span> (and **Edit in recursive.eco ↗**). The same spiral, the same wording, marks every "open or edit this in the app" link across the whole site — so you learn it once and recognise it everywhere.
+> **Look for the spiral.** Anywhere you're reading a deck in this site — the [card browser](../viewers/cards.html), the [Caster](../viewers/caster.html) — every card carries a small **purple recursive.eco spiral** button: <span style="white-space:nowrap">↻ **Open in recursive.eco ↗**</span>. The same spiral, the same wording, marks every "open this in the app" link across the whole site — so you learn it once and recognise it everywhere.
 3. **Fork / Edit** it, correct the text statement, and **propose the change** — it comes to the maintainer (me) to review and merge back into the public deck. Your name rides along in the version history.
 4. **Stuck on the UI?** It can feel dense. Open the **Grammar Assistant** (the chat button) and just say what you want — *"fix the date on the Death card to 1450"* — and let it make the edit for you. That's what the free credits are for.
 

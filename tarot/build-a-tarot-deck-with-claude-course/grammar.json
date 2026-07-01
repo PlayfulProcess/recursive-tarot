@@ -1,0 +1,37 @@
+{
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "note": "Course converted from markdown to a grammar."
+      }
+    ]
+  },
+  "name": "Contribute to the Commons",
+  "description": "",
+  "grammar_type": "custom",
+  "creator_name": "PlayfulProcess",
+  "default_view": "course",
+  "provenance": "reference",
+  "metadata": {
+    "common_name": "Contribute to the Commons",
+    "category": "reference",
+    "source_mdx": "course/build-a-tarot-deck-with-claude.mdx"
+  },
+  "_generated": true,
+  "_built_by": "scripts/course_to_grammar.py",
+  "_source_mdx": "course/build-a-tarot-deck-with-claude.mdx",
+  "items": [
+    {
+      "id": "lesson-01-introduction",
+      "name": "Introduction",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "The contributor's guide is now one course: **[How to Contribute](course-viewer.html?course=how-to-contribute)** — every way to add to the open library, from a one-click in-app edit to the full recursive.eco MCP, in one place."
+      }
+    }
+  ]
+}
