@@ -142,6 +142,7 @@
   .paths .pname{font-family:var(--serif-display);font-weight:600;font-size:17px;color:var(--ink)}
   .paths .pmeta{font-family:var(--sans);font-size:11px;color:var(--mut);margin-top:4px}
   .paths .pdo{font-family:var(--serif-body);font-size:14px;line-height:1.55;color:var(--ink-soft);max-width:54ch;white-space:normal}
+  .paths .pdo-img{width:100%;max-width:300px;border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 20px -14px rgba(60,45,20,.5);display:block;margin:0 0 11px}
   .paths .pdo strong{color:var(--ink)}
   .paths .pcta{display:inline-flex;align-items:center;white-space:nowrap;font-family:var(--sans);font-weight:600;font-size:13px;text-decoration:none;padding:8px 14px;border-radius:8px;border:1px solid var(--line-soft);color:var(--ink-soft);transition:border-color .15s,color .15s,background .15s}
   .paths .pcta:hover{border-color:#9a7322;color:#9a7322;background:rgba(154,115,34,.06)}
@@ -164,10 +165,10 @@
   </section>
 
   <a class="readcourse" href="course-viewer.html?course=how-to-contribute">
-    <div class="rc-img" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-wikimedia/Sola%20Busca%20tarot%20card%2027.jpg')"></div>
+    <div class="rc-img" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot/Pents08.jpg')"></div>
     <div class="rc-b">
       <div class="rc-k">Read · the contributor's guide</div>
-      <h2>Correct it — or create</h2>
+      <h2>Contribute to existing decks — or create your own</h2>
       <p>Fix a card, add a deck or a spread, write a course, or improve the site itself — by whatever route suits you, from a one-click edit in the app to full code. The deep guide walks every path.</p>
     </div>
   </a>
@@ -176,18 +177,13 @@
     <h2>Four ways to contribute — pick one</h2>
     <p class="sub">Creation-first · the gentlest route at the top</p>
 
-    <figure class="pathfig">
-      <img src="courses/images/shot-app-edit.png" alt="A card open in the browser with an 'Open in recursive.eco' action — propose a change without leaving the page.">
-      <figcaption>Path 1 — open any card and propose a change, right in the app.</figcaption>
-    </figure>
-
     <table class="paths">
       <thead><tr><th>Path</th><th>What you do</th><th>Start</th></tr></thead>
       <tbody>
         <tr>
           <td class="pcell"><span class="pnum">1</span><span class="pname">In the app</span><div class="pmeta">recursive.eco · no code</div></td>
-          <td><div class="pdo">Click through any card and propose a change — <strong>even without AI</strong>. The copy icon forks it to the Create page to edit inline; or just ask the <strong>Grammar Assistant</strong> to make the edit for you.</div></td>
-          <td><a class="pcta solid" href="../viewers/cards.html?src=..%2Ftarot%2Fontoject-illustrated%2Fgrammar.json" target="_blank" rel="noopener">Edit a card now &rarr;</a></td>
+          <td><img class="pdo-img" src="courses/images/shot-app-edit.png" alt="A card open in the browser with an 'Open in recursive.eco' action — propose a change without leaving the page."><div class="pdo">Click through any card and propose a change — <strong>even without AI</strong>. The copy icon forks it to the Create page to edit inline; or just ask the <strong>Grammar Assistant</strong> to make the edit for you.</div></td>
+          <td><a class="pcta solid" href="https://flow.recursive.eco/play?id=e8c4ca59-7841-4b5d-ad56-584ff52c859d" target="_blank" rel="noopener">Edit a card now &rarr;</a></td>
         </tr>
         <tr>
           <td class="pcell"><span class="pnum">2</span><span class="pname">On GitHub</span><div class="pmeta">web &middot; a browser</div></td>
