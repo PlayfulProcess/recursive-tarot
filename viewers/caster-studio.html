@@ -121,6 +121,22 @@
   .cdm-sec-text { font-size:13.5px; color:#4a4439; line-height:1.6; }
   .cdm-loading { text-align:center; color:#8a8273; font-size:13px; padding:30px 0; }
   footer.site { padding:18px; border-top:1px solid var(--line); color:#6b6457; font-size:12px; text-align:center; }
+
+  /* Spread Studio — aligned control rows, wide question, always-visible action bar */
+  .controls { flex-direction:column; align-items:stretch; gap:14px; }
+  .crow { display:flex; gap:14px; flex-wrap:wrap; align-items:flex-end; }
+  .crow .field label, .qfield label { font-size:12px; color:var(--muted); }
+  .spread-inline { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .qfield { display:flex; flex-direction:column; gap:5px; }
+  .qfield textarea { width:100%; min-height:3.1em; background:#faf8f3; color:var(--ink);
+    border:1px solid var(--line); border-radius:8px; padding:9px 11px; font-size:14px;
+    font-family:inherit; line-height:1.45; resize:vertical; }
+  .actionbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:14px; }
+  .actionbar .hint { color:var(--muted); font-size:12px; }
+  /* cast card — hug the image's own frame like the cards viewer (no letterbox gap) */
+  .slot .card.filled { aspect-ratio:auto; border:none; background:none; overflow:visible; }
+  .slot .card.filled img { display:block; width:100%; height:auto; border:1px solid var(--line);
+    border-radius:6px; background:#faf8f3; box-shadow:0 6px 16px -9px rgba(60,45,20,.5); }
 </style>
 </head>
 <body>
@@ -142,29 +158,34 @@
   </div>
 
   <div class="controls">
-    <div class="field">
-      <label for="deck">Deck</label>
-      <select id="deck"><option>Loading decks…</option></select>
-      <div class="deckmeta" id="deckmeta"></div>
+    <div class="crow">
+      <div class="field">
+        <label for="deck">Deck</label>
+        <select id="deck"><option>Loading decks…</option></select>
+        <div class="deckmeta" id="deckmeta"></div>
+      </div>
+      <div class="field">
+        <label for="spread">Spread</label>
+        <div class="spread-inline">
+          <select id="spread"><option>Loading…</option></select>
+          <label class="ghost" id="importLabel" title="Load a previously exported spread / cast .json" style="display:inline-flex;align-items:center;background:#efeadf;color:#4a4439;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;">Import Spread<input type="file" id="importFile" accept=".json,application/json" style="display:none"></label>
+        </div>
+        <div class="spreadmeta" id="spreadmeta"></div>
+      </div>
+      <label class="checkbox"><input type="checkbox" id="reversals" /> reversals</label>
     </div>
-    <div class="field">
-      <label for="spread">Spread</label>
-      <select id="spread"><option>Loading…</option></select>
-      <div class="spreadmeta" id="spreadmeta"></div>
-    </div>
-    <div class="field">
+    <div class="qfield">
       <label for="question">Your question (optional)</label>
-      <input type="text" id="question" placeholder="What is this situation made of?" />
+      <textarea id="question" rows="2" placeholder="What is this situation made of?"></textarea>
     </div>
-    <label class="checkbox"><input type="checkbox" id="reversals" /> reversals</label>
-    <button id="cast" disabled>Cast</button>
-    <button id="reshuffle" class="ghost" style="display:none">Re-cast</button>
-    <label class="ghost" id="importLabel" title="Load a previously exported cast .json" style="display:inline-flex;align-items:center;background:#efeadf;color:#4a4439;border-radius:8px;padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer;">Import Spread<input type="file" id="importFile" accept=".json,application/json" style="display:none"></label>
   </div>
 
-  <div class="custombar" id="custombar">
-    <button id="addPos">+ Add position</button>
-    <span class="spreadmeta">Drag positions on the board; edit labels &amp; meanings below. Or <a href="../pages/spread-builder.html" target="_blank" rel="noopener">open the full Spread Builder ↗</a>.</span>
+  <div class="actionbar">
+    <button id="cast" disabled>Cast</button>
+    <button id="addPos" class="ghost">+ Add position</button>
+    <button id="clearAll" class="ghost">Clear all</button>
+    <button id="reshuffle" class="ghost" style="display:none">Re-cast</button>
+    <span class="spreadmeta hint">Drag positions on the board; edit labels &amp; meanings below. Or <a href="../pages/spread-builder.html" target="_blank" rel="noopener">open the full Spread Builder ↗</a>.</span>
   </div>
 
   <div id="board" class="board"></div>
@@ -214,7 +235,7 @@ const FLOW = 'https://flow.recursive.eco';
 let leaves = [], byDeck = {}, deckLabels = {};
 let spreadsById = {};        // id -> spread def
 let positions = [];          // active positions [{label,meaning,x,y, card?}]
-let curSpreadId = 'custom';   // Studio opens in build-your-own mode
+let curSpreadId = 'spp';   // Studio opens on the Structures · Process · Possibilities spread
 let ecoIds = null;           // slug -> recursive.eco deck UUID
 let lastCast = null;
 let seq = 0;
@@ -271,15 +292,22 @@ const $ = id => document.getElementById(id);
   ssel.value = curSpreadId;
 
   $('cast').disabled = false;
-  if (loadedFromParam) { $('custombar').classList.add('on'); $('clist').classList.add('on'); renderBoard(); renderCustomList(); }
+  if (loadedFromParam) { curSpreadId='custom'; $('spread').value='custom'; $('clist').classList.add('on'); renderBoard(); renderCustomList(); }
   else setSpread(curSpreadId);
   updateDeckMeta();
   dsel.addEventListener('change', updateDeckMeta);
   ssel.addEventListener('change', e => setSpread(e.target.value));
   $('cast').addEventListener('click', cast);
   $('reshuffle').addEventListener('click', cast);
-  $('addPos').addEventListener('click', () => { const n = positions.length;
+  $('addPos').addEventListener('click', () => {
+    if (curSpreadId !== 'custom') { curSpreadId = 'custom'; $('spread').value = 'custom'; $('clist').classList.add('on'); }
+    const n = positions.length;
     addPosition('Position ' + (n+1), '', 0.5 + ((n%3)-1)*0.18, 0.4 + Math.floor(n/3)*0.22); });
+  $('clearAll').addEventListener('click', () => {
+    positions = []; curSpreadId = 'custom'; $('spread').value = 'custom';
+    $('clist').classList.add('on'); $('spreadmeta').textContent = '';
+    $('reshuffle').style.display = 'none'; $('export').classList.remove('on');
+    renderBoard(); renderCustomList(); syncJson(); });
   $('copyJson').addEventListener('click', copyJson);
   $('downloadJson').addEventListener('click', downloadJson);
   $('importFile').addEventListener('change', onImport);
@@ -296,7 +324,6 @@ function updateDeckMeta(){ const v = $('deck').value;
 function setSpread(id){
   curSpreadId = id;
   const custom = id === 'custom';
-  $('custombar').classList.toggle('on', custom);
   $('clist').classList.toggle('on', custom);
   if (custom) {
     if (!positions.length) { addPosition('Position 1','',0.5,0.5); return; }
@@ -417,7 +444,7 @@ async function onImport(e){ const f=e.target.files&&e.target.files[0]; if(!f) re
   try { const obj=JSON.parse(await f.text()); if(!obj||!Array.isArray(obj.cards)) throw new Error('not a cast file');
     if (Array.isArray(obj.positions) && obj.positions.length===obj.cards.length) {
       positions = obj.positions.map((p,i)=>({ id:'p'+(++seq), label:p.label, meaning:p.meaning, x:p.x??0.5, y:p.y??0.5, card:obj.cards[i] }));
-      $('spread').value='custom'; curSpreadId='custom'; $('custombar').classList.remove('on'); $('clist').classList.remove('on');
+      $('spread').value='custom'; curSpreadId='custom'; $('clist').classList.add('on');
       renderBoard(); $('reshuffle').style.display='inline-block'; syncJson(); $('export').classList.add('on');
     }
   } catch(err){ alert('Could not import this file: '+err.message); }
