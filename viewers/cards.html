@@ -1322,12 +1322,14 @@
             top: 1rem;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0,0,0,.45);
-            border: 1px solid rgba(255,255,255,.15);
+            background: rgba(45,34,15,.85);
+            border: 1px solid rgba(255,255,255,.12);
             border-radius: 20px;
-            padding: 2px 12px;
+            padding: 3px 13px;
             font-size: 11px;
-            color: #6b6457;
+            font-weight: 600;
+            letter-spacing: .02em;
+            color: #f4efe3;
             white-space: nowrap;
             pointer-events: none;
             z-index: 11;
@@ -4441,7 +4443,7 @@
             // worked here. Left empty so the modal's action row simply omits it.
             const viewModeOptions = [];
 
-            const hasActions = currentUser || viewModeOptions.length > 0;
+            const hasActions = true;   // always show the action row — "Open in recursive.eco" lives here
             if (hasActions) {
                 // Build a unique id for the details element so multiple
                 // modals don't share state.
@@ -4477,13 +4479,21 @@
                     bodyHtml += `
                         <button onclick="closeModal(); openForkModal('${escapeHtml(item.id)}')"
                            class="modal-action-btn"
-                           title="Copy this grammar to your drafts so you can edit or fork it"
-                           aria-label="Copy this grammar to your drafts so you can edit or fork it"
-                           style="display: inline-flex; align-items: center; justify-content: center; padding: 0.35rem 0.5rem; background: rgba(75, 85, 99, 0.3); border: 1px solid rgba(75, 85, 99, 0.5); border-radius: 4px; color: #4a4439; cursor: pointer; transition: all 0.2s;"
-                           onmouseover="this.style.background='rgba(75, 85, 99, 0.5)'" onmouseout="this.style.background='rgba(75, 85, 99, 0.3)'">
+                           title="Copy this card to your drafts on recursive.eco, then edit or fork it"
+                           aria-label="Copy this card to your drafts on recursive.eco, then edit or fork it"
+                           style="display: inline-flex; align-items: center; justify-content: center; padding: 0.35rem 0.55rem; background: rgba(147,51,234,0.10); border: 1px solid rgba(147,51,234,0.42); border-radius: 6px; color: #7c3aed; cursor: pointer; transition: all 0.2s;"
+                           onmouseover="this.style.background='rgba(147,51,234,0.20)'" onmouseout="this.style.background='rgba(147,51,234,0.10)'">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                         </button>`;
                 }
+                // "Open in recursive.eco" sits right beside the copy icon — both purple.
+                bodyHtml += `
+                    <a href="#" onclick="openItemDeckOnEco();return false;"
+                       title="Open this deck on recursive.eco — loaded in the oracle, ready to cast"
+                       style="display:inline-flex; align-items:center; gap:5px; padding:0.35rem 0.7rem; background:rgba(147,51,234,0.10); border:1px solid rgba(147,51,234,0.42); border-radius:6px; color:#7c3aed; font-size:0.8rem; font-weight:600; text-decoration:none; cursor:pointer; transition:all 0.2s;"
+                       onmouseover="this.style.background='rgba(147,51,234,0.20)'" onmouseout="this.style.background='rgba(147,51,234,0.10)'">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z"/></svg> Open in recursive.eco ↗
+                    </a>`;
                 bodyHtml += `</div>`;
             }
 
@@ -4642,12 +4652,8 @@
                 `;
             }
 
-            // One action for the open card: open its deck on recursive.eco's Play page,
-            // grammar loaded into the oracle, ready to cast (flow.recursive.eco/play?id=<uuid>).
-            bodyHtml += `
-                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)">
-                    <a href="#" onclick="openItemDeckOnEco();return false;" class="eco-chip" title="Open this deck on recursive.eco — loaded in the oracle, ready to cast"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z"/></svg> Open in recursive.eco ↗</a>
-                </div>`;
+            // ("Open in recursive.eco" now sits beside the Copy icon in the action row
+            //  near the top of the modal — both purple — so no separate foot chip here.)
 
             modalBody.innerHTML = bodyHtml;
             modalBackdrop.classList.add('open');
