@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="../theme.css?v=5">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Recursive Tarot — Caster</title>
+<title>Recursive Tarot — Spread Studio</title>
 <!--
   Self-contained tarot caster for GitHub Pages. No backend.
   - Pick a DECK (one historical deck, or All Decks = the cross-deck meta) and a SPREAD
@@ -129,8 +129,8 @@
 <site-header active="play"></site-header>
 
 <div class="wrap">
-  <h1>Tarot Caster <span style="font-size:13px;font-weight:400;color:var(--muted);">— free, open-source</span></h1>
-  <p class="sub">Set an intention, pick a deck and a spread, and cast. This page draws; <a href="https://flow.recursive.eco/" target="_blank" rel="noopener">recursive.eco</a> interprets with AI, renders Oracle cards, and keeps a Journal.</p>
+  <h1>Spread Studio <span style="font-size:13px;font-weight:400;color:var(--muted);">— build · cast · send</span></h1>
+  <p class="sub">Build a spread from scratch (or start from a preset), cast the cards into it, and send the whole reading to <a href="https://flow.recursive.eco/" target="_blank" rel="noopener">recursive.eco</a> for an AI interpretation. This page draws; recursive.eco interprets and keeps a Journal.</p>
 
   <div class="intention" id="intention" style="display:none">
     <h2 id="intentionTitle">Before you cast</h2>
@@ -171,9 +171,9 @@
   <div class="clist" id="clist"></div>
 
   <div class="export" id="export">
-    <h2>Take this reading further — or save it</h2>
-    <p>On recursive.eco your cast becomes Oracle cards, each with provenance, AI interpretation, and a Journal entry.</p>
-    <a id="journalLink" class="journal-cta" href="https://flow.recursive.eco/" target="_blank" rel="noopener">Open in recursive.eco Journal ↗</a>
+    <h2>Send it to the oracle for an AI reading</h2>
+    <p>Your built spread and the cards you cast go to recursive.eco, where each becomes an Oracle card with provenance, an AI interpretation, and a Journal entry.</p>
+    <a id="journalLink" class="journal-cta" href="https://flow.recursive.eco/" target="_blank" rel="noopener">Send to recursive.eco oracle ↗</a>
     <div class="btnrow">
       <button id="downloadJson">⤓ Download (save locally)</button>
       <a id="contributeLink" class="btn" href="https://github.com/PlayfulProcess/recursive-tarot/new/dev?filename=spreads/my-spread.json" target="_blank" rel="noopener" title="Add your spread to the shared library via a GitHub pull request">↗ Contribute a spread on GitHub</a>
@@ -214,7 +214,7 @@ const FLOW = 'https://flow.recursive.eco';
 let leaves = [], byDeck = {}, deckLabels = {};
 let spreadsById = {};        // id -> spread def
 let positions = [];          // active positions [{label,meaning,x,y, card?}]
-let curSpreadId = 'spp';
+let curSpreadId = 'custom';   // Studio opens in build-your-own mode
 let ecoIds = null;           // slug -> recursive.eco deck UUID
 let lastCast = null;
 let seq = 0;
