@@ -1,11 +1,12 @@
 // spiral-forming.js — the "still forming" logo (About page).
 //
-// A single spiral in the recursive.eco hero purple, golden growth (ln(φ)/(π·½)),
-// drawn from ONE origin as a crowd of small marks. Where a loop would close back
-// into a circle, it instead BREAKS at a random angle and keeps going in a new
-// direction — so it never quite closes; it wanders outward from the centre, then
-// withdraws to that same origin and sets out again, differently. Honours
-// prefers-reduced-motion (one static form).
+// It BEGINS as the exact recursive.eco hero spiral: a golden logarithmic spiral
+// (growth ln(φ)/(π·½)) drawn from the centre at angle 0, in the hero purple — the
+// same start, deterministically, every time. Where the hero would cap its radius
+// and close into a circle, this one instead BREAKS at a random angle and keeps
+// going in a new direction — wandering outward, then withdrawing to the same
+// origin to set out again (a new wander each time, but always the same beginning).
+// Honours prefers-reduced-motion (one static form).
 (function () {
   const canvas = document.getElementById('logoCanvas');
   if (!canvas) return;
@@ -23,34 +24,43 @@
   resize();
 
   const PHI = (1 + Math.sqrt(5)) / 2;
-  const GROWTH = Math.log(PHI) / (Math.PI / 2);
+  const GROWTH = Math.log(PHI) / (Math.PI / 2);   // exactly the hero spiral's growth rate
+  const HUE = '#9333ea';                           // the hero purple
   const rand = (a, b) => a + Math.random() * (b - a);
-  const PURPLE = ['#9333ea', '#a855f7', '#8b5cf6', '#7c3aed', '#b083f0'];   // the hero purple family
-  const GOLD = ['#b8902f', '#9a7322'];
-  const hue = () => (Math.random() < 0.15 ? GOLD : PURPLE)[(Math.random() * (Math.random() < 0.15 ? 2 : 5)) | 0];
 
-  let path = [];   // ordered segments {x1,y1,x2,y2,hue,a}
+  let path = [];   // ordered segments {x1,y1,x2,y2}
   function build() {
     path = [];
-    const cx = W / 2, cy = H / 2, dth = 0.085;
-    let x = cx, y = cy, th = rand(0, Math.PI * 2), r = rand(1.5, 3), dir = Math.random() < 0.5 ? 1 : -1;
-    let g = GROWTH * rand(0.6, 1.0);
-    let c0x = x - r * Math.cos(th), c0y = y - r * Math.sin(th);   // this arc's spiral centre
-    let sinceBreak = 0, col = hue();
-    for (let i = 0; i < 2200; i++) {
+    const cx = W / 2, cy = H / 2, dth = 0.04;
+    const breakR = Math.min(W, H) * 0.30;          // where the hero would cap & circle → we break instead
+    // ── deterministic hero beginning: centre, angle 0, +turn, golden growth ──
+    let th = 0, r = 1, dir = 1, g = GROWTH, c0x = cx, c0y = cy;
+    let px = cx + r, py = cy;                        // first point at angle 0 (matches the hero)
+    let broken = false, sinceBreak = 0;
+    for (let i = 0; i < 3200; i++) {
       th += dth * dir; r *= Math.exp(g * dth); sinceBreak++;
       const nx = c0x + r * Math.cos(th), ny = c0y + r * Math.sin(th);
-      if (nx < -30 || nx > W + 30 || ny < -30 || ny > H + 30) break;   // wandered off — stop
-      path.push({ x1: x, y1: y, x2: nx, y2: ny, hue: col, a: rand(0.5, 0.9) });
-      x = nx; y = ny;
-      // where about a full loop has gone by (it would close into a circle), BREAK to a
-      // random new heading and re-anchor — so it opens off in a new direction, not a circle.
-      if (r > 7 && sinceBreak > (Math.PI * 2 / dth) * rand(0.6, 1.1)) {
-        th += rand(-1, 1) * rand(0.5, 1.6);
+      if (nx < -30 || nx > W + 30 || ny < -30 || ny > H + 30) break;   // wandered off
+      path.push({ x1: px, y1: py, x2: nx, y2: ny });
+      px = nx; py = ny;
+      if (!broken) {
+        // FIRST break — exactly where the hero would stop spiralling and close a circle
+        if (r > breakR) {
+          broken = true;
+          th += rand(-1, 1) * rand(0.6, 1.4);
+          if (Math.random() < 0.4) dir = -dir;
+          g = GROWTH * rand(0.5, 0.95);
+          r *= rand(0.45, 0.7);                       // re-anchor: keep the point, veer off, don't close the ring
+          c0x = px - r * Math.cos(th); c0y = py - r * Math.sin(th);
+          sinceBreak = 0;
+        }
+      } else if (r > 7 && sinceBreak > (Math.PI * 2 / dth) * rand(0.55, 1.0)) {
+        // subsequent wandering breaks
+        th += rand(-1, 1) * rand(0.5, 1.5);
         if (Math.random() < 0.35) dir = -dir;
         g = GROWTH * rand(0.5, 0.95);
-        c0x = x - r * Math.cos(th); c0y = y - r * Math.sin(th);
-        if (Math.random() < 0.4) col = hue();
+        r *= rand(0.5, 0.8);
+        c0x = px - r * Math.cos(th); c0y = py - r * Math.sin(th);
         sinceBreak = 0;
       }
     }
@@ -58,21 +68,19 @@
 
   function draw(progress) {
     ctx.clearRect(0, 0, W, H);
-    ctx.lineCap = 'round';
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    ctx.strokeStyle = HUE; ctx.lineWidth = 1.6; ctx.globalAlpha = 0.88;
     const n = Math.floor(progress * path.length);
-    for (let i = 0; i < n; i++) {
-      const s = path[i];
-      ctx.strokeStyle = s.hue; ctx.globalAlpha = s.a;
-      ctx.lineWidth = 1.0 + (i / Math.max(1, path.length)) * 1.6;   // thin at the origin, fuller as it wanders out
-      ctx.beginPath(); ctx.moveTo(s.x1, s.y1); ctx.lineTo(s.x2, s.y2); ctx.stroke();
-    }
+    ctx.beginPath();
+    for (let i = 0; i < n; i++) { const s = path[i]; ctx.moveTo(s.x1, s.y1); ctx.lineTo(s.x2, s.y2); }
+    ctx.stroke();
     ctx.globalAlpha = 1;
   }
 
   window.addEventListener('resize', () => { resize(); build(); });
 
   const ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-  const T_GROW = 4600, T_HOLD = 1200, T_RET = 3200, T_REST = 550;
+  const T_GROW = 4600, T_HOLD = 1300, T_RET = 3200, T_REST = 550;
   let phase = 0, phaseStart = 0, built = false, raf = 0;
 
   function tick(now) {
