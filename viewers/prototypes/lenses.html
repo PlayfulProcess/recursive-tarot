@@ -83,6 +83,8 @@
   table.synT td .attr{font-size:10px;font-style:italic;color:var(--muted);display:block;margin-bottom:3px}
   table.synT td.empty{color:#d8d2c6;text-align:center}
 
+  .card-open{cursor:pointer;transition:outline .12s}
+  .card-open:hover{outline:2px solid var(--gold);outline-offset:1px}
   /* Ribbon */
   .ribbon{position:relative;height:230px;margin:30px 0 10px}
   .axis{position:absolute;left:0;right:0;top:130px;height:2px;background:linear-gradient(90deg,#d8d2c6,#9a7322)}
@@ -317,7 +319,7 @@ function viewSynopsis(sel){
       const bv=e.attr?e.v.trim().replace(/^\[[^\]]*\]\s*/,''):e.v;
       body+=`<div class="sec ${e.attributed?'later':''}"><div class="st">${esc(e.k)}</div>${e.attr?`<span class="attr">${esc(e.attr)}</span>`:''}<div class="sb"><p>${md(bv)}</p></div></div>`;
     }
-    h+=`<div class="col"><h3>${esc(it.label)} · ${it.year<9999?it.year:''}</h3>${it.image?`<div class="colimg" style="background-image:url('${esc(it.image)}')"></div>`:''}<div class="secs">${body}</div></div>`;
+    h+=`<div class="col"><h3>${esc(it.label)} · ${it.year<9999?it.year:''}</h3>${it.image?`<div class="colimg card-open" data-od="${it.deck}|${esc(it.id)}" title="Open this card in the Cards viewer" style="background-image:url('${esc(it.image)}')"></div>`:''}<div class="secs">${body}</div></div>`;
   }
   return h+`</div>`;
 }
@@ -328,7 +330,7 @@ function viewRibbon(sel){
   const pts=[];
   for(const d of activeDecks()){
     const it=activeItems().find(i=>i.deck===d.slug && i.cardKey===card); if(!it)continue;
-    pts.push({year:d.year,kind:'native',label:d.label,img:it.image,text:`**${d.label}** (${d.year}) — the card as depicted in this deck.`});
+    pts.push({year:d.year,kind:'native',label:d.label,img:it.image,deck:d.slug,id:it.id,text:`**${d.label}** (${d.year}) — the card as depicted in this deck.`});
     for(const [k,v] of Object.entries(it.sections)){
       const a=lensAttr(v); if(!a)continue; const y=attrYear(a); if(y===Infinity)continue;
       if(pts.some(p=>p.kind==='later'&&p.year===y&&p.src===k))continue;
@@ -347,7 +349,7 @@ function viewRibbon(sel){
     const labY=22+p._lane*30;            // dodge downward
     const thumbY=-(58+(p.kind==='native'?0:0));
     ticks+=`<div class="tick ${p.kind}" style="left:${p._x.toFixed(1)}%">
-      ${p.kind==='native'&&p.img?`<img class="thumb" src="${esc(p.img)}" style="top:-68px">`:''}
+      ${p.kind==='native'&&p.img?`<img class="thumb card-open" src="${esc(p.img)}" data-od="${p.deck}|${esc(p.id)}" title="Open this card in the Cards viewer" style="top:-68px">`:''}
       <div class="stem" style="top:7px;height:${labY-7}px"></div>
       <div class="pt" data-i="${i}"></div>
       <div class="lbl" style="top:${labY}px">${esc((p.kind==='later'?p.label:p.label)).slice(0,16)}<div class="yr">${p.year}</div></div></div>`;
@@ -367,7 +369,7 @@ function viewMultiples(sel){
   for(const d of activeDecks()){
     const matches=activeItems().filter(i=>i.deck===d.slug && i.cardKey===card);
     const it=matches.find(m=>m.image)||matches[0]; if(!it)continue;
-    tiles+=`<div class="mtile"><div class="mimg" style="background-image:url('${esc(it.image||'')}')"></div><div class="mcap"><b>${esc(d.label)}</b>${d.year<9999?d.year:''} · ${esc(it.name).slice(0,30)}</div></div>`;
+    tiles+=`<div class="mtile card-open" data-od="${it.deck}|${esc(it.id)}" title="Open this card in the Cards viewer"><div class="mimg" style="background-image:url('${esc(it.image||'')}')"></div><div class="mcap"><b>${esc(d.label)}</b>${d.year<9999?d.year:''} · ${esc(it.name).slice(0,30)}</div></div>`;
   }
   return `<div class="ctl"><label class="lbl">Card</label><select id="mul-sel">${cardOptionsHTML(card)}</select>
     <span style="color:var(--muted);font-size:12px">— the same card rendered by every selected tradition.</span></div><div class="multiples">${tiles||'<span style="color:var(--muted)">No images.</span>'}</div>`;
@@ -389,7 +391,7 @@ function viewReader(){
     return `<div class="rsec ${e.attributed?'later':''}"><div class="st">${esc(e.k)}</div>${e.attr?`<span class="attr">${esc(e.attr)}</span>`:''}<div><p>${md(bv)}</p></div></div>`;};
   return `<div class="ctl"><label class="lbl">Deck</label><select id="rd-deck">${decks.map(d=>`<option value="${d.slug}"${d.slug===readerDeck?' selected':''}>${esc(d.label)}</option>`).join('')}</select>
     <span style="color:var(--muted);font-size:12px">— one card per spread; later layers in an expander.</span></div>
-   <div class="reader">${it.image?`<div class="rimg" style="background-image:url('${esc(it.image)}')"></div>`:''}
+   <div class="reader">${it.image?`<div class="rimg card-open" data-od="${it.deck}|${esc(it.id)}" title="Open this card in the Cards viewer" style="background-image:url('${esc(it.image)}')"></div>`:''}
      <div class="rbody"><h2>${esc(it.name||'—')}</h2><div class="sub" style="color:var(--muted);margin-bottom:14px">${esc(readerDeck.replace(/-/g,' '))} · ${readerIdx+1} / ${list.length}</div>
        ${native.map(secHtml).join('')}${later.length?`<details open><summary>${later.length} later interpretation${later.length>1?'s':''} ▾</summary>${later.map(secHtml).join('')}</details>`:''}</div>
      <div class="nav"><button id="rd-prev">← Prev</button><button id="rd-next">Next →</button></div></div>`;
@@ -430,6 +432,10 @@ function buildTabs(){
   if(deep && cardOptions().includes(deep)){ cur='synopsis'; buildTabs(); render(deep); }
   else render();
 })();
+// Click any card in a lens to open its full detail in the Cards viewer (shared code, deep-linked).
+document.addEventListener('click', e=>{ const t=e.target.closest('[data-od]'); if(!t)return;
+  const [deck,id]=t.dataset.od.split('|'); if(!deck||!id)return;
+  window.open('../cards.html?src=../tarot/'+deck+'/grammar.json&item='+encodeURIComponent(id),'_blank','noopener'); });
 </script>
 
 <script src="../../site-footer.js"></script>
