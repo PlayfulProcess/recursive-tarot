@@ -5,371 +5,149 @@
     "attribution": [
       {
         "name": "PlayfulProcess",
-        "note": "The contribute guide, dogfooded as a grammar."
+        "note": "Course converted from markdown to a grammar."
       }
     ]
   },
-  "name": "How to Contribute — a Grammar of Ways In",
-  "description": "The contribute guide as a grammar: every item is one way IN — a thing you can make (your own deck, a fix to a historic deck, a sequence/playlist, a course) by an avenue (the app, GitHub, an AI on the repo, or the recursive.eco MCP). Each item carries its `what` and `how` in metadata, so the Emergence Explorer can group by what you want to contribute OR by the skill/tool — the contribute matrix draws itself. Grammars work through every avenue; a course is an MDX file in the repo, so it's code-only. This guide is itself a grammar you can fork and edit — which is exactly its point.",
+  "name": "Ways to Contribute",
+  "description": "Everything here is public-domain data in one open GitHub repo — the decks, the spreads, and these very courses. Three things you can add or fix, each by the gentlest route that suits you. No git required for the easy paths.",
   "grammar_type": "custom",
   "creator_name": "PlayfulProcess",
-  "default_view": "study",
+  "default_view": "course",
   "provenance": "reference",
   "metadata": {
-    "common_name": "How to Contribute",
-    "category": "reference"
+    "common_name": "Ways to Contribute",
+    "category": "reference",
+    "source_mdx": "course/how-to-contribute.mdx"
   },
   "_generated": true,
-  "_built_by": "scripts/build_contribute_grammar.py",
+  "_built_by": "scripts/course_to_grammar.py",
+  "_source_mdx": "course/how-to-contribute.mdx",
   "items": [
     {
-      "id": "community-deck__app",
-      "name": "Your own deck — In the app",
-      "category": "how-to",
-      "keywords": [
-        "community-deck",
-        "app",
-        "free"
-      ],
-      "metadata": {
-        "what": "community-deck",
-        "what_label": "Your own deck",
-        "how": "app",
-        "how_label": "In the app",
-        "skill": "No tools — just the website",
-        "cost": "free",
-        "needs": "A free recursive.eco account"
-      },
+      "id": "lesson-01-introduction",
+      "name": "Introduction",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a community grammar — your own deck (in the app). Example: Clown Town.",
-        "Steps": "Sign in to recursive.eco, open **Create**, and start a new grammar and add your cards. Save, then publish.",
-        "What you need": "A free recursive.eco account",
-        "Cost": "Free."
+        "Content": "Everything in the Recursive Tarot is **open data in one place** — the [recursive-tarot repo](https://github.com/PlayfulProcess/recursive-tarot). The decks are public-domain JSON; the spreads are JSON; these courses are Markdown. If something is wrong or missing, you can fix it — and there are three kinds of thing you can contribute:\n\n- a **deck** (or a correction to one),\n- a **spread** (a layout for the Caster),\n- a **course** (like this one).\n\nFor each there are two routes: the **easy route** — a button, no git knowledge — and the **GitHub route** — edit the file and open a pull request. Take whichever rung you're comfortable on. Every contribution ends the same way: a small, reviewable change that improves the commons for everyone.\n\n> Every change lands on the `dev` branch through a **pull request**, so nothing goes live until it's reviewed. You can't break anything."
       }
     },
     {
-      "id": "community-deck__github",
-      "name": "Your own deck — On GitHub",
-      "category": "how-to",
-      "keywords": [
-        "community-deck",
-        "github",
-        "free"
-      ],
-      "metadata": {
-        "what": "community-deck",
-        "what_label": "Your own deck",
-        "how": "github",
-        "how_label": "On GitHub",
-        "skill": "Git / GitHub — edit a file, open a PR",
-        "cost": "free",
-        "needs": "A free GitHub account"
-      },
+      "id": "lesson-02-contribute-a-deck",
+      "name": "Contribute a deck",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a community grammar — your own deck (on github). Example: Clown Town.",
-        "Steps": "On github.com, add a new `tarot/<your-deck>/grammar.json`. Edit it, then **open a pull request** — the change is reviewed before it goes live.",
-        "What you need": "A free GitHub account",
-        "Cost": "Free."
+        "Content": "A deck is a single file: `tarot/<deck-slug>/grammar.json`. To fix a date, rewrite a description, or add a source —\n\n- **Easy route — in the app.** Open any card on the [card browser](../viewers/cards.html) and use the **↻ Open in recursive.eco** button. In the app, **Fork / Edit** the card, make your change, and follow the *save / contribute* flow — no git, no raw JSON.\n- **GitHub route.** Open the deck's `grammar.json` on GitHub, click the ✏️ pencil, edit the text, and choose **Propose changes** — GitHub opens the pull request for you.\n\nFor the full range — from a one-click in-app fix all the way to building a whole new deck with AI and image generation — see the deep-dive: [Contribute to the Commons — Five Ways](course-viewer.html?course=build-a-tarot-deck-with-claude)."
       }
     },
     {
-      "id": "community-deck__ai-repo",
-      "name": "Your own deck — An AI on the repo",
-      "category": "how-to",
-      "keywords": [
-        "community-deck",
-        "ai-repo",
-        "ai"
-      ],
-      "metadata": {
-        "what": "community-deck",
-        "what_label": "Your own deck",
-        "how": "ai-repo",
-        "how_label": "An AI on the repo",
-        "skill": "An AI assistant pointed at the repo",
-        "cost": "ai",
-        "needs": "Any AI assistant"
-      },
+      "id": "lesson-03-contribute-a-spread",
+      "name": "Contribute a spread",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a community grammar — your own deck (an ai on the repo). Example: Clown Town.",
-        "Steps": "Point an AI assistant (Claude.ai, Claude Desktop, or Claude Code) at the repo and ask it to start a new grammar and add your cards. Review its draft and open a PR.",
-        "What you need": "Any AI assistant",
-        "Cost": "You pay your own AI provider's usage. See [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+        "Content": "A spread is a named layout — where the cards land and what each position means. The [Caster](../viewers/caster.html) — or the [Spread Studio](../viewers/caster-studio.html), which also casts and sends the reading to recursive.eco for an AI interpretation — builds one for you:\n\n1. Open the **[Caster](../viewers/caster.html)**, choose **Custom**, and drag the positions where you want them (long-press to drag on mobile). Name each position and give it a meaning.\n2. Use **⤓ Download** to keep a copy, or **↗ Contribute a spread on GitHub** to offer it to the shared library. The button opens a pre-filled GitHub form — name the file, describe it, and choose **Propose new file**.\n\n![The Caster's Custom spread editor — name each position and its meaning, then use the \"Contribute a spread on GitHub\" button in the save row.](images/contribute-spread.jpg)\n\nSpreads live in `viewers/spreads.json`; a maintainer folds your contribution into it after review."
       }
     },
     {
-      "id": "community-deck__mcp",
-      "name": "Your own deck — The recursive.eco MCP",
-      "category": "how-to",
-      "keywords": [
-        "community-deck",
-        "mcp",
-        "mcp"
-      ],
-      "metadata": {
-        "what": "community-deck",
-        "what_label": "Your own deck",
-        "how": "mcp",
-        "how_label": "The recursive.eco MCP",
-        "skill": "Claude Code, or your token in any MCP client",
-        "cost": "mcp",
-        "needs": "The MCP connected (Claude — or any MCP client)"
-      },
+      "id": "lesson-04-contribute-a-course",
+      "name": "Contribute a course",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a community grammar — your own deck (the recursive.eco mcp). Example: Clown Town.",
-        "Steps": "With the recursive.eco MCP connected, just **ask** your assistant to start a new grammar and add your cards — it acts on your library directly, no files to touch.",
-        "What you need": "The MCP connected (Claude — or any MCP client)",
-        "Cost": "Free to connect. Generated images, audio and storage are billed — see [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+        "Content": "A course is one Markdown file in `course/` — with a little front-matter at the top — plus one line that registers it in the menu.\n\n1. Add `course/<your-course-id>.mdx`. Copy the top of any existing course for the front-matter (`id`, `title`, `description`, `author`, `date`), then write in plain Markdown. YouTube embeds and images work.\n2. Register it: add one line to the `COURSE_GROUPS` list in `site-header.js`, under the group it belongs to — **Start here** or **More**.\n3. Open a pull request."
       }
     },
     {
-      "id": "edit-historic__app",
-      "name": "Fix a historic deck — In the app",
-      "category": "how-to",
-      "keywords": [
-        "edit-historic",
-        "app",
-        "free"
-      ],
-      "metadata": {
-        "what": "edit-historic",
-        "what_label": "Fix a historic deck",
-        "how": "app",
-        "how_label": "In the app",
-        "skill": "No tools — just the website",
-        "cost": "free",
-        "needs": "A free recursive.eco account"
-      },
+      "id": "lesson-05-every-deck-and-where-to-correct-it",
+      "name": "Every deck — and where to correct it",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a correction to a historic deck (in the app). Example: Visconti-Sforza.",
-        "Steps": "Sign in to recursive.eco, open **Create**, and open the deck and fix the card. Save, then publish.",
-        "What you need": "A free recursive.eco account",
-        "Cost": "Free."
+        "Content": "Pick a deck and open it. The **recursive.eco** logo opens the live grammar in the app — read it, then **Fork / Edit** to propose a fix (Rung 1). The **GitHub** logo opens that deck's `grammar.json` straight in GitHub's web editor (Rung 2). Two doors to the same deck — use whichever feels easier.\n\n<style>\n.dlinks{white-space:nowrap}\n.dlinks a{display:inline-block;margin-right:12px;vertical-align:middle;line-height:0}\n.dlinks img{height:24px;width:24px;vertical-align:middle}\n.dlinks a.eco img{background:#fff;border-radius:50%;padding:2px;box-sizing:border-box}\n.dlinks a.gh img{height:21px;width:21px}\n</style>\n\n| Deck | Era | Open · Edit |\n|---|---|---|\n| **Sola Busca Tarot** | 1491 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/277953bc-b745-419a-a265-484865e75516\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/sola-busca-tarot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Ganjifa** | 16th c.+ | <span class=\"dlinks\"><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/ganjifa/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Tarot de Marseille** | 1760 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/ac47f7af-ac80-4942-a422-dd4a15614738\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/tarot-de-marseille-conver/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Court de Gébelin's Tarot** | 1781 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/ba98bf95-e08d-409f-a16c-2dcb660e4545\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/court-de-gebelin-tarot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Etteilla I** | 1788–89 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/50fb5980-5be5-4702-9a4f-858ddd524fe3\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/etteilla-i-livre-de-thot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Tarocchino di Bologna** | 17th c. | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/37ff6a9d-ba38-42e2-92ea-aa5871716bcc\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/tarocchino-bologna/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Golden Dawn Tarot** | 1888 · RWS 1909 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/edac5d5a-8100-486d-b822-2f31b20a194c\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/golden-dawn-book-t-tarot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Oswald Wirth Tarot** | 1889 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/2b757b2e-b4d9-4896-bc72-f9ae6b7f5656\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/oswald-wirth-tarot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Tarot de Besançon / Swiss 1JJ** | 18th–19th c. | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/0aab46a2-38b1-4ba3-8dc1-914af67a026c\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/tarot-de-besancon/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Mamluk Playing Cards** | c. 1400 (Topkapı c. 1500) | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/2403af8b-1350-4df4-b04c-976ebe5c9326\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/mamluk-deck/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Cary-Yale Visconti Tarot** | c. 1442 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/4102566c-1d94-4f35-b1f8-c647e8ff7099\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/cary-yale-visconti-tarot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **d'Este Tarocchi** | c. 1450 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/7af567b3-3bf7-4047-b199-c8758dd2c9e8\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/este-tarot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **The 'Charles VI' Tarot (Gringonneur)** | c. 1450–80 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/cc5bda4c-f47b-43e9-aa35-d3164f7c3c0e\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/charles-vi-tarot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Visconti-Sforza Tarot** | c. 1451 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/6dc092b0-9972-43f0-b493-ff6c2a61dcfc\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/visconti-sforza-tarot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **The 'Mantegna Tarocchi'** | c. 1465 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/44c379aa-5bfa-40d4-91ea-b593e18cbc2d\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/mantegna-tarocchi/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **The Cary Sheet** | c. 1500 | <span class=\"dlinks\"><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/cary-sheet/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **The Rosenwald Sheet** | c. 1500 | <span class=\"dlinks\"><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/rosenwald-sheet/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Minchiate** | c. 1506+ | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/2fd5ebb0-a69d-4731-9acd-bbf4e37c17e8\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/minchiate-florence-tarot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Tarot de Paris** | c. 1600–50 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/cd170781-33d7-44f3-b5e5-23e50c52ba7e\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/paris-anonymous-tarot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Jacques Viéville Tarot** | c. 1650 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/748bd669-1a0b-4f71-b5fa-b7c15601fda5\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/vieville-tarot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Jean Noblet Tarot** | c. 1650 | <span class=\"dlinks\"><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/noblet-tarot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Belgian Tarot** | c. 1780 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/9e364631-d879-4c5a-84a6-79b2c5263d97\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/belgian-tarot/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Etteilla II** | c. 1838 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/c310e5d9-f954-458c-9462-aa1eefd95209\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/etteilla-ii-egyptian/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Grand Jeu de l'Oracle des Dames (Etteilla III)** | c. 1865 | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/9c62d3ca-4e96-44ff-bffb-b7d3da55423c\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/etteilla-iii-oracle-des-dames/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n| **Ma Diao (馬吊)** | money cards, 14th–15th c. | <span class=\"dlinks\"><a class=\"eco\" href=\"https://flow.recursive.eco/g/51858640-0605-4428-b6b0-633b115f642e\" target=\"_blank\" rel=\"noopener\" title=\"Open the live grammar on recursive.eco\"><img src=\"../public/recursive-logo.svg\" alt=\"Open on recursive.eco\"></a><a class=\"gh\" href=\"https://github.com/PlayfulProcess/recursive-tarot/edit/dev/tarot/madiao-money-cards/grammar.json\" target=\"_blank\" rel=\"noopener\" title=\"Edit the JSON on GitHub\"><img src=\"images/github-mark.svg\" alt=\"Edit on GitHub\"></a></span> |\n\n> A few of the rarest sheets aren't published to recursive.eco yet, so they show the GitHub door only for now.\n\n---"
       }
     },
     {
-      "id": "edit-historic__github",
-      "name": "Fix a historic deck — On GitHub",
-      "category": "how-to",
-      "keywords": [
-        "edit-historic",
-        "github",
-        "free"
-      ],
-      "metadata": {
-        "what": "edit-historic",
-        "what_label": "Fix a historic deck",
-        "how": "github",
-        "how_label": "On GitHub",
-        "skill": "Git / GitHub — edit a file, open a PR",
-        "cost": "free",
-        "needs": "A free GitHub account"
-      },
+      "id": "lesson-06-rung-1-fix-it-in-the-app-recursive-eco",
+      "name": "Rung 1 — Fix it in the app (recursive.eco)",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a correction to a historic deck (on github). Example: Visconti-Sforza.",
-        "Steps": "On github.com, edit the deck's `grammar.json`. Edit it, then **open a pull request** — the change is reviewed before it goes live.",
-        "What you need": "A free GitHub account",
-        "Cost": "Free."
+        "Content": "The gentlest path. No code, no git.\n\n1. **Sign in** at [recursive.eco](https://flow.recursive.eco) — a free account comes with **$1 of AI credits**.\n2. **Find your deck.** Simplest is the **table above** — click a deck's recursive.eco logo and it opens right there in the app. Or, inside recursive.eco, open **Library** and search it by name.\n\n> **Look for the spiral.** Anywhere you're reading a deck in this site — the [card browser](../viewers/cards.html), the [Caster](../viewers/caster.html) — every card carries a small **purple recursive.eco spiral** button: <span style=\"white-space:nowrap\">↻ **Open in recursive.eco ↗**</span>. The same spiral, the same wording, marks every \"open this in the app\" link across the whole site — so you learn it once and recognise it everywhere.\n3. **Fork / Edit** it, correct the text statement, and **propose the change** — it comes to the maintainer (me) to review and merge back into the public deck. Your name rides along in the version history.\n4. **Stuck on the UI?** It can feel dense. Open the **Grammar Assistant** (the chat button) and just say what you want — *\"fix the date on the Death card to 1450\"* — and let it make the edit for you. That's what the free credits are for.\n\n![The Library — every public deck lives here; pick one to read or fix.](images/01-library.png)\n\n![Open a deck to read its cards (Visconti-Sforza shown).](images/02-open-deck.png)\n\nThis is the same review-and-merge idea as a GitHub pull request, with none of the git.\n\n---"
       }
     },
     {
-      "id": "edit-historic__ai-repo",
-      "name": "Fix a historic deck — An AI on the repo",
-      "category": "how-to",
-      "keywords": [
-        "edit-historic",
-        "ai-repo",
-        "ai"
-      ],
-      "metadata": {
-        "what": "edit-historic",
-        "what_label": "Fix a historic deck",
-        "how": "ai-repo",
-        "how_label": "An AI on the repo",
-        "skill": "An AI assistant pointed at the repo",
-        "cost": "ai",
-        "needs": "Any AI assistant"
-      },
+      "id": "lesson-07-rung-2-edit-on-github-no-other-tools",
+      "name": "Rung 2 — Edit on GitHub (no other tools)",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a correction to a historic deck (an ai on the repo). Example: Visconti-Sforza.",
-        "Steps": "Point an AI assistant (Claude.ai, Claude Desktop, or Claude Code) at the repo and ask it to open the deck and fix the card. Review its draft and open a PR.",
-        "What you need": "Any AI assistant",
-        "Cost": "You pay your own AI provider's usage. See [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+        "Content": "If you're comfortable with a text field, you never need anything but a browser and a free GitHub account.\n\n1. In the table above, click **edit on GitHub** for your deck. GitHub opens the `grammar.json` in its **web editor**.\n2. Find the text and fix it. Grammars are just `items` with named `sections` (`Scene`, `Symbol`, `Research note`, `Tradition Note`…) — change the words, keep the quotes and commas.\n3. Scroll down, write a one-line note (\"corrected Death card date\"), and choose **\"Create a new branch and start a pull request.\"**\n4. **That's a pull request** — your proposed change, side by side with the original, for the maintainer to review and merge. No install, no command line.\n\n**Keep it honest** (the house rules): public-domain images only; facts in your own words (never paste copyrighted text); and respect the **game-vs-divination** line — most historical decks were *game* decks, so divinatory meaning is flagged as a later layer, not presented as original.\n\n---"
       }
     },
     {
-      "id": "edit-historic__mcp",
-      "name": "Fix a historic deck — The recursive.eco MCP",
-      "category": "how-to",
-      "keywords": [
-        "edit-historic",
-        "mcp",
-        "mcp"
-      ],
-      "metadata": {
-        "what": "edit-historic",
-        "what_label": "Fix a historic deck",
-        "how": "mcp",
-        "how_label": "The recursive.eco MCP",
-        "skill": "Claude Code, or your token in any MCP client",
-        "cost": "mcp",
-        "needs": "The MCP connected (Claude — or any MCP client)"
-      },
+      "id": "lesson-08-rung-3-work-the-repo-in-claude-ai",
+      "name": "Rung 3 — Work the repo in Claude.ai",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a correction to a historic deck (the recursive.eco mcp). Example: Visconti-Sforza.",
-        "Steps": "With the recursive.eco MCP connected, just **ask** your assistant to open the deck and fix the card — it acts on your library directly, no files to touch.",
-        "What you need": "The MCP connected (Claude — or any MCP client)",
-        "Cost": "Free to connect. Generated images, audio and storage are billed — see [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+        "Content": "When an edit is bigger than one line — rewriting a description, adding sources to every card — let a chat help.\n\n- Open [Claude.ai](https://claude.ai), paste in the deck's `grammar.json` (or the part you're changing), and describe what you want.\n- Ask it to **return valid JSON** and to **explain its reasoning and sources**.\n- Copy the result back into GitHub's web editor (Rung 2) and open the pull request.\n\nClaude.ai drafts; **GitHub is still where the change lands** and gets reviewed.\n\n---"
       }
     },
     {
-      "id": "sequence__app",
-      "name": "A sequence / playlist — In the app",
-      "category": "how-to",
-      "keywords": [
-        "sequence",
-        "app",
-        "free"
-      ],
-      "metadata": {
-        "what": "sequence",
-        "what_label": "A sequence / playlist",
-        "how": "app",
-        "how_label": "In the app",
-        "skill": "No tools — just the website",
-        "cost": "free",
-        "needs": "A free recursive.eco account"
-      },
+      "id": "lesson-09-rung-4-claude-desktop-on-the-repo",
+      "name": "Rung 4 — Claude Desktop on the repo",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a sequence grammar — a karaoke or paired set (in the app). Example: Sing & Sing 2.",
-        "Steps": "Sign in to recursive.eco, open **Create**, and create a sequence grammar (a karaoke or a paired set). Save, then publish.",
-        "What you need": "A free recursive.eco account",
-        "Cost": "Free."
+        "Content": "The same workflow, but Claude can read and write the files directly on your machine.\n\n1. Install **Claude Desktop** and **clone** the repo (Claude can run the `git clone` for you): `git clone https://github.com/PlayfulProcess/recursive-tarot.git`\n2. Ask it to read `GRAMMAR_FORMAT.md`, then make your edits across many cards at once (e.g. *\"add a Research note to every Marseille trump from `research/`\"*).\n3. Preview locally with a tiny server (`python -m http.server 8000` → open the viewers), then have Claude commit and push a branch and open the PR.\n\nBest when you're improving a **whole deck**, not a single card.\n\n---"
       }
     },
     {
-      "id": "sequence__github",
-      "name": "A sequence / playlist — On GitHub",
-      "category": "how-to",
-      "keywords": [
-        "sequence",
-        "github",
-        "free"
-      ],
-      "metadata": {
-        "what": "sequence",
-        "what_label": "A sequence / playlist",
-        "how": "github",
-        "how_label": "On GitHub",
-        "skill": "Git / GitHub — edit a file, open a PR",
-        "cost": "free",
-        "needs": "A free GitHub account"
-      },
+      "id": "lesson-10-rung-5-the-recursive-eco-mcp-the-full-to",
+      "name": "Rung 5 — The recursive.eco MCP (the full toolkit)",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a sequence grammar — a karaoke or paired set (on github). Example: Sing & Sing 2.",
-        "Steps": "On github.com, add a sequence `grammar.json`. Edit it, then **open a pull request** — the change is reviewed before it goes live.",
-        "What you need": "A free GitHub account",
-        "Cost": "Free."
+        "Content": "The top rung. Connect the **recursive.eco MCP** to Claude and you can act on your library just by *asking* — no files, no manual upload. It runs wherever Claude does — **claude.ai**, **Claude Desktop**, or any MCP-capable client like **Claude Code**. You connect it once (steps below) and sign in; after that, you just talk.\n\nWhat it can do for you:\n\n- **Create grammars** straight into your library (`create_grammar` → `add_items`).\n- **Generate images** with AI, or attach public-domain URLs (`generate_item_image`, `set_item_image`); `commons_image_search` and `wikipedia_summary` find and license-check free art for you — at no credit cost.\n- **Import / upload** existing grammars and manage storage.\n- **Read & test** as you go — list, fetch, and even **draw a spread** to feel how a deck reads.\n\n**Where does my work go — my library, or the public commons?** This is the important part, and it is always under your control:\n\n- Everything you create or edit through the MCP (or in the app) lands in **your own library first** — private to your account. Nothing you do touches a shared deck automatically.\n- It joins the **public commons** only when you say so. `set_grammar_visibility` *publishes* a grammar of your own and opens it to community editing; and an edit to an **existing public deck** is a *proposal* that comes to the maintainer (me) to review and merge — exactly like a pull request. Your name rides along in the version history.\n\nSo draft and illustrate freely in your own space; publish or propose only when it's good and well-sourced. Use the MCP to make a personal deck fast, then — if it earns it — open it to the commons.\n\n### Connect it once\n\nNo command line needed. In **claude.ai**, open **Settings → Connectors** — they now live under **Customize → Connectors**. Click the **+** button, choose **Add custom connector**, name it *recursive.eco*, and paste the URL:\n\n`https://flow.recursive.eco/api/mcp`\n\nHit **Add** and you'll be redirected to **log in to recursive.eco** — that sign-in is what lets the MCP read and write *your* library, and draw on *your* credits if you reach for a paid tool. The same URL works in **Claude Desktop**, **Claude Code**, or any MCP-capable client.\n\n### Allow the tools (the one gotcha)\n\nThe first time you connect, claude.ai asks **when Claude may use each tool**. If a tool is left on **Ask** and that approval prompt never reaches you, the call simply stalls — you'll see *\"No approval received\"* and nothing happens. That's claude.ai's own connector gate, **not** a recursive.eco error, and it's the single most common reason \"the MCP doesn't work.\" The fix is one screen.\n\nIn **Customize → Connectors → recursive.eco → Tool permissions**, set the tools to **Always allow** — the dropdown at the top right does all of them at once, or flip each one with the green check.\n\n![claude.ai → Connectors → recursive.eco → Tool permissions: set the tools to \"Always allow\" (or Ask / Never per tool).](images/mcp-always-allow.jpg)\n\n**What you're granting — worth reading.** \"Always allow\" lets Claude run that tool on *your* library without asking again. The browse-and-read tools (*Cast*, *Commons image search*, list/get) are safe to always-allow. The ones that **spend credits or change things** — *Create grammar*, *Generate image*, *Delete grammar* — you can leave on **Ask** so you confirm each one. Nothing here touches a *shared* deck without your own `set_grammar_visibility`; the permission is only ever about your account and your credits. Allow what you understand; leave the rest on Ask.\n\n**What actually costs credits?** Reading, listing, drawing a spread, publishing, and sourcing public-domain art with `commons_image_search` are all **free**. Credits are only spent on the paid services — **AI image generation, TTS narration, and R2 image hosting**. A free account starts with **$1**, plenty to try them, and you can contribute public-domain work all day without spending a cent. (Power users can read the [full MCP docs](https://code.claude.com/docs/en/mcp), but the paste-the-URL path above is all you need.)\n\n> Honesty note for Rung 5: AI-generated images are wonderful for a personal deck, but the historical decks in this commons are **scanned public-domain art**, not generated. If you publish, say which images are which.\n\n---"
       }
     },
     {
-      "id": "sequence__ai-repo",
-      "name": "A sequence / playlist — An AI on the repo",
-      "category": "how-to",
-      "keywords": [
-        "sequence",
-        "ai-repo",
-        "ai"
-      ],
-      "metadata": {
-        "what": "sequence",
-        "what_label": "A sequence / playlist",
-        "how": "ai-repo",
-        "how_label": "An AI on the repo",
-        "skill": "An AI assistant pointed at the repo",
-        "cost": "ai",
-        "needs": "Any AI assistant"
-      },
+      "id": "lesson-11-rung-5-in-practice-a-real-audit-and-impr",
+      "name": "Rung 5 in practice — a real audit-and-improve pass",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a sequence grammar — a karaoke or paired set (an ai on the repo). Example: Sing & Sing 2.",
-        "Steps": "Point an AI assistant (Claude.ai, Claude Desktop, or Claude Code) at the repo and ask it to create a sequence grammar (a karaoke or a paired set). Review its draft and open a PR.",
-        "What you need": "Any AI assistant",
-        "Cost": "You pay your own AI provider's usage. See [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+        "Content": "Here is an actual contribution made with Claude Desktop + the recursive.eco MCP, on **2026-06-20**. Nothing here is a mock-up — these are the real prompts, the real tool calls, and the real results. **You can do this too.** The full narrated build log lives at [`research/build-logs/grammar-audit-mcp-2026-06-20.md`](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/research/build-logs/grammar-audit-mcp-2026-06-20.md).\n\n**The task:** audit the two \"sources\" grammars — *Books Behind the Tarot* and *People & Institutions of Tarot* — and close the gaps: missing public-domain portraits, missing links between books, people and decks, and one cross-platform bug in the people generator.\n\n### Step 1 — Find public-domain images (don't guess, verify)\n\nThe MCP can query Wikimedia Commons directly over HTTP — no browser, no broken screenshot tool. Ask in plain language; Claude calls **`commons_image_search`** and you read the license straight off the result.\n\n![Asking the MCP for a public-domain portrait, and reading the license off the result.](images/mcp-audit-01-commons-search.png)\n\nThe rule is strict and worth repeating: **only `Public domain` / `CC0` / `CC-BY` / `CC-BY-SA` images are accepted**, and you always store the artist/license as a credit string. If nothing is freely licensed, the item stays imageless — you never scrape or guess.\n\nFor a person you usually want two things at once — the canonical Wikipedia page (to \"redirect\" a reader there) *and* a lead portrait. **`wikipedia_summary`** returns both; then a quick `commons_image_search` confirms the license.\n\n![wikipedia_summary gives the page URL and a lead image; a second call confirms the license.](images/mcp-audit-02-wikipedia-summary.png)\n\nA real dead-end from this session: the bare query `\"Oswald Wirth portrait\"` returned only unrelated scanned book PDFs, so the `wikipedia_summary` lead-image route was used instead, then license-checked on Commons. And **Stuart Kaplan** has no Wikipedia page at all, so he was left imageless on purpose — an honest gap beats a wrong picture.\n\n### Step 2 — Fix the source of truth, keep the gate green\n\n**Why this Python architecture?** Because `people-of-tarot` is **generated** — you never hand-edit its `grammar.json`. The real edits go into the dossiers (`research/people/*.md`) as new front-matter (`image:`, `wikipedia:`, `book:`), and the Python generator was upgraded to emit them — plus a fix to write file paths with forward slashes so Windows and CI stop fighting. One source of truth (the dossiers), one build step, no hand-edited output to drift out of sync. Then the gate must pass:\n\n![The pre-commit gate after the generator upgrade — dangling=0, all checks passed.](images/mcp-audit-03-check-all.png)\n\n### Step 3 — Make it live (and open it to everyone)\n\nWith the repo work pushed, the same MCP attaches the verified images in one bulk call (**`set_item_images`**, which mirrors each image to R2) and then publishes:\n\n![Bulk-attaching the 12 verified portraits in a single call.](images/mcp-audit-04-set-item-images.png)\n\nFinally, **`set_grammar_visibility`** publishes each grammar *and* opens it to community editing — the whole point, so the per-deck links resolve for visitors and anyone signed in can propose a fix.\n\n![Publishing and opening to community in one call — with the live link.](images/mcp-audit-05-publish.png)\n\nThe result is live now:\n\n- **Books Behind the Tarot** → [flow.recursive.eco/g/7ff3ad23-6ceb-4b20-8c27-8bb04d0876ef](https://flow.recursive.eco/g/7ff3ad23-6ceb-4b20-8c27-8bb04d0876ef)\n- **People & Institutions of Tarot** → [flow.recursive.eco/g/a284fa37-694f-48dc-b977-f093658bc2b7](https://flow.recursive.eco/g/a284fa37-694f-48dc-b977-f093658bc2b7)\n\n> The five panels above are faithful renderings of the actual MCP/CLI exchanges from this session (the pass was run head-less in Claude Code, not the Desktop GUI). The calls, arguments and results are verbatim; a maintainer can swap in live Desktop captures any time.\n\n---"
       }
     },
     {
-      "id": "sequence__mcp",
-      "name": "A sequence / playlist — The recursive.eco MCP",
-      "category": "how-to",
-      "keywords": [
-        "sequence",
-        "mcp",
-        "mcp"
-      ],
-      "metadata": {
-        "what": "sequence",
-        "what_label": "A sequence / playlist",
-        "how": "mcp",
-        "how_label": "The recursive.eco MCP",
-        "skill": "Claude Code, or your token in any MCP client",
-        "cost": "mcp",
-        "needs": "The MCP connected (Claude — or any MCP client)"
-      },
+      "id": "lesson-12-the-ethos",
+      "name": "The ethos",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a sequence grammar — a karaoke or paired set (the recursive.eco mcp). Example: Sing & Sing 2.",
-        "Steps": "With the recursive.eco MCP connected, just **ask** your assistant to create a sequence grammar (a karaoke or a paired set) — it acts on your library directly, no files to touch.",
-        "What you need": "The MCP connected (Claude — or any MCP client)",
-        "Cost": "Free to connect. Generated images, audio and storage are billed — see [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+        "Content": "You're not filing a bug. You're **tending a commons** — a deck you correct well becomes something a stranger in another country can read, trust, and draw a card from. The repo is public so the work outlives any one of us; the viewers are thin so the **data**, not the platform, is what matters.\n\nStart at whatever rung feels easy. A one-word fix on Rung 1 helps exactly as much as the deck needs."
       }
     },
     {
-      "id": "course__github",
-      "name": "A course — On GitHub",
-      "category": "how-to",
-      "keywords": [
-        "course",
-        "github",
-        "free"
-      ],
-      "metadata": {
-        "what": "course",
-        "what_label": "A course",
-        "how": "github",
-        "how_label": "On GitHub",
-        "skill": "Git / GitHub — edit a file, open a PR",
-        "cost": "free",
-        "needs": "A free GitHub account"
-      },
+      "id": "lesson-13-the-one-rule-read-this",
+      "name": "The one rule (read this)",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a written course (MDX in the repo) (on github). Example: this guide.",
-        "Steps": "On github.com, add a course `.mdx` under `pages/courses/`. Edit it, then **open a pull request** — the change is reviewed before it goes live.",
-        "What you need": "A free GitHub account",
-        "Cost": "Free."
+        "Content": "Whatever you contribute answers to the same values as the rest of this project:\n\n- **Public domain, with attribution.** Images must be public-domain or your own; name the source and the artist. Never upload a copyrighted image.\n- **A gate, not a fate.** If your contribution touches reading or meaning, keep it autonomy-preserving — *a prompt, not a prophecy.* (See [Intention Setting](course-viewer.html?course=intention-setting).)\n- **Small and reviewable.** One deck, one spread, one fix at a time. A small pull request is easy to read and quick to merge.\n- **Name a school, not a living person** if you add a reading \"voice\" — and say you were *inspired by* them, never that you speak for them.\n\nThat's it. Pick the smallest thing that bothers you, fix it, and propose it. The commons grows one small correction at a time."
       }
     },
     {
-      "id": "course__ai-repo",
-      "name": "A course — An AI on the repo",
-      "category": "how-to",
-      "keywords": [
-        "course",
-        "ai-repo",
-        "ai"
-      ],
-      "metadata": {
-        "what": "course",
-        "what_label": "A course",
-        "how": "ai-repo",
-        "how_label": "An AI on the repo",
-        "skill": "An AI assistant pointed at the repo",
-        "cost": "ai",
-        "needs": "Any AI assistant"
-      },
+      "id": "lesson-14-contribute-a-video",
+      "name": "Contribute a video",
+      "category": "lesson",
+      "keywords": [],
       "sections": {
-        "What you'll do": "Contribute a written course (MDX in the repo) (an ai on the repo). Example: this guide.",
-        "Steps": "Point an AI assistant (Claude.ai, Claude Desktop, or Claude Code) at the repo and ask it to draft a new course. Review its draft and open a PR.",
-        "What you need": "Any AI assistant",
-        "Cost": "You pay your own AI provider's usage. See [recursive.eco pricing](https://flow.recursive.eco/pricing)."
+        "Content": "The **Watch the history** page is fed by public-domain documentaries and talks framed as accounts of the history of tarot. You don't need to touch JSON by hand to add one — give Claude Code a one-line prompt like:\n\n> Add this public-domain YouTube documentary to the \"Further watching\" watchlist on the Play page: `<paste the URL>`. Check it's public-domain or appropriately licensed, write a one-sentence description framed as an account of tarot history, slot it into the watchlist sequence, and open a pull request.\n\nClaude Code will place it in the sequence and commit it back to the repo. Later we'll grow this into richer programs — the beta \"performances\" you see on the page — and a course on building those."
       }
     }
   ]
