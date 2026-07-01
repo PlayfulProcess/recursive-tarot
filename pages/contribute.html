@@ -129,6 +129,27 @@
   .wishlist .note{margin:34px auto 0;max-width:680px;text-align:center;font-family:var(--serif-body);font-size:14px;line-height:1.6;color:var(--mut)}
   .wishlist .note a{color:#8a6414}
   @media (max-width:620px){ .wishlist .feature{grid-template-columns:1fr} .wishlist .feature .f-img{min-height:150px;border-right:none;border-bottom:1px solid var(--line)} }
+  /* Four-paths table (replaces the ladder) */
+  .pathfig{margin:0 0 18px;max-width:560px}
+  .pathfig img{width:100%;border:1px solid var(--line);border-radius:10px;box-shadow:0 14px 34px -22px rgba(60,45,20,.5);display:block}
+  .pathfig figcaption{font-family:var(--sans);font-size:11.5px;color:var(--mut);margin-top:8px}
+  table.paths{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;overflow:hidden}
+  table.paths th,table.paths td{text-align:left;padding:15px 18px;vertical-align:top;border-top:1px solid var(--line)}
+  table.paths thead th{border-top:none;font-family:var(--sans);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);font-weight:600;background:var(--panel2,#faf8f3)}
+  table.paths tbody tr:hover{background:rgba(154,115,34,.04)}
+  .paths .pcell{min-width:150px;white-space:nowrap}
+  .paths .pnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;font-family:var(--sans);font-size:12px;font-weight:700;margin-right:8px;vertical-align:middle}
+  .paths .pname{font-family:var(--serif-display);font-weight:600;font-size:17px;color:var(--ink)}
+  .paths .pmeta{font-family:var(--sans);font-size:11px;color:var(--mut);margin-top:4px}
+  .paths .pdo{font-family:var(--serif-body);font-size:14px;line-height:1.55;color:var(--ink-soft);max-width:54ch;white-space:normal}
+  .paths .pdo strong{color:var(--ink)}
+  .paths .pcta{display:inline-flex;align-items:center;white-space:nowrap;font-family:var(--sans);font-weight:600;font-size:13px;text-decoration:none;padding:8px 14px;border-radius:8px;border:1px solid var(--line-soft);color:var(--ink-soft);transition:border-color .15s,color .15s,background .15s}
+  .paths .pcta:hover{border-color:#9a7322;color:#9a7322;background:rgba(154,115,34,.06)}
+  .paths .pcta.solid{background:var(--gold);color:#fff;border-color:var(--gold)}
+  .paths .pcta.solid:hover{background:#7c5b18;color:#fff}
+  .pathnote{margin:22px auto 0;max-width:72ch;text-align:center;font-family:var(--serif-body);font-size:14.5px;line-height:1.62;color:var(--ink-soft)}
+  .pathnote strong{color:var(--ink)}
+  @media (max-width:680px){ table.paths,table.paths thead,table.paths tbody,table.paths tr,table.paths th,table.paths td{display:block} table.paths thead{display:none} table.paths td{border-top:none;padding:6px 16px} .paths .pcell{white-space:normal} table.paths tbody tr{border-top:1px solid var(--line);padding:12px 0} .paths .pcta{margin-top:6px} }
 </style>
 </head>
 <body>
@@ -152,79 +173,41 @@
   </a>
 
   <section class="band">
-    <h2>Ways in — the ladder</h2>
-    <p class="sub">Gentlest route first · climb only as high as you like</p>
-    <div class="ladder">
+    <h2>Four ways to contribute — pick one</h2>
+    <p class="sub">Creation-first · the gentlest route at the top</p>
 
-      <a class="lcard" href="https://flow.recursive.eco" target="_blank" rel="noopener">
-        <div class="lthumb shot" style="background-image:url('courses/images/02-open-deck.png')">
-          <span class="shot-tag">Real screen · a deck open in the app</span>
-        </div>
-        <div class="lbody">
-          <span class="lbadge easy">Easiest · no git</span>
-          <div class="lnum">RUNG 1</div>
-          <div class="lt">Fix it in the app</div>
-          <div class="ld">Open any card on recursive.eco and save your change — no files, no JSON.</div>
-          <div class="llink">Open the app ↗</div>
-        </div>
-      </a>
+    <figure class="pathfig">
+      <img src="courses/images/shot-app-edit.png" alt="A card open in the browser with an 'Open in recursive.eco' action — propose a change without leaving the page.">
+      <figcaption>Path 1 — open any card and propose a change, right in the app.</figcaption>
+    </figure>
 
-      <a class="lcard" href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">
-        <div class="lthumb tile">
-          <div class="lbar"><b></b><b></b><b></b><span>github.com</span></div>
-          <div class="ltile-mid">Edit the JSON,<br>open a PR</div>
-        </div>
-        <div class="lbody">
-          <span class="lbadge">GitHub login</span>
-          <div class="lnum">RUNG 2</div>
-          <div class="lt">Edit on GitHub</div>
-          <div class="ld">Change the deck's JSON in the browser and open a pull request — no other tools.</div>
-          <div class="llink">Open the repo ↗</div>
-        </div>
-      </a>
+    <table class="paths">
+      <thead><tr><th>Path</th><th>What you do</th><th>Start</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="pcell"><span class="pnum">1</span><span class="pname">In the app</span><div class="pmeta">recursive.eco · no code</div></td>
+          <td><div class="pdo">Click through any card and propose a change — <strong>even without AI</strong>. The copy icon forks it to the Create page to edit inline; or just ask the <strong>Grammar Assistant</strong> to make the edit for you.</div></td>
+          <td><a class="pcta solid" href="../viewers/cards.html?src=..%2Ftarot%2Fontoject-illustrated%2Fgrammar.json" target="_blank" rel="noopener">Edit a card now &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="pcell"><span class="pnum">2</span><span class="pname">On GitHub</span><div class="pmeta">web &middot; a browser</div></td>
+          <td><div class="pdo">Edit the deck's JSON in GitHub's web editor and open a <strong>pull request</strong> — no other tools needed.</div></td>
+          <td><a class="pcta" href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">Open the repo &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="pcell"><span class="pnum">3</span><span class="pname">In Claude.ai</span><div class="pmeta">chat &middot; MCP recommended</div></td>
+          <td><div class="pdo">Draft bigger edits in a chat, then open the PR. We recommend connecting the <strong>recursive.eco MCP</strong> so Claude can act on your library directly.</div></td>
+          <td><a class="pcta" href="course-viewer.html?course=how-to-contribute#rung-5-the-recursive-eco-mcp-the-full-toolkit">Read the steps &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="pcell"><span class="pnum">4</span><span class="pname">Fork &amp; code</span><div class="pmeta">Claude Code Desktop + MCP</div></td>
+          <td><div class="pdo">Clone the repo and edit like any coder — best with <strong>Claude Code Desktop + the MCP</strong>, working the whole library at once.</div></td>
+          <td><a class="pcta" href="course-viewer.html?course=how-to-contribute#rung-4-claude-desktop-on-the-repo">Read the steps &rarr;</a></td>
+        </tr>
+      </tbody>
+    </table>
 
-      <a class="lcard" href="course-viewer.html?course=how-to-contribute#rung-3-work-the-repo-in-claude-ai">
-        <div class="lthumb tile">
-          <div class="lbar"><b></b><b></b><b></b><span>claude.ai</span></div>
-          <div class="ltile-mid">Point Claude<br>at the repo</div>
-        </div>
-        <div class="lbody">
-          <span class="lbadge">Claude.ai</span>
-          <div class="lnum">RUNG 3</div>
-          <div class="lt">Work it in Claude.ai</div>
-          <div class="ld">Connect the repo to Claude.ai and let it draft the change for you to review.</div>
-          <div class="llink">Read the steps →</div>
-        </div>
-      </a>
-
-      <a class="lcard" href="course-viewer.html?course=how-to-contribute#rung-4-claude-desktop-on-the-repo">
-        <div class="lthumb tile">
-          <div class="lbar"><b></b><b></b><b></b><span>Claude Desktop</span></div>
-          <div class="ltile-mid">Run the repo<br>locally</div>
-        </div>
-        <div class="lbody">
-          <span class="lbadge">Desktop app</span>
-          <div class="lnum">RUNG 4</div>
-          <div class="lt">Claude Desktop</div>
-          <div class="ld">Work the whole repo on your machine with the Claude Desktop app.</div>
-          <div class="llink">Read the steps →</div>
-        </div>
-      </a>
-
-      <a class="lcard feat" href="course-viewer.html?course=how-to-contribute#rung-5-the-recursive-eco-mcp-the-full-toolkit">
-        <div class="lthumb shot" style="background-image:url('courses/images/mcp-audit-01-commons-search.png')">
-          <span class="shot-tag">Real screen · MCP audit</span>
-        </div>
-        <div class="lbody">
-          <span class="lbadge feat">Full toolkit · flagship</span>
-          <div class="lnum">RUNG 5</div>
-          <div class="lt">The recursive.eco MCP</div>
-          <div class="ld">Just ask Claude — find public-domain images, fix the source, verify, and publish.</div>
-          <div class="llink">Read the steps →</div>
-        </div>
-      </a>
-
-    </div>
+    <p class="pathnote">From path 2 on, the same moves let you edit <strong>any</strong> part of this site — and they're the very skills you'd use to grow a library of your own. <em>(We're building easier on-ramps for that; more soon.)</em></p>
   </section>
 
   <section class="band">
