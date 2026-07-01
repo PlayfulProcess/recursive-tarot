@@ -72,7 +72,6 @@
   const HOME_MENU = [
     [PFX + 'index.html',        'Home'],
     [PFX + 'pages/about.html',  'About'],
-    [PFX + 'pages/wishlist.html', 'Wish List'],
   ];
   // Courses — grouped into three topics; each is a course-viewer ?course=… (deep-linkable with #section).
   const COURSE_GROUPS = [
