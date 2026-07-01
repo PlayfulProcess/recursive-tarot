@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A heart that fell — recursive.eco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F4EC; --ink:#1F5D4E; --ink-soft:#3a7a6a; --heart:#E23830;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background:var(--cream); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    overflow:hidden;
+  }
+  /* the signature element: the forest fills the frame */
+  #forest{position:fixed; inset:0; width:100vw; height:100vh; display:block}
+
+  .panel{
+    position:fixed; top:clamp(18px,4vw,40px); left:clamp(18px,4vw,40px);
+    max-width:min(340px,calc(100vw - 36px));
+    z-index:2;
+  }
+  .eyebrow{
+    font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--ink-soft); margin:0 0 6px;
+  }
+  h1{
+    font-family:"Fraunces",Georgia,serif;
+    font-weight:500; font-size:clamp(30px,5.4vw,46px); line-height:1.02;
+    margin:0 0 14px; letter-spacing:-.01em;
+  }
+  h1 em{font-style:italic; color:var(--heart)}
+  .caption{font-size:13.5px; line-height:1.5; color:var(--ink-soft); margin:0 0 18px; max-width:32ch}
+
+  .modes{display:inline-flex; background:rgba(31,93,78,.08); border-radius:999px; padding:3px; gap:2px}
+  .modes button{
+    font:inherit; font-size:13px; font-weight:500; cursor:pointer;
+    border:0; border-radius:999px; padding:7px 14px; color:var(--ink-soft);
+    background:transparent; transition:.18s;
+  }
+  .modes button[aria-pressed="true"]{ background:var(--cream); color:var(--ink); box-shadow:0 1px 4px rgba(31,93,78,.14) }
+  .modes button:focus-visible{ outline:2px solid var(--heart); outline-offset:2px }
+
+  .meta{display:flex; align-items:center; gap:14px; margin-top:14px}
+  #readout{font-size:12px; letter-spacing:.04em; color:var(--ink-soft); font-variant-numeric:tabular-nums}
+  #replant{
+    font:inherit; font-size:12.5px; cursor:pointer; background:none; border:0;
+    color:var(--ink); text-decoration:underline; text-underline-offset:3px;
+    text-decoration-color:rgba(31,93,78,.35); padding:2px 0;
+  }
+  #replant:focus-visible{ outline:2px solid var(--heart); outline-offset:2px; border-radius:3px }
+
+  .legend{
+    position:fixed; right:clamp(18px,4vw,40px); bottom:clamp(18px,4vw,34px);
+    font-size:12px; line-height:1.5; color:var(--ink-soft); text-align:right;
+    max-width:30ch; z-index:2;
+  }
+  .legend b{color:var(--ink); font-weight:600}
+  @media (max-width:560px){ .legend{display:none} }
+</style>
+</head>
+<body>
+  <canvas id="forest" aria-label="An animated forest: a heart falls, becomes a tree, and drops hearts that grow their own trees."></canvas>
+
+  <div class="panel">
+    <p class="eyebrow">recursive.eco</p>
+    <h1>A heart<br>that <em>fell</em></h1>
+    <p class="caption">One heart drops, roots, and grows a tree. Each heart it bears falls and grows its own — inheriting the last, drifting from it.</p>
+    <div class="modes" role="group" aria-label="Inheritance mode">
+      <button id="mode-bio" aria-pressed="true">Biodiverse</button>
+      <button id="mode-mono" aria-pressed="false">Monoculture</button>
+    </div>
+    <div class="meta">
+      <button id="replant">↻ drop a new heart</button>
+      <span id="readout">generation 0 · 0 trees</span>
+    </div>
+  </div>
+
+  <p class="legend"><b>Biodiverse</b> mutates each seed — one ruleset, a whole ecosystem.<br><b>Monoculture</b> turns mutation off: every tree a clone of the last.</p>
+
+  <script>
+/* ============================================================================
+   A HEART THAT FELL — a generative forest for recursive.eco
+   ----------------------------------------------------------------------------
+   The thesis, as code:
+     - GENOME      = the inherited grammar (a small set of numbers).
+     - buildTree() = the deck/pattern rendered from that grammar.
+     - mutate()    = resignification: the child inherits the parent, then drifts.
+     - the SEED    = the exact point where iteration becomes emergence.
+     - POP_CAP     = a calm commons, not scale: the forest turns over, stays bounded.
+   Turn mutation OFF and every tree is a clone of the last — a redwood monoculture
+   (the "universal template"). Turn it ON and one ruleset grows a biodiverse forest.
+   ========================================================================== */
+
+(() => {
+  'use strict';
+
+  // ---- palette (pulled from the uploaded tree image) ------------------------
+  const CREAM   = '#F7F4EC';
+  const INK     = '#1F5D4E';   // forest-green trunk/root ink
+  const HEART   = '#E23830';   // heart red
+  const reduce  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const CONFIG = {
+    POP_CAP:    13,    // a small, tended commons
+    GROW_TIME:  6.5,   // seconds for a tree to reach maturity
+    MATURE_TIME:10,    // seconds mature before it may senesce
+    SEED_DROPS: 3,     // hearts a mature tree lets go
+    SPEED:      1.0,
+  };
+
+  // ---- canvas setup ---------------------------------------------------------
+  const canvas = document.getElementById('forest');
+  const ctx = canvas.getContext('2d');
+  let W = 0, H = 0, groundY = 0, dpr = 1;
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = canvas.clientWidth; H = canvas.clientHeight;
+    canvas.width = Math.floor(W * dpr);
+    canvas.height = Math.floor(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    groundY = H * 0.82;
+  }
+  window.addEventListener('resize', resize);
+
+  // ---- small math helpers ---------------------------------------------------
+  const rand  = (a, b) => a + Math.random() * (b - a);
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const lerp  = (a, b, t) => a + (b - a) * t;
+  // cheap gaussian-ish noise in [-1,1]
+  const gauss = () => (Math.random() + Math.random() + Math.random() - 1.5) / 1.5;
+
+  // ====================  GENOME  =============================================
+  // A tree is fully described by ~11 numbers. That is the whole "grammar".
+  function randomGenome() {
+    return {
+      gen:        0,
+      angle:      rand(0.5, 1.15),   // spread between child branches
+      jitter:     rand(0.05, 0.35),  // asymmetry / crookedness
+      lean:       rand(-0.18, 0.18), // overall bias L/R
+      ratio:      rand(0.68, 0.80),  // how fast branches shorten
+      depth:      Math.round(rand(4, 5)),
+      branches:   Math.random() < 0.5 ? 2 : 3,
+      scale:      rand(0.78, 1.12),  // overall height
+      canopyHue:  rand(95, 165),     // green family, room to drift
+      canopySat:  rand(35, 60),
+      canopyLit:  rand(34, 50),
+      canopyR:    rand(16, 26),      // foliage softness
+      fruitHue:   rand(-8, 12),      // around red, can drift toward pink/gold
+      fruitful:   rand(0.35, 0.8),   // how many hearts
+    };
+  }
+
+  // A deliberately uniform ancestor for monoculture mode (a redwood).
+  function redwoodGenome() {
+    return {
+      gen: 0, angle: 0.42, jitter: 0.06, lean: 0, ratio: 0.78,
+      depth: 5, branches: 2, scale: 1.25,
+      canopyHue: 140, canopySat: 38, canopyLit: 30, canopyR: 14,
+      fruitHue: 2, fruitful: 0.35,
+    };
+  }
+
+  // The one line that turns iteration into emergence.
+  function mutate(g, rate) {
+    const n = Object.assign({}, g);
+    n.gen = g.gen + 1;
+    if (rate <= 0) return n;            // monoculture: a perfect clone
+    n.angle   = clamp(g.angle  + gauss() * 0.18 * rate, 0.35, 1.45);
+    n.jitter  = clamp(g.jitter + gauss() * 0.10 * rate, 0.03, 0.55);
+    n.lean    = clamp(g.lean   + gauss() * 0.10 * rate, -0.4, 0.4);
+    n.ratio   = clamp(g.ratio  + gauss() * 0.04 * rate, 0.62, 0.84);
+    n.scale   = clamp(g.scale  + gauss() * 0.14 * rate, 0.6, 1.4);
+    n.canopyHue = g.canopyHue + gauss() * 22 * rate;   // greens drift to teal / olive / autumn
+    n.canopySat = clamp(g.canopySat + gauss() * 10 * rate, 18, 72);
+    n.canopyLit = clamp(g.canopyLit + gauss() * 8 * rate, 26, 58);
+    n.canopyR   = clamp(g.canopyR + gauss() * 4 * rate, 11, 30);
+    n.fruitHue  = g.fruitHue + gauss() * 14 * rate;    // red drifts to pink / coral / gold
+    n.fruitful  = clamp(g.fruitful + gauss() * 0.18 * rate, 0.15, 0.95);
+    if (Math.random() < 0.12 * rate) n.branches = Math.random() < 0.5 ? 2 : 3;
+    if (Math.random() < 0.10 * rate) n.depth = clamp(g.depth + (Math.random() < 0.5 ? -1 : 1), 4, 6);
+    return n;
+  }
+
+  // ====================  TREE GEOMETRY  ======================================
+  // Build branch segments once; each carries a [growStart,growEnd] window so the
+  // tree visibly grows from the base upward as `growth` goes 0 -> 1.
+  function buildTree(g) {
+    const segs = [], tips = [], roots = [];
+    const baseLen = 78 * g.scale;
+    const baseW   = 9 * g.scale;
+    const maxLvl  = g.depth;
+
+    (function branch(x, y, ang, len, w, depth) {
+      const lvl = maxLvl - depth;
+      const x2 = x + Math.cos(ang) * len;
+      const y2 = y + Math.sin(ang) * len;
+      segs.push({ x1: x, y1: y, x2, y2, w,
+        g0: lvl / (maxLvl + 1), g1: (lvl + 1) / (maxLvl + 1) });
+      if (depth <= 0) { tips.push({ x: x2, y: y2 }); return; }
+      const nb = g.branches;
+      for (let i = 0; i < nb; i++) {
+        const frac = nb === 1 ? 0 : (i / (nb - 1) - 0.5);
+        const a = ang + frac * g.angle + gauss() * g.jitter + g.lean;
+        branch(x2, y2, a, len * g.ratio, w * 0.72, depth - 1);
+      }
+    })(0, 0, -Math.PI / 2, baseLen, baseW, maxLvl);
+
+    // roots: a shallow mirror going down, drawn first
+    (function root(x, y, ang, len, w, depth) {
+      const x2 = x + Math.cos(ang) * len, y2 = y + Math.sin(ang) * len;
+      roots.push({ x1: x, y1: y, x2, y2, w });
+      if (depth <= 0) return;
+      for (let i = 0; i < 2; i++) {
+        const a = ang + (i - 0.5) * 0.9 + gauss() * 0.25;
+        root(x2, y2, a, len * 0.66, w * 0.6, depth - 1);
+      }
+    })(0, 0, Math.PI / 2, 30 * g.scale, baseW * 0.8, 2);
+
+    // fruit: a subset of tips become hearts
+    const fruit = tips.filter(() => Math.random() < g.fruitful)
+                      .map(t => ({ x: t.x, y: t.y, s: rand(5, 8) }));
+    return { segs, tips, roots, fruit };
+  }
+
+  // ====================  DRAWING  ============================================
+  function heartPath(x, y, size, rot) {
+    ctx.beginPath();
+    for (let i = 0; i <= 26; i++) {
+      const t = (i / 26) * Math.PI * 2;
+      let px = 16 * Math.pow(Math.sin(t), 3);
+      let py = 13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t);
+      px *= size / 16; py *= -size / 16;
+      const rx = px * Math.cos(rot) - py * Math.sin(rot);
+      const ry = px * Math.sin(rot) + py * Math.cos(rot);
+      if (i === 0) ctx.moveTo(x + rx, y + ry); else ctx.lineTo(x + rx, y + ry);
+    }
+    ctx.closePath();
+  }
+
+  function drawTree(tr) {
+    const g = tr.genome, geo = tr.geo, gr = tr.growth, a = tr.alpha;
+    ctx.save();
+    ctx.translate(tr.x, groundY);
+    ctx.globalAlpha = a;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = INK;
+
+    // roots (grow first)
+    const rootGrow = clamp(gr * 2, 0, 1);
+    for (const s of geo.roots) {
+      ctx.globalAlpha = a * 0.55;
+      ctx.lineWidth = s.w;
+      ctx.beginPath();
+      ctx.moveTo(s.x1, s.y1);
+      ctx.lineTo(lerp(s.x1, s.x2, rootGrow), lerp(s.y1, s.y2, rootGrow));
+      ctx.stroke();
+    }
+    ctx.globalAlpha = a;
+
+    // branches, base -> tip
+    for (const s of geo.segs) {
+      const f = clamp((gr - s.g0) / (s.g1 - s.g0), 0, 1);
+      if (f <= 0) continue;
+      ctx.lineWidth = Math.max(0.6, s.w * (0.7 + 0.3 * gr));
+      ctx.beginPath();
+      ctx.moveTo(s.x1, s.y1);
+      ctx.lineTo(lerp(s.x1, s.x2, f), lerp(s.y1, s.y2, f));
+      ctx.stroke();
+    }
+
+    // foliage: soft blobs at tips once the tree is mostly grown
+    const leaf = clamp((gr - 0.55) / 0.45, 0, 1);
+    if (leaf > 0) {
+      ctx.fillStyle = `hsl(${g.canopyHue} ${g.canopySat}% ${g.canopyLit}%)`;
+      ctx.globalAlpha = a * 0.5 * leaf;
+      for (const t of geo.tips) {
+        ctx.beginPath();
+        ctx.arc(t.x, t.y, g.canopyR * leaf, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = a;
+    }
+
+    // hearts (fruit)
+    const fr = clamp((gr - 0.82) / 0.18, 0, 1);
+    if (fr > 0) {
+      ctx.fillStyle = `hsl(${(360 + g.fruitHue) % 360} 78% 52%)`;
+      for (const f of geo.fruit) {
+        heartPath(f.x, f.y - f.s * 0.2, f.s * fr, 0);
+        ctx.fill();
+      }
+    }
+    ctx.restore();
+  }
+
+  // a falling heart-seed with a little root tail (matches the image)
+  function drawSeed(sd) {
+    ctx.save();
+    ctx.translate(sd.x, sd.y);
+    ctx.globalAlpha = 0.95;
+    // root tails
+    ctx.strokeStyle = INK; ctx.lineWidth = 1.4; ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(0, 4); ctx.lineTo(-3.5, 11);
+    ctx.moveTo(0, 4); ctx.lineTo(3.5, 11);
+    ctx.moveTo(0, 4); ctx.lineTo(0, 12);
+    ctx.stroke();
+    // a tiny leaf pair on top, then the heart
+    ctx.fillStyle = '#74B33C';
+    ctx.beginPath(); ctx.ellipse(-3, -7, 3, 1.6, -0.6, 0, Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(3, -7, 3, 1.6, 0.6, 0, Math.PI*2); ctx.fill();
+    ctx.fillStyle = HEART;
+    heartPath(0, 0, 5, 0);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // ====================  WORLD  ==============================================
+  let trees = [], seeds = [], mutationOn = true, t0 = 0, maxGen = 0;
+
+  function spawnTree(genome, x) {
+    trees.push({
+      genome, x, geo: buildTree(genome),
+      born: now(), state: 'grow', growth: 0, alpha: 1,
+      dropped: 0, nextDrop: CONFIG.GROW_TIME + rand(0.5, 2),
+    });
+    maxGen = Math.max(maxGen, genome.gen);
+    updateReadout();
+  }
+
+  function dropSeed(tr) {
+    const f = tr.geo.fruit.length
+      ? tr.geo.fruit[(Math.random() * tr.geo.fruit.length) | 0]
+      : { x: 0, y: -120 };
+    seeds.push({
+      x: tr.x + f.x, y: groundY + f.y,
+      vx: rand(-46, 46) + (tr.genome.lean * 120),   // some land beyond the parent
+      vy: -20,
+      parent: tr.genome,
+    });
+  }
+
+  function germinate(sd) {
+    const child = mutate(sd.parent, mutationOn ? 1 : 0);
+    const x = clamp(sd.x, 60, W - 60);
+    spawnTree(child, x);
+    // a calm commons, not scale: if we're over the cap, the eldest makes room.
+    if (trees.length > CONFIG.POP_CAP) {
+      let eldest = null;
+      for (const t of trees)
+        if (t.state === 'mature' && (!eldest || t.born < eldest.born)) eldest = t;
+      if (eldest) eldest.state = 'senesce';
+    }
+  }
+
+  const now = () => (performance.now() / 1000 - t0) * CONFIG.SPEED;
+
+  function update(dt) {
+    for (const tr of trees) {
+      const age = now() - tr.born;
+      if (tr.state === 'grow') {
+        tr.growth = clamp(age / CONFIG.GROW_TIME, 0, 1);
+        if (tr.growth >= 1) tr.state = 'mature';
+      } else if (tr.state === 'mature') {
+        tr.growth = 1;
+        if (tr.dropped < CONFIG.SEED_DROPS && age > tr.nextDrop) {
+          dropSeed(tr); tr.dropped++;
+          tr.nextDrop = age + rand(1.6, 3.2);
+        }
+      } else if (tr.state === 'senesce') {
+        tr.alpha -= dt * 0.55;
+      }
+    }
+    trees = trees.filter(t => t.alpha > 0.02);
+
+    for (const sd of seeds) {
+      sd.vy += 90 * dt;          // gravity
+      sd.x += sd.vx * dt;
+      sd.y += sd.vy * dt;
+    }
+    const landed = seeds.filter(s => s.y >= groundY);
+    seeds = seeds.filter(s => s.y < groundY);
+    for (const s of landed) germinate(s);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    // ground
+    ctx.fillStyle = CREAM; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(31,93,78,0.18)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(0, groundY + 0.5); ctx.lineTo(W, groundY + 0.5); ctx.stroke();
+
+    // faint origin ring around the first tree — the boundary that seeds cross
+    if (trees.length) {
+      const o = trees[0];
+      ctx.strokeStyle = 'rgba(31,93,78,0.10)'; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.arc(o.x, groundY - 150 * o.genome.scale, 175 * o.genome.scale, 0, Math.PI * 2); ctx.stroke();
+    }
+
+    trees.sort((a, b) => a.x - b.x);
+    for (const tr of trees) drawTree(tr);
+    for (const sd of seeds) drawSeed(sd);
+  }
+
+  // ====================  LOOP  ===============================================
+  let last = 0;
+  function frame(ts) {
+    const t = ts / 1000;
+    const dt = Math.min(0.05, t - last || 0);
+    last = t;
+    update(dt);
+    draw();
+    requestAnimationFrame(frame);
+  }
+
+  function plant() {
+    resize();
+    trees = []; seeds = []; maxGen = 0; t0 = performance.now() / 1000; last = 0;
+    // the opening beat: a single heart falls from the sky.
+    const ancestor = mutationOn ? randomGenome() : redwoodGenome();
+    seeds.push({ x: W / 2, y: -30, vx: 0, vy: 10, parent: ancestor, _origin: true });
+    // the origin seed germinates immediately on the next landing; nudge it down fast
+    seeds[0].vy = 260;
+  }
+
+  // ---- static fallback for reduced-motion ----------------------------------
+  function drawStatic() {
+    resize();
+    const n = 6;
+    ctx.fillStyle = CREAM; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(31,93,78,0.18)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(0, groundY + 0.5); ctx.lineTo(W, groundY + 0.5); ctx.stroke();
+    for (let i = 0; i < n; i++) {
+      const g = randomGenome(); g.gen = i;
+      drawTree({ genome: g, x: lerp(80, W - 80, i / (n - 1)),
+        geo: buildTree(g), growth: 1, alpha: 1 });
+    }
+    updateReadout();
+  }
+
+  // ---- UI -------------------------------------------------------------------
+  function updateReadout() {
+    const el = document.getElementById('readout');
+    if (el) el.textContent = `generation ${maxGen} · ${trees.length} trees`;
+  }
+  function wireUI() {
+    const bBio = document.getElementById('mode-bio');
+    const bMono = document.getElementById('mode-mono');
+    const bReplant = document.getElementById('replant');
+    function setMode(on) {
+      mutationOn = on;
+      bBio.setAttribute('aria-pressed', String(on));
+      bMono.setAttribute('aria-pressed', String(!on));
+      plant();
+    }
+    bBio && bBio.addEventListener('click', () => setMode(true));
+    bMono && bMono.addEventListener('click', () => setMode(false));
+    bReplant && bReplant.addEventListener('click', () => plant());
+  }
+
+  // ---- go -------------------------------------------------------------------
+  resize();
+  wireUI();
+  if (reduce) {
+    drawStatic();
+  } else {
+    plant();
+    requestAnimationFrame(frame);
+  }
+})();
+
+  </script>
+</body>
+</html>
