@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="../theme.css?v=5">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Recursive Tarot — Spread Studio</title>
+<title>Recursive Tarot — Spread Caster</title>
 <!--
   Self-contained tarot caster for GitHub Pages. No backend.
   - Pick a DECK (one historical deck, or All Decks = the cross-deck meta) and a SPREAD
@@ -140,12 +140,12 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=40"></script>
+<script src="../site-header.js?v=42"></script>
 <script src="../icons.js"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">
-  <h1>Spread Studio <span style="font-size:13px;font-weight:400;color:var(--muted);">— build · cast · send</span></h1>
+  <h1>Spread Caster <span style="font-size:13px;font-weight:400;color:var(--muted);">— build · cast · send</span></h1>
   <p class="sub">Build a spread from scratch (or start from a preset), cast the cards into it, and send the whole reading to <a href="https://flow.recursive.eco/" target="_blank" rel="noopener">recursive.eco</a> for an AI interpretation. This page draws; recursive.eco interprets and keeps a Journal.</p>
 
   <div class="intention" id="intention" style="display:none">
@@ -168,7 +168,8 @@
         <label for="spread">Spread</label>
         <div class="spread-inline">
           <select id="spread"><option>Loading…</option></select>
-          <label class="ghost" id="importLabel" title="Load a previously exported spread / cast .json" style="display:inline-flex;align-items:center;background:#efeadf;color:#4a4439;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;">Import Spread<input type="file" id="importFile" accept=".json,application/json" style="display:none"></label>
+          <label class="ghost" id="importLabel" title="Load a spread (layout) or a full reading (layout + cast cards) — .json exported here" style="display:inline-flex;align-items:center;background:#efeadf;color:#4a4439;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;">Import<input type="file" id="importFile" accept=".json,application/json" style="display:none"></label>
+          <button type="button" class="ghost" id="exportSpread" title="Save just this layout — positions, labels &amp; meanings, no cards — as a reusable spread .json" style="background:#efeadf;color:#4a4439;border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;">Export spread</button>
         </div>
         <div class="spreadmeta" id="spreadmeta"></div>
       </div>
@@ -185,7 +186,7 @@
     <button id="addPos" class="ghost">+ Add position</button>
     <button id="clearAll" class="ghost">Clear all</button>
     <button id="reshuffle" class="ghost" style="display:none">Re-cast</button>
-    <span class="spreadmeta hint">Drag positions on the board; edit labels &amp; meanings below. Or <a href="../pages/spread-builder.html" target="_blank" rel="noopener">open the full Spread Builder ↗</a>.</span>
+    <span class="spreadmeta hint">Drag positions on the board; edit labels &amp; meanings below. <strong>Import</strong> a saved spread or reading, or <strong>Export spread</strong> to reuse this layout.</span>
   </div>
 
   <div id="board" class="board"></div>
@@ -196,7 +197,7 @@
     <p>Your built spread and the cards you cast go to recursive.eco, where each becomes an Oracle card with provenance, an AI interpretation, and a Journal entry.</p>
     <a id="journalLink" class="journal-cta" href="https://flow.recursive.eco/" target="_blank" rel="noopener">Send to recursive.eco oracle ↗</a>
     <div class="btnrow">
-      <button id="downloadJson">⤓ Download (save locally)</button>
+      <button id="downloadJson" title="Save this full reading — layout + the cards you cast — as a .json you can re-import later">⤓ Save reading (.json)</button>
       <a id="contributeLink" class="btn" href="https://github.com/PlayfulProcess/recursive-tarot/new/dev?filename=spreads/my-spread.json" target="_blank" rel="noopener" title="Add your spread to the shared library via a GitHub pull request">↗ Contribute a spread on GitHub</a>
       <a class="btn" href="../pages/course-viewer.html?course=how-to-contribute" target="_blank" rel="noopener" title="How to contribute a deck, spread, or course">How to contribute →</a>
       <button id="copyJson" class="ghost">Copy JSON</button>
@@ -310,6 +311,7 @@ const $ = id => document.getElementById(id);
     renderBoard(); renderCustomList(); syncJson(); });
   $('copyJson').addEventListener('click', copyJson);
   $('downloadJson').addEventListener('click', downloadJson);
+  $('exportSpread').addEventListener('click', exportSpread);
   $('importFile').addEventListener('change', onImport);
 
   loadVoices();
@@ -419,7 +421,7 @@ function buildCast(){
   const s = spreadsById[curSpreadId];
   return {
     _type:'recursive-tarot-cast', _version:2,
-    _source:'https://tarot.recursive.eco/viewers/caster.html',
+    _source:'https://tarot.recursive.eco/viewers/caster-studio.html',
     spread: curSpreadId==='custom' ? ($('question').value ? 'Custom' : 'Custom') : (s ? s.name : 'Custom'),
     spread_id: curSpreadId,
     positions: positions.map((p,i) => ({ n:i+1, label:p.label, meaning:p.meaning, x:Math.round(p.x*1000)/1000, y:Math.round(p.y*1000)/1000 })),
@@ -439,15 +441,54 @@ function copyJson(){ const ta=$('json'); ta.select();
 function downloadJson(){ if(!lastCast) syncJson();
   const blob=new Blob([JSON.stringify(lastCast,null,2)],{type:'application/json'});
   const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
-  a.download='tarot-cast-'+(lastCast.cast_at||'').replace(/[:.]/g,'-')+'.json'; a.click(); URL.revokeObjectURL(a.href); }
+  a.download='tarot-reading-'+(lastCast.cast_at||'').replace(/[:.]/g,'-')+'.json'; a.click(); URL.revokeObjectURL(a.href); }
+
+// ── the layout only (no drawn cards) — a reusable spread ──
+function buildSpreadObj(){
+  const s = spreadsById[curSpreadId];
+  const name = (curSpreadId!=='custom' && s) ? s.name : 'Custom spread';
+  return {
+    _type:'recursive-tarot-spread', _version:1,
+    _source:'https://tarot.recursive.eco/viewers/caster-studio.html',
+    name, description: (curSpreadId!=='custom' && s) ? (s.description||'') : '',
+    positions: positions.map((p,i)=>({ n:i+1, label:p.label, meaning:p.meaning, x:Math.round(p.x*1000)/1000, y:Math.round(p.y*1000)/1000 })),
+  };
+}
+function exportSpread(){
+  if(!positions.length){ alert('Add at least one position first.'); return; }
+  const obj = buildSpreadObj();
+  const blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='tarot-spread-'+slugify(obj.name)+'.json'; a.click(); URL.revokeObjectURL(a.href); }
+function slugify(s){ return (s||'spread').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') || 'spread'; }
+
+// Import auto-detects: a full reading (has drawn cards) → layout + cards;
+// a bare spread (positions, no cards; incl. spreads.json entries) → layout only, ready to cast.
 async function onImport(e){ const f=e.target.files&&e.target.files[0]; if(!f) return;
-  try { const obj=JSON.parse(await f.text()); if(!obj||!Array.isArray(obj.cards)) throw new Error('not a cast file');
-    if (Array.isArray(obj.positions) && obj.positions.length===obj.cards.length) {
-      positions = obj.positions.map((p,i)=>({ id:'p'+(++seq), label:p.label, meaning:p.meaning, x:p.x??0.5, y:p.y??0.5, card:obj.cards[i] }));
+  try {
+    const obj=JSON.parse(await f.text());
+    if(!obj || typeof obj!=='object') throw new Error('not a JSON object');
+    const hasCards = Array.isArray(obj.cards) && obj.cards.length;
+    if (hasCards) {
+      // full reading — pair each card with its position (fall back to card.position label)
+      const pos = Array.isArray(obj.positions) && obj.positions.length===obj.cards.length
+        ? obj.positions
+        : obj.cards.map((c,i)=>({ label:c.position||('Position '+(i+1)), meaning:c.prompt||'', x:0.5, y:0.5 }));
+      positions = pos.map((p,i)=>({ id:'p'+(++seq), label:p.label, meaning:p.meaning, x:p.x??0.5, y:p.y??0.5, card:obj.cards[i] }));
+      if(obj.question!=null) $('question').value = obj.question || '';
+      $('spread').value='custom'; curSpreadId='custom'; $('clist').classList.add('on'); $('spreadmeta').textContent='';
+      renderBoard(); renderCustomList(); $('reshuffle').style.display='inline-block'; syncJson(); $('export').classList.add('on');
+    } else if (Array.isArray(obj.positions) && obj.positions.length) {
+      // bare spread — layout only, no cards; ready to cast
+      positions = obj.positions.map((p)=>({ id:'p'+(++seq), label:p.label||'', meaning:p.meaning||'', x:p.x??0.5, y:p.y??0.5 }));
       $('spread').value='custom'; curSpreadId='custom'; $('clist').classList.add('on');
-      renderBoard(); $('reshuffle').style.display='inline-block'; syncJson(); $('export').classList.add('on');
+      $('spreadmeta').textContent = obj.description || (obj.name ? ('Imported: '+obj.name) : '');
+      $('reshuffle').style.display='none'; $('export').classList.remove('on');
+      renderBoard(); renderCustomList(); syncJson();
+    } else {
+      throw new Error('no positions or cards found');
     }
-  } catch(err){ alert('Could not import this file: '+err.message); }
+  } catch(err){ alert('Could not import this file — expected a spread or reading exported here.\n\n'+err.message); }
   e.target.value=''; }
 
 // ── voices carousel ──

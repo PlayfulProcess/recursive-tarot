@@ -62,9 +62,7 @@
     [PFX + 'pages/games/tarocchino.html', 'Tarocchino di Bologna'],
     [PFX + 'pages/games/madiao.html',     'Ma Diao 馬吊'],
     [PFX + 'pages/games/trionfi.html',    'Trionfi'],
-    [PFX + 'viewers/caster.html',         'Caster'],
-    [PFX + 'viewers/caster-studio.html',  'Spread Studio — build + cast + send'],
-    [PFX + 'pages/spread-builder.html',   'Spread Builder'],
+    [PFX + 'viewers/caster-studio.html',  'Spread Caster — build · cast · send'],
     ['https://flow.recursive.eco/',   'Oracle ↗', true],
     [PFX + 'pages/play.html',             'All games & readings →'],
   ];
