@@ -136,7 +136,13 @@
   /* cast card — hug the image's own frame like the cards viewer (no letterbox gap) */
   .slot .card.filled { aspect-ratio:auto; border:none; background:none; overflow:visible; }
   .slot .card.filled img { display:block; width:100%; height:auto; border:1px solid var(--line);
-    border-radius:6px; background:#faf8f3; box-shadow:0 6px 16px -9px rgba(60,45,20,.5); }
+    border-radius:6px; background:#faf8f3; box-shadow:0 6px 16px -9px rgba(60,45,20,.5); cursor:zoom-in; }
+
+  /* hover preview — a quick large look at a cast card without clicking (desktop only), like the Explorer */
+  #hovprev { position:fixed; display:none; pointer-events:none; z-index:80; }
+  #hovprev img { height:min(64vh,440px); width:auto; border-radius:8px; background:#f4f1ea;
+    border:1px solid #e3ddd0; box-shadow:0 18px 50px -12px rgba(20,12,4,.55); display:block; }
+  @media (hover:none){ #hovprev{ display:none!important; } }
 </style>
 </head>
 <body>
@@ -190,6 +196,7 @@
   </div>
 
   <div id="board" class="board"></div>
+  <div id="hovprev"><img alt=""></div>
   <div class="clist" id="clist"></div>
 
   <div class="export" id="export">
@@ -351,7 +358,7 @@ function renderBoard(){
     slot.style.left = (p.x*100)+'%'; slot.style.top = (p.y*100)+'%';
     const c = p.card;
     const cardInner = c
-      ? (c.image_url ? `<img src="${esc(c.image_url)}" alt="${esc(c.name)}" style="${c.reversed?'transform:rotate(180deg);':''}" onerror="this.outerHTML='<div class=ph>'+${JSON.stringify('?')}+'</div>'">` : '<div class="ph">★</div>')
+      ? (c.image_url ? `<img src="${esc(c.image_url)}" alt="${esc(c.name)}" style="${c.reversed?'transform:rotate(180deg);':''}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'?'}))">` : '<div class="ph">★</div>')
       : `<div class="ph">${esc(p.meaning||'').slice(0,60) || '—'}</div>`;
     slot.innerHTML = `<div class="num">${i+1}</div>`
       + `<div class="plabel" title="${esc(p.meaning||'')}">${esc(p.label)}</div>`
@@ -541,6 +548,38 @@ function closeCardDetail(){ $('cardDetailModal').style.display='none'; document.
 document.addEventListener('DOMContentLoaded',()=>{ $('cdmClose').addEventListener('click',closeCardDetail);
   $('cardDetailModal').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeCardDetail(); });
   document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeCardDetail(); }); });
+
+// hover preview — a large floating copy of the cast card under the cursor (desktop only), mirroring the Explorer
+(function(){
+  const hp=document.getElementById('hovprev'), hpImg=hp.querySelector('img');
+  const SEL='#board .slot .card.filled img';
+  const HEADPAD=64;
+  function place(card){
+    const r=card.getBoundingClientRect();
+    hp.style.display='block';
+    const pw=hp.offsetWidth||300, ph=hp.offsetHeight||440, gap=16;
+    let left=r.right+gap;
+    if (left+pw > window.innerWidth-8) left=r.left-gap-pw;              // flip to the left edge
+    left=Math.max(8, Math.min(left, window.innerWidth-pw-8));
+    let top=r.top+r.height/2-ph/2;
+    top=Math.max(HEADPAD, Math.min(top, window.innerHeight-ph-8));
+    hp.style.left=left+'px'; hp.style.top=top+'px';
+  }
+  function hide(){ hp.style.display='none'; }
+  document.addEventListener('mouseover', e=>{
+    const card=e.target.closest(SEL);
+    if (!card || !card.getAttribute('src')) return;
+    hpImg.style.transform = /rotate/.test(card.style.transform) ? 'rotate(180deg)' : '';   // match reversal
+    if (hpImg.getAttribute('src')!==card.getAttribute('src')) hpImg.src=card.src;
+    if (hpImg.complete && hpImg.naturalWidth) place(card); else hpImg.onload=()=>place(card);
+  });
+  document.addEventListener('mouseout', e=>{
+    const card=e.target.closest(SEL);
+    if (card && !(e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(SEL))) hide();
+  });
+  document.addEventListener('pointerdown', hide);                        // don't hover-preview mid-drag
+  window.addEventListener('scroll', hide, true);
+})();
 </script>
 
 <script src="../site-footer.js"></script>
