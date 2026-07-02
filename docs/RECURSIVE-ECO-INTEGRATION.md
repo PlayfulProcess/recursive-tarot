@@ -170,6 +170,52 @@ affected.)
 
 ---
 
+## 9. Opening & casting a grammar from a link (play URLs + the mini-app path)
+
+*Added Jul 2 2026 — the "recreate the caster inside the app" reference.*
+
+**To open a grammar in the app from anywhere (repo, course page, email, a marriage-gift site):**
+```
+https://flow.recursive.eco/play?id=<GRAMMAR_UUID>
+```
+A bare UUID resolves to `/play?id=<uuid>` (`apps/flow/src/components/shared/url-utils.ts`). The
+tabbed Journal (all oracles + AI) is `https://flow.recursive.eco/play?journal=1`. Get the UUID
+from `tarot/_eco_ids.json` (or the MCP `create_grammar` return).
+
+**In-app `oracle:` deep-links are NOT web URLs.** Inside the app the assistant emits pills like
+`[▶ Play in Tarot](oracle:tarot:<UUID>)`; the `oracle:<kind>:<UUID>` scheme (kinds: `tarot`,
+`iching`, `astro`, `story`) is handled by `JournalCompactPanel.tsx → handleOracleLink` to switch
+the sidebar tab and load the deck. It only works *inside* the app — for an external link, use the
+play URL above.
+
+**To CAST programmatically:** the MCP `cast` tool draws from a grammar — the seed of a
+"cast this deck from a link" feature.
+
+**Rebuilding this repo's spread caster as a mini-app inside the app:**
+1. Spread shapes live here (`spreads.json`) — the open source of truth.
+2. A caster = a small view that reads a spread shape, draws N cards from a grammar
+   (`cast` or client-side shuffle), lays them on the positions, hands the combination to the AI.
+3. **Test standalone first (your instinct):** build it as plain HTML+JS in this repo (like
+   `public/heart-forest-animated-hearts.html`) reading `spreads.json` + a grammar's public JSON —
+   zero app dependencies. If it feels good, it graduates into a real sidebar oracle tab in the app
+   (a React component alongside `apps/flow/src/components/TarotOracle.tsx`).
+4. **Duet / synastry** = the same caster with two grammars side by side, one combined prompt.
+   Build the single caster; the duet is a second column.
+
+App-side plans this connects to: `recursive-eco/docs/future_plan/PLAN-tarot-integrations-casting-course-tree.md`
+(§A casting shapes) and `PLAN-profiles-communities-contribute-miniapps.md` (§4d mini-app slot).
+
+## 10. The Journal app's feature names (so a link lands in the right place)
+
+| Feature | What it is | Entry |
+|---|---|---|
+| **Journal** | oracles + journaling + AI chat | `/` (tabbed: `/play?journal=1`) |
+| **Play** (reader) | opens one grammar in the viewer | `/play?id=<UUID>` |
+| **Create** | grammar editor | `/create` → `/create/<id>` |
+| **Library** | public catalog of all grammars | `/library` (channel: `?channel=<slug>`) |
+| **Personal Channel** | a user's curated public page | `/library/altar/<userId>` |
+| **Oracles** (sidebar tabs) | tarot · iching · astro · story · ✦ AI | inside Journal |
+
 ## Quick reference
 
 - **App reads:** `…/recursive-tarot/main/tarot/<slug>/grammar.json` (branch = `main`).
