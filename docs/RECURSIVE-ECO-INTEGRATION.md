@@ -136,6 +136,30 @@ flagging drift.
 **After the fix lands on the app:** re-run "Resolve all" → the regenerated PR preserves licence +
 enrichment + key order, skips the course, and is small and reviewable.
 
+### 5½. Repo-canonical channels + conflict behavior (Session 2, Jul 2 2026)
+
+The tarot, nara, and kali-paradevi channels are **repo-canonical**: the channel-doc carries
+`source_of_truth: 'repo'` (a channel-LEVEL flag — per-grammar `_source_of_truth` keeps its §4C
+meaning of "generated apparatus, never push"). The loop, in one breath:
+
+> **The app row is the live working copy; the repo is the canonical history; the webhook is the
+> reconciler; PRs are how app changes reach the repo.**
+
+- **Edit in the app** → the row updates immediately (phone-friendly; no PR per save).
+- **Panel "Resolve as PR" / "Resolve all"** → one reviewable merge-onto-repo PR per action; the
+  PR pointer is persisted on the channel-doc (`sync_prs`), so each drifted row keeps its
+  "Review PR ↗" link across reloads and devices.
+- **Merge the PR on GitHub** → the push webhook reindexes the row from the repo file
+  (deep-merge, repo wins on shared keys) and refreshes the drift baseline — app and repo converge.
+- **CONFLICT (repo push while the app has unsynced edits):** the webhook's deep-merge means
+  **repo wins on shared keys; app-only keys survive**. Unsynced app edits to a key the repo also
+  changed are overwritten. The protection is the flow itself: open the PR before editing the same
+  grammar on the repo side, and watch the panel's drift status.
+- **Generated grammars** (`_generated: true`, or per-grammar `_source_of_truth`) stay outside the
+  loop in BOTH directions: never pushed app→repo, never reindexed repo→app.
+- Works for **private repos**: all sync reads fall back to the GitHub App installation token when
+  unauthenticated raw fetches 404 (nara + kali-paradevi are private).
+
 ---
 
 ## 6. The course as a grammar
