@@ -598,16 +598,23 @@ document.addEventListener('DOMContentLoaded',()=>{ $('cdmClose').addEventListene
     hp.style.left=left+'px'; hp.style.top=top+'px';
   }
   function hide(){ hp.style.display='none'; }
+  let pending=null;
+  function reveal(card){ hpImg.style.transform = /rotate/.test(card.style.transform) ? 'rotate(180deg)' : ''; hp.style.display='block'; place(card); }
   document.addEventListener('mouseover', e=>{
     const card=e.target.closest(SEL);
     if (!card || !card.getAttribute('src')) return;
-    hpImg.style.transform = /rotate/.test(card.style.transform) ? 'rotate(180deg)' : '';   // match reversal
-    if (hpImg.getAttribute('src')!==card.getAttribute('src')) hpImg.src=card.src;
-    if (hpImg.complete && hpImg.naturalWidth) place(card); else hpImg.onload=()=>place(card);
+    pending=card;
+    if (hpImg.getAttribute('src')!==card.getAttribute('src')) {
+      hide();                                                              // don't flash the previous card at its old spot while the new one loads
+      hpImg.onload  = () => { if (pending===card) reveal(card); };
+      hpImg.onerror = () => { if (pending===card) hide(); };
+      hpImg.src=card.src;
+    }
+    if (hpImg.complete && hpImg.naturalWidth) reveal(card);
   });
   document.addEventListener('mouseout', e=>{
     const card=e.target.closest(SEL);
-    if (card && !(e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(SEL))) hide();
+    if (card && !(e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(SEL))) { pending=null; hide(); }
   });
   document.addEventListener('pointerdown', hide);                        // don't hover-preview mid-drag
   window.addEventListener('scroll', hide, true);

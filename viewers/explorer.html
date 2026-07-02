@@ -409,17 +409,25 @@ window.__lb = (src,cap)=>{ $('#lbimg').src=src; $('#lbcap').textContent=cap; $('
     top = Math.max(HEADPAD, Math.min(top, window.innerHeight - ph - 8));
     hp.style.left = left + 'px'; hp.style.top = top + 'px';
   }
+  let pending = null;                                    // the card we're currently previewing
+  function reveal(card){ hp.style.display = 'block'; place(card); }
   document.addEventListener('mouseover', e => {
     const card = e.target.closest('.cellwrap img[data-rid]');
     if (!card || !card.getAttribute('src')) return;
-    if (hpImg.getAttribute('src') !== card.getAttribute('src')) hpImg.src = card.src;
-    if (hpImg.complete && hpImg.naturalWidth) place(card);
-    else hpImg.onload = () => place(card);
+    pending = card;
+    if (hpImg.getAttribute('src') !== card.getAttribute('src')) {
+      hp.style.display = 'none';                          // hide the old card until the new image is ready — don't flash it at its old spot
+      hpImg.onload  = () => { if (pending === card) reveal(card); };
+      hpImg.onerror = () => { if (pending === card) hp.style.display = 'none'; };
+      hpImg.src = card.src;
+    }
+    if (hpImg.complete && hpImg.naturalWidth) reveal(card);   // already cached → show immediately, positioned to THIS card
   });
   document.addEventListener('mouseout', e => {
     const card = e.target.closest('.cellwrap img[data-rid]');
-    if (card && !(e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest('.cellwrap img[data-rid]')))
-      hp.style.display = 'none';
+    if (card && !(e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest('.cellwrap img[data-rid]'))) {
+      pending = null; hp.style.display = 'none';
+    }
   });
   window.addEventListener('scroll', () => { hp.style.display = 'none'; }, true);
 })();
