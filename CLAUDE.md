@@ -26,6 +26,14 @@
 - After any grammar edit: `python scripts/build_meta_grammar.py` (rebuilds meta + people). Then check_all again.
 - CI lands `chore: rebuild meta-grammar [skip ci]` commits on `dev`; always `git pull --rebase origin dev` before pushing.
 
+## recursive.eco integration (the GitHub boundary)
+
+This repo is the open half; **recursive.eco** is the private app. They share the grammar JSON format
+and pass grammars across GitHub. Full reference: **[docs/RECURSIVE-ECO-INTEGRATION.md](docs/RECURSIVE-ECO-INTEGRATION.md)**. The essentials:
+- The app **reads from `main`** (`raw.githubusercontent.com/PlayfulProcess/recursive-tarot/main/tarot/<slug>/grammar.json`) and **writes back to `main`** via `app/recursive-eco` sync PRs ("Resolve all drifts"). `dev` = live static site + working branch; merge `dev`→`main` to publish to the app, and reconcile (never discard) the App's write-backs that land on `main`.
+- **Slug ↔ app UUID:** `tarot/_eco_ids.json`.
+- Sync **must not drop repo-only fields** (`_grammar_commons` licence — on *all* grammars — `_image_usage`, `lineages`, cross-link pills, Research notes) and **must skip `_generated: true` grammars** (meta, people, contribute, the course). The doc has the full ownership model + the merge-onto-repo write-back fix.
+
 ## The one cross-link pattern (DO NOT INVENT ANOTHER)
 
 The viewer renders a pill link automatically when an item has:

@@ -9,7 +9,7 @@
 <meta property="og:title" content="Contribute — the Recursive Tarot commons">
 <meta property="og:description" content="Every deck is public-domain JSON anyone can correct, translate, or extend. Climb in by the gentlest route.">
 <link rel="icon" type="image/svg+xml" href="../public/favicon.svg?v=2">
-<link rel="stylesheet" href="../style.css?v=4">
+<link rel="stylesheet" href="../style.css?v=5">
 <style>
   main.wrap{max-width:1120px}
   .hero{text-align:center;padding:28px 18px 4px;max-width:720px;margin:0 auto}
@@ -84,10 +84,77 @@
   .ecotree .eco-cta a{font-family:var(--sans);font-weight:600;font-size:14px;text-decoration:none;padding:11px 22px;border-radius:8px;transition:background .15s,border-color .15s,color .15s}
   .ecotree .eco-cta a.solid{background:var(--gold);color:#fff}.ecotree .eco-cta a.solid:hover{background:#7c5b18}
   .ecotree .eco-cta a.line{color:var(--ink-soft);border:1px solid var(--line-soft)}.ecotree .eco-cta a.line:hover{border-color:#9a7322;color:#9a7322}
+
+  /* ── Wish List (folded in from the old page; scoped under .wishlist so its bands don't clash) ── */
+  .wishlist{margin:64px auto 0;max-width:1080px}
+  .wishlist .whead{text-align:center;max-width:680px;margin:0 auto}
+  .wishlist .whead h2{font-family:var(--serif-display);font-weight:600;font-size:clamp(26px,4.5vw,38px);line-height:1.05;margin:0;color:var(--ink)}
+  .wishlist .whead h2 .gold{color:#9a7322}
+  .wishlist .whead .tag{font-family:var(--serif-body);font-style:italic;font-size:16px;line-height:1.5;color:var(--ink-soft);margin:12px auto 0;max-width:52ch}
+  .wishlist .legend{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:16px 0 0;font-family:var(--sans);font-size:12px;color:var(--mut)}
+  .wishlist .legend span{display:inline-flex;align-items:center;gap:6px}
+  .wishlist .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+  .wishlist .dot.now{background:#9a7322}.wishlist .dot.todo{background:#c3b9a3}.wishlist .dot.done{background:#3f7a5c}
+  .wishlist .band{margin:38px auto 0}
+  .wishlist .band > h2{font-family:var(--serif-display);font-weight:600;font-size:23px;color:var(--ink);margin:0 0 .15em;display:flex;align-items:center;gap:11px;text-align:left}
+  .wishlist .band > .sub{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a6414;margin:0 0 20px;text-align:left}
+  .wishlist .feature{display:grid;grid-template-columns:200px 1fr;gap:0;background:var(--surface);border:2px solid #b8902f;border-radius:14px;overflow:hidden;margin-bottom:18px}
+  .wishlist .feature .f-img{background:var(--thumb-bg) center/contain no-repeat;border-right:1px solid var(--line);min-height:230px}
+  .wishlist .feature .f-b{padding:24px 28px}
+  .wishlist .feature .f-k{font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a6414;margin:0 0 8px;display:inline-flex;align-items:center;gap:7px}
+  .wishlist .feature h3{font-family:var(--serif-display);font-weight:600;font-size:23px;color:var(--ink);margin:0 0 10px;line-height:1.12}
+  .wishlist .feature p{font-family:var(--serif-body);font-size:15px;line-height:1.62;color:var(--ink-soft);margin:0 0 11px}
+  .wishlist .feature p strong{color:var(--ink)}
+  .wishlist .feature code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85em;background:var(--chip,#f1ece1);padding:1px 6px;border-radius:4px;color:#7c5b18}
+  .wishlist .feature .f-how{background:var(--panel2,#faf8f3);border:1px solid var(--line);border-radius:10px;padding:13px 16px;margin:14px 0 4px}
+  .wishlist .feature .f-how h4{font-family:var(--sans);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:0 0 7px}
+  .wishlist .feature .f-how ol{margin:0;padding-left:1.2em;font-family:var(--serif-body);font-size:14px;line-height:1.55;color:var(--ink-soft)}
+  .wishlist .feature .f-how li{margin:.25em 0}
+  .wishlist .feature .f-links{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+  .wishlist .feature .f-links a{font-family:var(--sans);font-weight:600;font-size:13px;text-decoration:none;padding:9px 15px;border-radius:8px;border:1px solid var(--line-soft);color:var(--ink-soft);transition:border-color .15s,color .15s,background .15s}
+  .wishlist .feature .f-links a:hover{border-color:#9a7322;color:#9a7322;background:rgba(154,115,34,.06)}
+  .wishlist .feature .f-links a.solid{background:var(--gold);color:#fff;border-color:var(--gold)}
+  .wishlist .wish{margin:14px 0 2px;border-left:3px solid #9a7322;background:rgba(154,115,34,.06);border-radius:0 9px 9px 0;padding:12px 15px}
+  .wishlist .wish .w-k{font-family:var(--sans);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8a6414;margin:0 0 5px}
+  .wishlist .wish p{font-size:14.5px;margin:0;color:var(--ink-soft)}
+  .wishlist .items{display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:14px}
+  .wishlist .item{background:var(--surface);border:1px solid var(--line-soft);border-radius:11px;padding:17px 19px;display:flex;flex-direction:column;gap:7px}
+  .wishlist .item .i-status{align-self:flex-start;font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 9px;border-radius:20px}
+  .wishlist .i-status.now{background:rgba(154,115,34,.12);color:#8a6414}
+  .wishlist .i-status.todo{background:rgba(107,100,87,.12);color:#6b6457}
+  .wishlist .i-status.done{background:rgba(63,122,93,.14);color:#3f6d27}
+  .wishlist .item h3{font-family:var(--serif-display);font-weight:600;font-size:18px;color:var(--ink);margin:2px 0 0;line-height:1.2}
+  .wishlist .item p{font-family:var(--serif-body);font-size:14px;line-height:1.55;color:var(--mut);margin:0}
+  .wishlist .item a.i-link{margin-top:auto;font-family:var(--sans);font-size:12px;font-weight:600;color:#8a6414;text-decoration:none}
+  .wishlist .note{margin:34px auto 0;max-width:680px;text-align:center;font-family:var(--serif-body);font-size:14px;line-height:1.6;color:var(--mut)}
+  .wishlist .note a{color:#8a6414}
+  @media (max-width:620px){ .wishlist .feature{grid-template-columns:1fr} .wishlist .feature .f-img{min-height:150px;border-right:none;border-bottom:1px solid var(--line)} }
+  /* Four-paths table (replaces the ladder) */
+  .pathfig{margin:0 0 18px;max-width:560px}
+  .pathfig img{width:100%;border:1px solid var(--line);border-radius:10px;box-shadow:0 14px 34px -22px rgba(60,45,20,.5);display:block}
+  .pathfig figcaption{font-family:var(--sans);font-size:11.5px;color:var(--mut);margin-top:8px}
+  table.paths{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;overflow:hidden}
+  table.paths th,table.paths td{text-align:left;padding:15px 18px;vertical-align:top;border-top:1px solid var(--line)}
+  table.paths thead th{border-top:none;font-family:var(--sans);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);font-weight:600;background:var(--panel2,#faf8f3)}
+  table.paths tbody tr:hover{background:rgba(154,115,34,.04)}
+  .paths .pcell{min-width:150px;white-space:nowrap}
+  .paths .pnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;font-family:var(--sans);font-size:12px;font-weight:700;margin-right:8px;vertical-align:middle}
+  .paths .pname{font-family:var(--serif-display);font-weight:600;font-size:17px;color:var(--ink)}
+  .paths .pmeta{font-family:var(--sans);font-size:11px;color:var(--mut);margin-top:4px}
+  .paths .pdo{font-family:var(--serif-body);font-size:14px;line-height:1.55;color:var(--ink-soft);max-width:54ch;white-space:normal}
+  .paths .pdo-img{width:100%;max-width:300px;border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 20px -14px rgba(60,45,20,.5);display:block;margin:0 0 11px}
+  .paths .pdo strong{color:var(--ink)}
+  .paths .pcta{display:inline-flex;align-items:center;white-space:nowrap;font-family:var(--sans);font-weight:600;font-size:13px;text-decoration:none;padding:8px 14px;border-radius:8px;border:1px solid var(--line-soft);color:var(--ink-soft);transition:border-color .15s,color .15s,background .15s}
+  .paths .pcta:hover{border-color:#9a7322;color:#9a7322;background:rgba(154,115,34,.06)}
+  .paths .pcta.solid{background:var(--gold);color:#fff;border-color:var(--gold)}
+  .paths .pcta.solid:hover{background:#7c5b18;color:#fff}
+  .pathnote{margin:22px auto 0;max-width:72ch;text-align:center;font-family:var(--serif-body);font-size:14.5px;line-height:1.62;color:var(--ink-soft)}
+  .pathnote strong{color:var(--ink)}
+  @media (max-width:680px){ table.paths,table.paths thead,table.paths tbody,table.paths tr,table.paths th,table.paths td{display:block} table.paths thead{display:none} table.paths td{border-top:none;padding:6px 16px} .paths .pcell{white-space:normal} table.paths tbody tr{border-top:1px solid var(--line);padding:12px 0} .paths .pcta{margin-top:6px} }
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=31"></script>
+<script src="../site-header.js?v=42"></script>
 <site-header active="course"></site-header>
 
 <main class="wrap">
@@ -98,111 +165,190 @@
   </section>
 
   <a class="readcourse" href="course-viewer.html?course=how-to-contribute">
-    <div class="rc-img" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-wikimedia/Sola%20Busca%20tarot%20card%2027.jpg')"></div>
+    <div class="rc-img" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot/Pents08.jpg')"></div>
     <div class="rc-b">
       <div class="rc-k">Read · the contributor's guide</div>
-      <h2>How to contribute</h2>
-      <p>Three things you can add or fix — a card, a public-domain deck, or a whole course — each by the gentlest route, no git required for the easy paths.</p>
+      <h2>Contribute to existing decks — or create your own</h2>
+      <p>Fix a card, add a deck or a spread, write a course, or improve the site itself — by whatever route suits you, from a one-click edit in the app to full code. The deep guide walks every path.</p>
     </div>
   </a>
 
   <section class="band">
-    <h2>Ways in — the ladder</h2>
-    <p class="sub">Gentlest route first · climb only as high as you like</p>
-    <div class="ladder">
+    <h2>Four ways to contribute — pick one</h2>
+    <p class="sub">Creation-first · the gentlest route at the top</p>
 
-      <a class="lcard" href="https://flow.recursive.eco" target="_blank" rel="noopener">
-        <div class="lthumb tile">
-          <div class="lbar"><b></b><b></b><b></b><span>recursive.eco</span></div>
-          <div class="ltile-mid">Edit a card<br>in the app</div>
-        </div>
-        <div class="lbody">
-          <span class="lbadge easy">Easiest · no git</span>
-          <div class="lnum">RUNG 1</div>
-          <div class="lt">Fix it in the app</div>
-          <div class="ld">Open any card on recursive.eco and save your change — no files, no JSON.</div>
-          <div class="llink">Open the app ↗</div>
-        </div>
+    <table class="paths">
+      <thead><tr><th>Path</th><th>What you do</th><th>Start</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="pcell"><span class="pnum">1</span><span class="pname">In the app</span><div class="pmeta">recursive.eco · no code</div></td>
+          <td><img class="pdo-img" src="courses/images/shot-app-edit.png" alt="A card open in the browser with an 'Open in recursive.eco' action — propose a change without leaving the page."><div class="pdo">Click through any card and propose a change — <strong>even without AI</strong>. The copy icon forks it to the Create page to edit inline; or just ask the <strong>Grammar Assistant</strong> to make the edit for you.</div></td>
+          <td><a class="pcta solid" href="https://flow.recursive.eco/play?id=e8c4ca59-7841-4b5d-ad56-584ff52c859d" target="_blank" rel="noopener">Edit a card now &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="pcell"><span class="pnum">2</span><span class="pname">On GitHub</span><div class="pmeta">web &middot; a browser</div></td>
+          <td><div class="pdo">Edit the deck's JSON in GitHub's web editor and open a <strong>pull request</strong> — no other tools needed.</div></td>
+          <td><a class="pcta" href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">Open the repo &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="pcell"><span class="pnum">3</span><span class="pname">In Claude.ai</span><div class="pmeta">chat &middot; MCP recommended</div></td>
+          <td><div class="pdo">Draft bigger edits in a chat, then open the PR. We recommend connecting the <strong>recursive.eco MCP</strong> so Claude can act on your library directly.</div></td>
+          <td><a class="pcta" href="course-viewer.html?course=how-to-contribute#rung-5-the-recursive-eco-mcp-the-full-toolkit">Read the steps &rarr;</a></td>
+        </tr>
+        <tr>
+          <td class="pcell"><span class="pnum">4</span><span class="pname">Fork &amp; code</span><div class="pmeta">Claude Code Desktop + MCP</div></td>
+          <td><div class="pdo">Clone the repo and edit like any coder — best with <strong>Claude Code Desktop + the MCP</strong>, working the whole library at once.</div></td>
+          <td><a class="pcta" href="course-viewer.html?course=how-to-contribute#rung-4-claude-desktop-on-the-repo">Read the steps &rarr;</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="pathnote">From path 2 on, the same moves let you edit <strong>any</strong> part of this site — and they're the very skills you'd use to grow a library of your own. <em>(We're building easier on-ramps for that; more soon.)</em></p>
+  </section>
+
+  <section class="band">
+    <h2>What you'd be tending</h2>
+    <p class="sub">The open library, in its actual viewers</p>
+    <div class="viewgrid">
+      <a class="vcard" href="../viewers/cards.html">
+        <div class="vthumb" style="background-image:url('courses/images/shot-cards.png');background-size:cover;background-position:top center"></div>
+        <div class="vb"><div class="vk">Browse · every card</div><div class="vt">The card library</div><div class="vd">Two dozen public-domain decks, card by card — the Scene, Symbol and Research notes you'd correct or translate.</div></div>
       </a>
-
-      <a class="lcard" href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">
-        <div class="lthumb tile">
-          <div class="lbar"><b></b><b></b><b></b><span>github.com</span></div>
-          <div class="ltile-mid">Edit the JSON,<br>open a PR</div>
-        </div>
-        <div class="lbody">
-          <span class="lbadge">GitHub login</span>
-          <div class="lnum">RUNG 2</div>
-          <div class="lt">Edit on GitHub</div>
-          <div class="ld">Change the deck's JSON in the browser and open a pull request — no other tools.</div>
-          <div class="llink">Open the repo ↗</div>
-        </div>
+      <a class="vcard" href="../viewers/explorer.html">
+        <div class="vthumb" style="background-image:url('courses/images/shot-explorer.png');background-size:cover;background-position:top center"></div>
+        <div class="vb"><div class="vk">Pivot · every angle</div><div class="vt">The Emergence Explorer</div><div class="vd">Drag fields to regroup every card — the patterns a well-tended grammar makes possible.</div></div>
       </a>
-
-      <a class="lcard" href="course-viewer.html?course=how-to-contribute#rung-3-work-the-repo-in-claude-ai">
-        <div class="lthumb tile">
-          <div class="lbar"><b></b><b></b><b></b><span>claude.ai</span></div>
-          <div class="ltile-mid">Point Claude<br>at the repo</div>
-        </div>
-        <div class="lbody">
-          <span class="lbadge">Claude.ai</span>
-          <div class="lnum">RUNG 3</div>
-          <div class="lt">Work it in Claude.ai</div>
-          <div class="ld">Connect the repo to Claude.ai and let it draft the change for you to review.</div>
-          <div class="llink">Read the steps →</div>
-        </div>
+      <a class="vcard" href="../viewers/caster-studio.html">
+        <div class="vthumb" style="background-image:url('courses/images/shot-spread-studio.png');background-size:cover;background-position:top center"></div>
+        <div class="vb"><div class="vk">Build · cast · send</div><div class="vt">The Spread Studio</div><div class="vd">Build a spread, cast it, and send the reading to recursive.eco for an AI interpretation.</div></div>
       </a>
-
-      <a class="lcard" href="course-viewer.html?course=how-to-contribute#rung-4-claude-desktop-on-the-repo">
-        <div class="lthumb tile">
-          <div class="lbar"><b></b><b></b><b></b><span>Claude Desktop</span></div>
-          <div class="ltile-mid">Run the repo<br>locally</div>
-        </div>
-        <div class="lbody">
-          <span class="lbadge">Desktop app</span>
-          <div class="lnum">RUNG 4</div>
-          <div class="lt">Claude Desktop</div>
-          <div class="ld">Work the whole repo on your machine with the Claude Desktop app.</div>
-          <div class="llink">Read the steps →</div>
-        </div>
+      <a class="vcard" href="course-viewer.html?course=history-of-tarot">
+        <div class="vthumb" style="background-image:url('courses/images/shot-course.png');background-size:cover;background-position:top center"></div>
+        <div class="vb"><div class="vk">Read · a course</div><div class="vt">The courses</div><div class="vd">Every course is Markdown — and now a grammar too. Write a new one, or fix a single line.</div></div>
       </a>
-
-      <a class="lcard feat" href="course-viewer.html?course=how-to-contribute#rung-5-the-recursive-eco-mcp-the-full-toolkit">
-        <div class="lthumb shot" style="background-image:url('courses/images/mcp-audit-01-commons-search.png')">
-          <span class="shot-tag">Real screen · MCP audit</span>
-        </div>
-        <div class="lbody">
-          <span class="lbadge feat">Full toolkit · flagship</span>
-          <div class="lnum">RUNG 5</div>
-          <div class="lt">The recursive.eco MCP</div>
-          <div class="ld">Just ask Claude — find public-domain images, fix the source, verify, and publish.</div>
-          <div class="llink">Read the steps →</div>
-        </div>
-      </a>
-
     </div>
   </section>
 
-  <aside class="grammarself">
-    <h2>This guide is itself a grammar</h2>
-    <p>Every way-in above is an item in an open grammar — the contribute guide practising what it preaches. Read the same grammar three ways:</p>
-    <div class="gs-links">
-      <a href="../viewers/grammar-course.html?src=../tarot/how-to-contribute/grammar.json&amp;group=what">Read it as a course →</a>
-      <a href="../viewers/explorer.html?src=../tarot/how-to-contribute/grammar.json">Pivot the what × how matrix →</a>
-      <a href="https://flow.recursive.eco/create/dashboard/unified/new?forkId=368974ce-0718-4e9a-9351-bce7b2c053e4" target="_blank" rel="noopener">Fork this guide ↗</a>
+  <aside class="ecotree">
+    <h2>Making it easier to contribute</h2>
+    <p>This library is built in the open, and we're actively lowering the barrier to helping: developing the
+    recursive.eco <strong>MCP</strong> and new <strong>paths of integration</strong> between the main app and
+    the open-source projects, so you can contribute without touching code. Whatever route you take, the floor
+    stays the same — every image public domain with attribution, every meaning kept in its source tradition.</p>
+    <div class="eco-cta">
+      <a class="solid" href="https://flow.recursive.eco/create" target="_blank" rel="noopener">Create your own ↗</a>
+      <a class="line" href="course-viewer.html?course=how-to-contribute">The full guide →</a>
     </div>
   </aside>
 
-  <aside class="ecotree">
-    <h2>Built with Claude Code &amp; the recursive.eco MCP</h2>
-    <p>This whole library was built openly with <strong>Claude Code</strong> and the recursive.eco grammar
-    <strong>MCP</strong> — the same tools you can use to fork it, correct it, or grow a grammar of your own.
-    Every image must be public domain with attribution; every meaning stays in its source tradition.</p>
-    <div class="eco-cta">
-      <a class="solid" href="https://flow.recursive.eco/create" target="_blank" rel="noopener">Create your own ↗</a>
-      <a class="line" href="course-viewer.html?course=how-to-contribute">The build course →</a>
+  <hr style="border:none;border-top:1px solid var(--line);margin:64px 0 0">
+
+  <section class="wishlist" id="wishlist">
+    <div class="whead">
+      <h2>The <span class="gold">Wish List</span></h2>
+      <p class="tag">What's on the workbench right now, and what we'd like done before launch — a living list, and a menu of things a contributor could pick up.</p>
+      <div class="legend">
+        <span><i class="dot now"></i> On the workbench</span>
+        <span><i class="dot todo"></i> Before launch</span>
+        <span><i class="dot done"></i> Done</span>
+      </div>
     </div>
-  </aside>
+
+    <section class="band">
+      <h2><i class="dot now"></i> On the workbench</h2>
+      <p class="sub">What we're actively building</p>
+
+      <article class="feature">
+        <div class="f-img" style="background-image:url('https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/visconti-sforza-tarot/Visconti-sforza-21-world.jpg')"></div>
+        <div class="f-b">
+          <div class="f-k"><i class="dot now"></i> Flagship · a course that is a grammar</div>
+          <h3>A history course, rendered straight from a grammar</h3>
+          <p><strong>"A History of Tarot"</strong> began as a single writing file. We taught the library
+          to read it as a <strong>grammar</strong> — the same open format as every deck — so the course can
+          be edited, forked, and previewed like anything else in the collection.</p>
+          <div class="f-how">
+            <h4>How it's made</h4>
+            <ol>
+              <li>The course is written once as Markdown (<code>history-of-tarot.mdx</code>).</li>
+              <li>A small converter turns it into a normal grammar — each section becomes a lesson; the card galleries become <strong>cross-grammar references</strong> to the real decks.</li>
+              <li><code>grammar-course.html</code> renders <em>any</em> grammar as a readable course, and a shared expander fills the live galleries — so the grammar version reads identically to the original.</li>
+            </ol>
+          </div>
+          <div class="wish">
+            <div class="w-k">The wish behind it</div>
+            <p>recursive.eco's <strong>Library Assistant</strong> can already <em>open</em> a course — but it
+            can't see what's inside. A grammar it <em>can</em> read. Because the course is now a grammar,
+            the assistant could answer questions about the actual content, not just point at the page.</p>
+          </div>
+          <div class="f-links">
+            <a class="solid" href="../viewers/grammar-course.html?src=../tarot/history-of-tarot-course/grammar.json">Read it as a course →</a>
+            <a href="course-viewer.html?course=history-of-tarot">Compare with the written version →</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="items">
+        <div class="item">
+          <span class="i-status now">On the workbench</span>
+          <h3>Sync that never loses work</h3>
+          <p>Making the recursive.eco ↔ GitHub channel-sync non-destructive: keep every repo-only field, hold a stable key order, so a sync proposal is small and reviewable instead of a 26,000-line wall.</p>
+        </div>
+        <div class="item">
+          <span class="i-status now">On the workbench</span>
+          <h3>Every grammar, every view</h3>
+          <p>The <strong>Views</strong> menu should flip any grammar — deck, course, or guide — through Cards, Course, Explorer, Tree and Timeline without a broken view. Course view was the last gap; it now renders at parity.</p>
+          <a class="i-link" href="../viewers/grammar-course.html?src=../tarot/how-to-contribute/grammar.json&amp;group=what">See the guide as a course →</a>
+        </div>
+        <div class="item">
+          <span class="i-status now">On the workbench</span>
+          <h3>A new logo — emergence, not just iteration</h3>
+          <p>The spiral captures <em>iteration</em>; we want a mark that also captures <strong>emergence</strong> and a more <strong>tree-like</strong> view — think a heart that falls, roots, and grows a whole forest. Drafts in progress.</p>
+          <a class="i-link" href="logo-studies.html">See the logo studies →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <h2><i class="dot todo"></i> Before launch</h2>
+      <p class="sub">What we want done first</p>
+      <div class="items">
+        <div class="item">
+          <span class="i-status todo">Before launch</span>
+          <h3>Fix sync before resolving drifts</h3>
+          <p>Don't merge the "resolve all drifts" pull requests until the roundtrip preserves repo-only fields — otherwise it strips licence blocks and enrichment from decks that look unchanged.</p>
+        </div>
+        <div class="item">
+          <span class="i-status todo">Before launch</span>
+          <h3>Let the assistant read course grammars</h3>
+          <p>Wire recursive.eco's Library Assistant to read a course's grammar content, so it can actually discuss the history, not just open the course page.</p>
+        </div>
+        <div class="item">
+          <span class="i-status todo">Before launch</span>
+          <h3>Publish the course grammar</h3>
+          <p>Offer "A History of Tarot" as a public, community-editable grammar on recursive.eco — the same path every deck takes.</p>
+        </div>
+        <div class="item">
+          <span class="i-status todo">Before launch</span>
+          <h3>One last legibility pass</h3>
+          <p>Walk every page and viewer in light only, confirm nothing is light-on-light, and finish the museum-restyle tokens on the remaining viewers.</p>
+        </div>
+        <div class="item">
+          <span class="i-status todo">Before launch</span>
+          <h3>Provenance you can trust</h3>
+          <p>Confirm every card image is public-domain with attribution, and every interpretive claim stays inside its source tradition — the floor the whole library stands on.</p>
+        </div>
+        <div class="item">
+          <span class="i-status done">Done</span>
+          <h3>Course-as-a-grammar renders at parity</h3>
+          <p>The grammar version of the history course now shows the deck chapters, suit and trump galleries, maker bios and live maps — identical to the written course.</p>
+          <a class="i-link" href="../viewers/grammar-course.html?src=../tarot/history-of-tarot-course/grammar.json">Open it →</a>
+        </div>
+      </div>
+    </section>
+
+    <p class="note">This list lives in the open repo like everything else — see something missing?
+    <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener">Open an issue or a pull request ↗</a>.</p>
+  </section>
 
 </main>
 

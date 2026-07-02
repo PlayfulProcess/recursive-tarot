@@ -97,6 +97,12 @@
 
   class ViewSwitcher extends HTMLElement {
     connectedCallback() {
+      // Eye view-switcher retired Jun 29 2026 — it renders nothing now; the
+      // per-page header nav already covers view switching, and the in-page
+      // controls were unreliable. The ?lens= deep-link redirect above still works.
+      this.style.display = 'none';
+      return;
+      // --- legacy render (unreachable, kept for reference) ---
       const active = this.getAttribute('active') || autoActive();
       const sr = this.attachShadow({ mode: 'open' });
       const menu =

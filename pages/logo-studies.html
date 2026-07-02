@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../theme.css?v=3">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logo studies · The Recursive Tarot</title>
+<meta name="description" content="Studies toward a recursive.eco mark that captures not only iteration, but emergence — and a more tree-like view. Drafts, not decisions.">
+<link rel="icon" type="image/svg+xml" href="../public/favicon.svg?v=2">
+<link rel="stylesheet" href="../style.css?v=5">
+<style>
+  main.wrap{max-width:900px}
+  .hero{text-align:center;padding:30px 8px 6px;max-width:640px;margin:0 auto}
+  .hero .kick{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a6414;margin:0 0 10px}
+  .hero h1{font-family:var(--serif-display);font-weight:600;font-size:clamp(30px,5.5vw,46px);line-height:1.05;margin:0;color:var(--ink)}
+  .hero .sub{font-family:var(--serif-body);font-style:italic;font-size:clamp(15px,2.4vw,19px);color:var(--ink-soft);margin:14px auto 0;max-width:54ch;line-height:1.5}
+  .studies{display:flex;flex-direction:column;gap:26px;margin:44px auto 0}
+  .study{background:var(--surface);border:1px solid var(--line-soft);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:280px 1fr}
+  .study .stage{background:var(--thumb-bg);display:flex;align-items:center;justify-content:center;min-height:230px;border-right:1px solid var(--line);overflow:hidden}
+  .study .stage img{max-width:76%;max-height:200px;object-fit:contain;display:block}
+  .study .stage canvas{display:block}
+  .study.wide{grid-template-columns:1fr}
+  .study.wide .stage{border-right:none;border-bottom:1px solid var(--line);min-height:0;padding:0}
+  .study.wide .stage iframe{width:100%;height:440px;border:0;display:block}
+  .study .sb{padding:22px 26px}
+  .study .sk{font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8a6414;margin:0 0 6px}
+  .study h2{font-family:var(--serif-display);font-weight:600;font-size:22px;color:var(--ink);margin:0 0 8px}
+  .study p{font-family:var(--serif-body);font-size:14.5px;line-height:1.6;color:var(--ink-soft);margin:0}
+  .backnote{margin:40px auto 0;text-align:center;font-family:var(--serif-body);font-size:14px;color:var(--mut)}
+  .backnote a{color:#8a6414}
+  @media (max-width:640px){ .study{grid-template-columns:1fr} .study .stage{border-right:none;border-bottom:1px solid var(--line)} }
+</style>
+</head>
+<body>
+<script src="../site-header.js?v=42"></script>
+<site-header active=""></site-header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="kick">Logo studies</p>
+    <h1>A logo, still forming</h1>
+    <p class="sub">Studies toward a mark for <a href="https://recursive.eco" target="_blank" rel="noopener">recursive.eco</a> that captures not only <em>iteration</em> but <em>emergence</em> — and a more tree-like view. Drafts, not decisions.</p>
+  </section>
+
+  <div class="studies">
+
+    <div class="study">
+      <div class="stage"><img src="../public/spiral-purple.svg" alt="The current recursive spiral mark, static"></div>
+      <div class="sb"><div class="sk">The current mark · static</div><h2>The spiral</h2><p>The mark as it stands — a golden logarithmic spiral. Clean and legible, but it says <em>iteration</em>: the same turn again, tighter. It doesn't yet say emergence.</p></div>
+    </div>
+
+    <div class="study">
+      <div class="stage"><div id="heroStudy" style="width:200px;height:200px"></div></div>
+      <div class="sb"><div class="sk">The current mark · animated</div><h2>The breathing spiral</h2><p>The same spiral, drawn and breathing — the version in the site header. Alive, but still a single closed figure.</p></div>
+    </div>
+
+    <div class="study">
+      <div class="stage"><img src="../public/tree.jpg" alt="A hand-drawn tree — the first vision of the recursive.eco ecosystem: many branches, one trunk"></div>
+      <div class="sb"><div class="sk">First vision · a drawing</div><h2>The tree</h2><p>The earliest sketch of the whole idea — many branches (grammars), one trunk. This is the tree-like view we want the mark to remember.</p></div>
+    </div>
+
+    <div class="study">
+      <div class="stage"><canvas id="logoCanvas" width="200" height="200" style="width:200px;height:200px;background:none"></canvas></div>
+      <div class="sb"><div class="sk">Working draft · animated</div><h2>The spiral that won't close</h2><p>A draft: the spiral begins exactly as the hero mark, then — where it would close into a circle — breaks at a new angle and keeps going, from the same origin. Iteration that refuses to become a loop.</p></div>
+    </div>
+
+    <div class="study wide">
+      <div class="stage"><iframe src="../public/heart-forest.html" title="A generative heart-forest: a heart falls, becomes a tree, and drops hearts that grow their own trees" loading="lazy"></iframe></div>
+      <div class="sb"><div class="sk">Toward emergence · generative</div><h2>The heart forest</h2><p>The direction we're most drawn to. One heart falls, roots, and grows a tree; each heart it bears falls and grows its own — inheriting the last, drifting from it. One small grammar, a whole biodiverse forest — this is <em>emergence</em>, not just iteration, the thesis of the project drawn as a living thing. (Toggle <strong>Biodiverse ↔ Monoculture</strong> to see the difference mutation makes.)</p></div>
+    </div>
+
+  </div>
+
+  <p class="backnote">These are drafts to iterate from. See the current mark in context on the <a href="about.html">About page</a>.</p>
+</main>
+
+<script src="../public/spiral/spiral.js?v=2"></script>
+<script>
+  // draw the hero spiral into the studies stage (no WHY/HOW/WHAT text, just the mark)
+  if (window.createSpiral) createSpiral('heroStudy', { size:100, turns:6, color:'#9333ea', strokeWidth:0.8, opacity:0.85,
+    rhythms:{ breathe:{duration:12000,timing:'ease-in-out'}, draw:{duration:12000,timing:'ease-in-out'} } });
+</script>
+<script src="../public/spiral/spiral-forming.js?v=5"></script>
+<script src="../site-footer.js"></script>
+<site-footer base="../"></site-footer>
+</body>
+</html>
