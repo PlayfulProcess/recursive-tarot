@@ -473,7 +473,7 @@ function buildCast(){
 function syncJson(){ lastCast = buildCast(); const json = JSON.stringify(lastCast, null, 2);
   $('json').value = json;
   const enc = btoa(unescape(encodeURIComponent(json))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
-  $('journalLink').href = FLOW + '/?d=' + enc; }
+  $('journalLink').href = FLOW + '/cast?d=' + enc; }   // /cast is the app's live receiver (decodes ?d=, renders the spread)
 
 function copyJson(){ const ta=$('json'); ta.select();
   navigator.clipboard?.writeText(ta.value).then(()=>{ const b=$('copyJson'); b.textContent='Copied ✓'; setTimeout(()=>b.textContent='Copy JSON',1400); }).catch(()=>document.execCommand('copy')); }

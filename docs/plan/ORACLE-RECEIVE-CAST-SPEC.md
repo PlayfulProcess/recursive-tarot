@@ -17,7 +17,17 @@ Two distinct hand-offs exist; keep them separate:
 | Link | Meaning | Status |
 |---|---|---|
 | `flow.recursive.eco/play?id=<grammar-uuid>` | "open this deck, let me cast fresh in the app" | works (deck loads) |
-| `flow.recursive.eco/?d=<base64url cast>` | "here is a spread I already cast — interpret it" | **needs building** |
+| `flow.recursive.eco/cast?d=<base64url cast>` | "here is a spread I already cast — interpret it" | **partially built** (see update) |
+
+> **UPDATE (Jul 2 2026):** the app already has a receiver at **`/cast?d=`**
+> (`apps/flow/src/app/cast/page.tsx`): it decodes the payload, renders the card grid
+> with position labels + reversal rotation, lazy-fetches Scene/Symbol from the repo's
+> raw grammar.json, and offers "Save deck to library". The Spread Caster now targets
+> `/cast?d=` (was `/?d=`, which the home page ignores). Still missing on the app side:
+> the AI oracle reading over the actual payload (`/api/ai/cast-reading` exists but
+> hardcodes the 3-card Structures/Process/Possibilities spread — it must read
+> `question` + `positions[]` + `cards[]` from the cast) and journal-saving the cast +
+> interpretation. Everything below remains the contract for that work.
 
 This doc is about the second one.
 
