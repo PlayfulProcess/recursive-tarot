@@ -29,6 +29,11 @@
         "name": "pagat.com (John McLeod)",
         "date": "documentary",
         "note": "Card images of the Ottocento Tarocco Bolognese pattern (19th-c. public-domain design) sourced from pagat.com/tarot/ottocento.html."
+      },
+      {
+        "name": "steve-p.org (Simon Wintle / WoPC-adjacent card gallery)",
+        "date": "accessed 2026-07-01",
+        "note": "Modiano Tarocco Bolognese card images (public-domain traditional Bolognese pattern); pip images 6-10 sourced here to match the existing deck scans."
       }
     ]
   },
@@ -998,7 +1003,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/coins-ace.jpg"
         },
-        "minor_key": "ace-of-coins"
+        "minor_key": "ace-of-coins",
+        "number": 1
       },
       "sections": {
         "Iconography": "Ace of Coins (Denari). The suit-emblems of coins in the Bolognese pattern.",
@@ -1052,7 +1058,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/coins-six.jpg"
         },
-        "minor_key": "six-of-coins"
+        "minor_key": "six-of-coins",
+        "number": 6
       },
       "sections": {
         "Iconography": "Six of Coins (Denari). The suit-emblems of coins in the Bolognese pattern.",
@@ -1088,7 +1095,8 @@
         "court": false,
         "archetype": "card:seven-of-coins",
         "mapping_confidence": "exact",
-        "minor_key": "seven-of-coins"
+        "minor_key": "seven-of-coins",
+        "number": 7
       },
       "sections": {
         "Iconography": "Seven of Coins (Denari). The suit-emblems of coins in the Bolognese pattern.",
@@ -1096,7 +1104,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Seven of Coins shows seven circular starburst coins in the conventional Italian pip arrangement — typically a four-two-one or three-one-three distribution that accommodates the odd count. Each coin bears the characteristic starburst design of the Bolognese denari suit. The seven-coin card has a slight asymmetry that marks it as an odd-number pip.",
         "Symbol": "Seven coins in asymmetric arrangement — material accumulation at an active point, the odd number that resists perfect symmetry."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-coins-seven.jpg"
     },
     {
       "id": "coins-eight",
@@ -1123,7 +1132,8 @@
         "court": false,
         "archetype": "card:eight-of-coins",
         "mapping_confidence": "exact",
-        "minor_key": "eight-of-coins"
+        "minor_key": "eight-of-coins",
+        "number": 8
       },
       "sections": {
         "Iconography": "Eight of Coins (Denari). The suit-emblems of coins in the Bolognese pattern.",
@@ -1131,7 +1141,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Eight of Coins shows eight circular starburst coins in a symmetrical pip arrangement. The even number allows a balanced four-by-two or two-column distribution, the eight Bolognese denari in their clean Italian pip style against a white background.",
         "Symbol": "Eight coins in balanced arrangement — measured material accumulation in the suit's stable mid-to-upper range."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-coins-eight.jpg"
     },
     {
       "id": "coins-nine",
@@ -1158,7 +1169,8 @@
         "court": false,
         "archetype": "card:nine-of-coins",
         "mapping_confidence": "exact",
-        "minor_key": "nine-of-coins"
+        "minor_key": "nine-of-coins",
+        "number": 9
       },
       "sections": {
         "Iconography": "Nine of Coins (Denari). The suit-emblems of coins in the Bolognese pattern.",
@@ -1166,7 +1178,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Nine of Coins shows nine circular starburst coins approaching the density of the ten. The nine Bolognese denari are distributed across the card in the standard Italian pip convention, the suit nearing its maximum pip count in a composition that remains visually organized.",
         "Symbol": "Nine coins approaching fullness — material near-completion, one step from the suit's fully expressed abundance."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-coins-nine.jpg"
     },
     {
       "id": "coins-ten",
@@ -1193,7 +1206,8 @@
         "court": false,
         "archetype": "card:ten-of-coins",
         "mapping_confidence": "exact",
-        "minor_key": "ten-of-coins"
+        "minor_key": "ten-of-coins",
+        "number": 10
       },
       "sections": {
         "Iconography": "Ten of Coins (Denari). The suit-emblems of coins in the Bolognese pattern.",
@@ -1201,7 +1215,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Ten of Coins shows ten circular starburst coins in the suit's fullest pip composition, the ten Bolognese denari arranged in the two-column or three-two-three-two convention of Italian pip cards. The ten-coin card represents the suit at its maximum numerical expression.",
         "Symbol": "Ten coins in full field — the suit at its most abundant, material wealth in its completed pip expression."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-coins-ten.jpg"
     },
     {
       "id": "coins-fante",
@@ -1243,7 +1258,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/coins-fante.jpg"
         },
-        "minor_key": "page-of-coins"
+        "minor_key": "page-of-coins",
+        "number": 11
       },
       "sections": {
         "Iconography": "Knave (Fante) of Coins (Denari). A courtly figure of the suit.",
@@ -1294,7 +1310,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/coins-cavallo.jpg"
         },
-        "minor_key": "knight-of-coins"
+        "minor_key": "knight-of-coins",
+        "number": 12
       },
       "sections": {
         "Iconography": "Knight (Cavallo) of Coins (Denari). A courtly figure of the suit.",
@@ -1345,7 +1362,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/coins-regina.jpg"
         },
-        "minor_key": "queen-of-coins"
+        "minor_key": "queen-of-coins",
+        "number": 13
       },
       "sections": {
         "Iconography": "Queen (Regina) of Coins (Denari). A courtly figure of the suit.",
@@ -1396,7 +1414,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/coins-re.jpg"
         },
-        "minor_key": "king-of-coins"
+        "minor_key": "king-of-coins",
+        "number": 14
       },
       "sections": {
         "Iconography": "King (Re) of Coins (Denari). A courtly figure of the suit.",
@@ -1450,7 +1469,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/cups-ace.jpg"
         },
-        "minor_key": "ace-of-cups"
+        "minor_key": "ace-of-cups",
+        "number": 1
       },
       "sections": {
         "Iconography": "Ace of Cups (Coppe). The suit-emblems of cups in the Bolognese pattern.",
@@ -1486,7 +1506,8 @@
         "court": false,
         "archetype": "card:six-of-cups",
         "mapping_confidence": "exact",
-        "minor_key": "six-of-cups"
+        "minor_key": "six-of-cups",
+        "number": 6
       },
       "sections": {
         "Iconography": "Six of Cups (Coppe). The suit-emblems of cups in the Bolognese pattern.",
@@ -1494,7 +1515,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Six of Cups shows six cylindrical cup or chalice shapes in the Italian pip convention. The cups are rendered as tall rounded vessels in red and blue tones, arranged in columns or rows against a white background. The six-cup card is balanced and open, the suit's cylindrical emblem repeated six times in the clean Bolognese pip style.",
         "Symbol": "Six cups in balanced arrangement — the suit's cylindrical vessels in their equitable mid-range form, emotional balance expressed in the Bolognese pip convention."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-cups-six.jpg"
     },
     {
       "id": "cups-seven",
@@ -1539,7 +1561,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/cups-seven.jpg"
         },
-        "minor_key": "seven-of-cups"
+        "minor_key": "seven-of-cups",
+        "number": 7
       },
       "sections": {
         "Iconography": "Seven of Cups (Coppe). The suit-emblems of cups in the Bolognese pattern.",
@@ -1575,7 +1598,8 @@
         "court": false,
         "archetype": "card:eight-of-cups",
         "mapping_confidence": "exact",
-        "minor_key": "eight-of-cups"
+        "minor_key": "eight-of-cups",
+        "number": 8
       },
       "sections": {
         "Iconography": "Eight of Cups (Coppe). The suit-emblems of cups in the Bolognese pattern.",
@@ -1583,7 +1607,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Eight of Cups shows eight cylindrical cup shapes in a symmetrical arrangement, the even number allowing a balanced two-column distribution. The eight Bolognese cups continue the suit's characteristic Italian chalice form in a composition that is dense but organized.",
         "Symbol": "Eight cups in balanced columns — the suit in its stable mid-to-upper range, the cylindrical chalice repeated in balanced symmetry."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-cups-eight.jpg"
     },
     {
       "id": "cups-nine",
@@ -1610,7 +1635,8 @@
         "court": false,
         "archetype": "card:nine-of-cups",
         "mapping_confidence": "exact",
-        "minor_key": "nine-of-cups"
+        "minor_key": "nine-of-cups",
+        "number": 9
       },
       "sections": {
         "Iconography": "Nine of Cups (Coppe). The suit-emblems of cups in the Bolognese pattern.",
@@ -1618,7 +1644,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Nine of Cups shows nine cylindrical cup shapes approaching the density of the ten. The nine cups are arranged in the Italian pip convention, the suit's chalice forms filling the card's field as the count approaches its maximum.",
         "Symbol": "Nine cups approaching fullness — emotional near-satisfaction, the suit one step from its complete expression."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-cups-nine.jpg"
     },
     {
       "id": "cups-ten",
@@ -1645,7 +1672,8 @@
         "court": false,
         "archetype": "card:ten-of-cups",
         "mapping_confidence": "exact",
-        "minor_key": "ten-of-cups"
+        "minor_key": "ten-of-cups",
+        "number": 10
       },
       "sections": {
         "Iconography": "Ten of Cups (Coppe). The suit-emblems of cups in the Bolognese pattern.",
@@ -1653,7 +1681,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Ten of Cups shows ten cylindrical cup shapes in the suit's fullest pip composition. Ten Bolognese chalice forms are arranged in the conventional Italian pip distribution, the ten-cup card representing the suit at its maximum numerical expression — emotional completeness in the cylindrical vessel form.",
         "Symbol": "Ten cups in full field — the suit at its most abundant, emotional completeness in the Bolognese pip's clean and vertical form."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-cups-ten.jpg"
     },
     {
       "id": "cups-fante",
@@ -1695,7 +1724,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/cups-fante.jpg"
         },
-        "minor_key": "page-of-cups"
+        "minor_key": "page-of-cups",
+        "number": 11
       },
       "sections": {
         "Iconography": "Knave (Fante) of Cups (Coppe). A courtly figure of the suit.",
@@ -1746,7 +1776,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/cups-cavallo.jpg"
         },
-        "minor_key": "knight-of-cups"
+        "minor_key": "knight-of-cups",
+        "number": 12
       },
       "sections": {
         "Iconography": "Knight (Cavallo) of Cups (Coppe). A courtly figure of the suit.",
@@ -1797,7 +1828,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/cups-regina.jpg"
         },
-        "minor_key": "queen-of-cups"
+        "minor_key": "queen-of-cups",
+        "number": 13
       },
       "sections": {
         "Iconography": "Queen (Regina) of Cups (Coppe). A courtly figure of the suit.",
@@ -1848,7 +1880,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/cups-re.jpg"
         },
-        "minor_key": "king-of-cups"
+        "minor_key": "king-of-cups",
+        "number": 14
       },
       "sections": {
         "Iconography": "King (Re) of Cups (Coppe). A courtly figure of the suit.",
@@ -1902,7 +1935,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/swords-ace.jpg"
         },
-        "minor_key": "ace-of-swords"
+        "minor_key": "ace-of-swords",
+        "number": 1
       },
       "sections": {
         "Iconography": "Ace of Swords (Spade). The suit-emblems of swords in the Bolognese pattern.",
@@ -1938,7 +1972,8 @@
         "court": false,
         "archetype": "card:six-of-swords",
         "mapping_confidence": "exact",
-        "minor_key": "six-of-swords"
+        "minor_key": "six-of-swords",
+        "number": 6
       },
       "sections": {
         "Iconography": "Six of Swords (Spade). The suit-emblems of swords in the Bolognese pattern.",
@@ -1946,7 +1981,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Six of Swords shows six sword shapes arranged in the Italian pip convention. The Bolognese spade are shown as straight or slightly curved blades with crossguards, arranged in symmetrical crossing patterns. Six swords fill the card in the characteristic Bolognese sword pip style, which differs from both the Marseille linear arrangement and the curved-saber style of some Italian decks.",
         "Symbol": "Six swords in crossing arrangement — the suit's blades at their balanced mid-range, discernment organized through bilateral crossing."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-swords-six.jpg"
     },
     {
       "id": "swords-seven",
@@ -1973,7 +2009,8 @@
         "court": false,
         "archetype": "card:seven-of-swords",
         "mapping_confidence": "exact",
-        "minor_key": "seven-of-swords"
+        "minor_key": "seven-of-swords",
+        "number": 7
       },
       "sections": {
         "Iconography": "Seven of Swords (Spade). The suit-emblems of swords in the Bolognese pattern.",
@@ -1981,7 +2018,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Seven of Swords shows seven sword shapes in the Italian pip convention, their blades and crossguards distributed in the slightly asymmetric pattern of an odd-number pip. The seven Bolognese spade are arranged with the characteristic interlocking or crossing formation of the Italian sword pip style.",
         "Symbol": "Seven swords in slight asymmetry — the suit at an active mid-to-upper register, seven blades that resist easy pairing and suggest alert readiness."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-swords-seven.jpg"
     },
     {
       "id": "swords-eight",
@@ -2008,7 +2046,8 @@
         "court": false,
         "archetype": "card:eight-of-swords",
         "mapping_confidence": "exact",
-        "minor_key": "eight-of-swords"
+        "minor_key": "eight-of-swords",
+        "number": 8
       },
       "sections": {
         "Iconography": "Eight of Swords (Spade). The suit-emblems of swords in the Bolognese pattern.",
@@ -2016,7 +2055,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Eight of Swords shows eight sword shapes in a symmetrical arrangement, the even number allowing a balanced distribution of the Bolognese spade. Eight blades in crossing or parallel formation fill the card's field in the Italian pip convention.",
         "Symbol": "Eight swords in balanced arrangement — the suit in its organized mid-to-upper range, blades held in structured geometric form."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-swords-eight.jpg"
     },
     {
       "id": "swords-nine",
@@ -2043,7 +2083,8 @@
         "court": false,
         "archetype": "card:nine-of-swords",
         "mapping_confidence": "exact",
-        "minor_key": "nine-of-swords"
+        "minor_key": "nine-of-swords",
+        "number": 9
       },
       "sections": {
         "Iconography": "Nine of Swords (Spade). The suit-emblems of swords in the Bolognese pattern.",
@@ -2051,7 +2092,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Nine of Swords shows nine sword shapes approaching the density of the ten. Nine Bolognese spade are distributed across the card in the Italian pip convention, the suit's blade forms filling the field as the count nears its maximum.",
         "Symbol": "Nine swords approaching fullness — the suit near its maximum, discernment or conflict accumulated close to its highest expression."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-swords-nine.jpg"
     },
     {
       "id": "swords-ten",
@@ -2096,7 +2138,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/swords-ten.jpg"
         },
-        "minor_key": "ten-of-swords"
+        "minor_key": "ten-of-swords",
+        "number": 10
       },
       "sections": {
         "Iconography": "Ten of Swords (Spade). The suit-emblems of swords in the Bolognese pattern.",
@@ -2147,7 +2190,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/swords-fante.jpg"
         },
-        "minor_key": "page-of-swords"
+        "minor_key": "page-of-swords",
+        "number": 11
       },
       "sections": {
         "Iconography": "Knave (Fante) of Swords (Spade). A courtly figure of the suit.",
@@ -2198,7 +2242,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/swords-cavallo.jpg"
         },
-        "minor_key": "knight-of-swords"
+        "minor_key": "knight-of-swords",
+        "number": 12
       },
       "sections": {
         "Iconography": "Knight (Cavallo) of Swords (Spade). A courtly figure of the suit.",
@@ -2249,7 +2294,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/swords-regina.jpg"
         },
-        "minor_key": "queen-of-swords"
+        "minor_key": "queen-of-swords",
+        "number": 13
       },
       "sections": {
         "Iconography": "Queen (Regina) of Swords (Spade). A courtly figure of the suit.",
@@ -2300,7 +2346,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/swords-re.jpg"
         },
-        "minor_key": "king-of-swords"
+        "minor_key": "king-of-swords",
+        "number": 14
       },
       "sections": {
         "Iconography": "King (Re) of Swords (Spade). A courtly figure of the suit.",
@@ -2354,7 +2401,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/batons-ace.jpg"
         },
-        "minor_key": "ace-of-batons"
+        "minor_key": "ace-of-batons",
+        "number": 1
       },
       "sections": {
         "Iconography": "Ace of Batons (Bastoni). The suit-emblems of batons in the Bolognese pattern.",
@@ -2390,7 +2438,8 @@
         "court": false,
         "archetype": "card:six-of-wands",
         "mapping_confidence": "exact",
-        "minor_key": "six-of-batons"
+        "minor_key": "six-of-batons",
+        "number": 6
       },
       "sections": {
         "Iconography": "Six of Batons (Bastoni). The suit-emblems of batons in the Bolognese pattern.",
@@ -2398,7 +2447,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Six of Batons shows six baton shapes in the Italian pip convention. The Bolognese bastoni are cylindrical staves in red and blue, arranged in a symmetrical crossing or parallel formation. The six-baton card is balanced and organized, the suit's cylindrical forms in their equitable mid-range arrangement.",
         "Symbol": "Six batons in balanced arrangement — the suit's creative force at a point of stable mid-range equilibrium."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-batons-six.jpg"
     },
     {
       "id": "batons-seven",
@@ -2443,7 +2493,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/batons-seven.jpg"
         },
-        "minor_key": "seven-of-batons"
+        "minor_key": "seven-of-batons",
+        "number": 7
       },
       "sections": {
         "Iconography": "Seven of Batons (Bastoni). The suit-emblems of batons in the Bolognese pattern.",
@@ -2479,7 +2530,8 @@
         "court": false,
         "archetype": "card:eight-of-wands",
         "mapping_confidence": "exact",
-        "minor_key": "eight-of-batons"
+        "minor_key": "eight-of-batons",
+        "number": 8
       },
       "sections": {
         "Iconography": "Eight of Batons (Bastoni). The suit-emblems of batons in the Bolognese pattern.",
@@ -2487,7 +2539,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Eight of Batons shows eight cylindrical baton shapes in a symmetrical arrangement, the even number allowing a balanced geometric formation. The eight bastoni with their red, blue, and yellow stripes fill the card in the Italian pip convention with the suit's characteristic strong color contrast.",
         "Symbol": "Eight batons in balanced formation — the suit's creative force organized through geometric symmetry, energy channeled into structured pattern."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-batons-eight.jpg"
     },
     {
       "id": "batons-nine",
@@ -2514,7 +2567,8 @@
         "court": false,
         "archetype": "card:nine-of-wands",
         "mapping_confidence": "exact",
-        "minor_key": "nine-of-batons"
+        "minor_key": "nine-of-batons",
+        "number": 9
       },
       "sections": {
         "Iconography": "Nine of Batons (Bastoni). The suit-emblems of batons in the Bolognese pattern.",
@@ -2522,7 +2576,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Nine of Batons shows nine cylindrical baton shapes approaching the density of the ten. Nine bastoni are distributed across the card in the Italian pip convention, the suit's force accumulating toward its maximum expression.",
         "Symbol": "Nine batons approaching fullness — creative force near its peak, the suit's energy gathered toward its most concentrated pip expression."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-batons-nine.jpg"
     },
     {
       "id": "batons-ten",
@@ -2549,7 +2604,8 @@
         "court": false,
         "archetype": "card:ten-of-wands",
         "mapping_confidence": "exact",
-        "minor_key": "ten-of-batons"
+        "minor_key": "ten-of-batons",
+        "number": 10
       },
       "sections": {
         "Iconography": "Ten of Batons (Bastoni). The suit-emblems of batons in the Bolognese pattern.",
@@ -2557,7 +2613,8 @@
         "Tradition Note": "The Tarocchino was made to play a fast Bolognese trick-taking game, not for divination. The notes here are historical and structural; any reading is a later overlay, not part of the deck's original use.",
         "Scene": "The Ten of Batons shows ten cylindrical baton shapes in the suit's fullest pip composition. The ten bastoni are arranged in the densest Italian pip formation, filling the card's field with the suit's characteristic striped cylindrical forms. The ten-baton card is the suit's most loaded pip, creative energy accumulated to its maximum.",
         "Symbol": "Ten batons in dense field — the suit at its most burdensome fullness, creative force accumulated to its highest pip expression."
-      }
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-batons-ten.jpg"
     },
     {
       "id": "batons-fante",
@@ -2599,7 +2656,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/batons-fante.jpg"
         },
-        "minor_key": "page-of-batons"
+        "minor_key": "page-of-batons",
+        "number": 11
       },
       "sections": {
         "Iconography": "Knave (Fante) of Batons (Bastoni). A courtly figure of the suit.",
@@ -2650,7 +2708,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/batons-cavallo.jpg"
         },
-        "minor_key": "knight-of-batons"
+        "minor_key": "knight-of-batons",
+        "number": 12
       },
       "sections": {
         "Iconography": "Knight (Cavallo) of Batons (Bastoni). A courtly figure of the suit.",
@@ -2701,7 +2760,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/batons-regina.jpg"
         },
-        "minor_key": "queen-of-batons"
+        "minor_key": "queen-of-batons",
+        "number": 13
       },
       "sections": {
         "Iconography": "Queen (Regina) of Batons (Bastoni). A courtly figure of the suit.",
@@ -2752,7 +2812,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarocchino-bologna/batons-re.jpg"
         },
-        "minor_key": "king-of-batons"
+        "minor_key": "king-of-batons",
+        "number": 14
       },
       "sections": {
         "Iconography": "King (Re) of Batons (Bastoni). A courtly figure of the suit.",

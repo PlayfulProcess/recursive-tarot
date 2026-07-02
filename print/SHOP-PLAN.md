@@ -102,6 +102,27 @@ No backend. Lights up product-by-product.
 - [ ] Builder: delete TGC_PASSWORD line from env-local.txt after testing; consider
       rotating the password
 
+## ⛔ PUBLISH GATE: must buy a proof copy first (June 30 2026)
+
+**TGC will NOT let you publish a game until you have purchased a copy of it.**
+Confirmed live: clicking **Publish** on Golden Dawn Tarot returned the error
+*"You must purchase a copy of Golden Dawn Tarot — Recursive Tarot."*
+
+So the order is fixed by the platform — proofing alone is not enough:
+
+1. Proof-all (digital) → ✅ done (box requirement also overridden via API: `box_required=0`).
+2. **Order ONE physical copy of Golden Dawn Tarot** (game `C07782A2-645A-11F1-87B8-CDFD42BF08F6`, ~$23.61 cost) — this is the proof copy AND the publish unlock.
+3. Inspect the printed copy when it arrives (the "hold it in our hands before selling" rule).
+4. **Then** Publish → it goes public → copy the product URL
+   (`https://www.thegamecrafter.com/games/golden-dawn-tarot-recursive-tarot`).
+5. Send the URL → paste into `print-products.json` (`golden-dawn-book-t-tarot` →
+   `product_url` + `status: live`) → Buy button goes live on the shop.
+
+**Status: builder is WAITING ON THE SAMPLE before publishing** (decided Jun 30 2026).
+Don't push the publish step until the printed copy has been ordered + inspected.
+Note: there's still a stray junk deck "Untitled Tarot Deck" (`DB06A4E0…`) in the
+game — delete it before publishing so the product isn't two decks.
+
 ## ✅ FULL SAMPLER ON TGC (June 11 2026)
 - 26-card proof deck pushed via API: 19 decks (12 READY + 7 webres-test) + 7 card
   backs (now on R2, no more Commons 429). All 900×1500.

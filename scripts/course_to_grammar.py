@@ -94,7 +94,12 @@ def convert(mdx_id, out_slug, name=None):
                 meta["embeds"] = EMBEDS[nm]
         if essay_md and 'data-embed="essay"' in content:
             content = content.replace('<div data-embed="essay"></div>', essay_md)
-        content = re.sub(r'\s*<div data-embed="[^"]+"></div>\s*', "\n\n", content).strip()
+        # plates → baked to metadata.embeds; essay → inlined above; strip only those two.
+        # KEEP the computed-aggregation markers (decks/suits/numbers/trumps-*/suits-detail/
+        # lineage/timeline/people/apparatus/card) inline in the prose — grammar-course expands
+        # them live via course-embeds.js, the SAME shared expander the MDX course-viewer uses,
+        # so the grammar renders the whole course at parity.
+        content = re.sub(r'\s*<div data-embed="plates"[^>]*></div>\s*', "\n\n", content).strip()
         if not content and not meta:
             continue
         it = {

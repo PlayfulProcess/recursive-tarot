@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
 <link rel="stylesheet" href="../theme.css?v=3">
+<link rel="stylesheet" href="course-embeds.css?v=1">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grammar as a course · Recursive Tarot</title>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="course-embeds.js?v=1"></script>
 <!--
   grammar-course.html — render ANY grammar as a readable course.
   ?src=<grammar.json>   the grammar to read (default: how-to-contribute)
@@ -26,7 +28,8 @@
   .organize select{font-family:inherit;font-size:13px;background:var(--surface);color:var(--ink);border:1px solid var(--line-soft);border-radius:8px;padding:6px 10px;cursor:pointer}
 
   .cgrid{display:grid;grid-template-columns:240px 1fr;gap:46px;margin-top:18px;align-items:start}
-  .toc{position:sticky;top:18px;font-family:var(--sans);padding-right:8px}
+  /* sticky below the ~60px sticky site-header so its top items aren't covered */
+  .toc{position:sticky;top:74px;max-height:calc(100vh - 90px);overflow:auto;font-family:var(--sans);padding-right:8px}
   .toc h3{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8a6414;margin:0 0 10px}
   .toc a{display:block;font-size:13px;color:var(--ink-soft);text-decoration:none;padding:4px 0 4px 10px;border-left:2px solid var(--line);line-height:1.35}
   .toc a:hover{color:#9a7322;border-left-color:#9a7322}
@@ -69,12 +72,13 @@
   .embeds figure.plate img{width:100%;border-radius:6px;border:1px solid var(--line);background:#f4f1ea;display:block}
   .embeds figure.plate figcaption{font-family:var(--serif-body);font-size:11.5px;line-height:1.42;color:var(--mut);margin-top:5px}
   #err{color:#a3402d;padding:24px;font-family:var(--sans)}
-  @media (max-width:760px){ .cgrid{grid-template-columns:1fr} .toc{position:static} }
+  @media (max-width:760px){ .cgrid{grid-template-columns:1fr} .toc{position:static;max-height:none;overflow:visible} }
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=31"></script>
-<script src="../view-switcher.js?v=11"></script>
+<script src="../site-header.js?v=42"></script>
+<script src="../view-switcher.js?v=12"></script>
+<script src="course-assistant.js?v=2"></script>
 <site-header active="course"></site-header>
 
 <main class="wrap">
@@ -197,8 +201,12 @@
       }
       $('content').appendChild(cEl);
     }
-    // resolve cross-grammar embeds (card galleries) after the page paints
+    // resolve cross-grammar embeds (curated card galleries) after the page paints
     pendingEmbeds.forEach(async pe => { const el = document.getElementById(pe.elId); if (el) el.innerHTML = await renderEmbeds(pe.embeds); });
+    // expand computed [data-embed] galleries (decks/suits/numbers/trumps/lineage/timeline…)
+    // left inline in the prose — same shared expander the MDX course-viewer uses, so this
+    // grammar renders at parity with the whole course.
+    if (window.expandCourseEmbeds) expandCourseEmbeds($('content'));
   }
 
   function setGroup(v){ groupField = v; const u = new URL(location); v ? u.searchParams.set('group', v) : u.searchParams.delete('group'); history.replaceState(null, '', u); render(); }
