@@ -124,7 +124,7 @@
 
   /* Spread Studio — aligned control rows, wide question, always-visible action bar */
   .controls { flex-direction:column; align-items:stretch; gap:14px; }
-  .crow { display:flex; gap:14px; flex-wrap:wrap; align-items:flex-end; }
+  .crow { display:flex; gap:14px; flex-wrap:wrap; align-items:flex-start; }
   .crow .field label, .qfield label { font-size:12px; color:var(--muted); }
   .spread-inline { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
   .qfield { display:flex; flex-direction:column; gap:5px; }
@@ -133,6 +133,23 @@
     font-family:inherit; line-height:1.45; resize:vertical; }
   .actionbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:14px; }
   .actionbar .hint { color:var(--muted); font-size:12px; }
+  /* Deck & Spread as two equal, aligned columns; their selects line up regardless of the icon buttons */
+  .crow .field { flex:1 1 260px; min-width:0; }
+  .crow .field select { width:100%; min-width:0; }
+  .fieldhead { display:flex; align-items:center; justify-content:space-between; gap:8px; height:30px; }
+  .io-btns { display:inline-flex; gap:6px; }
+  .iconbtn { display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; padding:0;
+    background:#efeadf; color:#4a4439; border:1px solid var(--line); border-radius:8px; cursor:pointer; }
+  .iconbtn:hover { background:#e6dfcf; color:#9a7322; border-color:#d9cfb8; }
+  .iconbtn svg { width:16px; height:16px; }
+  /* reversal probability — same shape as the recursive.eco oracle caster */
+  .revfield { display:flex; flex-direction:column; gap:6px; max-width:560px; }
+  .revfield > label { font-size:12px; color:var(--muted); }
+  .revfield > label strong { color:#9a7322; font-weight:700; }
+  .revrow { display:flex; align-items:center; gap:12px; }
+  .revrow input[type=range] { flex:1; accent-color:#9a7322; height:4px; cursor:pointer; }
+  .revpct { min-width:40px; text-align:right; font-size:12px; font-weight:700; color:#4a4439; }
+  .revhint { font-size:12px; color:var(--muted); }
   /* cast card — hug the image's own frame like the cards viewer (no letterbox gap) */
   .slot .card.filled { aspect-ratio:auto; border:none; background:none; overflow:visible; }
   .slot .card.filled img { display:block; width:100%; height:auto; border:1px solid var(--line);
@@ -166,20 +183,34 @@
   <div class="controls">
     <div class="crow">
       <div class="field">
-        <label for="deck">Deck</label>
+        <div class="fieldhead"><label for="deck">Deck</label></div>
         <select id="deck"><option>Loading decks…</option></select>
         <div class="deckmeta" id="deckmeta"></div>
       </div>
       <div class="field">
-        <label for="spread">Spread</label>
-        <div class="spread-inline">
-          <select id="spread"><option>Loading…</option></select>
-          <label class="ghost" id="importLabel" title="Load a spread (layout) or a full reading (layout + cast cards) — .json exported here" style="display:inline-flex;align-items:center;background:#efeadf;color:#4a4439;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;">Import<input type="file" id="importFile" accept=".json,application/json" style="display:none"></label>
-          <button type="button" class="ghost" id="exportSpread" title="Save just this layout — positions, labels &amp; meanings, no cards — as a reusable spread .json" style="background:#efeadf;color:#4a4439;border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;">Export spread</button>
+        <div class="fieldhead">
+          <label for="spread">Spread</label>
+          <span class="io-btns">
+            <button type="button" class="iconbtn" id="exportSpread" title="Export spread — save just this layout (positions, labels &amp; meanings; no cards)" aria-label="Export spread">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </button>
+            <label class="iconbtn" id="importLabel" title="Import — load a spread (layout) or a full reading (layout + cards) exported here" aria-label="Import spread or reading">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <input type="file" id="importFile" accept=".json,application/json" style="display:none">
+            </label>
+          </span>
         </div>
+        <select id="spread"><option>Loading…</option></select>
         <div class="spreadmeta" id="spreadmeta"></div>
       </div>
-      <label class="checkbox"><input type="checkbox" id="reversals" /> reversals</label>
+    </div>
+    <div class="revfield">
+      <label for="revProb">Reversal probability: <strong id="revPct">30%</strong></label>
+      <div class="revrow">
+        <input type="range" id="revProb" min="0" max="100" step="5" value="30">
+        <span class="revpct" id="revPctEnd">30%</span>
+      </div>
+      <div class="revhint">Chance that each card appears reversed — like the recursive.eco oracle caster.</div>
     </div>
     <div class="qfield">
       <label for="question">Your question (optional)</label>
@@ -307,6 +338,7 @@ const $ = id => document.getElementById(id);
   ssel.addEventListener('change', e => setSpread(e.target.value));
   $('cast').addEventListener('click', cast);
   $('reshuffle').addEventListener('click', cast);
+  $('revProb').addEventListener('input', e => { const v = e.target.value + '%'; $('revPct').textContent = v; $('revPctEnd').textContent = v; });
   $('addPos').addEventListener('click', () => {
     if (curSpreadId !== 'custom') { curSpreadId = 'custom'; $('spread').value = 'custom'; $('clist').classList.add('on'); }
     const n = positions.length;
@@ -414,10 +446,10 @@ function cast(){
   const n = positions.length;
   const cards = drawN(n);
   if (cards.length < n){ alert('This deck has only ' + cards.length + ' castable cards — fewer than this spread needs (' + n + '). Try "All Decks" or a larger deck.'); return; }
-  const allowRev = $('reversals').checked;
+  const revProb = (parseInt($('revProb').value,10) || 0) / 100;
   positions.forEach((p, i) => { const c = cards[i], m = c.metadata||{};
     p.card = { name:c.name, deck:(m.deck||deckLabels[m.source_deck]||''), arcana:m.arcana||null, number:(m.number??null),
-      reversed: allowRev ? Math.random()<0.5 : false, image_url:c.image_url||null,
+      reversed: Math.random() < revProb, image_url:c.image_url||null,
       source_deck:m.source_deck||null, source_item_id:m.source_item_id||null }; });
   $('reshuffle').style.display = 'inline-block';
   renderBoard(); syncJson(); $('export').classList.add('on');
