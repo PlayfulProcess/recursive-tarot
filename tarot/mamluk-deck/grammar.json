@@ -17,13 +17,7 @@
   "default_preview": "tree",
   "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%201.jpg",
   "description": "The single most important upstream object in this repo: the four-suit pack Europe copied. The surviving deck — *Mulūk wa-nuwwāb* (\"Kings and Deputies\"), the game called *kanjifah* — is a Mamluk-era set (Egypt & Syria, dated to roughly the 15th century, c. 1500), of which **roughly 48 cards survive — about 43 from the original pack plus a handful of cruder later replacement cards** (the original deck had 52), held at the **Topkapı Palace Museum, Istanbul** (found and published by L. A. Mayer, 1939/1971).\n\nIt has **four suits** — cups, coins, swords, and **polo-sticks** — each running **Ace–10 plus three court cards** (a king and two deputies). The courts are **aniconic**: no human figures, only abstract design and calligraphic inscriptions naming the rank. When this pack reached Iberia and Italy in the **1370s** (as *naipes* / *naibi*), Italians later added a fifth suit of 21 triumphs + the Fool — and that addition, in the **1440s**, is tarot. So tarot is *this deck plus trumps*. The polo-sticks, a game Europeans didn't play, were redrawn as **batons/wands**; cups, coins and swords carried over directly.\n\n**How the suits became European:** Cups → Cups, Coins → Coins, Swords → Swords (Latin suits), and Polo-sticks → Batons. The Latin-suited packs (Italian/Spanish) preserve the Mamluk shapes most faithfully; the later French suits (hearts/tiles/clovers/pikes) are a simplification of these.\n\n**China → Islam → Europe:** Playing cards most likely begin in Tang-dynasty China (money-suited cards). Through an undocumented transmission they reach the Islamic world as *kanjifah*; the Mamluk pack is the form that crossed into Iberia and Italy in the 1370s. Italy's fifth suit of triumphs (1440s) makes it tarot. The deepest roots are gaming, not divination.\n\nGAME OR DIVINATION? A gaming/gambling object. The deepest roots of tarot are a card-game tradition (Tang-China money-suited cards → Mamluk *kanjifah* → European *naibi*); divination cultures existed alongside but used *other* instruments.\n\nANCESTRAL STATUS: **direct ancestor** (the parent of the European four-suit pack), as distinct from the *cousin* branches (e.g. Ganjifa) that did not become tarot.\n\nSOURCES: L. A. Mayer, *Mamluk Playing Cards* (1971); Michael Dummett, *The Game of Tarot* (1980); Topkapı Palace Museum, Istanbul.\n\n**IMAGE PROVENANCE / TODO (2026-06-13).** The images here are **7 genuine public-domain photographs of the original Topkapı cards** (Wikimedia Commons, *Mamluk playing card 1–7*) — but the pack has **~48 surviving cards**, so these 7 are shown as **REPRESENTATIVE stand-ins**: the same court photograph (*card 6*) currently illustrates all four suits' deputies, and the pips reuse one or two images. That is a display stand-in, NOT a claim that the four deputies (or pips) are identical, and the specific image↔suit/rank assignments are **not yet verified against the originals**. TODO: source the full surviving set from Wikimedia Commons *Category: Mamluk playing cards* and the reconstructions at mamluk.spiorad.net / l-pollett.tripod.com, and map each image to its actual card. [@web_commons_mamluk; @web_spiorad_topkapi; @web_pollett_mamluk_cards64]\n",
-  "tags": [
-    "mamluk",
-    "kanjifah",
-    "ancestor",
-    "playing-cards",
-    "islamic"
-  ],
+  "tags": ["mamluk", "kanjifah", "ancestor", "playing-cards", "islamic"],
   "metadata": {
     "ancestry": "direct-ancestor",
     "era": "Mamluk Egypt & Syria, c. 1500",
@@ -48,13 +42,7 @@
         "Scene": "A hand-painted card from the Mamluk playing card collection (now dispersed in the Topkapi Palace Museum and Benaki Museum). The card shown is from the cups suit, elaborately painted with arabesque scrollwork, intricate geometric borders, and an Arabic inscription panel at top identifying rank.",
         "Symbol": "The Mamluk pack is the oldest surviving complete (or near-complete) set of playing cards. Its aniconic design — no human or animal figures — reflects Islamic artistic conventions, encoding rank and value through geometric and floral ornament alone."
       },
-      "composite_of": [
-        "suit-cups",
-        "suit-coins",
-        "suit-swords",
-        "suit-polo",
-        "court-structure"
-      ]
+      "composite_of": ["suit-cups", "suit-coins", "suit-swords", "suit-polo", "court-structure"]
     },
     {
       "id": "suit-cups",
@@ -68,11 +56,7 @@
         "Symbol": "The cup (ṭūmān) suit in the Mamluk pack is the direct ancestor of the cups suit in European tarot and Italian playing cards. Its form — a rounded goblet — passed intact through Moorish Spain and Sicily into Christian Europe."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%202.jpg",
-      "composite_of": [
-        "cups-king",
-        "cups-deputy",
-        "cups-pip"
-      ]
+      "composite_of": ["cups-king", "cups-deputy", "cups-pip"]
     },
     {
       "id": "suit-coins",
@@ -86,11 +70,7 @@
         "Symbol": "The coins (darāhim) suit directly prefigures the coins/pentacles suit of tarot. The coin symbol retained its circular form throughout its transmission into European card culture."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%203.jpg",
-      "composite_of": [
-        "coins-king",
-        "coins-deputy",
-        "coins-pip"
-      ]
+      "composite_of": ["coins-king", "coins-deputy", "coins-pip"]
     },
     {
       "id": "suit-swords",
@@ -104,11 +84,7 @@
         "Symbol": "The swords (suyūf) represent military rank and martial honour in Mamluk culture. The suit passed into Europe as the swords suit, retaining the curved blade of Islamic weaponry before later Italian and Spanish versions straightened the design."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%204.jpg",
-      "composite_of": [
-        "swords-king",
-        "swords-deputy",
-        "swords-pip"
-      ]
+      "composite_of": ["swords-king", "swords-deputy", "swords-pip"]
     },
     {
       "id": "suit-polo",
@@ -122,11 +98,7 @@
         "Symbol": "The polo-stick suit is the only suit that did not survive intact into European cards. When the deck passed to Europe via the Moors, jawkān was transformed into the wands/batons suit, the curved mallet head becoming a straight staff or club."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%205.jpg",
-      "composite_of": [
-        "polo-king",
-        "polo-deputy",
-        "polo-pip"
-      ]
+      "composite_of": ["polo-king", "polo-deputy", "polo-pip"]
     },
     {
       "id": "court-structure",
@@ -141,12 +113,7 @@
         "Symbol": "The three-rank Mamluk court (king + two deputies) likely evolved into the four-rank European court (king, queen, knight, page) through the addition of female figures during the passage into Christian Europe."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%206.jpg",
-      "composite_of": [
-        "cups-king",
-        "coins-king",
-        "swords-king",
-        "polo-king"
-      ]
+      "composite_of": ["cups-king", "coins-king", "swords-king", "polo-king"]
     },
     {
       "id": "cups-king",
@@ -164,12 +131,7 @@
         "Scene": "A court card from the cups suit identified as Malik (king) by its Arabic title inscription. The card bears particularly elaborate arabesque decoration in the main field and a formal calligraphic title panel at the top.",
         "Symbol": "The Malik of cups: highest ranking, most elaborately decorated card of the suit, encoding authority through ornamental density."
       },
-      "keywords": [
-        "court",
-        "king",
-        "aniconic",
-        "cups"
-      ]
+      "keywords": ["court", "king", "aniconic", "cups"]
     },
     {
       "id": "cups-deputy",
@@ -187,12 +149,7 @@
         "Scene": "A court card from the cups suit, rank Nā'ib (deputy/viceroy). Arabic calligraphic title panel at top; the arabesque decoration is rich but slightly less elaborate than the Malik card.",
         "Symbol": "The deputy rank — one or two per suit — is the direct ancestor of the European knight and page cards."
       },
-      "keywords": [
-        "court",
-        "deputy",
-        "aniconic",
-        "cups"
-      ]
+      "keywords": ["court", "deputy", "aniconic", "cups"]
     },
     {
       "id": "cups-pip",
@@ -210,10 +167,7 @@
         "Scene": "A pip card from the cups suit showing the cup symbol — a rounded chalice form — repeated in a geometric arrangement within an arabesque border.",
         "Symbol": "The cup pip: pure numerical value communicated through repetition of the suit emblem, a system that survives unchanged in European pip cards."
       },
-      "keywords": [
-        "pip",
-        "cups"
-      ]
+      "keywords": ["pip", "cups"]
     },
     {
       "id": "coins-king",
@@ -230,12 +184,7 @@
         "Scene": "A court card from the coins suit, rank Malik (king). Identified by its Arabic title and the richest arabesque decoration in the suit. The coin symbol — a round disc with square inset — appears in the decoration.",
         "Symbol": "Material authority and wealth communicated through the abstraction of the coin symbol and the density of its ornamental framing."
       },
-      "keywords": [
-        "court",
-        "king",
-        "aniconic",
-        "coins"
-      ]
+      "keywords": ["court", "king", "aniconic", "coins"]
     },
     {
       "id": "coins-deputy",
@@ -253,12 +202,7 @@
         "Scene": "A court card from the coins suit, rank Nā'ib. Arabesque field with a calligraphic title panel; slightly simpler ornamental scheme than the Malik.",
         "Symbol": "Delegated material authority; the viceroy who manages wealth on behalf of the king."
       },
-      "keywords": [
-        "court",
-        "deputy",
-        "aniconic",
-        "coins"
-      ]
+      "keywords": ["court", "deputy", "aniconic", "coins"]
     },
     {
       "id": "coins-pip",
@@ -276,10 +220,7 @@
         "Scene": "A pip card from the coins suit showing the round disc coin symbol repeated in balanced geometric arrangements within a fine arabesque border.",
         "Symbol": "Numerical coin pip: pure quantity expressed as repeating circular forms."
       },
-      "keywords": [
-        "pip",
-        "coins"
-      ]
+      "keywords": ["pip", "coins"]
     },
     {
       "id": "swords-king",
@@ -296,12 +237,7 @@
         "Scene": "A court card from the swords suit, rank Malik. The Arabic calligraphic title panel identifies it; the arabesque decoration is the most elaborate of the suit. Curved sword forms may appear subtly within the ornamental field.",
         "Symbol": "Military kingship encoded through abstraction; the highest rank of martial authority."
       },
-      "keywords": [
-        "court",
-        "king",
-        "aniconic",
-        "swords"
-      ]
+      "keywords": ["court", "king", "aniconic", "swords"]
     },
     {
       "id": "swords-deputy",
@@ -319,12 +255,7 @@
         "Scene": "A court card from the swords suit, rank Nā'ib. Calligraphic title panel with rich but secondary arabesque decoration.",
         "Symbol": "Delegated martial authority; the military commander serving the king."
       },
-      "keywords": [
-        "court",
-        "deputy",
-        "aniconic",
-        "swords"
-      ]
+      "keywords": ["court", "deputy", "aniconic", "swords"]
     },
     {
       "id": "swords-pip",
@@ -341,10 +272,7 @@
         "Scene": "A pip card from the swords suit showing curved scimitar forms arranged in interlocking or fanning patterns, contained within arabesque borders.",
         "Symbol": "Martial numerical value expressed through interlocking curved blades."
       },
-      "keywords": [
-        "pip",
-        "swords"
-      ]
+      "keywords": ["pip", "swords"]
     },
     {
       "id": "polo-king",
@@ -361,13 +289,7 @@
         "Scene": "A court card from the polo-sticks suit, rank Malik. The Arabic title identifies it; arabesque decoration is at its richest for this suit. The polo mallet form may appear within the ornamental field.",
         "Symbol": "The prestige of polo as the sport of the Mamluk military elite is encoded in this highest-ranking card of the jawkān suit."
       },
-      "keywords": [
-        "court",
-        "king",
-        "aniconic",
-        "polo-sticks",
-        "batons"
-      ]
+      "keywords": ["court", "king", "aniconic", "polo-sticks", "batons"]
     },
     {
       "id": "polo-deputy",
@@ -385,13 +307,7 @@
         "Scene": "A court card from the polo-sticks suit, rank Nā'ib. Calligraphic title panel; secondary level of arabesque decoration.",
         "Symbol": "Delegated authority in the sphere of sport and martial recreation."
       },
-      "keywords": [
-        "court",
-        "deputy",
-        "aniconic",
-        "polo-sticks",
-        "batons"
-      ]
+      "keywords": ["court", "deputy", "aniconic", "polo-sticks", "batons"]
     },
     {
       "id": "polo-pip",
@@ -408,11 +324,7 @@
         "Scene": "A pip card from the polo-sticks suit showing the polo mallet (a long staff with curved head) repeated in geometric arrangements within arabesque borders.",
         "Symbol": "The jawkān pip: the suit symbol that became the wands/batons of European tarot when the curved mallet head was straightened into a staff."
       },
-      "keywords": [
-        "pip",
-        "polo-sticks",
-        "batons"
-      ]
+      "keywords": ["pip", "polo-sticks", "batons"]
     }
   ],
   "_research": {
@@ -420,5 +332,9 @@
     "cards": "research/cards/mamluk-deck.md",
     "bibliography": "research/bibliography.bib"
   },
-  "image_credit": "Topkapı Palace Museum, Istanbul"
+  "image_credit": "Topkapı Palace Museum, Istanbul",
+  "is_published": true,
+  "open_to_community": true,
+  "_recursive_eco_url": "https://flow.recursive.eco/play?id=2403af8b-1350-4df4-b04c-976ebe5c9326",
+  "_recursive_eco_edit_url": "https://flow.recursive.eco/create/dashboard/unified/new?id=2403af8b-1350-4df4-b04c-976ebe5c9326"
 }
