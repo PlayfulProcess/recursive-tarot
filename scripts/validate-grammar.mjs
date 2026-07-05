@@ -22,7 +22,10 @@ function sh(cmd) {
 }
 
 function isGrammarPath(p) {
-  return /(^|\/)grammar\.json$/.test(p) || /^(tarot|grammars)\//.test(p) || /\.json$/.test(p.split('/').pop());
+  // Grammars are always named grammar.json (tarot/<slug>/, seeds/*/grammars/<slug>/, …).
+  // Matching any changed *.json here wrongly validated non-grammar JSON (voices.json,
+  // _collection.json, spreads.json) as grammars and failed the PR check.
+  return /(^|\/)grammar\.json$/.test(p);
 }
 
 let changed = [];
