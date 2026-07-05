@@ -100,6 +100,7 @@
     ]],
     ['Contribute & graduate', [
       ['how-to-contribute',               'Ways to Contribute'],
+      ['build-a-site-like-this-one',      'A Website Like This One'],
       ['build-a-tarot-deck-with-claude',  'Contribute to the Commons'],
     ]],
   ];

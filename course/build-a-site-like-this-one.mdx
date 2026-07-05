@@ -1,0 +1,97 @@
+---
+id: build-a-site-like-this-one
+title: "A Website Like This One"
+description: "Rung 7 of the ladder: fork the starter kit that ships in this repo, swap the sample library for yours, and stand up a static, backend-free site on GitHub Pages — a website like this one, about your own subject. Phone-viable up to Pages-on; a desktop and Claude for the rest."
+duration: 20
+author: PlayfulProcess
+date: 2026-07-05
+---
+
+# A Website Like This One
+
+Rung 6 gave you your own *grammars* — a library of JSON about your subject, made by talking to Claude. Rung 7 gives you your own *site* to show them: a static, backend-free website with the same bones as this one — the shared theme, a viewer that turns a folder of JSON into browsable cards, the check-before-you-commit gate, and GitHub Pages for free hosting. The tarot was only the worked example. Here we take the shape home.
+
+The good news for this rung: **the starter kit has landed.** It ships in this repo at [`template/`](https://github.com/PlayfulProcess/recursive-tarot/tree/dev/template) — the bones of this site with the tarot lifted out and one sample library left in. This course walks you through it, honestly, step by step, and tells you which steps you can do from a phone and which want a desktop.
+
+## Why leave home
+
+Everything you practised in Rungs 1–5 was about tending *one* commons — this one, about tarot. But a grammar is just named items with sections; the viewers are thin; the data is public and portable. The method has nothing to do with tarot. Rung 7 is the move where you stop being a contributor to our library and become the keeper of your own — a lineage, a language you're documenting, a valley's folk songs, your family's recipes, the trees on your street. Same shape, your subject.
+
+## Get the starter
+
+The starter is a self-contained folder. You don't fork our whole tarot repo for this — you lift the `template/` folder out and make it the root of a repo of your own.
+
+1. **Copy `template/` out of this repo** into a new folder — download the folder from GitHub, or, if you have the repo cloned, copy just `template/` somewhere new. What's in the box: `index.html` (a home that reads one grammar and renders it), `theme.css` (the single source of colour), `grammars/street-trees/grammar.json` (the sample library), `check.py` (the gate), `CLAUDE.md` (skeleton instructions for your AI helper), and `GRAMMAR_FORMAT.md` (the spec).
+2. **Make it the root of a new repo.** Create an empty GitHub repo (this part works fine from a phone browser) and push the starter's contents to it, or upload the files through GitHub's web interface.
+
+Everything is plain HTML, one CSS file, and JSON. No build step, no framework, no server to run in production.
+
+## See it run locally
+
+Browsers block `file://` fetches, so you view it over a tiny local server. This step wants a computer:
+
+```bash
+cd template
+python -m http.server 8000
+# now visit http://localhost:8000/
+```
+
+You'll see the sample library — **The Trees of Elm Row**: three trees and one grouping — rendered as cards you can open. That's the whole site working, before you've changed a thing.
+
+## Make the grammar yours
+
+Open `grammars/street-trees/grammar.json`. A grammar is just a **name** and **description** at the top, then a list of **items** — each with an `id`, a `name`, and `sections` (labelled prose blocks: the sample uses *"What it is"*, *"Where"*, *"In each season"*; yours can be whatever fits your subject).
+
+- Rename the folder `street-trees/` to your own slug.
+- Change the top-level `name` and `description`.
+- Rewrite the items about your thing. Fill in `creator_name` and `creator_link` while you're there.
+
+Reload the page. That's your library. You don't have to write JSON by hand, either — point Claude or Claude Code at the folder, tell it to read `GRAMMAR_FORMAT.md` and `CLAUDE.md`, and describe what you want (*"add an item for the maple by the school, with sections for what it is, where, and how it looks each season"*). It edits the JSON; you reload.
+
+## Let a pattern emerge
+
+Look at the last item in the sample, `group-the-oaks`. It holds no tree of its own — it has `composite_of: ["tree-white-oak", "tree-red-oak"]`. That's a **grouping**: an item made of other items. This is the one real trick — structure grows without a database. A grouping gathers leaves; a grouping of groupings gives you a whole tree. Make one for your subject: the pattern *across* your items becomes its own object you can point at, link to, and talk about.
+
+## Keep the gate green
+
+Before you commit, run the check:
+
+```bash
+python check.py
+# → OK: all checks passed (1 grammar)
+```
+
+`check.py` has zero dependencies and catches the handful of mistakes that stop a grammar from loading: missing `name`/`description`/`grammar_type`, a `grammar_type` that isn't one of the known kinds, an item missing `id`/`name`/`sections`, or a `composite_of` that points at an id that doesn't exist. Keep it green and your site keeps loading.
+
+## Turn on GitHub Pages
+
+This is the step that puts your library on the open web, for free:
+
+**Settings → Pages → Deploy from a branch → (your default branch) / root.** In a minute your site is live at `https://<you>.github.io/<repo>/`. Share the link.
+
+**What's phone-viable.** You can do a surprising amount from a phone: create the repo, upload files through GitHub's web interface, edit a grammar's JSON in GitHub's web editor, and flip on Pages — all of that is browser-only, no computer needed. What *wants a desktop* is previewing locally (`python -m http.server`) and running `check.py` before you commit. So: draft and publish from your phone if you must; but sit down at a computer at least once to see it run and to run the gate. Better still, do the editing with Claude Desktop or Claude Code on the folder — that's the smoothest way, and it runs the checks for you.
+
+## Wire it to recursive.eco (optional)
+
+Your site stands on its own as a static library. But your grammars can *also* open in the [recursive.eco](https://flow.recursive.eco) app — for the live oracle, AI readings, and community editing — the same app Rung 5 taught you to connect.
+
+This is the optional hookup, and the full reference is one doc: **[`docs/RECURSIVE-ECO-INTEGRATION.md`](https://github.com/PlayfulProcess/recursive-tarot/blob/dev/docs/RECURSIVE-ECO-INTEGRATION.md)** in this repo. The two sections you want:
+
+- **§9 — play/cast URLs.** Any grammar opens in the app from a link: `https://flow.recursive.eco/play?id=<GRAMMAR_UUID>`. Drop that on a card or a course page and a reader lands in the live viewer. (You get the UUID when you publish the grammar through the MCP.)
+- **§10 — the Journal feature names.** Which entry point lands where — Journal, Play, Create, Library, your Personal Channel — so a link points at the right surface.
+
+Publishing your grammar to the app and opening it to a channel is Claude-Desktop-plus-MCP work (Rung 5's toolkit again). Don't duplicate the doc — point at it, and follow it once when you're ready for a live oracle beside your static site.
+
+## Keep it honest
+
+The starter ships a `CLAUDE.md` that's deliberately a **skeleton** — it's the file Claude reads first, and it's yours to fill in. Three things every commons needs, whatever the subject:
+
+- **The one rule.** Every library needs a floor. Ours is *"a gate, not a fate — relate to the card, never obey it."* Yours will be different, but name it, so contributions hold a line.
+- **All colour lives in `theme.css`.** One `:root` of tokens, linked everywhere. Never redeclare a colour in a page, never add a dark-mode block — that's exactly what keeps a growing site from drifting into a dozen mismatched palettes.
+- **The data outlives the platform.** The viewers are thin on purpose. If the starter vanished tomorrow, your `grammars/*.json` would still be a clean, portable, public record of your subject. That's the point — build so the data, not the platform, is what lasts.
+
+Fill in `CLAUDE.md` with the rules of *your* commons before you lean on the AI, so the help stays on the rails you set.
+
+## Hand-off to Rung 8
+
+You now have a site of your own on the open web, and — if you wired it up — a live oracle beside it. The last rung isn't a tool; it's a role: becoming the **keeper** of a community that gathers around your library, reviewing what others contribute and deciding what the commons is *for*. That rung leans on machinery still being built on the recursive.eco side (channels that read and write straight to your repo; a membership model), so it's the one step still under construction — see the Rung 8 note in [Ways to Contribute](course-viewer.html?course=how-to-contribute). For now: you've left home and founded your own. That was the whole point.
