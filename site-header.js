@@ -71,16 +71,37 @@
     [PFX + 'index.html',        'Home'],
     [PFX + 'pages/about.html',  'About'],
   ];
-  // Courses — grouped into three topics; each is a course-viewer ?course=… (deep-linkable with #section).
+  // Courses — grouped by intent; each is a course-viewer ?course=… (deep-linkable with #section).
+  // Every course in course/*.mdx is registered here so it's discoverable from the menu,
+  // not only via sources.html. Keep new courses in the group that fits — consolidate, don't multiply.
   const COURSE_GROUPS = [
     ['Start here', [
       ['history-of-tarot',                'Recursiveness in Tarot History'],
       ['the-light-of-tarot',              'The Light of Tarot'],
-      ['how-to-contribute',               'Ways to Contribute'],
-    ]],
-    ['More', [
+      ['how-tarot-works',                 'How the Cards Can Work'],
       ['reading-the-cards',               'Reading the Cards'],
+    ]],
+    ['Practice', [
+      ['intention-setting',               'Intention Setting'],
+      ['divination-traditions',           'How Humans Have Always Cast Lots'],
+      ['games-of-the-tarot',              'Games of the Tarot'],
+      ['walking-the-golden-dawn-path',    'Walking the Golden Dawn Path'],
       ['tarot-today',                     'Tarot Today'],
+    ]],
+    ['Lenses — why it can work', [
+      ['jung-reads-the-tarot',            'Jung Reads the Tarot'],
+      ['kant-and-the-tarot',              'Kant Reads the Tarot'],
+      ['marsha-linehan-reads-the-tarot',  'Marsha Linehan (DBT) Reads the Tarot'],
+      ['non-dual-tantra-reads-the-tarot', 'The Non-Dual Tantra Lens'],
+      ['post-activism-reads-the-tarot',   'The Post-Activism Lens'],
+      ['hospicing-modernity-reads-the-tarot', 'The Hospicing-Modernity Lens'],
+      ['morality-is-an-ecosystem',        'Morality Is an Ecosystem'],
+      ['tarot-and-the-crack',             'Tarot & the Crack'],
+    ]],
+    ['Contribute & graduate', [
+      ['how-to-contribute',               'Ways to Contribute'],
+      ['build-a-site-like-this-one',      'A Website Like This One'],
+      ['build-a-tarot-deck-with-claude',  'Contribute to the Commons'],
     ]],
   ];
 

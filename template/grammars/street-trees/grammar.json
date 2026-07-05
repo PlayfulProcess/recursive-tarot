@@ -1,0 +1,65 @@
+{
+  "name": "The Trees of Elm Row",
+  "description": "A tiny field guide to the trees on one street — the sample grammar that ships with this starter. Replace it with a library about YOUR thing: a lineage, a language, a valley's folk songs, a family's recipes. The shape stays the same; only the subject changes.",
+  "grammar_type": "custom",
+  "creator_name": "Your name here",
+  "creator_link": "https://github.com/your-handle",
+  "is_published": false,
+  "tags": ["field-guide", "trees", "sample"],
+  "default_preview": "thumbnails",
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": []
+  },
+  "items": [
+    {
+      "id": "tree-white-oak",
+      "name": "The White Oak by No. 12",
+      "level": 1,
+      "category": "oak",
+      "keywords": ["oak", "shade", "acorns"],
+      "sections": {
+        "What it is": "A broad white oak (*Quercus alba*), maybe eighty years old, standing where the pavement bulges around its roots.",
+        "Where": "In front of number 12, the tallest thing on the block.",
+        "In each season": "Bare and architectural in winter; a green vault by June; in autumn it drops acorns the squirrels bury in every planter on the row.",
+        "Note": "The kind of item you'd write about your own subject — a plain observation, in your own words. No fortune, no claim. Just the record."
+      }
+    },
+    {
+      "id": "tree-red-oak",
+      "name": "The Red Oak on the Corner",
+      "level": 1,
+      "category": "oak",
+      "keywords": ["oak", "corner", "red"],
+      "sections": {
+        "What it is": "A northern red oak (*Quercus rubra*), younger and straighter than its white cousin, with leaves that turn a hard scarlet.",
+        "Where": "The corner of Elm Row and Vine, shading the bus stop.",
+        "In each season": "Last to leaf out in spring, last to let go in autumn — it holds its brown leaves half the winter."
+      }
+    },
+    {
+      "id": "tree-ginkgo",
+      "name": "The Lone Ginkgo",
+      "level": 1,
+      "category": "other",
+      "keywords": ["ginkgo", "fan", "gold"],
+      "sections": {
+        "What it is": "A single ginkgo (*Ginkgo biloba*), a living fossil with fan-shaped leaves — a species older than the dinosaurs, planted here by the city.",
+        "Where": "Halfway down, outside the old bakery.",
+        "In each season": "For one week each November it turns pure gold and drops every leaf at once, overnight, into a perfect ring."
+      }
+    },
+    {
+      "id": "group-the-oaks",
+      "name": "The Oaks of Elm Row",
+      "level": 2,
+      "category": "grouping",
+      "composite_of": ["tree-white-oak", "tree-red-oak"],
+      "sections": {
+        "About this group": "A composite item — it holds no tree of its own; it *emerges* from the two oaks by listing their ids in `composite_of`. This is how a library grows structure without a database: an item that groups other items. In the tree view it becomes a branch; in the card view it's a card you can open to see its members.",
+        "Why it matters": "Emergence is the whole trick. You write leaves (the individual things); groupings like this one let a pattern across them become its own object you can point at, link to, and talk about."
+      }
+    }
+  ]
+}
