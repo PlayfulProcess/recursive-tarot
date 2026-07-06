@@ -74,7 +74,7 @@
   // Courses — grouped into three topics; each is a course-viewer ?course=… (deep-linkable with #section).
   const COURSE_GROUPS = [
     ['Start here', [
-      ['history-of-tarot',                'Recursiveness in Tarot History'],
+      ['history-of-tarot',                'The History of Tarot'],
       ['the-light-of-tarot',              'The Light of Tarot'],
       ['how-to-contribute',               'Ways to Contribute'],
     ]],
