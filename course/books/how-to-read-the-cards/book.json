@@ -55,60 +55,20 @@
           "title": "Intention Setting",
           "status": "written",
           "role": "hub",
-          "note": "Gate vs. oracle; open vs. closed questions; the 'chill in the spine' as somatic salience. The lenses open from here."
+          "note": "Gate vs. oracle; open vs. closed questions; the 'chill in the spine' as somatic salience. Six lenses (Kant, DBT/Marsha Linehan, Jung, Non-Dual Tantra, Post-Activism, Hospicing Modernity) were collapsed into compact subsections at the end of this chapter Jul 2026 — they used to be separate chapters (see Part III note below)."
         }
       ]
     },
     {
       "title": "Part III — The lenses: an ecosystem of conscience",
-      "note": "Canonical voice order from viewers/voices.json. Each lens is presented faithfully in its own terms; any disagreement with a tradition lives here in the long form, never in the short intention. Living-teacher voices are titled by their school and say 'inspired by'.",
+      "note": "Canonical voice order from viewers/voices.json. Each lens is presented faithfully in its own terms; any disagreement with a tradition lives here in the long form, never in the short intention. Living-teacher voices are titled by their school and say 'inspired by'. Jul 2026: Kant, DBT, Jung, Non-Dual Tantra, Post-Activism, and Hospicing Modernity were folded into compact subsections of intention-setting.mdx (Part II) for clarity — the builder found the voices 'a bit less interesting than the rest' and wanted them concise and consolidated, not spread across six standalone chapters. Only the two voices that were genuinely standalone essays (not '<X> reads the tarot' pieces) still have their own chapter here: the Ecosystem and the Golden Dawn (the latter moved to Part IV, its own ritual chapter).",
       "chapters": [
-        {
-          "src": "kant-and-the-tarot.mdx",
-          "title": "Kant Reads the Tarot",
-          "status": "written",
-          "voice": "kant"
-        },
-        {
-          "src": "marsha-linehan-reads-the-tarot.mdx",
-          "title": "Marsha Linehan Reads the Tarot",
-          "status": "written",
-          "voice": "dbt"
-        },
         {
           "src": "morality-is-an-ecosystem.mdx",
           "title": "Morality Is an Ecosystem",
           "status": "written",
           "voice": "ecosystem",
           "note": "The methodological root: why the good is gardened, not legislated — and why autonomy must be respected."
-        },
-        {
-          "src": "jung-reads-the-tarot.mdx",
-          "title": "Jung Reads the Tarot",
-          "status": "written",
-          "voice": "jung",
-          "note": "Archetypes, active imagination, synchronicity-as-framing (not causal claim)."
-        },
-        {
-          "src": "non-dual-tantra-reads-the-tarot.mdx",
-          "title": "The Non-Dual Tantra Lens",
-          "status": "written",
-          "voice": "non-dual-tantra",
-          "note": "Inspired by Christopher Wallis. School-titled, 'inspired by'."
-        },
-        {
-          "src": "post-activism-reads-the-tarot.mdx",
-          "title": "The Post-Activism Lens",
-          "status": "written",
-          "voice": "post-activism",
-          "note": "Inspired by Bayo Akomolafe. School-titled, 'inspired by'."
-        },
-        {
-          "src": "hospicing-modernity-reads-the-tarot.mdx",
-          "title": "The Hospicing-Modernity Lens",
-          "status": "written",
-          "voice": "hospicing-modernity",
-          "note": "Inspired by Vanessa Andreotti. School-titled, 'inspired by'."
         }
       ]
     },
@@ -178,7 +138,7 @@
     "shared_with_book_repo": "../../../book-repo/epub-build"
   },
   "status": {
-    "summary": "All 11 chapters written. Front/back connective tissue (series preface, about page) remains. All 4 lens essays (jung / non-dual-tantra / post-activism / hospicing-modernity) + divination-traditions wired into the global Courses nav (site-header.js).",
+    "summary": "Jul 2026: collapsed from 11 chapters to 6 — Kant, DBT (Marsha Linehan), Jung, Non-Dual Tantra, Post-Activism, and Hospicing Modernity are now compact subsections of the Intention Setting chapter (Part II) rather than standalone chapters; only the Ecosystem essay kept its own chapter (Part III). Front/back connective tissue (series preface, about page) remains. All written chapters wired into the global Courses nav (site-header.js).",
     "next_step": "Write the series preface + about page, then build the EPUB/PDF (pandoc, reusing book-repo/epub-build)."
   }
 }

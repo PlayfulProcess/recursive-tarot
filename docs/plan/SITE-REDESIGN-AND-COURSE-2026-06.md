@@ -9,6 +9,41 @@ on a neutral mat), cache-bust with `style.css?v=N` + `site-header.js?v=N`.
 
 ---
 
+## Update — Jul 6 2026: voices collapsed, Golden Dawn enriched, editorial sweep
+
+- **Six voice courses retired**, folded into compact `### <Voice>` subsections at the **end**
+  of `course/intention-setting.mdx` (moved there per the builder — she finds them "a bit less
+  interesting" than the rest): Jung, Kant, Marsha Linehan (DBT), Non-Dual Tantra, Post-Activism,
+  Hospicing Modernity. Reframed as "my reading of X" rather than "X says" (interpretive
+  appropriation, not scholarship). `tarot-and-the-crack` and `morality-is-an-ecosystem` are
+  standalone essays, not "X reads the tarot" pieces — left alone. Retirement mechanics: each
+  retired `course/<slug>.mdx` is now a tiny stub (frontmatter + one link to its new home inside
+  `intention-setting#<id>`, since `voices.json`'s `link` fields already point there); the
+  generated `tarot/<slug>-course/grammar.json` mirrors were deleted; `site-header.js`
+  `COURSE_GROUPS` and `pages/sources.html`'s course index no longer list them;
+  `viewers/voices.json`'s now-dangling `essay` fields (kant, dbt) were removed.
+- **`the-light-of-tarot` retired** the same way, folded into a new "Recovery — seeing the
+  ordinary again" section in `course/how-tarot-works.mdx` (between the palantír warning and
+  "Where this leaves us").
+- **Golden Dawn**: `walking-the-golden-dawn-path.mdx` opens with Tolkien's sub-creation
+  metaphor (the Order as ambitious sub-creators of a Secondary World) instead of jumping
+  straight to the Order's founding date; course itself kept, not retired. Separately, all 22
+  majors in `tarot/golden-dawn-book-t-tarot/grammar.json` now carry a `Pathworking` section
+  (gate + practice question, right after `Correspondences`) — the deck itself now carries the
+  full 22-gate teaching, not just the course's 4 sampled gates.
+- **`course/books/how-to-read-the-cards/book.json`** Part III shrank from 7 chapters to 1
+  (only `morality-is-an-ecosystem.mdx`, the one voice that stayed standalone); fixed a
+  long-standing path bug in `scripts/build_reading_course.py` (`ROOT/"books"` → correctly
+  `ROOT/"course"/"books"`) so the book manifest actually resolves and the script runs.
+- **Divination-traditions**: added astrology (celestial omens, `Enūma Anu Enlil`) as one of the
+  oldest lot-casting systems, linking to the sister site `astro.recursive.eco`.
+- **Book → course sweep**: fixed 9 places where a course referred to itself as "this book" /
+  "the whole book" (`how-tarot-works.mdx` ×4, `history-of-tarot.mdx` ×3,
+  `divination-traditions.mdx` ×2) — genuine real-book references (Haich's *Initiation*, *Book
+  of Thoth*, Book T, the actual print/EPUB pipeline) were left untouched.
+
+---
+
 ## ✅ DONE (this arc)
 
 ### Book II — the practitioner course "Reading the Cards" (12 chapters, complete)
