@@ -169,12 +169,16 @@
             border-right:1.4px solid currentColor; border-bottom:1.4px solid currentColor;
             transform:rotate(45deg) translateY(-2px); opacity:.5; }
           .dd-menu{ position:absolute; top:calc(100% + 8px); right:0; min-width:220px;
-            max-width:min(300px,calc(100vw - 24px)); background:#ffffff; border:1px solid #d8d2c6;
-            border-radius:8px; padding:7px; box-shadow:0 16px 44px -18px rgba(60,45,20,.45); display:none; z-index:60; }
+            max-width:min(300px,calc(100vw - 16px)); background:#ffffff; border:1px solid #d8d2c6;
+            border-radius:8px; padding:7px; box-shadow:0 16px 44px -18px rgba(60,45,20,.45); display:none; z-index:60;
+            overflow-y:auto; }
           /* Invisible bridge across the 8px gap: keeps the menu open while the cursor
              travels from the trigger down to a sub-item (no more disappearing dropdown). */
           .dd-menu::before{ content:""; position:absolute; left:0; right:0; top:-10px; height:10px; }
-          @media (max-width:760px){ .dd-menu{ position:fixed; left:12px; right:12px; top:54px; min-width:0; max-width:none; } }
+          /* Horizontal/vertical clamping is computed in JS (positionMenu, below), not a fixed
+             breakpoint: a left-side trigger (Home, Views) overflows the left edge whenever the
+             panel is wider than the space to its left, which happens at tablet widths (~760–950px)
+             just as much as on phones — a single max-width media query missed that range entirely. */
           .dd:hover .dd-menu, .dd:focus-within .dd-menu, .dd.open .dd-menu{ display:block; }
           .dd.open .dd-btn::after{ transform:rotate(225deg) translateY(2px); opacity:.85; }
           .dd-menu a{ display:block; color:#4a4439; text-decoration:none; font-size:13px;
@@ -235,19 +239,42 @@
           </nav>
         </div>`;
 
-      // Dropdowns: keyboard + ARIA on top of the hover/focus-within CSS.
+      // Dropdowns: keyboard + ARIA on top of the hover/focus-within CSS. Panels are
+      // right-anchored by default (.dd-menu right:0), which reads fine when the trigger
+      // sits near the right of the nav — but a left-side trigger (Home, Views) has less
+      // room to its left than the panel needs, at tablet widths as much as on phones.
+      // positionMenu() measures the real trigger + panel on every open and clamps
+      // left/top so the panel always stays fully on-screen, at any width.
+      const DD_EDGE = 8; // min gap kept between a panel and the viewport edge
+      const positionMenu = dd => {
+        const menu = dd.querySelector('.dd-menu');
+        if (!menu) return;
+        const ddRect = dd.getBoundingClientRect();
+        const menuRect = menu.getBoundingClientRect();
+        const vw = window.innerWidth, vh = window.innerHeight;
+        // Natural position mirrors the CSS default (panel's right edge flush with the
+        // trigger's right edge), then clamp so neither edge crosses the viewport.
+        let left = ddRect.right - menuRect.width;
+        left = Math.max(DD_EDGE, Math.min(left, vw - menuRect.width - DD_EDGE));
+        menu.style.left = (left - ddRect.left) + 'px';
+        menu.style.right = 'auto';
+        // Vertical: cap height + let the panel scroll internally rather than running
+        // off the bottom of short viewports (e.g. a phone in landscape).
+        const top = ddRect.bottom + 8;
+        menu.style.maxHeight = Math.max(120, vh - top - DD_EDGE) + 'px';
+      };
       root.querySelectorAll('.dd').forEach(dd => {
         const btn = dd.querySelector('.dd-btn');
         const set = open => btn && btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        dd.addEventListener('mouseenter', () => set(true));
+        dd.addEventListener('mouseenter', () => { set(true); positionMenu(dd); });
         dd.addEventListener('mouseleave', () => set(false));
-        dd.addEventListener('focusin', () => set(true));
+        dd.addEventListener('focusin', () => { set(true); positionMenu(dd); });
         dd.addEventListener('focusout', () => { if (!dd.matches(':focus-within')) set(false); });
         dd.addEventListener('keydown', e => {
           if (e.key === 'Escape') { set(false); btn && btn.focus(); }
           // Enter/Space opens the menu when the trigger has no own link to follow
           if ((e.key === 'Enter' || e.key === ' ') && e.target === btn && !btn.getAttribute('href')) {
-            const first = dd.querySelector('.dd-menu a'); if (first) { e.preventDefault(); set(true); first.focus(); }
+            const first = dd.querySelector('.dd-menu a'); if (first) { e.preventDefault(); set(true); positionMenu(dd); first.focus(); }
           }
         });
         // Touch / no-hover devices: tap the tab to toggle its menu (hover never fires).
@@ -257,7 +284,7 @@
           e.preventDefault();
           const willOpen = !dd.classList.contains('open');
           root.querySelectorAll('.dd.open').forEach(o => { o.classList.remove('open'); const b = o.querySelector('.dd-btn'); if (b) b.setAttribute('aria-expanded', 'false'); });
-          if (willOpen) { dd.classList.add('open'); set(true); }
+          if (willOpen) { dd.classList.add('open'); set(true); positionMenu(dd); }
         });
       });
 
@@ -266,6 +293,15 @@
         if (!e.composedPath().includes(this)) {
           root.querySelectorAll('.dd.open').forEach(o => { o.classList.remove('open'); const b = o.querySelector('.dd-btn'); if (b) b.setAttribute('aria-expanded', 'false'); });
         }
+      });
+
+      // Reposition any currently-open menu on resize/orientation-change (e.g. rotating
+      // a tablet with a dropdown open) — a fixed breakpoint can't react to this either.
+      window.addEventListener('resize', () => {
+        root.querySelectorAll('.dd').forEach(dd => {
+          const menu = dd.querySelector('.dd-menu');
+          if (menu && getComputedStyle(menu).display !== 'none') positionMenu(dd);
+        });
       });
 
       // Auto-hide on scroll down, reveal on scroll up — but never while the nav has keyboard focus.
