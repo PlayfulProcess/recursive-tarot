@@ -10,8 +10,8 @@ import json, re, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BOOK = ROOT / "books" / "how-to-read-the-cards" / "book.json"
 COURSE = ROOT / "course"
+BOOK = COURSE / "books" / "how-to-read-the-cards" / "book.json"
 OUT = COURSE / "reading-the-cards.mdx"
 
 def strip_frontmatter(text):

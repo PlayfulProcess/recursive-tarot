@@ -77,7 +77,6 @@
   const COURSE_GROUPS = [
     ['Start here', [
       ['history-of-tarot',                'The History of Tarot'],
-      ['the-light-of-tarot',              'The Light of Tarot'],
       ['how-tarot-works',                 'How the Cards Can Work'],
       ['reading-the-cards',               'Reading the Cards'],
     ]],
@@ -89,12 +88,11 @@
       ['tarot-today',                     'Tarot Today'],
     ]],
     ['Lenses — why it can work', [
-      ['jung-reads-the-tarot',            'Jung Reads the Tarot'],
-      ['kant-and-the-tarot',              'Kant Reads the Tarot'],
-      ['marsha-linehan-reads-the-tarot',  'Marsha Linehan (DBT) Reads the Tarot'],
-      ['non-dual-tantra-reads-the-tarot', 'The Non-Dual Tantra Lens'],
-      ['post-activism-reads-the-tarot',   'The Post-Activism Lens'],
-      ['hospicing-modernity-reads-the-tarot', 'The Hospicing-Modernity Lens'],
+      // Jung / Kant / DBT (Marsha Linehan) / Non-Dual Tantra / Post-Activism / Hospicing
+      // Modernity were their own courses; collapsed Jul 2026 into compact subsections of
+      // Intention Setting (?course=intention-setting#<id>) — consolidate, don't multiply.
+      // "The Light of Tarot" collapsed the same way into How the Cards Can Work's
+      // "Recovery" section.
       ['morality-is-an-ecosystem',        'Morality Is an Ecosystem'],
       ['tarot-and-the-crack',             'Tarot & the Crack'],
     ]],
