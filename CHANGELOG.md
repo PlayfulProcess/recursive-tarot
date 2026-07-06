@@ -2,7 +2,16 @@
 
 Newest first. One bullet per shipped thing.
 
-## Jun 15 2026
+## Jul 6 2026
+
+- **Fixed header dropdowns cropping off the left edge on tablet widths** — `.dd-menu` was
+  right-anchored (`right:0`) with only a `max-width:760px` media-query rescue, so a left-side
+  trigger (Home, Views) rendered its panel partly off-screen at ~760–950px viewports (iPad
+  portrait, split-screen laptops) — the fixed breakpoint simply didn't cover that range.
+  Replaced the breakpoint hack with a `positionMenu()` JS calc in `site-header.js` that measures
+  the real trigger + panel on every open (hover, focus, and touch-tap) and clamps left/top so
+  the panel stays fully on-screen at any width, plus an internal-scroll cap for tall panels and
+  a resize/orientation listener. Verified overflow-free from 320px to 1440px.
 
 - **The book ("The Recursive Tarot") — accuracy & rendering pass (Opus session):**
   - **Courses render from the local `course/` directory** — `pages/course-viewer.html` loads the
