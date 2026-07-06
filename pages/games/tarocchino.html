@@ -58,6 +58,10 @@
   .tg-card img{width:100%;aspect-ratio:3/5;object-fit:contain;background:var(--panel2);border:1px solid var(--line);border-radius:6px}
   .tg-card figcaption{font-size:10px;color:var(--ink);margin-top:3px;line-height:1.15}
   .tg-n{position:absolute;top:3px;right:3px;background:#2d2a3a;color:#fff;font-size:9px;font-weight:800;padding:0 4px;border-radius:3px;min-width:12px;text-align:center}
+  .tg-n.rank{background:var(--accent)}
+  .tmodal-suits{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink)}
+  .tmodal-suits .lab{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-right:4px}
+  .tmodal-suits .sep{color:var(--muted)}
 
   .toolbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
   .toolbar label{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}
@@ -97,6 +101,7 @@
   .card.win{box-shadow:0 0 0 2px var(--accent)}
   .honour-badge{position:absolute;top:2px;left:2px;background:var(--accent);color:#f4f1ea;font-size:8px;font-weight:800;padding:0 3px;border-radius:3px}
   .trump-num{position:absolute;top:2px;right:2px;background:#2d2a3a;color:#fff;font-size:8.5px;font-weight:800;padding:0 4px;border-radius:3px;min-width:11px;text-align:center}
+  .trump-num.rank{background:var(--accent)}
 
   .status{font-size:14px;margin:12px 0 6px;min-height:20px;color:var(--ink);font-weight:600}
   .hand{display:flex;gap:9px;flex-wrap:wrap;align-items:center;min-height:180px}
@@ -130,8 +135,8 @@
 <link rel="stylesheet" href="game-mobile.css?v=1">
 </head>
 <body>
-<script src="game-card-detail.js?v=1"></script>
-<script src="../../site-header.js?v=44"></script>
+<script src="game-card-detail.js?v=45"></script>
+<script src="../../site-header.js?v=45"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">
@@ -151,9 +156,9 @@
     </div>
     <div class="rh-order">
       <div class="ord-line"><span class="lab">Trumps · low → high</span>
-        <span class="pill t">Bagattino</span><span class="sep">›</span><span class="pill t">4 Moors</span><span class="sep">›</span><span class="pill t">Love</span><span class="sep">›</span><span class="pill t">Chariot</span><span class="sep">›</span><span class="pill t">Temperance</span><span class="sep">›</span><span class="pill t">Justice</span><span class="sep">›</span><span class="pill t">Strength</span><span class="sep">›</span><span class="pill t">Wheel</span><span class="sep">› … ›</span><span class="pill t">Star</span><span class="sep">›</span><span class="pill t">Moon</span><span class="sep">›</span><span class="pill t">Sun</span><span class="sep">›</span><span class="pill t">World</span><span class="sep">›</span><span class="pill t">Angel</span></div>
+        <span class="pill t">Bagattino</span><span class="sep">›</span><span class="pill t">4 Moors</span><span class="sep">›</span><span class="pill t">Love</span><span class="sep">›</span><span class="pill t">Chariot</span><span class="sep">›</span><span class="pill t">Temperance</span><span class="sep">›</span><span class="pill t">Justice</span><span class="sep">›</span><span class="pill t">Strength</span><span class="sep">›</span><span class="pill t">Wheel</span><span class="sep">›</span><span class="pill t">Hermit</span><span class="sep">›</span><span class="pill t">Hanged Man</span><span class="sep">›</span><span class="pill t">Death</span><span class="sep">›</span><span class="pill t">Devil</span><span class="sep">›</span><span class="pill t">Tower</span><span class="sep">›</span><span class="pill t">Star</span><span class="sep">›</span><span class="pill t">Moon</span><span class="sep">›</span><span class="pill t">Sun</span><span class="sep">›</span><span class="pill t">World</span><span class="sep">›</span><span class="pill t">Angel</span></div>
       <div class="ord-line"><span class="lab">Suits</span> Coins &amp; Cups rank Ace→10; Swords &amp; Batons are <b>inverted</b> (Ace high). <span class="sep">·</span> <span class="lab">Courts on top</span> King › Queen › Knight › Page.</div>
-      <div class="ord-line"><span class="lab">On the numbers</span> Tarocchino trumps carried <b>no printed numbers</b> — we add the A-order rank (higher wins) for convenience. <button type="button" id="all-trumps">See all 22 trumps &amp; their numbers →</button></div>
+      <div class="ord-line"><span class="lab">On the numbers</span> Badges show <b>this deck's own printed number</b> when it has one (e.g. the Marseille Moon is <b>18</b>) — the trick-taking order shown above is always the Bolognese <b>A-order</b> rank, which can differ from a deck's printed number (that's historical, not a bug). Decks with no printed numbers, like Tarocchino di Bologna's own pack, show that A-order rank instead, marked <b>r</b> (e.g. <b>r17</b>) so it's never mistaken for a printed number. <button type="button" id="all-trumps">See the full deck order — numbers &amp; suits →</button></div>
     </div>
   </details>
 
@@ -223,8 +228,14 @@
   function buildDeck(g){
     const T=[], seen=new Set();
     for(const i of g.items){ const k=(i.metadata||{}).trump_key; if(!k||!imgOf(i)||seen.has(k))continue;
-      if(k==='fool'){ seen.add(k); T.push({kind:'trump',tkey:'fool',matto:true,rank:null,honour:true,img:imgOf(i),label:'Fool · Matto'}); }
-      else if(k in AORDER){ seen.add(k); T.push({kind:'trump',tkey:k,rank:AORDER[k],honour:HONOUR.has(k),img:imgOf(i),label:trumpName(i.name)}); } }
+      if(k==='fool'){ seen.add(k); T.push({kind:'trump',tkey:'fool',matto:true,rank:null,trueNum:null,honour:true,img:imgOf(i),label:'Fool · Matto'}); }
+      else if(k in AORDER){ seen.add(k);
+        // trueNum: the DEALT DECK's own printed number (e.g. Marseille's Moon=18), when the deck
+        // carries one. rank stays the fixed Bolognese A-order used for trick-taking — the two are
+        // allowed to differ (e.g. Marseille prints Strength=11/Justice=8, A-order ranks them 9/8);
+        // that's the historical record, not a bug. See CLAUDE.md "Fix the grammar, not the app."
+        const n=(i.metadata||{}).number;
+        T.push({kind:'trump',tkey:k,rank:AORDER[k],trueNum:(typeof n==='number'?n:null),honour:HONOUR.has(k),img:imgOf(i),label:trumpName(i.name)}); } }
     const WORDS=['ace','six','seven','eight','nine','ten','page','knight','queen','king'];
     const S=[], seen2=new Set();
     for(const s of SUITS) for(const i of g.items){ const mk=(i.metadata||{}).minor_key; if(!mk||!imgOf(i)||!mk.endsWith('-of-'+s))continue;
@@ -232,6 +243,11 @@
       S.push({kind:'suit',suit:s,word:w,court:COURTVAL[w]?w:null,rank:suitRank(s,w),honour:false,img:imgOf(i),label:cap(w)+' of '+cap(s)}); }
     return [...T,...S];
   }
+  // Display-only: the badge text for a trump. Prefers the deck's own printed number (trueNum);
+  // falls back to the A-order trick rank ONLY for genuinely numberless decks, prefixed "r" so it
+  // can never be mistaken for a printed number. Never used for game logic — rank alone drives that.
+  const trumpNumText=c=>{ if(c.rank==null) return ''; return c.trueNum!=null ? String(c.trueNum) : ('r'+c.rank); };
+  const trumpNumIsRank=c=>c.rank!=null && c.trueNum==null;
 
   // game state
   let hands=[[],[],[],[]], trick=[], ledSuit=null, leader=0, teamPts=[0,0], kitty=[], lastWinner=0, played=0, ntricks=0, logRows=[];
@@ -341,8 +357,12 @@
   }
   // TG-LOGDETAIL: open the shared card-detail modal for a game card (image + game facts + deck link).
   function inspectCard(c){ if(!c||!window.GameCard) return;
+    const trumpLines = c.kind==='trump'
+      ? [ c.trueNum!=null ? ['Printed number', c.trueNum] : ['Printed number', 'none (deck carries no numerals)'],
+          ['Trick rank (A-order)', c.matto ? 'Excuse — never wins' : c.rank] ]
+      : [ ['Suit', cap(c.suit||'—')] ];
     GameCard.show({ img:c.img, title:c.label,
-      lines:[ c.kind==='trump'?['Trump #', c.rank] : ['Suit', cap(c.suit||'—')],
+      lines:[ ...trumpLines,
               c.court?['Court', cap(c.court)] : null,
               ['Card points', cardPoints(c)] ].filter(Boolean),
       href: CURSLUG ? '../../viewers/cards.html?src=../tarot/'+CURSLUG+'/grammar.json' : null,
@@ -352,8 +372,11 @@
     el.className='card'+(c.kind==='trump'?' trump':'')+(opts.play?' play':'')+(opts.illegal?' illegal':'')+(opts.legalHint?' legal':'')+(opts.win?' win':'');
     if(opts.play){ el.type='button'; el.disabled=!!opts.illegal; if(!opts.illegal) el.onclick=()=>humanPlay(c);
       else el.title='You must follow '+(ledSuit==='trump'?'with a trump':cap(ledSuit)); }
+    const badgeTitle = c.trueNum!=null
+      ? `Printed number ${c.trueNum} in this deck (trick rank is the Bolognese A-order: ${c.rank})`
+      : `No printed number in this deck — showing the A-order trick rank instead`;
     el.innerHTML=(c.honour?`<span class="honour-badge">★</span>`:'')
-      +(c.kind==='trump'&&c.rank!=null?`<span class="trump-num" title="Trump ${c.rank} — higher wins">${c.rank}</span>`:'')
+      +(c.kind==='trump'&&c.rank!=null?`<span class="trump-num${trumpNumIsRank(c)?' rank':''}" title="${esc(badgeTitle)}">${trumpNumText(c)}</span>`:'')
       +`<img loading="lazy" src="${c.img}" alt=""><div class="cap">${c.label}</div>`;
     return el;
   }
@@ -390,7 +413,7 @@
     const body=logRows.slice().reverse().map(r=>{
       const cells=[0,1,2,3].map(seat=>{ const c=r.cards[seat];
         return `<td class="cell${r.winSeat===seat?' win':''}"${c?` data-card="${esc(c.label)}" style="cursor:pointer" title="Click to inspect this card"`:''}>`
-          +(c?`<img loading="lazy" src="${esc(c.img)}" alt=""><div class="cl">${c.kind==='trump'&&c.rank!=null?`<b>${c.rank}</b> `:''}${esc(c.label)}${cardPoints(c)?` <span class="pts">+${cardPoints(c)}</span>`:''}</div>`:'')
+          +(c?`<img loading="lazy" src="${esc(c.img)}" alt=""><div class="cl">${c.kind==='trump'&&c.rank!=null?`<b>${trumpNumText(c)}</b> `:''}${esc(c.label)}${cardPoints(c)?` <span class="pts">+${cardPoints(c)}</span>`:''}</div>`:'')
           +(r.leaderSeat===seat?'<div class="led">led</div>':'')+`</td>`; }).join('');
       const cls=teamOf(r.winSeat)===0?'us':'them';
       return `<tr><td class="rnd">${r.n}</td>${cells}<td class="took" style="color:var(--${cls})">${esc(SEATNAME[r.winSeat])}<br>+${r.pts}</td></tr>`;
@@ -415,15 +438,33 @@
     $('center').innerHTML=`<div class="result" style="color:${tie?'var(--muted)':win?'var(--us)':'var(--them)'}">`
       +(tie?`Even — ${us}–${them} points.`:win?`Your team wins, ${us}–${them} points!`:`Opponents win, ${them}–${us}.`)+`</div>`;
   }
+  const SUIT_WORDNUM={ace:'A',six:'6',seven:'7',eight:'8',nine:'9',ten:'10'};
+  const suitWordLabel=w=>SUIT_WORDNUM[w]||cap(w);
+  // TG-DECKORDER: "Deck order" affordance (builder ask, Jul 2026) — the FULL ordered pack for the
+  // deck currently dealt: all 22 trumps in trick-taking (A-order) order, each showing this deck's
+  // own printed number when it has one (else the A-order rank, marked "r"), plus every suit's own
+  // ranking (round suits Ace→10, long suits inverted, courts on top — read straight off each
+  // card's own `rank`, so it's always correct for the deck in play, not hardcoded).
   function showTrumpModal(){
     if(!DECK.length) return;
     const trumps=DECK.filter(c=>c.kind==='trump').slice().sort((a,b)=>(a.rank??-1)-(b.rank??-1));
+    const suitRows=SUITS.map(s=>{
+      const cards=DECK.filter(c=>c.kind==='suit'&&c.suit===s).slice().sort((a,b)=>a.rank-b.rank);
+      if(!cards.length) return '';
+      return '<div class="ord-line"><span class="lab">'+esc(cap(s))+'</span>'
+        +cards.map((c,idx)=>'<span class="pill">'+esc(suitWordLabel(c.word))+'</span>'+(idx<cards.length-1?'<span class="sep">›</span>':'')).join('')
+        +'</div>';
+    }).join('');
     const back=document.createElement('div'); back.className='tmodal';
     back.innerHTML='<div class="tmodal-box"><button class="tmodal-x" aria-label="Close">×</button>'
-      +'<div class="tmodal-head"><b>The 22 trumps · low → high</b>'
-      +'<span class="tmodal-sub">The numbers are the A-order rank we add for convenience — higher beats lower; equal ranks (the four Moors) tie, later-played wins. The Matto (★) is the Excuse: it never wins and stays with your side for 5 points.</span></div>'
+      +'<div class="tmodal-head"><b>Deck order · '+esc(CURNAME)+'</b>'
+      +'<span class="tmodal-sub">The 22 trumps in trick-taking order, low → high. Each badge shows <b>this deck\'s own printed number</b> when it has one; decks with no printed numbers show the A-order trick rank instead, marked <b>r</b> so the two are never confused. Equal ranks (the four Moors) tie — later-played wins. The Matto (★) is the Excuse: it never wins and stays with your side for 5 points.</span></div>'
       +'<div class="tgrid">'
-      +trumps.map(c=>`<figure class="tg-card"><span class="tg-n">${c.matto?'★':(c.rank??'')}</span><img loading="lazy" src="${esc(c.img)}" alt=""><figcaption>${esc(c.label)}</figcaption></figure>`).join('')
+      +trumps.map(c=>`<figure class="tg-card"><span class="tg-n${(!c.matto&&trumpNumIsRank(c))?' rank':''}">${c.matto?'★':trumpNumText(c)}</span><img loading="lazy" src="${esc(c.img)}" alt=""><figcaption>${esc(c.label)}</figcaption></figure>`).join('')
+      +'</div>'
+      +'<div class="tmodal-suits"><b style="font-size:13px">Suit order · low → high</b>'
+      +'<p class="tmodal-sub" style="margin:4px 0 10px">Coins &amp; Cups (round suits) run Ace→10; Swords &amp; Batons (long suits) invert — Ace ranks highest. Courts always outrank the pips: Page ‹ Knight ‹ Queen ‹ King.</p>'
+      +suitRows
       +'</div></div>';
     const close=()=>{ back.remove(); document.removeEventListener('keydown',onKey); };
     function onKey(e){ if(e.key==='Escape') close(); }
