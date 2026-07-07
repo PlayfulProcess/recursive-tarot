@@ -7,13 +7,16 @@ name: Rebuild meta + deploy Pages
 
 on:
   push:
-    branches: [dev]   # dev-phase (Jun 12 2026): Pages serves dev; restore [main] when dev merges back
+    branches: [main]   # dev merged back into main (Jul 2026) and the dev branch was deleted — Pages serves main again
     paths:
       - 'tarot/**'
       - 'scripts/build_meta_grammar.py'
       - 'genealogy.html'
       - 'index.html'
       - 'viewers/**'
+      - 'pages/**'
+      - 'course/**'
+      - 'site-header.js'
   workflow_dispatch:
 
 permissions:
