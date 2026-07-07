@@ -78,7 +78,10 @@
 <body>
 <script src="../site-header.js?v=45"></script>
 <script src="../view-switcher.js?v=45"></script>
-<script src="course-assistant.js?v=45"></script>
+<!-- Jul 7 2026: the hand-rolled course chat widget (course-assistant.js) is replaced
+     by the ONE shared recursive.eco assistant sidebar (../assistant.js below) — the same
+     star FAB + tabbed panel as the app; page text reaches it via the launcher's
+     page-context handshake. Old widget file kept one round for easy rollback. -->
 <site-header active="course"></site-header>
 
 <main class="wrap">
@@ -232,5 +235,6 @@
 
 <script src="../site-footer.js"></script>
 <site-footer base="../"></site-footer>
+<script src="../assistant.js" defer></script>
 </body>
 </html>

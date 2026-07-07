@@ -2,6 +2,17 @@
 
 Newest first. One bullet per shipped thing.
 
+## Jul 7 2026
+- **The ONE shared recursive.eco assistant sidebar, site-wide.** New `assistant.js` loads the
+  shared shell from `recursive.eco/js/assistant-launcher.js`, which iframes the flow app's
+  `/assistant` embed — the same star FAB + tabbed sidebar (Chat · Tarot · I Ching · Astro ·
+  Story) as every recursive.eco page; auth carries via the `.recursive.eco` cookie, and page
+  text reaches the assistant through the launcher's open-time page-context handshake. Included
+  on every site page. Replaces THREE drifting hand-rolled copies: the inline Library-Assistant
+  popup blocks in `viewers/tree-viewer.html` + `viewers/cards.html` (whose FAB was
+  `display:none` — dead UI) and `pages/course-viewer.html`, and the `course-assistant.js`
+  chat widget on `viewers/grammar-course.html` (widget file kept one round for rollback).
+
 ## Jul 6 2026
 
 - **Fixed header dropdowns cropping off the left edge on tablet widths** — `.dd-menu` was

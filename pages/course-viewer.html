@@ -1810,63 +1810,9 @@
         // Load course on page load
         loadCourse();
     </script>
-    <!-- Library Assistant (iframe from flow app) -->
-    <style>
-        .assistant-toggle {
-            position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 40;
-            background: #9a7322; color: white; border: none; border-radius: 9999px;
-            width: 56px; height: 56px; cursor: pointer; box-shadow: 0 4px 12px rgba(154,115,34,0.4);
-            display: flex; align-items: center; justify-content: center; transition: all 0.2s;
-        }
-        .assistant-toggle:hover { background: #7c5b18; transform: scale(1.05); }
-        .assistant-frame-container {
-            position: fixed; bottom: 5.5rem; right: 1.5rem; z-index: 40;
-            width: 384px; max-width: calc(100vw - 2rem); height: 500px; max-height: 70vh;
-            border-radius: 0.75rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            border: 1px solid #4a4439; display: none;
-        }
-        .assistant-frame-container.open { display: block; }
-        .assistant-frame-container iframe { width: 100%; height: 100%; border: none; }
-    </style>
-    <button class="assistant-toggle" id="assistant-toggle" title="Ask the Library Assistant" onclick="toggleAssistant()">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
-        </svg>
-    </button>
-    <div class="assistant-frame-container" id="assistant-frame">
-    </div>
-    <script>
-        function getFlowBaseUrl() { const h = window.location.hostname; if (h.includes("dev.") || h.includes("localhost")) return "https://dev.flow.recursive.eco"; return "https://flow.recursive.eco"; }
-        function toggleAssistant() {
-            const frame = document.getElementById('assistant-frame');
-            const isOpen = frame.classList.toggle('open');
-            if (isOpen && !frame.querySelector('iframe')) {
-                // Lazy-load iframe on first open
-                const params = new URLSearchParams(window.location.search);
-                const grammarId = params.get('id') || '';
-                const context = document.title.includes('Study') ? 'study' : document.title.includes('Tree') ? 'tree' : 'cards';
-                // Round 86 Jun 2 2026: when there's no grammar_id (e.g.
-                // course-viewer rendering a dialogue MDX via ?course=…),
-                // hand the LA the page title + URL so it can ground
-                // "what is this page about?" answers instead of asking
-                // the user which page they mean. Pulls title from the
-                // rendered hero (not document.title, which contains
-                // " — Recursive.eco" suffix noise).
-                const heroTitleEl = document.getElementById('course-hero-title');
-                const pageTitle = (heroTitleEl?.textContent || document.title || '').trim();
-                const pageUrl = window.location.href;
-                const qs = new URLSearchParams({
-                    grammar_id: grammarId,
-                    context,
-                    page_title: pageTitle,
-                    page_url: pageUrl,
-                });
-                const iframe = document.createElement('iframe');
-                iframe.src = `${getFlowBaseUrl()}/assistant?${qs.toString()}`;
-                frame.appendChild(iframe);
-            }
-        }
-    </script>
 
+    <!-- The ONE shared recursive.eco assistant (star FAB -> tabbed sidebar), replacing
+         the old inline Library-Assistant popup block. See assistant.js. -->
+    <script src="../assistant.js" defer></script>
 </body>
 </html>
