@@ -1259,7 +1259,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            /* Slim on phones (0.75rem) so the card uses nearly the full width now
+               that the arrows no longer flank it; roomier on desktop. */
+            padding: 0.75rem;
+        }
+        @media (min-width: 768px) {
+            .modal-backdrop.open { padding: 2rem; }
         }
 
         .modal-content {
@@ -1296,43 +1301,50 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* Study navigation: prev/next arrows flanking the modal */
+        /* Study navigation: prev/next as a sticky footer bar at the BOTTOM of the
+           modal body (Jul 7 2026, builder: "maybe arrows are at the bottom and I
+           can scroll left/right to pass to the next or card before"). Moved here
+           from flanking the modal — the side arrows ate ~96px of a phone's width
+           and squeezed the card too slim. Sticks to the bottom of the scroll area
+           (modal-content on phones, modal-body's scroll on desktop); negative
+           margins let it span edge-to-edge under modal-body's padding. */
+        .modal-nav-footer {
+            position: sticky;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin: 1.25rem -1.5rem -1.5rem;
+            padding: 0.7rem 1.5rem;
+            background: var(--grammar-bg-light, #fff);
+            border-top: 1px solid var(--grammar-line, #d8d2c6);
+        }
         .modal-nav-btn {
             flex-shrink: 0;
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
-            background: rgba(255,255,255,.1);
-            border: 1px solid rgba(255,255,255,.2);
-            color: #221f1a;
-            font-size: 1.4rem;
+            background: rgba(154,115,34,.1);
+            border: 1px solid var(--grammar-line, #d8d2c6);
+            color: var(--grammar-text, #221f1a);
+            font-size: 1.35rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: background .15s, opacity .15s;
-            flex-shrink: 0;
         }
-        .modal-nav-btn:hover { background: rgba(154,115,34,.4); border-color: #9a7322; }
-        .modal-nav-btn:disabled { opacity: .25; cursor: default; }
+        .modal-nav-btn:hover:not(:disabled) { background: rgba(154,115,34,.35); border-color: var(--grammar-accent, #9a7322); }
+        .modal-nav-btn:disabled { opacity: .3; cursor: default; }
 
-        /* Card counter badge in the modal */
+        /* Card counter — now inline in the footer, between the two arrows */
         .modal-counter {
-            position: absolute;
-            top: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(45,34,15,.85);
-            border: 1px solid rgba(255,255,255,.12);
-            border-radius: 20px;
-            padding: 3px 13px;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
             letter-spacing: .02em;
-            color: #f4efe3;
+            color: var(--grammar-text-muted, #6b6457);
             white-space: nowrap;
-            pointer-events: none;
-            z-index: 11;
         }
 
         /* Modal visual */
@@ -1508,6 +1520,13 @@
                 overflow-y: auto;
                 max-height: calc(100vh - 4rem);
                 padding: 2rem;
+            }
+
+            /* Body padding is 2rem on desktop — match the footer's edge-to-edge
+               negative margins to it. */
+            .modal-nav-footer {
+                margin: 1.5rem -2rem -2rem;
+                padding: 0.75rem 2rem;
             }
 
             .modal-close {
@@ -2160,20 +2179,20 @@
         </div>
     </div>
 
-    <!-- Detail Modal -->
+    <!-- Detail Modal — prev/next now live in a sticky footer INSIDE the modal
+         body (injected in openModal), not flanking the modal, so the card
+         reclaims the full width on phones and the arrows page cards from the
+         bottom (builder, Jul 7 2026). -->
     <div id="modal-backdrop" class="modal-backdrop">
-        <button id="modal-prev" class="modal-nav-btn" onclick="navigateItem(-1)" title="Previous card (←)" aria-label="Previous">&#8592;</button>
         <div class="modal-content">
             <button id="modal-close" class="modal-close">&times;</button>
-            <div id="modal-counter" class="modal-counter"></div>
             <div id="modal-visual" class="modal-visual">
                 <!-- Image or icon -->
             </div>
             <div id="modal-body" class="modal-body">
-                <!-- Content sections -->
+                <!-- Content sections + nav footer -->
             </div>
         </div>
-        <button id="modal-next" class="modal-nav-btn" onclick="navigateItem(1)" title="Next card (→)" aria-label="Next">&#8594;</button>
     </div>
 
     <!-- Image Lightbox -->
@@ -4330,14 +4349,10 @@
                 card.classList.toggle('active', card.dataset.itemId === item.id);
             });
 
-            // Study navigation: update counter + enable/disable prev/next
+            // Study navigation index — the prev/next footer (built into bodyHtml
+            // below) reads these to disable at the ends + show "N of M".
             const idx = filteredItems.findIndex(i => i.id === item.id);
-            const counter = document.getElementById('modal-counter');
-            const prevBtn = document.getElementById('modal-prev');
-            const nextBtn = document.getElementById('modal-next');
-            if (counter && idx !== -1) counter.textContent = `${idx + 1} of ${filteredItems.length}`;
-            if (prevBtn) prevBtn.disabled = idx <= 0;
-            if (nextBtn) nextBtn.disabled = idx >= filteredItems.length - 1;
+            const total = filteredItems.length;
 
             // Render visual - prefer explicit image, fall through to YouTube thumb, then icon
             const detailThumbUrl = getItemThumbnailUrl(item);
@@ -4655,7 +4670,25 @@
             // ("Open in recursive.eco" now sits beside the Copy icon in the action row
             //  near the top of the modal — both purple — so no separate foot chip here.)
 
+            // Prev/next footer — page cards from the bottom (builder, Jul 7 2026).
+            // Only shown when there's more than one card to page through.
+            if (total > 1 && idx !== -1) {
+                bodyHtml += `
+                    <div class="modal-nav-footer">
+                        <button class="modal-nav-btn" onclick="navigateItem(-1)" ${idx <= 0 ? 'disabled' : ''} title="Previous card (←)" aria-label="Previous card">&#8592;</button>
+                        <span class="modal-counter">${idx + 1} of ${total}</span>
+                        <button class="modal-nav-btn" onclick="navigateItem(1)" ${idx >= total - 1 ? 'disabled' : ''} title="Next card (→)" aria-label="Next card">&#8594;</button>
+                    </div>
+                `;
+            }
+
             modalBody.innerHTML = bodyHtml;
+            // Reset the scroll to the top so each card opens at its title, not
+            // wherever the previous card was scrolled to (modal-body scrolls on
+            // desktop, modal-content on phones — reset both).
+            modalBody.scrollTop = 0;
+            const mc = modalBackdrop.querySelector('.modal-content');
+            if (mc) mc.scrollTop = 0;
             modalBackdrop.classList.add('open');
         }
 
@@ -5287,17 +5320,33 @@ ${reason}
                 .replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
             const lines = String(s).split(/\r?\n/);
             let html = '', inList = false, inQuote = false, m;
-            const closeL = () => { if (inList) { html += '</ul>'; inList = false; } };
+            // Block buffering (Jul 7 2026): prose in these grammars is hard-wrapped
+            // mid-sentence (and list items span several wrapped, indented lines), so
+            // processing each source line on its own broke bold/italic that crossed a
+            // wrap (the `**` opened on one line and closed on the next → literal
+            // asterisks) and split single sentences into many gappy <p>/<li>. Fix:
+            // buffer each block's lines and join them with a space (standard Markdown
+            // soft-break) before running inline(), flushing on a blank line, a new
+            // block, or a new list item.
+            //   - `para`  = the current paragraph's lines
+            //   - `liBuf` = the current list item's lines (bullet + its continuations)
+            let para = [], liBuf = null;
+            const flushP = () => { if (para.length) { html += `<p style="margin:.6em 0;">${inline(para.join(' '))}</p>`; para = []; } };
+            const flushLI = () => { if (liBuf) { html += `<li>${inline(liBuf.join(' '))}</li>`; liBuf = null; } };
+            const closeL = () => { flushLI(); if (inList) { html += '</ul>'; inList = false; } };
             const closeQ = () => { if (inQuote) { html += '</blockquote>'; inQuote = false; } };
             for (const raw of lines) {
                 const line = raw.trim();
-                if (!line) { closeL(); closeQ(); continue; }
-                if (m = line.match(/^(#{1,6})\s+(.*)$/)) { closeL(); closeQ(); html += `<div style="font-weight:700;font-size:1.05em;margin:.7em 0 .25em;">${inline(m[2])}</div>`; continue; }
-                if (m = line.match(/^>\s?(.*)$/)) { closeL(); if (!inQuote) { html += '<blockquote style="border-left:3px solid currentColor;opacity:.8;margin:.5em 0;padding:.1em 0 .1em .8em;">'; inQuote = true; } html += inline(m[1]) + ' '; continue; }
-                if (m = line.match(/^[-*+]\s+(.*)$/)) { closeQ(); if (!inList) { html += '<ul style="margin:.4em 0;padding-left:1.2em;">'; inList = true; } html += `<li>${inline(m[1])}</li>`; continue; }
-                closeL(); closeQ(); html += `<p style="margin:.5em 0;">${inline(line)}</p>`;
+                if (!line) { flushP(); closeL(); closeQ(); continue; }
+                if (m = line.match(/^(#{1,6})\s+(.*)$/)) { flushP(); closeL(); closeQ(); html += `<div style="font-weight:700;font-size:1.05em;margin:.7em 0 .25em;">${inline(m[2])}</div>`; continue; }
+                if (m = line.match(/^>\s?(.*)$/)) { flushP(); closeL(); if (!inQuote) { html += '<blockquote style="border-left:3px solid currentColor;opacity:.8;margin:.5em 0;padding:.1em 0 .1em .8em;">'; inQuote = true; } html += inline(m[1]) + ' '; continue; }
+                if (m = line.match(/^[-*+]\s+(.*)$/)) { flushP(); closeQ(); flushLI(); if (!inList) { html += '<ul style="margin:.4em 0;padding-left:1.2em;">'; inList = true; } liBuf = [m[1]]; continue; }
+                // Plain line: a continuation of the open list item (no blank line broke
+                // it) folds into that item; otherwise it extends the current paragraph.
+                if (inList && liBuf) { liBuf.push(line); continue; }
+                closeL(); closeQ(); para.push(line);
             }
-            closeL(); closeQ();
+            flushP(); closeL(); closeQ();
             return html;
         }
 
