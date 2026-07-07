@@ -2,6 +2,35 @@
 
 Newest first. One bullet per shipped thing.
 
+## Jul 7 2026
+
+- **Mobile: genealogy graph blank + deck-detail paging.** Two builder-reported phone bugs:
+  - **Root cause of the blank genealogy graph (`genealogy.html`)**: the docked `#panel` had a
+    fixed `width:330px` with no responsive stacking, so on a 390px phone the `#cy` graph pane was
+    squeezed to a ~60px sliver — effectively invisible ("blank white"), independent of whether
+    Cytoscape itself loaded. Fixed with a `@media (max-width:720px)` rule that stacks the panel
+    *below* the graph and gives `#cy` an explicit `60vh`/`min-height:340px`, plus `cy.resize()` +
+    `cy.fit()` on load, `resize`, and `orientationchange` (the classic zero-height-container
+    Cytoscape bug, guarded against even though it wasn't the actual trigger here).
+  - **Vendored `cytoscape.min.js`** into `public/vendor/` (fetched via `npm pack cytoscape`, MIT,
+    v3.34.0) so the graph loads even when the jsdelivr CDN is unreachable — `<script>` tries the
+    local copy first, falls back to the CDN via a synchronous `document.write` if it 404s. Added a
+    visible in-page error message (`#cy-error`) when neither source loads, so the pane never goes
+    silently blank again; the panel/legend degrade to a plain clickable deck list in that case.
+  - **Deck-to-deck paging** ("I want to be able to click through the deck") added to three places,
+    copying the exact sticky bottom-footer pattern from `viewers/cards.html` (`.modal-nav-footer` /
+    `.modal-nav-btn` / `.modal-counter`, ← / "N of M" / →, disabled at the ends): the genealogy
+    graph's node-detail panel, the timeline viewer's deck-detail panel (`viewers/timeline.html`),
+    and the tree-of-tarot node-detail popup (`viewers/genealogy-tree.html`). Arrow keys page too.
+  - **Visible top-right X close**, dark chip + white glyph (matching `cards.html`'s `.modal-close`),
+    added/upgraded on `viewers/timeline.html` and `viewers/genealogy-tree.html`'s detail popups —
+    the old plain floated `×` was hard to see over light panels.
+  - **Bonus mobile fix, same two files**: `.wrap{height:calc(100vh - 52px)}` assumed a 52px
+    `<site-header>`, but the real custom element renders ~122px tall — the mismatch made `.wrap`
+    (and the sticky footer inside it) overflow past the bottom of the viewport. Replaced the
+    hardcoded guess with a `fitWrap()` that measures the real header height and reapplies it on
+    resize/orientationchange.
+
 ## Jul 6 2026
 
 - **Fixed header dropdowns cropping off the left edge on tablet widths** — `.dd-menu` was
