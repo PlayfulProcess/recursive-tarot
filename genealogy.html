@@ -16,7 +16,11 @@
   Companion to recursive.eco (the rich integrated reader); this is the academic,
   fork-it-yourself view of the repo's own data.
 -->
-<script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<!-- Vendored copy first (works offline / when the CDN is blocked); falls back to
+     the CDN via document.write so the fallback loads synchronously, before the
+     script below runs. See docs/CHANGELOG.md for the mobile-blank-graph fix. -->
+<script src="public/vendor/cytoscape.min.js"></script>
+<script>window.cytoscape || document.write('<script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js"><\/script>')</script>
 <style>
   :root {      }
   * { box-sizing:border-box; }
@@ -30,8 +34,19 @@
   button.toggle { background:var(--panel); color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:5px 10px; cursor:pointer; }
   button.toggle.active { background:#6a3fb0; border-color:#6a3fb0; }
   #wrap { display:flex; height:calc(100% - 56px); }
-  #cy { flex:1; height:100%; }
+  #cy { flex:1; height:100%; min-height:320px; }
   #panel { width:330px; border-left:1px solid var(--line); padding:16px; overflow:auto; background:var(--panel); }
+  /* Mobile: the fixed 330px panel used to squeeze the graph pane down to a
+     ~60px sliver on a 390px phone — effectively invisible ("blank white"),
+     independent of whether Cytoscape itself loaded. Stack the panel BELOW
+     the graph on narrow viewports and give the graph an explicit height so
+     it can never collapse to 0/near-0 px. */
+  @media (max-width:720px){
+    #wrap { flex-direction:column; height:auto; min-height:calc(100% - 56px); }
+    #cy { flex:none; width:100%; height:60vh; min-height:340px; }
+    #panel { width:100%; max-height:34vh; border-left:none; border-top:1px solid var(--line); }
+  }
+  #cy-error { display:none; padding:40px 18px; text-align:center; color:#e07a5f; font-size:13px; }
   #panel h2 { font-size:16px; margin:0 0 6px; }
   #panel .row { font-size:13px; color:var(--muted); margin:3px 0; }
   #panel .row b { color:var(--ink); font-weight:600; }
@@ -41,6 +56,16 @@
   .dot { width:11px; height:11px; border-radius:50%; display:inline-block; }
   .empty { color:var(--muted); font-size:13px; }
   .note { font-size:11px; color:var(--muted); padding:6px 18px; border-top:1px solid var(--line); }
+  /* Deck-to-deck paging footer — same pattern as viewers/cards.html's
+     .modal-nav-footer (sticky bottom bar, circular arrow buttons, counter). */
+  .modal-nav-footer { position:sticky; bottom:0; display:flex; align-items:center; justify-content:space-between;
+    gap:1rem; margin:1.25rem -16px -16px; padding:0.7rem 16px; background:var(--panel); border-top:1px solid var(--line); }
+  .modal-nav-btn { flex-shrink:0; width:40px; height:40px; border-radius:50%; background:rgba(154,115,34,.1);
+    border:1px solid var(--line); color:var(--ink); font-size:1.2rem; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; transition:background .15s, opacity .15s; }
+  .modal-nav-btn:hover:not(:disabled) { background:rgba(154,115,34,.35); border-color:#9a7322; }
+  .modal-nav-btn:disabled { opacity:.3; cursor:default; }
+  .modal-counter { font-size:12px; font-weight:600; letter-spacing:.02em; color:var(--muted); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -60,7 +85,7 @@
   </div>
 </header>
 <div id="wrap">
-  <div id="cy"></div>
+  <div id="cy"><div id="cy-error"></div></div>
   <aside id="panel"><div class="empty">Loading the catalogue…</div></aside>
 </div>
 <div class="note">Edges are simplified lineage (trump-order + chronology), not a claim of exact deck-to-deck derivation. The dashed purple edge marks the post-1781 occult turn off the C-order. Data: this repo's <code>tarot/all-decks-many-lenses/grammar.json</code>.</div>
@@ -91,6 +116,11 @@ function legendHTML(mode){
 
 (async function(){
   const panel = document.getElementById('panel');
+  if (typeof cytoscape === 'undefined') {
+    const cyEl = document.getElementById('cy');
+    cyEl.innerHTML = '<div id="cy-error" style="display:block">Could not load the graph library (cytoscape.js) — check your connection and reload. The legend and deck list below still work.</div>';
+    // Fall through: the panel/legend can still render even without the graph.
+  }
   let meta;
   try { meta = await (await fetch(META_URL)).json(); }
   catch(e){ panel.innerHTML = '<div class="empty">Could not load '+META_URL+'. Rebuild the meta (<code>python scripts/build_meta_grammar.py</code>) and serve the repo root.</div>'; return; }
@@ -126,23 +156,29 @@ function legendHTML(mode){
     if(earliestTarot) edges.push({ data:{ id:'anc'+a.node_id, source:a.node_id, target:earliestTarot.node_id, turn:1 } });
   });
 
-  const cy = cytoscape({
-    container: document.getElementById('cy'),
-    elements: { nodes, edges },
-    layout: { name:'preset' },
-    style: [
-      { selector:'node', style:{ 'label':'data(label)', 'color':'#221f1a', 'font-size':'11px',
-        'text-wrap':'wrap', 'text-max-width':'120px', 'text-valign':'bottom', 'text-margin-y':4,
-        'width':'data(_w)', 'height':'data(_w)', 'background-color':'data(_color)',
-        'border-width':2, 'border-color':'#00000055' } },
-      { selector:'edge', style:{ 'width':2, 'line-color':'#4a4660', 'target-arrow-color':'#4a4660',
-        'target-arrow-shape':'triangle', 'curve-style':'bezier', 'arrow-scale':0.8 } },
-      { selector:'edge[turn]', style:{ 'line-color':'#9c47d1', 'target-arrow-color':'#9c47d1', 'line-style':'dashed', 'width':3 } },
-      { selector:'node:selected', style:{ 'border-color':'#ffffff', 'border-width':3 } },
-    ],
-  });
+  let cy; // stays undefined if cytoscape failed to load; guarded throughout below
+  const cytoscapeAvailable = typeof cytoscape !== 'undefined';
+
+  if (cytoscapeAvailable) {
+    cy = cytoscape({
+      container: document.getElementById('cy'),
+      elements: { nodes, edges },
+      layout: { name:'preset' },
+      style: [
+        { selector:'node', style:{ 'label':'data(label)', 'color':'#221f1a', 'font-size':'11px',
+          'text-wrap':'wrap', 'text-max-width':'120px', 'text-valign':'bottom', 'text-margin-y':4,
+          'width':'data(_w)', 'height':'data(_w)', 'background-color':'data(_color)',
+          'border-width':2, 'border-color':'#00000055' } },
+        { selector:'edge', style:{ 'width':2, 'line-color':'#4a4660', 'target-arrow-color':'#4a4660',
+          'target-arrow-shape':'triangle', 'curve-style':'bezier', 'arrow-scale':0.8 } },
+        { selector:'edge[turn]', style:{ 'line-color':'#9c47d1', 'target-arrow-color':'#9c47d1', 'line-style':'dashed', 'width':3 } },
+        { selector:'node:selected', style:{ 'border-color':'#ffffff', 'border-width':3 } },
+      ],
+    });
+  }
 
   function recolor(mode){
+    if (!cy) { const lg = document.getElementById('lg'); if(lg) lg.innerHTML = legendHTML(mode); return; }
     cy.nodes().forEach(n => { const d = n.data();
       n.data('_color', mode==='function' ? (FUNC[d.function]||'#888') : (TIER[d.tier]||'#888'));
       n.data('_w', 22 + Math.sqrt(d.count||1)*5);
@@ -161,8 +197,14 @@ function legendHTML(mode){
   panel.innerHTML = '<div class="empty">Click a deck to see its provenance.</div><div class="legend" id="lg" style="margin-top:14px"></div>';
   recolor('order');
 
-  cy.on('tap','node', e => {
-    const d = e.target.data();
+  // Display order for prev/next paging = the same year order the graph places
+  // decks in left-to-right (chronological), so "click through the deck" steps
+  // the same direction the eye reads the timeline.
+  const orderedDecks = [...decks].sort((a,b) => a.year - b.year);
+
+  function renderDeckDetail(d){
+    const idx = orderedDecks.findIndex(x => x.node_id === d.node_id);
+    const total = orderedDecks.length;
     panel.innerHTML = `
       <h2>${d.label}</h2>
       <div class="row"><b>Date</b> · ${d.date||d.era||'—'}</div>
@@ -171,12 +213,57 @@ function legendHTML(mode){
       <div class="row"><b>Cards</b> · ${d.count}</div>
       ${d.slug ? `<div class="row" style="margin-top:10px"><a href="viewers/cards.html?src=${encodeURIComponent('../tarot/'+d.slug+'/grammar.json')}" target="_blank" rel="noopener">open cards ↗</a></div>
       <div class="row"><a href="tarot/${d.slug}/grammar.json" target="_blank" rel="noopener">raw JSON ↗</a></div>` : '<div class="row" style="margin-top:10px;color:#6b6457">No card-level deck in the repo yet for this node.</div>'}
-      <div class="legend" id="lg" style="margin-top:16px"></div>`;
+      <div class="legend" id="lg" style="margin-top:16px"></div>
+      ${total > 1 && idx !== -1 ? `
+      <div class="modal-nav-footer">
+        <button class="modal-nav-btn" onclick="window._genealogyNav(-1)" ${idx <= 0 ? 'disabled' : ''} title="Previous deck (←)" aria-label="Previous deck">&#8592;</button>
+        <span class="modal-counter">${idx + 1} of ${total}</span>
+        <button class="modal-nav-btn" onclick="window._genealogyNav(1)" ${idx >= total - 1 ? 'disabled' : ''} title="Next deck (→)" aria-label="Next deck">&#8594;</button>
+      </div>` : ''}`;
     document.getElementById('lg').innerHTML = legendHTML(activeMode());
+    if (cy) {
+      cy.nodes().unselect();
+      const n = cy.getElementById(d.node_id); if (n && n.length) n.select();
+    }
+  }
+  window._genealogyNav = function(dir){
+    const cur = panel.querySelector('h2');
+    if (!cur) return;
+    const curLabel = cur.textContent;
+    const curIdx = orderedDecks.findIndex(x => x.label === curLabel);
+    if (curIdx === -1) return;
+    const next = orderedDecks[Math.max(0, Math.min(orderedDecks.length - 1, curIdx + dir))];
+    renderDeckDetail(next);
+  };
+  document.addEventListener('keydown', e => {
+    if (!panel.querySelector('.modal-nav-footer')) return;
+    if (e.key === 'ArrowLeft') window._genealogyNav(-1);
+    if (e.key === 'ArrowRight') window._genealogyNav(1);
   });
 
-  cy.fit(undefined, 60);
-  window.addEventListener('resize', () => cy.fit(undefined, 60));
+  if (cytoscapeAvailable) {
+    cy.on('tap','node', e => renderDeckDetail(e.target.data()));
+
+    function resizeAndFit(){ cy.resize(); cy.fit(undefined, 60); }
+    resizeAndFit();
+    window.addEventListener('resize', resizeAndFit);
+    window.addEventListener('orientationchange', () => setTimeout(resizeAndFit, 200));
+  } else {
+    // Cytoscape didn't load (blocked network + vendored copy missing/failed).
+    // Fall back to a plain clickable deck list so the panel still works.
+    const cyEl = document.getElementById('cy');
+    const list = document.createElement('div');
+    list.style.cssText = 'padding:18px;overflow:auto;height:100%;';
+    list.innerHTML = orderedDecks.map(d =>
+      `<div class="row" style="cursor:pointer;padding:4px 0;border-bottom:1px solid var(--line)" data-node="${d.node_id}"><b>${d.label}</b> · ${d.date||d.era||'—'}</div>`
+    ).join('');
+    cyEl.appendChild(list);
+    list.addEventListener('click', e => {
+      const row = e.target.closest('[data-node]'); if (!row) return;
+      const d = orderedDecks.find(x => x.node_id === row.dataset.node);
+      if (d) renderDeckDetail(d);
+    });
+  }
 })();
 </script>
 

@@ -40,7 +40,7 @@
   .hot{opacity:1 !important}
   /* detail panel */
   aside#detail{width:340px;max-width:84vw;background:var(--panel);border-left:1px solid var(--line);
-    padding:18px;overflow:auto;display:none}
+    padding:18px;overflow:auto;display:none;position:relative}
   aside#detail.open{display:block}
   aside#detail img{width:100%;max-height:260px;object-fit:contain;background:#f4f1ea;border-radius:8px;margin-bottom:12px}
   aside#detail h2{margin:.2em 0 .1em;font-size:18px}
@@ -51,7 +51,21 @@
   aside#detail .chip{font-size:11px;padding:3px 9px;border-radius:999px;background:var(--line);color:var(--ink)}
   aside#detail .opencards{display:inline-block;margin-top:10px;padding:8px 14px;border:1px solid var(--accent);
     border-radius:999px;color:var(--accent);text-decoration:none;font-size:13px;font-weight:600}
-  aside#detail .close{float:right;cursor:pointer;color:var(--muted);font-size:20px;line-height:1}
+  /* Top-right X close — dark chip + white glyph, matching viewers/cards.html's
+     .modal-close (builder, Jul 7 2026: plain floated × disappeared on light panels). */
+  aside#detail .modal-close{position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;
+    background:rgba(45,34,15,0.65);border:1px solid rgba(255,255,255,0.35);color:#fff;font-size:1.1rem;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .2s}
+  aside#detail .modal-close:hover{background:rgba(255,255,255,0.2)}
+  /* Prev/next deck paging — sticky footer bar, same pattern as cards.html. */
+  .modal-nav-footer{position:sticky;bottom:0;display:flex;align-items:center;justify-content:space-between;
+    gap:1rem;margin:1.25rem -18px -18px;padding:0.7rem 18px;background:var(--panel);border-top:1px solid var(--line)}
+  .modal-nav-btn{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:rgba(154,115,34,.1);
+    border:1px solid var(--line);color:var(--ink);font-size:1.2rem;cursor:pointer;display:flex;
+    align-items:center;justify-content:center;transition:background .15s,opacity .15s}
+  .modal-nav-btn:hover:not(:disabled){background:rgba(154,115,34,.35);border-color:var(--accent)}
+  .modal-nav-btn:disabled{opacity:.3;cursor:default}
+  .modal-counter{font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--muted);white-space:nowrap}
   /* legend + controls */
   .legend{position:absolute;left:14px;bottom:14px;background:color-mix(in srgb,var(--panel) 88%,transparent);
     color:var(--ink);border:1px solid var(--line);
@@ -128,6 +142,21 @@ if(EMBED) document.body.classList.add('embed');
 function postHeight(){ if(!EMBED) return; try{ parent.postMessage({type:'tarotEmbedHeight',h:Math.ceil(document.body.scrollHeight)},'*'); }catch(e){} }
 if(EMBED){ window.addEventListener('load',()=>setTimeout(postHeight,90)); window.addEventListener('resize',postHeight); }
 
+// The CSS assumes a 52px <site-header>, but the real custom element renders
+// taller (and can wrap to more lines on narrow phones) — a fixed calc(100vh -
+// 52px) then makes .wrap taller than the actual remaining space, pushing the
+// bottom of the detail panel (incl. the prev/next footer) below the viewport.
+// Measure the real header height instead of guessing.
+function fitWrap(){
+  if(EMBED) return; // embed mode sizes .wrap explicitly (see body.embed .wrap)
+  const sh=document.querySelector('site-header');
+  const h=(sh&&sh.offsetHeight)||52;
+  document.querySelector('.wrap').style.height='calc(100vh - '+h+'px)';
+}
+fitWrap();
+window.addEventListener('resize',fitWrap);
+window.addEventListener('orientationchange',()=>setTimeout(fitWrap,200));
+
 let G, itemMap, hidden = new Set();
 
 (async function init(){
@@ -158,6 +187,12 @@ let G, itemMap, hidden = new Set();
   window.addEventListener('resize', ()=>draw(nested));
   document.getElementById('toggle-derive').addEventListener('change', ()=>draw(nested));
   document.getElementById('btn-reset').addEventListener('click', ()=>{ hidden.clear(); buildLegend(); draw(nested); });
+  document.addEventListener('keydown', (e)=>{
+    if(!document.getElementById('detail').classList.contains('open')) return;
+    if(e.key==='Escape'){ document.getElementById('detail').classList.remove('open'); }
+    if(e.key==='ArrowLeft') navigateDeck(-1);
+    if(e.key==='ArrowRight') navigateDeck(1);
+  });
 })();
 
 function yearOf(it){
@@ -294,13 +329,30 @@ function mdToHtml(s){
   cL();cQ();return html;
 }
 
+// Deck-to-deck paging order = chronological, filtered by the same branch
+// visibility as the tree itself (hidden legend rows). Only leaf decks page —
+// clicking a branch/root node still opens detail but has no prev/next.
+function deckOrderList(){
+  return (G.items||[]).filter(i=>i.id.startsWith('deck-') && !hidden.has(branchOf(i)))
+    .sort((a,b)=>(yearOf(a)||0)-(yearOf(b)||0));
+}
+function navigateDeck(direction){
+  const list=deckOrderList();
+  const el=document.getElementById('detail');
+  const curId=el.dataset.deckId;
+  const idx=list.findIndex(i=>i.id===curId);
+  if(idx===-1) return;
+  const newIdx=Math.max(0,Math.min(list.length-1,idx+direction));
+  if(newIdx!==idx) showDetail(list[newIdx]);
+}
 function showDetail(it){
   const el=document.getElementById('detail');
+  el.dataset.deckId=it.id;
   const b=branchOf(it);
   const when=(it.metadata||{}).when||'';
   const secs=it.sections||{};
   const slug = SLUG_MAP[it.id];
-  let html = `<span class="close" onclick="document.getElementById('detail').classList.remove('open')">×</span>`;
+  let html = `<span class="modal-close" onclick="document.getElementById('detail').classList.remove('open')" title="Close" aria-label="Close">&times;</span>`;
   if(it.image_url) html+=`<img src="${esc(it.image_url)}" alt="${esc(it.name)}" loading="lazy">`;
   html+=`<h2>${esc(it.name)}</h2>`;
   if(when) html+=`<div class="when">${esc(when)}</div>`;
@@ -313,6 +365,16 @@ function showDetail(it){
   }
   if(slug) html+=`<a class="opencards" href="cards.html?src=${encodeURIComponent('../tarot/'+slug+'/grammar.json')}">Open ${esc(it.name.replace(/\s+[—–-].*/,''))} cards →</a>`;
   else html+=`<div class="sec" style="color:#6b6457">No card-level deck in the repo yet for this node.</div>`;
+  if(it.id.startsWith('deck-')){
+    const list=deckOrderList(); const idx=list.findIndex(i=>i.id===it.id), total=list.length;
+    if(total>1 && idx!==-1){
+      html+=`<div class="modal-nav-footer">
+        <button class="modal-nav-btn" onclick="navigateDeck(-1)" ${idx<=0?'disabled':''} title="Previous deck (←)" aria-label="Previous deck">&#8592;</button>
+        <span class="modal-counter">${idx+1} of ${total}</span>
+        <button class="modal-nav-btn" onclick="navigateDeck(1)" ${idx>=total-1?'disabled':''} title="Next deck (→)" aria-label="Next deck">&#8594;</button>
+      </div>`;
+    }
+  }
   el.innerHTML=html; el.classList.add('open');
 }
 
