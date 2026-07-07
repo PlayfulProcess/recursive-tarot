@@ -9,6 +9,13 @@ yourself, not to be told your fate; relate to the card, never obey it*).
 ## Contents
 
 - **[`REPORT.md`](REPORT.md)** — the full human synthesis (read this first).
+- **[`does-tarot-predict.md`](does-tarot-predict.md)** — a focused dossier (2026-07-07)
+  grounding the specific claim "tarot does not predict" in citable primary literature:
+  the direct controlled tests of tarot (Blackmore 1983; Ivtzan & French 2004), the
+  Barnum/cold-reading mechanism, the Bem precognition studies and their replication
+  collapse, and — on the other side — citations for the ritual/randomness/re-narration
+  mechanisms this collection claims tarot *can* deliver. Feeds
+  `course/how-tarot-works.mdx`.
 - **`deep-research-raw-output.json`** — the complete, machine-readable workflow
   output: all 5 search angles, 25 sources, 10 confirmed claims, 15 killed-with-status
   (most rate-limited, not genuinely refuted), per-source quality + claim counts.
