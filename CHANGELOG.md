@@ -30,6 +30,35 @@ Newest first. One bullet per shipped thing.
     (and the sticky footer inside it) overflow past the bottom of the viewport. Replaced the
     hardcoded guess with a `fitWrap()` that measures the real header height and reapplies it on
     resize/orientationchange.
+- **Editorial pass on the voice courses + a mobile course-viewer rendering fix:**
+  - **"The Light of Tarot" folded into "How the Cards Can Work"** (`course/how-tarot-works.mdx`) —
+    added a closing section, "Sub-creation — why the pictures are enough" (Tolkien's sub-creation
+    and Recovery, the Murray/Holmes/Griffin idealization study), ending on "the light of the tarot
+    is in the eyes of the beholder." The standalone `course/the-light-of-tarot.mdx` is now a stub
+    that points to the merged section (kept only so old links resolve); removed from the site nav
+    (`site-header.js`), replaced there with "How the Cards Can Work."
+  - **Retitled the two voice courses to open questions** — "Kant Reads the Tarot" → **"How Could
+    Kant Read the Tarot?"** and "Marsha Linehan Reads the Tarot" → **"How Could Marsha Linehan
+    Read the Tarot?"** (frontmatter, H1, and every cross-reference across `course/*.mdx` and
+    `course/books/how-to-read-the-cards/book.json`). File ids/slugs unchanged, so URLs still work.
+  - **Kant course** (`course/kant-and-the-tarot.mdx`): pulled the Kant/tarot-divination exact-
+    contemporaneity argument (Etteilla 1785–91 vs. the *Groundwork* 1785) to the very front — the
+    frontmatter `description` and the opening paragraph now state it plainly as the license for
+    the whole imagined encounter, before the Königsberg vignette. Trimmed the repeated "make
+    meaning yourself, hold it lightly, hand it on" refrain (appeared near-verbatim twice in the
+    closing sections) to a single instance, and closed the course on the same "light of the tarot
+    is in the eyes of the beholder" image as the merged how-tarot-works chapter.
+  - Regenerated the `_generated` `tarot/*-course/grammar.json` mirrors (`scripts/course_to_grammar.py`)
+    for every touched course so they stay in sync with their source `.mdx`.
+  - **Fixed: mobile course-viewer Contents drawer let cropped page content show through.**
+    `pages/course-viewer.html`'s mobile TOC drawer only dims the page 50% (`.mobile-toc-overlay`);
+    the content column behind it doesn't resize when the drawer opens, so the sliver not covered
+    by the 80%-wide drawer panel showed legible, mid-word fragments of the hero title and body
+    text — read as broken/cropped rather than an intentional dimmed backdrop. Bumped the overlay
+    to near-opaque (`rgba(17,24,39,0.98)`) and locked background scroll while the drawer is open.
+    Verified pixel-level with Playwright at 390×844 (before/after RGB sampling through the overlay).
+    Checked separately for the reported "text clipped at the right edge with the drawer closed" —
+    already fixed by the existing `overflow-wrap: anywhere` rules; not reproducible.
 
 ## Jul 6 2026
 

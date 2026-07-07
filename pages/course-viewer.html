@@ -144,7 +144,15 @@
         .mobile-toc-overlay {
             position: fixed;
             inset: 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            /* Near-opaque, not the usual 50% dim backdrop — the content column behind
+               this overlay does NOT resize or hide itself when the drawer opens (it
+               stays full-width, sitting right under the fixed-position panel+overlay).
+               At 50% opacity the sliver of page not covered by the 80%-wide panel
+               (the right ~20% of a narrow phone) showed legible, mid-word fragments
+               of the hero title and body text through the backdrop — read as
+               "cropped/overlaid oddly" rather than an intentional dimmed backdrop.
+               Bumping to near-opaque hides that sliver instead of half-showing it. */
+            background-color: rgba(17, 24, 39, 0.98);
             z-index: 45;
             display: none;
             opacity: 0;
@@ -1471,6 +1479,10 @@
             const panel = document.getElementById('mobile-toc-panel');
             overlay.style.display = 'block';
             panel.style.display = 'block';
+            // Lock background scroll while the drawer is open — the page behind is
+            // full-width and unstyled for this state, so letting it scroll under a
+            // fixed overlay reads as broken. Restored in closeMobileTOC().
+            document.body.style.overflow = 'hidden';
             setTimeout(() => {
                 overlay.classList.add('active');
                 panel.classList.add('active');
@@ -1482,6 +1494,7 @@
             const panel = document.getElementById('mobile-toc-panel');
             overlay.classList.remove('active');
             panel.classList.remove('active');
+            document.body.style.overflow = '';
             setTimeout(() => {
                 overlay.style.display = 'none';
                 panel.style.display = 'none';
