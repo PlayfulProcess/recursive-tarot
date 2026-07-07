@@ -26,9 +26,18 @@ change three things*. The first feels creative; the second is correct.
 
 ## The recipe (I Ching, and every site after)
 
-**0. Start from a literal copy.** `git clone` this repo (or copy its tree) into the new repo.
-Delete the tarot *content*, keep every *mechanism*. Do not start from an empty folder, a
-template framework, or "the same idea done fresh."
+**0. Start from a literal copy — of the YOUNGEST sibling.** The most recent port is always
+the most generalized: tarot→astro stripped the tarot-isms (deck→grammar, trump-keys→generic
+matching, collection-driven menus); astro→iching stripped astro-isms in turn. So copy the tree
+of the newest site in the family (as of Jul 2026: the I Ching site in recursive-starter),
+falling back to tarot only for mechanisms it alone has (course→grammar build scripts, research
+conventions, print pipeline, caster). Delete the *content*, keep every *mechanism*. Do not
+start from an empty folder, a template framework, or "the same idea done fresh." Corollary:
+you never need to "upstream" improvements by hand — build in whichever site you're actively
+working on, and the next port harvests whatever got better. One domain-specific decision no
+copy can make for you: the cross-grammar MATCHING KEY in lenses (tarot: trump key; astro:
+entity name; iching: hexagram number — names differ across translations). Pick it consciously;
+picking wrong fails silently.
 
 **1. The data layer** — one folder per grammar: `grammars/<slug>/grammar.json` (canonical shape:
 `docs/GRAMMAR_FORMAT.md` / recursive-eco's `GRAMMAR_COMMONS_SCHEMA`). Then the collection
