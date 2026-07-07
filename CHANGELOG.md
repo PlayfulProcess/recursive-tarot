@@ -2,6 +2,43 @@
 
 Newest first. One bullet per shipped thing.
 
+## Jul 7 2026 (2)
+
+- **Editorial rewrite of "How the Cards Can Work"** (`course/how-tarot-works.mdx`), builder's direction:
+  - **Deleted** the "honest engine room of the series" tagline (frontmatter description) and the
+    body line "This page is the engine room... runs on the four small machines described here" —
+    the course no longer claims to be the sole authoritative account of how tarot works.
+  - **Rewrote the opening.** Dropped the "two questions people ask of tarot" frame entirely. New
+    frame: life (and the sun) is already mysterious and magical enough; tarot is no more magical
+    than life, or art, or human imagination — and that's magic enough — looping straight into "the
+    light of the tarot is in the eyes of the beholder" and into Tolkien.
+  - **De-enumerated "the four ways it can work."** Renamed "The four reasons a reading can still
+    genuinely help" → "Some of the ways a reading can help"; dropped the 1/2/3/4 numbering and the
+    "four machines" language throughout (including in "The catch that decides the stance" and
+    "Where this leaves us").
+  - **Moved Tolkien to the front and expanded to all four functions of fantasy** — Fantasy
+    (sub-creation), Recovery, Escape, and Consolation/eucatastrophe (previously only Recovery was
+    covered, and only in the closing section). New section order: Tolkien's functions of fiction →
+    Mythopoeia/C.S. Lewis → the honest disclaimer (no evidence for prediction) → the psychological
+    mechanisms (projection, re-narration, productive randomness, ritual) → the gate-stance catch →
+    the palantír warning → anthropological close (divination-traditions pointer) → the closing loop.
+  - **New "Mythopoeia" section**: quotes the poem's disenchantment/re-enchantment opening verbatim
+    (the "trees are 'trees'" passage — including the word *divination* inside Tolkien's own poem),
+    links *[On Fairy-stories](https://coolcalvary.com/wp-content/uploads/2018/10/on-fairy-stories1.pdf)*
+    and *[Mythopoeia](https://www.tolkien.ro/text/JRR%20Tolkien%20-%20Mythopoeia.pdf)*, and
+    contextualizes the 1931 Addison's Walk conversation with C.S. Lewis and his conversion
+    (linking *[The Most Reluctant Convert](https://cslewismovie.com/)*) — framed honestly as
+    showing the idea's pedigree, not as a religious claim.
+  - **Kept the closing image** ("the light of the tarot is in the eyes of the beholder") as the
+    course's close, now explicitly calling back to the new opening so the chapter reads as one loop.
+  - Regenerated `tarot/how-tarot-works-course/grammar.json` via `scripts/course_to_grammar.py`.
+  - **Fixed a stale path bug in `scripts/build_reading_course.py`** (it pointed at `books/...`
+    instead of `course/books/...` after an earlier repo-tidy move the script was never updated
+    for) and reran it — this also caught up `course/reading-the-cards.mdx` (the compiled
+    practitioner course) with edits made to `intention-setting.mdx` and `kant-and-the-tarot.mdx` in
+    earlier sessions that had never been mirrored in, plus this round's how-tarot-works edits.
+    Regenerated `tarot/reading-the-cards-course/grammar.json` to match.
+
 ## Jul 7 2026
 
 - **Mobile: genealogy graph blank + deck-detail paging.** Two builder-reported phone bugs:
