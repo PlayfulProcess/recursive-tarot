@@ -2,6 +2,35 @@
 
 Newest first. One bullet per shipped thing.
 
+## Jul 7 2026 (4)
+
+- **Golden Dawn (Book T) deck becomes an astro voice via item keys** (proving the builder's
+  item-key federation design, `docs/DESIGN-oracle-trinity.md` "Refinement" section in the astro
+  repo). Added `metadata.planet` / `metadata.sign` / `metadata.element` to all 22
+  `major-arcana` items in `tarot/golden-dawn-book-t-tarot/grammar.json`, matching the exact
+  canonical Book T astrological attribution already recorded in each card's (pre-existing)
+  `metadata.attribution` field: Fool=Air, Magician=Mercury, High Priestess=Moon, Empress=Venus,
+  Emperor=Aries, Hierophant=Taurus, Lovers=Gemini, Chariot=Cancer, Strength=Leo, Hermit=Virgo,
+  Wheel of Fortune=Jupiter, Justice=Libra, Hanged Man=Water, Death=Scorpio,
+  Temperance=Sagittarius, Devil=Capricorn, Tower=Mars, Star=Aquarius, Moon=Pisces, Sun=Sun,
+  Judgement=Fire/Spirit, World=Saturn — verified against multiple independent published sources
+  (davidcunliffe.com's Golden Dawn correspondence table, already cited in this deck's own
+  research notes; corroborated by Mary K. Greer, Angelorum, Biddy Tarot). Values use the exact
+  casing recursive.eco's `PLANETS`/`ZODIAC_SIGNS` constants expect (`apps/flow/src/lib/offer/
+  unified-grammar-types.ts`), and the three elemental trumps (Fool/Air, Hanged Man/Water,
+  Judgement/Fire) get `metadata.element` instead of a planet/sign. Also added a one-line
+  "Astrological attribution (Book T)" entry to each card's `sections`. `item.category` was left
+  untouched (`major-arcana` — these stay tarot cards, not re-typed as astrology items). Purely
+  additive: no other field in the file changed (verified programmatically against the prior
+  commit). **Caveat for the app side**: recursive.eco's live astro-voice matcher
+  (`astrology.types.ts` `convertUnifiedToInterpretations`, and the `astrology-grammars.ts`
+  picker) currently gates on `item.category` being one of `planet/sign/house/graha/rashi/
+  nakshatra/aspect/transit` — metadata alone, on a `major-arcana`-categorized item, is not yet
+  read by that matcher. The keys added here are the data-side half of the federation design;
+  making the astro oracle actually pick them up needs an app-side change (have the matcher also
+  honor `metadata.planet/sign/element` regardless of category) — not made here, since this task
+  was data-only and instructed not to force a category change.
+
 ## Jul 7 2026 (3)
 
 - **Grounded "tarot does not predict" in citable scientific literature**, builder's request
