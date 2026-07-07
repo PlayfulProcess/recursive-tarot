@@ -75,7 +75,7 @@
   const COURSE_GROUPS = [
     ['Start here', [
       ['history-of-tarot',                'The History of Tarot'],
-      ['the-light-of-tarot',              'The Light of Tarot'],
+      ['how-tarot-works',                 'How the Cards Can Work'],
       ['how-to-contribute',               'Ways to Contribute'],
     ]],
     ['More', [
