@@ -1560,11 +1560,11 @@
     <style>
         .assistant-toggle {
             position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 40;
-            background: #9a7322; color: white; border: none; border-radius: 9999px;
+            background: linear-gradient(135deg,#8b5cf6,#6d28d9); color: white; border: none; border-radius: 9999px;
             width: 56px; height: 56px; cursor: pointer; box-shadow: 0 4px 12px rgba(154,115,34,0.4);
             display: flex; align-items: center; justify-content: center; transition: all 0.2s;
         }
-        .assistant-toggle:hover { background: #7e22ce; transform: scale(1.05); }
+        .assistant-toggle:hover { background: linear-gradient(135deg,#7c3aed,#5b21b6); transform: scale(1.05); }
         .assistant-frame-container {
             position: fixed; bottom: 5.5rem; right: 1.5rem; z-index: 40;
             width: 384px; max-width: calc(100vw - 2rem); height: 500px; max-height: 70vh;
@@ -1574,9 +1574,9 @@
         .assistant-frame-container.open { display: block; }
         .assistant-frame-container iframe { width: 100%; height: 100%; border: none; }
     </style>
-    <button class="assistant-toggle" id="assistant-toggle" title="Ask the Library Assistant" onclick="toggleAssistant()" style="display:none;">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+    <button class="assistant-toggle" id="assistant-toggle" title="Ask the AI" aria-label="Ask the AI" onclick="toggleAssistant()" style="display:none;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 4l1.4 5.1L18.5 11l-5.1 1.5L12 17l-1.4-4.5L5.5 11l5.1-1.9z"/>
         </svg>
     </button>
     <div class="assistant-frame-container" id="assistant-frame">
