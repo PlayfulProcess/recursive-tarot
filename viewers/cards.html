@@ -1285,8 +1285,12 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            /* Visible on the light theme (builder, Jul 7 2026): the old white-on-
+               translucent-white chip disappeared over the cream card image panel.
+               Dark chip + light glyph reads on any card image or panel tone.
+               Top-right X = the default close affordance for EVERY popup. */
+            background: rgba(45, 34, 15, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.35);
             color: #fff;
             font-size: 1.25rem;
             cursor: pointer;
