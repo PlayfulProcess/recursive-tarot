@@ -2,6 +2,50 @@
 
 Newest first. One bullet per shipped thing.
 
+## Jul 7 2026 (3)
+
+- **Grounded "tarot does not predict" in citable scientific literature**, builder's request
+  ("research to base the claim... scientific papers etc."):
+  - **New dossier** `research/why-tarot-works/does-tarot-predict.md` — direct controlled tests of
+    tarot itself (Blackmore 1983, *JSPR*: subjects couldn't rank their own reading above chance in
+    2 of 3 experiments, honestly flagging Markwick's 1988 reanalysis that found the first
+    experiment held up; Ivtzan & French 2004 conference proceedings: real vs. random-card control
+    readings indistinguishable, including to tarot believers); the Barnum/Forer + cold-reading
+    mechanism (Forer 1949; Dickson & Kelly 1985; Hyman 1977); the broader precognition claim tested
+    at scale and its collapse (Bem 2011 *Feeling the Future* → failed replication by Ritchie,
+    Wiseman & French 2012 *PLoS ONE* and Galak et al. 2012, effect size d=0.04 across 3,289
+    subjects); the contested ganzfeld meta-analysis (Milton & Wiseman 1999, with Storm & Ertel's
+    2001 dispute noted rather than hidden); the unclaimed Randi Million Dollar Paranormal
+    Challenge (retired 2015, zero passes); and, as an adjacent design, Carlson's 1985 *Nature*
+    double-blind astrology test (also contested — Ertel 2009 reanalysis flagged). On the "ways it
+    can help" side: Hobson et al. 2018 (ritual/anxiety review), Norton & Gino 2014 (ritual/grief,
+    cited with an explicit caveat about Gino's separate retracted papers), Moore 1957 (Naskapi
+    scapulimancy as randomizer, with its game-conservation hypothesis's later critique noted),
+    Levitt 2021 (coin-toss major-life-decisions study), Evans-Pritchard 1937 (Azande poison
+    oracle as decision-procedure), Pennebaker & Beall 1986 (expressive writing).
+  - **One source found and deliberately excluded**: Brooks et al. 2016 "Don't Stop Believing:
+    Rituals Improve Performance by Decreasing Anxiety" — **retracted November 2024** after the
+    author team's own data audit found irreconcilable anomalies and they could not produce raw
+    data for two studies. Not cited anywhere in the dossier or the course; the ritual/anxiety claim
+    is grounded in the independent Hobson et al. 2018 review instead.
+  - **Added 18 new entries to `research/bibliography.bib`** (new section, keys `blackmore1983`
+    through `nortongino2014`) — every entry independently confirmed to exist (title/authors/venue/
+    year + stable link or DOI) before being added, per the file's own header rule. Not written into
+    the dossier as `[@key]` — that's the people/decks/cards convention; `why-tarot-works/` uses
+    plain inline links, which this dossier follows. The bibkeys exist so the sources land in the
+    one master bibliography and are picked up by the generated book's bibliography section.
+  - **Wove citations into `course/how-tarot-works.mdx`** — light touch, no restructuring: "The thing
+    the cards cannot do" now opens with the Blackmore + Ivtzan/French direct tests before the
+    Barnum-Forer bullet list, the Barnum bullet gains the Forer/Dickson-Kelly/Hyman citations and
+    names cold reading explicitly, and a new bullet covers the Bem replication collapse + the Randi
+    prize. "Some of the ways a reading can help" gains one supporting citation per mechanism:
+    re-narration → Pennebaker & Beall; productive randomness → Moore + Levitt; ritual → Hobson et
+    al. The "Sources & honesty" footer now points to the new dossier and its excluded-sources note.
+  - **Regenerated mirrors**: `scripts/course_to_grammar.py` for `how-tarot-works` and
+    `reading-the-cards`, `scripts/build_reading_course.py` (recompiles the anthology from the live
+    chapter files), and `scripts/build_meta_grammar.py`. `scripts/check_all.py` passes (55
+    grammars, dangling=0).
+
 ## Jul 7 2026 (2)
 
 - **Editorial rewrite of "How the Cards Can Work"** (`course/how-tarot-works.mdx`), builder's direction:
