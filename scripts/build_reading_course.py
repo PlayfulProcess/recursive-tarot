@@ -10,7 +10,7 @@ import json, re, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BOOK = ROOT / "books" / "how-to-read-the-cards" / "book.json"
+BOOK = ROOT / "course" / "books" / "how-to-read-the-cards" / "book.json"
 COURSE = ROOT / "course"
 OUT = COURSE / "reading-the-cards.mdx"
 
