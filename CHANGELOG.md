@@ -2,6 +2,52 @@
 
 Newest first. One bullet per shipped thing.
 
+## Jul 8 2026
+
+- **`course/how-tarot-works.mdx` restructured: new opening thesis + Tolkien functions
+  reordered Recovery → Escape → Fantasy → Consolation.** Builder's direction: the course
+  should open with an inspiring, objective summary of the whole argument before diving in,
+  and Tolkien's gifts should be walked through in the order they actually happen in a
+  reading — Recovery (see the structure again, from a different angle), then Escape (a
+  lens to sit with the present through, not a distraction from it), then Fantasy (the
+  imagination's move — new possibilities), with Consolation landing naturally after all
+  three, unchanged. Added a new "The whole argument, in miniature" section right after the
+  existing opening paragraph (two paragraphs: the thesis in miniature, then how the course
+  plays it out — Tolkien's functions as the map, then psychology, then the honest science,
+  ending at the beholder's light). Reordered/reframed the Recovery/Escape/Fantasy paragraphs
+  in "Tolkien: what fiction is for" with an honest note that Tolkien's own essay names them
+  in a different order (Fantasy, Recovery, Escape) — all existing verified quotes/citations
+  (Murray et al. on Recovery, the prisoner/deserter framing for Escape, the eucatastrophe for
+  Consolation) kept intact; only connective prose changed. Added one closing paragraph
+  introducing "my favorite three-card spread" (position 1 Recovery, 2 Escape, 3 Fantasy)
+  linking to the new spread grammar below. Mythopoeia, the science sections, and the closing
+  were **not** touched, per instruction.
+- **New spread grammar `tarot/tolkien-three/grammar.json`** — "Tolkien's Three — Recovery,
+  Escape, Fantasy," a 3-position tarot spread built on the course's reordered Tolkien
+  framing. Shape modeled on `casting-big-three` from the sibling `recursive-astrology` repo
+  (items carry `position` + a `casting` block), adapted for tarot: `grammar_type: "sequence"`
+  (both repos share the same `GRAMMAR_FORMAT.md` enum), `casting.draw: "random"` (unlike the
+  astrology castings this borrows the shape from, nothing here derives from birth data — any
+  tarot deck grammar, shuffled, drawn into the three positions), `allow_reversed: true`. Each
+  position item has `sections.Position` (a one-line description) and `sections.Prompt` (the
+  exact reflective question from the course: Recovery — "this structure, seen from a
+  different angle: what do you actually see, freed from the label?"; Escape — "a lens to sit
+  with the present through — not a distraction, a way to stay"; Fantasy — "the imagination's
+  move: what new possibility wants to exist?"). Credits *On Fairy-stories* in
+  `_grammar_commons.attribution`. Not registered in `tarot/_collection.json` (that registry
+  is scoped to the deck genealogy branches only — standalone grammars like
+  `how-to-contribute` follow the same pattern of living outside it) or `tarot/_eco_ids.json`
+  (populated only after a real Supabase publish, which didn't happen this session).
+- **Regenerated the course mirrors after the mdx edit**: ran
+  `python3 scripts/course_to_grammar.py how-tarot-works how-tarot-works-course "How the Cards
+  Can Work"` (11 lessons, up from 10 — the new opening section is now its own lesson item) and
+  `python3 scripts/build_reading_course.py` (rebuilds the collapsed
+  `course/reading-the-cards.mdx` from all 12 Book II chapters). Ran `python3
+  scripts/check_all.py` — all 56 grammars pass (JSON valid, no dangling `composite_of`,
+  people + meta grammars rebuild clean, meta reports `dangling=0`). That run also refreshed
+  the `_built_at` timestamp on the auto-generated `tarot/all-decks-many-lenses/grammar.json`
+  (routine rebuild artifact, no content change).
+
 ## Jul 7 2026 (4)
 
 - **Golden Dawn (Book T) deck becomes an astro voice via item keys** (proving the builder's
