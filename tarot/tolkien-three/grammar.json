@@ -1,0 +1,92 @@
+{
+  "name": "Tolkien's Three — Recovery, Escape, Fantasy",
+  "description": "A three-card spread built on three of the gifts J.R.R. Tolkien named for fairy-stories in *On Fairy-stories* — Recovery, Escape, and Fantasy, in that order, read as a reading and never a fortune: see a structure again with the label taken off, find a lens to sit with the present instead of fleeing it, then let the imagination reach for a possibility that wasn't there a minute ago. Credit: J.R.R. Tolkien, *On Fairy-stories* (https://coolcalvary.com/wp-content/uploads/2018/10/on-fairy-stories1.pdf) — read alongside the course chapter [How the Cards Can Work](https://github.com/PlayfulProcess/recursive-tarot/blob/main/course/how-tarot-works.mdx).",
+  "grammar_type": "sequence",
+  "creator_name": "PlayfulProcess",
+  "creator_link": "https://recursive.eco",
+  "is_published": false,
+  "tags": [
+    "tarot",
+    "spread",
+    "casting",
+    "tolkien",
+    "recovery",
+    "escape",
+    "fantasy",
+    "recursive-eco"
+  ],
+  "casting": {
+    "draw": "random",
+    "from": "any-tarot-deck-grammar",
+    "allow_reversed": true,
+    "_note": "Unlike the astrology castings this shape is modeled on, nothing here is derived from birth data or any personal record. Shuffle any tarot deck grammar (this library's or your own) and draw three cards face up into these three positions, in order. Read each card against whatever interpretation set you're using — the spread supplies the angle each position asks you to take, not a fixed card-to-position lookup."
+  },
+  "items": [
+    {
+      "id": "position-recovery",
+      "name": "Recovery",
+      "level": 1,
+      "category": "position",
+      "position": 1,
+      "sections": {
+        "Position": "The first card. Recovery is looking at a structure — a role, a habit, a story you've told about yourself or someone else — from a different angle, until the label falls away and you see what was actually there.",
+        "Prompt": "This structure, seen from a different angle: what do you actually see, freed from the label?"
+      },
+      "keywords": [
+        "recovery",
+        "attention",
+        "seeing-again"
+      ]
+    },
+    {
+      "id": "position-escape",
+      "name": "Escape",
+      "level": 1,
+      "category": "position",
+      "position": 2,
+      "sections": {
+        "Position": "The second card. Escape is not leaving the room — it's finding a lens to sit inside it with, so the present can be processed instead of fled or frozen in.",
+        "Prompt": "A lens to sit with the present through — not a distraction, a way to stay."
+      },
+      "keywords": [
+        "escape",
+        "presence",
+        "process-not-flee"
+      ]
+    },
+    {
+      "id": "position-fantasy",
+      "name": "Fantasy",
+      "level": 1,
+      "category": "position",
+      "position": 3,
+      "sections": {
+        "Position": "The third card. Only once you can see clearly and can sit still does Fantasy have anywhere honest to go — the imagination's own move, reaching past what already is toward what could still be.",
+        "Prompt": "The imagination's move: what new possibility wants to exist?"
+      },
+      "keywords": [
+        "fantasy",
+        "imagination",
+        "possibility"
+      ]
+    }
+  ],
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "role": "author",
+        "link": "https://recursive.eco"
+      },
+      {
+        "name": "J.R.R. Tolkien",
+        "role": "source concept",
+        "note": "Recovery, Escape, and Fantasy are named in On Fairy-stories (1947 essay). The spread's framing and prompts are original; the three names and their meanings are his.",
+        "link": "https://coolcalvary.com/wp-content/uploads/2018/10/on-fairy-stories1.pdf"
+      }
+    ]
+  }
+}
