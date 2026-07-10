@@ -549,6 +549,15 @@ def build():
             img = first_img(it["id"], set())
             if img: it["image_url"] = img
 
+    # Grammar-level cover_image_url (the Library/thumbnail card face) — reuse the
+    # root node's own inherited image so the tree's entry point and the grammar's
+    # cover always match, with zero hardcoded URL to drift out of sync with the
+    # decks. Same convention every other deck's grammar.json uses (see
+    # scripts/migrate_covers_to_r2.py) — set once at build time, not hand-edited.
+    root = by_id.get("root-arcana")
+    if root and root.get("image_url"):
+        grammar["cover_image_url"] = root["image_url"]
+
     out_dir = os.path.join(TAROT, OUT_SLUG)
     os.makedirs(out_dir, exist_ok=True)
     json.dump(grammar, open(os.path.join(out_dir, "grammar.json"), "w", encoding="utf-8"), indent=2, ensure_ascii=False)
