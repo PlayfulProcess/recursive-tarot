@@ -1495,6 +1495,42 @@
             font-style: italic;
         }
 
+        /* Resolved source-card content (meta-grammar reference resolution, reference-resolve.js)
+           — additive panel rendered after the card's own content, set off with the same plum
+           accent already used for "later" attributed commentary (.later-section). */
+        .ref-resolve-panel {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(196, 167, 255, .4);
+        }
+
+        .ref-resolve-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #6d4ab6;
+            margin-bottom: 0.75rem;
+        }
+
+        .ref-resolve-status {
+            font-size: 0.8rem;
+            color: var(--grammar-text-muted);
+        }
+
+        .ref-resolve-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: #6d4ab6;
+            text-decoration: underline;
+        }
+
+        .keyword-tag.ref-tag {
+            background: rgba(109, 74, 182, 0.15);
+            color: #6d4ab6;
+        }
+
         /* Large screen: side-by-side modal layout */
         @media (min-width: 768px) {
             .modal-content {
@@ -2075,6 +2111,7 @@
 </head>
 <body>
     <!-- Shared grammar loading component (local copy) -->
+    <script src="reference-resolve.js"></script>
     <script src="grammar-loader.js"></script>
     <script src="dimension-engine.js?v=1"></script>
     <script src="deck-picker.js?v=2"></script>
@@ -4415,26 +4452,29 @@
                 `;
             }
 
-            // ── Open in source deck (static deep-link) ──
-            // Meta cards carry metadata.source_deck (the deck's repo slug) +
-            // metadata.source_item_id (the card's id within that deck). When we're
-            // not already viewing that deck, offer a link that loads the individual
-            // deck's grammar opened on this exact card — pure static, no backend.
-            {
-                const md = item.metadata || {};
-                const srcDeck = md.source_deck;
-                const srcItem = md.source_item_id;
-                const curSrc = new URLSearchParams(window.location.search).get('src') || '';
-                if (srcDeck && srcItem && !curSrc.includes('/' + srcDeck + '/')) {
-                    const deckLabel = md.deck || srcDeck;
-                    const deckUrl = '?src=' + encodeURIComponent('../tarot/' + srcDeck + '/grammar.json')
-                        + '&item=' + encodeURIComponent(srcItem);
-                    bodyHtml += `
-                        <a href="${deckUrl}"
-                           style="display:inline-flex;align-items:center;gap:0.4rem;margin:0.25rem 0 0.85rem;padding:0.45rem 0.9rem;border:1px solid var(--grammar-accent);border-radius:9999px;color:var(--grammar-accent);text-decoration:none;font-size:0.85rem;font-weight:600;">
-                            Open in ${escapeHtml(deckLabel)} deck &rarr;
-                        </a>`;
-                }
+            // ── Meta-grammar source resolution (repo-local) ──
+            // Meta cards carry metadata.source_deck (the deck's repo slug) + metadata.source_item_id
+            // (the card's id within that deck's own grammar.json) — the repo-native counterpart of
+            // the private app's ref_document_id/ref_item_id pointer (see reference-resolve.js
+            // header comment). Detection is purely data-driven, never a grammar-type check. When
+            // we're not already viewing that deck, offer both a deep-link pill AND (below, after
+            // this card's own content) an additive "From <deck>" panel with the resolved source
+            // card's keywords/sections, fetched from the repo — no backend needed.
+            const srcMeta = item.metadata || {};
+            const srcDeck = srcMeta.source_deck;
+            const srcItem = srcMeta.source_item_id;
+            const curSrc = new URLSearchParams(window.location.search).get('src') || '';
+            const showSourceRef = !!(srcDeck && srcItem) && !curSrc.includes('/' + srcDeck + '/');
+            const sourceDeckLabel = srcMeta.deck || srcDeck;
+            const sourceDeckUrl = showSourceRef
+                ? '?src=' + encodeURIComponent('../tarot/' + srcDeck + '/grammar.json') + '&item=' + encodeURIComponent(srcItem)
+                : '';
+            if (showSourceRef) {
+                bodyHtml += `
+                    <a href="${sourceDeckUrl}"
+                       style="display:inline-flex;align-items:center;gap:0.4rem;margin:0.25rem 0 0.85rem;padding:0.45rem 0.9rem;border:1px solid var(--grammar-accent);border-radius:9999px;color:var(--grammar-accent);text-decoration:none;font-size:0.85rem;font-weight:600;">
+                        Open in ${escapeHtml(sourceDeckLabel)} deck &rarr;
+                    </a>`;
             }
 
             // Action buttons (minimal, at top)
@@ -4621,6 +4661,18 @@
                 `;
             });
 
+            // Resolved SOURCE card content — additive, rendered after this card's own content
+            // (never replacing it: a meta card's "Origin" blurb above and the source deck's full
+            // interpretation below both render). Starts as a loading placeholder; patched in place
+            // once resolveAndRenderSourceRef fetches the source deck's grammar.json, below.
+            if (showSourceRef) {
+                bodyHtml += `
+                    <div id="ref-resolve-panel" class="ref-resolve-panel">
+                        <p class="ref-resolve-status">Loading from ${escapeHtml(sourceDeckLabel)}&hellip;</p>
+                    </div>
+                `;
+            }
+
             // L2 Components Section - show component items for emergence/L2 items
             if (item.composite_of && item.composite_of.length > 0 && window._grammarItemMap) {
                 const componentItems = item.composite_of
@@ -4694,6 +4746,51 @@
             const mc = modalBackdrop.querySelector('.modal-content');
             if (mc) mc.scrollTop = 0;
             modalBackdrop.classList.add('open');
+
+            if (showSourceRef) {
+                resolveAndRenderSourceRef(item, srcDeck, srcItem, sourceDeckLabel, sourceDeckUrl);
+            }
+        }
+
+        // Fetches the source deck's grammar.json (via reference-resolve.js, cached per deck for
+        // the page's lifetime) and patches #ref-resolve-panel with its keywords + sections. Guards
+        // against the modal having moved on to a different card while the fetch was in flight.
+        async function resolveAndRenderSourceRef(forItem, srcDeck, srcItem, deckLabel, deckUrl) {
+            const result = await RefResolve.resolveSourceItem(srcDeck, srcItem, deckLabel);
+            if (selectedItem !== forItem) return;
+            const panel = document.getElementById('ref-resolve-panel');
+            if (!panel) return;
+
+            if (result.status === 'error') {
+                panel.innerHTML = `
+                    <p class="ref-resolve-status">From ${escapeHtml(result.deckLabel || deckLabel)} &mdash; couldn't load details,
+                        <a class="ref-resolve-link" href="${deckUrl}">view source deck &rarr;</a>
+                    </p>`;
+                return;
+            }
+
+            const src = result.item;
+            const keywords = Array.isArray(src.keywords) ? src.keywords : [];
+            const sections = src.sections || {};
+            const ORDER = ['Scene', 'Symbol', 'Figure', 'Tradition Note', 'History', 'Reading', 'Iconography', 'Research note'];
+            const keys = [...ORDER.filter(k => sections[k]), ...Object.keys(sections).filter(k => !ORDER.includes(k) && sections[k])];
+
+            let html = `<p class="ref-resolve-label">From ${escapeHtml(result.deckLabel)}`
+                + (src.name && src.name !== forItem.name ? ` &mdash; &ldquo;${escapeHtml(src.name)}&rdquo;` : '')
+                + `</p>`;
+            if (keywords.length > 0) {
+                html += `<div class="modal-keywords">${keywords.map(k => `<span class="keyword-tag ref-tag">${escapeHtml(k)}</span>`).join('')}</div>`;
+            }
+            keys.forEach(k => {
+                html += `
+                    <div class="content-section">
+                        <h3 class="section-title">${escapeHtml(k)}</h3>
+                        <div class="section-content">${mdToHtml(sections[k])}</div>
+                    </div>
+                `;
+            });
+            html += `<a class="ref-resolve-link" href="${deckUrl}">View full source deck &rarr;</a>`;
+            panel.innerHTML = html;
         }
 
         function closeModal() {

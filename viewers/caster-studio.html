@@ -120,6 +120,15 @@
   .cdm-sec-label { font-size:10.5px; text-transform:uppercase; letter-spacing:.11em; color:#8a8273; font-weight:700; margin-bottom:5px; }
   .cdm-sec-text { font-size:13.5px; color:#4a4439; line-height:1.6; }
   .cdm-loading { text-align:center; color:#8a8273; font-size:13px; padding:30px 0; }
+  .cdm-keywords { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
+  .cdm-tag { padding:3px 10px; background:#faf3e6; color:#9a7322; border-radius:9999px; font-size:11.5px; }
+  /* Resolved source-card content (meta-grammar reference resolution, reference-resolve.js) —
+     additive panel after the drawn card's own content, set off with a plum accent so it's
+     clear this content lives on the source deck. */
+  .cdm-ref-panel { margin-top:6px; padding-top:14px; border-top:1px dashed rgba(196,167,255,.4); }
+  .cdm-ref-label { font-size:10.5px; text-transform:uppercase; letter-spacing:.11em; color:#6d4ab6; font-weight:700; margin-bottom:8px; }
+  .cdm-ref-link { display:inline-block; margin-top:4px; font-size:12.5px; color:#6d4ab6; text-decoration:underline; }
+  .cdm-tag.cdm-ref-tag { background:rgba(109,74,182,.12); color:#6d4ab6; }
   footer.site { padding:18px; border-top:1px solid var(--line); color:#6b6457; font-size:12px; text-align:center; }
 
   /* Spread Studio — aligned control rows, wide question, always-visible action bar */
@@ -164,6 +173,7 @@
 </head>
 <body>
 <script src="../site-header.js?v=43"></script>
+<script src="reference-resolve.js"></script>
 <script src="../icons.js"></script>
 <site-header active="play"></site-header>
 
@@ -450,7 +460,10 @@ function cast(){
   positions.forEach((p, i) => { const c = cards[i], m = c.metadata||{};
     p.card = { name:c.name, deck:(m.deck||deckLabels[m.source_deck]||''), arcana:m.arcana||null, number:(m.number??null),
       reversed: Math.random() < revProb, image_url:c.image_url||null,
-      source_deck:m.source_deck||null, source_item_id:m.source_item_id||null }; });
+      source_deck:m.source_deck||null, source_item_id:m.source_item_id||null,
+      // The meta card's OWN content (its "Origin" provenance blurb etc.) — carried through so
+      // openCardDetail can render it additively alongside the resolved source deck content.
+      keywords:c.keywords||null, sections:c.sections||null }; });
   $('reshuffle').style.display = 'inline-block';
   renderBoard(); syncJson(); $('export').classList.add('on');
 }
@@ -553,11 +566,11 @@ async function loadVoices(){
 }
 
 // ── card detail modal ──
-const grammarCache = {};
-async function fetchGrammarItem(sourceDeck, sourceItemId){ if(!sourceDeck||!sourceItemId) return null;
-  if(!grammarCache[sourceDeck]){ try{ grammarCache[sourceDeck]=await (await fetch('../tarot/'+sourceDeck+'/grammar.json')).json(); }catch(e){ grammarCache[sourceDeck]=null; } }
-  const g=grammarCache[sourceDeck]; return g ? (g.items||[]).find(it=>it.id===sourceItemId)||null : null; }
+// Fetching + caching the source deck's grammar.json is shared with cards.html and
+// tree-viewer.html via reference-resolve.js (RefResolve.resolveSourceItem).
+let openCardToken = 0;
 async function openCardDetail(p){ const c=p.card; if(!c) return;
+  const myToken = ++openCardToken;
   const modal=$('cardDetailModal'), body=$('cdmBody');
   $('cdmPos').textContent=p.label||''; $('cdmName').textContent=c.name+(c.reversed?' (reversed)':''); $('cdmDeck').textContent=c.deck||'';
   const img=$('cdmImg'); if(c.image_url){ img.src=c.image_url; img.style.display='block'; img.style.transform=c.reversed?'rotate(180deg)':''; } else img.style.display='none';
@@ -569,12 +582,43 @@ async function openCardDetail(p){ const c=p.card; if(!c) return;
     ? `<a class="eco-chip" href="${FLOW}/create/dashboard/unified/new?forkId=${uuid}${c.source_item_id?'&card='+encodeURIComponent(c.source_item_id):''}" target="_blank" rel="noopener">${_pen} Edit in recursive.eco ↗</a>`
       + `<a class="eco-chip" href="${FLOW}/?deckId=${uuid}" target="_blank" rel="noopener">${_play} Play in recursive.eco ↗</a>`
     : '';
-  body.innerHTML='<div class="cdm-loading">Loading card details…</div>'; modal.style.display='flex'; document.body.style.overflow='hidden';
-  const item=await fetchGrammarItem(c.source_deck,c.source_item_id);
-  if(!item){ body.innerHTML='<div class="cdm-loading">No additional details available.</div>'; return; }
-  const ORDER=['Scene','Symbol','Figure','Tradition Note','Research note']; const sections=item.sections||{};
-  const keys=[...ORDER.filter(k=>sections[k]),...Object.keys(sections).filter(k=>!ORDER.includes(k))];
-  body.innerHTML = keys.length ? keys.map(k=>`<div class="cdm-section"><div class="cdm-sec-label">${esc(k)}</div><div class="cdm-sec-text">${esc(sections[k])}</div></div>`).join('') : '<div class="cdm-loading">No sections for this card.</div>';
+  modal.style.display='flex'; document.body.style.overflow='hidden';
+
+  // The drawn card's OWN content (a meta card's "Origin" provenance blurb, etc.) — rendered
+  // immediately, additive with (never replaced by) the resolved source-deck content below.
+  const ownSections = c.sections||{};
+  const ownKeys = Object.keys(ownSections).filter(k=>ownSections[k] && String(ownSections[k]).trim());
+  let ownHtml = '';
+  if (c.keywords && c.keywords.length) ownHtml += `<div class="cdm-keywords">${c.keywords.map(k=>`<span class="cdm-tag">${esc(k)}</span>`).join('')}</div>`;
+  ownKeys.forEach(k=>{ ownHtml += `<div class="cdm-section"><div class="cdm-sec-label">${esc(k)}</div><div class="cdm-sec-text">${esc(ownSections[k])}</div></div>`; });
+
+  body.innerHTML = ownHtml + `<div id="cdmRefPanel" class="cdm-ref-panel"><div class="cdm-loading">Loading from ${esc(c.deck||'the source deck')}…</div></div>`;
+
+  if (!c.source_deck || !c.source_item_id) {
+    const panel=$('cdmRefPanel'); if (panel) panel.remove();
+    if (!ownKeys.length && !(c.keywords&&c.keywords.length)) body.innerHTML = '<div class="cdm-loading">No additional details available.</div>';
+    return;
+  }
+
+  const result = await RefResolve.resolveSourceItem(c.source_deck, c.source_item_id, c.deck);
+  if (myToken !== openCardToken) return;          // board moved on to a different card meanwhile
+  const panel = $('cdmRefPanel'); if (!panel) return;
+
+  const deckUrl = 'cards.html?src=' + encodeURIComponent('../tarot/'+c.source_deck+'/grammar.json') + '&item=' + encodeURIComponent(c.source_item_id);
+  if (result.status === 'error') {
+    panel.innerHTML = `<div class="cdm-loading">From ${esc(result.deckLabel||c.deck||'the source deck')} — couldn't load details, <a class="cdm-ref-link" href="${deckUrl}">view source deck ↗</a></div>`;
+    return;
+  }
+
+  const item = result.item;
+  const ORDER=['Scene','Symbol','Figure','Tradition Note','History','Reading','Iconography','Research note'];
+  const sections = item.sections||{};
+  const keys=[...ORDER.filter(k=>sections[k]),...Object.keys(sections).filter(k=>!ORDER.includes(k)&&sections[k])];
+  let refHtml = `<div class="cdm-ref-label">From ${esc(result.deckLabel)}${item.name && item.name!==c.name ? ` — "${esc(item.name)}"` : ''}</div>`;
+  if (item.keywords && item.keywords.length) refHtml += `<div class="cdm-keywords">${item.keywords.map(k=>`<span class="cdm-tag cdm-ref-tag">${esc(k)}</span>`).join('')}</div>`;
+  refHtml += keys.map(k=>`<div class="cdm-section"><div class="cdm-sec-label">${esc(k)}</div><div class="cdm-sec-text">${esc(sections[k])}</div></div>`).join('');
+  refHtml += `<a class="cdm-ref-link" href="${deckUrl}">View full source deck ↗</a>`;
+  panel.innerHTML = refHtml;
 }
 function closeCardDetail(){ $('cardDetailModal').style.display='none'; document.body.style.overflow=''; }
 document.addEventListener('DOMContentLoaded',()=>{ $('cdmClose').addEventListener('click',closeCardDetail);
