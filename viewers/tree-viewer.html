@@ -539,6 +539,28 @@
             gap: 0.5rem;
             margin-top: 0.25rem;
         }
+        /* Resolved source-card content (meta-grammar reference resolution, reference-resolve.js)
+           — additive panel after this node's own content, set off with a plum accent. */
+        .modal-ref-panel {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(196, 167, 255, .4);
+        }
+        .modal-ref-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #6d4ab6;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .modal-ref-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: #6d4ab6;
+            text-decoration: underline;
+        }
         .modal-component-chip {
             font-size: 0.75rem;
             padding: 0.25rem 0.5rem;
@@ -590,6 +612,7 @@
     </style>
 </head>
 <body>
+    <script src="reference-resolve.js"></script>
     <script src="grammar-loader.js"></script>
 
     <site-header active="tree"></site-header>
@@ -1447,9 +1470,11 @@
         }
 
         // ── Detail Modal ──
+        let modalOpenToken = 0;
         function openModal(item) {
             const modal = document.getElementById('detail-modal');
             const body = document.getElementById('modal-body');
+            const myToken = ++modalOpenToken;
 
             let html = '';
 
@@ -1471,7 +1496,7 @@
                 html += `<p style="color:var(--tree-text-muted);font-size:0.8rem;margin-top:0.5rem;">${item.keywords.map(escapeHtml).join(' · ')}</p>`;
             }
 
-            // Sections
+            // Sections — this node's OWN content (e.g. a meta card's "Origin" provenance blurb).
             if (item.sections) {
                 Object.entries(item.sections).forEach(([key, value]) => {
                     if (value && value.trim()) {
@@ -1479,6 +1504,18 @@
                         html += `<div class="modal-section-content">${mdToHtml(value)}</div>`;
                     }
                 });
+            }
+
+            // Resolved SOURCE card content (repo-local, reference-resolve.js) — additive, never
+            // replacing the node's own content above. Meta cards carry metadata.source_deck +
+            // metadata.source_item_id (the repo-native counterpart of the private app's
+            // ref_document_id/ref_item_id pointer). Detection is purely data-driven.
+            const refMeta = item.metadata || {};
+            const refSrcDeck = refMeta.source_deck;
+            const refSrcItem = refMeta.source_item_id;
+            if (refSrcDeck && refSrcItem) {
+                const refDeckLabel = refMeta.deck || refSrcDeck;
+                html += `<div id="modal-ref-panel" class="modal-ref-panel"><div class="modal-section-content">Loading from ${escapeHtml(refDeckLabel)}&hellip;</div></div>`;
             }
 
             // Components (composite_of)
@@ -1525,6 +1562,44 @@
 
             body.innerHTML = html;
             modal.classList.remove('hidden');
+
+            if (refSrcDeck && refSrcItem) {
+                resolveAndRenderRefPanel(item, refSrcDeck, refSrcItem, refMeta.deck || refSrcDeck, myToken);
+            }
+        }
+
+        // Fetches the source deck's grammar.json (via reference-resolve.js, cached per deck for
+        // the page's lifetime) and patches #modal-ref-panel with its keywords + sections. Guards
+        // against the modal having moved on to a different node while the fetch was in flight.
+        async function resolveAndRenderRefPanel(forItem, srcDeck, srcItem, deckLabel, myToken) {
+            const result = await RefResolve.resolveSourceItem(srcDeck, srcItem, deckLabel);
+            if (myToken !== modalOpenToken) return;
+            const panel = document.getElementById('modal-ref-panel');
+            if (!panel) return;
+
+            const deckUrl = 'cards.html?src=' + encodeURIComponent('../tarot/' + srcDeck + '/grammar.json') + '&item=' + encodeURIComponent(srcItem);
+            if (result.status === 'error') {
+                panel.innerHTML = `<div class="modal-section-content">From ${escapeHtml(result.deckLabel || deckLabel)} &mdash; couldn't load details, <a class="modal-ref-link" href="${deckUrl}">view source deck &rarr;</a></div>`;
+                return;
+            }
+
+            const src = result.item;
+            const sections = src.sections || {};
+            const ORDER = ['Scene', 'Symbol', 'Figure', 'Tradition Note', 'History', 'Reading', 'Iconography', 'Research note'];
+            const keys = [...ORDER.filter(k => sections[k]), ...Object.keys(sections).filter(k => !ORDER.includes(k) && sections[k])];
+
+            let refHtml = `<div class="modal-ref-label">From ${escapeHtml(result.deckLabel)}`
+                + (src.name && src.name !== forItem.name ? ` &mdash; &ldquo;${escapeHtml(src.name)}&rdquo;` : '')
+                + `</div>`;
+            if (src.keywords && src.keywords.length > 0) {
+                refHtml += `<p style="color:var(--tree-text-muted);font-size:0.8rem;margin-bottom:0.5rem;">${src.keywords.map(escapeHtml).join(' · ')}</p>`;
+            }
+            keys.forEach(k => {
+                refHtml += `<div class="modal-section-title">${escapeHtml(k)}</div>`;
+                refHtml += `<div class="modal-section-content">${mdToHtml(sections[k])}</div>`;
+            });
+            refHtml += `<a class="modal-ref-link" href="${deckUrl}">View full source deck &rarr;</a>`;
+            panel.innerHTML = refHtml;
         }
 
         function closeModal() {
