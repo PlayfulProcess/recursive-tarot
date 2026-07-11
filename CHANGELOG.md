@@ -2,6 +2,38 @@
 
 Newest first. One bullet per shipped thing.
 
+## Jul 11 2026
+
+- **Meta-deck source-card resolution ported to the tarot site's own viewers** (new
+  `viewers/reference-resolve.js`, edits to `viewers/cards.html`,
+  `viewers/caster-studio.html`, `viewers/tree-viewer.html`). Mirrors the private app's
+  `ref_document_id`/`ref_item_id` resolution (built for the "All Decks, Many Lenses"
+  meta-grammar): a card that carries `metadata.source_deck` + `metadata.source_item_id`
+  now renders its OWN content (e.g. the "Origin" provenance blurb) PLUS an additive
+  "From &lt;source deck&gt;" panel with the source card's own keywords/sections, resolved
+  by fetching that deck's `tarot/<slug>/grammar.json` directly from the repo — no backend,
+  no Supabase call, fully static. Applied to the card-detail modal (`cards.html`, the
+  default viewer for the meta deck), the Spread Caster's drawn-card detail
+  (`caster-studio.html`), and the tree node detail (`tree-viewer.html`). Verified all 768
+  meta-deck card items resolve cleanly (0 dangling `source_deck`/`source_item_id`
+  references) and exercised the resolver's fetch/cache/error paths against the real served
+  repo data.
+
+- **Docs consolidation: `GRAMMAR_FORMAT.md` re-synced from the canonical
+  `recursive.eco-schemas` copy, and standardized as a mirror.** The canonical
+  `recursive.eco-schemas/GRAMMAR_FORMAT.md` gained three previously-undocumented,
+  already-shipped fields: `ref_item_id` (a reference item pointing at one specific
+  item inside another grammar, not the whole document — the "All Decks, Many
+  Lenses" tarot meta-grammar pattern), `performance.words` (per-word karaoke
+  timing for audio-narration grammars), and `_category_roles`/`_section_roles`
+  (custom astrology category/section-name mapping). This repo's copy is now
+  byte-synced to that extended version and carries a standardized header note:
+  *"Mirrored copy — canonical version lives in recursive.eco-schemas; if they
+  differ, that one wins."* Also updated the `GRAMMAR_FORMAT.md` row in the docs
+  map above and the `HOW-TO-WRITE-A-COURSE.md` guidance (identical across
+  tarot/astrology/starter) to tell future course-writers to link to
+  `GRAMMAR_FORMAT.md` for field shapes instead of restating them inline.
+
 ## Jul 8 2026
 
 - **`course/how-tarot-works.mdx` restructured: new opening thesis + Tolkien functions

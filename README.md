@@ -107,7 +107,7 @@ meta-grammar uses the platform's *reference-item* structure (see `GRAMMAR_FORMAT
 
 | Doc | What it covers |
 |---|---|
-| [`GRAMMAR_FORMAT.md`](GRAMMAR_FORMAT.md) | The canonical grammar-JSON shape (the contract). |
+| [`GRAMMAR_FORMAT.md`](GRAMMAR_FORMAT.md) | The grammar-JSON shape (the contract) — mirrored copy; canonical version is [`recursive.eco-schemas/GRAMMAR_FORMAT.md`](https://github.com/PlayfulProcess/recursive.eco-schemas/blob/main/GRAMMAR_FORMAT.md). |
 | [`EMERGENCES.md`](EMERGENCES.md) | The cataloguing model — emergences as patterns over referenced leaves; the source-of-truth contract; how it carries to recursive.eco. |
 | [`MULTI_LENS_PLAN.md`](MULTI_LENS_PLAN.md) | How an emergence picks its renderer (`render_as` / lens). |
 | [`FUTURE_PLAN.md`](FUTURE_PLAN.md) | Roadmap. |
