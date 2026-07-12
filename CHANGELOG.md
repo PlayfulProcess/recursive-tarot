@@ -4,6 +4,42 @@ Newest first. One bullet per shipped thing.
 
 ## Jul 12 2026
 
+- **Fixed: the AI assistant button was completely invisible on `viewers/cards.html` and
+  `viewers/tree-viewer.html`.** Builder reported "ai icons in tarot are not uniform" from a
+  screenshot; investigation found the real bug was worse than a style mismatch — both
+  pages' `#assistant-toggle` button carried an inline `style="display:none;"` with no JS
+  anywhere in either file that ever removed it, so the button never rendered at all (only
+  `pages/course-viewer.html`'s matching button was visible). Removed the dead `display:none`
+  from both. While in there: (1) their `.assistant-toggle` `box-shadow` was still the old
+  amber/gold `rgba(154,115,34,0.4)` left over from *before* the Jul 7 2026 purple→plum
+  recolor (commit `8bda0dc`) — `course-viewer.html` got the matching plum shadow
+  (`rgba(95,42,76,0.45)`) in that commit but the other two were missed; brought them in
+  line. (2) None of the three manual buttons/panels had the Jul 9 2026 z-index fix that
+  `assistant.js`'s shared shell got (`.rec-assistant-shell` forced to `2147483000` because
+  this site's sticky `site-header.js` is `z-index:50` and auto-reveals on scroll-up,
+  painting over anything lower) — the three manual `.assistant-toggle` /
+  `.assistant-frame-container` rules were still `z-index:40`, so the same header-covers-panel
+  bug could hit them. Bumped all three to `2147483000` to match. Net effect: all three
+  manual-iframe pages now render an identical, always-visible plum sparkle FAB (same glyph,
+  size, color, position, stacking) — internally consistent with each other. Did **not**
+  attempt to pixel-match the shared `assistant.js` pattern's actual FAB (the flow app's
+  `AssistantRail`: a transparent purple-ring circle with a context-specific glyph overlay,
+  confirmed by reading `apps/flow/src/components/shared/AssistantRail.tsx` +
+  `icons.tsx` in the private app repo) — that pattern lives inside a cross-origin iframe on
+  the shared-script pages (can't be restyled from here regardless), and recoloring these
+  three back toward the app's purple would undo the Jul 7 2026 builder-approved plum
+  recolor (chosen specifically to stop a gold+neon-violet clash). Flagging this as a
+  deliberate scope call, not an oversight — the shape family (four-point sparkle) already
+  matches; only the ring-vs-solid-fill treatment and the purple-vs-plum hue differ, and
+  changing those needs a real design proposal + green light, not a quiet fix.
+  Verified locally: served the repo over `python3 -m http.server`, screenshotted all three
+  fixed pages plus two `assistant.js` pages (`index.html`, `deck.html`) via headless
+  Chromium at desktop (1280×900) and mobile (390×844) widths. Confirmed the button now
+  appears (previously blank) on `cards.html`/`tree-viewer.html`, matches `course-viewer.html`
+  pixel-for-pixel, and sits clear of the header at both widths. Could **not** verify parity
+  against the actual shared-script FAB — this sandbox has no route to `recursive.eco`, so
+  `assistant-launcher.js` never loads and `index.html`/`deck.html` show no assistant icon at
+  all in the screenshots (expected sandbox limitation, not a site bug).
 - **New sitewide `assistant.js` — the ONE shared recursive.eco assistant sidebar, finally
   on this repo too.** This is the pattern source that `recursive-astrology/assistant.js`
   was modeled on (its header comment says so), but recursive-tarot itself never had the
