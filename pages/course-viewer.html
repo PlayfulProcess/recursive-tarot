@@ -1826,7 +1826,11 @@
     <!-- Library Assistant (iframe from flow app) -->
     <style>
         .assistant-toggle {
-            position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 40;
+            /* z-index 2147483000 (Jul 12 2026, matching assistant.js's shared-shell
+               fix): tarot's own sticky site-header.js is z-index:50 and
+               auto-reveals on scroll-up, which used to be able to paint over this
+               button/panel exactly like it did the shared assistant shell. */
+            position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 2147483000;
             /* The recursive.eco AI is a sparkle everywhere in the ecosystem (same star = same assistant).
                On tarot it wears a warm PLUM/aubergine rather than the app's neon
                violet: plum is the complement of tarot's gold, so gold+plum harmonizes
@@ -1838,7 +1842,7 @@
         }
         .assistant-toggle:hover { background: linear-gradient(135deg,#a05986,#4e2340); transform: scale(1.05); }
         .assistant-frame-container {
-            position: fixed; bottom: 5.5rem; right: 1.5rem; z-index: 40;
+            position: fixed; bottom: 5.5rem; right: 1.5rem; z-index: 2147483000;
             width: 384px; max-width: calc(100vw - 2rem); height: 500px; max-height: 70vh;
             border-radius: 0.75rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             border: 1px solid #4a4439; display: none;
