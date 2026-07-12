@@ -2,6 +2,33 @@
 
 Newest first. One bullet per shipped thing.
 
+## Jul 12 2026
+
+- **New sitewide `assistant.js` — the ONE shared recursive.eco assistant sidebar, finally
+  on this repo too.** This is the pattern source that `recursive-astrology/assistant.js`
+  was modeled on (its header comment says so), but recursive-tarot itself never had the
+  equivalent file — this repo instead had two older, page-specific patterns. `assistant.js`
+  loads the shared shell (`https://recursive.eco/js/assistant-launcher.js`), which iframes
+  the flow app's `/assistant` embed — the exact same star FAB and tabbed sidebar (Chat ·
+  Tarot · I Ching · Astro · Story) every recursive.eco page mounts, with auth carrying
+  because tarot.recursive.eco is a `.recursive.eco` subdomain. Included on `index.html`,
+  `deck.html`, `genealogy.html`, `pages/course.html`, and `pages/print-viewer.html`
+  (following astro's placement pattern: right after the `site-footer.js` include). Carries
+  over astro's Jul 9 2026 z-index fix (`.rec-assistant-shell` forced above this site's own
+  sticky `site-header.js`, which shares the identical z-index:50/auto-hide-reveal pattern).
+- **Retired the hand-rolled `viewers/course-assistant.js` chat widget** (own shadow-DOM UI,
+  own direct `fetch()` to `flow.recursive.eco/api/ai/chat`, in-memory-only conversation —
+  no persistence, no personality picker, no tabs, gold/cream theme instead of the platform
+  purple). `viewers/grammar-course.html` now includes the shared `assistant.js` instead
+  (dropped the `<script src="course-assistant.js?v=2">` include, added `../assistant.js`
+  next to its `site-footer.js` include). Confirmed zero remaining references to
+  `course-assistant.js` anywhere in the repo and deleted the file.
+- **Not touched (functional, lower priority):** `viewers/cards.html`, `viewers/tree-viewer.html`,
+  and `pages/course-viewer.html` already reach the real assistant via their own inline
+  `iframe.src = getFlowBaseUrl() + '/assistant?grammar_id=...&context=...'` construction —
+  these pass real per-page context (`study`/`tree`/`cards`) the generic script doesn't
+  replicate. Left as a follow-up candidate, not consolidated this round.
+
 ## Jul 11 2026
 
 - **Meta-deck source-card resolution ported to the tarot site's own viewers** (new
