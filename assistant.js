@@ -72,4 +72,28 @@
   var zfix = document.createElement('style');
   zfix.textContent = '.rec-assistant-shell{z-index:2147483000!important}';
   document.head.appendChild(zfix);
+
+  // Jul 15 2026: on course-viewer.html the mobile table-of-contents button
+  // (.mobile-toc-button, bottom-left, static markup) and this shared assistant
+  // FAB (bottom-right) are meant to sit at the same height — but the shared
+  // shell mounts with its own `bottom`, which doesn't necessarily match. Read
+  // the TOC button's actual computed offset (rather than hardcoding a value
+  // that could drift out of sync with its CSS) and apply it to the shell once
+  // the shell appears. No-op on pages with no TOC button.
+  var toc = document.querySelector('.mobile-toc-button');
+  if (toc) {
+    var tocBottom = getComputedStyle(toc).bottom;
+    if (tocBottom && tocBottom !== 'auto') {
+      var alignTries = 0;
+      var alignTimer = setInterval(function () {
+        var shell = document.querySelector('.rec-assistant-shell');
+        if (shell) {
+          shell.style.setProperty('bottom', tocBottom, 'important');
+          clearInterval(alignTimer);
+        } else if (++alignTries > 40) {
+          clearInterval(alignTimer); // ~10s: shell never mounted, give up quietly
+        }
+      }, 250);
+    }
+  }
 })();
