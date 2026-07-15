@@ -1,133 +1,178 @@
-# Content publish pass — July 2026
+# Content publish pass — July 2026 (v2)
 
 Goal: bring the site's reader-facing prose — starting with **"How the Cards Can Work"** — to a
-form the builder is proud to publish. This plan names the two failure modes we keep oscillating
-between, defines the target voice between them, and lays out the passes in order.
+form the builder is proud to publish. v2 corrects the diagnosis (the rendered version is
+**main's**, not dev's) and adds two content requirements from the builder: a fully **linked
+bibliography** and the missing **psychology literature**, woven in.
 
-## 1. Diagnosis — three versions of the flagship, two failure modes
+## 1. Diagnosis — which version is which
 
-Three versions of `course/how-tarot-works.mdx` are in play:
+Three versions of `course/how-tarot-works.mdx` exist; the branches have diverged into two
+different essays:
 
 | Version | What's right | What's wrong |
 |---|---|---|
-| **dev** (`f6dcc7d`, the live site) | Best content and argument order: the map/meaning opening, the honest skeptic section, Levitt's coin-flip, the Palantír close. Compact, well-sourced. | **AI-listicle format.** The argument is carried by bullet lists with bold lead-ins, a two-row table at the essay's hinge, a numbered "this course makes that case in three moves" announcement, Title-Case headers, bold on nearly every paragraph. Prose broken into bullets = "no sense of paragraphs." |
-| **main** (`4edec36`) | Punchy, readable. | One-sentence paragraphs used as a rhetorical drumbeat ("Not because… / Because…") — fragments standing in for paragraphs; a different flavor of the same AI cadence. |
-| **Earlier prose drafts** (`505102e` etc.) | Real paragraphs, real first-person voice. | Sentences run long; the same reframe is stated two or three times; tic phrases ("at its best," "the whole of," "exactly"); hedges stacked on hedges. Exaggerated, repetitive, dull. |
+| **main** (`4edec36`) — **the one the site renders** | The content and arc the builder likes: map/meaning opening, Tolkien, honest skeptic chapter, gates-vs-oracles, palantír, "light in the eyes of the beholder," Further Reading at the end. | **The ChatGPT failure mode: no sense of paragraphs.** Most "paragraphs" are single-sentence fragments used as a drumbeat ("Not because… / Because…", "We stop noticing. / Recovery interrupts that habit."). The psych literature is compressed into one citation-free paragraph. **Further Reading has zero links.** |
+| **dev** (`f6dcc7d`, unmerged rewrite) | Carries most of the missing literature *with URLs*: Forer, Hyman's cold reading, Whitson & Galinsky, Pennebaker, Hobson (ritual), Moore, Levitt, Blackmore, Ivtzan & French, the Bem replication failures. | Bullet-list/table format; ends mid-sentence (truncated link); typos ("necessariky," "a isolated"). Not what renders. |
+| **Earlier prose drafts** (`505102e` etc.) | Real paragraphs, real first-person voice. | The Claude failure mode: long sentences, repeated reframes, tic phrases, stacked hedges. |
 
-**Target: dev's content and structure, carried by the earlier drafts' paragraph form, at
-dev's length.** Neither more material nor a new argument — a re-setting of type.
+**Target: main's content and arc, in real paragraphs, with dev's evidence base woven in and
+a linked bibliography at the end.** The research already exists — `research/why-tarot-works/`
+(REPORT.md, adversarially verified 2026-06-22; does-tarot-predict.md; the shared
+`research/bibliography.bib`). No new research phase needed; this is a weaving job.
 
-Also found on dev, independent of style (fix regardless):
+## 2. The two content additions (builder's request, Jul 15)
 
-- The file **ends mid-sentence** — last line is a truncated link: `**[Here's how to contribute](course-`. Live bug.
-- Typos: "necessariky" (line 13), "connect **a** isolated, private problem" (line 108).
-- The "Try the practice" box links readers to a **raw grammar.json blob on GitHub**; it should
-  link to the Tolkien's Three deck in the site's own viewer.
-- "The Collapse of Precognition" is listed as one of the mechanisms that explain the uncanny
-  *how-did-it-know* feeling — but it isn't a mechanism of meaning-making; it's a separate
-  evidence claim. Move it out of the bullet list into the section's closing paragraph.
-- The Palantír material (including the surveillance-company aside) now appears in **both**
-  `how-tarot-works.mdx` and `intention-setting.mdx` on dev. Keep the full treatment in
-  How the Cards Can Work; reduce Intention Setting to one sentence plus a link.
+### 2a. The missing literature — woven in, depth at the end
 
-## 2. The style contract — additions to HOW-TO-WRITE-A-COURSE.md
+Two clusters, both already dossiered in `research/why-tarot-works/REPORT.md`:
 
-The existing voice guardrails (Jul 8–9) cover claims and tone. None cover **formatting** —
-which is exactly where the dev version fails. Add a "Formatting guardrails" block:
+**Cluster A — why readings feel personal and predictive** (goes in "The One Thing the
+Cards Cannot Honestly Do"). Each mechanism gets its own short, linked paragraph instead of
+today's single unlinked paragraph:
 
-- **Paragraphs carry arguments.** A bullet list is only for genuinely parallel, enumerable
-  items a reader might scan or return to (the five skeptic mechanisms qualify; Tolkien's four
-  gifts do not — they argue with each other, so they're paragraphs). Test: if the items need
-  connective tissue — *but, so, and yet* — it's a paragraph wearing a list's clothes.
-- **No tables for arguments.** A table is for reference data. If the two cells contain
-  competing claims, write the two sentences and let them compete in prose.
-- **Bold budget: about one per section**, reserved for a term of art on first use
-  (*Recovery*, *gate*, *sub-creator*) — never for emphasis. Italics for emphasis, sparingly.
-- **Sentence-case headings** in the builder's register ("The thing the cards cannot do"),
-  not Title-Case Noun Phrases ("The Catch That Decides the Stance"). No numbered headings.
-- **A paragraph is 3–6 sentences with one idea.** A single-sentence paragraph is a deliberate
-  beat you get once or twice per essay, not a default rhythm.
-- **Say each reframe once.** If the point has landed, the next sentence must do new work.
-  (This is the anti-Claude rule, complementing the anti-list rules above.)
+- Barnum/Forer effect — Forer 1949; Dickson & Kelly 1985 review.
+- Cold reading as the deliberate craft built on it — Hyman 1977 (Skeptical Inquirer).
+- Subjective validation — we tailor the suit ourselves.
+- Confirmation bias — hits stay bright, misses fade.
+- Apophenia + loss of control — Whitson & Galinsky 2008 (*Science*): pattern-seeing
+  intensifies exactly when we feel out of control — the state in which people reach for cards.
+- The direct tests — Blackmore 1983 (with the honest note that one of three experiments
+  survived reanalysis); Ivtzan & French 2004. Precognition replication failures — Ritchie,
+  Wiseman & French 2012; Galak et al. 2012 — as a closing paragraph, not a "mechanism."
 
-## 3. Worked sample — for sign-off before the full pass
+**Cluster B — therapeutic value per modern psychology** (goes in "Why the Cards Can Still
+Help," one short linked paragraph per mechanism):
 
-Dev's hinge section is currently an announcement ("Here is the hinge of the whole argument"),
-a bolded claim, and a two-row table. As prose, same content:
+- Projective surface — art-therapy framing ("semiotic mediators of meaning-making,"
+  *Divining the Self*), with the dossier's verified honesty note: projective in mechanism,
+  **not** a validated clinical instrument like Rorschach/TAT.
+- Externalization & re-narration — narrative therapy (White & Epston lineage).
+- Expressive writing — Pennebaker & Beall 1986: putting hard experience into words improves
+  measured health outcomes.
+- Structured randomness — Oblique Strategies; Moore 1957 (Naskapi divination as
+  randomizer); Levitt 2021 (coin-flip study: nudged-to-change participants happier at
+  follow-up).
+- Ritual & expectancy — Hobson et al. 2018: ritual reliably lowers anxiety and restores
+  felt agency, supernatural or not.
 
-> ## The catch that decides the stance
+**Form: hybrid (recommended).** Each mechanism earns one 2–4 sentence paragraph in the body
+with its inline link — enough that the essay itself carries the evidence. The *depth* lives
+at the end: the bibliography groups these sources by theme with one-line annotations, and a
+final pointer links to the full dossier for readers who want the whole trail. This beats
+pure deep-dive boxes (which fragment the read) and pure in-text expansion (which bloats it).
+
+### 2b. The linked bibliography
+
+Rework "Further Reading" so that:
+
+- **Every entry links out** — DOI, publisher page, or archival PDF. dev's version already
+  has working URLs for most; `research/bibliography.bib` (319 entries) covers the rest.
+- Entries are **grouped by theme**: Imagination & meaning-making (Tolkien, Korzybski, Kelly,
+  James) · Why readings feel accurate (Forer → Galak) · What readings can genuinely do
+  (Murray, Pennebaker, Hobson, Moore, Levitt, Eno) · Direct tests of tarot (Blackmore,
+  Ivtzan & French). Keep the existing one-line annotations; they're good.
+- It ends with a **"see the full bibliography"** link to `research/why-tarot-works/REPORT.md`
+  (which carries per-claim confidence marks) — the one place a reader-facing GitHub link is
+  right, because the target is prose, not raw JSON.
+
+## 3. The style contract — additions to HOW-TO-WRITE-A-COURSE.md
+
+The existing voice guardrails (Jul 8–9) cover claims and tone; add formatting guardrails:
+
+- **Paragraphs carry arguments.** A paragraph is 3–6 sentences with one idea. The
+  single-sentence paragraph is a deliberate beat used once or twice per essay — not the
+  default rhythm (main's current failure), and not replaced by bullet lists (dev's).
+- **Lists only for genuinely parallel, enumerable items** a reader might scan or return to.
+  If items need connective tissue — *but, so, and yet* — it's a paragraph.
+- **No tables for arguments**; tables are for reference data.
+- **Bold budget ≈ one per section**, for a term of art on first use (*Recovery*, *gate*);
+  italics for emphasis, sparingly.
+- **Sentence-case headings** in the builder's register; no numbered headings.
+- **Say each reframe once.** If the point landed, the next sentence does new work.
+- **Every empirical claim carries its inline link** at first mention; the bibliography
+  repeats it grouped by theme.
+
+## 4. Worked sample — for sign-off before the full pass
+
+Main's rendered text currently reads (lines 113–123):
+
+> These are not flaws in human nature.
+> They are consequences of being extraordinarily good at making meaning.
+> Understanding them does not diminish tarot.
+> It changes how we hold it.
+> The cards are poor crystal balls.
+> They are excellent mirrors.
+
+Same content as paragraphs, with the literature woven in (register proposal):
+
+> None of these are flaws in human nature; they are consequences of being extraordinarily
+> good at making meaning. And there is a twist worth knowing: when people feel they have
+> lost control, the pattern-seeing intensifies — in experiments they see images in static
+> and invent correlations they would otherwise dismiss ([Whitson & Galinsky, 2008](https://doi.org/10.1126/science.1159845)).
+> Uncertainty, high stakes, a longing for a sign — the conditions that make tarot most
+> appealing are exactly the conditions in which we over-read whatever we draw.
 >
-> Projection and subjective validation are the same mechanism wearing two names. The gift
-> that lets a card land so personally — your talent for pouring meaning into an open image —
-> is exactly what makes a reading feel prophetic when it is not.
->
-> That is why the question you bring decides what the deck becomes. Ask "what will happen to
-> me?" and you hand a powerful meaning-making engine a job it cannot do; it will oblige
-> anyway, and build you a fate out of your own fears and wishes. Ask "what am I not seeing
-> here?" and you give the same engine the job it does well. Same cards, same shuffle, same
-> chill down the spine. The chill is real — it is your body flagging that an image has
-> touched something live. Take it as a cue to look closer, not as proof that an oracle has
-> spoken.
+> Understanding this does not diminish tarot. It tells you what the deck is for: the cards
+> are poor crystal balls and excellent mirrors, and the rest of this essay is about what a
+> mirror, held honestly, can actually do.
 
-If this is the right register, the whole essay gets this treatment. If it isn't, adjust the
-contract in §2 first — cheaper to argue over two paragraphs than over the whole essay.
+If this register is right, the whole essay gets this treatment; if not, adjust §3 first —
+cheaper to argue over two paragraphs than the whole essay.
 
-## 4. The passes, in order
+## 5. The passes, in order
 
-**Phase 0 — settle the base.** dev is the canonical text (it's the live site and has the
-consolidations: voice courses folded into Intention Setting, Light of Tarot merged). All
-content edits happen against dev's versions. main lags and is reconciled later by the normal
-dev→main publish merge (per CLAUDE.md / RECURSIVE-ECO-INTEGRATION.md — never discard the
-App's write-backs on main).
+**Phase 0 — settle deployment truth.** The site renders main's text while CLAUDE.md calls
+dev the live static site — reconcile which branch deploys before editing (check Pages/deploy
+config). Whatever the answer, the rewrite must land where it renders; dev's diverged
+`how-tarot-works.mdx` (with its truncated last line) is superseded by this rewrite rather
+than fixed separately.
 
-**Phase 1 — flagship rewrite** (`how-tarot-works.mdx`), section by section on dev's text:
+**Phase 1 — flagship rewrite** of `course/how-tarot-works.mdx`, against main's text:
 
-| Section (dev) | Action |
+| Section (main) | Action |
 |---|---|
-| Opening (map/meaning) | Keep. Fix "necessariky." Delete the numbered "three moves" list — throat-clearing. |
-| The Magic of Fiction | Convert the four-gift bullet list to four short paragraphs; fold the Murray blockquote into the Recovery paragraph. Re-point "Try the practice" at the site's Tolkien's Three viewer. |
-| Mythopoeia | Already prose; light trim only. |
-| The thing the cards cannot do | Keep the mechanism list *as a list* (it's genuinely enumerable) but calm each entry to ≤3 sentences; move "Collapse of Precognition" out to a closing paragraph. |
-| Ways a reading can help | Drop numbers from the subheads; sentence-case; fix "a isolated"; cut feeling tags ("extraordinary evidence trail"). |
-| The catch (table section) | Replace with the §3 prose. |
-| Palantír | Keep — it's the essay's best prose already. Dedupe against Intention Setting (full version lives here). |
-| Where this leaves us / Keep digging | Keep; repair the truncated final link. |
+| Opening ("Does it actually work?") | Keep the arc; merge fragments into paragraphs (the Korzybski map passage is nearly there already). |
+| Why Fiction Changes Real Lives | Merge fragments; keep Murray/Holmes/Griffin with its link; add Brickman citation to the hedonic-adaptation paragraph. |
+| The One Thing the Cards Cannot Honestly Do | Expand per **Cluster A**: one linked paragraph per mechanism, Blackmore + Ivtzan & French as the direct tests, replication failures as the close. |
+| Why the Cards Can Still Help | Expand per **Cluster B**: one linked paragraph per mechanism; keep the art-analogy opening. |
+| Gates and Oracles / palantír | Merge fragments into paragraphs; content stays. |
+| The Light Is in the Eyes of the Beholder | Merge fragments; keep as the emotional close. |
+| Continue the Conversation | Keep; edit-on-GitHub link stays. |
+| Further Reading | Rebuild per **§2b**: links on every entry, thematic groups, dossier pointer. |
 
-Every citation and URL survives the rewrite — this pass moves type, not claims.
+Every existing citation and idea survives; nothing the builder liked is cut.
 
-**Phase 2 — audit + verify.** Run the existing post-draft audit checklist (absolutism grep,
-feeling tags, one-pass-per-critique). Read the whole essay start to finish once. Verify
-render with the course-viewer at 390×844 (TOC, no errors), regenerate mirrors
-(`scripts/course_to_grammar.py`, `scripts/build_reading_course.py` as applicable), then
-`python scripts/build_meta_grammar.py` and `python scripts/check_all.py` → "all checks
-passed", dangling=0.
+**Phase 2 — audit + verify.** Post-draft audit checklist (absolutism grep, feeling tags,
+one-pass-per-critique); every bibliography link resolves; read start-to-finish once; render
+check in course-viewer at 390×844; regenerate mirrors (`scripts/course_to_grammar.py` /
+`build_reading_course.py` as applicable), then `build_meta_grammar.py` + `check_all.py` →
+"all checks passed", dangling=0.
 
-**Phase 3 — sweep the rest of the reader-facing spine**, same contract, in priority order:
+**Phase 3 — sweep the rest of the reader-facing spine**, same contract:
 
-1. `intention-setting.mdx` — prose is already close; needs the bold diet and the Palantír
-   dedupe. Also: the redirect stub `marsha-linehan-reads-the-tarot.mdx` still titles a
-   living person ("Marsha Linehan Reads the Tarot") — retitle the stub to the school
-   ("DBT Reads the Tarot") per the house rule; the lens section inside Intention Setting
-   already correctly says "DBT."
-2. `reading-the-cards.mdx` — the biggest file (~1,000 lines on main, heavily reworked on
-   dev); audit-only pass first, rewrite only sections that fail the contract.
+1. `intention-setting.mdx` — bold diet; dedupe the palantír passage against the flagship
+   (full treatment lives in How the Cards Can Work). Retitle the
+   `marsha-linehan-reads-the-tarot.mdx` redirect stub to the school ("DBT") per the house
+   rule on living teachers.
+2. `reading-the-cards.mdx` — audit-first; rewrite only failing sections.
 3. `tarot-and-the-crack.mdx`, `history-of-tarot.mdx`, `divination-traditions.mdx`,
    `tarot-today.mdx` — one pass each.
-4. Redirect stubs and short pages — check titles/links only.
+4. Stubs and short pages — titles/links only.
 
-**Phase 4 — card-level text (later, optional).** Spot-audit Scene/Symbol sections in the
-deck grammars for the same failure modes (bold sprawl, feeling tags). Only worth a full pass
-if the spot-check fails; grammar edits then follow the normal rebuild pipeline.
+**Phase 4 — card-level text (later, optional).** Spot-audit Scene/Symbol sections for the
+same failure modes; full pass only if the spot-check fails.
 
-**Phase 5 — publish.** Merge dev→main per the integration doc. That is the "proudly
-publish" moment: the app reads from main.
+**Phase 5 — publish.** Reconcile dev/main per the integration doc (never discard the App's
+write-backs on main). That is the "proudly publish" moment.
 
-## 5. Definition of publishable (per essay)
+## 6. Definition of publishable (per essay)
 
-- [ ] No bullet list carrying an argument; no argument tables; bold within budget.
-- [ ] Every paragraph 3–6 sentences, one idea; single-sentence paragraphs ≤2 per essay.
+- [ ] Paragraphs of 3–6 sentences carry the argument; single-sentence beats ≤2 per essay;
+      no bullet lists or tables carrying arguments; bold within budget.
+- [ ] Every empirical claim linked inline; every bibliography entry linked; full-dossier
+      pointer present; all links resolve.
 - [ ] No reframe stated twice; no feeling tags; absolutism grep clean.
-- [ ] All citations intact and resolving; no reader-facing links to raw JSON/GitHub blobs.
 - [ ] No content duplicated against a sibling course (cross-link instead).
 - [ ] Renders clean in course-viewer at mobile width; `check_all.py` passes.
 - [ ] Read aloud once, start to finish, without wincing.
