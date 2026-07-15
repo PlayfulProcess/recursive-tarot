@@ -66,6 +66,29 @@ edit to any course in the family (tarot, astro, I Ching, and whatever comes afte
   belongs in its own honest section (Phase 1's research discipline, above) — stated once,
   squarely. Don't lead the whole piece with a negative claim; warmth and thesis come first.
 
+## Formatting guardrails (added Jul 15 2026 — the anti-listicle rules)
+
+The voice guardrails above govern claims and tone; these govern *form*. They come from the
+"How the Cards Can Work" publish pass, where the same content had swung between two AI
+failure modes: bullet-list/table sprawl ("no sense of paragraphs") and one-sentence
+fragments used as a rhetorical drumbeat.
+
+- **Paragraphs carry arguments.** A paragraph is 3–6 sentences with one idea. A
+  single-sentence paragraph is a deliberate beat used once or twice per essay — not the
+  default rhythm, and not replaced by bullets.
+- **Lists only for genuinely parallel, enumerable items** a reader might scan or return to
+  (install commands, a glossary, PR rules). If the items need connective tissue — *but,
+  so, and yet* — it's a paragraph wearing a list's clothes.
+- **No tables for arguments.** Tables are for reference data. If two cells contain
+  competing claims, write the two sentences and let them compete in prose.
+- **Bold budget ≈ one per section**, reserved for a term of art on first use (*Recovery*,
+  *gate*, *pull request*); italics for emphasis, sparingly.
+- **Sentence-case headings** in the builder's register ("The thing the cards cannot do"),
+  never Title-Case Noun Phrases; no numbered headings.
+- **Every empirical claim carries its inline link** at first mention; the bibliography at
+  the end repeats sources grouped by theme, every entry linked, closing with a pointer to
+  the research dossier.
+
 ## Post-draft audit checklist (added Jul 9 2026)
 
 Once a course reads as finished, run this pass before calling it done — these are the specific
