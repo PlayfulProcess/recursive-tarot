@@ -14,10 +14,12 @@
 (function () {
   // Never render inside an embed: some viewer pages iframe other viewer pages
   // (e.g. pages/course-viewer.html embeds viewers/genealogy-tree.html and
-  // viewers/timeline.html with ?embed=1), and a few viewers already carry their
-  // own purpose-built assistant iframe (viewers/cards.html, viewers/tree-viewer.html,
-  // pages/course-viewer.html) — this guard is what keeps the shared shell from
-  // double-mounting on top of those. Same rule site-header.js / site-footer.js apply.
+  // viewers/timeline.html with ?embed=1) — this guard keeps the shared shell
+  // from double-mounting inside those frames. Same rule site-header.js /
+  // site-footer.js apply. (Jul 15 2026: the last hand-rolled assistant widgets
+  // — viewers/cards.html, viewers/tree-viewer.html, pages/course-viewer.html —
+  // were retired in favour of this shared shell; every page now mounts the
+  // same star FAB from here and nothing else.)
   if (window.self !== window.top) return;
   if (new URLSearchParams(location.search).get('embed') === '1') return;
 
