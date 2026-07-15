@@ -56,11 +56,14 @@ Help," one short linked paragraph per mechanism):
 - Ritual & expectancy — Hobson et al. 2018: ritual reliably lowers anxiety and restores
   felt agency, supernatural or not.
 
-**Form: hybrid (recommended).** Each mechanism earns one 2–4 sentence paragraph in the body
-with its inline link — enough that the essay itself carries the evidence. The *depth* lives
-at the end: the bibliography groups these sources by theme with one-line annotations, and a
-final pointer links to the full dossier for readers who want the whole trail. This beats
-pure deep-dive boxes (which fragment the read) and pure in-text expansion (which bloats it).
+**Form (builder's decision, Jul 15): two separate deep-dive courses.** Each cluster becomes
+its own course — working titles *"Why a Reading Feels So Personal"* (Cluster A) and *"What a
+Reading Can Do — the Psychology"* (Cluster B) — built from the dossier with the standard
+four-phase course method, registered in `COURSE_GROUPS` under **More**. The flagship keeps
+one short, linked paragraph per mechanism in the body (the essay must still carry its own
+evidence) and points to each deep dive with a one-line "the full literature lives here" link
+at the end of the relevant section. No content duplicated: the flagship states each
+mechanism once; the deep dives own the studies, caveats, and confidence levels.
 
 ### 2b. The linked bibliography
 
@@ -75,6 +78,31 @@ Rework "Further Reading" so that:
 - It ends with a **"see the full bibliography"** link to `research/why-tarot-works/REPORT.md`
   (which carries per-claim confidence marks) — the one place a reader-facing GitHub link is
   right, because the target is prose, not raw JSON.
+
+### 2c. New course: "Working with Claude Desktop" (a Contribute deep dive)
+
+A deep dive expanding Rung 4 of *Ways to Contribute*, for readers who want the powerful
+path. Positioning stated up front: **claude.ai is the easiest version; Desktop/Claude Code
+is more advanced and more powerful** — this course is for when you're ready for that step.
+Contents (builder's spec, Jul 15):
+
+- **GitHub from zero** — what GitHub is, opening a free account, and why the project lives
+  there (versions protected, nothing ever lost, every change reviewable).
+- **Git, gently** — install, what a repository/branch/commit is, **local vs. remote (what
+  "push" means)**, what a **pull request** is and best practices for filing one small and
+  reviewable.
+- **Session habits** — always start a session by saying **which branch the work should be
+  saved on**; commit and push before ending; how to recover when you forget.
+- **What CLAUDE.md is** — the repo's standing instructions, and why editing it changes how
+  Claude behaves in every future session.
+- **Key settings** — permission modes (what "auto" accepts on your behalf and when to use
+  it), remote control, and the handful of defaults worth knowing before turning anything on.
+- **The private-folder pattern** — if you don't want your context public: keep a private
+  folder of personal references *next to* the cloned tarot repo and launch the Claude Code
+  session at the parent folder, so Claude sees both but only the repo is ever pushed.
+- Cross-reference: in the **claude.ai rung** of *Ways to Contribute*, add one light sentence
+  that a branch is created automatically there — versions are protected and no work gets
+  lost — with a pointer to this course for the full picture.
 
 ## 3. The style contract — additions to HOW-TO-WRITE-A-COURSE.md
 
@@ -149,6 +177,10 @@ check in course-viewer at 390×844; regenerate mirrors (`scripts/course_to_gramm
 `build_reading_course.py` as applicable), then `build_meta_grammar.py` + `check_all.py` →
 "all checks passed", dangling=0.
 
+**Phase 1b — the three new courses** (after the flagship, before the sweep): the two
+literature deep dives (§2a) and the Claude Desktop course (§2c), each via the four-phase
+method in HOW-TO-WRITE-A-COURSE.md, registered in `COURSE_GROUPS`.
+
 **Phase 3 — sweep the rest of the reader-facing spine**, same contract:
 
 1. `intention-setting.mdx` — bold diet; dedupe the palantír passage against the flagship
@@ -166,7 +198,17 @@ same failure modes; full pass only if the spot-check fails.
 **Phase 5 — publish.** Reconcile dev/main per the integration doc (never discard the App's
 write-backs on main). That is the "proudly publish" moment.
 
-## 6. Definition of publishable (per essay)
+## 6. Already fixed on the plan branch (Jul 15)
+
+- **One assistant, the real one.** The hand-rolled plum sparkle-toggle + bare `/assistant`
+  iframe on `pages/course-viewer.html`, `viewers/cards.html`, `viewers/tree-viewer.html`
+  opened as a dead-end shell next to the shared launcher. All three now load the shared
+  `assistant.js` (the recursive.eco item that opens the real thing), finishing the
+  retirement started in commit `7ed1224`.
+- **QR chip is icon-only.** The "Open on phone" label text is gone site-wide (the chip in
+  the course hero keeps its accessible label and still pops the scannable lightbox).
+
+## 7. Definition of publishable (per essay)
 
 - [ ] Paragraphs of 3–6 sentences carry the argument; single-sentence beats ≤2 per essay;
       no bullet lists or tables carrying arguments; bold within budget.
