@@ -81,6 +81,9 @@
     ['More', [
       ['reading-the-cards',               'Reading the Cards'],
       ['tarot-today',                     'Tarot Today'],
+      ['why-a-reading-feels-personal',    'Why a Reading Feels So Personal'],
+      ['what-a-reading-can-do',           'What a Reading Can Do'],
+      ['working-with-claude-desktop',     'Working with Claude Desktop'],
     ]],
   ];
 

@@ -198,7 +198,18 @@ same failure modes; full pass only if the spot-check fails.
 **Phase 5 — publish.** Reconcile dev/main per the integration doc (never discard the App's
 write-backs on main). That is the "proudly publish" moment.
 
-## 6. Already fixed on the plan branch (Jul 15)
+## 6. Already done on the plan branch (Jul 15)
+
+- **Phase 1 — flagship rewritten.** `how-tarot-works.mdx`: main's arc in real paragraphs,
+  every mechanism carrying its inline citation, linked thematic bibliography with dossier
+  pointers, deep-dive links. Mirrors regenerated (`how-tarot-works-course`,
+  `reading-the-cards` anthology + its grammar).
+- **Phase 1b — three new courses written and registered** in `COURSE_GROUPS` → More:
+  `why-a-reading-feels-personal`, `what-a-reading-can-do`, `working-with-claude-desktop`
+  (all with grammar mirrors; Claude Desktop facts verified against code.claude.com docs).
+- **Cross-references landed:** Ways to Contribute now notes the auto-created branch on the
+  claude.ai rung and points Rung 4 to the new desktop course; formatting guardrails added
+  to HOW-TO-WRITE-A-COURSE.md.
 
 - **One assistant, the real one.** The hand-rolled plum sparkle-toggle + bare `/assistant`
   iframe on `pages/course-viewer.html`, `viewers/cards.html`, `viewers/tree-viewer.html`
