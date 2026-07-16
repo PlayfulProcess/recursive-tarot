@@ -2,6 +2,50 @@
 
 Newest first. One bullet per shipped thing.
 
+## Jul 16 2026
+
+- **Spread Caster (`viewers/caster-studio.html`): split "Clear all", added spread send/receive
+  with recursive.eco, and embedded the shared assistant.** Three builder-requested changes plus
+  the assistant embed:
+  - **Split "Clear all" into two buttons.** New **Clear casting** drops the drawn cards but KEEPS
+    the spread (layout, positions, labels, meanings) so you can re-cast into the same shape;
+    **Clear all** keeps its old behaviour (wipes everything, layout included). Same ghost-button
+    styling.
+  - **Send / receive spreads ↔ recursive.eco (the pinned spread contract).** New paper-plane
+    **Send to recursive.eco** icon next to Export/Import encodes the current spread as the pinned
+    wire format — `base64url(JSON)` of `{ v:1, name, positions:[{label, meaning?, x?, y?}] }`,
+    x/y as 0–1 canvas fractions, capped at 15 positions — and opens
+    `https://flow.recursive.eco/?importSpread=<enc>` in a new tab, where the app saves it into the
+    user's My Spreads. The `?spread=<base64url contract>` receiver (how the app's "Fine-tune in the
+    builder" links arrive) now decodes and loads onto the canvas + into the editors ready for
+    fine-tuning; it's tolerant of missing `v`/`name`/`meaning`/`x`/`y` and preserves unknown extra
+    fields.
+  - **Existing file import/export kept — tolerant reader, strict writer.** The file Import still
+    reads the legacy `{_type,_version,positions:[{n,…}]}` shape (and full readings with cards);
+    the file Export now emits the contract shape (`{v:1,name,positions:[{label,meaning,x,y}]}`,
+    plus a tolerated `description` for presets), so everything written from here going forward is
+    contract-shaped.
+  - **Embedded the ONE recursive.eco assistant on the page.** Added the shared sparkle-star
+    launcher (`assistant.js` → the flow `/assistant` collapsible sidebar) to the Caster, and
+    upgraded `assistant.js` so a page can declare its embed context via
+    `<body data-assistant-context="…">` — the Caster passes `context=spread-builder` so the flow
+    side knows where it's hosted (other pages that include `assistant.js` are unchanged). The page
+    listens for `{ type:'eco-spread', spread:<contract obj> }` postMessages from the flow origin
+    (origin-checked) and loads the AI-built spread onto the board live — no navigation, no reload.
+    ONE `loadSpreadContract()` loader backs both the `?spread=` URL receiver and the postMessage
+    channel. Site-wide rollout of the assistant to every open-site page (via a shared include) is
+    the noted follow-up — deferred here to avoid double-mounting on the ~9 pages that already carry
+    `assistant.js`.
+  - **Verified** in headless Chromium (served over `python3 -m http.server`): 3-position spread →
+    Cast fills all 3 → Clear casting keeps the 3 positions with cards gone → Clear all empties the
+    board; reload with `?spread=<sample>` renders the positions/labels (incl. a position with no
+    meaning + an unknown extra field, both tolerated); Send to recursive.eco opens the exact
+    `flow.recursive.eco/?importSpread=` URL decoding back to the contract; an `eco-spread`
+    postMessage from `https://flow.recursive.eco` loads 4 positions live while the same message
+    from a wrong origin is ignored. The shared launcher's star FAB itself couldn't be exercised in
+    the sandbox (no route to `recursive.eco/js/assistant-launcher.js`) — that half is wired by
+    reading the existing pattern, not live-tested here.
+
 ## Jul 12 2026
 
 - **Fixed: the AI assistant button was completely invisible on `viewers/cards.html` and
