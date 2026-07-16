@@ -13,9 +13,11 @@ The two data files the page needs are already maintained:
   (record/practice), `category`, `branch` (roots/marseille/occult/…). Kept fresh by
   `scripts/refresh_collection.py` (idempotent; grammars are the source of truth).
 - **`tarot/_eco_ids.json`** — slug → recursive.eco UUID, plus `_public_now` (which decks
-  actually resolve for visitors). Link patterns are documented in the file itself:
-  open/read `https://flow.recursive.eco/?deckId=<uuid>`, and the app's channel page
-  `https://flow.recursive.eco/g/<uuid>` (the pattern already used by Ways to Contribute).
+  actually resolve for visitors). Per-grammar link: `https://flow.recursive.eco/?deckId=<uuid>`.
+- **The channel itself** (corrected Jul 16, builder-provided): each repo has one channel
+  page in the app at `https://flow.recursive.eco/library/channels/<channel>` — channels
+  `recursive-tarot`, `astrology`, `iching` (prefix `dev.` for the dev app). The page's
+  hero carries this link; the per-card links use `?deckId=` for individual grammars.
 
 Site conventions the page must reuse rather than duplicate: `theme.css` tokens only (no
 local colours), `<site-header>`/`site-footer.js`, the **purple spiral "Open in
@@ -84,7 +86,9 @@ convention — no shared package, a header comment naming the canonical copy.
 ## 5. Order of work
 
 1. **Tarot** (this repo): build `pages/channels.html`, register in the header Views menu,
-   verify at 390×844, `check_all.py`, ship. ~1 session.
+   verify at 390×844, `check_all.py`, ship. ~1 session. **✅ Done Jul 16 2026** — 36
+   grammars render in 8 lineage sections; 30 carry live `?deckId=` links, 6 show "not yet
+   published"; hero links the channel (`/library/channels/recursive-tarot`).
 2. **Astro**: add repo to session, verify the two unknowns, port page + (if needed)
    `refresh_collection.py`, seed `_eco_ids.json` via MCP. ~1 session.
 3. **I Ching**: same as astro. ~1 session.

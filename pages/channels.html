@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../theme.css?v=3">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Channels · Recursive Tarot</title>
+<meta name="description" content="Every grammar in the Recursive Tarot commons as a channel — historical decks, sources, courses and spreads — each linking to its live channel on recursive.eco.">
+<link rel="icon" type="image/svg+xml" href="../public/favicon.svg?v=2">
+<link rel="stylesheet" href="../style.css?v=5">
+<style>
+  /* channels.html — the lightweight static echo of recursive.eco's channels UI.
+     Data: ../tarot/_collection.json (cards) + ../tarot/_eco_ids.json (app links).
+     This file is the pattern source for the family: recursive-astrology and
+     recursive-iching copy it and change only CHANNELS_CONFIG (same convention
+     as assistant.js — no shared package, a header comment naming the canon). */
+  main.wrap{max-width:1120px;margin:0 auto;padding:0 18px 60px}
+  .hero{text-align:center;padding:28px 18px 8px;max-width:760px;margin:0 auto}
+  .hero h1{font-family:var(--serif-display);font-weight:600;font-size:clamp(32px,6vw,52px);line-height:1.05;margin:0}
+  .hero h1 .gold{color:var(--gold)}
+  .hero .tag{font-family:var(--serif-body);font-style:italic;font-size:clamp(15px,2.5vw,19px);line-height:1.5;color:var(--ink-soft);margin:14px auto 0;max-width:52ch}
+  .channel-cta{display:inline-flex;align-items:center;gap:8px;margin:18px auto 0;padding:10px 18px;border:1px solid var(--line-soft);
+    border-radius:999px;background:var(--surface);color:#7c3aed;font-weight:600;text-decoration:none;font-size:.95rem;
+    transition:border-color .15s, background .15s}
+  .channel-cta:hover{border-color:#9333ea;background:rgba(147,51,234,.06)}
+  .channel-cta img{width:20px;height:20px;border-radius:50%;background:#fff}
+
+  .branch{margin:40px 0 0}
+  .branch h2{font-family:var(--serif-display);font-weight:600;font-size:clamp(20px,3vw,26px);margin:0 0 4px;color:var(--ink)}
+  .branch .bnote{font-size:.9rem;color:var(--mut);margin:0 0 14px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+
+  .chan{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;
+    overflow:hidden;transition:transform .15s, box-shadow .15s, border-color .15s}
+  .chan:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(60,50,30,.10);border-color:var(--gold)}
+  .chan .cover{height:170px;background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden}
+  /* whole card visible, never cropped */
+  .chan .cover img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+  .chan .cover .noimg{font-family:var(--serif-display);font-size:2.2rem;color:var(--mut)}
+  .chan .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .chan h3{margin:0;font-size:1.02rem;line-height:1.3;font-family:var(--serif-display);font-weight:600}
+  .chan .sub{font-size:.8rem;color:var(--mut);line-height:1.4}
+  .chan .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+  .pill{font-size:.72rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line-soft);color:var(--ink-soft);background:var(--bg)}
+  .pill.record{border-color:#b8902f;color:#7c5b18}
+  .pill.practice{border-color:#8e4a74;color:#5f2a4c}
+  .chan .actions{margin-top:auto;display:flex;gap:10px;padding-top:10px;font-size:.85rem}
+  .chan .actions a{text-decoration:none;font-weight:600}
+  .chan .actions .read{color:var(--ink)}
+  .chan .actions .read:hover{color:var(--gold)}
+  .chan .actions .eco{color:#7c3aed;margin-left:auto;display:inline-flex;align-items:center;gap:5px}
+  .chan .actions .eco:hover{color:#9333ea}
+  .chan .actions .eco img{width:15px;height:15px;border-radius:50%;background:#fff}
+  .chan .actions .unpub{color:var(--mut);margin-left:auto;font-weight:400;font-size:.78rem;font-style:italic}
+  .loading,.error{text-align:center;color:var(--mut);padding:60px 0;font-style:italic}
+</style>
+</head>
+<body>
+<script src="../site-header.js?v=44"></script>
+<site-header active="channels"></site-header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>The <span class="gold">Channels</span></h1>
+    <p class="tag">Every grammar in this commons — the decks, the sources, the courses, the spreads — as a channel.
+      Read any of them here, or open the living channel on recursive.eco, where you can fork, edit, and cast.</p>
+    <a class="channel-cta" href="https://flow.recursive.eco/library/channels/recursive-tarot" target="_blank" rel="noopener">
+      <img src="../public/recursive-logo.svg" alt="" onerror="this.remove()">
+      Open this channel in recursive.eco ↗
+    </a>
+  </div>
+
+  <div id="channels-root"><p class="loading">Loading the library…</p></div>
+</main>
+
+<script>
+(async function () {
+  // ---- the only lines that change per repo (astro / iching ports) ----
+  const CHANNELS_CONFIG = {
+    collection: '../tarot/_collection.json',
+    ecoIds:     '../tarot/_eco_ids.json',
+    readerUrl:  slug => '../viewers/cards.html?src=' + encodeURIComponent('../tarot/' + slug + '/grammar.json'),
+    appChannel: 'https://flow.recursive.eco/library/channels/recursive-tarot',
+    appDeckUrl: uuid => 'https://flow.recursive.eco/?deckId=' + uuid,
+  };
+  // --------------------------------------------------------------------
+
+  const root = document.getElementById('channels-root');
+  let col, eco;
+  try {
+    [col, eco] = await Promise.all([
+      fetch(CHANNELS_CONFIG.collection).then(r => r.json()),
+      fetch(CHANNELS_CONFIG.ecoIds).then(r => r.json()).catch(() => ({ ids: {}, _public_now: [] })),
+    ]);
+  } catch (e) {
+    root.innerHTML = '<p class="error">Could not load the collection index.</p>';
+    return;
+  }
+
+  const ids = eco.ids || {};
+  const publicNow = new Set(eco._public_now || []);
+  const grammars = (col.grammars || []).slice();
+  const bySlug = Object.fromEntries(grammars.map(g => [g.slug, g]));
+
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  function card(g) {
+    const uuid = ids[g.slug];
+    const appLink = uuid && publicNow.has(g.slug)
+      ? '<a class="eco" href="' + esc(CHANNELS_CONFIG.appDeckUrl(uuid)) + '" target="_blank" rel="noopener">recursive.eco ↗</a>'
+      : '<span class="unpub">not yet published</span>';
+    const cover = g.cover_image_url
+      ? '<img loading="lazy" src="' + esc(g.cover_image_url) + '" alt="">'
+      : '<span class="noimg">☙</span>';
+    const prov = g.provenance ? '<span class="pill ' + esc(g.provenance) + '">' + (g.provenance === 'record' ? 'Record' : 'Practice') + '</span>' : '';
+    const year = g.year_label ? '<span class="pill">' + esc(g.year_label) + '</span>' : '';
+    const items = Number.isFinite(g.items) ? '<span class="pill">' + g.items + ' items</span>' : '';
+    const title = esc(g.common_name || g.name);
+    const sub = (g.common_name && g.name !== g.common_name) ? '<div class="sub">' + esc(g.name) + '</div>' : '';
+    return '<article class="chan">' +
+      '<a class="cover" href="' + esc(CHANNELS_CONFIG.readerUrl(g.slug)) + '">' + cover + '</a>' +
+      '<div class="body"><h3>' + title + '</h3>' + sub +
+      '<div class="meta">' + year + items + prov + '</div>' +
+      '<div class="actions"><a class="read" href="' + esc(CHANNELS_CONFIG.readerUrl(g.slug)) + '">Read here →</a>' + appLink + '</div>' +
+      '</div></article>';
+  }
+
+  const seen = new Set();
+  let html = '';
+  for (const b of (col.branches || [])) {
+    const slugs = (b.deck_slugs || []).filter(s => bySlug[s]);
+    if (!slugs.length) continue;
+    html += '<section class="branch"><h2>' + esc(b.name) + '</h2><div class="cards">' +
+      slugs.map(s => { seen.add(s); return card(bySlug[s]); }).join('') + '</div></section>';
+  }
+  const rest = grammars.filter(g => !seen.has(g.slug));
+  if (rest.length) {
+    html += '<section class="branch"><h2>More grammars</h2>' +
+      '<p class="bnote">Courses, sources, games and meta-views — everything not pinned to a lineage branch.</p>' +
+      '<div class="cards">' + rest.map(card).join('') + '</div></section>';
+  }
+  root.innerHTML = html || '<p class="error">No grammars found.</p>';
+})();
+</script>
+
+<script src="../site-footer.js"></script>
+<site-footer base="../"></site-footer>
+<script src="../assistant.js" defer></script>
+</body>
+</html>
