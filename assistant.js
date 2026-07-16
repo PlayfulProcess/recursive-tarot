@@ -14,10 +14,12 @@
 (function () {
   // Never render inside an embed: some viewer pages iframe other viewer pages
   // (e.g. pages/course-viewer.html embeds viewers/genealogy-tree.html and
-  // viewers/timeline.html with ?embed=1), and a few viewers already carry their
-  // own purpose-built assistant iframe (viewers/cards.html, viewers/tree-viewer.html,
-  // pages/course-viewer.html) — this guard is what keeps the shared shell from
-  // double-mounting on top of those. Same rule site-header.js / site-footer.js apply.
+  // viewers/timeline.html with ?embed=1) — this guard keeps the shared shell
+  // from double-mounting inside those frames. Same rule site-header.js /
+  // site-footer.js apply. (Jul 15 2026: the last hand-rolled assistant widgets
+  // — viewers/cards.html, viewers/tree-viewer.html, pages/course-viewer.html —
+  // were retired in favour of this shared shell; every page now mounts the
+  // same star FAB from here and nothing else.)
   if (window.self !== window.top) return;
   if (new URLSearchParams(location.search).get('embed') === '1') return;
 
@@ -70,4 +72,28 @@
   var zfix = document.createElement('style');
   zfix.textContent = '.rec-assistant-shell{z-index:2147483000!important}';
   document.head.appendChild(zfix);
+
+  // Jul 15 2026: on course-viewer.html the mobile table-of-contents button
+  // (.mobile-toc-button, bottom-left, static markup) and this shared assistant
+  // FAB (bottom-right) are meant to sit at the same height — but the shared
+  // shell mounts with its own `bottom`, which doesn't necessarily match. Read
+  // the TOC button's actual computed offset (rather than hardcoding a value
+  // that could drift out of sync with its CSS) and apply it to the shell once
+  // the shell appears. No-op on pages with no TOC button.
+  var toc = document.querySelector('.mobile-toc-button');
+  if (toc) {
+    var tocBottom = getComputedStyle(toc).bottom;
+    if (tocBottom && tocBottom !== 'auto') {
+      var alignTries = 0;
+      var alignTimer = setInterval(function () {
+        var shell = document.querySelector('.rec-assistant-shell');
+        if (shell) {
+          shell.style.setProperty('bottom', tocBottom, 'important');
+          clearInterval(alignTimer);
+        } else if (++alignTries > 40) {
+          clearInterval(alignTimer); // ~10s: shell never mounted, give up quietly
+        }
+      }, 250);
+    }
+  }
 })();

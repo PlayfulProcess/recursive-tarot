@@ -22,7 +22,12 @@ function sh(cmd) {
 }
 
 function isGrammarPath(p) {
-  return /(^|\/)grammar\.json$/.test(p) || /^(tarot|grammars)\//.test(p) || /\.json$/.test(p.split('/').pop());
+  // Only files literally named grammar.json ARE grammars. The old third
+  // alternative here (any *.json basename) made every JSON in the repo —
+  // book manifests, _eco_ids.json, print-products.json — fail the
+  // name/items schema the moment it was touched (PR #38's book.json title
+  // fix went red exactly this way).
+  return /(^|\/)grammar\.json$/.test(p);
 }
 
 let changed = [];
