@@ -300,7 +300,8 @@ const ALL = '__all__';
 const FLOW = 'https://flow.recursive.eco';
 
 let leaves = [], byDeck = {}, deckLabels = {};
-let spreadsById = {};        // id -> spread def
+let spreadsById = {};        // id -> BUILT-IN spread def (spreads.json)
+let mySpreadsById = {};      // 'my:<i>' -> the signed-in user's saved spread (contract) from recursive.eco
 let positions = [];          // active positions [{label,meaning,x,y, card?}]
 let curSpreadId = 'spp';   // Studio opens on the Structures · Process · Possibilities spread
 let ecoIds = null;           // slug -> recursive.eco deck UUID
@@ -396,6 +397,7 @@ const $ = id => document.getElementById(id);
     try { localStorage.setItem('rt-draghint-dismissed','1'); } catch(_){} });
 
   loadVoices();
+  loadMySpreads();   // pull the signed-in user's saved spreads into the dropdown (silent if signed out)
   // preload the deck-id map (for the per-card "View on recursive.eco" links)
   try { ecoIds = await (await fetch('../tarot/_eco_ids.json')).json(); } catch(_){ ecoIds = { ids:{} }; }
 })();
@@ -406,6 +408,19 @@ function updateDeckMeta(){ const v = $('deck').value;
 
 function setSpread(id){
   curSpreadId = id;
+  // A "My spread" (the signed-in user's saved spread pulled from recursive.eco) — apply it like a
+  // built-in (load its positions onto the board, ready to cast), but it stays UPDATABLE (it's not
+  // in spreadsById, so isBuiltinPreset() is false → the Update button shows).
+  const my = mySpreadsById[id];
+  if (my) {
+    $('clist').classList.remove('on');
+    positions = placePositions(my.positions);   // tolerant of missing x/y (deterministic layout)
+    $('spreadmeta').textContent = my.name || '';
+    $('reshuffle').style.display = 'none';
+    $('export').classList.remove('on');
+    renderBoard(); renderCustomList();
+    return;
+  }
   const custom = id === 'custom';
   $('clist').classList.toggle('on', custom);
   if (custom) {
@@ -463,13 +478,19 @@ function placePositions(raw){
   });
 }
 
-// Show/hide the save affordances. "Update spread" writes the dragged geometry back into a loaded
-// preset (a named spread); "Save as new" turns the current arrangement into a fresh named spread.
+// Is the current working spread a BUILT-IN preset (spreads.json)? Those are the only ones that
+// are NOT updatable — they're shared library layouts, so editing them makes a new spread instead.
+// Custom-built, ?spread=-loaded, imported, and "My spreads" working spreads ARE updatable.
+function isBuiltinPreset(){ return curSpreadId !== 'custom' && !!spreadsById[curSpreadId]; }
+
+// Show/hide the save affordances. "Update spread" rewrites the working spread's dragged geometry
+// (custom / loaded / My-spread — NOT a shared built-in preset); "Save as new" turns the current
+// arrangement into a fresh named spread. (Was backwards before Jul 16 2026: Update showed only for
+// built-in presets and hid for the user's own custom spreads — the exact opposite of what's useful.)
 function updateSaveAffordances(){
   const has = positions.length > 0;
-  const named = !!spreadsById[curSpreadId];   // a known preset is the current working spread
   const us = $('updateSpread'), sn = $('saveAsNew');
-  if (us) us.style.display = (has && named) ? 'inline-block' : 'none';
+  if (us) us.style.display = (has && !isBuiltinPreset()) ? 'inline-block' : 'none';
   if (sn) sn.style.display = has ? 'inline-block' : 'none';
 }
 
@@ -550,13 +571,21 @@ function cast(){
   renderBoard(); syncJson(); $('export').classList.add('on');
 }
 
+// The display name of the current working spread — built-in preset, a saved "My spread",
+// or a custom/loaded one (whose name lives in #spreadmeta).
+function resolveSpreadName(){
+  if (mySpreadsById[curSpreadId]) return mySpreadsById[curSpreadId].name || 'My spread';
+  const s = spreadsById[curSpreadId];
+  if (curSpreadId !== 'custom' && s) return s.name;
+  return ($('spreadmeta').textContent || '').trim() || 'Custom spread';
+}
+
 function buildCast(){
   const deckVal = $('deck').value;
-  const s = spreadsById[curSpreadId];
   return {
     _type:'recursive-tarot-cast', _version:2,
     _source:'https://tarot.recursive.eco/viewers/caster-studio.html',
-    spread: curSpreadId==='custom' ? ($('question').value ? 'Custom' : 'Custom') : (s ? s.name : 'Custom'),
+    spread: resolveSpreadName(),
     spread_id: curSpreadId,
     positions: positions.map((p,i) => ({ n:i+1, label:p.label, meaning:p.meaning, x:Math.round(p.x*1000)/1000, y:Math.round(p.y*1000)/1000 })),
     deck: deckVal===ALL ? 'All Decks (cross-deck)' : (deckLabels[deckVal]||deckVal),
@@ -591,8 +620,7 @@ function downloadJson(){ if(!lastCast) syncJson();
 // { v:1, name, positions:[{label, meaning?, x?, y?}] }. This is the STRICT writer: every
 // path that emits a spread (file export, ?importSpread= URL, Send to recursive.eco) uses it.
 function currentSpreadContract(){
-  const s = spreadsById[curSpreadId];
-  const name = (curSpreadId!=='custom' && s) ? s.name : (($('spreadmeta').textContent||'').trim() || 'Custom spread');
+  const name = resolveSpreadName();
   return {
     v:1,
     name: name || 'Custom spread',
@@ -633,14 +661,19 @@ function sendToEco(){
 // Persist a drag-rearranged layout. Export / Send / Save-reading already read the LIVE positions
 // (so they always carry the current x/y) — these two just make "keep my arrangement" explicit.
 function flash(btn, txt){ if(!btn) return; const t=btn.textContent; btn.textContent=txt; setTimeout(()=>{ btn.textContent=t; }, 1400); }
-// Update spread — write the current (dragged) geometry back into the loaded preset in memory,
-// so re-selecting it from the dropdown keeps the new layout.
+// Update spread — write the current (dragged) geometry back into the LOCAL working spread in
+// memory. Built-in presets are not updatable (their Update button is hidden). For a "My spread"
+// we also patch its in-memory copy so re-selecting it from the dropdown keeps the new layout, and
+// we remind the user to paper-plane (Send to recursive.eco) to sync the change back to My Spreads.
 function updateSpreadGeometry(){
-  const s = spreadsById[curSpreadId]; if(!s){ return; }
-  s.positions = positions.map(p => ({ label:p.label, meaning:p.meaning,
+  if (isBuiltinPreset()) return;   // shared library layout — Save as new instead (button is hidden anyway)
+  const geo = positions.map(p => ({ label:p.label, meaning:p.meaning,
     x:Math.round((p.x==null?0.5:p.x)*1000)/1000, y:Math.round((p.y==null?0.5:p.y)*1000)/1000 }));
+  const my = mySpreadsById[curSpreadId];
+  if (my) my.positions = geo;      // keep the drag if re-selected from the dropdown this session
+  // (custom spreads need no write-back: the live `positions` array IS the working spread.)
   syncJson();
-  flash($('updateSpread'), 'Updated ✓');
+  flash($('updateSpread'), my ? 'Updated — ✈ Send to sync' : 'Updated ✓');
 }
 // Save as new — turn the current arrangement into a fresh named custom spread. currentSpreadContract
 // reads this name from #spreadmeta for customs, so Export / Send / Contribute all pick it up.
@@ -709,6 +742,76 @@ async function onImport(e){ const f=e.target.files&&e.target.files[0]; if(!f) re
     }
   } catch(err){ alert('Could not import this file — expected a spread or reading exported here.\n\n'+err.message); }
   e.target.value=''; }
+
+// ── My spreads — pull the signed-in user's saved spreads from recursive.eco ──
+// The flow app exposes an authed, CORS-enabled read endpoint (credentials cookie identifies the
+// user). Primary: GET /api/spreads. Fallback on 404 (or if the primary isn't reachable): GET
+// /api/preferences, whose JSON carries the same spreads[] (as { preferences: { spreads:[…] } }).
+// Signed-out / 401 / error / timeout → we add NOTHING: the dropdown stays exactly as it is today.
+async function fetchMySpreadsJson(){
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), 6000);
+  const opts = { credentials:'include', signal:ctl.signal, headers:{ 'Accept':'application/json' } };
+  try {
+    // Primary — the dedicated spreads endpoint.
+    try {
+      const r = await fetch(FLOW + '/api/spreads', opts);
+      if (r.ok) return await r.json();
+      if (r.status !== 404) return null;   // 401 signed-out / 5xx → stay silent, don't leak via prefs
+    } catch(_){ /* not deployed yet / no CORS / offline → try the fallback */ }
+    // Fallback — preferences carries the same spreads[].
+    try {
+      const r2 = await fetch(FLOW + '/api/preferences', opts);
+      if (r2.ok) return await r2.json();
+    } catch(_){}
+    return null;
+  } finally { clearTimeout(timer); }
+}
+
+// Tolerant extraction — accept an array of contracts, { spreads:[…] }, the preferences envelope
+// ({ preferences:{ spreads:[…] } }), or a single contract. Returns an array or null.
+function extractSpreadsList(data){
+  if (!data || typeof data !== 'object') return null;
+  if (Array.isArray(data)) return data;
+  if (Array.isArray(data.spreads)) return data.spreads;
+  if (data.preferences && Array.isArray(data.preferences.spreads)) return data.preferences.spreads;
+  if (Array.isArray(data.mySpreads)) return data.mySpreads;
+  if (Array.isArray(data.positions) && data.positions.length) return [data];
+  return null;
+}
+
+// Coerce one saved-spread entry into a { v:1, name, positions:[…] } contract, or null if unusable.
+function normalizeMySpread(s){
+  if (!s || typeof s !== 'object') return null;
+  const positions = Array.isArray(s.positions) ? s.positions
+    : (Array.isArray(s) ? s : null);
+  if (!positions || !positions.length) return null;
+  const clean = positions.slice(0,15)
+    .filter(p => p && typeof p === 'object')
+    .map(p => ({ label:String(p.label||''), meaning:p.meaning!=null?String(p.meaning):'',
+      ...(p.x!=null?{x:+p.x}:{}), ...(p.y!=null?{y:+p.y}:{}) }));
+  if (!clean.length) return null;
+  return { v:1, name:String(s.name || s.title || 'My spread'), positions:clean };
+}
+
+async function loadMySpreads(){
+  let data;
+  try { data = await fetchMySpreadsJson(); } catch(_){ return; }
+  const raw = extractSpreadsList(data);
+  if (!Array.isArray(raw) || !raw.length) return;   // signed-out / empty → dropdown unchanged
+  const valid = [];
+  raw.forEach(s => { const c = normalizeMySpread(s); if (c) valid.push(c); });
+  if (!valid.length) return;
+  const ssel = $('spread'); if (!ssel) return;
+  const og = document.createElement('optgroup'); og.label = 'My spreads';
+  valid.forEach((c, i) => {
+    const key = 'my:' + i; mySpreadsById[key] = c;
+    const o = document.createElement('option'); o.value = key; o.textContent = c.name; og.appendChild(o);
+  });
+  // Insert the group just before the Custom option so it reads: presets · My spreads · Custom.
+  const customOpt = ssel.querySelector('option[value="custom"]');
+  if (customOpt) ssel.insertBefore(og, customOpt); else ssel.appendChild(og);
+}
 
 // ── voices carousel ──
 async function loadVoices(){
