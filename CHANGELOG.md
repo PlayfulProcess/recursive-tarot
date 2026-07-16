@@ -4,6 +4,33 @@ Newest first. One bullet per shipped thing.
 
 ## Jul 16 2026
 
+- **Spread Caster (`viewers/caster-studio.html`): deterministic layout (no more center pile),
+  save/update affordances, sidebar-targeting paper-plane, and an honest drag hint.** Follow-up to
+  the send/receive work below:
+  - **No more center pile.** Spreads that arrive without x/y (AI-built via the `eco-spread`
+    postMessage, a `?spread=` contract, or a bare/legacy import) are now laid out deterministically
+    instead of stacking at 0.5/0.5: 1–4 positions → equidistant horizontal row; 5 → cross (center,
+    above, below, left, right); 10 → classic Celtic Cross; any other count → an evenly spaced grid.
+    Same 0–1 canvas-fraction convention. Positions that already carry x/y keep them untouched. One
+    shared `placePositions()` helper backs `loadSpreadContract()` and both file-import branches.
+  - **Save / update after drag.** When a named preset is the working spread, a new **Update
+    spread** button writes the dragged geometry back into it (so re-selecting keeps the layout);
+    **Save as new** turns the current arrangement into a fresh named custom spread (prompts for a
+    name). Export, the paper-plane Send, Save-reading, and Contribute already read the live
+    positions, so they carry the updated x/y automatically. Both buttons are ghost-styled and show
+    contextually.
+  - **Paper-plane targets the sidebar.** The Send-to-recursive.eco URL now appends `&openSidebar=1`
+    to `?importSpread=` so the flow app auto-opens the chat sidebar on arrival (new tab / origin
+    logic unchanged). Extracted `ecoImportUrl()`.
+  - **Honest geometry hint.** A subtle, dismissible one-liner near the board tells users the
+    positions are auto-arranged and they can drag + Update/Save to keep a layout (remembered per
+    browser via localStorage).
+  - **Verified** in headless Chromium (served over `python3 -m http.server`): 3/5/10-position
+    contracts without x/y render as row / cross / Celtic Cross (screenshots confirmed — not
+    stacked); Update spread + Save as new click with no JS errors (Save as new → custom, name
+    persisted, Update spread hides); the paper-plane's opened URL contains both `importSpread=` and
+    `openSidebar=1`.
+
 - **Spread Caster (`viewers/caster-studio.html`): split "Clear all", added spread send/receive
   with recursive.eco, and embedded the shared assistant.** Three builder-requested changes plus
   the assistant embed:

@@ -142,6 +142,14 @@
     font-family:inherit; line-height:1.45; resize:vertical; }
   .actionbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:14px; }
   .actionbar .hint { color:var(--muted); font-size:12px; }
+  /* subtle, dismissible hint near the board — honest geometry messaging: an AI/auto-laid-out
+     spread has no meaningful geometry, so tell people they can arrange it themselves and keep it */
+  .draghint { display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted);
+    line-height:1.5; margin:16px 0 -4px; }
+  .draghint strong { color:#9a7322; font-weight:700; }
+  .draghint button { background:none; border:none; color:#8a8273; font-size:14px; line-height:1;
+    cursor:pointer; padding:2px 4px; margin-left:auto; flex:0 0 auto; }
+  .draghint button:hover { color:#9a7322; }
   /* Deck & Spread as two equal, aligned columns; their selects line up regardless of the icon buttons */
   .crow .field { flex:1 1 260px; min-width:0; }
   .crow .field select { width:100%; min-width:0; }
@@ -236,10 +244,16 @@
     <button id="addPos" class="ghost">+ Add position</button>
     <button id="clearCasting" class="ghost">Clear casting</button>
     <button id="clearAll" class="ghost">Clear all</button>
+    <button id="updateSpread" class="ghost" style="display:none" title="Save your drag-rearranged positions back into this loaded spread">Update spread</button>
+    <button id="saveAsNew" class="ghost" style="display:none" title="Keep this arrangement as a new named spread">Save as new</button>
     <button id="reshuffle" class="ghost" style="display:none">Re-cast</button>
     <span class="spreadmeta hint">Drag positions on the board; edit labels &amp; meanings below. <strong>Import</strong> a saved spread or reading, or <strong>Export spread</strong> to reuse this layout.</span>
   </div>
 
+  <div id="dragHint" class="draghint">
+    <span>Positions are laid out automatically — <strong>drag</strong> any card on the board to arrange it, then <strong>Update spread</strong> or <strong>Save as new</strong> to keep the layout.</span>
+    <button id="dragHintX" type="button" aria-label="Dismiss hint">✕</button>
+  </div>
   <div id="board" class="board"></div>
   <div id="hovprev"><img alt=""></div>
   <div class="clist" id="clist"></div>
@@ -374,6 +388,12 @@ const $ = id => document.getElementById(id);
   $('exportSpread').addEventListener('click', exportSpread);
   $('sendEco').addEventListener('click', sendToEco);
   $('importFile').addEventListener('change', onImport);
+  $('updateSpread').addEventListener('click', updateSpreadGeometry);
+  $('saveAsNew').addEventListener('click', saveAsNewSpread);
+  // subtle drag/save hint near the board — dismissible, remembered for the session
+  try { if (localStorage.getItem('rt-draghint-dismissed')) $('dragHint').style.display='none'; } catch(_){}
+  $('dragHintX').addEventListener('click', () => { $('dragHint').style.display='none';
+    try { localStorage.setItem('rt-draghint-dismissed','1'); } catch(_){} });
 
   loadVoices();
   // preload the deck-id map (for the per-card "View on recursive.eco" links)
@@ -404,9 +424,58 @@ function addPosition(label, meaning, x, y){
   renderBoard(); renderCustomList(); syncJson();
 }
 
+// ── deterministic layout — no more center pile ──
+// When a spread arrives without x/y (AI-built, bare import, older contract), lay the positions
+// out by count instead of stacking them at 0.5/0.5. x/y are the same 0–1 canvas fractions the
+// board already uses. Positions that DO carry x/y are kept untouched (see placePositions).
+function layoutTemplate(n){
+  if (n <= 0) return [];
+  if (n <= 4) { const t=[]; for(let i=0;i<n;i++) t.push({ x:(i+1)/(n+1), y:0.5 }); return t; }       // equidistant horizontal row
+  if (n === 5) return [ {x:0.5,y:0.5},{x:0.5,y:0.22},{x:0.5,y:0.78},{x:0.22,y:0.5},{x:0.78,y:0.5} ]; // cross: center, above, below, left, right
+  if (n === 10) return [                                                                              // classic Celtic Cross
+    {x:0.30,y:0.50}, // 1 present
+    {x:0.44,y:0.50}, // 2 crossing (offset so it's draggable, not stacked on 1)
+    {x:0.30,y:0.78}, // 3 foundation (below)
+    {x:0.16,y:0.50}, // 4 past (left)
+    {x:0.30,y:0.22}, // 5 crown (above)
+    {x:0.58,y:0.50}, // 6 future (right)
+    {x:0.82,y:0.80}, // 7 staff, bottom
+    {x:0.82,y:0.60}, // 8
+    {x:0.82,y:0.40}, // 9
+    {x:0.82,y:0.20}, // 10 staff, top
+  ];
+  // any other count → an evenly spaced grid with margins
+  const cols = Math.ceil(Math.sqrt(n)), rows = Math.ceil(n/cols);
+  const t = [];
+  for (let i=0;i<n;i++){ const c=i%cols, r=Math.floor(i/cols); t.push({ x:(c+1)/(cols+1), y:(r+1)/(rows+1) }); }
+  return t;
+}
+// Map raw contract/import positions onto working positions. Any position missing x/y gets a
+// slot from layoutTemplate; positions that already carry x/y keep them exactly.
+function placePositions(raw){
+  const arr = (raw||[]).slice(0,15);
+  const needsLayout = arr.some(p => !p || p.x==null || p.y==null);
+  const tpl = needsLayout ? layoutTemplate(arr.length) : null;
+  return arr.map((p,i) => {
+    const hasXY = p && p.x!=null && p.y!=null;
+    const xy = hasXY ? { x:+p.x, y:+p.y } : ((tpl && tpl[i]) || { x:0.5, y:0.5 });
+    return { id:'p'+(++seq), label:(p&&p.label)||'', meaning:(p&&p.meaning)||'', x:xy.x, y:xy.y };
+  });
+}
+
+// Show/hide the save affordances. "Update spread" writes the dragged geometry back into a loaded
+// preset (a named spread); "Save as new" turns the current arrangement into a fresh named spread.
+function updateSaveAffordances(){
+  const has = positions.length > 0;
+  const named = !!spreadsById[curSpreadId];   // a known preset is the current working spread
+  const us = $('updateSpread'), sn = $('saveAsNew');
+  if (us) us.style.display = (has && named) ? 'inline-block' : 'none';
+  if (sn) sn.style.display = has ? 'inline-block' : 'none';
+}
+
 function renderBoard(){
   const board = $('board'); board.innerHTML = '';
-  if (!positions.length) { board.innerHTML = '<div class="empty">Add a position to begin.</div>'; return; }
+  if (!positions.length) { board.innerHTML = '<div class="empty">Add a position to begin.</div>'; updateSaveAffordances(); return; }
   positions.forEach((p, i) => {
     const slot = document.createElement('div'); slot.className = 'slot'; slot.dataset.i = i;
     slot.style.left = (p.x*100)+'%'; slot.style.top = (p.y*100)+'%';
@@ -421,6 +490,7 @@ function renderBoard(){
     attachSlot(slot, p, i);
     board.appendChild(slot);
   });
+  updateSaveAffordances();
 }
 
 function attachSlot(slot, p, i){
@@ -550,11 +620,39 @@ function slugify(s){ return (s||'spread').toLowerCase().replace(/[^a-z0-9]+/g,'-
 
 // Send to recursive.eco — hand the CURRENT spread (contract, base64url) to the flow app,
 // which saves it into the user's My Spreads. Same FLOW origin the eco-links helper uses.
+// &openSidebar=1 tells the flow app to auto-open the chat sidebar on arrival.
+function ecoImportUrl(){
+  return FLOW + '/?importSpread=' + b64urlEncode(JSON.stringify(currentSpreadContract())) + '&openSidebar=1';
+}
 function sendToEco(){
   if(!positions.length){ alert('Add at least one position first.'); return; }
   if(positions.length>15){ alert('A spread can carry at most 15 positions to send to recursive.eco.'); return; }
-  const url = FLOW + '/?importSpread=' + b64urlEncode(JSON.stringify(currentSpreadContract()));
-  window.open(url, '_blank', 'noopener');
+  window.open(ecoImportUrl(), '_blank', 'noopener');
+}
+
+// Persist a drag-rearranged layout. Export / Send / Save-reading already read the LIVE positions
+// (so they always carry the current x/y) — these two just make "keep my arrangement" explicit.
+function flash(btn, txt){ if(!btn) return; const t=btn.textContent; btn.textContent=txt; setTimeout(()=>{ btn.textContent=t; }, 1400); }
+// Update spread — write the current (dragged) geometry back into the loaded preset in memory,
+// so re-selecting it from the dropdown keeps the new layout.
+function updateSpreadGeometry(){
+  const s = spreadsById[curSpreadId]; if(!s){ return; }
+  s.positions = positions.map(p => ({ label:p.label, meaning:p.meaning,
+    x:Math.round((p.x==null?0.5:p.x)*1000)/1000, y:Math.round((p.y==null?0.5:p.y)*1000)/1000 }));
+  syncJson();
+  flash($('updateSpread'), 'Updated ✓');
+}
+// Save as new — turn the current arrangement into a fresh named custom spread. currentSpreadContract
+// reads this name from #spreadmeta for customs, so Export / Send / Contribute all pick it up.
+function saveAsNewSpread(){
+  if(!positions.length){ alert('Add at least one position first.'); return; }
+  const suggested = ($('spreadmeta').textContent||'').replace(/^Imported:\s*/,'').trim() || 'My spread';
+  const name = (prompt('Name this spread:', suggested)||'').trim();
+  if(!name) return;
+  curSpreadId='custom'; $('spread').value='custom'; $('clist').classList.add('on');
+  $('spreadmeta').textContent = name;
+  renderBoard(); renderCustomList(); syncJson();
+  flash($('saveAsNew'), 'Saved ✓');
 }
 
 // ── receive a spread — ONE loader, two entry points (?spread= URL + eco-spread postMessage) ──
@@ -562,10 +660,8 @@ function sendToEco(){
 // Tolerant of a missing v / name / meaning / x / y and of unknown extra fields; caps at 15.
 function loadSpreadContract(obj){
   if (!obj || typeof obj!=='object' || !Array.isArray(obj.positions) || !obj.positions.length) return false;
-  positions = obj.positions.slice(0,15).map(p => ({
-    id:'p'+(++seq), label:(p&&p.label)||'', meaning:(p&&p.meaning)||'',
-    x:(p&&p.x!=null)?+p.x:0.5, y:(p&&p.y!=null)?+p.y:0.5,
-  }));
+  // Missing x/y → deterministic layout (no center pile); positions with x/y keep theirs.
+  positions = placePositions(obj.positions);
   curSpreadId='custom';
   const sel=$('spread'); if(sel) sel.value='custom';
   $('clist').classList.add('on');
@@ -591,17 +687,19 @@ async function onImport(e){ const f=e.target.files&&e.target.files[0]; if(!f) re
     if(!obj || typeof obj!=='object') throw new Error('not a JSON object');
     const hasCards = Array.isArray(obj.cards) && obj.cards.length;
     if (hasCards) {
-      // full reading — pair each card with its position (fall back to card.position label)
+      // full reading — pair each card with its position (fall back to card.position label).
+      // Missing x/y → deterministic layout (no center pile); positions with x/y keep theirs.
       const pos = Array.isArray(obj.positions) && obj.positions.length===obj.cards.length
         ? obj.positions
-        : obj.cards.map((c,i)=>({ label:c.position||('Position '+(i+1)), meaning:c.prompt||'', x:0.5, y:0.5 }));
-      positions = pos.map((p,i)=>({ id:'p'+(++seq), label:p.label, meaning:p.meaning, x:p.x??0.5, y:p.y??0.5, card:obj.cards[i] }));
+        : obj.cards.map((c,i)=>({ label:c.position||('Position '+(i+1)), meaning:c.prompt||'' }));
+      positions = placePositions(pos).map((p,i)=>({ ...p, card:obj.cards[i] }));
       if(obj.question!=null) $('question').value = obj.question || '';
       $('spread').value='custom'; curSpreadId='custom'; $('clist').classList.add('on'); $('spreadmeta').textContent='';
       renderBoard(); renderCustomList(); $('reshuffle').style.display='inline-block'; syncJson(); $('export').classList.add('on');
     } else if (Array.isArray(obj.positions) && obj.positions.length) {
-      // bare spread — layout only, no cards; ready to cast
-      positions = obj.positions.map((p)=>({ id:'p'+(++seq), label:p.label||'', meaning:p.meaning||'', x:p.x??0.5, y:p.y??0.5 }));
+      // bare spread — layout only, no cards; ready to cast.
+      // Missing x/y → deterministic layout (no center pile); positions with x/y keep theirs.
+      positions = placePositions(obj.positions);
       $('spread').value='custom'; curSpreadId='custom'; $('clist').classList.add('on');
       $('spreadmeta').textContent = obj.description || (obj.name ? ('Imported: '+obj.name) : '');
       $('reshuffle').style.display='none'; $('export').classList.remove('on');
