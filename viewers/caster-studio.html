@@ -171,7 +171,7 @@
   @media (hover:none){ #hovprev{ display:none!important; } }
 </style>
 </head>
-<body>
+<body data-assistant-context="spread-builder">
 <script src="../site-header.js?v=43"></script>
 <script src="reference-resolve.js"></script>
 <script src="../icons.js"></script>
@@ -208,6 +208,9 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
               <input type="file" id="importFile" accept=".json,application/json" style="display:none">
             </label>
+            <button type="button" class="iconbtn" id="sendEco" title="Send to recursive.eco — save this spread layout into your My Spreads" aria-label="Send spread to recursive.eco">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
           </span>
         </div>
         <select id="spread"><option>Loading…</option></select>
@@ -231,6 +234,7 @@
   <div class="actionbar">
     <button id="cast" disabled>Cast</button>
     <button id="addPos" class="ghost">+ Add position</button>
+    <button id="clearCasting" class="ghost">Clear casting</button>
     <button id="clearAll" class="ghost">Clear all</button>
     <button id="reshuffle" class="ghost" style="display:none">Re-cast</button>
     <span class="spreadmeta hint">Drag positions on the board; edit labels &amp; meanings below. <strong>Import</strong> a saved spread or reading, or <strong>Export spread</strong> to reuse this layout.</span>
@@ -289,6 +293,12 @@ let ecoIds = null;           // slug -> recursive.eco deck UUID
 let lastCast = null;
 let seq = 0;
 
+// ── the spread contract (pinned; the flow app builds against exactly this) ──
+// base64url(UTF-8 JSON) of { v:1, name, positions:[{label, meaning?, x?, y?}] }.
+// x/y are 0–1 canvas fractions; unknown extra fields are tolerated on read.
+function b64urlEncode(str){ return btoa(unescape(encodeURIComponent(str))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,''); }
+function b64urlDecode(str){ return decodeURIComponent(escape(atob(String(str).replace(/-/g,'+').replace(/_/g,'/')))); }
+
 const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 // Cross-deck (All Decks) cast names arrive as "Name — Deck" (or "rank — Name — Deck"). The deck is
 // shown separately in .cdeck, so strip a trailing " — <deck>" so the label reads cleanly under the card.
@@ -324,17 +334,15 @@ const $ = id => document.getElementById(id);
   (sdoc.spreads || []).forEach(s => { spreadsById[s.id] = s;
     const o = document.createElement('option'); o.value = s.id; o.textContent = s.name; ssel.appendChild(o); });
   const oc = document.createElement('option'); oc.value = 'custom'; oc.textContent = '✎ Custom (build your own)'; ssel.appendChild(oc);
-  // ?spread= : a known preset id, OR a base64url spread JSON handed over from the Spread Builder.
+  // ?spread= : a known preset id, OR a base64url spread-contract JSON handed over from the
+  // flow app's "Fine-tune in the builder" links. Same loader the eco-spread postMessage uses.
   const spParam = new URLSearchParams(location.search).get('spread');
   let loadedFromParam = false;
   if (spParam && spreadsById[spParam]) { curSpreadId = spParam; }
   else if (spParam) {
     try {
-      const obj = JSON.parse(decodeURIComponent(escape(atob(spParam.replace(/-/g,'+').replace(/_/g,'/')))));
-      if (obj && Array.isArray(obj.positions) && obj.positions.length) {
-        positions = obj.positions.map(p => ({ id:'p'+(++seq), label:p.label, meaning:p.meaning, x:p.x==null?0.5:p.x, y:p.y==null?0.5:p.y }));
-        curSpreadId = 'custom'; $('spreadmeta').textContent = obj.name || 'Custom spread'; loadedFromParam = true;
-      }
+      const obj = JSON.parse(b64urlDecode(spParam));
+      if (loadSpreadContract(obj)) loadedFromParam = true;
     } catch(_){ /* malformed param → fall through to default */ }
   }
   if (!spreadsById[curSpreadId] && curSpreadId !== 'custom') curSpreadId = spreadsById['spp'] ? 'spp' : ((sdoc.spreads[0] && sdoc.spreads[0].id) || 'custom');
@@ -353,6 +361,9 @@ const $ = id => document.getElementById(id);
     if (curSpreadId !== 'custom') { curSpreadId = 'custom'; $('spread').value = 'custom'; $('clist').classList.add('on'); }
     const n = positions.length;
     addPosition('Position ' + (n+1), '', 0.5 + ((n%3)-1)*0.18, 0.4 + Math.floor(n/3)*0.22); });
+  // Clear casting — drop the drawn cards but KEEP the spread (layout/labels/meanings).
+  $('clearCasting').addEventListener('click', clearCasting);
+  // Clear all — wipe everything, including the layout.
   $('clearAll').addEventListener('click', () => {
     positions = []; curSpreadId = 'custom'; $('spread').value = 'custom';
     $('clist').classList.add('on'); $('spreadmeta').textContent = '';
@@ -361,6 +372,7 @@ const $ = id => document.getElementById(id);
   $('copyJson').addEventListener('click', copyJson);
   $('downloadJson').addEventListener('click', downloadJson);
   $('exportSpread').addEventListener('click', exportSpread);
+  $('sendEco').addEventListener('click', sendToEco);
   $('importFile').addEventListener('change', onImport);
 
   loadVoices();
@@ -485,8 +497,18 @@ function buildCast(){
 }
 function syncJson(){ lastCast = buildCast(); const json = JSON.stringify(lastCast, null, 2);
   $('json').value = json;
-  const enc = btoa(unescape(encodeURIComponent(json))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
-  $('journalLink').href = FLOW + '/?d=' + enc; }
+  $('journalLink').href = FLOW + '/?d=' + b64urlEncode(json); }
+
+// Clear casting — remove the drawn cards but keep the spread layout, labels & meanings
+// so you can re-cast into the same shape. (Clear all, above, wipes the layout too.)
+function clearCasting(){
+  if (!positions.length) return;
+  positions.forEach(p => { delete p.card; });
+  lastCast = null;
+  $('reshuffle').style.display = 'none';
+  $('export').classList.remove('on');
+  renderBoard(); syncJson();
+}
 
 function copyJson(){ const ta=$('json'); ta.select();
   navigator.clipboard?.writeText(ta.value).then(()=>{ const b=$('copyJson'); b.textContent='Copied ✓'; setTimeout(()=>b.textContent='Copy JSON',1400); }).catch(()=>document.execCommand('copy')); }
@@ -495,16 +517,28 @@ function downloadJson(){ if(!lastCast) syncJson();
   const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
   a.download='tarot-reading-'+(lastCast.cast_at||'').replace(/[:.]/g,'-')+'.json'; a.click(); URL.revokeObjectURL(a.href); }
 
-// ── the layout only (no drawn cards) — a reusable spread ──
-function buildSpreadObj(){
+// ── the spread contract — the layout only (no drawn cards), the pinned wire format ──
+// { v:1, name, positions:[{label, meaning?, x?, y?}] }. This is the STRICT writer: every
+// path that emits a spread (file export, ?importSpread= URL, Send to recursive.eco) uses it.
+function currentSpreadContract(){
   const s = spreadsById[curSpreadId];
-  const name = (curSpreadId!=='custom' && s) ? s.name : 'Custom spread';
+  const name = (curSpreadId!=='custom' && s) ? s.name : (($('spreadmeta').textContent||'').trim() || 'Custom spread');
   return {
-    _type:'recursive-tarot-spread', _version:1,
-    _source:'https://tarot.recursive.eco/viewers/caster-studio.html',
-    name, description: (curSpreadId!=='custom' && s) ? (s.description||'') : '',
-    positions: positions.map((p,i)=>({ n:i+1, label:p.label, meaning:p.meaning, x:Math.round(p.x*1000)/1000, y:Math.round(p.y*1000)/1000 })),
+    v:1,
+    name: name || 'Custom spread',
+    positions: positions.slice(0,15).map(p => ({
+      label: p.label||'', meaning: p.meaning||'',
+      x: Math.round((p.x==null?0.5:p.x)*1000)/1000,
+      y: Math.round((p.y==null?0.5:p.y)*1000)/1000,
+    })),
   };
+}
+// The file writer emits the contract (+ a tolerated `description` extra when a preset has one).
+function buildSpreadObj(){
+  const c = currentSpreadContract();
+  const s = spreadsById[curSpreadId];
+  const description = (curSpreadId!=='custom' && s) ? (s.description||'') : '';
+  return description ? Object.assign({}, c, { description }) : c;
 }
 function exportSpread(){
   if(!positions.length){ alert('Add at least one position first.'); return; }
@@ -513,6 +547,41 @@ function exportSpread(){
   const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
   a.download='tarot-spread-'+slugify(obj.name)+'.json'; a.click(); URL.revokeObjectURL(a.href); }
 function slugify(s){ return (s||'spread').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') || 'spread'; }
+
+// Send to recursive.eco — hand the CURRENT spread (contract, base64url) to the flow app,
+// which saves it into the user's My Spreads. Same FLOW origin the eco-links helper uses.
+function sendToEco(){
+  if(!positions.length){ alert('Add at least one position first.'); return; }
+  if(positions.length>15){ alert('A spread can carry at most 15 positions to send to recursive.eco.'); return; }
+  const url = FLOW + '/?importSpread=' + b64urlEncode(JSON.stringify(currentSpreadContract()));
+  window.open(url, '_blank', 'noopener');
+}
+
+// ── receive a spread — ONE loader, two entry points (?spread= URL + eco-spread postMessage) ──
+// Loads a spread-contract object onto the canvas + into the editors, ready for fine-tuning.
+// Tolerant of a missing v / name / meaning / x / y and of unknown extra fields; caps at 15.
+function loadSpreadContract(obj){
+  if (!obj || typeof obj!=='object' || !Array.isArray(obj.positions) || !obj.positions.length) return false;
+  positions = obj.positions.slice(0,15).map(p => ({
+    id:'p'+(++seq), label:(p&&p.label)||'', meaning:(p&&p.meaning)||'',
+    x:(p&&p.x!=null)?+p.x:0.5, y:(p&&p.y!=null)?+p.y:0.5,
+  }));
+  curSpreadId='custom';
+  const sel=$('spread'); if(sel) sel.value='custom';
+  $('clist').classList.add('on');
+  $('spreadmeta').textContent = obj.name || 'Custom spread';
+  $('reshuffle').style.display='none'; $('export').classList.remove('on');
+  renderBoard(); renderCustomList(); syncJson();
+  return true;
+}
+// The recursive.eco assistant iframe (flow origin) posts { type:'eco-spread', spread:<contract obj> }
+// when the AI builds/loads a spread — load it live, no navigation, no reload.
+window.addEventListener('message', (e) => {
+  if (e.origin !== FLOW) return;                       // only trust the flow origin
+  const d = e.data;
+  if (!d || d.type !== 'eco-spread' || !d.spread) return;
+  try { loadSpreadContract(d.spread); } catch(_){}
+});
 
 // Import auto-detects: a full reading (has drawn cards) → layout + cards;
 // a bare spread (positions, no cards; incl. spreads.json entries) → layout only, ready to cast.
@@ -667,5 +736,12 @@ document.addEventListener('DOMContentLoaded',()=>{ $('cdmClose').addEventListene
 
 <script src="../site-footer.js"></script>
 <site-footer base="../"></site-footer>
+
+<!-- The ONE recursive.eco assistant — the shared sparkle-star launcher + collapsible
+     flow /assistant sidebar, same shell every page mounts. data-assistant-context on
+     <body> tells the flow embed it's hosted here (?context=spread-builder). The
+     eco-spread postMessage listener that loads AI-built spreads into the board lives in
+     the page script above (loadSpreadContract). -->
+<script src="../assistant.js" defer></script>
 </body>
 </html>

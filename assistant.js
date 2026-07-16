@@ -32,15 +32,20 @@
       buildSrc: function () {
         var params = new URLSearchParams(location.search);
         var grammarId = params.get('grammar_id') || params.get('id') || '';
+        // A page can declare its own embed context (e.g. the Spread Caster sets
+        // data-assistant-context="spread-builder") so the flow side knows where it's
+        // hosted. Pages that don't set it keep the previous behaviour.
+        var pageCtx = (document.body && document.body.getAttribute('data-assistant-context')) || '';
         var qs = new URLSearchParams();
         if (grammarId) {
           // A grammar is on the page: the assistant grounds "this grammar" on it.
           qs.set('grammar_id', grammarId);
-          qs.set('context', 'tarot');
+          qs.set('context', pageCtx || 'tarot');
         } else {
           // No grammar: pass page context so "what is this page?" just works.
           qs.set('page_title', document.title || 'The Recursive Tarot');
           qs.set('page_url', location.href);
+          if (pageCtx) qs.set('context', pageCtx);
         }
         return window.RecursiveAssistant.flowBaseUrl() + '/assistant?' + qs.toString();
       }
