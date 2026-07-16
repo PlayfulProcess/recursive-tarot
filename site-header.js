@@ -50,6 +50,7 @@
     ['treeoflife', 'Tree of Life', PFX + 'viewers/genealogy-tree.html'],
     ['timeline',   'Timeline',     PFX + 'viewers/timeline.html'],
     ['genealogy',  'Genealogy',    PFX + 'genealogy.html'],
+    ['channels',   'Channels',     PFX + 'pages/channels.html'],
   ];
   // [key, label, href, cssClass, external?]
   const TOOLS = [
@@ -97,6 +98,7 @@
     if (f.startsWith('tree-viewer')) return 'tree';
     if (f.startsWith('play') || f.startsWith('caster') || f.startsWith('trionfi') || location.pathname.includes('/games/')) return 'play';
     if (f.startsWith('genealogy')) return 'genealogy';
+    if (f.startsWith('channels')) return 'channels';
     if (f.startsWith('course')) return 'course';
     if (f.startsWith('shop')) return 'shop';
     if (f.startsWith('contribute')) return 'contribute';
@@ -126,7 +128,7 @@
       // Dropdown menu item (used inside the Views menu) — highlights the current page.
       const menuItem = ([key, label, href, cls, ext]) =>
         `<a class="${key === active ? 'on' : ''}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`;
-      const VIEW_KEYS = ['explorer', 'cards', 'lenses', 'tree', 'treeoflife', 'timeline', 'genealogy'];
+      const VIEW_KEYS = ['explorer', 'cards', 'lenses', 'tree', 'treeoflife', 'timeline', 'genealogy', 'channels'];
       const viewActive = VIEW_KEYS.includes(active);
       root.innerHTML = `
         <style>

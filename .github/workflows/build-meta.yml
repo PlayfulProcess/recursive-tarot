@@ -8,7 +8,9 @@ name: Rebuild meta + deploy Pages
 on:
   push:
     # dev merged back into main (Jul 2026) and the dev branch was deleted — Pages serves main.
-    branches: [main]
+    # claude/website-content-cards-plan-xwn8lj re-added Jul 16 2026 (builder request: keep
+    # working/testing on this branch live); remove when it merges.
+    branches: [main, claude/website-content-cards-plan-xwn8lj]
     paths:
       - 'tarot/**'
       - 'scripts/build_meta_grammar.py'
