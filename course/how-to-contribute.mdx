@@ -133,6 +133,8 @@ When an edit is bigger than one line — rewriting a description, adding sources
 
 Claude.ai drafts; **GitHub is still where the change lands** and gets reviewed.
 
+If you connect claude.ai's Code tab to GitHub instead of copy-pasting, there's a quiet safety net worth knowing: every session automatically works on its own branch, so your versions are protected and no work gets lost — even if you close the tab mid-edit. (What a branch is, and why that guarantee holds, is explained gently in [Working with Claude Desktop](course-viewer.html?course=working-with-claude-desktop).)
+
 ---
 
 ## Rung 4 — Claude Desktop on the repo
@@ -144,6 +146,8 @@ The same workflow, but Claude can read and write the files directly on your mach
 3. Preview locally with a tiny server (`python -m http.server 8000` → open the viewers), then have Claude commit and push a branch and open the PR.
 
 Best when you're improving a **whole deck**, not a single card.
+
+This rung has its own deep dive — [Working with Claude Desktop](course-viewer.html?course=working-with-claude-desktop) — which starts from zero: what GitHub and git actually are, the session habits that guarantee no work is lost, how to file a good pull request, and how to keep private notes private while contributing to the public commons.
 
 ---
 

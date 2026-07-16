@@ -5903,60 +5903,13 @@ ${reason}
     </script>
 
     <!-- Sign-in Modal HTML removed - using shared signin-modal.js component which injects its own HTML -->
-    <!-- Library Assistant (iframe from flow app) -->
-    <style>
-        .assistant-toggle {
-            /* z-index 2147483000 (Jul 12 2026, matching assistant.js's shared-shell
-               fix): tarot's own sticky site-header.js is z-index:50 and
-               auto-reveals on scroll-up, which used to be able to paint over this
-               button/panel exactly like it did the shared assistant shell. */
-            position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 2147483000;
-            background: linear-gradient(135deg,#8e4a74,#5f2a4c); color: white; border: none; border-radius: 9999px;
-            width: 56px; height: 56px; cursor: pointer; box-shadow: 0 4px 14px rgba(95,42,76,0.45);
-            display: flex; align-items: center; justify-content: center; transition: all 0.2s;
-        }
-        .assistant-toggle:hover { background: linear-gradient(135deg,#a05986,#4e2340); transform: scale(1.05); }
-        .assistant-frame-container {
-            position: fixed; bottom: 5.5rem; right: 1.5rem; z-index: 2147483000;
-            width: 384px; max-width: calc(100vw - 2rem); height: 500px; max-height: 70vh;
-            border-radius: 0.75rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            border: 1px solid #4a4439; display: none;
-        }
-        .assistant-frame-container.open { display: block; }
-        .assistant-frame-container iframe { width: 100%; height: 100%; border: none; }
-    </style>
-    <button class="assistant-toggle" id="assistant-toggle" title="Ask the AI" aria-label="Ask the AI" onclick="toggleAssistant()">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 4l1.4 5.1L18.5 11l-5.1 1.5L12 17l-1.4-4.5L5.5 11l5.1-1.9z"/>
-        </svg>
-    </button>
-    <div class="assistant-frame-container" id="assistant-frame">
-    </div>
-    <script>
-        async function toggleAssistant() {
-            const frame = document.getElementById('assistant-frame');
-            const isOpen = frame.classList.toggle('open');
-            if (!isOpen || frame.querySelector('iframe')) return;
-            // Logged-out users get a clear sign-in prompt instead of a confused anonymous iframe
-            let user = null;
-            try { user = await window.recursiveAuth?.getUser?.(); } catch (e) {}
-            if (!user) {
-                frame.innerHTML = `<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#faf8f3;color:#4a4439;font-family:-apple-system,'Segoe UI',sans-serif;font-size:14px;text-align:center;padding:24px">
-                    <div style="font-size:28px"><rt-icon name="message"></rt-icon></div>
-                    <div>The Library Assistant needs a free<br><b>recursive.eco</b> account.</div>
-                    <a href="${getFlowBaseUrl()}/?signin=1" target="_blank" rel="noopener" style="background:#9a7322;color:#fff;text-decoration:none;padding:8px 18px;border-radius:8px;font-weight:600">Sign in ↗</a>
-                    <small style="color:#7c7596">Sign in, then reopen this bubble.</small></div>`;
-                return;
-            }
-            frame.innerHTML = '';
-            // Lazy-load iframe on first open
-            const grammarId = new URLSearchParams(window.location.search).get('id') || '';
-            const context = document.title.includes('Study') ? 'study' : document.title.includes('Tree') ? 'tree' : 'cards';
-            const iframe = document.createElement('iframe');
-            iframe.src = `${getFlowBaseUrl()}/assistant?grammar_id=${grammarId}&context=${context}`;
-            frame.appendChild(iframe);
-        }
-    </script>
+    <!-- AI assistant: the ONE shared recursive.eco shell (assistant.js) — same
+         star FAB + tabbed sidebar as index.html/deck.html. The hand-rolled plum
+         sparkle-toggle + bare /assistant iframe that used to live here was
+         retired Jul 15 2026: it opened as a second, dead-end sparkle shell next
+         to the real launcher. assistant.js picks up ?id= as the grammar to
+         ground on, and its top-window guard keeps it out of embeds. -->
+    <script src="../assistant.js" defer></script>
 
 </body>
 </html>

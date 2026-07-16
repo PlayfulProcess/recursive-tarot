@@ -1,0 +1,115 @@
+---
+id: working-with-claude-desktop
+title: "Working with Claude Desktop"
+description: "The deep dive for contributors who want the powerful path: what GitHub and git actually are, how to run Claude Code on your own machine, the session habits that make sure no work is ever lost, and how to keep private context private while contributing to the public commons."
+author: PlayfulProcess
+date: 2026-07-15
+---
+
+# Working with Claude Desktop
+
+[Ways to Contribute](course-viewer.html?course=how-to-contribute) lays out the rungs, and it's worth saying plainly where this page sits: **claude.ai in the browser is the easiest version**, and for most contributions it is genuinely enough. Claude Desktop and Claude Code are the more advanced, more powerful version — Claude working directly on files on your own machine, able to read the whole repo, edit many files at once, preview the site locally, and push the result back. This page is the deep dive for when you're ready for that step. Nothing here assumes you've used a terminal before.
+
+## Which Claude is which
+
+Three names, one assistant. **claude.ai** is the website — chat in a browser, no setup; it also has a Code tab ([claude.ai/code](https://claude.ai/code)) that runs coding sessions in the cloud. **Claude Desktop** is the app you install on your computer — the same chat, plus a Code tab that can run sessions on your own machine. **Claude Code** is the coding agent itself, the thing both of those host: it reads files, edits them, runs commands, and works with git on your behalf.
+
+One reassurance about the cloud version, because it matters for confidence: when you start a Claude Code session from claude.ai connected to a GitHub repo, **it automatically creates its own working branch** (named `claude/…`). Your changes accumulate there — versioned, recoverable, and separate from the live site — so nothing you do can break anything, and no work gets lost even if you close the tab and come back days later. That safety is not special to the cloud; it's how git works, which is the next thing to understand.
+
+## GitHub, from zero
+
+GitHub is a website where projects live as **repositories** — folders whose entire history is preserved. This whole site is one repository, [PlayfulProcess/recursive-tarot](https://github.com/PlayfulProcess/recursive-tarot): every deck, every spread, every course, and every version of every one of them since the project began. Nothing is ever really deleted; every change is recorded with who made it and why. That is the reason the project lives there — contributions are protected, reviewable, and reversible, which is what makes it safe to invite strangers to edit a commons.
+
+You need a free account to contribute: [github.com/signup](https://github.com/signup), an email address, done. No payment, no install — the account alone already unlocks the browser-editing route in *Ways to Contribute*.
+
+## Git, gently
+
+Git is the version-control program that GitHub is built around, and its mental model is small enough to hold in four words:
+
+- A **repository** ("repo") is a folder whose history is tracked.
+- A **commit** is a saved snapshot of your changes, with a one-line note about what you did.
+- A **branch** is a parallel line of work — your own copy of the project's state where you can commit freely without touching what everyone else sees. The main line here is called `dev`; your work happens on a branch until it's reviewed.
+- **Local vs. remote:** the copy on your machine is *local*; the copy on GitHub is the *remote*. Committing saves a snapshot locally. **Pushing** uploads your commits to GitHub. Until you push, your work exists only on your computer — this is the single most important thing to understand, because work that is committed *and pushed* can never be lost, while work that is neither can be.
+
+You don't need to memorize git commands — Claude runs them for you. You do need this vocabulary, so that when Claude says "committed and pushed to your branch," you know your work is safe.
+
+## Install the tools
+
+Two installs. First **Claude Desktop**, from [claude.com/download](https://claude.com/download), like any app. Then **Claude Code** — the official installer is one command in a terminal (as of mid-2026; the current instructions live at [code.claude.com/docs](https://code.claude.com/docs/en/setup)):
+
+On macOS or Linux:
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+On Windows (PowerShell):
+
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+Then get the repo onto your machine — Claude can do this for you the first time you ask, or you can run it yourself:
+
+```bash
+git clone https://github.com/PlayfulProcess/recursive-tarot.git
+cd recursive-tarot
+claude
+```
+
+That last command starts a Claude Code session *in that folder*. The folder you start in matters: it is the boundary of what Claude can see and touch. Start it in the repo, and Claude sees the repo.
+
+## The session habits that save you
+
+Three habits cover almost everything that can go wrong.
+
+**Start every session by saying where the work should be saved.** The first message of a session should name the branch: *"Work on a new branch called `fix-death-card-date`, based on `dev`."* Claude will create it if it doesn't exist. This one habit prevents the classic beginner accident — an hour of good edits sitting on the wrong branch — and makes everything that follows reviewable.
+
+**Commit and push before you stop.** End sessions with: *"Commit what we did with a clear message and push the branch."* Committed-and-pushed work is immortal; everything else is just files on one computer. If you forget and come back later, don't panic — ask Claude *"what's the state of my work? is anything uncommitted or unpushed?"* and it will tell you and fix it.
+
+**Let the project's checks run.** This repo has a gate — `python scripts/check_all.py` — that must pass before committing. You don't need to know what it checks; you need the habit of asking Claude to run it. (Claude reads this from the repo's own instructions — see CLAUDE.md below — so usually it just does.)
+
+## What a pull request is, and how to file a good one
+
+A **pull request** (PR) is how a branch full of commits becomes part of the project: it is a request that the maintainer pull your branch in, shown as a side-by-side comparison of everything you changed. Nothing lands until it's reviewed — which is why you can't break anything, and why your name rides along in the history when it merges.
+
+Best practices, learned the usual way:
+
+- **One thing per PR.** A PR that fixes one deck's dates is easy to review and merges fast; a PR that fixes dates, rewrites a course, and renames files will sit.
+- **Say what and why.** A title like "Correct Death card date to 1451 (Visconti-Sforza)" plus two sentences of why — with a source if it's a factual claim — is all a good description needs.
+- **Small beats complete.** Three small PRs merge faster and safer than one big one.
+- **Expect conversation.** A reviewer asking questions is the system working, not a rejection. Answer, adjust, push again — the PR updates itself.
+
+Ask Claude to open the PR for you when the branch is pushed; it will draft the title and description from what you actually did, and you can edit before it goes up.
+
+## CLAUDE.md — the repo's standing instructions
+
+In the root of this repo there is a file called `CLAUDE.md`. Claude Code reads it automatically at the start of every session, and it contains the project's standing instructions: which files are generated and must never be hand-edited, which checks to run before committing, how images are licensed, what the house rules are. This is why a fresh Claude session in this repo already "knows" the project's conventions — the knowledge is in the repo itself, versioned like everything else.
+
+Two practical consequences. You rarely need to teach Claude the project's rules — they're already loaded. And if you build your own projects later, writing a `CLAUDE.md` is the single highest-leverage thing you can do to make Claude useful in them.
+
+## The settings that matter
+
+Claude Code asks permission before acting, and how much it asks is a setting — the **permission mode**. The two ends you'll actually use: the default mode asks you to approve each edit and command, which is the right place to start; **auto-accept** (and the fuller `auto` mode) lets Claude edit files and run routine commands without asking each time, which is comfortable once you trust the flow — while genuinely consequential things (protected files, work outside the folder you started in) still prompt. Start in the default, graduate to auto when the asking gets tedious. The full list of modes is in [the docs](https://code.claude.com/docs/en/permission-modes).
+
+The other setting worth knowing exists is **Remote Control** ([docs](https://code.claude.com/docs/en/remote-control)): it lets a session running on your computer be continued from your phone or another browser — you start work at your desk, then check in and keep steering from anywhere, while the files and tools stay on your machine. As of mid-2026 it's in research preview; the docs page has the current state.
+
+## The private-folder pattern
+
+Here is a pattern for a real need: you want Claude to know things about you — a journal, reading notes, drafts, personal context for the readings you're designing — but those things do not belong in a public repository.
+
+Make a parent folder with two things inside: the public repo, and a private folder that is *not* a git repository at all.
+
+```
+my-tarot-work/
+├── recursive-tarot/     ← the public repo (cloned from GitHub)
+└── private-notes/       ← yours alone: journal, drafts, context
+```
+
+Start your Claude Code session at `my-tarot-work/`, the parent. Claude can now read your private notes for context *and* edit the repo — but only the repo is connected to git, so only the repo can ever be committed or pushed. Your private folder has no path to the public internet. Say so explicitly at the start of the session if it makes you comfortable — *"private-notes/ is context only, never copy from it into the repo"* — and the boundary is doubly held.
+
+This is the honest shape of working with an AI on a public commons: full context for you, clean separation for everyone else.
+
+## Where to start
+
+Don't start with any of this. Start with the smallest real thing that bothers you — a wrong date, a clumsy sentence, a missing source — and fix it on whichever rung of [Ways to Contribute](course-viewer.html?course=how-to-contribute) feels easy today. The desktop setup on this page will still be here when a one-line fix stops being enough. The commons grows one small correction at a time, and it does not care which rung the correction came from.
