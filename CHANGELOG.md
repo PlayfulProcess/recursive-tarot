@@ -4,6 +4,35 @@ Newest first. One bullet per shipped thing.
 
 ## Jul 16 2026
 
+- **Spread Caster (`viewers/caster-studio.html`): pull your own "My spreads" from recursive.eco +
+  fix the Update-vs-Save-as-new logic (it was backwards).** Follow-up to the save/update work below:
+  - **My spreads in the dropdown.** On load the page now pulls the signed-in user's saved spreads
+    from recursive.eco (credentialed, CORS): primary `GET /api/spreads`, falling back on 404 (or an
+    unreachable primary) to `GET /api/preferences` (which carries the same `spreads[]`, as
+    `{ preferences: { spreads: [...] } }`). Each entry is a `{v:1, name, positions:[{label,
+    meaning?, x?, y?}]}` contract; valid ones populate a new **"My spreads"** `<optgroup>` inserted
+    between the built-in presets and Custom. Selecting one applies it like a preset (loads onto the
+    board, ready to cast) via the tolerant `placePositions()` (missing x/y → deterministic layout).
+    Fully defensive: signed-out / 401 / error / timeout adds NOTHING — the dropdown is byte-for-byte
+    today's. New helpers: `fetchMySpreadsJson()`, `extractSpreadsList()`, `normalizeMySpread()`,
+    `loadMySpreads()`, `resolveSpreadName()`.
+  - **Update-vs-Save-as-new fixed (was exactly backwards).** The **Update spread** button showed
+    only when a *built-in preset* was the working spread and hid for the user's own custom spreads —
+    the opposite of useful. Now: custom-built, `?spread=`-loaded, imported, and **My spreads**
+    working spreads ARE updatable (Update rewrites the working spread's positions in memory; for a
+    My spread it also patches the in-memory copy and flashes "Updated — ✈ Send to sync" to remind
+    the user to paper-plane it back); shared built-in presets are NOT updatable (Save as new only).
+    Gated by a single `isBuiltinPreset()` helper.
+  - **Note:** the tarot casting surface and the spread builder are the SAME page — `caster.html` is
+    a redirect stub to `caster-studio.html` — so there was no dropdown-code duplication to extract.
+  - **Verified** in headless Chromium (served over `python3 -m http.server`, endpoints mocked):
+    signed-out load leaves the dropdown unchanged with no page errors; built-in preset → Update
+    hidden, Save-as-new shown; Custom → both shown; a mocked `/api/preferences` envelope adds the
+    "My spreads" group (2 spreads, incl. a no-x/y one that lays out across the board, not stacked),
+    and selecting one loads it with Update visible. Screenshots read and confirmed. NOT verifiable in
+    the sandbox: the real authed My-spreads fetch (needs a signed-in session on tarot.recursive.eco
+    once the flow endpoint is deployed with CORS for the tarot origin).
+
 - **Spread Caster (`viewers/caster-studio.html`): deterministic layout (no more center pile),
   save/update affordances, sidebar-targeting paper-plane, and an honest drag hint.** Follow-up to
   the send/receive work below:
