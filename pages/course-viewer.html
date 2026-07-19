@@ -311,8 +311,12 @@
             line-height: 1.7;
         }
         .course-content a {
-            color: #2563eb;
+            /* Tarot theme brown, not browser/Tailwind blue — the blue-on-brown
+               clashed with the museum palette (builder, Jul 2026). recursive.eco
+               links keep the family purple, handled by the rule below. */
+            color: var(--gold, #9a7322);
             text-decoration: underline;
+            text-underline-offset: 2px;
             transition: color 0.2s;
             /* Long URLs (course links, library deep-links) must wrap instead
                of forcing horizontal overflow — that overflow was making mobile
@@ -322,7 +326,14 @@
             word-break: break-word;
         }
         .course-content a:hover {
-            color: #1d4ed8;
+            color: #6f521a;
+        }
+        /* Keep the recursive.eco family links purple — "look for the spiral". */
+        .course-content a[href*="recursive.eco"] {
+            color: #9333ea;
+        }
+        .course-content a[href*="recursive.eco"]:hover {
+            color: #7c2fd0;
         }
         .course-content blockquote {
             border-left: 4px solid #9a7322;
