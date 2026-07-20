@@ -27,9 +27,11 @@ ambiguous photo), it **externalizes and re-narrates** a problem (as in narrative
 therapy), it uses **randomness to bypass the conscious mind's defaults** (as artists
 do with Oblique Strategies), and it borrows the **expectancy/ritual scaffolding**
 that makes placebos and ceremonies effective. The intention that maximizes this
-benefit is the **mirror stance** ("what does this image surface in me?") rather than
-the **oracle stance** ("what will happen?"). Read as a mirror, tarot is a
-disciplined way of talking to yourself in images; the long human history of
+benefit is an **agency-preserving stance** — one that keeps the pen in the reader's
+hand ("what does this image surface in me? what's mine to do?"), whether the reading
+is reflective (a *mirror*) or oracular. What corrodes the benefit is any reading —
+mirror or oracle — that hands the querent's authorship to the deck. Held this way,
+tarot is a disciplined way of talking to yourself in images; the long human history of
 divination shows the same move — randomness used to *break deadlock, license a
 decision, and structure reflection* — long before anyone needed it to be literally
 true.
@@ -68,11 +70,14 @@ asks you to make sense of it; what you produce is *yours*, surfaced by the promp
 - **Active imagination** (Jung's practice of entering into an image and letting it
   speak) maps almost exactly onto a reflective reading: you dwell in the card, let
   associations rise, dialogue with the figure. ◆
-- **Synchronicity** ("meaningful coincidence" / acausal connection) is the
-  *interpretive license* Jungians use to treat a random draw as meaningful. Worth
-  flagging clearly: synchronicity is a **framing device, not a demonstrated causal
-  mechanism**. It gives permission to take the draw seriously; it does not prove the
-  draw is caused by your situation. ◆
+- **Synchronicity** ("meaningful coincidence" / acausal connection) is best held
+  **without false closure in either direction** — neither *merely* apophenia nor a
+  *proven* cosmic force. Read generously, it names the moment when our inner nature and
+  the structures we've inherited surface and speak again, and we recognize their
+  relevance — a movement toward harmonizing the inner world with the outer. Some
+  animating consciousness *may* be at work; the experience does not require it. What it
+  does **not** amount to is a demonstrated causal claim that your situation produced the
+  draw — so take the draw seriously without asserting external causation. ◆
 
 ### Narrative therapy & meaning-making
 A reading is a small narrative-therapy session: it **externalizes** the problem (the
@@ -146,20 +151,37 @@ yet. ◆
 
 ## 3. Intention & stance — what actually changes the value of a session
 
-The single biggest lever is **which question you think you're answering.**
+The single biggest lever is **which question you think you're answering — and who
+holds the pen.** The real axis is **agency-preserving vs. agency-surrendering**, and
+it cuts across both the reflective and the oracular ways of reading.
 
-| | **Oracle stance** | **Mirror stance** |
+| | **Agency-surrendering reading** | **Agency-preserving reading** |
 |---|---|---|
-| Question type | "What *will* happen?" (closed, predictive) | "What's at stake / what am I not seeing?" (open, reflective) |
-| Locus of meaning | In the cards (external) | In you, surfaced by the cards (co-created) |
-| Failure mode | Barnum effect, dependency, fatalism | (few) — at worst, an unproductive session |
-| Evidence base | none | projection + narrative + ritual |
+| Question type | closed and handed-over ("What *will* happen — just tell me?") | open and owned ("What's at stake / what am I not seeing / what's mine to do?") |
+| Locus of meaning | placed wholly in the cards; a verdict awaited | co-created — surfaced by the cards, authored by you |
+| Failure mode | Barnum effect, dependency, and treating the draw as a verdict to obey | (few) — at worst, an unproductive session |
+| Evidence base | none for external prediction | projection + narrative + ritual |
 
-- **Open vs. closed questions:** closed/predictive questions ("Will he call?") invite
-  Barnum-style false precision and surrender agency. Open questions ("What do I need
-  to understand about this relationship?") invite the projective/narrative engine that
+**These columns are *stances*, not *traditions* — the axis is agency, not
+oracle-vs-mirror.** A reflective "mirror" reading can quietly surrender agency
+(telling a querent what they "really" feel) and land on the left; an oracular or
+fate-oriented reading can fully preserve it and land on the right. Many living
+oracular traditions sit squarely on the right: practitioners describe an **Umbanda**
+(Afro-Brazilian) consultation as offering *orientação* — counsel — that respects the
+*consulente*'s free will and rarely delivers a fixed prediction; **Ifá** (Yoruba) is
+described as a decision-and-ethics practice, not fortune-telling. ○ *(These are my
+careful characterizations from the secondary literature, not claims made on the
+traditions' behalf — represented humbly, flagged for correction.)* The failure mode
+is not prediction or fate as such; it is any reading, of any stance, that takes the
+pen out of the reader's hand.
+
+- **Owned vs. handed-over questions:** a question you *hand over* ("Will he call —
+  just tell me?") invites Barnum-style false precision and surrenders agency — not
+  because it touches the future, but because it asks the deck to author the answer.
+  A question you keep authorship of ("What do I need to understand about this
+  relationship? what's mine to do?") invites the projective/narrative engine that
   actually does the work. Productive questions are **about the querent's stance toward
-  a situation**, not about external facts. ◆ (consistent with practitioner ethics
+  a situation**. ◆ (consistent with practitioner ethics
   sources: biddytarot, tarothermeneutics, angelorum)
 - **"Asking the cards" / waiting for a chill in the spine:** read honestly, these are
   **somatic attention practices.** The "chill" is not the cards signaling truth; it's
@@ -170,7 +192,7 @@ The single biggest lever is **which question you think you're answering.**
   or medical/legal outcomes; protect querent agency (the reading **opens options,
   doesn't dictate**); avoid fostering dependency; consent and emotional safety; the
   reader is a **facilitator of the querent's own meaning-making,** not an authority
-  delivering verdicts. ○/◆ This ethical posture *is* the mirror stance operationalized.
+  delivering verdicts. ○/◆ This ethical posture *is* agency-preservation operationalized.
 
 ---
 
@@ -276,18 +298,20 @@ without needing its **metaphysics.**
 4. **Ritual/expectancy** — the bounded ceremony delivers the attention, containment,
    and felt-control benefits of any effective ritual/placebo.
 
-**The stance that unlocks them:** the **mirror**, not the **oracle**. Ask **open**
-questions about *your* relationship to a situation; treat a **somatic "chill"** as
-*your body flagging salience*, not as external proof; let the reading **open options,
+**The stance that unlocks them:** **agency-preserving**, whether held as mirror or as
+oracle. Ask questions you keep authorship of; treat a **somatic "chill"** as *your
+body flagging salience*, not as external proof; let the reading **open options,
 never dictate** (the shared ethic of every responsible practitioner source). Used
 this way, "asking the cards" is a legitimate, disciplined form of **asking yourself
 in images** — with a randomizer to keep you honest.
 
 **Where it sits beside supernatural claims:** the benefit **does not require** that
-tarot predict anything, and the evidence says it doesn't. The same projective
-mechanism that makes it a good mirror (subjective validation) is exactly what makes
-it *feel* prophetic when it isn't — so the mirror stance isn't just the ethical
-choice, it's the **epistemically honest** one. The millennia of divination across
+tarot predict anything, and the evidence says no one has shown that it does. The same
+projective mechanism that makes it a good mirror (subjective validation) is exactly
+what makes it *feel* prophetic when it isn't — so an **agency-preserving stance** isn't
+just the ethical choice, it's the **epistemically honest** one. (Note this is a claim
+about *external prediction*, which the evidence doesn't support — not a verdict against
+oracular practice, much of which never claims external prediction in the first place.) The millennia of divination across
 cultures don't prove the cards work; they show that humans have **always used
 structured randomness to think, decide, and commune** — and that this practice can be
 profound **even when held entirely as a human, meaning-making art.**
@@ -317,9 +341,11 @@ profound **even when held entirely as a human, meaning-making art.**
   now be read as ✔︎ for these eight. (A handful of minor details not in the re-run set
   remain ○ — re-check the primary before quoting exact figures.)
 - **◆ Synthesis/interpretation by Claude:** cross-tradition patterns, the
-  oracle-vs-mirror table, somatic-salience reading of the "chill," and the integrative
-  argument — reasoned from the verified claims + established knowledge in the parent
-  fields, not separately source-verified.
+  agency-preserving-vs-surrendering stance table, somatic-salience reading of the
+  "chill," and the integrative argument — reasoned from the verified claims +
+  established knowledge in the parent fields, not separately source-verified. (The
+  Umbanda *orientação* and Ifá decision-ethics characterizations are marked ○ — my
+  careful readings of the secondary literature, not the traditions' own claims.)
 
 ### Key sources
 - *Divining the Self: Applying Tarot as a Projective Technique in Counseling* — James
