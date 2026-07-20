@@ -4,7 +4,7 @@ Research workspace on the mechanisms behind a tarot reading feeling meaningful o
 beneficial, and the intentions/stances that support that benefit. Feeds the
 history-of-tarot course and the **why-it-works lenses** / mirror-vs-divination thread
 that serve the project creed (`voices.json` → `shared_intention`: *read to know
-yourself, not to be told your fate; relate to the card, never obey it*).
+yourself, not to surrender yourself; relate to the card, never obey it*).
 
 ## Contents
 
