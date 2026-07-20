@@ -166,12 +166,15 @@ it cuts across both the reflective and the oracular ways of reading.
 oracle-vs-mirror.** A reflective "mirror" reading can quietly surrender agency
 (telling a querent what they "really" feel) and land on the left; an oracular or
 fate-oriented reading can fully preserve it and land on the right. Many living
-oracular traditions sit squarely on the right: practitioners describe an **Umbanda**
-(Afro-Brazilian) consultation as offering *orientação* — counsel — that respects the
-*consulente*'s free will and rarely delivers a fixed prediction; **Ifá** (Yoruba) is
-described as a decision-and-ethics practice, not fortune-telling. ○ *(These are my
-careful characterizations from the secondary literature, not claims made on the
-traditions' behalf — represented humbly, flagged for correction.)* The failure mode
+oracular traditions sit squarely on the right. In the personal experience of this
+project's maker, an **Umbanda** (Afro-Brazilian) consultation offers *orientação* —
+counsel — that respects the *consulente*'s free will rather than handing down a fixed
+prediction; that is one person's lived experience, offered as such, and not a claim on
+behalf of the tradition or its many practitioners. **Ifá** (Yoruba) is likewise
+described in the scholarly literature as a decision-and-ethics practice, not
+fortune-telling. ○ *(The Umbanda note is first-person experience; the Ifá note is a
+reading of the secondary literature — both offered humbly, neither speaking for the
+tradition.)* The failure mode
 is not prediction or fate as such; it is any reading, of any stance, that takes the
 pen out of the reader's hand.
 
@@ -344,8 +347,9 @@ profound **even when held entirely as a human, meaning-making art.**
   agency-preserving-vs-surrendering stance table, somatic-salience reading of the
   "chill," and the integrative argument — reasoned from the verified claims +
   established knowledge in the parent fields, not separately source-verified. (The
-  Umbanda *orientação* and Ifá decision-ethics characterizations are marked ○ — my
-  careful readings of the secondary literature, not the traditions' own claims.)
+  Umbanda *orientação* note is the maker's own first-person experience; the Ifá
+  decision-ethics note is a reading of the secondary literature — both ○, neither a
+  claim on the traditions' behalf.)
 
 ### Key sources
 - *Divining the Self: Applying Tarot as a Projective Technique in Counseling* — James
