@@ -2,6 +2,47 @@
 
 Newest first. One bullet per shipped thing.
 
+## Jul 27 2026
+
+- **Spread Caster (`viewers/caster-studio.html`): the spread's NAME is now a real, visible field;
+  position text never truncates; row/column headers; Create-editor icon parity.** Builder-reported
+  round of fixes:
+  - **The name you are editing is always on screen.** The working spread's name used to live only in
+    the small grey `#spreadmeta` line, where it shared one slot with the *description* — so an
+    imported spread's description overwrote its name, a saved reading blanked it, and Clear all wiped
+    it. An assistant-built spread ("Nature's Negotiation") therefore showed up in the builder as an
+    anonymous "✎ Custom". Name and description are now separate state (`spreadName` / `spreadDesc`)
+    behind one setter, `setSpreadIdentity()`; the name renders in a large, always-editable **Spread
+    name** field and in the Custom dropdown entry (`✎ Nature's Negotiation (editing)`). Every writer
+    — contract, cast JSON, export filename, Contribute, Update spread — reads it from there.
+  - **Whole position text, always.** Position meanings were cut at 60 characters ("…where the
+    movement o") and labels were `white-space:nowrap` + ellipsis. Labels, meanings, card names and
+    deck names now wrap in full in a text column 1.9× the card's width (centred over it via a
+    symmetric negative margin), and an un-cast position's box grows to fit its meaning.
+  - **Aggregate headers (`axes`).** A grid spread can declare a row/column meaning ONCE instead of
+    repeating it in every cell name: optional `axes: { rows:[{label,meaning?}], cols:[…] }` on the
+    spread contract (plain strings and the flat `row_labels`/`col_labels` form are accepted too).
+    Column headers render across the top of the board and row headers down the left, positioned by
+    clustering the positions' own x/y so they line up with the real grid. Editable in Custom mode via
+    two comma-separated fields. Omitted entirely when unused — spreads without axes render exactly as
+    before. Documented in `docs/plan/ORACLE-RECEIVE-CAST-SPEC.md` (appendix).
+  - **Presentation-app editing.** **Shift-click** multi-selects positions, dragging any selected one
+    moves the whole selection, **Ctrl/⌘/Alt-drag** leaves the originals in place and drops copies at
+    the new geometry, **Esc** clears the selection and **Delete** removes it. Remaining ideas
+    (marquee select, align/distribute, snap guides, undo) are in the new `WISHLIST.md`.
+  - **Icon + order parity with the recursive.eco Create editor** (`EditorToolbar.tsx`): the spread
+    toolbar moved next to the name and now reads **+ · fork · | · import · export · | · save**, with
+    Create's own SVG shapes — its fork ("save as your own copy") for **Save as new** and its floppy
+    ("save changes") for **Update spread**. Import/export were also *swapped* relative to Create
+    (the arrow pointing down into the tray is import, up out of it is export); fixed.
+  - **Paper plane removed.** The `#sendEco` "Send to recursive.eco" icon never reliably landed the
+    spread in My Spreads; the button and its `sendToEco()` / `ecoImportUrl()` helpers are gone, and
+    Create has retired the paper plane from its own icon language.
+  - **Lightweight-model hint.** The Studio pins no model — the assistant sidebar is flow's `/assistant`
+    embed and flow resolves the model from the account (`preferences.modelQuality`; signed-out guests
+    are forced onto the light model). When a light model is active the Studio now shows one
+    dismissible line pointing at the account setting. A hint, never a block.
+
 ## Jul 16 2026
 
 - **Spread Caster (`viewers/caster-studio.html`): pull your own "My spreads" from recursive.eco +
