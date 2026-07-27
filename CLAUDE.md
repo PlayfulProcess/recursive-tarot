@@ -35,7 +35,7 @@
 
 This repo is the open half; **recursive.eco** is the private app. They share the grammar JSON format
 and pass grammars across GitHub. Full reference: **[docs/RECURSIVE-ECO-INTEGRATION.md](docs/RECURSIVE-ECO-INTEGRATION.md)**. The essentials:
-- The app **reads from `main`** (`raw.githubusercontent.com/PlayfulProcess/recursive-tarot/main/tarot/<slug>/grammar.json`) and **writes back to `main`** via `app/recursive-eco` sync PRs ("Resolve all drifts"). `main` is also the live static site (see above); work on a feature branch and merge to `main` to publish, reconciling (never discarding) the App's write-backs that land there.
+- The app **reads from `main`** (`raw.githubusercontent.com/PlayfulProcess/recursive-tarot/main/tarot/<slug>/grammar.json`) and **writes back to `main`** via `app/recursive-eco` sync PRs ("Resolve all drifts"). `main` is the app's source of truth but **not** the live static site — Pages serves `claude/website-content-cards-plan-xwn8lj` (see above), so a change has to reach `main` for the app *and* the Pages branch for the site. Work on a feature branch and merge to `main`, reconciling (never discarding) the App's write-backs that land there.
 - **Slug ↔ app UUID:** `tarot/_eco_ids.json`.
 - Sync **must not drop repo-only fields** (`_grammar_commons` licence — on *all* grammars — `_image_usage`, `lineages`, cross-link pills, Research notes) and **must skip `_generated: true` grammars** (meta, people, contribute, the course). The doc has the full ownership model + the merge-onto-repo write-back fix.
 
