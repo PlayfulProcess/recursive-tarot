@@ -1086,24 +1086,33 @@ function showModelHint(html){
   $('modelHintText').innerHTML = html;
   $('modelHint').classList.add('on');
 }
+// Only /api/spreads is CORS-enabled for the *.recursive.eco family, so that's our signed-in probe
+// (401 = guest). /api/preferences — which is what actually carries modelQuality — is NOT reachable
+// cross-origin today; we still try it for signed-in users so this hint sharpens by itself if flow
+// ever opens it up, and stay silent rather than guess when it can't be read.
 async function checkAssistantModel(){
   const x = $('modelHintX');
   if (x) x.addEventListener('click', () => { $('modelHint').classList.remove('on');
     try { localStorage.setItem('rt-modelhint-dismissed','1'); } catch(_){} });
-  let data = null, signedIn = false;
-  try {
+  const get = async (path) => {
     const ctl = new AbortController(); const t = setTimeout(()=>ctl.abort(), 6000);
-    const r = await fetch(FLOW + '/api/preferences', { credentials:'include', signal:ctl.signal, headers:{ 'Accept':'application/json' } });
-    clearTimeout(t);
-    if (r.ok) { data = await r.json(); signedIn = true; }
-  } catch(_){ return; }               // offline / blocked → say nothing at all
-  if (!signedIn) {
-    showModelHint('You are not signed in, so the assistant answers on the lightweight model. '
-      + '<a href="' + FLOW + '/" target="_blank" rel="noopener">Sign in to recursive.eco</a> before asking it to design a spread — spread-building is a reasoning task and the light model does it poorly.');
+    try { return await fetch(FLOW + path, { credentials:'include', signal:ctl.signal, headers:{ 'Accept':'application/json' } }); }
+    catch(_){ return null; } finally { clearTimeout(t); }
+  };
+  const probe = await get('/api/spreads');
+  if (!probe) return;                                   // offline / blocked → say nothing at all
+  if (probe.status === 401 || probe.status === 403) {
+    // Signed-out chats are forced onto the lightweight model by the flow route.
+    showModelHint('You are not signed in to recursive.eco, so the assistant answers on the '
+      + '<strong>lightweight model</strong>. Designing a spread is a reasoning task and the light model does it '
+      + 'poorly — <a href="' + FLOW + '/" target="_blank" rel="noopener">sign in</a> before asking it to build one.');
     return;
   }
-  const prefs = (data && (data.preferences || data)) || {};
-  const mq = prefs.modelQuality || {};
+  if (!probe.ok) return;
+  const r = await get('/api/preferences');
+  if (!r || !r.ok) return;                              // can't read the preference → don't guess
+  let data; try { data = await r.json(); } catch(_){ return; }
+  const mq = ((data && (data.preferences || data)) || {}).modelQuality || {};
   const light = mq.tier === 'cheap' || LIGHT_MODEL_RE.test(String(mq.chat || ''));
   if (!light) return;
   showModelHint('Your assistant is set to a <strong>lightweight model</strong>'
