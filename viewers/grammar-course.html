@@ -109,9 +109,17 @@
     if (!s) return '';
     return s.split(/\n{2,}/).map(p => {
       let t = esc(p.trim());
+      // Bare http(s) URLs first (only after a space / line start, so a markdown link's
+      // "(target)" is left for the rule below and nothing is anchored twice).
+      t = t.replace(/(^|\s)(https?:\/\/[^\s<>"']+)/g, (m, pre, url) => {
+        const tl = url.match(/[).,;:!?]+$/); const tail = tl ? tl[0] : '';
+        if (tail) url = url.slice(0, -tail.length);
+        return `${pre}<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>${tail}`;
+      });
       t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
            .replace(/`([^`]+)`/g, '<code>$1</code>')
-           .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+           .replace(/\[([^\]]+)\]\(\s*(?:<a href="([^"]+)"[^>]*>[^<]*<\/a>|([^)\s]+))\s*\)/g,
+                    (m, text, wrapped, plain) => `<a href="${wrapped || plain || ''}" target="_blank" rel="noopener noreferrer">${text}</a>`);
       return '<p>' + t + '</p>';
     }).join('');
   }

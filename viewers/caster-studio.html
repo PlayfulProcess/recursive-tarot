@@ -181,7 +181,7 @@
 </head>
 <body data-assistant-context="spread-builder">
 <script src="../site-header.js?v=43"></script>
-<script src="reference-resolve.js"></script>
+<script src="reference-resolve.js?v=2"></script>
 <script src="../icons.js"></script>
 <site-header active="play"></site-header>
 
@@ -315,6 +315,22 @@ function b64urlEncode(str){ return btoa(unescape(encodeURIComponent(str))).repla
 function b64urlDecode(str){ return decodeURIComponent(escape(atob(String(str).replace(/-/g,'+').replace(/_/g,'/')))); }
 
 const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+// Minimal markdown for card text: **bold**, `code`, [text](url), bare URLs, line breaks.
+// Card sections used to render through esc() alone, so every research/source link in them
+// showed as literal "[label](https://…)" instead of something you can click.
+const mdLite = s => {
+  let t = esc(s);
+  t = t.replace(/(^|\s)(https?:\/\/[^\s<>"']+)/g, (m, pre, url) => {
+    const tl = url.match(/[).,;:!?]+$/); const tail = tl ? tl[0] : '';
+    if (tail) url = url.slice(0, -tail.length);
+    return `${pre}<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>${tail}`;
+  });
+  t = t.replace(/\[([^\]]+)\]\(\s*(?:<a href="([^"]+)"[^>]*>[^<]*<\/a>|([^)\s]+))\s*\)/g,
+    (m, text, wrapped, plain) => `<a href="${wrapped || plain || ''}" target="_blank" rel="noopener noreferrer">${text}</a>`);
+  return t.replace(/`([^`]+)`/g, '<code>$1</code>')
+          .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+          .replace(/\n/g, '<br>');
+};
 // Cross-deck (All Decks) cast names arrive as "Name — Deck" (or "rank — Name — Deck"). The deck is
 // shown separately in .cdeck, so strip a trailing " — <deck>" so the label reads cleanly under the card.
 const shortCardName = (nm, deck) => { let s = String(nm||'');
@@ -860,7 +876,7 @@ async function openCardDetail(p){ const c=p.card; if(!c) return;
   const ownKeys = Object.keys(ownSections).filter(k=>ownSections[k] && String(ownSections[k]).trim());
   let ownHtml = '';
   if (c.keywords && c.keywords.length) ownHtml += `<div class="cdm-keywords">${c.keywords.map(k=>`<span class="cdm-tag">${esc(k)}</span>`).join('')}</div>`;
-  ownKeys.forEach(k=>{ ownHtml += `<div class="cdm-section"><div class="cdm-sec-label">${esc(k)}</div><div class="cdm-sec-text">${esc(ownSections[k])}</div></div>`; });
+  ownKeys.forEach(k=>{ ownHtml += `<div class="cdm-section"><div class="cdm-sec-label">${esc(k)}</div><div class="cdm-sec-text">${mdLite(ownSections[k])}</div></div>`; });
 
   body.innerHTML = ownHtml + `<div id="cdmRefPanel" class="cdm-ref-panel"><div class="cdm-loading">Loading from ${esc(c.deck||'the source deck')}…</div></div>`;
 
@@ -876,19 +892,21 @@ async function openCardDetail(p){ const c=p.card; if(!c) return;
 
   const deckUrl = 'cards.html?src=' + encodeURIComponent('../tarot/'+c.source_deck+'/grammar.json') + '&item=' + encodeURIComponent(c.source_item_id);
   if (result.status === 'error') {
-    panel.innerHTML = `<div class="cdm-loading">From ${esc(result.deckLabel||c.deck||'the source deck')} — couldn't load details, <a class="cdm-ref-link" href="${deckUrl}">view source deck ↗</a></div>`;
+    panel.innerHTML = RefResolve.renderEmbedError(result.deckLabel||c.deck, deckUrl);
     return;
   }
 
-  const item = result.item;
-  const ORDER=['Scene','Symbol','Figure','Tradition Note','History','Reading','Iconography','Research note'];
-  const sections = item.sections||{};
-  const keys=[...ORDER.filter(k=>sections[k]),...Object.keys(sections).filter(k=>!ORDER.includes(k)&&sections[k])];
-  let refHtml = `<div class="cdm-ref-label">From ${esc(result.deckLabel)}${item.name && item.name!==c.name ? ` — "${esc(item.name)}"` : ''}</div>`;
-  if (item.keywords && item.keywords.length) refHtml += `<div class="cdm-keywords">${item.keywords.map(k=>`<span class="cdm-tag cdm-ref-tag">${esc(k)}</span>`).join('')}</div>`;
-  refHtml += keys.map(k=>`<div class="cdm-section"><div class="cdm-sec-label">${esc(k)}</div><div class="cdm-sec-text">${esc(sections[k])}</div></div>`).join('');
-  refHtml += `<a class="cdm-ref-link" href="${deckUrl}">View full source deck ↗</a>`;
-  panel.innerHTML = refHtml;
+  // Framed embed (reference-resolve.js). The Caster always draws from the aggregator
+  // (meta) grammar, whose card items are pointer stubs — so the resolved entry IS the
+  // content here and the box opens expanded, but it stays clearly bounded and attributed.
+  panel.innerHTML = RefResolve.renderEmbed({
+    hostItem: c,
+    sourceItem: result.item,
+    deckLabel: result.deckLabel,
+    href: deckUrl,
+    hostIsAggregator: true,
+    md: mdLite,
+  });
 }
 function closeCardDetail(){ $('cardDetailModal').style.display='none'; document.body.style.overflow=''; }
 document.addEventListener('DOMContentLoaded',()=>{ $('cdmClose').addEventListener('click',closeCardDetail);
