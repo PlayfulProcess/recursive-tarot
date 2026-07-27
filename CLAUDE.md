@@ -113,4 +113,22 @@ comes from R2 (see the Image pattern above); this folder is only for course-auth
 | `scripts/build_people_grammar.py` | Rebuild people-of-tarot from research/people/*.md |
 | `scripts/enrich_cards_from_research.py` | Add Research notes from research/cards/*.md (idempotent) |
 | `scripts/refresh_collection.py` | Sync _collection.json from grammars |
+| `scripts/normalize_book_t_sections.py` | Idempotent Book T section normaliser; `--check` asserts nothing was lost |
 | `scripts/check_all.py` | Pre-commit gate |
+
+**`scripts/archive/` is history, not tooling.** The one-shot generators that first built each
+deck live there (moved Jul 27 2026). Their output is canonical in `tarot/<slug>/grammar.json`
+and has been hand-edited since — **re-running one would overwrite current content with months-old
+seed data.** To change a deck, edit its `grammar.json`. See `scripts/archive/README.md`.
+
+## Cross-grammar embeds — always framed
+
+An item that carries the `source_deck`/`source_item_id` cross-link (above) also gets the OTHER
+grammar's content resolved into its detail view (`viewers/reference-resolve.js`). That embed is
+**always framed** — a bounded, collapsed `<details>` box that names the relationship ("Featured
+card from Golden Dawn Tarot", "About Pamela Colman Smith") and says whose content it is. Never
+render resolved content in the host's own section markup: that's what made a card's
+Scene/Symbol read as part of a person's biography, and a person's biography read as part of all
+78 Golden Dawn cards. The one exception is the aggregator (meta) grammar — its items are pointer
+stubs, so there the box opens expanded. `RefResolve.renderEmbed()` is the single implementation
+for `cards.html`, `tree-viewer.html` and `caster-studio.html`; change it there, not per viewer.
