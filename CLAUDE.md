@@ -24,7 +24,12 @@
 - Grammar files live in `tarot/<slug>/grammar.json`. Never hand-edit `tarot/all-decks-many-lenses/grammar.json` or `tarot/people-of-tarot/grammar.json` — both are generated.
 - Always run `python scripts/check_all.py` before committing. Must end "all checks passed" with `dangling=0`.
 - After any grammar edit: `python scripts/build_meta_grammar.py` (rebuilds meta + people). Then check_all again.
-- **`main` is the live branch** (confirmed Jul 15 2026 from `.github/workflows/build-meta.yml`: Pages deploys on push to `main`; dev was merged back and retired — the leftover `origin/dev` ref is stale, don't work from it). CI lands `chore: rebuild meta-grammar [skip ci]` commits on the deployed branch; always `git pull --rebase` your branch before pushing.
+- **Two branches matter, and they are not the same one** (verified Jul 27 2026 via `gh api repos/PlayfulProcess/recursive-tarot/pages` and `recursive-eco.json`):
+  - **GitHub Pages (the live site, tarot.recursive.eco) serves `claude/website-content-cards-plan-xwn8lj`**, *not* `main` and not `dev`. It was re-added to `build-meta.yml` on Jul 16 2026 at the builder's request (keep working/testing live) and is still the Pages source. Anything that must appear on the live site has to land on that branch.
+  - **`main` is the repo's default branch and the recursive.eco sync source** (`recursive-eco.json` → `default_branch: main`). Anything the app must pull has to land on `main`.
+  - So a data change that is both live-visible and app-synced belongs on **both** branches — apply the same transformation (cherry-pick or re-run the script), don't hand-merge.
+  - `dev` was retired but the `origin/dev` ref is stale *and divergent* (it carries a Jul 6 Golden Dawn enrichment that never reached `main`); don't work from it.
+  - CI lands `chore: rebuild meta-grammar [skip ci]` commits on both deployed branches; always `git pull --rebase` before pushing.
 
 ## recursive.eco integration (the GitHub boundary)
 
