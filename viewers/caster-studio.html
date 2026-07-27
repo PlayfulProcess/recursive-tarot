@@ -565,7 +565,7 @@ function setSpread(id){
   const my = mySpreadsById[id];
   if (my) {
     setCustomMode(false);
-    positions = placePositions(my.positions);   // tolerant of missing x/y (deterministic layout)
+    positions = placePositions(my.positions, my);   // grid-aware; tolerant of missing x/y otherwise
     axes = normalizeAxes(my); syncAxesInputs();
     setSpreadIdentity(my.name || 'My spread', '');
     $('reshuffle').style.display = 'none';
@@ -581,7 +581,7 @@ function setSpread(id){
     if (!positions.length) { setSpreadIdentity(spreadName, ''); addPosition('Position 1','',0.5,0.5); return; }
     setSpreadIdentity(spreadName, '');
   } else {
-    const s = spreadsById[id]; positions = (s ? s.positions : []).map((p,i) => ({ id:'p'+(++seq), label:p.label, meaning:p.meaning, x:p.x, y:p.y }));
+    const s = spreadsById[id]; positions = placePositions(s ? s.positions : [], s);   // grid-aware
     axes = normalizeAxes(s); syncAxesInputs();
     setSpreadIdentity(s ? (s.name||'') : '', s ? (s.description || '') : '');
   }
@@ -680,10 +680,77 @@ function layoutTemplate(n){
   for (let i=0;i<n;i++){ const c=i%cols, r=Math.floor(i/cols); t.push({ x:(c+1)/(cols+1), y:(r+1)/(rows+1) }); }
   return t;
 }
-// Map raw contract/import positions onto working positions. Any position missing x/y gets a
-// slot from layoutTemplate; positions that already carry x/y keep them exactly.
-function placePositions(raw){
+// ── grid detection — a 3×3 (or R×C) spread should look like a grid, not a scattered arrow ──
+// A spread is confidently grid-shaped when EITHER:
+//  (a) it declares axes (rows/cols) whose product matches the position count, or
+//  (b) every position label splits on a shared "Row · Col" (or "Row - Col" / "Row: Col")
+//      separator into a consistent set of row labels × column labels.
+// Either signal is strong enough that we OVERRIDE any stored x/y with a real grid — a spread
+// built by the assistant may carry x/y that trace an arrow/diagonal (assistant-side layout has
+// no grid awareness), and that stored geometry is exactly the bug: axes/label structure is a
+// stronger source of truth for "this is a grid" than whatever x/y happened to be saved.
+// A bare perfect-square count with NEITHER signal is only used as a fallback template (see
+// layoutTemplate) when x/y is missing — we don't clobber a deliberately-dragged 4-card diamond
+// just because 4 is a perfect square.
+const GRID_LABEL_SEPS = [' · ', ' - ', ' – ', ' — ', ': '];
+function detectGrid(rawPositions, axesObj){
+  const arr = rawPositions || [];
+  const n = arr.length;
+  if (n < 4) return null;
+  const ax = normalizeAxes(axesObj || {});
+  if (ax.rows.length > 1 && ax.cols.length > 1 && ax.rows.length * ax.cols.length === n) {
+    return { rows: ax.rows.length, cols: ax.cols.length,
+      rowOrder: ax.rows.map(a=>a.label), colOrder: ax.cols.map(a=>a.label), sep: null };
+  }
+  for (const sep of GRID_LABEL_SEPS) {
+    const parts = arr.map(p => (p && p.label!=null) ? String(p.label).split(sep) : null);
+    if (!parts.every(pp => pp && pp.length === 2 && pp[0].trim() && pp[1].trim())) continue;
+    const rowOrder = [], colOrder = [];
+    parts.forEach(pp => { const r=pp[0].trim(), c=pp[1].trim();
+      if (!rowOrder.includes(r)) rowOrder.push(r); if (!colOrder.includes(c)) colOrder.push(c); });
+    if (rowOrder.length > 1 && colOrder.length > 1 && rowOrder.length * colOrder.length === n) {
+      return { rows: rowOrder.length, cols: colOrder.length, rowOrder, colOrder, sep };
+    }
+  }
+  return null;
+}
+// Which grid cell a given raw position belongs to. Prefers parsing its own "Row · Col" label
+// against the detected row/col order (so a scrambled position order still lands correctly);
+// falls back to row-major (i-th position → row i/cols, col i%cols) when the label can't be parsed
+// (e.g. axes-based detection with plain per-position labels that don't repeat the axis names).
+function gridCellFor(p, i, grid){
+  if (grid.rowOrder && grid.colOrder && p && p.label!=null) {
+    // If detection already pinned the separator (label-prefix path), trust only that one;
+    // otherwise (axes-based detection) try every known separator against the axis label sets —
+    // the position's own label is a stronger placement signal than array order, since a
+    // scattered/arrow spread's positions may not be listed in row-major order at all.
+    const seps = grid.sep ? [grid.sep] : GRID_LABEL_SEPS;
+    const lbl = String(p.label);
+    for (const sep of seps) {
+      const parts = lbl.split(sep);
+      if (parts.length !== 2) continue;
+      const r = grid.rowOrder.indexOf(parts[0].trim()), c = grid.colOrder.indexOf(parts[1].trim());
+      if (r >= 0 && c >= 0) return { row:r, col:c };
+    }
+  }
+  return { row: Math.floor(i / grid.cols), col: i % grid.cols };
+}
+function gridXY(row, col, grid){ return { x:(col+1)/(grid.cols+1), y:(row+1)/(grid.rows+1) }; }
+// Map raw contract/import positions onto working positions.
+//  - Confidently grid-shaped (axes or label-prefix, see detectGrid) → ALWAYS laid out as a real
+//    grid, aligned with the axis headers; any stored x/y is replaced (the arrow bug).
+//  - Otherwise: a position missing x/y gets a slot from layoutTemplate; positions that already
+//    carry x/y keep them exactly (unchanged behaviour for non-grid spreads).
+function placePositions(raw, axesObj){
   const arr = (raw||[]).slice(0,15);
+  const grid = detectGrid(arr, axesObj);
+  if (grid) {
+    return arr.map((p,i) => {
+      const cell = gridCellFor(p, i, grid);
+      const xy = gridXY(cell.row, cell.col, grid);
+      return { id:'p'+(++seq), label:(p&&p.label)||'', meaning:(p&&p.meaning)||'', x:xy.x, y:xy.y };
+    });
+  }
   const needsLayout = arr.some(p => !p || p.x==null || p.y==null);
   const tpl = needsLayout ? layoutTemplate(arr.length) : null;
   return arr.map((p,i) => {
@@ -957,8 +1024,10 @@ function saveAsNewSpread(){
 // Tolerant of a missing v / name / meaning / x / y and of unknown extra fields; caps at 15.
 function loadSpreadContract(obj){
   if (!obj || typeof obj!=='object' || !Array.isArray(obj.positions) || !obj.positions.length) return false;
-  // Missing x/y → deterministic layout (no center pile); positions with x/y keep theirs.
-  positions = placePositions(obj.positions);
+  // Grid-shaped (axes, or "Row · Col" labels) → laid out as a real grid, overriding any stored
+  // x/y (an assistant-built spread's saved x/y may trace an arrow — see detectGrid). Otherwise:
+  // missing x/y → deterministic layout (no center pile); positions with x/y keep theirs.
+  positions = placePositions(obj.positions, obj);
   selected.clear();
   axes = normalizeAxes(obj); syncAxesInputs();
   curSpreadId='custom';
@@ -993,7 +1062,7 @@ async function onImport(e){ const f=e.target.files&&e.target.files[0]; if(!f) re
       const pos = Array.isArray(obj.positions) && obj.positions.length===obj.cards.length
         ? obj.positions
         : obj.cards.map((c,i)=>({ label:c.position||('Position '+(i+1)), meaning:c.prompt||'' }));
-      positions = placePositions(pos).map((p,i)=>({ ...p, card:obj.cards[i] }));
+      positions = placePositions(pos, obj).map((p,i)=>({ ...p, card:obj.cards[i] }));
       selected.clear(); axes = normalizeAxes(obj); syncAxesInputs();
       if(obj.question!=null) $('question').value = obj.question || '';
       $('spread').value='custom'; curSpreadId='custom'; setCustomMode(true);
@@ -1002,8 +1071,9 @@ async function onImport(e){ const f=e.target.files&&e.target.files[0]; if(!f) re
       renderBoard(); renderCustomList(); $('reshuffle').style.display='inline-block'; syncJson(); $('export').classList.add('on');
     } else if (Array.isArray(obj.positions) && obj.positions.length) {
       // bare spread — layout only, no cards; ready to cast.
-      // Missing x/y → deterministic layout (no center pile); positions with x/y keep theirs.
-      positions = placePositions(obj.positions);
+      // Grid-shaped → laid out as a real grid (overrides stored x/y). Otherwise missing x/y →
+      // deterministic layout (no center pile); positions with x/y keep theirs.
+      positions = placePositions(obj.positions, obj);
       selected.clear(); axes = normalizeAxes(obj); syncAxesInputs();
       $('spread').value='custom'; curSpreadId='custom'; setCustomMode(true);
       // Name and description are separate: the description no longer overwrites the name.
