@@ -1,40 +1,35 @@
-name: Rebuild meta + deploy Pages
+name: Rebuild meta-grammar
 
-# Auto-rebuilds the aggregated meta-grammar whenever a deck changes, then publishes
-# the repo (incl. genealogy.html) to GitHub Pages. So "add tarot/<deck>/grammar.json
-# respecting the structure → push" makes the genealogy graph update with no manual step.
-# (Enable once: Settings → Pages → Source = "GitHub Actions".)
+# Auto-rebuilds the aggregated meta-grammar whenever a deck changes and commits it back, so
+# recursive.eco (which reads from main) always sees a fresh tarot/all-decks-many-lenses/grammar.json.
+#
+# main is the app-sync source but is NOT the live static site — GitHub Pages serves
+# claude/website-content-cards-plan-xwn8lj (see CLAUDE.md "Two branches matter"). This workflow
+# used to ALSO deploy Pages from main (same job name, same push cadence as the claude branch's
+# copy of this file). Both wrote to the same `github-pages` environment, so whichever run finished
+# last won the live site — and because main's viewers/ content is usually staler than the claude
+# branch's, main's deploy would silently clobber the live site with old HTML/CSS/JS after almost
+# every push here. Diagnosed Jul 27 2026 (icon toolbar + label-wrap fixes landed on the claude
+# branch and built successfully, then vanished from tarot.recursive.eco minutes later — the actual
+# GitHub Pages deployment history showed a main-branch deploy of an older commit landing right
+# after). Fix: main only rebuilds + commits the meta-grammar now. Pages deploy lives solely on the
+# claude/website-content-cards-plan-xwn8lj copy of this workflow — do not re-add `pages: write` /
+# `deploy-pages` here without also removing it from wherever else currently deploys.
 
 on:
   push:
-    # dev merged back into main (Jul 2026) and the dev branch was deleted — Pages serves main.
     branches: [main]
     paths:
       - 'tarot/**'
       - 'scripts/build_meta_grammar.py'
-      - 'genealogy.html'
-      - 'index.html'
-      - 'viewers/**'
-      - 'pages/**'
-      - 'course/**'
-      - 'site-header.js'
   workflow_dispatch:
 
 permissions:
   contents: write   # to commit the regenerated meta
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  rebuild-meta:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -56,10 +51,3 @@ jobs:
           else
             echo "meta unchanged"
           fi
-
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.'
-      - id: deploy
-        uses: actions/deploy-pages@v4
