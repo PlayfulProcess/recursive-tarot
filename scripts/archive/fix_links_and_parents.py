@@ -12,7 +12,7 @@ import json, os, re, glob
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 TAROT = os.path.join(ROOT, "tarot")
-BLOB = "https://github.com/PlayfulProcess/recursive-tarot/blob/dev/"
+BLOB = "https://github.com/PlayfulProcess/recursive-tarot/blob/main/"
 PARENT_DECKS = ["paris-anonymous-tarot", "tarot-de-besancon", "tarocchino-bologna"]
 
 # Marseille Conver: the parent the "vs. its parent" notes compare against.

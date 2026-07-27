@@ -96,9 +96,13 @@ meta-grammar uses the platform's *reference-item* structure (see `GRAMMAR_FORMAT
   (roots · A/B/C-order · occult · sui-generis · `_meta`) by `_collection.json`.
 - **Images:** public-domain, hot-linked from Wikimedia Commons via stable
   `Special:FilePath` URLs (filenames pulled from the Commons API, not guessed).
-- **Assembly:** `python scripts/build_tarot_collection.py` (re)builds this repo from the
-  source grammars and writes the collection index; `python scripts/stamp_canonical_repo.py`
-  stamps each deck's `_github_url` home pointer.
+- **Assembly:** the grammar JSONs are standalone data now — **to change a deck, edit
+  `tarot/<slug>/grammar.json` directly.** The one-shot scripts that first built them
+  (`build_tarot_collection.py`, `stamp_canonical_repo.py`, the per-deck `build_*.py`) have
+  moved to `scripts/archive/` and must not be re-run; see `scripts/archive/README.md`.
+  What's still live in `scripts/`: `check_all.py` (the gate), `build_meta_grammar.py` +
+  `build_people_grammar.py` (regenerate the two `_generated` grammars), `course_to_grammar.py`,
+  `refresh_collection.py`, and the print/proofing pipeline.
 - **Provenance:** the original per-deck generators (`generate_<deck>.py`), build logs,
   and the master history/roadmap docs live in the source repo,
   **recursive.eco-schemas** — see below.
