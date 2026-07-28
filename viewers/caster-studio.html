@@ -63,14 +63,17 @@
   @media (max-width:640px){ .board { aspect-ratio:3/4; } }
   .slot { position:absolute; transform:translate(-50%,-50%); width:var(--cw); cursor:grab; user-select:none; touch-action:none; }
   .slot.dragging { cursor:grabbing; opacity:.92; z-index:10; }
-  .slot .num { position:absolute; top:-8px; left:-8px; width:18px; height:18px; border-radius:50%;
-    background:var(--accent); color:#fff; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; z-index:3; }
   /* Position text is NEVER truncated — the whole label and the whole meaning stay readable.
-     The text column is ~1.9× the card's width and pulled left by half the overhang so it stays
-     centred over the card; text wraps and the box grows to fit. */
-  .slot .plabel { font-size:10.5px; font-weight:700; color:#9a7322; text-align:center; line-height:1.25; margin-bottom:3px;
-    white-space:normal; overflow-wrap:break-word;
+     The number badge sits INLINE before the label, its own flex cell, so it can never overlap the
+     label's first characters — it used to be absolutely positioned at the slot's top-left corner,
+     which collided with wide/wrapped labels (e.g. "Structures · Perceiver" in 3×3 grid spreads;
+     builder-reported Jul 28 2026: "S(3)ructures" — the badge sitting on top of the first letters). */
+  .slot .phead { display:flex; align-items:flex-start; justify-content:center; gap:5px; margin-bottom:3px;
     width:calc(var(--cw) * 1.9); margin-left:calc(var(--cw) * -0.45); }
+  .slot .num { flex:0 0 auto; width:16px; height:16px; margin-top:1px; border-radius:50%;
+    background:var(--accent); color:#fff; font-size:9.5px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .slot .plabel { flex:1 1 auto; min-width:0; font-size:10.5px; font-weight:700; color:#9a7322; text-align:center; line-height:1.25;
+    white-space:normal; overflow-wrap:break-word; }
   .slot .card { width:100%; aspect-ratio:3/5; border-radius:8px; border:1px dashed #cfc8ba; background:#faf8f3;
     display:flex; align-items:center; justify-content:center; overflow:hidden; }
   /* An EMPTY position shows its meaning in full: wider box, auto height, no clipping. */
@@ -170,16 +173,28 @@
   .qfield textarea { width:100%; min-height:3.1em; background:#faf8f3; color:var(--ink);
     border:1px solid var(--line); border-radius:8px; padding:9px 11px; font-size:14px;
     font-family:inherit; line-height:1.45; resize:vertical; }
-  .actionbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:14px; }
-  .actionbar .hint { color:var(--muted); font-size:12px; }
-  /* subtle, dismissible hint near the board — honest geometry messaging: an AI/auto-laid-out
-     spread has no meaningful geometry, so tell people they can arrange it themselves and keep it */
-  .draghint { display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted);
-    line-height:1.5; margin:16px 0 -4px; }
-  .draghint strong { color:#9a7322; font-weight:700; }
-  .draghint button { background:none; border:none; color:#8a8273; font-size:14px; line-height:1;
-    cursor:pointer; padding:2px 4px; margin-left:auto; flex:0 0 auto; }
-  .draghint button:hover { color:#9a7322; }
+  /* One compact, touch-first action row: casting actions (Cast · Clear casting · Clear all) first,
+     a subtle divider, then the spread create/edit actions (Add position · Save as new · Update
+     spread — moved out of the icon toolbar so each control exists in exactly one place), then the
+     ⓘ tips toggle. Wraps gracefully at 375px — the divider hides rather than orphaning onto its
+     own line. */
+  .actionbar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:14px; }
+  .actionbar .abarsep { width:1px; align-self:stretch; background:var(--line); margin:0 2px; }
+  @media (max-width:480px){ .actionbar .abarsep { display:none; } }
+  /* Helper prose — collapsed behind the ⓘ toggle by default (was always-visible prose in the
+     action row + a separate dismissible drag-hint banner; both folded in here Jul 2026). */
+  .helperpanel { margin-top:10px; padding:12px 14px; background:var(--panel); border:1px solid var(--line);
+    border-radius:10px; color:var(--muted); font-size:12.5px; line-height:1.55; }
+  .helperpanel p { margin:0 0 8px; }
+  .helperpanel p:last-child { margin-bottom:0; }
+  .helperpanel strong { color:#9a7322; font-weight:700; }
+  #helpToggle[aria-expanded="true"] { background:#e6dfcf; color:#9a7322; border-color:#d9cfb8; }
+  /* ephemeral toast — the "Interpret with AI" fallback path when the embed hasn't acked yet */
+  .rt-toast { position:fixed; left:50%; bottom:26px; transform:translateX(-50%) translateY(12px);
+    background:#221f1a; color:#fff; font-size:13px; line-height:1.4; padding:10px 16px; border-radius:9px;
+    box-shadow:0 10px 30px -8px rgba(0,0,0,.5); max-width:min(92vw,420px); text-align:center; z-index:2000;
+    opacity:0; pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .rt-toast.on { opacity:1; transform:translateX(-50%) translateY(0); }
   /* model hint — shown only when the assistant would answer on a lightweight model */
   .modelhint { display:none; align-items:flex-start; gap:10px; font-size:12.5px; line-height:1.55;
     color:#4a4439; background:#faf3e6; border:1px solid #e6d9b8; border-radius:10px;
@@ -264,29 +279,17 @@
         <input type="text" id="spreadName" placeholder="Untitled spread" autocomplete="off"
                title="The name of the spread you are editing — used everywhere it is saved, exported or sent">
       </div>
-      <!-- Icons + order copied from the recursive.eco Create editor toolbar (EditorToolbar.tsx), so
-           one visual language covers both editors:  +  ·  fork  |  import  export  |  save.
-           Create's "fork / save as your own copy" = Save as new here; Create's floppy "save changes"
-           = Update spread here. NOTE: import is the arrow pointing DOWN into the tray and export the
-           arrow pointing UP out of it — the Studio had those two swapped before Jul 2026. -->
+      <!-- Import/export only — Add position, Save as new and Update spread moved into the single
+           action row (below, with the casting buttons) Jul 2026, so each control lives in exactly
+           ONE place instead of a toolbar icon + a row duplicate. NOTE: import is the arrow pointing
+           DOWN into the tray and export the arrow pointing UP out of it. -->
       <span class="io-btns" id="spreadTools">
-        <button type="button" class="iconbtn" id="addPos" title="Add a position to this spread" aria-label="Add position">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5v15m7.5-7.5h-15"/></svg>
-        </button>
-        <button type="button" class="iconbtn" id="saveAsNew" style="display:none" title="Save as new — keep this arrangement as your own new named spread" aria-label="Save as new spread">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg>
-        </button>
-        <span class="toolsep" aria-hidden="true"></span>
         <label class="iconbtn" id="importLabel" title="Import — load a spread (layout) or a full reading (layout + cards) exported here" aria-label="Import spread or reading">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <input type="file" id="importFile" accept=".json,application/json" style="display:none">
         </label>
         <button type="button" class="iconbtn" id="exportSpread" title="Export spread — save just this layout (positions, labels &amp; meanings; no cards)" aria-label="Export spread">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        </button>
-        <span class="toolsep" aria-hidden="true"></span>
-        <button type="button" class="iconbtn primary" id="updateSpread" style="display:none" title="Save changes — keep this arrangement in the spread you are editing" aria-label="Update spread">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
         </button>
       </span>
     </div>
@@ -331,22 +334,28 @@
     <button id="clearCasting" class="ghost">Clear casting</button>
     <button id="clearAll" class="ghost">Clear all</button>
     <button id="reshuffle" class="ghost" style="display:none">Re-cast</button>
-    <span class="spreadmeta hint">Drag positions on the board; edit labels &amp; meanings below. The icons beside the spread name <strong>add</strong> a position, <strong>download</strong> or <strong>upload</strong> a spread, and <strong>update</strong> or <strong>save</strong> it.</span>
+    <span class="abarsep" aria-hidden="true"></span>
+    <button type="button" id="addPos" class="ghost">+ Add position</button>
+    <button type="button" id="saveAsNew" class="ghost" style="display:none">Save as new</button>
+    <button type="button" id="updateSpread" style="display:none">Update spread</button>
+    <button type="button" class="iconbtn" id="helpToggle" title="Show tips" aria-label="Show tips" aria-expanded="false" aria-controls="helperPanel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    </button>
   </div>
-
-  <div id="dragHint" class="draghint">
-    <span>Positions are laid out automatically — <strong>drag</strong> any card on the board to arrange it, then <strong>Update</strong> or <strong>Save as new</strong> (the icons beside the spread name) to keep the layout. <strong>Shift-click</strong> to select several and move them together; hold <strong>Ctrl</strong> (⌘) while dragging to copy them.</span>
-    <button id="dragHintX" type="button" aria-label="Dismiss hint">✕</button>
+  <div id="helperPanel" class="helperpanel" hidden>
+    <p>Drag positions on the board to arrange them; edit labels &amp; meanings in the list below. <strong>Cast</strong> draws a card into every position; <strong>Clear casting</strong> keeps the layout while <strong>Clear all</strong> wipes it too. <strong>Add position</strong>, <strong>Save as new</strong> and <strong>Update spread</strong> build and save the spread itself; the icons beside the spread name download or upload a spread file.</p>
+    <p>An automatically laid-out spread has no meaningful geometry — drag any card on the board to arrange it. <strong>Shift-click</strong> to select several positions and move them together; hold <strong>Ctrl</strong> (⌘) while dragging to copy them.</p>
   </div>
   <div id="board" class="board"></div>
   <div id="hovprev"><img alt=""></div>
   <div class="clist" id="clist"></div>
 
   <div class="export" id="export">
-    <h2>Send it to the oracle for an AI reading</h2>
-    <p>Your built spread and the cards you cast go to recursive.eco, where each becomes an Oracle card with provenance, an AI interpretation, and a Journal entry.</p>
-    <a id="journalLink" class="journal-cta" href="https://flow.recursive.eco/" target="_blank" rel="noopener">Send to recursive.eco oracle ↗</a>
+    <h2>Interpret the reading</h2>
+    <p>Send this cast to the recursive.eco assistant — right here on this page — for an AI interpretation, provenance, and a Journal entry.</p>
+    <button type="button" id="interpretAI" class="journal-cta">✦ Interpret with AI</button>
     <div class="btnrow">
+      <a id="journalLink" class="btn" href="https://flow.recursive.eco/" target="_blank" rel="noopener" title="Open the full reading in recursive.eco in a new tab">Open in recursive.eco ↗</a>
       <button id="downloadJson" title="Save this full reading — layout + the cards you cast — as a .json you can re-import later">⤓ Save reading (.json)</button>
       <a id="contributeLink" class="btn" href="https://github.com/PlayfulProcess/recursive-tarot/new/dev?filename=spreads/my-spread.json" target="_blank" rel="noopener" title="Add your spread to the shared library via a GitHub pull request">↗ Contribute a spread on GitHub</a>
       <a class="btn" href="../pages/course-viewer.html?course=how-to-contribute" target="_blank" rel="noopener" title="How to contribute a deck, spread, or course">How to contribute →</a>
@@ -512,10 +521,13 @@ const $ = id => document.getElementById(id);
   // Aggregate row/column headers — comma-separated, applied to the whole row/column at once.
   $('colLabels').addEventListener('input', e => { axes.cols = parseAxisInput(e.target.value); renderBoard(); syncJson(); });
   $('rowLabels').addEventListener('input', e => { axes.rows = parseAxisInput(e.target.value); renderBoard(); syncJson(); });
-  // subtle drag/save hint near the board — dismissible, remembered for the session
-  try { if (localStorage.getItem('rt-draghint-dismissed')) $('dragHint').style.display='none'; } catch(_){}
-  $('dragHintX').addEventListener('click', () => { $('dragHint').style.display='none';
-    try { localStorage.setItem('rt-draghint-dismissed','1'); } catch(_){} });
+  // Helper prose — collapsed behind the ⓘ toggle, default hidden (folded the old always-visible
+  // action-row hint + the separate dismissible drag-hint banner into this one panel, Jul 2026).
+  $('helpToggle').addEventListener('click', () => {
+    const panel = $('helperPanel'); panel.hidden = !panel.hidden;
+    $('helpToggle').setAttribute('aria-expanded', panel.hidden ? 'false' : 'true');
+  });
+  $('interpretAI').addEventListener('click', interpretWithAI);
 
   // Board-level keyboard: Esc clears the selection, Delete/Backspace removes the selected positions.
   document.addEventListener('keydown', onBoardKey);
@@ -543,12 +555,15 @@ function setSpreadIdentity(name, desc){
   const meta = $('spreadmeta'); if (meta) meta.textContent = spreadDesc;
   labelCustomOption();
 }
-// Keep the Custom option reading as the thing you are actually editing.
+// Keep the Custom option reading as "you're editing this," WITHOUT repeating the name — the name
+// already has exactly one authoritative, visible home: the #spreadName field above. Before Jul 28
+// 2026 this wrote the name into the option text too ("✎ Nature's Negotiation (3×3) (editing)"),
+// so it showed twice on screen at once (builder screenshot, Jul 28 2026).
 function labelCustomOption(){
   const oc = $('spread') && $('spread').querySelector('option[value="custom"]');
   if (!oc) return;
   const n = (spreadName||'').trim();
-  oc.textContent = n ? ('✎ ' + n + ' (editing)') : '✎ Custom (build your own)';
+  oc.textContent = n ? '✎ Custom — editing' : '✎ Custom (build your own)';
 }
 // Custom mode shows the per-position editor list AND the row/column header fields.
 function setCustomMode(on){
@@ -791,8 +806,7 @@ function renderBoard(){
     const cardInner = c
       ? (c.image_url ? `<img src="${esc(c.image_url)}" alt="${esc(c.name)}" style="${c.reversed?'transform:rotate(180deg);':''}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'?'}))">` : '<div class="ph">★</div>')
       : `<div class="ph">${esc(p.meaning||'') || '—'}</div>`;
-    slot.innerHTML = `<div class="num">${i+1}</div>`
-      + `<div class="plabel" title="${esc(p.meaning||'')}">${esc(p.label)}</div>`
+    slot.innerHTML = `<div class="phead"><span class="num">${i+1}</span><span class="plabel" title="${esc(p.meaning||'')}">${esc(p.label)}</span></div>`
       + `<div class="card${c?' filled':''}">${cardInner}</div>`
       + (c ? `<div class="cname">${esc(shortCardName(c.name, c.deck))}</div><div class="cdeck">${esc(c.deck||'')}</div>${c.reversed?'<div class="rev">reversed</div>':''}` : '');
     attachSlot(slot, p, i);
@@ -941,6 +955,99 @@ function clearCasting(){
   $('reshuffle').style.display = 'none';
   $('export').classList.remove('on');
   renderBoard(); syncJson();
+}
+
+// ── Interpret with AI — open the embedded flow assistant sidebar on THIS page (no redirect to
+// the flow oracle — the old "Send to recursive.eco oracle" link "is not really working" per the
+// builder, Jul 28 2026) and hand it the reading via postMessage. The flow side does not listen
+// for this message yet (queued in the flow repo); if it doesn't ack within ~1s we fall back to
+// copying a compact summary + a toast, and the sidebar stays open either way so the person can
+// paste it in themselves. Full contract (message shape, origin rule, ack, reading schema) is
+// documented in docs/ASSISTANT-EMBED-CONTRACT.md — keep this block and that file in sync.
+function getAssistantIframe(){ return document.querySelector('.rec-assistant-shell iframe'); }
+function ensureAssistantReady(cb, tries){
+  const ifr = getAssistantIframe();
+  if (ifr) { cb(ifr); return; }
+  if ((tries||0) > 40) { cb(null); return; }   // ~10s of polling — the shell never mounted, give up
+  setTimeout(() => ensureAssistantReady(cb, (tries||0) + 1), 250);
+}
+// The reading contract sent to the assistant — spread name, every position with its card (name,
+// deck, reversed flag) or null if not yet cast, and the free-text question. See
+// docs/ASSISTANT-EMBED-CONTRACT.md for the pinned schema.
+function buildReadingForAssistant(){
+  const c = lastCast || buildCast();
+  return {
+    v: 1,
+    spread: c.spread,
+    question: c.question || null,
+    positions: positions.map((p, i) => ({
+      n: i + 1,
+      label: p.label || '',
+      meaning: p.meaning || null,
+      card: p.card ? {
+        name: p.card.name,
+        deck: p.card.deck || null,
+        reversed: !!p.card.reversed,
+        arcana: p.card.arcana || null,
+        number: (p.card.number == null ? null : p.card.number),
+      } : null,
+    })),
+    cast_at: c.cast_at,
+    source: 'https://tarot.recursive.eco/viewers/caster-studio.html',
+  };
+}
+function buildCompactReadingSummary(reading){
+  const cards = reading.positions.map(p => p.label + ': ' + (p.card ? (p.card.name + (p.card.reversed ? ' (reversed)' : '')) : '(empty)')).join('; ');
+  return reading.spread + ' — ' + cards + (reading.question ? ' — Question: ' + reading.question : '');
+}
+let rtToastTimer = null;
+function showToast(msg){
+  let t = document.getElementById('rtToast');
+  if (!t) { t = document.createElement('div'); t.id = 'rtToast'; t.className = 'rt-toast'; document.body.appendChild(t); }
+  t.textContent = msg;
+  requestAnimationFrame(() => t.classList.add('on'));
+  clearTimeout(rtToastTimer);
+  rtToastTimer = setTimeout(() => t.classList.remove('on'), 5200);
+}
+// The fallback path: no ack (or no assistant at all) arrived in time. Copy a compact summary to
+// the clipboard (the closest thing to "send it to the composer" we have — the embed is a
+// cross-origin iframe, so there is no DOM handle into its textbox) and toast either way.
+function showInterpretFallbackToast(){
+  const reading = buildReadingForAssistant();
+  const summary = buildCompactReadingSummary(reading);
+  const tellUser = copied => showToast(copied
+    ? 'Reading copied — paste it into the chat and ask about it. It will send automatically once recursive.eco updates.'
+    : 'Open the chat and ask about this reading — it will be sent automatically once the app updates.');
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(summary).then(() => tellUser(true)).catch(() => tellUser(false));
+    } else { tellUser(false); }
+  } catch(_) { tellUser(false); }
+}
+function interpretWithAI(){
+  if (!positions.some(p => p.card)) { alert('Cast a reading first.'); return; }
+  ensureAssistantReady(function(ifr){
+    if (!ifr || !window.RecursiveAssistant || typeof window.RecursiveAssistant.open !== 'function') {
+      showInterpretFallbackToast(); return;
+    }
+    window.RecursiveAssistant.open();
+    let origin;
+    try { origin = new URL(ifr.src).origin; }                          // the iframe's ACTUAL origin — never '*'
+    catch(_) { origin = (window.RecursiveAssistant.flowBaseUrl && window.RecursiveAssistant.flowBaseUrl()) || FLOW; }
+    const reading = buildReadingForAssistant();
+    let acked = false;
+    const onAck = function(e){
+      if (e.origin !== origin) return;
+      if (e.data && e.data.type === 'recursive:interpret-ack') { acked = true; window.removeEventListener('message', onAck); }
+    };
+    window.addEventListener('message', onAck);
+    try { ifr.contentWindow.postMessage({ type: 'recursive:interpret-reading', reading: reading }, origin); }
+    catch(_) { window.removeEventListener('message', onAck); showInterpretFallbackToast(); return; }
+    setTimeout(function(){
+      window.removeEventListener('message', onAck);
+      if (!acked) showInterpretFallbackToast();
+    }, 1000);
+  });
 }
 
 function copyJson(){ const ta=$('json'); ta.select();
