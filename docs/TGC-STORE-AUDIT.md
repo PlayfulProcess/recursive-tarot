@@ -112,19 +112,33 @@ future edit breaks it).
 
 ## Staged TGC products (drafts — nothing published, nothing purchased)
 
-See the companion report in chat for TGC ids, deep links, and your publish
-walkthrough per product. Summary of what got created/updated:
+All confirmed `public: 0` (private draft) via a read-only account listing on
+2026-07-29. Edit link pattern: `https://www.thegamecrafter.com/make/games/<game_id>`.
 
-| Deck | TGC action | New back applied? |
-|---|---|---|
-| golden-dawn-book-t-tarot | **updated** existing draft (game `C07782A2…`, deck `27B3B844…`) | yes — replaced the old back |
-| minchiate-florence-tarot | new draft game+deck | yes |
-| paris-anonymous-tarot | new draft game+deck | yes |
-| vieville-tarot | new draft game+deck | yes |
-| etteilla-ii-egyptian | new draft game+deck | yes |
-| este-tarot | new draft game+deck | yes |
-| tarocchino-arlecchino | new draft game+deck | yes |
-| arlecchinos-augmented-arcana | new draft game+deck | yes |
+| Deck | Game id | Deck id | Cards | New back? |
+|---|---|---|---:|---|
+| golden-dawn-book-t-tarot | `C07782A2-645A-11F1-87B8-CDFD42BF08F6` (existing, updated) | `27B3B844-64E4-11F1-9D82-EA4366E3122E` | 78/78 | yes — replaced the old Napoletane back |
+| minchiate-florence-tarot | `795691FC-8B78-11F1-84DD-ECC0EC690B95` | `7BC6D000-8B78-11F1-84DD-0AC1EC690B95` | 97/97 | yes |
+| paris-anonymous-tarot | `2B767F64-8B79-11F1-964F-71BB2FE3B2B9` | `2D207608-8B79-11F1-84DD-A2C8EC690B95` | 78/78 | yes |
+| vieville-tarot | `BBF41A2E-8B79-11F1-964F-FEC22FE3B2B9` | `BDCC6A0E-8B79-11F1-B8B4-AA9440A950E6` | 78/78 | yes |
+| etteilla-ii-egyptian | `49F36F0A-8B7A-11F1-964F-C2C92FE3B2B9` | `4BA0B920-8B7A-11F1-964F-CDC92FE3B2B9` | 78/78 | yes |
+| este-tarot | `45E377D6-8B78-11F1-B8B4-9E8340A950E6` | `477CF7FC-8B78-11F1-B8B4-A08340A950E6` | 16/16 | yes |
+| tarocchino-arlecchino | `D66048DC-8B7A-11F1-9B66-4CF3DFA4E030` | `D8BF8548-8B7A-11F1-B8B4-BAA240A950E6` | 62/64 (2 significators excluded — broken source images, see below) | yes |
+| arlecchinos-augmented-arcana | `44C11036-8B7B-11F1-B8B4-3FA840A950E6` | `46A59FE8-8B7B-11F1-9B66-A3F8DFA4E030` | 84/84 | yes |
+
+All 8 use the same uploaded back file (`file_id 78A97A8A-8B78-11F1-84DD-DEC0EC690B95`
+for the 7 new ones; Golden Dawn's own upload got its own file id since it was a
+separate PUT call). `has_proofed_back` was reset to `0` on every deck touched
+(new back means the old digital proof no longer applies) — each needs a fresh
+**Proof All** pass in the TGC UI before it can be ordered or published; see the
+walkthrough in chat.
+
+**Known gap:** `tarocchino-arlecchino`'s two Significator cards
+(`significator-62`, `significator-63`) have corrupted/truncated source images on
+R2 (9.6KB, ~220×405px, fails to decode) — excluded from this print run rather
+than uploading broken art. Flagged as a separate background task
+(`task_d7e2ac52`) to re-source and re-upload; once fixed, re-run the upload for
+just those two cards and the deck goes from 62 to the full 64.
 
 MARGINAL decks (oswald-wirth-tarot, tarot-de-marseille-conver,
 anecdotes-tarot) were **not** staged — see the table above for why, and
