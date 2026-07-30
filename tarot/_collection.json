@@ -53,7 +53,9 @@
         "court-de-gebelin-tarot",
         "etteilla-i-livre-de-thot",
         "etteilla-ii-egyptian",
-        "etteilla-iii-oracle-des-dames"
+        "etteilla-iii-oracle-des-dames",
+        "papus-tarot-des-bohemiens",
+        "rider-waite-smith-pictorial-key"
       ]
     },
     {
@@ -659,11 +661,45 @@
       "default_preview": null,
       "items": 12,
       "cover_image_url": null,
-      "blurb": "A contemplative 12-card reflection deck on the rebirth pattern underneath Christmas -- the returning of light at the darkest point of the year -- held as PlayfulProcess's own synthesis, not a claim about Christian doctrine. A draft, built leaning heavily on AI, offered as a commons.",
+      "blurb": "A contemplative reflection deck for the Christmas season, held as PlayfulProcess's own synthesis, not a claim about Christian doctrine and not a retelling of scripture. Its thesis: Christmas is usuall…",
       "path": "tarot/christmas-the-rebirth/grammar.json",
       "provenance": "living",
       "common_name": "Christmas: The Rebirth",
       "category": "contemporary"
+    },
+    {
+      "slug": "papus-tarot-des-bohemiens",
+      "name": "Papus — Le Tarot des Bohémiens (1889)",
+      "type": "tarot",
+      "branch": "occult",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 22,
+      "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/oswald-wirth-tarot/01%20Le%20Bateleur%2C%20Oswald%20Wirth%20Tarot%20Deck%201889%20BnF.jpg",
+      "blurb": "# Papus — Le Tarot des Bohémiens",
+      "path": "tarot/papus-tarot-des-bohemiens/grammar.json",
+      "common_name": "Papus",
+      "category": "historical",
+      "year": 1889,
+      "year_label": "1889",
+      "provenance": "record"
+    },
+    {
+      "slug": "rider-waite-smith-pictorial-key",
+      "name": "Rider-Waite-Smith — The Pictorial Key (1911)",
+      "type": "tarot",
+      "branch": "occult",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 78,
+      "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot/RWS_Tarot_02_High_Priestess.jpg",
+      "blurb": "# Rider-Waite-Smith — The Pictorial Key",
+      "path": "tarot/rider-waite-smith-pictorial-key/grammar.json",
+      "common_name": "Rider-Waite-Smith",
+      "category": "historical",
+      "year": 1911,
+      "year_label": "deck 1909 · key 1911",
+      "provenance": "record"
     }
   ]
 }

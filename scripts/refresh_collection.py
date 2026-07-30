@@ -40,7 +40,9 @@ YEARS = {
     "etteilla-ii-egyptian":          (1838, "c. 1838"),
     "etteilla-iii-oracle-des-dames": (1865, "c. 1865"),
     "oswald-wirth-tarot":            (1889, "1889"),
+    "papus-tarot-des-bohemiens":     (1889, "1889"),
     "golden-dawn-book-t-tarot":      (1909, "1888 · RWS 1909"),
+    "rider-waite-smith-pictorial-key": (1911, "deck 1909 · key 1911"),
 }
 
 
