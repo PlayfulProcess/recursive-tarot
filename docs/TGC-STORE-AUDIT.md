@@ -110,6 +110,65 @@ Regenerate/tweak with `python scripts/make_symmetric_back.py` — it re-derives
 both files and re-asserts the symmetry check on every run (fails loudly if a
 future edit breaks it).
 
+## Composition spec — art-fill, so this never regresses
+
+Builder caught this from her physical proof: her printed **Justice** card
+(sampler deck `E25631D6`) fills the card properly; the freshly-staged
+**Golden Dawn "The Fool"** showed the art floating small inside a huge
+cream margin. Root cause found and fixed 2026-07-30.
+
+**The one correct pipeline** (`scripts/tgc_card.py` → `border_fit()`, used by
+both `prebake_deck_r2.py` and `build_sampler_v6.py` — this is *why* the
+sampler prints correctly, and the spec every future face upload must match):
+
+1. Canvas is **900×1500** (TGC bleed spec). Trim/cut line is **825×1425**,
+   safe zone is **750×1350**, all centered.
+2. `autotrim()` (or `content_crop()` for `TIGHT_TRIM` decks) strips the raw
+   scan's own margin first.
+3. The trimmed card is scaled to fit **fully inside `FIT = (800, 1395)`**
+   — i.e. **~89% of canvas width / ~93% of canvas height** — preserving
+   aspect, never cropping the card's own printed frame.
+4. It's pasted centered on the 900×1500 canvas, filled with a **sampled
+   border colour** (corner colour for `BLEND_FRAME` decks, edge-ring median
+   otherwise, or the flood-filled card-stock colour for `FLOOD_BG` decks) —
+   never plain white — so the added margin reads as a continuation of the
+   card's own frame, not a mismatched box.
+
+**What actually went wrong:** the Golden Dawn deck's 78 card faces were
+uploaded to TGC on **2026-06-10**, before this pipeline existed in its
+current form (`prebake_deck_r2.py`'s R2 masters and `metadata.print.tgc_url`
+came later). That original upload fit the art far smaller than the `FIT`
+box above — visually closer to 60–65% of the canvas instead of ~89%/93% —
+so it sat on TGC untouched through every later session, including this
+one's initial staging pass (which only updated the *back*, correctly
+assuming the faces were already fine — they weren't; they were just old).
+The 7 newly-created products never had this problem: they were built fresh
+from the current `metadata.print.tgc_url` R2 masters (or, for
+`tarocchino-arlecchino` / `arlecchinos-augmented-arcana`, native art that's
+already exactly 900×1500 — no `border_fit` needed at all).
+
+**Fix applied:** re-baked nothing new (the R2 masters were already correct)
+— downloaded the current `tgc_url` for all 78 Golden Dawn cards and, for
+each *existing* TGC card object, `PUT /card/{id}` with a freshly-uploaded
+`face_id` (matched card-by-card via name, not a create-new pass, so no
+duplicate cards were introduced). Verified via TGC's own preview image
+before and after on "The Fool" (visibly fixed — art now fills to the `FIT`
+box, matching the sampler's Justice) — see `stage_results` / chat for the
+before/after preview URLs. All 78 faces replaced; `has_proofed_face` reset
+to `0` on each (expected — she'll need to re-run Proof All before ordering).
+
+**Verified clean on spot-check** (all match the sampler's fill ratio):
+paris-anonymous-tarot, etteilla-ii-egyptian, vieville-tarot,
+arlecchinos-augmented-arcana. Every other staged deck (minchiate,
+etteilla-ii, este, tarocchino-arlecchino) was built the same way as these
+four, so treated as clean without a separate check on every single card.
+
+**Standing rule:** any future TGC card-face upload — new product or update
+— must come from `metadata.print.tgc_url` (or a fresh `border_fit()` bake if
+that's stale/missing), never from an ad-hoc local folder or an older
+one-off script's output. If a deck's `tgc_url` predates a `tgc_card.py`
+change, re-run `prebake_deck_r2.py <slug>` before uploading.
+
 ## Staged TGC products (drafts — nothing published, nothing purchased)
 
 All confirmed `public: 0` (private draft) via a read-only account listing on
