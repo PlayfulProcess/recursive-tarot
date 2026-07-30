@@ -84,7 +84,7 @@
       ['tarot-today',                     'Tarot Today'],
       ['why-a-reading-feels-personal',    'Why a Reading Feels So Personal'],
       ['what-a-reading-can-do',           'What a Reading Can Do'],
-      ['how-the-golden-dawn-read-the-tarot', 'How the Golden Dawn Read the Tarot'],
+      ['walking-the-golden-dawn-path',     'The Golden Dawn — the Map and the Walk'],
       ['working-with-claude-desktop',     'Working with Claude Desktop'],
     ]],
   ];
