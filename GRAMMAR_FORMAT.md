@@ -115,6 +115,65 @@ content. Examples seen in production grammars:
 
 The viewer renders all sections. Order is the JSON property order.
 
+### ONE SOURCE PER DECK
+
+**A deck carries one author's text. If you want a second author on the same imagery,
+that is a second deck.**
+
+Three occult decks used to stack three voices on one card — the deck's own source, plus
+Waite's *Pictorial Key*, plus Papus's *Le Tarot des Bohémiens* — so a reader had no way to
+tell whose claim they were looking at, and the same Papus chapter sat in three places at
+once. Split Jul 30 2026 by `scripts/one_source_per_deck.py` (idempotent; `--check` verifies
+without writing).
+
+| Deck | Its one source | Section key |
+|------|----------------|-------------|
+| `golden-dawn-book-t-tarot` | Golden Dawn, *Book T* (c. 1888) | `Divinatory Meaning`, `Reversed / Ill-Dignified`, `Correspondences`, `Golden Dawn Title`, `Astrological attribution (Book T)` |
+| `rider-waite-smith-pictorial-key` | A. E. Waite, *The Pictorial Key to the Tarot* (1911) | `The Pictorial Key` |
+| `papus-tarot-des-bohemiens` | Papus, *Le Tarot des Bohémiens* (1889) | `Le Tarot des Bohémiens` |
+| `oswald-wirth-tarot` | Wirth's own commentary | `Wirth`, `Symbolism`, `Upright`, `Reversed` |
+| `court-de-gebelin-tarot` | Court de Gébelin, *Le Monde Primitif* (1781) | `Court de Gébelin's Egyptian Reading`, `Iconography` |
+
+The rules that follow from it:
+
+1. **Imagery may be shared; text may not.** `rider-waite-smith-pictorial-key` points at the
+   same R2 RWS scans the Book T deck uses, and `papus-tarot-des-bohemiens` points at the
+   same Wirth plates the Wirth deck uses. Re-use the URL — never re-upload the file.
+2. **Editorial sections are exempt.** `Scene`, `Symbol`, `Research note` and `Tradition Note`
+   are the repo's own voice about the picture, not a borrowed author's. They may sit
+   alongside the deck's source.
+3. **Never quote another author into a card.** If a foreign voice earns an italic
+   *"X — Title, year · later interpretation, not written for this deck"* header, it is in
+   the wrong deck. Give it its own deck, or link to the deck that has it.
+4. **Say where a voice went.** When you split, append a `## One source per deck` note to the
+   host deck's `description` naming the new deck, and record `_source` on the new one:
+   ```json
+   "_source": {
+     "single_source": "A. E. Waite, The Pictorial Key to the Tarot (1911)",
+     "section": "The Pictorial Key",
+     "rule": "one source per deck — see GRAMMAR_FORMAT.md",
+     "moved_from": "golden-dawn-book-t-tarot"
+   }
+   ```
+5. **Nothing is lost in a split.** The mover must prove, per card, that every removed body
+   is still readable either in the new deck or in `research/sources/*.md`. The script
+   hard-fails on a single unaccounted character.
+
+### Credit the maker at DECK level, not on every card
+
+The `source_deck: "people-of-tarot"` pill (see CLAUDE.md, "the one cross-link pattern")
+resolves the person's whole biography into a collapsed box on the item. Stamped on all 78
+cards it is 78 repetitions of the same box. So:
+
+- Artist/maker credit lives in `image_credit`, in `_grammar_commons.attribution`, and in the
+  deck `description`. State it once, factually.
+- A person pill on **one** dedicated item (an overview card, an "about the maker" entry) is
+  fine — `noblet-tarot`'s single `overview` item is the model.
+- A person pill on **every** item is not. `scripts/one_source_per_deck.py` strips that case
+  and refuses to run if the deck has no deck-level credit to fall back on.
+- `people-of-tarot` is untouched by this — person → featured card still works, so the
+  relationship stays navigable from the side where it is stated once.
+
 ### Composite items (the L2/L3 emergence pattern)
 
 A composite item is just a regular item that has a `composite_of`

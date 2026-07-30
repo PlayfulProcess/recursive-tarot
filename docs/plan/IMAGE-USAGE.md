@@ -4,15 +4,15 @@ Where each card image appears in the site chrome. Keep unique within a page, and
 reusing the same image across sibling pages (Home / Play / About) so the library shows its
 range. Regenerate after editing any page's imagery.
 
-**25 images used across 14 pages.** 13 image(s) appear on more than one page:
+**26 images used across 19 pages.** 13 image(s) appear on more than one page:
 
 - `Fool tarot charles6.jpg` — index.html, pages/historian.html
-- `mantegna-tarocchi-plate-01.jpg` — index.html, pages/contribute.html, pages/historian.html
+- `mantegna-tarocchi-plate-01.jpg` — index.html, pages/historian.html
 - `13 XIII Nicolas Conver Tarot 1760.jpg` — pages/play.html, pages/sources.html
 - `I LE BATELEUR Nicolas Conver Tarot 1760.jpg` — pages/play.html, pages/sources.html
 - `LE MAT Nicolas Conver Tarot 1760.jpg` — pages/historian.html, pages/play.html
 - `XVII L'ETOILE Nicolas Conver Tarot 1760.jpg` — pages/play.html, pages/sources.html
-- `Sola Busca tarot card 27.jpg` — pages/contribute.html, pages/play.html, pages/sources.html
+- `Sola Busca tarot card 27.jpg` — pages/play.html, pages/sources.html
 - `Visconti-sforza-01-magician.jpg` — index.html, pages/play.html
 - `Visconti-sforza-02-popess.jpg` — pages/play.html, pages/sources.html
 - `Visconti-sforza-10-fortune.jpg` — index.html, pages/historian.html, pages/play.html, pages/sources.html
@@ -23,14 +23,17 @@ range. Regenerate after editing any page's imagery.
 ## By deck
 
 ### _shared
-- `mantegna-tarocchi-plate-01.jpg` → index.html, pages/contribute.html, pages/historian.html
+- `mantegna-tarocchi-plate-01.jpg` → index.html, pages/historian.html
 - `tarocchino-bologna-cover.jpg` → pages/play.html
+
+### cary-yale-visconti-tarot
+- `Cary-Yale Tarot deck - The Lovers.jpg` → pages/about.html
 
 ### charles-vi-tarot
 - `Fool tarot charles6.jpg` → index.html, pages/historian.html
 
 ### golden-dawn-book-t-tarot
-- `RWS_Tarot_00_Fool.jpg` → pages/contribute.html
+- `Pents08.jpg` → pages/contribute.html
 
 ### tarot-de-marseille-conver
 - `13 XIII Nicolas Conver Tarot 1760.jpg` → pages/play.html, pages/sources.html
@@ -42,7 +45,7 @@ range. Regenerate after editing any page's imagery.
 - `XXI LE MONDE Nicolas Conver Tarot 1760.jpg` → pages/sources.html
 
 ### tarot-wikimedia
-- `Sola Busca tarot card 27.jpg` → pages/contribute.html, pages/play.html, pages/sources.html
+- `Sola Busca tarot card 27.jpg` → pages/play.html, pages/sources.html
 
 ### visconti-sforza-tarot
 - `Bembo-Visconti-tarot-coins-13-queen.jpg` → index.html
