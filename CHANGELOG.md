@@ -2,6 +2,41 @@
 
 Newest first. One bullet per shipped thing.
 
+## Jul 30 2026
+
+- **One branch: `main`.** The old Pages branch (`claude/website-content-cards-plan-xwn8lj`) merged
+  into `main` with a real merge commit, and GitHub Pages now serves `main` in deploy-from-branch mode
+  (`build_type: legacy`). Site, app-sync and Pages are one branch; the Actions workflow stays
+  deploy-free (re-adding `deploy-pages` would fail against a legacy-configured site) and root
+  `.nojekyll` is what keeps the build from running Jekyll. Documented in CLAUDE.md; the old branch is
+  retired, not deleted.
+- **One source per deck.** Three occult decks each carried several *other* authors' complete card
+  texts, so a reader could not tell whose claim they were reading and Papus's chapters sat in three
+  places at once. Split by `scripts/one_source_per_deck.py` (idempotent; `--check` verifies without
+  writing; it hard-fails if a single removed character is not preserved elsewhere):
+  - `golden-dawn-book-t-tarot` → **Book T only** (100 sections removed: 78 Waite + 22 Papus). The
+    editorial `Scene` / `Symbol` / `Research note` stay.
+  - **NEW `rider-waite-smith-pictorial-key`** — 78 cards, the same RWS scans re-used (not
+    re-uploaded), carrying Waite's own *Pictorial Key* (1911) text as the single source.
+  - **NEW `papus-tarot-des-bohemiens`** — 22 majors, Oswald Wirth's plates (the ones Papus's book
+    reproduces) with Papus's *Le Tarot des Bohémiens* (1889) as the single source. Marseille
+    numbering: VIII Justice, XI Strength. Majors only — the book's minor material is suit-wide
+    theory, not per-card, so none was invented.
+  - `oswald-wirth-tarot` and `court-de-gebelin-tarot` → Papus removed (22 each).
+  - The three Papus copies proved byte-identical per card (modulo Book T's VIII↔XI swap), so the
+    corpus is now stored once. Rule + deck→source table written into `GRAMMAR_FORMAT.md`.
+- **Maker credit sits at deck level, not on all 78 cards.** The `people-of-tarot` cross-link pill
+  resolves a whole biography into a collapsed box on the item; stamped on every card of a deck that
+  is one box repeated 78 times. Removed from the 15 decks where it repeated on *every* item (1,065
+  items total) — `noblet-tarot`'s single dedicated `overview` item keeps its pill, which is the
+  pattern to follow. Credit now reads factually at deck level, e.g. "Art by Pamela Colman Smith
+  (Rider-Waite-Smith, 1909), credited by Waite in his text though not in the deck's market name."
+  `people-of-tarot` is untouched — person → featured card still works.
+- **Card detail: the pager stopped eating the last line.** In `viewers/cards.html` the sticky
+  prev/next footer parked 2rem above the scroll container's bottom edge while its negative margin
+  removed those same 2rem of scrollable height, so at full scroll the closing lines sat ~8px under
+  the bar with no way to scroll clear. Fixed at the desktop breakpoint; verified at 1280px and 375px.
+
 ## Jul 27 2026
 
 - **Spread Caster (`viewers/caster-studio.html`): the spread's NAME is now a real, visible field;
