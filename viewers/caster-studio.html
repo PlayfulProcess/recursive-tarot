@@ -1351,7 +1351,7 @@ async function openCardDetail(p){ const c=p.card; if(!c) return;
   const _play='<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z"/></svg>';
   $('cdmActions').innerHTML = uuid
     ? `<a class="eco-chip" href="${FLOW}/create/dashboard/unified/new?forkId=${uuid}${c.source_item_id?'&card='+encodeURIComponent(c.source_item_id):''}" target="_blank" rel="noopener">${_pen} Edit in recursive.eco ↗</a>`
-      + `<a class="eco-chip" href="${FLOW}/?deckId=${uuid}" target="_blank" rel="noopener">${_play} Play in recursive.eco ↗</a>`
+      + `<a class="eco-chip" href="${FLOW}/g/${uuid}?view=reading" target="_blank" rel="noopener">${_play} Play in recursive.eco ↗</a>`
     : '';
   modal.style.display='flex'; document.body.style.overflow='hidden';
 
