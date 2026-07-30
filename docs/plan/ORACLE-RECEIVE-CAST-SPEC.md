@@ -41,6 +41,10 @@ stripped padding (URL-safe base64). Decode with the inverse. Shape (`_version: 2
   "positions": [                                        // the spread layout
     { "n": 1, "label": "Structures", "meaning": "What's already built…", "x": 0.22, "y": 0.5 }
   ],
+  "axes": {                                             // OPTIONAL (added Jul 2026) — omitted entirely when unused
+    "cols": [ { "label": "Structures", "meaning": "what is built" } ],
+    "rows": [ { "label": "Perceived",  "meaning": "" } ]
+  },
   "cards": [                                            // one per position, in order
     {
       "position": "Structures",
@@ -113,3 +117,66 @@ Implement **option 2** on flow (decode `?d=` → render → interpret with the r
 wallet → journal), keeping the `_type`/`_version` discriminator so it can later become
 the first entry in a channel-app registry (option 3). The tarot side is ready and will
 not need changes.
+
+---
+
+## Appendix — the SPREAD contract (layout only) and its `axes` extension
+
+Distinct from the cast payload above: a **spread** is the layout with no drawn cards.
+It is the wire format shared by the flow assistant's `create_spread` tool, the
+`?spread=<base64url>` handoff, the `eco-spread` postMessage, and the Studio's
+Export/Import. Written and read in `viewers/caster-studio.html`
+(`currentSpreadContract()` / `loadSpreadContract()`).
+
+```jsonc
+{
+  "v": 1,
+  "name": "Nature's Negotiation",          // REQUIRED — the spread's name, see below
+  "description": "…",                       // optional, tolerated extra
+  "positions": [
+    { "label": "Held", "meaning": "What is already built here.", "x": 0.25, "y": 0.25 }
+  ],
+  "axes": {                                 // OPTIONAL — aggregate row/column headers
+    "cols": [ { "label": "Structures", "meaning": "what is built" },
+              { "label": "Process",    "meaning": "what moves" },
+              { "label": "Possibilities" } ],
+    "rows": [ { "label": "Perceived" }, { "label": "Self" }, { "label": "Perceiver" } ]
+  }
+}
+```
+
+**`name` is load-bearing.** The Studio shows it in a always-visible, editable *Spread
+name* field and in the spread dropdown, and every downstream writer (export filename,
+cast JSON `spread`, Contribute) reads it from there. A spread that arrives without a
+name shows up as an anonymous "Custom", which is exactly the confusion this field was
+added to end (Jul 2026).
+
+### `axes` — declare a row/column meaning ONCE
+
+For grid spreads, `axes` lets the *axis* carry the meaning so the position names can
+stay short. A 3×3 "Structures/Process/Possibilities × Perceived/Self/Perceiver" needs
+`axes.cols` + `axes.rows` and nine one-word position labels, instead of repeating both
+axis names inside all nine position names.
+
+- Entries may be plain strings (`["Structures","Process","Possibilities"]`) or objects
+  `{ label, meaning? }`. The flat `col_labels` / `row_labels` arrays are accepted as
+  aliases on read.
+- Column headers render across the top of the board, row headers down the left. Their
+  positions are derived by clustering the positions' own x (or y) values, so they line
+  up with the actual grid; if the layout isn't a grid the headers space out evenly.
+- **Backward compatible in both directions:** the key is omitted entirely when unused,
+  and a spread without `axes` renders exactly as it always has.
+
+### TODO on the flow side (not doable from this repo)
+
+1. **`create_spread` should accept `axes`.** The tool schema
+   (`lib/ai-pkg/capability-registry.ts`) currently takes only `name` + `positions[]
+   {label, meaning}`. Adding an optional `axes: { rows[], cols[] }` (labels + optional
+   meanings) would let the assistant build grid spreads the way a person describes
+   them, and `spread-codec.ts` already tolerates unknown extras on the wire.
+2. **There is no way for the assistant to edit a spread by name.** There is no
+   `list_spreads` / `get_spread` / `update_spread` tool, the chat route never reads
+   `preferences.spreads`, and the saved names are not in the system prompt — so
+   "edit my Nature's Negotiation spread" makes the model call `create_spread` again and
+   append a duplicate. The only name-keyed update path is the client-side
+   `importSpread()` reached via `?importSpread=`.

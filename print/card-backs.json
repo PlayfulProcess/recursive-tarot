@@ -115,6 +115,25 @@
       }
     },
     {
+      "id": "back-symmetric-spiral",
+      "name": "Recursive Spiral — 180°-symmetric back (2026)",
+      "level": 1,
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/card-backs/back-symmetric-spiral.jpg",
+      "metadata": {
+        "year": 2026,
+        "tradition": "Recursive Tarot (original)",
+        "print": {
+          "dpi_ready": true,
+          "bleed": true
+        },
+        "point_symmetric_180": true
+      },
+      "sections": {
+        "About": "A new house back built from the project's own golden-ratio spiral motif, drawn only in the card's top half and completed by an exact 180° rotation of itself onto the bottom half — so the printed back is mathematically point-symmetric: rotating it 180° reproduces the identical image, pixel for pixel. That means a shuffled deck never telegraphs a reversed card from the back, which historical backs (all asymmetric top/bottom) can't guarantee. Recommended default for any deck sold reversal-agnostic.",
+        "Attribution": "PlayfulProcess, 2026. Original design, CC-BY-SA-4.0 (same license as the rest of the library)."
+      }
+    },
+    {
       "id": "back-francese-blu",
       "name": "Carta Francese — blue reverse (Italy)",
       "level": 1,

@@ -50,6 +50,7 @@
     ['treeoflife', 'Tree of Life', PFX + 'viewers/genealogy-tree.html'],
     ['timeline',   'Timeline',     PFX + 'viewers/timeline.html'],
     ['genealogy',  'Genealogy',    PFX + 'genealogy.html'],
+    ['channels',   'Channels',     PFX + 'pages/channels.html'],
   ];
   // [key, label, href, cssClass, external?]
   const TOOLS = [
@@ -83,6 +84,7 @@
       ['tarot-today',                     'Tarot Today'],
       ['why-a-reading-feels-personal',    'Why a Reading Feels So Personal'],
       ['what-a-reading-can-do',           'What a Reading Can Do'],
+      ['how-the-golden-dawn-read-the-tarot', 'How the Golden Dawn Read the Tarot'],
       ['working-with-claude-desktop',     'Working with Claude Desktop'],
     ]],
   ];
@@ -97,6 +99,7 @@
     if (f.startsWith('tree-viewer')) return 'tree';
     if (f.startsWith('play') || f.startsWith('caster') || f.startsWith('trionfi') || location.pathname.includes('/games/')) return 'play';
     if (f.startsWith('genealogy')) return 'genealogy';
+    if (f.startsWith('channels')) return 'channels';
     if (f.startsWith('course')) return 'course';
     if (f.startsWith('shop')) return 'shop';
     if (f.startsWith('contribute')) return 'contribute';
@@ -126,7 +129,7 @@
       // Dropdown menu item (used inside the Views menu) — highlights the current page.
       const menuItem = ([key, label, href, cls, ext]) =>
         `<a class="${key === active ? 'on' : ''}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`;
-      const VIEW_KEYS = ['explorer', 'cards', 'lenses', 'tree', 'treeoflife', 'timeline', 'genealogy'];
+      const VIEW_KEYS = ['explorer', 'cards', 'lenses', 'tree', 'treeoflife', 'timeline', 'genealogy', 'channels'];
       const viewActive = VIEW_KEYS.includes(active);
       root.innerHTML = `
         <style>
@@ -228,7 +231,8 @@
               <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Courses menu">Courses</a>
               <span class="dd-menu">
                 ${COURSE_GROUPS.map(([cap, items]) => `<span class="dd-cap">${cap}</span>` + items.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')).join('')}
-                <a href="${PFX}pages/sources.html" style="border-top:1px solid #d8d2c6;margin-top:4px;padding-top:9px">All courses &amp; sources →</a>
+                <a href="${PFX}pages/courses.html" style="border-top:1px solid #d8d2c6;margin-top:4px;padding-top:9px">All courses (gallery) →</a>
+                <a href="${PFX}pages/sources.html">The sources — people &amp; books →</a>
               </span>
             </span>
             <span class="dd">

@@ -46,7 +46,7 @@ def main():
         "date: 2026-06-22\n"
         "---\n\n"
         "# Reading the Cards\n\n"
-        "> *Read to know yourself, not to be told your fate. A card starts a conversation "
+        "> *Read to know yourself, not to surrender yourself. A card starts a conversation "
         "with what is already alive in you. Relate to the card; never obey it.*\n\n"
         "This is the full course in one place — twelve chapters, from *why a reading can "
         "help* through the lenses, a ritual, and the long human history of divination. "
