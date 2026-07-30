@@ -3434,9 +3434,7 @@
                             || items.some(it => typeof it.number === 'number' && it.number >= 1 && it.number <= 64 && (it.binary || it.king_wen || it.trigram_above));
                         const looksLikeAstro = typeStr.includes('astro') || typeStr.includes('birthchart') || typeStr.includes('birth_chart')
                             || (grammarData && Array.isArray(grammarData.birth_charts) && grammarData.birth_charts.length > 0);
-                        url = looksLikeIching ? `${flowBaseUrl}/?bookId=${id}`
-                            : looksLikeAstro ? `${flowBaseUrl}/?astroGrammarId=${id}`
-                            : `${flowBaseUrl}/play?id=${id}`;
+                        url = `${flowBaseUrl}/g/${id}?view=reading`;
                     }
                     window.open(url, '_blank', 'noopener');
                 });
@@ -5010,9 +5008,7 @@
                     || items.some(it => typeof it.number === 'number' && it.number >= 1 && it.number <= 64 && (it.binary || it.king_wen || it.trigram_above));
                 const looksLikeAstro = typeStr.includes('astro') || typeStr.includes('birthchart') || typeStr.includes('birth_chart')
                     || (grammarData && Array.isArray(grammarData.birth_charts) && grammarData.birth_charts.length > 0);
-                url = looksLikeIching ? `${flowBaseUrl}/?bookId=${id}`
-                    : looksLikeAstro ? `${flowBaseUrl}/?astroGrammarId=${id}`
-                    : `${flowBaseUrl}/?deckId=${id}`;
+                url = `${flowBaseUrl}/g/${id}?view=reading`;
             }
             window.open(url, '_blank', 'noopener');
         }
@@ -5028,7 +5024,7 @@
                 id = (ecoIds.ids || {})[slug] || null;
             }
             if (!id) id = await resolveDeckFlowId();   // single-deck fallback (?src=/?id=)
-            const url = id ? `${flowBaseUrl}/play?id=${id}` : `${flowBaseUrl}/play`;
+            const url = id ? `${flowBaseUrl}/g/${id}?view=reading` : `${flowBaseUrl}/play`;
             window.open(url, '_blank', 'noopener');
         }
 
