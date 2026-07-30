@@ -1,0 +1,36 @@
+{
+  "_note": "Catalog for the all-courses gallery (pages/courses.html). One entry per course shown in the gallery. `deck` resolves that deck's cover_image_url from tarot/_collection.json at render time (so thumbnails follow the deck art); `thumb` is a direct image path when a deck cover isn't the right image. Keep the id/title in step with COURSE_GROUPS in site-header.js (the dropdown menu) — this file is the gallery's data, that array is the menu's.",
+  "groups": [
+    {
+      "name": "Start here",
+      "courses": [
+        { "id": "history-of-tarot", "title": "The History of Tarot", "blurb": "Six centuries, from a 1440s card game to the occult reinvention of 1781 — read closely, deck by deck.", "deck": "visconti-sforza-tarot" },
+        { "id": "how-tarot-works", "title": "How the Cards Can Work", "blurb": "A reading doesn't tell your fate — it might help you make it. The honest case, with the evidence.", "deck": "tarot-de-marseille-conver" },
+        { "id": "how-to-contribute", "title": "Ways to Contribute", "blurb": "Everything here is public-domain data in one open repo. Fix or add a deck, a spread, a course — by the gentlest route that suits you.", "deck": "cary-yale-visconti-tarot" }
+      ]
+    },
+    {
+      "name": "Read more deeply",
+      "courses": [
+        { "id": "reading-the-cards", "title": "Reading the Cards", "blurb": "The full anthology — why read at all, setting the intention, and the ecosystem of voices to read through.", "deck": "golden-dawn-book-t-tarot" },
+        { "id": "intention-setting", "title": "Intention Setting", "blurb": "Why still read tarot after it disappointed you — not as a fate, but as a gate — and the lenses to read through.", "deck": "oswald-wirth-tarot" },
+        { "id": "how-the-golden-dawn-read-the-tarot", "title": "How the Golden Dawn Read the Tarot", "blurb": "The most influential reading system the cards ever wore — Book T, its attributions, and the Rider-Waite-Smith deck that grew from it.", "deck": "golden-dawn-book-t-tarot" },
+        { "id": "walking-the-golden-dawn-path", "title": "Walking the Golden Dawn Path", "blurb": "The esoteric voice, kept honest: each trump a gate you choose to walk through, a step on the Tree of Life. Pathworking, not prophecy.", "deck": "golden-dawn-book-t-tarot" }
+      ]
+    },
+    {
+      "name": "The honest questions",
+      "courses": [
+        { "id": "why-a-reading-feels-personal", "title": "Why a Reading Feels So Personal", "blurb": "The chill is real; its explanation is documented psychology, not hidden knowledge. A deep dive into the evidence.", "deck": "etteilla-i-livre-de-thot" },
+        { "id": "what-a-reading-can-do", "title": "What a Reading Can Do", "blurb": "Four non-magical mechanisms with real evidence — projection, re-narration, productive randomness, ritual — and the stance that unlocks them.", "deck": "court-de-gebelin-tarot" },
+        { "id": "tarot-today", "title": "Tarot Today", "blurb": "A living question: why a card game is having a cultural moment, read against the data.", "deck": "petit-lenormand" }
+      ]
+    },
+    {
+      "name": "Build with us",
+      "courses": [
+        { "id": "working-with-claude-desktop", "title": "Working with Claude Desktop", "blurb": "The powerful path for contributors: GitHub and git from zero, the session habits that keep work safe, and a private-folder pattern.", "thumb": "courses/images/shot-course.png" }
+      ]
+    }
+  ]
+}
