@@ -1563,9 +1563,23 @@
             }
 
             /* Body padding is 2rem on desktop — match the footer's edge-to-edge
-               negative margins to it. */
+               negative margins to it.
+
+               `bottom` must match that negative margin, or the bar eats the last
+               line of the card (builder, Jul 30 2026: "the last lines are
+               unreadable beneath it"). Here .modal-body is the scroll container and
+               it has 2rem of padding, so a sticky `bottom: 0` parks the bar 2rem
+               ABOVE the container's bottom edge — while `margin-bottom: -2rem`
+               takes those same 2rem out of the scrollable height. The two cancel
+               each other exactly wrong: at full scroll the text still runs ~8px
+               under the bar and can never be scrolled clear. `bottom: -2rem` parks
+               it flush with the border-box bottom instead, which restores the full
+               1.5rem of clearance. On phones .modal-content is the scroller and has
+               no padding, so the base `bottom: 0` is already correct there and the
+               sticky element is clamped by .modal-body anyway. */
             .modal-nav-footer {
                 margin: 1.5rem -2rem -2rem;
+                bottom: -2rem;
                 padding: 0.75rem 2rem;
             }
 
