@@ -4,6 +4,40 @@ Newest first. One bullet per shipped thing.
 
 ## Jul 30 2026
 
+- **Course editorial pass — the book applied to the courses.** Worked from
+  `_research/TAROT-COURSES-EDITORIAL-NOTES-2026-07-27.md` (the book *Tarot as Myth* read against
+  every course). Four groups of fixes, all in the source essays — never in the generated anthology:
+  - **The colonial-oracle picture, named as such.** `intention-setting` keeps *game → crystal ball →
+    gate* but as one reader's path through **one European lineage**, with a new paragraph saying the
+    crystal ball is a datable European commercial figure and not what "oracle" means (Azande /
+    Mambila / Ifá / Umbanda, the last in the first person only). `how-tarot-works`' "Gates and
+    oracles" became "The crystal ball and the gate" for the same reason.
+  - **False genealogy, applied to ourselves.** `divination-traditions`: "Modern tarot… inherits all
+    of this" → *descends from none of this; keeps company with, and borrows from, on a dated
+    modern choice*. `tarot-today`: astrology's "unbroken line" → the actual chain of transmissions,
+    "foretelling" → "what the scribes read as omens", the pyramid-era astrologers cut.
+    `tarot-and-the-crack`: "some say… Hermes Trismegistus" now carries its authors and dates
+    (Court de Gébelin 1781, Etteilla, Haich 1953) and "this ancient wisdom" is retired.
+    `history-of-tarot`: a sentence under the Waite epigraph on what he installed in place of Egypt.
+  - **Outsider voices marked as outsider voices.** Moore (1957) attributed in-sentence in both
+    `what-a-reading-can-do` and `how-tarot-works`, with Innu (Naskapi) on first mention and the
+    bibliography line de-verdicted; Tacitus dated (98 CE) and the runes inference marked as the
+    author's; Tibetan *Mo* no longer ranked by closeness to the house stance but named as a
+    borrowing; the universal frame narrowed (title: **How Humans Have Cast Lots**) with a
+    ch-20 caution against flattening, and the "whose fairness, whose adaptation" guard moved *above*
+    the synthesis it has to govern.
+  - **Golden Dawn: two courses became one.** `how-the-golden-dawn-read-the-tarot` merged into
+    **`walking-the-golden-dawn-path`** — retitled *The Golden Dawn — the Map and the Walk*, eleven
+    sections, the map (Book T, decans, courts, Aces, the RWS origin) beside the walk (four gates),
+    with the duplicated founding / Tree / disclaimer / sources paragraphs stated once. The id is
+    unchanged, so `voices.json`, `book.json`, the course grammar folder and the inbound links all
+    still resolve; the old file is a stub on the `the-light-of-tarot.mdx` pattern. In the same pass
+    the Smith credit is stated structurally (named in the *Pictorial Key*, dropped from the market
+    name, flat fee and no royalties — how commissioned illustrators were and mostly still are paid)
+    and the Order's Kabbalah is named as a Christian-occultist adaptation of a living Jewish
+    tradition. `site-header.js`, `course/_courses.json` and `book.json` follow.
+  - Regenerated: `build_reading_course.py`, then `course_to_grammar.py` for all twelve touched
+    courses; `check_all.py` green with `dangling=0`.
 - **One branch: `main`.** The old Pages branch (`claude/website-content-cards-plan-xwn8lj`) merged
   into `main` with a real merge commit, and GitHub Pages now serves `main` in deploy-from-branch mode
   (`build_type: legacy`). Site, app-sync and Pages are one branch; the Actions workflow stays

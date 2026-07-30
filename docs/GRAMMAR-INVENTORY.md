@@ -124,7 +124,7 @@ MDX) and `viewers/grammar-course.html` / `cards.html` (from the grammar).
 | `history-of-tarot-course` | 17 | no |
 | `hospicing-modernity-reads-the-tarot-course` | 6 | no |
 | `how-tarot-works-course` | 8 | no |
-| `how-the-golden-dawn-read-the-tarot-course` | 7 | no |
+| `how-the-golden-dawn-read-the-tarot-course` | 1 | no |  ← stub; merged into `walking-the-golden-dawn-path` (Jul 30 2026)
 | `how-to-contribute` | 14 | **yes** |
 | `intention-setting-course` | 12 | no |
 | `jung-reads-the-tarot-course` | 8 | no |
@@ -137,7 +137,7 @@ MDX) and `viewers/grammar-course.html` / `cards.html` (from the grammar).
 | `tarot-and-the-crack-course` | 13 | no |
 | `tarot-today-course` | 11 | no |
 | `the-light-of-tarot-course` | 1 | no |
-| `walking-the-golden-dawn-path-course` | 6 | no |
+| `walking-the-golden-dawn-path-course` | 10 | no |
 | `what-a-reading-can-do-course` | 7 | no |
 | `why-a-reading-feels-personal-course` | 8 | no |
 | `working-with-claude-desktop-course` | 11 | no |
