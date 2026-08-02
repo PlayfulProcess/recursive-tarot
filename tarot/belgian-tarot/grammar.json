@@ -2,11 +2,53 @@
   "name": "Belgian Tarot — Vandenborre / 'Tarot Flamand' (Brussels, c. 1780)",
   "slug": "belgian-tarot",
   "cover_image_url": "https://tarot.recursive.eco/tarot/belgian-tarot/images/t21.jpg",
+  "cover_image_credit": {
+    "title": "Le Monde (XXI) — Vandenborre / 'Tarot Flamand' pattern",
+    "creator": "F. I. Vandenborre (workshop), Brussels",
+    "date": "c. 1780",
+    "source": "Wikimedia Commons, the 'Tarot Belgijski' set",
+    "file_page": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A21_-_%C5%9Awiat.jpg",
+    "license": "Public domain (as stated on the Wikimedia Commons file page)",
+    "pd_basis": "c. 1780 print, long out of copyright; the Commons file page states public domain",
+    "verified": "2026-08-02"
+  },
   "description": "# Belgian Tarot — the Vandenborre / Flemish pattern\n\n## At a glance\n\nThe **Flemish tarot** (*Tarot flamand*), printed in Brussels in the later 18th century by makers such as **F. I. Vandenborre** and Jacques/Jean Galler. It keeps the whole **Tarot de Marseille** structure but is famous for **two substitutions** in the trumps — a quiet response to Catholic sensibilities:\n\n- **II · Le Capitaine** — a braggart soldier replaces **La Papesse** (the Popess).\n- **V · Bacchus** — the wine-god on a barrel replaces **Le Pape** (the Pope).\n\nWith both clergy gone, the deck could be sold without offence in a region pulled between Catholic and Protestant authority. It is the **Eastern/Belgian branch** of the family — the same current the earlier **Viéville** (1650) pointed toward.\n\n## What you're looking at\n\nThe **22 Major Arcana** (atouts) of the Vandenborre pattern, from the public-domain c. 1780 set on Wikimedia Commons. The 56 suit cards are not included here — clean public-domain scans of the Flemish minors have not yet been located at usable resolution; this is therefore a **trumps-only** grammar (like our Oswald Wirth), and the images are **display resolution**, not print.\n\n## Game, not divination\n\nThe Flemish tarot was a **card game**; the cartomantic readings attached to tarot belong to the later French occult tradition, not to this Brussels playing pack.\n\n## Sources\n\nWikimedia Commons 'Tarot Belgijski' set (public domain, c. 1780); Thierry Depaulis on the Belgian/Flemish cartiers; Dummett, *The Game of Tarot*. Trump identifications follow the standard Vandenborre order.\n",
   "grammar_type": "tarot",
   "provenance": "record",
   "creator_name": "PlayfulProcess",
   "license": "CC-BY-SA-4.0",
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "F. I. Vandenborre (workshop), Brussels",
+        "date": "c. 1780",
+        "note": "Printer of the Vandenborre / 'Tarot Flamand' pattern; the pattern itself is older than the firm and descends from Jacques Viéville via Bodet (Liège, 1693) and de Hautot (Rouen)"
+      },
+      {
+        "name": "Wikimedia Commons",
+        "date": "public domain",
+        "note": "Card images, the 'Tarot Belgijski' set — 22 atouts only; clean public-domain scans of the Flemish minors have not been located"
+      },
+      {
+        "name": "PlayfulProcess",
+        "date": "2026",
+        "note": "Grammar architecture and summaries"
+      }
+    ]
+  },
+  "_image_provenance": {
+    "schema_version": "1.0",
+    "holding_institution": null,
+    "archive": "Wikimedia Commons — the 'Tarot Belgijski' set",
+    "license": "Public domain (as stated on the Wikimedia Commons file page)",
+    "pd_basis": "The cards are a c. 1780 print, so the artwork is long out of copyright; each Commons file page states public domain.",
+    "verified": "2026-08-02",
+    "per_item_field": "metadata.image_source",
+    "mapping_rule": "images/tNN.jpg is Commons 'File:Tarot Belgijski - A<NN> - <name>.jpg', the <name> suffix recovered from scripts/archive/build_belgian.py.",
+    "unknown": "Which institution or private collection holds the physical Vandenborre pack these scans were made from is not recorded anywhere in this repo, and the Commons upload does not say. The images are display resolution and the print masters are flagged quality: web because there is no higher-resolution upstream. Source under reconstruction — do not read the credit as naming a holder."
+  },
   "default_view": "cards",
   "metadata": {
     "year": 1780,
@@ -37,7 +79,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-01.jpg"
         },
         "trump_key": "magician",
-        "trump_number": 1
+        "trump_number": 1,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A1_-_Mag.jpg"
       },
       "sections": {
         "About": "The mountebank — the Magician.",
@@ -61,7 +104,8 @@
             611
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-02.jpg"
-        }
+        },
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A2_-_Kapitan_Eracasse.jpg"
       },
       "sections": {
         "About": "**A Belgian substitution.** Where the Marseille has La Papesse (the Popess), the Flemish tarot puts a swaggering soldier — the *Capitaine* of farce and commedia dell'arte. Avoiding the female 'pope' sidesteps a figure the Counter-Reformation found scandalous. (The card's actual inscription is *L'Espagnol Capitano Eracasse*; 'Fracasse' is the later Commedia dell'arte name.) [research 2026-06-13]",
@@ -87,7 +131,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-03.jpg"
         },
         "trump_key": "empress",
-        "trump_number": 3
+        "trump_number": 3,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A3_-_Cesarzowa.jpg"
       },
       "sections": {
         "About": "The Empress.",
@@ -113,7 +158,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-04.jpg"
         },
         "trump_key": "emperor",
-        "trump_number": 4
+        "trump_number": 4,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A4_-_Cesarz.jpg"
       },
       "sections": {
         "About": "The Emperor.",
@@ -138,7 +184,8 @@
             619
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-05.jpg"
-        }
+        },
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A5_-_Bachus.jpg"
       },
       "sections": {
         "About": "**The second Belgian substitution.** In place of Le Pape (the Pope), the wine-god **Bacchus** rides a barrel — a playful, anticlerical swap that, with the Captain, removes both Catholic clergy from the trumps.",
@@ -165,7 +212,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-06.jpg"
         },
         "trump_key": "lovers",
-        "trump_number": 6
+        "trump_number": 6,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A6_-_Kochankowie.jpg"
       },
       "sections": {
         "About": "The Lovers.",
@@ -191,7 +239,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-07.jpg"
         },
         "trump_key": "chariot",
-        "trump_number": 7
+        "trump_number": 7,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A7_-_Rydwan.jpg"
       },
       "sections": {
         "About": "The Chariot.",
@@ -218,7 +267,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-08.jpg"
         },
         "trump_key": "justice",
-        "trump_number": 11
+        "trump_number": 11,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A8_-_Sprawiedliwo%C5%9B%C4%87.jpg"
       },
       "sections": {
         "About": "Justice.",
@@ -245,7 +295,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-09.jpg"
         },
         "trump_key": "hermit",
-        "trump_number": 9
+        "trump_number": 9,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A9_-_Pustelnik.jpg"
       },
       "sections": {
         "About": "The Hermit.",
@@ -272,7 +323,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-10.jpg"
         },
         "trump_key": "wheel-of-fortune",
-        "trump_number": 10
+        "trump_number": 10,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A10_-_Ko%C5%82o_Fortuny.jpg"
       },
       "sections": {
         "About": "The Wheel of Fortune.",
@@ -299,7 +351,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-11.jpg"
         },
         "trump_key": "strength",
-        "trump_number": 8
+        "trump_number": 8,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A11_-_Si%C5%82a.jpg"
       },
       "sections": {
         "About": "Strength.",
@@ -326,7 +379,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-12.jpg"
         },
         "trump_key": "hanged-man",
-        "trump_number": 12
+        "trump_number": 12,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A12_-_Wisielec.jpg"
       },
       "sections": {
         "About": "The Hanged Man — hangs **right-side-up** in the Belgian line (the card inscription is the misspelt *Lepen-du*). [research 2026-06-13]",
@@ -352,7 +406,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-13.jpg"
         },
         "trump_key": "death",
-        "trump_number": 13
+        "trump_number": 13,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A13_-_%C5%9Amier%C4%87.jpg"
       },
       "sections": {
         "About": "Death. (The Belgian card IS named 'La Mort'; it is the Marseille XIII that is left unnamed.)",
@@ -378,7 +433,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-14.jpg"
         },
         "trump_key": "temperance",
-        "trump_number": 14
+        "trump_number": 14,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A14_-_Umiarkowanie.jpg"
       },
       "sections": {
         "About": "Temperance.",
@@ -405,7 +461,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-15.jpg"
         },
         "trump_key": "devil",
-        "trump_number": 15
+        "trump_number": 15,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A15_-_Diabe%C5%82.jpg"
       },
       "sections": {
         "About": "The Devil.",
@@ -432,7 +489,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-16.jpg"
         },
         "trump_key": "tower",
-        "trump_number": 16
+        "trump_number": 16,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A16_-_Gniew_Bo%C5%BCy.jpg"
       },
       "sections": {
         "About": "La Foudre — a **tree** struck by lightning with a shepherd beneath (the Belgian-line design), NOT a struck **tower**; 'Maison-Dieu' is the Marseille name, not this card's. [research 2026-06-13]",
@@ -458,7 +516,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-17.jpg"
         },
         "trump_key": "star",
-        "trump_number": 17
+        "trump_number": 17,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A17_-_Gwiazda.jpg"
       },
       "sections": {
         "About": "The Star.",
@@ -484,7 +543,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-18.jpg"
         },
         "trump_key": "moon",
-        "trump_number": 18
+        "trump_number": 18,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A18_-_Ksi%C4%99%C5%BCyc.jpg"
       },
       "sections": {
         "About": "The Moon.",
@@ -511,7 +571,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-19.jpg"
         },
         "trump_key": "sun",
-        "trump_number": 19
+        "trump_number": 19,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A19_-_S%C5%82o%C5%84ce.jpg"
       },
       "sections": {
         "About": "The Sun.",
@@ -538,7 +599,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-20.jpg"
         },
         "trump_key": "judgement",
-        "trump_number": 20
+        "trump_number": 20,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A20_-_S%C4%85d_Bo%C5%BCy.jpg"
       },
       "sections": {
         "About": "The Judgement.",
@@ -565,7 +627,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-21.jpg"
         },
         "trump_key": "world",
-        "trump_number": 21
+        "trump_number": 21,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A21_-_%C5%9Awiat.jpg"
       },
       "sections": {
         "About": "The World.",
@@ -592,7 +655,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/belgian-tarot/trump-22.jpg"
         },
         "trump_key": "fool",
-        "trump_number": 0
+        "trump_number": 0,
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A22_-_G%C5%82upiec.jpg"
       },
       "sections": {
         "About": "The unnumbered Fool / Mat — the wandering jester.",
@@ -637,12 +701,14 @@
         "Scene": "The twenty-two trumps of the Belgian Tarot laid out together. The sequence follows standard Marseille ordering with the two Protestant substitutions — Capitaine Fracasse in place of the Papesse, and Bacchus in place of the Pope — both rendered in vivid hand-coloured line engraving.",
         "Symbol": "The Belgian substitutions reflect a Reformed Protestant cultural context: ecclesiastical authority replaced by secular archetypes — the swaggering soldier and the festive wine god."
       },
-      "metadata": {}
+      "metadata": {
+        "image_source": "https://commons.wikimedia.org/wiki/File:Tarot_Belgijski_-_A5_-_Bachus.jpg"
+      }
     }
   ],
   "_research": {
     "deck": "research/decks/belgian-tarot.md",
     "bibliography": "research/bibliography.bib"
   },
-  "image_credit": "Reproductions in the public domain (Vandenborre / Belgian type)"
+  "image_credit": "Wikimedia Commons, 'Tarot Belgijski' set — the Vandenborre / Rouen-Brussels pattern, c. 1780, public domain. No holding institution is recorded for the pack these scans were made from."
 }

@@ -2,11 +2,53 @@
   "name": "Tarot de Paris — Anonymous (BnF, c. 1600–1650)",
   "slug": "paris-anonymous-tarot",
   "cover_image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c21.jpg",
+  "cover_image_credit": {
+    "title": "Le Monde (XXI) — anonymous Parisian tarot",
+    "creator": "Anonymous Parisian cardmaker",
+    "date": "c. 1600-1650 (Depaulis: first half of the 17th century)",
+    "source": "Bibliothèque nationale de France, RESERVE KH-34, on Gallica (ark:/12148/btv1b105109624)",
+    "file_page": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f41.item",
+    "license": "Public domain (as stated by the BnF on Gallica)",
+    "pd_basis": "17th-century woodcut, long out of copyright; the BnF publishes the scan as public domain",
+    "verified": "2026-08-02"
+  },
   "description": "# Anonymous Parisian Tarot de Marseille (BnF)\n\n## At a glance\n\nAn **anonymous early Parisian tarot** (BnF, *c. 1600–1650*) held at the Bibliothèque nationale de France and freely on **Gallica** (ark:/12148/btv1b105109624) — the unsigned companion to our **Jean Noblet** (c. 1650) and **Jacques Viéville** decks. Unlike the outlier Viéville, this pack sits squarely in the **C-order (Marseille)** mainstream: a fully **named** French Tarot de Marseille, every trump captioned on the card in period spelling (LE BATELEVR, LA IVSTICE, ATREMPANCE…). 78 woodcut cards, hand-coloured, shown here from the BnF scan.\n\n## Why it matters\n\nWith Noblet and Viéville, it shows that the **named, numbered Marseille pattern was already standardised in Paris a century before Nicolas Conver's 1760 Marseille** — the printed standard our library also holds. It is a clean witness to the C-order line in its Parisian form.\n\n## What you're looking at\n\n- **22 atouts (trumps):** 21 numbered + the unnumbered **Mat**, with the card names read directly from the scans.\n- **56 suit cards:** **Deniers** (Coins), **Coupes** (Cups), **Bâtons** (Batons), **Épées** (Swords), each with ten pips and four courts (Valet, Cavalier, Reine, Roi).\n\n## Honesty notes\n\nThe maker is anonymous, but the **BnF catalogue dates it 1600–1650** (shelfmark RESERVE KH-34, titled *Jeu de tarot parisien anonyme à enseignes italiennes*). It is one of *several* early Parisian tarots — note it is **not** the famous idiosyncratic *Tarot de Paris* of the same years, but a captioned, mainstream C-order pack. The trumps are named from their printed captions; suit cards are shown in **BnF folio order** and pip ranks are assigned by position (corrections welcome).\n\n## Game, not divination\n\nA playing pack; the cartomantic readings attached to the Marseille came later, with the 18th-century occult revival.\n\n## Sources\n\nBnF / Gallica (ark:/12148/btv1b105109624), public domain; Thierry Depaulis on the Parisian cartiers; Dummett, *The Game of Tarot*.\n\n**RESEARCH NOTE (2026-06-13) — identity correction owed.** The BnF object cited here (ark:/12148/btv1b105109624) is the idiosyncratic **Tarot de Paris**, a pattern of its OWN — NOT a mainstream C-order Tarot de Marseille. Its cards carry broken period captions (LAN PEREUT, LER MITE, A TREMPANCE, LES TOILLES, LA FOUDRE), figural animal Aces, and a Hell-mouth at XVI (La Foudre, not La Maison-Dieu). The deck name/description and trump titles need a reframe; confidence medium (Gallica scan not read card-by-card). See [research/decks/paris-anonymous-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/decks/paris-anonymous-tarot.md).\n\n**EDITORIAL CALL (2026-06-13):** reframed as the **Tarot de Paris**, a distinct pattern of its own (NOT a mainstream Marseille). Per-card trump CAPTIONS (the broken period spellings, Hell-mouth Foudre at XVI, figural animal Aces) still need card-by-card correction from the Gallica scan — deferred to a session with image access. [@web_pollett_paris; @web_th_paris]\n",
   "grammar_type": "tarot",
   "provenance": "record",
   "creator_name": "PlayfulProcess",
   "license": "CC-BY-SA-4.0",
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "Anonymous Parisian cardmaker",
+        "date": "c. 1600-1650",
+        "note": "No maker's name appears on the cards, not even in the Two of Coins cartouche where a maker would normally sign"
+      },
+      {
+        "name": "Bibliothèque nationale de France",
+        "date": "holding institution",
+        "note": "Holds the sole surviving complete copy, shelfmark RESERVE KH-34; digitised on Gallica as ark:/12148/btv1b105109624"
+      },
+      {
+        "name": "PlayfulProcess",
+        "date": "2026",
+        "note": "Grammar architecture and summaries"
+      }
+    ]
+  },
+  "_image_provenance": {
+    "schema_version": "1.0",
+    "holding_institution": "Bibliothèque nationale de France, Paris — shelfmark RESERVE KH-34",
+    "archive": "Gallica, ark:/12148/btv1b105109624",
+    "license": "Public domain (as stated by the BnF on Gallica)",
+    "pd_basis": "A 17th-century woodcut, long out of copyright; the BnF publishes the scan on Gallica as public domain.",
+    "verified": "2026-08-02",
+    "per_item_field": "metadata.image_source",
+    "mapping_rule": "images/cNN.jpg is Gallica folio 2·NN−1 of the same ark — odd folios are the card faces, even folios the patterned backs. Mapping recovered from scripts/prebake_deck_r2.py high_res_url().",
+    "unknown": "This block records the image source only. The deck's own `description` still carries the misidentification the deck dossier flags (research/decks/paris-anonymous-tarot.md) — it denies being the Tarot de Paris while citing that object's ark. That is a separate text correction, not touched here."
+  },
   "default_view": "cards",
   "metadata": {
     "year": 1625,
@@ -40,7 +82,8 @@
         "trump_number": 1,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-01-le-bateleur",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f1.item"
       },
       "sections": {
         "About": "Le Bateleur (atout I) — the name is printed on the card.",
@@ -70,7 +113,8 @@
         "trump_number": 2,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-02-la-papesse",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f3.item"
       },
       "sections": {
         "About": "La Papesse (atout II) — the name is printed on the card.",
@@ -100,7 +144,8 @@
         "trump_number": 3,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-03-limperatrice",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f5.item"
       },
       "sections": {
         "About": "L'Impératrice (atout III) — the name is printed on the card.",
@@ -130,7 +175,8 @@
         "trump_number": 4,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-04-lempereur",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f7.item"
       },
       "sections": {
         "About": "L'Empereur (atout IIII) — the name is printed on the card.",
@@ -160,7 +206,8 @@
         "trump_number": 5,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-05-le-pape",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f9.item"
       },
       "sections": {
         "About": "Le Pape (atout V) — the name is printed on the card.",
@@ -190,7 +237,8 @@
         "trump_number": 6,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-06-lamoureux",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f11.item"
       },
       "sections": {
         "About": "L'Amoureux (atout VI) — the name is printed on the card.",
@@ -220,7 +268,8 @@
         "trump_number": 7,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-07-le-chariot",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f13.item"
       },
       "sections": {
         "About": "Le Chariot (atout VII) — the name is printed on the card.",
@@ -250,7 +299,8 @@
         "trump_number": 11,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-08-la-justice",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f15.item"
       },
       "sections": {
         "About": "La Justice (atout VIII) — the name is printed on the card.",
@@ -280,7 +330,8 @@
         "trump_number": 9,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-09-lhermite",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f17.item"
       },
       "sections": {
         "About": "L'Hermite (atout VIIII) — the name is printed on the card.",
@@ -310,7 +361,8 @@
         "trump_number": 10,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-10-la-roue",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f19.item"
       },
       "sections": {
         "About": "La Roue de Fortune (atout X) — the name is printed on the card.",
@@ -340,7 +392,8 @@
         "trump_number": 8,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-11-la-force",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f21.item"
       },
       "sections": {
         "About": "La Force (atout XI) — the name is printed on the card.",
@@ -370,7 +423,8 @@
         "trump_number": 12,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-12-le-pendu",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f23.item"
       },
       "sections": {
         "About": "Le Pendu (atout XII) — the name is printed on the card.",
@@ -400,7 +454,8 @@
         "trump_number": 13,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-13-la-mort",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f25.item"
       },
       "sections": {
         "About": "La Mort (atout XIII) — the name is printed on the card.",
@@ -430,7 +485,8 @@
         "trump_number": 14,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-14-temperance",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f27.item"
       },
       "sections": {
         "About": "Tempérance (atout XIIII) — the name is printed on the card.",
@@ -460,7 +516,8 @@
         "trump_number": 15,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-15-le-diable",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f29.item"
       },
       "sections": {
         "About": "Le Diable (atout XV) — the name is printed on the card.",
@@ -487,7 +544,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/trump-16.jpg"
         },
         "trump_key": "tower",
-        "trump_number": 16
+        "trump_number": 16,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f31.item"
       },
       "sections": {
         "About": "La Maison-Dieu (atout XVI) — the name is printed on the card.",
@@ -516,7 +574,8 @@
         "trump_number": 17,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-17-letoile",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f33.item"
       },
       "sections": {
         "About": "L'Étoile (atout XVII) — the name is printed on the card.",
@@ -546,7 +605,8 @@
         "trump_number": 18,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-18-la-lune",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f35.item"
       },
       "sections": {
         "About": "La Lune (atout XVIII) — the name is printed on the card.",
@@ -576,7 +636,8 @@
         "trump_number": 19,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-19-le-soleil",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f37.item"
       },
       "sections": {
         "About": "Le Soleil (atout XVIIII) — the name is printed on the card.",
@@ -606,7 +667,8 @@
         "trump_number": 20,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-20-le-jugement",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f39.item"
       },
       "sections": {
         "About": "Le Jugement (atout XX) — the name is printed on the card.",
@@ -636,7 +698,8 @@
         "trump_number": 21,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-21-le-monde",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f41.item"
       },
       "sections": {
         "About": "Le Monde (atout XXI) — the name is printed on the card.",
@@ -662,7 +725,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-22.jpg"
         },
-        "number": 1
+        "number": 1,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f43.item"
       },
       "sections": {
         "About": "As of Coins (BnF folio order).",
@@ -687,7 +751,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-23.jpg"
         },
-        "number": 2
+        "number": 2,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f45.item"
       },
       "sections": {
         "About": "Deux of Coins (BnF folio order).",
@@ -712,7 +777,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-24.jpg"
         },
-        "number": 3
+        "number": 3,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f47.item"
       },
       "sections": {
         "About": "Trois of Coins (BnF folio order).",
@@ -737,7 +803,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-25.jpg"
         },
-        "number": 4
+        "number": 4,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f49.item"
       },
       "sections": {
         "About": "Quatre of Coins (BnF folio order).",
@@ -762,7 +829,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-26.jpg"
         },
-        "number": 5
+        "number": 5,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f51.item"
       },
       "sections": {
         "About": "Cinq of Coins (BnF folio order).",
@@ -787,7 +855,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-27.jpg"
         },
-        "number": 6
+        "number": 6,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f53.item"
       },
       "sections": {
         "About": "Six of Coins (BnF folio order).",
@@ -812,7 +881,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-28.jpg"
         },
-        "number": 7
+        "number": 7,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f55.item"
       },
       "sections": {
         "About": "Sept of Coins (BnF folio order).",
@@ -837,7 +907,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-29.jpg"
         },
-        "number": 8
+        "number": 8,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f57.item"
       },
       "sections": {
         "About": "Huit of Coins (BnF folio order).",
@@ -862,7 +933,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-30.jpg"
         },
-        "number": 9
+        "number": 9,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f59.item"
       },
       "sections": {
         "About": "Neuf of Coins (BnF folio order).",
@@ -887,7 +959,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-31.jpg"
         },
-        "number": 10
+        "number": 10,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f61.item"
       },
       "sections": {
         "About": "Dix of Coins (BnF folio order).",
@@ -912,7 +985,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-32.jpg"
         },
-        "number": 11
+        "number": 11,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f63.item"
       },
       "sections": {
         "About": "Valet of Coins (BnF folio order).",
@@ -937,7 +1011,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-33.jpg"
         },
-        "number": 12
+        "number": 12,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f65.item"
       },
       "sections": {
         "About": "Cavalier of Coins (BnF folio order).",
@@ -962,7 +1037,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-34.jpg"
         },
-        "number": 13
+        "number": 13,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f67.item"
       },
       "sections": {
         "About": "Reine of Coins (BnF folio order).",
@@ -987,7 +1063,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/deniers-35.jpg"
         },
-        "number": 14
+        "number": 14,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f69.item"
       },
       "sections": {
         "About": "Roi of Coins (BnF folio order).",
@@ -1022,6 +1099,9 @@
         "What it is": "The Deniers (Coins) suit — ten pips plus Valet, Cavalier, Reine and Roi.",
         "Scene": "The suit of Deniers (Coins) in the Paris anonymous tarot uses the Italian-suited circular coin emblem with French court names: Roi, Reine, Cavalier, Valet. The pip cards follow standard Italian pip conventions with coin shapes in symmetrical distributions. This suit is part of the deck's Italian-suited structure within an otherwise distinctively French 17th-century production.",
         "Symbol": "Coins as the suit of material wealth and earthly value — the circular emblem that measures and mediates human exchange, here within a deck that otherwise reimagines the Marseille tradition at every turn."
+      },
+      "metadata": {
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f43.item"
       }
     },
     {
@@ -1041,7 +1121,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-36.jpg"
         },
-        "number": 1
+        "number": 1,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f71.item"
       },
       "sections": {
         "About": "As of Cups (BnF folio order).",
@@ -1066,7 +1147,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-37.jpg"
         },
-        "number": 2
+        "number": 2,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f73.item"
       },
       "sections": {
         "About": "Deux of Cups (BnF folio order).",
@@ -1091,7 +1173,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-38.jpg"
         },
-        "number": 3
+        "number": 3,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f75.item"
       },
       "sections": {
         "About": "Trois of Cups (BnF folio order).",
@@ -1116,7 +1199,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-39.jpg"
         },
-        "number": 4
+        "number": 4,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f77.item"
       },
       "sections": {
         "About": "Quatre of Cups (BnF folio order).",
@@ -1141,7 +1225,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-40.jpg"
         },
-        "number": 5
+        "number": 5,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f79.item"
       },
       "sections": {
         "About": "Cinq of Cups (BnF folio order).",
@@ -1166,7 +1251,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-41.jpg"
         },
-        "number": 6
+        "number": 6,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f81.item"
       },
       "sections": {
         "About": "Six of Cups (BnF folio order).",
@@ -1191,7 +1277,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-42.jpg"
         },
-        "number": 7
+        "number": 7,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f83.item"
       },
       "sections": {
         "About": "Sept of Cups (BnF folio order).",
@@ -1216,7 +1303,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-43.jpg"
         },
-        "number": 8
+        "number": 8,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f85.item"
       },
       "sections": {
         "About": "Huit of Cups (BnF folio order).",
@@ -1241,7 +1329,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-44.jpg"
         },
-        "number": 9
+        "number": 9,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f87.item"
       },
       "sections": {
         "About": "Neuf of Cups (BnF folio order).",
@@ -1266,7 +1355,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-45.jpg"
         },
-        "number": 10
+        "number": 10,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f89.item"
       },
       "sections": {
         "About": "Dix of Cups (BnF folio order).",
@@ -1291,7 +1381,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-46.jpg"
         },
-        "number": 11
+        "number": 11,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f91.item"
       },
       "sections": {
         "About": "Valet of Cups (BnF folio order).",
@@ -1316,7 +1407,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-47.jpg"
         },
-        "number": 12
+        "number": 12,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f93.item"
       },
       "sections": {
         "About": "Cavalier of Cups (BnF folio order).",
@@ -1341,7 +1433,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-48.jpg"
         },
-        "number": 13
+        "number": 13,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f95.item"
       },
       "sections": {
         "About": "Reine of Cups (BnF folio order).",
@@ -1366,7 +1459,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/coupes-49.jpg"
         },
-        "number": 14
+        "number": 14,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f97.item"
       },
       "sections": {
         "About": "Roi of Cups (BnF folio order).",
@@ -1401,6 +1495,9 @@
         "What it is": "The Coupes (Cups) suit — ten pips plus Valet, Cavalier, Reine and Roi.",
         "Scene": "The suit of Coupes (Cups) in the Paris anonymous tarot uses the Italian-suited chalice emblem with French court names: Roi, Reine, Cavalier, Valet. The pip cards follow standard Italian conventions with cup shapes in symmetrical distributions. Within a deck famous for its unusual trumps, the cups suit carries the more conventional iconography of the Italian pip tradition.",
         "Symbol": "Cups as the suit of emotion, reception, and inner life — the chalice that holds feeling as surely as it holds liquid, within a deck that reimagines the world of the trumps while maintaining convention in its suits."
+      },
+      "metadata": {
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f71.item"
       }
     },
     {
@@ -1420,7 +1517,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-50.jpg"
         },
-        "number": 1
+        "number": 1,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f99.item"
       },
       "sections": {
         "About": "As of Batons (BnF folio order).",
@@ -1445,7 +1543,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-51.jpg"
         },
-        "number": 2
+        "number": 2,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f101.item"
       },
       "sections": {
         "About": "Deux of Batons (BnF folio order).",
@@ -1470,7 +1569,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-52.jpg"
         },
-        "number": 3
+        "number": 3,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f103.item"
       },
       "sections": {
         "About": "Trois of Batons (BnF folio order).",
@@ -1495,7 +1595,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-53.jpg"
         },
-        "number": 4
+        "number": 4,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f105.item"
       },
       "sections": {
         "About": "Quatre of Batons (BnF folio order).",
@@ -1520,7 +1621,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-54.jpg"
         },
-        "number": 5
+        "number": 5,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f107.item"
       },
       "sections": {
         "About": "Cinq of Batons (BnF folio order).",
@@ -1545,7 +1647,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-55.jpg"
         },
-        "number": 6
+        "number": 6,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f109.item"
       },
       "sections": {
         "About": "Six of Batons (BnF folio order).",
@@ -1570,7 +1673,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-56.jpg"
         },
-        "number": 7
+        "number": 7,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f111.item"
       },
       "sections": {
         "About": "Sept of Batons (BnF folio order).",
@@ -1595,7 +1699,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-57.jpg"
         },
-        "number": 8
+        "number": 8,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f113.item"
       },
       "sections": {
         "About": "Huit of Batons (BnF folio order).",
@@ -1620,7 +1725,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-58.jpg"
         },
-        "number": 9
+        "number": 9,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f115.item"
       },
       "sections": {
         "About": "Neuf of Batons (BnF folio order).",
@@ -1645,7 +1751,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-59.jpg"
         },
-        "number": 10
+        "number": 10,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f117.item"
       },
       "sections": {
         "About": "Dix of Batons (BnF folio order).",
@@ -1670,7 +1777,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-60.jpg"
         },
-        "number": 11
+        "number": 11,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f119.item"
       },
       "sections": {
         "About": "Valet of Batons (BnF folio order).",
@@ -1695,7 +1803,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-61.jpg"
         },
-        "number": 12
+        "number": 12,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f121.item"
       },
       "sections": {
         "About": "Cavalier of Batons (BnF folio order).",
@@ -1720,7 +1829,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-62.jpg"
         },
-        "number": 13
+        "number": 13,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f123.item"
       },
       "sections": {
         "About": "Reine of Batons (BnF folio order).",
@@ -1745,7 +1855,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/batons-63.jpg"
         },
-        "number": 14
+        "number": 14,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f125.item"
       },
       "sections": {
         "About": "Roi of Batons (BnF folio order).",
@@ -1780,6 +1891,9 @@
         "What it is": "The Bâtons (Batons) suit — ten pips plus Valet, Cavalier, Reine and Roi.",
         "Scene": "The suit of Bâtons (Batons) in the Paris anonymous tarot uses the Italian-suited staff or wand emblem with French court names: Roi, Reine, Cavalier, Valet. The pip cards follow standard Italian conventions with stave shapes in crossing and symmetrical arrangements. Within a deck famous for its unusual trumps, the batons suit carries the more conventional iconography of the Italian pip tradition.",
         "Symbol": "Batons as the suit of fire, will, and creative enterprise — the staff that strikes and seeds, within a deck that reserves its most daring reimagination for the world of the major arcana."
+      },
+      "metadata": {
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f99.item"
       }
     },
     {
@@ -1799,7 +1913,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-64.jpg"
         },
-        "number": 1
+        "number": 1,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f127.item"
       },
       "sections": {
         "About": "As of Swords (BnF folio order).",
@@ -1824,7 +1939,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-65.jpg"
         },
-        "number": 2
+        "number": 2,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f129.item"
       },
       "sections": {
         "About": "Deux of Swords (BnF folio order).",
@@ -1849,7 +1965,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-66.jpg"
         },
-        "number": 3
+        "number": 3,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f131.item"
       },
       "sections": {
         "About": "Trois of Swords (BnF folio order).",
@@ -1874,7 +1991,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-67.jpg"
         },
-        "number": 4
+        "number": 4,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f133.item"
       },
       "sections": {
         "About": "Quatre of Swords (BnF folio order).",
@@ -1899,7 +2017,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-68.jpg"
         },
-        "number": 5
+        "number": 5,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f135.item"
       },
       "sections": {
         "About": "Cinq of Swords (BnF folio order).",
@@ -1924,7 +2043,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-69.jpg"
         },
-        "number": 6
+        "number": 6,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f137.item"
       },
       "sections": {
         "About": "Six of Swords (BnF folio order).",
@@ -1949,7 +2069,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-70.jpg"
         },
-        "number": 7
+        "number": 7,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f139.item"
       },
       "sections": {
         "About": "Sept of Swords (BnF folio order).",
@@ -1974,7 +2095,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-71.jpg"
         },
-        "number": 8
+        "number": 8,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f141.item"
       },
       "sections": {
         "About": "Huit of Swords (BnF folio order).",
@@ -1999,7 +2121,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-72.jpg"
         },
-        "number": 9
+        "number": 9,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f143.item"
       },
       "sections": {
         "About": "Neuf of Swords (BnF folio order).",
@@ -2024,7 +2147,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-73.jpg"
         },
-        "number": 10
+        "number": 10,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f145.item"
       },
       "sections": {
         "About": "Dix of Swords (BnF folio order).",
@@ -2049,7 +2173,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-74.jpg"
         },
-        "number": 11
+        "number": 11,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f147.item"
       },
       "sections": {
         "About": "Valet of Swords (BnF folio order).",
@@ -2074,7 +2199,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-75.jpg"
         },
-        "number": 12
+        "number": 12,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f149.item"
       },
       "sections": {
         "About": "Cavalier of Swords (BnF folio order).",
@@ -2099,7 +2225,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-76.jpg"
         },
-        "number": 13
+        "number": 13,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f151.item"
       },
       "sections": {
         "About": "Reine of Swords (BnF folio order).",
@@ -2124,7 +2251,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/paris-anonymous-tarot/epees-77.jpg"
         },
-        "number": 14
+        "number": 14,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f153.item"
       },
       "sections": {
         "About": "Roi of Swords (BnF folio order).",
@@ -2159,6 +2287,9 @@
         "What it is": "The Épées (Swords) suit — ten pips plus Valet, Cavalier, Reine and Roi.",
         "Scene": "The suit of Épées (Swords) in the Paris anonymous tarot uses the Italian-suited long sword emblem with French court names: Roi, Reine, Cavalier, Valet. The pip cards follow standard Italian conventions with blade shapes in crossing and symmetrical arrangements. The sword suit's Italian-tradition iconography carries the conventional pip vocabulary within a deck whose trumps are among the most unusual in the Marseille tradition.",
         "Symbol": "Swords as the suit of thought, conflict, and discernment — the blade that cuts clean, within a deck that applies its own cutting intellect to the reimagination of the entire trump sequence."
+      },
+      "metadata": {
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f127.item"
       }
     },
     {
@@ -2181,7 +2312,8 @@
         "trump_number": 0,
         "source_deck": "tarot-de-marseille-conver",
         "source_item_id": "major-00-le-mat",
-        "deck": "Tarot de Marseille"
+        "deck": "Tarot de Marseille",
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f155.item"
       },
       "sections": {
         "About": "The unnumbered Fool, last in the BnF scan.",
@@ -2225,6 +2357,9 @@
         "What it is": "The 22 named trumps — 21 numbered atouts plus the Mat.",
         "Scene": "A navigational axis grouping all twenty-two Paris anonymous trump cards together. Among the most celebrated departures from the Marseille tradition: a goose-drawn chariot with child rider at VII, a Janus-faced Justice at VIII, a scholar measuring the heavens for the Star, a romantic serenade for the Moon, and a monkey vanity scene for the Sun. The Paris anonymous tarot is one of the earliest and most distinctive surviving French tarots.",
         "Symbol": "The twenty-two major arcana of the Paris Anonymous tarot — a field of early 17th-century Parisian reimagination, where the Marseille vocabulary is inherited and then transformed through satire, science, and the comic inversion of triumph."
+      },
+      "metadata": {
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f1.item"
       }
     }
   ],

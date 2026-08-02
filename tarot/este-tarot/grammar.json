@@ -2,11 +2,53 @@
   "name": "d'Este Tarocchi — The Ferrarese Fragment (c. 1450)",
   "slug": "este-tarot",
   "cover_image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c29.jpg",
+  "cover_image_credit": {
+    "title": "A card from the d'Este (Estensi) Tarocchi fragment",
+    "creator": "Ferrarese workshop (unnamed), in the orbit of the House of Este",
+    "date": "c. 1450 (a 1470s date is also argued — see the deck dossier)",
+    "source": "Beinecke Rare Book & Manuscript Library, Yale — Cary Collection of Playing Cards, PLAYING CARDS GEN 966",
+    "file_page": "https://collections.library.yale.edu/iiif/2/33215714/info.json",
+    "license": "Open access (as stated by Yale University Library)",
+    "pd_basis": "15th-century object, long out of copyright; Yale publishes the digitisation as open access",
+    "verified": "2026-08-02"
+  },
   "description": "# d'Este (Estensi) Tarocchi\n\n## At a glance\n\nAmong the **oldest surviving tarot of all** — sixteen hand-painted cards made in **Ferrara around 1450**, in the orbit of the ruling **House of Este**, contemporaries of the Milanese Visconti decks but from the *other* great early tarot court. Only **16 cards survive** (8 trumps + 8 court cards) of what was once a full pack; they are held in the **Cary Collection of Playing Cards at Yale's Beinecke Library** (PLAYING CARDS GEN 966) and shown here from Yale's open-access high-resolution scans.\n\n## Why it matters — the B-order home\n\nFerrara is the home of the **B-order** trump sequence (the Eastern branch in Dummett's A/B/C scheme). Where Milan's Visconti decks head the **C-order** line that became the Tarot de Marseille, the d'Este cards are a rare, luxurious witness to Ferrara's parallel tradition — proof that tarot's invention was not a single Milanese event but a courtly fashion shared across northern Italy in the 1440s–50s.\n\n## What survives\n\n- **8 trumps:** Il Bagatto (the Magician), Il Papa (the Pope), Temperance, the Star, the Moon, the Sun, the World, and Il Matto (the Fool).\n- **8 court cards:** kings, queens, a cavalier and a jack across Swords, Batons, Coins and Cups.\n- Card identifications are **Yale's own catalogue labels** — not guessed from iconography. The cards are unnumbered (as 15th-century hand-painted trumps were).\n\n## Game, not divination\n\nLike the Visconti decks, this is a **luxury court game** object — *trionfi*, three centuries before any divinatory use. No cartomantic meaning is native to it.\n\n## Provenance & evidence\n\nBeinecke Rare Book & Manuscript Library, Yale — Cary Collection (Mary Flagler Cary, 1967); PLAYING CARDS GEN 966; cards 140 × 78 mm; completely digitized, open access (credit: Yale University Library). Dating ('c. 1450') and the Ferrarese/Este attribution follow the standard scholarship but, as with all the early hand-painted decks, remain debated.\n\n## Sources\n\nYale Beinecke / Cary Collection catalogue; Michael Dummett, *The Game of Tarot* (1980); Thierry Depaulis on the Ferrarese decks.\n\n**RESEARCH NOTE (2026-06-13).** Dating is disputed: c. 1450 (used here) vs c. 1470s (Pollett). The deck's original composition is unknown. See [research/decks/este-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/decks/este-tarot.md).\n",
   "grammar_type": "tarot",
   "provenance": "record",
   "creator_name": "PlayfulProcess",
   "license": "CC-BY-SA-4.0",
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "Ferrarese workshop, in the orbit of the House of Este",
+        "date": "c. 1450 (a 1470s date is also argued)",
+        "note": "Painter of the 16 surviving hand-painted d'Este cards; no maker is documented by name"
+      },
+      {
+        "name": "Beinecke Rare Book & Manuscript Library, Yale",
+        "date": "holding institution",
+        "note": "Holds the fragment as Cary Collection of Playing Cards, PLAYING CARDS GEN 966; completely digitised, open access"
+      },
+      {
+        "name": "PlayfulProcess",
+        "date": "2026",
+        "note": "Grammar architecture and summaries"
+      }
+    ]
+  },
+  "_image_provenance": {
+    "schema_version": "1.0",
+    "holding_institution": "Beinecke Rare Book & Manuscript Library, Yale University — Cary Collection of Playing Cards, PLAYING CARDS GEN 966",
+    "archive": "Yale University Library open-access IIIF",
+    "license": "Open access (as stated by Yale University Library)",
+    "pd_basis": "A 15th-century hand-painted object, long out of copyright; Yale publishes the digitisation as open access (credit: Yale University Library).",
+    "verified": "2026-08-02",
+    "per_item_field": "metadata.image_source",
+    "mapping_rule": "images/cNN.jpg is Yale IIIF image 33215685 + NN, the offset recovered from scripts/prebake_deck_r2.py high_res_url().",
+    "unknown": "Yale's own human-readable catalogue-record URL for this object is not recorded in this repo — only the IIIF image endpoints the images were fetched from. The per-item source below is therefore the IIIF image description, not a catalogue page."
+  },
   "default_view": "cards",
   "metadata": {
     "year": 1450,
@@ -39,7 +81,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-01.jpg"
         },
-        "number": 14
+        "number": 14,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215686/info.json"
       },
       "sections": {
         "About": "Re di Spade.",
@@ -65,7 +108,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-03.jpg"
         },
-        "number": 13
+        "number": 13,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215688/info.json"
       },
       "sections": {
         "About": "Regina di Spade.",
@@ -91,7 +135,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-05.jpg"
         },
-        "number": 12
+        "number": 12,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215690/info.json"
       },
       "sections": {
         "About": "Cavallo di Spade.",
@@ -117,7 +162,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-07.jpg"
         },
-        "number": 14
+        "number": 14,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215692/info.json"
       },
       "sections": {
         "About": "Re di Bastoni.",
@@ -143,7 +189,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-09.jpg"
         },
-        "number": 12
+        "number": 12,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215694/info.json"
       },
       "sections": {
         "About": "Cavallo di Bastoni.",
@@ -169,7 +216,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-11.jpg"
         },
-        "number": 11
+        "number": 11,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215696/info.json"
       },
       "sections": {
         "About": "Fante di Bastoni.",
@@ -195,7 +243,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-13.jpg"
         },
-        "number": 14
+        "number": 14,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215698/info.json"
       },
       "sections": {
         "About": "Re di Denari.",
@@ -221,7 +270,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-15.jpg"
         },
-        "number": 13
+        "number": 13,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215700/info.json"
       },
       "sections": {
         "About": "Regina di Coppe.",
@@ -247,7 +297,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-17.jpg"
         },
         "trump_key": "magician",
-        "trump_number": 1
+        "trump_number": 1,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215702/info.json"
       },
       "sections": {
         "About": "The mountebank — the first trump (atout I).",
@@ -273,7 +324,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-19.jpg"
         },
         "trump_key": "hierophant",
-        "trump_number": 5
+        "trump_number": 5,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215704/info.json"
       },
       "sections": {
         "About": "The Pope / Hierophant.",
@@ -299,7 +351,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-21.jpg"
         },
         "trump_key": "temperance",
-        "trump_number": 14
+        "trump_number": 14,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215706/info.json"
       },
       "sections": {
         "About": "Temperance, pouring between two vessels.",
@@ -325,7 +378,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-23.jpg"
         },
         "trump_key": "star",
-        "trump_number": 17
+        "trump_number": 17,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215708/info.json"
       },
       "sections": {
         "About": "La Stella.",
@@ -351,7 +405,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-25.jpg"
         },
         "trump_key": "moon",
-        "trump_number": 18
+        "trump_number": 18,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215710/info.json"
       },
       "sections": {
         "About": "La Luna.",
@@ -377,7 +432,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-27.jpg"
         },
         "trump_key": "sun",
-        "trump_number": 19
+        "trump_number": 19,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215712/info.json"
       },
       "sections": {
         "About": "Il Sole.",
@@ -403,7 +459,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-29.jpg"
         },
         "trump_key": "world",
-        "trump_number": 21
+        "trump_number": 21,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215714/info.json"
       },
       "sections": {
         "About": "Il Mondo.",
@@ -429,7 +486,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/este-tarot/card-31.jpg"
         },
         "trump_key": "fool",
-        "trump_number": 0
+        "trump_number": 0,
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215716/info.json"
       },
       "sections": {
         "About": "The Fool / Mat — the unnumbered wanderer.",
@@ -459,7 +517,9 @@
         "Scene": "Eight surviving trump cards from the Este Tarot, a set of hand-painted cards produced c. 1450 for the Este court in Ferrara. The surviving trumps are: Il Bagatto, Il Papa, Temperance, The Star, The Moon, The Sun, The World, and Il Matto. The cards are painted on heavy vellum with tempera, gold leaf, and fine brushwork.",
         "Symbol": "The Este set represents an early stage of the trionfi tradition, before the iconography had fully stabilised. Its survival as eight disconnected trumps hints at the fragility of the court tarot tradition."
       },
-      "metadata": {}
+      "metadata": {
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215702/info.json"
+      }
     },
     {
       "id": "axis-courts",
@@ -483,7 +543,9 @@
         "Scene": "Eight surviving court cards from the Este Tarot: King and Queen of Swords, Cavalier of Swords, King of Batons, Cavalier of Batons, Jack of Batons, King of Coins, and Queen of Cups. Each card depicts a courtly figure in the dress and style of the mid-15th century North Italian court.",
         "Symbol": "Court cards in this tradition depict the social ranks of the court: king, queen, cavalier (mounted knight), and jack (page). The Este court cards are among the earliest surviving examples of the suit-court structure that became standard in European playing cards."
       },
-      "metadata": {}
+      "metadata": {
+        "image_source": "https://collections.library.yale.edu/iiif/2/33215686/info.json"
+      }
     }
   ],
   "_research": {
