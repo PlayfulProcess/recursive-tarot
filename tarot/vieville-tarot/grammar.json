@@ -2,11 +2,53 @@
   "name": "Jacques Viéville Tarot — Paris, c. 1650 (BnF)",
   "slug": "vieville-tarot",
   "cover_image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c21.jpg",
+  "cover_image_credit": {
+    "title": "Le Monde (XXI) — Jacques Viéville tarot",
+    "creator": "Jacques Viéville",
+    "date": "c. 1650",
+    "source": "Bibliothèque nationale de France, on Gallica (ark:/12148/btv1b10510963k)",
+    "file_page": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f41.item",
+    "license": "Public domain (as stated by the BnF on Gallica)",
+    "pd_basis": "c. 1650 woodcut, long out of copyright; the BnF publishes the scan as public domain",
+    "verified": "2026-08-02"
+  },
   "description": "# Jacques Viéville Tarot (Paris, c. 1650)\n\n## At a glance\n\nOne of the **three oldest surviving named Tarots de Marseille-family decks**, printed in Paris around 1650 by the *maître-cartier* **Jacques Viéville** — a near-contemporary of **Jean Noblet** (whose deck this library also holds). The single known copy is at the **Bibliothèque nationale de France** and is on **Gallica** (ark:/12148/btv1b10510963k), fully public domain. Its 78 woodcut cards are shown here from the BnF scan, at high resolution.\n\n## Why it matters — the road not taken\n\nViéville's pack is the great **outlier** of the early Parisian tarots. Where Noblet sits squarely in the **C-order (Marseille)** line that became standard, Viéville's trump imagery leans toward the **Eastern/Belgian** branch: its figures face the other way, several trumps (the Popess, the Sun, the World, the Star) carry markedly different designs, and the pack is a key witness to the family that later surfaces in the **Vandenborre / 'Tarot Flamand'** decks rather than the Marseille mainstream. It shows that c. 1650 Paris held *two* competing tarot patterns at once.\n\n## What you're looking at\n\n- **22 atouts (trumps):** 21 carry printed Roman numerals (read directly from the scans here) plus the unnumbered **Mat** (Fool).\n- **56 suit cards:** four Italian suits — **Épées** (Swords), **Deniers** (Coins), **Bâtons** (Batons), **Coupes** (Cups) — each with King, Queen, Cavalier, Valet and ten pips.\n- The even-numbered canvases of the BnF scan are the cards' **patterned backs**; only the faces are shown.\n\n## Honesty notes\n\nThe trumps are identified by their **printed numerals AND their scenes** — and the two together reveal a key feature: the Viéville follows the older **Eastern trump order**, not the later Marseille standard. Here **Justice is VII, the Chariot VIII, Strength VIIII, and the Hermit XI** — exactly the cards the Marseille (Conver) sequence reorders. This non-standard order is itself the evidence for the deck's Eastern/Belgian-leaning lineage. Suit cards are shown in **BnF folio order**; courts are identified by figure, and **pip ranks are assigned by position and may warrant correction** — corrections welcome, as everywhere in this library.\n\n## Game, not divination\n\nLike Noblet, this is a **playing-and-trick-taking** pack from a century before tarot was attached to fortune-telling; no cartomantic meaning is native to it.\n\n## Sources\n\nBnF / Gallica (ark:/12148/btv1b10510963k), public domain; Thierry Depaulis on the early Parisian cartiers; Dummett, *The Game of Tarot*.\n",
   "grammar_type": "tarot",
   "provenance": "record",
   "creator_name": "PlayfulProcess",
   "license": "CC-BY-SA-4.0",
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "Jacques Viéville",
+        "date": "c. 1650",
+        "note": "Maître-cartier, Paris; the earliest surviving witness of the non-Marseille pattern that descends to the Belgian line"
+      },
+      {
+        "name": "Bibliothèque nationale de France",
+        "date": "holding institution",
+        "note": "Holds the single known copy; digitised on Gallica as ark:/12148/btv1b10510963k"
+      },
+      {
+        "name": "PlayfulProcess",
+        "date": "2026",
+        "note": "Grammar architecture and summaries"
+      }
+    ]
+  },
+  "_image_provenance": {
+    "schema_version": "1.0",
+    "holding_institution": "Bibliothèque nationale de France, Paris",
+    "archive": "Gallica, ark:/12148/btv1b10510963k",
+    "license": "Public domain (as stated by the BnF on Gallica)",
+    "pd_basis": "A c. 1650 woodcut, long out of copyright; the BnF publishes the scan on Gallica as public domain.",
+    "verified": "2026-08-02",
+    "per_item_field": "metadata.image_source",
+    "mapping_rule": "images/cNN.jpg is Gallica folio 2·NN−1 of the same ark — odd folios are the card faces, even folios the patterned backs. Mapping recovered from scripts/prebake_deck_r2.py high_res_url().",
+    "unknown": "Viéville's precise working dates are undocumented; 'c. 1650' rests on style and trade context, not a dated colophon."
+  },
   "default_view": "cards",
   "metadata": {
     "year": 1650,
@@ -38,7 +80,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-01.jpg"
         },
         "trump_key": "magician",
-        "trump_number": 1
+        "trump_number": 1,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f1.item"
       },
       "sections": {
         "About": "The mountebank at his table — the deck opens, as the Parisian pattern does, with the conjuror.",
@@ -65,7 +108,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-02.jpg"
         },
         "trump_key": "high-priestess",
-        "trump_number": 2
+        "trump_number": 2,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f3.item"
       },
       "sections": {
         "About": "A seated, winged figure with the papal tiara — the Viéville's idiosyncratic Popess.",
@@ -92,7 +136,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-03.jpg"
         },
         "trump_key": "empress",
-        "trump_number": 3
+        "trump_number": 3,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f5.item"
       },
       "sections": {
         "About": "Enthroned with the eagle shield and a cross-staff — the Empress.",
@@ -119,7 +164,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-04.jpg"
         },
         "trump_key": "emperor",
-        "trump_number": 4
+        "trump_number": 4,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f7.item"
       },
       "sections": {
         "About": "The crowned Emperor.",
@@ -146,7 +192,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-05.jpg"
         },
         "trump_key": "hierophant",
-        "trump_number": 5
+        "trump_number": 5,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f9.item"
       },
       "sections": {
         "About": "The Pope / Hierophant.",
@@ -173,7 +220,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-06.jpg"
         },
         "trump_key": "lovers",
-        "trump_number": 6
+        "trump_number": 6,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f11.item"
       },
       "sections": {
         "About": "The Lovers, under the radiant cupid.",
@@ -200,7 +248,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-07.jpg"
         },
         "trump_key": "justice",
-        "trump_number": 11
+        "trump_number": 11,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f13.item"
       },
       "sections": {
         "About": "Justice — sword and scales — numbered VII. The Viéville keeps the older Eastern order, where Justice sits at 7, not the Marseille-standard 8.",
@@ -227,7 +276,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-08.jpg"
         },
         "trump_key": "chariot",
-        "trump_number": 7
+        "trump_number": 7,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f15.item"
       },
       "sections": {
         "About": "The Chariot under its canopy, numbered VIII — the position the Marseille standard gives to Justice.",
@@ -254,7 +304,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-09.jpg"
         },
         "trump_key": "strength",
-        "trump_number": 8
+        "trump_number": 8,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f17.item"
       },
       "sections": {
         "About": "Strength — the figure mastering the lion — at VIIII (9), its Eastern-order position.",
@@ -281,7 +332,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-10.jpg"
         },
         "trump_key": "wheel-of-fortune",
-        "trump_number": 10
+        "trump_number": 10,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f19.item"
       },
       "sections": {
         "About": "The Wheel of Fortune.",
@@ -308,7 +360,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-11.jpg"
         },
         "trump_key": "hermit",
-        "trump_number": 9
+        "trump_number": 9,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f21.item"
       },
       "sections": {
         "About": "The Hermit, the cloaked old man — at XI, where the Marseille standard puts Strength.",
@@ -335,7 +388,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-12.jpg"
         },
         "trump_key": "hanged-man",
-        "trump_number": 12
+        "trump_number": 12,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f23.item"
       },
       "sections": {
         "About": "The Hanged Man — in the Viéville/Belgian line the figure hangs **right-side-up** (a key divergence from the Marseille, where he hangs by one ankle, inverted). [research 2026-06-13]",
@@ -362,7 +416,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-13.jpg"
         },
         "trump_key": "death",
-        "trump_number": 13
+        "trump_number": 13,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f25.item"
       },
       "sections": {
         "About": "Death — the scything skeleton (the card itself is unnamed, as usual).",
@@ -389,7 +444,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-14.jpg"
         },
         "trump_key": "temperance",
-        "trump_number": 14
+        "trump_number": 14,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f27.item"
       },
       "sections": {
         "About": "Temperance, pouring between two vessels.",
@@ -416,7 +472,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-15.jpg"
         },
         "trump_key": "devil",
-        "trump_number": 15
+        "trump_number": 15,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f29.item"
       },
       "sections": {
         "About": "The Devil.",
@@ -443,7 +500,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-16.jpg"
         },
         "trump_key": "tower",
-        "trump_number": 16
+        "trump_number": 16,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f31.item"
       },
       "sections": {
         "About": "La Foudre — in the Viéville pack a **tree** struck by fire/hail with a shepherd figure beneath, NOT the Marseille struck **tower** (despite the 'Maison-Dieu' label). A signature marker of the Rouen-Brussels/Belgian line. [research 2026-06-13]",
@@ -470,7 +528,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-17.jpg"
         },
         "trump_key": "star",
-        "trump_number": 17
+        "trump_number": 17,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f33.item"
       },
       "sections": {
         "About": "The Star.",
@@ -497,7 +556,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-18.jpg"
         },
         "trump_key": "moon",
-        "trump_number": 18
+        "trump_number": 18,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f35.item"
       },
       "sections": {
         "About": "The Moon.",
@@ -524,7 +584,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-19.jpg"
         },
         "trump_key": "sun",
-        "trump_number": 19
+        "trump_number": 19,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f37.item"
       },
       "sections": {
         "About": "The Sun, with figures beneath.",
@@ -551,7 +612,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-20.jpg"
         },
         "trump_key": "judgement",
-        "trump_number": 20
+        "trump_number": 20,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f39.item"
       },
       "sections": {
         "About": "The Judgement — the angel and the rising dead.",
@@ -578,7 +640,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-21.jpg"
         },
         "trump_key": "world",
-        "trump_number": 21
+        "trump_number": 21,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f41.item"
       },
       "sections": {
         "About": "The World.",
@@ -604,7 +667,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-22.jpg"
         },
-        "number": 14
+        "number": 14,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f43.item"
       },
       "sections": {
         "About": "Roi of Swords, from the Viéville pack (BnF folio order).",
@@ -629,7 +693,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-23.jpg"
         },
-        "number": 13
+        "number": 13,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f45.item"
       },
       "sections": {
         "About": "Reine of Swords, from the Viéville pack (BnF folio order).",
@@ -654,7 +719,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-24.jpg"
         },
-        "number": 12
+        "number": 12,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f47.item"
       },
       "sections": {
         "About": "Cavalier of Swords, from the Viéville pack (BnF folio order).",
@@ -679,7 +745,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-25.jpg"
         },
-        "number": 11
+        "number": 11,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f49.item"
       },
       "sections": {
         "About": "Valet of Swords, from the Viéville pack (BnF folio order).",
@@ -704,7 +771,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-26.jpg"
         },
-        "number": 10
+        "number": 10,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f51.item"
       },
       "sections": {
         "About": "Dix of Swords, from the Viéville pack (BnF folio order).",
@@ -729,7 +797,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-27.jpg"
         },
-        "number": 9
+        "number": 9,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f53.item"
       },
       "sections": {
         "About": "Neuf of Swords, from the Viéville pack (BnF folio order).",
@@ -754,7 +823,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-28.jpg"
         },
-        "number": 8
+        "number": 8,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f55.item"
       },
       "sections": {
         "About": "Huit of Swords, from the Viéville pack (BnF folio order).",
@@ -779,7 +849,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-29.jpg"
         },
-        "number": 7
+        "number": 7,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f57.item"
       },
       "sections": {
         "About": "Sept of Swords, from the Viéville pack (BnF folio order).",
@@ -804,7 +875,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-30.jpg"
         },
-        "number": 6
+        "number": 6,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f59.item"
       },
       "sections": {
         "About": "Six of Swords, from the Viéville pack (BnF folio order).",
@@ -829,7 +901,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-31.jpg"
         },
-        "number": 5
+        "number": 5,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f61.item"
       },
       "sections": {
         "About": "Cinq of Swords, from the Viéville pack (BnF folio order).",
@@ -854,7 +927,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-32.jpg"
         },
-        "number": 4
+        "number": 4,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f63.item"
       },
       "sections": {
         "About": "Quatre of Swords, from the Viéville pack (BnF folio order).",
@@ -879,7 +953,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-33.jpg"
         },
-        "number": 3
+        "number": 3,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f65.item"
       },
       "sections": {
         "About": "Trois of Swords, from the Viéville pack (BnF folio order).",
@@ -904,7 +979,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-34.jpg"
         },
-        "number": 2
+        "number": 2,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f67.item"
       },
       "sections": {
         "About": "Deux of Swords, from the Viéville pack (BnF folio order).",
@@ -929,7 +1005,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/epees-35.jpg"
         },
-        "number": 1
+        "number": 1,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f69.item"
       },
       "sections": {
         "About": "As of Swords, from the Viéville pack (BnF folio order).",
@@ -965,7 +1042,9 @@
         "Scene": "The suit of Épées (Swords) in the Viéville Tarot spans fourteen ranks from Roi to As. The court figures follow standard Marseille conventions — seated king, enthroned queen, mounted knight, standing valet — while the pip cards arrange silver-gray blades in symmetrical formations characteristic of the 17th-century Parisian woodcut tradition.",
         "Symbol": "Swords as the suit of thought, conflict, and discernment — mental clarity and its shadow, the blade that cuts clean and the blade that wounds."
       },
-      "metadata": {}
+      "metadata": {
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f43.item"
+      }
     },
     {
       "id": "deniers-36",
@@ -984,7 +1063,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-36.jpg"
         },
-        "number": 14
+        "number": 14,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f71.item"
       },
       "sections": {
         "About": "Roi of Coins, from the Viéville pack (BnF folio order).",
@@ -1009,7 +1089,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-37.jpg"
         },
-        "number": 13
+        "number": 13,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f73.item"
       },
       "sections": {
         "About": "Reine of Coins, from the Viéville pack (BnF folio order).",
@@ -1034,7 +1115,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-38.jpg"
         },
-        "number": 12
+        "number": 12,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f75.item"
       },
       "sections": {
         "About": "Cavalier of Coins, from the Viéville pack (BnF folio order).",
@@ -1059,7 +1141,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-39.jpg"
         },
-        "number": 11
+        "number": 11,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f77.item"
       },
       "sections": {
         "About": "Valet of Coins, from the Viéville pack (BnF folio order).",
@@ -1084,7 +1167,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-40.jpg"
         },
-        "number": 10
+        "number": 10,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f79.item"
       },
       "sections": {
         "About": "Dix of Coins, from the Viéville pack (BnF folio order).",
@@ -1109,7 +1193,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-41.jpg"
         },
-        "number": 9
+        "number": 9,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f81.item"
       },
       "sections": {
         "About": "Neuf of Coins, from the Viéville pack (BnF folio order).",
@@ -1134,7 +1219,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-42.jpg"
         },
-        "number": 8
+        "number": 8,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f83.item"
       },
       "sections": {
         "About": "Huit of Coins, from the Viéville pack (BnF folio order).",
@@ -1159,7 +1245,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-43.jpg"
         },
-        "number": 7
+        "number": 7,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f85.item"
       },
       "sections": {
         "About": "Sept of Coins, from the Viéville pack (BnF folio order).",
@@ -1184,7 +1271,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-44.jpg"
         },
-        "number": 6
+        "number": 6,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f87.item"
       },
       "sections": {
         "About": "Six of Coins, from the Viéville pack (BnF folio order).",
@@ -1209,7 +1297,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-45.jpg"
         },
-        "number": 5
+        "number": 5,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f89.item"
       },
       "sections": {
         "About": "Cinq of Coins, from the Viéville pack (BnF folio order).",
@@ -1234,7 +1323,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-46.jpg"
         },
-        "number": 4
+        "number": 4,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f91.item"
       },
       "sections": {
         "About": "Quatre of Coins, from the Viéville pack (BnF folio order).",
@@ -1259,7 +1349,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-47.jpg"
         },
-        "number": 3
+        "number": 3,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f93.item"
       },
       "sections": {
         "About": "Trois of Coins, from the Viéville pack (BnF folio order).",
@@ -1284,7 +1375,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-48.jpg"
         },
-        "number": 2
+        "number": 2,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f95.item"
       },
       "sections": {
         "About": "Deux of Coins, from the Viéville pack (BnF folio order).",
@@ -1309,7 +1401,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/deniers-49.jpg"
         },
-        "number": 1
+        "number": 1,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f97.item"
       },
       "sections": {
         "About": "As of Coins, from the Viéville pack (BnF folio order).",
@@ -1345,7 +1438,9 @@
         "Scene": "The suit of Deniers (Coins) in the Viéville Tarot is among the most textually and iconographically distinctive in the surviving Marseille tradition. The Roi de Deniers bears a verse inscription, the Reine carries the maker's S-scroll 'IACQUE VIEVIL A PARIS,' and the pip cards display golden starburst coins in ornate red-and-gold vine interlace throughout.",
         "Symbol": "Coins as the suit of material wealth, craft, and earthly value — here uniquely marked by the maker's own signature, embedding the artisan's identity within the suit of tangible worth."
       },
-      "metadata": {}
+      "metadata": {
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f71.item"
+      }
     },
     {
       "id": "batons-50",
@@ -1364,7 +1459,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-50.jpg"
         },
-        "number": 14
+        "number": 14,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f99.item"
       },
       "sections": {
         "About": "Roi of Batons, from the Viéville pack (BnF folio order).",
@@ -1389,7 +1485,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-51.jpg"
         },
-        "number": 13
+        "number": 13,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f101.item"
       },
       "sections": {
         "About": "Reine of Batons, from the Viéville pack (BnF folio order).",
@@ -1414,7 +1511,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-52.jpg"
         },
-        "number": 12
+        "number": 12,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f103.item"
       },
       "sections": {
         "About": "Cavalier of Batons, from the Viéville pack (BnF folio order).",
@@ -1439,7 +1537,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-53.jpg"
         },
-        "number": 11
+        "number": 11,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f105.item"
       },
       "sections": {
         "About": "Valet of Batons, from the Viéville pack (BnF folio order).",
@@ -1464,7 +1563,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-54.jpg"
         },
-        "number": 10
+        "number": 10,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f107.item"
       },
       "sections": {
         "About": "Dix of Batons, from the Viéville pack (BnF folio order).",
@@ -1489,7 +1589,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-55.jpg"
         },
-        "number": 9
+        "number": 9,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f109.item"
       },
       "sections": {
         "About": "Neuf of Batons, from the Viéville pack (BnF folio order).",
@@ -1514,7 +1615,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-56.jpg"
         },
-        "number": 8
+        "number": 8,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f111.item"
       },
       "sections": {
         "About": "Huit of Batons, from the Viéville pack (BnF folio order).",
@@ -1539,7 +1641,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-57.jpg"
         },
-        "number": 7
+        "number": 7,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f113.item"
       },
       "sections": {
         "About": "Sept of Batons, from the Viéville pack (BnF folio order).",
@@ -1564,7 +1667,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-58.jpg"
         },
-        "number": 6
+        "number": 6,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f115.item"
       },
       "sections": {
         "About": "Six of Batons, from the Viéville pack (BnF folio order).",
@@ -1589,7 +1693,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-59.jpg"
         },
-        "number": 5
+        "number": 5,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f117.item"
       },
       "sections": {
         "About": "Cinq of Batons, from the Viéville pack (BnF folio order).",
@@ -1614,7 +1719,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-60.jpg"
         },
-        "number": 4
+        "number": 4,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f119.item"
       },
       "sections": {
         "About": "Quatre of Batons, from the Viéville pack (BnF folio order).",
@@ -1639,7 +1745,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-61.jpg"
         },
-        "number": 3
+        "number": 3,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f121.item"
       },
       "sections": {
         "About": "Trois of Batons, from the Viéville pack (BnF folio order).",
@@ -1664,7 +1771,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-62.jpg"
         },
-        "number": 2
+        "number": 2,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f123.item"
       },
       "sections": {
         "About": "Deux of Batons, from the Viéville pack (BnF folio order).",
@@ -1689,7 +1797,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/batons-63.jpg"
         },
-        "number": 1
+        "number": 1,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f125.item"
       },
       "sections": {
         "About": "As of Batons, from the Viéville pack (BnF folio order).",
@@ -1725,7 +1834,9 @@
         "Scene": "The suit of Bâtons (Batons) in the Viéville Tarot is rendered in deep red for the baton shafts, with gold and blue-gray ornamental interlace throughout the pip cards. The court figures are iconographically unusual — a standing man holding coins serves as king, a striding man with dog as queen — while the pip cards arrange red cylindrical batons in dense crossing formations.",
         "Symbol": "Batons as the suit of fire, growth, and creative will — here rendered in bold red cylinders that suggest both the peasant's staff and the wand of creative authority."
       },
-      "metadata": {}
+      "metadata": {
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f99.item"
+      }
     },
     {
       "id": "coupes-64",
@@ -1744,7 +1855,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-64.jpg"
         },
-        "number": 14
+        "number": 14,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f127.item"
       },
       "sections": {
         "About": "Roi of Cups, from the Viéville pack (BnF folio order).",
@@ -1769,7 +1881,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-65.jpg"
         },
-        "number": 13
+        "number": 13,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f129.item"
       },
       "sections": {
         "About": "Reine of Cups, from the Viéville pack (BnF folio order).",
@@ -1794,7 +1907,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-66.jpg"
         },
-        "number": 12
+        "number": 12,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f131.item"
       },
       "sections": {
         "About": "Cavalier of Cups, from the Viéville pack (BnF folio order).",
@@ -1819,7 +1933,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-67.jpg"
         },
-        "number": 11
+        "number": 11,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f133.item"
       },
       "sections": {
         "About": "Valet of Cups, from the Viéville pack (BnF folio order).",
@@ -1844,7 +1959,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-68.jpg"
         },
-        "number": 10
+        "number": 10,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f135.item"
       },
       "sections": {
         "About": "Dix of Cups, from the Viéville pack (BnF folio order).",
@@ -1869,7 +1985,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-69.jpg"
         },
-        "number": 9
+        "number": 9,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f137.item"
       },
       "sections": {
         "About": "Neuf of Cups, from the Viéville pack (BnF folio order).",
@@ -1894,7 +2011,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-70.jpg"
         },
-        "number": 8
+        "number": 8,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f139.item"
       },
       "sections": {
         "About": "Huit of Cups, from the Viéville pack (BnF folio order).",
@@ -1919,7 +2037,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-71.jpg"
         },
-        "number": 7
+        "number": 7,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f141.item"
       },
       "sections": {
         "About": "Sept of Cups, from the Viéville pack (BnF folio order).",
@@ -1944,7 +2063,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-72.jpg"
         },
-        "number": 6
+        "number": 6,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f143.item"
       },
       "sections": {
         "About": "Six of Cups, from the Viéville pack (BnF folio order).",
@@ -1969,7 +2089,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-73.jpg"
         },
-        "number": 5
+        "number": 5,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f145.item"
       },
       "sections": {
         "About": "Cinq of Cups, from the Viéville pack (BnF folio order).",
@@ -1994,7 +2115,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-74.jpg"
         },
-        "number": 4
+        "number": 4,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f147.item"
       },
       "sections": {
         "About": "Quatre of Cups, from the Viéville pack (BnF folio order).",
@@ -2019,7 +2141,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-75.jpg"
         },
-        "number": 3
+        "number": 3,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f149.item"
       },
       "sections": {
         "About": "Trois of Cups, from the Viéville pack (BnF folio order).",
@@ -2044,7 +2167,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-76.jpg"
         },
-        "number": 2
+        "number": 2,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f151.item"
       },
       "sections": {
         "About": "Deux of Cups, from the Viéville pack (BnF folio order).",
@@ -2069,7 +2193,8 @@
           ],
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/coupes-77.jpg"
         },
-        "number": 1
+        "number": 1,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f153.item"
       },
       "sections": {
         "About": "As of Cups, from the Viéville pack (BnF folio order).",
@@ -2105,7 +2230,9 @@
         "Scene": "The suit of Coupes (Cups) in the Viéville Tarot ranges across fourteen ranks from Roi to As. The cup forms are distinctive throughout — architectural and multi-tiered in the king's chalice, dragon-crowned in the queen's three-cup arrangement, and fluted in gold throughout the pip cards. Several cards in the suit bear old French inscriptions or verse, giving the Viéville cups their unique narrative character.",
         "Symbol": "Cups as the suit of emotion, reception, and inner life — here given an unusual ornamental depth and textual voice, the suit that in the Viéville speaks as well as holds."
       },
-      "metadata": {}
+      "metadata": {
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f127.item"
+      }
     },
     {
       "id": "trump-mat",
@@ -2124,7 +2251,8 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/vieville-tarot/trump-mat.jpg"
         },
         "trump_key": "fool",
-        "trump_number": 0
+        "trump_number": 0,
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f155.item"
       },
       "sections": {
         "About": "The unnumbered Fool, the wandering figure — placed last in the BnF scan.",
@@ -2168,7 +2296,9 @@
         "Scene": "A navigational axis grouping all twenty-two Viéville trumps together — from Le Bateleur through Le Monde, with Le Mat at the unnumbered threshold. The axis invites reading across this deck's many iconographic departures: the standing Pendu, the tree-struck Maison-Dieu, the lute-playing Jugement, the grail-carrying Fou, and the domestic Moon.",
         "Symbol": "The twenty-two major arcana of the Viéville deck as a collective field — a map of the soul's journey expressed through the most iconographically divergent surviving Marseille variant."
       },
-      "metadata": {}
+      "metadata": {
+        "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k/f1.item"
+      }
     }
   ],
   "_research": {
