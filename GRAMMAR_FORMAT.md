@@ -128,11 +128,23 @@ without writing).
 
 | Deck | Its one source | Section key |
 |------|----------------|-------------|
-| `golden-dawn-book-t-tarot` | Golden Dawn, *Book T* (c. 1888) | `Divinatory Meaning`, `Reversed / Ill-Dignified`, `Correspondences`, `Golden Dawn Title`, `Astrological attribution (Book T)` |
+| `golden-dawn-book-t-tarot` | Golden Dawn, *Book T* (c. 1888) — **paraphrased**, not quoted, for the divinatory sections (see note below) | `Divinatory Meaning`, `Reversed / Ill-Dignified`, `Correspondences`, `Golden Dawn Title`, `Astrological attribution (Book T)` |
 | `rider-waite-smith-pictorial-key` | A. E. Waite, *The Pictorial Key to the Tarot* (1911) | `The Pictorial Key` |
 | `papus-tarot-des-bohemiens` | Papus, *Le Tarot des Bohémiens* (1889) | `Le Tarot des Bohémiens` |
 | `oswald-wirth-tarot` | Wirth's own commentary | `Wirth`, `Symbolism`, `Upright`, `Reversed` |
 | `court-de-gebelin-tarot` | Court de Gébelin, *Le Monde Primitif* (1781) | `Court de Gébelin's Egyptian Reading`, `Iconography` |
+
+> **Book T is paraphrased, not quoted — and that's labeled.** Book T's own prose never reached
+> print under its own name; it survives only via Israel Regardie's *The Golden Dawn* (1937-40),
+> whose copyright status is murky. So `golden-dawn-book-t-tarot`'s `Divinatory Meaning` and
+> `Reversed / Ill-Dignified` are editorial paraphrases of Book T's divinatory system, not
+> quotations — and each card carries a header saying so, immediately before `Divinatory Meaning`,
+> covering both sections as one contiguous block (same at-change-of-voice convention as the rest
+> of the deck; see `scripts/label_book_t_divinatory_paraphrase.py`, idempotent, `--check` verifies
+> without writing): `*Editorial — The Recursive Tarot · after Book T's divinatory meanings
+> (paraphrased; Book T's own prose is not safely public domain)*`. The Golden Dawn card titles
+> (`Golden Dawn Title`) and the attribution sections (`Correspondences`,
+> `Astrological attribution (Book T)`) are short facts, not paraphrased prose, and stay unlabeled.
 
 The rules that follow from it:
 
