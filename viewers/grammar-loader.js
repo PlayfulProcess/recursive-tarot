@@ -7,6 +7,13 @@
  * 2. Initialize: GrammarLoader.init(supabaseClient)
  * 3. Load from Supabase: const data = await GrammarLoader.loadFromSupabase(id, options)
  * 4. Load from GitHub: const data = await GrammarLoader.loadFromGitHub(path)
+ *
+ * NOTE for this repo (recursive-tarot): tarot.recursive.eco is a STATIC site with
+ * no backend — cards.html and tree-viewer.html install a no-op stub Supabase
+ * client, so loadFromSupabase() can never succeed here and calling it only
+ * produces console noise. Both viewers therefore resolve ?id= against the repo
+ * (deck slug, or app UUID via tarot/_eco_ids.json) and never reach this path.
+ * If you add a new caller, gate it on GrammarLoader.isReady() first.
  */
 
 (function() {
@@ -234,9 +241,19 @@
         }
     }
 
+    /**
+     * Whether init() has been given a client. Gate any Supabase-backed call on
+     * this rather than letting it fail into console.error.
+     * @returns {boolean}
+     */
+    function isReady() {
+        return !!supabaseClient;
+    }
+
     // Expose public API
     window.GrammarLoader = {
         init,
+        isReady,
         loadFromSupabase,
         loadFromGitHub,
         isCommunityUrl,
