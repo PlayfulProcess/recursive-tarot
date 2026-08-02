@@ -114,6 +114,7 @@ comes from R2 (see the Image pattern above); this folder is only for course-auth
 | `scripts/enrich_cards_from_research.py` | Add Research notes from research/cards/*.md (idempotent) |
 | `scripts/refresh_collection.py` | Sync _collection.json from grammars |
 | `scripts/normalize_book_t_sections.py` | Idempotent Book T section normaliser; `--check` asserts nothing was lost |
+| `scripts/label_book_t_divinatory_paraphrase.py` | Labels Book T's `Divinatory Meaning`/`Reversed / Ill-Dignified` as paraphrase (idempotent; `--check` verifies) |
 | `scripts/check_all.py` | Pre-commit gate |
 
 **`scripts/archive/` is history, not tooling.** The one-shot generators that first built each
