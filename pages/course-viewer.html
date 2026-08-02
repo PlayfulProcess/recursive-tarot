@@ -6,7 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="course-title">Course - Recursive.eco</title>
     <link rel="icon" type="image/svg+xml" href="/public/favicon.svg?v=2">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- This page used to pull https://cdn.tailwindcss.com, which prints a
+         "should not be used in production" warning on every load. It used 41
+         Tailwind utilities in total, all of them listed and hand-written
+         below, so the CDN is gone. Keep it that way: if you need another
+         utility, add its rule here rather than bringing the CDN back. -->
+    <style>
+        /* Tailwind utilities this page uses, vendored. */
+        .block { display: block; }
+        .hidden { display: none !important; }
+        .flex { display: flex; }
+        .grid { display: grid; }
+        .flex-wrap { flex-wrap: wrap; }
+        .items-center { align-items: center; }
+        .gap-3 { gap: .75rem; }
+        .gap-8 { gap: 2rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .mb-2 { margin-bottom: .5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+        .max-w-7xl { max-width: 80rem; }
+        .text-sm { font-size: .875rem; line-height: 1.25rem; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        .rounded-lg { border-radius: .5rem; }
+        .rounded-xl { border-radius: .75rem; }
+        .border { border-width: 1px; border-style: solid; }
+        .border-gray-200 { border-color: #e5e7eb; }
+        .border-\[\#e0dacd\] { border-color: #e0dacd; }
+        .hover\:border-\[\#9a7322\]:hover { border-color: #9a7322; }
+        .bg-white { background-color: #fff; }
+        .bg-gray-50 { background-color: #f9fafb; }
+        .text-gray-600 { color: #4b5563; }
+        .text-gray-900 { color: #111827; }
+        .text-red-600 { color: #dc2626; }
+        .text-\[\#221f1a\] { color: #221f1a; }
+        .text-\[\#6b6457\] { color: #6b6457; }
+        .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05); }
+        .transition-all { transition: all .15s ease; }
+        @media (min-width: 640px) { .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; } }
+        @media (min-width: 768px) {
+            .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .md\:col-span-1 { grid-column: span 1 / span 1; }
+            .md\:col-span-3 { grid-column: span 3 / span 3; }
+        }
+        @media (min-width: 1024px) { .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; } }
+    </style>
     <!-- Markdown parser -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>

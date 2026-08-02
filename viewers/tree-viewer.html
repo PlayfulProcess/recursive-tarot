@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tree View — Recursive Tarot</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- This page used to pull https://cdn.tailwindcss.com, which prints a
+         "should not be used in production" warning on every load. It used
+         exactly ONE Tailwind utility, so the CDN is gone and the utility is
+         inlined. Keep it that way: if you need more utilities, write the CSS. -->
+    <style>.hidden { display: none !important; }</style>
     <!-- ── Static-mode shim (recursive-tarot drift, no backend) ──
          The recursive.eco viewer expects Supabase + the app shell. Here we run
          self-contained on GitHub Pages: stub the auth/Supabase client (no remote
@@ -860,6 +864,28 @@
             return 'size-compact';
         }
 
+        // This site has no backend (see the stub Supabase client at the top of the
+        // file), so an ?id= can only be served from the repo: either it IS a deck
+        // slug, or it is a recursive.eco deck UUID that tarot/_eco_ids.json maps back
+        // to one. Returns a src path, or null when neither resolves.
+        let _ecoIds = null;
+        async function resolveStaticSrcForId(id) {
+            if (!id) return null;
+            if (!_ecoIds) { try { _ecoIds = await (await fetch('../tarot/_eco_ids.json')).json(); } catch (_) { _ecoIds = { ids: {} }; } }
+            const ids = _ecoIds.ids || {};
+            let slug = null;
+            if (Object.prototype.hasOwnProperty.call(ids, id)) slug = id;
+            else slug = Object.keys(ids).find(k => ids[k] === id) || null;
+            if (!slug && /^[a-z0-9][a-z0-9-]*$/.test(id)) slug = id;
+            if (!slug) return null;
+            const path = `../tarot/${slug}/grammar.json`;
+            try {
+                const head = await fetch(path, { method: 'HEAD' });
+                if (!head.ok) return null;
+            } catch (_) { return null; }
+            return path;
+        }
+
         // ── Load Grammar ──
         async function loadGrammar() {
             const params = new URLSearchParams(window.location.search);
@@ -867,7 +893,26 @@
             grammarType = params.get('type') || 'tarot';
             const githubPath = params.get('github');
             // Static mode: default to the repo's meta-grammar when no source is given.
-            const srcUrl = params.get('src') || (!grammarId && !githubPath ? '../tarot/all-decks-many-lenses/grammar.json' : '');
+            let srcUrl = params.get('src') || (!grammarId && !githubPath ? '../tarot/all-decks-many-lenses/grammar.json' : '');
+
+            // ?id= used to fall through to GrammarLoader.loadFromSupabase, which on THIS
+            // site talks to the no-op stub client declared at the top of the file — so it
+            // could only ever fail, into two console.error lines and then the error state.
+            // Resolve ?id= against the repo instead: a deck slug is the folder name, and
+            // an app UUID maps back to its slug through tarot/_eco_ids.json.
+            if (!srcUrl && !githubPath && grammarId) {
+                srcUrl = await resolveStaticSrcForId(grammarId);
+                if (!srcUrl) {
+                    document.getElementById('loading-state').classList.add('hidden');
+                    const err = document.getElementById('error-state');
+                    err.textContent = 'No deck matches ?id=' + grammarId + '. This site is static, so ?id= '
+                        + 'only works for a deck slug or a known recursive.eco deck UUID — otherwise use '
+                        + '?src=../tarot/<deck-slug>/grammar.json (the form every link on this site uses), '
+                        + 'or ?github=path/to/grammar.json.';
+                    err.classList.remove('hidden');
+                    return;
+                }
+            }
 
             let docData = null;
 
