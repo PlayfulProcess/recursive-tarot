@@ -182,7 +182,7 @@ All confirmed `public: 0` (private draft) via a read-only account listing on
 | vieville-tarot | `BBF41A2E-8B79-11F1-964F-FEC22FE3B2B9` | `BDCC6A0E-8B79-11F1-B8B4-AA9440A950E6` | 78/78 | yes |
 | etteilla-ii-egyptian | `49F36F0A-8B7A-11F1-964F-C2C92FE3B2B9` | `4BA0B920-8B7A-11F1-964F-CDC92FE3B2B9` | 78/78 | yes |
 | este-tarot | `45E377D6-8B78-11F1-B8B4-9E8340A950E6` | `477CF7FC-8B78-11F1-B8B4-A08340A950E6` | 16/16 | yes |
-| tarocchino-arlecchino | `D66048DC-8B7A-11F1-9B66-4CF3DFA4E030` | `D8BF8548-8B7A-11F1-B8B4-BAA240A950E6` | 62/64 (2 significators excluded — broken source images, see below) | yes |
+| tarocchino-arlecchino | `D66048DC-8B7A-11F1-9B66-4CF3DFA4E030` | `D8BF8548-8B7A-11F1-B8B4-BAA240A950E6` | 64/64 (2 significators fixed 2026-08-01, see below) | yes |
 | arlecchinos-augmented-arcana | `44C11036-8B7B-11F1-B8B4-3FA840A950E6` | `46A59FE8-8B7B-11F1-9B66-A3F8DFA4E030` | 84/84 | yes |
 
 All 8 use the same uploaded back file (`file_id 78A97A8A-8B78-11F1-84DD-DEC0EC690B95`
@@ -192,12 +192,50 @@ separate PUT call). `has_proofed_back` was reset to `0` on every deck touched
 **Proof All** pass in the TGC UI before it can be ordered or published; see the
 walkthrough in chat.
 
-**Known gap:** `tarocchino-arlecchino`'s two Significator cards
-(`significator-62`, `significator-63`) have corrupted/truncated source images on
-R2 (9.6KB, ~220×405px, fails to decode) — excluded from this print run rather
-than uploading broken art. Flagged as a separate background task
-(`task_d7e2ac52`) to re-source and re-upload; once fixed, re-run the upload for
-just those two cards and the deck goes from 62 to the full 64.
+**Gap fixed 2026-08-01:** `tarocchino-arlecchino`'s two Significator cards
+(`significator-62`, `significator-63`) had corrupted/truncated source images on
+R2 (9.6KB/13KB, JPEG header claimed 220×405px, `PIL` raised "broken data stream"
+on both — confirmed corrupt, not just low-res). Root cause: the 2026-06-23
+commit (`5f7d0c2`) that first added these two cropped its source from Yve
+Lepkowski's own combined "Fool + two Significators" illustration
+(`stolen-thyme.com/wp-content/uploads/2021/06/foolandsignificators.jpg`,
+2139×1313 — confirmed via WordPress srcset that this is the largest size she
+publishes, no `-scaled` original exists) and the crop apparently got truncated
+in transit to R2.
+
+**Re-sourced, not regenerated:** re-downloaded her original composite fresh
+(still live, still 2139×1313), confirmed it splits into exact equal thirds
+(2139/3 = 713.0 — no guessing on the crop line): left third = the male
+Arlecchino significator, right third = Arlecchina (Lady Harlequin) in her
+skirt — matches each card's existing name/description. Re-uploaded both crops
+(713×1313, healthy JPEGs, decode-verified) to the *same* R2 keys the grammar
+already pointed at (`grammars/1782231353624-m29xgsnxzc.jpg` and
+`grammars/1782230724644-g6cy9sdu136.jpg`) — no `grammar.json` `image_url`
+change needed, existing references just started resolving.
+
+For the TGC face: ran the two crops through `tgc_card.border_fit()` (no
+special deck flags — `tarocchino-arlecchino` isn't in `BLEND_FRAME` /
+`TIGHT_TRIM` / `FLOOD_BG`), producing standard 900×1500 canvases with the art
+filling the 800×1395 `FIT` box on a matching cream bleed, same as every other
+face in this run. Stamped `metadata.print` on just these two items (the other
+62 still carry none — they were never prebaked, being native 900×1500 art
+already) with `tgc_url` pointing at the new R2 print masters
+(`grammar-illustrations/print/tarocchino-arlecchino/significator-{62,63}.jpg`).
+Uploaded both faces to the existing draft deck via the TGC API
+(`POST /file` + `POST /card`, same pattern as `tgc_upload_deck.py`), matching
+card names exactly to the grammar's `name` field (the convention every other
+card in this deck already uses). Deck is now **64/64**, confirmed via a
+read-only card-count query; game still `public: 0`.
+
+**One honest caveat:** her published composite is the only source that
+exists — no higher-resolution version is available anywhere (checked for a
+WP `-scaled` original and larger srcset entries; none found). Each
+significator's short side (713px) sits just under the pipeline's own 800px
+"print" floor — `tgc_card.print_quality()` stamps them `"web"`, not `"print"`,
+same tier as the deck's MARGINAL peers elsewhere in this doc, just slightly
+softer (713 vs. 780+). Visually the art still fills the card properly (see
+the composition spec above) and prints comparably to the rest of this
+CC-BY-SA deck's supplied art; flagging the number rather than hiding it.
 
 MARGINAL decks (oswald-wirth-tarot, tarot-de-marseille-conver,
 anecdotes-tarot) were **not** staged — see the table above for why, and
