@@ -57,9 +57,35 @@ def fetch_url(url, tries=5):
             raise
     raise RuntimeError("max retries")
 
+SNIFF = [(b"\xff\xd8\xff", "jpg", "image/jpeg"),
+         (b"\x89PNG\r\n\x1a\n", "png", "image/png"),
+         (b"GIF87a", "gif", "image/gif"),
+         (b"GIF89a", "gif", "image/gif"),
+         (b"RIFF", "webp", "image/webp")]
+
+
+def sniff(data):
+    """(extension, content-type) read from the bytes' own magic number.
+
+    This used to be hardcoded `ContentType="image/jpeg"` with a `.jpg` key, and
+    the script never looked at what it was actually uploading. Commons serves
+    GIFs and PNGs too, so the Jun 12 2026 migration put 61 GIFs and 1 PNG into
+    tarocchino-bologna's `.jpg` keys and served them as image/jpeg — bytes
+    intact, labels wrong, on every card of that deck. Browsers sniff and render
+    them anyway, which is why it went unnoticed. Never restore the hardcoded
+    value: the key's extension and the Content-Type must both follow the bytes.
+    """
+    for magic, ext, ctype in SNIFF:
+        if data.startswith(magic):
+            return ext, ctype
+    raise RuntimeError(f"unrecognised image format, first bytes: {data[:12]!r}")
+
+
 def upload(s3, bucket, key, data):
+    ext, ctype = sniff(data)
+    key = re.sub(r"\.[A-Za-z0-9]+$", "", key) + "." + ext
     s3.put_object(Bucket=bucket, Key=key, Body=data,
-                  ContentType="image/jpeg",
+                  ContentType=ctype,
                   CacheControl="public, max-age=31536000")
     return f"{PUB}/{key}"
 
