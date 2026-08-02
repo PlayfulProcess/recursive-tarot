@@ -101,6 +101,14 @@ HEADER_RE = re.compile(r"^\*Papus.*?\*|^\[Papus.*?\]", re.S)
 MARKER_RE = re.compile(r"(\d{1,2})(?:st|nd|rd|th)\s+Hebrew letter\s*\(", re.I)
 
 SEPTENARY_WORD = re.compile(r"SEPTEN\w{1,3}Y", re.I)
+# BUG, kept for the record: {2,3} requires two-to-three letters between TA
+# and OT, so this never matched TAROT (one letter, R) — nor the scan's TAKOT
+# / TAEOT. Every "THE SYMBOLICAL TAROT. <page>" running head passed straight
+# through this script and survived into papus-tarot-des-bohemiens, where
+# scripts/clean_papus_running_heads.py finally removes them with {1,3}. This
+# script no longer has any input (one_source_per_deck.py moved every Papus
+# section out of the three host decks), so the pattern is left as it ran
+# rather than silently changed; use {1,3} in anything new.
 TAROT_WORD = r"TA[A-Z]{2,3}OT"
 RUNNING_HEAD = re.compile(
     r"^(\d+\s+)?(THE " + TAROT_WORD + r"\.?|THE SYMBOLICAL " + TAROT_WORD + r"\.?|"
