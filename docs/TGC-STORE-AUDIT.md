@@ -241,3 +241,58 @@ MARGINAL decks (oswald-wirth-tarot, tarot-de-marseille-conver,
 anecdotes-tarot) were **not** staged — see the table above for why, and
 what would need to happen (a spot-check, or a re-source) before they're
 store-ready.
+
+## tarocchino-bologna — 62 mislabeled R2 objects repaired 2026-08-02
+
+Cause (commit `5869625`): `scripts/migrate_covers_to_r2.py` hardcoded
+`ContentType="image/jpeg"` and a `.jpg` key without ever checking what it
+was uploading. The Jun 12 2026 migration put 61 GIFs and 1 PNG into this
+deck's `.jpg` keys and served them all as `image/jpeg` — bytes intact,
+labels wrong. That commit fixed the uploader (extension/Content-Type now
+follow the bytes' own magic number) but explicitly left the already-bad
+objects in the bucket for a separate repair pass.
+
+**Verified count:** enumerated all 79 R2 objects under
+`grammar-illustrations/tarocchino-bologna*` (78 flat `tarocchino-bologna-*.jpg`
+keys referenced from `grammar.json`'s `cover_image_url` + `items[].image_url`,
+plus the one `tarocchino-bologna/Tarocco Bolognese.png` composite sheet, which
+was already correctly typed). Downloaded every one of the 78 and sniffed the
+true format from its magic number: **62 mismatches** — 61 `image/gif` and 1
+`image/png` (the deck cover), all stored as `image/jpeg`. 16 objects were
+already correct JPEGs. Matches the number commit `5869625` flagged.
+
+**Repair method — no URL churn:** for each of the 62, ran an R2
+`copy_object` with the *same bucket and same key* as source and destination
+and `MetadataDirective="REPLACE"`, setting `ContentType` to the bytes'
+actual sniffed type (`image/gif` ×61, `image/png` ×1). This rewrites only
+the object's stored HTTP metadata — the bytes themselves were never
+downloaded, re-encoded, or touched, so there is zero quality loss and zero
+risk of a transcription error. Keys were **not** renamed (still `.jpg`) and
+`grammar.json` needed no edit — the URLs `_grammar_commons`/items already
+point at keep resolving to the same, now-correctly-labeled, objects.
+
+**Verified after:** HEAD on all 62 repaired public URLs → 200 OK with the
+corrected `Content-Type`. 5 random samples downloaded fresh and decoded with
+PIL — byte-for-byte identical size to the pre-repair object, valid images
+(the GIFs are genuine 100×209 two-colour Bolognese card art, not the
+"placeholder" the original crawler note called them — see `5869625`'s
+message). Live-rendered on `tarot.recursive.eco/viewers/cards.html` (deck id
+`37ff6a9d-ba38-42e2-92ea-aa5871716bcc`, cache-busted query param): sampled 5
+of the repaired cards (`trump-matto`, `trump-bagatto`, `trump-papa-a`,
+`coins-ace`, `cups-ace`) — all decoded through the browser's own `<img>`
+pipeline at their native 100×209, `complete === true`.
+
+**Downstream consumers checked for extension-sniffing:** `scripts/tgc_card.py`
+(the TGC print pipeline) loads every image via
+`Image.open(io.BytesIO(urlopen(...).read()))` — pure magic-number decoding,
+never looks at the URL's extension or a Content-Type header, so it was never
+affected and needs no change. No viewer JS (`viewers/*.js`, `viewers/*.html`)
+branches on image file extension either — cards render through plain
+`<img>` tags, which browsers already sniff regardless of the (still-`.jpg`)
+key name. One adjacent, **out-of-scope** finding: `scripts/prebake_deck_r2.py`
+line 102 has the same hardcoded-`ContentType="image/jpeg"` pattern
+`migrate_covers_to_r2.py` had before `5869625` — it hasn't bitten anyone yet
+because tarocchino-bologna is FAIL-class and has never been run through the
+TGC prebake pipeline, but it's the same latent bug in a sibling script and
+worth fixing before any FAIL/MARGINAL deck with non-JPEG source art gets
+prebaked.
