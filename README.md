@@ -2,8 +2,17 @@
 
 A public-domain, scholarship-grounded set of **tarot grammars** — structured JSON
 datasets, one per historical deck — plus a **genealogical meta-grammar** that maps how
-the decks descend from one another. Everything here is **CC-BY-SA-4.0** and built from
-**public-domain** sources (Wikimedia Commons, the BnF/Gallica, etc.).
+the decks descend from one another. Built from **public-domain** sources (Wikimedia
+Commons, the BnF/Gallica, etc.).
+
+**Licensing** (mirrors [Recursive-astrology](https://github.com/PlayfulProcess/Recursive-astrology)):
+
+| What | License |
+|------|---------|
+| Code — viewers, scripts, site pages | [MIT](LICENSE) |
+| Content — grammar data, research dossiers, courses, images metadata | [CC-BY-SA-4.0](LICENSE-CONTENT.txt) |
+
+Card artwork itself is public domain (each grammar records per-image provenance).
 
 If you are a tarot historian or collector and found this from the Tarot History Forum:
 **welcome, and please correct us.** See *Contributing* below.
