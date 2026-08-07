@@ -178,14 +178,14 @@
             max-width:min(300px,calc(100vw - 16px)); background:#ffffff; border:1px solid #d8d2c6;
             border-radius:8px; padding:7px; box-shadow:0 16px 44px -18px rgba(60,45,20,.45); display:none; z-index:60;
             overflow-y:auto; }
-          /* Invisible bridge across the 8px gap: keeps the menu open while the cursor
-             travels from the trigger down to a sub-item (no more disappearing dropdown). */
-          .dd-menu::before{ content:""; position:absolute; left:0; right:0; top:-10px; height:10px; }
           /* Horizontal/vertical clamping is computed in JS (positionMenu, below), not a fixed
              breakpoint: a left-side trigger (Home, Views) overflows the left edge whenever the
              panel is wider than the space to its left, which happens at tablet widths (~760–950px)
              just as much as on phones — a single max-width media query missed that range entirely. */
-          .dd:hover .dd-menu, .dd:focus-within .dd-menu, .dd.open .dd-menu{ display:block; }
+          /* Open state is .open (JS-managed, incl. desktop hover) or keyboard focus — never
+             raw :hover: the gap under the trigger made :hover a dead zone (the old ::before
+             bridge couldn't cover it — overflow-y:auto clips pseudo-content above the panel). */
+          .dd:focus-within .dd-menu, .dd.open .dd-menu{ display:block; }
           .dd.open .dd-btn::after{ transform:rotate(225deg) translateY(2px); opacity:.85; }
           .dd-menu a{ display:block; color:#4a4439; text-decoration:none; font-size:13px;
             padding:8px 10px; border-radius:7px; white-space:nowrap; }
@@ -273,12 +273,26 @@
       root.querySelectorAll('.dd').forEach(dd => {
         const btn = dd.querySelector('.dd-btn');
         const set = open => btn && btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        dd.addEventListener('mouseenter', () => { set(true); positionMenu(dd); });
-        dd.addEventListener('mouseleave', () => set(false));
+        const closeAll = except => root.querySelectorAll('.dd.open').forEach(o => {
+          if (o === except) return;
+          o.classList.remove('open'); const b = o.querySelector('.dd-btn'); if (b) b.setAttribute('aria-expanded', 'false');
+        });
+        let closeTimer = null;
+        const open = () => { clearTimeout(closeTimer); closeAll(dd); dd.classList.add('open'); set(true); positionMenu(dd); };
+        const close = () => { clearTimeout(closeTimer); dd.classList.remove('open'); set(false); };
+        // Desktop hover: JS-managed with a grace period on close. Pure CSS :hover
+        // closed the panel the instant the cursor crossed the gap under the trigger
+        // (a dead zone no bridge can cover once the panel scrolls) — and a delay
+        // also survives the horizontal shift positionMenu applies near screen edges.
+        dd.addEventListener('mouseenter', () => { if (window.matchMedia('(hover: hover)').matches) open(); });
+        dd.addEventListener('mouseleave', () => {
+          if (!window.matchMedia('(hover: hover)').matches) return;
+          clearTimeout(closeTimer); closeTimer = setTimeout(close, 260);
+        });
         dd.addEventListener('focusin', () => { set(true); positionMenu(dd); });
         dd.addEventListener('focusout', () => { if (!dd.matches(':focus-within')) set(false); });
         dd.addEventListener('keydown', e => {
-          if (e.key === 'Escape') { set(false); btn && btn.focus(); }
+          if (e.key === 'Escape') { close(); btn && btn.focus(); }
           // Enter/Space opens the menu when the trigger has no own link to follow
           if ((e.key === 'Enter' || e.key === ' ') && e.target === btn && !btn.getAttribute('href')) {
             const first = dd.querySelector('.dd-menu a'); if (first) { e.preventDefault(); set(true); positionMenu(dd); first.focus(); }
@@ -290,8 +304,8 @@
           if (window.matchMedia('(hover: hover)').matches) return;
           e.preventDefault();
           const willOpen = !dd.classList.contains('open');
-          root.querySelectorAll('.dd.open').forEach(o => { o.classList.remove('open'); const b = o.querySelector('.dd-btn'); if (b) b.setAttribute('aria-expanded', 'false'); });
-          if (willOpen) { dd.classList.add('open'); set(true); positionMenu(dd); }
+          closeAll(null);
+          if (willOpen) open(); else close();
         });
       });
 
