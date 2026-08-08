@@ -56,11 +56,19 @@
     const style = document.createElement('style');
     style.id = 'oracle-ribbon-style';
     style.textContent = [
+      // Never paints a surface — no background, no border, no shadow. The ribbon is an
+      // inscription on whatever page hosts it, so it must disappear into a light parchment
+      // page AND a dark app panel. Colour follows the host's theme three ways (OS preference,
+      // a data-theme attribute, or a .dark class — flow/Tailwind uses the last one).
+      ':root{--orb-ink:#9a7322;}',
+      '@media (prefers-color-scheme: dark){:root{--orb-ink:#d8b978;}}',
+      '[data-theme="dark"], .dark{--orb-ink:#d8b978;}',
+      '[data-theme="light"]{--orb-ink:#9a7322;}',
       '.oracle-ribbon{display:flex;align-items:baseline;justify-content:center;gap:10px;',
       'margin:10px auto 0;padding:2px 28px 2px 8px;max-width:640px;position:relative;',
       'font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:12.5px;',
       'line-height:1.5;letter-spacing:.045em;text-align:center;',
-      'color:#9a7322;opacity:.8;background:transparent;border:none;box-shadow:none;}',
+      'color:var(--orb-ink,#9a7322);opacity:.82;background:transparent;border:none;box-shadow:none;}',
       '.oracle-ribbon .orb-text{flex:1 1 auto;min-width:0;transition:opacity ' + FADE_MS + 'ms ease;opacity:1;}',
       '.oracle-ribbon .orb-text.orb-fade{opacity:0;}',
       '.oracle-ribbon .orb-close{position:absolute;right:4px;top:50%;transform:translateY(-50%);',
@@ -74,11 +82,22 @@
 
   let mounted = false;
 
-  function show(afterEl) {
-    if (!ribbonEnabled()) return;          // preview flag off — no-op
+  /* show(afterEl, opts)
+   *   opts.gated      — default true: obey the ?ribbon=1 preview flag. Pass false when a host
+   *                     surface (e.g. the app's waiting state) deliberately always shows it.
+   *   opts.holdMs     — override the per-fragment dwell. A waiting state that lasts ~15s wants
+   *                     a shorter hold than a board a reader sits with.
+   *   opts.fragments  — override the lines.
+   *   opts.dismissible— default true; a waiting state that disappears on its own sets false.  */
+  function show(afterEl, opts) {
+    const o = opts || {};
+    if (o.gated !== false && !ribbonEnabled()) return;   // preview flag off — no-op
     if (dismissedThisSession()) return;
     if (mounted) return;
     if (!afterEl || !afterEl.parentNode) return;
+
+    const FRAGS = Array.isArray(o.fragments) && o.fragments.length ? o.fragments : FRAGMENTS;
+    const hold = typeof o.holdMs === 'number' ? o.holdMs : HOLD_MS;
 
     injectStyle();
     mounted = true;
@@ -100,23 +119,24 @@
     closeBtn.textContent = '×';
 
     wrap.appendChild(textEl);
-    wrap.appendChild(closeBtn);
+    if (o.dismissible !== false) wrap.appendChild(closeBtn);
+    else wrap.style.paddingRight = '8px';
     afterEl.parentNode.insertBefore(wrap, afterEl.nextSibling);
 
-    let idx = reduced ? STATIC_INDEX : 0;
-    textEl.textContent = FRAGMENTS[idx];
+    let idx = reduced ? Math.min(STATIC_INDEX, FRAGS.length - 1) : 0;
+    textEl.textContent = FRAGS[idx];
 
     let holdTimer = null, fadeTimer = null;
     function scheduleNext() {
       holdTimer = setTimeout(() => {
         textEl.classList.add('orb-fade');
         fadeTimer = setTimeout(() => {
-          idx = (idx + 1) % FRAGMENTS.length;
-          textEl.textContent = FRAGMENTS[idx];
+          idx = (idx + 1) % FRAGS.length;
+          textEl.textContent = FRAGS[idx];
           textEl.classList.remove('orb-fade');
           scheduleNext();
         }, FADE_MS);
-      }, HOLD_MS);
+      }, hold);
     }
     if (!reduced) scheduleNext();
 
