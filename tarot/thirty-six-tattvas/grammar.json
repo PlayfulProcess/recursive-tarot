@@ -8,6 +8,11 @@
         "name": "PlayfulProcess",
         "url": "https://recursive.eco",
         "note": "Living Tradition deck — a recursive.eco original / interpretive grammar, imported from the platform. Not a historical artifact."
+      },
+      {
+        "name": "Wikimedia Commons contributors",
+        "url": "https://commons.wikimedia.org/",
+        "note": "Seven plates in this deck (Naṭarāja / LACMA, Ardhanārīśvara / Cleveland Museum of Art, an 1858 Ganges-at-Haridwar lithograph, a Śiva liṅgam / British Museum, a copper Śrī Yantra, an annotated Śrī Yantra diagram, and an illustrated Kashmir Śaivist / Trika Yoga manuscript) are public-domain or CC0-dedicated works sourced from Wikimedia Commons, replacing the deck's placeholder plates on those cards. Re-verified against each file's Commons licensing page 2026-08-08. Full per-item provenance is recorded in each item's metadata.credit."
       }
     ]
   },
@@ -51,9 +56,17 @@
       "metadata": {
         "shakti": "cit",
         "element": "akasha",
-        "movement": "ground"
+        "movement": "ground",
+        "credit": {
+          "source": "Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Sri_Yantra_copper.jpg",
+          "license": "Public domain (dedicated to the public domain by the copyright holder)",
+          "creator": "Tangopaso (Wikimedia contributor; photograph of own work)",
+          "date": "c. 1980",
+          "note": "Śrī Yantra mounted on a copper plaque (11 cm frame, 7 cm yantra). Chosen for this card because the Śrī Yantra's bindu-at-center geometry mirrors the card's own Yantra description of a point radiating light."
+        }
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1776198976296-7ibw5sjjs6b.png"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sri_Yantra_copper.jpg?width=900"
     },
     {
       "id": "shakti-ananda",
@@ -185,9 +198,17 @@
         "shakti": "cit",
         "movement": "unmesa",
         "tattva_number": 1,
-        "number": 1
+        "number": 1,
+        "credit": {
+          "source": "Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Shiva_lingam,_British_Museum.jpg",
+          "license": "Public Domain Mark 1.0 (public domain in country of origin; life+70 expired)",
+          "creator": "Unknown artist",
+          "date": "c. 1700–1900",
+          "note": "Sandstone Śiva liṅgam, George Witt collection, British Museum. The liṅgam is a traditional aniconic emblem of Śiva tattva — pure, undifferentiated awareness."
+        }
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1776198977297-5s5f5d5o3zf.png"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shiva_lingam%2C_British_Museum.jpg?width=900"
     },
     {
       "id": "tattva-02",
@@ -305,9 +326,17 @@
         "shakti": "kriya",
         "movement": "threshold",
         "tattva_number": 5,
-        "number": 5
+        "number": 5,
+        "credit": {
+          "source": "Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Sri_Yanta.png",
+          "license": "CC0 1.0 Universal Public Domain Dedication",
+          "creator": "Attribution given on the file page as 'Adi Shankaracharya'; this appears to be an unverified/traditional attribution in the upload metadata rather than a documented creator, and the stated date (1 January 790) reads as placeholder metadata — treat both with caution",
+          "date": "Undated (see caution above)",
+          "note": "Annotated Śrī Yantra diagram — two interlocking triangles with lotus petals and siddhi labels. Chosen for this card because its own Yantra text explicitly calls its geometry 'the echo of the Śrī Yantra': two interlocking triangles around a white bindu."
+        }
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1776198977289-td5iouqu26s.png"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sri_Yanta.png?width=900"
     },
     {
       "id": "tattva-06",
@@ -1201,9 +1230,17 @@
         "tattva_number": 35,
         "holographic_mirror": "Shakti Tattva",
         "holographic_mirror_note": "Interpretive correspondence inferred from element-shakti pairings, not a formally cited traditional teaching.",
-        "number": 35
+        "number": 35,
+        "credit": {
+          "source": "Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Ganges_River_at_Haridwar_-_1858.jpg",
+          "license": "Public domain (published before 1931; life+70 expired)",
+          "creator": "Unknown / anonymous",
+          "date": "1858",
+          "note": "Antique lithograph, originally titled 'The Ganges Entering the Plains near Hurdwar [Haridwar]' — the sacred river descending from the Himalayan foothills, chosen for the Jala (water) tattva."
+        }
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1776198988151-r3my86swd8a.png"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ganges_River_at_Haridwar_-_1858.jpg?width=900"
     },
     {
       "id": "tattva-36",
@@ -1314,14 +1351,21 @@
         "Question": "If buddhi, ahamkāra, and manas are instruments — who is using them?"
       },
       "metadata": {
-        "realm": "material"
+        "realm": "material",
+        "credit": {
+          "source": "Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Yogin_in_meditation_chakras_kundalini_snake.jpg",
+          "license": "Public domain",
+          "creator": "Unknown; Wellcome Collection manuscript",
+          "note": "Yogin in meditation showing the nadis, chakras and the kundalini serpent. Chosen over the Gurmukhi Trika manuscript scan, which is a 131x1200 vertical strip and renders as a sliver at card proportions; that manuscript is kept for a page-level lineage illustration instead."
+        }
       },
       "composite_of": [
         "tattva-14",
         "tattva-15",
         "tattva-16"
       ],
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1776198988812-dbpevidtmwl.png"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Yogin_in_meditation_chakras_kundalini_snake.jpg?width=900"
     },
     {
       "id": "realm-senses",
@@ -1410,9 +1454,17 @@
         "Non-Dual Key": "Recognition (pratyabhijñā) is the moment when nara sees: I was always Shiva-Shakti, playing at being only nara."
       },
       "metadata": {
-        "concept": "trinity"
+        "concept": "trinity",
+        "credit": {
+          "source": "Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:11th_century_Trishul_with_Shaivism_Ardhanarishvara,_Cleveland_Museum_of_Art.jpg",
+          "license": "CC0 1.0 Universal Public Domain Dedication",
+          "creator": "Sculptor unknown; photograph by Gary Kirchenbauer",
+          "date": "c. 1050 CE, Chola period",
+          "note": "Trident (triśūla) bearing an image of Ardhanārīśvara — Śiva's half-male, half-female form uniting Śiva and Śakti. Cleveland Museum of Art, accession 1969.117."
+        }
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1776198989658-vbea40g8mp.png"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/11th_century_Trishul_with_Shaivism_Ardhanarishvara%2C_Cleveland_Museum_of_Art.jpg?width=900"
     },
     {
       "id": "concept-spanda",
@@ -1434,9 +1486,17 @@
         "Spanda Kārikā": "That in which all this rests and from which it has come forth — since it has an unveiled nature, there is no obstruction of it anywhere."
       },
       "metadata": {
-        "concept": "spanda"
+        "concept": "spanda",
+        "credit": {
+          "source": "Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Shiva_as_the_Lord_of_Dance_LACMA_edit.jpg",
+          "license": "Public domain (PD-LACMA; LACMA-released public domain high-resolution image)",
+          "creator": "Unknown artist",
+          "date": "c. 950–1000 CE, Chola dynasty",
+          "note": "Naṭarāja — Śiva as the Lord of Dance, copper alloy sculpture from Tamil Nadu, India. Los Angeles County Museum of Art (LACMA), accession M.75.1. The cosmic dance is the canonical image of spanda, the divine pulsation."
+        }
       },
-      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1776198989676-i9i6hu2ofwh.png"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shiva_as_the_Lord_of_Dance_LACMA_edit.jpg?width=900"
     },
     {
       "id": "concept-pratyabhijna",

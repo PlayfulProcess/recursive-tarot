@@ -3,12 +3,22 @@
  * shown once a cast lands, that slow-crossfades through a handful of short fragments —
  * "Keep your agency. The cards ask; you decide." — like a votive inscription being re-lit.
  *
- * To the left of the text sits a small spiral mark, turning slowly and continuously
- * (7s/revolution, linear) — the same golden-ratio curve as the site's hero/header spiral
- * (public/spiral/spiral.js generateSpiralPath), reproduced inline below so this file has
- * no external asset dependency. It's the visible "this is thinking" cue: the rolling text
- * alone read as a static disclaimer, not an active process. Static (no rotation) under
- * prefers-reduced-motion. Colour follows --orb-ink via currentColor, same as the text.
+ * To the left of the text sits a small spiral mark — the same golden-ratio curve as the
+ * site's hero/header spiral (public/spiral/spiral.js generateSpiralPath), reproduced inline
+ * below so this file has no external asset dependency. It's the visible "this is thinking"
+ * cue: the rolling text alone read as a static disclaimer, not an active process.
+ *
+ * Fixed Aug 8 2026, mirroring the flow app's OracleRibbon.tsx (same builder feedback: a bare
+ * rotation didn't read as active — a logarithmic spiral turning about its own centre is close
+ * to rotationally self-similar, so a slow spin barely changes the silhouette frame to frame).
+ * Now the mark draws/undraws via stroke-dashoffset (the same idiom as the flow app's brand
+ * SpiralLoader) at a brisk ~2.4s cycle, with the previous 7s rotation layered on top as
+ * secondary texture rather than the primary cue. Static (no motion at all) under
+ * prefers-reduced-motion — this ribbon isn't a busy/loading state (it appears once a cast has
+ * already landed, as a reflective note), so there's no "Interpreting…"-style text fallback to
+ * add here the way the flow app's waiting-state twin needed one; a frozen mark is honest, not
+ * a broken loading cue, in this context. Colour follows --orb-ink via currentColor, same as
+ * the text.
  *
 
  * PREVIEW-GATED: everything below is a no-op unless the page URL carries ?ribbon=1. This
@@ -106,23 +116,35 @@
       'font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:12.5px;',
       'line-height:1.5;letter-spacing:.045em;text-align:center;',
       'color:var(--orb-ink,#9a7322);opacity:.82;background:transparent;border:none;box-shadow:none;}',
-      // Thinking mark: the same brand spiral (SPIRAL_D above), turning slowly
-      // like a votive wheel — this is the visible "it is thinking" cue the
-      // rolling text alone didn't give. 7s linear infinite: quick enough to
-      // register as in-motion inside one ~8s text hold, slow enough to stay
-      // contemplative rather than reading as a generic loading spinner.
+      // Thinking mark: the same brand spiral (SPIRAL_D above). Fixed Aug 8 2026 — a bare
+      // rotation read as nearly static (a logarithmic spiral turning about its own centre is
+      // close to rotationally self-similar), so the primary motion cue is now the path
+      // drawing/undrawing via stroke-dashoffset (same idiom as the flow app's brand
+      // SpiralLoader), at a brisk ~2.4s cycle. The 7s rotation still turns the wrapper on top,
+      // like a votive wheel, as secondary texture — not the thing carrying the "it is active"
+      // signal anymore.
       '.oracle-ribbon .orb-spiral{flex:0 0 auto;width:17px;height:17px;display:inline-block;',
       'animation:orb-spiral-spin 7s linear infinite;}',
       '.oracle-ribbon .orb-spiral svg{display:block;width:100%;height:100%;}',
+      '.oracle-ribbon .orb-spiral path{stroke-dasharray:1;',
+      'animation:orb-spiral-draw 2.4s ease-in-out infinite alternate;}',
       '@keyframes orb-spiral-spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}',
+      // Draws (offset 1→0) then un-draws (0→1) via `alternate` — mirrors the flow app's
+      // `spiral-draw` keyframe (globals.css / <SpiralLoader>) exactly, just sped up.
+      '@keyframes orb-spiral-draw{from{stroke-dashoffset:1;}to{stroke-dashoffset:0;}}',
       '.oracle-ribbon .orb-text{flex:1 1 auto;min-width:0;transition:opacity ' + FADE_MS + 'ms ease;opacity:1;}',
       '.oracle-ribbon .orb-text.orb-fade{opacity:0;}',
       '.oracle-ribbon .orb-close{position:absolute;right:4px;top:50%;transform:translateY(-50%);',
       'flex:0 0 auto;cursor:pointer;background:none;border:none;padding:2px 4px;',
       'font-family:inherit;color:inherit;opacity:.6;font-size:12px;line-height:1;}',
       '.oracle-ribbon .orb-close:hover{opacity:1;}',
+      // Reduced motion: freeze both layers. No "Interpreting…"-style text fallback is added
+      // here (unlike the flow app's waiting-state twin) — this ribbon shows AFTER a cast has
+      // already landed, as a reflective note, not while something is loading, so a frozen mark
+      // is honest rather than a broken loading cue.
       '@media (prefers-reduced-motion: reduce){.oracle-ribbon .orb-text{transition:none;}',
-      '.oracle-ribbon .orb-spiral{animation:none;}}',
+      '.oracle-ribbon .orb-spiral{animation:none;}',
+      '.oracle-ribbon .orb-spiral path{animation:none;}}',
     ].join('');
     document.head.appendChild(style);
   }
@@ -165,6 +187,9 @@
     spiralSvg.setAttribute('viewBox', '0 0 100 100');
     const spiralPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     spiralPath.setAttribute('d', SPIRAL_D);
+    // Normalizes the dash math for orb-spiral-draw (stroke-dasharray:1 / dashoffset 0-1)
+    // the same way <SpiralLoader> uses pathLength={1} in the flow app.
+    spiralPath.setAttribute('pathLength', '1');
     spiralPath.setAttribute('fill', 'none');
     spiralPath.setAttribute('stroke', 'currentColor');
     spiralPath.setAttribute('stroke-width', '7');
