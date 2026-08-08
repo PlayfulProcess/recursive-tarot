@@ -247,7 +247,16 @@ def build():
                 role = "court"                          # courts backfilled as 11-14 = P/Kn/Q/K
             else:
                 role = "other"                          # significators, sheets, missing arcana
-            trump_number = major if (role == "trump" and major is not None) else None
+            # trump_number: the trump's position in ITS OWN deck's sequence. Prefer the
+            # name-derived canonical major, then fall back to the deck's raw metadata.number.
+            # The fallback matters for decks that use "trump" vocabulary and their own longer
+            # sequence — Minchiate runs to 40, Bologna keeps four Papi — whose numbers were
+            # otherwise dropped, because the `major` branch above only fires for arcana=="major"
+            # and capping at 21 would cut Minchiate's zodiac trumps. Deliberately does NOT
+            # rewrite their arcana to "major": that distinction is editorial voice, not noise.
+            # NOTE the consequence, which is the point: row 11 holds Marseille's Strength AND
+            # Minchiate's Hunchback. Same number, different card — that IS the comparison.
+            trump_number = (major if major is not None else mnum) if role == "trump" else None
             pivot_rank = role_num if role in ("pip", "court") else None
             cards.append(dict(
                 cid="card-%s-%d" % (slug.replace("-",""), ord_),

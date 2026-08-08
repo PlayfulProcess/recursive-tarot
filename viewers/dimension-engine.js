@@ -16,6 +16,12 @@
   'use strict';
 
   function smartCmp(a, b) {
+    // The "no value" bucket always sorts LAST. It used to head every pivot — a landfill row
+    // in the first position reads as "this data is broken" when it is usually a handful of
+    // cards that genuinely have no value (Bologna's four equal-ranking Papi carry no trump
+    // number; that is the deck, not a gap).
+    const da = a === '—', db = b === '—';
+    if (da !== db) return da ? 1 : -1;
     const na = +a, nb = +b;
     if (!isNaN(na) && !isNaN(nb)) return na - nb;
     return String(a).localeCompare(String(b));

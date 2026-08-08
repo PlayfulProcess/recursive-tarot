@@ -3,6 +3,14 @@
  * shown once a cast lands, that slow-crossfades through a handful of short fragments —
  * "Keep your agency. The cards ask; you decide." — like a votive inscription being re-lit.
  *
+ * To the left of the text sits a small spiral mark, turning slowly and continuously
+ * (7s/revolution, linear) — the same golden-ratio curve as the site's hero/header spiral
+ * (public/spiral/spiral.js generateSpiralPath), reproduced inline below so this file has
+ * no external asset dependency. It's the visible "this is thinking" cue: the rolling text
+ * alone read as a static disclaimer, not an active process. Static (no rotation) under
+ * prefers-reduced-motion. Colour follows --orb-ink via currentColor, same as the text.
+ *
+
  * PREVIEW-GATED: everything below is a no-op unless the page URL carries ?ribbon=1. This
  * lets the script ship on every page that includes it without changing default behavior
  * until Fernando approves the fragments + placement (plan Phase 5 gate).
@@ -20,6 +28,32 @@
 (function () {
   'use strict';
   if (window.OracleRibbon) return; // idempotent — safe to include more than once
+
+  // Golden-ratio logarithmic spiral — identical algorithm to
+  // public/spiral/spiral.js's generateSpiralPath (the site header/hero
+  // spiral generator). Reproduced inline (not <script src>'d) so this file
+  // stays self-contained per its own contract above: other sites adopting
+  // oracle-ribbon.js get the exact brand curve with zero extra requests.
+  // Computed once at module load, same turns/size as the header spiral.
+  function generateSpiralPath(size, turns) {
+    const center = size / 2;
+    const maxRadius = size * 0.45;
+    const goldenRatio = (1 + Math.sqrt(5)) / 2;
+    const growthRate = Math.log(goldenRatio) / (Math.PI / 2);
+    const minRadius = 0.5;
+    const totalPoints = turns * 300;
+    const points = [];
+    for (let i = 0; i <= totalPoints; i++) {
+      const t = (i / 300) * 2 * Math.PI;
+      let r = minRadius * Math.exp(growthRate * t);
+      if (r > maxRadius) r = maxRadius;
+      const x = center + r * Math.cos(t);
+      const y = center + r * Math.sin(t);
+      points.push((i === 0 ? 'M ' : 'L ') + x.toFixed(2) + ' ' + y.toFixed(2));
+    }
+    return points.join(' ');
+  }
+  const SPIRAL_D = generateSpiralPath(100, 6);
 
   const FRAGMENTS = [
     'An oracle is a recursive process — make-believe becoming sense-making, sometimes becoming real.',
@@ -64,18 +98,28 @@
       '@media (prefers-color-scheme: dark){:root{--orb-ink:#d8b978;}}',
       '[data-theme="dark"], .dark{--orb-ink:#d8b978;}',
       '[data-theme="light"]{--orb-ink:#9a7322;}',
-      '.oracle-ribbon{display:flex;align-items:baseline;justify-content:center;gap:10px;',
+      '.oracle-ribbon{display:flex;align-items:center;justify-content:center;gap:8px;',
       'margin:10px auto 0;padding:2px 28px 2px 8px;max-width:640px;position:relative;',
       'font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:12.5px;',
       'line-height:1.5;letter-spacing:.045em;text-align:center;',
       'color:var(--orb-ink,#9a7322);opacity:.82;background:transparent;border:none;box-shadow:none;}',
+      // Thinking mark: the same brand spiral (SPIRAL_D above), turning slowly
+      // like a votive wheel — this is the visible "it is thinking" cue the
+      // rolling text alone didn't give. 7s linear infinite: quick enough to
+      // register as in-motion inside one ~8s text hold, slow enough to stay
+      // contemplative rather than reading as a generic loading spinner.
+      '.oracle-ribbon .orb-spiral{flex:0 0 auto;width:17px;height:17px;display:inline-block;',
+      'animation:orb-spiral-spin 7s linear infinite;}',
+      '.oracle-ribbon .orb-spiral svg{display:block;width:100%;height:100%;}',
+      '@keyframes orb-spiral-spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}',
       '.oracle-ribbon .orb-text{flex:1 1 auto;min-width:0;transition:opacity ' + FADE_MS + 'ms ease;opacity:1;}',
       '.oracle-ribbon .orb-text.orb-fade{opacity:0;}',
       '.oracle-ribbon .orb-close{position:absolute;right:4px;top:50%;transform:translateY(-50%);',
       'flex:0 0 auto;cursor:pointer;background:none;border:none;padding:2px 4px;',
       'font-family:inherit;color:inherit;opacity:.6;font-size:12px;line-height:1;}',
       '.oracle-ribbon .orb-close:hover{opacity:1;}',
-      '@media (prefers-reduced-motion: reduce){.oracle-ribbon .orb-text{transition:none;}}',
+      '@media (prefers-reduced-motion: reduce){.oracle-ribbon .orb-text{transition:none;}',
+      '.oracle-ribbon .orb-spiral{animation:none;}}',
     ].join('');
     document.head.appendChild(style);
   }
@@ -109,6 +153,22 @@
     wrap.setAttribute('role', 'note');
     wrap.setAttribute('aria-label', 'A note on how to read this');
 
+    // Thinking mark — decorative, aria-hidden (the ribbon's role="note"
+    // label already carries the meaning; this is purely the visible cue).
+    const spiralWrap = document.createElement('span');
+    spiralWrap.className = 'orb-spiral';
+    spiralWrap.setAttribute('aria-hidden', 'true');
+    const spiralSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    spiralSvg.setAttribute('viewBox', '0 0 100 100');
+    const spiralPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    spiralPath.setAttribute('d', SPIRAL_D);
+    spiralPath.setAttribute('fill', 'none');
+    spiralPath.setAttribute('stroke', 'currentColor');
+    spiralPath.setAttribute('stroke-width', '7');
+    spiralPath.setAttribute('stroke-linecap', 'round');
+    spiralSvg.appendChild(spiralPath);
+    spiralWrap.appendChild(spiralSvg);
+
     const textEl = document.createElement('span');
     textEl.className = 'orb-text';
 
@@ -118,6 +178,7 @@
     closeBtn.setAttribute('aria-label', 'Dismiss this note for the rest of your session');
     closeBtn.textContent = '×';
 
+    wrap.appendChild(spiralWrap);
     wrap.appendChild(textEl);
     if (o.dismissible !== false) wrap.appendChild(closeBtn);
     else wrap.style.paddingRight = '8px';
