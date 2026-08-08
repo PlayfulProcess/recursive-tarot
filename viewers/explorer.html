@@ -676,7 +676,11 @@ if (localStorage.getItem('explorer-sidebar')) {
 async function boot(){
   try { collection = await (await fetch(PFX+'tarot/_collection.json')).json(); } catch(e){}
   const slugs = selectedSlugs();
-  specKey = 'explorer-spec:' + slugs.slice().sort().join(',');
+  // Versioned key. Phase 1 (Aug 7 2026) replaced the overloaded `number` axis with derived
+  // role/trump_number/rank; a spec saved under the old key pins the reader to the old rows and
+  // they never see the new default view. Bumping the version retires those silently — the old
+  // entry is simply no longer read — rather than migrating a spec whose fields changed meaning.
+  specKey = 'explorer-spec-v2:' + slugs.slice().sort().join(',');
   const srcParam = new URLSearchParams(location.search).get('src');
   records = []; byId = {}; secById = {};
   // record an item's sections under the same prefixed id flatten produces

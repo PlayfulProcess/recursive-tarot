@@ -2,6 +2,31 @@
 
 Newest first. One bullet per shipped thing.
 
+## Aug 8 2026
+
+- **Explorer: the saved-layout key is versioned** (`explorer-spec-v2:`). A layout saved before the
+  Aug 7 axis change pinned readers to the old `number` rows, so nobody saw the new Trump × Deck
+  default. The old entry is left in place, just no longer read.
+- **Card numbers backfilled** where they were sitting unread in an item's id or name
+  (`scripts/backfill_numbers.py`, idempotent, additive-only). Cards that genuinely have no number
+  in the historical record — Minchiate's zodiac trumps, Cary-Yale's extra virtues, Bologna's four
+  Papi — are deliberately left unnumbered rather than invented.
+- **Bus Passengers gains a fifth tier — "Knowing passengers: how you know what you know"**: The
+  Intuition (whose `Thoughts` layer is three words long, because intuition announces rather than
+  argues), The Interface, and The Predictor. Each names its school, never a living teacher, and
+  each carries its own shadow — for The Intuition, that it can never show its work, so a true
+  recognition and a conditioned prejudice feel identical from inside.
+- **36 Tattvas: the accumulating qualities.** Each gross element carries the qualities of every
+  element above it — space has sound, air adds touch, fire form, water taste, earth smell — so
+  earth holds all five and is dense precisely because it is the most inclusive. Written into
+  tattvas 32–36 plus a new concept card; the kañcuka cards gained `Mirror` fields pointing back to
+  the śakti each one contracts.
+- **`bus-passengers` deliberately unmapped in `_eco_ids.json`** — see the note in that file. For a
+  GitHub-synced grammar, holding a tier out of the repo *deletes it from the app*; the two copies
+  cannot carry different item sets while they share one identity.
+- Oracle ribbon is now theme-aware (follows OS preference, `data-theme`, or a `.dark` class) and
+  paints no surface at all, so it can sit on a dark app panel as well as this parchment.
+
 ## Aug 7 2026
 
 - **Revamp arc, phases 1–5 (see `_research/TAROT-REVAMP-PLAN-2026-08-07.md` + the truth audit in
