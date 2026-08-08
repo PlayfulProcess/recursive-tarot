@@ -249,9 +249,9 @@
 <script src="../site-header.js?v=47"></script>
 <script src="reference-resolve.js?v=2"></script>
 <script src="../icons.js"></script>
-<!-- Oracle Ribbon: preview-gated (?ribbon=1) rolling disclaimer under the casting board.
-     No-op without the flag — see oracle-ribbon.js and TAROT-REVAMP-PLAN-2026-08-07.md Phase 5. -->
-<script src="oracle-ribbon.js?v=1"></script>
+<!-- Oracle Ribbon: the rolling frame under the casting board. Default-on since Aug 8 2026;
+     see oracle-ribbon.js and TAROT-REVAMP-PLAN-2026-08-07.md Phase 5. -->
+<script src="oracle-ribbon.js?v=3"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">
@@ -926,9 +926,10 @@ function cast(){
       keywords:c.keywords||null, sections:c.sections||null }; });
   $('reshuffle').style.display = 'inline-block';
   renderBoard(); syncJson(); $('export').classList.add('on');
-  // Oracle Ribbon (?ribbon=1 preview only — no-op otherwise): the moment a cast lands is
-  // exactly when "the cards have spoken" energy is highest, so that's where the frame belongs.
-  if (window.OracleRibbon) OracleRibbon.show($('board'));
+  // Oracle Ribbon — ON by default since Aug 8 2026 (approved after the ?ribbon=1 preview).
+  // The moment a cast lands is exactly when "the cards have spoken" energy is highest, so
+  // that's where the frame belongs. Still dismissible for the session via its own ×.
+  if (window.OracleRibbon) OracleRibbon.show($('board'), { gated: false });
 }
 
 // The display name of the current working spread. ONE source of truth: the #spreadName field, which
