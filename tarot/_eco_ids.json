@@ -73,7 +73,8 @@
     "tarocchino-arlecchino": "7ea72ae9-989c-4c2a-9d85-6b07fe08a70d",
     "how-to-contribute": "368974ce-0718-4e9a-9351-bce7b2c053e4",
     "papus-tarot-des-bohemiens": "3810fd74-8896-442d-9af1-e09685e5bfac",
-    "rider-waite-smith-pictorial-key": "48b91a88-13ad-4e7f-934c-ab01d125fc8a"
+    "rider-waite-smith-pictorial-key": "48b91a88-13ad-4e7f-934c-ab01d125fc8a",
+    "bus-passengers": "62830eb0-4876-4c51-864b-1c59a9068e88"
   },
   "_unmapped_deliberately": {
     "bus-passengers": "NOT mapped on purpose (Aug 8 2026). Mapping this slug to app grammar 68c76f60-e3aa-4d7d-ac64-488f463852d9 on Aug 7 caused a repo->app reconcile that overwrote the live app deck with the repo's public-safe subset, deleting the four Mountain cards + their tier card from it (restored via MCP; row backed up as _backup_bus_passengers_20260808). The repo copy deliberately omits that tier while its attribution review is open, so repo and app MUST NOT share one synced identity: for a synced grammar, 'held out of the repo' == 'deleted from the app'. Re-map only after deciding whether the two copies should carry the same items."
