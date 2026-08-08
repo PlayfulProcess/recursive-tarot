@@ -5109,14 +5109,20 @@ ${reason}
                 return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}`;
             }
 
-            // Ensure Special:FilePath URLs have proper encoding (handles parentheses, etc.)
-            const filePathMatch = url.match(/^(https?:\/\/[^\/]+\/wiki\/Special:FilePath\/)(.+)$/);
+            // Ensure Special:FilePath URLs have proper encoding (handles parentheses, etc.).
+            // Only the FILENAME is encoded — the query string is split off first and re-appended
+            // verbatim. Encoding the whole tail turned `?width=900` into `%3Fwidth%3D900`, which
+            // Commons reads as part of the filename, so every sized rendition 404'd (caught
+            // Aug 8 2026, when the 36-Tattvas public-domain plates went in: the full-size
+            // originals are 3000px museum scans, so a width cap is not optional).
+            const filePathMatch = url.match(/^(https?:\/\/[^\/]+\/wiki\/Special:FilePath\/)([^?#]+)(\?[^#]*)?(#.*)?$/);
             if (filePathMatch) {
                 const baseUrl = filePathMatch[1];
                 const filename = filePathMatch[2];
+                const query = filePathMatch[3] || '';
                 try {
                     const decodedFilename = decodeURIComponent(filename);
-                    return baseUrl + encodeURIComponent(decodedFilename);
+                    return baseUrl + encodeURIComponent(decodedFilename) + query;
                 } catch (e) {
                     // If decoding fails, use the original URL
                 }
