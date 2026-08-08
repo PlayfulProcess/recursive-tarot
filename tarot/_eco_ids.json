@@ -74,9 +74,7 @@
     "how-to-contribute": "368974ce-0718-4e9a-9351-bce7b2c053e4",
     "papus-tarot-des-bohemiens": "3810fd74-8896-442d-9af1-e09685e5bfac",
     "rider-waite-smith-pictorial-key": "48b91a88-13ad-4e7f-934c-ab01d125fc8a",
-    "bus-passengers": "62830eb0-4876-4c51-864b-1c59a9068e88"
+    "bus-passengers": "68c76f60-e3aa-4d7d-ac64-488f463852d9"
   },
-  "_unmapped_deliberately": {
-    "bus-passengers": "NOT mapped on purpose (Aug 8 2026). Mapping this slug to app grammar 68c76f60-e3aa-4d7d-ac64-488f463852d9 on Aug 7 caused a repo->app reconcile that overwrote the live app deck with the repo's public-safe subset, deleting the four Mountain cards + their tier card from it (restored via MCP; row backed up as _backup_bus_passengers_20260808). The repo copy deliberately omits that tier while its attribution review is open, so repo and app MUST NOT share one synced identity: for a synced grammar, 'held out of the repo' == 'deleted from the app'. Re-map only after deciding whether the two copies should carry the same items."
-  }
+  "_note_bus_passengers": "Re-mapped Aug 8 2026 AFTER the repo->app item-preservation guard shipped. The repo copy deliberately omits the Four Mountains tier (Cree teaching, attribution review open) while the app copy keeps it, and that is now SAFE: the pull merges repo edits onto shared items and PRESERVES app-only items instead of dropping them. Before the guard, this same mapping cut the live deck from 39 items to 34. If the guard is ever reverted, unmap this again."
 }
