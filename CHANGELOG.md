@@ -2,6 +2,40 @@
 
 Newest first. One bullet per shipped thing.
 
+## Aug 7 2026
+
+- **Revamp arc, phases 1–5 (see `_research/TAROT-REVAMP-PLAN-2026-08-07.md` + the truth audit in
+  `_research/audits/`).** In one push:
+  - **Explorer becomes a comparison instrument.** `build_meta_grammar.py` derives `role`
+    (trump/pip/court/other), `trump_number` and `rank` per card — splitting the overloaded
+    `number` field that mixed trump numbers with pip ranks. New default landing view:
+    **Trump × Deck** (each trump as a row across all 13 decks). Presets rebuilt on the clean
+    axes; empty buckets now name themselves ("— (no trump_number)"). Fixed the
+    deck-misattribution bug (cross-link `metadata.deck` no longer beats the real deck — 47
+    cards were rendering under the wrong deck).
+  - **Truth-audit fixes.** Caster: "Contribute a spread on GitHub" now pre-fills the actual
+    spread JSON; "Update spread" says honestly that changes live in this tab; `?src=` handoff
+    from tree-viewer now pre-selects the deck. Tree-viewer: Copy-to-My-Grammars resolves the
+    real app UUID from `_eco_ids.json` (hides when unresolvable); no-tree fallback no longer
+    404s. Course-viewer: dead presentation-mode machinery removed, hero-pill relocation fixed,
+    `?grammar_id=` listing path no longer throws.
+  - **Dead-code sweep.** Retired `<view-switcher>` element gone everywhere (script kept only
+    for the `?lens=` redirect, v13); cards.html loses its Supabase-era dead family (sync
+    buttons, type toggle, orphaned menus, dead SigninModal gate → direct flow sign-in link).
+  - **Bus Passengers** imported as `tarot/bus-passengers/grammar.json` (30 items, Tiers 1–3 +
+    4a). The Four Mountains tier (Cree teaching, elder John Crier) is deliberately held out
+    pending attribution review — linked to decolonialfutures.net in the description instead.
+    Featured on Play page + Play menu; registered in `_collection.json` + `_eco_ids.json`.
+  - **36 Tattvas de-Wallis'd.** All quotes/attributions to Christopher Wallis rewritten in our
+    own words per the name-a-school rule, grounded in Kṣemarāja/Sanderson/Torella (sources
+    hyperlinked in the description). Three new concept cards: anupāya, ṣaḍadhvan, and "Why
+    Thirty-Six, Not Twenty-Five". Fixed the twelve-vowels slip.
+  - **Oracle ribbon (preview).** `viewers/oracle-ribbon.js` — the rolling disclaimer as slow
+    crossfading creed fragments under the casting board. Gated behind `?ribbon=1` until
+    approved.
+  - Header dropdown close-on-gap fix shipped earlier today (`site-header.js` v46 → now v47
+    with the Play-menu addition).
+
 ## Jul 30 2026
 
 - **Course editorial pass — the book applied to the courses.** Worked from

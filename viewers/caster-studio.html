@@ -246,9 +246,12 @@
 </style>
 </head>
 <body data-assistant-context="spread-builder">
-<script src="../site-header.js?v=46"></script>
+<script src="../site-header.js?v=47"></script>
 <script src="reference-resolve.js?v=2"></script>
 <script src="../icons.js"></script>
+<!-- Oracle Ribbon: preview-gated (?ribbon=1) rolling disclaimer under the casting board.
+     No-op without the flag — see oracle-ribbon.js and TAROT-REVAMP-PLAN-2026-08-07.md Phase 5. -->
+<script src="oracle-ribbon.js?v=1"></script>
 <site-header active="play"></site-header>
 
 <div class="wrap">
@@ -337,7 +340,7 @@
     <span class="abarsep" aria-hidden="true"></span>
     <button type="button" id="addPos" class="ghost">+ Add position</button>
     <button type="button" id="saveAsNew" class="ghost" style="display:none">Save as new</button>
-    <button type="button" id="updateSpread" style="display:none">Update spread</button>
+    <button type="button" id="updateSpread" style="display:none" title="Changes apply only in this browser tab — this is a static site with no save API. Export the spread (or Contribute it on GitHub) to keep it.">Update spread</button>
     <button type="button" class="iconbtn" id="helpToggle" title="Show tips" aria-label="Show tips" aria-expanded="false" aria-controls="helperPanel">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
     </button>
@@ -466,6 +469,16 @@ const $ = id => document.getElementById(id);
     .forEach(d => { const n = (byDeck[d.slug]||[]).length; if (n < 3) return;
       const o = document.createElement('option'); o.value = d.slug;
       o.textContent = `${d.label} · ${d.date || d.era || ''} (${n})`; dsel.appendChild(o); });
+
+  // ?src= : tree-viewer's "Get a Reading" button (via the caster.html redirect stub) hands over
+  // the grammar.json the visitor was just looking at, so the deck context isn't silently dropped.
+  // This page has no separate ?deck= param — resolve ?src= to a deck option above by matching the
+  // slug embedded in the standard ../tarot/<slug>/grammar.json src path.
+  const srcParam = new URLSearchParams(location.search).get('src') || '';
+  if (srcParam) {
+    const srcOpt = [...dsel.options].find(o => o.value && o.value !== ALL && srcParam.includes('/' + o.value + '/'));
+    if (srcOpt) dsel.value = srcOpt.value;
+  }
 
   // Spread dropdown — from spreads.json, plus Custom.
   let sdoc; try { sdoc = await (await fetch('spreads.json')).json(); } catch(e){ sdoc = { spreads: [] }; }
@@ -913,6 +926,9 @@ function cast(){
       keywords:c.keywords||null, sections:c.sections||null }; });
   $('reshuffle').style.display = 'inline-block';
   renderBoard(); syncJson(); $('export').classList.add('on');
+  // Oracle Ribbon (?ribbon=1 preview only — no-op otherwise): the moment a cast lands is
+  // exactly when "the cards have spoken" energy is highest, so that's where the frame belongs.
+  if (window.OracleRibbon) OracleRibbon.show($('board'));
 }
 
 // The display name of the current working spread. ONE source of truth: the #spreadName field, which
@@ -944,7 +960,37 @@ function buildCast(){
 }
 function syncJson(){ lastCast = buildCast(); const json = JSON.stringify(lastCast, null, 2);
   $('json').value = json;
-  $('journalLink').href = FLOW + '/?d=' + b64urlEncode(json); }
+  $('journalLink').href = FLOW + '/?d=' + b64urlEncode(json);
+  updateContributeLink(); }
+
+// "Contribute a spread on GitHub" used to be a static link to a blank new-file page — it never
+// carried the spread the visitor had just built. GitHub's new-file page accepts a `value=` query
+// param that prefills the editor, so hand it the exported spread contract (layout only, same JSON
+// `exportSpread()` writes to disk) pretty-printed. GitHub/browsers have no hard URL-length spec,
+// but very long query strings silently fail in some proxies/browsers well under the nominal 8k
+// limit — so past ~7000 chars we fall back to the plain (unprefilled) link and tell people to
+// export the file first instead of quietly producing a broken or truncated link.
+function updateContributeLink(){
+  const link = $('contributeLink');
+  if (!link) return;
+  const base = 'https://github.com/PlayfulProcess/recursive-tarot/new/main';
+  if (!positions.length) {
+    link.href = base + '?filename=' + encodeURIComponent('spreads/my-spread.json');
+    link.title = 'Add your spread to the shared library via a GitHub pull request';
+    return;
+  }
+  const obj = buildSpreadObj();
+  const json = JSON.stringify(obj, null, 2);
+  const filename = 'spreads/' + slugify(obj.name) + '.json';
+  const withValue = base + '?filename=' + encodeURIComponent(filename) + '&value=' + encodeURIComponent(json);
+  if (withValue.length > 7000) {
+    link.href = base + '?filename=' + encodeURIComponent(filename);
+    link.title = 'This spread is too large to prefill on GitHub — use "⤓ Save reading" or the spread-export icon to save the .json first, then attach or paste it into the pull request.';
+  } else {
+    link.href = withValue;
+    link.title = 'Opens a new GitHub file prefilled with this spread — review and submit as a pull request.';
+  }
+}
 
 // Clear casting — remove the drawn cards but keep the spread layout, labels & meanings
 // so you can re-cast into the same shape. (Clear all, above, wipes the layout too.)
@@ -1111,7 +1157,9 @@ function updateSpreadGeometry(){
     const opt = $('spread').querySelector('option[value="'+curSpreadId+'"]'); if (opt) opt.textContent = my.name; }
   // (custom spreads need no write-back: the live `positions` array IS the working spread.)
   syncJson();
-  flash($('updateSpread'), 'Updated ✓');
+  // Honest label: this is a static site with no write API — nothing is persisted
+  // server-side. Only the in-memory working spread (and this tab's session) changes.
+  flash($('updateSpread'), 'Updated in this tab (export to keep)');
 }
 // Save as new — turn the current arrangement into a fresh named custom spread. The name goes into
 // the visible #spreadName field, so Export / Cast / Contribute all pick it up from there.

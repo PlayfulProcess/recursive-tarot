@@ -37,17 +37,17 @@
         }
         if (!customElements.get('site-footer')) customElements.define('site-footer', RTFooter);
 
-        // ViewModeDropdown stub: the shared "eye" view-switcher.
+        // ViewModeDropdown stub: the "eye" view-switcher it used to render was
+        // retired Jun 29 2026 and its custom element removed entirely Aug 2026 —
+        // the per-page header nav (site-header.js) already covers view switching.
+        // Kept as a no-op so callers don't need a feature-detect.
         window.ViewModeDropdown = {
-            init(container, opts) {
-                if (!container) return;
-                container.innerHTML = `<view-switcher active="tree"></view-switcher>`;
-            }
+            init(container, opts) {}
         };
     })();
     </script>
-    <script src="../site-header.js?v=46"></script>
-    <script src="../view-switcher.js?v=12"></script>
+    <script src="../site-header.js?v=47"></script>
+    <script src="../view-switcher.js?v=13"></script>
     <style>
         :root {
             
@@ -697,6 +697,7 @@
         let itemMap = {};       // id → item
         let grammarType = '';
         let grammarId = '';
+        let resolvedForkId = ''; // app UUID for "Copy to My Grammars", resolved from ?id= or from the loaded slug
         let focusPath = [];     // stack of item IDs for drill-down
         let collapsedLevels = new Set(); // level numbers that are collapsed
 
@@ -869,9 +870,13 @@
         // slug, or it is a recursive.eco deck UUID that tarot/_eco_ids.json maps back
         // to one. Returns a src path, or null when neither resolves.
         let _ecoIds = null;
+        async function ensureEcoIds() {
+            if (!_ecoIds) { try { _ecoIds = await (await fetch('../tarot/_eco_ids.json')).json(); } catch (_) { _ecoIds = { ids: {} }; } }
+            return _ecoIds;
+        }
         async function resolveStaticSrcForId(id) {
             if (!id) return null;
-            if (!_ecoIds) { try { _ecoIds = await (await fetch('../tarot/_eco_ids.json')).json(); } catch (_) { _ecoIds = { ids: {} }; } }
+            await ensureEcoIds();
             const ids = _ecoIds.ids || {};
             let slug = null;
             if (Object.prototype.hasOwnProperty.call(ids, id)) slug = id;
@@ -884,6 +889,29 @@
                 if (!head.ok) return null;
             } catch (_) { return null; }
             return path;
+        }
+
+        // "Copy to My Grammars" needs a recursive.eco app UUID (forkId). ?id= already
+        // carries one on app-originated links; on the site's standard ?src= navigation
+        // there is none, so resolve it from the loaded grammar's own slug (the src path
+        // is always ../tarot/<slug>/grammar.json) via tarot/_eco_ids.json. If neither
+        // resolves, hide the button rather than emit an empty forkId link.
+        async function setupCopyButton(srcUrl) {
+            const btn = document.getElementById('copy-btn');
+            if (!btn) return;
+            if (grammarId) {
+                resolvedForkId = grammarId;
+            } else {
+                const m = /tarot\/([^/]+)\/grammar\.json/.exec(srcUrl || '');
+                const slug = m ? m[1] : null;
+                if (slug) {
+                    await ensureEcoIds();
+                    resolvedForkId = (_ecoIds.ids || {})[slug] || '';
+                } else {
+                    resolvedForkId = '';
+                }
+            }
+            btn.style.display = resolvedForkId ? 'inline-flex' : 'none';
         }
 
         // ── Load Grammar ──
@@ -983,7 +1011,7 @@
             if (!hasComposites) {
                 document.getElementById('loading-state').classList.add('hidden');
                 document.getElementById('no-tree-state').classList.remove('hidden');
-                setupBackLink();
+                setupBackLink(srcUrl);
                 return;
             }
 
@@ -1028,6 +1056,7 @@
                 githubBtn.style.display = 'inline-flex';
                 githubBtn.onclick = () => window.open(data.publish_metadata.github_source_url, '_blank');
             }
+            await setupCopyButton(srcUrl);
 
             // Render
             document.getElementById('loading-state').classList.add('hidden');
@@ -1036,10 +1065,15 @@
             renderTree();
         }
 
-        function setupBackLink() {
+        function setupBackLink(srcUrl) {
+            // pages/grammar-viewer.html never existed in this repo (404). This site's
+            // card-level viewer is viewers/cards.html — carry whichever param loaded
+            // this page (?src= is the standard form; ?id= for app-originated links).
             const link = document.getElementById('back-to-cards-link');
             if (link) {
-                link.href = `/pages/grammar-viewer.html?type=${grammarType}&id=${grammarId}`;
+                link.href = srcUrl
+                    ? `cards.html?src=${encodeURIComponent(srcUrl)}`
+                    : `cards.html?type=${encodeURIComponent(grammarType)}&id=${encodeURIComponent(grammarId)}`;
             }
         }
 
@@ -1053,20 +1087,6 @@
                 githubPath: githubParam || null,
                 hasTree: true,
             });
-
-            // Delegated right-click context menu (works on all tree nodes)
-            if (window.NodeContextMenu) {
-                const canvas = document.getElementById('tree-canvas');
-                if (canvas) {
-                    NodeContextMenu.delegateOn(canvas, {
-                        getItemById: (id) => itemMap[id],
-                        grammarType: grammarType,
-                        grammarId: grammarId || null,
-                        githubPath: githubParam || null,
-                        hasTree: true,
-                    });
-                }
-            }
         }
 
         function toggleDescription() {
@@ -1691,8 +1711,8 @@
     <script>
         function getFlowBaseUrl() { const h = window.location.hostname; if (h.includes("dev.") || h.includes("localhost")) return "https://dev.flow.recursive.eco"; return "https://flow.recursive.eco"; }
         function copyToMyGrammars() {
-            const id = new URLSearchParams(window.location.search).get('id') || '';
-            window.open(`${getFlowBaseUrl()}/create/dashboard/unified/new?forkId=${id}`, '_blank');
+            if (!resolvedForkId) return; // button is hidden in this case; guard anyway
+            window.open(`${getFlowBaseUrl()}/create/dashboard/unified/new?forkId=${resolvedForkId}`, '_blank');
         }
         function openReportModal() {
             const id = new URLSearchParams(window.location.search).get('id') || '';

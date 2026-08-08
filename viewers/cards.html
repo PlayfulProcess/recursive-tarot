@@ -42,8 +42,8 @@
         };
     })();
     </script>
-    <script src="../site-header.js?v=46"></script>
-    <script src="../view-switcher.js?v=12"></script>
+    <script src="../site-header.js?v=47"></script>
+    <script src="../view-switcher.js?v=13"></script>
     <style>
         /* Unified Grammar Theme - adapts based on grammar type */
         :root {
@@ -809,36 +809,6 @@
 
         .report-modal button:hover {
             opacity: 0.8;
-        }
-
-        /* Type toggle */
-        .type-toggle {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .type-btn {
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: transparent;
-            color: var(--grammar-text-muted);
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .type-btn:hover {
-            border-color: var(--grammar-accent);
-            color: var(--grammar-accent);
-        }
-
-        .type-btn.active {
-            background: var(--grammar-accent);
-            border-color: var(--grammar-accent);
-            color: var(--grammar-bg-dark);
         }
 
         /* Controls row */
@@ -2133,8 +2103,6 @@
     <script src="grammar-loader.js"></script>
     <script src="dimension-engine.js?v=1"></script>
     <script src="deck-picker.js?v=2"></script>
-    <script src="eco-links.js?v=2"></script>
-    <script>window.RecursiveEcoLinks && RecursiveEcoLinks.ready();</script>
 
     <!-- Site Header -->
     <site-header active="cards"></site-header>
@@ -2156,7 +2124,12 @@
         <div id="grammar-content" class="hidden">
             <!-- Header -->
             <div class="grammar-header">
-                <select id="deck-switcher" onchange="switchDeck(this.value)" title="Switch deck — or back to All Decks" style="display:none">
+                <!-- Hidden data source (not a user control — no onchange) for the title
+                     dropdown below: populateDeckSwitcher() fills its <option>s from
+                     _collection.json, and toggleTitleMenu() reads sel.options to build
+                     the "Open cards" deck list. Keep it; only its old switchDeck()
+                     onchange handler (a real, redundant control) was dead. -->
+                <select id="deck-switcher" title="Deck list (data source for the title dropdown)" style="display:none">
                     <option value="">Loading decks…</option>
                 </select>
                 <div class="title-dd-wrap" style="position:relative;margin-bottom:10px">
@@ -2185,12 +2158,6 @@
                         <button id="report-btn" class="report-btn" onclick="openReportModal()" title="Report issue with this grammar"><rt-icon name="flag"></rt-icon> Report</button>
                     </span>
                 </div>
-            </div>
-
-            <!-- Type Toggle (hidden by default, shown if switching enabled) -->
-            <div id="type-toggle" class="type-toggle hidden">
-                <button class="type-btn" data-type="tarot">Tarot</button>
-                <button class="type-btn" data-type="iching">I Ching</button>
             </div>
 
             <!-- Controls -->
@@ -2416,7 +2383,6 @@
         const grammarTitle = document.getElementById('grammar-title');
         const grammarDescription = document.getElementById('grammar-description');
         const filteredCountEl = document.getElementById('filtered-count');
-        const typeToggle = document.getElementById('type-toggle');
         const searchInput = document.getElementById('search-input');
         const filterPills = document.getElementById('filter-pills');
         const itemGrid = document.getElementById('item-grid');
@@ -3496,17 +3462,6 @@
                 hasTree: hasComposites,
             });
 
-            // Delegated right-click context menu (works on dynamic cards + images)
-            if (window.NodeContextMenu && itemGrid) {
-                NodeContextMenu.delegateOn(itemGrid, {
-                    getItemById: (itemId) => items.find(i => i.id === itemId),
-                    grammarType: grammarType,
-                    grammarId: id || null,
-                    githubPath: githubParamForToggle || null,
-                    hasTree: hasComposites,
-                });
-            }
-
             // (Explore More + Read-as-a-course header buttons removed Jun 25 2026 — the
             //  course view is reached via the eye view-switcher / the contribute page.)
 
@@ -3518,30 +3473,6 @@
                 } else {
                     githubBtn.classList.remove('visible');
                 }
-            }
-        }
-
-        // Sync from GitHub source (header button - kept for backwards compatibility)
-        async function syncFromSource() {
-            const syncBtn = document.getElementById('sync-btn');
-            if (!syncBtn) return;
-
-            const originalText = syncBtn.textContent;
-            try {
-                syncBtn.disabled = true;
-                syncBtn.classList.add('syncing');
-                syncBtn.textContent = 'Syncing...';
-
-                await syncFromSourceInner();
-                alert('Grammar synced successfully from GitHub!');
-
-            } catch (error) {
-                console.error('Sync error:', error);
-                alert('Sync failed: ' + error.message);
-            } finally {
-                syncBtn.disabled = false;
-                syncBtn.classList.remove('syncing');
-                syncBtn.textContent = originalText;
             }
         }
 
@@ -3812,9 +3743,6 @@
             }
         }
 
-        // Deck switcher — toggle between decks (and "All Decks" = the meta) without
-        // leaving the cards view. Reads the repo's _collection.json.
-        function switchDeck(val) { if (val) window.location.href = 'cards.html?src=' + encodeURIComponent(val); }
         // CV-TITLEDROP: clicking the title opens the deck list (built from the hidden deck-switcher).
         function toggleTitleMenu(ev){
             if(ev){ ev.preventDefault(); ev.stopPropagation(); }
@@ -3850,51 +3778,6 @@
             sel.innerHTML = opt(metaItem.slug, '✦ All Decks (the meta)') + decks.map(d => opt(d.slug, d.common_name || d.name)).join('');
         }
 
-        // In-place dimension menu — NO redirect. Just changes how this dimension is
-        // shown within the cards view (filter the grid / expand in the sidebar / clear).
-        function showLensMenu(item, anchor) {
-            document.querySelectorAll('.lens-menu-pop').forEach(m => m.remove());
-            const opts = [
-                ['<rt-icon name="grid"></rt-icon> Filter the grid to this', 'filter'],
-                ['☰ Expand in sidebar', 'sidebar'],
-                ['<rt-icon name="x"></rt-icon> Show all (clear filter)', 'clear'],
-                ['—', 'sep'],
-                ['⸬ View as Genealogy', 'genealogy'],
-                ['↧ View as Timeline', 'timeline'],
-                ['⛢ View as Tree', 'tree'],
-            ];
-            const NAV = { genealogy: '../genealogy.html', timeline: 'timeline.html', tree: 'tree-viewer.html' };
-            const menu = document.createElement('div');
-            menu.className = 'lens-menu-pop';
-            menu.style.cssText = 'position:fixed;z-index:9999;background:#f4f1ea;border:1px solid #d8d2c6;border-radius:9px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.55);min-width:190px;';
-            const r = anchor.getBoundingClientRect();
-            menu.style.left = Math.min(r.left, window.innerWidth - 210) + 'px';
-            menu.style.top = (r.bottom + 4) + 'px';
-            opts.forEach(([label, mode]) => {
-                if (mode === 'sep') { const hr = document.createElement('div'); hr.style.cssText = 'height:1px;background:#d8d2c6;margin:5px 4px;'; menu.appendChild(hr); return; }
-                const a = document.createElement('div');
-                a.textContent = label;
-                a.style.cssText = 'padding:7px 11px;border-radius:6px;cursor:pointer;color:#4a4439;font-size:13px;';
-                a.onmouseenter = () => a.style.background = '#241d3a';
-                a.onmouseleave = () => a.style.background = '';
-                a.onclick = (ev) => {
-                    ev.stopPropagation(); menu.remove();
-                    if (NAV[mode]) {
-                        const src = new URLSearchParams(window.location.search).get('src') || '';
-                        const q = src ? ('?src=' + encodeURIComponent(src)) : '';
-                        window.location.href = NAV[mode] + (mode === 'genealogy' ? '' : q);
-                        return;
-                    }
-                    if (mode === 'clear') { filterByHierarchy(null, null); }
-                    else if (mode === 'sidebar') { expandedSections.add(item.id); }
-                    else { expandedSections.add(item.id); filterByHierarchy(`l${item.level || 4}`, item.id); }
-                    buildHierarchySidebar();
-                };
-                menu.appendChild(a);
-            });
-            document.body.appendChild(menu);
-            setTimeout(() => document.addEventListener('click', function close() { menu.remove(); document.removeEventListener('click', close); }), 0);
-        }
 
         function buildSidebarNode(item, depth) {
             const children = items.filter(child =>
@@ -4553,37 +4436,12 @@
             // "View as" eye dropdown retired Jun 29 2026 — its links pointed at
             // recursive.eco app routes (/pages/grammar-viewer.html, /view/…,
             // flow.recursive.eco) that don't exist on the static site, so it never
-            // worked here. Left empty so the modal's action row simply omits it.
-            const viewModeOptions = [];
-
+            // worked here. The dead scaffold that built it (an always-empty
+            // viewModeOptions array feeding an unreachable <details> block) was
+            // removed Aug 2026 — the modal's action row simply omits it now.
             const hasActions = true;   // always show the action row — "Open in recursive.eco" lives here
             if (hasActions) {
-                // Build a unique id for the details element so multiple
-                // modals don't share state.
-                const viewMenuId = `view-menu-${escapeHtml(item.id)}-${Math.random().toString(36).slice(2, 8)}`;
                 bodyHtml += `<div class="modal-actions" style="display: flex; gap: 0.5rem; margin: 1rem 0; flex-wrap: wrap; position: relative;">`;
-                if (viewModeOptions.length > 0) {
-                    // <details> gives us a no-JS dropdown. The summary
-                    // is the eye-icon button; the listed <a>s are the
-                    // viewer options.
-                    bodyHtml += `
-                        <details class="view-mode-picker" id="${viewMenuId}" style="position: relative;">
-                            <summary
-                                title="Pick a view mode"
-                                aria-label="Pick a view mode"
-                                style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.6rem; font-size: 0.75rem; background: rgba(59, 130, 246, 0.3); border: 1px solid rgba(59, 130, 246, 0.5); border-radius: 4px; color: #93c5fd; cursor: pointer; list-style: none; transition: all 0.2s;"
-                                onmouseover="this.style.background='rgba(59, 130, 246, 0.5)'" onmouseout="this.style.background='rgba(59, 130, 246, 0.3)'">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                                <span>View as</span>
-                            </summary>
-                            <div style="position: absolute; top: calc(100% + 4px); left: 0; min-width: 160px; background: #1f2937; border: 1px solid #6b6457; border-radius: 6px; padding: 4px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.4); z-index: 50;">
-                                ${viewModeOptions
-                                    .filter(([, url]) => !!url)
-                                    .map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener noreferrer" style="display: block; padding: 6px 12px; font-size: 0.75rem; color: #4a4439; text-decoration: none; transition: background 0.15s;" onmouseover="this.style.background='#4a4439';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4439'">${label}</a>`)
-                                    .join('')}
-                            </div>
-                        </details>`;
-                }
                 if (currentUser) {
                     // Copy button → duplicate icon only, with tooltip.
                     // Author direction May 9 2026: shrink the action
@@ -4916,71 +4774,6 @@
             document.getElementById('source-popup').classList.remove('open');
         }
 
-        // Sync from the popup - wraps syncFromSource and updates popup
-        async function syncFromPopup() {
-            const syncBtn = document.querySelector('.source-popup-actions .sync-action');
-            if (!syncBtn) return;
-
-            const originalText = syncBtn.textContent;
-            syncBtn.disabled = true;
-            syncBtn.textContent = 'Syncing...';
-
-            try {
-                await syncFromSourceInner();
-                // Update the popup info with new sync date
-                const infoDiv = document.getElementById('source-popup-info');
-                if (infoDiv && lastSyncedAt) {
-                    // Re-render info with updated date
-                    openSourcePopup();
-                }
-                alert('Grammar synced successfully from GitHub!');
-            } catch (error) {
-                alert('Sync failed: ' + error.message);
-            } finally {
-                syncBtn.disabled = false;
-                syncBtn.textContent = originalText;
-            }
-        }
-
-        // Inner sync function (shared logic)
-        async function syncFromSourceInner() {
-            if (!grammarToolId || !githubSourceUrl) {
-                throw new Error('This grammar does not have a GitHub source configured.');
-            }
-
-            const altarsApiUrl = getAltarsApiBaseUrl();
-            const response = await fetch(`${altarsApiUrl}/api/community/tools/${grammarToolId}/sync`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            const result = await response.json();
-
-            if (!response.ok) {
-                throw new Error(result.error || 'Sync failed');
-            }
-
-            // Update last synced timestamp
-            lastSyncedAt = result.synced_at;
-
-            // Reload the grammar data to show updated content
-            const params = new URLSearchParams(window.location.search);
-            const id = params.get('id') || params.get('deckId') || params.get('bookId');
-            const data = await loadGrammarData(grammarType, id);
-
-            if (data) {
-                grammarData = data;
-                items = normalizeItems(grammarType, data);
-                filteredItems = [...items];
-                renderHeader();
-                renderItems();
-            }
-
-            return result;
-        }
-
         // Update Edit/Copy buttons visibility based on auth state and community status
         function updateEditCopyButtons() {
             const editBtn = document.getElementById('edit-btn');
@@ -5170,32 +4963,16 @@
         }
 
         // ============================================================
-        // SIGN-IN MODAL FUNCTIONS (using shared signin-modal.js)
+        // SIGN-IN — this static site has no accounts of its own; recursive.eco
+        // (flow.recursive.eco) is the app that owns sign-in. window.SigninModal
+        // was never defined anywhere in this repo, so the old modal branch here
+        // was always dead code falling through to a "not available" alert.
+        // Send the visitor to the real app instead of faking a local sign-in.
         // ============================================================
 
         function openSigninModal() {
-            // Use the shared SigninModal component
-            if (window.SigninModal) {
-                SigninModal.open({
-                    title: 'Sign In',
-                    description: 'Sign in to copy or edit this grammar.',
-                    onSuccess: (user) => {
-                        currentUser = user;
-                        updateEditCopyButtons();
-
-                        // If there was a pending action, proceed with it
-                        if (pendingForkCardId !== undefined) {
-                            proceedToFork(pendingForkCardId);
-                            pendingForkCardId = undefined;
-                        } else if (pendingEditCardId !== undefined) {
-                            editCommunityGrammar(pendingEditCardId);
-                            pendingEditCardId = undefined;
-                        }
-                    }
-                });
-            } else {
-                console.warn('SigninModal not loaded');
-                alert('Sign in functionality not available. Please refresh the page.');
+            if (confirm('Sign in happens on flow.recursive.eco. Continue there now?')) {
+                window.open('https://flow.recursive.eco/', '_blank', 'noopener');
             }
         }
 

@@ -8,8 +8,6 @@
  *         <view-switcher active="cards"></view-switcher>
  */
 (function () {
-  if (customElements.get('view-switcher')) return;
-
   // Root-relative from any subdir (viewers/ OR pages/), so links work everywhere.
   const root = /\/(viewers|pages)\//.test(location.pathname) ? '../' : '';
 
@@ -62,8 +60,6 @@
   ];
   const VIEWS = [...CARD_VIEWS, ...GRAMMAR_VIEWS, ...EXTRA_VIEWS];
 
-  const EYE = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>';
-
   const VIEW_MAP = Object.fromEntries(VIEWS.map(([k, , href]) => [k, href]));
 
   // Which view is THIS page? (so ?lens to the current view is a no-op, not a loop)
@@ -86,57 +82,11 @@
   const wantLens = p.get('lens');
   if (wantLens && wantLens !== autoActive() && VIEW_MAP[wantLens]) {
     location.replace(VIEW_MAP[wantLens]);
-    return;
   }
 
-  function renderSection(views, active) {
-    return views.map(([k, label, href]) =>
-      `<a class="vs-item${k === active ? ' active' : ''}" href="${href}">${label}</a>`
-    ).join('');
-  }
-
-  class ViewSwitcher extends HTMLElement {
-    connectedCallback() {
-      // Eye view-switcher retired Jun 29 2026 — it renders nothing now; the
-      // per-page header nav already covers view switching, and the in-page
-      // controls were unreliable. The ?lens= deep-link redirect above still works.
-      this.style.display = 'none';
-      return;
-      // --- legacy render (unreachable, kept for reference) ---
-      const active = this.getAttribute('active') || autoActive();
-      const sr = this.attachShadow({ mode: 'open' });
-      const menu =
-        `<div class="vs-section-label">Card views</div>` +
-        renderSection(CARD_VIEWS, active) +
-        `<div class="vs-divider"></div><div class="vs-section-label">Collection maps</div>` +
-        renderSection(GRAMMAR_VIEWS, active) +
-        `<div class="vs-divider"></div>` +
-        renderSection(EXTRA_VIEWS, active);
-      sr.innerHTML = `
-        <style>
-          :host{ display:inline-block; position:relative; font-family:Inter,system-ui,-apple-system,sans-serif; }
-          details{ position:relative; }
-          summary{ list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px;
-            padding:6px 11px; border:1px solid #d8d2c6; border-radius:8px; background:#ffffff; color:#4a4439;
-            font-size:13px; font-weight:600; user-select:none; }
-          summary::-webkit-details-marker{ display:none; }
-          summary:hover{ border-color:#9a7322; color:#b8902f; }
-          summary .cap{ font-size:12px; opacity:.85; }
-          .menu{ position:absolute; top:calc(100% + 6px); left:0; z-index:60; min-width:170px;
-            background:#f4f1ea; border:1px solid #d8d2c6; border-radius:10px; padding:6px; box-shadow:0 8px 24px rgba(60,45,20,.5); }
-          .vs-section-label{ padding:4px 10px 2px; font-size:10px; letter-spacing:.07em; text-transform:uppercase; color:#6b6457; font-weight:600; }
-          .vs-divider{ margin:4px 0; border-top:1px solid #f1ece1; }
-          .vs-item{ display:block; padding:7px 12px; border-radius:7px; text-decoration:none; color:#4a4439; font-size:13px; }
-          .vs-item:hover{ background:#faf3e6; color:#221f1a; }
-          .vs-item.active{ background:#9a7322; color:#fff; font-weight:700; }
-        </style>
-        <details>
-          <summary title="Switch view">${EYE}<span class="cap">View</span></summary>
-          <div class="menu">${menu}</div>
-        </details>`;
-      const det = sr.querySelector('details');
-      document.addEventListener('click', (e) => { if (!this.contains(e.target)) det.removeAttribute('open'); });
-    }
-  }
-  customElements.define('view-switcher', ViewSwitcher);
+  // The <view-switcher> custom element (the "eye" menu) was retired Jun 29 2026 —
+  // the per-page header nav already covers view switching, and the in-page menu
+  // was unreliable. It has been removed entirely (Aug 2026 dead-code sweep); only
+  // the ?lens= deep-link redirect above remains live. Old <view-switcher> tags
+  // left on any page not yet swept just render as empty unknown elements.
 })();
