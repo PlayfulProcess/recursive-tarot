@@ -94,10 +94,13 @@
       // inscription on whatever page hosts it, so it must disappear into a light parchment
       // page AND a dark app panel. Colour follows the host's theme three ways (OS preference,
       // a data-theme attribute, or a .dark class — flow/Tailwind uses the last one).
+      // Ink follows the HOST's declared theme, and deliberately NOT the OS preference:
+      // this site is light-only, so honouring prefers-color-scheme painted pale dark-mode
+      // gold onto cream parchment for anyone whose laptop is set to dark. A host that is
+      // genuinely dark says so — data-theme="dark", a .dark class (Tailwind), or
+      // color-scheme:dark — and only then does the ink lighten.
       ':root{--orb-ink:#9a7322;}',
-      '@media (prefers-color-scheme: dark){:root{--orb-ink:#d8b978;}}',
-      '[data-theme="dark"], .dark{--orb-ink:#d8b978;}',
-      '[data-theme="light"]{--orb-ink:#9a7322;}',
+      '[data-theme="dark"] , .dark, [style*="color-scheme:dark"], [style*="color-scheme: dark"]{--orb-ink:#d8b978;}',
       '.oracle-ribbon{display:flex;align-items:center;justify-content:center;gap:8px;',
       'margin:10px auto 0;padding:2px 28px 2px 8px;max-width:640px;position:relative;',
       'font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:12.5px;',
