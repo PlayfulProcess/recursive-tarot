@@ -502,8 +502,9 @@
             if (!url) return '';
             var cm = url.match(/commons\.wikimedia\.org\/wiki\/File:([^#?]+)/);
             if (cm) return 'https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(decodeURIComponent(cm[1]));
-            var fp = url.match(/^(https?:\/\/[^\/]+\/wiki\/Special:FilePath\/)(.+)$/);
-            if (fp) { try { return fp[1] + encodeURIComponent(decodeURIComponent(fp[2])); } catch(e){} }
+            // Encode only the filename; keep any ?width= query verbatim (see cards.html for why).
+            var fp = url.match(/^(https?:\/\/[^\/]+\/wiki\/Special:FilePath\/)([^?#]+)(\?[^#]*)?/);
+            if (fp) { try { return fp[1] + encodeURIComponent(decodeURIComponent(fp[2])) + (fp[3] || ''); } catch(e){} }
             var dp = [/drive\.google\.com\/file\/d\/([^\/]+)/, /drive\.google\.com\/open\?id=([^&]+)/];
             for (var i = 0; i < dp.length; i++) {
                 var m = url.match(dp[i]);
