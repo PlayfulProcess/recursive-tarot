@@ -1,0 +1,871 @@
+{
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "url": "https://recursive.eco",
+        "note": "Living Tradition deck — a recursive.eco original / interpretive grammar. Not a historical artifact. Draws with attribution on the ACT bus metaphor (Hayes, 1999), the parts-work tradition, Voice Dialogue (Hal & Sidra Stone), Ekman–Keltner emotion research, and — inspired-by, per the name-a-school rule — Hospicing Modernity / the Gesturing Towards Decolonial Futures collective. The Four Mountains tier (Cree teaching, elder John Crier) is intentionally excluded from this repository pending attribution review; see the deck description."
+      }
+    ]
+  },
+  "name": "Bus Passengers",
+  "slug": "bus-passengers",
+  "grammar_type": "custom",
+  "creator_name": "PlayfulProcess",
+  "creator_link": "https://recursive.eco",
+  "provenance": "living",
+  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778691682325-my6vdxp78nq.png",
+  "tags": [
+    "parts-work",
+    "ifs",
+    "voice-dialogue",
+    "act",
+    "bus-metaphor"
+  ],
+  "description": "A contemplative parts-work and decolonial cartography for noticing which voice is driving when you make a values-laden decision.\n\nEach passenger card has six layered sections, descending from the articulated voice toward the more-than-human web: Thoughts → Thinking → Perception → Sensing → Context → Mystery. You start where you always start — with what the passenger says — and the reading is a slow walk toward what was here before language got hold of it. Inspired by a passage in Vanessa Machado de Oliveira Andreotti's *Outgrowing Modernity* on the layered nature of awareness: what we articulate is a small fraction of what we think, what we think a fragment of what we perceive, and so on down toward the dynamic universe we are part of.\n\nFour tiers of passengers: familiar emotions from the Ekman–Keltner research lineage (Tier 1), parts-work passengers (Tier 2), Voice Dialogue inner selves (Tier 3), and decolonial passengers carrying inherited material — modernity, ancestral patterns, the more-than-human web (Tier 4, inspired by *Hospicing Modernity* and the Gesturing Towards Decolonial Futures collective). The bus metaphor itself is long-standing in Acceptance & Commitment Therapy (Hayes, 1999).\n\n**A held tier.** The deck's companion tier, the Four Mountains — an Indigenous Cree teaching from elder John Crier, shared through the Decolonial Futures collective — is deliberately *not* included in this public repository while its attribution conversation is ongoing. Read it at the source: [decolonialfutures.net/portfolio/fourmountains](https://decolonialfutures.net/portfolio/fourmountains/). Teachings that are not ours to license are linked, not copied.\n\nLike every deck here: a mirror, not a command. The cards ask; you decide.",
+  "items": [
+    {
+      "id": "joy",
+      "name": "Joy",
+      "category": "tier-1",
+      "sort_order": 1,
+      "metadata": {
+        "tier": 1,
+        "color": "#E8B547",
+        "shape": "sun",
+        "tagline": "The brightening, the lift.",
+        "tier_name": "Familiar emotions (Pixar / Ekman / Damour)",
+        "number": 1
+      },
+      "keywords": [
+        "joy"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1778385713918-yc9htirjw7d.png",
+      "sections": {
+        "About": "The brightening, the lift.",
+        "Thoughts": "This is good. I want more. Look how good this is.",
+        "Thinking": "Pattern-matching toward what's working. Building case for sustaining the moment. Often unconsciously bargaining: if I notice it, will it leave?",
+        "Perception": "Filters toward the warm, the light, the people who are with you. Often dims the edges of the room.",
+        "Sensing": "An expansion in the chest. Lightness behind the eyes. A lifting at the mouth that came before the smile.",
+        "Context": "Something is going well. Right now, in this configuration. It might not last; it doesn't need to.",
+        "Mystery": "Joy is older than language. Other animals know it. You are participating in something far larger than your own pleasure when you feel it — and the not-knowing of that is part of its sweetness.",
+        "Lineage": "Pixar Inside Out (Ekman / Keltner). Public-domain emotion archetype.",
+        "Where this isn't enough": "When joy starts feeling like something to grip or perform, that's the cue to put the phone down and let it be without commentary."
+      }
+    },
+    {
+      "id": "sadness",
+      "name": "Sadness",
+      "category": "tier-1",
+      "sort_order": 2,
+      "metadata": {
+        "tier": 1,
+        "color": "#5B7AB8",
+        "shape": "downarc",
+        "tagline": "The honest weight.",
+        "tier_name": "Familiar emotions (Pixar / Ekman / Damour)",
+        "number": 2
+      },
+      "keywords": [
+        "sadness"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778380327084-8szylrneog.png",
+      "sections": {
+        "About": "The honest weight.",
+        "Thoughts": "This is hard. I don't have what I need. Something is gone.",
+        "Thinking": "Cataloguing what's missing. Tracing the shape of the loss. Often resisting the catalogue while making it.",
+        "Perception": "Filters toward absence. The room may feel emptier than it is. Voices may sound farther away.",
+        "Sensing": "A pulling-down in the chest. A heaviness behind the eyes. The body wanting to fold inward, not outward.",
+        "Context": "Something has actually been lost or is being lost. Something real that mattered. The grief is not a malfunction.",
+        "Mystery": "Sadness is one of the oldest songs. Many traditions consider it sacred. The body knows how to grieve in ways the mind has never been taught.",
+        "Lineage": "Pixar Inside Out (Ekman / Keltner). Public-domain emotion archetype.",
+        "Where this isn't enough": "If the heaviness is constant and the days are flat, this scaffolding stops being enough. A therapist, a doctor, or a trusted friend is the right next step."
+      }
+    },
+    {
+      "id": "anger",
+      "name": "Anger",
+      "category": "tier-1",
+      "sort_order": 3,
+      "metadata": {
+        "tier": 1,
+        "color": "#C13E3E",
+        "shape": "triangle",
+        "tagline": "The boundary-feeling.",
+        "tier_name": "Familiar emotions (Pixar / Ekman / Damour)",
+        "number": 3
+      },
+      "keywords": [
+        "anger"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778384253447-ob1xhj91rsg.png",
+      "sections": {
+        "About": "The boundary-feeling.",
+        "Thoughts": "This is wrong. This shouldn't be happening. Someone should answer for this.",
+        "Thinking": "Building case for action. Often confusing the trigger with the cause. Frequently arrives after a slower hurt that wasn't named in time.",
+        "Perception": "Narrows. Tunnel-vision toward the perceived violator. Filters out context and counter-evidence.",
+        "Sensing": "Heat in the chest, jaw, hands. Pressure behind the eyes. The body recruiting itself for something.",
+        "Context": "A boundary has been crossed, or a value violated. Or a value is being defended that you were not allowed to defend earlier in life.",
+        "Mystery": "Anger as a teacher of boundaries is older than the courts. In some traditions it is a form of love refusing to lie.",
+        "Lineage": "Pixar Inside Out (Ekman / Keltner). Public-domain emotion archetype.",
+        "Where this isn't enough": "If the heat keeps redirecting at the same person and you cannot find what's actually under it, an outside witness — therapist, mediator, trusted friend — helps more than another round of journaling."
+      }
+    },
+    {
+      "id": "fear",
+      "name": "Fear",
+      "category": "tier-1",
+      "sort_order": 4,
+      "metadata": {
+        "tier": 1,
+        "color": "#7E3FA8",
+        "shape": "jagged",
+        "tagline": "The sharper edge of attention.",
+        "tier_name": "Familiar emotions (Pixar / Ekman / Damour)",
+        "number": 4
+      },
+      "keywords": [
+        "fear"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778384829345-ofgqcuxqh3.png",
+      "sections": {
+        "About": "The sharper edge of attention.",
+        "Thoughts": "Something is wrong. I need to be ready. I cannot let my guard down.",
+        "Thinking": "Running rehearsals of bad outcomes. Building case for vigilance. Often confusing imagined threat with present threat.",
+        "Perception": "Narrows toward perceived danger. Edges of the room go sharper; safe things become invisible.",
+        "Sensing": "A held breath. A coolness in the hands. The skin alert in places it usually isn't.",
+        "Context": "Something might be at stake. Sometimes the stakes are real and present. Sometimes they were real twenty years ago and the body has not been told the news.",
+        "Mystery": "Fear is a gift older than language. It has saved every ancestor who passed life on to you. The fact that you are alive is partly because fear was paying attention.",
+        "Lineage": "Pixar Inside Out (Ekman / Keltner). Public-domain emotion archetype.",
+        "Where this isn't enough": "Panic that arrives without a stimulus, or fear that organizes most of the day, is past the line where reflection is the right tool. Clinical support is."
+      }
+    },
+    {
+      "id": "disgust",
+      "name": "Disgust",
+      "category": "tier-1",
+      "sort_order": 5,
+      "metadata": {
+        "tier": 1,
+        "color": "#5C8A3F",
+        "shape": "pentagon",
+        "tagline": "The instinctive no.",
+        "tier_name": "Familiar emotions (Pixar / Ekman / Damour)",
+        "number": 5
+      },
+      "keywords": [
+        "disgust"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778384850169-eplb8p8y4wb.png",
+      "sections": {
+        "About": "The instinctive no.",
+        "Thoughts": "This is wrong for me. This contaminates something.",
+        "Thinking": "Sorting in and out. Often inherited from family, culture, or trauma rather than freshly chosen. Sometimes accurate, sometimes not.",
+        "Perception": "Filters toward the offending object or person. Other things in the field can disappear.",
+        "Sensing": "A pulling-back in the throat or mouth. A skin crawl. The body recoiling slightly before the mind has decided.",
+        "Context": "Something violates a value, taste, or boundary that lives in this body. The disgust may be teaching you something about yourself, or about an inheritance.",
+        "Mystery": "The instinct that lets a body know what to push away is one of the oldest immune systems. It is not always wise; it is always old.",
+        "Lineage": "Pixar Inside Out (Ekman / Keltner). Public-domain emotion archetype.",
+        "Where this isn't enough": "When disgust attaches to whole categories of people, it has stopped serving you and started repeating something you didn't choose. Therapy and reading outside your tradition are better than journaling."
+      }
+    },
+    {
+      "id": "anxiety",
+      "name": "Anxiety",
+      "category": "tier-1",
+      "sort_order": 6,
+      "metadata": {
+        "tier": 1,
+        "color": "#D17F4E",
+        "shape": "spiral",
+        "tagline": "The forward-leaning rehearsal.",
+        "tier_name": "Familiar emotions (Pixar / Ekman / Damour)",
+        "number": 6
+      },
+      "keywords": [
+        "anxiety"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778384997148-y5y8mojr5xh.png",
+      "sections": {
+        "About": "The forward-leaning rehearsal.",
+        "Thoughts": "What if. What about. I should plan for. I should be ready.",
+        "Thinking": "Generating contingencies. Building forecasts. Often mistaking the rehearsal for the protection.",
+        "Perception": "Filters toward future scenarios. The present can become hard to land in.",
+        "Sensing": "A tightness behind the breastbone. Restlessness in the hands or legs. The body acting as if it must move soon, even when it doesn't.",
+        "Context": "Something is uncertain. Sometimes the uncertainty is real and active. Sometimes the body is protecting you from a different uncertainty that already happened.",
+        "Mystery": "Anxiety is not a malfunction of a calm mind. It is the mind doing what minds were made to do, applied to a situation older minds did not face. The body's care is older than the worry.",
+        "Lineage": "Pixar Inside Out 2 (Damour / Keltner). Public-domain emotion archetype.",
+        "Where this isn't enough": "If anxiety is the climate, not the weather — if every day arrives this way — this is not the right tool. A clinician is."
+      }
+    },
+    {
+      "id": "envy",
+      "name": "Envy",
+      "category": "tier-1",
+      "sort_order": 7,
+      "metadata": {
+        "tier": 1,
+        "color": "#3F8A8E",
+        "shape": "twocircles",
+        "tagline": "The map of what you want.",
+        "tier_name": "Familiar emotions (Pixar / Ekman / Damour)",
+        "number": 7
+      },
+      "keywords": [
+        "envy"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778430565321-c5lon9kop3m.png",
+      "sections": {
+        "About": "The map of what you want.",
+        "Thoughts": "They have what I should have. Why not me. I deserved that more.",
+        "Thinking": "Comparison engines running in the background. Often using the other person as a map of the self's longing while pretending to be about them.",
+        "Perception": "Filters toward the other person's life. Often misses what they don't have or what it cost them.",
+        "Sensing": "A tightness in the gut or chest. A heat in the face. Sometimes a nausea.",
+        "Context": "Something you want is showing up clearly in someone else's life. The clarity is the gift, even when the feeling is corrosive.",
+        "Mystery": "Envy reveals the contour of a longing you may not have admitted to yourself. The longing is the data. The other person is the messenger, not the cause.",
+        "Lineage": "Pixar Inside Out 2 (Damour / Keltner). Public-domain emotion archetype.",
+        "Where this isn't enough": "When envy turns into action that diminishes the other, the practice has crossed a line. Stepping back, talking to a friend or therapist, and asking what the longing actually is — that's the work."
+      }
+    },
+    {
+      "id": "embarrassment",
+      "name": "Embarrassment",
+      "category": "tier-1",
+      "sort_order": 8,
+      "metadata": {
+        "tier": 1,
+        "color": "#C46AA8",
+        "shape": "downarc",
+        "tagline": "The visible self, briefly aware of itself.",
+        "tier_name": "Familiar emotions (Pixar / Ekman / Damour)",
+        "number": 8
+      },
+      "keywords": [
+        "embarrassment"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778384871859-bnks49c02rj.png",
+      "sections": {
+        "About": "The visible self, briefly aware of itself.",
+        "Thoughts": "They saw. I look bad. I want to disappear.",
+        "Thinking": "Imagining yourself from outside. Building case that you have failed a social standard. Often catastrophizing the visibility.",
+        "Perception": "Filters toward your own image in others' eyes. Filters out their actual likely indifference.",
+        "Sensing": "Heat in the face. A wanting-to-fold-up. A breath that didn't come.",
+        "Context": "You did something visible that crossed a social line. Sometimes the line was real; sometimes it was inherited and rigid.",
+        "Mystery": "Belonging matters because you are an animal made of relationship. Embarrassment is a cousin of belonging. It is not weakness.",
+        "Lineage": "Pixar Inside Out 2 (Damour / Keltner). Public-domain emotion archetype.",
+        "Where this isn't enough": "If embarrassment becomes shame and shame becomes hiding, the work is past this scaffold. Friends who love you. Therapy. The right kind of small repair, in person, when you are ready."
+      }
+    },
+    {
+      "id": "ennui",
+      "name": "Ennui",
+      "category": "tier-1",
+      "sort_order": 9,
+      "metadata": {
+        "tier": 1,
+        "color": "#9494A8",
+        "shape": "wave",
+        "tagline": "The flatness with no name.",
+        "tier_name": "Familiar emotions (Pixar / Ekman / Damour)",
+        "number": 9
+      },
+      "keywords": [
+        "ennui"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778385017214-fk82dfevstq.png",
+      "sections": {
+        "About": "The flatness with no name.",
+        "Thoughts": "Nothing matters. Whatever. I'm bored. I should be doing something.",
+        "Thinking": "Disengaged scanning. Often a defense against feeling something more specific that the body is not yet ready to feel.",
+        "Perception": "Everything slightly grey. Nothing pulls attention. Things that would normally interest you don't.",
+        "Sensing": "A heaviness or a numbness, depending on the day. The body present but quiet.",
+        "Context": "Something is being held at a distance. Sometimes you are tired in a real way that needs rest. Sometimes you are protecting yourself from something specific that's underneath.",
+        "Mystery": "The flatness is not nothing. It is something covering something else. The body is waiting for you to be ready.",
+        "Lineage": "Pixar Inside Out 2 (Damour / Keltner). Public-domain emotion archetype.",
+        "Where this isn't enough": "Persistent flatness with low energy and no joy in things that used to give joy is past this tool's range. A doctor and a therapist together is the right next step."
+      }
+    },
+    {
+      "id": "manager",
+      "name": "The Manager",
+      "category": "tier-2",
+      "sort_order": 10,
+      "metadata": {
+        "tier": 2,
+        "color": "#4F6B8B",
+        "shape": "scales",
+        "tagline": "The one who tries to keep everything from breaking.",
+        "tier_name": "Parts-work passengers (parts-work tradition)",
+        "number": 10
+      },
+      "keywords": [
+        "the manager"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778385036199-281yi7evxpg.png",
+      "sections": {
+        "About": "The one who tries to keep everything from breaking.",
+        "Thoughts": "I have to think about this. I have to plan. I have to keep us safe.",
+        "Thinking": "Strategic, anticipatory, controlling. Maintaining the daily structures. Often working without rest.",
+        "Perception": "Hyper-aware of risks, schedules, expectations. Less aware of present pleasure or rest.",
+        "Sensing": "Tension in the shoulders or jaw. A slight forward-leaning. Often disconnected from breath.",
+        "Context": "There are real responsibilities and the world is genuinely complicated. The manager is not wrong; it is just very tired.",
+        "Mystery": "This passenger is protecting parts of you that learned, long ago, that being managed kept everyone safe. It is a form of love that forgot it could rest.",
+        "Lineage": "Generic parts-work language inspired by IFS (Schwartz). 'Internal Family Systems' is trademarked; this card uses common-language parts framing only.",
+        "Where this isn't enough": "If the manager runs all night, the work is not in this tool. Sleep, somatic therapy, a long break, or someone else taking the wheel for a while."
+      }
+    },
+    {
+      "id": "firefighter",
+      "name": "The Firefighter",
+      "category": "tier-2",
+      "sort_order": 11,
+      "metadata": {
+        "tier": 2,
+        "color": "#D14F2C",
+        "shape": "flame",
+        "tagline": "The one who breaks the glass.",
+        "tier_name": "Parts-work passengers (parts-work tradition)",
+        "number": 11
+      },
+      "keywords": [
+        "the firefighter"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778385055416-15pg834syqp.png",
+      "sections": {
+        "About": "The one who breaks the glass.",
+        "Thoughts": "I need it now. Just this one thing. It will help.",
+        "Thinking": "Reaching for the immediate intervention — food, drink, scroll, work, drama. Often arrives when something painful gets too close.",
+        "Perception": "Tunnel toward the relief. The thing that was hurting drops out of view temporarily.",
+        "Sensing": "A grabbing-quality in the body. Hands that already know what they want to do.",
+        "Context": "Something more uncomfortable is right behind this. The firefighter is not stupid; it is doing exactly what it was hired to do.",
+        "Mystery": "This passenger is keeping the system running. If you forced it out without anything to replace it, the underlying part it protects would flood. Respect it.",
+        "Lineage": "Generic parts-work language inspired by IFS (Schwartz). 'Internal Family Systems' is trademarked; this card uses common-language parts framing only.",
+        "Where this isn't enough": "When the firefighter's intervention is itself causing harm — to your body, your relationships, your work — this scaffolding cannot replace community, therapy, or specific recovery support."
+      }
+    },
+    {
+      "id": "exile",
+      "name": "The Exile",
+      "category": "tier-2",
+      "sort_order": 12,
+      "metadata": {
+        "tier": 2,
+        "color": "#7264A8",
+        "shape": "moon",
+        "tagline": "The young one carrying what nobody could hold then.",
+        "tier_name": "Parts-work passengers (parts-work tradition)",
+        "number": 12
+      },
+      "keywords": [
+        "the exile"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778385077105-4kj0neyzegy.png",
+      "sections": {
+        "About": "The young one carrying what nobody could hold then.",
+        "Thoughts": "Sometimes there are no thoughts here, just feelings. When there are thoughts: 'It was my fault. I was alone. Nobody came.'",
+        "Thinking": "Often pre-verbal. The patterns are old, formed before language was the main currency.",
+        "Perception": "Filters toward signs of the original abandonment, even decades later.",
+        "Sensing": "A specific quality of holding in the chest or belly. Sometimes a child's posture in an adult body.",
+        "Context": "Something happened, often early, that nobody at the time could metabolize with you. The exile is carrying it on behalf of the system.",
+        "Mystery": "This passenger is the part of you that kept feeling when the rest of you had to keep going. The fact that you can sit with it now means something has changed in your capacity to be a witness.",
+        "Lineage": "Generic parts-work language inspired by IFS (Schwartz). The cautionary scope of this card is intentional.",
+        "Where this isn't enough": "Direct work with exiled parts is not for solo journaling. A therapist trained in parts work, somatic experiencing, or a similar approach is the right container."
+      }
+    },
+    {
+      "id": "self-energy",
+      "name": "Self-Energy",
+      "category": "tier-2",
+      "sort_order": 13,
+      "metadata": {
+        "tier": 2,
+        "color": "#C9A02E",
+        "shape": "ring",
+        "tagline": "The one who can be with all of it.",
+        "tier_name": "Parts-work passengers (parts-work tradition)",
+        "number": 13
+      },
+      "keywords": [
+        "self-energy"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778385094661-uoii6kyxcmj.png",
+      "sections": {
+        "About": "The one who can be with all of it.",
+        "Thoughts": "Few thoughts. Mostly: 'I see you.' 'You are welcome here.' 'I am not going anywhere.'",
+        "Thinking": "Spacious, unhurried, curious. Less about strategy than about presence.",
+        "Perception": "Wider. Holds multiple passengers at once without choosing sides.",
+        "Sensing": "A settling. Breath returns. Shoulders drop. The body remembers it is not alone.",
+        "Context": "This is the part of you that has always been here, even when it felt unreachable. Not above the others; alongside them, with more room.",
+        "Mystery": "Many traditions have a name for this — Buddha-nature, the witness, the deep self, the soul. Each tradition is pointing at something hard to point at.",
+        "Lineage": "Generic parts-work language for the centering capacity (related to IFS 'Self', Voice Dialogue 'Aware Ego', and many contemplative traditions' witness/observer).",
+        "Where this isn't enough": "Self-energy is the resource, not the answer. When the system is in crisis, finding this is the first step, not the only one."
+      }
+    },
+    {
+      "id": "inner-critic",
+      "name": "The Inner Critic",
+      "category": "tier-2",
+      "sort_order": 14,
+      "metadata": {
+        "tier": 2,
+        "color": "#5A5A6E",
+        "shape": "diamond",
+        "tagline": "The one who learned that pre-emptive scolding kept you safer.",
+        "tier_name": "Parts-work passengers (parts-work tradition)",
+        "number": 14
+      },
+      "keywords": [
+        "the inner critic"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778385112467-a3v3tqru2nn.png",
+      "sections": {
+        "About": "The one who learned that pre-emptive scolding kept you safer.",
+        "Thoughts": "Not good enough. They're going to see. You should know better. You're a fraud.",
+        "Thinking": "Comparison engines, perfectionist standards, often quoting verbatim from someone who scolded you long ago.",
+        "Perception": "Filters toward your own flaws and others' implicit judgments. Filters out evidence of your competence.",
+        "Sensing": "A clenching in the chest. A specific kind of held breath. Sometimes a small audible 'hmph' that no one else hears.",
+        "Context": "At some point, scolding yourself before someone else could was the strategy that kept you in good standing. It worked. It is no longer the only available strategy.",
+        "Mystery": "The voice you hear is often not your own. It is a recording of someone who was once in your environment. You are not the recording. You are the one listening.",
+        "Lineage": "Common across parts-work traditions (IFS, Voice Dialogue, Gestalt). Generic framing.",
+        "Where this isn't enough": "When the critic dominates the day and erodes basic functioning, structured therapy is the work. This card is for noticing, not for replacing the work."
+      }
+    },
+    {
+      "id": "pusher",
+      "name": "The Pusher",
+      "category": "tier-3",
+      "sort_order": 15,
+      "metadata": {
+        "tier": 3,
+        "color": "#B14F2C",
+        "shape": "arrow",
+        "tagline": "The one who keeps you moving.",
+        "tier_name": "Inner selves (Voice Dialogue, Stones)",
+        "number": 15
+      },
+      "keywords": [
+        "the pusher"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778696570492-pwoo9nnayr8.png",
+      "sections": {
+        "About": "The one who keeps you moving.",
+        "Thoughts": "Not done yet. One more thing. You can't stop now.",
+        "Thinking": "Forward-leaning, achievement-focused. Often confuses motion with worth.",
+        "Perception": "Sees the next task. Misses the body asking to rest.",
+        "Sensing": "A driving pressure behind the sternum. Hands that want to be doing.",
+        "Context": "Something needs to get done, sometimes. The pusher is excellent at delivery. It also runs on a deficit it doesn't know how to acknowledge.",
+        "Mystery": "This passenger learned, somewhere, that being still was unsafe — that you were only loved when you produced. That belief is older than your current life and it is not the truth.",
+        "Lineage": "Voice Dialogue (Hal & Sidra Stone). Voice Dialogue is explicitly not trademarked; the Stones welcomed open use.",
+        "Where this isn't enough": "If the pusher won't let you rest even when you're ill, the practice is not journaling. It is sometimes radical: a doctor's note, a friend who books your day off, a retreat with no agenda."
+      }
+    },
+    {
+      "id": "pleaser",
+      "name": "The Pleaser",
+      "category": "tier-3",
+      "sort_order": 16,
+      "metadata": {
+        "tier": 3,
+        "color": "#D78EAE",
+        "shape": "vesica",
+        "tagline": "The one who reads the room before reading themselves.",
+        "tier_name": "Inner selves (Voice Dialogue, Stones)",
+        "number": 16
+      },
+      "keywords": [
+        "the pleaser"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778696578141-a7ml8fjz5hj.png",
+      "sections": {
+        "About": "The one who reads the room before reading themselves.",
+        "Thoughts": "What do they want. How can I help. I shouldn't have said that.",
+        "Thinking": "Constantly adjusting to perceived need. Often over-reading micro-expressions. Almost always working harder than the situation requires.",
+        "Perception": "Hyper-attuned to others. Less aware of own preferences.",
+        "Sensing": "A subtle leaning-toward in the upper body. A breath held to listen.",
+        "Context": "Connection is real and matters. The pleaser is not wrong about that. It is mistaken only about how much of yourself you have to disappear to maintain it.",
+        "Mystery": "Belonging is a primary need. This passenger is protecting that need. It deserves gratitude even as it learns to take up a little more space.",
+        "Lineage": "Voice Dialogue (Hal & Sidra Stone). Voice Dialogue is explicitly not trademarked.",
+        "Where this isn't enough": "When the pleaser shapes your every relationship and you cannot find what you actually want, somatic and relational therapy do this work better than self-reflection alone."
+      }
+    },
+    {
+      "id": "rule-maker",
+      "name": "The Rule Maker",
+      "category": "tier-3",
+      "sort_order": 17,
+      "metadata": {
+        "tier": 3,
+        "color": "#5C5C7C",
+        "shape": "square",
+        "tagline": "The one who keeps the structure standing.",
+        "tier_name": "Inner selves (Voice Dialogue, Stones)",
+        "number": 17
+      },
+      "keywords": [
+        "the rule maker"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778696587621-68clpm4fiev.png",
+      "sections": {
+        "About": "The one who keeps the structure standing.",
+        "Thoughts": "This is how it's done. There's a right way. We agreed on this.",
+        "Thinking": "Categorical, principled, often inherited verbatim from a parent or teacher. Stable but rigid.",
+        "Perception": "Sees rules and rule-violations clearly. Misses context and exceptions.",
+        "Sensing": "An uprightness in the spine. A held quality at the jaw.",
+        "Context": "Many rules exist for good reasons. The rule maker is excellent at consistency. It is sometimes mistaken about whether a rule is yours or someone else's.",
+        "Mystery": "Every rule was once a response to a real problem. The rule maker is, at root, trying to keep faith with the people who taught them. That loyalty is not the same as truth.",
+        "Lineage": "Voice Dialogue (Hal & Sidra Stone). Voice Dialogue is explicitly not trademarked.",
+        "Where this isn't enough": "If the rules are causing visible harm to you or someone you love, journaling won't override decades of conditioning. A therapist or trusted elder helps more."
+      }
+    },
+    {
+      "id": "vulnerable-self",
+      "name": "The Vulnerable Self",
+      "category": "tier-3",
+      "sort_order": 18,
+      "metadata": {
+        "tier": 3,
+        "color": "#9D4F7C",
+        "shape": "uparc",
+        "tagline": "The one with thinner skin and longer ears.",
+        "tier_name": "Inner selves (Voice Dialogue, Stones)",
+        "number": 18
+      },
+      "keywords": [
+        "the vulnerable self"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778696595429-cfhjr39w9um.png",
+      "sections": {
+        "About": "The one with thinner skin and longer ears.",
+        "Thoughts": "Few articulated thoughts. More like atmospheres: 'I don't want to be here.' 'I want to be held.' 'Please be kind.'",
+        "Thinking": "Pre-verbal or near-verbal. Often arrives as a feeling tone before a thought.",
+        "Perception": "Sensitive to subtle shifts that other passengers miss. Sometimes overwhelmed by them.",
+        "Sensing": "A quality of openness in the chest. A face that wants to be looked at gently.",
+        "Context": "There is a part of you that knows things the busier parts don't. It needs slower air. Most environments do not give it slower air.",
+        "Mystery": "This passenger may be the closest to what some traditions call soul. It does not respond well to performance, including spiritual performance. It responds to presence.",
+        "Lineage": "Voice Dialogue (Hal & Sidra Stone). Voice Dialogue is explicitly not trademarked.",
+        "Where this isn't enough": "When this passenger is in a lot of pain and is not being held in any human relationship, that is a real gap. Therapy, intimate friendship, a community of practice — relational containers, not solo ones."
+      }
+    },
+    {
+      "id": "aware-ego",
+      "name": "The Aware Ego",
+      "category": "tier-3",
+      "sort_order": 19,
+      "metadata": {
+        "tier": 3,
+        "color": "#3F7E8B",
+        "shape": "ring",
+        "tagline": "The one who can sit between two passengers without picking a fight.",
+        "tier_name": "Inner selves (Voice Dialogue, Stones)",
+        "number": 19
+      },
+      "keywords": [
+        "the aware ego"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778696607815-iinq2fx34y.png",
+      "sections": {
+        "About": "The one who can sit between two passengers without picking a fight.",
+        "Thoughts": "I notice the part that wants to push and the part that wants to hide. I don't have to be either right now.",
+        "Thinking": "Holding tension between opposites without collapsing into either. The 'and' rather than the 'either-or.'",
+        "Perception": "Sees both sides of a conflict at once, including both internal sides. Doesn't lose access to either.",
+        "Sensing": "A widening of the chest. Breath returns. Time slows slightly.",
+        "Context": "This isn't above the bus. This is what becomes available when you're not blended with any one passenger. It is a capacity, not a person.",
+        "Mystery": "The Stones called this 'aware ego' carefully — not 'higher self' or 'true self.' It is a place to stand, not a person to become.",
+        "Lineage": "Voice Dialogue (Hal & Sidra Stone). Voice Dialogue is explicitly not trademarked. Closely related to IFS 'Self' and contemplative traditions' witness.",
+        "Where this isn't enough": "Aware ego is the room you do the work in, not the work itself. Real change usually still happens through specific interventions: therapy, body practice, relationship, action."
+      }
+    },
+    {
+      "id": "modernity-passenger",
+      "name": "The Modernity Passenger",
+      "category": "tier-4",
+      "sort_order": 20,
+      "metadata": {
+        "tier": 4,
+        "color": "#B89F6E",
+        "shape": "house",
+        "tagline": "The one who thinks the house was always the world.",
+        "tier_name": "Decolonial passengers (GTDF & Andreotti, synthesized)",
+        "number": 20
+      },
+      "keywords": [
+        "the modernity passenger"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778698734023-dplt60348rc.png",
+      "sections": {
+        "About": "The one who thinks the \"house of modernity\" is the whole world. This passenger doesn't just live in the house; it believes the house is reality itself, struggling to see the world outside its walls.",
+        "Thoughts": "The way things are is the way things must be. Progress is real. We are at the top.",
+        "Thinking": "Linear, hierarchical, separability-based. Often confuses one civilizational arrangement for the only possible arrangement.",
+        "Perception": "Filters out what is not legible to its categories. Indigenous knowledge, the more-than-human, deep time — these become invisible.",
+        "Sensing": "Often disconnected from sensing. The body is treated as a vehicle for the mind, not as a knower in its own right.",
+        "Context": "You were born inside a five-hundred-year-old project. Most of what you call common sense is its furniture. The project is in trouble.",
+        "Mystery": "Other ways of being human have always existed and continue to exist. Modernity is one cosmology. The world is older and stranger than this passenger has been allowed to imagine.",
+        "Lineage": "Synthesized from the GTDF Global Citizenship Education Otherwise booklet (CC-BY 4.0, Andreotti et al.) and *Hospicing Modernity* (Andreotti 2021). PlayfulProcess's paraphrased framing; not direct quotation.",
+        "Where this isn't enough": "Reading widely outside your own tradition. Indigenous teachers in their own communities. The CC-licensed GTDF GCE Otherwise booklet. Bayo Akomolafe's essays. This card is a doorway, not a teaching."
+      }
+    },
+    {
+      "id": "denial-passenger",
+      "name": "The Denial Passenger",
+      "category": "tier-4",
+      "sort_order": 21,
+      "metadata": {
+        "tier": 4,
+        "color": "#7E8A9F",
+        "shape": "shield",
+        "tagline": "The one who keeps the news at the door.",
+        "tier_name": "Decolonial passengers (GTDF & Andreotti, synthesized)",
+        "number": 21
+      },
+      "keywords": [
+        "the denial passenger"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778698743678-sa64wveu3fs.png",
+      "sections": {
+        "About": "The one who refuses to see the cracks forming in the walls of the \"house of modernity.\" This passenger works tirelessly to keep unsettling news outside the door, believing that if it isn't acknowledged, the house will remain safe.",
+        "Thoughts": "It's not that bad. Someone will fix it. Don't make me look at this.",
+        "Thinking": "Filtering, downscaling, redirecting. Genuine work — denial is labor, even when it feels like nothing.",
+        "Perception": "Edits the field of awareness in real time. Things that would unsettle the day quietly disappear.",
+        "Sensing": "A held quality. A breath that doesn't fully come. Sometimes a numbness whose origin you can't locate.",
+        "Context": "There are real things — climate, complicity, systemic harm, the news of the day — that the body does not know how to metabolize at the rate they arrive. Denial is not stupid; it is exhausted.",
+        "Mystery": "The capacity to look at something hard without collapsing is a skill, and skills are learned slowly. The denial passenger is buying time. That time is worth something. It is not worth everything.",
+        "Lineage": "GTDF 'four denials' framework (decolonialfutures.net/4denials/). Synthesized in PlayfulProcess's voice; refers to but does not reproduce GTDF text.",
+        "Where this isn't enough": "Denial that prevents you from acting at all when action would matter is past this scaffold. Community, practice, slow work with people who are already doing this — that's the path."
+      }
+    },
+    {
+      "id": "ancestral-passenger",
+      "name": "The Ancestral Passenger",
+      "category": "tier-4",
+      "sort_order": 22,
+      "metadata": {
+        "tier": 4,
+        "color": "#7E5C3C",
+        "shape": "rootsystem",
+        "tagline": "The one carrying what was passed without words.",
+        "tier_name": "Decolonial passengers (GTDF & Andreotti, synthesized)",
+        "number": 22
+      },
+      "keywords": [
+        "the ancestral passenger"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778701987259-n21u3zkcinl.png",
+      "sections": {
+        "About": "The one carrying what was passed without words.",
+        "Thoughts": "Often few articulated thoughts. More like a feeling-tone or a sudden gesture: 'this is how my grandmother held a knife.'",
+        "Thinking": "Pre-verbal, somatic, inherited across generations. Patterns of fear, joy, belonging, and grief that came with the bloodline.",
+        "Perception": "Sometimes sees through the eyes of people you never met. Sometimes notices what kept your line alive.",
+        "Sensing": "Old gestures. Familiar postures. A song you didn't learn that you somehow know.",
+        "Context": "You are not the start of your line. This passenger carries the patterns, wisdom, and wounds of those who came before you. These ancestral forces, both positive and negative, travel with you inside the 'house of modernity,' silently influencing your choices, shaping your reactions, and informing your deepest instincts. They are the blueprint of your nervous system, the echo in your bones.",
+        "Mystery": "Many traditions consider this passenger central, not peripheral. The dead are not gone in the way modernity says they are. What gets passed forward is not always chosen, and what gets healed travels both directions.",
+        "Lineage": "Pan-traditional concept; framed here in conversation with Andreotti's discussions of intergenerational inheritance and Bayo Akomolafe's essays on lineage. PlayfulProcess's synthesis.",
+        "Where this isn't enough": "Ancestral work is not a solo journaling task. Specific lineages do this work specifically — talk to teachers in traditions you have a real relationship with, not in ones you don't."
+      }
+    },
+    {
+      "id": "wounded-inheritance",
+      "name": "The Wounded Inheritance",
+      "category": "tier-4",
+      "sort_order": 23,
+      "metadata": {
+        "tier": 4,
+        "color": "#6E3F4F",
+        "shape": "knot",
+        "tagline": "The one carrying what the system did and did not name.",
+        "tier_name": "Decolonial passengers (GTDF & Andreotti, synthesized)",
+        "number": 23
+      },
+      "keywords": [
+        "the wounded inheritance"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778702010076-akndjp2x3a6.png",
+      "sections": {
+        "About": "The one carrying what the system did and did not name.",
+        "Thoughts": "I shouldn't have to feel this. It was so long ago. Why is this still here.",
+        "Thinking": "Cycling through patterns the conscious mind didn't choose. Often arriving as the family pattern repeating, even when you swore you wouldn't.",
+        "Perception": "Filters for the original wound's signal everywhere — in love, in work, in stranger-interactions.",
+        "Sensing": "A specific quality of bracing the body learned before you remember learning it.",
+        "Context": "Something happened to you, or to people who came before you, that the community at the time could not metabolize. It got passed down, becoming one of the invisible bricks in the 'house of modernity' that you inherited. The fact that it is in you does not mean it is yours to keep.",
+        "Mystery": "Traditions across the world have rituals for this — for the wounds that travel. Most modern environments stripped those rituals away. The passenger is asking for what those rituals used to provide.",
+        "Lineage": "Synthesized from Andreotti & Ahenakew's *Towards Scarring Our Collective Soul Wound* (CC-licensed); also draws on Resmaa Menakem's *My Grandmother's Hands*, Cash Ahenakew's academic work, and the broader trauma-and-lineage literature.",
+        "Where this isn't enough": "This is therapeutic territory, not journaling territory. Somatic experiencing, IFS-trained therapists, ancestral healing practitioners, EMDR — the modalities exist. Use them."
+      }
+    },
+    {
+      "id": "carriage-driver",
+      "name": "The Carriage Driver",
+      "category": "tier-4",
+      "sort_order": 24,
+      "metadata": {
+        "tier": 4,
+        "color": "#3F5C7C",
+        "shape": "anchor",
+        "tagline": "The question, not the person.",
+        "tier_name": "Decolonial passengers (GTDF & Andreotti, synthesized)",
+        "number": 24
+      },
+      "keywords": [
+        "the carriage driver"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778702231837-txm1814md3.png",
+      "sections": {
+        "About": "The question, not the person.",
+        "Thoughts": "Who is driving right now. Whose voice is this. What is this part of me actually responding to.",
+        "Thinking": "A meta-question, not a passenger. The capacity to notice which passenger is at the wheel without assuming you are them.",
+        "Perception": "Steps back. Holds the bus rather than identifying with one seat.",
+        "Sensing": "A widening. Breath returns. The body remembers it is bigger than any one voice in it.",
+        "Context": "There is no permanent driver. There is only the practice of asking, in any moment, who is driving — and whether that is the one you would have chosen if you had been awake.",
+        "Mystery": "This question is older than most of the frameworks pointing at it. It echoes the witness in many contemplative traditions. The question is more durable than any answer to it.",
+        "Lineage": "Andreotti's 'who is driving' question, drawn from her work with Indigenous teachers (Ninawa Huni Kui, Pitaguary family) as articulated in *Hospicing Modernity* (2021) and the GTDF GCE Otherwise booklet (CC-BY). Framed here in conversation with ACT's bus metaphor (Hayes 1999) and IFS's Self.",
+        "Where this isn't enough": "The question alone doesn't change the bus. What changes the bus is what you do once you've asked it — and that work usually involves people, not just reflection."
+      }
+    },
+    {
+      "id": "more-than-human",
+      "name": "The More-Than-Human Passenger",
+      "category": "tier-4",
+      "sort_order": 25,
+      "metadata": {
+        "tier": 4,
+        "color": "#3F8A6E",
+        "shape": "weave",
+        "tagline": "The one who reminds you that you are made of relationships you didn't choose.",
+        "tier_name": "Decolonial passengers (GTDF & Andreotti, synthesized)",
+        "number": 29
+      },
+      "keywords": [
+        "the more-than-human passenger"
+      ],
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778698824694-6ho40fm1lco.png",
+      "sections": {
+        "About": "The one who reminds you that you are made of relationships you didn't choose.",
+        "Thoughts": "Often few. Sometimes a sudden awareness: 'a tree was here before me.' 'this air was a leaf last year.'",
+        "Thinking": "Relational, ecological, interspecies. Often arrives as a sudden re-orientation rather than a reasoned position.",
+        "Perception": "Wider field. Notices what isn't human. Notices what doesn't speak in human language.",
+        "Sensing": "Often a sudden grounding. The feet remembering the ground. The breath remembering the trees.",
+        "Context": "You are not separate from the rest of the living world; modernity told you that you were. Most other cosmologies have known otherwise.",
+        "Mystery": "The web is older than your name for it. Indigenous traditions have been pointing at it for thousands of years. Modernity is a recent and partial set of eyes.",
+        "Lineage": "Drawn from the GTDF 'house of modernity' / 'hummingbird' / 'multi-layered selves' essays (decolonialfutures.net, CC-licensed), Robin Wall Kimmerer's *Braiding Sweetgrass*, Bayo Akomolafe's essays. PlayfulProcess's synthesis.",
+        "Where this isn't enough": "Reading is a doorway, not a relationship. Time outside, a garden you tend, a watershed you learn the name of, an Indigenous teacher in their own community whose work you have permission to support — these are the ground."
+      }
+    },
+    {
+      "id": "tier-1",
+      "name": "Familiar emotions (Pixar / Ekman / Damour)",
+      "category": "tier",
+      "sort_order": 26,
+      "metadata": {
+        "tier": 1,
+        "number": 30
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778696326668-ml3i7cb5ez.png",
+      "sections": {
+        "About this tier": "The familiar Pixar/Inside Out emotions, drawn from the Ekman-Keltner research lineage. Culturally fluent — most users already know these archetypes intuitively. They make a low-friction intake layer for noticing what's moving.",
+        "How to use it": "Start here if a familiar emotion is loud. Move to Tier 2 or 3 if 'who keeps making this feeling' becomes the more interesting question."
+      },
+      "composite_of": [
+        "joy",
+        "sadness",
+        "anger",
+        "fear",
+        "disgust",
+        "anxiety",
+        "envy",
+        "embarrassment",
+        "ennui"
+      ]
+    },
+    {
+      "id": "tier-2",
+      "name": "Parts-work passengers (parts-work tradition)",
+      "category": "tier",
+      "sort_order": 27,
+      "metadata": {
+        "tier": 2,
+        "number": 31
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778696317061-pkqe9v8i4hp.png",
+      "sections": {
+        "About this tier": "Generic parts-work passengers — Manager, Firefighter, Exile, Self-energy, Inner Critic. Common-language framing of insights from Internal Family Systems (Schwartz). 'IFS' is trademarked; this tier uses generic parts framing only.",
+        "How to use it": "Use these when the emotional response feels structural — a part of you that always shows up under certain conditions, with a job and a history. If exile-level material arises, stop solo work and find a parts-work-trained therapist."
+      },
+      "composite_of": [
+        "manager",
+        "firefighter",
+        "exile",
+        "inner-critic"
+      ]
+    },
+    {
+      "id": "tier-3",
+      "name": "Inner selves (Voice Dialogue, Stones)",
+      "category": "tier",
+      "sort_order": 28,
+      "metadata": {
+        "tier": 3,
+        "number": 32
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1778691671739-jhl4y9onbf.png",
+      "sections": {
+        "About this tier": "Voice Dialogue passengers (Hal & Sidra Stone). Voice Dialogue is explicitly not trademarked. Pusher, Pleaser, Rule Maker, Vulnerable Self, Aware Ego — these are the inner selves most people meet first when they begin parts work.",
+        "How to use it": "Use these when you can name the inner voice but not the emotion underneath. Voice Dialogue's gift is making the voices addressable."
+      },
+      "composite_of": [
+        "pusher",
+        "pleaser",
+        "rule-maker",
+        "vulnerable-self"
+      ]
+    },
+    {
+      "id": "tier-4a",
+      "name": "Decolonial passengers — inspired by Hospicing Modernity / Decolonial Futures",
+      "category": "tier",
+      "sort_order": 29,
+      "metadata": {
+        "number": 33
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1779219918262-5sqb189kcth.png",
+      "sections": {
+        "About this tier": "Passengers carrying inherited material from system, ancestry, and the more-than-human web — the figures encountered when you ride modernity's bus. Drawn from Vanessa Andreotti's GTDF materials and Hospicing Modernity. The bus metaphor itself is in the public domain (Hayes' ACT, 1999); Andreotti's contribution is the cast of passengers each of us already carries inside this bus.",
+        "How to use it": "Use when the question is wider than individual psychology — when noticing patterns from bloodline, land, language, or system. These passengers point outward as much as inward. Each can be voiced; each carries material that is not only yours.",
+        "Lineage": "Vanessa Andreotti & GTDF Collective. Source: decolonialfutures.net. Used here under CC-BY framing where applicable. Permission letter to GTDF pending."
+      },
+      "composite_of": [
+        "modernity-passenger",
+        "denial-passenger",
+        "ancestral-passenger",
+        "wounded-inheritance",
+        "more-than-human"
+      ]
+    },
+    {
+      "id": "positions-not-passengers",
+      "name": "Positions, not passengers — seats on the bus",
+      "category": "tier",
+      "sort_order": 30,
+      "metadata": {
+        "number": 35
+      },
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-image-gen/1779219939983-tqwgy03yl6.png",
+      "sections": {
+        "About this tier": "These three cards are not parts of you. They are positions from which you can listen to your parts. Self-Energy comes from IFS (Schwartz). The Aware Ego comes from Voice Dialogue (Hal & Sidra Stone). The Carriage Driver comes from the deck's own meta-question, in dialogue with Andreotti. Each tradition names the same operation: the capacity to sit with all the passengers without being any of them.",
+        "How to use it": "If one of these cards comes up in a spread, the deck is asking whether you can find this seat right now. Not whether you are this position (you aren't — it is a capacity, not a thing). Whether the seat is available, today, in this body. The seat is always there; sometimes the bus is too loud to find it.",
+        "Note for the AI facilitator": "These three cards should not be voiced in the parts-work register. They are not passengers. They are positions from which to listen. If the AI is acting as facilitator (Voice Dialogue / IFS / parts-work style), do not speak as Self-Energy, the Aware Ego, or the Carriage Driver — those belong to the user."
+      },
+      "composite_of": [
+        "self-energy",
+        "aware-ego",
+        "carriage-driver"
+      ]
+    }
+  ],
+  "metadata": {
+    "year": 2026,
+    "category": "Living Tradition",
+    "when": "2026"
+  }
+}

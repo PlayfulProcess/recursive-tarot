@@ -139,7 +139,7 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=46"></script>
+<script src="../site-header.js?v=47"></script>
 <site-header active="explorer"></site-header>
 
 <div class="toolbar">
@@ -164,11 +164,10 @@
 <div id="builder">
   <div id="presets">
     <span class="lab">Organize ▸</span>
-    <button class="preset" data-r="arcana,suit,rank">Major/Minor ▸ Suit ▸ Rank</button>
-    <button class="preset" data-r="arcana" data-c="suit">Arcana × Suit</button>
+    <button class="preset" data-r="trump_number" data-c="deck" data-f="role=trump">Trump × Deck</button>
     <button class="preset" data-r="suit" data-c="rank">Suit × Rank</button>
-    <button class="preset" data-r="deck" data-c="arcana">Deck × Arcana</button>
-    <button class="preset" data-r="number">Number line</button>
+    <button class="preset" data-r="deck" data-c="role">Deck × Role</button>
+    <button class="preset" data-r="role,suit,rank">Major/Minor ▸ Suit ▸ Rank</button>
     <button class="preset" data-r="branch,deck">Lineage ▸ Deck</button>
     <button class="preset preset-clear" data-clear="1">Clear</button>
   </div>
@@ -282,6 +281,9 @@ function recHTML(r){
     style="background:linear-gradient(135deg,${rgba(c,lo)},${rgba(c,hi)});border-left:3px solid ${c}">
     <span class="lv">L${lvl}</span>${esc(r.__name.split(' — ')[0].slice(0,26))}</span>`;
 }
+// A pivot's "—" bucket is real data (items missing that field) — name it after the
+// field so it reads as a stated exclusion, not an anonymous landfill row/col.
+const dashLabel = (v, field) => v === '—' ? `— (no ${field})` : v;
 function cellHTML(rs){
   if (!rs.length) return '<td><span class="empty">·</span></td>';
   if (mode === 'counts'){
@@ -331,7 +333,7 @@ function render(){
   }
   let h = '<table class="pivot"><thead><tr>';
   for (const rf of spec.rows) h += `<th>${esc(rf)}</th>`;
-  if (colVals) for (const cv of colVals) h += `<th>${esc(cv)}</th>`;
+  if (colVals) for (const cv of colVals) h += `<th>${esc(dashLabel(cv, colField))}</th>`;
   else h += '<th>items</th>';
   h += '</tr></thead><tbody>';
   const rowsOut = [];
@@ -349,7 +351,7 @@ function render(){
   for (const path of rowsOut){
     h += '<tr>';
     path.forEach((g,i)=>{
-      if (prev[i] !== g) h += `<th class="rowhead">${esc(g.key)} <span class="cnt">${g.recs.length}</span></th>`;
+      if (prev[i] !== g) h += `<th class="rowhead">${esc(dashLabel(g.key, spec.rows[i]))} <span class="cnt">${g.recs.length}</span></th>`;
       else h += '<th class="rowhead" style="border-top:none"></th>';
     });
     const leafRecs = path[path.length-1].recs;
@@ -645,6 +647,15 @@ document.querySelectorAll('#presets button').forEach(b => b.onclick = () => {
   const pick = s => (s ? s.split(',') : []).filter(x => avail.has(x));
   spec.rows = pick(b.dataset.r);
   spec.cols = pick(b.dataset.c);
+  // Presets own the filter they need (e.g. Trump × Deck pre-filters role=trump) so
+  // switching presets doesn't leave a stale filter behind — the "x of y items" line
+  // already states the exclusion honestly. Keep the boot-applied level=L1 card filter.
+  const keepLevel = spec.filters.level;
+  spec.filters = keepLevel ? { level: keepLevel } : {};
+  if (b.dataset.f) {
+    const [ff, fv] = b.dataset.f.split('=');
+    if (avail.has(ff)) spec.filters[ff] = [fv];
+  }
   sync();
 });
 $('#mode-cards').onclick = () => setMode('cards');
@@ -688,7 +699,9 @@ async function boot(){
       const src = srcParam || PFX+'tarot/all-decks-many-lenses/grammar.json';
       const g = await (await fetch(src)).json();
       stash(g, null);
-      records = flatten(g, null, null);
+      // single-grammar path (?src=) needs the deck-level year too, so century still
+      // derives per-item (Phase 1: audit §5 "?src= single-deck loads never get century").
+      records = flatten(g, { year: g.metadata?.year }, null);
       if (srcParam) $('#deckbtn').textContent = '✦ ' + (g.name||'deck').split(' — ')[0].slice(0,22) + ' ▾';
     }
   } catch(e){ $('#out').innerHTML = '<div id="hint">Could not load the grammar(s).</div>'; return; }
@@ -711,10 +724,17 @@ async function boot(){
   if (!restored){
     const lv = fields.find(f=>f.name==='level');
     if (lv && lv.count > 1 && lv.values.includes('L1')) spec.filters.level = ['L1'];
-    if (fields.some(f=>f.name==='century') && fields.some(f=>f.name==='suit'))
+    const avail = new Set(fields.map(f=>f.name));
+    if (avail.has('trump_number') && avail.has('deck') && avail.has('role')){
+      // Phase-1 default landing view — "the same card across every deck" comparison
+      // wall (north star, Fernando Aug 7: something scholars/artists can compare and
+      // inspire themselves with). Only available on the meta-grammar's derived axes;
+      // raw single-deck loads fall through to the century/suit views below.
+      spec.rows = ['trump_number']; spec.cols = ['deck']; spec.filters.role = ['trump'];
+    } else if (avail.has('century') && avail.has('suit'))
       { spec.rows=['century']; spec.cols=['suit']; }
-    else if (slugs.length > 1 && fields.some(f=>f.name==='century'))
-      { spec.rows=['century']; if (fields.some(f=>f.name==='deck')) spec.cols=['deck']; }
+    else if (slugs.length > 1 && avail.has('century'))
+      { spec.rows=['century']; if (avail.has('deck')) spec.cols=['deck']; }
   }
   sync();
 }

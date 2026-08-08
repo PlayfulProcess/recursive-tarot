@@ -466,36 +466,6 @@
             font-weight: 600;
             margin-left: 0.5rem;
         }
-        /* ── Presentation Mode (round 21 — QR-code-every-link toggle) ──
-           A toggle in the hero that turns every external link in the course
-           body into "link + QR code" pairs, so an audience watching a live
-           reading of the course can scan instead of typing URLs. State is
-           persisted in localStorage so it survives reload (useful when
-           presenting and the browser hiccups). Pagination/slide-mode is on
-           the roadmap; this commit ships only the QR overlay. */
-        .present-toggle {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            background-color: #fff;
-            color: #7c5b18;
-            border: 1px solid #d8b4fe;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.15s;
-        }
-        .present-toggle:hover {
-            background-color: #faf5ff;
-            border-color: #c084fc;
-        }
-        .present-toggle.active {
-            background-color: #7c5b18;
-            color: #fff;
-            border-color: #7c5b18;
-        }
         /* Round 45: prominent QR block at the top of course content
            when Presentation Mode is on — for the course page's own URL.
            Big enough to scan from across a room, with a label that tells
@@ -702,19 +672,6 @@
             font-size: 0.75rem;
             color: #6b6457;
         }
-        /* When presentation mode is active, render link + QR as a block so
-           the QR code sits visibly under the link rather than fighting for
-           inline space inside paragraphs. The audience sees both at once. */
-        body.presentation-mode .course-content a[target="_blank"] {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-        body.presentation-mode .course-content {
-            font-size: 1.05rem;
-        }
-
         /* ── Tarot embeds (filled by expandTarotEmbeds from [data-embed]) ── */
         .tarot-embed{ margin:1.6rem 0; }
         .viewer-frame{ width:100%; border:1px solid #d8d2c6; border-radius:12px; overflow:hidden; background:#faf8f3; }
@@ -779,7 +736,7 @@
         /* ── PRINT: clean book pagination ── */
         @media print{
             @page{ size: 7in 10in; margin: .7in .65in; }
-            site-header, .course-sidebar, #course-hero-pills, #present-toggle, #course-nav,
+            site-header, .course-sidebar, #course-hero-pills, #course-nav,
             .course-popup-pill, button, .screen-only{ display:none !important; }
             body, body.bg-gray-50{ background:#fff !important; font-family:"Fraunces",Georgia,serif; }
             .max-w-7xl{ max-width:none !important; }
@@ -801,7 +758,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- recursive-tarot drift: shared dark header instead of the recursive.eco shell. -->
-    <script src="../site-header.js?v=46"></script>
+    <script src="../site-header.js?v=47"></script>
     <site-header active="course"></site-header>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -939,7 +896,11 @@
             document.getElementById('course-title').textContent = grammar.name || 'Courses';
             document.getElementById('course-hero-title').textContent = grammar.name || 'Courses';
             document.getElementById('course-hero-description').textContent = grammar.description || '';
-            document.getElementById('course-duration').textContent = `${items.length} courses`;
+            // #course-duration doesn't exist on this page (it never has — this was throwing a
+            // TypeError on every ?grammar_id= multi-item listing, past this line silently). Guard
+            // instead of assuming the element is there.
+            const durationEl = document.getElementById('course-duration');
+            if (durationEl) durationEl.textContent = `${items.length} courses`;
 
             const html = items.map(item => {
                 const duration = item.metadata?.duration ? `${item.metadata.duration} min` : '';
@@ -1034,23 +995,23 @@
 
                 // ── Relocate the course popup pills into the hero row ──
                 // The MDX authors the Teaching / Building-responsibly pills at
-                // the top of the body. Move them up next to the Presentation
-                // Mode toggle so the header carries all three interactive
-                // pills and the content card leads straight into the first
-                // paragraph. Pills land BEFORE the toggle, preserving their
-                // authored order (Teaching, Building responsibly, then
-                // Presentation Mode). Any now-empty wrapper <p> marked left
-                // behind is removed. (Jun 5 2026)
+                // the top of the body. Move them up into the hero row so the
+                // header carries the interactive pills and the content card
+                // leads straight into the first paragraph, preserving their
+                // authored order (Teaching, Building responsibly, …). Any
+                // now-empty wrapper <p> left behind is removed. (Jun 5 2026;
+                // fixed Aug 2026 — this used to also require a #present-toggle
+                // element that no longer exists on the page, so the guard
+                // clause below always returned early and pills never moved.)
                 (function relocateCoursePills() {
                   const heroPills = document.getElementById('course-hero-pills');
-                  const presentToggle = document.getElementById('present-toggle');
                   const contentEl = document.getElementById('course-content');
-                  if (!heroPills || !presentToggle || !contentEl) return;
+                  if (!heroPills || !contentEl) return;
                   const pills = Array.from(contentEl.querySelectorAll('.course-popup-pill'));
                   const wrappers = new Set();
                   pills.forEach(pill => {
                     wrappers.add(pill.parentElement);
-                    heroPills.insertBefore(pill, presentToggle);
+                    heroPills.appendChild(pill);
                   });
                   wrappers.forEach(w => {
                     if (w && w !== contentEl && !w.textContent.trim() && !w.querySelector('*')) {
@@ -1852,33 +1813,6 @@
                 delete a.dataset.qrWrapper;
             });
             removeCoursePageQr();
-        }
-
-        async function setPresentationMode(on) {
-            const body = document.body;
-            const btn = document.getElementById('present-toggle');
-            const label = document.getElementById('present-toggle-label');
-            if (on) {
-                try {
-                    await loadQrcodeLib();
-                } catch (err) {
-                    console.error('[presentation-mode] QR lib failed to load', err);
-                    return;
-                }
-                body.classList.add('presentation-mode');
-                btn.classList.add('active');
-                btn.setAttribute('aria-pressed', 'true');
-                label.textContent = 'Exit Presentation';
-                paintQrCodes();
-                try { localStorage.setItem('course-presentation-mode', '1'); } catch { /* private mode */ }
-            } else {
-                body.classList.remove('presentation-mode');
-                btn.classList.remove('active');
-                btn.setAttribute('aria-pressed', 'false');
-                label.textContent = 'Presentation Mode';
-                removeQrCodes();
-                try { localStorage.removeItem('course-presentation-mode'); } catch { /* private mode */ }
-            }
         }
 
         // Presentation Mode (the per-link QR toggle) was retired Jun 23 2026 — it cluttered the

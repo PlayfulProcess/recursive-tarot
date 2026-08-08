@@ -64,6 +64,7 @@
     [PFX + 'pages/games/madiao.html',     'Ma Diao 馬吊'],
     [PFX + 'pages/games/trionfi.html',    'Trionfi'],
     [PFX + 'viewers/caster-studio.html',  'Spread Caster — build · cast · send'],
+    [PFX + 'viewers/cards.html?src=../tarot/bus-passengers/grammar.json', 'Bus Passengers — who’s driving?'],
     ['https://flow.recursive.eco/',   'Oracle ↗', true],
     [PFX + 'pages/play.html',             'All games & readings →'],
   ];

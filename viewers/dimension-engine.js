@@ -49,9 +49,15 @@
       }
       // inherited deck-level fields (multiselect mode): records WITHOUT their own
       // value take the deck's — so a deck's emergences are catalogued into its
-      // century, branch, etc. alongside the cards.
-      if (inherit) for (const [k, v] of Object.entries(inherit))
-        if (v != null && !r[k]) r[k] = [v];
+      // century, branch, etc. alongside the cards. Identity fields (deck) are the
+      // exception: the cross-link convention (CLAUDE.md "one cross-link pattern")
+      // stamps metadata.deck with the OTHER grammar's label, which collides with
+      // this same identity key — inherited (the item's REAL deck) must always win.
+      if (inherit) for (const [k, v] of Object.entries(inherit)) {
+        if (v == null) continue;
+        if (k === 'deck') r[k] = [v];
+        else if (!r[k]) r[k] = [v];
+      }
       if (r.year) { const y = +r.year[0]; if (y) r.century = [(Math.floor((y - 1) / 100) + 1) + 'th c.']; }
       for (const kw of (it.keywords || [])) {
         const m = /^([a-z_-]{2,20}):(.+)$/.exec(kw);

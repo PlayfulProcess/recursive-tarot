@@ -233,11 +233,28 @@ def build():
                 if major is not None:
                     arcana = "major"
             cl = CLASS.get(slug, {})
+            # --- Derived pivot axes (meta-build-time only; deck grammars stay untouched) ---
+            # role_num: the minor's pip/court number — prefer the source item's own raw
+            # metadata.number (covers courts like "Jack"/"Damsel"/"Horsewoman" that
+            # rank_from_name doesn't recognize by name) and fall back to the name-derived
+            # rank. Verified across all 13 decks: the two never disagree when both are set.
+            role_num = mnum if mnum is not None else rank
+            if arcana in ("major", "trump"):          # normalize the deck's own major/trump
+                role = "trump"                          # vocabulary into one pivot axis; the
+            elif arcana == "minor" and role_num is not None and 1 <= role_num <= 10:
+                role = "pip"
+            elif arcana == "minor" and role_num is not None and 11 <= role_num <= 14:
+                role = "court"                          # courts backfilled as 11-14 = P/Kn/Q/K
+            else:
+                role = "other"                          # significators, sheets, missing arcana
+            trump_number = major if (role == "trump" and major is not None) else None
+            pivot_rank = role_num if role in ("pip", "court") else None
             cards.append(dict(
                 cid="card-%s-%d" % (slug.replace("-",""), ord_),
                 slug=slug, label=dk["label"], era=dk["era"], era_sort=dk["era_sort"], ed=dk["ed"],
                 name=name, image_url=it.get("image_url"), src_item_id=it.get("id"),
                 arcana=arcana, suit=suit, rank=rank, major=major,
+                role=role, trump_number=trump_number, pivot_rank=pivot_rank,
                 order=cl.get("order"), function=cl.get("function")))
 
     items = []
@@ -260,6 +277,9 @@ def build():
              "metadata": {k: v for k, v in {
                  "deck": c["label"], "arcana": c["arcana"], "suit": c["suit"],
                  "number": (c["major"] if c["major"] is not None else c["rank"]),
+                 # Derived clean pivot axes (added, never replacing number/arcana above —
+                 # see _research/TAROT-REVAMP-PLAN-2026-08-07.md Phase 1):
+                 "role": c["role"], "trump_number": c["trump_number"], "rank": c["pivot_rank"],
                  "order": c["order"], "function": c["function"],
                  "year": _year(ed["date"]) or _year(c["era"]),
                  "source_deck": c["slug"], "source_item_id": c["src_item_id"],
