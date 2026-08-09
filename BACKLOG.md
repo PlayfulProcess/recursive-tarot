@@ -101,6 +101,52 @@ set_grammar_media · upload_audio · narrate_grammar · align_audio.
 - Env note: backgrounded `python -m http.server` keeps getting reaped on this machine — restart as
   needed; verify via the preview tool, not `localhost` curl alone.
 
+## F. Truth-audit Phase 2 — carried, not completed (2026-08-09)
+
+Three items were promised in `_research/TAROT-REVAMP-PLAN-2026-08-07.md` Phase 2 (item 7, 9, 10)
+and the companion audit `_research/audits/2026-08-07-tarot-ui-truth.md`, and the Aug 8 shipping
+round did not do them. Recorded here honestly instead of letting them silently vanish.
+
+- ☐ **Derive `genealogy-tree.html` / `timeline.html`'s duplicated hand-maintained `SLUG_MAP`
+  from `metadata.source_deck`.** Promised as part of the Phase-2 dead-code sweep (a new deck node
+  silently loses its "Open cards →" link if someone forgets to add it to both hand-maintained
+  maps). **Did not ship because the plan's assumption was wrong**: verified against
+  `tarot/tree-of-tarot/grammar.json` (37 items, hand-maintained — no `_generated` flag) that
+  **zero** items carry `metadata.source_deck`; each item's `metadata` is only
+  `{branch, derives_from, when}`. There is nothing to derive from today. **What it would take:**
+  hand-add `metadata.source_deck` (+ `source_item_id`, `deck`) to each of the ~28 deck nodes in
+  `tarot/tree-of-tarot/grammar.json` (the one-cross-link-pattern fields CLAUDE.md already
+  specifies), matching the node id to a real deck slug, then rewrite `SLUG_MAP` in both viewers as
+  a lookup over the tree grammar's own items instead of a literal object. ~0.5 session; the
+  tedious part is the 28 by-hand id→slug confirmations, not the code.
+- ☐ **Unify `viewers/cards.html`'s two "Group by" states.** `deckGroupField` (the dimension-chip
+  tray grouping) persists to `location.hash` (`groupby=<field>`); `pillAxisId` (the built-in
+  emergence-axis select) never touches the hash, so choosing an axis and then following any
+  hash-carrying link (e.g. a card's own permalink, a "Copy link" action) silently drops it and the
+  view reverts to Levels mode. Promised in Phase 2 item 9, not shipped — no code was attempted
+  (per instruction, this was deliberately left as a backlog item rather than risked mid-sweep).
+  **What it would take:** extend the existing `groupby=` hash scheme to also carry
+  `pillaxis=<id>` (mirroring the `deckGroupField` read/write pair at cards.html:2591/2673/2750-51),
+  restore `pillAxisId` from the hash on load next to `deckGroupField`, and decide precedence if a
+  URL somehow carries both. ~0.5 session, low risk (isolated to the hash read/write + one restore
+  call).
+- ☐ **Quiet the signed-out 401 pair from `auth-widget.js`.** The audit measured two benign 401s
+  in DevTools on every page while signed out ("expected behavior, but it makes real errors harder
+  to spot"). Promised in Phase 2 item 10, not shipped. **What it would take, and why it's not a
+  one-line fix:** `auth-widget.js`'s `getUser()` already wraps the Supabase call in
+  `try { … } catch { return null }`, so no *thrown* error escapes — but a 401 HTTP response
+  doesn't throw; `fetch`/the Supabase client resolves normally and the browser's own
+  Network/Console panel still logs the failed request regardless of the JS-level catch. Genuinely
+  quieting it means either (a) skip the network call entirely when there's no local session
+  evidence (check for the `.recursive.eco` auth cookie/localStorage key before calling
+  `getUser()` at all, since a signed-out visitor by definition has none), or (b) wrap the
+  underlying `fetch` the Supabase client uses to swallow non-2xx logging — messier, ties to
+  Supabase internals. Route (a) is the sane fix. Same root cause may also explain the
+  `caster-studio.html` `/api/spreads` model-hint probe's 401 (that one's fetch is already in a
+  try/catch with an explicit "stay silent" comment at cards.html/caster-studio.html:1249,1344-46,
+  so it's the same class of "JS already doesn't react to it, but DevTools still shows it").
+  ~0.5 session.
+
 ---
 
 ## Handoff prompt — start a fresh chat with the recursive.eco MCP connected

@@ -26,6 +26,15 @@ Newest first. One bullet per shipped thing.
   cannot carry different item sets while they share one identity.
 - Oracle ribbon is now theme-aware (follows OS preference, `data-theme`, or a `.dark` class) and
   paints no surface at all, so it can sit on a dark app panel as well as this parchment.
+- **Honest carry-forward, not silent drop.** Three items promised in the Aug 7 revamp plan's
+  Phase 2 did NOT ship in this round and are logged in `BACKLOG.md` §F instead of quietly
+  disappearing: deriving `genealogy-tree.html`/`timeline.html`'s duplicated `SLUG_MAP` from
+  `metadata.source_deck` (turns out `tree-of-tarot/grammar.json` items carry no `source_deck` at
+  all — verified, not assumed — so there's nothing to derive from yet); unifying `cards.html`'s
+  two "Group by" states (`deckGroupField` persists to the URL hash, `pillAxisId` still doesn't);
+  and quieting the two benign signed-out 401s from `auth-widget.js` in DevTools. Also deleted:
+  `cards.html`'s dead `.sync-action` CSS rules (no matching element in the file — leftover from
+  the Aug 7 sweep).
 
 ## Aug 7 2026
 

@@ -8,7 +8,9 @@ Checks:
   2. composite_of references resolve within each grammar (no dangling);
   3. no mojibake — no UTF-8 text that was decoded as Latin-1/CP1252 anywhere;
   4. people dossiers (research/people/*.md) have the frontmatter the generator needs;
-  5. rebuilds people + meta grammars and asserts the meta reports dangling=0.
+  5. rebuilds people + meta grammars and asserts the meta reports dangling=0;
+  6. semantic check on the built meta grammar's derived pivot axes (role /
+     trump_number / rank / deck-attribution) — see check_derived_axes.py.
 Exits non-zero on any failure.
 """
 import json, os, re, glob, subprocess, sys
@@ -88,6 +90,16 @@ for script in ("build_people_grammar.py", "build_meta_grammar.py"):
         errors.append(f"{script} failed:\n{out}")
     if script == "build_meta_grammar.py" and "dangling=0" not in out:
         warnings.append(f"meta build did not report dangling=0: {out[:200]}")
+
+# 5 — semantic check on the freshly-rebuilt meta grammar's derived axes (structural
+# checks above can't catch role/trump_number/rank/deck semantics quietly rotting —
+# see check_derived_axes.py's own docstring for the Aug 7 2026 incident this pins).
+r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "check_derived_axes.py")],
+                   capture_output=True, text=True, cwd=ROOT)
+out = (r.stdout + r.stderr).strip()
+print(f"[check_derived_axes.py] {out.splitlines()[0] if out else '(no output)'}")
+if r.returncode != 0:
+    errors.append(f"check_derived_axes.py failed:\n{out}")
 
 for w in warnings:
     print("WARN:", w)
