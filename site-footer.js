@@ -1,6 +1,12 @@
 /* The Recursive Tarot — one shared footer: under construction · recursive.eco spiral · newsletter.
    <site-footer></site-footer>  (reads theme.css tokens). The newsletter writes to recursive.eco's
-   newsletter_subscribers via the public anon key (browser-safe). */
+   newsletter_subscribers via the public anon key (browser-safe).
+
+   Also the sitewide home of the Oracle Ribbon (Aug 10 2026): every page carrying this footer
+   gets the ribbon as a quiet, ambient line tucked inside the footer's own links row — loading
+   viewers/oracle-ribbon.js itself (path-aware, same depth formula as site-header.js's PFX) if
+   the page hasn't already pulled it in for its own purposes. See the ribbon-loading block near
+   the end of connectedCallback() below. */
 (function(){
   if (customElements.get('site-footer')) return;
   var SUPA="https://xtviwcznhbrsvkitepvm.supabase.co";
@@ -64,6 +70,35 @@
         }catch(err){msg.style.color='#c0473b';msg.innerHTML='Something went wrong — or sign up at <a href="https://recursive.eco" target="_blank" rel="noopener" style="color:var(--gold)">recursive.eco</a>.';}
         finally{btn.disabled=false; btn.textContent='Sign up';}
       });
+
+      // Ambient oracle ribbon — one quiet line at the foot of every page carrying this
+      // footer, since Aug 10 2026 (see oracle-ribbon.js's own header comment: it used to be
+      // gated behind ?ribbon=1, this call always passes gated:false). Anchored just inside
+      // the footer's own "links" row so it inherits the footer's centred, padded column
+      // instead of sitting flush against the outer edge.
+      var anchor = this.querySelector('.rtf .links') || this.querySelector('.rtf');
+      if (anchor) {
+        // Same depth-from-root formula as site-header.js's own PFX — works at any nesting
+        // (root, /pages/, /pages/games/, /viewers/, /viewers/prototypes/ …) without relying
+        // on this element's own `base` attribute (which some pages omit or could mistype).
+        var _segs = location.pathname.split('/').filter(Boolean);
+        var PFX = '../'.repeat(Math.max(0, _segs.length - 1));
+        var showRibbon = function () {
+          if (window.OracleRibbon) window.OracleRibbon.show(anchor, { gated: false });
+        };
+        if (window.OracleRibbon) {
+          // Already loaded by the page itself (e.g. caster-studio.html, for its own
+          // post-cast call) — don't fetch it twice. OracleRibbon.show()'s own `mounted`
+          // guard makes whichever call runs first win; the other is a same-page no-op,
+          // never a second ribbon.
+          showRibbon();
+        } else {
+          var rs = document.createElement('script');
+          rs.src = PFX + 'viewers/oracle-ribbon.js?v=2';
+          rs.onload = showRibbon;
+          document.head.appendChild(rs);
+        }
+      }
     }
   }
   customElements.define('site-footer', SiteFooter);

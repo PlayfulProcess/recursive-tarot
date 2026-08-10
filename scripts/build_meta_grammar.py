@@ -220,7 +220,13 @@ def build():
             m = it.get("metadata", {}) or {}
             name = it.get("name") or ""
             suit = suit_norm(m.get("suit"))
+            # Some decks store the trump's own sequence under trump_number rather than
+            # number (Bologna: "Love" carries trump_number 6, "The Old Man" 9, with no
+            # number key at all) — without this fallback those cards fell into the
+            # "no trump_number" landfill even though the value sat right there.
             mnum = m.get("number")
+            if mnum is None:
+                mnum = m.get("trump_number")
             mnum = int(mnum) if str(mnum).strip().isdigit() else None
             arcana = m.get("arcana")
             major = None; rank = None

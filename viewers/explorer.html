@@ -38,7 +38,8 @@
   #presets{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding-bottom:8px;margin-bottom:6px;border-bottom:1px solid var(--line)}
   #presets .lab{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:2px}
   button.preset{background:rgba(154,115,34,.12);color:var(--ink-soft);border:1px solid rgba(154,115,34,.4);
-    border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+    border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;
+    user-select:none;-webkit-user-drag:none}
   button.preset:hover{background:rgba(154,115,34,.28);border-color:#9a7322}
   button.preset-clear{background:rgba(255,255,255,.05);border-color:var(--line);color:var(--muted)}
   #tray{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding-bottom:4px}
@@ -80,7 +81,14 @@
   .pivot th.rowhead .cnt{color:var(--muted);font-weight:400;font-size:10.5px}
   :root { --card-h: 62px; }
   .cellwrap{display:flex;flex-wrap:wrap;gap:4px;align-items:flex-end;max-width:360px}
-  .cellwrap img{height:var(--card-h);border-radius:4px;background:#f4f1ea;cursor:pointer;transition:outline .12s,height .12s}
+  /* Explicit width (not just height) reserves each thumbnail's box before the image
+     has loaded — without it, an <img> with only `height` set collapses to 0 width
+     until its natural size is known, so several cards in one cell stack into
+     invisible slivers and only the one(s) that finished loading are visible (looked
+     like "only the last card" for a cell that held several). object-fit:contain
+     keeps the whole card visible, never cropped (CLAUDE.md thumbnail rule). */
+  .cellwrap img{height:var(--card-h);width:calc(var(--card-h) * .7);object-fit:contain;
+    border-radius:4px;background:#f4f1ea;cursor:pointer;transition:outline .12s,height .12s,width .12s}
   .cellwrap img:hover{outline:2px solid #9a7322;outline-offset:1px;z-index:9;position:relative}
   /* emergence pills: hue = branch, gradient depth = level */
   .epill{display:inline-flex;align-items:center;gap:4px;border-radius:7px;padding:4px 8px;font-size:11px;
@@ -163,15 +171,15 @@
 <div id="main">
 <div id="builder">
   <div id="presets">
-    <span class="lab">Organize ▸</span>
-    <button class="preset" data-r="trump_number" data-c="deck" data-f="role=trump">Trump × Deck</button>
-    <button class="preset" data-r="suit" data-c="rank">Suit × Rank</button>
-    <button class="preset" data-r="deck" data-c="role">Deck × Role</button>
-    <button class="preset" data-r="role,suit,rank">Major/Minor ▸ Suit ▸ Rank</button>
-    <button class="preset" data-r="branch,deck">Lineage ▸ Deck</button>
-    <button class="preset preset-clear" data-clear="1">Clear</button>
+    <span class="lab" title="One-click combos — not draggable; drag the field chips below instead">Organize ▸ click a preset</span>
+    <button class="preset" title="Click to apply this pivot — presets aren't draggable" data-r="trump_number" data-c="deck" data-f="role=trump">Trump × Deck</button>
+    <button class="preset" title="Click to apply this pivot — presets aren't draggable" data-r="suit" data-c="rank">Suit × Rank</button>
+    <button class="preset" title="Click to apply this pivot — presets aren't draggable" data-r="deck" data-c="role">Deck × Role</button>
+    <button class="preset" title="Click to apply this pivot — presets aren't draggable" data-r="role,suit,rank">Major/Minor ▸ Suit ▸ Rank</button>
+    <button class="preset" title="Click to apply this pivot — presets aren't draggable" data-r="branch,deck">Lineage ▸ Deck</button>
+    <button class="preset preset-clear" title="Clear the pivot" data-clear="1">Clear</button>
   </div>
-  <div id="tray"><span class="lab">…or drag any field below — click a chip to filter it ⧩ · drag into Rows / Columns to group</span></div>
+  <div id="tray"><span class="lab">🖐 Drag any field chip below — click a chip to filter it ⧩ · drag into Rows / Columns / Filters to group</span></div>
   <div class="zone" id="z-rows"><div class="zlab">Rows ▦</div><div class="chips"></div></div>
   <div class="zone" id="z-cols"><div class="zlab">Columns ▥</div><div class="chips"></div></div>
   <div class="zone" id="z-filters"><div class="zlab">⊸ Filters — drop a field here to pin its values as toggles</div><div id="z-filters-body"></div></div>
@@ -281,9 +289,34 @@ function recHTML(r){
     style="background:linear-gradient(135deg,${rgba(c,lo)},${rgba(c,hi)});border-left:3px solid ${c}">
     <span class="lv">L${lvl}</span>${esc(r.__name.split(' — ')[0].slice(0,26))}</span>`;
 }
+// Display-level formatting only — sorting (smartCmp) always runs on the raw numeric
+// value; these two helpers just choose how that raw value is *shown* wherever it
+// renders as a row/column header, chip filter value, or detail-panel field.
+function toRoman(n){
+  n = +n;
+  if (!Number.isInteger(n) || n <= 0) return String(n);
+  const table = [[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],
+    [40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];
+  let res = '';
+  for (const [v,s] of table) while (n >= v) { res += s; n -= v; }
+  return res;
+}
+const RANK_LABEL = {11:'Page', 12:'Knight', 13:'Queen', 14:'King'};
+function formatFieldValue(field, v){
+  if (v === '—') return v;
+  if (field === 'trump_number'){
+    const n = +v;
+    if (!isNaN(n)) return n === 0 ? '0 · Fool' : toRoman(n);
+  }
+  if (field === 'rank'){
+    const n = +v;
+    if (!isNaN(n)) return RANK_LABEL[n] || String(n);
+  }
+  return v;
+}
 // A pivot's "—" bucket is real data (items missing that field) — name it after the
 // field so it reads as a stated exclusion, not an anonymous landfill row/col.
-const dashLabel = (v, field) => v === '—' ? `— (no ${field})` : v;
+const dashLabel = (v, field) => v === '—' ? `— (no ${field})` : formatFieldValue(field, v);
 function cellHTML(rs){
   if (!rs.length) return '<td><span class="empty">·</span></td>';
   if (mode === 'counts'){
@@ -370,8 +403,8 @@ function openDetail(id){
     .map(x => x.__img && +(x.level?.[0]||'L1').slice(1)===1
       ? `<img data-rid="${esc(x.__id)}" src="${esc(x.__img)}" title="${esc(x.__name)}">`
       : recHTML(x)).join('');
-  const metaBits = ['level','deck','source_deck','century','order','branch','suit','rank','function','print quality']
-    .filter(k=>r[k]).map(k=>`${k}: <b>${esc(r[k].join(', '))}</b>`).join(' · ');
+  const metaBits = ['level','deck','source_deck','century','order','branch','suit','trump_number','rank','function','print quality']
+    .filter(k=>r[k]).map(k=>`${k}: <b>${esc(r[k].map(v=>formatFieldValue(k,v)).join(', '))}</b>`).join(' · ');
   det.innerHTML = `
     <span class="close" onclick="document.getElementById('det').classList.remove('open')">✕</span>
     ${r.__img ? `<img class="hero" src="${esc(r.__img)}" onclick="window.__lb('${esc(r.__img)}','${esc(r.__name)}')">` : ''}
@@ -519,7 +552,7 @@ function renderPinnedFilters(){
     for (const v of allVals){
       const pill = document.createElement('span');
       pill.className = 'fval-pill' + (selected.includes(v) ? ' on' : '');
-      pill.textContent = v; pill.dataset.filterf = f; pill.dataset.filterv = v;
+      pill.textContent = formatFieldValue(f, v); pill.dataset.filterf = f; pill.dataset.filterv = v;
       grp.appendChild(pill); grp.appendChild(document.createTextNode(' '));
     }
     body.appendChild(grp);
@@ -577,7 +610,7 @@ function openPop(f, anchor, zone){
   const sel = new Set((spec.filters[f]||[]).map(String));
   const pop = popAt(anchor);
   pop.innerHTML = `<input type="text" placeholder="search values…">
-    <div class="vals">${fl.values.map(v=>`<label><input type="checkbox" value="${esc(v)}" ${sel.has(String(v))?'checked':''}> ${esc(v)}</label>`).join('')}</div>
+    <div class="vals">${fl.values.map(v=>`<label><input type="checkbox" value="${esc(v)}" ${sel.has(String(v))?'checked':''}> ${esc(formatFieldValue(f, v))}</label>`).join('')}</div>
     <div class="pbtns"><button data-a="all">All</button><button data-a="none">None</button><button data-a="ok">Apply ⧩</button></div>
     ${zone ? '' : `<div class="pbtns"><button data-a="rows">→ Rows</button><button data-a="cols">→ Columns</button></div>`}`;
   pop.querySelector('input[type=text]').oninput = e => {
@@ -709,6 +742,18 @@ async function boot(){
       if (srcParam) $('#deckbtn').textContent = '✦ ' + (g.name||'deck').split(' — ')[0].slice(0,22) + ' ▾';
     }
   } catch(e){ $('#out').innerHTML = '<div id="hint">Could not load the grammar(s).</div>'; return; }
+  // The meta grammar's items are pointer stubs (source_deck set, but no `branch` of their
+  // own — branch only lives per-deck in _collection.json, and until now only the multi-
+  // select `?decks=` path inherited it). Backfill it from the collection here so "Lineage ▸
+  // Deck" has a real field to pivot on from the default landing view too, not just a
+  // silent no-op that quietly drops to Deck-only grouping.
+  if (collection){
+    const branchBySlug = {};
+    for (const cg of collection.grammars) if (cg.branch) branchBySlug[cg.slug] = cg.branch;
+    for (const r of records)
+      if (!r.branch && r.source_deck && branchBySlug[r.source_deck[0]])
+        r.branch = [branchBySlug[r.source_deck[0]]];
+  }
   sectionGroups = inferSectionGroups();
   if (!sectionField && sectionGroups.length) sectionField = sectionGroups[0].key;
   populateSectionPick();
@@ -717,6 +762,17 @@ async function boot(){
   for (const r of records) if (r.__parents.length)
     r.emergence = r.__parents.map(p => (byId[p]?.__name || p).split(' — ')[0].slice(0,40));
   fields = discoverFields(records);
+  // Phase-1's derived trump_number/rank supersede the old overloaded `number` field
+  // (majors 0–21 and pips 1–14 sharing one key — the "— (no number)" landfill row,
+  // fixed Aug 7). Once a dataset has the derived axes, retire raw `number` from the
+  // tray so it can't be dragged into a pivot again. Single-deck `?src=` loads whose
+  // grammar predates the split (no trump_number/rank at all) keep `number` — it's
+  // the only axis they have.
+  {
+    const discovered = new Set(fields.map(f => f.name));
+    if (discovered.has('trump_number') || discovered.has('rank'))
+      fields = fields.filter(f => f.name !== 'number');
+  }
   fieldParent = inferHierarchy(records, fields);
   let restored = false;
   try { const s = JSON.parse(decodeURIComponent(location.hash.slice(1)));
@@ -724,6 +780,17 @@ async function boot(){
   if (!restored){ // no hash → last saved arrangement for this grammar selection
     try { const s = JSON.parse(localStorage.getItem(specKey));
           if (s && s.rows) { spec = s; restored = true; } } catch(e){}
+  }
+  if (restored){
+    // A saved hash/localStorage spec can reference a field that no longer exists in
+    // the tray (e.g. `number`, just retired above) — drop it rather than let a
+    // dangling row/col field render an uncatalogued, chip-less ghost dimension.
+    const avail = new Set(fields.map(f => f.name));
+    spec.rows = (spec.rows || []).filter(f => avail.has(f));
+    spec.cols = (spec.cols || []).filter(f => avail.has(f));
+    spec.pinned = (spec.pinned || []).filter(f => avail.has(f));
+    spec.filters = spec.filters || {};
+    for (const f of Object.keys(spec.filters)) if (!avail.has(f)) delete spec.filters[f];
   }
   if (!restored){
     const lv = fields.find(f=>f.name==='level');
@@ -828,7 +895,7 @@ boot();
 })();
 </script>
 
-<script src="../site-footer.js"></script>
+<script src="../site-footer.js?v=1"></script>
 <site-footer base="../"></site-footer>
 </body>
 </html>

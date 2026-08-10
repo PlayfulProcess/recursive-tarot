@@ -385,9 +385,16 @@
   // Render the deck galleries from the open collection manifest (always current).
   (function(){
     // PlayfulProcess's own grammars — shown apart, as objects of study (not expertise).
+    // Optional `image` overrides the grammar's own cover_image_url for this tile only
+    // (used for thirty-six-tattvas — see IMAGE-USAGE note below — without touching grammar.json).
     const COMMUNITY = {
       'ontoject-illustrated': {status:'Looking for collaborators', note:'A creative, tattva-tinged deck still under process — my own study object. I am not an authority on the tradition.'},
-      'thirty-six-tattvas':   {status:'Looking for collaborators', note:'The 36 Tattvas of Shaiva Tantra as a grammar of consciousness — an object of study by PlayfulProcess, not an expert in the tradition.'}
+      'thirty-six-tattvas':   {status:'Looking for collaborators', note:'The 36 Tattvas of Shaiva Tantra as a grammar of consciousness — an object of study by PlayfulProcess, not an expert in the tradition.',
+        // Repo's own constructed plate (Śuddhavidyā, interlocking triangles, parchment ground) —
+        // the deck's stored cover_image_url reads as a near-black square at tile size on this
+        // light site; this SVG plate is legible instead. Aug 10 2026.
+        image: 'tarot/thirty-six-tattvas/plates/tattva-05.svg'},
+      'bus-passengers': {note:"Rumi's guest house, on a bus — notice which voice is driving."}
     };
     const esc = s => String(s).replace(/</g,'&lt;');
     const thumb = g => '<div class="dthumb" style="background-image:url(\''+g.cover_image_url.replace(/'/g,"%27")+'\')"></div>';
@@ -399,7 +406,9 @@
     const communityCard = g => {
       const c = COMMUNITY[g.slug]||{}, name = (g.name||g.slug).split(' — ')[0].split(':')[0];
       const href = 'viewers/cards.html?src=../tarot/'+encodeURIComponent(g.slug)+'/grammar.json';
-      return '<a class="dcard" href="'+href+'">'+thumb(g)+'<div class="dn">'+esc(name)+'</div>'
+      const img = c.image || g.cover_image_url;
+      const thumbHtml = '<div class="dthumb" style="background-image:url(\''+img.replace(/'/g,"%27")+'\')"></div>';
+      return '<a class="dcard" href="'+href+'">'+thumbHtml+'<div class="dn">'+esc(name)+'</div>'
         +(c.status?'<span class="status">'+esc(c.status)+'</span>':'')
         +(c.note?'<div class="note">'+esc(c.note)+'</div>':'')+'</a>';
     };
@@ -417,7 +426,7 @@
   })();
 </script>
 
-<script src="site-footer.js"></script>
+<script src="site-footer.js?v=1"></script>
 <script src="assistant.js" defer></script>
 <site-footer></site-footer>
 </body>
