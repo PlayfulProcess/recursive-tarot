@@ -12,7 +12,7 @@
  * rotation didn't read as active — a logarithmic spiral turning about its own centre is close
  * to rotationally self-similar, so a slow spin barely changes the silhouette frame to frame).
  * Now the mark draws/undraws via stroke-dashoffset (the same idiom as the flow app's brand
- * SpiralLoader) at a brisk ~2.4s cycle, with the previous 7s rotation layered on top as
+ * SpiralLoader) at a slow ~7.2s cycle (her call: same tempo family as the loader, 3x slower), with the previous 7s rotation layered on top as
  * secondary texture rather than the primary cue. Static (no motion at all) under
  * prefers-reduced-motion — this ribbon isn't a busy/loading state (it appears once a cast has
  * already landed, as a reflective note), so there's no "Interpreting…"-style text fallback to
@@ -21,9 +21,13 @@
  * the text.
  *
 
- * PREVIEW-GATED: everything below is a no-op unless the page URL carries ?ribbon=1. This
- * lets the script ship on every page that includes it without changing default behavior
- * until Fernando approves the fragments + placement (plan Phase 5 gate).
+ * DEFAULT-ON, SITEWIDE (Aug 10 2026): Fernando approved the fragments + placement (plan
+ * Phase 5 gate), so the ribbon is no longer preview-gated behind ?ribbon=1. site-footer.js
+ * now loads this script and calls show(anchor, { gated: false }) on every page that carries
+ * the shared footer, so the ribbon appears ambiently near the page's footer everywhere —
+ * not just on caster-studio.html's post-cast board. The `gated` option (default true) still
+ * exists for any future caller that *does* want the old ?ribbon=1 preview behavior; it's
+ * just unused by the sitewide footer call, which always passes gated:false.
  *
  * Self-contained: injects its own <style>, no external CSS dependency beyond the Fraunces
  * font already loaded site-wide. Exposes window.OracleRibbon = { show(afterEl) } so other
@@ -31,9 +35,9 @@
  * the ribbon should be inserted directly after (e.g. the casting board) once a reading has
  * landed.
  *
- * Usage:  <script src="oracle-ribbon.js?v=1"></script>
+ * Usage:  <script src="oracle-ribbon.js?v=4"></script>
  *         ... after a cast completes ...
- *         if (window.OracleRibbon) OracleRibbon.show(document.getElementById('board'));
+ *         if (window.OracleRibbon) OracleRibbon.show(document.getElementById('board'), { gated: false });
  */
 (function () {
   'use strict';
@@ -120,14 +124,14 @@
       // rotation read as nearly static (a logarithmic spiral turning about its own centre is
       // close to rotationally self-similar), so the primary motion cue is now the path
       // drawing/undrawing via stroke-dashoffset (same idiom as the flow app's brand
-      // SpiralLoader), at a brisk ~2.4s cycle. The 7s rotation still turns the wrapper on top,
+      // SpiralLoader), at a slow ~7.2s cycle (her call: same tempo family as the loader, 3x slower). The 7s rotation still turns the wrapper on top,
       // like a votive wheel, as secondary texture — not the thing carrying the "it is active"
       // signal anymore.
       '.oracle-ribbon .orb-spiral{flex:0 0 auto;width:17px;height:17px;display:inline-block;',
       'animation:orb-spiral-spin 7s linear infinite;}',
       '.oracle-ribbon .orb-spiral svg{display:block;width:100%;height:100%;}',
       '.oracle-ribbon .orb-spiral path{stroke-dasharray:1;',
-      'animation:orb-spiral-draw 2.4s ease-in-out infinite alternate;}',
+      'animation:orb-spiral-draw 7.2s ease-in-out infinite alternate;}',
       '@keyframes orb-spiral-spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}',
       // Draws (offset 1→0) then un-draws (0→1) via `alternate` — mirrors the flow app's
       // `spiral-draw` keyframe (globals.css / <SpiralLoader>) exactly, just sped up.

@@ -575,52 +575,86 @@ def render_gross_element(item_id):
     cx, cy = CENTER
     parts = []
 
+    # Inherited shapes (a prior element's symbol, carried forward into a
+    # later one) get a floor opacity and a uniformly thinner stroke instead
+    # of fading toward invisibility — hierarchy comes from weight + colour
+    # dominance, not from being nearly unrenderable at 120px. Each element's
+    # OWN shape stays full colour, full weight, so the row still reads as a
+    # progression rather than five identical faint stacks.
+    INHERIT_OP = 0.55
+    INHERIT_W = STROKE_THIN
+
     def field(op=0.15):
         return circle_outline(cx, cy, 150, FAINT, STROKE_THIN, op)
 
-    def air_circle(op=1.0, r=108):
-        c = circle_outline(cx, cy, r, ELEMENT_COLOR["vayu"], STROKE, op)
-        dots = six_dot(cx, cy, r, ELEMENT_COLOR["vayu"], 3.2, op)
-        return c + "\n" + dots
+    def air_hexagram(own=True, r=108):
+        # Canonical bhuta-shuddhi symbol for vayu: a hexagram (two interlocking
+        # equilateral triangles). triangle_pts() places an up-triangle's three
+        # vertices at angles 0/120/240 and a down-triangle's at 60/180/300 (both
+        # at radius r), so the six outer points land exactly on six_dot()'s
+        # i*60 positions — the point-dots keep working unchanged. Outline only
+        # (no fill), and the inherited copy uses the thinnest stroke in the
+        # system + a floor opacity, per the accumulation convention, so the
+        # busier six-line shape doesn't overwhelm tejas/jala/prithvi's own
+        # marks when it's carried forward into their plates.
+        op = 1.0 if own else INHERIT_OP
+        w = STROKE if own else INHERIT_W
+        dot_r = 3.2 if own else 2.2
+        up = triangle(cx, cy, r, ELEMENT_COLOR["vayu"], w, direction="up", opacity=op)
+        down = triangle(cx, cy, r, ELEMENT_COLOR["vayu"], w, direction="down", opacity=op)
+        dots = six_dot(cx, cy, r, ELEMENT_COLOR["vayu"], dot_r, op)
+        return up + "\n" + down + "\n" + dots
 
-    def fire_triangle(op=1.0, size=88):
-        return triangle(cx, cy, size, ELEMENT_COLOR["tejas"], STROKE, direction="up", opacity=op)
+    def fire_triangle(own=True, size=88):
+        op = 1.0 if own else INHERIT_OP
+        w = STROKE if own else INHERIT_W
+        return triangle(cx, cy, size, ELEMENT_COLOR["tejas"], w, direction="up", opacity=op)
 
-    def water_crescent(op=0.55, r=68):
+    def water_crescent(own=True, r=68):
+        op = 0.8 if own else max(INHERIT_OP - 0.1, 0.45)
         return crescent(cx, cy, r, ELEMENT_COLOR["jala"], fill_opacity=op, stroke_width=STROKE_THIN)
 
     def earth_square(op=1.0, half=54):
         return square_outline(cx, cy, half, ELEMENT_COLOR["prithvi"], STROKE_HEAVY, opacity=op,
                                fill=ELEMENT_COLOR["prithvi"] if op > 0.8 else "none")
 
-    if item_id == "tattva-32":  # Akasha — near-empty field, a bindu, nothing more
-        parts.append(field(0.22))
-        parts.append(bindu(cx, cy, 4, ELEMENT_COLOR["akasha"], opacity=0.65))
+    if item_id == "tattva-32":  # Akasha — the canonical bhuta-shuddhi symbol:
+        # a plain black disc, flat and unornamented — doctrinally the
+        # HEAVIEST mark in the set, not the emptiest. (An earlier version of
+        # this plate read space as a near-empty field to express "least
+        # contracted"; the builder's source documents the disc instead, so
+        # that is what ships. See the build report for the tension between
+        # the two readings.) Unornamented per brief: no rays, no rings
+        # inside it — just the disc, centred, on the shared frame.
+        # Her call (Aug 10): "Black disc" — INK, not the slate element tone.
+        # The canonical symbol is black; the muted blue read as a soft
+        # compromise between the two readings, and she chose the canon.
+        parts.append(circle_fill(cx, cy, 92, INK, 1.0))
 
-    elif item_id == "tattva-33":  # Vayu — space's field + air's own circle
-        parts.append(field(0.15))
-        parts.append(air_circle(1.0, 108))
+    elif item_id == "tattva-33":  # Vayu — space's field + air's own hexagram
+        parts.append(field(0.18))
+        parts.append(air_hexagram(True, 108))
         parts.append(bindu(cx, cy, 5, ELEMENT_COLOR["vayu"], opacity=0.85))
 
-    elif item_id == "tattva-34":  # Tejas — + air recedes, fire's triangle, bindu at the apex
-        parts.append(field(0.12))
-        parts.append(air_circle(0.32, 108))
-        parts.append(fire_triangle(1.0, 92))
+    elif item_id == "tattva-34":  # Tejas — + air carried forward (visible, thin), fire's own triangle
+        parts.append(field(0.16))
+        parts.append(air_hexagram(False, 108))
+        parts.append(fire_triangle(True, 92))
         apex = (cx, cy - 92)
         parts.append(bindu(apex[0], apex[1], 7, ELEMENT_COLOR["tejas"], opacity=1.0, outline=True))
 
-    elif item_id == "tattva-35":  # Jala — + fire recedes, water's crescent prominent
-        parts.append(field(0.10))
-        parts.append(air_circle(0.22, 108))
-        parts.append(fire_triangle(0.28, 92))
-        parts.append(water_crescent(0.6, 66))
+    elif item_id == "tattva-35":  # Jala — + air & fire carried forward, water's own crescent
+        parts.append(field(0.14))
+        parts.append(air_hexagram(False, 108))
+        parts.append(fire_triangle(False, 92))
+        parts.append(water_crescent(True, 66))
         parts.append(bindu(cx, cy, 6, ELEMENT_COLOR["jala"]))
 
     elif item_id == "tattva-36":  # Prithvi — holds all five shapes at once
-        parts.append(field(0.10))
-        parts.append(air_circle(0.24, 108))
-        parts.append(fire_triangle(0.24, 92))
-        parts.append(water_crescent(0.32, 66))
+        parts.append(field(0.14))
+        parts.append(air_hexagram(False, 108))
+        parts.append(fire_triangle(False, 92))
+        parts.append(water_crescent(False, 66))
         parts.append(earth_square(1.0, 46))
         parts.append(bindu(cx, cy, 7, GOLD))
 
@@ -745,7 +779,16 @@ def render_concept(item_id):
         parts.append(bindu(cx, cy, 7, outline=True))
 
     elif item_id == "concept-anupaya":
+        # No-means: still a single quiet circle, but held at a considered
+        # proportion with the deck's own construction ticks (the frame's
+        # vocabulary, echoed inward) so the emptiness reads as placed, not
+        # missing. An outline bindu — the deck's mark elsewhere for
+        # "presence without technique" (concept-trinity, tattva-05) — keeps
+        # the centre from reading as a blank gap.
         parts.append(circle_outline(cx, cy, 100, MUTED, STROKE_THIN, 0.6))
+        for angle in (0, 90, 180, 270):
+            parts.append(ticks(cx, cy, angle, 100, 14, FAINT, 1.0, 0.7))
+        parts.append(bindu(cx, cy, 5, outline=True))
 
     elif item_id == "concept-shadadhvan":
         top, bottom = (cx, 50.0), (cx, 350.0)
@@ -760,11 +803,21 @@ def render_concept(item_id):
         parts.append(bindu(bottom[0], bottom[1], 6, INK))
 
     elif item_id == "concept-samkhya-comparison":
-        band_y = 60 + (340 - 60) * 2 / 3
-        parts.append(line_el(cx, band_y, cx, 340, MUTED, STROKE_THIN, 0.9))
+        # Why thirty-six, not twenty-five: the shared count first (three
+        # close ink lines — Sāṅkhya's twenty-five), a marked seam, then the
+        # eleven tattvas unique to this system continuing alone in gold.
+        # Endpoint bindus close the line the way concept-shadadhvan's do,
+        # so a bare divided line reads as a considered count, not a stub.
+        top_y, bottom_y = 60.0, 340.0
+        band_y = top_y + (bottom_y - top_y) * 2 / 3
         for dx in (-3, 0, 3):
-            parts.append(line_el(cx + dx, 60, cx + dx, band_y, INK, STROKE_THIN, 0.85))
+            parts.append(line_el(cx + dx, top_y, cx + dx, band_y, INK, STROKE_THIN, 0.85))
+        parts.append(line_el(cx, band_y, cx, bottom_y, GOLD, STROKE_THIN, 0.85))
         parts.append(line_el(cx - 18, band_y, cx + 18, band_y, MUTED, 1.0, 0.7))
+        parts.append(line_el(cx - 18, band_y - 6, cx - 18, band_y + 6, MUTED, 1.0, 0.6))
+        parts.append(line_el(cx + 18, band_y - 6, cx + 18, band_y + 6, MUTED, 1.0, 0.6))
+        parts.append(bindu(cx, top_y, 5, INK, opacity=0.85))
+        parts.append(bindu(cx, bottom_y, 5, GOLD, opacity=0.85))
 
     elif item_id == "concept-tanmatra-accumulation":
         bands = [

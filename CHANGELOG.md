@@ -2,6 +2,30 @@
 
 Newest first. One bullet per shipped thing.
 
+## Aug 10 2026
+
+- **Explorer speaks the deck's language.** Trumps render as Roman numerals (0 · Fool, I…XXXV),
+  courts as Page/Knight/Queen/King — display-only, numeric sort untouched. The muddled raw
+  `number` chip is retired wherever the derived axes exist. The "Lineage ▸ Deck" preset now
+  works on the default view (branch backfilled from the collection). Cell thumbnails reserve
+  their box before loading — several cards in one cell no longer collapse to "just the last
+  one". Organize presets read as click-only; the drag affordance belongs to the field chips.
+- **Two data truths restored:** Minchiate's early trumps carried RWS-equivalent numbers in
+  `trump_number` (Papa Two said 5); they now carry the deck's own sequence. Bologna's Love and
+  The Old Man had their numbers under a key the meta-build never read — now read. Unnumbered
+  trumps are down to the three Cary-Yale virtues, which history genuinely left unnumbered.
+- **Researcher journeys + course seed** in `_research/`: six real art-history questions tested
+  against the live Explorer (two navigable, two exposed the bugs above, two are open decisions —
+  the wall's missing decks, and normalization hiding printed numbers). Course seed: "Same Card,
+  Every Deck".
+- **Home:** Bus Passengers joins the community section ("Rumi's guest house, on a bus"); the
+  36-Tattvas tile shows the Śuddhavidyā plate instead of a near-black square. The deck's
+  description now carries the guest-house frame, in our own words.
+- **The ribbon is sitewide** via the shared footer — ambient, once per page, dismissible.
+  Spiral draw slowed 3x (7.2s) to match the calmer loader tempo, both repos.
+- **Ākāśa's disc is ink-black** per the canonical symbol (her call), air's hexagram inherited
+  down the element accumulation.
+
 ## Aug 8 2026
 
 - **Explorer: the saved-layout key is versioned** (`explorer-spec-v2:`). A layout saved before the
