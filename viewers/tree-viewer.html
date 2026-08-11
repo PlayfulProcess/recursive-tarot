@@ -28,14 +28,13 @@
         window.RecursiveAuth = { init() { return stubClient; }, getClient() { return stubClient; } };
 
         // Header comes from the shared ../site-header.js (loaded below).
-        class RTFooter extends HTMLElement {
-            connectedCallback() {
-                this.innerHTML = `<footer style="padding:18px;border-top:1px solid var(--line);color:#6b6457;font-size:12px;text-align:center;">
-                    Public-domain tarot data · <a href="https://github.com/PlayfulProcess/recursive-tarot" target="_blank" rel="noopener" style="color:#9a7322;">recursive-tarot</a> · companion to <a href="https://recursive.eco" target="_blank" rel="noopener" style="color:#9a7322;">recursive.eco</a>
-                </footer>`;
-            }
-        }
-        if (!customElements.get('site-footer')) customElements.define('site-footer', RTFooter);
+        // Footer used to be a hand-rolled RTFooter stub here — retired Aug 11 2026 in
+        // favour of the real shared ../site-footer.js (loaded just above the
+        // <site-footer> tag near the end of this file), so this page gets the same
+        // newsletter/links footer AND the sitewide Oracle Ribbon every other page has
+        // carried since Aug 10 2026. Don't redefine `site-footer` here — the shared
+        // script's own `customElements.get('site-footer')` guard would then treat this
+        // stub as "already defined" and skip itself, silently keeping the old stub.
 
         // ViewModeDropdown stub: the "eye" view-switcher it used to render was
         // retired Jun 29 2026 and its custom element removed entirely Aug 2026 —
@@ -686,7 +685,12 @@
         </div>
     </div>
 
-    <site-footer></site-footer>
+    <!-- Site Footer: the shared component (site-footer.js) — newsletter + links +
+         the sitewide Oracle Ribbon (site-footer.js's own connectedCallback loads
+         viewers/oracle-ribbon.js and calls show()). base="../" because this page
+         lives one level down from the repo root, same as pages/about.html. -->
+    <script src="../site-footer.js?v=1"></script>
+    <site-footer base="../"></site-footer>
 
     <script>
         // Initialize Supabase via shared auth module

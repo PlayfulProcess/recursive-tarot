@@ -1,0 +1,75 @@
+---
+id: same-card-every-deck
+title: "Same Card, Every Deck"
+description: "Five centuries of the same twenty-two pictures, redrawn by hand, sitting in one public-domain library — a natural experiment in how meaning travels. A practical course in reading the comparison tool honestly: what a matching picture proves, what it doesn't, and where the tool itself still gets in the way."
+author: PlayfulProcess
+date: 2026-08-11
+---
+
+# Same Card, Every Deck
+
+*This course is a working draft. Two sections are written in full below; the rest are stubs — a short summary of what each will teach, marked "§ In progress." Read what's here now, or come back as the rest gets written — or [help write it](course-viewer.html?course=how-to-contribute).*
+
+Open the [Emergence Explorer](../viewers/explorer.html) and the first thing you see is a grid: the twenty-two trumps down the side, two dozen historical decks across the top, five and a half centuries collapsed into one table you can scroll. That grid is not a museum wall. It's an instrument — the same instrument an art historian would build by hand, spreading facsimiles across a table, except this one already has close to 1,600 cards loaded and lets you re-sort them by year, by suit, by which regional order they follow, in the time it takes to drag a chip from one box to another.
+
+Here is the natural experiment sitting inside it, worth stating plainly before you touch anything. Tarot's twenty-two trumps were fixed as a *set* — Fool through World, in some order — by the 1440s, in northern Italy, and the picture on each one has been recognizably the same picture ever since: a skeleton for Death, a falling tower for the Tower, a dancing figure in a wreath for the World. What has *not* stayed the same, not even slightly, is what anyone believed those pictures were for. For three centuries they illustrated a card game. Then, starting in 1781, a small group of French and English writers — none of them citing each other's evidence, most of them inventing their own — began reading the same twenty-two pictures as a lost Egyptian book, a fortune-telling system, a map of the soul. The picture is a fossil. The meaning is poured in fresh, over and over, by people who each believed they were the first to see what was really there.
+
+That is the whole argument of this site's [History of Tarot](course-viewer.html?course=history-of-tarot) course, told as a story. This course asks a narrower, more mechanical question: **now that all of it is sitting in one comparable dataset, what can you actually verify by eye, and how do you tell the difference between verifying something and just noticing a resemblance?**
+
+Those are not the same skill, and it is worth naming the three claims a resemblance can support, because the rest of this course keeps coming back to them:
+
+- **Correlation** — two cards, in two different decks, occupy "the same slot" (both are the eighth trump, say) or share a visual motif. This is the cheapest claim and the Explorer is very good at surfacing it — that's what a pivot table *is*.
+- **Copying** — one deck's maker had the other deck (or a description of it) in front of them, and reproduced something from it on purpose. This is a much stronger claim, and a shared slot alone never proves it — you need provenance: who could have seen what, and when.
+- **Shared exemplar** — two decks that look alike didn't copy each other at all; they both descend, independently, from some earlier common source neither maker ever saw side by side (the way the European suit-signs — cups, coins, swords, batons — all trace back through the Mamluk pack to cards that were already old by the time they reached Italy, without any European cardmaker ever touching a Mamluk deck directly).
+
+An untrained eye collapses all three into "huh, these look similar." A researcher's job — and this course's actual subject — is keeping them apart even when the tool in front of you makes them look identical. Three guided exercises follow, each one a real question a historian or working artist would bring to this library, each one navigated honestly: two of them work cleanly, one of them hits a wall the tool doesn't tell you about until you go looking. The wall is not a flaw in the course. It's the best lesson in it.
+
+## The tool in one minute
+
+Before the exercises, the mechanics, in brief: what a **pivot** is (drag a field into Rows, another into Columns, and read the grid that appears); what a row or cell reading **"— (no value)"** honestly means (a stated exclusion, never a silent error); and how the **"Open in [deck] →"** pill on any card's detail view carries you back to the source deck itself. Three minutes with the tool will teach you more than a paragraph about it can.
+
+*§ In progress — this section is being written.*
+
+## Exercise 1 — Find the turn
+
+The easy win, meant to build confidence before the trap in Exercise 2. You'll reset the wall, put `century` in Rows and `function` in Columns, and watch three centuries of "game" give way to a hard turn into "origin-myth," "divination," and "esoteric" starting in 1781 — a documented, hand-classified axis making a historical argument visually, in one pivot, faster than a paragraph can. [Try the pivot now →](../viewers/explorer.html#%7B%22rows%22%3A%5B%22century%22%5D%2C%22cols%22%3A%5B%22function%22%5D%2C%22filters%22%3A%7B%7D%2C%22pinned%22%3A%5B%5D%7D) — the walkthrough below it is still being written.
+
+*§ In progress — this section is being written.*
+
+## Exercise 2 — The swap hiding in plain sight
+
+You'll need: the [Emergence Explorer](../viewers/explorer.html), loaded fresh (its default view is already what this exercise starts from — the Trump × Deck wall, two dozen decks, twenty-two rows).
+
+**The question.** Around 1909, the designers of what's now called the Rider-Waite-Smith deck — the most reproduced tarot in the world — made one change to the trump sequence that nobody who plays the original card game would recognize: they swapped Strength and Justice. In the old Marseille pattern, card VIII is *La Justice* and card XI is *La Force*. In the Golden Dawn's system (which RWS inherited wholesale — see [The Golden Dawn — the Map and the Walk](course-viewer.html?course=walking-the-golden-dawn-path)), card VIII is Strength and card XI is Justice. It's a small change with a real reason behind it — the Order wanted the trump sequence to track the zodiac in order, and Leo (Strength's astrological attribution) needs to come before Libra (Justice's) — but it's exactly the kind of change that proves the sequence was never a fixed, ancient thing. Someone, in living memory, just... moved two cards. Can you *see* that in the data you're looking at right now?
+
+**Step 1 — find the archetype.** You're already looking at it: the default wall's rows are numbered 0–21, and row 8 and row 11 are right there. Scroll to row 8. Every deck's column shows a Strength card — a figure and a lion, roughly, dress and composition varying, subject constant. Scroll to row 11: every deck shows a Justice card — scales, a sword, a seated figure. This part is clean. The Explorer built these rows by matching each card's *name* to a canonical list, not by trusting whatever number each deck printed on it — so row 8 really is "every deck's Strength card," full stop, regardless of what any individual deck called it internally.
+
+**Step 2 — and that's exactly the trap.** Open the Tarot de Marseille (Conver) card in row 8 (click it; the detail panel opens on the right). Nothing in that panel — not the title, not the metadata line, not the "Origin" text — tells you what number is actually printed on that card in the Marseille deck. It isn't VIII, but the panel doesn't say so, because the number the Explorer tracks internally has *already been remapped* to the shared archetype slot before it ever reaches you. The swap you came here to find is sitting one click away — inside the source deck itself, readable straight off the card image — but invisible from the comparison view built to show it to you.
+
+**Step 3 — go get the fact the tool won't hand you.** Click the "Open in [deck] →" pill on that Marseille card (or open the [Tarot de Marseille card browser](../viewers/cards.html?src=../tarot/tarot-de-marseille-conver/grammar.json) directly and find *La Force*). Read the roman numeral printed on the card: **XI**. Now do the same for Golden Dawn's Strength card: **VIII**. You've now confirmed the swap by hand, using the Explorer to *find* the right two cards to compare and the source decks to *read* the fact itself.
+
+**What this teaches, beyond the swap.** A tool that normalizes data for you — matches "Strength" in five languages to one archetype slot, so you can compare across two dozen decks without doing that matching yourself — is doing real, valuable work. It is also, by definition, throwing something away: here, the one fact that made the comparison interesting in the first place. Neither the normalization nor the loss is a bug exactly — it's a trade-off, made silently, and a careful reader checks what got traded before trusting a view that looks this clean. That habit — *ask what a tool normalized before you cite what it shows you* — is worth more than this one swap. Carry it into every pivot in this library, and into every dataset you ever compare by eye again.
+
+## What the pictures can prove — and what they can't
+
+The intellectual spine of the whole course: three case studies of "resemblance," ranked by what kind of claim each actually supports. The trumps generally (same slot, same picture, five centuries) are strong evidence of a shared game convention and weak evidence about meaning, since the meaning changed completely while the picture didn't. The suit-signs (cups, coins, swords, batons, tracing to the Mamluk pack) are evidence of one transmission event, not evidence that any two specific decks copied each other. And the hard case — Sola Busca's scenic minors against the Rider-Waite-Smith minors — gets worked with the same hedge this site's own Golden Dawn course already uses: a *documented opportunity* to have seen the earlier work is not the same claim as *documented influence*, which is not the same claim as *direct copying*.
+
+*§ In progress — this section is being written.*
+
+## Exercise 3 — When the tool says no (and what still slips through)
+
+*Updated 2026-08-11 — a live correction, not a hypothetical.* This section was outlined around a gap the Explorer had at the time: Sola Busca — tarot's strangest deck, and the one several historians think Pamela Colman Smith studied before drawing the Rider-Waite-Smith minors — was missing from the Trump × Deck wall entirely. That gap has since closed: Sola Busca's trumps and normalized suits now sit in the wall alongside the others, no workaround needed. The harder lesson survives it, one level down. Load Sola Busca and Golden Dawn (Book T) through the raw **"✦ Decks ▾"** multi-select instead of the wall — [try it →](../viewers/explorer.html?decks=sola-busca-tarot,golden-dawn-book-t-tarot) — and their *un-normalized* labels still disagree: Sola Busca's own file calls its suits Batons and Coins, Golden Dawn's calls them Wands and Pentacles. The wall's cleanliness is a service the meta-grammar performs, not a property of the underlying data — and a negative result from a tool, even a since-fixed one, is itself data: about the tool, never proof the underlying question is unanswerable.
+
+*§ In progress — this section is being written.*
+
+## Document what you find
+
+The closing exercise, modeled on this site's own [Ways to Contribute](course-viewer.html?course=how-to-contribute). You'll run one comparison of your own choosing — any two decks, any shared field — and write down, in three sentences, what you compared, what you found, and which of the three epistemic weights from the section above it actually supports. Two routes out, mirroring that course exactly: post it as a note via Fork/Edit in recursive.eco, or open a pull request adding a short Research note to a deck's `grammar.json`.
+
+*§ In progress — this section is being written.*
+
+## Sources & honesty
+
+The standard closing note: every source cited above, plus an explicit line that every gap named in this course — the raw-load suit-label mismatch, the swap the detail panel doesn't surface — is a snapshot of the tool as of this writing, dated, so a later reader can tell whether it's since been fixed. (One already has, mid-course: see the note on Exercise 3.)
+
+*§ In progress — this section is being written.*
