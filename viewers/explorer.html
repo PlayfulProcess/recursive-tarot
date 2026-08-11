@@ -226,6 +226,22 @@ let secById = {};     // __id -> sections map (flatten drops sections; we keep t
 let sectionField = null;   // normalized section-group key chosen for Sections mode
 let sectionGroups = [];    // inferred [{key,label,count,attributed}]
 
+/* DECIDED tray structure (coordinator's call, 2026-08-11 — builder's complaint was
+   "hard to understand what 'kw' mean and mapping confidence... All decks should be
+   there"). The tray shows AT MOST these fields, in this order, with these display
+   names — every other field discoverFields() turns up (the kw- keyword internals,
+   mapping_confidence, source_deck, category, order, year, arcana, emergence, the old
+   overloaded `number`, and anything else that leaks straight from raw per-deck
+   metadata) never becomes a chip. HIDDEN != DELETED: every field still lives on the
+   record and still renders in full in the detail panel (openDetail() reads `r`
+   directly, unfiltered) — this allowlist only gates what discoverFields() is allowed
+   to turn into a tray/pivot chip. Raw field names stay the spec/hash vocabulary (old
+   #hash / localStorage links keep resolving); DISPLAY_NAME below is label-only. */
+const TRAY_ALLOWLIST = ['deck','branch','century','role','trump_number','rank','suit','function','level'];
+const TRAY_ORDER = new Map(TRAY_ALLOWLIST.map((f,i) => [f,i]));
+const DISPLAY_NAME = { branch: 'lineage', trump_number: 'trump' };
+const displayName = f => DISPLAY_NAME[f] || f;
+
 /* Section Lens contract (shared with cards.html): identity = normalized name,
    provenance inferred from the leading "[Author, Work, Date]" attribution line. */
 const SEC_STOP = new Set(['the','a','an','this','that','these','those','it','its']);
@@ -365,7 +381,7 @@ function render(){
     return;
   }
   let h = '<table class="pivot"><thead><tr>';
-  for (const rf of spec.rows) h += `<th>${esc(rf)}</th>`;
+  for (const rf of spec.rows) h += `<th>${esc(displayName(rf))}</th>`;
   if (colVals) for (const cv of colVals) h += `<th>${esc(dashLabel(cv, colField))}</th>`;
   else h += '<th>items</th>';
   h += '</tr></thead><tbody>';
@@ -404,7 +420,7 @@ function openDetail(id){
       ? `<img data-rid="${esc(x.__id)}" src="${esc(x.__img)}" title="${esc(x.__name)}">`
       : recHTML(x)).join('');
   const metaBits = ['level','deck','source_deck','century','order','branch','suit','trump_number','rank','function','print quality']
-    .filter(k=>r[k]).map(k=>`${k}: <b>${esc(r[k].map(v=>formatFieldValue(k,v)).join(', '))}</b>`).join(' · ');
+    .filter(k=>r[k]).map(k=>`${displayName(k)}: <b>${esc(r[k].map(v=>formatFieldValue(k,v)).join(', '))}</b>`).join(' · ');
   det.innerHTML = `
     <span class="close" onclick="document.getElementById('det').classList.remove('open')">✕</span>
     ${r.__img ? `<img class="hero" src="${esc(r.__img)}" onclick="window.__lb('${esc(r.__img)}','${esc(r.__name)}')">` : ''}
@@ -473,7 +489,7 @@ function chipEl(f, zone){
   const fl = fields.find(x=>x.name===f);
   const nsel = (spec.filters[f]||[]).length;
   el.className = 'chip' + (zone ? ' inzone' : '') + (nsel ? ' filter-active' : '');
-  el.innerHTML = `${esc(f)} <span class="n">${nsel ? '⧩ '+nsel+'/'+(fl?fl.count:'?') : (fl?fl.count:'')}</span>`
+  el.innerHTML = `${esc(displayName(f))} <span class="n">${nsel ? '⧩ '+nsel+'/'+(fl?fl.count:'?') : (fl?fl.count:'')}</span>`
     + ((zone || nsel) ? ` <span class="x" title="Clear as filter and dimension">✕</span>` : '');
   el.draggable = true;
   el.dataset.f = f;
@@ -546,7 +562,7 @@ function renderPinnedFilters(){
     const selected = spec.filters[f] || [];
     const grp = document.createElement('div'); grp.className = 'fpinned-group';
     const lbl = document.createElement('div'); lbl.className = 'fpin-label';
-    lbl.innerHTML = `<b style="color:#9a7322">${esc(f)}</b>
+    lbl.innerHTML = `<b style="color:#9a7322">${esc(displayName(f))}</b>
       <span class="rx" data-unpinf="${esc(f)}" title="Remove filter">✕</span>`;
     grp.appendChild(lbl);
     for (const v of allVals){
@@ -762,17 +778,15 @@ async function boot(){
   for (const r of records) if (r.__parents.length)
     r.emergence = r.__parents.map(p => (byId[p]?.__name || p).split(' — ')[0].slice(0,40));
   fields = discoverFields(records);
-  // Phase-1's derived trump_number/rank supersede the old overloaded `number` field
-  // (majors 0–21 and pips 1–14 sharing one key — the "— (no number)" landfill row,
-  // fixed Aug 7). Once a dataset has the derived axes, retire raw `number` from the
-  // tray so it can't be dragged into a pivot again. Single-deck `?src=` loads whose
-  // grammar predates the split (no trump_number/rank at all) keep `number` — it's
-  // the only axis they have.
-  {
-    const discovered = new Set(fields.map(f => f.name));
-    if (discovered.has('trump_number') || discovered.has('rank'))
-      fields = fields.filter(f => f.name !== 'number');
-  }
+  // Apply the DECIDED tray allowlist (see the constant above) right at the discovery
+  // step — everything discoverFields() found stays on the records (detail panel is
+  // unaffected), but only allowlisted fields ever become tray chips, in the fixed
+  // order the coordinator specified. This also retires the old overloaded `number`
+  // field (majors 0–21 and pips 1–14 sharing one key — the "— (no number)" landfill
+  // row, fixed Aug 7) unconditionally, on every load path including single-deck
+  // `?src=` grammars that predate the role/trump_number/rank split.
+  fields = fields.filter(f => TRAY_ALLOWLIST.includes(f.name))
+                 .sort((a, b) => TRAY_ORDER.get(a.name) - TRAY_ORDER.get(b.name));
   fieldParent = inferHierarchy(records, fields);
   let restored = false;
   try { const s = JSON.parse(decodeURIComponent(location.hash.slice(1)));

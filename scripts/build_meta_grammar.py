@@ -37,7 +37,27 @@ NUM_TO_KEY = ["fool", "magician", "high-priestess", "empress", "emperor", "hiero
 R2 = "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev"  # public base (kept if a deck already uses it)
 
 # --- Decks to include + per-deck editorial/era (provenance is a deck property) ---
-# Excluded on purpose: mantegna-tarocchi (NOT a tarot) and tree-of-tarot (a meta).
+#
+# ALL TAROT-STRUCTURE DECKS JOIN THE WALL (2026-08-11 revamp — see
+# _research/audits/2026-08-07-tarot-ui-truth.md and the builder's "All decks should be
+# there" complaint). DELIBERATELY EXCLUDED, on purpose, two different ways:
+#   - NON-TAROT SYSTEMS (no trump/suit/rank structure to aggregate): mantegna-tarocchi,
+#     petit-lenormand, madiao-money-cards, mamluk-deck, ganjifa.
+#   - NON-DECK GRAMMARS (not a deck at all): thirty-six-tattvas, bus-passengers,
+#     ontoject-illustrated, christmas-the-rebirth, tree-of-tarot (a meta), plus every
+#     course/book/person grammar (books-of-tarot, people-of-tarot, contribute, the course).
+# All of the above stay loadable individually via Decks▾, same as before — only the
+# Trump×Deck wall (this meta-grammar) excludes them.
+#
+# REJECTED after checking (per the "check each grammar actually has card items" rule):
+#   - noblet-tarot / cary-sheet / rosenwald-sheet: each grammar is a single "overview"
+#     stub (`tarot/<slug>/grammar.json` has exactly one item, category="overview", zero
+#     real card items) — there is nothing to aggregate. They keep their existing role in
+#     ANCESTORS below (real objects, real timeline placement) but cannot join a card wall
+#     that has no cards. If someone later builds out real per-card items for them, move
+#     them here instead.
+#   - tolkien-three: not tarot-structured at all — a 3-item "position" sequence/lens
+#     grammar (Recovery/Escape/Fantasy), not even registered in tarot/_collection.json.
 DECKS = {
  "visconti-sforza-tarot":      dict(label="Visconti-Sforza", era="15th c · Renaissance Italy", era_sort=1,
         ed=dict(date="c. 1451", maker="Bonifacio Bembo workshop (attrib.)", patron="House of Visconti–Sforza, Milan",
@@ -91,6 +111,57 @@ DECKS = {
         ed=dict(date="c. 1888", maker="Hermetic Order of the Golden Dawn (Mathers)", patron="—",
                 context="The full correspondence system (astrology, Hebrew, decans); swaps Strength ↔ Justice", print="Manuscript / RWS-style imagery",
                 orientation="Divination")),
+ # --- Added 2026-08-11 (all-decks-join-the-wall revamp) ---
+ "sola-busca-tarot":           dict(label="Sola Busca", era="15th c · Renaissance Italy", era_sort=1,
+        ed=dict(date="1491", maker="Anonymous N. Italian engraver ('Master of the Sola Busca')", patron="—",
+                context="Sui-generis trumps named for Roman/biblical/legendary figures (not the Fool-to-World sequence); earliest tarot with fully scenic minors — a documented model for Pamela Colman Smith's RWS",
+                print="Copperplate engraving, hand-coloured (Brera exemplar)",
+                orientation="Game (sui-generis; no divinatory apparatus native to it)")),
+ "este-tarot":                 dict(label="d'Este Tarocchi", era="15th c · Renaissance Italy", era_sort=1,
+        ed=dict(date="c. 1450 (debated; some date c. 1473)", maker="Ferrarese court workshop, House of Este", patron="House of Este, Ferrara",
+                context="A 16-card fragment (8 trumps + 8 courts) — the principal witness of Ferrara's B-order tradition alongside the 'Charles VI' cards",
+                print="Hand-painted", orientation="Game")),
+ "vieville-tarot":             dict(label="Jacques Viéville", era="17th c · Paris (Belgian-line ancestor)", era_sort=2,
+        ed=dict(date="c. 1650", maker="Jacques Viéville, maître-cartier, Paris", patron="—",
+                context="Earliest surviving witness of the non-Marseille pattern Dummett traces Bologna → Piedmont/Savoy → the 18th-c. Belgian/Rouen-Brussels line; not a Tarot de Marseille",
+                print="Woodcut", orientation="Game")),
+ "paris-anonymous-tarot":      dict(label="Tarot de Paris", era="17th c · Paris (its own pattern)", era_sort=2,
+        ed=dict(date="c. 1600–1650", maker="Anonymous Parisian cardmaker", patron="—",
+                context="A complete 78-card Parisian pack with idiosyncratic imagery of its own — not a Marseille, not the Viéville/Belgian line either",
+                print="Woodcut, stencil-coloured", orientation="Game")),
+ "belgian-tarot":              dict(label="Belgian (Vandenborre)", era="c. 1780 · Belgian line", era_sort=3,
+        ed=dict(date="c. 1780", maker="F. I. Vandenborre, Brussels", patron="Brussels card trade",
+                context="The most polished late witness of the Rouen-Brussels/Belgian line descending from Viéville — a game deck, no native cartomantic tradition",
+                print="Woodcut", orientation="Game")),
+ "papus-tarot-des-bohemiens":  dict(label="Papus — Tarot des Bohémiens", era="1889 · Occult synthesis", era_sort=5,
+        ed=dict(date="1889", maker="Papus (Gérard Encausse); plates by Oswald Wirth", patron="Parisian occult circle (Stanislas de Guaita)",
+                context="Carries Éliphas Lévi's tarot–Kabbalah equation to a wide readership; majors only — Papus's minor-arcana material is a suit-wide theory, not per-card",
+                print="Engraving (Wirth's 1889 plates)", orientation="Divination / esoteric synthesis")),
+ "rider-waite-smith-pictorial-key": dict(label="Rider-Waite-Smith", era="1909 · The Waite-Smith deck", era_sort=6,
+        ed=dict(date="1909 (deck); 1911 (Pictorial Key text)", maker="Pamela Colman Smith (art), programme by A. E. Waite, published by William Rider & Son", patron="—",
+                context="The deck most people mean by 'tarot' — first to illustrate the minor arcana as full scenes rather than counted suit signs",
+                print="Commercial colour print", orientation="Divination (purpose-built)")),
+ # Contemporary/community decks by Yve Lepkowski (stolen-thyme.com), CC-BY-SA-4.0 — real
+ # tarot-structured decks (majors + 4 suits, Marseille-descended), just not historical
+ # objects, so they get their own era tier and NO order/function classification (the
+ # Dummett A/B/C/occult taxonomy below is for documented historical trump-order lineages;
+ # it doesn't meaningfully apply to a 2020s reinterpretation, so we don't force one).
+ "tarocchino-arlecchino":      dict(label="Tarocchino Arlecchino", era="2020s · Contemporary reinterpretation", era_sort=7,
+        ed=dict(date="MMXXII (2022)", maker="Yve Lepkowski (stolen-thyme.com)", patron="—",
+                context="A 64-card Bolognese tarocchino (21 trumps + Fool, 40 pips) reframed through Commedia dell'Arte's Harlequin, after Etteilla's methods",
+                print="Digital, print-on-demand", orientation="Contemporary (Bolognese-structured)")),
+ "anecdotes-tarot":            dict(label="Anecdotes", era="2020s · Contemporary reinterpretation", era_sort=7,
+        ed=dict(date="2020", maker="Yve Lepkowski (stolen-thyme.com)", patron="—",
+                context="A 78-card tarot descending from the Tarot de Marseille, every card renamed after a Joanna Newsom song and lyric",
+                print="Digital, print-on-demand", orientation="Contemporary (Marseille-structured)")),
+ "arlecchinos-augmented-arcana": dict(label="Arlecchino's Augmented Arcana", era="2020s · Contemporary reinterpretation", era_sort=7,
+        ed=dict(date="n.d. (expansion of Tarocchino Arlecchino, c. 2022)", maker="Yve Lepkowski (stolen-thyme.com)", patron="—",
+                context="An 84-card expansion of Tarocchino Arlecchino with complete pips, two Significators (Arlecchino & Colombina), and four added virtue trumps including Prudence — beyond the standard 22",
+                print="Digital, print-on-demand", orientation="Contemporary (Bolognese-structured, expanded)")),
+ "clown-town-tarot":           dict(label="Clown Town", era="2020s · Contemporary reinterpretation", era_sort=7,
+        ed=dict(date="n.d.", maker="Yve Lepkowski (stolen-thyme.com)", patron="—",
+                context="A full Marseille-structured 78-card deck (Justice VIII, Strength XI) reimagined through vaudeville and the circus",
+                print="Digital, print-on-demand", orientation="Contemporary (Marseille-structured)")),
 }
 
 # Historian classification (from research/*.mdx frontmatter): Dummett trump-ORDER branch +
@@ -111,6 +182,23 @@ CLASS = {
  "etteilla-iii-oracle-des-dames": dict(order="occult", function="divination"),
  "oswald-wirth-tarot":            dict(order="occult", function="esoteric"),
  "golden-dawn-book-t-tarot":      dict(order="occult", function="esoteric"),
+ # Added 2026-08-11. este/vieville/paris-anonymous/belgian order+function are the
+ # research/decks/*.md dossier frontmatter (Dummett-spine classification), not a new
+ # guess. sola-busca's dossier order is "n/a" (its trumps are sui-generis named
+ # figures, not a documented A/B/C trump-order lineage) — left unset here rather than
+ # forced into a bucket. RWS/Papus have no dossier; classified by the same "occult"
+ # bucket every post-1781 esoteric-turn deck already uses (Court de Gébelin/Etteilla/
+ # Wirth/Golden Dawn), function chosen by what each was built to DO (RWS: purpose-built
+ # for divination, like Etteilla; Papus: a correspondence synthesis, like Wirth — they
+ # share Wirth's own 1889 plates). Contemporary community decks below deliberately get
+ # no order/function — see the comment on DECKS.
+ "sola-busca-tarot":              dict(order=None, function="game"),
+ "este-tarot":                    dict(order="B", function="game"),
+ "vieville-tarot":                dict(order="C", function="game"),
+ "paris-anonymous-tarot":         dict(order="C", function="game"),
+ "belgian-tarot":                 dict(order="C", function="game"),
+ "papus-tarot-des-bohemiens":     dict(order="occult", function="esoteric"),
+ "rider-waite-smith-pictorial-key": dict(order="occult", function="divination"),
 }
 # Upstream ancestors / cousins — their OWN grammars (not tarot; no trumps), surfaced on the
 # genealogy timeline via _decks (they do NOT enter the arcana/suit/rank card tree).
@@ -224,9 +312,16 @@ def build():
             # number (Bologna: "Love" carries trump_number 6, "The Old Man" 9, with no
             # number key at all) — without this fallback those cards fell into the
             # "no trump_number" landfill even though the value sat right there.
+            # Also fall back when `number` IS present but isn't a plain digit string —
+            # Viéville/Paris-anonymous/Belgian store their trumps' `number` as roman
+            # numerals ("I", "II", "IIII"...) while carrying a clean int in their own
+            # trump_number field; the old `mnum is None` check never looked past the
+            # (unusable) roman numeral to find it (added 2026-08-11, all-decks revamp).
             mnum = m.get("number")
-            if mnum is None:
-                mnum = m.get("trump_number")
+            if mnum is None or not str(mnum).strip().isdigit():
+                tn = m.get("trump_number")
+                if tn is not None and str(tn).strip().isdigit():
+                    mnum = tn
             mnum = int(mnum) if str(mnum).strip().isdigit() else None
             arcana = m.get("arcana")
             major = None; rank = None

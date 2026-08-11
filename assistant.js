@@ -23,6 +23,39 @@
   if (window.self !== window.top) return;
   if (new URLSearchParams(location.search).get('embed') === '1') return;
 
+  // Aug 11 2026: static viewer pages (viewers/cards.html, viewers/tree-viewer.html,
+  // viewers/caster-studio.html, …) link to grammars via ?src=../tarot/<slug>/grammar.json
+  // — never ?grammar_id= or ?id= (see viewers/tree-viewer.html's own comment: "the src
+  // path is always ../tarot/<slug>/grammar.json, the form every link on this site uses").
+  // buildSrc() below only ever looked for grammar_id/id, so on those pages it fell through
+  // to the generic page_title/page_url branch with no idea a grammar was even open — this
+  // is why, on cards.html?src=../tarot/bus-passengers/grammar.json, asking about "item
+  // 36-38" got "tell me the name of the deck you're working with" back. Fix: read the slug
+  // out of ?src= ourselves, and resolve it to the app's grammar UUID via tarot/_eco_ids.json
+  // (the exact mapping viewers/tree-viewer.html's resolveStaticSrcForId/setupCopyButton
+  // already use for the same slug↔UUID problem) — riding the grammar_id channel that
+  // already exists and already works, not a new one. Started here (not inside buildSrc)
+  // so the fetch has the whole assistant-launcher.js network round-trip to resolve before
+  // buildSrc is ever called.
+  var srcSlug = (function () {
+    try {
+      var src = new URLSearchParams(location.search).get('src') || '';
+      var m = /tarot\/([^/]+)\/grammar\.json/.exec(src);
+      return m ? m[1] : '';
+    } catch (_) { return ''; }
+  })();
+  var srcGrammarId = ''; // filled in below if the ?src= slug resolves to a known app UUID
+  if (srcSlug) {
+    var _segs = location.pathname.split('/').filter(Boolean);
+    var _PFX = '../'.repeat(Math.max(0, _segs.length - 1)); // same depth formula as site-footer.js's PFX
+    fetch(_PFX + 'tarot/_eco_ids.json').then(function (r) { return r.json(); }).then(function (j) {
+      srcGrammarId = (j && j.ids && j.ids[srcSlug]) || '';
+    }).catch(function () { /* offline / 404 — page_title fallback below still names the slug */ });
+  }
+  function titleCaseSlug(slug) {
+    return String(slug || '').replace(/[-_]+/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); }).trim();
+  }
+
   var s = document.createElement('script');
   s.src = 'https://recursive.eco/js/assistant-launcher.js';
   s.defer = true;
@@ -31,21 +64,30 @@
     window.RecursiveAssistant.init({
       buildSrc: function () {
         var params = new URLSearchParams(location.search);
-        var grammarId = params.get('grammar_id') || params.get('id') || '';
+        var grammarId = params.get('grammar_id') || params.get('id') || srcGrammarId || '';
         // A page can declare its own embed context (e.g. the Spread Caster sets
         // data-assistant-context="spread-builder") so the flow side knows where it's
         // hosted. Pages that don't set it keep the previous behaviour.
         var pageCtx = (document.body && document.body.getAttribute('data-assistant-context')) || '';
         var qs = new URLSearchParams();
         if (grammarId) {
-          // A grammar is on the page: the assistant grounds "this grammar" on it.
+          // A grammar is on the page (either a real ?grammar_id=/?id=, or resolved above
+          // from a static ?src= link): the assistant grounds "this grammar" on it.
           qs.set('grammar_id', grammarId);
           qs.set('context', pageCtx || 'tarot');
         } else {
-          // No grammar: pass page context so "what is this page?" just works.
-          qs.set('page_title', document.title || 'The Recursive Tarot');
+          // No grammar_id available (no grammar on the page, or the tarot/_eco_ids.json
+          // lookup above hasn't resolved / has no entry for this slug yet). Pass page
+          // context so "what is this page?" just works — and if we at least know the
+          // SLUG from ?src=, name it explicitly in the title so "what grammar is this?"
+          // also works without the UUID: "The user is on <page> viewing the grammar
+          // <slug>" is exactly document.title once this runs.
+          var title = document.title || 'The Recursive Tarot';
+          if (srcSlug) title = titleCaseSlug(srcSlug) + ' — ' + title;
+          qs.set('page_title', title);
           qs.set('page_url', location.href);
-          if (pageCtx) qs.set('context', pageCtx);
+          var ctx = pageCtx || (srcSlug ? 'tarot' : '');
+          if (ctx) qs.set('context', ctx);
         }
         return window.RecursiveAssistant.flowBaseUrl() + '/assistant?' + qs.toString();
       }
