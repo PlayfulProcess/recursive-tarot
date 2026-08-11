@@ -10,8 +10,12 @@ This pins the semantics `scripts/build_meta_grammar.py` is supposed to guarantee
   1. every card with role == "trump" that has a resolvable `number` also has a
      non-null `trump_number` (the split-axis invariant the revamp introduced);
   2. every card's `role` is one of trump / pip / court / other (no stray values);
-  3. `rank` is set for pip/court cards and absent for trump cards (the axis split
-     is supposed to be exhaustive and mutually exclusive);
+  3. `rank` is set for pip/court cards; for trump cards `rank` equals
+     `trump_number` (the 2026-08-11 fifth-suit fold: trumps join the Suit × Rank
+     pivot as suit="Trumps" with rank = their own deck's trump number — absent
+     together when the trump is unnumbered);
+  3b. every trump card has suit == "Trumps", and no non-trump card does (the
+      fifth-suit invariant);
   4. no card's `metadata.deck` disagrees with the deck it was aggregated from —
      the cross-link misattribution bug (audit 2026-08-07 §5): a card's own
      cross-link `metadata.deck` field (pointing at some OTHER grammar, e.g. a
@@ -71,7 +75,8 @@ def main():
         errors.append(f"{len(bad_role)} card(s) have an invalid `role`: " + ", ".join(bad_role[:20])
                        + (" ..." if len(bad_role) > 20 else ""))
 
-    # 3. rank set for pip/court, absent for trump
+    # 3. rank set for pip/court; for trumps, rank == trump_number (fifth-suit fold:
+    #    both present with the same value, or both absent for unnumbered trumps)
     bad_rank = []
     for it in cards:
         m = it.get("metadata", {}) or {}
@@ -79,11 +84,25 @@ def main():
         rank = m.get("rank")
         if role in ("pip", "court") and rank is None:
             bad_rank.append(f"{it['id']} (role={role}, rank missing)")
-        elif role == "trump" and rank is not None:
-            bad_rank.append(f"{it['id']} (role=trump, rank={rank!r} should be absent)")
+        elif role == "trump" and rank != m.get("trump_number"):
+            bad_rank.append(f"{it['id']} (role=trump, rank={rank!r} != trump_number={m.get('trump_number')!r})")
     if bad_rank:
         errors.append(f"{len(bad_rank)} card(s) violate the rank/role split: " + ", ".join(bad_rank[:20])
                        + (" ..." if len(bad_rank) > 20 else ""))
+
+    # 3b. suit == "Trumps" exactly for trump cards (the fifth-suit invariant)
+    bad_suit = []
+    for it in cards:
+        m = it.get("metadata", {}) or {}
+        role = m.get("role")
+        suit = m.get("suit")
+        if role == "trump" and suit != "Trumps":
+            bad_suit.append(f"{it['id']} (role=trump, suit={suit!r} should be 'Trumps')")
+        elif role != "trump" and suit == "Trumps":
+            bad_suit.append(f"{it['id']} (role={role}, suit='Trumps' reserved for trumps)")
+    if bad_suit:
+        errors.append(f"{len(bad_suit)} card(s) violate the fifth-suit (Trumps) invariant: " + ", ".join(bad_suit[:20])
+                       + (" ..." if len(bad_suit) > 20 else ""))
 
     # 4. deck cross-link misattribution — metadata.deck must match the deck node
     #    the card was actually aggregated under (its own source_deck), not any
