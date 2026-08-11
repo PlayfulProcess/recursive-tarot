@@ -87,11 +87,45 @@ explanation stranger than well-documented psychology.
   pretense that it was individually written for each of them. Students rated it, on
   average, **4.3 out of 5** for how accurately it described them. **✔︎** [Forer, B. R.
   (1949). *The fallacy of personal validation: A classroom demonstration of gullibility*.
-  Journal of Abnormal and Social Psychology, 44(1), 118–123.] Thirty-five years of
-  follow-up study confirmed the effect holds up broadly, not as a one-off classroom
-  trick. **✔︎** [Dickson, D. H. & Kelly, I. W. (1985). *The 'Barnum effect' in personality
+  Journal of Abnormal and Social Psychology, 44(1), 118–123.]
+- **The correction: rating a true statement as true isn't bias.** For decades this got
+  told as a story about gullibility. That deserves a correction, made explicitly in print
+  since 1979: if a statement really is true of nearly everyone, rating it accurate is
+  rational inference, not credulity — the felt "it knows me" is not, by itself, evidence
+  of a mistake. **✔︎** [Layne, C. (1979). *The Barnum effect: Rationality versus
+  gullibility?* Journal of Consulting and Clinical Psychology, 47(1),
+  219–221.](https://doi.org/10.1037/0022-006X.47.1.219)
+- **The correction relocates the finding; it doesn't close the case.** Measured against
+  how people actually rate themselves, several of Forer's 13 statements turn out *not* to
+  be near-universal — flattery, not pure truth-tracking, carried part of the 4.3. Thirty-
+  five years of follow-up study confirmed the underlying acceptance effect holds up
+  broadly, not as a one-off classroom trick, while sharpening this reading of what it
+  means. **✔︎** [Dickson, D. H. & Kelly, I. W. (1985). *The 'Barnum effect' in personality
   assessment: A review of the literature*. Psychological Reports, 57(2),
   367–382.](https://journals.sagepub.com/doi/10.2466/pr0.1985.57.2.367)
+- **The manipulation studies — the load-bearing evidence.** Hold a sketch's *words*
+  constant and move the framing around it, and felt accuracy moves too. Identical
+  interpretation text is rated more accurate when subjects are told it was written
+  specifically for them rather than generally true of people. **✔︎** [Snyder, C. R. &
+  Larson, G. R. (1972). *A further look at student acceptance of general personality
+  interpretations*. Journal of Consulting and Clinical Psychology, 38(3),
+  384–388.](https://doi.org/10.1037/h0032899) An identical horoscope is rated higher the
+  more precise its claimed input — year, then year and month, then year, month, and day
+  of birth, same text throughout. **✔︎** [Snyder, C. R. (1974). *Why horoscopes are true:
+  The effects of specificity on acceptance of astrological interpretations*. Journal of
+  Clinical Psychology, 30(4),
+  577–580.](https://doi.org/10.1002/1097-4679%28197410%2930%3A4%3C577%3A%3AAID-JCLP2270300434%3E3.0.CO%3B2-8)
+- **Cannot tell real from fake.** Handed their own genuine blind-interpreted MMPI profile
+  alongside a fabricated one, subjects could not pick their own at better than chance;
+  nor could their friends. **✔︎** [Sundberg, N. D. (1955). *The acceptability of "fake"
+  versus "bona fide" personality test interpretations*. Journal of Abnormal and Social
+  Psychology, 50, 145–147.](https://doi.org/10.1037/h0044374)
+- **At full astrological scale.** Michel Gauquelin mailed roughly 150 respondents to a
+  newspaper ad the identical "ultra-personal" horoscope, secretly computed from the birth
+  data of a convicted serial killer; on the order of nine in ten recognized themselves in
+  it. **○** (exact figures vary across secondary retellings — treat as approximate)
+  [Gauquelin, M. (1979). *Dreams and Illusions of Astrology*. Prometheus
+  Books.](https://archive.org/details/dreamsillusionso0000gauq)
 - **Cold reading.** Where Barnum/Forer explains why a *generic* statement feels personal,
   cold reading is the deliberate craft of producing that feeling on purpose — a set of
   conversational techniques (broad statements, watching for reaction, letting the other
@@ -288,7 +322,8 @@ project asks its readers to notice in a bad tarot reading.
 ## Sources
 
 **Direct tarot tests:** Blackmore (1983); Ivtzan & French (2004); Ivtzan (2007).
-**Mechanism:** Forer (1949); Dickson & Kelly (1985); Hyman (1977); Whitson & Galinsky
+**Mechanism:** Forer (1949); Layne (1979); Dickson & Kelly (1985); Snyder & Larson (1972);
+Snyder (1974); Sundberg (1955); Gauquelin (1979); Hyman (1977); Whitson & Galinsky
 (2008, see `REPORT.md`).
 **Precognition/psi at scale:** Bem (2011); Ritchie, Wiseman & French (2012); Galak et al.
 (2012); Milton & Wiseman (1999); One Million Dollar Paranormal Challenge (Wikipedia);
@@ -297,10 +332,12 @@ Carlson (1985), adjacent design.
 flagged); Levitt (2021); Evans-Pritchard (1937); Pennebaker & Beall (1986).
 
 All entries above are in `research/bibliography.bib` under the "DOES TAROT PREDICT?"
-section added 2026-07-07, with bibkeys `blackmore1983`, `ivtzanfrench2004`, `ivtzan2007`,
-`forer1949`, `dicksonkelly1985`, `hyman1977`, `bem2011`, `ritchie2012`, `galak2012`,
-`miltonwiseman1999`, `web_randi_challenge_wp`, `carlson1985`, `levitt2021`, `moore1957`,
-`evanspritchard1937`, `pennebakerbeall1986`, `hobson2018`, `nortongino2014`. This dossier
-itself cites them as plain inline links rather than `[@key]`, matching this folder's own
-convention (see `README.md`) — the bibkeys exist so the sources are discoverable from the
-one master bibliography and picked up by the generated book's bibliography section.
+section added 2026-07-07 (Forer/Barnum correction sources added 2026-08-11), with bibkeys
+`blackmore1983`, `ivtzanfrench2004`, `ivtzan2007`, `forer1949`, `layne1979`,
+`dicksonkelly1985`, `snyderlarson1972`, `snyder1974`, `sundberg1955`, `gauquelin1979`,
+`hyman1977`, `bem2011`, `ritchie2012`, `galak2012`, `miltonwiseman1999`,
+`web_randi_challenge_wp`, `carlson1985`, `levitt2021`, `moore1957`, `evanspritchard1937`,
+`pennebakerbeall1986`, `hobson2018`, `nortongino2014`. This dossier itself cites them as
+plain inline links rather than `[@key]`, matching this folder's own convention (see
+`README.md`) — the bibkeys exist so the sources are discoverable from the one master
+bibliography and picked up by the generated book's bibliography section.
