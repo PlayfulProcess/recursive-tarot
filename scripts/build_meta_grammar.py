@@ -359,12 +359,24 @@ def build():
             # Minchiate's Hunchback. Same number, different card — that IS the comparison.
             trump_number = (major if major is not None else mnum) if role == "trump" else None
             pivot_rank = role_num if role in ("pip", "court") else None
+            # Trumps fold into the Suit × Rank pivot as a FIFTH SUIT (2026-08-11):
+            # pivot_suit="Trumps" + pivot_rank=trump_number means ONE Suit × Rank pivot
+            # covers the whole deck — no separate role/trump_number axes needed in the
+            # explorer tray. rank stays None for unnumbered trumps (Visconti et al.):
+            # they land in the "not catalogued" bucket, which is honest — the deck
+            # itself carries no number. `role` and `trump_number` keep being emitted
+            # unchanged below (other viewers + check_derived_axes.py rely on them);
+            # this is additive. Internal tree-building still uses c["suit"]/c["rank"]
+            # (the four minor suits), so the arcana→suit→rank spine is untouched.
+            pivot_suit = "Trumps" if role == "trump" else suit
+            if role == "trump":
+                pivot_rank = trump_number
             cards.append(dict(
                 cid="card-%s-%d" % (slug.replace("-",""), ord_),
                 slug=slug, label=dk["label"], era=dk["era"], era_sort=dk["era_sort"], ed=dk["ed"],
                 name=name, image_url=it.get("image_url"), src_item_id=it.get("id"),
                 arcana=arcana, suit=suit, rank=rank, major=major,
-                role=role, trump_number=trump_number, pivot_rank=pivot_rank,
+                role=role, trump_number=trump_number, pivot_rank=pivot_rank, pivot_suit=pivot_suit,
                 order=cl.get("order"), function=cl.get("function")))
 
     items = []
@@ -385,7 +397,9 @@ def build():
         add({"id": c["cid"], "name": "%s — %s" % (c["name"], c["label"]), "level": 1, "category": "card",
              "ref_preview": "study",
              "metadata": {k: v for k, v in {
-                 "deck": c["label"], "arcana": c["arcana"], "suit": c["suit"],
+                 # pivot_suit = the four minor suits + "Trumps" as a fifth (see the
+                 # derivation above); for pips/courts it equals the normalized suit.
+                 "deck": c["label"], "arcana": c["arcana"], "suit": c["pivot_suit"],
                  "number": (c["major"] if c["major"] is not None else c["rank"]),
                  # Derived clean pivot axes (added, never replacing number/arcana above —
                  # see _research/TAROT-REVAMP-PLAN-2026-08-07.md Phase 1):

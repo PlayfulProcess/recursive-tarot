@@ -172,10 +172,10 @@
 <div id="builder">
   <div id="presets">
     <span class="lab" title="One-click combos — not draggable; drag the field chips below instead">Organize ▸ click a preset</span>
-    <button class="preset" title="Click to apply this pivot — presets aren't draggable" data-r="trump_number" data-c="deck" data-f="role=trump">Trump × Deck</button>
+    <button class="preset" title="Click to apply this pivot — presets aren't draggable" data-r="rank" data-c="deck" data-f="suit=Trumps">Trump × Deck</button>
     <button class="preset" title="Click to apply this pivot — presets aren't draggable" data-r="suit" data-c="rank">Suit × Rank</button>
-    <button class="preset" title="Click to apply this pivot — presets aren't draggable" data-r="deck" data-c="role">Deck × Role</button>
-    <button class="preset" title="Click to apply this pivot — presets aren't draggable" data-r="role,suit,rank">Major/Minor ▸ Suit ▸ Rank</button>
+    <button class="preset" title="Click to apply this pivot — presets aren't draggable" data-r="deck" data-c="suit">Deck × Suit</button>
+    <button class="preset" title="Click to apply this pivot — presets aren't draggable" data-r="suit,rank">Suit ▸ Rank</button>
     <button class="preset" title="Click to apply this pivot — presets aren't draggable" data-r="branch,deck">Lineage ▸ Deck</button>
     <button class="preset preset-clear" title="Clear the pivot" data-clear="1">Clear</button>
   </div>
@@ -236,8 +236,14 @@ let sectionGroups = [];    // inferred [{key,label,count,attributed}]
    record and still renders in full in the detail panel (openDetail() reads `r`
    directly, unfiltered) — this allowlist only gates what discoverFields() is allowed
    to turn into a tray/pivot chip. Raw field names stay the spec/hash vocabulary (old
-   #hash / localStorage links keep resolving); DISPLAY_NAME below is label-only. */
-const TRAY_ALLOWLIST = ['deck','branch','century','role','trump_number','rank','suit','function','level'];
+   #hash / localStorage links keep resolving); DISPLAY_NAME below is label-only.
+   2026-08-11 fifth-suit fold: trumps now carry suit="Trumps" + rank=trump_number in
+   the meta grammar, so ONE Suit × Rank pivot covers the whole deck — `role` and
+   `trump_number` are redundant as tray chips and were dropped (they still exist on
+   every record and still render in the detail panel). `function` stays in the tray
+   (documented use: game / divination / esoteric / origin-myth) — the builder wants
+   it kept as a comparison axis. */
+const TRAY_ALLOWLIST = ['deck','branch','century','suit','rank','function','level'];
 const TRAY_ORDER = new Map(TRAY_ALLOWLIST.map((f,i) => [f,i]));
 const DISPLAY_NAME = { branch: 'lineage', trump_number: 'trump' };
 const displayName = f => DISPLAY_NAME[f] || f;
@@ -325,8 +331,13 @@ function formatFieldValue(field, v){
     if (!isNaN(n)) return n === 0 ? '0 · Fool' : toRoman(n);
   }
   if (field === 'rank'){
+    // The rank axis is SHARED since the fifth-suit fold (2026-08-11): trumps carry
+    // their own deck's trump number (0–21+) and pips/courts carry 1–14, so a header
+    // like 11 can hold Justice AND Pages at once. Plain numbers are the honest
+    // default; 11–14 name both readings ("11 · Page/XI") rather than silently
+    // labelling a mixed cell "Page".
     const n = +v;
-    if (!isNaN(n)) return RANK_LABEL[n] || String(n);
+    if (!isNaN(n)) return RANK_LABEL[n] ? `${n} · ${RANK_LABEL[n]}/${toRoman(n)}` : String(n);
   }
   return v;
 }
@@ -696,7 +707,7 @@ document.querySelectorAll('#presets button').forEach(b => b.onclick = () => {
   const pick = s => (s ? s.split(',') : []).filter(x => avail.has(x));
   spec.rows = pick(b.dataset.r);
   spec.cols = pick(b.dataset.c);
-  // Presets own the filter they need (e.g. Trump × Deck pre-filters role=trump) so
+  // Presets own the filter they need (e.g. Trump × Deck pre-filters suit=Trumps) so
   // switching presets doesn't leave a stale filter behind — the "x of y items" line
   // already states the exclusion honestly. Keep the boot-applied level=L1 card filter.
   const keepLevel = spec.filters.level;
@@ -726,10 +737,12 @@ async function boot(){
   try { collection = await (await fetch(PFX+'tarot/_collection.json')).json(); } catch(e){}
   const slugs = selectedSlugs();
   // Versioned key. Phase 1 (Aug 7 2026) replaced the overloaded `number` axis with derived
-  // role/trump_number/rank; a spec saved under the old key pins the reader to the old rows and
-  // they never see the new default view. Bumping the version retires those silently — the old
-  // entry is simply no longer read — rather than migrating a spec whose fields changed meaning.
-  specKey = 'explorer-spec-v2:' + slugs.slice().sort().join(',');
+  // role/trump_number/rank (v1→v2); the fifth-suit fold (Aug 11 2026) retired role/trump_number
+  // from the tray in favour of suit=Trumps + shared rank (v2→v3). A spec saved under an old key
+  // pins the reader to retired rows and they never see the new default view. Bumping the version
+  // retires those silently — the old entry is simply no longer read — rather than migrating a
+  // spec whose fields changed meaning.
+  specKey = 'explorer-spec-v3:' + slugs.slice().sort().join(',');
   const srcParam = new URLSearchParams(location.search).get('src');
   records = []; byId = {}; secById = {};
   // record an item's sections under the same prefixed id flatten produces
@@ -810,12 +823,15 @@ async function boot(){
     const lv = fields.find(f=>f.name==='level');
     if (lv && lv.count > 1 && lv.values.includes('L1')) spec.filters.level = ['L1'];
     const avail = new Set(fields.map(f=>f.name));
-    if (avail.has('trump_number') && avail.has('deck') && avail.has('role')){
+    const hasTrumpsSuit = (fields.find(f=>f.name==='suit')?.values || []).includes('Trumps');
+    if (hasTrumpsSuit && avail.has('rank') && avail.has('deck')){
       // Phase-1 default landing view — "the same card across every deck" comparison
       // wall (north star, Fernando Aug 7: something scholars/artists can compare and
-      // inspire themselves with). Only available on the meta-grammar's derived axes;
-      // raw single-deck loads fall through to the century/suit views below.
-      spec.rows = ['trump_number']; spec.cols = ['deck']; spec.filters.role = ['trump'];
+      // inspire themselves with). Since the fifth-suit fold this is just the Suit ×
+      // Rank system filtered to suit=Trumps, pivoted rank × deck. Only available on
+      // the meta-grammar's derived axes; raw single-deck loads fall through to the
+      // century/suit views below.
+      spec.rows = ['rank']; spec.cols = ['deck']; spec.filters.suit = ['Trumps'];
     } else if (avail.has('century') && avail.has('suit'))
       { spec.rows=['century']; spec.cols=['suit']; }
     else if (slugs.length > 1 && avail.has('century'))
