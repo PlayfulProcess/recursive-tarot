@@ -62,6 +62,11 @@
   s.onload = function () {
     if (!window.RecursiveAssistant) return;
     window.RecursiveAssistant.init({
+      // Declare explicitly rather than relying on the launcher's background-
+      // luminance guess: this site is light-only by policy (CLAUDE.md "Theme
+      // & colour" — light backgrounds, no dark stages, ever), so there's no
+      // ambiguity to auto-detect.
+      theme: 'light',
       buildSrc: function () {
         var params = new URLSearchParams(location.search);
         var grammarId = params.get('grammar_id') || params.get('id') || srcGrammarId || '';
