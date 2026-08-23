@@ -20,62 +20,62 @@ shipped — this is a decision/priority document, not a change log.*
    (public, known-working) instead of the bare meta view / a private "Ontoject" grammar link that
    was broken for anyone but her.
 
-## Highest priority — the core reading experience is broken signed-out
+## Cleared — she tested it herself
 
-**"Interpret with AI" fails on both `caster.html` and `caster-studio.html`, found independently by
-two agents:**
-- The chat panel's width sticks at 72px instead of its designed 384px (confirmed via
-  `getComputedStyle`, reproduced twice) — it's technically "open" but renders as an invisible
-  sliver.
-- Separately (or relatedly — same root feature): 10+ console 401s fire, and the UI shows only a
-  vague "it will be sent automatically once the app updates" message instead of a clear sign-in
-  prompt.
-- **Why this matters more than anything else here:** this is the single moment the site is trying
-  to deliver its core value (an AI reading) to a first-time visitor, and it silently fails with no
-  actionable message. Contrast with the Journal's own signed-out flow, which is genuinely good
-  (an honest "sign in to interpret" button + a "Continue as Guest" option) — the Caster doesn't
-  match that bar.
-- **Suggested next step:** reproduce the 72px width bug directly (likely a CSS class-timing issue
-  in the `rec-assistant-shell`/`rec-open` toggle) and decide whether Caster's signed-out messaging
-  should just match the Journal's pattern.
+**"Interpret with AI" on the Caster.** Two agents reported this as broken signed-out (a chat panel
+stuck at 72px width; separately, 401s with a vague message instead of a sign-in prompt). She tried
+it live (Aug 22) and the sign-in + interpretation flow worked for her — **clearing this from the
+list.** Not chasing the 72px width report further without a live repro; if it resurfaces, it's a
+CSS class-timing issue in the `rec-assistant-shell`/`rec-open` toggle worth a fresh look then.
 
-## High priority — several decks can't actually be cast
+## Not reproducible — investigated, no fix made
 
-Two independent passes confirm Cast silently fails (infinite "Loading…" in Flow, no error shown)
-for a specific subset of decks:
+**"Tree" nav link.** The audit reported `viewers/tree-viewer.html` auto-redirecting into
+`caster.html` → `caster-studio.html` on load. Re-tested live (fresh tab, no cache, waited 3s after
+load): it loads correctly and stays on the meta-grammar tree view, no redirect. Also confirmed by
+reading the source — `loadGrammar()` defaults to the meta grammar exactly like `cards.html` does;
+the only `caster.html` reference in the file is the (correct, intentional) "Cast a Reading" button.
+**The homepage's bare `viewers/tree-viewer.html` link is fine as-is** — it's one of four sibling
+"Card level" view cards (Cards/Explorer/Lenses/Tree) that all deliberately link bare and default to
+the meta grammar; my first draft of this doc wrongly suggested repointing it at `genealogy-tree.html`
+or `genealogy.html`, which are a different, deliberately separate "whole collection" feature — that
+suggestion was wrong and is retracted. Likely the audit agent clicked something mid-exploration
+without realizing it. No further action here unless it reproduces again with a clear repro.
 
-| Deck | Symptom |
-|---|---|
-| Cary Sheet | `GET /api/tarot-channel/decks/{id}` → 404, deck selector spins forever |
-| The Rosenwald Sheet | same 404 pattern |
-| Ganjifa | same 404 pattern |
-| Jean Noblet Tarot de Marseille | same 404 pattern, retested twice |
-| **The Ontoject — Illustrated** | same 404 pattern — **but this one has 24 real items, not a stub** |
+## High priority — 5 decks can't actually be cast, and now we know exactly why
 
-The first four all show as 1-item "stub" grammars in `list_grammars` — plausibly just not fully
-built out yet, and the tarot-channel endpoint 404s on near-empty decks. **The Ontoject is the odd
-one out**: it's a real, populated grammar, and it's also `is_public: false` (confirmed via direct
-lookup) — a private grammar can't be fetched by the anonymous-facing tarot-channel endpoint, which
-is a much more plausible explanation than "stub." If Ontoject is meant to be a public example
-(it's linked from `pages/contribute.html` until today's fix), it needs `set_grammar_visibility`
-run on it, or the link needs to stop pointing at it.
+Confirmed by direct database lookup (not inference): **all five are `is_public: false`.**
 
-**Suggested next step:** decide whether the stub decks (Cary Sheet, Rosenwald Sheet, Ganjifa,
-Jean Noblet) are meant to be castable yet — if not, the deck table should show the GitHub-only
-door for them too, the same way the other "not yet published" rare sheets already correctly do.
-This sweep only checked 9 of ~35+ decks; a fuller pass would likely find more.
+| Deck | Items | Type | Cast symptom |
+|---|---|---|---|
+| Cary Sheet | 1 (stub) | unified_grammar | 404 from `tarot-channel/decks/{id}`, spinner never resolves |
+| The Rosenwald Sheet | 1 (stub) | unified_grammar | same |
+| Ganjifa | 1 (stub) | unified_grammar | same |
+| Jean Noblet Tarot de Marseille | 1 (stub) | unified_grammar | same, retested twice |
+| **The Ontoject — Illustrated** | **24 (real content)** | tarot_deck | same |
+
+The first four are genuine placeholder stubs (1 item, generic `unified_grammar` type) — they were
+never finished, and being private is presumably intentional until they are. **The Ontoject is a
+fully-built 24-card deck that simply isn't published** — it's not a stub, it's finished and private.
+It was linked from `pages/contribute.html`'s "Edit a card now" button until today's fix moved that
+link to Visconti-Sforza instead, so a first-time visitor no longer hits it through that specific
+door — but it's still listed in the "All Decks" meta view's deck switcher, so anyone browsing there
+and picking it will still hit the same 404.
+
+**This needs your call, not mine** — it's your content:
+- Do any of the 4 stub decks need finishing + publishing, or should their card-browser pages show
+  the GitHub-only door (matching how the course's own deck table already correctly curates them)
+  instead of a Cast/Edit button that can never work while they're private?
+- Is The Ontoject meant to go public? It reads like a real, finished piece — if so, one
+  `set_grammar_visibility` call publishes it and Cast starts working immediately. If it should stay
+  private for now, its entry could be pulled from the meta view's deck switcher so visitors don't
+  find the dead end at all.
+
+This sweep only checked 9 of ~35+ decks; a fuller pass would likely find a few more in the same
+state — worth a full `is_public` audit across all `tarot/_eco_ids.json` entries at some point.
 
 ## Medium priority
 
-- **"Tree" nav link is broken/misrouting.** `viewers/tree-viewer.html` (linked from the homepage's
-  "Every view" grid) auto-redirects through `caster.html` into `caster-studio.html` — a completely
-  unrelated spread-building tool, with 401 errors during the chain. Meanwhile two OTHER pages
-  already do the "tree" job well and were called the best feature on the whole site by the
-  Historian-path agent: **`genealogy-tree.html`** ("Tree of Tarot" — pannable radial genealogy,
-  rich detail cards) and **`genealogy.html`** ("Genealogy Graph," honest about simplified edges).
-  This reads like a stale nav link pointing at a deprecated/broken implementation instead of the
-  two good ones that already exist. Likely a one-line nav fix once you confirm which of the two
-  it should point to.
 - **Spread Studio and Caster are the same page.** `caster-studio.html` and `caster.html` are
   byte-for-byte identical in content and controls, despite being presented as two different tools
   ("fancier Spread Studio" vs. plain Caster) in nav copy and in the how-to-contribute course. Either
