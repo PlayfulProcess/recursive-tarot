@@ -4801,10 +4801,20 @@
             if (copyBtn) {
                 // Purple "Edit" button (pen) beside Get a Reading — opens the recursive.eco
                 // editor (Create page) at this grammar's UUID. (Jun 25 2026.)
-                const penIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';
-                copyBtn.innerHTML = penIcon + 'Edit';
-                copyBtn.title = 'Edit this grammar in the recursive.eco editor';
-                copyBtn.setAttribute('aria-label', 'Edit this grammar in the recursive.eco editor');
+                // Hidden on a _generated aggregator (meta grammar, people-of-tarot): it has no
+                // UUID of its own to edit, so openEditOnEco() silently fell back to a bare,
+                // context-free Create page — the same dead end fixed on the per-card button
+                // (Aug 22 2026), just one level up at the page header. Found in the builder's
+                // first-time-visitor audit.
+                if (grammarData?._generated) {
+                    copyBtn.style.display = 'none';
+                } else {
+                    copyBtn.style.display = '';
+                    const penIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';
+                    copyBtn.innerHTML = penIcon + 'Edit';
+                    copyBtn.title = 'Edit this grammar in the recursive.eco editor';
+                    copyBtn.setAttribute('aria-label', 'Edit this grammar in the recursive.eco editor');
+                }
             }
         }
 
