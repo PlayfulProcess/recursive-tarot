@@ -88,7 +88,7 @@
     <h1>The Book of Fate</h1>
     <p class="bof-dek">"Formerly in the possession of, and used by, Napoleon" — an English oracle chapbook that sold itself as a translated Egyptian papyrus, printed the same decades tarot was acquiring its own invented Egyptian pedigree. It's not a tarot deck. It belongs on this site anyway, as the clearest sister case we have.</p>
     <span class="bof-badge">⚑ Presented as fact by the book; it was a hoax</span>
-    <span class="bof-badge" style="color:var(--gold);background:rgba(154,115,34,.09);border-color:rgba(154,115,34,.35)">✎ Draft — 9 of 32 questions verified so far</span>
+    <span class="bof-badge" style="color:var(--gold);background:rgba(154,115,34,.09);border-color:rgba(154,115,34,.35)">✎ Draft — 10 of 32 questions transcribed so far</span>
     <p class="soft" style="font-family:var(--sans);font-size:13px;margin-top:10px">Read the <a href="https://archive.org/details/bookoffateformer01kirc" target="_blank" rel="noopener">original 1822/1923 scan on the Internet Archive</a> — everything on this page is transcribed from it.</p>
   </section>
 
@@ -122,7 +122,7 @@
 
   <section class="bof-section">
     <h2>Cast the oracle</h2>
-    <p class="soft">Nine questions, cross-checked against the original. Pick one and cast — you'll get one of the answers the book itself records, word for word. Your five rows decide which one: most questions have only one answer surviving in the source, so recasting them will honestly always land on that same answer — that's the book, not a bug. A couple of questions have two recorded answers, and your cast picks between them.</p>
+    <p class="soft">Ten questions, each with a set of the book's own answers behind it — fifty-eight in all, transcribed from the scan. Pick a question and cast. Your five rows are read as five odd/even marks, which makes one of thirty-two possible <strong>Signs</strong>, exactly as the book has it, and the Sign is what selects your answer: different marks, different answer. Each result tells you where it comes from — a pairing the book documents outright, or an answer from its bank matched to your question by subject.</p>
     <div class="caster">
       <p class="caster-q">Ask:</p>
       <select id="bof-select"></select>
@@ -134,13 +134,17 @@
 
   <section class="bof-section">
     <h2>The hieroglyphics, as cards</h2>
-    <p class="soft">Every verified answer, gathered as its own card — click one for the full answer and its source.</p>
+    <p class="soft">The documented pairings only — the twelve cases where the book itself names the Hieroglyphic alongside the Question and the Answer, several of them recorded as Napoleon's own consultations. Click one for the full answer and its source.</p>
     <div class="card-gallery" id="bof-gallery"></div>
     <div class="gdetail" id="bof-gdetail"></div>
   </section>
 
   <p class="bof-footer-note">
-    <strong>Sources &amp; honesty.</strong> Text drawn from the 1923 H. S. Nichols facsimile of the 1822 London original, digitized by the Internet Archive (<a href="https://archive.org/details/bookoffateformer01kirc" target="_blank" rel="noopener">full scan</a>) and the Library of Congress. The hoax attribution — no historical Kirchenhoffer, the Sonnini/Napoleon story invented for the market — follows the Public Domain Review's account, <a href="https://publicdomainreview.org/collection/book-of-fate" target="_blank" rel="noopener">"Hieroglyphics of a Rope-Dancer"</a>. All nine cast-able questions and their answers are quoted directly from the translator's preface, where the book itself works a set of worked examples (including Napoleon's own recorded consultations). The other twenty-three questions and the full body of answers exist in the original but weren't reliably recoverable from this OCR pass in one sitting — a fuller transcription is possible as a later pass, matched page by page against the scan rather than against damaged text. This page is a companion piece to <a href="course-viewer.html?course=tarot-and-fiction">Tarot as a Source of Fiction</a>.
+    <strong>Sources &amp; honesty.</strong> Text drawn from the 1923 H. S. Nichols facsimile of the 1822 London original, digitized by the Internet Archive (<a href="https://archive.org/details/bookoffateformer01kirc" target="_blank" rel="noopener">full scan</a>) and the Library of Congress. The hoax attribution — no historical Kirchenhoffer, the Sonnini/Napoleon story invented for the market — follows the Public Domain Review's account, <a href="https://publicdomainreview.org/collection/book-of-fate" target="_blank" rel="noopener">"Hieroglyphics of a Rope-Dancer"</a>.
+    <br><br>
+    <strong>What is verified, and what isn't.</strong> Twelve answers are <em>documented pairings</em>: the translator's preface prints the Question, the Hieroglyphic and the Answer together, several of them as Napoleon's own recorded consultations. The remaining forty-six answers are the book's own words, transcribed from its answer bank in the body of the volume, and matched to a question <em>by their plain subject matter</em> — "the patient will recover" belongs to the question about the patient. That matching is this edition's, not the original's, and each cast result says so. The reason for it: the book routes a Question and a Sign through an engraved fold-out plate to a Hieroglyphic, and the Hieroglyphic's own page then gives the answer — but the plate and the engraved Hieroglyphic headers are images, and they did not survive the OCR this edition was built from, so the exact routing cannot be reconstructed here without going back to the page scans. Obvious scanning damage in the answers has been repaired (a dropped letter, a broken word); no wording has been modernised or rephrased. Twenty-two of the thirty-two questions are listed above but not yet castable, and the full body of answers is much larger than the fifty-eight here.
+    <br><br>
+    Want to take it further? The <a href="https://github.com/PlayfulProcess/recursive-tarot/blob/main/WISHLIST.md" target="_blank" rel="noopener">wishlist</a> has this written up as an open job, with the data shape spelled out — even a handful of newly-verified questions is a welcome pull request. This page is a companion piece to <a href="course-viewer.html?course=tarot-and-fiction">Tarot as a Source of Fiction</a>.
   </p>
 </main>
 
@@ -155,33 +159,94 @@
   // as the book itself states them. Where a question has more than one
   // recorded answer (the book explains a Sign can point to different
   // Hieroglyphics on different casts), both are kept.
+  // Every answer below is the 1822 book's own wording, transcribed from the scan
+  // (obvious OCR damage repaired, nothing rephrased). Two provenances:
+  //   v: true  — a documented pairing. The translator's preface prints the
+  //              Question, the Hieroglyphic and the Answer together.
+  //   v: false — the answer is the book's, taken from its answer bank, and
+  //              matched to this question by its own plain subject matter. The
+  //              engraved lookup plate that would route a Sign to a specific
+  //              Hieroglyphic did not survive the scan, so the Hieroglyphic for
+  //              these is unknown and the page says so rather than inventing one.
   const QUESTIONS = [
-    { n: 6,  q: "Shall I make, or mar, my fortune by gambling?", verified: true,
-      answers: [{ h: "Cross Bones", a: "Be warned! from henceforth, never play for money, nor money's worth.", kind: "mandatory" }] },
-    { n: 8,  q: "Shall I be eminent, and meet with preferment in my pursuits?", verified: true,
-      answers: [{ h: "Pyramid", a: "Thou shalt meet with many obstacles, but at length thou shalt attain the highest earthly power and honour.", kind: "presumptive" }] },
-    { n: 12, q: "Will my name be immortalized, and will posterity applaud it?", verified: true,
-      answers: [
-        { h: "Pyramid", a: "Thy name will be handed down, with the memory of thy deeds, to the most distant posterity.", kind: "positive" },
-        { h: "Castellated Mansion", a: "Abuse not the power which the Lord giveth thee, and thy name will be hailed with rapture in future ages.", kind: "admonitory" }
-      ] },
-    { n: 15, q: "What is the aspect of the seasons, and what political changes are likely to take place?", verified: true,
-      answers: [
-        { h: "Cross Keys", a: "A conqueror, of noble mind and mighty power, shall spring from low condition; he will break the chains of the oppressed, and will give liberty to the nations.", kind: "presumptive" },
-        { h: "Castellated Mansion", a: "The wings of the eagle of the north will be clipped, and his talons blunted.", kind: "presumptive" }
-      ] },
-    { n: 17, q: "Will my beloved prove true in my absence?", verified: true,
-      answers: [{ h: "Plough", a: "The affections of the being whom thou lovest, will be placed on none other but thyself.", kind: "positive" }] },
-    { n: 19, q: "After my death, will my children be virtuous and happy?", verified: true,
-      answers: [{ h: "Ladder", a: "In the training of thy offspring, let thy discipline be strict, but not severe; lose no opportunity of improving their understandings, and, in the plenitude of their happiness, they will bless thee.", kind: "conditional" }] },
-    { n: 24, q: "Inform me of all particulars relating to my future husband.", verified: true,
-      answers: [{ h: "Bow and Arrow", a: "Consider well whether thou oughtest, at present, to change thy condition in life.", kind: "admonitory" }] },
-    { n: 27, q: "Shall my intended journey be prosperous, or unlucky?", verified: true,
-      answers: [{ h: "Cross Bones", a: "When thou hast arrived at thy place of destination, lose no time in executing thy errand, and return without delay.", kind: "conditional" }] },
-    { n: 28, q: "Shall I ever find a treasure?", verified: true,
-      answers: [{ h: "Fasces", a: "When thou findest a treasure, teach thy tongue to be silent; and see that thou makest good use of thy riches.", kind: "presumptive" }] },
-    { n: 30, q: "Have I any, or many, enemies?", verified: true,
-      answers: [{ h: "Hand and Dagger", a: "Thou hast enemies, who, if not restrained by the laws, would plunge a dagger in thy heart.", kind: "positive" }] },
+    { n: 6, q: "Shall I make, or mar, my fortune by gambling?", answers: [
+      { h: "Cross Bones", kind: "mandatory", v: true, a: "Be warned! from henceforth, never play for money, nor money's worth." },
+      { kind: "conditional", a: "A lucky hit may make thy fortune — if so, play no more." },
+      { kind: "mandatory", a: "Leave off play as the clock strikes twelve; after that hour there is no luck for thee." },
+      { kind: "mandatory", a: "When thy ready money is gone, go too: never borrow." },
+    ]},
+    { n: 8, q: "Shall I be eminent, and meet with preferment in my pursuits?", answers: [
+      { h: "Pyramid", kind: "presumptive", v: true, a: "Thou shalt meet with many obstacles, but at length thou shalt attain the highest earthly power and honour." },
+      { kind: "conditional", a: "Preferment depends entirely on thyself." },
+      { kind: "positive", a: "Thy preferment will be owing to thine own deserts." },
+      { kind: "positive", a: "Thou shalt be exalted above thy fellows." },
+      { kind: "presumptive", a: "Interest will procure thee preferment to great trust." },
+    ]},
+    { n: 12, q: "Will my name be immortalized, and will posterity applaud it?", answers: [
+      { h: "Pyramid", kind: "positive", v: true, a: "Thy name will be handed down, with the memory of thy deeds, to the most distant posterity." },
+      { h: "Castellated Mansion", kind: "admonitory", v: true, a: "Abuse not the power which the Lord giveth thee, and thy name will be hailed with rapture in future ages." },
+      { kind: "conditional", a: "If thy deeds are evil, posterity will execrate thy name." },
+      { kind: "admonitory", a: "Let not thy desire of making thy name live for ever urge thee on to deeds of cruelty and rapine." },
+      { kind: "positive", a: "When thou art cold in thy grave, thy name will be greatly honoured in thy children." },
+    ]},
+    { n: 15, q: "What is the aspect of the seasons, and what political changes are likely to take place?", answers: [
+      { h: "Cross Keys", kind: "presumptive", v: true, a: "A conqueror, of noble mind and mighty power, shall spring from low condition; he will break the chains of the oppressed, and will give liberty to the nations." },
+      { h: "Castellated Mansion", kind: "presumptive", v: true, a: "The wings of the eagle of the north will be clipped, and his talons blunted." },
+      { kind: "presumptive", a: "A colony of outcasts will break their chains, and obtain great dominion." },
+      { kind: "presumptive", a: "He who ruleth the kings of the earth, and who terrifieth the nations with the sound of his arms, will be abased, and speedily cut off." },
+      { kind: "presumptive", a: "Political changes will change thy fortune." },
+    ]},
+    { n: 17, q: "Will my beloved prove true in my absence?", answers: [
+      { h: "Plough", kind: "positive", v: true, a: "The affections of the being whom thou lovest, will be placed on none other but thyself." },
+      { kind: "positive", a: "Despair not: thy love will meet its due return." },
+      { kind: "admonitory", a: "If thy beloved hath proved inconstant to another, think not that she will prove faithful to thee." },
+      { kind: "positive", a: "Thou shalt receive proofs that thou art beloved." },
+      { kind: "conditional", a: "Be not neglectful, and thy beloved will remain true." },
+      { kind: "positive", a: "Thy beloved will not cease to pray for thy speedy return." },
+      { kind: "conditional", a: "Wait patiently, and thy love will be requited in due season." },
+    ]},
+    { n: 19, q: "After my death, will my children be virtuous and happy?", answers: [
+      { h: "Ladder", kind: "conditional", v: true, a: "In the training of thy offspring, let thy discipline be strict, but not severe; lose no opportunity of improving their understandings, and, in the plenitude of their happiness, they will bless thee." },
+      { kind: "mandatory", a: "Instruct thy children; shew them a good example; and fear not for their happiness." },
+      { kind: "conditional", a: "As thou sowest, so shall thy children reap." },
+      { kind: "mandatory", a: "Teach not thy children to be avaricious, and they will be both contented and happy." },
+      { kind: "conditional", a: "Restrain thy children when they indulge in wicked courses, and when thou art gathered unto thy fathers, they will have cause to bless thy name." },
+      { kind: "mandatory", a: "To be happy, it is necessary only to be virtuous — teach this to thy children, and they will be benefitted." },
+    ]},
+    { n: 24, q: "Inform me of all particulars relating to my future husband.", answers: [
+      { h: "Bow and Arrow", kind: "admonitory", v: true, a: "Consider well whether thou oughtest, at present, to change thy condition in life." },
+      { kind: "positive", a: "Thou shalt wed a man in an exalted station." },
+      { kind: "positive", a: "Thy husband will be a man of honour and integrity." },
+      { kind: "presumptive", a: "Thy husband's talents will promote him to honour and to great trust." },
+      { kind: "positive", a: "Thy husband will inherit great riches." },
+      { kind: "positive", a: "Thou shalt have a handsome partner." },
+    ]},
+    { n: 27, q: "Shall my intended journey be prosperous, or unlucky?", answers: [
+      { h: "Cross Bones", kind: "conditional", v: true, a: "When thou hast arrived at thy place of destination, lose no time in executing thy errand, and return without delay." },
+      { kind: "conditional", a: "Choose right trusty companions for thy intended journey, and no ill can befal thee." },
+      { kind: "positive", a: "Thy journey will be safe, and its object will be attained." },
+      { kind: "conditional", a: "Thou wilt be truly prosperous in thy journey; but stay not abroad longer than is necessary." },
+      { kind: "positive", a: "Thy journey, when thou goest, will be to thy advantage." },
+      { kind: "mandatory", a: "As thou journeyest along, commend thyself to God, and he will watch over thee." },
+      { kind: "admonitory", a: "Danger may threaten thee, if thou sojournest long in a strange land." },
+    ]},
+    { n: 28, q: "Shall I ever find a treasure?", answers: [
+      { h: "Fasces", kind: "presumptive", v: true, a: "When thou findest a treasure, teach thy tongue to be silent; and see that thou makest good use of thy riches." },
+      { kind: "positive", a: "A treasure awaits thee of which thou hast little expectation." },
+      { kind: "positive", a: "Thou shalt possess a rich mine, out of which treasures shall be dug from time to time." },
+      { kind: "conditional", a: "If thou takest care to acquire knowledge, it will prove a rich treasure, of which no one can deprive thee." },
+      { kind: "admonitory", a: "Be not buoyed up by hopes of inheriting property which thou hast not earned." },
+      { kind: "mandatory", a: "Set not thy mind on searching after that which hath been hidden; but attend diligently to the duties of thy calling." },
+    ]},
+    { n: 30, q: "Have I any, or many, enemies?", answers: [
+      { h: "Hand and Dagger", kind: "positive", v: true, a: "Thou hast enemies, who, if not restrained by the laws, would plunge a dagger in thy heart." },
+      { kind: "positive", a: "Thou hast no enemies, who can in any degree injure thee." },
+      { kind: "positive", a: "A secret enemy will endeavour to undermine thy happiness." },
+      { kind: "positive", a: "Thou hast enemies, but they will have no power over thee." },
+      { kind: "presumptive", a: "Thou hast enemies, but thou shalt defeat them, and they will be overwhelmed with shame." },
+      { kind: "presumptive", a: "An enemy will try to circumvent thee, but he will be foiled in his attempts." },
+      { kind: "positive", a: "Thine enemies are powerless, and unworthy of thy regard." },
+    ]},
   ];
 
   // The rest of the frontispiece's 32, best-effort — see the page's caveat.
@@ -212,7 +277,7 @@
 
   // ── render the 32-question list ──
   const qlist = document.getElementById('bof-qlist');
-  const verifiedRows = QUESTIONS.map(x => ({ n: x.n, q: x.q, verified: true }));
+  const verifiedRows = QUESTIONS.map(x => ({ n: x.n, q: x.q, verified: true, count: x.answers.length }));
   const allRows = verifiedRows.concat(UNVERIFIED.map(q => ({ n: null, q, verified: false })))
     .sort((a, b) => (a.n ?? 99) - (b.n ?? 99));
   qlist.innerHTML = allRows.map(r =>
@@ -238,23 +303,26 @@
     const rows = [castRow(), castRow(), castRow(), castRow(), castRow()];
     tallyEl.textContent = rows.map(r => '|'.repeat(r.n) + '  →  ' + (r.odd ? '★' : '★★')).join('\n');
     tallyEl.style.whiteSpace = 'pre-line';
-    // The Sign — the count of odd rows among the five cast — is what actually
-    // picks the answer, the way the book's own lookup works: a Sign points to
-    // one Hieroglyphic. When a question has only one recorded answer, every
-    // Sign points to it, honestly — that's the surviving source, not a stuck
-    // random draw.
-    const oddCount = rows.filter(r => r.odd).length;
-    const pick = q.answers[oddCount % q.answers.length];
-    const onlyOne = q.answers.length === 1
-      ? `<p class="cite">Only one answer to Question ${q.n} survives in the source — every Sign you can cast for it points here.</p>`
-      : '';
+
+    // The Sign is the five rows read as five odd/even marks — thirty-two
+    // possible Signs, exactly as the book has it. The Sign is what selects the
+    // answer, so different marks genuinely give a different answer.
+    const signBits = rows.map(r => (r.odd ? 1 : 0));
+    const signValue = signBits.reduce((acc, b) => acc * 2 + b, 0);
+    const pick = q.answers[signValue % q.answers.length];
+    const signStars = signBits.map(b => (b ? '★' : '★★')).join(' · ');
+
+    const prov = pick.v
+      ? `<p class="cite">Documented pairing — the translator's preface prints this Question, this Hieroglyphic and this Answer together.</p>`
+      : `<p class="cite">The book's own wording, from its answer bank, matched to this question by subject. The engraved plate that routes a Sign to its Hieroglyphic didn't survive the scan, so this answer's Hieroglyphic is unknown — see the note at the foot of the page.</p>`;
+
     resultEl.innerHTML = `<div class="oracle-card">
       <div class="glyph">☙</div>
       <div>
-        <p class="hname">Hieroglyphic of the ${pick.h}</p>
+        <p class="hname">${pick.h ? 'Hieroglyphic of the ' + pick.h : 'Sign No. ' + (signValue + 1) + ' of 32'} &middot; ${signStars}</p>
         <p class="atext">&ldquo;${pick.a}&rdquo;</p>
         <p class="cite">Answer to Question ${q.n} — &ldquo;${q.q}&rdquo; (${pick.kind})</p>
-        ${onlyOne}
+        ${prov}
       </div>
     </div>`;
   });
@@ -262,8 +330,10 @@
   // ── the card gallery (every verified hieroglyphic-answer pair) ──
   const gallery = document.getElementById('bof-gallery');
   const gdetail = document.getElementById('bof-gdetail');
+  // Only the documented pairings become cards — these are the ones where the
+  // book itself names the Hieroglyphic alongside the Question and the Answer.
   const cards = [];
-  QUESTIONS.forEach(q => q.answers.forEach(ans => cards.push({ q: q.n, qtext: q.q, ...ans })));
+  QUESTIONS.forEach(q => q.answers.filter(a => a.v).forEach(ans => cards.push({ q: q.n, qtext: q.q, ...ans })));
 
   gallery.innerHTML = cards.map((c, i) => `<div class="gcard" data-i="${i}">
       <div class="gicon">☙</div>
