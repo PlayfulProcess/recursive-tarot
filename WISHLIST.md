@@ -59,3 +59,27 @@ in `attachSlot()`. That made the first slice of "edit it like PowerPoint" cheap.
 - **Teach `create_spread` the `axes` field** so the assistant can build grid spreads
   with row/column headers instead of repeating the axis names in every position name.
   Same appendix.
+
+---
+
+## The Book of Fate (1822) — finish the transcription (`pages/book-of-fate-1822.html`)
+
+The page ships a real, working digital edition of Napoleon's *Book of Fate* — but
+only **9 of the book's 32 questions** are verified word-for-word against the
+original. The frontispiece (the question list) and the main answer bank are both
+badly damaged in the OCR the page was built from — decorative italic type on the
+frontispiece, and the engraved Hieroglyphic images (Pyramid, Ladder, Cross Bones,
+etc.) simply didn't survive OCR at all in the body text, so each Question's own
+page can't currently be matched to its Signs and answers with confidence.
+
+We'd love for someone to take this further. What's needed: the original scan
+(linked at the top of the page, and in `research/` if pulled locally) read
+page-by-page rather than through OCR, to recover the remaining ~23 questions'
+answer sets and the star-Sign-to-Hieroglyphic lookup table this page currently
+can't render. The data model is already there — `QUESTIONS` in the page's own
+`<script>` block, one object per question with an `answers` array of
+`{ h, a, kind }` (Hieroglyphic name, the quoted answer, and its "kind" —
+positive / mandatory / presumptive / admonitory / conditional, per the book's own
+taxonomy). Extending it is additive: more entries, no restructuring. A PR with
+even a handful of newly-verified questions is welcome on its own — it doesn't
+need to be the whole book at once.
