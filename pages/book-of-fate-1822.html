@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../theme.css?v=3">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Book of Fate (1822) · Recursive Tarot</title>
+<meta name="description" content="A digital edition of Napoleon's Book of Fate (Kirchenhoffer, London, 1822) — a public-domain English oracle-machine from the same wave of invented Egyptian pedigree as tarot's own divinatory turn. Read the frame story, the real casting method, and cast the nine questions we could verify against the original text.">
+<link rel="icon" type="image/svg+xml" href="../public/favicon.svg?v=2">
+<link rel="stylesheet" href="../style.css?v=5">
+<style>
+  main.wrap{max-width:880px}
+  .bof-hero{padding:8px 0 6px}
+  .bof-eyebrow{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+  .bof-hero h1{font-family:var(--serif-display);font-weight:600;font-size:clamp(28px,5vw,42px);line-height:1.06;margin:0 0 12px;color:var(--ink)}
+  .bof-dek{font-family:var(--serif-body);font-style:italic;color:var(--ink-soft);font-size:17px;line-height:1.6;max-width:66ch;margin:0 0 6px}
+  .bof-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.03em;
+    color:#b4432f;background:rgba(180,67,47,.09);border:1px solid rgba(180,67,47,.35);border-radius:999px;padding:4px 11px;margin:14px 0 0}
+
+  .bof-section{margin-top:44px;padding-top:20px;border-top:1px solid var(--line)}
+  .bof-section h2{font-family:var(--serif-display);font-weight:600;font-size:23px;margin:0 0 12px;color:var(--ink)}
+  .bof-section p{font-family:var(--serif-body);font-size:15.5px;line-height:1.7;color:var(--ink);max-width:70ch;margin:0 0 14px}
+  .bof-section p.soft{color:var(--ink-soft)}
+  .bof-section blockquote{margin:16px 0;padding:12px 18px;border-left:3px solid var(--gold);background:var(--panel2);
+    border-radius:0 10px 10px 0;font-family:var(--serif-body);font-style:italic;font-size:15px;line-height:1.65;color:var(--ink)}
+  .bof-section blockquote cite{display:block;margin-top:8px;font-style:normal;font-size:12.5px;color:var(--mut);font-family:var(--sans)}
+
+  /* ── the casting method, as a numbered procedure ── */
+  .bof-steps{counter-reset:step;list-style:none;margin:18px 0;padding:0;display:flex;flex-direction:column;gap:12px}
+  .bof-steps li{counter-increment:step;position:relative;padding-left:40px;font-family:var(--serif-body);font-size:15px;line-height:1.6;color:var(--ink)}
+  .bof-steps li::before{content:counter(step);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;
+    background:var(--gold);color:#fff;font-family:var(--sans);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+
+  /* ── the 32 questions ── */
+  .qlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px 18px;margin:16px 0;padding:0;list-style:none}
+  .qlist li{font-family:var(--serif-body);font-size:14.5px;line-height:1.5;color:var(--ink-soft);padding:6px 0;border-bottom:1px solid var(--line-soft)}
+  .qlist li .n{font-family:var(--sans);font-size:11px;color:var(--mut);margin-right:6px}
+  .qlist li.verified{color:var(--ink)}
+  .qlist li.verified .n{color:var(--gold);font-weight:700}
+  .vflag{display:inline-block;margin-left:6px;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.04em;
+    color:#3f7a5c;background:rgba(63,122,92,.1);border:1px solid rgba(63,122,92,.35);border-radius:999px;padding:1px 7px;vertical-align:1px}
+
+  /* ── the caster ── */
+  .caster{background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:24px 22px;margin-top:18px}
+  .caster-q{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink-soft);margin:0 0 8px}
+  #bof-select{width:100%;font-family:var(--serif-body);font-size:15px;color:var(--ink);background:var(--surface);
+    border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:14px}
+  #bof-cast{font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.02em;color:#fff;background:var(--gold);
+    border:none;border-radius:999px;padding:11px 22px;cursor:pointer;transition:background .15s,transform .1s}
+  #bof-cast:hover{background:#7c5b18}
+  #bof-cast:active{transform:scale(.97)}
+  #bof-tally{font-family:ui-monospace,Menlo,monospace;font-size:15px;letter-spacing:2px;color:var(--mut);min-height:1.4em;margin:16px 0 0}
+  #bof-result{margin-top:18px}
+
+  .oracle-card{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);
+    border-radius:14px;padding:18px 20px;box-shadow:var(--shadow-card);animation:bofin .35s ease-out}
+  @keyframes bofin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .oracle-card .glyph{flex:0 0 auto;width:54px;height:54px;border-radius:10px;background:var(--chip);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-family:var(--serif-display);font-size:22px;color:var(--gold)}
+  .oracle-card .hname{font-family:var(--sans);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin:0 0 5px}
+  .oracle-card .atext{font-family:var(--serif-body);font-size:17px;line-height:1.55;color:var(--ink);margin:0 0 8px;font-style:italic}
+  .oracle-card .cite{font-family:var(--sans);font-size:12px;color:var(--mut)}
+
+  /* ── the card gallery ── */
+  .card-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:16px}
+  .gcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 14px;cursor:pointer;
+    transition:transform .14s,box-shadow .14s,border-color .14s}
+  .gcard:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:var(--shadow-lift)}
+  .gcard .gicon{font-family:var(--serif-display);font-size:20px;color:var(--gold);margin-bottom:6px}
+  .gcard .gname{font-family:var(--sans);font-weight:700;font-size:12.5px;color:var(--ink)}
+  .gcard .gq{font-family:var(--serif-body);font-size:12px;color:var(--mut);margin-top:4px;line-height:1.4}
+  .gcard[hidden]{display:none}
+  .gdetail{display:none;margin-top:14px}
+  .gdetail.open{display:block}
+
+  .bof-footer-note{margin-top:44px;padding:16px 18px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;
+    font-family:var(--sans);font-size:12.5px;line-height:1.65;color:var(--mut)}
+  .bof-footer-note a{color:var(--gold)}
+</style>
+</head>
+<body>
+<script src="../site-header.js?v=47"></script>
+<site-header active="course"></site-header>
+
+<main class="wrap">
+  <section class="bof-hero">
+    <p class="bof-eyebrow">A digital edition · public domain, 1822</p>
+    <h1>The Book of Fate</h1>
+    <p class="bof-dek">"Formerly in the possession of, and used by, Napoleon" — an English oracle chapbook that sold itself as a translated Egyptian papyrus, printed the same decades tarot was acquiring its own invented Egyptian pedigree. It's not a tarot deck. It belongs on this site anyway, as the clearest sister case we have.</p>
+    <span class="bof-badge">⚑ Presented as fact by the book; it was a hoax</span>
+  </section>
+
+  <section class="bof-section">
+    <h2>The story the book tells about itself</h2>
+    <p>In 1801, the book claims, the naturalist M. Sonnini — travelling with Napoleon's Egyptian expedition — broke into a royal tomb near Mount Libycus and found a mummy with a roll of papyrus bound to its chest. A Coptic scholar decoded the hieroglyphics for the First Consul, who had them translated into German for secrecy and kept the manuscript in his private cabinet ever after, consulting it, the book says, before every campaign and on the eve of every battle. It survived him only by accident: lost at Leipzig in 1813, sold for a few coins by a Prussian officer to a French general who died before he could return it, passed eventually to the Empress Marie Louise, who granted an English translator — one "H. Kirchenhoffer, Fellow of the University of Pavia" — permission to publish it. London, 1822. Five shillings, boards.</p>
+    <blockquote>"He accordingly secured the original and translated Manuscripts, in his private cabinet, which ever after accompanied him... They were held by him as a sacred treasure, and are said to have been a stimulus to many of his grandest speculations."
+      <cite>— Translator's Preface, <em>The Book of Fate</em> (1822)</cite>
+    </blockquote>
+    <p class="soft">None of it happened. There was no Kirchenhoffer, no Sardinian knighthood, no papyrus, no Coptic scholar — the whole apparatus, dedication to a real empress included, was invented for the London chapbook market. It's the same move Antoine Court de Gébelin made for tarot in 1781: an invented Egyptian pedigree, dressed in real names and real dates, sold as the frame that would make an oracle worth buying. Where <a href="course-viewer.html?course=history-of-tarot">A History of Tarot</a> corrects that record for the cards, this page just leaves the correction sitting in plain sight, up top, rather than at the end.</p>
+  </section>
+
+  <section class="bof-section">
+    <h2>How the oracle actually worked</h2>
+    <p class="soft">The consultation method is a real, functioning piece of design — structured randomness with a lookup table, no cards, no dice, just a pen and a count. Here it is, condensed from the book's own instructions:</p>
+    <ol class="bof-steps">
+      <li>Trace five rows of upright lines with a pen, quickly and without counting — each row needs to come out to more than twelve marks, but exactly how many is left to chance.</li>
+      <li>Count off each row in twelves. What's left over — the remainder — is either odd or even.</li>
+      <li>Mark one star beside a row if its remainder is odd, two stars if it's even. Five rows, five marks: this double column of stars is your <strong>Sign</strong>.</li>
+      <li>Find your Sign among the printed columns in the book's table. Each Sign points to one <strong>Hieroglyphic</strong> — a named image (a Pyramid, a Plough, a pair of Cross Bones).</li>
+      <li>Ask your question aloud, by its number in the list of thirty-two. Look up that Hieroglyphic under your question, and the words beside it are your answer.</li>
+    </ol>
+    <p class="soft">The translator adds, dryly, that the blood-dipped reed and the temple sacrifices can be safely skipped — "he and his friends have, invariably and without the least detriment, used a pen dipped in common ink."</p>
+  </section>
+
+  <section class="bof-section">
+    <h2>The thirty-two questions</h2>
+    <p class="soft">As listed on the book's frontispiece. The <span class="vflag">verified</span> ones are checked against clean, quoted text in the translator's preface — wording and numbering confirmed. The rest are a best-effort reading of a badly damaged scan (the frontispiece was set in italic type the OCR mangled badly) and may not match the original phrasing or order exactly; treat them as a sketch, not a transcription.</p>
+    <ol class="qlist" id="bof-qlist"><!-- filled by script from QUESTIONS --></ol>
+  </section>
+
+  <section class="bof-section">
+    <h2>Cast the oracle</h2>
+    <p class="soft">Nine questions, cross-checked against the original. Pick one and cast — you'll get one of the answers the book itself records, word for word.</p>
+    <div class="caster">
+      <p class="caster-q">Ask:</p>
+      <select id="bof-select"></select>
+      <div><button id="bof-cast" type="button">Cast the lines</button></div>
+      <div id="bof-tally"></div>
+      <div id="bof-result"></div>
+    </div>
+  </section>
+
+  <section class="bof-section">
+    <h2>The hieroglyphics, as cards</h2>
+    <p class="soft">Every verified answer, gathered as its own card — click one for the full answer and its source.</p>
+    <div class="card-gallery" id="bof-gallery"></div>
+    <div class="gdetail" id="bof-gdetail"></div>
+  </section>
+
+  <p class="bof-footer-note">
+    <strong>Sources &amp; honesty.</strong> Text drawn from the 1923 H. S. Nichols facsimile of the 1822 London original, digitized by the Internet Archive (<a href="https://archive.org/details/bookoffateformer01kirc" target="_blank" rel="noopener">full scan</a>) and the Library of Congress. The hoax attribution — no historical Kirchenhoffer, the Sonnini/Napoleon story invented for the market — follows the Public Domain Review's account, <a href="https://publicdomainreview.org/collection/book-of-fate" target="_blank" rel="noopener">"Hieroglyphics of a Rope-Dancer"</a>. All nine cast-able questions and their answers are quoted directly from the translator's preface, where the book itself works a set of worked examples (including Napoleon's own recorded consultations). The other twenty-three questions and the full body of answers exist in the original but weren't reliably recoverable from this OCR pass in one sitting — a fuller transcription is possible as a later pass, matched page by page against the scan rather than against damaged text. This page is a companion piece to <a href="course-viewer.html?course=tarot-and-fiction">Tarot as a Source of Fiction</a>.
+  </p>
+</main>
+
+<script src="../site-footer.js?v=1"></script>
+<site-footer base="../"></site-footer>
+<script src="../assistant.js" defer></script>
+
+<script>
+(function(){
+  // Every entry below is a direct quotation from the translator's preface to
+  // The Book of Fate (1822), matched to its question number and hieroglyphic
+  // as the book itself states them. Where a question has more than one
+  // recorded answer (the book explains a Sign can point to different
+  // Hieroglyphics on different casts), both are kept.
+  const QUESTIONS = [
+    { n: 6,  q: "Shall I make, or mar, my fortune by gambling?", verified: true,
+      answers: [{ h: "Cross Bones", a: "Be warned! from henceforth, never play for money, nor money's worth.", kind: "mandatory" }] },
+    { n: 8,  q: "Shall I be eminent, and meet with preferment in my pursuits?", verified: true,
+      answers: [{ h: "Pyramid", a: "Thou shalt meet with many obstacles, but at length thou shalt attain the highest earthly power and honour.", kind: "presumptive" }] },
+    { n: 12, q: "Will my name be immortalized, and will posterity applaud it?", verified: true,
+      answers: [
+        { h: "Pyramid", a: "Thy name will be handed down, with the memory of thy deeds, to the most distant posterity.", kind: "positive" },
+        { h: "Castellated Mansion", a: "Abuse not the power which the Lord giveth thee, and thy name will be hailed with rapture in future ages.", kind: "admonitory" }
+      ] },
+    { n: 15, q: "What is the aspect of the seasons, and what political changes are likely to take place?", verified: true,
+      answers: [
+        { h: "Cross Keys", a: "A conqueror, of noble mind and mighty power, shall spring from low condition; he will break the chains of the oppressed, and will give liberty to the nations.", kind: "presumptive" },
+        { h: "Castellated Mansion", a: "The wings of the eagle of the north will be clipped, and his talons blunted.", kind: "presumptive" }
+      ] },
+    { n: 17, q: "Will my beloved prove true in my absence?", verified: true,
+      answers: [{ h: "Plough", a: "The affections of the being whom thou lovest, will be placed on none other but thyself.", kind: "positive" }] },
+    { n: 19, q: "After my death, will my children be virtuous and happy?", verified: true,
+      answers: [{ h: "Ladder", a: "In the training of thy offspring, let thy discipline be strict, but not severe; lose no opportunity of improving their understandings, and, in the plenitude of their happiness, they will bless thee.", kind: "conditional" }] },
+    { n: 24, q: "Inform me of all particulars relating to my future husband.", verified: true,
+      answers: [{ h: "Bow and Arrow", a: "Consider well whether thou oughtest, at present, to change thy condition in life.", kind: "admonitory" }] },
+    { n: 27, q: "Shall my intended journey be prosperous, or unlucky?", verified: true,
+      answers: [{ h: "Cross Bones", a: "When thou hast arrived at thy place of destination, lose no time in executing thy errand, and return without delay.", kind: "conditional" }] },
+    { n: 28, q: "Shall I ever find a treasure?", verified: true,
+      answers: [{ h: "Fasces", a: "When thou findest a treasure, teach thy tongue to be silent; and see that thou makest good use of thy riches.", kind: "presumptive" }] },
+    { n: 30, q: "Have I any, or many, enemies?", verified: true,
+      answers: [{ h: "Hand and Dagger", a: "Thou hast enemies, who, if not restrained by the laws, would plunge a dagger in thy heart.", kind: "positive" }] },
+  ];
+
+  // The rest of the frontispiece's 32, best-effort — see the page's caveat.
+  const UNVERIFIED = [
+    "Shall my wife have a son, or a daughter?",
+    "Shall I travel, by sea, to a foreign country?",
+    "Shall I live to old age?",
+    "Will my travels be attended with good fortune?",
+    "Shall the lawsuit in which I am engaged bring loss upon my estate?",
+    "Shall I begin, and meet with fortune, in a new pursuit?",
+    "Shall I be successful in my present pursuit or attainment?",
+    "Shall I be wealthy?",
+    "Shall I spend this year as happily as the first?",
+    "Will my friends prove faithful, or treacherous?",
+    "Shall I properly recover what a thief has taken from me?",
+    "Will the summer sun return safely from abroad?",
+    "Doth my dream portend good luck, or misfortune?",
+    "Will the sovereign's affairs be brought to a happy issue?",
+    "Shall I recover from my present misfortunes?",
+    "Will it be my lot to experience many hardships in this life?",
+    "Will my reputation be damaged little, or much, by calumny?",
+    "Will the patient recover from illness?",
+    "Does the person whom I love, love and think of me?",
+    "Are my absent friends in good health, and what is their present employment?",
+    "What trade, or profession, ought I to follow?",
+    "Have I any, or many enemies?",
+  ];
+
+  // ── render the 32-question list ──
+  const qlist = document.getElementById('bof-qlist');
+  const verifiedRows = QUESTIONS.map(x => ({ n: x.n, q: x.q, verified: true }));
+  const allRows = verifiedRows.concat(UNVERIFIED.map(q => ({ n: null, q, verified: false })))
+    .sort((a, b) => (a.n ?? 99) - (b.n ?? 99));
+  qlist.innerHTML = allRows.map(r =>
+    `<li class="${r.verified ? 'verified' : ''}"><span class="n">${r.n ? 'No. ' + r.n : '—'}</span>${r.q}${r.verified ? '<span class="vflag">verified</span>' : ''}</li>`
+  ).join('');
+
+  // ── the caster ──
+  const select = document.getElementById('bof-select');
+  select.innerHTML = QUESTIONS.map(x => `<option value="${x.n}">No. ${x.n} — ${x.q}</option>`).join('');
+
+  const tallyEl = document.getElementById('bof-tally');
+  const resultEl = document.getElementById('bof-result');
+
+  function castRow() {
+    const n = 13 + Math.floor(Math.random() * 8); // more than twelve, by chance
+    const rem = n % 12;
+    return { n, rem, odd: rem % 2 === 1 };
+  }
+
+  document.getElementById('bof-cast').addEventListener('click', function () {
+    const q = QUESTIONS.find(x => String(x.n) === select.value);
+    if (!q) return;
+    const rows = [castRow(), castRow(), castRow(), castRow(), castRow()];
+    tallyEl.textContent = rows.map(r => '|'.repeat(r.n) + '  →  ' + (r.odd ? '★' : '★★')).join('\n');
+    tallyEl.style.whiteSpace = 'pre-line';
+    const pick = q.answers[Math.floor(Math.random() * q.answers.length)];
+    resultEl.innerHTML = `<div class="oracle-card">
+      <div class="glyph">☙</div>
+      <div>
+        <p class="hname">Hieroglyphic of the ${pick.h}</p>
+        <p class="atext">&ldquo;${pick.a}&rdquo;</p>
+        <p class="cite">Answer to Question ${q.n} — &ldquo;${q.q}&rdquo; (${pick.kind})</p>
+      </div>
+    </div>`;
+  });
+
+  // ── the card gallery (every verified hieroglyphic-answer pair) ──
+  const gallery = document.getElementById('bof-gallery');
+  const gdetail = document.getElementById('bof-gdetail');
+  const cards = [];
+  QUESTIONS.forEach(q => q.answers.forEach(ans => cards.push({ q: q.n, qtext: q.q, ...ans })));
+
+  gallery.innerHTML = cards.map((c, i) => `<div class="gcard" data-i="${i}">
+      <div class="gicon">☙</div>
+      <div class="gname">${c.h}</div>
+      <div class="gq">No. ${c.q}</div>
+    </div>`).join('');
+
+  gallery.querySelectorAll('.gcard').forEach(el => {
+    el.addEventListener('click', () => {
+      const c = cards[+el.dataset.i];
+      gdetail.innerHTML = `<div class="oracle-card">
+        <div class="glyph">☙</div>
+        <div>
+          <p class="hname">Hieroglyphic of the ${c.h}</p>
+          <p class="atext">&ldquo;${c.a}&rdquo;</p>
+          <p class="cite">Answer to Question ${c.q} — &ldquo;${c.qtext}&rdquo; (${c.kind})</p>
+        </div>
+      </div>`;
+      gdetail.classList.add('open');
+      gdetail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+})();
+</script>
+</body>
+</html>
