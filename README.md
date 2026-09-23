@@ -9,10 +9,14 @@ Commons, the BnF/Gallica, etc.).
 
 | What | License |
 |------|---------|
-| Code — viewers, scripts, site pages | [MIT](LICENSE) |
-| Content — grammar data, research dossiers, courses, images metadata | [CC-BY-SA-4.0](LICENSE-CONTENT.txt) |
+| Code — `viewers/`, `scripts/`, `public/` scripts and styles, the site pages (`*.html`, `*.js`, `*.css`), and the format spec `GRAMMAR_FORMAT.md` | [Apache-2.0](LICENSE) — see [NOTICE](NOTICE) |
+| Content — grammar data (`tarot/`), research dossiers (`research/`, `_research/`), `docs/`, `course/`, `print/`, `recording/`, images and images metadata | [CC-BY-SA-4.0](LICENSE-CONTENT.txt) unless a file says otherwise |
+| Third-party — `public/vendor/cytoscape.min.js`; `pages/courses/images/github-mark.svg` | Cytoscape.js: MIT, © The Cytoscape Consortium (licence in the file header). The GitHub mark belongs to GitHub and is used only as a link icon |
+| The names "recursive.eco" and "Recursive", and the spiral logo (`public/recursive-logo.svg`, `public/recursive-mark.svg`, `public/spiral-*.svg`, `public/spiral/spiral-v2.svg`, `public/favicon.svg`) | Not licensed — see [TRADEMARKS.md](TRADEMARKS.md) |
 
-Card artwork itself is public domain (each grammar records per-image provenance).
+Card artwork itself is public domain (each grammar records per-image provenance); it stays
+public domain and is not relicensed. The code was MIT until September 2026; copies taken
+before then keep that licence.
 
 If you are a tarot historian or collector and found this from the Tarot History Forum:
 **welcome, and please correct us.** See *Contributing* below.
