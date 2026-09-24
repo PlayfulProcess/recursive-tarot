@@ -13,3 +13,20 @@ are used as trademarks and are not licensed. See TRADEMARKS.md.
 This repository includes third-party software:
 - Cytoscape.js (public/vendor/cytoscape.min.js),
   Copyright (c) 2016-2026 The Cytoscape Consortium, MIT License.
+
+Third-party images: some card scans are not covered by CC-BY-SA-4.0.
+- tarot/vieville-tarot/images/ and tarot/paris-anonymous-tarot/images/ are
+  scans by the Bibliothèque nationale de France from Gallica
+  (ark:/12148/btv1b10510963k and ark:/12148/btv1b105109624). Credit:
+  "Source gallica.bnf.fr / Bibliothèque nationale de France". The 17th-century
+  cards are public domain, but the scans are reused under Gallica's conditions
+  of use: non-commercial reuse is free with that credit; commercial reuse
+  needs a licence from the BnF.
+- Other decks credit their image sources in each grammar.json
+  (_grammar_commons, cover_image_credit, per-card metadata); where a source
+  has its own licence (for example CC BY-SA 4.0 photographs on Wikimedia
+  Commons), that licence applies to those images.
+
+Third-party marks: the GitHub mark (pages/courses/images/github-mark.svg) is a
+trademark of GitHub, Inc. It is used only as a link to GitHub, as GitHub's logo
+guidelines allow. This project is not affiliated with GitHub.
