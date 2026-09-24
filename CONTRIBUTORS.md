@@ -5,18 +5,18 @@ promise: this library stays open, and everyone who builds it stays credited. Eve
 contribution's author already rides along in the git history (`git log`); this file just makes
 that list easy to find without cloning the repo.
 
-The list below is young — right now it's essentially one builder plus one early collaborator. If
+The list below is young — right now it's essentially one builder. If
 you fix a card, add a deck, write a course, or improve the site and get a **pull request merged**,
 add yourself here in that same PR (or ask the maintainer to) and you're on the list. No invented
 names, no false crowd — just whoever has actually merged work.
 
 ## Maintainer
 
-- **PlayfulProcess** (João) — [@PlayfulProcess](https://github.com/PlayfulProcess) — project maintainer, keeper of the grammar and the shared intention.
+- **PlayfulProcess** — [@PlayfulProcess](https://github.com/PlayfulProcess) — project maintainer, keeper of the grammar and the shared intention.
 
 ## Contributors
 
-- **PlayfulProcess** — [@pp-life-is-process](https://github.com/pp-life-is-process)
+- *(none yet: yours could be the first merged pull request)*
 
 ## How to get listed
 

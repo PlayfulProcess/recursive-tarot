@@ -43,9 +43,14 @@ def canon_key(name):
     return None
 
 def main():
-    plat_file = ("C:/Users/USER/.claude/projects/C--Users-USER-OneDrive-Documentos-GitHub/"
-                 "f8bb4a3a-268a-42dd-9596-28e77d67add8/tool-results/"
-                 "mcp-6b361191-1fb9-4ce8-bfa5-928a3833b8a0-get_grammar-1782175398563.txt")
+    # A saved get_grammar MCP result from a Claude Code session. PLATFORM_GRAMMAR_FILE overrides;
+    # otherwise it is looked up under this machine's ~/.claude project folder.
+    home = os.path.expanduser("~")
+    plat_file = os.environ.get("PLATFORM_GRAMMAR_FILE") or os.path.join(
+        home, ".claude", "projects",
+        "C--Users-" + os.path.basename(home) + "-OneDrive-Documentos-GitHub",
+        "f8bb4a3a-268a-42dd-9596-28e77d67add8", "tool-results",
+        "mcp-6b361191-1fb9-4ce8-bfa5-928a3833b8a0-get_grammar-1782175398563.txt")
     g = json.loads(open(plat_file, encoding="utf-8").read())
     plat = g["items"]
 
