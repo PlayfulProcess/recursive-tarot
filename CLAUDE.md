@@ -7,6 +7,15 @@
 3. **Consolidate, don't multiply.** Prefer turning a new idea into something we already have — a **voice** (`voices.json`), a **deck**, a **source** (`books-of-tarot` / `people-of-tarot`), or a **journey** (the four doors: Player · Historian · Practitioner · Contributor) — over a parallel structure. The Golden Dawn is the worked example: it became a *voice* + a short pathworking course, not a separate sub-site.
 4. **Voice vs Source (the two wings).** A tradition's *reading stance* is the **Living/practice** layer (voices, courses, the Golden Dawn Path); its *people, books, and decks* are the **Record/evidence** layer (`docs/DESIGN-two-wings-provenance.md`). Keep them in their own places and cross-link with the one pill pattern below — never let a practice claim masquerade as a historical one.
 
+## Reflective practice, not a habit (Sep 26 2026)
+
+From the tarot hope-or-habit study (`recursive-eco/docs/future_plan/STUDY-tarot-hope-or-habit-2026-09-26.md`):
+- **The deck never calls.** No daily card, streak, badge, push or re-engagement message about readings. Events a person opts into (a monthly table) are not readings and are fine.
+- **Re-casting is never silent.** Caster Studio shows the session's draw count from the second draw on (`#castCount`, sessionStorage only, used for nothing else).
+- **Practice words, not delivery words.** Buttons say "Lay the cards" / "Draw & reflect", never "Get a Reading".
+- **Say the true thing at the draw.** The Oracle Ribbon (`viewers/oracle-ribbon.js`) carries the framing at the moment of the cast; keep its evidence line accurate. Barnum/Forer is about accepting *personality descriptions*, not predictions or advice; the blind tests (Blackmore 1983, about ten people per experiment, one experiment significant on reanalysis; Ivtzan & French 2004) are about recognizing one's own reading, and are small.
+- **Tarot stays off kids surfaces**; AI readings are adults-only (that gate lives in recursive.eco, not here).
+
 ## Theme & colour — ONE source (`theme.css`)
 
 - **All colour lives in `theme.css`** (a single `:root` of tokens), linked by every page and viewer.

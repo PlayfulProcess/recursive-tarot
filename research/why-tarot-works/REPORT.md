@@ -118,6 +118,10 @@ plausible mechanisms.** A rigorous account must hold both.
   tailored specifically to them, yet which are in fact vague and general enough to
   apply to a broad range of people."** ✔︎ (Wikipedia, citing Forer/Meehl). Forer's
   1948 study: students rating an identical generic profile as ~4.3/5 accurate. ○
+  **Scope (added Sep 26 2026):** these studies measured acceptance of *personality
+  descriptions* as one's own. They did not test predictions, advice or a reading's
+  conclusions; a reading's descriptive part works like a Barnum statement, its forecasts
+  and advice are a separate, untested question.
 - **Subjective validation** — the same vagueness that drives the Forer effect lets
   you **project your own specifics** onto a general statement, which is the very same
   projective mechanism that makes tarot useful. The mechanism cuts both ways: it's

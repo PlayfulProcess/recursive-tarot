@@ -337,6 +337,10 @@
     <button id="clearCasting" class="ghost">Clear casting</button>
     <button id="clearAll" class="ghost">Clear all</button>
     <button id="reshuffle" class="ghost" style="display:none">Re-cast</button>
+    <!-- Re-casting stays allowed, but never silent (Sep 26 2026, tarot hope-or-habit study): from the
+         second draw on, the count for this browser session shows beside Cast. Kept in sessionStorage
+         only; nothing is sent anywhere and the count is used for nothing else. -->
+    <span id="castCount" aria-live="polite" style="font-size:12px;color:var(--mut);align-self:center;"></span>
     <span class="abarsep" aria-hidden="true"></span>
     <button type="button" id="addPos" class="ghost">+ Add position</button>
     <button type="button" id="saveAsNew" class="ghost" style="display:none">Save as new</button>
@@ -911,6 +915,16 @@ function drawN(n){ const pool = currentPool().slice();
   for (let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
   return pool.slice(0,n); }
 
+// Count of draws in this browser session, shown from the second one on (see #castCount).
+let castCountMem = 0;
+function showCastCount(){
+  let n;
+  try { n = (parseInt(sessionStorage.getItem('casterDraws'), 10) || 0) + 1; sessionStorage.setItem('casterDraws', String(n)); }
+  catch (e) { n = ++castCountMem; }
+  const el = $('castCount');
+  if (el) el.textContent = n > 1 ? `Draw ${n} this session` : '';
+}
+
 function cast(){
   if (!positions.length) { alert('Add at least one position.'); return; }
   const n = positions.length;
@@ -925,6 +939,7 @@ function cast(){
       // openCardDetail can render it additively alongside the resolved source deck content.
       keywords:c.keywords||null, sections:c.sections||null }; });
   $('reshuffle').style.display = 'inline-block';
+  showCastCount();
   renderBoard(); syncJson(); $('export').classList.add('on');
   // Oracle Ribbon — ON by default since Aug 8 2026 (approved after the ?ribbon=1 preview).
   // The moment a cast lands is exactly when "the cards have spoken" energy is highest, so

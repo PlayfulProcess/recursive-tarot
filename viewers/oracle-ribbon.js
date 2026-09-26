@@ -75,6 +75,7 @@
     'The map is not the territory.',
     'A mirror, not a command.',
     'Gate, not fate.',
+    'In small blind tests, people mostly could not tell their own reading from someone else’s. Read it as a mirror, not a forecast.',
   ];
   const HOLD_MS = 8000;
   const FADE_MS = 2000;
