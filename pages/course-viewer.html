@@ -1079,14 +1079,14 @@
                       const dg=await get(T+'/'+g.slug+'/grammar.json'); if(!dg)continue;
                       const sigs=dg.items.filter(i=>(i.level||1)===1 && (i.image_url||(i.metadata||{}).image_url)).map(i=>i.image_url||(i.metadata||{}).image_url);
                       const cover=g.cover_image_url||sigs[0];
-                      const cells=sigs.slice(1,9).map(im=>`<figure class="c"><img loading="lazy" src="${esc(im)}"></figure>`).join('');
+                      const cells=sigs.slice(1,9).map(im=>`<figure class="c"><img loading="lazy" src="${esc(im)}" alt="${esc((g.name||g.slug).split(' — ')[0])} card"></figure>`).join('');
                       let makers='';
                       for(const p of (makersByDeck[g.slug]||[])){ const who=((p.sections||{}).Who||'').replace(/\s*\[@[^\]]+\]/g,'').split('. ')[0]; const life=(p.metadata||{}).lifespan||'';
                         makers+=`<p class="maker"><strong>${esc(p.name)}${life?' ('+esc(life)+')':''}</strong> — ${mdl(who.slice(0,240))}.</p>`; }
                       if(makers)makers='<div class="made-by"><h4>The hands behind it</h4>'+makers+'</div>';
                       const sch=(scholarsByDeck[g.slug]||[]).map(p=>esc(p.name)).join(' · ');
                       if(sch)makers+='<div class="made-by"><h4>Studied by</h4><p class="maker">'+sch+'</p></div>';
-                      html+=`<section class="deck-chapter" id="deck-${g.slug}"><h3>${esc((g.name||g.slug).split(' — ')[0])}${g.year_label?' · '+esc(g.year_label):''}</h3>${cover?`<img class="deck-cover" src="${esc(cover)}">`:''}${mdBlock(dg.description)}${makers}${cells?`<div class="strip">${cells}</div>`:''}</section>`;
+                      html+=`<section class="deck-chapter" id="deck-${g.slug}"><h3>${esc((g.name||g.slug).split(' — ')[0])}${g.year_label?' · '+esc(g.year_label):''}</h3>${cover?`<img class="deck-cover" src="${esc(cover)}" alt="${esc((g.name||g.slug).split(' — ')[0])} — cover card">`:''}${mdBlock(dg.description)}${makers}${cells?`<div class="strip">${cells}</div>`:''}</section>`;
                     } }
                     deckEls.forEach(el=>el.innerHTML=html);
                   }
@@ -1103,7 +1103,7 @@
                         if(s&&img){ const cs=CANON[String(s).toLowerCase()]; if(cs){ (sidx[cs]=sidx[cs]||{}); (sidx[cs][slug]=sidx[cs][slug]||[]).push(img); } } } }
                     let html=suits?`<p>${mdl(suits._intro)}</p>`:'';
                     for(const cs of SORDER){ if(!suits||!suits[cs])continue;
-                      const cells=ANCH.flatMap(slug=>((sidx[cs]||{})[slug]||[]).slice(0,5)).map(im=>`<figure class="c"><img loading="lazy" src="${esc(im)}"></figure>`).join('');
+                      const cells=ANCH.flatMap(slug=>((sidx[cs]||{})[slug]||[]).slice(0,5)).map(im=>`<figure class="c"><img loading="lazy" src="${esc(im)}" alt="${esc(cs)} suit card"></figure>`).join('');
                       html+=`<section class="card-chapter"><h3>The Suit of ${esc(STITLE[cs])}</h3><div class="synthbox"><p>${mdl(suits[cs])}</p></div><div class="strip">${cells}</div></section>`;
                     }
                     suitEls.forEach(el=>el.innerHTML=html);
@@ -1126,7 +1126,7 @@
                     let html=nums&&nums._intro?`<p>${mdl(nums._intro)}</p>`:'';
                     for(let n=1;n<=10;n++){ if(!nums||!nums[n])continue;
                       const cells=SUITORDER.map(cs=>{const c=(nidx[n]||{})[cs];if(!c||!c.img)return '';
-                        return `<a class="c" href="../viewers/cards.html?src=../tarot/${c.slug}/grammar.json&item=${encodeURIComponent(c.item)}" title="${esc(c.title)}"><img loading="lazy" src="${esc(c.img)}"><div>${esc(cs)}</div></a>`;}).join('');
+                        return `<a class="c" href="../viewers/cards.html?src=../tarot/${c.slug}/grammar.json&item=${encodeURIComponent(c.item)}" title="${esc(c.title)}"><img loading="lazy" src="${esc(c.img)}" alt="${esc(c.title)}"><div>${esc(cs)}</div></a>`;}).join('');
                       const tm=String(nums[n]).match(/^\*\*(.+?)\*\*\s*/); const head=tm?tm[1]:('Number '+n); const body=tm?String(nums[n]).slice(tm[0].length):String(nums[n]);
                       html+=`<section class="card-chapter"><h3>${esc(head)}</h3><div class="synthbox"><p>${mdl(body)}</p></div><div class="strip">${cells}</div></section>`;
                     }
@@ -1146,7 +1146,7 @@
                           const dname=(g.name||g.slug).split(' — ')[0];
                           // each card links to its detail view in that deck (history-only static viewer)
                           const url=`../viewers/cards.html?src=../tarot/${g.slug}/grammar.json&item=${encodeURIComponent(it?it.id:'')}`;
-                          if(img) cells.push({y:g.year||9999,slug:g.slug,h:`<a class="c" href="${url}" title="Open the ${esc(dname)} card"><img loading="lazy" src="${esc(img)}"><div>${esc(dname.slice(0,14))}</div></a>`});
+                          if(img) cells.push({y:g.year||9999,slug:g.slug,h:`<a class="c" href="${url}" title="Open the ${esc(dname)} card"><img loading="lazy" src="${esc(img)}" alt="${esc(dname)} card"><div>${esc(dname.slice(0,14))}</div></a>`});
                         }
                         cells.sort((a,b)=>a.y-b.y); html+=cells.map(c=>c.h).join('');
                         const withId=cells.find(c=>ecoIds&&ecoIds.ids&&ecoIds.ids[c.slug]);
@@ -1185,7 +1185,7 @@
                     if(synEls.length){ let html='';
                       for(const tk of ORDER){ if(!syn||!syn[tk])continue;
                         const entries=(idx[tk]||[]).filter(c=>c.img).sort((a,b)=>a.year-b.year);
-                        const cells=entries.map(c=>`<a class="c" href="../viewers/cards.html?src=../tarot/${c.slug}/grammar.json&item=${encodeURIComponent(c.id)}"><img loading="lazy" src="${esc(c.img)}"><div>${esc(c.name.slice(0,14))}</div></a>`).join('');
+                        const cells=entries.map(c=>`<a class="c" href="../viewers/cards.html?src=../tarot/${c.slug}/grammar.json&item=${encodeURIComponent(c.id)}"><img loading="lazy" src="${esc(c.img)}" alt="${esc(c.name)}"><div>${esc(c.name.slice(0,14))}</div></a>`).join('');
                         const withId=entries.find(c=>ecoIds&&ecoIds.ids&&ecoIds.ids[c.slug]);
                         const readingUrl=withId?`https://flow.recursive.eco/g/${ecoIds.ids[withId.slug]}?view=reading`:'https://flow.recursive.eco';
                         html+=`<div class="card-chapter"><h3>${NUM[tk]} — ${esc(lbl(tk))}</h3><div class="synthbox"><p>${mdl(syn[tk])}</p></div><div class="strip">${cells}</div><p class="card-links screen-only"><a href="../viewers/prototypes/lenses.html?card=${tk}">See ${esc(lbl(tk))} across every deck in Lenses →</a> · <a href="${readingUrl}" target="_blank" rel="noopener">Get a reading at recursive.eco →</a></p></div>`;
@@ -1200,7 +1200,7 @@
                         const early=ANCH.find(s=>sceneOf(entryOf(s))); let ind='', drow=0;
                         for(const slug of [early,'tarot-de-marseille-conver','golden-dawn-book-t-tarot']){ if(!slug)continue; const c=entryOf(slug); const sc=sceneOf(c); if(!sc)continue;
                           const g=col.grammars.find(x=>x.slug===slug);
-                          const thumb=c.img?`<a class="cardthumb" href="../viewers/cards.html?src=../tarot/${slug}/grammar.json&item=${encodeURIComponent(c.id)}"><img loading="lazy" src="${esc(c.img)}"></a>`:'';
+                          const thumb=c.img?`<a class="cardthumb" href="../viewers/cards.html?src=../tarot/${slug}/grammar.json&item=${encodeURIComponent(c.id)}"><img loading="lazy" src="${esc(c.img)}" alt="${esc(((g&&g.name)||slug).split(' — ')[0])} card"></a>`:'';
                           ind+=`<div class="indeck-row${drow++%2?' flip':''}">${thumb}<div class="indeck-text"><strong>${esc((g.name||slug).split(' — ')[0])} · ${g.year||''}.</strong> ${mdl(sc.slice(0,520))}${sc.length>520?'…':''}</div></div>`; }
                         if(ind)ind='<h4>In the decks</h4>'+ind;
                         const later=[],seen=new Set();
@@ -1233,7 +1233,7 @@
                           if(later.length){const [,a,body]=later[0];rd=`<span class="mread"><em>${esc(a.split(',')[0])}</em> — ${mdl(body.slice(0,240))}${body.length>240?'…':''}</span>`;}
                           const rl=(rank||'').replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
                           const badge=(ro>=1&&ro<=10)?String(ro):esc(rl.charAt(0));
-                          const imgh=repimg?`<div class="minor-img"><img loading="lazy" src="${esc(repimg)}"></div>`:'';
+                          const imgh=repimg?`<div class="minor-img"><img loading="lazy" src="${esc(repimg)}" alt="${esc(rl)} card"></div>`:'';
                           html+=`<div class="minor-card"><div class="minor-head"><span class="rank-num">${badge}</span><strong>${esc(rl)} of ${esc(STITLE[cs].split(' ')[0])}</strong></div><div class="minor-body">${ind} ${rd}</div>${imgh}</div>`;
                         }
                         html+='</div>';
@@ -1275,7 +1275,7 @@
                       for(const [slug,spec,cap] of list){ const dg=await get(T+'/'+slug+'/grammar.json'); if(!dg)continue;
                         const it=resolve(dg,spec); const img=it&&(it.image_url||(it.metadata||{}).image_url); if(!img)continue;
                         const href=`../viewers/cards.html?src=${encodeURIComponent('../tarot/'+slug+'/grammar.json')}&item=${encodeURIComponent(it.id)}`;
-                        h+=`<figure class="plate"><a href="${href}"><img loading="lazy" src="${esc(img)}"></a><figcaption>${esc(cap)}</figcaption></figure>`; }
+                        h+=`<figure class="plate"><a href="${href}"><img loading="lazy" src="${esc(img)}" alt="${esc(cap)}"></a><figcaption>${esc(cap)}</figcaption></figure>`; }
                       return h; }
                     const html=`<div class="plates-h">One card across the centuries — Death</div><div class="plate-row">${await gallery(DEATH)}</div>`
                       +`<div class="plates-h">Continuity &amp; diversity — a few iconic cards</div><div class="plate-grid">${await gallery(ICONS)}</div>`;

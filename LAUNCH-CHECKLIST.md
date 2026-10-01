@@ -1,6 +1,6 @@
 # Launch Checklist — The Recursive Tarot
 
-Working notes for what to address before a real public launch. Live site: **tarot.recursive.eco** (GitHub Pages serves the `dev` branch).
+Working notes for what to address before a real public launch. Live site: **tarot.recursive.eco** (GitHub Pages serves the `main` branch — `dev` is retired; see CLAUDE.md → Core architecture).
 
 ---
 
@@ -39,7 +39,7 @@ For each: button appears → logged-out shows the sign-in prompt → logged-in l
 ## 4. Site hygiene sweep
 - [ ] Click every nav item + every Play/Shop tile — no 404s (root, `/viewers/`, `/pages/`, `/pages/games/`).
 - [ ] Mobile: header wraps cleanly, tiles stack, dropdowns work on tap.
-- [ ] Light + dark mode both readable on every page.
+- [ ] Light theme readable on every page (the site is light-only by design — no dark-mode blocks; see CLAUDE.md → Theme & colour).
 - [ ] OG/meta tags + favicon present on key pages; `CNAME` = `tarot.recursive.eco`.
 - [ ] Auth widget (`recursive-auth`) renders in the header and sign-in works.
 - [ ] **Reminder:** any time `site-header.js` changes, bump `?v=` across all pages (currently `v=17`).

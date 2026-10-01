@@ -304,7 +304,7 @@ function recHTML(r){
       <span class="nm">${esc(r.__name).slice(0,24)}</span>${attr?`<span class="at">${esc(attr).slice(0,46)}</span>`:''}${esc(body)}</span>`;
   }
   if (lvl === 1 && r.__img)
-    return `<img loading="lazy" data-rid="${esc(r.__id)}" src="${esc(r.__img)}" title="${esc(r.__name)}">`;
+    return `<img loading="lazy" data-rid="${esc(r.__id)}" src="${esc(r.__img)}" title="${esc(r.__name)}" alt="${esc(r.__name)}">`;
   const c = branchColor(r);
   const lo = Math.min(.5, .06 + .07*lvl), hi = Math.min(.85, .14 + .12*lvl);
   return `<span class="epill" data-rid="${esc(r.__id)}" title="${esc(r.__name)}"
@@ -428,13 +428,13 @@ function openDetail(id){
   const det = $('#det');
   const relList = ids => ids.map(i => byId[i]).filter(Boolean).slice(0,18)
     .map(x => x.__img && +(x.level?.[0]||'L1').slice(1)===1
-      ? `<img data-rid="${esc(x.__id)}" src="${esc(x.__img)}" title="${esc(x.__name)}">`
+      ? `<img data-rid="${esc(x.__id)}" src="${esc(x.__img)}" title="${esc(x.__name)}" alt="${esc(x.__name)}">`
       : recHTML(x)).join('');
   const metaBits = ['level','deck','source_deck','century','order','branch','suit','trump_number','rank','function','print quality']
     .filter(k=>r[k]).map(k=>`${displayName(k)}: <b>${esc(r[k].map(v=>formatFieldValue(k,v)).join(', '))}</b>`).join(' · ');
   det.innerHTML = `
     <span class="close" onclick="document.getElementById('det').classList.remove('open')">✕</span>
-    ${r.__img ? `<img class="hero" src="${esc(r.__img)}" onclick="window.__lb('${esc(r.__img)}','${esc(r.__name)}')">` : ''}
+    ${r.__img ? `<img class="hero" src="${esc(r.__img)}" alt="${esc(r.__name)}" onclick="window.__lb('${esc(r.__img)}','${esc(r.__name)}')">` : ''}
     <h2>${esc(r.__name)}</h2>
     <div class="meta">${metaBits}</div>
     <h4>⬆ Part of (${r.__parents.length})</h4>

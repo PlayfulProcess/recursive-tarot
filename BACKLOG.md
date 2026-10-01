@@ -5,7 +5,7 @@ sessions. Companion to `LAUNCH-CHECKLIST.md` (launch gates) and `FUTURE_PLAN.md`
 Newest context first. Status: ☐ todo · ◐ partial · ✅ done.
 
 > **▶ Jun 2026 site-redesign + practitioner-course arc has its own master status doc:**
-> [`plan/SITE-REDESIGN-AND-COURSE-2026-06.md`](plan/SITE-REDESIGN-AND-COURSE-2026-06.md) — start
+> [`docs/plan/SITE-REDESIGN-AND-COURSE-2026-06.md`](docs/plan/SITE-REDESIGN-AND-COURSE-2026-06.md) — start
 > there for the editorial homepage redesign, the collapsed "Reading the Cards" course, the
 > dark-mode sweep, the Fraunces font, the "Tarot & the Crack" philosophy enrichment, the video
 > program (7 lenses), and the open queue (icons/de-emoji, broader dark audit, cards.html, screenshots).

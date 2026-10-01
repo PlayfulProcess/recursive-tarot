@@ -140,7 +140,7 @@ meta-grammar uses the platform's *reference-item* structure (see `GRAMMAR_FORMAT
 | [`EMERGENCES.md`](EMERGENCES.md) | The cataloguing model — emergences as patterns over referenced leaves; the source-of-truth contract; how it carries to recursive.eco. |
 | [`MULTI_LENS_PLAN.md`](MULTI_LENS_PLAN.md) | How an emergence picks its renderer (`render_as` / lens). |
 | [`FUTURE_PLAN.md`](FUTURE_PLAN.md) | Roadmap. |
-| [`plan/NEXT-SESSIONS.md`](plan/NEXT-SESSIONS.md) | Live session handoff: what's done, what's queued, per-deck image status. |
+| [`docs/plan/NEXT-SESSIONS.md`](docs/plan/NEXT-SESSIONS.md) | Live session handoff: what's done, what's queued, per-deck image status. |
 | [`research/`](research/) | Per-deck history essays (`00`–`14`), `AUDIT-historical-claims.md`, `ENRICHMENT_PLAN.md`. |
 
 > Transparency: these grammars are **AI-assisted** (drafted with Claude, reviewed by the
