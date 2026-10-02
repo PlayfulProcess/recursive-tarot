@@ -105,7 +105,12 @@ re-Egyptianised). He pairs naturally with the **comte-de-mellet** card as the tw
 
 ## Open questions / corrections owed
 
-- Fix his birth year against a primary source (1719 vs. 1725 both circulate).
+- Fix his birth year against a primary source (1719 vs. 1725 both circulate). One data point:
+  Sosteric quotes Dummett giving "1719 - 1784" [@dummett1980, p. 102, as quoted in @sosteric2014];
+  the 1725 date still needs its own source before either is chosen.
+- His initiation as a Freemason: this page says 1771 (lodge *Les Neuf Sœurs*), while Sosteric
+  gives 1776 [@sosteric2014]. Check against Decker–Depaulis–Dummett before either is printed
+  on a card.
 - Confirm the precise salon and the identity of "Mme la C. d'H." (commonly read as Mme
   Helvétius) from Decker–Depaulis–Dummett rather than tertiary sources.
 - Keep his essay and Mellet's appended essay clearly separated in the grammar (different
@@ -115,3 +120,6 @@ re-Egyptianised). He pairs naturally with the **comte-de-mellet** card as the tw
 
 [@dummett1980], [@decker1996], [@decker2002], [@web_wopc_monde], [@web_gebelin_wp],
 [@web_place_mellet], [@tarot_heritage].
+
+- [@sosteric2014]: a sociologist's reading of the occult turn as an elite, Masonic project. His
+  thesis is contested and his own; cited here for the dates above, not as the page's view.

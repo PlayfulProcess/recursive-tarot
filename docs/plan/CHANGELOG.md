@@ -3,6 +3,17 @@
 Newest first. One line per shipped item; reference the TODO id when there is one.
 Open work lives in [TODO.md](TODO.md).
 
+## 2026-10-02
+
+- **Enrichment from papers read on 2026-10-02** (full list, marks and decisions: [ENRICH-from-papers-2026-10-02.md](ENRICH-from-papers-2026-10-02.md)).
+  - Ten new bibliography entries: Sosteric 2014 and 2023, Greenberg 2023 (not opened), Semetsky 2005 and 2015, Fawaid 2016, Farley 2009 (not read), Depaulis 2011, Bauduin 2012, Leavitt 2007 (not read).
+  - `course/tarot-today.mdx`: Sosteric's argument that the deck cannot be reclaimed, as the course's counter-voice; tarot localised in Java (Fawaid); both added to the bench and to "What's still thin".
+  - `course/tarot-and-fiction.mdx`: Leavitt's dissent on Eliot's cards, with Bauduin's verdict.
+  - `research/00-overview-history-of-tarot.mdx`: where tarot was invented is still argued (Farley vs Depaulis).
+  - `research/people/court-de-gebelin.md`: Dummett's 1719 (as quoted by Sosteric) and a 1771 vs 1776 Masonic-initiation question.
+  - `research/why-tarot-works/REPORT.md`: semiotic (Semetsky) and critical-sociological (Sosteric) readings; Semetsky's "not random" claim declined.
+  - Checked: `check_all` passes; both courses viewed at 1280 and 375 px.
+
 ## 2026-06-25
 
 - **Wish List page + header link.** New `pages/wishlist.html` — a living roadmap in two bands (**On the workbench** / **Before launch**, with a Done lane), on-brand design (Fraunces + gold, card grid). Features the **course-as-a-grammar** with a "how it's made" panel and the wish behind it: recursive.eco's Library Assistant can *open* a course but can't read its content — as a grammar it could. Linked from the header **Home ▸ Wish List**; bumped `site-header.js?v=31→32` across all 27 pages.
