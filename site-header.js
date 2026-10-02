@@ -64,6 +64,7 @@
     [PFX + 'pages/games/madiao.html',     'Ma Diao 馬吊'],
     [PFX + 'pages/games/trionfi.html',    'Trionfi'],
     [PFX + 'viewers/caster-studio.html',  'Spread Caster — build · cast · send'],
+    [PFX + 'viewers/table.html',          'Card Table — less · keep · more'],
     [PFX + 'viewers/cards.html?src=../tarot/bus-passengers/grammar.json', 'Bus Passengers — who’s driving?'],
     ['https://flow.recursive.eco/',   'Oracle ↗', true],
     [PFX + 'pages/play.html',             'All games & readings →'],
@@ -85,6 +86,7 @@
       ['tarot-today',                     'Tarot Today'],
       ['why-a-reading-feels-personal',    'Why a Reading Feels So Personal'],
       ['what-a-reading-can-do',           'What a Reading Can Do'],
+      ['your-card-table',                 'Your Card Table'],
       ['walking-the-golden-dawn-path',     'The Golden Dawn — the Map and the Walk'],
       ['working-with-claude-desktop',     'Working with Claude Desktop'],
     ]],
@@ -98,7 +100,7 @@
     if (f.startsWith('genealogy-tree')) return 'treeoflife';
     if (f.startsWith('timeline')) return 'timeline';
     if (f.startsWith('tree-viewer')) return 'tree';
-    if (f.startsWith('play') || f.startsWith('caster') || f.startsWith('trionfi') || location.pathname.includes('/games/')) return 'play';
+    if (f.startsWith('play') || f.startsWith('caster') || f.startsWith('table') || f.startsWith('trionfi') || location.pathname.includes('/games/')) return 'play';
     if (f.startsWith('genealogy')) return 'genealogy';
     if (f.startsWith('channels')) return 'channels';
     if (f.startsWith('course')) return 'course';

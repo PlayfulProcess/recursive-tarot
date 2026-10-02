@@ -21,6 +21,12 @@
     'spiral':   '<path d="M12 12a1.5 1.5 0 1 1 1.5 1.5 3.5 3.5 0 0 1-3.5-3.5 5.5 5.5 0 0 1 5.5-5.5 7.5 7.5 0 0 1 7.5 7.5"/>',                                        /* Hospicing — composting/cycle */
     'triangle': '<path d="M12 4l8.5 15.5H3.5z"/>',                                                                                                                  /* Golden Dawn — ascent */
 
+    /* ── the four suits, as PlayfulProcess draws them in her card tables (viewers/table.html) ── */
+    'suit-wands':     '<path d="M12 21V11"/><path d="M12 11c-5-1-7-5-6-9 4 0 7 3 6 9z"/><path d="M12 15c3-.5 5-3 5-6-3 0-5 2-5 6z"/>',  /* a leaf on its stem */
+    'suit-cups':      '<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>',                                  /* a heart */
+    'suit-swords':    '<path d="M12 3v14"/><path d="M8 14h8"/><path d="M12 17v4"/><path d="M10.5 21h3"/>',                                   /* a sword with its cross-guard */
+    'suit-pentacles': '<path d="M12 3l2.6 7.9H22l-6.7 4.9 2.6 7.9L12 18.8l-5.9 4.9 2.6-7.9L2 10.9h7.4z"/>',                                /* a pentagram */
+
     /* ── UI chrome (for the viewer sweeps) ── */
     'x':        '<path d="M6 6l12 12M18 6L6 18"/>',
     'eye':      '<path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',

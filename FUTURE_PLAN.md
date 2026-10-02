@@ -184,6 +184,11 @@ reindex) 🟡 dry-run scaffold · Bring-your-own-repo ⛔ not started.
 - `viewers/caster.html` — draw 3 cards (one deck or cross-deck) → export JSON for
   recursive.eco Journal.
 - `genealogy.html` — Cytoscape force-graph of the genealogy.
+- `viewers/table.html` — **the card table** (Oct 2026): areas × less · keep · more, editable
+  rows and columns, "Lay the table" fills empty cells, per-card notes, the notation
+  (`viewers/notation.js`, tests in `viewers/notation.test.js`). Plan:
+  `docs/plan/PLAN-card-table-notation-2026-10-02.md`; the app side is handed to recursive.eco in
+  `docs/plan/REQUESTS-card-table-for-recursive-eco.md`.
 
 ### Tree-format ideas not yet built
 - **Chronological phylogeny**: place decks on a horizontal time axis (parse
