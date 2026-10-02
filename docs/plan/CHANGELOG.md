@@ -5,6 +5,7 @@ Open work lives in [TODO.md](TODO.md).
 
 ## 2026-10-02
 
+- **Paul Foster Case, *An Introduction to the Study of the Tarot* (1920), added to `research/sources/`** (public domain in the US and, since 2025, in Brazil). A later edited printing: an editor's note says the Lamed/Nun directions were changed; the file's header says so and lists the 15 scanning fixes. Court de Gébelin's page: four candidate birth years with their sources; the 1771 initiation confirmed (1776 is the Neuf Sœurs' opening). Six web sources added to the bibliography.
 - **Enrichment from papers read on 2026-10-02** (full list, marks and decisions: [ENRICH-from-papers-2026-10-02.md](ENRICH-from-papers-2026-10-02.md)).
   - Ten new bibliography entries: Sosteric 2014 and 2023, Greenberg 2023 (not opened), Semetsky 2005 and 2015, Fawaid 2016, Farley 2009 (not read), Depaulis 2011, Bauduin 2012, Leavitt 2007 (not read).
   - `course/tarot-today.mdx`: Sosteric's argument that the deck cannot be reclaimed, as the course's counter-voice; tarot localised in Java (Fawaid); both added to the bench and to "What's still thin".

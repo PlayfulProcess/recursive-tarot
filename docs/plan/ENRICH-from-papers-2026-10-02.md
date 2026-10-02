@@ -31,12 +31,17 @@ Marks: ✔ supports the site · ◆ disputes or is contested · ✗ contradicts 
 
 ## Decisions for PlayfulProcess (each with the default used meanwhile)
 
-1. **Case 1920 into `research/sources/`?** Published in New York in 1920, so public domain in
-   the US. Case died in 1954 (from memory; check), so under Brazil's life-plus-70 rule it
-   would have entered the public domain on 1 January 2025. If both hold, it can join Papus
-   and Waite the same way. *Default: not added until you say yes.*
-2. **Gébelin's dates on his card.** *Default: the card keeps "c. 1725" until a primary source
-   settles 1719 vs 1725.*
+1. **Case 1920 into `research/sources/`?** *Yes (PlayfulProcess, 2026-10-02).* Added as
+   `research/sources/case-introduction-to-the-study-of-the-tarot-1920.md`. Case lived 1884–1954
+   (Wikipedia), so the book is public domain in the US (1920) and in Brazil (since
+   1 January 2025). The text available is a later edited printing: one editor's note (Note 5)
+   says the Lamed/Nun directions were changed to Case's later attributions. The file says so
+   and lists every scanning fix.
+2. **Gébelin's dates on his card.** *Keep "c. 1725" (PlayfulProcess, 2026-10-02), and search.*
+   Searched: four dates circulate (1719, February 1724 in Geneva, 1725, 1728); 1719 sits badly
+   with his parents' 1722 marriage; the 1724 Geneva register entry and his father's letters
+   are the primary sources to check. The initiation question is settled for now: 1771 at
+   *Les Amis Réunis*; 1776 is when *Les Neuf Sœurs* opened. Details on his page.
 3. **Sosteric's own deck.** The course names that he offers one, because it bears on his
    argument. *Default: no link to it.*
 

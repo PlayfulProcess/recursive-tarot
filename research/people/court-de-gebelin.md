@@ -31,7 +31,7 @@ the cards and tying them to the Hebrew alphabet [@decker1996; @web_wopc_monde].
 
 ## Life & context
 
-Court de Gébelin was born c. 1725 (sources vary; commonly given as 1719 or 1725), the son of
+Court de Gébelin was born c. 1725 (sources vary: 1719, 1724, 1725 or 1728; see the open questions below), the son of
 **Antoine Court** (1696–1760), the Huguenot minister celebrated as the "Restorer of
 Protestantism in France." The son trained and served as a **Protestant (Huguenot) pastor**,
 then retired from active ministry to literary and antiquarian pursuits in Paris, where he was
@@ -105,12 +105,24 @@ re-Egyptianised). He pairs naturally with the **comte-de-mellet** card as the tw
 
 ## Open questions / corrections owed
 
-- Fix his birth year against a primary source (1719 vs. 1725 both circulate). One data point:
-  Sosteric quotes Dummett giving "1719 - 1784" [@dummett1980, p. 102, as quoted in @sosteric2014];
-  the 1725 date still needs its own source before either is chosen.
-- His initiation as a Freemason: this page says 1771 (lodge *Les Neuf Sœurs*), while Sosteric
-  gives 1776 [@sosteric2014]. Check against Decker–Depaulis–Dummett before either is printed
-  on a card.
+- **His birth year is still open, narrowed on 2026-10-02.** Four dates circulate:
+  - **1719**: Dummett, as quoted by Sosteric [@dummett1980, p. 102, as quoted in @sosteric2014].
+    Hard to square with his parents' marriage in 1722 [@web_lumieres_court] ○.
+  - **February 1724, Geneva**: registered there, as a precaution, under the name "Antoine
+    Corteiz" [@web_museeprotestant_gebelin] ○. If that register entry is his, it is the only
+    date here resting on a document of the time.
+  - **25 January 1725, Nîmes**: Britannica [@web_britannica_gebelin] ○; "c. 1725" in
+    Lumières.Lausanne, which lists 1719, 1725 and 1728 as uncertain [@web_lumieres_gebelin] ○.
+  - **5 September 1728, near Nîmes**: French Wikipedia [@web_gebelin_frwp] ✔ (opening read);
+    the Musée protestant traces 1728 to his father's letters [@web_museeprotestant_gebelin] ○.
+  The card keeps "c. 1725" until a primary source settles it. The documents that would: the
+  Geneva baptismal register for February 1724, and Antoine Court's correspondence (the
+  Collection Antoine Court at the Bibliothèque de Genève).
+- **His initiation as a Freemason: 1771, as this page says.** Search summaries report him
+  initiated in 1771 at the lodge *Les Amis Réunis*, then joining *Les Neuf Sœurs*, which
+  Lalande opened in 1776, and serving as its secretary from 1778 [@web_neufsoeurs_wp] ○.
+  Sosteric's 1776 [@sosteric2014] is probably the Neuf Sœurs date. The page's wording
+  ("initiated (1771) and moved in the lodge *Les Neuf Sœurs*") stands.
 - Confirm the precise salon and the identity of "Mme la C. d'H." (commonly read as Mme
   Helvétius) from Decker–Depaulis–Dummett rather than tertiary sources.
 - Keep his essay and Mellet's appended essay clearly separated in the grammar (different
