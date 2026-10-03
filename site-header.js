@@ -45,6 +45,7 @@
     ['cards',    'Cards',    PFX + 'viewers/cards.html'],
     ['lenses',   'Lenses', PFX + 'viewers/prototypes/lenses.html'],
     ['tree',     'Tree',     PFX + 'viewers/tree-viewer.html'],
+    ['table',    'Card Table', PFX + 'viewers/table.html'],
   ];
   const GRAMMAR_VIEWS = [
     ['treeoflife', 'Tree of Life', PFX + 'viewers/genealogy-tree.html'],
