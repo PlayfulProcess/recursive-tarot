@@ -5315,9 +5315,40 @@ ${reason}
             const flushLI = () => { if (liBuf) { html += `<li>${inline(liBuf.join(' '))}</li>`; liBuf = null; } };
             const closeL = () => { flushLI(); if (inList) { html += '</ul>'; inList = false; } };
             const closeQ = () => { if (inQuote) { html += '</blockquote>'; inQuote = false; } };
-            for (const raw of lines) {
-                const line = raw.trim();
+            // GFM pipe tables (Oct 3 2026): same row-splitting as recursive-eco's
+            // apps/landing/scripts/build-grammar-format.mjs splitRow — a header row
+            // starting with `|`, then a `|---|` separator, then `|` rows. Escaped
+            // pipes (`\|`) stay in the cell. Cells go through inline(), which escapes.
+            const splitRow = row => {
+                const cells = []; let cur = '';
+                const body = row.trim().replace(/^\|/, '').replace(/\|$/, '');
+                for (let k = 0; k < body.length; k++) {
+                    if (body[k] === '\\' && body[k + 1] === '|') { cur += '|'; k++; continue; }
+                    if (body[k] === '|') { cells.push(cur.trim()); cur = ''; continue; }
+                    cur += body[k];
+                }
+                cells.push(cur.trim());
+                return cells;
+            };
+            const cellStyle = 'border-bottom:1px solid rgba(156,163,175,.3);padding:.35em .6em;text-align:left;vertical-align:top;';
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
                 if (!line) { flushP(); closeL(); closeQ(); continue; }
+                if (/^\|/.test(line) && i + 1 < lines.length && /^\s*\|?\s*:?-{2,}/.test(lines[i + 1])) {
+                    flushP(); closeL(); closeQ();
+                    const head = splitRow(line);
+                    i += 2;
+                    const rows = [];
+                    while (i < lines.length && /^\s*\|/.test(lines[i])) rows.push(splitRow(lines[i++]));
+                    i--;
+                    // white-space:normal: .section-content is pre-wrap, which drew a stray scrollbar.
+                    html += '<div style="overflow-x:auto;margin:.5em 0;white-space:normal;"><table style="border-collapse:collapse;width:100%;font-size:.9em;"><thead><tr>' +
+                        head.map(c => `<th style="${cellStyle}font-weight:600;">${inline(c)}</th>`).join('') +
+                        '</tr></thead><tbody>' +
+                        rows.map(r => '<tr>' + r.map(c => `<td style="${cellStyle}">${inline(c)}</td>`).join('') + '</tr>').join('') +
+                        '</tbody></table></div>';
+                    continue;
+                }
                 if (m = line.match(/^(#{1,6})\s+(.*)$/)) { flushP(); closeL(); closeQ(); html += `<div style="font-weight:700;font-size:1.05em;margin:.7em 0 .25em;">${inline(m[2])}</div>`; continue; }
                 if (m = line.match(/^>\s?(.*)$/)) { flushP(); closeL(); if (!inQuote) { html += '<blockquote style="border-left:3px solid currentColor;opacity:.8;margin:.5em 0;padding:.1em 0 .1em .8em;">'; inQuote = true; } html += inline(m[1]) + ' '; continue; }
                 if (m = line.match(/^[-*+]\s+(.*)$/)) { flushP(); closeQ(); flushLI(); if (!inList) { html += '<ul style="margin:.4em 0;padding-left:1.2em;">'; inList = true; } liBuf = [m[1]]; continue; }
