@@ -21,7 +21,7 @@ book: "book-court-de-gebelin-monde-primitif"
 
 ## At a glance
 
-**Antoine Court de Gébelin** (c. 1725 – 1784) is the hinge of the entire "occult turn." In
+**Antoine Court de Gébelin** (c. 1725 – 1784; sources give 1719, 1724, 1725 or 1728 for his birth) is the hinge of the entire "occult turn." In
 **1781**, in volume 8 of his vast encyclopedia *Le Monde primitif*, the Protestant pastor and
 Freemason published an essay declaring the Tarot de Marseille a survival of the ancient
 Egyptian **Book of Thoth**. He offered **no evidence**, and was **wrong** — but he converted a

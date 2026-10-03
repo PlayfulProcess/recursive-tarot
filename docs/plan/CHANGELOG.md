@@ -5,6 +5,10 @@ Open work lives in [TODO.md](TODO.md).
 
 ## 2026-10-03
 
+- **Case 1920 is readable on the site:** moved to `course/booklets/case-introduction-to-the-study-of-the-tarot-1920.mdx` (`?course=booklets/case-introduction-to-the-study-of-the-tarot-1920`), with a "source text, not this site's view" line; `research/sources/` keeps a pointer. Checked at 1280 and 375 px.
+- **Court de Gébelin's card** now says "sources give 1719, 1724, 1725 or 1728 for his birth" beside "c. 1725" (people grammar rebuilt).
+- **Draft, not published:** one paragraph on Semetsky and Sosteric for "What a Reading Can Do", in `docs/plan/DRAFT-what-a-reading-can-do-semetsky-sosteric.md`, waiting for PlayfulProcess.
+
 - **Card table → grammar.** `viewers/table.html` gets **Export as grammar**: each card an item (area, column, code, reversed, circled, My note, the deck's reading, and the deck cross-link that shows "Open in …"), with groups per area, per column and for the circled message. Tested: the exported file opens in `cards.html` (12 cards, 8 groups, grouping by area/column works). recursive.eco imports it via Create → Import JSON. Also: the Card Table in the **Views** menu; `site-header.js?v=48` on every page.
 
 ## 2026-10-02
