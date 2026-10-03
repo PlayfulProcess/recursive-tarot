@@ -35,7 +35,11 @@ built yet. Read `docs/plan/PLAN-card-table-notation-2026-10-02.md` first.*
      output format and the confirm step makes it safe.
 2. **Photo of a handwritten table → the table.** Same flow, from her paper notation. Handwriting
    is ambiguous (a `+` can be her sword glyph): the assistant asks rather than guesses.
-3. **A table is a grammar.** Saving creates a **private** grammar:
+3. **A table is a grammar.** *Half done here (2026-10-03):* `table.html` has **Export as grammar**, a
+   `grammar.json` that recursive.eco's Create → Import JSON accepts (cards as items with `area`,
+   `column`, `code`, `reversed`, `circled` and the deck cross-link; groups per area, per column and
+   for the circled cards). What's left for the app is a one-tap **Save to recursive.eco** that does
+   the same server-side, private by default. The shape:
    - items = the cards, each with metadata `row`, `column`, `circled`, `reversed`, `deck`, `code`;
    - sections = the deck's meaning for that card and **My note**;
    - one edition per row (an area) or per column (less · keep · more).

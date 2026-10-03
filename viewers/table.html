@@ -139,6 +139,7 @@
     <button id="copyLink" type="button" title="A link that opens this table (without your notes)">Copy link</button>
     <button id="exportMd" type="button">Export .md</button>
     <button id="exportJson" type="button">Export JSON</button>
+    <button id="exportGrammar" type="button" title="A grammar file you can import into recursive.eco (Create → Import JSON)">Export as grammar</button>
     <label class="btn" for="importFile" style="cursor:pointer">Import<input type="file" id="importFile" accept=".md,.txt,.json" hidden></label>
     <button id="print" type="button">Print</button>
     <button id="reset" type="button" title="Start again from the example">Start over</button>
@@ -489,6 +490,50 @@ function exportMd() {
 function exportJson() {
   download(slug() + '.json', JSON.stringify({ v: 1, notation: N.serializeTable(table), notes }, null, 2), 'application/json');
 }
+// A table as a grammar (GRAMMAR_FORMAT.md): each card an item, with its area, column, code and
+// note, and the one cross-link pattern back to its deck (source_deck / source_item_id / deck), so
+// it shows "Open in <deck>". Areas, columns and the circled cards become groups (composite_of).
+// recursive.eco imports it through Create → Import JSON; it arrives as the person's own draft.
+async function exportGrammar() {
+  const slugDeck = deckSlug(), deckName = deckLabels[slugDeck] || slugDeck;
+  const g = await deckGrammar(slugDeck);
+  const deckItems = {}; ((g && g.items) || []).forEach(it => { deckItems[it.id] = it; });
+  const items = [], byRow = {}, byCol = {}, circled = [];
+  const idOf = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'x';
+  table.rows.forEach((r, ri) => { if (r.heading) return; r.cells.forEach((cards, ci) => cards.forEach((c, ki) => {
+    const meta = lookup(c), m = (meta && meta.metadata) || {};
+    const id = `card-${ri + 1}-${ci + 1}-${ki + 1}-${idOf(plainCode(c))}`;
+    const col = table.columns[ci] || `column ${ci + 1}`;
+    const sections = { 'Where it fell': `${r.label} · ${col}${c.reversed ? ' · reversed' : ''}${c.circled ? ' · circled (the message)' : ''}` };
+    const note = notes[noteKey(ri, ci, c)]; if (note) sections['My note'] = note;
+    const src = m.source_item_id && deckItems[m.source_item_id];
+    if (src && src.sections) {
+      let entries = Object.entries(src.sections).filter(([k, v]) => typeof v === 'string' && v.trim());
+      if (c.reversed) entries.sort((a, b) => (/revers|ill-dignified/i.test(b[0]) ? 1 : 0) - (/revers|ill-dignified/i.test(a[0]) ? 1 : 0));
+      entries.forEach(([k, v]) => { sections[k] = v; });
+    }
+    items.push({ id, name: `${r.label} · ${col}: ${N.cardName(c)}${c.reversed ? ' (reversed)' : ''}`, category: 'card',
+      image_url: meta && meta.image_url || undefined, sections,
+      metadata: { code: N.cardCode(c), area: r.label, column: col, reversed: c.reversed, circled: c.circled, major: c.major,
+        source_deck: m.source_deck || slugDeck, source_item_id: m.source_item_id || undefined, deck: deckName } });
+    (byRow[ri] ||= { label: r.label, ids: [] }).ids.push(id);
+    (byCol[ci] ||= { label: col, ids: [] }).ids.push(id);
+    if (c.circled) circled.push(id);
+  })); });
+  if (!items.length) { alert('The table has no cards yet.'); return; }
+  Object.values(byRow).forEach(x => items.push({ id: 'area-' + idOf(x.label), name: x.label, category: 'area', composite_of: x.ids, sections: { About: 'The cards that fell in this area.' } }));
+  Object.values(byCol).forEach(x => items.push({ id: 'column-' + idOf(x.label), name: x.label, category: 'column', composite_of: x.ids, sections: { About: `Every card in the "${x.label}" column.` } }));
+  if (circled.length) items.push({ id: 'the-message', name: 'The message (circled)', category: 'message', composite_of: circled, sections: { About: 'The cards circled as carrying the message of this table.' } });
+  const date = new Date().toISOString().slice(0, 10);
+  const desc = [`A card table laid on ${date} with ${deckName}. Areas: ${table.rows.filter(r => !r.heading).map(r => r.label).join(', ')}. Columns: ${table.columns.join(' · ')}.`]
+    .concat(table.notes.map(n => '> ' + n))
+    .concat(table.strips.map(s => `${s.label}: ${s.cards.map(c => N.cardCode(c)).join(' ')}`))
+    .concat(['', 'Relate to the card; never obey it.']).join('\n');
+  const grammar = { name: table.title || `Card table ${date}`, grammar_type: 'custom', description: desc,
+    tags: ['card-table', 'tarot'], metadata: { kind: 'card-table', deck: slugDeck, columns: table.columns, notation: N.serializeTable(table), laid_on: date },
+    items: JSON.parse(JSON.stringify(items)) };
+  download(slug() + '.grammar.json', JSON.stringify(grammar, null, 2), 'application/json');
+}
 async function onImport(e) {
   const f = e.target.files && e.target.files[0]; if (!f) return;
   const text = await f.text();
@@ -566,6 +611,7 @@ function syncControls() {
   $('copyLink').addEventListener('click', copyLink);
   $('exportMd').addEventListener('click', exportMd);
   $('exportJson').addEventListener('click', exportJson);
+  $('exportGrammar').addEventListener('click', exportGrammar);
   $('importFile').addEventListener('change', onImport);
   $('print').addEventListener('click', () => window.print());
   $('reset').addEventListener('click', () => {

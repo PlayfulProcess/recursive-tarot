@@ -3,6 +3,10 @@
 Newest first. One line per shipped item; reference the TODO id when there is one.
 Open work lives in [TODO.md](TODO.md).
 
+## 2026-10-03
+
+- **Card table → grammar.** `viewers/table.html` gets **Export as grammar**: each card an item (area, column, code, reversed, circled, My note, the deck's reading, and the deck cross-link that shows "Open in …"), with groups per area, per column and for the circled message. Tested: the exported file opens in `cards.html` (12 cards, 8 groups, grouping by area/column works). recursive.eco imports it via Create → Import JSON. Also: the Card Table in the **Views** menu; `site-header.js?v=48` on every page.
+
 ## 2026-10-02
 
 - **The card table** (`viewers/table.html`), from `docs/plan/PLAN-card-table-notation-2026-10-02.md`. Areas × less · keep · more; add, rename and remove rows, headings and columns; **Lay the table** draws one card into each empty cell (optional reversals; draw count from the second draw; the oracle ribbon at the draw); type cards in by code; tap a card for its deck's reading (the reversed reading first when it fell reversed), circle it, turn it, and write **My note**. **Show codes** captions each card with its code and shows the key, for people learning the notation. Export `.md`/JSON, import, share link, print; the table also lives on the page as JSON (`#card-table-state`) for assistants. Checked at 1280 and 375 px in headless Chromium.
