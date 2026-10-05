@@ -39,6 +39,9 @@ WAITE = "*A. E. Waite — The Pictorial Key to the Tarot, 1911 · describes this
 SCENE = "*Editorial — The Recursive Tarot · what is pictured on this card*"
 BOOK_T = ("*Book T — Golden Dawn, c. 1888 · the deck's native system "
           "(predates this imagery)*")
+# Book T's own 1912 text (scripts/import_book_t_1912.py writes it; keep the two headers equal).
+BOOK_T_1912 = ("*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain "
+               "(notes in square brackets are Crowley's)*")
 PAPUS = ("*Papus (Gérard Encausse) — Le Tarot des Bohémiens, 1889 · French occult "
          "revival · later interpretation, not written for this deck*")
 NOTE = ("*Editorial — The Recursive Tarot · sources, and what changed from the "
@@ -50,6 +53,7 @@ ORDER = [
     ("Scene", SCENE),
     ("Golden Dawn Title", BOOK_T),          # first Book T section present carries
     ("Golden Dawn Rank", BOOK_T),           # the header; the rest inherit it
+    ("Book T (1912)", BOOK_T_1912),
     ("Divinatory Meaning", BOOK_T),
     ("Reversed / Ill-Dignified", BOOK_T),
     ("Correspondences", BOOK_T),
@@ -59,7 +63,7 @@ ORDER = [
     ("Research note", NOTE),
 ]
 KNOWN = [k for k, _ in ORDER]
-HEADERS = {WAITE, SCENE, BOOK_T, PAPUS, NOTE}
+HEADERS = {WAITE, SCENE, BOOK_T, BOOK_T_1912, PAPUS, NOTE}
 
 BRACKET = re.compile(r"\A\s*\[[^\]]*\]\s*\n+")
 

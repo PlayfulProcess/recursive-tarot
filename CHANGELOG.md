@@ -2,6 +2,54 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 5 2026 — merged: what is new, and what was not thoroughly verified
+
+PlayfulProcess merged the cloud session's work (PR #44) and the rights work (PR #43). New, and not
+thoroughly verified:
+
+- **From the papers (Sosteric, Semetsky, Fawaid, Depaulis, Bauduin):** research notes written with
+  AI from the papers, spot-checked only.
+- **The Card Table:** its notation passes 11 tests, but the page was looked at once, locally.
+- **The Case 1920 booklet:** transcribed text, not proofread against the 1920 printing.
+- **Court de Gébelin's birth years:** the dispute is reported from the sources, not settled.
+- **The draft paragraph** (`docs/plan/DRAFT-what-a-reading-can-do-semetsky-sosteric.md`) stays a
+  draft.
+- **Book T (1912) on the Golden Dawn cards:** checked against the OCR of the 1912 scan (median 86%
+  of each card's 4-word runs found; the lowest, 65–70%, are pages with noisy OCR). Not proofread
+  line by line.
+- **The image ledger** (`docs/rights/`) reads what Wikimedia Commons says about each image, not
+  the holders' own terms, and checks no pictures.
+- **The audit of Yve Lepkowski's decks** matches sentences automatically, and leaves the images
+  unchecked.
+- **The archived Scenes** were moved as a block, not reviewed one by one.
+
+## Oct 5 2026
+
+- **The Golden Dawn cards carry Book T's own words.** Book T was printed in *The Equinox* I(8),
+  1912, and is public domain. Each of the 78 cards now has a `Book T (1912)` section, verbatim: the
+  full description and meaning of the aces, courts and 36 numbered cards, and Book T's brief
+  meaning of each key. The text (`research/sources/book-t-equinox-1912.txt`) was checked against
+  the scan of the 1912 issue (median 86% of 4-word runs found in its OCR; the rest is OCR noise).
+  The paraphrases and the AI-written `Symbol` sections moved to
+  `tarot/_archive/golden-dawn-editorial-2026-10-05.json`. `scripts/import_book_t_1912.py` writes it.
+- **Yve Lepkowski's licence found** on her Downloads page: CC BY-SA 4.0 for all five decks.
+
+## Oct 4 2026
+
+- **AI-written Scenes archived.** At PlayfulProcess's word, the 1,500 "Scene" sections (machine
+  descriptions of the card images) left 22 decks for `tarot/_archive/ai-scenes-2026-10-04/`, one file
+  per deck, with a README saying what they were and why they went. Where a tradition wrote its
+  cards down, the cards will carry its own text.
+- **Rights audit** ([docs/rights/RIGHTS-AUDIT-2026-10-04.md](docs/rights/RIGHTS-AUDIT-2026-10-04.md)).
+  The site says **open**, not public-domain (35 lines: home, about, historian, contribute,
+  play, shop, print page, course credits, channel manifest, README); README and NOTICE say the
+  CC BY-SA covers our text, never the card images. Song lyrics removed from Anecdotes Tarot
+  (74 cards) and its scraped guidebook files; the song title, album and year stay. Conver's 24
+  Tarot World Project photographs relabelled CC BY-SA 4.0; Mantegna credited to Cleveland;
+  the Gallica credit added to six decks showing BnF scans; rights and sale gates on seven
+  print-listed decks. New `scripts/audit_image_rights.py` checks all 1,998 card images on
+  Commons and writes `docs/rights/IMAGE-LEDGER.md`.
+
 ## Aug 10 2026
 
 - **Explorer speaks the deck's language.** Trumps render as Roman numerals (0 · Fool, I…XXXV),
