@@ -1285,7 +1285,7 @@
                   const appEls=[...root.querySelectorAll('[data-embed="apparatus"]')];
                   if(appEls.length){
                     const col=await get(T+'/_collection.json');
-                    let cred='<h3>Image credits</h3><p>Every card image here is in the <strong>public domain</strong> — the originals all predate the twentieth century. Reproductions are drawn from the institutions and archives below; full per-card provenance is in the research dossiers on GitHub.</p><ul class="credits">';
+                    let cred='<h3>Image credits</h3><p>The historical originals all predate the twentieth century and are in the <strong>public domain</strong>; a scan or photograph can still carry its holder's terms. Reproductions are drawn from the institutions and archives below; full per-card provenance is in the research dossiers on GitHub.</p><ul class="credits">';
                     if(col){ for(const g of col.grammars.filter(x=>!x.is_meta).sort((a,b)=>(a.year||9999)-(b.year||9999))){
                       const dg=await get(T+'/'+g.slug+'/grammar.json');
                       const credit=(dg&&dg.image_credit)||[...new Set((dg?dg.items:[]).map(i=>(i.metadata||{}).collection).filter(Boolean))].join('; ')||'public domain — see the deck dossier';

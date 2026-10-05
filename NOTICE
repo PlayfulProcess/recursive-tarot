@@ -14,7 +14,9 @@ This repository includes third-party software:
 - Cytoscape.js (public/vendor/cytoscape.min.js),
   Copyright (c) 2016-2026 The Cytoscape Consortium, MIT License.
 
-Third-party images: some card scans are not covered by CC-BY-SA-4.0.
+Third-party images: card images are not covered by CC-BY-SA-4.0 unless
+PlayfulProcess made them. What each image is, and what is still unknown, is in
+docs/rights/ (IMAGE-LEDGER.md, from scripts/audit_image_rights.py).
 - tarot/vieville-tarot/images/ and tarot/paris-anonymous-tarot/images/ are
   scans by the Bibliothèque nationale de France from Gallica
   (ark:/12148/btv1b10510963k and ark:/12148/btv1b105109624). Credit:
@@ -22,6 +24,17 @@ Third-party images: some card scans are not covered by CC-BY-SA-4.0.
   cards are public domain, but the scans are reused under Gallica's conditions
   of use: non-commercial reuse is free with that credit; commercial reuse
   needs a licence from the BnF.
+- The same Gallica conditions apply to BnF scans that reached this repo through
+  Wikimedia Commons: minchiate-florence-tarot, oswald-wirth-tarot (and the same
+  images in papus-tarot-des-bohemiens), charles-vi-tarot, noblet-tarot, and the
+  pips and courts of tarot-de-marseille-conver.
+- CC BY-SA 4.0 photographs on Wikimedia Commons: the Tarot World Project
+  photographs in tarot-de-marseille-conver and six images in tarocchino-bologna.
+  Credit the photographer and keep the licence.
+- The contemporary decks anecdotes-tarot, arlecchinos-augmented-arcana,
+  clown-town-tarot, petit-lenormand and tarocchino-arlecchino are the work of
+  Yve Lepkowski (stolen-thyme.com). Song titles in anecdotes-tarot name Joanna
+  Newsom's songs; no lyrics are stored here.
 - Other decks credit their image sources in each grammar.json
   (_grammar_commons, cover_image_credit, per-card metadata); where a source
   has its own licence (for example CC BY-SA 4.0 photographs on Wikimedia

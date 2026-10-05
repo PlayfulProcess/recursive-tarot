@@ -125,6 +125,7 @@ comes from R2 (see the Image pattern above); this folder is only for course-auth
 | `scripts/normalize_book_t_sections.py` | Idempotent Book T section normaliser; `--check` asserts nothing was lost |
 | `scripts/label_book_t_divinatory_paraphrase.py` | Labels Book T's `Divinatory Meaning`/`Reversed / Ill-Dignified` as paraphrase (idempotent; `--check` verifies) |
 | `scripts/check_all.py` | Pre-commit gate |
+| `scripts/audit_image_rights.py` | Asks Commons what every card image is (licence, credit); writes `docs/rights/IMAGE-LEDGER.md`. Re-run after any image change. The site says **open**, never "public-domain library": see `docs/rights/RIGHTS-AUDIT-2026-10-04.md` |
 
 **`scripts/archive/` is history, not tooling.** The one-shot generators that first built each
 deck live there (moved Jul 27 2026). Their output is canonical in `tarot/<slug>/grammar.json`

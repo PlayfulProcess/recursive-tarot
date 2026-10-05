@@ -2,6 +2,18 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 4 2026
+
+- **Rights audit** ([docs/rights/RIGHTS-AUDIT-2026-10-04.md](docs/rights/RIGHTS-AUDIT-2026-10-04.md)).
+  The site says **open**, not public-domain (35 lines: home, about, historian, contribute,
+  play, shop, print page, course credits, channel manifest, README); README and NOTICE say the
+  CC BY-SA covers our text, never the card images. Song lyrics removed from Anecdotes Tarot
+  (74 cards) and its scraped guidebook files; the song title, album and year stay. Conver's 24
+  Tarot World Project photographs relabelled CC BY-SA 4.0; Mantegna credited to Cleveland;
+  the Gallica credit added to six decks showing BnF scans; rights and sale gates on seven
+  print-listed decks. New `scripts/audit_image_rights.py` checks all 1,998 card images on
+  Commons and writes `docs/rights/IMAGE-LEDGER.md`.
+
 ## Aug 10 2026
 
 - **Explorer speaks the deck's language.** Trumps render as Roman numerals (0 · Fool, I…XXXV),

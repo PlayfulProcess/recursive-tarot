@@ -31,7 +31,7 @@ are fast — images are cached in `build/img/` and only downloaded once.
 1. `python scripts/generate_book.py --pdf` → `book.pdf` (the interior).
 2. Upload to **KDP** (paperback) or **IngramSpark** (also hardcover / bookstore reach).
    Both accept this PDF; KDP is simplest, IngramSpark has wider distribution.
-3. Add front-matter (title page, copyright, **image credits** — all public domain) and
+3. Add front-matter (title page, copyright, **image credits** — per image, from each grammar; CC BY-SA photographs need their credit, and BnF/Gallica scans need a BnF licence for a book that is sold) and
    a cover (KDP's cover creator computes spine width from the page count).
 4. The physical **card decks** stay on The Game Crafter — a different pipeline; this
    book is the reader-facing companion.
