@@ -21,7 +21,7 @@ book: "book-court-de-gebelin-monde-primitif"
 
 ## At a glance
 
-**Antoine Court de Gébelin** (c. 1725 – 1784) is the hinge of the entire "occult turn." In
+**Antoine Court de Gébelin** (c. 1725 – 1784; sources give 1719, 1724, 1725 or 1728 for his birth) is the hinge of the entire "occult turn." In
 **1781**, in volume 8 of his vast encyclopedia *Le Monde primitif*, the Protestant pastor and
 Freemason published an essay declaring the Tarot de Marseille a survival of the ancient
 Egyptian **Book of Thoth**. He offered **no evidence**, and was **wrong** — but he converted a
@@ -31,7 +31,7 @@ the cards and tying them to the Hebrew alphabet [@decker1996; @web_wopc_monde].
 
 ## Life & context
 
-Court de Gébelin was born c. 1725 (sources vary; commonly given as 1719 or 1725), the son of
+Court de Gébelin was born c. 1725 (sources vary: 1719, 1724, 1725 or 1728; see the open questions below), the son of
 **Antoine Court** (1696–1760), the Huguenot minister celebrated as the "Restorer of
 Protestantism in France." The son trained and served as a **Protestant (Huguenot) pastor**,
 then retired from active ministry to literary and antiquarian pursuits in Paris, where he was
@@ -105,7 +105,24 @@ re-Egyptianised). He pairs naturally with the **comte-de-mellet** card as the tw
 
 ## Open questions / corrections owed
 
-- Fix his birth year against a primary source (1719 vs. 1725 both circulate).
+- **His birth year is still open, narrowed on 2026-10-02.** Four dates circulate:
+  - **1719**: Dummett, as quoted by Sosteric [@dummett1980, p. 102, as quoted in @sosteric2014].
+    Hard to square with his parents' marriage in 1722 [@web_lumieres_court] ○.
+  - **February 1724, Geneva**: registered there, as a precaution, under the name "Antoine
+    Corteiz" [@web_museeprotestant_gebelin] ○. If that register entry is his, it is the only
+    date here resting on a document of the time.
+  - **25 January 1725, Nîmes**: Britannica [@web_britannica_gebelin] ○; "c. 1725" in
+    Lumières.Lausanne, which lists 1719, 1725 and 1728 as uncertain [@web_lumieres_gebelin] ○.
+  - **5 September 1728, near Nîmes**: French Wikipedia [@web_gebelin_frwp] ✔ (opening read);
+    the Musée protestant traces 1728 to his father's letters [@web_museeprotestant_gebelin] ○.
+  The card keeps "c. 1725" until a primary source settles it. The documents that would: the
+  Geneva baptismal register for February 1724, and Antoine Court's correspondence (the
+  Collection Antoine Court at the Bibliothèque de Genève).
+- **His initiation as a Freemason: 1771, as this page says.** Search summaries report him
+  initiated in 1771 at the lodge *Les Amis Réunis*, then joining *Les Neuf Sœurs*, which
+  Lalande opened in 1776, and serving as its secretary from 1778 [@web_neufsoeurs_wp] ○.
+  Sosteric's 1776 [@sosteric2014] is probably the Neuf Sœurs date. The page's wording
+  ("initiated (1771) and moved in the lodge *Les Neuf Sœurs*") stands.
 - Confirm the precise salon and the identity of "Mme la C. d'H." (commonly read as Mme
   Helvétius) from Decker–Depaulis–Dummett rather than tertiary sources.
 - Keep his essay and Mellet's appended essay clearly separated in the grammar (different
@@ -115,3 +132,6 @@ re-Egyptianised). He pairs naturally with the **comte-de-mellet** card as the tw
 
 [@dummett1980], [@decker1996], [@decker2002], [@web_wopc_monde], [@web_gebelin_wp],
 [@web_place_mellet], [@tarot_heritage].
+
+- [@sosteric2014]: a sociologist's reading of the occult turn as an elite, Masonic project. His
+  thesis is contested and his own; cited here for the dates above, not as the page's view.

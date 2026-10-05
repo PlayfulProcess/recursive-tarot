@@ -3,6 +3,31 @@
 Newest first. One line per shipped item; reference the TODO id when there is one.
 Open work lives in [TODO.md](TODO.md).
 
+## 2026-10-03
+
+- **Case 1920 is readable on the site:** moved to `course/booklets/case-introduction-to-the-study-of-the-tarot-1920.mdx` (`?course=booklets/case-introduction-to-the-study-of-the-tarot-1920`), with a "source text, not this site's view" line; `research/sources/` keeps a pointer. Checked at 1280 and 375 px.
+- **Court de Gébelin's card** now says "sources give 1719, 1724, 1725 or 1728 for his birth" beside "c. 1725" (people grammar rebuilt).
+- **Draft, not published:** one paragraph on Semetsky and Sosteric for "What a Reading Can Do", in `docs/plan/DRAFT-what-a-reading-can-do-semetsky-sosteric.md`, waiting for PlayfulProcess.
+
+- **Card table → grammar.** `viewers/table.html` gets **Export as grammar**: each card an item (area, column, code, reversed, circled, My note, the deck's reading, and the deck cross-link that shows "Open in …"), with groups per area, per column and for the circled message. Tested: the exported file opens in `cards.html` (12 cards, 8 groups, grouping by area/column works). recursive.eco imports it via Create → Import JSON. Also: the Card Table in the **Views** menu; `site-header.js?v=48` on every page.
+
+## 2026-10-02
+
+- **The card table** (`viewers/table.html`), from `docs/plan/PLAN-card-table-notation-2026-10-02.md`. Areas × less · keep · more; add, rename and remove rows, headings and columns; **Lay the table** draws one card into each empty cell (optional reversals; draw count from the second draw; the oracle ribbon at the draw); type cards in by code; tap a card for its deck's reading (the reversed reading first when it fell reversed), circle it, turn it, and write **My note**. **Show codes** captions each card with its code and shows the key, for people learning the notation. Export `.md`/JSON, import, share link, print; the table also lives on the page as JSON (`#card-table-state`) for assistants. Checked at 1280 and 375 px in headless Chromium.
+  - `viewers/notation.js` (the parser and writer) + `viewers/notation.test.js` (11 tests, `node viewers/notation.test.js`). Her answers: `↓` = reversed (`r` accepted, `↑` optional), `+` = swords.
+  - Four suit icons in `icons.js` (leaf, heart, sword with guard, pentagram), as she draws them.
+  - `course/your-card-table.mdx` (draft), registered in `_courses.json` and the Courses menu; the page in the Play menu and on the Play hub (new image: Golden Dawn Nine of Wands; `IMAGE-USAGE.md` refreshed).
+  - `docs/plan/REQUESTS-card-table-for-recursive-eco.md`: the app half for the recursive.eco session, led by her new idea (photograph a spread of real cards; the assistant names them, writes the notation, and asks her to confirm).
+- **Paul Foster Case, *An Introduction to the Study of the Tarot* (1920), added to `research/sources/`** (public domain in the US and, since 2025, in Brazil). A later edited printing: an editor's note says the Lamed/Nun directions were changed; the file's header says so and lists the 15 scanning fixes. Court de Gébelin's page: four candidate birth years with their sources; the 1771 initiation confirmed (1776 is the Neuf Sœurs' opening). Six web sources added to the bibliography.
+- **Enrichment from papers read on 2026-10-02** (full list, marks and decisions: [ENRICH-from-papers-2026-10-02.md](ENRICH-from-papers-2026-10-02.md)).
+  - Ten new bibliography entries: Sosteric 2014 and 2023, Greenberg 2023 (not opened), Semetsky 2005 and 2015, Fawaid 2016, Farley 2009 (not read), Depaulis 2011, Bauduin 2012, Leavitt 2007 (not read).
+  - `course/tarot-today.mdx`: Sosteric's argument that the deck cannot be reclaimed, as the course's counter-voice; tarot localised in Java (Fawaid); both added to the bench and to "What's still thin".
+  - `course/tarot-and-fiction.mdx`: Leavitt's dissent on Eliot's cards, with Bauduin's verdict.
+  - `research/00-overview-history-of-tarot.mdx`: where tarot was invented is still argued (Farley vs Depaulis).
+  - `research/people/court-de-gebelin.md`: Dummett's 1719 (as quoted by Sosteric) and a 1771 vs 1776 Masonic-initiation question.
+  - `research/why-tarot-works/REPORT.md`: semiotic (Semetsky) and critical-sociological (Sosteric) readings; Semetsky's "not random" claim declined.
+  - Checked: `check_all` passes; both courses viewed at 1280 and 375 px.
+
 ## 2026-06-25
 
 - **Wish List page + header link.** New `pages/wishlist.html` — a living roadmap in two bands (**On the workbench** / **Before launch**, with a Done lane), on-brand design (Fraunces + gold, card grid). Features the **course-as-a-grammar** with a "how it's made" panel and the wish behind it: recursive.eco's Library Assistant can *open* a course but can't read its content — as a grammar it could. Linked from the header **Home ▸ Wish List**; bumped `site-header.js?v=31→32` across all 27 pages.

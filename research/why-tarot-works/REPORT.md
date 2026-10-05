@@ -79,6 +79,21 @@ asks you to make sense of it; what you produce is *yours*, surfaced by the promp
   does **not** amount to is a demonstrated causal claim that your situation produced the
   draw — so take the draw seriously without asserting external causation. ◆
 
+### Semiotic and philosophical readings (added 2026-10-02)
+- **Inna Semetsky** reads a tarot reading as semiosis: Deleuze's transcendental
+  empiricism, Husserl and Peirce applied to the images, with the reading as a "semiotic
+  bridge" between experience and meaning, and later as a mode of informal learning and
+  a counselling aid [@semetsky2005; @semetsky2015]. ✔︎ for what she argues. ◆ for the
+  claim itself: it is a philosopher's reading, not a tested one. Sosteric quotes her
+  saying that cards laid in a spread are selected by the unconscious and "cannot be
+  considered random" [@sosteric2014]; that goes further than §2's evidence allows, and
+  this collection does not adopt it. Her semiotic frame fits the creed (a sign to be
+  interpreted, not obeyed); her claim about non-randomness does not.
+- **Mike Sosteric** reads the same psychological and Jungian literature as the latest
+  layer of an elite ideology wrapped round the cards since the 1780s [@sosteric2014;
+  @sosteric2023]. ◆ His thesis; useful here as the sharpest outside critique of the
+  "archetypes" language this report uses.
+
 ### Narrative therapy & meaning-making
 A reading is a small narrative-therapy session: it **externalizes** the problem (the
 struggle becomes "The Tower" rather than "my failure"), invites **re-authoring**
@@ -368,6 +383,8 @@ profound **even when held entirely as a human, meaning-making art.**
 - I Ching divination — https://en.wikipedia.org/wiki/I_Ching_divination · Pythia — https://en.wikipedia.org/wiki/Pythia
 - Oblique Strategies × tarot (randomness) — https://lesser.occult.institute/introducing-randomness-into-chaos-culture-oblique-strategies-and-tarot
 - Practitioner ethics — https://biddytarot.com/blog/the-ethics-of-tarot-reading/ · https://tarothermeneutics.com/ethics/proethics.html · https://angelorum.co/topics/divination/relationship-tarot-ethics/
+- Semetsky 2005, *Trickster's Way* 4(1) (open access) — https://digitalcommons.trinity.edu/trickstersway/vol4/iss1/3 · Semetsky 2015, *Semiotica* — https://doi.org/10.1515/sem-2015-0008
+- Sosteric 2014, *Canadian Journal of Sociology* 39(3); Sosteric 2023, letter, *Anthropology of Consciousness* — https://doi.org/10.1111/anoc.12219
 - Runes / pre-Christian Scandinavia — https://arithharger.wordpress.com/2021/03/18/runes-bones-divination-in-pre-christian-scandinavia/
 
 *Full machine-readable claim set (10 confirmed + 15 killed-with-status) preserved in

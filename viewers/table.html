@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card Table — The Recursive Tarot</title>
+<meta name="description" content="Lay cards across the areas of your life — less · keep · more — then sit with the table and decide. Write it in a simple notation, or lay it with a deck.">
+<link rel="stylesheet" href="../theme.css?v=5">
+<style>
+  body { background:var(--bg); color:var(--ink); margin:0; font-family:var(--sans, system-ui, sans-serif); }
+  .wrap { max-width:1080px; margin:0 auto; padding:22px 16px 60px; }
+  h1 { font-family:var(--serif-display, Georgia, serif); font-weight:600; font-size:30px; margin:6px 0 6px; }
+  .lede { color:var(--mut); max-width:760px; line-height:1.55; margin:0 0 16px; }
+  .lede a { color:var(--gold); }
+  .bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }
+  .bar label { font-size:13px; color:var(--mut); display:inline-flex; gap:6px; align-items:center; }
+  select, input[type=text], textarea { font:inherit; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:6px 9px; }
+  select { max-width:260px; }
+  button, .btn { font:inherit; font-size:13.5px; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:6px 13px; cursor:pointer; display:inline-flex; gap:6px; align-items:center; text-decoration:none; }
+  button:hover, .btn:hover { border-color:var(--gold); color:var(--gold); }
+  button.primary { background:var(--gold); border-color:var(--gold); color:var(--surface); }
+  button.primary:hover { color:var(--surface); filter:brightness(1.07); }
+  .count { font-size:12px; color:var(--mut); }
+  .titlein { font-family:var(--serif-display, Georgia, serif); font-size:18px; min-width:0; flex:1 1 220px; }
+
+  /* the table */
+  .board { background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:12px; overflow:hidden; }
+  .trow { display:grid; grid-template-columns:minmax(110px,170px) repeat(var(--n), minmax(0,1fr)); gap:8px; align-items:stretch; padding:6px 0; border-bottom:1px solid var(--line); }
+  .trow:last-child { border-bottom:0; }
+  .thead { border-bottom:2px solid var(--line); padding-top:8px; }
+  .hcell, .rlabel { display:flex; gap:4px; align-items:center; }
+  .hcell { position:relative; }
+  .hcell .x { position:absolute; right:-2px; top:-4px; }
+  .hcell input, .rlabel input, .heading input { width:100%; min-width:0; border:1px dashed transparent; background:transparent; padding:4px 6px; font-weight:600; }
+  .hcell input { text-align:center; text-transform:none; letter-spacing:.02em; }
+  .hcell input:hover, .rlabel input:hover, .heading input:hover, .hcell input:focus, .rlabel input:focus, .heading input:focus { border-color:var(--line); background:var(--surface); outline:none; }
+  .x { border:0; background:transparent; color:var(--mut); padding:2px 4px; border-radius:6px; font-size:12px; flex:0 0 auto; }
+  .x:hover { color:var(--ink); background:var(--chip); }
+  .heading { grid-column:1/-1; display:flex; gap:6px; align-items:center; border-left:3px solid var(--gold); padding-left:8px; }
+  .heading input { font-family:var(--serif-display, Georgia, serif); font-size:17px; color:var(--gold); }
+  .cell { min-height:86px; background:var(--surface); border:1px solid var(--line); border-radius:9px; padding:6px; display:flex; flex-wrap:wrap; gap:6px; align-content:flex-start; justify-content:center; position:relative; }
+  .cell .empty { color:var(--mut); font-size:12px; align-self:center; margin:auto; }
+  .add { position:absolute; right:3px; top:2px; border:0; background:transparent; color:var(--mut); font-size:15px; padding:0 5px; border-radius:6px; }
+  .addin { width:78px; font-size:13px; padding:3px 6px; }
+  .addmsg { font-size:11px; color:var(--bad, #a33); width:100%; text-align:center; }
+
+  .tc { border:0; background:transparent; padding:0; display:flex; flex-direction:column; align-items:center; gap:3px; width:64px; cursor:pointer; color:var(--ink); }
+  .tc:hover { color:var(--ink); }
+  .tc .face { width:62px; height:104px; border-radius:6px; background:var(--thumb-bg, var(--chip)); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .tc img { width:100%; height:100%; object-fit:contain; display:block; }
+  .tc .fallback { font-size:10.5px; line-height:1.2; padding:4px; text-align:center; color:var(--mut); }
+  .tc.major .face { border:2px solid var(--gold); background:var(--chip); }
+  .tc.rev img, .tc.rev .fallback { transform:rotate(180deg); }
+  .tc.circled .face { outline:2.5px solid var(--ink); outline-offset:3px; border-radius:10px; }
+  .tc .code { font-size:11.5px; font-family:var(--mono, ui-monospace, monospace); color:var(--mut); display:inline-flex; gap:2px; align-items:center; }
+  body.nocodes .tc .code { display:none; }
+
+  .extras { margin:10px 0 0; color:var(--mut); }
+  .extras p { margin:4px 0; font-style:italic; }
+  .strip { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:8px 0; }
+  .strip b { font-weight:600; color:var(--ink); min-width:90px; }
+
+  .legend { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin:12px 0; font-size:13.5px; line-height:1.55; }
+  body.nocodes .legend { display:none; }
+  .legend code, .hand code { font-family:var(--mono, ui-monospace, monospace); background:var(--chip); padding:0 4px; border-radius:4px; }
+  .legend h2 { font-size:14px; margin:0 0 4px; }
+  .legend ul { margin:4px 0; padding-left:18px; }
+  .hand { margin:14px 0; }
+  .hand summary { cursor:pointer; font-weight:600; }
+  .hand textarea { width:100%; box-sizing:border-box; min-height:220px; font-family:var(--mono, ui-monospace, monospace); font-size:13.5px; line-height:1.5; margin-top:8px; }
+  .errors { color:var(--bad, #a33); font-size:13px; margin:6px 0; padding-left:18px; }
+  .privacy { font-size:12.5px; color:var(--mut); margin:6px 0 0; }
+
+  /* the card dialog */
+  .modal { position:fixed; inset:0; background:rgba(34,31,26,.45); display:none; align-items:flex-start; justify-content:center; z-index:9000; overflow:auto; padding:24px 12px; }
+  .modal.on { display:flex; }
+  .dialog { background:var(--surface); border-radius:14px; max-width:720px; width:100%; padding:18px; position:relative; box-shadow:var(--shadow-lift, 0 10px 30px rgba(0,0,0,.2)); }
+  .dialog .close { position:absolute; right:10px; top:10px; }
+  .dhead { display:flex; gap:16px; flex-wrap:wrap; }
+  .dimg { width:150px; height:250px; background:var(--thumb-bg, var(--chip)); border-radius:8px; display:flex; align-items:center; justify-content:center; overflow:hidden; flex:0 0 auto; }
+  .dimg img { width:100%; height:100%; object-fit:contain; }
+  .dimg.rev img { transform:rotate(180deg); }
+  .dinfo { flex:1 1 260px; min-width:0; }
+  .dinfo h2 { font-family:var(--serif-display, Georgia, serif); margin:0 0 4px; font-size:22px; }
+  .dmeta { color:var(--mut); font-size:13px; margin:0 0 8px; }
+  .dactions { display:flex; gap:6px; flex-wrap:wrap; margin:8px 0; }
+  .sec h3 { font-size:13px; text-transform:uppercase; letter-spacing:.05em; color:var(--gold); margin:14px 0 4px; }
+  .sec div { line-height:1.55; font-size:14.5px; }
+  .note textarea { width:100%; box-sizing:border-box; min-height:90px; }
+  .creed { color:var(--mut); font-size:12.5px; font-style:italic; margin:12px 0 0; }
+
+  @media (max-width: 640px) {
+    h1 { font-size:25px; }
+    .trow { grid-template-columns:repeat(var(--n), minmax(0,1fr)); gap:6px; }
+    .trow .rlabel { grid-column:1/-1; }
+    .thead .corner { display:none; }
+    .tc { width:52px; } .tc .face { width:50px; height:84px; }
+    .tc .code { font-size:10px; }
+    .hcell input { font-size:12.5px; padding:4px 2px; }
+    .hcell .x { top:-8px; right:-4px; font-size:10px; }
+    .cell { padding-top:18px; }
+    .add { top:0; font-size:13px; }
+    .cell { min-height:70px; padding:4px; }
+  }
+  @media print {
+    site-header, site-footer, .bar, .hand, .legend, .privacy, .add, .x, .lede, .oracle-ribbon { display:none !important; }
+    body { background:#fff; }
+    .board { border:0; }
+    .hcell input, .rlabel input, .heading input { border:0; }
+  }
+</style>
+</head>
+<body data-assistant-context="card-table">
+<script src="../site-header.js?v=48"></script>
+<script src="../icons.js"></script>
+<script src="oracle-ribbon.js?v=4"></script>
+<script src="notation.js?v=1"></script>
+<site-header active="play"></site-header>
+
+<main class="wrap" id="main">
+  <h1>Card Table</h1>
+  <p class="lede">Lay cards across the areas of your life (rows) and what to do with each: <b>less · keep · more</b> (columns). Then sit with the table, notice where the major arcana fall, circle the cards that carry the message, and decide for yourself. The cards ask; you decide. <a href="../pages/course-viewer.html?course=your-card-table" target="_blank" rel="noopener">How the practice works →</a></p>
+
+  <div class="bar">
+    <input class="titlein" type="text" id="title" placeholder="Name this table (optional)" aria-label="Table name">
+  </div>
+  <div class="bar">
+    <label>Deck <select id="deck" aria-label="Deck"></select></label>
+    <button id="addRow" type="button">+ Area</button>
+    <button id="addHeading" type="button">+ Heading</button>
+    <button id="addCol" type="button">+ Column</button>
+    <button id="lay" class="primary" type="button" title="Draw one card into every empty cell">Lay the table</button>
+    <button id="clearCards" type="button" title="Take the cards off; keep the areas and columns">Clear the cards</button>
+    <label title="Each card laid has an even chance of landing reversed"><input type="checkbox" id="reversals"> reversals</label>
+    <span class="count" id="castCount" aria-live="polite"></span>
+  </div>
+  <div class="bar">
+    <label title="Show each card's code under it, and the key to the notation"><input type="checkbox" id="showCodes" checked> show codes</label>
+    <button id="copyLink" type="button" title="A link that opens this table (without your notes)">Copy link</button>
+    <button id="exportMd" type="button">Export .md</button>
+    <button id="exportJson" type="button">Export JSON</button>
+    <button id="exportGrammar" type="button" title="A grammar file you can import into recursive.eco (Create → Import JSON)">Export as grammar</button>
+    <label class="btn" for="importFile" style="cursor:pointer">Import<input type="file" id="importFile" accept=".md,.txt,.json" hidden></label>
+    <button id="print" type="button">Print</button>
+    <button id="reset" type="button" title="Start again from the example">Start over</button>
+  </div>
+
+  <section class="board" id="board" aria-label="The card table"></section>
+  <section class="extras" id="extras"></section>
+
+  <section class="legend" id="legend" aria-label="How to read the codes">
+    <h2>Reading the codes</h2>
+    <ul>
+      <li><b>Major arcana</b> are Roman numerals, <code>0</code> (the Fool) to <code>XXI</code> (the World). They have a gold frame on the table.</li>
+      <li><b>Minor arcana</b> are rank + suit: <code>A</code> or <code>1</code>, <code>2</code>–<code>10</code>, <code>P</code> page, <code>Kn</code> knight, <code>Q</code> queen, <code>K</code> king; then <code>W</code> <rt-icon name="suit-wands" size="14"></rt-icon> wands, <code>C</code> <rt-icon name="suit-cups" size="14"></rt-icon> cups, <code>S</code> <rt-icon name="suit-swords" size="14"></rt-icon> swords, <code>P</code> <rt-icon name="suit-pentacles" size="14"></rt-icon> pentacles. So <code>4C</code> is the Four of Cups, <code>KnP</code> the Knight of Pentacles.</li>
+      <li><code>↓</code> after a card means it fell <b>reversed</b> (<code>r</code> works too); <code>↑</code> means upright and can be left out.</li>
+      <li><code>( )</code> around a card means it is <b>circled</b>: the card that carries the message, the one that feels needed, not the "best" one. It has a ring on the table.</li>
+      <li>Two cards in one cell are separated by a space: <code>8C 3P</code>.</li>
+    </ul>
+    <p style="margin:4px 0 0;color:var(--mut)">Untick <b>show codes</b> once you know them. The codes are also how an assistant can read your table.</p>
+  </section>
+
+  <details class="hand" id="hand">
+    <summary>Write it by hand (the notation)</summary>
+    <textarea id="notation" spellcheck="false" aria-label="The table in notation"></textarea>
+    <ul class="errors" id="errors"></ul>
+    <p class="privacy">One line per area: <code>Area | cards | cards | cards</code>. A line in <code>[brackets]</code> is a heading. <code>&gt; …</code> is a note. <code>Label: cards</code> is a mini-row under the table (another deck or oracle). <code>deck:</code> and <code>columns:</code> lines set the deck and the column names.</p>
+  </details>
+
+  <p class="privacy">Your table and your notes stay in this browser; nothing is sent anywhere. Tables often name people and projects: export them to keep them, and think before you share a link.</p>
+</main>
+
+<div class="modal" id="cardModal" role="dialog" aria-modal="true" aria-labelledby="dName">
+  <div class="dialog">
+    <button class="close x" id="dClose" type="button" aria-label="Close"><rt-icon name="x" size="18"></rt-icon></button>
+    <div class="dhead">
+      <div class="dimg" id="dImg"></div>
+      <div class="dinfo">
+        <h2 id="dName"></h2>
+        <p class="dmeta" id="dMeta"></p>
+        <div class="dactions">
+          <button id="dCircle" type="button"></button>
+          <button id="dTurn" type="button"></button>
+          <button id="dRemove" type="button">Take it off the table</button>
+          <a class="btn" id="dOpen" target="_blank" rel="noopener">Open in the deck →</a>
+        </div>
+        <div class="note"><label for="dNote"><b>My note</b></label><textarea id="dNote" placeholder="What does this card say to you, here?"></textarea></div>
+      </div>
+    </div>
+    <div id="dSecs"></div>
+    <p class="creed">Relate to the card; never obey it.</p>
+  </div>
+</div>
+
+<!-- The current table as data, for assistants and other tools reading this page. -->
+<script type="application/json" id="card-table-state">{}</script>
+
+<script>
+(function () {
+'use strict';
+const N = window.CardNotation;
+const $ = id => document.getElementById(id);
+const META_URL = '../tarot/all-decks-many-lenses/grammar.json';
+const STORE = 'cardTable:v1';
+const SUIT_OF = { Wands: 'W', Cups: 'C', Swords: 'S', Coins: 'P', Pentacles: 'P', Disks: 'P' };
+const EXAMPLE = [
+  'deck: golden-dawn-book-t-tarot',
+  'columns: less | keep | more',
+  '',
+  'Work      | 4C        | 3W        | (XVIII)',
+  'Health    | 7C        | 8C        | QS',
+  'Writing   | (XVII)    | AS        | 6W↓',
+  'Family    | KnP       | (VIII)    | IV',
+  '',
+  '> cards = possibilities',
+  ''
+].join('\n');
+
+let byDeck = {}, deckLabels = {}, deckIndex = {};   // slug -> { key -> meta item }
+let table = N.parseTable(EXAMPLE);
+let notes = {};            // "row|colIndex|CODE" -> text
+let open = null;           // { ri, ci, ki } of the card in the dialog
+const grammarCache = {};
+
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const mdLite = s => esc(s).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+const plainCode = c => N.cardCode(Object.assign({}, c, { reversed: false, circled: false }));
+const cardKey = c => c.major ? 'M' + c.number : c.suit + c.rank;
+const noteKey = (ri, ci, c) => (table.rows[ri] ? table.rows[ri].label : ri) + '|' + ci + '|' + plainCode(c);
+
+function save() {
+  try { localStorage.setItem(STORE, JSON.stringify({ text: N.serializeTable(table), notes, codes: $('showCodes').checked })); } catch (e) {}
+}
+function load() {
+  const qp = new URLSearchParams(location.search);
+  const t = qp.get('t');
+  if (t) { try { table = N.parseTable(decodeURIComponent(escape(atob(t.replace(/-/g, '+').replace(/_/g, '/'))))); return; } catch (e) {} }
+  try {
+    const s = JSON.parse(localStorage.getItem(STORE) || 'null');
+    if (s && s.text) { table = N.parseTable(s.text); notes = s.notes || {}; if (s.codes === false) $('showCodes').checked = false; }
+  } catch (e) {}
+}
+
+function deckSlug() { return $('deck').value || table.deck || 'golden-dawn-book-t-tarot'; }
+function lookup(c) { const d = deckIndex[deckSlug()] || {}; return d[cardKey(c)] || null; }
+
+// ── rendering ──────────────────────────────────────────────────────────
+function cardEl(c, ri, ci, ki) {
+  const item = lookup(c);
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'tc' + (c.major ? ' major' : '') + (c.reversed ? ' rev' : '') + (c.circled ? ' circled' : '');
+  const label = N.cardName(c) + (c.reversed ? ', reversed' : '') + (c.circled ? ', circled' : '');
+  b.setAttribute('aria-label', label); b.title = label;
+  b.dataset.code = N.cardCode(c);
+  const face = item && item.image_url
+    ? `<img src="${esc(item.image_url)}" alt="" loading="lazy">`
+    : `<span class="fallback">${esc(N.cardName(c))}</span>`;
+  const suitIcon = c.major ? '' : `<rt-icon name="suit-${{ W: 'wands', C: 'cups', S: 'swords', P: 'pentacles' }[c.suit]}" size="11"></rt-icon>`;
+  b.innerHTML = `<span class="face">${face}</span><span class="code">${esc(N.cardCode(c))}${suitIcon}</span>`;
+  b.addEventListener('click', () => openCard(ri, ci, ki));
+  return b;
+}
+
+function render() {
+  const n = Math.max(1, table.columns.length);
+  const board = $('board');
+  board.innerHTML = '';
+  board.style.setProperty('--n', n);
+  // column headers
+  const head = document.createElement('div'); head.className = 'trow thead';
+  head.innerHTML = '<div class="corner"></div>';
+  table.columns.forEach((name, ci) => {
+    const h = document.createElement('div'); h.className = 'hcell';
+    h.innerHTML = `<input type="text" value="${esc(name)}" aria-label="Column ${ci + 1} name" placeholder="column">` +
+      (table.columns.length > 1 ? `<button class="x" type="button" title="Remove this column" aria-label="Remove column ${esc(name)}">✕</button>` : '');
+    h.querySelector('input').addEventListener('input', e => { table.columns[ci] = e.target.value; changed(false); });
+    const x = h.querySelector('.x'); if (x) x.addEventListener('click', () => removeCol(ci));
+    head.appendChild(h);
+  });
+  board.appendChild(head);
+  // rows
+  table.rows.forEach((r, ri) => {
+    const row = document.createElement('div'); row.className = 'trow';
+    if (r.heading) {
+      row.innerHTML = `<div class="heading"><input type="text" value="${esc(r.label)}" aria-label="Heading"><button class="x" type="button" title="Remove this heading">✕</button></div>`;
+      row.querySelector('input').addEventListener('input', e => { r.label = e.target.value; changed(false); });
+      row.querySelector('.x').addEventListener('click', () => { table.rows.splice(ri, 1); changed(); });
+      board.appendChild(row); return;
+    }
+    const lab = document.createElement('div'); lab.className = 'rlabel';
+    lab.innerHTML = `<input type="text" value="${esc(r.label)}" aria-label="Area name" placeholder="area"><button class="x" type="button" title="Remove this area">✕</button>`;
+    lab.querySelector('input').addEventListener('input', e => { r.label = e.target.value; changed(false); });
+    lab.querySelector('.x').addEventListener('click', () => { table.rows.splice(ri, 1); changed(); });
+    row.appendChild(lab);
+    r.cells.forEach((cards, ci) => {
+      const cell = document.createElement('div'); cell.className = 'cell';
+      cell.dataset.row = r.label; cell.dataset.col = table.columns[ci] || String(ci + 1);
+      if (!cards.length) cell.innerHTML = '<span class="empty">—</span>';
+      cards.forEach((c, ki) => cell.appendChild(cardEl(c, ri, ci, ki)));
+      const add = document.createElement('button');
+      add.type = 'button'; add.className = 'add'; add.textContent = '+';
+      add.title = 'Type a card into this cell'; add.setAttribute('aria-label', `Add a card to ${r.label}, ${table.columns[ci] || ''}`);
+      add.addEventListener('click', () => addByCode(cell, ri, ci));
+      cell.appendChild(add);
+      row.appendChild(cell);
+    });
+    board.appendChild(row);
+  });
+  if (!table.rows.length) {
+    const e = document.createElement('p'); e.className = 'privacy';
+    e.textContent = 'No areas yet: add one with “+ Area”, or write the table by hand below.';
+    board.appendChild(e);
+  }
+  // notes and mini-rows
+  const ex = $('extras'); ex.innerHTML = '';
+  table.notes.forEach(t => { const p = document.createElement('p'); p.textContent = t; ex.appendChild(p); });
+  table.strips.forEach((s, si) => {
+    const d = document.createElement('div'); d.className = 'strip';
+    d.innerHTML = `<b>${esc(s.label)}</b>`;
+    s.cards.forEach(c => { const sp = document.createElement('span'); sp.className = 'tc' + (c.major ? ' major' : '') + (c.circled ? ' circled' : '') + (c.reversed ? ' rev' : '');
+      sp.innerHTML = `<span class="code" style="display:inline-flex">${esc(N.cardCode(c))}</span>`; d.appendChild(sp); });
+    ex.appendChild(d);
+  });
+  writeState();
+}
+
+function writeState() {
+  const st = {
+    about: 'A card table: rows are areas of life, columns are what to do with each (default less / keep / more). Codes: majors 0-XXI, minors rank+suit (W C S P), ↓ reversed, (…) circled = the card carrying the message. Notes are the person\'s own.',
+    title: table.title, deck: deckSlug(), columns: table.columns,
+    notation: N.serializeTable(table),
+    rows: table.rows.map((r, ri) => r.heading ? { heading: r.label } : {
+      area: r.label,
+      cells: r.cells.map((cards, ci) => ({ column: table.columns[ci], cards: cards.map(c => {
+        const it = lookup(c);
+        return { code: N.cardCode(c), name: N.cardName(c), deck_name: it ? it.name : null, major: c.major,
+          reversed: c.reversed, circled: c.circled, note: notes[noteKey(ri, ci, c)] || null };
+      }) }))
+    }),
+    notes: table.notes, mini_rows: table.strips.map(s => ({ label: s.label, cards: s.cards.map(c => N.cardCode(c)) }))
+  };
+  $('card-table-state').textContent = JSON.stringify(st, null, 1);
+}
+
+// Any edit from the table: re-render (unless typing in a header), rewrite the notation, save.
+function changed(rerender) {
+  table.deck = deckSlug();
+  if (rerender !== false) render(); else writeState();
+  $('notation').value = N.serializeTable(table);
+  showErrors([]);
+  save();
+}
+
+function showErrors(errs) {
+  $('errors').innerHTML = errs.map(e => `<li>Line ${e.line}: ${esc(e.message)}</li>`).join('');
+}
+
+// ── editing ────────────────────────────────────────────────────────────
+function addRow(heading) {
+  if (heading) { table.rows.push({ label: 'Heading', heading: true }); changed(); return; }
+  table.rows.push({ label: 'Area ' + (table.rows.filter(r => !r.heading).length + 1), heading: false, cells: table.columns.map(() => []) });
+  changed();
+  const inputs = $('board').querySelectorAll('.rlabel input'); const last = inputs[inputs.length - 1]; if (last) { last.focus(); last.select(); }
+}
+function addCol() {
+  table.columns.push('column ' + (table.columns.length + 1));
+  table.rows.forEach(r => { if (!r.heading) r.cells.push([]); });
+  changed();
+}
+function removeCol(ci) {
+  table.columns.splice(ci, 1);
+  table.rows.forEach(r => { if (!r.heading) r.cells.splice(ci, 1); });
+  changed();
+}
+function addByCode(cell, ri, ci) {
+  if (cell.querySelector('.addin')) return;
+  const inp = document.createElement('input'); inp.type = 'text'; inp.className = 'addin'; inp.placeholder = 'e.g. 4C';
+  inp.setAttribute('aria-label', 'Card code');
+  const msg = document.createElement('div'); msg.className = 'addmsg';
+  cell.appendChild(inp); cell.appendChild(msg); inp.focus();
+  inp.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { render(); return; }
+    if (e.key !== 'Enter') return;
+    const toks = inp.value.trim().split(/\s+/).filter(Boolean);
+    const cards = toks.map(N.parseCard);
+    const bad = cards.find(c => c.error);
+    if (bad) { msg.textContent = bad.error; return; }
+    table.rows[ri].cells[ci].push(...cards);
+    changed();
+  });
+  inp.addEventListener('blur', () => setTimeout(() => { if (document.activeElement !== inp && inp.isConnected && !inp.value) render(); }, 150));
+}
+
+// ── laying the table ───────────────────────────────────────────────────
+let drawsMem = 0;
+function countDraw() {
+  let n;
+  try { n = (parseInt(sessionStorage.getItem('tableDraws'), 10) || 0) + 1; sessionStorage.setItem('tableDraws', String(n)); }
+  catch (e) { n = ++drawsMem; }
+  $('castCount').textContent = n > 1 ? `Draw ${n} this session` : '';
+}
+function lay() {
+  const pool = Object.keys(deckIndex[deckSlug()] || {});
+  if (!pool.length) { alert('This deck has no cards that the notation can name.'); return; }
+  const used = new Set();
+  table.rows.forEach(r => { if (!r.heading) r.cells.forEach(cards => cards.forEach(c => used.add(cardKey(c)))); });
+  let left = pool.filter(k => !used.has(k));
+  const empties = [];
+  table.rows.forEach(r => { if (!r.heading) r.cells.forEach((cards, ci) => { if (!cards.length) empties.push(cards); }); });
+  if (!empties.length) { alert('Every cell already has a card. “Clear the cards” to lay the table again.'); return; }
+  if (left.length < empties.length) { alert(`This deck has ${left.length} cards left for ${empties.length} empty cells. Try a larger deck or fewer cells.`); return; }
+  const rev = $('reversals').checked;
+  empties.forEach(cards => {
+    const i = Math.floor(Math.random() * left.length);
+    const key = left.splice(i, 1)[0];
+    const item = deckIndex[deckSlug()][key];
+    const c = key[0] === 'M'
+      ? { major: true, number: +key.slice(1), rank: null, suit: null }
+      : { major: false, number: null, suit: key[0], rank: +key.slice(1) };
+    c.reversed = rev && Math.random() < 0.5; c.circled = false; c.raw = N.cardCode(c);
+    void item;
+    cards.push(c);
+  });
+  countDraw();
+  changed();
+  if (window.OracleRibbon) OracleRibbon.show($('board'), { gated: false });
+}
+function clearCards() {
+  if (!confirm('Take every card off the table? The areas, columns and notes on the page stay.')) return;
+  table.rows.forEach(r => { if (!r.heading) r.cells = r.cells.map(() => []); });
+  changed();
+}
+
+// ── the card dialog ────────────────────────────────────────────────────
+async function deckGrammar(slug) {
+  if (!grammarCache[slug]) grammarCache[slug] = fetch(`../tarot/${slug}/grammar.json`).then(r => r.json()).catch(() => null);
+  return grammarCache[slug];
+}
+async function openCard(ri, ci, ki) {
+  open = { ri, ci, ki };
+  const c = table.rows[ri].cells[ci][ki];
+  const item = lookup(c);
+  $('dImg').className = 'dimg' + (c.reversed ? ' rev' : '');
+  $('dImg').innerHTML = item && item.image_url ? `<img src="${esc(item.image_url)}" alt="${esc(item.name)}">` : '';
+  $('dName').textContent = N.cardName(c) + (c.reversed ? ' (reversed)' : '');
+  const deckName = deckLabels[deckSlug()] || deckSlug();
+  $('dMeta').innerHTML = `<code>${esc(N.cardCode(c))}</code> · ${esc(table.rows[ri].label)} · ${esc(table.columns[ci] || '')} · ${esc(deckName)}` + (c.circled ? ' · <b>circled</b>' : '');
+  $('dCircle').textContent = c.circled ? 'Uncircle' : 'Circle it (the message)';
+  $('dTurn').textContent = c.reversed ? 'Turn it upright' : 'Turn it (reversed)';
+  $('dNote').value = notes[noteKey(ri, ci, c)] || '';
+  const m = item && item.metadata;
+  if (m && m.source_deck && m.source_item_id) { $('dOpen').href = `cards.html?src=../tarot/${m.source_deck}/grammar.json&item=${encodeURIComponent(m.source_item_id)}`; $('dOpen').style.display = ''; }
+  else $('dOpen').style.display = 'none';
+  $('dSecs').innerHTML = '<p class="privacy">Loading the deck’s reading…</p>';
+  $('cardModal').classList.add('on'); document.body.style.overflow = 'hidden';
+  $('dClose').focus();
+  let secsHtml = '<p class="privacy">This deck has no reading for this card.</p>';
+  if (m && m.source_deck) {
+    const g = await deckGrammar(m.source_deck);
+    const it = g && (g.items || []).find(x => x.id === m.source_item_id);
+    if (it && it.sections) {
+      let entries = Object.entries(it.sections).filter(([k, v]) => typeof v === 'string' && v.trim());
+      if (c.reversed) entries.sort((a, b) => (/revers|ill-dignified/i.test(b[0]) ? 1 : 0) - (/revers|ill-dignified/i.test(a[0]) ? 1 : 0));
+      else entries = entries.filter(([k]) => !/^reversed$/i.test(k)).concat(entries.filter(([k]) => /^reversed$/i.test(k)));
+      secsHtml = entries.map(([k, v]) => `<div class="sec"><h3>${esc(k)}</h3><div>${mdLite(v)}</div></div>`).join('');
+    }
+  }
+  if (open && open.ri === ri && open.ci === ci && open.ki === ki) $('dSecs').innerHTML = secsHtml;
+}
+function closeCard() { $('cardModal').classList.remove('on'); document.body.style.overflow = ''; open = null; }
+function current() { return open ? table.rows[open.ri].cells[open.ci][open.ki] : null; }
+
+// ── import / export ────────────────────────────────────────────────────
+function download(name, text, type) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], { type }));
+  a.download = name; document.body.appendChild(a); a.click(); a.remove();
+}
+function slug() { return (table.title || 'card-table').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'card-table'; }
+function exportMd() {
+  const lines = ['# ' + (table.title || 'Card table'), '', '```', N.serializeTable(table).trim(), '```', ''];
+  const noteLines = [];
+  table.rows.forEach((r, ri) => { if (!r.heading) r.cells.forEach((cards, ci) => cards.forEach(c => {
+    const t = notes[noteKey(ri, ci, c)]; if (t) noteLines.push(`- ${r.label} · ${table.columns[ci] || ci + 1} · ${N.cardCode(c)}: ${t.replace(/\n/g, ' ')}`);
+  })); });
+  if (noteLines.length) lines.push('## Notes', '', ...noteLines, '');
+  download(slug() + '.md', lines.join('\n'), 'text/markdown');
+}
+function exportJson() {
+  download(slug() + '.json', JSON.stringify({ v: 1, notation: N.serializeTable(table), notes }, null, 2), 'application/json');
+}
+// A table as a grammar (GRAMMAR_FORMAT.md): each card an item, with its area, column, code and
+// note, and the one cross-link pattern back to its deck (source_deck / source_item_id / deck), so
+// it shows "Open in <deck>". Areas, columns and the circled cards become groups (composite_of).
+// recursive.eco imports it through Create → Import JSON; it arrives as the person's own draft.
+async function exportGrammar() {
+  const slugDeck = deckSlug(), deckName = deckLabels[slugDeck] || slugDeck;
+  const g = await deckGrammar(slugDeck);
+  const deckItems = {}; ((g && g.items) || []).forEach(it => { deckItems[it.id] = it; });
+  const items = [], byRow = {}, byCol = {}, circled = [];
+  const idOf = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'x';
+  table.rows.forEach((r, ri) => { if (r.heading) return; r.cells.forEach((cards, ci) => cards.forEach((c, ki) => {
+    const meta = lookup(c), m = (meta && meta.metadata) || {};
+    const id = `card-${ri + 1}-${ci + 1}-${ki + 1}-${idOf(plainCode(c))}`;
+    const col = table.columns[ci] || `column ${ci + 1}`;
+    const sections = { 'Where it fell': `${r.label} · ${col}${c.reversed ? ' · reversed' : ''}${c.circled ? ' · circled (the message)' : ''}` };
+    const note = notes[noteKey(ri, ci, c)]; if (note) sections['My note'] = note;
+    const src = m.source_item_id && deckItems[m.source_item_id];
+    if (src && src.sections) {
+      let entries = Object.entries(src.sections).filter(([k, v]) => typeof v === 'string' && v.trim());
+      if (c.reversed) entries.sort((a, b) => (/revers|ill-dignified/i.test(b[0]) ? 1 : 0) - (/revers|ill-dignified/i.test(a[0]) ? 1 : 0));
+      entries.forEach(([k, v]) => { sections[k] = v; });
+    }
+    items.push({ id, name: `${r.label} · ${col}: ${N.cardName(c)}${c.reversed ? ' (reversed)' : ''}`, category: 'card',
+      image_url: meta && meta.image_url || undefined, sections,
+      metadata: { code: N.cardCode(c), area: r.label, column: col, reversed: c.reversed, circled: c.circled, major: c.major,
+        source_deck: m.source_deck || slugDeck, source_item_id: m.source_item_id || undefined, deck: deckName } });
+    (byRow[ri] ||= { label: r.label, ids: [] }).ids.push(id);
+    (byCol[ci] ||= { label: col, ids: [] }).ids.push(id);
+    if (c.circled) circled.push(id);
+  })); });
+  if (!items.length) { alert('The table has no cards yet.'); return; }
+  Object.values(byRow).forEach(x => items.push({ id: 'area-' + idOf(x.label), name: x.label, category: 'area', composite_of: x.ids, sections: { About: 'The cards that fell in this area.' } }));
+  Object.values(byCol).forEach(x => items.push({ id: 'column-' + idOf(x.label), name: x.label, category: 'column', composite_of: x.ids, sections: { About: `Every card in the "${x.label}" column.` } }));
+  if (circled.length) items.push({ id: 'the-message', name: 'The message (circled)', category: 'message', composite_of: circled, sections: { About: 'The cards circled as carrying the message of this table.' } });
+  const date = new Date().toISOString().slice(0, 10);
+  const desc = [`A card table laid on ${date} with ${deckName}. Areas: ${table.rows.filter(r => !r.heading).map(r => r.label).join(', ')}. Columns: ${table.columns.join(' · ')}.`]
+    .concat(table.notes.map(n => '> ' + n))
+    .concat(table.strips.map(s => `${s.label}: ${s.cards.map(c => N.cardCode(c)).join(' ')}`))
+    .concat(['', 'Relate to the card; never obey it.']).join('\n');
+  const grammar = { name: table.title || `Card table ${date}`, grammar_type: 'custom', description: desc,
+    tags: ['card-table', 'tarot'], metadata: { kind: 'card-table', deck: slugDeck, columns: table.columns, notation: N.serializeTable(table), laid_on: date },
+    items: JSON.parse(JSON.stringify(items)) };
+  download(slug() + '.grammar.json', JSON.stringify(grammar, null, 2), 'application/json');
+}
+async function onImport(e) {
+  const f = e.target.files && e.target.files[0]; if (!f) return;
+  const text = await f.text();
+  e.target.value = '';
+  if (/\.json$/i.test(f.name)) {
+    try { const o = JSON.parse(text); table = N.parseTable(o.notation || ''); notes = o.notes || {}; }
+    catch (err) { alert('That JSON file could not be read.'); return; }
+  } else {
+    const fence = text.match(/```[a-z]*\n([\s\S]*?)```/);
+    table = N.parseTable(fence ? fence[1] : text);
+    const title = text.match(/^#\s+(.+)$/m); if (title && !table.title) table.title = title[1].trim();
+    notes = {};
+    (text.split('## Notes')[1] || '').split('\n').forEach(l => {
+      const m = l.match(/^- (.+?) · (.+?) · (\S+): (.*)$/); if (!m) return;
+      const ri = table.rows.findIndex(r => r.label === m[1]); const ci = table.columns.indexOf(m[2]);
+      const c = N.parseCard(m[3]); if (ri >= 0 && ci >= 0 && !c.error) notes[noteKey(ri, ci, c)] = m[4];
+    });
+  }
+  syncControls(); changed();
+}
+function copyLink() {
+  const b64 = btoa(unescape(encodeURIComponent(N.serializeTable(table)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  const url = location.origin + location.pathname + '?t=' + b64;
+  const done = () => { $('copyLink').textContent = 'Link copied'; setTimeout(() => { $('copyLink').textContent = 'Copy link'; }, 1600); };
+  if (navigator.clipboard) navigator.clipboard.writeText(url).then(done, () => prompt('Copy this link:', url));
+  else prompt('Copy this link:', url);
+}
+
+function syncControls() {
+  $('title').value = table.title || '';
+  const want = table.deck || 'golden-dawn-book-t-tarot';
+  if ([...$('deck').options].some(o => o.value === want)) $('deck').value = want;
+  document.body.classList.toggle('nocodes', !$('showCodes').checked);
+}
+
+// ── start ──────────────────────────────────────────────────────────────
+(async function init() {
+  load();
+  let meta = null;
+  try { meta = await (await fetch(META_URL)).json(); } catch (e) {}
+  if (meta) {
+    (meta._decks || []).forEach(d => { deckLabels[d.slug] = d.label; });
+    (meta.items || []).forEach(it => {
+      const m = it.metadata || {};
+      if (it.composite_of || !m.source_deck || !m.arcana) return;
+      let key = null;
+      if (m.arcana === 'major') { const n = m.trump_number != null ? m.trump_number : m.number; if (Number.isInteger(n) && n >= 0 && n <= 21) key = 'M' + n; }
+      else { const s = SUIT_OF[m.suit]; const r = m.rank != null ? m.rank : m.number; if (s && Number.isInteger(r) && r >= 1 && r <= 14) key = s + r; }
+      if (!key) return;
+      const d = (deckIndex[m.source_deck] ||= {});
+      if (!d[key]) d[key] = it;
+    });
+    const dsel = $('deck');
+    const _yr = d => { const mm = String(d.date || d.era || '').match(/\d{4}/); return mm ? +mm[0] : 9999; };
+    [...(meta._decks || [])]
+      .filter(d => Object.keys(deckIndex[d.slug] || {}).length >= 22)
+      .sort((a, b) => _yr(a) - _yr(b) || (a.label || '').localeCompare(b.label || ''))
+      .forEach(d => { const o = document.createElement('option'); o.value = d.slug;
+        o.textContent = `${d.label} · ${d.date || d.era || ''} (${Object.keys(deckIndex[d.slug]).length})`; dsel.appendChild(o); });
+  } else {
+    $('board').insertAdjacentHTML('beforebegin', '<p class="privacy">The deck index could not load, so cards show by name only. Serve the site so ../tarot/ is reachable.</p>');
+  }
+  syncControls();
+  $('notation').value = N.serializeTable(table);
+  render();
+
+  $('deck').addEventListener('change', () => changed());
+  $('title').addEventListener('input', e => { table.title = e.target.value.trim(); changed(false); });
+  $('addRow').addEventListener('click', () => addRow(false));
+  $('addHeading').addEventListener('click', () => addRow(true));
+  $('addCol').addEventListener('click', addCol);
+  $('lay').addEventListener('click', lay);
+  $('clearCards').addEventListener('click', clearCards);
+  $('showCodes').addEventListener('change', () => { syncControls(); save(); });
+  $('copyLink').addEventListener('click', copyLink);
+  $('exportMd').addEventListener('click', exportMd);
+  $('exportJson').addEventListener('click', exportJson);
+  $('exportGrammar').addEventListener('click', exportGrammar);
+  $('importFile').addEventListener('change', onImport);
+  $('print').addEventListener('click', () => window.print());
+  $('reset').addEventListener('click', () => {
+    if (!confirm('Start over from the example table? Export first if you want to keep this one.')) return;
+    table = N.parseTable(EXAMPLE); notes = {}; syncControls(); changed();
+  });
+  let timer = null;
+  $('notation').addEventListener('input', e => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      const t = N.parseTable(e.target.value);
+      table = t; syncControls(); render(); showErrors(t.errors); save();
+    }, 350);
+  });
+
+  // dialog
+  $('dClose').addEventListener('click', closeCard);
+  $('cardModal').addEventListener('click', e => { if (e.target === $('cardModal')) closeCard(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && open) closeCard(); });
+  $('dCircle').addEventListener('click', () => { const c = current(); if (!c) return; const o = open; const note = notes[noteKey(o.ri, o.ci, c)];
+    c.circled = !c.circled; changed(); openCard(o.ri, o.ci, o.ki); if (note != null) { notes[noteKey(o.ri, o.ci, c)] = note; save(); } });
+  $('dTurn').addEventListener('click', () => { const c = current(); if (!c) return; const o = open;
+    c.reversed = !c.reversed; changed(); openCard(o.ri, o.ci, o.ki); });
+  $('dRemove').addEventListener('click', () => { const c = current(); if (!c) return; const o = open;
+    delete notes[noteKey(o.ri, o.ci, c)];
+    table.rows[o.ri].cells[o.ci].splice(o.ki, 1); closeCard(); changed(); });
+  $('dNote').addEventListener('input', e => { const c = current(); if (!c) return;
+    const k = noteKey(open.ri, open.ci, c); if (e.target.value.trim()) notes[k] = e.target.value; else delete notes[k]; save(); writeState(); });
+})();
+})();
+</script>
+<script src="../site-footer.js?v=1"></script>
+<site-footer base="../"></site-footer>
+</body>
+</html>
