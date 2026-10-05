@@ -51,7 +51,8 @@ the BnF: free to reuse **non-commercially** with the credit; a deck for sale nee
 | ◆ Copied from a website | Tarocchino Bologna (77 images from pagat.com) | pagat.com is © John McLeod and states no image licence. Replace with Commons scans, or ask him. |
 | ◇ Unrecorded | Etteilla I, II, III (282) | Uploaded through recursive.eco; nothing says which scan or printing. Gated for print. |
 | ◇ Waite-Smith printing unrecorded | Golden Dawn, Rider-Waite-Smith (182, Commons credit muzendo.jp) | The work is public domain (US; UK/EU since 2022). Before a sale, confirm the printing, and keep RIDER-WAITE-SMITH (a U.S. Games trademark for printed tarot cards) off product names and boxes. |
-| Contemporary decks | Yve Lepkowski's five decks (340); PlayfulProcess's Ontoject, Bus Passengers, 36 Tattvas | See decisions A and D. |
+| ✔ Contemporary, licensed | Yve Lepkowski's five decks (340), CC BY-SA 4.0 per her Downloads page (decision A) | Credit, licence link, modifications, share-alike: all carried. |
+| Our own | PlayfulProcess's Ontoject, Bus Passengers, 36 Tattvas | Hers to license; see decision D. |
 
 ## Texts
 
@@ -61,21 +62,24 @@ the BnF: free to reuse **non-commercially** with the credit; a deck for sale nee
   (`scripts/label_book_t_divinatory_paraphrase.py`).
 - Etteilla: our own rewriting, crediting Benebell Wen's reconstruction (2022). Spot check: no
   shared 8-word run with her Etteilla landing page; her per-card pages were not checked.
-- Yve Lepkowski's guidebook text is carried verbatim in her five decks (decision A).
+- Yve Lepkowski's guidebook text is carried verbatim in her five decks, under her CC BY-SA 4.0 (decision A).
 
 ## Decisions waiting for PlayfulProcess
 
-**A. Yve Lepkowski's five decks.** The repo labels them CC BY-SA 4.0 (`_grammar_commons`, the
-NOTICE until today, the import plan). Her site states no licence anywhere I could find, only
-"Stolen Thyme is created by Yve Lepkowski, 2020-2023". The label first appears as recursive.eco's
-default `_grammar_commons` stamp (attribution dated 2026-01-22). If she granted it (an email, a
-message, a licence inside her downloads), record the grant in `research/yve-lepkowski/`. If not,
-the five decks (340 images and her verbatim guidebook text) are republished without a licence:
-ask her (a short email, drafted for your approval), or take them off the site until she answers.
+**A. Yve Lepkowski's five decks: RESOLVED (Oct 5).** The first pass looked at her home, about,
+deck and guidebook pages and found no licence. The licence is on her
+[Downloads page](https://stolen-thyme.com/downloads/) ("Terms of Use"), found on Oct 5 by
+scanning all 311 pages and posts of her site through its WordPress API. All five decks and their
+guidebook files are there, licensed CC BY-SA 4.0. Her terms: credit her and link to her
+site, name the licence and link it, list the modifications, share adaptations under the same
+licence, and add no further restrictions. The grammars already do this
+(`_grammar_commons.attribution`, `license_url`, `modifications`). Evidence:
+`research/yve-lepkowski/LICENSE-EVIDENCE.md`. Her licence cannot cover Joanna Newsom's lyrics,
+which are not hers; that is why finding 1 stands.
 
 **B. Lyrics in git history.** The lyric lines are gone from the files but remain in this public
-repository's history. Rewriting a public history breaks every fork and clone, so the usual answer
-is to leave it; it is your call.
+repository's history. Rewriting a public history breaks every fork and clone. **Her answer
+(Oct 5): leave them in the past.**
 
 **C. recursive.eco's copy of Anecdotes Tarot** still carries the lyrics, and the app's items win
 on a write-back ("Resolve all drifts"), which would bring them back here. Fix the app copy (MCP
