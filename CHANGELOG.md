@@ -2,6 +2,17 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 5 2026
+
+- **The Golden Dawn cards carry Book T's own words.** Book T was printed in *The Equinox* I(8),
+  1912, and is public domain. Each of the 78 cards now has a `Book T (1912)` section, verbatim: the
+  full description and meaning of the aces, courts and 36 numbered cards, and Book T's brief
+  meaning of each key. The text (`research/sources/book-t-equinox-1912.txt`) was checked against
+  the scan of the 1912 issue (median 86% of 4-word runs found in its OCR; the rest is OCR noise).
+  The paraphrases and the AI-written `Symbol` sections moved to
+  `tarot/_archive/golden-dawn-editorial-2026-10-05.json`. `scripts/import_book_t_1912.py` writes it.
+- **Yve Lepkowski's licence found** on her Downloads page: CC BY-SA 4.0 for all five decks.
+
 ## Oct 4 2026
 
 - **AI-written Scenes archived.** At PlayfulProcess's word, the 1,500 "Scene" sections (machine

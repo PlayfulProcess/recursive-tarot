@@ -129,7 +129,7 @@ comes from R2 (see the Image pattern above); this folder is only for course-auth
 | `scripts/enrich_cards_from_research.py` | Add Research notes from research/cards/*.md (idempotent) |
 | `scripts/refresh_collection.py` | Sync _collection.json from grammars |
 | `scripts/normalize_book_t_sections.py` | Idempotent Book T section normaliser; `--check` asserts nothing was lost |
-| `scripts/label_book_t_divinatory_paraphrase.py` | Labels Book T's `Divinatory Meaning`/`Reversed / Ill-Dignified` as paraphrase (idempotent; `--check` verifies) |
+| `scripts/import_book_t_1912.py` | Writes Book T's own 1912 text (*The Equinox* I(8)) onto the 78 Golden Dawn cards from `research/sources/book-t-equinox-1912.txt`; `--check`; `--verify-scan` compares with the 1912 scan's OCR |
 | `scripts/check_all.py` | Pre-commit gate |
 | `scripts/audit_image_rights.py` | Asks Commons what every card image is (licence, credit); writes `docs/rights/IMAGE-LEDGER.md`. Re-run after any image change. The site says **open**, never "public-domain library": see `docs/rights/RIGHTS-AUDIT-2026-10-04.md` |
 

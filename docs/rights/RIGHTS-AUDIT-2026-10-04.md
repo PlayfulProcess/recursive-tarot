@@ -58,8 +58,8 @@ the BnF: free to reuse **non-commercially** with the credit; a deck for sale nee
 
 - Translated here from public-domain originals: Wirth (1927 French; Wirth d. 1943, US public
   domain since 2023), Court de Gébelin (1781). Carried in old translations: Papus (A. P. Morton's
-  1890s English), Waite (*Pictorial Key*, 1911). Book T meanings are labelled paraphrase
-  (`scripts/label_book_t_divinatory_paraphrase.py`).
+  1890s English), Waite (*Pictorial Key*, 1911). Book T: quoted from its 1912 printing in *The Equinox* I(8), public domain
+  (`scripts/import_book_t_1912.py`, Oct 5); the earlier paraphrases are archived.
 - Etteilla: our own rewriting, crediting Benebell Wen's reconstruction (2022). Spot check: no
   shared 8-word run with her Etteilla landing page; her per-card pages were not checked.
 - Yve Lepkowski's guidebook text is carried verbatim in her five decks, under her CC BY-SA 4.0 (decision A).
