@@ -13,8 +13,9 @@ quotes cannot cause a miss. "Song reference", "Traditional meaning" and "Also ca
 (not hers, or not prose). Script: `scripts/audit_yve_decks.py` (it reads the API dumps; the dumps
 are not committed).
 
-**Not checked:** the images. Whether each picture sits on the right card needs her original files
-(the ZIPs on her Downloads page, or the copy in PlayfulProcess's Drive).
+**The images** were checked in a second pass, against the files in the ZIPs on her Downloads page
+(each of our card images matched to the nearest of her files by a visual fingerprint; see
+"What was fixed").
 
 ## What it found (first pass, Oct 5 morning)
 
