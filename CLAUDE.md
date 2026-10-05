@@ -78,7 +78,7 @@ The pill suppresses itself if the current page URL already contains `/<slug>/`, 
 
 | Section | Meaning |
 |---------|---------|
-| `Scene` | Narrative description of what is literally depicted |
+| ~~`Scene`~~ | **Retired Oct 4 2026.** AI vision descriptions, archived in `tarot/_archive/ai-scenes-2026-10-04/`. Don't write new ones: where a tradition wrote its cards down (Book T, Waite, Etteilla), the card carries that tradition's own text |
 | `Symbol` | Semiotic note: what the visual elements mean in the tradition they come from |
 | `Research note` | Sourced historical claims with `[@citation]` keys |
 | `Figure` | Named figure on the card (courts, named trumps) |
@@ -89,7 +89,13 @@ The pill suppresses itself if the current page URL already contains `/<slug>/`, 
 All deck images are on R2 at:
 `https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/<deck-folder>/<filename>`
 
-To write Scene/Symbol sections: download images from R2 to a temp dir, use Read tool vision to view each, write descriptions, delete temp dir. Sola Busca minors done 2026-06-13 this way.
+**No AI-written card descriptions under a tradition's name** (PlayfulProcess, Oct 4 2026). The
+Scene sections once written by viewing images with vision were found unreliable and archived
+(`tarot/_archive/ai-scenes-2026-10-04/README.md`). Where a tradition wrote its cards down, render
+its own text, from public-domain printings (Book T as printed in *The Equinox* I(8), 1912; Waite's
+*Pictorial Key*, 1911). Vision may only propose candidates, labelled "machine description,
+unchecked", for a person to approve. Decks no tradition fully held (Sola Busca) may carry new
+meaning, labelled as ours.
 
 **Thumbnails are always resized, never cropped.** Card images must show the whole card — use
 `object-fit:contain` (letterboxed on a neutral background), never `object-fit:cover`. A clipped

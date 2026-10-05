@@ -4,6 +4,10 @@ Newest first. One bullet per shipped thing.
 
 ## Oct 4 2026
 
+- **AI-written Scenes archived.** At PlayfulProcess's word, the 1,500 "Scene" sections (machine
+  descriptions of the card images) left 22 decks for `tarot/_archive/ai-scenes-2026-10-04/`, one file
+  per deck, with a README saying what they were and why they went. Where a tradition wrote its
+  cards down, the cards will carry its own text.
 - **Rights audit** ([docs/rights/RIGHTS-AUDIT-2026-10-04.md](docs/rights/RIGHTS-AUDIT-2026-10-04.md)).
   The site says **open**, not public-domain (35 lines: home, about, historian, contribute,
   play, shop, print page, course credits, channel manifest, README); README and NOTICE say the

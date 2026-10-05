@@ -16,3 +16,6 @@ Each `grammar.json` is the full document as exported from the app, with an `_arc
 The first five were early single-deck builds from before the repo's historical-sourcing standards (dated attributions, provenance notes). `tarot-of-all-tarots` was the first attempt at a cross-deck collection and is the direct ancestor of "The Tarot — All Decks, Many Lenses."
 
 Nothing in this folder is served by the site or imported by recursive.eco: the channel manifest glob (`tarot/*/grammar.json`) does not descend into `_archive/`.
+
+**Also here:** `ai-scenes-2026-10-04/`, the AI-written "Scene" sections removed from every deck on
+Oct 4 2026 (see its README).
