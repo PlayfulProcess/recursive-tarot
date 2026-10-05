@@ -2,6 +2,19 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 5 2026 — Yve Lepkowski's own words, and her pictures checked
+
+- **Her text, word for word, from her guidebook pages**: Anecdotes (31 sections), Clown Town (11),
+  Tarocchino (62 card descriptions, 4 meanings), Augmented (2 descriptions, 2 meanings). These were
+  paraphrases from the June import; one Anecdotes interpretation was not hers at all. Verse
+  epigraphs and song lyrics are left out. What is ours is marked editorial. Each deck's
+  `modifications` note says what is hers and what is ours.
+- **Her pictures, checked against the files in her Downloads ZIPs:** three decks match exactly.
+  The Petit Lenormand Cross showed the Roads picture and now shows her Cross; the Tarocchino
+  significators were cropped and now show her whole cards (files in `tarot/*/images/`).
+- Report: `docs/rights/YVE-DECKS-AUDIT-2026-10-05.md`, with a correction (Il Vecchio's
+  chronos/kairos meanings are hers). One-offs: `scripts/archive/yve_*.py`.
+
 ## Oct 5 2026 — merged: what is new, and what was not thoroughly verified
 
 PlayfulProcess merged the cloud session's work (PR #44) and the rights work (PR #43). New, and not
