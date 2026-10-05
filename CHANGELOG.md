@@ -2,6 +2,27 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 5 2026 — merged: what is new, and what was not thoroughly verified
+
+PlayfulProcess merged the cloud session's work (PR #44) and the rights work (PR #43). New, and not
+thoroughly verified:
+
+- **From the papers (Sosteric, Semetsky, Fawaid, Depaulis, Bauduin):** research notes written with
+  AI from the papers, spot-checked only.
+- **The Card Table:** its notation passes 11 tests, but the page was looked at once, locally.
+- **The Case 1920 booklet:** transcribed text, not proofread against the 1920 printing.
+- **Court de Gébelin's birth years:** the dispute is reported from the sources, not settled.
+- **The draft paragraph** (`docs/plan/DRAFT-what-a-reading-can-do-semetsky-sosteric.md`) stays a
+  draft.
+- **Book T (1912) on the Golden Dawn cards:** checked against the OCR of the 1912 scan (median 86%
+  of each card's 4-word runs found; the lowest, 65–70%, are pages with noisy OCR). Not proofread
+  line by line.
+- **The image ledger** (`docs/rights/`) reads what Wikimedia Commons says about each image, not
+  the holders' own terms, and checks no pictures.
+- **The audit of Yve Lepkowski's decks** matches sentences automatically, and leaves the images
+  unchecked.
+- **The archived Scenes** were moved as a block, not reviewed one by one.
+
 ## Oct 5 2026
 
 - **The Golden Dawn cards carry Book T's own words.** Book T was printed in *The Equinox* I(8),
