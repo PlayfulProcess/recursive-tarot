@@ -78,6 +78,8 @@ above is the one this draft was written for.
 - **Unverified:** whether the connector is on by default in Project chats; step 5 covers it
   either way.
 
+Readings can be saved to your recursive.eco Journal through the connector (`record_reading`), only when you say yes, once recursive.eco's next release is live.
+
 ## Without a connector
 
 READER.md still works: Claude reads from the notation alone and leaves out the quotations

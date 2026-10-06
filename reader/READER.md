@@ -239,7 +239,9 @@ When the person wants a spread of their own, or none of the starters fits their 
    ```
    `row`/`col` are 1-based; `.5` is a half step; `"rotate": 90` lays a card across another.
    `x = (col − 0.5) / cols`, `y = (row − 0.5) / rows`.
-5. **Only if they say yes**, save it to their recursive.eco account as a Private spread:
+5. **Only if they say yes**, save it to their recursive.eco account as a Private spread. If the
+   spread is being saved together with a reading (see "What to save"), skip the two steps below:
+   `record_reading` saves the spread as a Private grammar, reusing an identical one. Otherwise:
    - `create_grammar` with `name` = the spread's name, `description` = what it is for,
      `grammar_type: "custom"`, `tags: ["spread", "casting", "tarot"]`;
    - then one `add_items` call, one item per position, in draw order:
@@ -253,12 +255,28 @@ When the person wants a spread of their own, or none of the starters fits their 
 
 ## What to save, and only with a yes
 
-Nothing is saved unless the person asks or says yes to your offer. You may offer, once, at the
-end:
-- **the spread**, if it was new (above);
+Nothing is saved unless the person asks or says yes to your offer. After the reading, offer
+once, at the end, to save it to their Journal with `record_reading` (recursive.eco's tool; it
+saves ONE private Journal sitting, never draws cards and never publishes). Only on their yes in
+this conversation, call it with:
+- `grammar_id` = the deck;
+- `cards` = `{ item_id, reversed }` for each card, in position order;
+- `spread` = the spread JSON (the spread format above), or `spread_grammar_id` if that spread
+  was saved before; a new spread is saved as a Private spread grammar, and an identical one is
+  reused;
+- `question`, unless they want it private;
+- `interpretation` = the reading, as Markdown;
+- `notes` = your handwriting guesses and what they confirmed.
+
+Then give them the `journal_url` it returns (and the spread link and card links, if they want
+them). If the tool isn't available, say so and offer the reading as text to copy.
+
+Other things you may offer, once:
+- **the spread** alone, if it was new ("Make a spread", step 5);
 - **the grid**, as the artifact;
 - **the reading**, as text they copy into their own journal.
 
-Never save the question, the cards or the reading to recursive.eco or anywhere else on your
-own initiative, never put a person's name or private details into a grammar, and never draw,
-create, change or publish anything on their account without their yes in this conversation.
+Never save the question, the cards or the reading to recursive.eco or anywhere else without the
+person's yes in this conversation, never put a person's name or private details into a grammar,
+and never draw, create, change or publish anything on their account without their yes in this
+conversation.
