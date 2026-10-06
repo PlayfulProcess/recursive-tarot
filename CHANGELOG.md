@@ -2,6 +2,12 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 6 2026 — Book T: Strength and Justice had each other's 1912 text
+
+- `scripts/import_book_t_1912.py` used Book T's key numbers (8 = Justice, 11 = Fortitude) as indexes into the deck's
+  Rider-Waite-Smith order (8 = Strength, 11 = Justice). It now translates Book T's number to the deck's
+  and asserts Book T's own table. Fixed on `major-08-strength` and `major-11-justice`; the other 20 keys were right.
+
 ## Oct 5 2026 — merged: what is new, and what was not thoroughly verified
 
 PlayfulProcess merged the cloud session's work (PR #44) and the rights work (PR #43). New, and not
