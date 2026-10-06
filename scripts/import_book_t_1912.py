@@ -56,6 +56,13 @@ HEB = [("a'a", 'ע'), ('Ch', 'ח'), ('Sh', 'ש'), ('Th', 'ת'), ('Tz', 'צ'),
        ('A', 'א'), ('B', 'ב'), ('G', 'ג'), ('D', 'ד'), ('H', 'ה'), ('V', 'ו'), ('Z', 'ז'),
        ('T', 'ט'), ('Y', 'י'), ('K', 'כ'), ('L', 'ל'), ('M', 'מ'), ('N', 'נ'), ('S', 'ס'),
        ('O', 'ע'), ('P', 'פ'), ('Q', 'ק'), ('R', 'ר')]
+# Book T numbers the keys VIII = Justice (Libra) and XI = Fortitude (Leo); this deck's cards follow
+# the Rider-Waite-Smith order (8 Strength, 11 Justice). MAJORS above is in the deck's order, so a
+# Book T key number must be translated before it is used as an index, or the two cards get each
+# other's 1912 text (fixed Oct 6 2026). Book T's own table (source file: "11 | Fortitude",
+# "8 | Justice") is asserted in `parse` so the translation can't drift from the source.
+BOOK_T_TO_DECK = {8: 11, 11: 8}
+
 FINAL = {'כ': 'ך', 'מ': 'ם', 'נ': 'ן', 'פ': 'ף', 'צ': 'ץ'}
 
 
@@ -106,8 +113,10 @@ def parse(src_text):
         assert cid not in cards, cid
         cards[cid] = tidy(text[end:nxt])
     keys = text[text.find('BRIEF MEANING OF TWENTY-TWO KEYS'):text.find('OF THE DIGNITIES')]
+    for n, name in ((8, 'Justice'), (11, 'Fortitude')):          # Book T's own key numbers
+        assert re.search(r'\n\s*%d \|\s*\n\s*%s \|' % (n, name), text), 'Book T table: %d %s' % (n, name)
     for m in re.finditer(r'\n(\d{1,2})\. (.+?)(?=\n\d{1,2}\. |\Z)', keys, re.S):
-        n = int(m.group(1))
+        n = BOOK_T_TO_DECK.get(int(m.group(1)), int(m.group(1)))   # Book T's number -> deck's number
         # one paragraph per key; after 21 the text goes on to the table of groupings
         cards['major-%02d-%s' % (n, MAJORS[n])] = tidy(m.group(2)).split('\n\n')[0]
     return cards
