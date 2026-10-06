@@ -2,21 +2,19 @@
 
 Newest first. One bullet per shipped thing.
 
-<<<<<<< HEAD
-## Oct 6 2026 (draft, branch reader/draft)
+## Oct 6 2026 — merged: the Tarot Reader
 
 - **The Tarot Reader** (`reader/`): instructions to paste into a claude.ai Project so Claude reads a
   spread in this site's style (notation, Book T and Waite quoted briefly, patterns, questions not
   instructions, links to each card's page on recursive.eco); a spread format with four starters
   that also load in the Spread Caster; and a self-contained grid page that lays the cards on the
   spread. Not yet tried in claude.ai itself.
-=======
+
 ## Oct 6 2026 — Book T: Strength and Justice had each other's 1912 text
 
 - `scripts/import_book_t_1912.py` used Book T's key numbers (8 = Justice, 11 = Fortitude) as indexes into the deck's
   Rider-Waite-Smith order (8 = Strength, 11 = Justice). It now translates Book T's number to the deck's
   and asserts Book T's own table. Fixed on `major-08-strength` and `major-11-justice`; the other 20 keys were right.
->>>>>>> origin/main
 
 ## Oct 5 2026 — merged: what is new, and what was not thoroughly verified
 
