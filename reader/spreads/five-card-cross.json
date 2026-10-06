@@ -1,0 +1,61 @@
+{
+  "_type": "recursive-tarot-spread",
+  "_version": 1,
+  "id": "five-card-cross",
+  "name": "The Five-Card Cross",
+  "description": "A situation and its four pressures: the heart, above, below, and either side. Positions and meanings as in the site's Caster (viewers/spreads.json, cross5).",
+  "question_prompt": "What is the situation, in a sentence?",
+  "grid": {
+    "rows": 3,
+    "cols": 3
+  },
+  "positions": [
+    {
+      "n": 1,
+      "label": "The Heart",
+      "meaning": "The centre of the matter, where you stand.",
+      "row": 2,
+      "col": 2,
+      "x": 0.5,
+      "y": 0.5
+    },
+    {
+      "n": 2,
+      "label": "Above",
+      "meaning": "What you aspire to, or what oversees this.",
+      "row": 1,
+      "col": 2,
+      "x": 0.5,
+      "y": 0.167
+    },
+    {
+      "n": 3,
+      "label": "Below",
+      "meaning": "The root it grows from, often unspoken.",
+      "row": 3,
+      "col": 2,
+      "x": 0.5,
+      "y": 0.833
+    },
+    {
+      "n": 4,
+      "label": "Behind",
+      "meaning": "What is passing, just leaving the frame.",
+      "row": 2,
+      "col": 1,
+      "x": 0.167,
+      "y": 0.5
+    },
+    {
+      "n": 5,
+      "label": "Before",
+      "meaning": "What is approaching, just entering it.",
+      "row": 2,
+      "col": 3,
+      "x": 0.833,
+      "y": 0.5
+    }
+  ],
+  "author": "PlayfulProcess",
+  "license": "CC-BY-SA-4.0"
+}

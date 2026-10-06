@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tarot Spread</title>
+<!--
+  grid-template.html: one reading, laid out on its spread's grid.
+
+  HOW TO FILL IT (for Claude, see reader/READER.md, "Lay the grid"):
+  replace ONLY the JSON inside <script type="application/json" id="reading"> below.
+  Nothing else changes. No external scripts, fonts or styles: it works as a claude.ai
+  artifact, as a file opened from disk, or on any static host.
+
+  The block:
+  {
+    "title":    "Sleep",                         // short, the person's own word if they gave one
+    "question": "What helps my sleep?",          // in the person's words; omit if they kept it private
+    "date":     "2026-10-06",
+    "notation": "3♥ KW 4S XI↓ / 6⛤↓ 8W KnP",    // what they wrote or typed, as given
+    "deck":   { "id": "<recursive.eco grammar id>", "name": "…", "url": "https://flow.recursive.eco/g/<id>" },
+    "spread": { a spread in reader/spreads/SPREAD-FORMAT.md: name, grid {rows, cols},
+                positions [{ n, label, meaning, row, col, rotate? }] },
+    "cards":  [ { "n": 1,                        // the position it fell in
+                  "code": "3C", "name": "Three of Cups", "reversed": false,
+                  "item_id": "cups-03",
+                  "image_url": "https://…",       // the deck item's own public image_url, or omit
+                  "url": "https://flow.recursive.eco/g/<deck id>?item=<item id>",
+                  "note": "Book T: Lord of Abundance" } ],   // optional, one short line
+    "credit":    "Card images: …",               // optional
+    "links":   [ { "label": "Open this table on tarot.recursive.eco", "url": "https://…" } ]  // optional
+  }
+
+  Grid rules: row and col are 1-based; a .5 places a card half a step over (a centred second
+  row, the Celtic Cross's cross beside its staff). rotate: 90 lays a card across another
+  (it shares the other card's cell). A reversed card turns 180°.
+-->
+<style>
+  :root {
+    --bg: #f4f1ea; --surface: #ffffff; --mat: #faf8f3;
+    --ink: #221f1a; --ink-soft: #4a4439; --mut: #6b6457;
+    --line: #d8d2c6; --gold: #9a7322; --link: #7c5b18;
+    --shadow: 0 1px 2px rgba(40, 30, 10, .10), 0 4px 14px rgba(40, 30, 10, .08);
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17150f; --surface: #221f18; --mat: #2a261d;
+      --ink: #efe9dc; --ink-soft: #d6cebd; --mut: #ada490;
+      --line: #3d372b; --gold: #d4ad5c; --link: #e2c27f;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 4px 14px rgba(0, 0, 0, .35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17150f; --surface: #221f18; --mat: #2a261d;
+    --ink: #efe9dc; --ink-soft: #d6cebd; --mut: #ada490;
+    --line: #3d372b; --gold: #d4ad5c; --link: #e2c27f;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 4px 14px rgba(0, 0, 0, .35);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.55 var(--sans);
+  }
+  main { max-width: 920px; margin: 0 auto; padding: 24px 16px 40px; }
+  a { color: var(--link); text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+  .kicker { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin: 0 0 6px; }
+  h1 { font: 600 clamp(24px, 5vw, 32px)/1.2 var(--serif); margin: 0 0 6px; }
+  .question { font: italic 18px/1.45 var(--serif); color: var(--ink-soft); margin: 0 0 10px; }
+  .meta { font-size: 13px; color: var(--mut); margin: 0; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+  .meta code { font: 13px/1.4 ui-monospace, "Cascadia Mono", Consolas, monospace; background: var(--mat); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; color: var(--ink); }
+
+  /* The board: each spread column/row is two tracks, so a card spans 2 and a .5 shifts it by one. */
+  .board {
+    list-style: none; margin: 22px 0 8px; padding: 18px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow);
+    display: grid; gap: 10px 8px; align-items: start; justify-items: center;
+    grid-template-columns: repeat(var(--tracks-x), minmax(0, 1fr));
+  }
+  .slot { position: relative; width: 100%; max-width: 150px; margin: 0; z-index: 1; }
+  .slot.across { z-index: 2; }
+  .face {
+    display: block; position: relative; aspect-ratio: 7 / 12; width: 100%;
+    background: var(--mat); border: 1px solid var(--line); border-radius: 8px;
+    overflow: hidden; transition: transform .2s ease;
+  }
+  .face img { display: block; width: 100%; height: 100%; object-fit: contain; }
+  .face .fallback {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    padding: 8px; text-align: center; font: 600 13px/1.3 var(--serif); color: var(--ink-soft);
+  }
+  .slot.rev .face { transform: rotate(180deg); }
+  .slot.across .face { transform: rotate(90deg) scale(.92); box-shadow: var(--shadow); }
+  .slot.across.rev .face { transform: rotate(270deg) scale(.92); }
+  .slot a.cardlink { display: block; text-decoration: none; color: inherit; border-radius: 8px; }
+  .slot a.cardlink:hover .face { border-color: var(--gold); }
+  .badge {
+    position: absolute; top: -8px; left: -6px; z-index: 3;
+    min-width: 22px; height: 22px; padding: 0 6px; border-radius: 11px;
+    background: var(--surface); border: 1px solid var(--gold); color: var(--gold);
+    font: 700 12px/20px var(--sans); text-align: center;
+  }
+  .slot.across .badge { left: auto; right: -6px; top: auto; bottom: -8px; }
+  figcaption { margin-top: 6px; text-align: center; font-size: 12.5px; line-height: 1.3; }
+  figcaption .pos { display: block; color: var(--mut); font-size: 11px; letter-spacing: .04em; }
+  figcaption .name { color: var(--ink); font-weight: 600; }
+  figcaption .rev-tag { display: block; color: var(--gold); font-size: 11px; }
+  .slot.across figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  .positions { margin: 22px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+  .positions li { display: grid; grid-template-columns: 34px 1fr; gap: 2px 10px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .positions .n { grid-row: span 3; font: 700 14px/22px var(--sans); color: var(--gold); text-align: center; border: 1px solid var(--gold); border-radius: 11px; height: 22px; }
+  .positions .lab { font-weight: 600; }
+  .positions .mean { color: var(--ink-soft); font-size: 14px; }
+  .positions .card { font-size: 14px; }
+  .positions .card .note { color: var(--mut); }
+  h2 { font: 600 18px/1.3 var(--serif); margin: 28px 0 0; }
+  footer { margin-top: 28px; font-size: 13px; color: var(--mut); }
+  footer p { margin: 0 0 6px; }
+  .creed { font: italic 15px/1.5 var(--serif); color: var(--ink-soft); }
+  @media (max-width: 520px) {
+    main { padding: 18px 16px 32px; }
+    .board { padding: 12px 8px; gap: 8px 4px; }
+    figcaption { font-size: 11px; }
+    figcaption .pos { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="kicker">Tarot reading</p>
+  <h1 id="title">A reading</h1>
+  <p class="question" id="question" hidden></p>
+  <p class="meta" id="meta"></p>
+
+  <ol class="board" id="board" aria-label="The cards, laid out in the spread"></ol>
+
+  <h2 id="positionsHead">Positions</h2>
+  <ol class="positions" id="positions" aria-labelledby="positionsHead"></ol>
+
+  <footer>
+    <p class="creed">These are things to try on, not instructions. Relate to the card; never obey it. You decide.</p>
+    <p id="credit"></p>
+    <p id="links"></p>
+  </footer>
+  <noscript><p>This page draws the cards with a small inline script. With scripts off, the reading's data is in the page source.</p></noscript>
+</main>
+
+<script type="application/json" id="reading">
+{
+  "title": "Three cards",
+  "question": "What do I want to look at?",
+  "date": "2026-10-06",
+  "notation": "XVII 4S 3C",
+  "deck": { "id": "edac5d5a-8100-486d-b822-2f31b20a194c", "name": "Golden Dawn Tarot (Book T)", "url": "https://flow.recursive.eco/g/edac5d5a-8100-486d-b822-2f31b20a194c" },
+  "spread": {
+    "name": "Three Cards: Past · Present · Possibility",
+    "grid": { "rows": 1, "cols": 3 },
+    "positions": [
+      { "n": 1, "label": "Past", "meaning": "What this grew from: the ground just behind you.", "row": 1, "col": 1 },
+      { "n": 2, "label": "Present", "meaning": "Where you stand now: the heart of it.", "row": 1, "col": 2 },
+      { "n": 3, "label": "Possibility", "meaning": "One opening not yet committed to. Something to try on, which you may also put down.", "row": 1, "col": 3 }
+    ]
+  },
+  "cards": [
+    { "n": 1, "code": "XVII", "name": "The Star", "reversed": false, "item_id": "major-17-the-star", "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot/RWS_Tarot_17_Star.jpg", "url": "https://flow.recursive.eco/g/edac5d5a-8100-486d-b822-2f31b20a194c?item=major-17-the-star" },
+    { "n": 2, "code": "4S", "name": "Four of Swords", "reversed": false, "item_id": "swords-04", "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot/Swords04.jpg", "url": "https://flow.recursive.eco/g/edac5d5a-8100-486d-b822-2f31b20a194c?item=swords-04", "note": "Book T: Lord of Rest from Strife" },
+    { "n": 3, "code": "3C", "name": "Three of Cups", "reversed": true, "item_id": "cups-03", "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot/Cups03.jpg", "url": "https://flow.recursive.eco/g/edac5d5a-8100-486d-b822-2f31b20a194c?item=cups-03", "note": "Book T: Lord of Abundance" }
+  ],
+  "credit": "Card images: Pamela Colman Smith, 1909 (Rider-Waite-Smith), public domain, via recursive.eco.",
+  "links": []
+}
+</script>
+
+<script>
+(function () {
+  'use strict';
+  var data;
+  try { data = JSON.parse(document.getElementById('reading').textContent); }
+  catch (e) { document.getElementById('title').textContent = 'The reading data could not be read'; return; }
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = String(text);
+    return e;
+  }
+  // Only plain https links and images; anything else is shown as text.
+  function safeUrl(u) { return typeof u === 'string' && /^https:\/\//i.test(u) ? u : ''; }
+  function link(text, url) {
+    var u = safeUrl(url);
+    if (!u) return el('span', null, text);
+    var a = el('a', null, text);
+    a.href = u; a.target = '_blank'; a.rel = 'noopener';
+    return a;
+  }
+
+  var spread = data.spread || {};
+  var positions = (spread.positions || []).slice().sort(function (a, b) { return (a.n || 0) - (b.n || 0); });
+  var cardsByN = {};
+  (data.cards || []).forEach(function (c) { if (c && c.n != null) cardsByN[c.n] = c; });
+
+  // Grid size: declared, or the furthest position.
+  var grid = spread.grid || {};
+  var cols = grid.cols || Math.max.apply(null, positions.map(function (p) { return Math.ceil(p.col || 1); }).concat([1]));
+  var rows = grid.rows || Math.max.apply(null, positions.map(function (p) { return Math.ceil(p.row || 1); }).concat([1]));
+
+  // Header
+  document.getElementById('title').textContent = data.title || spread.name || 'A reading';
+  document.title = data.title ? data.title + ' · Tarot Spread' : 'Tarot Spread';
+  if (data.question) {
+    var q = document.getElementById('question');
+    q.textContent = data.question; q.hidden = false;
+  }
+  var meta = document.getElementById('meta');
+  if (spread.name) meta.appendChild(el('span', null, spread.name));
+  if (data.deck && data.deck.name) {
+    var ds = el('span', null, 'Deck: ');
+    ds.appendChild(link(data.deck.name, data.deck.url));
+    meta.appendChild(ds);
+  }
+  if (data.date) meta.appendChild(el('span', null, data.date));
+  if (data.notation) {
+    var ns = el('span', null, 'As written: ');
+    ns.appendChild(el('code', null, data.notation));
+    meta.appendChild(ns);
+  }
+
+  // Board
+  var board = document.getElementById('board');
+  board.style.setProperty('--tracks-x', String(cols * 2));
+  board.style.gridTemplateRows = 'repeat(' + (rows * 2) + ', auto)';
+  positions.forEach(function (p) {
+    var c = cardsByN[p.n];
+    var li = el('li', 'slot');
+    var across = Number(p.rotate) === 90;
+    if (across) li.classList.add('across');
+    if (c && c.reversed) li.classList.add('rev');
+    var col = Number(p.col) || 1, row = Number(p.row) || 1;
+    li.style.gridColumn = String(Math.round(col * 2 - 1)) + ' / span 2';
+    li.style.gridRow = String(Math.round(row * 2 - 1)) + ' / span 2';
+
+    var label = p.label || ('Position ' + p.n);
+    var cardName = c ? (c.name || c.code || 'card') : 'no card';
+    var orient = c ? (c.reversed ? 'reversed' : 'upright') : '';
+    var alt = c ? cardName + ', ' + orient + ', in position ' + p.n + ' (' + label + ')' : 'Position ' + p.n + ' (' + label + '), empty';
+
+    var face = el('span', 'face');
+    var img = null;
+    if (c && safeUrl(c.image_url)) {
+      img = document.createElement('img');
+      img.src = c.image_url; img.alt = alt; img.loading = 'lazy'; img.decoding = 'async';
+      img.addEventListener('error', function () {
+        img.remove();
+        var fb = el('span', 'fallback', cardName); fb.setAttribute('role', 'img'); fb.setAttribute('aria-label', alt);
+        face.appendChild(fb);
+      });
+      face.appendChild(img);
+    } else {
+      var fb = el('span', 'fallback', c ? cardName : '—'); fb.setAttribute('role', 'img'); fb.setAttribute('aria-label', alt);
+      face.appendChild(fb);
+    }
+
+    var fig = el('figure', null); fig.style.margin = '0';
+    var badge = el('span', 'badge', p.n); badge.setAttribute('aria-hidden', 'true');
+    fig.appendChild(badge);
+    if (c && safeUrl(c.url)) {
+      var a = el('a', 'cardlink'); a.href = c.url; a.target = '_blank'; a.rel = 'noopener';
+      a.title = 'Open ' + cardName + ' on recursive.eco';
+      a.appendChild(face); fig.appendChild(a);
+    } else {
+      fig.appendChild(face);
+    }
+    var cap = el('figcaption');
+    cap.appendChild(el('span', 'pos', p.n + ' · ' + label));
+    cap.appendChild(el('span', 'name', cardName));
+    if (c && c.reversed) cap.appendChild(el('span', 'rev-tag', 'reversed'));
+    fig.appendChild(cap);
+    li.appendChild(fig);
+    board.appendChild(li);
+  });
+
+  // Positions list: label, meaning, the card, its line, its page
+  var list = document.getElementById('positions');
+  positions.forEach(function (p) {
+    var c = cardsByN[p.n];
+    var li = el('li');
+    li.appendChild(el('span', 'n', p.n));
+    li.appendChild(el('span', 'lab', (p.label || 'Position ' + p.n) + (Number(p.rotate) === 90 ? ' (lies across)' : '')));
+    if (p.meaning) li.appendChild(el('span', 'mean', p.meaning));
+    var cd = el('span', 'card');
+    if (c) {
+      cd.appendChild(link((c.name || c.code) + (c.code ? ' (' + c.code + (c.reversed && !/[↓]$/.test(c.code) ? '↓' : '') + ')' : ''), c.url));
+      cd.appendChild(document.createTextNode(c.reversed ? ', reversed' : ', upright'));
+      if (c.note) cd.appendChild(el('span', 'note', ' · ' + c.note));
+    } else {
+      cd.appendChild(el('span', 'note', 'No card here.'));
+    }
+    li.appendChild(cd);
+    list.appendChild(li);
+  });
+
+  // Footer
+  if (data.credit) document.getElementById('credit').textContent = data.credit;
+  var lk = document.getElementById('links');
+  (data.links || []).forEach(function (l, i) {
+    if (i) lk.appendChild(document.createTextNode(' · '));
+    lk.appendChild(link(l.label || l.url, l.url));
+  });
+})();
+</script>
+</body>
+</html>

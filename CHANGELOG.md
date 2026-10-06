@@ -2,6 +2,14 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 6 2026 (draft, branch reader/draft)
+
+- **The Tarot Reader** (`reader/`): instructions to paste into a claude.ai Project so Claude reads a
+  spread in this site's style (notation, Book T and Waite quoted briefly, patterns, questions not
+  instructions, links to each card's page on recursive.eco); a spread format with four starters
+  that also load in the Spread Caster; and a self-contained grid page that lays the cards on the
+  spread. Not yet tried in claude.ai itself.
+
 ## Oct 5 2026 — merged: what is new, and what was not thoroughly verified
 
 PlayfulProcess merged the cloud session's work (PR #44) and the rights work (PR #43). New, and not
