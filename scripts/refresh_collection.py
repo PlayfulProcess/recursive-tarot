@@ -43,6 +43,8 @@ YEARS = {
     "papus-tarot-des-bohemiens":     (1889, "1889"),
     "golden-dawn-book-t-tarot":      (1909, "1888 · RWS 1909"),
     "rider-waite-smith-pictorial-key": (1911, "deck 1909 · key 1911"),
+    # stolen-thyme.com/anecdotes-tarot: drawn 2018–2020, printed 2020 (Kickstarter)
+    "anecdotes-tarot":               (2020, "2020"),
 }
 
 

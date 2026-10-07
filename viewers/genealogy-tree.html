@@ -117,7 +117,7 @@ const BRANCH_COLORS = {
 };
 const RAW_COLORS = {
   'branch-roots':'#c9a24b','branch-a':'#e07a5f','branch-b':'#81b29a',
-  'branch-c':'#6d8ec9','branch-occult':'#9b6dc9','branch-sui':'#c96d9b'
+  'branch-c':'#6d8ec9','branch-occult':'#9b6dc9','branch-sui':'#c96d9b','branch-contemporary':'#4db6ac'
 };
 const PALETTE = ['#c9a24b','#e07a5f','#81b29a','#6d8ec9','#9b6dc9','#c96d9b','#9a7322','#6b6457','#4db6ac','#e57373'];
 let hubField = 'branch'; // discoverable field that drives hub/node color
@@ -130,7 +130,8 @@ const SLUG_MAP = {
   'deck-marseille-type1':'noblet-tarot','deck-besancon':'tarot-de-besancon',
   'deck-court-de-gebelin':'court-de-gebelin-tarot','deck-etteilla-i':'etteilla-i-livre-de-thot',
   'deck-etteilla-iii':'etteilla-iii-oracle-des-dames','deck-oswald-wirth':'oswald-wirth-tarot',
-  'deck-golden-dawn':'golden-dawn-book-t-tarot','deck-sola-busca':'sola-busca-tarot','deck-mantegna':'mantegna-tarocchi'
+  'deck-golden-dawn':'golden-dawn-book-t-tarot','deck-sola-busca':'sola-busca-tarot','deck-mantegna':'mantegna-tarocchi',
+  'deck-ontoject':'ontoject-illustrated','deck-anecdotes':'anecdotes-tarot'
 };
 
 const params = new URLSearchParams(location.search);
@@ -376,7 +377,7 @@ function showDetail(it){
   el.innerHTML=html; el.classList.add('open');
 }
 
-const BRANCH_LABELS={'branch-roots':'Roots (Milan)','branch-a':'Southern (A-order)','branch-b':'Eastern (B-order)','branch-c':'Western (C-order)','branch-occult':'Occult','branch-sui':'Sui generis'};
+const BRANCH_LABELS={'branch-roots':'Roots (Milan)','branch-a':'Southern (A-order)','branch-b':'Eastern (B-order)','branch-c':'Western (C-order)','branch-occult':'Occult','branch-sui':'Sui generis','branch-contemporary':'Contemporary'};
 function buildLegend(){
   // Build legend from dynamic hubColorOf values
   const lg=document.getElementById('legend');
