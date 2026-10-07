@@ -23,7 +23,7 @@
     ]
   },
   "name": "The Tree of Tarot — A Grammar of Tarot Grammars",
-  "description": "The genealogy of tarot as a single explorable tree: the decks ARE the cards. Built to render in the recursive.eco tree-viewer, with L1 = individual decks/traditions, L2 = the branches (Michael Dummett's A / B / C trump-orders, plus the occult reframing and the sui-generis relatives), and L3 = the root 'The Tree of Tarot'.\n\nIt corrects a common misconception: the Tarot de Marseille is NOT descended from the Bolognese Tarocchino — they are cousins, both descending from the mid-1400s Italian trionfi. Each leaf links to its full deck in this library (built, live in Supabase, or planned).\n\nThis is the capstone of the tarot collection: a map you can walk from the 1440s Milanese game decks, through the three regional orders and the printed Marseille standard, into the occult reframing that invented divination and produced the modern decks.\n",
+  "description": "The genealogy of tarot as a single explorable tree: the decks ARE the cards. Built to render in the recursive.eco tree-viewer, with L1 = individual decks/traditions, L2 = the branches (Michael Dummett's A / B / C trump-orders, plus the occult reframing and the sui-generis relatives), and L3 = the root 'The Tree of Tarot'.\n\nIt corrects a common misconception: the Tarot de Marseille is NOT descended from the Bolognese Tarocchino — they are cousins, both descending from the mid-1400s Italian trionfi. Each leaf links to its full deck in this library (built here, or planned).\n\nThis is the capstone of the tarot collection: a map you can walk from the 1440s Milanese game decks, through the three regional orders and the printed Marseille standard, into the occult reframing that invented divination and produced the modern decks.\n",
   "grammar_type": "custom",
   "provenance": "reference",
   "creator_name": "PlayfulProcess",
@@ -101,7 +101,7 @@
         "Where & when": "Milan, c. 1442",
         "Lineage": "A root deck; its idiosyncrasies (extra virtues, six courts) show how unsettled the early form was.",
         "In this library": "✅ Built (tarot/cary-yale-visconti-tarot).",
-        "Symbol": "The earliest Visconti deck — gold grounds, five-rank courts, and three Theological Virtues found nowhere else in tarot history."
+        "Symbol": "The earliest Visconti deck — gold grounds, six-rank courts, and three Theological Virtues found nowhere else in tarot history."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tree-of-tarot-deck-cary-yale.jpg"
     },
@@ -181,7 +181,7 @@
         "Where & when": "Florence, 16th c.→",
         "Lineage": "A-order (Florentine). The most cosmological tarot.",
         "In this library": "✅ Built (tarot/minchiate-florence-tarot).",
-        "Symbol": "The 97-card Florentine game deck — 41 trumps including four elements, 12 zodiac signs, and seven virtues, the most cosmologically comprehensive tarot tradition."
+        "Symbol": "The 97-card Florentine game deck — 40 trumps (41 with the Fool) including four elements, 12 zodiac signs, and seven virtues, the most cosmologically comprehensive tarot tradition."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tree-of-tarot-deck-minchiate.jpg"
     },
@@ -227,12 +227,12 @@
         "derives_from": [
           "deck-italian-trionfi"
         ],
-        "when": "Ferrara/Bologna, c. 1450–80",
+        "when": "Ferrara or Florence, c. 1450–80",
         "year": 1455
       },
       "sections": {
         "What it is": "A hand-painted deck of which 17 cards (16 trumps + the Page of Swords) survive at the BnF. Long mis-called the oldest tarot (and wrongly tied to a 1392 payment to Gringonneur).",
-        "Where & when": "Ferrara/Bologna, c. 1450–80",
+        "Where & when": "Ferrara or Florence, c. 1450–80",
         "Lineage": "B-order (Ferrarese). A documentary cornerstone of the eastern tradition.",
         "In this library": "✅ Built in this library (tarot/charles-vi-tarot).",
         "Symbol": "The 17 surviving cards of the Charles VI — misattributed to Gringonneur but actually Italian luxury work of c. 1450–80, among the most beautiful early tarot images."
@@ -262,7 +262,7 @@
         "What it is": "Fragmentary hand-painted cards from the Este court of Ferrara.",
         "Where & when": "Ferrara, 15th c.",
         "Lineage": "B-order. Completes the eastern luxury-deck picture beside Visconti's western ones.",
-        "In this library": "🔨 Planned."
+        "In this library": "✅ Built in this library (tarot/este-tarot)."
       }
     },
     {
@@ -316,7 +316,7 @@
         "What it is": "The earlier Marseille pattern (Jean Noblet c. 1650, Jean Dodal 1701), slightly different from the later Conver 'Type II'.",
         "Where & when": "Paris/Lyon, 1650–1701",
         "Lineage": "C-order. The first crystallisation of the Marseille image.",
-        "In this library": "🔨 Planned (fuller PD pip scans live here)."
+        "In this library": "✅ Built in this library (tarot/noblet-tarot)."
       }
     },
     {
@@ -370,7 +370,7 @@
         "What it is": "The Flemish 'Tarot de Vandenborre', replacing the Popess and Pope with Bacchus and the Spanish Captain (Capitano Eracasse).",
         "Where & when": "Brussels, 18th c.",
         "Lineage": "C-order sibling of the Marseille.",
-        "In this library": "🔨 Planned."
+        "In this library": "✅ Built in this library (tarot/belgian-tarot)."
       }
     },
     {
@@ -496,14 +496,14 @@
           "deck-court-de-gebelin",
           "deck-marseille-conver"
         ],
-        "when": "Paris, 1788–91",
+        "when": "Paris, 1788–89",
         "year": 1788
       },
       "sections": {
         "What it is": "The FIRST deck designed for divination — Jean-Baptiste Alliette's renamed, renumbered cards with a cosmogony sequence, significators, and systematic reversed meanings.",
-        "Where & when": "Paris, 1788–91",
+        "Where & when": "Paris, 1788–89",
         "Lineage": "First fruit of the occult branch; descends from the Marseille via Court de Gébelin.",
-        "In this library": "✅ Rewritten in this library + live in Supabase."
+        "In this library": "✅ Built in this library (tarot/etteilla-i-livre-de-thot)."
       }
     },
     {
@@ -581,7 +581,7 @@
         "What it is": "Gérard Encausse ('Papus') systematised the Lévi correspondences in a famous book, illustrated with Wirth's majors.",
         "Where & when": "Paris, 1889",
         "Lineage": "A tradition NODE linking Lévi to Wirth.",
-        "In this library": "📘 Tradition node."
+        "In this library": "✅ Built in this library (tarot/papus-tarot-des-bohemiens)."
       }
     },
     {
@@ -665,8 +665,8 @@
         "What it is": "A.E. Waite & Pamela Colman Smith's deck — the first widely used deck to give every minor-arcana card a scene (the Sola Busca, c. 1491, had done it first). The most influential modern tarot.",
         "Where & when": "London, 1909",
         "Lineage": "Descends from the Golden Dawn; ancestor of thousands of modern decks.",
-        "In this library": "🟢 Live in Supabase (RWS Archetypal).",
-        "Symbol": "Pamela Colman Smith's 1909 scenic pip cards — the revolutionary decision to illustrate all 78 cards with narrative scenes, making the Waite-Smith the most influential tarot deck of all time."
+        "In this library": "✅ Built in this library (tarot/rider-waite-smith-pictorial-key).",
+        "Symbol": "Pamela Colman Smith's 1909 scenic pip cards — the decision, after the Sola Busca's lead, to illustrate all 78 cards with narrative scenes, making the Waite-Smith the most influential tarot deck of all time."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tree-of-tarot-deck-rws.jpg"
     },
@@ -719,7 +719,7 @@
         "What it is": "The earliest COMPLETE 78-card illustrated deck — trumps named for classical figures (Mato, Panfilio, Catulo…), steeped in alchemical and humanist symbolism. Pamela Colman Smith studied its pips.",
         "Where & when": "Ferrara/Venice, c. 1491",
         "Lineage": "A sui-generis offshoot, in none of the three orders; an alchemical art-object more than a game deck.",
-        "In this library": "🟢 Live in Supabase."
+        "In this library": "✅ Built in this library (tarot/sola-busca-tarot)."
       }
     },
     {
@@ -772,7 +772,7 @@
         "What it is": "The thousands of modern decks descending from the Marseille, RWS, or Thoth — including the library's own community decks (Tarocchino Arlecchino, Clown Town, Anecdotes, Luiza Lian, the Ontoject…).",
         "Where & when": "20th–21st c.",
         "Lineage": "The living edge of the tree; nearly all trace to RWS or the Marseille.",
-        "In this library": "🟢 Several live in Supabase."
+        "In this library": "🟢 Several live on recursive.eco; the Ontoject and Anecdotes are in this library (Contemporary Decks)."
       }
     },
     {
