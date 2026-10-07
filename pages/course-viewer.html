@@ -758,7 +758,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- recursive-tarot drift: shared dark header instead of the recursive.eco shell. -->
-    <script src="../site-header.js?v=48"></script>
+    <script src="../site-header.js?v=49"></script>
     <site-header active="course"></site-header>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -1037,7 +1037,7 @@
                   root.querySelectorAll('[data-embed="lineage"],[data-embed="timeline"]').forEach(el=>{
                     const w=el.dataset.embed;
                     const src=(w==='lineage'?'../viewers/genealogy-tree.html':'../viewers/timeline.html')+'?embed=1';
-                    const label=w==='lineage'?'The Lineage of Tarot':'Timeline · 1440s–1900s';
+                    const label=w==='lineage'?'The Tree of Tarot':'Timeline · 1440s–1900s';
                     const fig=w==='lineage'?'../print/book/figures/lineage.png':'../print/book/figures/timeline.png';
                     el.innerHTML=`<figure class="tarot-embed"><div class="viewer-frame screen-only"><iframe loading="lazy" title="${label}" src="${src}"></iframe></div><div class="print-figure"><img src="${fig}" alt="${label}"></div><figcaption>${label}. Interactive on screen; a static plate in print.</figcaption></figure>`;
                   });
@@ -1155,7 +1155,7 @@
                       html+='</div>';
                       const lbl=tk.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
                       const readingUrl=readingId?`https://flow.recursive.eco/g/${readingId}?view=reading`:'https://flow.recursive.eco';
-                      html+=`<p class="card-links screen-only"><a href="../viewers/prototypes/lenses.html?card=${encodeURIComponent(tk)}">See ${esc(lbl)} across every deck in Lenses →</a> · <a href="${readingUrl}" target="_blank" rel="noopener">Get a reading at recursive.eco →</a></p>`;
+                      html+=`<p class="card-links screen-only"><a href="../viewers/prototypes/lenses.html?card=${encodeURIComponent(tk)}">See ${esc(lbl)} across every deck in Lenses →</a> · <a href="${readingUrl}" target="_blank" rel="noopener">Lay the cards at recursive.eco →</a></p>`;
                       el.innerHTML=html;
                     }
                   }
@@ -1188,7 +1188,7 @@
                         const cells=entries.map(c=>`<a class="c" href="../viewers/cards.html?src=../tarot/${c.slug}/grammar.json&item=${encodeURIComponent(c.id)}"><img loading="lazy" src="${esc(c.img)}" alt="${esc(c.name)}"><div>${esc(c.name.slice(0,14))}</div></a>`).join('');
                         const withId=entries.find(c=>ecoIds&&ecoIds.ids&&ecoIds.ids[c.slug]);
                         const readingUrl=withId?`https://flow.recursive.eco/g/${ecoIds.ids[withId.slug]}?view=reading`:'https://flow.recursive.eco';
-                        html+=`<div class="card-chapter"><h3>${NUM[tk]} — ${esc(lbl(tk))}</h3><div class="synthbox"><p>${mdl(syn[tk])}</p></div><div class="strip">${cells}</div><p class="card-links screen-only"><a href="../viewers/prototypes/lenses.html?card=${tk}">See ${esc(lbl(tk))} across every deck in Lenses →</a> · <a href="${readingUrl}" target="_blank" rel="noopener">Get a reading at recursive.eco →</a></p></div>`;
+                        html+=`<div class="card-chapter"><h3>${NUM[tk]} — ${esc(lbl(tk))}</h3><div class="synthbox"><p>${mdl(syn[tk])}</p></div><div class="strip">${cells}</div><p class="card-links screen-only"><a href="../viewers/prototypes/lenses.html?card=${tk}">See ${esc(lbl(tk))} across every deck in Lenses →</a> · <a href="${readingUrl}" target="_blank" rel="noopener">Lay the cards at recursive.eco →</a></p></div>`;
                       }
                       synEls.forEach(el=>el.innerHTML=html);
                     }

@@ -23,7 +23,7 @@ line — descended from **Viéville** (c. 1650), *not* the Tarot de Marseille
 "Means" line is given. The **"Changed from parent"** line measures each card against the
 **Viéville** ancestor, and — where the contrast is sharper — against the **Marseille** standard.
 Card titles are reproduced in the workshop's own (often misspelt) French. The order is the
-southern **C order**: Justice VIII, Strength XI, Fool unnumbered [@web_aeclectic_flamand;
+western **C order**: Justice VIII, Strength XI, Fool unnumbered [@web_aeclectic_flamand;
 @web_belgian_wp].
 
 ---

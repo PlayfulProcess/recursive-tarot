@@ -68,7 +68,9 @@ DECKS = {
                 context="The lavish outlier — six-rank courts + theological virtues", print="Hand-painted, gold-ground tempera",
                 orientation="Game (trionfi)")),
  "charles-vi-tarot":           dict(label="'Charles VI' (Ferrara)", era="15th c · Renaissance Italy", era_sort=1,
-        ed=dict(date="c. 1475–1500", maker="Ferrarese workshop (the so-called 'Charles VI'/Gringonneur, misattributed)", patron="—",
+        # Date as research/decks/charles-vi-tarot.md gives it ("Italian, c. 1450–80", after the BnF catalogue);
+        # the same label is on the deck's grammar, tree-of-tarot and _collection.json.
+        ed=dict(date="c. 1450–80", maker="Italian workshop: Florence (Apollonio di Giovanni & Marco del Buono) in the current BnF record, formerly called Ferrarese; the 'Charles VI'/Gringonneur name is a misattribution", patron="—",
                 context="Hand-painted trump fragments long misdated to a 1392 Gringonneur payment", print="Hand-painted",
                 orientation="Game")),
  "minchiate-florence-tarot":   dict(label="Minchiate (Florence)", era="16th–18th c · Florence", era_sort=2,
