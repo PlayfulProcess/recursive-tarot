@@ -2,6 +2,19 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 7 2026 — branch `sources/oct7` (PR, not merged): sources and coherence
+
+- **Farley:** in print as the Bloomsbury Academic paperback (2019); the editorial view now says the book was
+  not read here; her open-access "Out of Africa" (2011) read and cited; her death (9 July 2025) noted.
+- **Open-access sources** added and cited where they support the repo: Depaulis 1984 (Gallica), IPCS
+  pattern sheet 001, Pratesi 1989, Strube 2016, Pooley 2023.
+- **Tree of Tarot data:** the Italian trionfi, the Ontoject and Anecdotes now sit in branches (new
+  Contemporary branch); every node has a numeric year (Lévi no longer drops off the timeline; "20th–21st c."
+  no longer lands at 2050); Charles VI and Anecdotes have one date everywhere; `check_all.py` checks the tree.
+- **Coherence:** mechanical joins only (the ring is "Tree of Tarot" everywhere, practice words, dates and
+  counts that disagreed between files, stale statuses). The seams in her prose are listed for her in
+  `docs/plan/COHERENCE-2026-10-07.md`.
+
 ## Oct 6 2026 — merged: the Tarot Reader
 
 - **The Tarot Reader** (`reader/`): instructions to paste into a claude.ai Project so Claude reads a
