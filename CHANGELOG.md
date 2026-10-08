@@ -2,6 +2,36 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 8 2026 — branch `sources/wirth-own-words` (PR, not merged; stacked on `due/oct8`): Wirth in his own words
+
+- **Wirth deck, 22 cards:** each card now quotes Wirth's *Le Tarot des imagiers du Moyen Âge* (Paris, 1927)
+  in French with page numbers, from the BnF copy on Gallica (public domain), with this site's English
+  translation: the opening of his chapter on the card (`Wirth`) and his *Interprétations divinatoires*
+  (`Divinatory meanings (Wirth, 1927)`, replacing the editorial `Upright` line). The old `Wirth` section,
+  labelled "translated from" this book, was checked against the 1927 text and was not Wirth's words.
+- **Correspondences:** Wirth's own constellations per card (his table, p. 76) added; the older
+  "Astrological association" line labelled as editorial.
+- **Symbol notes:** eleven sentences that gave Golden Dawn Hebrew letters (Wheel to Judgement) removed,
+  Strength's numbering note corrected, every note labelled as editorial.
+- Source: `research/sources/wirth-imagiers-1927.json`. Scripts: `scripts/import_wirth_1927.py` (`--check`),
+  `scripts/archive/wirth_symbol_letters_2026_10_08.py` (one-shot, `--check`).
+
+## Oct 8 2026 — branch `sources/etteilla-own-words` (PR, not merged; stacked on `due/oct8`): Etteilla's own words
+
+- **All three Etteilla decks, all 78 cards:** `Upright` and `Reversed` are now Etteilla's own word for each
+  leaf, as printed, with this site's English translation, page and scan link, from the *Dictionnaire
+  synonimique du Livre de Thot* (Paris, 1791), pp. 19-57, whose preface says he printed these words on each
+  leaf (e.g. 2 *Eclaircissemens* / *Feu*; Ten of Cups *Ville* / *Courroux*). Transcription, notes and the
+  two printing irregularities: `research/sources/etteilla-dictionnaire-synonimique-1791.md`. Etteilla II and
+  III say the words are those of his 1789 deck and that their own captions are not transcribed.
+- The paraphrases they replace (22 trumps, 16 courts per deck) moved to
+  `tarot/_archive/etteilla-paraphrases-2026-10-08.json`; the courts' "person well-disposed" label is gone;
+  the number cards' "not transcribed yet" line is gone; three Knights whose word is an event say so; on II
+  and III, card 78 no longer calls La Folie the female querent.
+- Still unread: Etteilla's third cahier (1783-1785) on Gallica, which answered with a security check.
+  App-side step in `docs/plan/APP-SCENE-CLEANUP-CHECKLIST-2026-10-05.md`.
+- Script: `scripts/archive/etteilla_own_words_2026_10_08.py` (one-shot, idempotent, `--check`).
+
 ## Oct 8 2026 — branch `course/review-decisions` (PR, not merged; stacked on `due/oct8`): the course review decided
 
 - **Courses:** the 38 items of `docs/plan/COURSES-REVIEW-2026-10-08.md` decided against sources; 35

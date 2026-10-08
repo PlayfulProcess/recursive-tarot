@@ -165,3 +165,7 @@ Section 3, decided:
 - **The Etteilla number cards** now carry no meaning (their template lines were removed). Etteilla
   printed his upright and reversed words on each card; a transcription from the card images,
   checked by a person, or from his *Troisième cahier*, would give them back his own words.
+  *Done on branch `sources/etteilla-own-words`:* all 78 cards on the three decks now carry his
+  upright and reversed words from the *Dictionnaire synonimique du Livre de Thot* (1791), pp. 19-57
+  (`research/sources/etteilla-dictionnaire-synonimique-1791.md`); the *Troisième cahier* is still
+  unread.
