@@ -22,7 +22,9 @@ on:
     branches: [main]
     paths:
       - 'tarot/**'
+      - 'course/*.mdx'
       - 'scripts/build_meta_grammar.py'
+      - 'scripts/build_search_index.py'
   workflow_dispatch:
 
 permissions:
@@ -41,14 +43,20 @@ jobs:
       - name: Rebuild meta-grammar
         run: python scripts/build_meta_grammar.py
 
-      - name: Commit regenerated meta (if changed)
+      # The header's quick-jump search reads search-index.json (cards, decks, chapters).
+      # Rebuilt from the same grammars + course/*.mdx so it never goes stale; see
+      # docs/QUICK-JUMP-SEARCH.md. Runs after the meta build (it reads the deck table).
+      - name: Rebuild search index
+        run: python scripts/build_search_index.py
+
+      - name: Commit regenerated meta + search index (if changed)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- tarot/all-decks-many-lenses/grammar.json; then
-            git add tarot/all-decks-many-lenses/grammar.json
+          if ! git diff --quiet -- tarot/all-decks-many-lenses/grammar.json search-index.json; then
+            git add tarot/all-decks-many-lenses/grammar.json search-index.json
             git commit -m "chore: rebuild meta-grammar [skip ci]"
             git push
           else
-            echo "meta unchanged"
+            echo "meta + search index unchanged"
           fi
