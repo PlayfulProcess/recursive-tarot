@@ -8,11 +8,16 @@
  * The `active` attribute highlights the matching tab; if omitted it is
  * auto-detected from the filename.
  *
- * Nav model (June 2026): two groups, all right-aligned.
- *  - VIEWS  — previews of the same data (Cards, Explorer, Tree of Tarot, Timeline,
- *             Tree, Genealogy), introduced by a tiny "views" caption.
- *  - TOOLS  — different-natured pages, each colour-coded: Caster (violet),
- *             Course (green), Shop (gold), GitHub (muted, external).
+ * Nav model (Oct 8 2026, PlayfulProcess: "I dont like that the header has two rows
+ * now, can we use iconography similar to recursive eco to collapse it?"): ONE row,
+ * an icon per section in recursive.eco's icon style, with a small text label while
+ * there is room for it.
+ *   Home (house) · Views (eye) · Courses (the continuous-play glyph; it also holds the
+ *   Golden Dawn group: Tree of Life map, Glossary, Book T) · Play (a pair of dice) ·
+ *   Contribute (the pencil, recursive.eco's Create glyph) · GitHub (its mark).
+ *   Shop is hidden until the decks exist (TOOLS → `hidden`); pages/shop.html stays.
+ * The row never wraps: fitRow() measures it and steps down one level at a time —
+ * labels off, then the brand name, then Sign in and GitHub move into the Home menu.
  */
 (function () {
   if (customElements.get('site-header')) return;
@@ -53,12 +58,14 @@
     ['genealogy',  'Genealogy',    PFX + 'genealogy.html'],
     ['channels',   'Channels',     PFX + 'pages/channels.html'],
   ];
-  // [key, label, href, cssClass, external?]
+  // [key, label, href, cssClass, external?, hidden?]
   const TOOLS = [
     ['contribute', 'Contribute', PFX + 'pages/contribute.html', 't-contribute'],
-    ['shop',   'Shop',    PFX + 'pages/shop.html',          't-shop'],
-    ['github', 'GitHub ↗',  'https://github.com/PlayfulProcess/recursive-tarot', 't-github', true],
+    // Shop: hidden until there are decks to sell (Oct 8 2026); the page is kept.
+    ['shop',   'Shop',    PFX + 'pages/shop.html',          't-shop', false, true],
+    ['github', 'GitHub',  'https://github.com/PlayfulProcess/recursive-tarot', 't-github', true],
   ];
+  const GITHUB_URL = 'https://github.com/PlayfulProcess/recursive-tarot';
   // Play — a dropdown of the games + readings (the pill itself links to the Play hub).
   const PLAY_MENU = [
     [PFX + 'pages/games/tarocchino.html', 'Tarocchino di Bologna'],
@@ -88,7 +95,6 @@
       ['why-a-reading-feels-personal',    'Why a Reading Feels So Personal'],
       ['what-a-reading-can-do',           'What a Reading Can Do'],
       ['your-card-table',                 'Your Card Table'],
-      ['walking-the-golden-dawn-path',     'The Golden Dawn — the Map and the Walk'],
       ['working-with-claude-desktop',     'Working with Claude Desktop'],
     ]],
   ];
@@ -109,6 +115,36 @@
     h:      '<path d="M5 4h14M5 9h14M5 14h9M5 19h6"/>',
     g:      '<path d="M9 15l6-6"/><path d="M11 6l1-1a4 4 0 0 1 6 6l-1 1"/><path d="M13 18l-1 1a4 4 0 0 1-6-6l1-1"/>',
   };
+  // The Tree of Life map and the Glossary (Oct 2026). They were a second row of icons;
+  // since Oct 8 they sit in the Courses menu's Golden Dawn group, with these glyphs.
+  const ICO_TREE = '<path d="M12 3.5v17M6.5 6.5v10M17.5 6.5v10M6.5 6.5h11M6.5 11.5h11M6.5 16.5h11M12 3.5L6.5 6.5M12 3.5l5.5 3M6.5 16.5L12 20.5l5.5-4"/>'
+    + [[12, 3.5], [6.5, 6.5], [17.5, 6.5], [6.5, 11.5], [17.5, 11.5], [12, 13.5], [6.5, 16.5], [17.5, 16.5], [12, 17.5], [12, 20.5]]
+      .map(([x, y]) => `<circle cx="${x}" cy="${y}" r="1.7" fill="#ffffff"/>`).join('');
+  const ICO_GLOSS = '<path d="M5 4.5h11.5a2 2 0 0 1 2 2V20H7a2 2 0 0 1-2-2z"/><path d="M5 18a2 2 0 0 1 2-2h11.5"/><path d="M9.3 13.2l2.2-6 2.2 6M10.1 11.2h2.8"/>';
+  const ICO_BOOK = '<path d="M5 4h11a2 2 0 0 1 2 2v14H7a2 2 0 0 0-2 2z"/><path d="M5 4v16"/>';
+  const ICO_PATH = '<path d="M12 4l8.5 15.5H3.5z"/>';
+  // Golden Dawn group inside the Courses menu: [file under pages/ or course id, label, glyph]
+  const GD_MENU = [
+    [PFX + 'pages/course-viewer.html?course=walking-the-golden-dawn-path', 'The course: the Map and the Walk', ICO_PATH, 'walking-the-golden-dawn-path'],
+    [PFX + 'pages/tree-of-life.html', 'The Tree of Life map', ICO_TREE, 'tree-of-life.html'],
+    [PFX + 'pages/glossary.html',     'Glossary',             ICO_GLOSS, 'glossary.html'],
+    [PFX + 'pages/book-t.html',       'Book T (1912), to read', ICO_BOOK, 'book-t.html'],
+  ];
+  // Nav glyphs, in recursive.eco's icon style (apps/flow/src/components/shared/icons.tsx and
+  // apps/landing/icons.svg): eye = ViewIcon, pencil = PencilIcon (Create), continuous play =
+  // the sprite's "autoplay", GitHub = its mark. House and dice are drawn in the same outline
+  // style (24-unit box, round caps). Fill-based glyphs carry their own fill attributes.
+  const NAV_ICON = {
+    home:   '<path d="M2.25 12l8.954-8.955a1.126 1.126 0 0 1 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>',
+    views:  '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>',
+    course: '<path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1"/><path d="M20.5 2.5v4.3h-4.3"/><path d="M10 8.6v6.8l5.4-3.4z" fill="currentColor" stroke="none"/>',
+    play:   '<rect x="2.5" y="9" width="11" height="11" rx="2"/><path d="M10.5 9V5.5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-6"/>'
+          + [[5.5, 12], [8, 14.5], [10.5, 17], [14.5, 6.5], [18.5, 10.5]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="1.15" fill="currentColor" stroke="none"/>`).join(''),
+    contribute: '<path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931zm0 0L19.5 7.125"/>',
+    shop:   '<path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',
+    github: '<path fill="currentColor" stroke="none" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/>',
+  };
+  const NAV_SVG = (inner, size) => `<svg viewBox="0 0 24 24" width="${size || 20}" height="${size || 20}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${inner}</svg>`;
   const QJ_TRY = ['Justice', 'Golden Dawn', 'Queen of Cups', 'XI', 'Pathworking', 'Marseille'];
   const qjEsc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
@@ -123,7 +159,7 @@
     if (f.startsWith('play') || f.startsWith('caster') || f.startsWith('table') || f.startsWith('trionfi') || location.pathname.includes('/games/')) return 'play';
     if (f.startsWith('genealogy')) return 'genealogy';
     if (f.startsWith('channels')) return 'channels';
-    if (f.startsWith('course')) return 'course';
+    if (f.startsWith('course') || f.startsWith('tree-of-life') || f.startsWith('glossary') || f.startsWith('book-t')) return 'course';
     if (f.startsWith('shop')) return 'shop';
     if (f.startsWith('contribute')) return 'contribute';
     return 'home';
@@ -147,8 +183,12 @@
       }
       const active = this.getAttribute('active') || autoActive();
       const root = this.attachShadow({ mode: 'open' });
-      const tab = ([key, label, href, cls, ext]) =>
-        `<a class="tab ${cls || ''}${key === active ? ' active' : ''}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`;
+      // An icon, then a small text label that fitRow() hides when the row runs out of room.
+      const glyph = (key, text) => `${NAV_SVG(NAV_ICON[key])}<span class="lbl">${text}</span>`;
+      const tab = ([key, label, href, cls, ext, hidden]) => hidden ? '' :
+        `<a class="tab ${cls || ''}${key === active ? ' active' : ''}" href="${href}" title="${label}${ext ? ' (opens in a new tab)' : ''}" aria-label="${label}${ext ? ' (opens in a new tab)' : ''}"${key === active ? ' aria-current="page"' : ''}${ext ? ' target="_blank" rel="noopener"' : ''}>${glyph(key, label)}</a>`;
+      const hereGD = k => k.endsWith('.html') ? location.pathname.endsWith('/' + k)
+        : new URLSearchParams(location.search).get('course') === k;
       // Dropdown menu item (used inside the Views menu) — highlights the current page.
       const menuItem = ([key, label, href, cls, ext]) =>
         `<a class="${key === active ? 'on' : ''}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`;
@@ -161,32 +201,44 @@
                  transition:transform .25s ease; }
           @media (prefers-reduced-motion: reduce){ :host{ transition:none; } .tab, .dd-menu a, .brand{ transition:none !important; } }
           .bar{
-            display:flex; align-items:center; gap:14px; flex-wrap:wrap;
-            padding:13px 20px; background:#fbf9f3;
+            display:flex; align-items:center; gap:12px; flex-wrap:nowrap;
+            padding:6px 20px; background:#fbf9f3;
             border-bottom:1px solid #d8d2c6;
             font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
           }
-          .brand{ display:flex; flex-direction:row; align-items:center; gap:10px; margin-right:4px; }
+          .brand{ display:flex; flex-direction:row; align-items:center; gap:8px; margin-right:4px; flex-shrink:0; }
           .brand-logo, .brand-name{ display:inline-flex; align-items:center; text-decoration:none; }
-          .brand-logo{ border-radius:50%; }
+          .brand-logo{ border-radius:50%; width:44px; height:44px; justify-content:center; }
+          .brand-logo:focus-visible, .tab:focus-visible{ outline:2px solid #9a7322; outline-offset:-2px; }
           .brand-name .name{ font-family:"Fraunces",Georgia,serif; font-size:21px; font-weight:600; letter-spacing:.4px; color:#221f1a; white-space:nowrap; }
           .brand-name:hover .name{ color:#000; }
           .brand-name .name .gold{ color:#9a7322; }
           .brand svg{ flex-shrink:0; }
-          .spacer{ flex:1 1 auto; }
-          nav{ display:flex; gap:4px; flex-wrap:wrap; align-items:center; }
-          .cap{ font-size:9.5px; text-transform:uppercase; letter-spacing:.16em;
-                color:#8a8273; margin:0 2px 0 6px; user-select:none; }
-          .cap.card-cap{ color:#9a7322; }
-          .cap.gram-cap{ color:#6b6457; }
-          .sep{ width:1px; height:20px; background:#d8d2c6; margin:0 6px; }
-          /* one restrained editorial language for every nav item — text links,
-             gold on hover, a hairline underline when active. No pills, no per-tool colour. */
+          .spacer{ flex:1 1 auto; min-width:0; }
+          nav{ display:flex; gap:2px; flex-wrap:nowrap; align-items:center; flex-shrink:0; }
+          recursive-auth{ display:inline-flex; align-items:center; margin-left:6px; }
+          /* one restrained editorial language for every nav item — an icon with a small
+             label, gold on hover, a hairline underline when active. No pills, no per-tool colour. */
           .tab{
+            display:inline-flex; align-items:center; justify-content:center; gap:6px;
+            box-sizing:border-box; min-width:44px; height:44px;
             color:#6b6457; text-decoration:none; font-size:13px; font-weight:500;
-            padding:7px 9px; white-space:nowrap; transition:color .15s;
+            padding:0 8px; white-space:nowrap; transition:color .15s;
             border:0; border-bottom:1.5px solid transparent; border-radius:0;
           }
+          .tab svg{ flex-shrink:0; }
+          /* fitRow() levels: c1 labels off · c2 brand name off · c3 Sign in → Home menu · c4 GitHub → Home menu · c5 narrower logo */
+          .bar.c1 .lbl{ display:none; }
+          .bar.c1 .tab{ padding:0 4px; }
+          .bar.c1 .dd-btn::after{ margin-left:3px; }
+          .bar.c2 .brand-name{ display:none; }
+          .bar.c3 nav > recursive-auth{ display:none; }
+          .bar:not(.c3) .m-auth{ display:none; }
+          .bar.c4 .t-github{ display:none; }
+          .bar:not(.c4) .m-gh{ display:none; }
+          .bar.c5 .brand-logo{ width:36px; }      /* phones under ~330px: the logo gives up its margin */
+          .m-auth{ display:block; padding:8px 10px 4px; border-top:1px solid #d8d2c6; margin-top:4px; }
+          .m-auth recursive-auth{ margin-left:0; }
           .tab:hover{ color:#9a7322; }
           .tab.active{ color:#9a7322; font-weight:600; border-bottom-color:#9a7322; }
           .t-caster,.t-course,.t-shop,.t-github,.t-contribute{ color:#6b6457; border:0; border-bottom:1.5px solid transparent; border-radius:0; }
@@ -218,12 +270,15 @@
           .dd-cap{ display:block; font-family:Inter,sans-serif; font-size:9px; text-transform:uppercase; letter-spacing:.16em;
             color:#8a8273; padding:8px 10px 3px; user-select:none; }
           .dd-cap:first-child{ padding-top:2px; }
+          .dd-menu a.mi{ display:flex; align-items:center; gap:9px; }
+          .dd-menu a.mi svg{ flex-shrink:0; color:#9a7322; }
           /* -- quick-jump search -- */
           [hidden]{ display:none !important; }
           .qj-open{ display:none; width:44px; height:44px; padding:0; border:0; border-radius:50%;
             background:none; color:#4a4439; cursor:pointer; align-items:center; justify-content:center; }
           .qj-open:hover, .qj-open:focus-visible{ color:#9a7322; background:#f1ece1; }
-          .qj{ position:relative; }
+          .qj{ position:relative; flex-shrink:0; }
+          .qj-open{ flex-shrink:0; }
           .qj-field{ display:flex; align-items:center; gap:7px; height:36px; width:200px; padding:0 6px 0 12px;
             border:1px solid #d8d2c6; border-radius:18px; background:#fff; color:#8a8273;
             transition:width .2s ease, border-color .15s; box-sizing:border-box; }
@@ -273,9 +328,12 @@
             .qj.sheet .qj-row{ min-height:52px; }
           }
           @media (max-width:680px){
-            .brand .sub{ display:none; }
-            .tab{ padding:5px 8px; font-size:12px; }
-            .cap{ display:none; } .sep{ display:none; }
+            .bar{ padding:6px 6px; gap:0; }
+            nav{ gap:0; }
+            .brand{ margin-right:0; }
+            .lbl{ display:none; }
+            .tab{ padding:0 4px; }
+            .dd-btn::after{ margin-left:3px; }
           }
         </style>
         <div class="bar">
@@ -305,13 +363,15 @@
           </div>
           <nav aria-label="Site sections">
             <span class="dd">
-              <a class="tab dd-btn${active === 'home' ? ' active' : ''}" href="${PFX}index.html" aria-haspopup="true" aria-expanded="false" aria-label="Home menu">Home</a>
+              <a class="tab dd-btn${active === 'home' ? ' active' : ''}" href="${PFX}index.html" title="Home" aria-haspopup="true" aria-expanded="false" aria-label="Home menu">${glyph('home', 'Home')}</a>
               <span class="dd-menu">
                 ${HOME_MENU.map(([href, label]) => `<a href="${href}">${label}</a>`).join('')}
+                <a class="m-gh mi" href="${GITHUB_URL}" target="_blank" rel="noopener">${NAV_SVG(NAV_ICON.github, 16)}GitHub ↗</a>
+                <span class="m-auth"><recursive-auth></recursive-auth></span>
               </span>
             </span>
             <span class="dd">
-              <a class="tab dd-btn${viewActive ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Views menu">Views</a>
+              <a class="tab dd-btn${viewActive ? ' active' : ''}" role="button" tabindex="0" title="Views" aria-haspopup="true" aria-expanded="false" aria-label="Views menu">${glyph('views', 'Views')}</a>
               <span class="dd-menu">
                 <span class="dd-cap">By card</span>
                 ${CARD_VIEWS.map(menuItem).join('')}
@@ -320,15 +380,17 @@
               </span>
             </span>
             <span class="dd">
-              <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Courses menu">Courses</a>
+              <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}" role="button" tabindex="0" title="Courses" aria-haspopup="true" aria-expanded="false" aria-label="Courses menu">${glyph('course', 'Courses')}</a>
               <span class="dd-menu">
                 ${COURSE_GROUPS.map(([cap, items]) => `<span class="dd-cap">${cap}</span>` + items.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')).join('')}
+                <span class="dd-cap">The Golden Dawn</span>
+                ${GD_MENU.map(([href, label, svg, k]) => `<a class="mi${hereGD(k) ? ' on' : ''}" href="${href}"${hereGD(k) ? ' aria-current="page"' : ''}>${NAV_SVG(svg, 18)}${label}</a>`).join('')}
                 <a href="${PFX}pages/courses.html" style="border-top:1px solid #d8d2c6;margin-top:4px;padding-top:9px">All courses (gallery) →</a>
                 <a href="${PFX}pages/sources.html">The sources — people &amp; books →</a>
               </span>
             </span>
             <span class="dd">
-              <a class="tab t-caster dd-btn${active === 'play' ? ' active' : ''}" href="${PFX}pages/play.html" aria-haspopup="true" aria-expanded="false" aria-label="Play menu">Play</a>
+              <a class="tab t-caster dd-btn${active === 'play' ? ' active' : ''}" href="${PFX}pages/play.html" title="Play" aria-haspopup="true" aria-expanded="false" aria-label="Play menu">${glyph('play', 'Play')}</a>
               <span class="dd-menu">
                 ${PLAY_MENU.map(([href, label, ext]) => `<a href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`).join('')}
               </span>
@@ -418,6 +480,28 @@
       });
 
       this.wireQuickJump(root);
+
+      // ONE row at every width: measure, and step down a level only while the row overflows.
+      // Re-run when the bar or the nav changes size (window width, fonts, the Sign-in name
+      // arriving). The timeout keeps the class changes out of the ResizeObserver callback
+      // itself (a rAF would stall in a background tab).
+      const bar = root.querySelector('.bar'), navEl = root.querySelector('nav');
+      const LEVELS = ['c1', 'c2', 'c3', 'c4', 'c5'];
+      const fitRow = () => {
+        bar.classList.remove(...LEVELS);
+        for (const c of LEVELS) {
+          if (bar.scrollWidth <= bar.clientWidth) break;
+          bar.classList.add(c);
+        }
+      };
+      let fitQueued = false;
+      const queueFit = () => { if (fitQueued) return; fitQueued = true; setTimeout(() => { fitQueued = false; fitRow(); }, 0); };
+      fitRow();
+      if ('ResizeObserver' in window) { const ro = new ResizeObserver(queueFit); ro.observe(bar); ro.observe(navEl); }
+      window.addEventListener('resize', queueFit);
+      const authScript = document.querySelector('script[data-recursive-auth]');
+      if (authScript) authScript.addEventListener('load', queueFit);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(queueFit);
 
       // Auto-hide on scroll down, reveal on scroll up — but never while the nav has keyboard focus.
       let lastY = window.scrollY || 0, host = this;
