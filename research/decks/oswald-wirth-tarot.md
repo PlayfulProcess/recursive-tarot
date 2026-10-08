@@ -186,7 +186,10 @@ tradition [@decker2002; @web_wirth_wp].
 ## People
 
 - **`oswald-wirth`** — drew and published the 22 trumps (1889), redrew them (1926), and wrote
-  *Le Tarot des imagiers du Moyen Âge* (1926/27).
+  *Le Tarot des imagiers du Moyen Âge* (title page 1927; printed 1 August 1927). The grammar
+  quotes it card by card in French with page numbers (`research/sources/wirth-imagiers-1927.json`,
+  from the BnF copy on Gallica, ark:/12148/bpt6k3112874). Quote only the 1927 printing: the 1966
+  reissue and the English *The Tarot of the Magicians* (Weiser, 1985) are later editions.
 - **`eliphas-levi`** — supplied the trump↔Hebrew-letter and Kabbalistic correspondence Wirth
   follows; designed no deck himself.
 - **Stanislas de Guaita** (1861–1897) — commissioned and directed the 1889 deck; Wirth's
