@@ -154,7 +154,10 @@ INTROS = {
     'front': ("Book T is the Golden Dawn's own book of the 78 cards. Crowley printed it in "
               "*The Equinox* I(8), September 1912, pp. 143–210. This page gives all of it. "
               "Gold numbers in the margin are the printed pages. Notes in square brackets are "
-              "Crowley's. Underlined words open the [glossary](glossary.html) or the card."),
+              "Crowley's. Underlined words open the [glossary](glossary.html) or the card. The pictures "
+              "beside the cards are the Rider-Waite-Smith deck's; Book T's own deck, in its own order "
+              "and titles, is [Book T](../viewers/cards.html?src=../tarot/book-t/grammar.json), its "
+              "pictures still to come."),
     'titles': ("Every card has a title. The Aces are Roots. The court cards are a Lord, a Queen, "
                "a Prince and a Princess. Each small card is the Lord of something, set in one decan "
                "of the zodiac under one planet. The trumps are Keys, each with a Hebrew letter."),

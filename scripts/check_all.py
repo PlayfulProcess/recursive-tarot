@@ -148,6 +148,14 @@ print(f"[build_book_t_page.py] {out.splitlines()[0] if out else '(no output)'}")
 if r.returncode != 0:
     errors.append(f"build_book_t_page.py --check failed:\n{out}")
 
+# 8 — tarot/book-t/grammar.json (Book T's own deck) is generated from the same 1912 source.
+r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "build_book_t_deck.py"), "--check"],
+                   capture_output=True, text=True, cwd=ROOT)
+out = (r.stdout + r.stderr).strip()
+print(f"[build_book_t_deck.py] {out.splitlines()[0] if out else '(no output)'}")
+if r.returncode != 0:
+    errors.append(f"build_book_t_deck.py --check failed:\n{out}")
+
 for w in warnings:
     print("WARN:", w)
 if errors:

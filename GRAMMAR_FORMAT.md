@@ -129,6 +129,7 @@ without writing).
 | Deck | Its one source | Section key |
 |------|----------------|-------------|
 | `golden-dawn-book-t-tarot` | Golden Dawn, *Book T* (c. 1888), as printed in *The Equinox* I(8), 1912 — **quoted** (see note below) | `Book T (1912)`, `Correspondences`, `Golden Dawn Title`, `Astrological attribution (Book T)` |
+| `book-t` | Book T as printed in *The Equinox* I(8), 1912: Book T's own order and titles, no pictures yet (`scripts/build_book_t_deck.py`) | `Book T (1912)`, `In Book T's table`, `Correspondences` |
 | `rider-waite-smith-pictorial-key` | A. E. Waite, *The Pictorial Key to the Tarot* (1911) | `The Pictorial Key` |
 | `papus-tarot-des-bohemiens` | Papus, *Le Tarot des Bohémiens* (1889) | `Le Tarot des Bohémiens` |
 | `oswald-wirth-tarot` | Wirth's own commentary | `Wirth`, `Symbolism`, `Upright` (no `Reversed`: Wirth's text gives none) |

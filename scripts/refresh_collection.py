@@ -41,6 +41,7 @@ YEARS = {
     "etteilla-iii-oracle-des-dames": (1865, "c. 1865"),
     "oswald-wirth-tarot":            (1889, "1889"),
     "papus-tarot-des-bohemiens":     (1889, "1889"),
+    "book-t":                        (1912, "c. 1888 · printed 1912"),
     "golden-dawn-book-t-tarot":      (1909, "1888 · RWS 1909"),
     "rider-waite-smith-pictorial-key": (1911, "deck 1909 · key 1911"),
     # stolen-thyme.com/anecdotes-tarot: drawn 2018–2020, printed 2020 (Kickstarter)
