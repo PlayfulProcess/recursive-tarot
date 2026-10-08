@@ -129,6 +129,7 @@ comes from R2 (see the Image pattern above); this folder is only for course-auth
 | `scripts/enrich_cards_from_research.py` | Add Research notes from research/cards/*.md (idempotent) |
 | `scripts/refresh_collection.py` | Sync _collection.json from grammars |
 | `scripts/normalize_book_t_sections.py` | Idempotent Book T section normaliser; `--check` asserts nothing was lost |
+| `scripts/import_wirth_1927.py` | Writes Wirth's own words (*Le Tarot des imagiers du Moyen Âge*, Paris 1927, French + page + this site's translation) onto the 22 Wirth cards from `research/sources/wirth-imagiers-1927.json`; `--check` |
 | `scripts/import_book_t_1912.py` | Writes Book T's own 1912 text (*The Equinox* I(8)) onto the 78 Golden Dawn cards from `research/sources/book-t-equinox-1912.txt`; `--check`; `--verify-scan` compares with the 1912 scan's OCR |
 | `scripts/check_all.py` | Pre-commit gate |
 | `scripts/audit_image_rights.py` | Asks Commons what every card image is (licence, credit); writes `docs/rights/IMAGE-LEDGER.md`. Re-run after any image change. The site says **open**, never "public-domain library": see `docs/rights/RIGHTS-AUDIT-2026-10-04.md` |

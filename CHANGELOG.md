@@ -2,6 +2,20 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 8 2026 — branch `sources/wirth-own-words` (PR, not merged; stacked on `due/oct8`): Wirth in his own words
+
+- **Wirth deck, 22 cards:** each card now quotes Wirth's *Le Tarot des imagiers du Moyen Âge* (Paris, 1927)
+  in French with page numbers, from the BnF copy on Gallica (public domain), with this site's English
+  translation: the opening of his chapter on the card (`Wirth`) and his *Interprétations divinatoires*
+  (`Divinatory meanings (Wirth, 1927)`, replacing the editorial `Upright` line). The old `Wirth` section,
+  labelled "translated from" this book, was checked against the 1927 text and was not Wirth's words.
+- **Correspondences:** Wirth's own constellations per card (his table, p. 76) added; the older
+  "Astrological association" line labelled as editorial.
+- **Symbol notes:** eleven sentences that gave Golden Dawn Hebrew letters (Wheel to Judgement) removed,
+  Strength's numbering note corrected, every note labelled as editorial.
+- Source: `research/sources/wirth-imagiers-1927.json`. Scripts: `scripts/import_wirth_1927.py` (`--check`),
+  `scripts/archive/wirth_symbol_letters_2026_10_08.py` (one-shot, `--check`).
+
 ## Oct 8 2026 — branch `due/oct8` (PR, not merged): due edits on the decks and the courses
 
 - **Etteilla number cards:** the 40 "Upright" lines per deck (one template copied across the suits) moved to
