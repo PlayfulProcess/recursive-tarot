@@ -2,6 +2,17 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 8 2026 — branch `course/review-decisions` (PR, not merged; stacked on `due/oct8`): the course review decided
+
+- **Courses:** the 38 items of `docs/plan/COURSES-REVIEW-2026-10-08.md` decided against sources; 35
+  applied as factual changes in the smallest wording (one in part; mirrored in the course grammars and the anthology),
+  3 dropped with the reason recorded there. Site copy in `index.html` and `pages/play.html` too.
+- **Strength and Justice:** `research/synthesis/strength-justice-numbering.md` lists what Mathers (1888),
+  Book T in *The Equinox* (1912), the Rider-Waite-Smith cards (1909) and Waite (1911) actually print. The
+  Golden Dawn moved the attributions (Leo to Strength, Libra to Justice); the 1912 printing still numbers
+  Fortitude 11 and Justice 8; the 1909 deck is the first known to print VIII and XI. The dossiers, the
+  Golden Dawn deck's notes and `same-card-every-deck` now say so.
+
 ## Oct 8 2026 — branch `due/oct8` (PR, not merged): due edits on the decks and the courses
 
 - **Etteilla number cards:** the 40 "Upright" lines per deck (one template copied across the suits) moved to

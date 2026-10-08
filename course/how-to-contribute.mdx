@@ -26,7 +26,7 @@ A deck is a single file: `tarot/<deck-slug>/grammar.json`. To fix a date, rewrit
 - **Easy route — in the app.** Open any card on the [card browser](../viewers/cards.html?src=../tarot/visconti-sforza-tarot/grammar.json) and use the **✏️ Edit in recursive.eco** button. It opens the deck in recursive.eco's Create editor — make your change and save; if it isn't your own deck, the edit is proposed to the owner for review. No git, no raw JSON.
 - **GitHub route.** Open the deck's `grammar.json` on GitHub, click the ✏️ pencil, edit the text, and choose **Propose changes** — GitHub opens the pull request for you.
 
-For the full range — from a one-click in-app fix all the way to building a whole new deck with AI and image generation — see the deep-dive: [Contribute to the Commons — Five Ways](course-viewer.html?course=build-a-tarot-deck-with-claude).
+For the full range — from a one-click in-app fix all the way to building a whole new deck with AI and image generation — read on: the rest of this course walks through each route.
 
 ## Contribute a spread
 
@@ -189,13 +189,13 @@ In **Customize → Connectors → recursive.eco → Tool permissions**, set the 
 
 **What actually costs credits?** Reading, listing, drawing a spread, publishing, and sourcing public-domain art with `commons_image_search` are all **free**. Credits are only spent on the paid services — **AI image generation, TTS narration, and R2 image hosting**. A free account starts with **$1**, plenty to try them, and you can contribute public-domain work all day without spending a cent. (Power users can read the [full MCP docs](https://code.claude.com/docs/en/mcp), but the paste-the-URL path above is all you need.)
 
-> Honesty note for Rung 5: AI-generated images are wonderful for a personal deck, but the historical decks in this commons are **scanned public-domain art**, not generated. If you publish, say which images are which.
+> Honesty note for Rung 5: AI-generated images are wonderful for a personal deck, but the historical decks in this commons are **scanned historical art, open to use** (see the [image ledger](https://github.com/PlayfulProcess/recursive-tarot/blob/main/docs/rights/IMAGE-LEDGER.md)), not generated. If you publish, say which images are which.
 
 ---
 
 ## Rung 5 in practice — a real audit-and-improve pass
 
-Here is an actual contribution made with Claude Desktop + the recursive.eco MCP, on **2026-06-20**. Nothing here is a mock-up — these are the real prompts, the real tool calls, and the real results. **You can do this too.** The full narrated build log lives at [`research/build-logs/grammar-audit-mcp-2026-06-20.md`](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/build-logs/grammar-audit-mcp-2026-06-20.md).
+Here is an actual contribution made with the recursive.eco MCP (run head-less in Claude Code; the same calls work from Claude Desktop), on **2026-06-20**. Nothing here is a mock-up — these are the real prompts, the real tool calls, and the real results. **You can do this too.** The full narrated build log lives at [`research/build-logs/grammar-audit-mcp-2026-06-20.md`](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/build-logs/grammar-audit-mcp-2026-06-20.md).
 
 **The task:** audit the two "sources" grammars — *Books Behind the Tarot* and *People & Institutions of Tarot* — and close the gaps: missing public-domain portraits, missing links between books, people and decks, and one cross-platform bug in the people generator.
 

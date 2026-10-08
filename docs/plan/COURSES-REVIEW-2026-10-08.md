@@ -19,6 +19,69 @@ read here: check before acting.
 - From `COHERENCE-2026-10-07.md`: rows 6–13, 15 and 16 are applied. Rows 1–5, 14 and 17–27 are
   still open there and are not repeated here.
 
+## Decisions, Oct 8 (branch `course/review-decisions`)
+
+PlayfulProcess asked for the 38 items to be decided rather than handed back. Each was checked
+against a source and then applied, or dropped with a reason. Only facts were changed in her
+sentences; where a fix is applied, the course grammar that mirrors the page
+(`tarot/<course>-course/grammar.json`) and the anthology `reading-the-cards.mdx` carry the same
+words. The tables further down are the original list, kept as the record.
+
+| # | Decision | Source |
+|---|---|---|
+| 1 | Applied: "nearly nine hundred miles away" (great-circle distance Königsberg to Paris is about 870 miles; the review's 950 was too high). | Coordinates of the two cities |
+| 2 | Applied: "unregulated for five years, and only began to rein in the *bets* with a law signed at the end of 2023. By mid-2024". | Lei nº 14.790, de 29 de dezembro de 2023 (planalto.gov.br) |
+| 3 | Applied: "never overcharges an inexperienced customer, not even a child". | Kant, *Groundwork* 4:397 |
+| 4 | Applied: 1948 for the class, 1949 for the paper (`why-a-reading-feels-personal`, `how-tarot-works`); `kant-and-the-tarot` already said 1948. | Forer (1949) for the paper; the 1948 class date as in `research/why-tarot-works/REPORT.md:135` |
+| 5 | Applied: winners and accident victims "rated their happiness far closer to that of people who had been through neither than anyone expected". | Brickman, Coates and Janoff-Bulman (1978): a comparison with controls, no before-measure |
+| 6 | Applied: "about twenty thousand people" in both courses. | `research/why-tarot-works/does-tarot-predict.md:241` (~22,500 tosses) |
+| 7 | Applied: "In the original analysis, across the study's three experiments, they did not". | Blackmore (1983); Markwick (1988) as the page already says |
+| 8 | Dropped: "disturbed" stays. Hyman's own account of reading palms against the lines says his readings stayed as successful, "to my surprise and horror". | Hyman, "Cold Reading" (1977), as quoted in his TAM workshop manual and in secondary accounts |
+| 9 | Applied: the Zeitlyn sentence now links his essay, which says that when divining about an illness one should not ask "Will this person die?". | Zeitlyn, "In Cameroon, truth-telling spiders untangle the future", *Aeon*, 28 July 2025 |
+| 10 | Koch applied: "the standard modern guide to the first-millennium texts" (the book's subtitle is *Sources from the First Millennium BCE*). "None copying the others" dropped: the three practices named (Mesopotamian omen texts, Shang plastromancy, the Delphic oracle) are not known to derive from one another; Greek liver-reading is a different practice from Delphi. | Koch (2015), GMTR 7, Ugarit-Verlag |
+| 11 | Applied: "Lots and marked staves (Tacitus says *notae*, marks; he does not say runes)". | Tacitus, *Germania* 10 ("notis quibusdam discretos") |
+| 12 | Applied: "The **oldest** written layer". | Unwritten scapulimancy predates the Shang inscriptions |
+| 13 | Applied: "an Italian court card game of the 1440s". | Pratesi (1989), in `research/bibliography.bib`: early mentions from Ferrara, Bologna and Milan |
+| 14 | Applied at both places: "nobody is recorded using it to divine anything for about another three hundred years"; "some three centuries before anyone is recorded using it for divination". | The Bologna sheet of tarocchino meanings, before 1750 (Pratesi 1989; Dummett: first half of the 18th century) |
+| 15 | Applied: "who offered no evidence for". | `research/people/court-de-gebelin.md` |
+| 16 | Applied: "vinyl revenue crossed a billion dollars in 2021 for the first time since 1986". The "nineteenth consecutive year" for 2025 is consistent with RIAA's count (2021 was the fifteenth). | RIAA 2021 year-end report, as reported by Variety and Billboard, March 2022 |
+| 17 | Dropped: the course stands. Krans's own site and the press describe a 2012 self-published deck; no Kickstarter campaign was found. The Kickstarter line in `research/17-contemporary-tarot.txt` is unsupported (that file is a raw transcript, left as is). | kimkrans.com/the-wild-unknown |
+| 18 | Applied: "and fought there until the war ended". Sources differ on whether he joined in late 1943 or 1944, so no length is given. | Encyclopedia entries disagree; the end date (April 1945) does not |
+| 19 | Applied: "who directed the design of the Rider-Waite-Smith deck". | `research/people/a-e-waite.md`, `tarot-today.mdx:60` |
+| 20 | Applied: `:35` "made in China". | `research/decks/madiao-money-cards.md` |
+| 21 | Applied: "In most packs, for centuries, the numbered cards ..." (`:110`) and "abstract patterns in most packs for centuries, then, in the Sola Busca of 1491 and again from 1909, little figured scenes" (`:118`). | Sola Busca 1491; RWS 1909 |
+| 22 | Applied after the section 3 check (below): RWS is the first known deck to print VIII Strength, XI Justice; Book T's 1912 printing keeps 11 and 8. The sentence now links `research/synthesis/strength-justice-numbering.md`. | See section 3 |
+| 23 | Applied: "though no European cardmaker need ever have copied a Mamluk deck directly". | The Mamluk pack is a transmission, not a known model |
+| 24 | Applied: "by the later 1400s in most packs". | Minchiate has forty trumps; the 1440s packs are incomplete |
+| 25 | Applied: "northern Italian card game"; "the 1781 occult reframing that invented occult tarot divination". | Pratesi (1989); the Bologna sheet (item 14) |
+| 26 | Applied: "were likely modelled in part on the 1491 Sola Busca", as `same-card-every-deck.mdx:55` hedges. | `research/decks/sola-busca-tarot.md` |
+| 27 | Applied: Ma Diao "a deep documented root of the suited pack ... One of the oldest card games whose rules survive", the badge "A root"; "genuine open deck". | `research/decks/madiao-money-cards.md:24-32`; `docs/rights/IMAGE-LEDGER.md` |
+| 28 | Applied: "*pathworking*: the name the Order's heirs gave to a contemplative practice" (`:13`) and "what the Order's heirs came to call **pathworking**" (`:49`). The description (`:4`) and `:65` are the course's own stance and stay. The Order's own visionary practice ("spirit vision") is left out: not checked in a primary source. | Book T (1912) has no pathworking |
+| 29 | Applied: "printed in 1912 as 'A Method of Divination by the Tarot', now usually called the 'Opening of the Key'". | *The Equinox* I(8), 1912 |
+| 30 | Applied: "set down, mainly by Mathers, ... circulated to initiates and unpublished until *The Equinox* printed it in 1912". | `research/people/macgregor-mathers.md` |
+| 31 | Applied: confirmed that the sacred-texts link is Mathers's own 1888 booklet *The Tarot* (its chapters are "Symbolism of each of the Keys" and "Meanings of the Cards"). The reading list now points to the 1912 scan and a transcription for Book T, and names the 1888 booklet separately. The archive.org item `the-book-t-the-tarot` was dropped: it is a 2023 upload compiled from the online *Equinox* transcription, not an Order manuscript. | archive.org metadata; mr-kaplan.com transcription of the 1888 text |
+| 32 | Applied: the quotation now has Linehan's words ("... It is almost always quiet. It has a certain peace."), checked against secondary sources that quote her 1993 skills manual (the manual itself not seen). `:71` now says "(in my reading of her skills, not her words)". | dbtselfhelp.com and others quoting Linehan (1993) |
+| 33 | Dropped: the labels describe different things. Two epigraphs are paraphrases; the post-activism one is a phrase he uses. A single wording is a style choice for PlayfulProcess. | |
+| 34 | Applied: "Vanessa Machado de Oliveira (who has also published as Vanessa Andreotti)" in the epigraph, then "Machado de Oliveira"; the same name in `intention-setting.mdx` and `viewers/voices.json`. | *Hospicing Modernity* (North Atlantic Books, 2021), by Vanessa Machado de Oliveira |
+| 35 | Applied: one sentence under the heading, "(The phrase is Donna Haraway's, from her book *Staying with the Trouble*, 2016.)". | Haraway (2016), Duke University Press |
+| 36 | Applied: "made with the recursive.eco MCP (run head-less in Claude Code; the same calls work from Claude Desktop)". | `research/build-logs/grammar-audit-mcp-2026-06-20.md:165` |
+| 37 | Applied: the link pointed back to this same course through a stub. Now "read on: the rest of this course walks through each route." | `course/build-a-tarot-deck-with-claude.mdx` (the stub) |
+| 38 | Applied: "scanned historical art, open to use (see the image ledger)", with a link. | `docs/rights/IMAGE-LEDGER.md` |
+
+Section 3, decided:
+
+- **Who swapped Strength and Justice:** settled from the printed sources; see below and
+  `research/synthesis/strength-justice-numbering.md`. Corrected in `research/12-golden-dawn-book-t.mdx`,
+  `research/people/golden-dawn.md`, `research/people/macgregor-mathers.md`,
+  `research/decks/golden-dawn-book-t-tarot.md`, `research/cards/golden-dawn-book-t-tarot.md`, the Golden
+  Dawn deck (its description, Strength and Justice notes, and "The 22 Keys"), and the course.
+- **The history course's name:** applied, "The History of Tarot" in `tarot-and-the-crack.mdx` and
+  `tarot-and-fiction.mdx` (and the anthology).
+- **Cross-page counts:** dropped; each count is right for its own start date. A single form is a
+  style choice for PlayfulProcess.
+- **The Etteilla number cards:** still open. Giving them back Etteilla's own words needs a person to
+  transcribe the card images or the *Troisième cahier*; not done here.
+
 ## 1. Claims to fix or hedge (a word or a clause, your wording)
 
 | # | Where | Seam | Proposed fix |
@@ -77,6 +140,22 @@ read here: check before acting.
   Fortitude 11. The Golden Dawn deck's "About the Keys" says "Strength at VIII (Leo), Justice at XI
   (Libra)". One sentence in the dossiers would settle the wording: the swap is in the
   attributions, and the 1909 deck was the first to print it.
+
+  **Settled Oct 8 from the printed sources** (full table in
+  `research/synthesis/strength-justice-numbering.md`):
+  - Mathers, *The Tarot* (1888): Justice 8 (Cheth), Strength 11 (Kaph), on Lévi's letter scheme
+    (Magician = Aleph, Fool = Shin). Read in two transcriptions; no page scan seen.
+  - Book T, *The Equinox* I(8) (1912): Fortitude numbered 11 on Teth/Leo, Justice numbered 8 on
+    Lamed/Libra, Fool on Aleph. Read in the archive.org scan's OCR and the repo's transcription.
+  - Rider-Waite-Smith cards (1909): VIII Strength, XI Justice.
+  - Waite, *Pictorial Key* (1911): Strength 8, with "For reasons which satisfy myself, this card has
+    been interchanged with that of justice, which is usually numbered eight."
+  - Regardie, *The Golden Dawn* (1937–40): reference only, in copyright, not checked.
+
+  So the Golden Dawn moved the attributions; the 1909 deck is the first known to print the new
+  numbers. Whether the Order's manuscripts renumbered the cards is not settled by any printed
+  source checked here (Crowley edited the 1912 printing, and his Thoth deck keeps the same
+  arrangement: old numbers, Golden Dawn letters).
 - **Cross-page counts.** "Six centuries" (`index.html`, `_courses.json:7`, `pages/historian.html:63`),
   "six-hundred-year-old" (`tarot-and-the-crack.mdx:36`), "580-year-old" (`tarot-today.mdx:36`),
   "five and a half centuries" (`same-card-every-deck.mdx:13`), "four and a half"
