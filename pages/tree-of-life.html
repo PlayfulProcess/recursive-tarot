@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../theme.css?v=3">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tree of Life · Recursive Tarot</title>
+<meta property="og:title" content="The Tree of Life — the Golden Dawn's map of the trumps">
+<meta property="og:description" content="Ten sephiroth, twenty-two paths, one trump on each. Tap a path, or lay your cards on the map.">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light;font-family:var(--sans)}
+  .wrap{max-width:1180px;margin:0 auto;padding:18px 16px 70px}
+  h1{font-family:var(--serif-display);font-size:26px;margin:.1em 0 .1em}
+  .lede{color:var(--muted);font-size:14.5px;line-height:1.55;margin:0 0 12px;max-width:70ch}
+  .layout{display:grid;grid-template-columns:1fr;gap:18px;align-items:start}
+  @media (min-width:900px){.layout{grid-template-columns:minmax(380px,520px) 1fr}}
+  .stage{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:8px 6px 4px}
+  @media (min-width:900px){.stage{position:sticky;top:64px}}
+  svg.tree{display:block;width:100%;height:auto;margin:0 auto;touch-action:manipulation}
+  @media (min-width:900px){svg.tree{max-height:calc(100vh - 150px)}}
+  /* paths */
+  .p line.ln{stroke:var(--line-soft);stroke-width:5;stroke-linecap:round;transition:stroke .15s,stroke-width .15s}
+  .p line.hit{stroke:transparent;stroke-width:22;stroke-linecap:round;cursor:pointer}
+  .p circle.bd{fill:var(--surface);stroke:var(--mut);stroke-width:1.2;cursor:pointer;transition:fill .15s}
+  .p text.lt{font-family:"Noto Serif Hebrew","Times New Roman",serif;font-size:17px;fill:var(--ink);text-anchor:middle;dominant-baseline:central;pointer-events:none}
+  .p:hover line.ln,.p:focus line.ln{stroke:var(--faint)}
+  .p:focus{outline:none}
+  .p:focus-visible circle.bd{stroke:var(--gold);stroke-width:3}
+  .p.on line.ln{stroke:var(--gold);stroke-width:8}
+  .p.on circle.bd{fill:var(--gold);stroke:var(--gold)}
+  .p.on text.lt{fill:var(--surface)}
+  .p .ord{display:none}
+  .p.on .ord{display:inline}
+  .p .ord circle{fill:var(--ink)}
+  .p .ord text{fill:var(--surface);font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:central;font-family:var(--sans)}
+  /* sephiroth */
+  .s circle.dot{fill:var(--panel2);stroke:var(--mut);stroke-width:1.4;cursor:pointer;transition:fill .15s}
+  .s text{text-anchor:middle;pointer-events:none;fill:var(--ink);font-family:var(--sans)}
+  .s text.n{font-size:10px;fill:var(--mut);font-weight:700}
+  .s text.nm{font-size:10px;font-weight:600}
+  .s:focus{outline:none}
+  .s:focus-visible circle.dot{stroke:var(--gold);stroke-width:3}
+  .s.on circle.dot{fill:var(--chip);stroke:var(--gold);stroke-width:3}
+  .s.on2 circle.dot{stroke-width:5}
+  .s.sel circle.dot{fill:var(--gold);stroke:var(--gold)}
+  .s.sel text{fill:var(--surface)}
+  svg.focus .p:not(.on) line.ln{stroke:var(--line)}
+  svg.focus .p:not(.on) circle.bd{stroke:var(--line-soft)}
+  svg.focus .p:not(.on) text.lt{fill:var(--faint)}
+  svg.focus .s:not(.on):not(.sel) circle.dot{stroke:var(--line-soft)}
+  svg.focus .s:not(.on):not(.sel) text{fill:var(--faint)}
+  /* the row of 22 */
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 2px 6px;justify-content:center}
+  .chips button{min-width:44px;min-height:44px;padding:2px 6px;border:1px solid var(--line);border-radius:10px;background:var(--surface);
+    color:var(--ink);font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05}
+  .chips button .he{font-size:18px;font-family:"Noto Serif Hebrew","Times New Roman",serif}
+  .chips button .no{font-size:10px;color:var(--mut)}
+  .chips button.on{background:var(--gold);border-color:var(--gold);color:var(--surface)}
+  .chips button.on .no{color:var(--surface)}
+  /* panel */
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;min-height:200px}
+  .panel h2{font-family:var(--serif-display);font-size:22px;margin:0 0 2px}
+  .panel .sub{color:var(--mut);font-size:13.5px;margin:0 0 10px;font-style:italic}
+  .card{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:start}
+  @media (max-width:420px){.card{grid-template-columns:96px 1fr}}
+  .card img{width:100%;aspect-ratio:3/5;object-fit:contain;background:var(--thumb-bg);border-radius:8px;border:1px solid var(--line)}
+  .facts{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;margin:0;font-size:14px;align-items:center}
+  .facts dt{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+  .facts dd{margin:0}
+  .bigl{font-size:34px;line-height:1;font-family:"Noto Serif Hebrew","Times New Roman",serif;vertical-align:middle;margin-right:6px}
+  blockquote{margin:14px 0 6px;padding:8px 12px;border-left:3px solid var(--gold);background:var(--panel2);border-radius:0 8px 8px 0;font-size:14px;line-height:1.55}
+  .cite{font-size:12px;color:var(--mut);margin:0 0 10px}
+  .links{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+  .links a,.links button{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:4px 12px;border:1px solid var(--line);border-radius:10px;
+    background:var(--surface);color:var(--ink);font:inherit;font-size:14px;text-decoration:none;cursor:pointer}
+  .links a.primary,.links button.primary{border-color:var(--gold);color:var(--gold);font-weight:600}
+  .reading{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px}
+  .reading li button{width:100%;display:grid;grid-template-columns:28px 44px 1fr;gap:10px;align-items:center;text-align:left;min-height:56px;
+    padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:var(--surface);font:inherit;color:var(--ink);cursor:pointer}
+  .reading li button.cur{border-color:var(--gold);background:var(--chip)}
+  .reading .k{width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--surface);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .reading img{width:44px;height:52px;object-fit:contain;background:var(--thumb-bg);border-radius:4px}
+  .reading .t{font-size:14px;line-height:1.3}
+  .reading .t small{display:block;color:var(--mut);font-size:12px}
+  .body p{font-size:14.5px;line-height:1.6;margin:.4em 0}
+  .note{font-size:12.5px;color:var(--mut);line-height:1.5;margin:14px 0 0}
+  .sep-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0 0}
+  .sep-cards a{display:block;text-align:center;font-size:12px;color:var(--ink-soft);text-decoration:none;min-height:44px}
+  .sep-cards img{width:100%;aspect-ratio:3/5;object-fit:contain;background:var(--thumb-bg);border-radius:6px;border:1px solid var(--line)}
+  h3.k3{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut);margin:16px 0 6px}
+  a{color:var(--gold)}
+  .src{font-size:12px;color:var(--mut);line-height:1.5;margin-top:16px}
+</style>
+</head>
+<body>
+<script src="../site-header.js?v=49"></script>
+<site-header active="course"></site-header>
+
+<div class="wrap">
+  <h1>The Tree of Life</h1>
+  <p class="lede">The Golden Dawn's map: ten spheres, twenty-two paths, a trump on every path. Tap a path or a sphere.</p>
+  <div class="layout">
+    <div class="stage">
+      <svg class="tree" id="tree" viewBox="-118 -34 236 620" role="group" aria-label="The Tree of Life: ten sephiroth joined by twenty-two paths"></svg>
+      <div class="chips" id="chips" role="group" aria-label="The 22 paths"></div>
+    </div>
+    <div class="panel" id="panel" aria-live="polite"><p>Loading...</p></div>
+  </div>
+  <p class="src">Paths and which sephiroth they join: the Tree as drawn by Athanasius Kircher, <em>Oedipus Aegyptiacus</em> (1652–54), the arrangement the Golden Dawn used.
+  Letters, trumps, titles and attributions: <a href="https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep" target="_blank" rel="noopener"><em>Book T</em>, as printed in <em>The Equinox</em> I(8), 1912</a>,
+  as carried by this library's <a href="../viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json">Golden Dawn deck</a> (card numbers follow that deck: 8 Strength, 11 Justice).
+  Small cards: Book T sets the Aces in Kether and each Two to Ten in the sephirah of its number. Words: <a href="glossary.html">the glossary</a>.</p>
+</div>
+
+<script src="gd-tree.js?v=1"></script>
+<script>
+(async function () {
+  const { SEPH, BY, esc, md, mini } = window.GDTree;
+  const U = 80, R = 27, BR = 16;               // unit, sephirah radius, badge radius (viewBox units)
+  const X = x => x * U, Y = y => y * U;
+  const svg = document.getElementById('tree'), panel = document.getElementById('panel'), chips = document.getElementById('chips');
+  const DECK_SRC = '../tarot/golden-dawn-book-t-tarot/grammar.json';
+  const CARD = id => `../viewers/cards.html?src=${DECK_SRC}&item=${encodeURIComponent(id)}`;
+  const ROMAN = ['0','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XXI'];
+  const SIGN_OR_PLANET = /\b(Aries|Taurus|Gemini|Cancer|Leo|Virgo|Libra|Scorpio|Sagittarius|Capricorn|Aquarius|Pisces|Mercury|Venus|Mars|Jupiter|Saturn|Sun|Moon|Air|Water|Fire)\b/;
+
+  let deck, gloss;
+  try {
+    [deck, gloss] = await Promise.all([fetch(DECK_SRC).then(r => r.json()), fetch('../tarot/glossary-of-tarot/grammar.json').then(r => r.json())]);
+  } catch (e) {
+    panel.innerHTML = '<p>The map could not load its data.</p>';
+    return;
+  }
+  const PATHS = (gloss.metadata || {}).tree_paths;          // "22": ["geburah","tiphareth"]
+  const G = Object.fromEntries((gloss.items || []).map(it => [it.id, it]));
+  const items = deck.items || [];
+  const byId = Object.fromEntries(items.map(it => [it.id, it]));
+  const trumps = {};                                         // path -> trump info
+  for (const it of items) {
+    const m = it.metadata || {};
+    if (it.category !== 'major-arcana' || !m.tree_path) continue;
+    const cor = (it.sections || {}).Correspondences || '';
+    const mm = cor.match(/\((?:\[)?([A-Za-z]+)(?:\][^,]*)?, '([^']+)'\)/);
+    const bookT = ((it.sections || {})['Book T (1912)'] || '').split('\n\n').slice(1).join('\n\n');
+    trumps[m.tree_path] = {
+      id: it.id, path: m.tree_path, num: m.number, name: it.name.replace(/^\d+ — /, ''),
+      letter: m.hebrew_letter, translit: m.hebrew_translit, meaning: mm ? mm[2] : '',
+      attr: m.attribution, title: m.golden_dawn_title, img: it.image_url, bookT,
+    };
+  }
+  const byNumber = {};
+  Object.values(trumps).forEach(t => { byNumber[t.num] = t; });
+  const RANK_SEPH = { ace: 'kether', '02': 'chokmah', '03': 'binah', '04': 'chesed', '05': 'geburah', '06': 'tiphareth', '07': 'netzach', '08': 'hod', '09': 'yesod', '10': 'malkuth' };
+
+  /* ---------- draw ---------- */
+  const NS = 'http://www.w3.org/2000/svg';
+  let out = '';
+  // pillars, faint
+  for (const x of [-1, 0, 1]) out += `<line x1="${X(x)}" y1="${Y(x === 0 ? 0 : 0.6)}" x2="${X(x)}" y2="${Y(x === 0 ? 6.9 : 4.6)}" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 6"/>`;
+  const order = Object.keys(PATHS).map(Number).sort((a, b) => a - b);
+  for (const p of order) {
+    const [a, b] = PATHS[p].map(id => BY[id]);
+    const t = trumps[p];
+    const tt = p === 25 ? 0.4 : 0.5;
+    const bx = X(a.x + (b.x - a.x) * tt), by = Y(a.y + (b.y - a.y) * tt);
+    const label = `Path ${p}: ${t.letter} ${t.translit}, ${t.name}, ${t.attr}; joins ${a.name} and ${b.name}`;
+    out += `<g class="p" id="p${p}" data-path="${p}" tabindex="0" role="button" aria-label="${esc(label)}">
+      <title>${esc(label)}</title>
+      <line class="ln" x1="${X(a.x)}" y1="${Y(a.y)}" x2="${X(b.x)}" y2="${Y(b.y)}"/>
+      <line class="hit" x1="${X(a.x)}" y1="${Y(a.y)}" x2="${X(b.x)}" y2="${Y(b.y)}"/>
+      <circle class="bd" cx="${bx}" cy="${by}" r="${BR}"/>
+      <text class="lt" x="${bx}" y="${by + 1}" lang="he">${esc(t.letter)}</text>
+      <g class="ord"><circle cx="${bx + 13}" cy="${by - 13}" r="8"/><text x="${bx + 13}" y="${by - 12.5}"></text></g>
+    </g>`;
+  }
+  for (const s of SEPH) {
+    out += `<g class="s" id="s-${s.id}" data-seph="${s.id}" tabindex="0" role="button" aria-label="${esc(`${s.n}. ${s.name}, ${s.en}`)}">
+      <title>${esc(`${s.n}. ${s.name} (${s.en})`)}</title>
+      <circle class="dot" cx="${X(s.x)}" cy="${Y(s.y)}" r="${R}"/>
+      <text class="n" x="${X(s.x)}" y="${Y(s.y) - 7}">${s.n}</text>
+      <text class="nm" x="${X(s.x)}" y="${Y(s.y) + 8}">${esc(s.name)}</text>
+    </g>`;
+  }
+  svg.innerHTML = out;
+  // paths sit under the sephiroth, but a path's badge must stay clickable: move badges to the top layer
+  for (const p of order) {
+    const g = svg.querySelector('#p' + p);
+    const top = document.createElementNS(NS, 'g');
+    top.setAttribute('class', 'p badge');
+    top.dataset.path = p;
+    ['circle.bd', 'text.lt', 'g.ord'].forEach(sel => top.appendChild(g.querySelector(sel)));
+    top.id = 'pb' + p;
+    svg.appendChild(top);
+  }
+  chips.innerHTML = order.map(p => `<button type="button" data-path="${p}" aria-label="Path ${p}, ${esc(trumps[p].name)}"><span class="he" lang="he">${esc(trumps[p].letter)}</span><span class="no">${p}</span></button>`).join('');
+
+  /* ---------- state ---------- */
+  function parse() {
+    const q = new URLSearchParams(location.search);
+    const path = parseInt(q.get('path'), 10);
+    const cards = (q.get('cards') || '').split(',').map(s => s.trim()).filter(Boolean);
+    return { path: PATHS[path] ? path : null, sephirah: BY[q.get('sephirah')] ? q.get('sephirah') : null, cards };
+  }
+  function setState(st) {
+    const q = new URLSearchParams();
+    if (st.cards && st.cards.length) q.set('cards', st.cards.join(','));
+    if (st.path) q.set('path', st.path);
+    if (st.sephirah) q.set('sephirah', st.sephirah);
+    const s = q.toString().replace(/%2C/g, ',');
+    history.pushState(null, '', s ? '?' + s : location.pathname);
+    render();
+  }
+  // A drawn card: a trump number (0-21, this deck's numbering) or a deck item id.
+  function resolve(tok) {
+    if (/^\d+$/.test(tok)) { const t = byNumber[+tok]; return t ? { kind: 'trump', t, item: byId[t.id], tok } : null; }
+    const it = byId[tok];
+    if (!it) return null;
+    if (it.category === 'major-arcana') { const t = trumps[(it.metadata || {}).tree_path]; return t ? { kind: 'trump', t, item: it, tok } : null; }
+    const rank = (tok.match(/-(ace|0[2-9]|10)$/) || [])[1];
+    return { kind: rank ? 'small' : 'court', item: it, seph: rank ? RANK_SEPH[rank] : null, tok };
+  }
+
+  const gl = (id, text) => G[id] ? `<a href="glossary.html#${id}">${esc(text || G[id].metadata.aliases[0] || G[id].name)}</a>` : esc(text || id);
+  const attrLink = a => { const m = String(a).match(SIGN_OR_PLANET); return m ? esc(a).replace(m[0], gl(m[0].toLowerCase(), m[0])) : esc(a); };
+  const cleanName = n => n.replace(/^\d+ — /, '');
+
+  function pathPanel(p, st) {
+    const t = trumps[p], [a, b] = PATHS[p];
+    const inReading = st.cards.some(c => { const r = resolve(c); return r && r.kind === 'trump' && r.t.path === p; });
+    const nextCards = inReading ? st.cards : st.cards.concat(String(t.num));
+    return `<div class="card"><img src="${esc(t.img)}" alt="${esc(t.name)}, Golden Dawn deck" loading="lazy">
+      <div><h2>${esc(ROMAN[t.num] || t.num)} · ${esc(t.name)}</h2>
+      <p class="sub">${esc(t.title || '')}</p>
+      <dl class="facts">
+        <dt>Path</dt><dd>${p}</dd>
+        <dt>Letter</dt><dd><span class="bigl" lang="he">${esc(t.letter)}</span>${gl(t.translit.toLowerCase(), t.translit)}${t.meaning ? ', ' + esc(t.meaning) : ''}</dd>
+        <dt>Sign</dt><dd>${attrLink(t.attr)}</dd>
+        <dt>Joins</dt><dd>${gl(a, BY[a].name)} and ${gl(b, BY[b].name)}</dd>
+      </dl></div></div>
+      ${t.bookT ? `<blockquote>${md(t.bookT)}</blockquote><p class="cite"><em>Book T</em>, “Brief meaning of the twenty-two keys”, <em>The Equinox</em> I(8), 1912</p>` : ''}
+      <div class="links">
+        <a class="primary" href="${CARD(t.id)}">Open the card</a>
+        ${inReading ? '' : `<button type="button" class="primary" data-set='${esc(JSON.stringify({ cards: nextCards, path: p }))}'>Add to my reading</button>`}
+        <a href="glossary.html#path">${mini({ paths: PATHS, path: p, w: 12 })} Path</a>
+        ${gl('tree-of-life', 'Tree of Life')}
+      </div>`;
+  }
+  function sephPanel(id) {
+    const s = BY[id], e = G[id];
+    const touching = order.filter(p => PATHS[p].includes(id));
+    const rank = Object.keys(RANK_SEPH).find(k => RANK_SEPH[k] === id);
+    const small = ['wands', 'cups', 'swords', 'pentacles'].map(suit => byId[`${suit}-${rank}`]).filter(Boolean);
+    return `<h2>${s.n} · ${esc(s.name)}</h2><p class="sub">${esc(s.en)}</p>
+      <div class="body">${e ? md(e.sections.Entry.split('\n\n')[0], 'tree-of-life.html') : ''}</div>
+      <h3 class="k3">Paths</h3>
+      <div class="links">${touching.map(p => `<button type="button" data-set='${esc(JSON.stringify({ path: p }))}'><span class="bigl" lang="he" style="font-size:20px">${esc(trumps[p].letter)}</span>${p} · ${esc(trumps[p].name)}</button>`).join('')}</div>
+      ${small.length ? `<h3 class="k3">In Book T, the small cards here</h3><div class="sep-cards">${small.map(it => `<a href="${CARD(it.id)}"><img src="${esc(it.image_url)}" alt="" loading="lazy">${esc(cleanName(it.name))}</a>`).join('')}</div>` : ''}
+      <div class="links"><a href="glossary.html#${id}">Glossary: ${esc(s.name)}</a></div>`;
+  }
+  function readingPanel(st, drawn) {
+    const rows = drawn.map((r, i) => {
+      if (!r) return `<li><button type="button" disabled><span class="k">${i + 1}</span><span></span><span class="t">${esc(st.cards[i])}<small>not a card in this deck</small></span></button></li>`;
+      const where = r.kind === 'trump' ? `Path ${r.t.path} · ${BY[PATHS[r.t.path][0]].name} to ${BY[PATHS[r.t.path][1]].name}`
+        : r.kind === 'small' ? `In ${BY[r.seph].name}` : 'A court card: not on this map';
+      const set = r.kind === 'trump' ? { cards: st.cards, path: r.t.path } : r.kind === 'small' ? { cards: st.cards, sephirah: r.seph } : null;
+      const cur = (r.kind === 'trump' && st.path === r.t.path) || (r.kind === 'small' && st.sephirah === r.seph);
+      return `<li><button type="button" class="${cur ? 'cur' : ''}" ${set ? `data-set='${esc(JSON.stringify(set))}'` : 'disabled'}>
+        <span class="k">${i + 1}</span><img src="${esc(r.item.image_url)}" alt="" loading="lazy">
+        <span class="t">${esc(cleanName(r.item.name))}<small>${esc(where)}</small></span></button></li>`;
+    }).join('');
+    return `<h2>Your cards on the Tree</h2>
+      <p class="sub">${drawn.filter(Boolean).length} card${drawn.length === 1 ? '' : 's'}, in the order drawn. Lit spheres are where your paths meet; a darker ring, more than one.</p>
+      <ol class="reading">${rows}</ol>
+      <div class="links"><button type="button" data-set='{"cards":[]}'>Clear the reading</button></div>`;
+  }
+  function introPanel() {
+    return `<h2>Ten spheres, twenty-two paths</h2>
+      <div class="body"><p>Each circle is a ${gl('sephirah', 'sephirah')}. Each line between two of them is a ${gl('path', 'path')}, carrying a ${gl('hebrew-letters', 'Hebrew letter')} and one trump.
+      Tap a letter to see its card; tap a circle to see what meets there.</p>
+      <p>Lay a reading on the map with <code>?cards=</code> and the cards' numbers: the paths you drew light up, and so do the spheres they join.</p></div>
+      <div class="links">
+        <button type="button" class="primary" data-set='{"path":22}'><span class="bigl" lang="he" style="font-size:20px">ל</span>Path 22, Justice</button>
+        <button type="button" class="primary" data-set='{"cards":["11","8","0"]}'>A reading: 11, 8, 0</button>
+        <a href="glossary.html">The glossary</a>
+      </div>`;
+  }
+
+  function render() {
+    const st = parse();
+    const drawn = st.cards.map(resolve);
+    const litPaths = new Map(), sephCount = {};
+    drawn.forEach((r, i) => {
+      if (!r) return;
+      if (r.kind === 'trump') { if (!litPaths.has(r.t.path)) litPaths.set(r.t.path, i + 1); PATHS[r.t.path].forEach(s => sephCount[s] = (sephCount[s] || 0) + 1); }
+      if (r.kind === 'small') sephCount[r.seph] = (sephCount[r.seph] || 0) + 1;
+    });
+    if (st.path && !litPaths.has(st.path)) { litPaths.set(st.path, 0); PATHS[st.path].forEach(s => sephCount[s] = (sephCount[s] || 0) + 1); }
+    for (const p of order) {
+      const on = litPaths.has(p), k = litPaths.get(p);
+      ['#p' + p, '#pb' + p].forEach(sel => svg.querySelector(sel).classList.toggle('on', on));
+      const ord = svg.querySelector('#pb' + p + ' g.ord');
+      ord.style.visibility = on && k ? 'visible' : 'hidden';
+      ord.querySelector('text').textContent = k || '';
+      chips.querySelector(`[data-path="${p}"]`).classList.toggle('on', on);
+      chips.querySelector(`[data-path="${p}"]`).setAttribute('aria-pressed', st.path === p ? 'true' : 'false');
+    }
+    for (const s of SEPH) {
+      const el = svg.querySelector('#s-' + s.id);
+      el.classList.toggle('on', !!sephCount[s.id]);
+      el.classList.toggle('on2', (sephCount[s.id] || 0) > 1);
+      el.classList.toggle('sel', st.sephirah === s.id);
+    }
+    svg.classList.toggle('focus', litPaths.size > 0 || !!st.sephirah || Object.keys(sephCount).length > 0);
+    let html = '';
+    if (st.cards.length) html += readingPanel(st, drawn);
+    if (st.path) html += (html ? '<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">' : '') + pathPanel(st.path, st);
+    else if (st.sephirah) html += (html ? '<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">' : '') + sephPanel(st.sephirah);
+    panel.innerHTML = html || introPanel();
+    document.title = st.path ? `Path ${st.path} · ${trumps[st.path].name} · Tree of Life` : st.sephirah ? `${BY[st.sephirah].name} · Tree of Life` : 'Tree of Life · Recursive Tarot';
+  }
+
+  /* ---------- events ---------- */
+  const keepCards = () => parse().cards;
+  function pickPath(p) { setState({ cards: keepCards(), path: +p }); if (matchMedia('(max-width: 899px)').matches) panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  function pickSeph(id) { setState({ cards: keepCards(), sephirah: id }); if (matchMedia('(max-width: 899px)').matches) panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  svg.addEventListener('click', e => {
+    const p = e.target.closest('[data-path]'), s = e.target.closest('[data-seph]');
+    if (s) pickSeph(s.dataset.seph); else if (p) pickPath(p.dataset.path);
+  });
+  svg.addEventListener('keydown', e => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const p = e.target.closest('[data-path]'), s = e.target.closest('[data-seph]');
+    if (p || s) { e.preventDefault(); s ? pickSeph(s.dataset.seph) : pickPath(p.dataset.path); }
+  });
+  chips.addEventListener('click', e => { const b = e.target.closest('button[data-path]'); if (b) pickPath(b.dataset.path); });
+  panel.addEventListener('click', e => {
+    const b = e.target.closest('[data-set]');
+    if (!b) return;
+    const st = JSON.parse(b.dataset.set);
+    setState({ cards: st.cards !== undefined ? st.cards : keepCards(), path: st.path || null, sephirah: st.sephirah || null });
+  });
+  window.addEventListener('popstate', render);
+  render();
+})();
+</script>
+<script src="../site-footer.js?v=1"></script>
+<site-footer base="../"></site-footer>
+</body>
+</html>

@@ -130,6 +130,15 @@ print(f"[check_derived_axes.py] {out.splitlines()[0] if out else '(no output)'}"
 if r.returncode != 0:
     errors.append(f"check_derived_axes.py failed:\n{out}")
 
+# 6 — the glossary link layer is up to date (links are content, written by the script,
+# never by hand) and every glossary entry has an Entry + Sources — see link_glossary.py.
+r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "link_glossary.py"), "--check"],
+                   capture_output=True, text=True, cwd=ROOT)
+out = (r.stdout + r.stderr).strip()
+print(f"[link_glossary.py] {out.splitlines()[0] if out else '(no output)'}")
+if r.returncode != 0:
+    errors.append(f"link_glossary.py --check failed:\n{out}")
+
 for w in warnings:
     print("WARN:", w)
 if errors:

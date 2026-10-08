@@ -1,0 +1,1562 @@
+{
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "url": "https://recursive.eco",
+        "date": "2026-10-08",
+        "note": "Glossary entries: short sourced paragraphs, written for this library"
+      }
+    ]
+  },
+  "name": "Glossary of Tarot — the Golden Dawn's words",
+  "slug": "glossary-of-tarot",
+  "grammar_type": "custom",
+  "provenance": "reference",
+  "creator_name": "PlayfulProcess",
+  "creator_link": "https://recursive.eco",
+  "is_published": true,
+  "tags": [
+    "glossary",
+    "golden dawn",
+    "tree of life",
+    "reference"
+  ],
+  "description": "# Glossary of Tarot\n\nShort, sourced entries for the words the cards and courses lean on: the ten sephiroth, the twenty-two Hebrew letters, the signs, planets and elements, and the ideas (Book T, dignities, decans, Ma'at). Each entry is one paragraph with its sources. Rendered at [tarot.recursive.eco/pages/glossary.html](https://tarot.recursive.eco/pages/glossary.html); the deck and course texts link here by `scripts/link_glossary.py`. Entries are edited here, by hand.",
+  "metadata": {
+    "common_name": "Glossary",
+    "category": "reference",
+    "link_base": "https://tarot.recursive.eco/pages/glossary.html#",
+    "tree_paths": {
+      "11": [
+        "kether",
+        "chokmah"
+      ],
+      "12": [
+        "kether",
+        "binah"
+      ],
+      "13": [
+        "kether",
+        "tiphareth"
+      ],
+      "14": [
+        "chokmah",
+        "binah"
+      ],
+      "15": [
+        "chokmah",
+        "tiphareth"
+      ],
+      "16": [
+        "chokmah",
+        "chesed"
+      ],
+      "17": [
+        "binah",
+        "tiphareth"
+      ],
+      "18": [
+        "binah",
+        "geburah"
+      ],
+      "19": [
+        "chesed",
+        "geburah"
+      ],
+      "20": [
+        "chesed",
+        "tiphareth"
+      ],
+      "21": [
+        "chesed",
+        "netzach"
+      ],
+      "22": [
+        "geburah",
+        "tiphareth"
+      ],
+      "23": [
+        "geburah",
+        "hod"
+      ],
+      "24": [
+        "tiphareth",
+        "netzach"
+      ],
+      "25": [
+        "tiphareth",
+        "yesod"
+      ],
+      "26": [
+        "tiphareth",
+        "hod"
+      ],
+      "27": [
+        "netzach",
+        "hod"
+      ],
+      "28": [
+        "netzach",
+        "yesod"
+      ],
+      "29": [
+        "netzach",
+        "malkuth"
+      ],
+      "30": [
+        "hod",
+        "yesod"
+      ],
+      "31": [
+        "hod",
+        "malkuth"
+      ],
+      "32": [
+        "yesod",
+        "malkuth"
+      ]
+    },
+    "tree_paths_source": "Kircher, Oedipus Aegyptiacus (1652–54), the arrangement the Golden Dawn used; trumps, letters and attributions from tarot/golden-dawn-book-t-tarot"
+  },
+  "items": [
+    {
+      "id": "tree-of-life",
+      "name": "Tree of Life",
+      "sort_order": 1,
+      "category": "concept",
+      "level": 1,
+      "keywords": [
+        "concept"
+      ],
+      "metadata": {
+        "kind": "concept",
+        "aliases": [
+          "Tree of Life"
+        ]
+      },
+      "sections": {
+        "Entry": "A diagram of ten spheres, the [sephiroth](https://tarot.recursive.eco/pages/glossary.html#sephirah), joined by twenty-two [paths](https://tarot.recursive.eco/pages/glossary.html#path). The Golden Dawn drew it after the Christian-Kabbalist tree of Athanasius Kircher (1652) and laid the whole tarot on it: each trump on a path, each Ace in Kether, each small card Two to Ten in the sephirah of its number ([Book T](https://tarot.recursive.eco/pages/glossary.html#book-t)). The Kabbalah it rests on was taken from a living Jewish tradition and refitted to a Victorian scheme; the [The Golden Dawn — the Map and the Walk](https://tarot.recursive.eco/pages/course-viewer.html?course=walking-the-golden-dawn-path) course says more. Not to be confused with this library's *Tree of Tarot*, a family tree of decks.\n\n[See the map](https://tarot.recursive.eco/pages/tree-of-life.html)",
+        "Sources": "- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- S. L. MacGregor Mathers, *The Kabbalah Unveiled* (London, 1887), Introduction ([sacred-texts](https://sacred-texts.com/jud/tku/index.htm))"
+      }
+    },
+    {
+      "id": "sephirah",
+      "name": "Sephirah (plural sephiroth)",
+      "sort_order": 2,
+      "category": "concept",
+      "level": 1,
+      "keywords": [
+        "concept"
+      ],
+      "metadata": {
+        "kind": "concept",
+        "aliases": [
+          "sephiroth",
+          "Sephiroth",
+          "sephirah",
+          "Sephirah"
+        ]
+      },
+      "sections": {
+        "Entry": "Hebrew for a numbered sphere, or emanation: the ten stations of the [Tree of Life](https://tarot.recursive.eco/pages/glossary.html#tree-of-life), from [Kether](https://tarot.recursive.eco/pages/glossary.html#kether) (1) to [Malkuth](https://tarot.recursive.eco/pages/glossary.html#malkuth) (10). Mathers gives their names in English as Crown, Wisdom, Understanding, Mercy, Strength, Beauty, Victory, Splendour, Foundation and Kingdom. In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) the small cards are \"classified under the nine Sephiroth below Kether\": the Twos in Chokmah, the Threes in Binah, and so on to the Tens in Malkuth.",
+        "Sources": "- S. L. MacGregor Mathers, *The Kabbalah Unveiled* (London, 1887), Introduction ([sacred-texts](https://sacred-texts.com/jud/tku/index.htm))\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt)), \"Here follow the general meanings of the small cards\""
+      }
+    },
+    {
+      "id": "path",
+      "name": "Path",
+      "sort_order": 3,
+      "category": "concept",
+      "level": 1,
+      "keywords": [
+        "concept"
+      ],
+      "metadata": {
+        "kind": "concept",
+        "aliases": [
+          "paths",
+          "Paths"
+        ]
+      },
+      "sections": {
+        "Entry": "The *Sepher Yetzirah* opens: \"In two and thirty most occult and wonderful paths of wisdom\". The ten [sephiroth](https://tarot.recursive.eco/pages/glossary.html#sephirah) count as the first ten, and the twenty-two letters of the [Hebrew alphabet](https://tarot.recursive.eco/pages/glossary.html#hebrew-letters) as the rest. The Golden Dawn numbered the letter-paths 11 to 32 and gave each one a trump, so a trump is a way *between* two sephiroth rather than a place: Justice, path 22, runs from [Geburah](https://tarot.recursive.eco/pages/glossary.html#geburah) to [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth).\n\n[See the 22 paths on the map](https://tarot.recursive.eco/pages/tree-of-life.html)",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)), ch. I\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "hebrew-letters",
+      "name": "Hebrew letters",
+      "sort_order": 4,
+      "category": "concept",
+      "level": 1,
+      "keywords": [
+        "concept"
+      ],
+      "metadata": {
+        "kind": "concept",
+        "aliases": [
+          "Hebrew letters",
+          "Hebrew letter",
+          "Hebrew alphabet"
+        ]
+      },
+      "sections": {
+        "Entry": "The twenty-two letters of the Hebrew alphabet, which the Golden Dawn set on the twenty-two [paths](https://tarot.recursive.eco/pages/glossary.html#path) in alphabetical order, Aleph on path 11 to Tau on path 32. The *Sepher Yetzirah* sorts them into three mothers (Aleph, Mem, Shin), seven doubles and twelve simple, or single, letters; the Order gave the mothers to the elements, the doubles to the seven planets and the simples to the twelve signs. Which planet goes with which double differs between versions of the *Sepher Yetzirah*; the Order made its own choice.",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)), chs. III–V\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "book-t",
+      "name": "Book T",
+      "sort_order": 5,
+      "category": "concept",
+      "level": 1,
+      "keywords": [
+        "text"
+      ],
+      "metadata": {
+        "kind": "text",
+        "aliases": [
+          "Book T"
+        ]
+      },
+      "sections": {
+        "Entry": "The Golden Dawn's own paper on the tarot, set down mainly by S. L. MacGregor Mathers around 1888 and kept among initiates until Aleister Crowley printed it in *The Equinox* in 1912. It gives each card its title, its place on the [Tree of Life](https://tarot.recursive.eco/pages/glossary.html#tree-of-life) and in the zodiac, a description, a meaning, and a method of divination read by [dignities](https://tarot.recursive.eco/pages/glossary.html#dignities). It is a different text from Mathers's public booklet *The Tarot* (1888). Public domain; every card of this library's Golden Dawn deck carries its words.",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- [Golden Dawn decks: lineage and where to see them](https://tarot.recursive.eco/pages/golden-dawn-decks.html)"
+      }
+    },
+    {
+      "id": "dignities",
+      "name": "Dignities",
+      "sort_order": 6,
+      "category": "concept",
+      "level": 1,
+      "keywords": [
+        "concept"
+      ],
+      "metadata": {
+        "kind": "concept",
+        "aliases": [
+          "dignities",
+          "Dignities",
+          "ill dignified",
+          "well dignified",
+          "ill-dignified",
+          "well-dignified",
+          "dignity"
+        ]
+      },
+      "sections": {
+        "Entry": "Book T's way of weighing a card in a spread: \"A CARD is strong or weak, well dignified or ill dignified, according to the cards next to it on either side.\" Cards of the same suit strengthen it; Swords and Pentacles, Wands and Cups, weaken each other. Book T gives no rule for a card that lands upside down: the reversed meanings came later, through books printed for the public. The chapter [Dignities, not reversals](https://tarot.recursive.eco/pages/course-viewer.html?course=golden-dawn-dignities-not-reversals) sets the sources side by side.",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt)), \"Of the Dignities\"\n- [Dignities, not reversals](https://tarot.recursive.eco/pages/course-viewer.html?course=golden-dawn-dignities-not-reversals)"
+      }
+    },
+    {
+      "id": "decan",
+      "name": "Decan",
+      "sort_order": 7,
+      "category": "concept",
+      "level": 1,
+      "keywords": [
+        "concept"
+      ],
+      "metadata": {
+        "kind": "concept",
+        "aliases": [
+          "decans",
+          "decan",
+          "Decans",
+          "Decan",
+          "decanate"
+        ]
+      },
+      "sections": {
+        "Entry": "One of thirty-six ten-degree slices of the zodiac, three to a sign. [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives each decan to one small card, Two to Ten, and each a planetary ruler, beginning \"from the royal Star of Leo\": so the first decan, [Saturn](https://tarot.recursive.eco/pages/glossary.html#saturn) in [Leo](https://tarot.recursive.eco/pages/glossary.html#leo), is the Five of Wands. The card titles (Dominion, Ruin, Material Happiness) are read from these pairings.",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt)), \"Of the Thirty-six Decans\"\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "four-worlds",
+      "name": "The four worlds",
+      "sort_order": 8,
+      "category": "concept",
+      "level": 1,
+      "keywords": [
+        "concept"
+      ],
+      "metadata": {
+        "kind": "concept",
+        "aliases": [
+          "Atziluth",
+          "Briah",
+          "Yetzirah",
+          "Assiah"
+        ]
+      },
+      "sections": {
+        "Entry": "The Kabbalah's four levels of being, from the highest down: Atziluth (the Archetypal World), Briah (the Creative), Yetzirah (the Formative) and Assiah (the Material). This library's Golden Dawn deck sets the four suits in them, Wands in Atziluth, Cups in Briah, Swords in Yetzirah and Pentacles in Assiah, so the Two of Cups is Chokmah in Briah. Book T itself names Yetzirah, where the Aces rule \"as the connecting link between Yetzirah and the Material Plane\".",
+        "Sources": "- S. L. MacGregor Mathers, *The Kabbalah Unveiled* (London, 1887), Introduction ([sacred-texts](https://sacred-texts.com/jud/tku/index.htm))\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt)), \"Of the Aces\"\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "pathworking",
+      "name": "Pathworking",
+      "sort_order": 9,
+      "category": "concept",
+      "level": 1,
+      "keywords": [
+        "concept"
+      ],
+      "metadata": {
+        "kind": "concept",
+        "aliases": [
+          "pathworking",
+          "Pathworking"
+        ]
+      },
+      "sections": {
+        "Entry": "A contemplative practice in which a trump is entered in imagination, as a way between two [sephiroth](https://tarot.recursive.eco/pages/glossary.html#sephirah), rather than consulted for a meaning. The name belongs to the Order's heirs; the course [The Golden Dawn — the Map and the Walk](https://tarot.recursive.eco/pages/course-viewer.html?course=walking-the-golden-dawn-path) walks four of these gates. Pathworking, not prophecy: the card is a door you may choose to cross.",
+        "Sources": "- [The Golden Dawn — the Map and the Walk](https://tarot.recursive.eco/pages/course-viewer.html?course=walking-the-golden-dawn-path)"
+      }
+    },
+    {
+      "id": "maat",
+      "name": "Ma'at",
+      "sort_order": 10,
+      "category": "concept",
+      "level": 1,
+      "keywords": [
+        "concept"
+      ],
+      "metadata": {
+        "kind": "concept",
+        "aliases": [
+          "Ma'at",
+          "Ma’at",
+          "Maat"
+        ]
+      },
+      "sections": {
+        "Entry": "The Egyptian idea of truth, balance and right order, and the goddess who stands for it, shown with an ostrich feather. In the judgment scene of the *Book of the Dead* the dead person's heart is weighed on a balance against the feather of Ma'at. Later readers set that balance beside the scales of the trump [Justice](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-11-justice); it is a comparison, not Book T's: Book T does not name her, and no tarot writer before Champollion's decipherment of hieroglyphs (1822), Court de Gébelin (1781) included, could have read her name.",
+        "Sources": "- E. A. Wallis Budge, *The Book of the Dead: the Papyrus of Ani* (London, 1895), the judgment scene ([sacred-texts](https://sacred-texts.com/egy/ebod/index.htm))\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt)) (Justice: no mention)"
+      }
+    },
+    {
+      "id": "kether",
+      "name": "Kether (the Crown)",
+      "sort_order": 11,
+      "category": "sephirah",
+      "level": 1,
+      "keywords": [
+        "sephirah"
+      ],
+      "metadata": {
+        "kind": "sephirah",
+        "aliases": [
+          "Kether"
+        ],
+        "number": 1,
+        "pillar": "middle"
+      },
+      "sections": {
+        "Entry": "**1. Kether**, the Crown. The first of the ten [sephiroth](https://tarot.recursive.eco/pages/glossary.html#sephirah) of the [Tree of Life](https://tarot.recursive.eco/pages/glossary.html#tree-of-life), on the middle pillar. In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) the four Aces stand here: they answer \"to the Dominion of the Letters of the Name in the Kether of each\".\n\nPaths from here: [path 11](https://tarot.recursive.eco/pages/tree-of-life.html?path=11) (The Fool) to [Chokmah](https://tarot.recursive.eco/pages/glossary.html#chokmah); [path 12](https://tarot.recursive.eco/pages/tree-of-life.html?path=12) (The Magician) to [Binah](https://tarot.recursive.eco/pages/glossary.html#binah); [path 13](https://tarot.recursive.eco/pages/tree-of-life.html?path=13) (The High Priestess) to [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth).\n\n[See it on the map](https://tarot.recursive.eco/pages/tree-of-life.html?sephirah=kether)",
+        "Sources": "- S. L. MacGregor Mathers, *The Kabbalah Unveiled* (London, 1887), Introduction ([sacred-texts](https://sacred-texts.com/jud/tku/index.htm)) (names and their English)\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus)) (which paths meet here)"
+      }
+    },
+    {
+      "id": "chokmah",
+      "name": "Chokmah (Wisdom)",
+      "sort_order": 12,
+      "category": "sephirah",
+      "level": 1,
+      "keywords": [
+        "sephirah"
+      ],
+      "metadata": {
+        "kind": "sephirah",
+        "aliases": [
+          "Chokmah",
+          "Chokhmah"
+        ],
+        "number": 2,
+        "pillar": "right"
+      },
+      "sections": {
+        "Entry": "**2. Chokmah**, Wisdom. The second of the ten [sephiroth](https://tarot.recursive.eco/pages/glossary.html#sephirah) of the [Tree of Life](https://tarot.recursive.eco/pages/glossary.html#tree-of-life), on the right-hand pillar, of Mercy, as the diagram is drawn. In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) the four Twos are classified under Chokmah, one in each suit.\n\nPaths from here: [path 11](https://tarot.recursive.eco/pages/tree-of-life.html?path=11) (The Fool) to [Kether](https://tarot.recursive.eco/pages/glossary.html#kether); [path 14](https://tarot.recursive.eco/pages/tree-of-life.html?path=14) (The Empress) to [Binah](https://tarot.recursive.eco/pages/glossary.html#binah); [path 15](https://tarot.recursive.eco/pages/tree-of-life.html?path=15) (The Emperor) to [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth); [path 16](https://tarot.recursive.eco/pages/tree-of-life.html?path=16) (The Hierophant) to [Chesed](https://tarot.recursive.eco/pages/glossary.html#chesed).\n\n[See it on the map](https://tarot.recursive.eco/pages/tree-of-life.html?sephirah=chokmah)",
+        "Sources": "- S. L. MacGregor Mathers, *The Kabbalah Unveiled* (London, 1887), Introduction ([sacred-texts](https://sacred-texts.com/jud/tku/index.htm)) (names and their English)\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus)) (which paths meet here)"
+      }
+    },
+    {
+      "id": "binah",
+      "name": "Binah (Understanding)",
+      "sort_order": 13,
+      "category": "sephirah",
+      "level": 1,
+      "keywords": [
+        "sephirah"
+      ],
+      "metadata": {
+        "kind": "sephirah",
+        "aliases": [
+          "Binah"
+        ],
+        "number": 3,
+        "pillar": "left"
+      },
+      "sections": {
+        "Entry": "**3. Binah**, Understanding. The third of the ten [sephiroth](https://tarot.recursive.eco/pages/glossary.html#sephirah) of the [Tree of Life](https://tarot.recursive.eco/pages/glossary.html#tree-of-life), on the left-hand pillar, of Severity, as the diagram is drawn. In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) the four Threes are classified under Binah, one in each suit.\n\nPaths from here: [path 12](https://tarot.recursive.eco/pages/tree-of-life.html?path=12) (The Magician) to [Kether](https://tarot.recursive.eco/pages/glossary.html#kether); [path 14](https://tarot.recursive.eco/pages/tree-of-life.html?path=14) (The Empress) to [Chokmah](https://tarot.recursive.eco/pages/glossary.html#chokmah); [path 17](https://tarot.recursive.eco/pages/tree-of-life.html?path=17) (The Lovers) to [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth); [path 18](https://tarot.recursive.eco/pages/tree-of-life.html?path=18) (The Chariot) to [Geburah](https://tarot.recursive.eco/pages/glossary.html#geburah).\n\n[See it on the map](https://tarot.recursive.eco/pages/tree-of-life.html?sephirah=binah)",
+        "Sources": "- S. L. MacGregor Mathers, *The Kabbalah Unveiled* (London, 1887), Introduction ([sacred-texts](https://sacred-texts.com/jud/tku/index.htm)) (names and their English)\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus)) (which paths meet here)"
+      }
+    },
+    {
+      "id": "chesed",
+      "name": "Chesed (Mercy)",
+      "sort_order": 14,
+      "category": "sephirah",
+      "level": 1,
+      "keywords": [
+        "sephirah"
+      ],
+      "metadata": {
+        "kind": "sephirah",
+        "aliases": [
+          "Chesed"
+        ],
+        "number": 4,
+        "pillar": "right"
+      },
+      "sections": {
+        "Entry": "**4. Chesed**, Mercy. The fourth of the ten [sephiroth](https://tarot.recursive.eco/pages/glossary.html#sephirah) of the [Tree of Life](https://tarot.recursive.eco/pages/glossary.html#tree-of-life), on the right-hand pillar, of Mercy, as the diagram is drawn. In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) the four Fours are classified under Chesed, one in each suit.\n\nPaths from here: [path 16](https://tarot.recursive.eco/pages/tree-of-life.html?path=16) (The Hierophant) to [Chokmah](https://tarot.recursive.eco/pages/glossary.html#chokmah); [path 19](https://tarot.recursive.eco/pages/tree-of-life.html?path=19) (Strength) to [Geburah](https://tarot.recursive.eco/pages/glossary.html#geburah); [path 20](https://tarot.recursive.eco/pages/tree-of-life.html?path=20) (The Hermit) to [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth); [path 21](https://tarot.recursive.eco/pages/tree-of-life.html?path=21) (Wheel of Fortune) to [Netzach](https://tarot.recursive.eco/pages/glossary.html#netzach).\n\n[See it on the map](https://tarot.recursive.eco/pages/tree-of-life.html?sephirah=chesed)",
+        "Sources": "- S. L. MacGregor Mathers, *The Kabbalah Unveiled* (London, 1887), Introduction ([sacred-texts](https://sacred-texts.com/jud/tku/index.htm)) (names and their English)\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus)) (which paths meet here)"
+      }
+    },
+    {
+      "id": "geburah",
+      "name": "Geburah (Strength, or Severity)",
+      "sort_order": 15,
+      "category": "sephirah",
+      "level": 1,
+      "keywords": [
+        "sephirah"
+      ],
+      "metadata": {
+        "kind": "sephirah",
+        "aliases": [
+          "Geburah"
+        ],
+        "number": 5,
+        "pillar": "left"
+      },
+      "sections": {
+        "Entry": "**5. Geburah**, Strength, or Severity. The fifth of the ten [sephiroth](https://tarot.recursive.eco/pages/glossary.html#sephirah) of the [Tree of Life](https://tarot.recursive.eco/pages/glossary.html#tree-of-life), on the left-hand pillar, of Severity, as the diagram is drawn. In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) the four Fives are classified under Geburah, one in each suit.\n\nPaths from here: [path 18](https://tarot.recursive.eco/pages/tree-of-life.html?path=18) (The Chariot) to [Binah](https://tarot.recursive.eco/pages/glossary.html#binah); [path 19](https://tarot.recursive.eco/pages/tree-of-life.html?path=19) (Strength) to [Chesed](https://tarot.recursive.eco/pages/glossary.html#chesed); [path 22](https://tarot.recursive.eco/pages/tree-of-life.html?path=22) (Justice) to [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth); [path 23](https://tarot.recursive.eco/pages/tree-of-life.html?path=23) (The Hanged Man) to [Hod](https://tarot.recursive.eco/pages/glossary.html#hod).\n\n[See it on the map](https://tarot.recursive.eco/pages/tree-of-life.html?sephirah=geburah)",
+        "Sources": "- S. L. MacGregor Mathers, *The Kabbalah Unveiled* (London, 1887), Introduction ([sacred-texts](https://sacred-texts.com/jud/tku/index.htm)) (names and their English)\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus)) (which paths meet here)"
+      }
+    },
+    {
+      "id": "tiphareth",
+      "name": "Tiphareth (Beauty)",
+      "sort_order": 16,
+      "category": "sephirah",
+      "level": 1,
+      "keywords": [
+        "sephirah"
+      ],
+      "metadata": {
+        "kind": "sephirah",
+        "aliases": [
+          "Tiphareth",
+          "Tiphereth"
+        ],
+        "number": 6,
+        "pillar": "middle"
+      },
+      "sections": {
+        "Entry": "**6. Tiphareth**, Beauty. The sixth of the ten [sephiroth](https://tarot.recursive.eco/pages/glossary.html#sephirah) of the [Tree of Life](https://tarot.recursive.eco/pages/glossary.html#tree-of-life), on the middle pillar. In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) the four Sixes are classified under Tiphareth, one in each suit.\n\nPaths from here: [path 13](https://tarot.recursive.eco/pages/tree-of-life.html?path=13) (The High Priestess) to [Kether](https://tarot.recursive.eco/pages/glossary.html#kether); [path 15](https://tarot.recursive.eco/pages/tree-of-life.html?path=15) (The Emperor) to [Chokmah](https://tarot.recursive.eco/pages/glossary.html#chokmah); [path 17](https://tarot.recursive.eco/pages/tree-of-life.html?path=17) (The Lovers) to [Binah](https://tarot.recursive.eco/pages/glossary.html#binah); [path 20](https://tarot.recursive.eco/pages/tree-of-life.html?path=20) (The Hermit) to [Chesed](https://tarot.recursive.eco/pages/glossary.html#chesed); [path 22](https://tarot.recursive.eco/pages/tree-of-life.html?path=22) (Justice) to [Geburah](https://tarot.recursive.eco/pages/glossary.html#geburah); [path 24](https://tarot.recursive.eco/pages/tree-of-life.html?path=24) (Death) to [Netzach](https://tarot.recursive.eco/pages/glossary.html#netzach); [path 25](https://tarot.recursive.eco/pages/tree-of-life.html?path=25) (Temperance) to [Yesod](https://tarot.recursive.eco/pages/glossary.html#yesod); [path 26](https://tarot.recursive.eco/pages/tree-of-life.html?path=26) (The Devil) to [Hod](https://tarot.recursive.eco/pages/glossary.html#hod).\n\n[See it on the map](https://tarot.recursive.eco/pages/tree-of-life.html?sephirah=tiphareth)",
+        "Sources": "- S. L. MacGregor Mathers, *The Kabbalah Unveiled* (London, 1887), Introduction ([sacred-texts](https://sacred-texts.com/jud/tku/index.htm)) (names and their English)\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus)) (which paths meet here)"
+      }
+    },
+    {
+      "id": "netzach",
+      "name": "Netzach (Victory)",
+      "sort_order": 17,
+      "category": "sephirah",
+      "level": 1,
+      "keywords": [
+        "sephirah"
+      ],
+      "metadata": {
+        "kind": "sephirah",
+        "aliases": [
+          "Netzach"
+        ],
+        "number": 7,
+        "pillar": "right"
+      },
+      "sections": {
+        "Entry": "**7. Netzach**, Victory. The seventh of the ten [sephiroth](https://tarot.recursive.eco/pages/glossary.html#sephirah) of the [Tree of Life](https://tarot.recursive.eco/pages/glossary.html#tree-of-life), on the right-hand pillar, of Mercy, as the diagram is drawn. In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) the four Sevens are classified under Netzach, one in each suit.\n\nPaths from here: [path 21](https://tarot.recursive.eco/pages/tree-of-life.html?path=21) (Wheel of Fortune) to [Chesed](https://tarot.recursive.eco/pages/glossary.html#chesed); [path 24](https://tarot.recursive.eco/pages/tree-of-life.html?path=24) (Death) to [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth); [path 27](https://tarot.recursive.eco/pages/tree-of-life.html?path=27) (The Tower) to [Hod](https://tarot.recursive.eco/pages/glossary.html#hod); [path 28](https://tarot.recursive.eco/pages/tree-of-life.html?path=28) (The Star) to [Yesod](https://tarot.recursive.eco/pages/glossary.html#yesod); [path 29](https://tarot.recursive.eco/pages/tree-of-life.html?path=29) (The Moon) to [Malkuth](https://tarot.recursive.eco/pages/glossary.html#malkuth).\n\n[See it on the map](https://tarot.recursive.eco/pages/tree-of-life.html?sephirah=netzach)",
+        "Sources": "- S. L. MacGregor Mathers, *The Kabbalah Unveiled* (London, 1887), Introduction ([sacred-texts](https://sacred-texts.com/jud/tku/index.htm)) (names and their English)\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus)) (which paths meet here)"
+      }
+    },
+    {
+      "id": "hod",
+      "name": "Hod (Splendour)",
+      "sort_order": 18,
+      "category": "sephirah",
+      "level": 1,
+      "keywords": [
+        "sephirah"
+      ],
+      "metadata": {
+        "kind": "sephirah",
+        "aliases": [
+          "Hod"
+        ],
+        "number": 8,
+        "pillar": "left"
+      },
+      "sections": {
+        "Entry": "**8. Hod**, Splendour. The eighth of the ten [sephiroth](https://tarot.recursive.eco/pages/glossary.html#sephirah) of the [Tree of Life](https://tarot.recursive.eco/pages/glossary.html#tree-of-life), on the left-hand pillar, of Severity, as the diagram is drawn. In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) the four Eights are classified under Hod, one in each suit.\n\nPaths from here: [path 23](https://tarot.recursive.eco/pages/tree-of-life.html?path=23) (The Hanged Man) to [Geburah](https://tarot.recursive.eco/pages/glossary.html#geburah); [path 26](https://tarot.recursive.eco/pages/tree-of-life.html?path=26) (The Devil) to [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth); [path 27](https://tarot.recursive.eco/pages/tree-of-life.html?path=27) (The Tower) to [Netzach](https://tarot.recursive.eco/pages/glossary.html#netzach); [path 30](https://tarot.recursive.eco/pages/tree-of-life.html?path=30) (The Sun) to [Yesod](https://tarot.recursive.eco/pages/glossary.html#yesod); [path 31](https://tarot.recursive.eco/pages/tree-of-life.html?path=31) (Judgement) to [Malkuth](https://tarot.recursive.eco/pages/glossary.html#malkuth).\n\n[See it on the map](https://tarot.recursive.eco/pages/tree-of-life.html?sephirah=hod)",
+        "Sources": "- S. L. MacGregor Mathers, *The Kabbalah Unveiled* (London, 1887), Introduction ([sacred-texts](https://sacred-texts.com/jud/tku/index.htm)) (names and their English)\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus)) (which paths meet here)"
+      }
+    },
+    {
+      "id": "yesod",
+      "name": "Yesod (the Foundation)",
+      "sort_order": 19,
+      "category": "sephirah",
+      "level": 1,
+      "keywords": [
+        "sephirah"
+      ],
+      "metadata": {
+        "kind": "sephirah",
+        "aliases": [
+          "Yesod"
+        ],
+        "number": 9,
+        "pillar": "middle"
+      },
+      "sections": {
+        "Entry": "**9. Yesod**, the Foundation. The ninth of the ten [sephiroth](https://tarot.recursive.eco/pages/glossary.html#sephirah) of the [Tree of Life](https://tarot.recursive.eco/pages/glossary.html#tree-of-life), on the middle pillar. In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) the four Nines are classified under Yesod, one in each suit.\n\nPaths from here: [path 25](https://tarot.recursive.eco/pages/tree-of-life.html?path=25) (Temperance) to [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth); [path 28](https://tarot.recursive.eco/pages/tree-of-life.html?path=28) (The Star) to [Netzach](https://tarot.recursive.eco/pages/glossary.html#netzach); [path 30](https://tarot.recursive.eco/pages/tree-of-life.html?path=30) (The Sun) to [Hod](https://tarot.recursive.eco/pages/glossary.html#hod); [path 32](https://tarot.recursive.eco/pages/tree-of-life.html?path=32) (The World) to [Malkuth](https://tarot.recursive.eco/pages/glossary.html#malkuth).\n\n[See it on the map](https://tarot.recursive.eco/pages/tree-of-life.html?sephirah=yesod)",
+        "Sources": "- S. L. MacGregor Mathers, *The Kabbalah Unveiled* (London, 1887), Introduction ([sacred-texts](https://sacred-texts.com/jud/tku/index.htm)) (names and their English)\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus)) (which paths meet here)"
+      }
+    },
+    {
+      "id": "malkuth",
+      "name": "Malkuth (the Kingdom)",
+      "sort_order": 20,
+      "category": "sephirah",
+      "level": 1,
+      "keywords": [
+        "sephirah"
+      ],
+      "metadata": {
+        "kind": "sephirah",
+        "aliases": [
+          "Malkuth"
+        ],
+        "number": 10,
+        "pillar": "middle"
+      },
+      "sections": {
+        "Entry": "**10. Malkuth**, the Kingdom. The tenth of the ten [sephiroth](https://tarot.recursive.eco/pages/glossary.html#sephirah) of the [Tree of Life](https://tarot.recursive.eco/pages/glossary.html#tree-of-life), on the middle pillar. In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) the four Tens are classified under Malkuth, one in each suit.\n\nPaths from here: [path 29](https://tarot.recursive.eco/pages/tree-of-life.html?path=29) (The Moon) to [Netzach](https://tarot.recursive.eco/pages/glossary.html#netzach); [path 31](https://tarot.recursive.eco/pages/tree-of-life.html?path=31) (Judgement) to [Hod](https://tarot.recursive.eco/pages/glossary.html#hod); [path 32](https://tarot.recursive.eco/pages/tree-of-life.html?path=32) (The World) to [Yesod](https://tarot.recursive.eco/pages/glossary.html#yesod).\n\n[See it on the map](https://tarot.recursive.eco/pages/tree-of-life.html?sephirah=malkuth)",
+        "Sources": "- S. L. MacGregor Mathers, *The Kabbalah Unveiled* (London, 1887), Introduction ([sacred-texts](https://sacred-texts.com/jud/tku/index.htm)) (names and their English)\n- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus)) (which paths meet here)"
+      }
+    },
+    {
+      "id": "aleph",
+      "name": "א Aleph",
+      "sort_order": 21,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Aleph"
+        ],
+        "glyph": "א",
+        "tree_path": 11,
+        "trump_id": "major-00-the-fool"
+      },
+      "sections": {
+        "Entry": "**א Aleph**, 'ox': a mother letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 11](https://tarot.recursive.eco/pages/tree-of-life.html?path=11), joining [Kether](https://tarot.recursive.eco/pages/glossary.html#kether) and [Chokmah](https://tarot.recursive.eco/pages/glossary.html#chokmah), and the trump [The Fool](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-00-the-fool) (0 in this deck), attributed to [Air](https://tarot.recursive.eco/pages/glossary.html#air).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "beth",
+      "name": "ב Beth",
+      "sort_order": 22,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Beth"
+        ],
+        "glyph": "ב",
+        "tree_path": 12,
+        "trump_id": "major-01-the-magician"
+      },
+      "sections": {
+        "Entry": "**ב Beth**, 'house': a double letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 12](https://tarot.recursive.eco/pages/tree-of-life.html?path=12), joining [Kether](https://tarot.recursive.eco/pages/glossary.html#kether) and [Binah](https://tarot.recursive.eco/pages/glossary.html#binah), and the trump [The Magician](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-01-the-magician) (I in this deck), attributed to [Mercury](https://tarot.recursive.eco/pages/glossary.html#mercury).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "gimel",
+      "name": "ג Gimel",
+      "sort_order": 23,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Gimel"
+        ],
+        "glyph": "ג",
+        "tree_path": 13,
+        "trump_id": "major-02-the-high-priestess"
+      },
+      "sections": {
+        "Entry": "**ג Gimel**, 'camel': a double letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 13](https://tarot.recursive.eco/pages/tree-of-life.html?path=13), joining [Kether](https://tarot.recursive.eco/pages/glossary.html#kether) and [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth), and the trump [The High Priestess](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-02-the-high-priestess) (II in this deck), attributed to the [Moon](https://tarot.recursive.eco/pages/glossary.html#moon).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "daleth",
+      "name": "ד Daleth",
+      "sort_order": 24,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Daleth"
+        ],
+        "glyph": "ד",
+        "tree_path": 14,
+        "trump_id": "major-03-the-empress"
+      },
+      "sections": {
+        "Entry": "**ד Daleth**, 'door': a double letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 14](https://tarot.recursive.eco/pages/tree-of-life.html?path=14), joining [Chokmah](https://tarot.recursive.eco/pages/glossary.html#chokmah) and [Binah](https://tarot.recursive.eco/pages/glossary.html#binah), and the trump [The Empress](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-03-the-empress) (III in this deck), attributed to [Venus](https://tarot.recursive.eco/pages/glossary.html#venus).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "heh",
+      "name": "ה Heh",
+      "sort_order": 25,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Heh"
+        ],
+        "glyph": "ה",
+        "tree_path": 15,
+        "trump_id": "major-04-the-emperor"
+      },
+      "sections": {
+        "Entry": "**ה Heh**, 'window': a simple letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 15](https://tarot.recursive.eco/pages/tree-of-life.html?path=15), joining [Chokmah](https://tarot.recursive.eco/pages/glossary.html#chokmah) and [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth), and the trump [The Emperor](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-04-the-emperor) (IV in this deck), attributed to [Aries](https://tarot.recursive.eco/pages/glossary.html#aries).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "vau",
+      "name": "ו Vau",
+      "sort_order": 26,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Vau",
+          "Vav"
+        ],
+        "glyph": "ו",
+        "tree_path": 16,
+        "trump_id": "major-05-the-hierophant"
+      },
+      "sections": {
+        "Entry": "**ו Vau**, 'nail': a simple letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 16](https://tarot.recursive.eco/pages/tree-of-life.html?path=16), joining [Chokmah](https://tarot.recursive.eco/pages/glossary.html#chokmah) and [Chesed](https://tarot.recursive.eco/pages/glossary.html#chesed), and the trump [The Hierophant](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-05-the-hierophant) (V in this deck), attributed to [Taurus](https://tarot.recursive.eco/pages/glossary.html#taurus).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "zain",
+      "name": "ז Zain",
+      "sort_order": 27,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Zain",
+          "Zayin"
+        ],
+        "glyph": "ז",
+        "tree_path": 17,
+        "trump_id": "major-06-the-lovers"
+      },
+      "sections": {
+        "Entry": "**ז Zain**, 'sword': a simple letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 17](https://tarot.recursive.eco/pages/tree-of-life.html?path=17), joining [Binah](https://tarot.recursive.eco/pages/glossary.html#binah) and [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth), and the trump [The Lovers](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-06-the-lovers) (VI in this deck), attributed to [Gemini](https://tarot.recursive.eco/pages/glossary.html#gemini).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "cheth",
+      "name": "ח Cheth",
+      "sort_order": 28,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Cheth"
+        ],
+        "glyph": "ח",
+        "tree_path": 18,
+        "trump_id": "major-07-the-chariot"
+      },
+      "sections": {
+        "Entry": "**ח Cheth**, 'fence': a simple letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 18](https://tarot.recursive.eco/pages/tree-of-life.html?path=18), joining [Binah](https://tarot.recursive.eco/pages/glossary.html#binah) and [Geburah](https://tarot.recursive.eco/pages/glossary.html#geburah), and the trump [The Chariot](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-07-the-chariot) (VII in this deck), attributed to [Cancer](https://tarot.recursive.eco/pages/glossary.html#cancer).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "teth",
+      "name": "ט Teth",
+      "sort_order": 29,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Teth"
+        ],
+        "glyph": "ט",
+        "tree_path": 19,
+        "trump_id": "major-08-strength"
+      },
+      "sections": {
+        "Entry": "**ט Teth**, 'serpent': a simple letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 19](https://tarot.recursive.eco/pages/tree-of-life.html?path=19), joining [Chesed](https://tarot.recursive.eco/pages/glossary.html#chesed) and [Geburah](https://tarot.recursive.eco/pages/glossary.html#geburah), and the trump [Strength](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-08-strength) (VIII in this deck), attributed to [Leo](https://tarot.recursive.eco/pages/glossary.html#leo).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "yod",
+      "name": "י Yod",
+      "sort_order": 30,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Yod"
+        ],
+        "glyph": "י",
+        "tree_path": 20,
+        "trump_id": "major-09-the-hermit"
+      },
+      "sections": {
+        "Entry": "**י Yod**, 'hand': a simple letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 20](https://tarot.recursive.eco/pages/tree-of-life.html?path=20), joining [Chesed](https://tarot.recursive.eco/pages/glossary.html#chesed) and [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth), and the trump [The Hermit](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-09-the-hermit) (IX in this deck), attributed to [Virgo](https://tarot.recursive.eco/pages/glossary.html#virgo).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "kaph",
+      "name": "כ Kaph",
+      "sort_order": 31,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Kaph"
+        ],
+        "glyph": "כ",
+        "tree_path": 21,
+        "trump_id": "major-10-wheel-of-fortune"
+      },
+      "sections": {
+        "Entry": "**כ Kaph**, 'palm': a double letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 21](https://tarot.recursive.eco/pages/tree-of-life.html?path=21), joining [Chesed](https://tarot.recursive.eco/pages/glossary.html#chesed) and [Netzach](https://tarot.recursive.eco/pages/glossary.html#netzach), and the trump [Wheel of Fortune](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-10-wheel-of-fortune) (X in this deck), attributed to [Jupiter](https://tarot.recursive.eco/pages/glossary.html#jupiter).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "lamed",
+      "name": "ל Lamed",
+      "sort_order": 32,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Lamed"
+        ],
+        "glyph": "ל",
+        "tree_path": 22,
+        "trump_id": "major-11-justice"
+      },
+      "sections": {
+        "Entry": "**ל Lamed**, 'ox-goad': a simple letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 22](https://tarot.recursive.eco/pages/tree-of-life.html?path=22), joining [Geburah](https://tarot.recursive.eco/pages/glossary.html#geburah) and [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth), and the trump [Justice](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-11-justice) (XI in this deck), attributed to [Libra](https://tarot.recursive.eco/pages/glossary.html#libra).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "mem",
+      "name": "מ Mem",
+      "sort_order": 33,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Mem"
+        ],
+        "glyph": "מ",
+        "tree_path": 23,
+        "trump_id": "major-12-the-hanged-man"
+      },
+      "sections": {
+        "Entry": "**מ Mem**, 'water': a mother letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 23](https://tarot.recursive.eco/pages/tree-of-life.html?path=23), joining [Geburah](https://tarot.recursive.eco/pages/glossary.html#geburah) and [Hod](https://tarot.recursive.eco/pages/glossary.html#hod), and the trump [The Hanged Man](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-12-the-hanged-man) (XII in this deck), attributed to [Water](https://tarot.recursive.eco/pages/glossary.html#water).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "nun",
+      "name": "נ Nun",
+      "sort_order": 34,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Nun"
+        ],
+        "glyph": "נ",
+        "tree_path": 24,
+        "trump_id": "major-13-death"
+      },
+      "sections": {
+        "Entry": "**נ Nun**, 'fish': a simple letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 24](https://tarot.recursive.eco/pages/tree-of-life.html?path=24), joining [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth) and [Netzach](https://tarot.recursive.eco/pages/glossary.html#netzach), and the trump [Death](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-13-death) (XIII in this deck), attributed to [Scorpio](https://tarot.recursive.eco/pages/glossary.html#scorpio).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "samekh",
+      "name": "ס Samekh",
+      "sort_order": 35,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Samekh"
+        ],
+        "glyph": "ס",
+        "tree_path": 25,
+        "trump_id": "major-14-temperance"
+      },
+      "sections": {
+        "Entry": "**ס Samekh**, 'prop': a simple letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 25](https://tarot.recursive.eco/pages/tree-of-life.html?path=25), joining [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth) and [Yesod](https://tarot.recursive.eco/pages/glossary.html#yesod), and the trump [Temperance](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-14-temperance) (XIV in this deck), attributed to [Sagittarius](https://tarot.recursive.eco/pages/glossary.html#sagittarius).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "ayin",
+      "name": "ע Ayin",
+      "sort_order": 36,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Ayin"
+        ],
+        "glyph": "ע",
+        "tree_path": 26,
+        "trump_id": "major-15-the-devil"
+      },
+      "sections": {
+        "Entry": "**ע Ayin**, 'eye': a simple letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 26](https://tarot.recursive.eco/pages/tree-of-life.html?path=26), joining [Tiphareth](https://tarot.recursive.eco/pages/glossary.html#tiphareth) and [Hod](https://tarot.recursive.eco/pages/glossary.html#hod), and the trump [The Devil](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-15-the-devil) (XV in this deck), attributed to [Capricorn](https://tarot.recursive.eco/pages/glossary.html#capricorn).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "peh",
+      "name": "פ Peh",
+      "sort_order": 37,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Peh"
+        ],
+        "glyph": "פ",
+        "tree_path": 27,
+        "trump_id": "major-16-the-tower"
+      },
+      "sections": {
+        "Entry": "**פ Peh**, 'mouth': a double letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 27](https://tarot.recursive.eco/pages/tree-of-life.html?path=27), joining [Netzach](https://tarot.recursive.eco/pages/glossary.html#netzach) and [Hod](https://tarot.recursive.eco/pages/glossary.html#hod), and the trump [The Tower](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-16-the-tower) (XVI in this deck), attributed to [Mars](https://tarot.recursive.eco/pages/glossary.html#mars).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "tzaddi",
+      "name": "צ Tzaddi",
+      "sort_order": 38,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Tzaddi",
+          "Tzaddik"
+        ],
+        "glyph": "צ",
+        "tree_path": 28,
+        "trump_id": "major-17-the-star"
+      },
+      "sections": {
+        "Entry": "**צ Tzaddi**, 'fish-hook': a simple letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 28](https://tarot.recursive.eco/pages/tree-of-life.html?path=28), joining [Netzach](https://tarot.recursive.eco/pages/glossary.html#netzach) and [Yesod](https://tarot.recursive.eco/pages/glossary.html#yesod), and the trump [The Star](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-17-the-star) (XVII in this deck), attributed to [Aquarius](https://tarot.recursive.eco/pages/glossary.html#aquarius).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "qoph",
+      "name": "ק Qoph",
+      "sort_order": 39,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Qoph"
+        ],
+        "glyph": "ק",
+        "tree_path": 29,
+        "trump_id": "major-18-the-moon"
+      },
+      "sections": {
+        "Entry": "**ק Qoph**, 'back of head': a simple letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 29](https://tarot.recursive.eco/pages/tree-of-life.html?path=29), joining [Netzach](https://tarot.recursive.eco/pages/glossary.html#netzach) and [Malkuth](https://tarot.recursive.eco/pages/glossary.html#malkuth), and the trump [The Moon](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-18-the-moon) (XVIII in this deck), attributed to [Pisces](https://tarot.recursive.eco/pages/glossary.html#pisces).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "resh",
+      "name": "ר Resh",
+      "sort_order": 40,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Resh"
+        ],
+        "glyph": "ר",
+        "tree_path": 30,
+        "trump_id": "major-19-the-sun"
+      },
+      "sections": {
+        "Entry": "**ר Resh**, 'head': a double letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 30](https://tarot.recursive.eco/pages/tree-of-life.html?path=30), joining [Hod](https://tarot.recursive.eco/pages/glossary.html#hod) and [Yesod](https://tarot.recursive.eco/pages/glossary.html#yesod), and the trump [The Sun](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-19-the-sun) (XIX in this deck), attributed to the [Sun](https://tarot.recursive.eco/pages/glossary.html#sun).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "shin",
+      "name": "ש Shin",
+      "sort_order": 41,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Shin"
+        ],
+        "glyph": "ש",
+        "tree_path": 31,
+        "trump_id": "major-20-judgement"
+      },
+      "sections": {
+        "Entry": "**ש Shin**, 'tooth': a mother letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 31](https://tarot.recursive.eco/pages/tree-of-life.html?path=31), joining [Hod](https://tarot.recursive.eco/pages/glossary.html#hod) and [Malkuth](https://tarot.recursive.eco/pages/glossary.html#malkuth), and the trump [Judgement](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-20-judgement) (XX in this deck), attributed to [Fire](https://tarot.recursive.eco/pages/glossary.html#fire) / Spirit.",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "tau",
+      "name": "ת Tau",
+      "sort_order": 42,
+      "category": "hebrew-letter",
+      "level": 1,
+      "keywords": [
+        "hebrew-letter"
+      ],
+      "metadata": {
+        "kind": "hebrew-letter",
+        "aliases": [
+          "Tau"
+        ],
+        "glyph": "ת",
+        "tree_path": 32,
+        "trump_id": "major-21-the-world"
+      },
+      "sections": {
+        "Entry": "**ת Tau**, 'cross': a double letter in the *Sepher Yetzirah*. In the Golden Dawn it is [path 32](https://tarot.recursive.eco/pages/tree-of-life.html?path=32), joining [Yesod](https://tarot.recursive.eco/pages/glossary.html#yesod) and [Malkuth](https://tarot.recursive.eco/pages/glossary.html#malkuth), and the trump [The World](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-21-the-world) (XXI in this deck), attributed to [Saturn](https://tarot.recursive.eco/pages/glossary.html#saturn).",
+        "Sources": "- *Sepher Yetzirah*, tr. W. Wynn Westcott (London, 1887; 3rd ed. 1911) ([sacred-texts](https://sacred-texts.com/jud/yetzirah.htm)) (the three classes)\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json) (letter, meaning, path, trump, attribution)\n- the Tree as drawn by Athanasius Kircher, *Oedipus Aegyptiacus* II (Rome, 1652–54), whose arrangement of the 22 paths the Golden Dawn used ([about the book](https://en.wikipedia.org/wiki/Oedipus_Aegyptiacus))"
+      }
+    },
+    {
+      "id": "aries",
+      "name": "Aries",
+      "sort_order": 43,
+      "category": "sign",
+      "level": 1,
+      "keywords": [
+        "sign"
+      ],
+      "metadata": {
+        "kind": "sign",
+        "aliases": [
+          "Aries"
+        ],
+        "tree_path": 15
+      },
+      "sections": {
+        "Entry": "The first sign of the zodiac, the Ram, a sign of [Fire](https://tarot.recursive.eco/pages/glossary.html#fire). [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives it the trump [The Emperor](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-04-the-emperor), on [path 15](https://tarot.recursive.eco/pages/tree-of-life.html?path=15) with the letter [Heh](https://tarot.recursive.eco/pages/glossary.html#heh). Its three [decans](https://tarot.recursive.eco/pages/glossary.html#decan) are the small cards [Two of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-02) ([Mars](https://tarot.recursive.eco/pages/glossary.html#mars)), [Three of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-03) ([Sun](https://tarot.recursive.eco/pages/glossary.html#sun)), [Four of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-04) ([Venus](https://tarot.recursive.eco/pages/glossary.html#venus)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "taurus",
+      "name": "Taurus",
+      "sort_order": 44,
+      "category": "sign",
+      "level": 1,
+      "keywords": [
+        "sign"
+      ],
+      "metadata": {
+        "kind": "sign",
+        "aliases": [
+          "Taurus"
+        ],
+        "tree_path": 16
+      },
+      "sections": {
+        "Entry": "The second sign of the zodiac, the Bull, a sign of [Earth](https://tarot.recursive.eco/pages/glossary.html#earth). [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives it the trump [The Hierophant](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-05-the-hierophant), on [path 16](https://tarot.recursive.eco/pages/tree-of-life.html?path=16) with the letter [Vau](https://tarot.recursive.eco/pages/glossary.html#vau). Its three [decans](https://tarot.recursive.eco/pages/glossary.html#decan) are the small cards [Five of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-05) ([Mercury](https://tarot.recursive.eco/pages/glossary.html#mercury)), [Six of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-06) ([Moon](https://tarot.recursive.eco/pages/glossary.html#moon)), [Seven of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-07) ([Saturn](https://tarot.recursive.eco/pages/glossary.html#saturn)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "sort_order": 45,
+      "category": "sign",
+      "level": 1,
+      "keywords": [
+        "sign"
+      ],
+      "metadata": {
+        "kind": "sign",
+        "aliases": [
+          "Gemini"
+        ],
+        "tree_path": 17
+      },
+      "sections": {
+        "Entry": "The third sign of the zodiac, the Twins, a sign of [Air](https://tarot.recursive.eco/pages/glossary.html#air). [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives it the trump [The Lovers](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-06-the-lovers), on [path 17](https://tarot.recursive.eco/pages/tree-of-life.html?path=17) with the letter [Zain](https://tarot.recursive.eco/pages/glossary.html#zain). Its three [decans](https://tarot.recursive.eco/pages/glossary.html#decan) are the small cards [Eight of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-08) ([Jupiter](https://tarot.recursive.eco/pages/glossary.html#jupiter)), [Nine of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-09) ([Mars](https://tarot.recursive.eco/pages/glossary.html#mars)), [Ten of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-10) ([Sun](https://tarot.recursive.eco/pages/glossary.html#sun)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "cancer",
+      "name": "Cancer",
+      "sort_order": 46,
+      "category": "sign",
+      "level": 1,
+      "keywords": [
+        "sign"
+      ],
+      "metadata": {
+        "kind": "sign",
+        "aliases": [
+          "Cancer"
+        ],
+        "tree_path": 18
+      },
+      "sections": {
+        "Entry": "The fourth sign of the zodiac, the Crab, a sign of [Water](https://tarot.recursive.eco/pages/glossary.html#water). [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives it the trump [The Chariot](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-07-the-chariot), on [path 18](https://tarot.recursive.eco/pages/tree-of-life.html?path=18) with the letter [Cheth](https://tarot.recursive.eco/pages/glossary.html#cheth). Its three [decans](https://tarot.recursive.eco/pages/glossary.html#decan) are the small cards [Two of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-02) ([Venus](https://tarot.recursive.eco/pages/glossary.html#venus)), [Three of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-03) ([Mercury](https://tarot.recursive.eco/pages/glossary.html#mercury)), [Four of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-04) ([Moon](https://tarot.recursive.eco/pages/glossary.html#moon)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "leo",
+      "name": "Leo",
+      "sort_order": 47,
+      "category": "sign",
+      "level": 1,
+      "keywords": [
+        "sign"
+      ],
+      "metadata": {
+        "kind": "sign",
+        "aliases": [
+          "Leo"
+        ],
+        "tree_path": 19
+      },
+      "sections": {
+        "Entry": "The fifth sign of the zodiac, the Lion, a sign of [Fire](https://tarot.recursive.eco/pages/glossary.html#fire). [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives it the trump [Strength](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-08-strength), on [path 19](https://tarot.recursive.eco/pages/tree-of-life.html?path=19) with the letter [Teth](https://tarot.recursive.eco/pages/glossary.html#teth). Its three [decans](https://tarot.recursive.eco/pages/glossary.html#decan) are the small cards [Five of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-05) ([Saturn](https://tarot.recursive.eco/pages/glossary.html#saturn)), [Six of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-06) ([Jupiter](https://tarot.recursive.eco/pages/glossary.html#jupiter)), [Seven of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-07) ([Mars](https://tarot.recursive.eco/pages/glossary.html#mars)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "virgo",
+      "name": "Virgo",
+      "sort_order": 48,
+      "category": "sign",
+      "level": 1,
+      "keywords": [
+        "sign"
+      ],
+      "metadata": {
+        "kind": "sign",
+        "aliases": [
+          "Virgo"
+        ],
+        "tree_path": 20
+      },
+      "sections": {
+        "Entry": "The sixth sign of the zodiac, the Virgin, a sign of [Earth](https://tarot.recursive.eco/pages/glossary.html#earth). [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives it the trump [The Hermit](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-09-the-hermit), on [path 20](https://tarot.recursive.eco/pages/tree-of-life.html?path=20) with the letter [Yod](https://tarot.recursive.eco/pages/glossary.html#yod). Its three [decans](https://tarot.recursive.eco/pages/glossary.html#decan) are the small cards [Eight of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-08) ([Sun](https://tarot.recursive.eco/pages/glossary.html#sun)), [Nine of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-09) ([Venus](https://tarot.recursive.eco/pages/glossary.html#venus)), [Ten of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-10) ([Mercury](https://tarot.recursive.eco/pages/glossary.html#mercury)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "libra",
+      "name": "Libra",
+      "sort_order": 49,
+      "category": "sign",
+      "level": 1,
+      "keywords": [
+        "sign"
+      ],
+      "metadata": {
+        "kind": "sign",
+        "aliases": [
+          "Libra"
+        ],
+        "tree_path": 22
+      },
+      "sections": {
+        "Entry": "The seventh sign of the zodiac, the Balance, a sign of [Air](https://tarot.recursive.eco/pages/glossary.html#air). [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives it the trump [Justice](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-11-justice), on [path 22](https://tarot.recursive.eco/pages/tree-of-life.html?path=22) with the letter [Lamed](https://tarot.recursive.eco/pages/glossary.html#lamed). Its three [decans](https://tarot.recursive.eco/pages/glossary.html#decan) are the small cards [Two of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-02) ([Moon](https://tarot.recursive.eco/pages/glossary.html#moon)), [Three of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-03) ([Saturn](https://tarot.recursive.eco/pages/glossary.html#saturn)), [Four of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-04) ([Jupiter](https://tarot.recursive.eco/pages/glossary.html#jupiter)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "scorpio",
+      "name": "Scorpio",
+      "sort_order": 50,
+      "category": "sign",
+      "level": 1,
+      "keywords": [
+        "sign"
+      ],
+      "metadata": {
+        "kind": "sign",
+        "aliases": [
+          "Scorpio"
+        ],
+        "tree_path": 24
+      },
+      "sections": {
+        "Entry": "The eighth sign of the zodiac, the Scorpion, a sign of [Water](https://tarot.recursive.eco/pages/glossary.html#water). [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives it the trump [Death](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-13-death), on [path 24](https://tarot.recursive.eco/pages/tree-of-life.html?path=24) with the letter [Nun](https://tarot.recursive.eco/pages/glossary.html#nun). Its three [decans](https://tarot.recursive.eco/pages/glossary.html#decan) are the small cards [Five of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-05) ([Mars](https://tarot.recursive.eco/pages/glossary.html#mars)), [Six of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-06) ([Sun](https://tarot.recursive.eco/pages/glossary.html#sun)), [Seven of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-07) ([Venus](https://tarot.recursive.eco/pages/glossary.html#venus)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "sagittarius",
+      "name": "Sagittarius",
+      "sort_order": 51,
+      "category": "sign",
+      "level": 1,
+      "keywords": [
+        "sign"
+      ],
+      "metadata": {
+        "kind": "sign",
+        "aliases": [
+          "Sagittarius"
+        ],
+        "tree_path": 25
+      },
+      "sections": {
+        "Entry": "The ninth sign of the zodiac, the Archer, a sign of [Fire](https://tarot.recursive.eco/pages/glossary.html#fire). [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives it the trump [Temperance](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-14-temperance), on [path 25](https://tarot.recursive.eco/pages/tree-of-life.html?path=25) with the letter [Samekh](https://tarot.recursive.eco/pages/glossary.html#samekh). Its three [decans](https://tarot.recursive.eco/pages/glossary.html#decan) are the small cards [Eight of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-08) ([Mercury](https://tarot.recursive.eco/pages/glossary.html#mercury)), [Nine of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-09) ([Moon](https://tarot.recursive.eco/pages/glossary.html#moon)), [Ten of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-10) ([Saturn](https://tarot.recursive.eco/pages/glossary.html#saturn)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "capricorn",
+      "name": "Capricorn",
+      "sort_order": 52,
+      "category": "sign",
+      "level": 1,
+      "keywords": [
+        "sign"
+      ],
+      "metadata": {
+        "kind": "sign",
+        "aliases": [
+          "Capricorn"
+        ],
+        "tree_path": 26
+      },
+      "sections": {
+        "Entry": "The tenth sign of the zodiac, the Goat, a sign of [Earth](https://tarot.recursive.eco/pages/glossary.html#earth). [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives it the trump [The Devil](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-15-the-devil), on [path 26](https://tarot.recursive.eco/pages/tree-of-life.html?path=26) with the letter [Ayin](https://tarot.recursive.eco/pages/glossary.html#ayin). Its three [decans](https://tarot.recursive.eco/pages/glossary.html#decan) are the small cards [Two of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-02) ([Jupiter](https://tarot.recursive.eco/pages/glossary.html#jupiter)), [Three of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-03) ([Mars](https://tarot.recursive.eco/pages/glossary.html#mars)), [Four of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-04) ([Sun](https://tarot.recursive.eco/pages/glossary.html#sun)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "aquarius",
+      "name": "Aquarius",
+      "sort_order": 53,
+      "category": "sign",
+      "level": 1,
+      "keywords": [
+        "sign"
+      ],
+      "metadata": {
+        "kind": "sign",
+        "aliases": [
+          "Aquarius"
+        ],
+        "tree_path": 28
+      },
+      "sections": {
+        "Entry": "The eleventh sign of the zodiac, the Water-bearer, a sign of [Air](https://tarot.recursive.eco/pages/glossary.html#air). [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives it the trump [The Star](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-17-the-star), on [path 28](https://tarot.recursive.eco/pages/tree-of-life.html?path=28) with the letter [Tzaddi](https://tarot.recursive.eco/pages/glossary.html#tzaddi). Its three [decans](https://tarot.recursive.eco/pages/glossary.html#decan) are the small cards [Five of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-05) ([Venus](https://tarot.recursive.eco/pages/glossary.html#venus)), [Six of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-06) ([Mercury](https://tarot.recursive.eco/pages/glossary.html#mercury)), [Seven of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-07) ([Moon](https://tarot.recursive.eco/pages/glossary.html#moon)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "pisces",
+      "name": "Pisces",
+      "sort_order": 54,
+      "category": "sign",
+      "level": 1,
+      "keywords": [
+        "sign"
+      ],
+      "metadata": {
+        "kind": "sign",
+        "aliases": [
+          "Pisces"
+        ],
+        "tree_path": 29
+      },
+      "sections": {
+        "Entry": "The twelfth sign of the zodiac, the Fishes, a sign of [Water](https://tarot.recursive.eco/pages/glossary.html#water). [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives it the trump [The Moon](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-18-the-moon), on [path 29](https://tarot.recursive.eco/pages/tree-of-life.html?path=29) with the letter [Qoph](https://tarot.recursive.eco/pages/glossary.html#qoph). Its three [decans](https://tarot.recursive.eco/pages/glossary.html#decan) are the small cards [Eight of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-08) ([Saturn](https://tarot.recursive.eco/pages/glossary.html#saturn)), [Nine of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-09) ([Jupiter](https://tarot.recursive.eco/pages/glossary.html#jupiter)), [Ten of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-10) ([Mars](https://tarot.recursive.eco/pages/glossary.html#mars)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "mercury",
+      "name": "Mercury",
+      "sort_order": 55,
+      "category": "planet",
+      "level": 1,
+      "keywords": [
+        "planet"
+      ],
+      "metadata": {
+        "kind": "planet",
+        "aliases": [
+          "Mercury"
+        ],
+        "tree_path": 12
+      },
+      "sections": {
+        "Entry": "One of the seven planets of the old astrology, which the Golden Dawn set on the seven double letters. [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives Mercury the trump [The Magician](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-01-the-magician), on [path 12](https://tarot.recursive.eco/pages/tree-of-life.html?path=12) with the letter [Beth](https://tarot.recursive.eco/pages/glossary.html#beth), and makes it ruler of 5 [decans](https://tarot.recursive.eco/pages/glossary.html#decan): [Eight of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-08) (in [Sagittarius](https://tarot.recursive.eco/pages/glossary.html#sagittarius)), [Three of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-03) (in [Cancer](https://tarot.recursive.eco/pages/glossary.html#cancer)), [Six of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-06) (in [Aquarius](https://tarot.recursive.eco/pages/glossary.html#aquarius)), [Five of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-05) (in [Taurus](https://tarot.recursive.eco/pages/glossary.html#taurus)), [Ten of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-10) (in [Virgo](https://tarot.recursive.eco/pages/glossary.html#virgo)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "venus",
+      "name": "Venus",
+      "sort_order": 56,
+      "category": "planet",
+      "level": 1,
+      "keywords": [
+        "planet"
+      ],
+      "metadata": {
+        "kind": "planet",
+        "aliases": [
+          "Venus"
+        ],
+        "tree_path": 14
+      },
+      "sections": {
+        "Entry": "One of the seven planets of the old astrology, which the Golden Dawn set on the seven double letters. [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives Venus the trump [The Empress](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-03-the-empress), on [path 14](https://tarot.recursive.eco/pages/tree-of-life.html?path=14) with the letter [Daleth](https://tarot.recursive.eco/pages/glossary.html#daleth), and makes it ruler of 5 [decans](https://tarot.recursive.eco/pages/glossary.html#decan): [Four of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-04) (in [Aries](https://tarot.recursive.eco/pages/glossary.html#aries)), [Two of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-02) (in [Cancer](https://tarot.recursive.eco/pages/glossary.html#cancer)), [Seven of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-07) (in [Scorpio](https://tarot.recursive.eco/pages/glossary.html#scorpio)), [Five of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-05) (in [Aquarius](https://tarot.recursive.eco/pages/glossary.html#aquarius)), [Nine of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-09) (in [Virgo](https://tarot.recursive.eco/pages/glossary.html#virgo)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "mars",
+      "name": "Mars",
+      "sort_order": 57,
+      "category": "planet",
+      "level": 1,
+      "keywords": [
+        "planet"
+      ],
+      "metadata": {
+        "kind": "planet",
+        "aliases": [
+          "Mars"
+        ],
+        "tree_path": 27
+      },
+      "sections": {
+        "Entry": "One of the seven planets of the old astrology, which the Golden Dawn set on the seven double letters. [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives Mars the trump [The Tower](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-16-the-tower), on [path 27](https://tarot.recursive.eco/pages/tree-of-life.html?path=27) with the letter [Peh](https://tarot.recursive.eco/pages/glossary.html#peh), and makes it ruler of 6 [decans](https://tarot.recursive.eco/pages/glossary.html#decan): [Two of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-02) (in [Aries](https://tarot.recursive.eco/pages/glossary.html#aries)), [Seven of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-07) (in [Leo](https://tarot.recursive.eco/pages/glossary.html#leo)), [Five of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-05) (in [Scorpio](https://tarot.recursive.eco/pages/glossary.html#scorpio)), [Ten of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-10) (in [Pisces](https://tarot.recursive.eco/pages/glossary.html#pisces)), [Nine of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-09) (in [Gemini](https://tarot.recursive.eco/pages/glossary.html#gemini)), [Three of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-03) (in [Capricorn](https://tarot.recursive.eco/pages/glossary.html#capricorn)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "jupiter",
+      "name": "Jupiter",
+      "sort_order": 58,
+      "category": "planet",
+      "level": 1,
+      "keywords": [
+        "planet"
+      ],
+      "metadata": {
+        "kind": "planet",
+        "aliases": [
+          "Jupiter"
+        ],
+        "tree_path": 21
+      },
+      "sections": {
+        "Entry": "One of the seven planets of the old astrology, which the Golden Dawn set on the seven double letters. [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives Jupiter the trump [Wheel of Fortune](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-10-wheel-of-fortune), on [path 21](https://tarot.recursive.eco/pages/tree-of-life.html?path=21) with the letter [Kaph](https://tarot.recursive.eco/pages/glossary.html#kaph), and makes it ruler of 5 [decans](https://tarot.recursive.eco/pages/glossary.html#decan): [Six of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-06) (in [Leo](https://tarot.recursive.eco/pages/glossary.html#leo)), [Nine of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-09) (in [Pisces](https://tarot.recursive.eco/pages/glossary.html#pisces)), [Four of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-04) (in [Libra](https://tarot.recursive.eco/pages/glossary.html#libra)), [Eight of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-08) (in [Gemini](https://tarot.recursive.eco/pages/glossary.html#gemini)), [Two of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-02) (in [Capricorn](https://tarot.recursive.eco/pages/glossary.html#capricorn)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "saturn",
+      "name": "Saturn",
+      "sort_order": 59,
+      "category": "planet",
+      "level": 1,
+      "keywords": [
+        "planet"
+      ],
+      "metadata": {
+        "kind": "planet",
+        "aliases": [
+          "Saturn"
+        ],
+        "tree_path": 32
+      },
+      "sections": {
+        "Entry": "One of the seven planets of the old astrology, which the Golden Dawn set on the seven double letters. [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives Saturn the trump [The World](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-21-the-world), on [path 32](https://tarot.recursive.eco/pages/tree-of-life.html?path=32) with the letter [Tau](https://tarot.recursive.eco/pages/glossary.html#tau), and makes it ruler of 5 [decans](https://tarot.recursive.eco/pages/glossary.html#decan): [Five of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-05) (in [Leo](https://tarot.recursive.eco/pages/glossary.html#leo)), [Ten of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-10) (in [Sagittarius](https://tarot.recursive.eco/pages/glossary.html#sagittarius)), [Eight of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-08) (in [Pisces](https://tarot.recursive.eco/pages/glossary.html#pisces)), [Three of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-03) (in [Libra](https://tarot.recursive.eco/pages/glossary.html#libra)), [Seven of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-07) (in [Taurus](https://tarot.recursive.eco/pages/glossary.html#taurus)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "sun",
+      "name": "The Sun",
+      "sort_order": 60,
+      "category": "planet",
+      "level": 1,
+      "keywords": [
+        "planet"
+      ],
+      "metadata": {
+        "kind": "planet",
+        "aliases": [
+          "Sun"
+        ],
+        "tree_path": 30
+      },
+      "sections": {
+        "Entry": "One of the two lights, which the Golden Dawn set on the seven double letters. [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives the Sun the trump [The Sun](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-19-the-sun), on [path 30](https://tarot.recursive.eco/pages/tree-of-life.html?path=30) with the letter [Resh](https://tarot.recursive.eco/pages/glossary.html#resh), and makes it ruler of 5 [decans](https://tarot.recursive.eco/pages/glossary.html#decan): [Three of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-03) (in [Aries](https://tarot.recursive.eco/pages/glossary.html#aries)), [Six of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-06) (in [Scorpio](https://tarot.recursive.eco/pages/glossary.html#scorpio)), [Ten of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-10) (in [Gemini](https://tarot.recursive.eco/pages/glossary.html#gemini)), [Four of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-04) (in [Capricorn](https://tarot.recursive.eco/pages/glossary.html#capricorn)), [Eight of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-08) (in [Virgo](https://tarot.recursive.eco/pages/glossary.html#virgo)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "moon",
+      "name": "The Moon",
+      "sort_order": 61,
+      "category": "planet",
+      "level": 1,
+      "keywords": [
+        "planet"
+      ],
+      "metadata": {
+        "kind": "planet",
+        "aliases": [
+          "Moon"
+        ],
+        "tree_path": 13
+      },
+      "sections": {
+        "Entry": "One of the two lights, which the Golden Dawn set on the seven double letters. [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) gives the Moon the trump [The High Priestess](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-02-the-high-priestess), on [path 13](https://tarot.recursive.eco/pages/tree-of-life.html?path=13) with the letter [Gimel](https://tarot.recursive.eco/pages/glossary.html#gimel), and makes it ruler of 5 [decans](https://tarot.recursive.eco/pages/glossary.html#decan): [Nine of Wands](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=wands-09) (in [Sagittarius](https://tarot.recursive.eco/pages/glossary.html#sagittarius)), [Four of Cups](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=cups-04) (in [Cancer](https://tarot.recursive.eco/pages/glossary.html#cancer)), [Two of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-02) (in [Libra](https://tarot.recursive.eco/pages/glossary.html#libra)), [Seven of Swords](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=swords-07) (in [Aquarius](https://tarot.recursive.eco/pages/glossary.html#aquarius)), [Six of Pentacles](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=pentacles-06) (in [Taurus](https://tarot.recursive.eco/pages/glossary.html#taurus)).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "fire",
+      "name": "Fire",
+      "sort_order": 62,
+      "category": "element",
+      "level": 1,
+      "keywords": [
+        "element"
+      ],
+      "metadata": {
+        "kind": "element",
+        "aliases": [
+          "Fire"
+        ],
+        "tree_path": 31
+      },
+      "sections": {
+        "Entry": "One of the four elements. Its trump is [Judgement](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-20-judgement), on [path 31](https://tarot.recursive.eco/pages/tree-of-life.html?path=31) with the mother letter [Shin](https://tarot.recursive.eco/pages/glossary.html#shin). In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) it is the element of the suit of Wands, whose root is the Ace of Wands, \"The Root of the Powers of Fire\", and of the signs [Aries](https://tarot.recursive.eco/pages/glossary.html#aries), [Leo](https://tarot.recursive.eco/pages/glossary.html#leo), [Sagittarius](https://tarot.recursive.eco/pages/glossary.html#sagittarius).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "water",
+      "name": "Water",
+      "sort_order": 63,
+      "category": "element",
+      "level": 1,
+      "keywords": [
+        "element"
+      ],
+      "metadata": {
+        "kind": "element",
+        "aliases": [
+          "Water"
+        ],
+        "tree_path": 23
+      },
+      "sections": {
+        "Entry": "One of the four elements. Its trump is [The Hanged Man](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-12-the-hanged-man), on [path 23](https://tarot.recursive.eco/pages/tree-of-life.html?path=23) with the mother letter [Mem](https://tarot.recursive.eco/pages/glossary.html#mem). In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) it is the element of the suit of Cups, whose root is the Ace of Cups, \"The Root of the Powers of the Waters\", and of the signs [Cancer](https://tarot.recursive.eco/pages/glossary.html#cancer), [Scorpio](https://tarot.recursive.eco/pages/glossary.html#scorpio), [Pisces](https://tarot.recursive.eco/pages/glossary.html#pisces).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "air",
+      "name": "Air",
+      "sort_order": 64,
+      "category": "element",
+      "level": 1,
+      "keywords": [
+        "element"
+      ],
+      "metadata": {
+        "kind": "element",
+        "aliases": [
+          "Air"
+        ],
+        "tree_path": 11
+      },
+      "sections": {
+        "Entry": "One of the four elements. Its trump is [The Fool](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item=major-00-the-fool), on [path 11](https://tarot.recursive.eco/pages/tree-of-life.html?path=11) with the mother letter [Aleph](https://tarot.recursive.eco/pages/glossary.html#aleph). In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) it is the element of the suit of Swords, whose root is the Ace of Swords, \"The Root of the Powers of the Air\", and of the signs [Gemini](https://tarot.recursive.eco/pages/glossary.html#gemini), [Libra](https://tarot.recursive.eco/pages/glossary.html#libra), [Aquarius](https://tarot.recursive.eco/pages/glossary.html#aquarius).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "earth",
+      "name": "Earth",
+      "sort_order": 65,
+      "category": "element",
+      "level": 1,
+      "keywords": [
+        "element"
+      ],
+      "metadata": {
+        "kind": "element",
+        "aliases": [
+          "Earth"
+        ]
+      },
+      "sections": {
+        "Entry": "One of the four elements. The three mother letters cover Air, Water and Fire only, so Earth has no trump of its own in Book T's table; Golden Dawn tables pair it with [Saturn](https://tarot.recursive.eco/pages/glossary.html#saturn) on path 32, the World, which the course gives as \"Saturn (and Earth)\". In [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) it is the element of the suit of Pentacles, whose root is the Ace of Pentacles, \"The Root of the Powers of the Earth\", and of the signs [Taurus](https://tarot.recursive.eco/pages/glossary.html#taurus), [Virgo](https://tarot.recursive.eco/pages/glossary.html#virgo), [Capricorn](https://tarot.recursive.eco/pages/glossary.html#capricorn).",
+        "Sources": "- *Book T*, as printed in *The Equinox* I(8), London, 1912, pp. 143–210 ([scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt))\n- the attributions on this library's [Golden Dawn (Book T) deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)\n- [The Golden Dawn — the Map and the Walk](https://tarot.recursive.eco/pages/course-viewer.html?course=walking-the-golden-dawn-path)"
+      }
+    }
+  ]
+}

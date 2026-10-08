@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../theme.css?v=3">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary · Recursive Tarot</title>
+<meta property="og:title" content="Glossary — Recursive Tarot">
+<meta property="og:description" content="Short, sourced entries for the words the Golden Dawn cards lean on: the sephiroth, the Hebrew letters, the signs, Book T, dignities, Ma'at.">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light;font-family:var(--sans)}
+  .wrap{max-width:860px;margin:0 auto;padding:22px 16px 80px}
+  h1{font-family:var(--serif-display);font-size:28px;margin:.2em 0 .15em}
+  .lede{color:var(--muted);font-size:15px;line-height:1.6;max-width:70ch;margin:.2em 0 14px}
+  .tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0 6px}
+  .tools input{flex:1 1 220px;min-height:44px;padding:8px 12px;font:inherit;font-size:15px;border:1px solid var(--line);
+    border-radius:10px;background:var(--surface);color:var(--ink)}
+  .tools a.map{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:4px 14px 4px 8px;border:1px solid var(--gold);
+    border-radius:10px;color:var(--gold);text-decoration:none;font-weight:600;background:var(--surface)}
+  nav.jump{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
+  nav.jump a{display:inline-flex;align-items:center;min-height:36px;padding:4px 12px;border:1px solid var(--line);border-radius:999px;
+    font-size:13px;color:var(--ink-soft);text-decoration:none;background:var(--surface)}
+  h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:30px 0 8px;padding-top:12px;border-top:1px solid var(--line)}
+  .entry{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:14px 12px;margin:0 -12px;border-radius:12px;scroll-margin-top:70px}
+  .entry:target,.entry.hit{background:var(--chip);outline:2px solid var(--gold);outline-offset:-2px}
+  .icon{display:flex;flex-direction:column;align-items:center;gap:4px;padding-top:2px}
+  .glyph{font-size:30px;line-height:1;color:var(--ink);font-family:"Noto Serif Hebrew","Times New Roman",serif}
+  .entry h3{margin:0 0 4px;font-size:17px;font-family:var(--serif-display)}
+  .entry h3 a.self{color:inherit;text-decoration:none}
+  .entry h3 a.self:hover{text-decoration:underline}
+  .body p{margin:.35em 0;font-size:14.5px;line-height:1.62}
+  .src{font-size:12.5px;color:var(--ink-soft);margin-top:6px}
+  .src summary{cursor:pointer;color:var(--mut);min-height:28px;display:inline-flex;align-items:center}
+  .src ul{margin:4px 0 0;padding-left:18px}
+  .src li{margin:2px 0;line-height:1.5}
+  a{color:var(--gold)}
+  .empty{color:var(--mut);font-size:14px;padding:20px 0}
+</style>
+</head>
+<body>
+<script src="../site-header.js?v=49"></script>
+<site-header active="course"></site-header>
+
+<div class="wrap">
+  <h1>Glossary</h1>
+  <p class="lede">The words the Golden Dawn cards and courses lean on, one short entry each, with where it comes from.
+  The card texts link here the first time a word appears.</p>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Find a word: Geburah, Lamed, Ma'at..." aria-label="Find a word in the glossary">
+    <a class="map" href="tree-of-life.html" title="The Tree of Life map"><span id="mapIcon"></span>The map</a>
+  </div>
+  <nav class="jump" id="jump" aria-label="Sections"></nav>
+  <div id="list"><p class="empty">Loading...</p></div>
+</div>
+
+<script src="gd-tree.js?v=1"></script>
+<script>
+(async function () {
+  const { esc, md, mini } = window.GDTree;
+  const GROUPS = [
+    ['concept', 'Ideas'], ['sephirah', 'The ten sephiroth'], ['hebrew-letter', 'The twenty-two letters'],
+    ['sign', 'Signs'], ['planet', 'Planets and lights'], ['element', 'Elements'],
+  ];
+  const list = document.getElementById('list');
+  let g;
+  try {
+    g = await (await fetch('../tarot/glossary-of-tarot/grammar.json')).json();
+  } catch (e) {
+    list.innerHTML = '<p class="empty">The glossary could not be loaded.</p>';
+    return;
+  }
+  const paths = (g.metadata || {}).tree_paths || {};
+  document.getElementById('mapIcon').innerHTML = mini({ paths, w: 16 });
+  const items = (g.items || []).slice().sort((a, b) => (a.sort_order || 0) - (b.sort_order || 0));
+
+  function icon(it) {
+    const m = it.metadata || {};
+    const glyph = m.glyph ? `<span class="glyph" lang="he">${esc(m.glyph)}</span>` : '';
+    if (it.category === 'sephirah') return mini({ paths, sephirah: it.id, w: 30 });
+    if (m.tree_path) return glyph + mini({ paths, path: m.tree_path, w: glyph ? 22 : 30 });
+    if (['tree-of-life', 'path', 'sephirah', 'hebrew-letters', 'pathworking'].includes(it.id)) return mini({ paths, w: 30 });
+    return '';
+  }
+  function render() {
+    let html = '', jump = '';
+    for (const [cat, label] of GROUPS) {
+      const group = items.filter(it => it.category === cat);
+      if (!group.length) continue;
+      jump += `<a href="#group-${cat}">${esc(label)}</a>`;
+      html += `<h2 id="group-${cat}">${esc(label)}</h2>`;
+      for (const it of group) {
+        const s = it.sections || {};
+        const words = [it.name, ...((it.metadata || {}).aliases || [])].join(' ').toLowerCase();
+        html += `<article class="entry" id="${esc(it.id)}" data-words="${esc(words)}">
+          <div class="icon">${icon(it)}</div>
+          <div><h3><a class="self" href="#${esc(it.id)}">${esc(it.name)}</a></h3>
+          <div class="body">${md(s.Entry, 'glossary.html')}</div>
+          <details class="src"><summary>Sources</summary>${md(s.Sources, 'glossary.html')}</details></div>
+        </article>`;
+      }
+    }
+    list.innerHTML = html;
+    document.getElementById('jump').innerHTML = jump;
+  }
+  render();
+
+  // Arriving at #term after the async render: scroll there and mark it.
+  function showHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    document.querySelectorAll('.entry.hit').forEach(e => e.classList.remove('hit'));
+    const el = id && document.getElementById(id);
+    if (el && el.classList.contains('entry')) {
+      el.classList.add('hit');
+      el.scrollIntoView({ block: 'start' });
+      const d = el.querySelector('details');
+      if (d) d.open = true;
+    }
+  }
+  window.addEventListener('hashchange', showHash);
+  showHash();
+
+  document.getElementById('q').addEventListener('input', e => {
+    const q = e.target.value.trim().toLowerCase();
+    document.querySelectorAll('.entry').forEach(el => {
+      el.style.display = !q || el.dataset.words.includes(q) ? '' : 'none';
+    });
+  });
+})();
+</script>
+<script src="../site-footer.js?v=1"></script>
+<site-footer base="../"></site-footer>
+</body>
+</html>
