@@ -14,8 +14,9 @@ research/sources/book-t-equinox-1912.txt with the reading page's corrections fro
 
   * Order and numbers: Book T's own list, "The Titles of the Symbols" (pp. 147-152): 1-4 the
     Aces, 5-20 the court cards, 21-56 the small cards in decan order from Leo, 57-78 the Keys.
-    `metadata.number` is that list's number and nothing else; the card's own numeral (a Key's
-    number, a small card's pip) is in `metadata.key_number` / `metadata.pip` and in the text.
+    `metadata.number` is the card's own number (coordinator's call, Oct 8 2026): a Key's number
+    as Book T prints it in 1912 (the Fool 0, Justice 8, Fortitude 11), a small card's pip, 1 for
+    an Ace; the court cards have none. The place in the list of 78 is `metadata.book_t_no`.
   * Names: Book T's title, never a number (Keys "Daughter of the Lords of Truth: the Ruler of the
     Balance", courts "Lord of the Flame and the Lightning: the King of the Spirits of Fire",
     small cards "Lord of Strife", Aces "Root of the Powers of Fire"). The courts are Knight,
@@ -70,8 +71,11 @@ until then.
 
 - **Order.** Book T's own list of the 78 titles: the four Aces, the sixteen court cards, the
   thirty-six small cards in the order of the decans (starting from Leo), then the twenty-two Keys.
-- **Number.** The number on a card is its place in that list, 1 to 78. A Key's own number, or a
-  small card's pip, is in the card's text. Book T numbers Justice 8 and Fortitude 11.
+- **Number.** Each card shows its own number: a small card its pip, an Ace 1, a Key the number
+  Book T prints. The court cards have none. The Key numbers follow the 1912 printing, which
+  numbers Justice 8 and Fortitude 11, the reverse of the Rider-Waite-Smith deck; what each source
+  prints is set out in
+  [Strength and Justice: the numbering](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/synthesis/strength-justice-numbering.md).
 - **Name.** Each card is named by its Book T title: *Lord of Strife*, *Root of the Powers of
   Fire*, *Daughter of the Lords of Truth: the Ruler of the Balance*.
 - **Court.** Knight, Queen, Prince, Princess. Book T's Knight rides a horse; its Prince drives a
@@ -178,11 +182,11 @@ def build(prev):
             body = body.replace(k, v)
         assert not re.search('[-]', body), gid
         suit = r.get('suit')
-        md = {'number': no, 'book_t_no': no}
+        md = {'book_t_no': no}
         kw = ['book t', 'golden dawn']
         if r['kind'] == 'key':
             card = r['card']
-            md.update(arcana='major', key_number=r['key'], trump_number=r['key'],
+            md.update(arcana='major', number=r['key'], key_number=r['key'], trump_number=r['key'],
                       trump_key=gm.get('trump_key'), card_name_1912=card,
                       hebrew_letter=gm.get('hebrew_letter'), hebrew_translit=gm.get('hebrew_translit'),
                       tree_path=gm.get('tree_path'), attribution=r['attribution'])
@@ -198,7 +202,7 @@ def build(prev):
                    r['attribution'].lower(), 'key', 'major arcana']
         elif r['kind'] == 'ace':
             card = 'Ace of %s' % SUIT_NAME[suit]
-            md.update(arcana='minor', suit=SUIT_NAME[suit], element=ELEMENT[suit], rank='Ace', pip=1,
+            md.update(arcana='minor', number=1, suit=SUIT_NAME[suit], element=ELEMENT[suit], rank='Ace', pip=1,
                       sephirah=gm.get('sephirah'), world=gm.get('world'), card_name_1912=card)
             row = "No. %d of Book T's 78 titles · **%s** · %s" % (no, card, ELEMENT[suit])
             category = 'aces'
@@ -219,7 +223,7 @@ def build(prev):
             card = '%s of %s' % (WORD[r['pip']], SUIT_NAME[suit])
             decan = '%s in %s' % (r['planet'], r['sign'])
             assert decan.lower() == (gm.get('decan') or '').lower(), (no, decan, gm.get('decan'))
-            md.update(arcana='minor', suit=SUIT_NAME[suit], element=ELEMENT[suit], pip=r['pip'],
+            md.update(arcana='minor', number=r['pip'], suit=SUIT_NAME[suit], element=ELEMENT[suit], pip=r['pip'],
                       decan=decan, planet=r['planet'], sign=r['sign'], sephirah=gm.get('sephirah'),
                       world=gm.get('world'), card_name_1912=card)
             row = "No. %d of Book T's 78 titles · **%s** · decan: %s" % (no, card, decan)
