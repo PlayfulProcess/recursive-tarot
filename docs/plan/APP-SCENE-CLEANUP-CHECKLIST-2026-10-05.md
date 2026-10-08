@@ -114,3 +114,20 @@ rule: remove them in the app too, with your word, before any "Resolve all drifts
 `has_section: "Upright"` alone would also catch the 22 trumps, which keep theirs (now labelled as
 paraphrase): select the 40 by the item ids in the archive file. The courts carry
 `Upright (the person well-disposed)`, a different label, and are not touched.
+
+## Added Oct 8: Etteilla's own words on all 78 cards
+
+The branch `sources/etteilla-own-words` gives every card on the three Etteilla decks an `Upright` and
+a `Reversed` holding Etteilla's own word for that leaf (from the *Dictionnaire synonimique du Livre de
+Thot*, 1791), and drops the 16 courts' `Upright (the person well-disposed)` label. The paraphrases it
+replaces are archived in `tarot/_archive/etteilla-paraphrases-2026-10-08.json`. Before any "Resolve all
+drifts" write-back, with your word, the app copy needs the same:
+
+| Repo deck | recursive.eco id | In the app | Expect |
+|---|---|---|---|
+| etteilla-i-livre-de-thot | 50fb5980-5be5-4702-9a4f-858ddd524fe3 | take `Upright` and `Reversed` from the repo for all 78 cards; remove `Upright (the person well-disposed)` on the 16 courts | 78 cards, 16 removals |
+| etteilla-ii-egyptian | c310e5d9-f954-458c-9462-aa1eefd95209 | as Etteilla I | 78, 16 |
+| etteilla-iii-oracle-des-dames | 9c62d3ca-4e96-44ff-bffb-b7d3da55423c | as Etteilla I | 78, 16 |
+
+A pull from `main` after merge brings the new sections in; the court label is the one field a pull
+would leave behind in the app.

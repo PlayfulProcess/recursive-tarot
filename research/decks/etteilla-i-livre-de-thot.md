@@ -184,7 +184,10 @@ identities, printed reversals), not extra physical cards [@web_pdr_etteilla;
   defensible and reported together).
 - The mid-trump correspondences (Cards 14–16, 19) rest on secondary scholarship and the
   etteillastrumps translation; a primary check of Etteilla's *Troisième cahier* would raise
-  several from medium to high confidence.
+  several from medium to high confidence. (A 1791 primary now gives the words printed on these
+  leaves: 14 *Force Majeure* / *Force Mineure*, 15 *Maladie*, 16 *Jugement*, 19 *Misere* /
+  *Prison*; see `research/sources/etteilla-dictionnaire-synonimique-1791.md`. It gives the words,
+  not the correspondences.)
 
 ## Sources
 
