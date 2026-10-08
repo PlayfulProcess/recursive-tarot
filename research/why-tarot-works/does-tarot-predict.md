@@ -83,7 +83,7 @@ This is the part that matters most for honesty: a reading landing hard doesn't n
 explanation stranger than well-documented psychology.
 
 - **The Barnum/Forer effect.** In 1949, Bertram Forer gave 39 students an identical,
-  generic personality sketch (assembled from a newsstand astrology column) under the
+  generic personality sketch (assembled from a newsstand astrology book) under the
   pretense that it was individually written for each of them. Students rated it, on
   average, **4.3 out of 5** for how accurately it described them. **✔︎** [Forer, B. R.
   (1949). *The fallacy of personal validation: A classroom demonstration of gullibility*.

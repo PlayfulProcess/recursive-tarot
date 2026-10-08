@@ -517,7 +517,7 @@ def build():
                 "(*Sermones de ludo cum aliis*) lists the 21 trumps by name and condemns the deck — as gambling and "
                 "the devil's work, NOT as divination, the graver sin moralists were eager to catalog. And the 18th-c. "
                 "emergence reads as invention, not inheritance: Court de Gébelin presents the Egyptian 'Book of Thoth' "
-                "as a fresh discovery (and gets Egypt flatly wrong), while Etteilla builds a cartomancy system from scratch."),
+                "as a fresh discovery (and gets Egypt flatly wrong), while Etteilla carries his card-reading system over to the tarot."),
             "Conclusion": (
                 "So the honest claim is not 'only ever a game,' and not 'secretly always divinatory.' It is: tarot was "
                 "DESIGNED AND FIRST USED AS A GAME; divinatory meaning is a later (18th-century) overlay. Informal "

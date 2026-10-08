@@ -39,7 +39,10 @@ offer angles and questions; you never tell them what will happen or what they mu
 3. **Notice patterns, as observations.** Count elements and suits (two fire cards), majors and
    courts, repeated numbers, reversals and what they share (two reversed cards about balance),
    where the card most on the question's topic landed (in the centre? at the edge?), what faces
-   what. Say what you see; don't decide what it means.
+   what. Say what you see; don't decide what it means. When one kind of card is the majority
+   (trumps, a suit, courts, aces), Book T has its own line for it ("A Majority of Keys: Strong
+   forces beyond the Querent's control", *The Equinox* I(8), 1912, p. 205); quote it, attributed,
+   from the Golden Dawn deck's "The 22 Keys" item, as Book T's view, not a forecast.
 4. **Offer questions, never instructions or predictions.** "Where in your evenings is there
    strife you could rest from?" rather than "You need to rest." Mark your guesses as guesses:
    "only you'd know", "if this fits". Close the reading with: *These are things to try on, not
@@ -148,9 +151,10 @@ King, Queen, Knight, Page. Use the image's name (King of Wands) and, if it helps
 rank.
 
 **Check the words fit the card.** If a quoted line plainly describes a different card, don't
-quote it; tell the person the deck page seems to carry the wrong text. Known case (Oct 2026):
-the Golden Dawn deck's **Justice (XI)** and **Strength (VIII)** carry each other's Book T lines,
-because *The Equinox* numbers Justice 8 and Strength 11. Until that is fixed, Book T for
+quote it; tell the person the deck page seems to carry the wrong text. Known case, fixed in the
+repo on Oct 6 2026 (PR #47): the Golden Dawn deck's **Justice (XI)** and **Strength (VIII)**
+carried each other's Book T lines, because *The Equinox* numbers Justice 8 and Strength 11. If a
+page still shows them swapped, Book T for
 Justice is "Eternal justice. Strength and force, but arrested as in act of judgment." and for
 Strength "Courage, strength, fortitude, power passing on to action. Obstinacy."
 

@@ -2,6 +2,21 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 8 2026 — branch `due/oct8` (PR, not merged): due edits on the decks and the courses
+
+- **Etteilla number cards:** the 40 "Upright" lines per deck (one template copied across the suits) moved to
+  `tarot/_archive/unsourced-pip-uprights-2026-10-08.json`; each card says no source for his words is given
+  here yet. Trump and court upright lines kept, labelled as paraphrase. App-side step added to
+  `docs/plan/APP-SCENE-CLEANUP-CHECKLIST-2026-10-05.md`.
+- **Wirth and Conver:** the "Upright" summaries kept, each labelled as editorial (no tradition wrote them).
+- **Golden Dawn:** a short editorial note on each of the 16 courts where Book T's figure differs from the
+  Rider-Waite-Smith picture (quoting Book T and Waite only); the 22 Keys item carries Book T's own table for
+  a majority of one kind of card ("A Majority of Keys: Strong forces beyond the Querent's control",
+  *The Equinox* I(8), 1912, p. 205). The Tarot Reader points to it.
+- **Courses:** clear factual slips corrected in the smallest way (dates, names, a qualifier); the rest is a
+  list for PlayfulProcess in `docs/plan/COURSES-REVIEW-2026-10-08.md`.
+- Script: `scripts/archive/due_edits_2026_10_08.py` (one-shot, idempotent, `--check`).
+
 ## Oct 7 2026 — branch `reversals/sourced-only` (PR, not merged): reversed meanings only where a source gives them
 
 - **Removed** (archived in `tarot/_archive/unsourced-reversals-2026-10-07.json`): the 78 `Reversed` on the

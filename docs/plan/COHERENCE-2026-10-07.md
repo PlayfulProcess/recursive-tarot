@@ -6,6 +6,8 @@ your prose, a tradition's words, or a choice only you can make, so nothing here 
 
 Each row: where, the seam, the smallest fix I would suggest. Line numbers are from this branch.
 
+**Oct 8:** rows 6–13, 15 and 16 are applied on branch `due/oct8` (see `COURSES-REVIEW-2026-10-08.md`). The rest are still open.
+
 ## 1. Your prose: the same argument or opening twice
 
 | # | Where | Seam | Smallest fix |
