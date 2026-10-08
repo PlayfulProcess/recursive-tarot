@@ -21,9 +21,10 @@
       "tarot/all-decks-many-lenses/grammar.json",
       "tarot/tree-of-tarot/grammar.json",
       "tarot/people-of-tarot/grammar.json",
-      "tarot/books-of-tarot/grammar.json"
+      "tarot/books-of-tarot/grammar.json",
+      "tarot/glossary-of-tarot/grammar.json"
     ],
-    "_exclude_note": "all-decks/tree/people/books are generated meta or reference apparatus (provenance:reference), not castable decks. Only public, complete deck grammars are imported as channel members; drafts/stubs are skipped on import.",
+    "_exclude_note": "all-decks/tree/people/books/glossary are generated meta or reference apparatus (provenance:reference), not castable decks. Only public, complete deck grammars are imported as channel members; drafts/stubs are skipped on import.",
     "id_map": "tarot/_eco_ids.json"
   },
   "maintainers": ["pp@playfulprocess.com"],
