@@ -66,6 +66,34 @@ for path in sorted(glob.glob(os.path.join(TAROT, "*", "grammar.json"))):
             if c not in ids:
                 errors.append(f"{slug}: dangling composite_of '{c}' in item '{it.get('id')}'")
 
+# 2b — the genealogy tree (tree-of-tarot): every deck node sits in exactly one branch,
+# that branch is the one its metadata.branch names, it has a numeric metadata.year,
+# and its derives_from ids exist. The ring and the timeline drop anything that fails
+# these (Oct 7 2026: three nodes outside every branch lost 8 lines of descent).
+TREE = os.path.join(TAROT, "tree-of-tarot", "grammar.json")
+if os.path.exists(TREE):
+    t_items = json.load(open(TREE, encoding="utf-8")).get("items", [])
+    t_ids = {it["id"] for it in t_items}
+    holder = {}
+    for it in t_items:
+        if it.get("level") == 2:
+            for c in it.get("composite_of", []) or []:
+                holder.setdefault(c, []).append(it["id"])
+    for it in t_items:
+        if not it["id"].startswith("deck-"):
+            continue
+        md = it.get("metadata") or {}
+        hs = holder.get(it["id"], [])
+        if len(hs) != 1:
+            errors.append(f"tree-of-tarot: '{it['id']}' is in {len(hs)} branches (expected 1)")
+        elif md.get("branch") and md["branch"] != hs[0]:
+            errors.append(f"tree-of-tarot: '{it['id']}' says branch '{md['branch']}' but sits in '{hs[0]}'")
+        if not isinstance(md.get("year"), int):
+            errors.append(f"tree-of-tarot: '{it['id']}' has no numeric metadata.year")
+        for d in md.get("derives_from", []) or []:
+            if d not in t_ids:
+                errors.append(f"tree-of-tarot: '{it['id']}' derives_from unknown '{d}'")
+
 # 3 — people dossiers
 for path in sorted(glob.glob(os.path.join(PEOPLE, "*.md"))):
     name = os.path.basename(path)

@@ -2,6 +2,111 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 8 2026 — branch `sources/wirth-own-words` (PR, not merged; stacked on `due/oct8`): Wirth in his own words
+
+- **Wirth deck, 22 cards:** each card now quotes Wirth's *Le Tarot des imagiers du Moyen Âge* (Paris, 1927)
+  in French with page numbers, from the BnF copy on Gallica (public domain), with this site's English
+  translation: the opening of his chapter on the card (`Wirth`) and his *Interprétations divinatoires*
+  (`Divinatory meanings (Wirth, 1927)`, replacing the editorial `Upright` line). The old `Wirth` section,
+  labelled "translated from" this book, was checked against the 1927 text and was not Wirth's words.
+- **Correspondences:** Wirth's own constellations per card (his table, p. 76) added; the older
+  "Astrological association" line labelled as editorial.
+- **Symbol notes:** eleven sentences that gave Golden Dawn Hebrew letters (Wheel to Judgement) removed,
+  Strength's numbering note corrected, every note labelled as editorial.
+- Source: `research/sources/wirth-imagiers-1927.json`. Scripts: `scripts/import_wirth_1927.py` (`--check`),
+  `scripts/archive/wirth_symbol_letters_2026_10_08.py` (one-shot, `--check`).
+
+## Oct 8 2026 — branch `sources/etteilla-own-words` (PR, not merged; stacked on `due/oct8`): Etteilla's own words
+
+- **All three Etteilla decks, all 78 cards:** `Upright` and `Reversed` are now Etteilla's own word for each
+  leaf, as printed, with this site's English translation, page and scan link, from the *Dictionnaire
+  synonimique du Livre de Thot* (Paris, 1791), pp. 19-57, whose preface says he printed these words on each
+  leaf (e.g. 2 *Eclaircissemens* / *Feu*; Ten of Cups *Ville* / *Courroux*). Transcription, notes and the
+  two printing irregularities: `research/sources/etteilla-dictionnaire-synonimique-1791.md`. Etteilla II and
+  III say the words are those of his 1789 deck and that their own captions are not transcribed.
+- The paraphrases they replace (22 trumps, 16 courts per deck) moved to
+  `tarot/_archive/etteilla-paraphrases-2026-10-08.json`; the courts' "person well-disposed" label is gone;
+  the number cards' "not transcribed yet" line is gone; three Knights whose word is an event say so; on II
+  and III, card 78 no longer calls La Folie the female querent.
+- Still unread: Etteilla's third cahier (1783-1785) on Gallica, which answered with a security check.
+  App-side step in `docs/plan/APP-SCENE-CLEANUP-CHECKLIST-2026-10-05.md`.
+- Script: `scripts/archive/etteilla_own_words_2026_10_08.py` (one-shot, idempotent, `--check`).
+
+## Oct 8 2026 — branch `practice/ledger` (PR, not merged): a reading path and a revision ledger
+
+- **`docs/practice/READING-PATH.md`:** 177 days, one course section and one card a day, from why to read
+  at all, through PlayfulProcess's own practice and the voices, into the history, ending with making.
+  Every card link was checked against the deck's grammar (item exists, has an image).
+- **`docs/practice/REVISION-LEDGER.md`:** one line per course chapter (229) and per deck (36), plus the
+  reference grammars, each with a status, a date and notes. All start as "not yet read in practice";
+  how that was seeded from git is written at the top, with the note for future sessions to update a
+  line whenever she practises with it.
+
+## Oct 8 2026 — branch `course/review-decisions` (PR, not merged; stacked on `due/oct8`): the course review decided
+
+- **Courses:** the 38 items of `docs/plan/COURSES-REVIEW-2026-10-08.md` decided against sources; 35
+  applied as factual changes in the smallest wording (one in part; mirrored in the course grammars and the anthology),
+  3 dropped with the reason recorded there. Site copy in `index.html` and `pages/play.html` too.
+- **Strength and Justice:** `research/synthesis/strength-justice-numbering.md` lists what Mathers (1888),
+  Book T in *The Equinox* (1912), the Rider-Waite-Smith cards (1909) and Waite (1911) actually print. The
+  Golden Dawn moved the attributions (Leo to Strength, Libra to Justice); the 1912 printing still numbers
+  Fortitude 11 and Justice 8; the 1909 deck is the first known to print VIII and XI. The dossiers, the
+  Golden Dawn deck's notes and `same-card-every-deck` now say so.
+
+## Oct 8 2026 — branch `due/oct8` (PR, not merged): due edits on the decks and the courses
+
+- **Etteilla number cards:** the 40 "Upright" lines per deck (one template copied across the suits) moved to
+  `tarot/_archive/unsourced-pip-uprights-2026-10-08.json`; each card says no source for his words is given
+  here yet. Trump and court upright lines kept, labelled as paraphrase. App-side step added to
+  `docs/plan/APP-SCENE-CLEANUP-CHECKLIST-2026-10-05.md`.
+- **Wirth and Conver:** the "Upright" summaries kept, each labelled as editorial (no tradition wrote them).
+- **Golden Dawn:** a short editorial note on each of the 16 courts where Book T's figure differs from the
+  Rider-Waite-Smith picture (quoting Book T and Waite only); the 22 Keys item carries Book T's own table for
+  a majority of one kind of card ("A Majority of Keys: Strong forces beyond the Querent's control",
+  *The Equinox* I(8), 1912, p. 205). The Tarot Reader points to it.
+- **Courses:** clear factual slips corrected in the smallest way (dates, names, a qualifier); the rest is a
+  list for PlayfulProcess in `docs/plan/COURSES-REVIEW-2026-10-08.md`.
+- Script: `scripts/archive/due_edits_2026_10_08.py` (one-shot, idempotent, `--check`).
+
+## Oct 7 2026 — branch `reversals/sourced-only` (PR, not merged): reversed meanings only where a source gives them
+
+- **Removed** (archived in `tarot/_archive/unsourced-reversals-2026-10-07.json`): the 78 `Reversed` on the
+  Conver Marseille (no source gives the Marseille pattern reversals; its Tradition Note now says so), the 22
+  on Oswald Wirth (his text gives none), and on each Etteilla deck the 40 pip and 16 court reversals (not
+  Etteilla's: one template repeated across the suits, and invented "ill-disposed" persons).
+- **Kept:** Etteilla's 22 trump reversals, now labelled as paraphrase (card 8, and card 13 on Etteilla I,
+  replaced by the wording the research file cites); Waite's own reversals; Book T's own "if ill dignified"
+  sentences; Yve Lepkowski's guidebook meanings. Golden Dawn's editorial `Reversed / Ill-Dignified` left
+  the repo with PR #43 and is still in the app (see `docs/plan/APP-SCENE-CLEANUP-CHECKLIST-2026-10-05.md`).
+- Script: `scripts/archive/remove_unsourced_reversals.py` (one-shot, `--check`).
+
+## Oct 7 2026 — branch `sources/oct7` (PR, not merged): sources and coherence
+
+- **Farley:** in print as the Bloomsbury Academic paperback (2019); the editorial view now says the book was
+  not read here; her open-access "Out of Africa" (2011) read and cited; her death (9 July 2025) noted.
+- **Open-access sources** added and cited where they support the repo: Depaulis 1984 (Gallica), IPCS
+  pattern sheet 001, Pratesi 1989, Strube 2016, Pooley 2023.
+- **Tree of Tarot data:** the Italian trionfi, the Ontoject and Anecdotes now sit in branches (new
+  Contemporary branch); every node has a numeric year (Lévi no longer drops off the timeline; "20th–21st c."
+  no longer lands at 2050); Charles VI and Anecdotes have one date everywhere; `check_all.py` checks the tree.
+- **Coherence:** mechanical joins only (the ring is "Tree of Tarot" everywhere, practice words, dates and
+  counts that disagreed between files, stale statuses). The seams in her prose are listed for her in
+  `docs/plan/COHERENCE-2026-10-07.md`.
+
+## Oct 6 2026 — merged: the Tarot Reader
+
+- **The Tarot Reader** (`reader/`): instructions to paste into a claude.ai Project so Claude reads a
+  spread in this site's style (notation, Book T and Waite quoted briefly, patterns, questions not
+  instructions, links to each card's page on recursive.eco); a spread format with four starters
+  that also load in the Spread Caster; and a self-contained grid page that lays the cards on the
+  spread. Not yet tried in claude.ai itself.
+
+## Oct 6 2026 — Book T: Strength and Justice had each other's 1912 text
+
+- `scripts/import_book_t_1912.py` used Book T's key numbers (8 = Justice, 11 = Fortitude) as indexes into the deck's
+  Rider-Waite-Smith order (8 = Strength, 11 = Justice). It now translates Book T's number to the deck's
+  and asserts Book T's own table. Fixed on `major-08-strength` and `major-11-justice`; the other 20 keys were right.
+
 ## Oct 5 2026 — Yve Lepkowski's own words, and her pictures checked
 
 - **Her text, word for word, from her guidebook pages**: Anecdotes (31 sections), Clown Town (11),

@@ -9,7 +9,7 @@
  * auto-detected from the filename.
  *
  * Nav model (June 2026): two groups, all right-aligned.
- *  - VIEWS  — previews of the same data (Cards, Explorer, Tree of Life, Timeline,
+ *  - VIEWS  — previews of the same data (Cards, Explorer, Tree of Tarot, Timeline,
  *             Tree, Genealogy), introduced by a tiny "views" caption.
  *  - TOOLS  — different-natured pages, each colour-coded: Caster (violet),
  *             Course (green), Shop (gold), GitHub (muted, external).
@@ -48,7 +48,7 @@
     ['table',    'Card Table', PFX + 'viewers/table.html'],
   ];
   const GRAMMAR_VIEWS = [
-    ['treeoflife', 'Tree of Life', PFX + 'viewers/genealogy-tree.html'],
+    ['treeoflife', 'Tree of Tarot', PFX + 'viewers/genealogy-tree.html'],
     ['timeline',   'Timeline',     PFX + 'viewers/timeline.html'],
     ['genealogy',  'Genealogy',    PFX + 'genealogy.html'],
     ['channels',   'Channels',     PFX + 'pages/channels.html'],

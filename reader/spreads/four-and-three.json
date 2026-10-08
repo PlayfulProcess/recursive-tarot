@@ -1,0 +1,80 @@
+{
+  "_type": "recursive-tarot-spread",
+  "_version": 1,
+  "id": "four-and-three",
+  "name": "Four and Three",
+  "description": "Two rows: four cards above, three below, laid in the order drawn. The positions carry no fixed meaning; the question and the person give them one. This is the layout of PlayfulProcess's sleep reading of Oct 6 2026.",
+  "question_prompt": "What do you want to look at? (The rows can mean whatever you decide before you lay them.)",
+  "grid": {
+    "rows": 2,
+    "cols": 4
+  },
+  "_note": "The bottom row is drawn centred under the top row (half-step columns). If the cards were laid left-aligned, use col 1, 2, 3.",
+  "positions": [
+    {
+      "n": 1,
+      "label": "Top 1",
+      "meaning": "First card of the top row.",
+      "row": 1,
+      "col": 1,
+      "x": 0.125,
+      "y": 0.25
+    },
+    {
+      "n": 2,
+      "label": "Top 2",
+      "meaning": "Second card of the top row.",
+      "row": 1,
+      "col": 2,
+      "x": 0.375,
+      "y": 0.25
+    },
+    {
+      "n": 3,
+      "label": "Top 3",
+      "meaning": "Third card of the top row.",
+      "row": 1,
+      "col": 3,
+      "x": 0.625,
+      "y": 0.25
+    },
+    {
+      "n": 4,
+      "label": "Top 4",
+      "meaning": "Fourth card of the top row.",
+      "row": 1,
+      "col": 4,
+      "x": 0.875,
+      "y": 0.25
+    },
+    {
+      "n": 5,
+      "label": "Bottom 1",
+      "meaning": "First card of the bottom row.",
+      "row": 2,
+      "col": 1.5,
+      "x": 0.25,
+      "y": 0.75
+    },
+    {
+      "n": 6,
+      "label": "Bottom 2",
+      "meaning": "Second card of the bottom row.",
+      "row": 2,
+      "col": 2.5,
+      "x": 0.5,
+      "y": 0.75
+    },
+    {
+      "n": 7,
+      "label": "Bottom 3",
+      "meaning": "Third card of the bottom row.",
+      "row": 2,
+      "col": 3.5,
+      "x": 0.75,
+      "y": 0.75
+    }
+  ],
+  "author": "PlayfulProcess",
+  "license": "CC-BY-SA-4.0"
+}

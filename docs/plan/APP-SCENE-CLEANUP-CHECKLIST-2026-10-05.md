@@ -79,3 +79,55 @@ So before removing every Scene in the app:
 
 Counts are the repo's. If the app's count differs for a deck, the two copies have drifted; stop and
 look before applying. The ids come from `tarot/_eco_ids.json`.
+
+## Added Oct 7: reversed meanings that no source gave
+
+The branch `reversals/sourced-only` ("Reversed meanings: only where a source gives them") removes
+these from the repo, archived in `tarot/_archive/unsourced-reversals-2026-10-07.json`. Same rule
+as above: the push does not remove them in the app, so each needs the app-side call, with your word,
+**before** any "Resolve all drifts" write-back (or the app's copies come back into the repo).
+
+| Repo deck | recursive.eco id | Remove in the app | Expect |
+|---|---|---|---|
+| golden-dawn-book-t-tarot | edac5d5a-8100-486d-b822-2f31b20a194c | `Reversed / Ill-Dignified` (step 4 above) | 78 |
+| tarot-de-marseille-conver | ac47f7af-ac80-4942-a422-dd4a15614738 | `Reversed` | 78 |
+| oswald-wirth-tarot | 2b757b2e-b4d9-4896-bc72-f9ae6b7f5656 | `Reversed` | 22 |
+| etteilla-i-livre-de-thot | 50fb5980-5be5-4702-9a4f-858ddd524fe3 | `Reversed (the person ill-disposed)`; `Reversed` on the minors only | 16 + 40 |
+| etteilla-ii-egyptian | c310e5d9-f954-458c-9462-aa1eefd95209 | as Etteilla I | 16 + 40 |
+| etteilla-iii-oracle-des-dames | 9c62d3ca-4e96-44ff-bffb-b7d3da55423c | as Etteilla I | 16 + 40 |
+
+On the Etteilla decks, `has_section: "Reversed"` alone would also catch the 22 trumps, which keep
+theirs: select the 40 minors (`category: "minor"`, or the item ids listed in the archive file).
+
+## Added Oct 8: the Etteilla number cards' upright lines
+
+The branch `due/oct8` moves the 40 number-card `Upright` lines off each Etteilla deck (one template
+copied across the suits), archived in `tarot/_archive/unsourced-pip-uprights-2026-10-08.json`. Same
+rule: remove them in the app too, with your word, before any "Resolve all drifts" write-back.
+
+| Repo deck | recursive.eco id | Remove in the app | Expect |
+|---|---|---|---|
+| etteilla-i-livre-de-thot | 50fb5980-5be5-4702-9a4f-858ddd524fe3 | `Upright` on the 40 number cards only | 40 |
+| etteilla-ii-egyptian | c310e5d9-f954-458c-9462-aa1eefd95209 | as Etteilla I | 40 |
+| etteilla-iii-oracle-des-dames | 9c62d3ca-4e96-44ff-bffb-b7d3da55423c | as Etteilla I | 40 |
+
+`has_section: "Upright"` alone would also catch the 22 trumps, which keep theirs (now labelled as
+paraphrase): select the 40 by the item ids in the archive file. The courts carry
+`Upright (the person well-disposed)`, a different label, and are not touched.
+
+## Added Oct 8: Etteilla's own words on all 78 cards
+
+The branch `sources/etteilla-own-words` gives every card on the three Etteilla decks an `Upright` and
+a `Reversed` holding Etteilla's own word for that leaf (from the *Dictionnaire synonimique du Livre de
+Thot*, 1791), and drops the 16 courts' `Upright (the person well-disposed)` label. The paraphrases it
+replaces are archived in `tarot/_archive/etteilla-paraphrases-2026-10-08.json`. Before any "Resolve all
+drifts" write-back, with your word, the app copy needs the same:
+
+| Repo deck | recursive.eco id | In the app | Expect |
+|---|---|---|---|
+| etteilla-i-livre-de-thot | 50fb5980-5be5-4702-9a4f-858ddd524fe3 | take `Upright` and `Reversed` from the repo for all 78 cards; remove `Upright (the person well-disposed)` on the 16 courts | 78 cards, 16 removals |
+| etteilla-ii-egyptian | c310e5d9-f954-458c-9462-aa1eefd95209 | as Etteilla I | 78, 16 |
+| etteilla-iii-oracle-des-dames | 9c62d3ca-4e96-44ff-bffb-b7d3da55423c | as Etteilla I | 78, 16 |
+
+A pull from `main` after merge brings the new sections in; the court label is the one field a pull
+would leave behind in the app.

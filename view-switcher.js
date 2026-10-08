@@ -1,6 +1,6 @@
 /* Shared "eye" view-switcher for the Recursive Tarot static site.
  * One eye icon that flips the current grammar through every view (Cards, Course,
- * Explorer, Tree, Thumbnails, Timeline, Tree of Life, Genealogy, Print). Preserves
+ * Explorer, Tree, Thumbnails, Timeline, Tree of Tarot, Genealogy, Print). Preserves
  * the loaded grammar (?src / ?github / ?id). Course = the same grammar rendered as a
  * readable course (grammar-course.html), each item a lesson. Style-isolated via Shadow DOM.
  *
@@ -51,7 +51,7 @@
   ];
   const GRAMMAR_VIEWS = [
     ['timeline',   'Timeline',     root + 'viewers/timeline.html' + qs],
-    ['treeoflife', 'Tree of Life', root + 'viewers/genealogy-tree.html' + qs],
+    ['treeoflife', 'Tree of Tarot', root + 'viewers/genealogy-tree.html' + qs],
     ['genealogy',  'Genealogy',    root + 'genealogy.html'],
   ];
   const EXTRA_VIEWS = [

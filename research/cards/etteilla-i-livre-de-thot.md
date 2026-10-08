@@ -340,6 +340,11 @@ and the etteillastrumps project; they are summarised here rather than reproduced
   keep them un-normalised.
 - Per-pip divinatory wordlists (cards 22–77) should be transcribed from a primary
   (Etteilla's *Troisième cahier*) before being raised above `medium`.
+  **Partly done (Oct 8 2026):** every card's upright and reversed head-word, the words Etteilla
+  printed on each leaf, is now transcribed from the *Dictionnaire synonimique du Livre de Thot*
+  (Paris, 1791), pp. 19-57, onto the three Etteilla decks:
+  [research/sources/etteilla-dictionnaire-synonimique-1791.md](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/etteilla-dictionnaire-synonimique-1791.md).
+  The *Troisième cahier* itself (Gallica, ark:/12148/bpt6k312882c) is still unread.
 
 ## Sources
 

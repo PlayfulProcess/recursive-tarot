@@ -55,7 +55,9 @@ ORDER = [
     ("Golden Dawn Rank", BOOK_T),           # the header; the rest inherit it
     ("Book T (1912)", BOOK_T_1912),
     ("Divinatory Meaning", BOOK_T),
-    ("Reversed / Ill-Dignified", BOOK_T),
+    # No "Reversed / Ill-Dignified": Book T gives no reversals, and its own "if ill dignified"
+    # sentences live inside `Book T (1912)`. If the app writes that label back, it must not be
+    # stamped with the Book T header (archived: tarot/_archive/golden-dawn-editorial-2026-10-05.json).
     ("Correspondences", BOOK_T),
     ("Astrological attribution (Book T)", BOOK_T),
     ("Symbol", BOOK_T),
