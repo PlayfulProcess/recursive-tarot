@@ -13,37 +13,41 @@ quotes cannot cause a miss. "Song reference", "Traditional meaning" and "Also ca
 (not hers, or not prose). Script: `scripts/audit_yve_decks.py` (it reads the API dumps; the dumps
 are not committed).
 
-**Not checked:** the images. Whether each picture sits on the right card needs her original files
-(the ZIPs on her Downloads page, or the copy in PlayfulProcess's Drive).
+**The images** were checked in a second pass, against the files in the ZIPs on her Downloads page
+(each of our card images matched to the nearest of her files by a visual fingerprint; see
+"What was fixed").
 
-## What it found
+## What it found (first pass, Oct 5 morning)
 
 - **No text sits on the wrong card.** Every passage that is hers comes from her page for that card.
 - **Petit Lenormand: 100%** of the card descriptions are hers, word for word (her image `alt` text).
-- **Clown Town Tarot: 99%.** Three interpretations (Judgement, 8 of Batons, 4 of Swords) and a
-  sentence here and there are not on her site; they may come from her PDF guidebook.
-- **Anecdotes Tarot: 95%.** Two cards are rewritten rather than hers: the **Nine of Coins** and the
-  **Page of Coins** (both "The card" and "Interpretation" are shorter paraphrases of her pages). The
-  **Three of Cups** "Interpretation" is not hers at all. About 25 more cards each have one or two
-  sentences that are not on her site.
-- **Arlecchino's Augmented Arcana: 97%.** Most meanings come from her Tarocchino guidebook, as the
-  deck's note says, but a few are not hers: Il Vecchio's upright and reversed (a chronos/kairos
-  split that is not in Etteilla), and single meanings on the King of Batons, Nine of Coins, Knight of
-  Cups and Ace of Cups. The Queen of Batons ends with a summary sentence ("The description continues
-  with details about…") that a machine wrote. Her Augmented meanings are published only in her PDF,
-  so these need the file.
-- **Tarocchino Arlecchino: the 64 "The card" sections are paraphrases**, not her words. The deck's
-  own note says so ("'The card' notes paraphrase her iconography text"), but the deck is presented
-  as hers. Her own descriptions are on her guidebook pages.
+- **Clown Town Tarot: 99%; Anecdotes Tarot: 95%; Augmented Arcana: 97%.** The gaps were paraphrases
+  made by the June import (for example the Anecdotes Nine and Page of Coins), an interpretation that
+  was not hers at all (the Anecdotes Three of Cups), and one machine-written summary sentence
+  (the Augmented Queen of Batons).
+- **Tarocchino Arlecchino:** the 64 "The card" sections were paraphrases of her image descriptions,
+  as the deck's note said.
+- **Correction:** the first pass called Il Vecchio's chronos/kairos meanings "not hers". They are
+  hers: her Tarocchino page for Le Vieillard explains that she chose the two Greek words for time.
 
-## Proposed fix (waits for PlayfulProcess's word)
+## What was fixed (Oct 5, at PlayfulProcess's word)
 
-1. Replace every passage that is not hers with her own text, from her pages (and her PDFs for the
-   Augmented meanings and the three Clown Town interpretations), leaving out the lyric epigraph at
-   the top of each Anecdotes page.
-2. Where she wrote nothing for a field, leave the field empty rather than fill it.
-3. Update each deck's `modifications` note to say exactly what was changed, as her licence asks.
-4. Check the pictures against her ZIP files.
+- **Text:** every section meant to be hers was taken again, word for word, from her guidebook pages:
+  Anecdotes (31 sections), Clown Town (11), Tarocchino (62 card descriptions, 4 meanings), Augmented
+  (2 card descriptions, 2 meanings synced from her Tarocchino text). Her own small slips stay as she
+  wrote them. The verse epigraphs at the top of some pages are left out, and so is every song lyric.
+  What remains of ours is marked *Editorial — The Recursive Tarot* (the Augmented notes on the cards
+  whose meanings are only in her printed guidebook, and two one-line significator notes). The
+  significators now carry the text of her Tarocchino guidebook PDF. A re-run of the audit finds 95–100%
+  of each deck on her site; what it still misses is formatting (quotation marks, links), not wording.
+- **Pictures**, compared with the files in her ZIPs (Downloads page, Oct 5) by a visual fingerprint:
+  Augmented, Anecdotes and Clown Town match her files exactly, card for card. In Petit Lenormand the
+  **Cross showed the Roads picture**: it now shows her Cross. The two Tarocchino **significators**
+  were her art cropped without its frame and titles: they now show her whole cards (Le Questionnant,
+  La Questionnante). The three new files are in the repo (`tarot/petit-lenormand/images/`,
+  `tarot/tarocchino-arlecchino/images/`) and load from tarot.recursive.eco once Pages serves `main`.
+- **Each deck's `modifications` note** now says exactly what is hers and what is ours, as her
+  licence asks.
 
 ## Per deck
 
