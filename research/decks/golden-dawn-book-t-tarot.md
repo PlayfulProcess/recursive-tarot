@@ -190,12 +190,38 @@ that ends in today's bookshop tarot [@decker2002; @web_th_rws].
   primary Regardie/Gilbert edition.
 - The Sola Busca → Smith links are **influence, not certainty** — keep them so.
 
+## Lineage and where to see the decks
+
+Added 2026-10-08. References only; nothing reproduced. The readable version, with links, is
+`pages/golden-dawn-decks.html`; the same list sits in the grammar description.
+
+- **The Order's pattern deck** — lost. One account has Moina Mathers paint it and adepts copy it
+  [@web_learntarot_gd]; Farrell argues the Order never made a deck of its own, giving line drawings of
+  some trumps to the Outer Order and descriptions to the Inner [@farrell2009_gd_tarot]. Keep both.
+- **Regardie's own hand-copied deck** (1930s, reportedly): lost in the 1960s, reportedly stolen;
+  photographs went to Wang and, reportedly, to a private library connected with the O.T.O.
+  [@web_stevep_gd_compare]. Farrell says the cards are shown in Regardie's *Complete Golden Dawn
+  System of Magic* (1984) [@farrell2009_gd_tarot] — page reference unchecked.
+- **Whare Ra** (1912–1978): no coloured deck found; crude line drawings on small yellow card; members
+  moved to BOTA cards in the 1960s [@farrell2009_gd_tarot]; regalia and records mostly burned at
+  closure [@web_whare_ra_wp]. Line drawings of the trumps (via Pat Zalewski) online at the Hermetic
+  Library [@web_hermetic_whare_ra]. **The claim that photographs of hand-painted Whare Ra decks
+  survive was not confirmed.**
+- **Yeats's Golden Dawn papers**, National Library of Ireland [@web_nli_yeats_occult]; Raine's study
+  [@raine1972_yeats]. Whether a painted deck is among them is unconfirmed.
+- **Thoth** — Harris's paintings (1938–1943) at the Warburg Institute [@web_thoth_wp].
+- **Wang/Regardie** (1977 or 1978), **Dowson's Hermetic Tarot** (1980; some listings 1979),
+  **Ciceros** (1991; reissued 2000 or 2001), **Zalewskis** (book 1997/2008; deck 2022): dates and
+  provenance per [@web_stevep_gd_compare; @farrell2009_gd_tarot]. All in copyright: references only.
+
 ## Sources
 
 [@decker1996], [@decker2002], [@dummett1980], [@waite1910], [@web_gd_swap], [@web_gd_nodeck],
 [@web_mathers_wp], [@web_pkt_wp], [@web_pcs_wp], [@web_pcs_artnet], [@web_rws_wopc], [@web_th_rws],
 [@web_strength_wp], [@web_mysticsym_swap], [@web_greer_gd_minors], [@web_cunliffe_correspondences],
-[@web_silverlotus_titles], [@web_solabusca_pcs].
+[@web_silverlotus_titles], [@web_solabusca_pcs], [@farrell2009_gd_tarot], [@web_stevep_gd_compare],
+[@web_hermetic_whare_ra], [@web_whare_ra_wp], [@web_learntarot_gd], [@web_thoth_wp], [@raine1972_yeats],
+[@web_nli_yeats_occult].
 
 ---
 *Research notes — AI-assisted draft, pending review by the maintainer and the Tarot History
