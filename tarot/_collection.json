@@ -49,6 +49,7 @@
       "name": "The Occult Reframing (France → England, 1781→)",
       "deck_slugs": [
         "oswald-wirth-tarot",
+        "book-t",
         "golden-dawn-book-t-tarot",
         "court-de-gebelin-tarot",
         "etteilla-i-livre-de-thot",
@@ -212,6 +213,23 @@
       "provenance": "record",
       "common_name": "Oswald Wirth",
       "category": "historical"
+    },
+    {
+      "slug": "book-t",
+      "name": "Book T — The Golden Dawn's 78 Cards",
+      "type": "tarot",
+      "branch": "occult",
+      "is_meta": false,
+      "default_preview": null,
+      "items": 82,
+      "cover_image_url": "",
+      "blurb": "# Book T — the Golden Dawn's 78 cards",
+      "path": "tarot/book-t/grammar.json",
+      "common_name": "Book T",
+      "category": "historical",
+      "year": 1912,
+      "year_label": "c. 1888 · printed 1912",
+      "provenance": "record"
     },
     {
       "slug": "golden-dawn-book-t-tarot",
