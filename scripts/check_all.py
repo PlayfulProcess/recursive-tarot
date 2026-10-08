@@ -139,6 +139,15 @@ print(f"[link_glossary.py] {out.splitlines()[0] if out else '(no output)'}")
 if r.returncode != 0:
     errors.append(f"link_glossary.py --check failed:\n{out}")
 
+# 7 — pages/book-t.html is generated from the 1912 source, the deck and the glossary; it must
+# match what build_book_t_page.py makes of them now (a glossary or deck edit can change it).
+r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "build_book_t_page.py"), "--check"],
+                   capture_output=True, text=True, cwd=ROOT)
+out = (r.stdout + r.stderr).strip()
+print(f"[build_book_t_page.py] {out.splitlines()[0] if out else '(no output)'}")
+if r.returncode != 0:
+    errors.append(f"build_book_t_page.py --check failed:\n{out}")
+
 for w in warnings:
     print("WARN:", w)
 if errors:

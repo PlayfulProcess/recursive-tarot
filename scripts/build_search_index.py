@@ -90,6 +90,7 @@ PAGES = [
     ("Timeline", "viewers/timeline.html", "timeline history dates"),
     ("Genealogy", "genealogy.html", "genealogy family"),
     ("Golden Dawn decks", "pages/golden-dawn-decks.html", "golden dawn decks"),
+    ("Book T (1912) — the whole text", "pages/book-t.html", "book t 1912 equinox golden dawn text decans"),
     ("Sources — people & books", "pages/sources.html", "sources people books bibliography"),
     ("All courses", "pages/courses.html", "courses gallery"),
     ("Contribute", "pages/contribute.html", "contribute help"),

@@ -109,6 +109,15 @@
     h:      '<path d="M5 4h14M5 9h14M5 14h9M5 19h6"/>',
     g:      '<path d="M9 15l6-6"/><path d="M11 6l1-1a4 4 0 0 1 6 6l-1 1"/><path d="M13 18l-1 1a4 4 0 0 1-6-6l1-1"/>',
   };
+  // Two small icon links in the bar (Oct 2026): the Tree of Life map and the Glossary.
+  const ICO_TREE = '<path d="M12 3.5v17M6.5 6.5v10M17.5 6.5v10M6.5 6.5h11M6.5 11.5h11M6.5 16.5h11M12 3.5L6.5 6.5M12 3.5l5.5 3M6.5 16.5L12 20.5l5.5-4"/>'
+    + [[12, 3.5], [6.5, 6.5], [17.5, 6.5], [6.5, 11.5], [17.5, 11.5], [12, 13.5], [6.5, 16.5], [17.5, 16.5], [12, 17.5], [12, 20.5]]
+      .map(([x, y]) => `<circle cx="${x}" cy="${y}" r="1.7" fill="#fbf9f3"/>`).join('');
+  const ICO_GLOSS = '<path d="M5 4.5h11.5a2 2 0 0 1 2 2V20H7a2 2 0 0 1-2-2z"/><path d="M5 18a2 2 0 0 1 2-2h11.5"/><path d="M9.3 13.2l2.2-6 2.2 6M10.1 11.2h2.8"/>';
+  const ICON_LINKS = [
+    ['tree-of-life.html', 'The Tree of Life map', ICO_TREE],
+    ['glossary.html', 'Glossary', ICO_GLOSS],
+  ];
   const QJ_TRY = ['Justice', 'Golden Dawn', 'Queen of Cups', 'XI', 'Pathworking', 'Marseille'];
   const qjEsc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
@@ -218,6 +227,12 @@
           .dd-cap{ display:block; font-family:Inter,sans-serif; font-size:9px; text-transform:uppercase; letter-spacing:.16em;
             color:#8a8273; padding:8px 10px 3px; user-select:none; }
           .dd-cap:first-child{ padding-top:2px; }
+          /* -- the Tree and Glossary icons -- */
+          .icos{ display:inline-flex; align-items:center; gap:0; margin:0 4px 0 -6px; }
+          .ico{ display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px;
+            border-radius:50%; color:#4a4439; text-decoration:none; }
+          .ico:hover, .ico:focus-visible{ color:#9a7322; background:#f1ece1; }
+          .ico.on{ color:#9a7322; }
           /* -- quick-jump search -- */
           [hidden]{ display:none !important; }
           .qj-open{ display:none; width:44px; height:44px; padding:0; border:0; border-radius:50%;
@@ -304,6 +319,10 @@
             </div>
           </div>
           <nav aria-label="Site sections">
+            <span class="icos">${ICON_LINKS.map(([file, label, svg]) => {
+              const here = location.pathname.endsWith('/' + file);
+              return `<a class="ico${here ? ' on' : ''}" href="${PFX}pages/${file}" title="${label}" aria-label="${label}"${here ? ' aria-current="page"' : ''}>${QJ_SVG(svg, 22)}</a>`;
+            }).join('')}</span>
             <span class="dd">
               <a class="tab dd-btn${active === 'home' ? ' active' : ''}" href="${PFX}index.html" aria-haspopup="true" aria-expanded="false" aria-label="Home menu">Home</a>
               <span class="dd-menu">
