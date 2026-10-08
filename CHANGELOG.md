@@ -2,6 +2,18 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 7 2026 — branch `reversals/sourced-only` (PR, not merged): reversed meanings only where a source gives them
+
+- **Removed** (archived in `tarot/_archive/unsourced-reversals-2026-10-07.json`): the 78 `Reversed` on the
+  Conver Marseille (no source gives the Marseille pattern reversals; its Tradition Note now says so), the 22
+  on Oswald Wirth (his text gives none), and on each Etteilla deck the 40 pip and 16 court reversals (not
+  Etteilla's: one template repeated across the suits, and invented "ill-disposed" persons).
+- **Kept:** Etteilla's 22 trump reversals, now labelled as paraphrase (card 8, and card 13 on Etteilla I,
+  replaced by the wording the research file cites); Waite's own reversals; Book T's own "if ill dignified"
+  sentences; Yve Lepkowski's guidebook meanings. Golden Dawn's editorial `Reversed / Ill-Dignified` left
+  the repo with PR #43 and is still in the app (see `docs/plan/APP-SCENE-CLEANUP-CHECKLIST-2026-10-05.md`).
+- Script: `scripts/archive/remove_unsourced_reversals.py` (one-shot, `--check`).
+
 ## Oct 7 2026 — branch `sources/oct7` (PR, not merged): sources and coherence
 
 - **Farley:** in print as the Bloomsbury Academic paperback (2019); the editorial view now says the book was
