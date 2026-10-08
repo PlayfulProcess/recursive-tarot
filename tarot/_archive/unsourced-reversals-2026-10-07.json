@@ -1,0 +1,1108 @@
+{
+  "_about": "Reversed meanings moved off the decks on 2026-10-07 because no source for that deck gave them (PlayfulProcess: \"I would delete any reverse meaning that was not there\"). Kept by deck and item id. Written by scripts/archive/remove_unsourced_reversals.py.",
+  "reasons": {
+    "tarot-de-marseille-conver": "No source gives reversed meanings for the Marseille pattern: a game pack, meanings a post-1780s overlay (research/decks/tarot-de-marseille-conver.md, after Decker 1996 and Dummett 1980).",
+    "oswald-wirth-tarot": "Wirth's own text (the `Wirth` sections) gives no reversed meanings; research/cards/oswald-wirth-tarot.md cites no source for them.",
+    "etteilla": "Not Etteilla's: the pip lines were one template repeated across the four suits and the court lines (\"the person ill-disposed\") were invented; no source in the repo gives them."
+  },
+  "decks": {
+    "tarot-de-marseille-conver": {
+      "major-00-le-mat": {
+        "Reversed": "Folly, heedlessness, dispersion; movement without direction or commitment.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-01-le-bateleur": {
+        "Reversed": "Trickery, false starts, cleverness without substance, manipulation.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-02-la-papesse": {
+        "Reversed": "Secrets misused, surface knowledge, withdrawal, sterile silence.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-03-limperatrice": {
+        "Reversed": "Vanity, sterility, smothering, creativity blocked or squandered.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-04-lempereur": {
+        "Reversed": "Domination, rigidity, tyranny, order hardened into oppression.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-05-le-pape": {
+        "Reversed": "Dogma, empty orthodoxy, conformity, the letter without the spirit.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-06-lamoureux": {
+        "Reversed": "Indecision, temptation, a union founded on weakness, choice deferred.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-07-le-chariot": {
+        "Reversed": "Loss of control, conflict, a triumph undone by pride or haste.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-08-la-justice": {
+        "Reversed": "Injustice, imbalance, severity, judgment distorted or evaded.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-09-lhermite": {
+        "Reversed": "Isolation, withdrawal that avoids, a light hoarded or refused.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-10-la-roue": {
+        "Reversed": "Bad turns, resistance to change, being dragged by the wheel.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-11-la-force": {
+        "Reversed": "Brute force, domination by appetite, weakness disguised as control.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-12-le-pendu": {
+        "Reversed": "Useless sacrifice, stagnation, martyrdom that serves no one.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-13-la-mort": {
+        "Reversed": "Stagnation, fear of change, decay resisted instead of released.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-14-temperance": {
+        "Reversed": "Imbalance, impatience, dissipation, the flow spilled or blocked.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-15-le-diable": {
+        "Reversed": "Release from bondage, or deeper enslavement: obsession, the chains embraced.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-16-la-maison-dieu": {
+        "Reversed": "Disaster resisted, a collapse delayed but coming, clinging to ruins.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-17-letoile": {
+        "Reversed": "Despair, disillusion, hope clouded, the waters poured in vain.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-18-la-lune": {
+        "Reversed": "Deception, fear, confusion, illusions mistaken for truth.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-19-le-soleil": {
+        "Reversed": "Vanity, false brightness, a clouded sun, happiness only on the surface.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-20-le-jugement": {
+        "Reversed": "Stagnation, a call refused, fear of change, the trumpet unheard.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "major-21-le-monde": {
+        "Reversed": "Incompletion, a goal almost reached, a cycle that fails to close.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-ace": {
+        "Reversed": "a false start, energy blocked at the source.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-02": {
+        "Reversed": "division, imbalance, a partnership strained.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-03": {
+        "Reversed": "delay, growth stalled, effort scattered.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-04": {
+        "Reversed": "stagnation, rigidity, security clung to.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-05": {
+        "Reversed": "the easing of conflict, or loss deepened.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-06": {
+        "Reversed": "imbalance returning, harmony lost.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-07": {
+        "Reversed": "struggle abandoned, effort wasted.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-08": {
+        "Reversed": "blockage, stalled movement, scattered force.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-09": {
+        "Reversed": "strain, overreach, intensity turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-10": {
+        "Reversed": "burden, excess, a cycle that overstays.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-page": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-knight": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-queen": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "coins-king": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-ace": {
+        "Reversed": "a false start, energy blocked at the source.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-02": {
+        "Reversed": "division, imbalance, a partnership strained.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-03": {
+        "Reversed": "delay, growth stalled, effort scattered.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-04": {
+        "Reversed": "stagnation, rigidity, security clung to.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-05": {
+        "Reversed": "the easing of conflict, or loss deepened.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-06": {
+        "Reversed": "imbalance returning, harmony lost.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-07": {
+        "Reversed": "struggle abandoned, effort wasted.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-08": {
+        "Reversed": "blockage, stalled movement, scattered force.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-09": {
+        "Reversed": "strain, overreach, intensity turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-10": {
+        "Reversed": "burden, excess, a cycle that overstays.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-page": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-knight": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-queen": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "cups-king": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-ace": {
+        "Reversed": "a false start, energy blocked at the source.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-02": {
+        "Reversed": "division, imbalance, a partnership strained.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-03": {
+        "Reversed": "delay, growth stalled, effort scattered.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-04": {
+        "Reversed": "stagnation, rigidity, security clung to.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-05": {
+        "Reversed": "the easing of conflict, or loss deepened.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-06": {
+        "Reversed": "imbalance returning, harmony lost.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-07": {
+        "Reversed": "struggle abandoned, effort wasted.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-08": {
+        "Reversed": "blockage, stalled movement, scattered force.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-09": {
+        "Reversed": "strain, overreach, intensity turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-10": {
+        "Reversed": "burden, excess, a cycle that overstays.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-page": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-knight": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-queen": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "swords-king": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-ace": {
+        "Reversed": "a false start, energy blocked at the source.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-02": {
+        "Reversed": "division, imbalance, a partnership strained.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-03": {
+        "Reversed": "delay, growth stalled, effort scattered.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-04": {
+        "Reversed": "stagnation, rigidity, security clung to.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-05": {
+        "Reversed": "the easing of conflict, or loss deepened.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-06": {
+        "Reversed": "imbalance returning, harmony lost.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-07": {
+        "Reversed": "struggle abandoned, effort wasted.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-08": {
+        "Reversed": "blockage, stalled movement, scattered force.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-09": {
+        "Reversed": "strain, overreach, intensity turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-10": {
+        "Reversed": "burden, excess, a cycle that overstays.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-page": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-knight": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-queen": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      },
+      "batons-king": {
+        "Reversed": "The same energy obstructed, immature, or turned against itself.",
+        "_reason": "tarot-de-marseille-conver"
+      }
+    },
+    "oswald-wirth-tarot": {
+      "arcanum-00-le-fou": {
+        "Reversed": "Aimlessness, madness, dispersion of force; the spirit that scatters instead of advancing.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-01-le-bateleur": {
+        "Reversed": "Trickery, misused skill, a will turned to manipulation or empty cleverness.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-02-la-papesse": {
+        "Reversed": "Secrets misused, surface piety without depth, knowledge withheld or sterile.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-03-limperatrice": {
+        "Reversed": "Sterility, vanity, luxury without fruit, creative energy squandered.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-04-lempereur": {
+        "Reversed": "Tyranny, rigidity, domination, order hardened into oppression.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-05-le-pape": {
+        "Reversed": "Dogmatism, hollow orthodoxy, the letter of the law without its spirit.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-06-lamoureux": {
+        "Reversed": "Indecision, temptation, a union founded on weakness, choice avoided.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-07-le-chariot": {
+        "Reversed": "Loss of control, conflict between the forces, a triumph that turns to defeat through pride.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-08-la-justice": {
+        "Reversed": "Injustice, imbalance, severity without mercy, judgment distorted.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-09-lermite": {
+        "Reversed": "Isolation, miserliness with one's light, withdrawal that becomes mere avoidance.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-10-la-roue": {
+        "Reversed": "Bad luck, resistance to change, being dragged by the wheel rather than riding it.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-11-la-force": {
+        "Reversed": "Brute force, domination by appetite, weakness disguised as control.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-12-le-pendu": {
+        "Reversed": "Useless sacrifice, stagnation, a martyrdom that serves no one, attachment refusing to let go.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-13-la-mort": {
+        "Reversed": "Stagnation, fear of change, decay that is resisted instead of composted, mortification without renewal.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-14-la-temperance": {
+        "Reversed": "Imbalance, impatience, dissipation, the flow blocked or spilled.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-15-le-diable": {
+        "Reversed": "Liberation from bondage, or its opposite: deeper enslavement, obsession, the chains accepted as comfort.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-16-la-maison-dieu": {
+        "Reversed": "Disaster resisted, a delayed but inevitable collapse, clinging to ruins, catastrophe without learning.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-17-les-etoiles": {
+        "Reversed": "Despair, disillusion, hope clouded, the waters poured out in vain.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-18-la-lune": {
+        "Reversed": "Deception, fear, confusion mastering the traveller, illusions taken for truth.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-19-le-soleil": {
+        "Reversed": "Vanity, a clouded sun, false brilliance, happiness that is only on the surface.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-20-le-jugement": {
+        "Reversed": "Stagnation, a call refused, fear of change, the trumpet unheard.",
+        "_reason": "oswald-wirth-tarot"
+      },
+      "arcanum-21-le-monde": {
+        "Reversed": "Incompletion, a goal almost but not reached, a cycle that fails to close, attachment to the journey instead of its end.",
+        "_reason": "oswald-wirth-tarot"
+      }
+    },
+    "etteilla-i-livre-de-thot": {
+      "etteilla-08": {
+        "Reversed (replaced)": "Idleness and stagnation; rest curdled into inertia.",
+        "_reason": "replaced by the cited research wording: research/cards/etteilla-i-livre-de-thot.md, card 8 [@web_etteillastrumps]"
+      },
+      "etteilla-13": {
+        "Reversed (replaced)": "Hollow dogma, a bad counsellor, hypocrisy in high place.",
+        "_reason": "replaced by the cited research wording: research/cards/etteilla-i-livre-de-thot.md, card 13 [@web_etteillastrumps]"
+      },
+      "etteilla-22": {
+        "Reversed (the person ill-disposed)": "The same man turned harsh, grasping, or unreliable in his dealings.",
+        "_reason": "etteilla"
+      },
+      "etteilla-23": {
+        "Reversed (the person ill-disposed)": "A meddling or obstinate woman; help offered with strings.",
+        "_reason": "etteilla"
+      },
+      "etteilla-24": {
+        "Reversed (the person ill-disposed)": "A hasty or quarrelsome youth; a journey or venture gone wrong.",
+        "_reason": "etteilla"
+      },
+      "etteilla-25": {
+        "Reversed (the person ill-disposed)": "Bad news, a careless messenger, a rumour about one's affairs.",
+        "_reason": "etteilla"
+      },
+      "etteilla-26": {
+        "Reversed": "Excess and burden; a cycle that overstays.",
+        "_reason": "etteilla"
+      },
+      "etteilla-27": {
+        "Reversed": "Strain, delay, intensity turned against itself.",
+        "_reason": "etteilla"
+      },
+      "etteilla-28": {
+        "Reversed": "Movement stalled; restlessness without progress.",
+        "_reason": "etteilla"
+      },
+      "etteilla-29": {
+        "Reversed": "The hope dashed; effort abandoned.",
+        "_reason": "etteilla"
+      },
+      "etteilla-30": {
+        "Reversed": "The way blocked; an exchange gone unequal.",
+        "_reason": "etteilla"
+      },
+      "etteilla-31": {
+        "Reversed": "The loss easing, or the test deepening.",
+        "_reason": "etteilla"
+      },
+      "etteilla-32": {
+        "Reversed": "Stagnation; holding on too tightly.",
+        "_reason": "etteilla"
+      },
+      "etteilla-33": {
+        "Reversed": "Growth checked; effort scattered, a delay.",
+        "_reason": "etteilla"
+      },
+      "etteilla-34": {
+        "Reversed": "Division, a pairing strained or broken.",
+        "_reason": "etteilla"
+      },
+      "etteilla-35": {
+        "Reversed": "That force blocked or misdirected at the very start.",
+        "_reason": "etteilla"
+      },
+      "etteilla-36": {
+        "Reversed (the person ill-disposed)": "A fickle or self-indulgent man; affection that cannot be trusted.",
+        "_reason": "etteilla"
+      },
+      "etteilla-37": {
+        "Reversed (the person ill-disposed)": "A jealous or capricious woman; love soured into possessiveness.",
+        "_reason": "etteilla"
+      },
+      "etteilla-38": {
+        "Reversed (the person ill-disposed)": "A seducer or flatterer; an arrival that disappoints.",
+        "_reason": "etteilla"
+      },
+      "etteilla-39": {
+        "Reversed (the person ill-disposed)": "A flatterer, an idle promise; feeling that is only on the surface.",
+        "_reason": "etteilla"
+      },
+      "etteilla-40": {
+        "Reversed": "Excess and burden; a cycle that overstays.",
+        "_reason": "etteilla"
+      },
+      "etteilla-41": {
+        "Reversed": "Strain, delay, intensity turned against itself.",
+        "_reason": "etteilla"
+      },
+      "etteilla-42": {
+        "Reversed": "Movement stalled; restlessness without progress.",
+        "_reason": "etteilla"
+      },
+      "etteilla-43": {
+        "Reversed": "The hope dashed; effort abandoned.",
+        "_reason": "etteilla"
+      },
+      "etteilla-44": {
+        "Reversed": "The way blocked; an exchange gone unequal.",
+        "_reason": "etteilla"
+      },
+      "etteilla-45": {
+        "Reversed": "The loss easing, or the test deepening.",
+        "_reason": "etteilla"
+      },
+      "etteilla-46": {
+        "Reversed": "Stagnation; holding on too tightly.",
+        "_reason": "etteilla"
+      },
+      "etteilla-47": {
+        "Reversed": "Growth checked; effort scattered, a delay.",
+        "_reason": "etteilla"
+      },
+      "etteilla-48": {
+        "Reversed": "Division, a pairing strained or broken.",
+        "_reason": "etteilla"
+      },
+      "etteilla-49": {
+        "Reversed": "That force blocked or misdirected at the very start.",
+        "_reason": "etteilla"
+      },
+      "etteilla-50": {
+        "Reversed (the person ill-disposed)": "A cruel or vindictive man; authority used to wound, a dangerous enemy.",
+        "_reason": "etteilla"
+      },
+      "etteilla-51": {
+        "Reversed (the person ill-disposed)": "A spiteful or grieving woman; malice, mourning, a bitter tongue.",
+        "_reason": "etteilla"
+      },
+      "etteilla-52": {
+        "Reversed (the person ill-disposed)": "An enemy's attack, reckless aggression; conflict that overreaches.",
+        "_reason": "etteilla"
+      },
+      "etteilla-53": {
+        "Reversed (the person ill-disposed)": "Surveillance turned hostile; a spy, slander, trouble carried by a youth.",
+        "_reason": "etteilla"
+      },
+      "etteilla-54": {
+        "Reversed": "Excess and burden; a cycle that overstays.",
+        "_reason": "etteilla"
+      },
+      "etteilla-55": {
+        "Reversed": "Strain, delay, intensity turned against itself.",
+        "_reason": "etteilla"
+      },
+      "etteilla-56": {
+        "Reversed": "Movement stalled; restlessness without progress.",
+        "_reason": "etteilla"
+      },
+      "etteilla-57": {
+        "Reversed": "The hope dashed; effort abandoned.",
+        "_reason": "etteilla"
+      },
+      "etteilla-58": {
+        "Reversed": "The way blocked; an exchange gone unequal.",
+        "_reason": "etteilla"
+      },
+      "etteilla-59": {
+        "Reversed": "The loss easing, or the test deepening.",
+        "_reason": "etteilla"
+      },
+      "etteilla-60": {
+        "Reversed": "Stagnation; holding on too tightly.",
+        "_reason": "etteilla"
+      },
+      "etteilla-61": {
+        "Reversed": "Growth checked; effort scattered, a delay.",
+        "_reason": "etteilla"
+      },
+      "etteilla-62": {
+        "Reversed": "Division, a pairing strained or broken.",
+        "_reason": "etteilla"
+      },
+      "etteilla-63": {
+        "Reversed": "That force blocked or misdirected at the very start.",
+        "_reason": "etteilla"
+      },
+      "etteilla-64": {
+        "Reversed (the person ill-disposed)": "A miserly or corrupt man; wealth used coldly, gain without scruple.",
+        "_reason": "etteilla"
+      },
+      "etteilla-65": {
+        "Reversed (the person ill-disposed)": "A grasping or showy woman; luxury without warmth.",
+        "_reason": "etteilla"
+      },
+      "etteilla-66": {
+        "Reversed (the person ill-disposed)": "A stalled payment, a heavy and unimaginative man; gain delayed.",
+        "_reason": "etteilla"
+      },
+      "etteilla-67": {
+        "Reversed (the person ill-disposed)": "Bad news of money, a careless clerk; effort that earns little.",
+        "_reason": "etteilla"
+      },
+      "etteilla-68": {
+        "Reversed": "Excess and burden; a cycle that overstays.",
+        "_reason": "etteilla"
+      },
+      "etteilla-69": {
+        "Reversed": "Strain, delay, intensity turned against itself.",
+        "_reason": "etteilla"
+      },
+      "etteilla-70": {
+        "Reversed": "Movement stalled; restlessness without progress.",
+        "_reason": "etteilla"
+      },
+      "etteilla-71": {
+        "Reversed": "The hope dashed; effort abandoned.",
+        "_reason": "etteilla"
+      },
+      "etteilla-72": {
+        "Reversed": "The way blocked; an exchange gone unequal.",
+        "_reason": "etteilla"
+      },
+      "etteilla-73": {
+        "Reversed": "The loss easing, or the test deepening.",
+        "_reason": "etteilla"
+      },
+      "etteilla-74": {
+        "Reversed": "Stagnation; holding on too tightly.",
+        "_reason": "etteilla"
+      },
+      "etteilla-75": {
+        "Reversed": "Growth checked; effort scattered, a delay.",
+        "_reason": "etteilla"
+      },
+      "etteilla-76": {
+        "Reversed": "Division, a pairing strained or broken.",
+        "_reason": "etteilla"
+      },
+      "etteilla-77": {
+        "Reversed": "That force blocked or misdirected at the very start.",
+        "_reason": "etteilla"
+      }
+    },
+    "etteilla-ii-egyptian": {
+      "etteilla-08": {
+        "Reversed (replaced)": "Idleness and stagnation; rest curdled into inertia.",
+        "_reason": "replaced by the cited research wording: research/cards/etteilla-i-livre-de-thot.md, card 8 [@web_etteillastrumps]"
+      },
+      "etteilla-22": {
+        "Reversed (the person ill-disposed)": "The same man turned harsh, grasping, or unreliable in his dealings.",
+        "_reason": "etteilla"
+      },
+      "etteilla-23": {
+        "Reversed (the person ill-disposed)": "A meddling or obstinate woman; help offered with strings.",
+        "_reason": "etteilla"
+      },
+      "etteilla-24": {
+        "Reversed (the person ill-disposed)": "A hasty or quarrelsome youth; a journey or venture gone wrong.",
+        "_reason": "etteilla"
+      },
+      "etteilla-25": {
+        "Reversed (the person ill-disposed)": "Bad news, a careless messenger, a rumour about one's affairs.",
+        "_reason": "etteilla"
+      },
+      "etteilla-26": {
+        "Reversed": "Excess and burden; a cycle that overstays.",
+        "_reason": "etteilla"
+      },
+      "etteilla-27": {
+        "Reversed": "Strain, delay, intensity turned against itself.",
+        "_reason": "etteilla"
+      },
+      "etteilla-28": {
+        "Reversed": "Movement stalled; restlessness without progress.",
+        "_reason": "etteilla"
+      },
+      "etteilla-29": {
+        "Reversed": "The hope dashed; effort abandoned.",
+        "_reason": "etteilla"
+      },
+      "etteilla-30": {
+        "Reversed": "The way blocked; an exchange gone unequal.",
+        "_reason": "etteilla"
+      },
+      "etteilla-31": {
+        "Reversed": "The loss easing, or the test deepening.",
+        "_reason": "etteilla"
+      },
+      "etteilla-32": {
+        "Reversed": "Stagnation; holding on too tightly.",
+        "_reason": "etteilla"
+      },
+      "etteilla-33": {
+        "Reversed": "Growth checked; effort scattered, a delay.",
+        "_reason": "etteilla"
+      },
+      "etteilla-34": {
+        "Reversed": "Division, a pairing strained or broken.",
+        "_reason": "etteilla"
+      },
+      "etteilla-35": {
+        "Reversed": "That force blocked or misdirected at the very start.",
+        "_reason": "etteilla"
+      },
+      "etteilla-36": {
+        "Reversed (the person ill-disposed)": "A fickle or self-indulgent man; affection that cannot be trusted.",
+        "_reason": "etteilla"
+      },
+      "etteilla-37": {
+        "Reversed (the person ill-disposed)": "A jealous or capricious woman; love soured into possessiveness.",
+        "_reason": "etteilla"
+      },
+      "etteilla-38": {
+        "Reversed (the person ill-disposed)": "A seducer or flatterer; an arrival that disappoints.",
+        "_reason": "etteilla"
+      },
+      "etteilla-39": {
+        "Reversed (the person ill-disposed)": "A flatterer, an idle promise; feeling that is only on the surface.",
+        "_reason": "etteilla"
+      },
+      "etteilla-40": {
+        "Reversed": "Excess and burden; a cycle that overstays.",
+        "_reason": "etteilla"
+      },
+      "etteilla-41": {
+        "Reversed": "Strain, delay, intensity turned against itself.",
+        "_reason": "etteilla"
+      },
+      "etteilla-42": {
+        "Reversed": "Movement stalled; restlessness without progress.",
+        "_reason": "etteilla"
+      },
+      "etteilla-43": {
+        "Reversed": "The hope dashed; effort abandoned.",
+        "_reason": "etteilla"
+      },
+      "etteilla-44": {
+        "Reversed": "The way blocked; an exchange gone unequal.",
+        "_reason": "etteilla"
+      },
+      "etteilla-45": {
+        "Reversed": "The loss easing, or the test deepening.",
+        "_reason": "etteilla"
+      },
+      "etteilla-46": {
+        "Reversed": "Stagnation; holding on too tightly.",
+        "_reason": "etteilla"
+      },
+      "etteilla-47": {
+        "Reversed": "Growth checked; effort scattered, a delay.",
+        "_reason": "etteilla"
+      },
+      "etteilla-48": {
+        "Reversed": "Division, a pairing strained or broken.",
+        "_reason": "etteilla"
+      },
+      "etteilla-49": {
+        "Reversed": "That force blocked or misdirected at the very start.",
+        "_reason": "etteilla"
+      },
+      "etteilla-50": {
+        "Reversed (the person ill-disposed)": "A cruel or vindictive man; authority used to wound, a dangerous enemy.",
+        "_reason": "etteilla"
+      },
+      "etteilla-51": {
+        "Reversed (the person ill-disposed)": "A spiteful or grieving woman; malice, mourning, a bitter tongue.",
+        "_reason": "etteilla"
+      },
+      "etteilla-52": {
+        "Reversed (the person ill-disposed)": "An enemy's attack, reckless aggression; conflict that overreaches.",
+        "_reason": "etteilla"
+      },
+      "etteilla-53": {
+        "Reversed (the person ill-disposed)": "Surveillance turned hostile; a spy, slander, trouble carried by a youth.",
+        "_reason": "etteilla"
+      },
+      "etteilla-54": {
+        "Reversed": "Excess and burden; a cycle that overstays.",
+        "_reason": "etteilla"
+      },
+      "etteilla-55": {
+        "Reversed": "Strain, delay, intensity turned against itself.",
+        "_reason": "etteilla"
+      },
+      "etteilla-56": {
+        "Reversed": "Movement stalled; restlessness without progress.",
+        "_reason": "etteilla"
+      },
+      "etteilla-57": {
+        "Reversed": "The hope dashed; effort abandoned.",
+        "_reason": "etteilla"
+      },
+      "etteilla-58": {
+        "Reversed": "The way blocked; an exchange gone unequal.",
+        "_reason": "etteilla"
+      },
+      "etteilla-59": {
+        "Reversed": "The loss easing, or the test deepening.",
+        "_reason": "etteilla"
+      },
+      "etteilla-60": {
+        "Reversed": "Stagnation; holding on too tightly.",
+        "_reason": "etteilla"
+      },
+      "etteilla-61": {
+        "Reversed": "Growth checked; effort scattered, a delay.",
+        "_reason": "etteilla"
+      },
+      "etteilla-62": {
+        "Reversed": "Division, a pairing strained or broken.",
+        "_reason": "etteilla"
+      },
+      "etteilla-63": {
+        "Reversed": "That force blocked or misdirected at the very start.",
+        "_reason": "etteilla"
+      },
+      "etteilla-64": {
+        "Reversed (the person ill-disposed)": "A miserly or corrupt man; wealth used coldly, gain without scruple.",
+        "_reason": "etteilla"
+      },
+      "etteilla-65": {
+        "Reversed (the person ill-disposed)": "A grasping or showy woman; luxury without warmth.",
+        "_reason": "etteilla"
+      },
+      "etteilla-66": {
+        "Reversed (the person ill-disposed)": "A stalled payment, a heavy and unimaginative man; gain delayed.",
+        "_reason": "etteilla"
+      },
+      "etteilla-67": {
+        "Reversed (the person ill-disposed)": "Bad news of money, a careless clerk; effort that earns little.",
+        "_reason": "etteilla"
+      },
+      "etteilla-68": {
+        "Reversed": "Excess and burden; a cycle that overstays.",
+        "_reason": "etteilla"
+      },
+      "etteilla-69": {
+        "Reversed": "Strain, delay, intensity turned against itself.",
+        "_reason": "etteilla"
+      },
+      "etteilla-70": {
+        "Reversed": "Movement stalled; restlessness without progress.",
+        "_reason": "etteilla"
+      },
+      "etteilla-71": {
+        "Reversed": "The hope dashed; effort abandoned.",
+        "_reason": "etteilla"
+      },
+      "etteilla-72": {
+        "Reversed": "The way blocked; an exchange gone unequal.",
+        "_reason": "etteilla"
+      },
+      "etteilla-73": {
+        "Reversed": "The loss easing, or the test deepening.",
+        "_reason": "etteilla"
+      },
+      "etteilla-74": {
+        "Reversed": "Stagnation; holding on too tightly.",
+        "_reason": "etteilla"
+      },
+      "etteilla-75": {
+        "Reversed": "Growth checked; effort scattered, a delay.",
+        "_reason": "etteilla"
+      },
+      "etteilla-76": {
+        "Reversed": "Division, a pairing strained or broken.",
+        "_reason": "etteilla"
+      },
+      "etteilla-77": {
+        "Reversed": "That force blocked or misdirected at the very start.",
+        "_reason": "etteilla"
+      }
+    },
+    "etteilla-iii-oracle-des-dames": {
+      "oracle-dames-08": {
+        "Reversed (replaced)": "Idleness and stagnation; rest curdled into inertia.",
+        "_reason": "replaced by the cited research wording: research/cards/etteilla-i-livre-de-thot.md, card 8 [@web_etteillastrumps]"
+      },
+      "oracle-dames-22": {
+        "Reversed (the person ill-disposed)": "The same man turned harsh, grasping, or unreliable in his dealings.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-23": {
+        "Reversed (the person ill-disposed)": "A meddling or obstinate woman; help offered with strings.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-24": {
+        "Reversed (the person ill-disposed)": "A hasty or quarrelsome youth; a journey or venture gone wrong.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-25": {
+        "Reversed (the person ill-disposed)": "Bad news, a careless messenger, a rumour about one's affairs.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-26": {
+        "Reversed": "Excess and burden; a cycle that overstays.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-27": {
+        "Reversed": "Strain, delay, intensity turned against itself.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-28": {
+        "Reversed": "Movement stalled; restlessness without progress.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-29": {
+        "Reversed": "The hope dashed; effort abandoned.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-30": {
+        "Reversed": "The way blocked; an exchange gone unequal.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-31": {
+        "Reversed": "The loss easing, or the test deepening.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-32": {
+        "Reversed": "Stagnation; holding on too tightly.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-33": {
+        "Reversed": "Growth checked; effort scattered, a delay.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-34": {
+        "Reversed": "Division, a pairing strained or broken.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-35": {
+        "Reversed": "That force blocked or misdirected at the very start.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-36": {
+        "Reversed (the person ill-disposed)": "A fickle or self-indulgent man; affection that cannot be trusted.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-37": {
+        "Reversed (the person ill-disposed)": "A jealous or capricious woman; love soured into possessiveness.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-38": {
+        "Reversed (the person ill-disposed)": "A seducer or flatterer; an arrival that disappoints.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-39": {
+        "Reversed (the person ill-disposed)": "A flatterer, an idle promise; feeling that is only on the surface.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-40": {
+        "Reversed": "Excess and burden; a cycle that overstays.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-41": {
+        "Reversed": "Strain, delay, intensity turned against itself.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-42": {
+        "Reversed": "Movement stalled; restlessness without progress.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-43": {
+        "Reversed": "The hope dashed; effort abandoned.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-44": {
+        "Reversed": "The way blocked; an exchange gone unequal.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-45": {
+        "Reversed": "The loss easing, or the test deepening.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-46": {
+        "Reversed": "Stagnation; holding on too tightly.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-47": {
+        "Reversed": "Growth checked; effort scattered, a delay.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-48": {
+        "Reversed": "Division, a pairing strained or broken.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-49": {
+        "Reversed": "That force blocked or misdirected at the very start.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-50": {
+        "Reversed (the person ill-disposed)": "A cruel or vindictive man; authority used to wound, a dangerous enemy.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-51": {
+        "Reversed (the person ill-disposed)": "A spiteful or grieving woman; malice, mourning, a bitter tongue.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-52": {
+        "Reversed (the person ill-disposed)": "An enemy's attack, reckless aggression; conflict that overreaches.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-53": {
+        "Reversed (the person ill-disposed)": "Surveillance turned hostile; a spy, slander, trouble carried by a youth.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-54": {
+        "Reversed": "Excess and burden; a cycle that overstays.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-55": {
+        "Reversed": "Strain, delay, intensity turned against itself.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-56": {
+        "Reversed": "Movement stalled; restlessness without progress.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-57": {
+        "Reversed": "The hope dashed; effort abandoned.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-58": {
+        "Reversed": "The way blocked; an exchange gone unequal.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-59": {
+        "Reversed": "The loss easing, or the test deepening.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-60": {
+        "Reversed": "Stagnation; holding on too tightly.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-61": {
+        "Reversed": "Growth checked; effort scattered, a delay.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-62": {
+        "Reversed": "Division, a pairing strained or broken.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-63": {
+        "Reversed": "That force blocked or misdirected at the very start.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-64": {
+        "Reversed (the person ill-disposed)": "A miserly or corrupt man; wealth used coldly, gain without scruple.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-65": {
+        "Reversed (the person ill-disposed)": "A grasping or showy woman; luxury without warmth.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-66": {
+        "Reversed (the person ill-disposed)": "A stalled payment, a heavy and unimaginative man; gain delayed.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-67": {
+        "Reversed (the person ill-disposed)": "Bad news of money, a careless clerk; effort that earns little.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-68": {
+        "Reversed": "Excess and burden; a cycle that overstays.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-69": {
+        "Reversed": "Strain, delay, intensity turned against itself.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-70": {
+        "Reversed": "Movement stalled; restlessness without progress.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-71": {
+        "Reversed": "The hope dashed; effort abandoned.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-72": {
+        "Reversed": "The way blocked; an exchange gone unequal.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-73": {
+        "Reversed": "The loss easing, or the test deepening.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-74": {
+        "Reversed": "Stagnation; holding on too tightly.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-75": {
+        "Reversed": "Growth checked; effort scattered, a delay.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-76": {
+        "Reversed": "Division, a pairing strained or broken.",
+        "_reason": "etteilla"
+      },
+      "oracle-dames-77": {
+        "Reversed": "That force blocked or misdirected at the very start.",
+        "_reason": "etteilla"
+      }
+    }
+  }
+}

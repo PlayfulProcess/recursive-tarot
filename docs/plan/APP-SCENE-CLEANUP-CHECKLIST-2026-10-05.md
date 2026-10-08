@@ -79,3 +79,22 @@ So before removing every Scene in the app:
 
 Counts are the repo's. If the app's count differs for a deck, the two copies have drifted; stop and
 look before applying. The ids come from `tarot/_eco_ids.json`.
+
+## Added Oct 7: reversed meanings that no source gave
+
+The branch `reversals/sourced-only` ("Reversed meanings: only where a source gives them") removes
+these from the repo, archived in `tarot/_archive/unsourced-reversals-2026-10-07.json`. Same rule
+as above: the push does not remove them in the app, so each needs the app-side call, with your word,
+**before** any "Resolve all drifts" write-back (or the app's copies come back into the repo).
+
+| Repo deck | recursive.eco id | Remove in the app | Expect |
+|---|---|---|---|
+| golden-dawn-book-t-tarot | edac5d5a-8100-486d-b822-2f31b20a194c | `Reversed / Ill-Dignified` (step 4 above) | 78 |
+| tarot-de-marseille-conver | ac47f7af-ac80-4942-a422-dd4a15614738 | `Reversed` | 78 |
+| oswald-wirth-tarot | 2b757b2e-b4d9-4896-bc72-f9ae6b7f5656 | `Reversed` | 22 |
+| etteilla-i-livre-de-thot | 50fb5980-5be5-4702-9a4f-858ddd524fe3 | `Reversed (the person ill-disposed)`; `Reversed` on the minors only | 16 + 40 |
+| etteilla-ii-egyptian | c310e5d9-f954-458c-9462-aa1eefd95209 | as Etteilla I | 16 + 40 |
+| etteilla-iii-oracle-des-dames | 9c62d3ca-4e96-44ff-bffb-b7d3da55423c | as Etteilla I | 16 + 40 |
+
+On the Etteilla decks, `has_section: "Reversed"` alone would also catch the 22 trumps, which keep
+theirs: select the 40 minors (`category: "minor"`, or the item ids listed in the archive file).
