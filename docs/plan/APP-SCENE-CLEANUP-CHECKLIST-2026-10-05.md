@@ -98,3 +98,19 @@ as above: the push does not remove them in the app, so each needs the app-side c
 
 On the Etteilla decks, `has_section: "Reversed"` alone would also catch the 22 trumps, which keep
 theirs: select the 40 minors (`category: "minor"`, or the item ids listed in the archive file).
+
+## Added Oct 8: the Etteilla number cards' upright lines
+
+The branch `due/oct8` moves the 40 number-card `Upright` lines off each Etteilla deck (one template
+copied across the suits), archived in `tarot/_archive/unsourced-pip-uprights-2026-10-08.json`. Same
+rule: remove them in the app too, with your word, before any "Resolve all drifts" write-back.
+
+| Repo deck | recursive.eco id | Remove in the app | Expect |
+|---|---|---|---|
+| etteilla-i-livre-de-thot | 50fb5980-5be5-4702-9a4f-858ddd524fe3 | `Upright` on the 40 number cards only | 40 |
+| etteilla-ii-egyptian | c310e5d9-f954-458c-9462-aa1eefd95209 | as Etteilla I | 40 |
+| etteilla-iii-oracle-des-dames | 9c62d3ca-4e96-44ff-bffb-b7d3da55423c | as Etteilla I | 40 |
+
+`has_section: "Upright"` alone would also catch the 22 trumps, which keep theirs (now labelled as
+paraphrase): select the 40 by the item ids in the archive file. The courts carry
+`Upright (the person well-disposed)`, a different label, and are not touched.
