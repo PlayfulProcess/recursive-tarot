@@ -212,6 +212,24 @@ Added 2026-10-08. References only; nothing reproduced. The readable version, wit
   survive was not confirmed.**
 - **Yeats's Golden Dawn papers**, National Library of Ireland [@web_nli_yeats_occult]; Raine's study
   [@raine1972_yeats]. Whether a painted deck is among them is unconfirmed.
+- **Why Whare Ra's papers were burned (added 2026-10-08, second pass).** The closure letter (August
+  1978; Wikipedia gives the 24th, citing *The Lantern* III, 2019) gives reasons for *closing*: thin
+  numbers, loss of "power", no new members since 1975 [@web_whare_ra_wp]. The *burning* has one
+  detailed account, Farrell's, from members he interviewed: John von Dadelszen decided alone, members
+  kept their own papers, sixty years of Order papers burned over a weekend, so that members' names
+  would not come out [@farrell2019_beyond_sun_article]. Second-hand; Wikipedia's "they burnt" reads
+  as a group act. Context: the Order's rule that lent papers go back "unread and unopened" on a
+  member's death, and an editor's note that members long burned papers for secrecy
+  [@web_flying_rolls_thelemagick]; Alpha et Omega's furniture burned at Sacombe Park, 1939, on the
+  Secret Chiefs' instruction per Colquhoun 1975 [@web_alpha_omega_wp]; Westcott's exit, 1896/97,
+  speculatively tied to papers left in a cab [@web_hogd_wp]. Von Dadelszen as mayor and coroner:
+  [@web_nzls_vondadelszen] (death 1988; Farrell places the obituary he wrote in the 1990s, a
+  discrepancy). BOTA trumps sold uncoloured for students to colour [@web_bota_deck_wp]. Court-card
+  line drawings from Westcott's papers, published 1996, attributed to Westcott and/or Moina Mathers
+  [@kuntz1996_gd_court_cards]. Told as a story in `course/golden-dawn-where-the-cards-went.mdx`.
+- **Correction (2026-10-08):** the Zalewskis' 1997 short run (150 copies) was illustrated by
+  Jonathon A. Pierce; Dudschus's Whare Ra redrawings first appear in the 2008 edition
+  [@web_stevep_gd_compare]. Pat Zalewski calls the original Whare Ra decks badly drawn (quoted there).
 - **Thoth** — Harris's paintings (1938–1943) at the Warburg Institute [@web_thoth_wp].
 - **Wang/Regardie** (1977 or 1978), **Dowson's Hermetic Tarot** (1980; some listings 1979),
   **Ciceros** (1991; reissued 2000 or 2001), **Zalewskis** (book 1997/2008; deck 2022): dates and
@@ -224,7 +242,9 @@ Added 2026-10-08. References only; nothing reproduced. The readable version, wit
 [@web_strength_wp], [@web_mysticsym_swap], [@web_greer_gd_minors], [@web_cunliffe_correspondences],
 [@web_silverlotus_titles], [@web_solabusca_pcs], [@farrell2009_gd_tarot], [@web_stevep_gd_compare],
 [@web_hermetic_whare_ra], [@web_whare_ra_wp], [@web_learntarot_gd], [@web_thoth_wp], [@raine1972_yeats],
-[@web_nli_yeats_occult].
+[@web_nli_yeats_occult], [@farrell2019_beyond_sun_article], [@web_flying_rolls_thelemagick],
+[@web_alpha_omega_wp], [@web_hogd_wp], [@web_nzls_vondadelszen], [@web_bota_deck_wp],
+[@kuntz1996_gd_court_cards].
 
 ---
 *Research notes — AI-assisted draft, pending review by the maintainer and the Tarot History
