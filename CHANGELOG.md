@@ -32,6 +32,16 @@ Newest first. One bullet per shipped thing.
   App-side step in `docs/plan/APP-SCENE-CLEANUP-CHECKLIST-2026-10-05.md`.
 - Script: `scripts/archive/etteilla_own_words_2026_10_08.py` (one-shot, idempotent, `--check`).
 
+## Oct 8 2026 — branch `practice/ledger` (PR, not merged): a reading path and a revision ledger
+
+- **`docs/practice/READING-PATH.md`:** 177 days, one course section and one card a day, from why to read
+  at all, through PlayfulProcess's own practice and the voices, into the history, ending with making.
+  Every card link was checked against the deck's grammar (item exists, has an image).
+- **`docs/practice/REVISION-LEDGER.md`:** one line per course chapter (229) and per deck (36), plus the
+  reference grammars, each with a status, a date and notes. All start as "not yet read in practice";
+  how that was seeded from git is written at the top, with the note for future sessions to update a
+  line whenever she practises with it.
+
 ## Oct 8 2026 — branch `course/review-decisions` (PR, not merged; stacked on `due/oct8`): the course review decided
 
 - **Courses:** the 38 items of `docs/plan/COURSES-REVIEW-2026-10-08.md` decided against sources; 35
