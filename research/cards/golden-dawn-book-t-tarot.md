@@ -25,8 +25,10 @@ decanic title** — her signal innovation, since Marseille pips were bare suit-s
 
 **Cross-cutting note — the Strength↔Justice swap.** Book T assigns **Leo to Strength** (letter
 Teth) and **Libra to Justice** (letter Lamed); because Teth precedes Lamed in the alphabet,
-**Strength is renumbered VIII and Justice XI** — reversing the Marseille order. Both cards below
-are documented with the swap applied (as in RWS) [@web_gd_swap; @web_mysticsym_swap;
+**Strength takes the eighth place and Justice the eleventh**. Book T as printed in 1912 still
+numbers them Fortitude 11 and Justice 8 [@equinox1912_bookt]; the RWS cards (1909) are the first
+known to print VIII and XI (`research/synthesis/strength-justice-numbering.md`). Both cards below are documented with the
+RWS numbers (this deck uses the RWS pictures) [@web_gd_swap; @web_mysticsym_swap;
 @web_strength_wp].
 
 ---
@@ -101,7 +103,7 @@ are documented with the swap applied (as in RWS) [@web_gd_swap; @web_mysticsym_s
 - **Depicts:** A woman gently closing (or opening) a lion's jaws, lemniscate overhead [@waite1910].
 - **Correspondences:** Hebrew **ט Teth** ('serpent'), path 19; attribution **Leo** [@web_cunliffe_correspondences; @web_mysticsym_swap].
 - **Means:** Gentle mastery of instinct, force quietly governing passion / brute force, domination by appetite.
-- **Changed from parent:** **THE SWAP.** Marseille numbers this card **XI** (*La Force*). Book T renumbers it **VIII** to seat **Leo/Teth** in alphabetical-zodiacal order, and RWS prints it VIII — a sequence that had never appeared in a printed deck before the GD [@web_gd_swap; @web_strength_wp; @web_mysticsym_swap].
+- **Changed from parent:** **THE SWAP.** Marseille numbers this card **XI** (*La Force*). Book T seats it on **Leo/Teth**, the eighth place in alphabetical-zodiacal order, though its 1912 printing still numbers it 11; RWS (1909) is the first known deck to print it VIII [@web_gd_swap; @web_strength_wp; @web_mysticsym_swap].
 - **Sources:** [@waite1910], [@web_gd_swap], [@web_strength_wp], [@web_mysticsym_swap]
 - **Confidence:** high
 
@@ -125,7 +127,7 @@ are documented with the swap applied (as in RWS) [@web_gd_swap; @web_mysticsym_s
 - **Depicts:** Enthroned figure with upright sword and scales between two pillars [@waite1910].
 - **Correspondences:** Hebrew **ל Lamed** ('ox-goad'), path 22; attribution **Libra** [@web_cunliffe_correspondences; @web_mysticsym_swap].
 - **Means:** Equilibrium, the exact adjustment of forces, consequence / injustice, imbalance, scales falsified.
-- **Changed from parent:** **THE SWAP.** Marseille numbers this card **VIII** (*La Justice*). Book T renumbers it **XI** so the scales align with **Libra/Lamed**, and RWS prints it XI [@web_gd_swap; @web_strength_wp; @web_mysticsym_swap].
+- **Changed from parent:** **THE SWAP.** Marseille numbers this card **VIII** (*La Justice*). Book T seats it on **Libra/Lamed**, the eleventh place, though its 1912 printing still numbers it 8; RWS (1909) prints it XI [@web_gd_swap; @web_strength_wp; @web_mysticsym_swap].
 - **Sources:** [@waite1910], [@web_gd_swap], [@web_strength_wp], [@web_mysticsym_swap]
 - **Confidence:** high
 
