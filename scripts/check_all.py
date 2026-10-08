@@ -8,7 +8,8 @@ Checks:
   2. composite_of references resolve within each grammar (no dangling);
   3. no mojibake — no UTF-8 text that was decoded as Latin-1/CP1252 anywhere;
   4. people dossiers (research/people/*.md) have the frontmatter the generator needs;
-  5. rebuilds people + meta grammars and asserts the meta reports dangling=0;
+  5. rebuilds people + meta grammars and asserts the meta reports dangling=0,
+     then rebuilds search-index.json (the header's quick-jump search) from them;
   6. semantic check on the built meta grammar's derived pivot axes (role /
      trump_number / rank / deck-attribution) — see check_derived_axes.py.
 Exits non-zero on any failure.
@@ -109,7 +110,7 @@ for path in sorted(glob.glob(os.path.join(PEOPLE, "*.md"))):
         errors.append(f"people/{name}: bad role_group '{fm['role_group']}'")
 
 # 4 — rebuild generated grammars
-for script in ("build_people_grammar.py", "build_meta_grammar.py"):
+for script in ("build_people_grammar.py", "build_meta_grammar.py", "build_search_index.py"):
     r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", script)],
                        capture_output=True, text=True, cwd=ROOT)
     out = (r.stdout + r.stderr).strip()

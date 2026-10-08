@@ -133,6 +133,7 @@ comes from R2 (see the Image pattern above); this folder is only for course-auth
 | `scripts/import_book_t_1912.py` | Writes Book T's own 1912 text (*The Equinox* I(8)) onto the 78 Golden Dawn cards from `research/sources/book-t-equinox-1912.txt`; `--check`; `--verify-scan` compares with the 1912 scan's OCR |
 | `scripts/link_glossary.py` | The glossary link layer: first mention of a glossary term per section links to `pages/glossary.html#term`, "Path NN" to `pages/tree-of-life.html?path=NN`, in the Golden Dawn deck's editorial sections and the GD course chapters (never inside Book T's quoted text). Entries live in `tarot/glossary-of-tarot/grammar.json` (hand-edited). Re-run after editing either; `--check` runs in check_all |
 | `scripts/check_all.py` | Pre-commit gate |
+| `scripts/build_search_index.py` | Writes `search-index.json` (the header's quick-jump search: cards, decks, chapters). **Generated, never hand-edit**; check_all and the build-meta workflow rebuild it. See `docs/QUICK-JUMP-SEARCH.md` |
 | `scripts/audit_image_rights.py` | Asks Commons what every card image is (licence, credit); writes `docs/rights/IMAGE-LEDGER.md`. Re-run after any image change. The site says **open**, never "public-domain library": see `docs/rights/RIGHTS-AUDIT-2026-10-04.md` |
 
 **`scripts/archive/` is history, not tooling.** The one-shot generators that first built each
