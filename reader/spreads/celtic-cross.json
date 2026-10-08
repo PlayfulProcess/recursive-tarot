@@ -1,0 +1,107 @@
+{
+  "_type": "recursive-tarot-spread",
+  "_version": 1,
+  "id": "celtic-cross",
+  "name": "The Celtic Cross",
+  "description": "The famous ten: a cross of the situation and a staff of the self. Classic names, read for shape and tendency, not certainty. Positions and meanings as in the site's Caster (viewers/spreads.json, celtic-cross); card 2 lies across card 1.",
+  "question_prompt": "What question do you bring to the cross?",
+  "grid": {
+    "rows": 4,
+    "cols": 4
+  },
+  "positions": [
+    {
+      "n": 1,
+      "label": "Present",
+      "meaning": "The heart of it: where you stand now.",
+      "row": 2.5,
+      "col": 2,
+      "x": 0.375,
+      "y": 0.5
+    },
+    {
+      "n": 2,
+      "label": "Challenge",
+      "meaning": "What crosses you: the obstacle, or the help in disguise.",
+      "row": 2.5,
+      "col": 2,
+      "rotate": 90,
+      "x": 0.375,
+      "y": 0.5
+    },
+    {
+      "n": 3,
+      "label": "Foundation",
+      "meaning": "The root it grows from: the deeper past.",
+      "row": 3.5,
+      "col": 2,
+      "x": 0.375,
+      "y": 0.75
+    },
+    {
+      "n": 4,
+      "label": "Recent past",
+      "meaning": "What is passing, just behind you.",
+      "row": 2.5,
+      "col": 1,
+      "x": 0.125,
+      "y": 0.5
+    },
+    {
+      "n": 5,
+      "label": "Crown",
+      "meaning": "What you aim at, or what oversees the situation.",
+      "row": 1.5,
+      "col": 2,
+      "x": 0.375,
+      "y": 0.25
+    },
+    {
+      "n": 6,
+      "label": "Near future",
+      "meaning": "What may come next, if nothing turns.",
+      "row": 2.5,
+      "col": 3,
+      "x": 0.625,
+      "y": 0.5
+    },
+    {
+      "n": 7,
+      "label": "You",
+      "meaning": "Yourself in it: your stance and posture.",
+      "row": 4,
+      "col": 4,
+      "x": 0.875,
+      "y": 0.875
+    },
+    {
+      "n": 8,
+      "label": "Environment",
+      "meaning": "Others and the setting around you.",
+      "row": 3,
+      "col": 4,
+      "x": 0.875,
+      "y": 0.625
+    },
+    {
+      "n": 9,
+      "label": "Hopes & fears",
+      "meaning": "What you long for and what you dread (often the same).",
+      "row": 2,
+      "col": 4,
+      "x": 0.875,
+      "y": 0.375
+    },
+    {
+      "n": 10,
+      "label": "Outcome",
+      "meaning": "Where this shape is tending, all things held. A tendency, not a verdict.",
+      "row": 1,
+      "col": 4,
+      "x": 0.875,
+      "y": 0.125
+    }
+  ],
+  "author": "PlayfulProcess",
+  "license": "CC-BY-SA-4.0"
+}

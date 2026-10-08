@@ -22,7 +22,7 @@ wikipedia: "https://en.wikipedia.org/wiki/Oswald_Wirth"
 
 **Joseph Paul Oswald Wirth** (5 August 1860 – 9 March 1943) was a Swiss-born occultist,
 illustrator and Freemason who, under the direction of the Kabbalist **Stanislas de Guaita**,
-**drew the first overtly occult tarot deck**: the **22 trumps (Major Arcana only)** of *Les 22
+**drew the first overtly Kabbalistic tarot deck**: the **22 trumps (Major Arcana only)** of *Les 22
 Arcanes du Tarot Kabbalistique*, **1889**. He turned **Éliphas Lévi's** tarot–Hebrew–Kabbalah
 program into actual *cards*, and decades later issued a revised, far better-known version
 alongside his book *Le Tarot des imagiers du Moyen Âge* (**1927**). He is the Continental

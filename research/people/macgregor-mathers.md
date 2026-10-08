@@ -46,7 +46,8 @@ Mathers** (the artist Mina Bergson, sister of the philosopher Henri Bergson), ru
 
 - **Book T (Liber T): The Tarot (c.1891).** The Order's confidential instructional paper on the
   cards, **written anonymously around 1891, in the main by Mathers**. It set out the trump
-  attributions, the **Strength↔Justice (VIII↔XI) swap**, the **decanic** meanings of the pips,
+  attributions (Leo to Strength and Libra to Justice, behind the later **VIII↔XI swap**; the
+  1912 printing still numbers them 11 and 8), the **decanic** meanings of the pips,
   and the elemental court structure — the foundational document for all Golden-Dawn-based decks,
   RWS and Thoth included [@web_mathers_wp; @web_gd_swap].
 - **Translations that fed the system.** *The Kabbalah Unveiled* (1887, from Knorr von Rosenroth's

@@ -7,7 +7,7 @@ status: "verified"
 confidence: "high"
 last_updated: "2026-06-13"
 maintainer_note: "AI-assisted; web-checked against Decker–Dummett (A Wicked Pack of Cards / A History of the Occult Tarot), Tarot Heritage, and Golden-Dawn primary scholarship. The Order never published its own deck — keep Book-T-as-text distinct from any visual deck. For maintainer + Tarot History Forum review."
-summary: "The London Hermetic order (founded 1888) whose confidential 'Book T' fixed the astrological/elemental/decan correspondences — and the Strength↔Justice swap — that still structure how tarot is read."
+summary: "The London Hermetic order (founded 1888) whose confidential 'Book T' fixed the astrological/elemental/decan correspondences — including Leo for Strength and Libra for Justice, behind the later VIII/XI swap — that still structure how tarot is read."
 lifespan: "1888–c.1903 (original order; offshoots continue)"
 roles: ["esoteric order", "tarot system-builder", "ritual lodge"]
 made: ["golden-dawn-book-t-tarot"]
@@ -23,8 +23,9 @@ esoteric tarot. Founded in London on **1 March 1888**, this small, oath-bound ma
 fused tarot, Kabbalah, astrology, alchemy and Hermetic imagery into one graded, internally
 consistent system, recorded in a confidential teaching paper called **Book T**. Book T
 assigned every card a place in a master grid of **astrological, elemental and decanic
-correspondences**, and — to keep that grid tidy — **swapped the traditional numbers of
-Strength and Justice (VIII↔XI)**. Crucially, the Order **never published a deck of its own**:
+correspondences**, and — to keep that grid tidy — **moved Strength and Justice in the
+letter sequence** (Leo to Strength, Libra to Justice); the 1909 Rider-Waite-Smith cards were
+the first known to print the numbers VIII and XI for them. Crucially, the Order **never published a deck of its own**:
 members hand-copied their cards from Mathers' specimen under the secrecy of the lodge. The
 *public* realisation of its system came later and from outside the Order's control — the
 **Rider-Waite-Smith** deck of 1909 [@decker1996; @decker2002; @tarot_heritage].
@@ -57,8 +58,12 @@ bodies (Alpha et Omega, Stella Matutina) [@decker1996; @decker2002].
   is the grammar behind almost every modern keyword meaning [@tarot_heritage; @web_gd_swap].
 - **The Strength ↔ Justice swap (VIII↔XI).** To align the trump sequence with the zodiac, the
   Order assigned **Leo to Strength, Virgo to the Hermit, Libra to Justice, Scorpio to Death**,
-  and therefore **swapped the traditional numbers of Justice (VIII) and Strength/Fortitude
-  (XI)**. RWS inherited this; the Marseille order did not have it [@web_gd_swap; @decker2002].
+  which seats Strength in the eighth place of the letter sequence and Justice in the eleventh.
+  Book T as printed in 1912 still numbers them Fortitude 11 and Justice 8 [@equinox1912_bookt];
+  the Rider-Waite-Smith deck (1909) is the first known to print VIII Strength and XI Justice, and
+  Waite took the change on himself "for reasons which satisfy myself" [@waite1910]. The
+  Marseille order has neither. What each source prints: `research/synthesis/strength-justice-numbering.md`
+  [@web_gd_swap; @decker2002].
 - **No published deck.** The Order issued *no* commercial tarot. After the Adeptus Minor grade,
   an adept's task was to **hand-paint his or her own copy** of the pack from Mathers' specimen
   (probably executed by Moïna Mathers, since lost). Because the deck stayed inside the secret
@@ -102,7 +107,7 @@ shown are a later public deck, not the Order's own lost pack.
 
 - Pin the exact date and authorship share of Book T (c.1890–91; Mathers principal, with later
   hands such as Felkin in circulation) against a primary Regardie/Gilbert edition.
-- Keep the **VIII/XI swap** tied explicitly to the Leo→Strength / Libra→Justice rationale.
+- Keep the **VIII/XI swap** tied explicitly to the Leo→Strength / Libra→Justice rationale, and to where it is printed (attributions in Book T; numbers first on the 1909 cards).
 - Document the lineage forks (Alpha et Omega, Stella Matutina) so later decks trace to the right
   branch.
 

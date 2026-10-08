@@ -23,8 +23,10 @@ dossier's first duty is to say so plainly. Its *system* is **Book T** — the He
 the Golden Dawn's confidential tarot paper, written anonymously around **1888–1891, principally
 by S. L. MacGregor Mathers** — which assigns every one of the 78 cards a **Hebrew letter,
 Tree-of-Life path, and astrological attribution** (a planet, element, or zodiac decan), fixes
-the four suits to the four elements, and famously **swaps the traditional numbers of Strength
-(now VIII) and Justice (now XI)** to keep the zodiac in sequence [@decker1996; @decker2002;
+the four suits to the four elements, and gives **Leo to Strength and Libra to Justice** to keep
+the zodiac in sequence: the root of the VIII/XI swap that the Rider-Waite-Smith deck (1909) was
+the first known to print (the 1912 printing of Book T still numbers them 11 and 8; see
+`research/synthesis/strength-justice-numbering.md`) [@decker1996; @decker2002;
 @web_gd_swap; @web_mysticsym_swap]. The Order **never published a deck**: members hand-copied
 their cards from a lodge specimen under oath [@web_gd_nodeck]. Its *imagery*, rendered here, is
 the **Rider-Waite-Smith deck of 1909** — designed by **A. E. Waite** and **drawn in its entirety
@@ -43,7 +45,7 @@ Two distinct origins, deliberately not collapsed:
   **Isis-Urania Temple on 1 March 1888**; its tarot teaching was set down in a confidential
   paper, *Book T*, written anonymously around **1891, chiefly by Mathers**, subtitled *A
   Description of the Cards of the Tarot with their Attributions; Including a Method of Divination
-  by Their Use*. Book T fixes the trump attributions, the Strength↔Justice swap, the decanic
+  by Their Use*. Book T fixes the trump attributions (including Leo for Strength and Libra for Justice), the decanic
   meanings of the pips, and the elemental court structure [@web_mathers_wp; @web_gd_swap;
   @decker1996]. The underlying trump↔Hebrew-letter idea descends from **Éliphas Lévi**, whom
   Waite translated and Mathers rebuilt [@decker2002].
@@ -86,9 +88,10 @@ correspondence grid laid over it:
   [@web_cunliffe_correspondences; @decker2002].
 - **The Strength ↔ Justice swap.** To align the trumps with the zodiac, the GD assigned **Leo to
   Strength** and **Libra to Justice**; since Teth (Strength's letter, the serpent/Leo) precedes
-  Lamed (Justice's letter, the ox-goad/Libra) in the alphabet, **Strength becomes VIII and
-  Justice becomes XI** — reversing the Marseille order. RWS inherited this; the Marseille order
-  did not have it. *Flag, don't normalise* [@web_gd_swap; @web_mysticsym_swap; @web_strength_wp].
+  Lamed (Justice's letter, the ox-goad/Libra) in the alphabet, **Strength takes the eighth place
+  and Justice the eleventh**. Book T as printed in 1912 still numbers them Fortitude 11 and
+  Justice 8 [@equinox1912_bookt]; the RWS cards (1909) are the first known to print VIII and XI.
+  The Marseille order has neither (`research/synthesis/strength-justice-numbering.md`). *Flag, don't normalise* [@web_gd_swap; @web_mysticsym_swap; @web_strength_wp].
 - **Suits fixed to elements:** **Wands/Fire, Cups/Water, Swords/Air, Pentacles/Earth**
   [@web_cunliffe_correspondences].
 - **Aces = "Root of the Powers"** of their element (the elemental seed, no decan). **Pips
@@ -119,9 +122,9 @@ parent the Book-T/RWS deck:
 1. **Overlaid a total correspondence grid** absent from the game deck — every trump a Hebrew
    letter, path, and astrological sign; every pip a decan and a "Lord of…" title
    [@web_cunliffe_correspondences; @web_greer_gd_minors].
-2. **Swapped Strength and Justice** (VIII↔XI), a sequence that **had never appeared in a printed
-   tarot before** the GD/RWS, done to fit Leo→Strength and Libra→Justice [@web_strength_wp;
-   @web_gd_swap].
+2. **Moved Strength and Justice** to fit Leo→Strength and Libra→Justice; the numbers VIII and
+   XI were first printed on the RWS cards (1909), while Book T's 1912 printing keeps 11 and 8
+   [@equinox1912_bookt; @web_strength_wp; @web_gd_swap].
 3. **Made the Minor Arcana fully scenic.** Marseille pips are bare arrangements of suit-signs;
    Smith drew a **narrative scene with figures on every numbered card**, visualising each card's
    Book-T decan-title (the heartbroken Three of Swords for *Lord of Sorrow*; the toiling Ten of
@@ -165,7 +168,7 @@ that ends in today's bookshop tarot [@decker2002; @web_th_rws].
 - **`golden-dawn`** — the institution that authored Book T's correspondence system (the *author,
   not the publisher*; it issued no deck).
 - **`macgregor-mathers`** — principal author of Book T; architect of the Hebrew/path/decan grid
-  and the Strength↔Justice swap.
+  and the Leo/Libra attributions behind the Strength↔Justice swap.
 - **`a-e-waite`** — designed the RWS *scheme* and wrote *The Pictorial Key*; **did not draw the
   cards**.
 - **`pamela-colman-smith`** — drew all 78 RWS cards and **invented the fully scenic Minor Arcana**;
@@ -190,12 +193,38 @@ that ends in today's bookshop tarot [@decker2002; @web_th_rws].
   primary Regardie/Gilbert edition.
 - The Sola Busca → Smith links are **influence, not certainty** — keep them so.
 
+## Lineage and where to see the decks
+
+Added 2026-10-08. References only; nothing reproduced. The readable version, with links, is
+`pages/golden-dawn-decks.html`; the same list sits in the grammar description.
+
+- **The Order's pattern deck** — lost. One account has Moina Mathers paint it and adepts copy it
+  [@web_learntarot_gd]; Farrell argues the Order never made a deck of its own, giving line drawings of
+  some trumps to the Outer Order and descriptions to the Inner [@farrell2009_gd_tarot]. Keep both.
+- **Regardie's own hand-copied deck** (1930s, reportedly): lost in the 1960s, reportedly stolen;
+  photographs went to Wang and, reportedly, to a private library connected with the O.T.O.
+  [@web_stevep_gd_compare]. Farrell says the cards are shown in Regardie's *Complete Golden Dawn
+  System of Magic* (1984) [@farrell2009_gd_tarot] — page reference unchecked.
+- **Whare Ra** (1912–1978): no coloured deck found; crude line drawings on small yellow card; members
+  moved to BOTA cards in the 1960s [@farrell2009_gd_tarot]; regalia and records mostly burned at
+  closure [@web_whare_ra_wp]. Line drawings of the trumps (via Pat Zalewski) online at the Hermetic
+  Library [@web_hermetic_whare_ra]. **The claim that photographs of hand-painted Whare Ra decks
+  survive was not confirmed.**
+- **Yeats's Golden Dawn papers**, National Library of Ireland [@web_nli_yeats_occult]; Raine's study
+  [@raine1972_yeats]. Whether a painted deck is among them is unconfirmed.
+- **Thoth** — Harris's paintings (1938–1943) at the Warburg Institute [@web_thoth_wp].
+- **Wang/Regardie** (1977 or 1978), **Dowson's Hermetic Tarot** (1980; some listings 1979),
+  **Ciceros** (1991; reissued 2000 or 2001), **Zalewskis** (book 1997/2008; deck 2022): dates and
+  provenance per [@web_stevep_gd_compare; @farrell2009_gd_tarot]. All in copyright: references only.
+
 ## Sources
 
 [@decker1996], [@decker2002], [@dummett1980], [@waite1910], [@web_gd_swap], [@web_gd_nodeck],
 [@web_mathers_wp], [@web_pkt_wp], [@web_pcs_wp], [@web_pcs_artnet], [@web_rws_wopc], [@web_th_rws],
 [@web_strength_wp], [@web_mysticsym_swap], [@web_greer_gd_minors], [@web_cunliffe_correspondences],
-[@web_silverlotus_titles], [@web_solabusca_pcs].
+[@web_silverlotus_titles], [@web_solabusca_pcs], [@farrell2009_gd_tarot], [@web_stevep_gd_compare],
+[@web_hermetic_whare_ra], [@web_whare_ra_wp], [@web_learntarot_gd], [@web_thoth_wp], [@raine1972_yeats],
+[@web_nli_yeats_occult].
 
 ---
 *Research notes — AI-assisted draft, pending review by the maintainer and the Tarot History

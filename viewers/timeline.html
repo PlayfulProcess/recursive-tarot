@@ -73,8 +73,8 @@
 </style>
 </head>
 <body>
-<script src="../site-header.js?v=48"></script>
-<script src="../view-switcher.js?v=13"></script>
+<script src="../site-header.js?v=49"></script>
+<script src="../view-switcher.js?v=14"></script>
 <site-header active="timeline"></site-header>
 <div class="wrap">
   <div id="stage">
@@ -122,9 +122,10 @@ let itemMap, decks, hidden=new Set(), oldestFirst=true, laneField='branch';
 let currentPlaced=[]; // display order (chronological, current direction+filters) for prev/next paging
 let laneValues=[], colorOf={};   // set by buildLaneFromField()
 
+// Fallback only: tree nodes carry a numeric metadata.year. "1850s" reads as 1850; "20th–21st c." as 1950 (the first century).
 function parseYear(when){ if(!when) return null;
-  let m=String(when).match(/\b(1[2-9]\d{2}|20\d{2})\b/); if(m) return +m[1];
-  m=String(when).match(/(\d{1,2})\s*(?:st|nd|rd|th)?\s*c\b/i); if(m) return (+m[1]-1)*100+50; return null; }
+  let m=String(when).match(/\b(1[2-9]\d{2}|20\d{2})s?\b/); if(m) return +m[1];
+  m=String(when).match(/(\d{1,2})\s*(?:st|nd|rd|th)\b[^\d]*?(?:\d{1,2}\s*(?:st|nd|rd|th)\s*)?c\b/i); if(m) return (+m[1]-1)*100+50; return null; }
 
 // Extract a field value from a deck for the current laneField
 function laneOf(d){
@@ -148,7 +149,7 @@ function buildLaneFromField(){
     itemMap=Object.fromEntries(items.map(i=>[i.id,i]));
     decks=items.filter(i=>i.id.startsWith('deck-')).map(i=>{
       const md=i.metadata||{};
-      const d={id:i.id,name:i.name,when:md.when||'',year:parseYear(md.when),
+      const d={id:i.id,name:i.name,when:md.when||'',year:(typeof md.year==='number'?md.year:parseYear(md.when)),
                branch:md.branch,derives:md.derives_from||[],image:i.image_url,sections:i.sections||{}};
       // copy all metadata fields onto deck record for lane discovery
       Object.entries(md).forEach(([k,v])=>{ if(typeof v==='string'&&v.length<60) d[k]=v; });

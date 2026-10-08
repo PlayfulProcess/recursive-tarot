@@ -57,7 +57,7 @@ on the item itself. (Continued in "Composite items" below.)
 
 | Type | What it's for |
 |---|---|
-| `"tarot"` | Card-draw oracle decks (Major Arcana, archetype decks). Items have Interpretation, Reversed, etc. |
+| `"tarot"` | Card-draw oracle decks (Major Arcana, archetype decks). Items have Interpretation, and Reversed only where a source gives one. |
 | `"iching"` | I Ching hexagrams. Items have line data via the `lines` property. Must have 64 items. |
 | `"astrology"` | Western or Vedic astrology. Items have planet / sign / house categories. |
 | `"sequence"` | Curated playlists / story sequences / video collections. Often paired with `performance` blocks (see below). |
@@ -106,7 +106,7 @@ Every entry in `items[]` follows this shape:
 Section keys are not restricted. Use whatever makes sense for your
 content. Examples seen in production grammars:
 
-- Tarot: `Interpretation`, `Reversed`, `Summary`
+- Tarot: `Interpretation`, `Reversed` (only where the deck's tradition wrote reversed meanings: Etteilla, Waite), `Summary`
 - I Ching: `Image`, `Judgment`, `Line 1`, `Line 2`, ...
 - Bus Passengers: `Thoughts`, `Thinking`, `Perception`, `Sensing`, `Context`, `Mystery`
 - Story grammar: `Story`, `For Young Readers`, `For Parents`, `Themes`
@@ -131,7 +131,7 @@ without writing).
 | `golden-dawn-book-t-tarot` | Golden Dawn, *Book T* (c. 1888), as printed in *The Equinox* I(8), 1912 — **quoted** (see note below) | `Book T (1912)`, `Correspondences`, `Golden Dawn Title`, `Astrological attribution (Book T)` |
 | `rider-waite-smith-pictorial-key` | A. E. Waite, *The Pictorial Key to the Tarot* (1911) | `The Pictorial Key` |
 | `papus-tarot-des-bohemiens` | Papus, *Le Tarot des Bohémiens* (1889) | `Le Tarot des Bohémiens` |
-| `oswald-wirth-tarot` | Wirth's own commentary | `Wirth`, `Symbolism`, `Upright`, `Reversed` |
+| `oswald-wirth-tarot` | Wirth's own commentary | `Wirth`, `Symbolism`, `Upright` (no `Reversed`: Wirth's text gives none) |
 | `court-de-gebelin-tarot` | Court de Gébelin, *Le Monde Primitif* (1781) | `Court de Gébelin's Egyptian Reading`, `Iconography` |
 
 > **Book T is quoted, from its 1912 printing.** Book T reached print in *The Equinox* I(8)

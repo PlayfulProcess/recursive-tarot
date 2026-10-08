@@ -55,7 +55,8 @@ and died there on 31 May 1875 [@web_levi_wp; @tarot_heritage].
   record does **not** support as a real derivation) [@web_levi_rota; @decker2002].
 - **The Baphomet image.** His famous drawing of the "Sabbatic Goat" (Baphomet) accompanies the
   work and shaped later occult iconography — relevant to the **Devil** trump in subsequent decks
-  [@web_levi_wp].
+  [@web_levi_wp]. Its most direct model, Julian Strube argues, was the Marseille deck's own
+  Devil card [@strube2016].
 - **No deck.** Lévi **never designed or published a tarot deck.** His influence is entirely
   textual and conceptual; the *cards* embodying his ideas were drawn by others — first **Oswald
   Wirth** under **Stanislas de Guaita** (1889) [@web_levi_rota; @decker2002].

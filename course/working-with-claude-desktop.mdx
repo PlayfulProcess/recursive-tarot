@@ -28,7 +28,7 @@ Git is the version-control program that GitHub is built around, and its mental m
 
 - A **repository** ("repo") is a folder whose history is tracked.
 - A **commit** is a saved snapshot of your changes, with a one-line note about what you did.
-- A **branch** is a parallel line of work — your own copy of the project's state where you can commit freely without touching what everyone else sees. The main line here is called `dev`; your work happens on a branch until it's reviewed.
+- A **branch** is a parallel line of work — your own copy of the project's state where you can commit freely without touching what everyone else sees. The main line here is called `main`; your work happens on a branch until it's reviewed.
 - **Local vs. remote:** the copy on your machine is *local*; the copy on GitHub is the *remote*. Committing saves a snapshot locally. **Pushing** uploads your commits to GitHub. Until you push, your work exists only on your computer — this is the single most important thing to understand, because work that is committed *and pushed* can never be lost, while work that is neither can be.
 
 You don't need to memorize git commands — Claude runs them for you. You do need this vocabulary, so that when Claude says "committed and pushed to your branch," you know your work is safe.
@@ -63,7 +63,7 @@ That last command starts a Claude Code session *in that folder*. The folder you 
 
 Three habits cover almost everything that can go wrong.
 
-**Start every session by saying where the work should be saved.** The first message of a session should name the branch: *"Work on a new branch called `fix-death-card-date`, based on `dev`."* Claude will create it if it doesn't exist. This one habit prevents the classic beginner accident — an hour of good edits sitting on the wrong branch — and makes everything that follows reviewable.
+**Start every session by saying where the work should be saved.** The first message of a session should name the branch: *"Work on a new branch called `fix-death-card-date`, based on `main`."* Claude will create it if it doesn't exist. This one habit prevents the classic beginner accident — an hour of good edits sitting on the wrong branch — and makes everything that follows reviewable.
 
 **Commit and push before you stop.** End sessions with: *"Commit what we did with a clear message and push the branch."* Committed-and-pushed work is immortal; everything else is just files on one computer. If you forget and come back later, don't panic — ask Claude *"what's the state of my work? is anything uncommitted or unpushed?"* and it will tell you and fix it.
 

@@ -1,0 +1,43 @@
+{
+  "_type": "recursive-tarot-spread",
+  "_version": 1,
+  "id": "three-card",
+  "name": "Three Cards: Past · Present · Possibility",
+  "description": "The classic three, read as a current rather than a prophecy. The third card is a possibility to try on, not a future.",
+  "question_prompt": "What situation do you want to look at?",
+  "grid": {
+    "rows": 1,
+    "cols": 3
+  },
+  "positions": [
+    {
+      "n": 1,
+      "label": "Past",
+      "meaning": "What this grew from: the ground just behind you.",
+      "row": 1,
+      "col": 1,
+      "x": 0.167,
+      "y": 0.5
+    },
+    {
+      "n": 2,
+      "label": "Present",
+      "meaning": "Where you stand now: the heart of it.",
+      "row": 1,
+      "col": 2,
+      "x": 0.5,
+      "y": 0.5
+    },
+    {
+      "n": 3,
+      "label": "Possibility",
+      "meaning": "One opening not yet committed to. Something to try on, which you may also put down.",
+      "row": 1,
+      "col": 3,
+      "x": 0.833,
+      "y": 0.5
+    }
+  ],
+  "author": "PlayfulProcess",
+  "license": "CC-BY-SA-4.0"
+}

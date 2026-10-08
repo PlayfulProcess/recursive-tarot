@@ -68,7 +68,9 @@ DECKS = {
                 context="The lavish outlier — six-rank courts + theological virtues", print="Hand-painted, gold-ground tempera",
                 orientation="Game (trionfi)")),
  "charles-vi-tarot":           dict(label="'Charles VI' (Ferrara)", era="15th c · Renaissance Italy", era_sort=1,
-        ed=dict(date="c. 1475–1500", maker="Ferrarese workshop (the so-called 'Charles VI'/Gringonneur, misattributed)", patron="—",
+        # Date as research/decks/charles-vi-tarot.md gives it ("Italian, c. 1450–80", after the BnF catalogue);
+        # the same label is on the deck's grammar, tree-of-tarot and _collection.json.
+        ed=dict(date="c. 1450–80", maker="Italian workshop: Florence (Apollonio di Giovanni & Marco del Buono) in the current BnF record, formerly called Ferrarese; the 'Charles VI'/Gringonneur name is a misattribution", patron="—",
                 context="Hand-painted trump fragments long misdated to a 1392 Gringonneur payment", print="Hand-painted",
                 orientation="Game")),
  "minchiate-florence-tarot":   dict(label="Minchiate (Florence)", era="16th–18th c · Florence", era_sort=2,
@@ -515,7 +517,7 @@ def build():
                 "(*Sermones de ludo cum aliis*) lists the 21 trumps by name and condemns the deck — as gambling and "
                 "the devil's work, NOT as divination, the graver sin moralists were eager to catalog. And the 18th-c. "
                 "emergence reads as invention, not inheritance: Court de Gébelin presents the Egyptian 'Book of Thoth' "
-                "as a fresh discovery (and gets Egypt flatly wrong), while Etteilla builds a cartomancy system from scratch."),
+                "as a fresh discovery (and gets Egypt flatly wrong), while Etteilla carries his card-reading system over to the tarot."),
             "Conclusion": (
                 "So the honest claim is not 'only ever a game,' and not 'secretly always divinatory.' It is: tarot was "
                 "DESIGNED AND FIRST USED AS A GAME; divinatory meaning is a later (18th-century) overlay. Informal "
