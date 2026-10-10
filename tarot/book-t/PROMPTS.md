@@ -2,6 +2,8 @@
 
 Written Oct 10 2026 for PlayfulProcess's public deck [Book T: The Golden Dawn's 78 Cards](https://recursive.eco/g/2000ad96-70c6-4aa4-a6fb-c22cce5e9cc7). Each card below quotes Book T's own passage (*The Equinox* I(8), 1912, public domain), then the prompt written from it, then what came back.
 
+All 78 at a glance: [sheet-78.jpg](sheet-78.jpg) (Keys, Aces, courts, then the small cards in Book T's order). Scripts and data: [src/](src/). A copy of this file is `tarot/book-t/PROMPTS.md` in recursive-tarot.
+
 ## How the pictures were made
 
 1. **Prompt from the text.** One prompt per card, written from Book T's passage for that card. Every prompt starts with the same style line, so the 78 read as one deck.
@@ -22,15 +24,44 @@ Written Oct 10 2026 for PlayfulProcess's public deck [Book T: The Golden Dawn's 
 
 **Licence.** The deck is CC BY-SA 4.0. The paintings are AI-generated from public-domain text; PlayfulProcess's images here are offered under the deck's CC BY-SA 4.0 (the pilot had marked its four "all rights reserved for now"; in this public deck they carry the deck's licence).
 
-## Redo first
+## Redo, round 1 (Oct 10 2026, evening)
 
-- **Root of the Powers of Earth** (`pentacles-ace`): 1st: this Ace is the pattern for every pentacle in the suit.
-- **Lord of the Forces of Life** (`key-10-wheel-of-fate`): 2nd: the sphinx is the card's key figure.
-- **Spirit of the Mighty Waters** (`key-12-hanged-man`): 3rd: the posture is the card.
-- **Queen of the Thrones of Earth** (`pentacles-queen`): 4th: the crest and the split face are Book T's own marks for this card.
-- **Lord of Shortened Force** (`swords-08`): 5th, swords 4 to 10 as a set: every one gives each hand one sword. A reference image of the right layout (or a drawn layout) would help more than another prompt.
-- **Lord of Material Happiness** (`cups-09`): 6th, with cups-07, cups-08, cups-10: the counts.
-- **Lord of Harmonious Change** (`pentacles-02`): 7th: the tail-in-mouth is Book T's detail for this card.
+PlayfulProcess said "ok" to redoing the seven weakest cards of the first run. Same style line, same trace, same caption and licence; Book T's words still decide every symbol. Each card's own section below keeps the prompt from before the redo, the new prompt and what is resolved.
+
+**Two new tools**, both in [src/](src/):
+
+- **Corrections by script on a kept painting** (`fixrays.py`, `splitface.py`). Where a painting had everything but one Book T detail, that detail was painted in by code instead of asking the model again: the twelve rays of the Ace of Pentacles (and of the Two), the dark half of the Queen of Pentacles' face. The picture's credit says so, and the uncorrected painting stays linked.
+- **Composites for the counted cards** (`compose.py`, `elements.py`). The model gives each hand one sword and loses count past five cups, so for Swords 4 to 10 and Cups 7 to 10 it painted single elements once (a hand rising from a cloud, a sword, a rose, a goblet, a lotus, an empty sky), and a script places them in the layout Book T describes. Every sword and cup is counted by code. Stems, water and fallen petals are drawn by the script; the sky is recoloured per card. The composite then goes through the same line-art trace as every other card.
+
+**The element prompts** (after the first sentence of the style line; an element is not a card, so the full-bleed sentence is left off):
+
+- *hand* ([painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791666271199-1rl6at0ocgn.png)): A study of one element, alone on a plain, flat, empty pale cream ground: a single white radiant angelic hand rises upright out of a small round white cloud. The hand is closed in a fist, seen from the side, the thumb wrapped over the curled fingers, gripping around an empty round hole as if holding the hilt of an invisible upright staff. A few thin pale gold rays spread from the hand. The cloud and fist sit in the middle of the picture, with wide empty cream space all around.
+- *sword* ([painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791666289587-q56j369gq9.png)): A study of one element, alone on a plain, flat, empty pale cream ground: a single straight double-edged steel sword standing vertical, point up, running from near the top to near the bottom of the picture: a long narrow pale blue-grey steel blade with a dark ink outline and a thin central ridge, a straight gold cross-guard, a short dark red leather grip and a round gold pommel. Wide empty cream space on both sides.
+- *rose* ([painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791666305412-rqr9768ewvn.png)): A study of one element, alone on a plain, flat, empty deep sky-blue ground: a single red rose of five petals seen straight from the front, flat and symmetrical like a heraldic rose, a golden centre, five small green sepal points between the petals. Thin straight white rays radiate from behind the rose all around it, like a small sunburst. The rose sits in the middle with wide empty blue space around it.
+- *sky* ([painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791666323948-3ufa0q1nxa2.png)): An empty sky: a calm pale grey-blue sky with a few long flat bands of light cloud high up, and soft rounded white and grey clouds banked low in the two bottom corners and along the bottom edge. Only sky and clouds fill the picture. (Full style line, as a card.)
+- *goblet* ([painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791666342535-4858y1v278t.png)): A study of one element, alone on a plain, flat, empty pale cream ground: a single golden goblet standing upright, seen from the side and a little from above so the dark empty inside of its bowl shows as an oval: a wide round bowl, a short stem with one round knop, and a broad round foot, flat gold with a few darker gold bands and bold dark ink outlines. The goblet sits in the middle with wide empty cream space all around.
+- *lotus* ([painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791666357699-lppus858rji.png)): A study of one element, alone on a plain, flat, empty deep blue ground: a single open lotus flower, pink and white petals, hanging upside down so the open face of the flower points straight down, at the end of a short curved green stem that comes in from above. The lotus sits in the middle with wide empty blue space all around.
+
+| Card | Before the redo | Now |
+|---|---|---|
+| Root of the Powers of Earth (`pentacles-ace`) | The pentacle hangs under the hand rather than on the branch; 8 rays instead of 12; the cross over it is Greek, not Maltese. | Resolved: on the branch, twelve rays, a cross with widening arms and wings. Left out as before: Book T's 'Four Crosses' (the 1912 scan reads 'Crosses' where other printings read 'Roses'), so only the two buds are shown. |
+| Lord of the Forces of Life (`key-10-wheel-of-fate`) | The figure on top of the wheel reads as a dark winged bird more than a sphinx; the rising jackal-headed figure is cut by the right edge. | Resolved: a sphinx with a sword on top, Hermanubis on the right inside the frame, the serpent on the left. |
+| Spirit of the Mighty Waters (`key-12-hanged-man`) | Hangs by both feet with the arms bound in front; the crossed-leg posture is missing. | Resolved for the legs: one ankle tied, one leg straight, the other bent behind it in a cross. The hands sit behind his head rather than his back, so the arms still make the downward triangle. |
+| Queen of the Thrones of Earth (`pentacles-queen`) | The crest is a winged bird on the throne, not a winged goat's head on her; light and dark halves of the face are not shown. | Resolved: winged goat's-head crest, profile, one side of the face light and the other dark (the dark half is a hand correction, said so in the picture's credit). |
+| Lord of Rest from Strife (`swords-04`) | Four hands with one sword each, not two hands with two. | Resolved by the composite. Four swords, two in each of two hands, crossing at the rose. |
+| Lord of Defeat (`swords-05`) | One sword per hand. | Resolved by the composite. Five swords: two in each outer hand, one upright in the centre; the rose's petals falling. |
+| Lord of Earned Success (`swords-06`) | One sword per hand. | Resolved by the composite. Six swords as Book T counts them: two hands with two each, crossing at the rose, and the two short daggers that carry the decan. |
+| Lord of Unstable Effort (`swords-07`) | Five swords, not seven. | Resolved by the composite. Seven swords: three in each outer hand, one in the centre; all points touch; the rose with the central hand. |
+| Lord of Shortened Force (`swords-08`) | One sword per hand; the points do not meet. | Resolved by the composite. Eight swords from four hands, all points touching near the top; the rose in the centre. |
+| Lord of Despair and Cruelty (`swords-09`) | No note of its own; redone with the set (every hand held one sword). | Resolved by the composite. Nine swords: eight from four hands falling apart, one upright in the centre; no rose. |
+| Lord of Ruin (`swords-10`) | Four swords, not ten. | Resolved by the composite. Ten swords: eight from four hands falling apart, two crossed in the centre; no rose. |
+| Lord of Illusionary Success (`cups-07`) | Six cups in one triangle, not two. | Resolved by the composite. Seven cups: two descending triangles above the lowest one; six lotuses; every cup empty. |
+| Lord of Abandoned Success (`cups-08`) | Six cups, not eight; two hands with vessels pour instead of two lotus flowers. | Resolved by the composite. Eight cups: three empty above, two filled and running over, three below not yet full. |
+| Lord of Material Happiness (`cups-09`) | Re-run once (the first had about 25 cups); the kept one has ten. | Resolved by the composite. Nine cups in three rows of three, a lotus pouring into each. |
+| Lord of Perfected Success (`cups-10`) | Eleven cups in a pyramid; the sideways cup pours into the lotus. | Resolved by the composite. Ten cups, all running over; the uppermost held sideways pours into the left-hand upper cup. |
+| Lord of Harmonious Change (`pentacles-02`) | The serpent loops round both discs like an eight, but has a head at each end instead of holding its tail in its mouth; the hand holds the top, not the centre. | Partly resolved: one serpent, one head, the hand at the centre, no roses, discs like the Ace. The tail curls back inside the small central loop to just below the jaws, not into the mouth. Next step if it matters: draw the tail tip into the jaws by hand on the SVG. |
+
+**Cost of the redo:** $2.13 (nine card paintings and six element paintings; no `verify` passes this round, the curating was by eye): Ace of Pentacles $0.15; Wheel of Fate $0.15; Hanged Man x2 $0.30; Queen of Pentacles x2 $0.30; Two of Pentacles x3 $0.45; elements: hand 0.12, sword 0.15, rose 0.12, sky 0.15, goblet 0.12, lotus 0.12 $0.78.
 
 The other notes under each card are smaller misses (a count off by one or two, a crest in the wrong place).
 
@@ -200,17 +231,21 @@ The other notes under each card are smaller misses (a count off by one or two, a
 
 > Good fortune, happiness (within bounds). Intoxication of success.
 
-**Prompt of the kept painting** (after the style line):
+**Prompt of the kept painting** (redo, Oct 10; after the style line):
+
+> The Lord of the Forces of Life: a great golden eight-spoked wheel stands in the middle of a deep blue sky among clouds, the whole wheel inside the picture. Sitting calmly on the very top rim of the wheel is a sphinx: the body of a lion lying down with its paws forward, a calm human face, a blue and gold striped Egyptian headcloth, its fur the colour of sand; an upright sword rests against its shoulder. On the right side of the wheel, fully inside the picture, a dog-headed Egyptian figure, Hermanubis, climbs up with the wheel; on the left side a long serpent slides down with it. Rich royal blue, purple and gold of Jupiter. Good fortune and turning fate.
+
+**Redo:** One painting. The sphinx is described part by part (a lion's body lying down, a human face, an Egyptian headcloth), and the climbing figure is asked to stay inside the picture.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > The Lord of the Forces of Life: a great golden eight-spoked wheel turns in a deep blue sky among clouds. A blue sphinx with a sword sits calmly on the top of the wheel. On the right a jackal-headed figure rises with the wheel; on the left a serpent descends with it. Rich royal blue and purple and gold of Jupiter. Good fortune and turning fate.
 
 **Left out / changed:** Book T describes no picture for the Keys: only a title, an attribution and a meaning. The prompt is built from the title's own words and the 1912 card name; the rest is the traditional figure the name implies.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650317027-p3o5e2cfc8.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654180131-9pectoja3l9.svg)
+**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791665772962-6jfdazm29ii.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669510597-4jnbanuts26.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650317027-p3o5e2cfc8.png)
 
-**Check:** The figure on top of the wheel reads as a dark winged bird more than a sphinx; the rising jackal-headed figure is cut by the right edge.
-
-**Redo:** 2nd: the sphinx is the card's key figure.
+**Check:** Resolved: a sphinx with a sword on top, Hermanubis on the right inside the frame, the serpent on the left.
 
 ### Daughter of the Lords of Truth: the Ruler of the Balance (Justice)
 
@@ -232,17 +267,25 @@ The other notes under each card are smaller misses (a count off by one or two, a
 
 > Enforced sacrifice, punishment, loss, fatal and not voluntary, suffering.
 
-**Prompt of the kept painting** (after the style line):
+**Prompt of the kept painting** (redo, Oct 10; after the style line):
+
+> The Spirit of the Mighty Waters: the traditional Hanged Man. A young man hangs upside down from a crossbeam of living green wood between two trees, over deep blue water. A rope round his right ankle ties that one foot to the beam; his right leg is held straight up. His left leg is bent at the knee, and its foot rests behind the straight right knee, so the two legs cross and make the shape of a cross. Both his hands are tied behind his back, his elbows sticking out to each side, so his arms and head form a downward triangle. His face is calm, a faint golden glow around his head. Plain dark green and violet air between the trees; the deep blue waters fill the bottom of the picture. Sacrifice and suspension.
+
+**Redo prompt tried and dropped (1):**
+
+> The Spirit of the Mighty Waters: a young man hangs head-down from a crossbeam of living green wood between two trees, over deep blue water. A single rope is tied round his right ankle only. His right leg is straight; his left leg is bent at the knee and tucked behind his right knee, so his two legs form a cross, like the figure 4. His hands are tied behind his back, his elbows out to each side, so his arms and head make a triangle pointing down. His face is calm, a faint golden glow around his head. The deep waters fill the bottom of the picture. Sacrifice and suspension.
+
+**Redo:** Two paintings. The first bent both knees and scattered planet glyphs over the sky (the words 'figure 4' seem to have invited marks); the second, with the legs described step by step and a plain ground, was kept.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > The Spirit of the Mighty Waters: a young man hangs upside down by one foot from a crossbeam of living green wood between two trees, over deep blue water. His free leg is bent behind the other to form a cross; his arms are bound behind his back. His face is calm, a faint glow around his head. The deep waters fill the bottom of the picture. Sacrifice and suspension.
 
 **Left out / changed:** Book T describes no picture for the Keys: only a title, an attribution and a meaning. The prompt is built from the title's own words and the 1912 card name; the rest is the traditional figure the name implies.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650360010-sr5tzmrja6.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654185112-gn0k24yj4s9.svg)
+**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791666010955-w3hh98njsfb.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669515642-q5muxnmrx3a.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650360010-sr5tzmrja6.png), [2](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791665792041-jr4r7p8ms6.png)
 
-**Check:** Hangs by both feet with the arms bound in front; the crossed-leg posture is missing.
-
-**Redo:** 3rd: the posture is the card.
+**Check:** Resolved for the legs: one ankle tied, one leg straight, the other bent behind it in a cross. The hands sit behind his head rather than his back, so the arms still make the downward triangle.
 
 ### Child of the Great Transformers: the Lord of the Gates of Death (Death)
 
@@ -440,15 +483,19 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > It represents materiality in all senses, good and evil: and is, therefore, in a sense, illusionary: it shows material gain, labour, power, wealth, etc.
 
-**Prompt of the kept painting** (after the style line):
+**Prompt of the kept painting** (redo, Oct 10; after the style line):
+
+> The Root of the Powers of Earth: a white, radiant angelic hand comes out of a cloud at the lower left and holds a green branch of a rose tree that rises up the middle of the picture. The pentacle grows ON the branch like a great round fruit: a large disc in the centre of the picture, the branch passing up behind it, two green rosebuds on the branch. The disc is five concentric rings of green and gold; the innermost circle is white with a red equal-armed Greek cross; exactly twelve thin straight white rays run from the white centre out to the rim, evenly spaced like the twelve hours on a clock face, like an astrological chart of the twelve houses. On top of the disc sits a small white circle, and above that a large white Maltese cross whose four arms widen outward to notched tips, with two white wings spread to either side. Green and gold.
+
+**Redo:** One painting. The pentacle now sits on the branch, with the small circle, the winged cross and two buds above it. The model still drew sixteen rays, so the ray ring was repainted by script (`fixrays.py`): the old rays were filled with the ring's own green, and exactly twelve white rays were drawn from the white centre to the rim. This disc is the pattern for the suit.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > The Root of the Powers of Earth: a white, radiant angelic hand comes out of clouds holding a branch of a rose tree. On the branch rests a large pentacle made of five concentric circles: the innermost circle is white with a red Greek cross, and twelve white rays run from the centre to the edge, like an astrological chart of the heavens. Above it a small circle, and over that a large white Maltese cross with two white wings. Green and gold.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651031031-jlkquijd8nc.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653725573-jjy9tjdj7pb.svg)
+**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791665737849-1fcz3kdw1hoj.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669456576-01not0opkr22.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651031031-jlkquijd8nc.png)
 
-**Check:** The pentacle hangs under the hand rather than on the branch; 8 rays instead of 12; the cross over it is Greek, not Maltese.
-
-**Redo:** 1st: this Ace is the pattern for every pentacle in the suit.
+**Check:** Resolved: on the branch, twelve rays, a cross with widening arms and wings. Left out as before: Book T's 'Four Crosses' (the 1912 scan reads 'Crosses' where other printings read 'Roses'), so only the two buds are shown.
 
 ## The sixteen court cards
 
@@ -782,15 +829,23 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > The Queen of Gnomes.
 
-**Prompt of the kept painting** (after the style line):
+**Prompt of the kept painting** (redo, Oct 10; after the style line):
+
+> The Queen of the Thrones of Earth: a woman with a beautiful face and long dark hair sits on a stone throne, her head in profile, looking to the left. Her face is half light and half dark: the front of her face, brow, nose, lips and chin, is pale and brightly lit, and the back half, cheek, ear and jaw, is painted in deep brown shadow, a clean split down the profile. On top of her head, as a helmet crest, is a whole golden goat's head with a beard and curling horns, facing forward, with a pair of white feathered wings spreading out from behind it. Beneath the throne is dark sandy earth. She wears a corslet and buskins of scale-mail, which her green robe discloses. A goat stands by her side. In one hand she holds a sceptre topped by a cube, in the other an orb of gold. Melancholy, kind, many-mooded.
+
+**Redo prompt tried and dropped (1):**
+
+> The Queen of the Thrones of Earth: a woman with a beautiful face and long dark hair sits on a throne, her head and face seen in profile, looking to the left. A sharp line divides her face: the front half is bright and lit, the back half is in deep dark shadow. On top of her head she wears, as her crest, the head of a goat with curling horns and two small spread wings, sitting on her crown. Beneath the throne is dark sandy earth. She wears a corslet and buskins of scale-mail, which her green robe discloses. A goat stands by her side. In one hand she holds a sceptre topped by a cube, in the other an orb of gold. Melancholy, kind, many-mooded.
+
+**Redo:** Two paintings. The first gave her goat's horns on a crown, no head and no wings; the second gave the whole winged goat's head as a crest. Neither split the face, so the back half of the face (behind a line just past the eye) was painted into warm shadow by script (`splitface.py`).
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > The Queen of the Thrones of Earth: a woman with a beautiful face and dark hair sits on a throne, shown in profile; one side of her face is in light and the other in shadow. Beneath the throne is dark sandy earth. She wears a corslet and buskins of scale-mail which her robe discloses, and as her crest a winged goat's head. A goat stands by her side. In one hand she holds a sceptre topped by a cube, in the other an orb of gold. Melancholy, kind, many-mooded.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651328765-4r7123db1xo.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653846939-m83v6hdz0lr.svg)
+**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791666034090-u7l7s41pykh.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669524253-rnv0ybypz7d.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651328765-4r7123db1xo.png), [2](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791665806818-5pd8hzum5s.png)
 
-**Check:** The crest is a winged bird on the throne, not a winged goat's head on her; light and dark halves of the face are not shown.
-
-**Redo:** 4th: the crest and the split face are Book T's own marks for this card.
+**Check:** Resolved: winged goat's-head crest, profile, one side of the face light and the other dark (the dark half is a hand correction, said so in the picture's credit).
 
 ### Prince of the Chariot of Earth (King of Pentacles)
 
@@ -1052,15 +1107,17 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > Herein do לאויה and כליאל bear rule.
 
-**Prompt of the kept painting** (after the style line):
+**Composite** (redo, Oct 10): no card prompt; the painted elements listed under *Redo, round 1*, placed by `compose.py`. The layout, from Book T: Two hands from the lower corners, two swords in each; the four cross in the centre, and the rose sits on the crossing. A small dagger above and below.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > Lord of Rest from Strife: two white radiant angelic hands come out of clouds, each holding two steel swords; the four blades cross at the centre, and a red rose of five petals with white rays sits again at the crossing. Two small daggers above and below. Calm pale sky. Rest after strife.
 
 **Left out / changed:** The decan's planet and sign, which Book T sets above and below, are left out of the painting (image models garble astrological glyphs) and set as real text under the card instead.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652433095-bsgwe66yt1j.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653929514-4yqs53cday8.svg)
+**Result:** [composite](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669716863-o403f9hc57.jpg) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669532820-xnuotr47dvn.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652433095-bsgwe66yt1j.png)
 
-**Check:** Four hands with one sword each, not two hands with two.
+**Check:** Resolved by the composite. Four swords, two in each of two hands, crossing at the rose.
 
 ### Lord of Loss in Pleasure (Five of Cups)
 
@@ -1128,15 +1185,17 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > Herein the Angels מלהאל and חהויה rule.
 
-**Prompt of the kept painting** (after the style line):
+**Composite** (redo, Oct 10): no card prompt; the painted elements listed under *Redo, round 1*, placed by `compose.py`. The layout, from Book T: Six cups as two descending triangles (two, then one, twice), above a seventh cup at the bottom. The lotus stems rise out of that lowest cup; a hand from a cloud at the left grips them between it and the middle cup. A lotus overhangs each of the six; no water; every cup empty.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > Lord of Illusionary Success: seven golden cups are arranged as two downward-pointing triangles above a single cup at the bottom. A hand, just above that lowest cup, holds lotus stems rising from it. A lotus flower overhangs each of the other six cups, but no water falls from them: every cup is empty. A dreamlike, deceptive violet mood.
 
 **Left out / changed:** The decan's planet and sign, which Book T sets above and below, are left out of the painting (image models garble astrological glyphs) and set as real text under the card instead.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652192385-dljcfa6c0s.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653937443-s7cipsxjgyp.svg)
+**Result:** [composite](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669804425-c008y8l7m4w.jpg) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669623181-rj6y04rkkyb.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652192385-dljcfa6c0s.png)
 
-**Check:** Six cups in one triangle, not two.
+**Check:** Resolved by the composite. Seven cups: two descending triangles above the lowest one; six lotuses; every cup empty.
 
 ### Lord of Swiftness (Eight of Wands)
 
@@ -1214,17 +1273,29 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > Herein the Angels לכבאל and ושריה have rule.
 
-**Prompt of the kept painting** (after the style line):
+**Prompt of the kept painting** (redo, Oct 10; after the style line):
+
+> Lord of Harmonious Change: two large golden discs, one above the other, each with green and gold concentric rings and a white centre bearing a red cross. A single green-and-gold serpent is bound about the two discs like a figure of 8, an ouroboros: its long scaled body circles the upper disc, crosses over at the middle, and circles the lower disc. At the crossing in the very centre of the picture the serpent's open jaws bite firmly on the tip of its own tail, so head and tail meet and the loop is closed. A white radiant angelic hand comes out of a cloud at the left edge and holds that centre point, where the head grips the tail. Plain pale blue sky ground. A revolving, playful motion.
+
+**Redo prompt tried and dropped (1):**
+
+> Lord of Harmonious Change: two large discs, one above the other, each like the pentacle of the Ace: concentric green and gold rings, a white centre with a red cross, thin white rays. A single green-and-gold serpent with only one head is bound about them like a figure of 8: its body loops round the upper disc and round the lower disc and crosses itself between them, and its one head, at that crossing, holds the tip of its own tail in its mouth, closing the loop, like an ouroboros. A white radiant angelic hand comes out of a cloud at the left edge and grips the serpent at the very centre of the figure eight, holding the whole. A plain sky ground of pale blue. A revolving, playful motion.
+
+**Redo prompt tried and dropped (2):**
+
+> Lord of Harmonious Change: two large golden discs, one above the other, each with green and gold concentric rings, a white centre bearing a red cross, and twelve thin white rays. One green-and-gold serpent is wound round both discs in a single unbroken figure of 8. The serpent's head is at the top of the upper loop, and its jaws are clamped shut on the end of its own tail, which is inside its mouth: head and tail joined in one place, as in the ancient ouroboros. A white radiant angelic hand comes out of a cloud at the left edge and grips the serpent's body where the figure 8 crosses itself, in the centre of the picture. Plain pale blue sky ground. A revolving motion.
+
+**Redo:** Three paintings. The first had one head but added a crown and its tail stopped short of the mouth; the third went back to a head at each end. The second was kept: one head, at the centre, where the hand holds the eight. Its discs had no rays, so twelve were drawn on each by the same script as the Ace, to make them 'similar to that of the Ace'.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > Lord of Harmonious Change: two golden pentacles, each a disc of concentric rings with a small red cross at its centre, one above the other, bound together by a green-and-gold serpent that loops around them like a figure eight and holds its tail in its mouth. A white radiant angelic hand from a cloud holds the centre of the whole. No roses. A revolving, playful motion.
 
 **Left out / changed:** The decan's planet and sign, which Book T sets above and below, are left out of the painting (image models garble astrological glyphs) and set as real text under the card instead.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652669239-9h7fia8ql.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653983713-sfcaxjivh7.svg)
+**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791666434048-5aq2b9rjh5i.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669528869-1apysc8xqlv.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652669239-9h7fia8ql.png), [2](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791666242059-3w7a64ajg1p.png), [3](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791669363624-bb5pb6q1xck.png)
 
-**Check:** The serpent loops round both discs like an eight, but has a head at each end instead of holding its tail in its mouth; the hand holds the top, not the centre.
-
-**Redo:** 7th: the tail-in-mouth is Book T's detail for this card.
+**Check:** Partly resolved: one serpent, one head, the hand at the centre, no roses, discs like the Ace. The tail curls back inside the small central loop to just below the jaws, not into the mouth. Next step if it matters: draw the tail tip into the jaws by hand on the SVG.
 
 ### Lord of Material Works (Three of Pentacles)
 
@@ -1284,15 +1355,17 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > Herein the Angels אניאל and חעמיה bear rule.
 
-**Prompt of the kept painting** (after the style line):
+**Composite** (redo, Oct 10): no card prompt; the painted elements listed under *Redo, round 1*, placed by `compose.py`. The layout, from Book T: Two hands, two swords each, nearly upright and falling apart to left and right; a third hand holds one sword upright in the centre. The rose's petals are drawn torn and falling.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > Lord of Defeat: two radiant angelic hands come out of clouds, each holding two steel swords nearly upright but falling apart from each other to right and left; a third hand from below holds a sword upright in the centre, as if it had split them. The petals of a red rose are torn apart and falling. Bleak grey sky. Defeat.
 
 **Left out / changed:** The decan's planet and sign, which Book T sets above and below, are left out of the painting (image models garble astrological glyphs) and set as real text under the card instead.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652458230-dv4ffdpsfjf.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653991632-qc2jtfwnvx.svg)
+**Result:** [composite](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669725508-tfm29c58qe.jpg) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669536590-p6n54rdps3p.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652458230-dv4ffdpsfjf.png)
 
-**Check:** One sword per hand.
+**Check:** Resolved by the composite. Five swords: two in each outer hand, one upright in the centre; the rose's petals falling.
 
 ### Lord of Earned Success (Six of Swords)
 
@@ -1306,15 +1379,17 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > Ruled by the Great Angels רהעאל and ייוהל.
 
-**Prompt of the kept painting** (after the style line):
+**Composite** (redo, Oct 10): no card prompt; the painted elements listed under *Redo, round 1*, placed by `compose.py`. The layout, from Book T: As the Four (Book T: 'as before'): two hands, two swords each, crossing in the centre, the rose on the crossing, two short daggers above and below.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > Lord of Earned Success: two white radiant angelic hands come out of clouds, each holding two steel swords; the four blades cross in the centre and a red rose of five petals sits again at the crossing. Two short daggers at the top and bottom. Clear, cool blue sky. Success after trouble.
 
 **Left out / changed:** The decan's planet and sign, which Book T sets above and below, are left out of the painting (image models garble astrological glyphs) and set as real text under the card instead.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652483683-wc6ootltd5t.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653994446-wthqcpa7wyh.svg)
+**Result:** [composite](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669735180-qnxtxdmc3on.jpg) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669547471-ni476t2ni9e.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652483683-wc6ootltd5t.png)
 
-**Check:** One sword per hand.
+**Check:** Resolved by the composite. Six swords as Book T counts them: two hands with two each, crossing at the rose, and the two short daggers that carry the decan.
 
 ### Lord of Unstable Effort (Seven of Swords)
 
@@ -1330,15 +1405,17 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > Herein rule the Great Angels הההאל and מעכאל.
 
-**Prompt of the kept painting** (after the style line):
+**Composite** (redo, Oct 10): no card prompt; the painted elements listed under *Redo, round 1*, placed by `compose.py`. The layout, from Book T: Two hands, three swords each; a third hand holds one sword in the centre. All seven points just touch at the top. The rose is held up by the hand that holds the central sword.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > Lord of Unstable Effort: two radiant angelic hands come out of clouds left and right, each holding three steel swords; a third hand from below holds up a single sword in the centre and, with the same hand, a red rose beside its hilt. The points of all seven swords just touch at the top. Unsettled grey-blue sky.
 
 **Left out / changed:** The decan's planet and sign, which Book T sets above and below, are left out of the painting (image models garble astrological glyphs) and set as real text under the card instead.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652504984-inqgaonykp.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653996966-ts21r9qr5j.svg)
+**Result:** [composite](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669740057-qlhgchfujo.jpg) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669555693-878y0c2nckc.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652504984-inqgaonykp.png)
 
-**Check:** Five swords, not seven.
+**Check:** Resolved by the composite. Seven swords: three in each outer hand, one in the centre; all points touch; the rose with the central hand.
 
 ### Lord of Abandoned Success (Eight of Cups)
 
@@ -1352,15 +1429,17 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > The Angels ruling are ווליה and ילהיה.
 
-**Prompt of the kept painting** (after the style line):
+**Composite** (redo, Oct 10): no card prompt; the painted elements listed under *Redo, round 1*, placed by `compose.py`. The layout, from Book T: Three cups at the top (empty), two in the middle, three at the bottom. Two lotus flowers on stems from the hand bend over the two middle cups and pour white water; those fill and run over into the three lowest, which are not yet full.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > Lord of Abandoned Success: a white radiant angelic hand holds a group of lotus stems. Only two lotus flowers bend over the two central cups and pour white water into them; these overflow into the three lowest cups, which are not yet full. The three uppermost cups are quite empty. Eight golden cups in all. Grey, waning light.
 
 **Left out / changed:** The decan's planet and sign, which Book T sets above and below, are left out of the painting (image models garble astrological glyphs) and set as real text under the card instead.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652219206-bd2rrof7mcv.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653999895-0t3y778eq01f.svg)
+**Result:** [composite](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669810264-v8ska6hd2t.jpg) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669629313-83k87c3lycj.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652219206-bd2rrof7mcv.png)
 
-**Check:** Six cups, not eight; two hands with vessels pour instead of two lotus flowers.
+**Check:** Resolved by the composite. Eight cups: three empty above, two filled and running over, three below not yet full.
 
 ### Lord of Material Happiness (Nine of Cups)
 
@@ -1374,21 +1453,17 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > Therein rule the Angels סאליה and עריאל.
 
-**Prompt of the kept painting** (after the style line):
+**Composite** (redo, Oct 10): no card prompt; the painted elements listed under *Redo, round 1*, placed by `compose.py`. The layout, from Book T: Nine cups in three rows of three. A hand from a cloud holds the stems; a lotus overhangs each cup and pours white water into it.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > Lord of Material Happiness: exactly nine large golden goblets in a simple grid of three rows with three goblets in each row, well spaced on a deep blue ground. A white radiant angelic hand comes out of a cloud at the top holding lotus stems; nine lotus flowers bend down, one over each goblet, and a thin stream of white water pours from each flower into its goblet. Rich, contented blue and gold.
 
-**First prompt** (its painting was re-run once):
-
-> Lord of Material Happiness: a white radiant angelic hand comes out of a cloud holding lotus or water-lily stems; one flower overhangs each of nine golden cups arranged in three rows of three, and white water pours from each flower into its cup. Rich, contented blue and gold.
-
 **Left out / changed:** The decan's planet and sign, which Book T sets above and below, are left out of the painting (image models garble astrological glyphs) and set as real text under the card instead.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791653290477-19px0wlex69.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654003459-zvr07x7bzc.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652240615-z7zpm8ldtj.png)
+**Result:** [composite](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669820047-2t5tznr7gxh.jpg) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669633639-6hws2v7yudv.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652240615-z7zpm8ldtj.png), [2](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791653290477-19px0wlex69.png)
 
-**Check:** Re-run once (the first had about 25 cups); the kept one has ten.
-
-**Redo:** 6th, with cups-07, cups-08, cups-10: the counts.
+**Check:** Resolved by the composite. Nine cups in three rows of three, a lotus pouring into each.
 
 ### Lord of Perfected Success (Ten of Cups)
 
@@ -1404,15 +1479,17 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > [This is not such a good card as stated. It represents boredom, and quarrelling arising therefrom; disgust springing from too great luxury. In particular it represents drug-habits, the sottish excess of pleasure and the revenge of nature.]
 
-**Prompt of the kept painting** (after the style line):
+**Composite** (redo, Oct 10): no card prompt; the painted elements listed under *Redo, round 1*, placed by `compose.py`. The layout, from Book T: Ten cups. The uppermost, held sideways by a hand, pours into the left-hand upper cup; a single lotus above it is the source of its water. A hand from a cloud holds the stems whose flowers pour into every other cup, and all run over. Book T names no layout beyond 'uppermost' and 'left-hand upper', so the other nine take the places of the Tree of Life, as in the Ten of Pentacles.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > Lord of Perfected Success: a hand holds a bunch of lotus stems whose flowers pour white water into ten golden cups, which all run over. At the very top one cup is held sideways by a hand and pours water into the upper left cup; a single lotus flower above that top cup is the source of its water. Abundant, overflowing blue and gold.
 
 **Left out / changed:** The decan's planet and sign, which Book T sets above and below, are left out of the painting (image models garble astrological glyphs) and set as real text under the card instead.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652255891-6x3jfoko3yo.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654040658-idlx6ptv8jg.svg)
+**Result:** [composite](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669826076-g4u2kmnewk9.jpg) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669642620-wy6hgz68kqg.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652255891-6x3jfoko3yo.png)
 
-**Check:** Eleven cups in a pyramid; the sideways cup pours into the lotus.
+**Check:** Resolved by the composite. Ten cups, all running over; the uppermost held sideways pours into the left-hand upper cup.
 
 ### Lord of Dominion (Two of Wands)
 
@@ -1564,17 +1641,17 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > Therein rule the Angels ומבאל and יההאל.
 
-**Prompt of the kept painting** (after the style line):
+**Composite** (redo, Oct 10): no card prompt; the painted elements listed under *Redo, round 1*, placed by `compose.py`. The layout, from Book T: Four hands, two at each lower corner, two swords each, points upward; all eight points touch near the top. A rose in the centre (the 1912 scan prints 'the pose of the other sword symbols is re-established'; it is read here as the rose of the Four and Six, the first run's reading).
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > Lord of Shortened Force: four white radiant angelic hands come out of clouds, two at each lower corner of the card, each holding two steel swords points upward; all eight points touch near the top of the card. A red rose of five petals sits at the centre where the blades cross. Narrow, constricted feeling.
 
 **Left out / changed:** The decan's planet and sign, which Book T sets above and below, are left out of the painting (image models garble astrological glyphs) and set as real text under the card instead.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652541194-upy0c4sdadh.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654059151-zdi8w0wg3z.svg)
+**Result:** [composite](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669787236-04apok623dsh.jpg) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669604201-356rrbmb2t.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652541194-upy0c4sdadh.png)
 
-**Check:** One sword per hand; the points do not meet.
-
-**Redo:** 5th, swords 4 to 10 as a set: every one gives each hand one sword. A reference image of the right layout (or a drawn layout) would help more than another prompt.
+**Check:** Resolved by the composite. Eight swords from four hands, all points touching near the top; the rose in the centre.
 
 ### Lord of Despair and Cruelty (Nine of Swords)
 
@@ -1590,13 +1667,17 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > Therein do ענואל and מחיאל bear rule.
 
-**Prompt of the kept painting** (after the style line):
+**Composite** (redo, Oct 10): no card prompt; the painted elements listed under *Redo, round 1*, placed by `compose.py`. The layout, from Book T: Four hands as in the Eight hold eight swords nearly upright, the points falling away from each other; a fifth hand holds a ninth sword upright in the centre. No rose.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > Lord of Despair and Cruelty: four hands come out of clouds at the lower corners and hold eight steel swords nearly upright, their points falling away from each other; a fifth hand holds a ninth sword upright in the centre, as if it had struck them apart. No rose anywhere. Dark night sky. Despair and cruelty.
 
 **Left out / changed:** The decan's planet and sign, which Book T sets above and below, are left out of the painting (image models garble astrological glyphs) and set as real text under the card instead.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652572306-4v5v4yjjp0k.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654061942-wkqrqf01ix.svg)
+**Result:** [composite](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669794822-74cem96ftz.jpg) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669611013-mhodgv61nbn.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652572306-4v5v4yjjp0k.png)
+
+**Check:** Resolved by the composite. Nine swords: eight from four hands falling apart, one upright in the centre; no rose.
 
 ### Lord of Ruin (Ten of Swords)
 
@@ -1610,15 +1691,17 @@ The other notes under each card are smaller misses (a count off by one or two, a
 >
 > Herein the Angels דמביה and מנקאל reign.
 
-**Prompt of the kept painting** (after the style line):
+**Composite** (redo, Oct 10): no card prompt; the painted elements listed under *Redo, round 1*, placed by `compose.py`. The layout, from Book T: Four hands hold eight swords with the points falling away; two more hands hold two swords crossed in the centre. No rose.
+
+**Prompt before the redo** (the first run's kept painting, among the earlier attempts below):
 
 > Lord of Ruin: four hands come out of clouds and hold eight steel swords whose points fall away from each other; two more hands hold two swords crossed in the centre, as though their crossing had broken the others apart. No rose, flower or bud. A ruined dark red and black sky.
 
 **Left out / changed:** The decan's planet and sign, which Book T sets above and below, are left out of the painting (image models garble astrological glyphs) and set as real text under the card instead.
 
-**Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652603992-nt0ysycgdjj.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654064581-76aczx6bnc8.svg)
+**Result:** [composite](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669800825-8051l9qh6i9.jpg) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791669618303-vvl1qo1ydoe.svg) · earlier attempts: [1](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652603992-nt0ysycgdjj.png)
 
-**Check:** Four swords, not ten.
+**Check:** Resolved by the composite. Ten swords: eight from four hands falling apart, two crossed in the centre; no rose.
 
 ### Lord of Love (Two of Cups)
 
