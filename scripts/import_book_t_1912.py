@@ -154,7 +154,7 @@ def main():
     g = json.loads(raw)
     moved = json.load(open(ARCHIVE, encoding='utf-8'))['items'] if os.path.exists(ARCHIVE) else {}
     changed = 0
-    for it in g['items']:
+    for it in g['nodes']:
         if it['id'] not in cards:
             continue
         sec = it.setdefault('sections', {})
@@ -177,7 +177,7 @@ def main():
             if not placed:
                 new = {SECTION: want, **new}
             it['sections'] = new
-    missing = set(cards) - {i['id'] for i in g['items']}
+    missing = set(cards) - {i['id'] for i in g['nodes']}
     if missing:
         sys.exit('cards in the source but not in the deck: %s' % sorted(missing))
     if a.check:

@@ -337,7 +337,7 @@ def build_spans(grammar):
     applied per source item but not yet merged/cleaned -- clean_span does
     that)."""
     by_pos = {}
-    for it in grammar["items"]:
+    for it in grammar["nodes"]:
         pos = position_of(it)
         if pos is None:
             continue
@@ -499,7 +499,7 @@ def check_deck(deck):
     marker and mentions no other card's marker; (b) report char counts."""
     path, grammar = load_deck(deck)
     ok = True
-    for it in grammar["items"]:
+    for it in grammar["nodes"]:
         pos = position_of(it)
         if pos is None:
             continue

@@ -99,7 +99,7 @@ wirth = load(WIRTH)
 gebelin = load(GEBELIN)
 
 waite = {}   # gd item id -> (item, waite body)
-for it in gd["items"]:
+for it in gd["nodes"]:
     s = it.get("sections") or {}
     if "Waite" in s:
         waite[it["id"]] = (it, body(s["Waite"]))
@@ -107,7 +107,7 @@ for it in gd["items"]:
 papus_by_deck = {}
 for slug, g in ((GD, gd), (WIRTH, wirth), (GEBELIN, gebelin)):
     d = {}
-    for it in g["items"]:
+    for it in g["nodes"]:
         s = it.get("sections") or {}
         if "Papus" in s:
             d[it["id"]] = body(s["Papus"])
@@ -159,7 +159,7 @@ def clean_meta(m, drop_print=True):
     per-card person pill and its print/TGC paths (those point at the other deck's
     pre-baked files)."""
     m = dict(m or {})
-    for k in ("source_deck", "source_item_id", "deck"):
+    for k in ("source_deck", "source_node_id", "deck"):
         m.pop(k, None)
     if drop_print:
         m.pop("print", None)
@@ -178,7 +178,6 @@ for it, txt in [(v[0], v[1]) for v in waite.values()]:
         "name": it["name"],
         "sort_order": it["sort_order"],
         "category": it["category"],
-        "level": it.get("level", 1),
         "keywords": [k for k in (it.get("keywords") or []) if k != "golden dawn"],
         "image_url": it["image_url"],
         "metadata": m,
@@ -285,12 +284,12 @@ literally the same imagery being read by a different source.
         "rule": "one source per deck — see GRAMMAR_FORMAT.md",
         "moved_from": GD,
     },
-    "items": rws_items,
+    "nodes": rws_items,
 }
 
 # ------------------------------------------------------------------ new deck: Papus
 papus_items = []
-for it in wirth["items"]:
+for it in wirth["nodes"]:
     if it.get("category") != "major-arcana":
         continue
     n = int(NUM_RE.search(it["id"]).group(1))
@@ -300,7 +299,6 @@ for it in wirth["items"]:
         "name": it["name"],
         "sort_order": it["sort_order"],
         "category": "major-arcana",
-        "level": it.get("level", 1),
         "keywords": [k for k in (it.get("keywords") or []) if k != "oswald wirth"],
         "image_url": it["image_url"],
         "metadata": m,
@@ -406,7 +404,7 @@ of the cards.
         "rule": "one source per deck — see GRAMMAR_FORMAT.md",
         "moved_from": [GD, WIRTH, GEBELIN],
     },
-    "items": papus_items,
+    "nodes": papus_items,
 }
 
 log("built %s: %d cards; %s: %d cards" % (RWS_NEW, len(rws_items), PAPUS_NEW, len(papus_items)))
@@ -415,7 +413,7 @@ log("built %s: %d cards; %s: %d cards" % (RWS_NEW, len(rws_items), PAPUS_NEW, le
 removed = []   # (deck, item id, section, text)
 for slug, g in ((GD, gd), (WIRTH, wirth), (GEBELIN, gebelin)):
     n = 0
-    for it in g["items"]:
+    for it in g["nodes"]:
         s = it.get("sections") or {}
         for key in STRIP[slug]:
             if key in s:
@@ -424,7 +422,7 @@ for slug, g in ((GD, gd), (WIRTH, wirth), (GEBELIN, gebelin)):
     log("  %-26s removed %d section(s): %s" % (slug, n, ", ".join(STRIP[slug])))
 
 # --------------------------------------------- drop the repeated per-card person pill
-PILL = ("source_deck", "source_item_id", "deck")
+PILL = ("source_deck", "source_node_id", "deck")
 
 
 MIN_REPEATS = 5   # below this it is a credit, not a repetition
@@ -436,12 +434,12 @@ def strip_person_pill(g, slug):
     Artist/maker credit belongs at deck level. ONE dedicated item carrying the pill (an
     overview card, a single 'about the maker' entry) is exactly right and is left alone;
     the same collapsed biography box rendered on all 78 cards is not."""
-    items = g.get("items", [])
+    items = g.get("nodes", [])
     hits = [it for it in items
             if (it.get("metadata") or {}).get("source_deck") == "people-of-tarot"]
     if len(hits) < MIN_REPEATS or len(hits) < len(items):
         return 0, None
-    person = (hits[0].get("metadata") or {}).get("source_item_id")
+    person = (hits[0].get("metadata") or {}).get("source_node_id")
     for it in hits:
         for k in PILL:
             it["metadata"].pop(k, None)
@@ -541,7 +539,7 @@ for slug, credit in CREDITS.items():
 haystacks = {}
 for slug, g in ((RWS_NEW, rws), (PAPUS_NEW, papus)):
     haystacks["deck:" + slug] = norm(" ".join(
-        v for it in g["items"] for v in (it.get("sections") or {}).values()))
+        v for it in g["nodes"] for v in (it.get("sections") or {}).values()))
 for p in sorted(glob.glob(os.path.join(SOURCES, "*.md"))):
     haystacks["sources:" + os.path.basename(p)] = norm(open(p, encoding="utf-8").read())
 

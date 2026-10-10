@@ -52,12 +52,12 @@ def main():
         "f8bb4a3a-268a-42dd-9596-28e77d67add8", "tool-results",
         "mcp-6b361191-1fb9-4ce8-bfa5-928a3833b8a0-get_grammar-1782175398563.txt")
     g = json.loads(open(plat_file, encoding="utf-8").read())
-    plat = g["items"]
+    plat = g["nodes"]
 
     # 1) meaning lookup from the built Tarocchino grammar (her Etteilla text)
     tg = json.load(open("tarot/tarocchino-arlecchino/grammar.json", encoding="utf-8"))
     meanings = {}
-    for it in tg["items"]:
+    for it in tg["nodes"]:
         a = it["metadata"].get("archetype")
         key = a if a else canon_key(it["name"])
         if not key: continue
@@ -150,7 +150,7 @@ def main():
        "modifications":("'The card' sections are her own art descriptions (from her per-card pages). Etteilla upright/"
          "reversed meanings are reused verbatim from her Tarocchino Arlecchino guidebook for overlapping cards; the "
          "6 added majors and the 2-5 pips carry her art description only (their meanings are PDF-only). No meanings altered.")},
-     "items":items}
+     "nodes":items}
     os.makedirs("tarot/arlecchinos-augmented-arcana", exist_ok=True)
     json.dump(out, open("tarot/arlecchinos-augmented-arcana/grammar.json","w",encoding="utf-8"), ensure_ascii=False, indent=2)
     print(f"wrote arlecchinos-augmented-arcana — {len(items)} cards, {reused} reused Etteilla meanings, {arted} with art description")

@@ -225,7 +225,7 @@ def load():
 def run(write):
     grammar = load()
     report, archive, changed, ok = [], [], 0, True
-    for it in grammar["items"]:
+    for it in grammar["nodes"]:
         secs = it.get("sections") or {}
         if SECTION not in secs:
             print(f"FAIL {it['id']}: no '{SECTION}' section")
@@ -306,7 +306,7 @@ def check():
     grammar = load()
     ok = True
     heading_ok = 0
-    for it in grammar["items"]:
+    for it in grammar["nodes"]:
         body = (it.get("sections") or {}).get(SECTION, "")
         _, removals, _ = plan_item(it["id"], body)
         for frag, reason in removals:
@@ -329,7 +329,7 @@ def check():
                 print(f"FAIL {it['id']}: a section heading is buried "
                       f"mid-paragraph: {ps[:120]!r}")
     if ok:
-        print(f"OK: {len(grammar['items'])} items — no running head, plate "
+        print(f"OK: {len(grammar['nodes'])} items — no running head, plate "
               f"caption, diagram debris or box glyph left; {heading_ok} "
               f"section headings all stand as their own paragraph")
     return ok

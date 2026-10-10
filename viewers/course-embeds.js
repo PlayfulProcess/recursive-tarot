@@ -33,17 +33,17 @@ window.expandCourseEmbeds = async function(root){
                   let PG=null, makersByDeck={}, scholarsByDeck={};
                   if(peopleEls.length || root.querySelector('[data-embed="decks"]')){
                     PG=await get(T+'/people-of-tarot/grammar.json');
-                    if(PG) for(const p of PG.items){ if((p.metadata||{}).kind==='person'||p.category==='person'){
+                    if(PG) for(const p of PG.nodes){ if((p.metadata||{}).kind==='person'||p.category==='person'){
                       for(const s of ((p.metadata||{}).made||[])) (makersByDeck[s]=makersByDeck[s]||[]).push(p);
                       for(const s of ((p.metadata||{}).studied||[])) (scholarsByDeck[s]=scholarsByDeck[s]||[]).push(p); } }
                   }
                   if(peopleEls.length && PG){
-                    const items=Object.fromEntries(PG.items.map(i=>[i.id,i]));
+                    const items=Object.fromEntries(PG.nodes.map(i=>[i.id,i]));
                     const r3=items['root-people-of-tarot'];
                     let html=''; if(r3)html+='<div class="people-weave"><p>'+mdl((r3.sections||{})['What it is'])+'</p></div>';
                     for(const gid of ['grp-makers','grp-patrons','grp-occultists','grp-scholars','grp-institutions']){ const grp=items[gid]; if(!grp)continue;
                       html+='<h3>'+esc(grp.name)+'</h3>'; const wt=(grp.sections||{})['What this groups']; if(wt)html+='<p>'+mdl(wt)+'</p>';
-                      for(const cid of grp.composite_of||[]){ const p=items[cid]; if(!p)continue;
+                      for(const cid of grp.parts||[]){ const p=items[cid]; if(!p)continue;
                         const who=((p.sections||{}).Who||'').replace(/\s*\[@[^\]]+\]/g,''); const life=(p.metadata||{}).lifespan||'';
                         html+=`<div class="bio"><div class="bio-name">${esc(p.name)}${life?` <span class="bio-life">${esc(life)}</span>`:''}</div><div class="bio-text"><p>${mdl(who)}</p></div></div>`;
                       }
@@ -59,7 +59,7 @@ window.expandCourseEmbeds = async function(root){
                     let html='';
                     if(col){ for(const g of col.grammars.filter(x=>!x.is_meta).sort((a,b)=>(a.year||9999)-(b.year||9999))){
                       const dg=await get(T+'/'+g.slug+'/grammar.json'); if(!dg)continue;
-                      const sigs=dg.items.filter(i=>(i.level||1)===1 && (i.image_url||(i.metadata||{}).image_url)).map(i=>i.image_url||(i.metadata||{}).image_url);
+                      const sigs=dg.nodes.filter(i=>!(i.parts&&i.parts.length) && (i.image_url||(i.metadata||{}).image_url)).map(i=>i.image_url||(i.metadata||{}).image_url);
                       const cover=g.cover_image_url||sigs[0];
                       const cells=sigs.slice(1,9).map(im=>`<figure class="c"><img loading="lazy" src="${esc(im)}"></figure>`).join('');
                       let makers='';
@@ -81,7 +81,7 @@ window.expandCourseEmbeds = async function(root){
                     const ANCH=['tarot-de-marseille-conver','sola-busca-tarot','golden-dawn-book-t-tarot','visconti-sforza-tarot'];
                     const sidx={};
                     for(const slug of ANCH){ const dg=await get(T+'/'+slug+'/grammar.json'); if(!dg)continue;
-                      for(const it of dg.items){ const s=(it.metadata||{}).suit, img=it.image_url||(it.metadata||{}).image_url;
+                      for(const it of dg.nodes){ const s=(it.metadata||{}).suit, img=it.image_url||(it.metadata||{}).image_url;
                         if(s&&img){ const cs=CANON[String(s).toLowerCase()]; if(cs){ (sidx[cs]=sidx[cs]||{}); (sidx[cs][slug]=sidx[cs][slug]||[]).push(img); } } } }
                     let html=suits?`<p>${mdl(suits._intro)}</p>`:'';
                     for(const cs of SORDER){ if(!suits||!suits[cs])continue;
@@ -100,7 +100,7 @@ window.expandCourseEmbeds = async function(root){
                     const SUITORDER=['Batons','Coins','Swords','Cups'];
                     const nidx={};
                     for(const slug of ['golden-dawn-book-t-tarot']){ const dg=await get(T+'/'+slug+'/grammar.json'); if(!dg)continue;
-                      for(const it of dg.items){ const md=it.metadata||{}; let n=md.number; const arch=String(md.archetype||'');
+                      for(const it of dg.nodes){ const md=it.metadata||{}; let n=md.number; const arch=String(md.archetype||'');
                         const m=arch.match(/card:(.+?)-of-(.+)/); if(n==null&&m)n=RANKW[m[1].toLowerCase()];
                         const suit=md.suit||(m&&m[2]); const cs=suit&&CANON2[String(suit).toLowerCase()];
                         if(!n||n>10||!cs)continue; const img=it.image_url||md.image_url;
@@ -124,7 +124,7 @@ window.expandCourseEmbeds = async function(root){
                       let readingId=null;
                       if(col){ const cells=[];
                         for(const g of col.grammars.filter(x=>!x.is_meta)){ const dg=await get(T+'/'+g.slug+'/grammar.json'); if(!dg)continue;
-                          const it=dg.items.find(i=>(i.metadata||{}).trump_key===tk); const img=it&&(it.image_url||(it.metadata||{}).image_url);
+                          const it=dg.nodes.find(i=>(i.metadata||{}).trump_key===tk); const img=it&&(it.image_url||(it.metadata||{}).image_url);
                           const dname=(g.name||g.slug).split(' — ')[0];
                           // each card links to its detail view in that deck (history-only static viewer)
                           const url=`../viewers/cards.html?src=../tarot/${g.slug}/grammar.json&item=${encodeURIComponent(it?it.id:'')}`;
@@ -153,7 +153,7 @@ window.expandCourseEmbeds = async function(root){
                     const CANON={cups:'cups',coins:'coins',swords:'swords',batons:'batons',wands:'batons',pentacles:'coins',disks:'coins',staves:'batons',clubs:'batons'};
                     const idx={}, midx={};
                     if(col){ for(const g of col.grammars.filter(x=>!x.is_meta)){ const dg=await get(T+'/'+g.slug+'/grammar.json'); if(!dg)continue;
-                      for(const it of dg.items){ const md=it.metadata||{}; const img=it.image_url||md.image_url;
+                      for(const it of dg.nodes){ const md=it.metadata||{}; const img=it.image_url||md.image_url;
                         // group minors by the canonical minor_key (e.g. four-of-coins) so the same card
                         // lines up across decks regardless of suit/court naming; archetype is a fallback.
                         const mk=md.minor_key||(String(md.archetype||'').match(/^card:(.+)/)||[])[1];
@@ -227,7 +227,7 @@ window.expandCourseEmbeds = async function(root){
                   const essayEls=[...root.querySelectorAll('[data-embed="essay"]')];
                   if(essayEls.length){
                     const mg=await get(T+'/all-decks-many-lenses/grammar.json');
-                    const e=mg&&mg.items.find(i=>i.id==='essay-divination-question');
+                    const e=mg&&mg.nodes.find(i=>i.id==='essay-divination-question');
                     let html=''; if(e)for(const [k,v] of Object.entries(e.sections||{}))html+=`<h3>${esc(k)}</h3><p>${mdl(v)}</p>`;
                     essayEls.forEach(el=>el.innerHTML=html);
                   }
@@ -250,9 +250,9 @@ window.expandCourseEmbeds = async function(root){
                       ['mantegna-tarocchi','item:plate-01','The "Mantegna Tarocchi", c. 1465 — a humanist set of ranks and virtues, not a tarot at all: a cousin, not a parent.'],
                       ['visconti-sforza-tarot','tk:world','The World — Visconti-Sforza, c. 1451. Tooled gold leaf for a ducal court: tarot began as luxury, not occultism.'],
                       ['tarot-de-marseille-conver','tk:moon','The Moon — Marseille, 1760. The uncanny scene of towers, dogs, and crayfish the occultists inherited whole.']];
-                    const resolve=(dg,spec)=> spec.startsWith('tk:') ? dg.items.find(i=>(i.metadata||{}).trump_key===spec.slice(3))
-                      : spec.startsWith('item:') ? dg.items.find(i=>i.id===spec.slice(5))
-                      : dg.items.find(i=>i.image_url||(i.metadata||{}).image_url);
+                    const resolve=(dg,spec)=> spec.startsWith('tk:') ? dg.nodes.find(i=>(i.metadata||{}).trump_key===spec.slice(3))
+                      : spec.startsWith('item:') ? dg.nodes.find(i=>i.id===spec.slice(5))
+                      : dg.nodes.find(i=>i.image_url||(i.metadata||{}).image_url);
                     async function gallery(list){ let h='';
                       for(const [slug,spec,cap] of list){ const dg=await get(T+'/'+slug+'/grammar.json'); if(!dg)continue;
                         const it=resolve(dg,spec); const img=it&&(it.image_url||(it.metadata||{}).image_url); if(!img)continue;
@@ -270,7 +270,7 @@ window.expandCourseEmbeds = async function(root){
                     let cred='<h3>Image credits</h3><p>Every card image here is in the <strong>public domain</strong> — the originals all predate the twentieth century. Reproductions are drawn from the institutions and archives below; full per-card provenance is in the research dossiers on GitHub.</p><ul class="credits">';
                     if(col){ for(const g of col.grammars.filter(x=>!x.is_meta).sort((a,b)=>(a.year||9999)-(b.year||9999))){
                       const dg=await get(T+'/'+g.slug+'/grammar.json');
-                      const credit=(dg&&dg.image_credit)||[...new Set((dg?dg.items:[]).map(i=>(i.metadata||{}).collection).filter(Boolean))].join('; ')||'public domain — see the deck dossier';
+                      const credit=(dg&&dg.image_credit)||[...new Set((dg?dg.nodes:[]).map(i=>(i.metadata||{}).collection).filter(Boolean))].join('; ')||'public domain — see the deck dossier';
                       cred+=`<li><strong>${esc((g.name||g.slug).split(' — ')[0])}.</strong> ${esc(credit)}.</li>`;
                     } }
                     cred+='</ul>';

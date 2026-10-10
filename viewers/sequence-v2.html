@@ -193,7 +193,7 @@ let bgPlayer=null, bgCfg=null;            // background_audio
 (async function(){
   try{
     G=await (await fetch(SRC)).json();
-    const raw=(G.items||[]).slice();
+    const raw=(G.nodes||[]).slice();
     items=raw.map(normalize).sort((a,b)=>(a.sort||0)-(b.sort||0)).filter(x=>x.type==='card'||x.type==='image'||x.video_id);
     if(!items.length) throw new Error('No playable items in this sequence.');
     $('title').innerHTML=esc(G.name||'Sequence')+' <span class="v2">v2</span> <span class="sub">— '+items.length+' parts</span>';

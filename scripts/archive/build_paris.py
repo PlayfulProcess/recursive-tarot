@@ -27,7 +27,7 @@ items = []
 trump_ids = []
 for i, (num, name) in enumerate(TRUMPS):
     cid = f"trump-{i+1:02d}"
-    items.append({"id": cid, "name": f"{num} · {name}", "level": 1, "category": "trump",
+    items.append({"id": cid, "name": f"{num} · {name}", "category": "trump",
                   "image_url": img(i+1), "metadata": {"number": num, "arcana": "major"},
                   "sections": {"About": f"{name} (atout {num}) — the name is printed on the card."}})
     trump_ids.append(cid)
@@ -38,22 +38,22 @@ for skey, sfr, sen in SUITS:
     sids = []
     for r in RANKS:
         cid = f"{skey}-{c}"
-        items.append({"id": cid, "name": f"{r} de {sfr}", "level": 1, "category": "suit-card",
+        items.append({"id": cid, "name": f"{r} de {sfr}", "category": "suit-card",
                       "image_url": img(c), "metadata": {"suit": sen, "arcana": "minor"},
                       "sections": {"About": f"{r} of {sen} (BnF folio order)."}})
         sids.append(cid); c += 1
     gid = f"suit-{skey}"
-    items.append({"id": gid, "name": f"{sfr} · {sen}", "level": 3, "category": "axis",
-                  "render_as": "pill-group", "composite_of": sids, "image_url": img(c-14),
+    items.append({"id": gid, "name": f"{sfr} · {sen}", "category": "axis",
+                  "render_as": "pill-group", "parts": sids, "image_url": img(c-14),
                   "sections": {"What it is": f"The {sfr} ({sen}) suit — ten pips plus Valet, Cavalier, Reine and Roi."}})
     suit_group_ids.append(gid)
 
-items.append({"id": "trump-mat", "name": "Le Mat (The Fool)", "level": 1, "category": "trump",
+items.append({"id": "trump-mat", "name": "Le Mat (The Fool)", "category": "trump",
               "image_url": img(78), "metadata": {"arcana": "major"},
               "sections": {"About": "The unnumbered Fool, last in the BnF scan."}})
 trump_ids.append("trump-mat")
-items.append({"id": "axis-atouts", "name": "Les Atouts (22 Trumps)", "level": 3, "category": "axis",
-              "render_as": "pill-group", "composite_of": trump_ids, "image_url": img(1),
+items.append({"id": "axis-atouts", "name": "Les Atouts (22 Trumps)", "category": "axis",
+              "render_as": "pill-group", "parts": trump_ids, "image_url": img(1),
               "sections": {"What it is": "The 22 named trumps — 21 numbered atouts plus the Mat."}})
 
 grammar = {
@@ -66,7 +66,7 @@ grammar = {
     "default_view": "cards",
     "metadata": {"year": 1625, "tradition": "Tarot de Marseille (Parisian)", "branch": "marseille", "order": "C-order"},
     "_source": "BnF / Gallica ark:/12148/btv1b105109624 — public domain.",
-    "items": items,
+    "nodes": items,
 }
 out = os.path.join(ROOT, "tarot", "paris-anonymous-tarot")
 json.dump(grammar, open(os.path.join(out, "grammar.json"), "w", encoding="utf-8"),

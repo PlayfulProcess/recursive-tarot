@@ -21,11 +21,10 @@
     "allow_reversed": true,
     "_note": "Unlike the astrology castings this shape is modeled on, nothing here is derived from birth data or any personal record. Shuffle any tarot deck grammar (this library's or your own) and draw three cards face up into these three positions, in order. Read each card against whatever interpretation set you're using — the spread supplies the angle each position asks you to take, not a fixed card-to-position lookup."
   },
-  "items": [
+  "nodes": [
     {
       "id": "position-recovery",
       "name": "Recovery",
-      "level": 1,
       "category": "position",
       "position": 1,
       "sections": {
@@ -41,7 +40,6 @@
     {
       "id": "position-escape",
       "name": "Escape",
-      "level": 1,
       "category": "position",
       "position": 2,
       "sections": {
@@ -57,7 +55,6 @@
     {
       "id": "position-fantasy",
       "name": "Fantasy",
-      "level": 1,
       "category": "position",
       "position": 3,
       "sections": {

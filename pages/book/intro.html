@@ -109,7 +109,7 @@
   // Intro narrative + branch sections from the tree-of-tarot grammar
   try{
     const g = await (await fetch('../../tarot/tree-of-tarot/grammar.json')).json();
-    const byId = Object.fromEntries(g.items.map(i=>[i.id,i]));
+    const byId = Object.fromEntries(g.nodes.map(i=>[i.id,i]));
     document.getElementById('lead').innerHTML =
       '<p>'+md((byId['root-tree-of-tarot']?.sections?.Scene)||'')+'</p>';
     const branchIds = ['branch-roots','branch-a','branch-b','branch-c','branch-occult','branch-sui'];
@@ -125,7 +125,7 @@
     const cells=[];
     await Promise.all(decks.map(async slug=>{
       try{ const dg = await (await fetch(`../../tarot/${slug}/grammar.json`)).json();
-        const it = dg.items.find(i=>(i.metadata||{}).trump_key==='death');
+        const it = dg.nodes.find(i=>(i.metadata||{}).trump_key==='death');
         if(it && (it.image_url||it.metadata?.image_url)){
           const lab=(col.grammars.find(x=>x.slug===slug)?.name||slug).split(' — ')[0].slice(0,16);
           cells.push({y:col.grammars.find(x=>x.slug===slug)?.year||9999,html:`<div class="c"><img loading="lazy" src="${it.image_url||it.metadata.image_url}" alt="Death — ${lab}"><div>${lab}</div></div>`});

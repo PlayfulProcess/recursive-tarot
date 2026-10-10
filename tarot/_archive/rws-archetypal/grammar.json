@@ -8,11 +8,10 @@
   "builders",
   "oracle"
  ],
- "items": [
+ "nodes": [
   {
    "id": "1",
    "name": "The Fool",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.398Z",
@@ -46,7 +45,6 @@
   {
    "id": "2",
    "name": "The Magician",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.398Z",
@@ -81,7 +79,6 @@
   {
    "id": "3",
    "name": "The High Priestess",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.398Z",
@@ -115,7 +112,6 @@
   {
    "id": "4",
    "name": "The Empress",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.398Z",
@@ -149,7 +145,6 @@
   {
    "id": "5",
    "name": "The Emperor",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.398Z",
@@ -184,7 +179,6 @@
   {
    "id": "6",
    "name": "The Hierophant",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.398Z",
@@ -219,7 +213,6 @@
   {
    "id": "7",
    "name": "The Lovers",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.398Z",
@@ -253,7 +246,6 @@
   {
    "id": "8",
    "name": "The Chariot",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.398Z",
@@ -287,7 +279,6 @@
   {
    "id": "9",
    "name": "Strength",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -322,7 +313,6 @@
   {
    "id": "10",
    "name": "The Hermit",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -356,7 +346,6 @@
   {
    "id": "11",
    "name": "Wheel of Fortune",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -390,7 +379,6 @@
   {
    "id": "12",
    "name": "Justice",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -424,7 +412,6 @@
   {
    "id": "13",
    "name": "The Hanged Man",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -458,7 +445,6 @@
   {
    "id": "14",
    "name": "Death",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -493,7 +479,6 @@
   {
    "id": "15",
    "name": "Temperance",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -527,7 +512,6 @@
   {
    "id": "16",
    "name": "The Devil",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -561,7 +545,6 @@
   {
    "id": "17",
    "name": "The Tower",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -595,7 +578,6 @@
   {
    "id": "18",
    "name": "The Star",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -629,7 +611,6 @@
   {
    "id": "19",
    "name": "The Moon",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -663,7 +644,6 @@
   {
    "id": "20",
    "name": "The Sun",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -698,7 +678,6 @@
   {
    "id": "21",
    "name": "Judgement",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -732,7 +711,6 @@
   {
    "id": "22",
    "name": "The World",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -766,7 +744,6 @@
   {
    "id": "23",
    "name": "Ace of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -801,7 +778,6 @@
   {
    "id": "24",
    "name": "Two of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -835,7 +811,6 @@
   {
    "id": "25",
    "name": "Three of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -869,7 +844,6 @@
   {
    "id": "26",
    "name": "Four of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -903,7 +877,6 @@
   {
    "id": "27",
    "name": "Five of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -937,7 +910,6 @@
   {
    "id": "28",
    "name": "Six of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -971,7 +943,6 @@
   {
    "id": "29",
    "name": "Seven of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1005,7 +976,6 @@
   {
    "id": "30",
    "name": "Eight of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1039,7 +1009,6 @@
   {
    "id": "31",
    "name": "Nine of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1071,7 +1040,6 @@
   {
    "id": "32",
    "name": "Ten of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1105,7 +1073,6 @@
   {
    "id": "33",
    "name": "Page of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1139,7 +1106,6 @@
   {
    "id": "34",
    "name": "Knight of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1173,7 +1139,6 @@
   {
    "id": "35",
    "name": "Queen of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1207,7 +1172,6 @@
   {
    "id": "36",
    "name": "King of Wands",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1241,7 +1205,6 @@
   {
    "id": "37",
    "name": "Ace of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1275,7 +1238,6 @@
   {
    "id": "38",
    "name": "Two of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1309,7 +1271,6 @@
   {
    "id": "39",
    "name": "Three of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1343,7 +1304,6 @@
   {
    "id": "40",
    "name": "Four of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1377,7 +1337,6 @@
   {
    "id": "41",
    "name": "Five of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1411,7 +1370,6 @@
   {
    "id": "42",
    "name": "Six of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1445,7 +1403,6 @@
   {
    "id": "43",
    "name": "Seven of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1479,7 +1436,6 @@
   {
    "id": "44",
    "name": "Eight of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1513,7 +1469,6 @@
   {
    "id": "45",
    "name": "Nine of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1547,7 +1502,6 @@
   {
    "id": "46",
    "name": "Ten of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1581,7 +1535,6 @@
   {
    "id": "47",
    "name": "Page of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1615,7 +1568,6 @@
   {
    "id": "48",
    "name": "Knight of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1649,7 +1601,6 @@
   {
    "id": "49",
    "name": "Queen of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1683,7 +1634,6 @@
   {
    "id": "50",
    "name": "King of Cups",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1717,7 +1667,6 @@
   {
    "id": "51",
    "name": "Ace of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1751,7 +1700,6 @@
   {
    "id": "52",
    "name": "Two of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1785,7 +1733,6 @@
   {
    "id": "53",
    "name": "Three of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1819,7 +1766,6 @@
   {
    "id": "54",
    "name": "Four of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1853,7 +1799,6 @@
   {
    "id": "55",
    "name": "Five of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1887,7 +1832,6 @@
   {
    "id": "56",
    "name": "Six of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1921,7 +1865,6 @@
   {
    "id": "57",
    "name": "Seven of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1955,7 +1898,6 @@
   {
    "id": "58",
    "name": "Eight of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -1989,7 +1931,6 @@
   {
    "id": "59",
    "name": "Nine of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2023,7 +1964,6 @@
   {
    "id": "60",
    "name": "Ten of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2057,7 +1997,6 @@
   {
    "id": "61",
    "name": "Page of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2091,7 +2030,6 @@
   {
    "id": "62",
    "name": "Knight of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2125,7 +2063,6 @@
   {
    "id": "63",
    "name": "Queen of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2159,7 +2096,6 @@
   {
    "id": "64",
    "name": "King of Swords",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2193,7 +2129,6 @@
   {
    "id": "65",
    "name": "Ace of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2227,7 +2162,6 @@
   {
    "id": "66",
    "name": "Two of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2261,7 +2195,6 @@
   {
    "id": "67",
    "name": "Three of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2295,7 +2228,6 @@
   {
    "id": "68",
    "name": "Four of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2329,7 +2261,6 @@
   {
    "id": "69",
    "name": "Five of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2363,7 +2294,6 @@
   {
    "id": "70",
    "name": "Six of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2397,7 +2327,6 @@
   {
    "id": "71",
    "name": "Seven of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2431,7 +2360,6 @@
   {
    "id": "72",
    "name": "Eight of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2465,7 +2393,6 @@
   {
    "id": "73",
    "name": "Nine of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2499,7 +2426,6 @@
   {
    "id": "74",
    "name": "Ten of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2533,7 +2459,6 @@
   {
    "id": "75",
    "name": "Page of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2567,7 +2492,6 @@
   {
    "id": "76",
    "name": "Knight of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2601,7 +2525,6 @@
   {
    "id": "77",
    "name": "Queen of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",
@@ -2635,7 +2558,6 @@
   {
    "id": "78",
    "name": "King of Pentacles",
-   "level": 1,
    "origin": {
     "type": "imported",
     "timestamp": "2026-01-19T06:45:29.399Z",

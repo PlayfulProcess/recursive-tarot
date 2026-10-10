@@ -169,7 +169,7 @@ def main():
 
     for slug in ETTEILLA:
         p, g, raw, crlf = load(slug)
-        for it in g['items']:
+        for it in g['nodes']:
             s = it.get('sections') or {}
             cat = it.get('category')
             if cat == 'minor' and 'Upright (the person well-disposed)' not in s:
@@ -189,7 +189,7 @@ def main():
             pending[p] = out
 
     p, g, raw, crlf = load('oswald-wirth-tarot')
-    for it in g['items']:
+    for it in g['nodes']:
         bump('wirth tagged', tag(it.get('sections') or {}, 'Upright', WIRTH_TAG))
     commons(g, WIRTH_COMMONS_OLD, WIRTH_COMMONS_NEW)
     out = dump(g, raw, crlf)
@@ -197,7 +197,7 @@ def main():
         pending[p] = out
 
     p, g, raw, crlf = load('tarot-de-marseille-conver')
-    for it in g['items']:
+    for it in g['nodes']:
         s = it.get('sections') or {}
         bump('conver tagged', tag(s, 'Upright', CONVER_TAG))
         if isinstance(s.get('Tradition Note'), str) and CONVER_TN_OLD in s['Tradition Note']:
@@ -208,7 +208,7 @@ def main():
         pending[p] = out
 
     p, g, raw, crlf = load('golden-dawn-book-t-tarot')
-    for it in g['items']:
+    for it in g['nodes']:
         s = it.get('sections') or {}
         if it['id'] in GD_COURTS:
             note = GD_HEAD + '\n\n' + GD_COURTS[it['id']]

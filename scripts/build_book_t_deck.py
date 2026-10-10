@@ -170,8 +170,8 @@ def build(prev):
     text = corrected_text()
     words = IB.parse(text)                      # verbatim card texts, keyed by the GD deck's ids
     rows = titles(text)
-    gd = {it['id']: it for it in json.load(open(GD, encoding='utf-8'))['items']}
-    keep = {it['id']: it for it in (prev or {}).get('items', [])}
+    gd = {it['id']: it for it in json.load(open(GD, encoding='utf-8'))['nodes']}
+    keep = {it['id']: it for it in (prev or {}).get('nodes', [])}
     items = []
     for no in range(1, 79):
         r, gid = rows[no], gd_id(rows[no])
@@ -240,7 +240,7 @@ def build(prev):
             "In Book T's table": row,
             'Correspondences': g['sections']['Correspondences'],
         }
-        item = {'id': nid, 'name': title, 'sort_order': no - 1, 'category': category, 'level': 1,
+        item = {'id': nid, 'name': title, 'sort_order': no - 1, 'category': category,
                 'keywords': [k for k in dict.fromkeys(kw) if k], 'image_url': '',
                 'metadata': {k: v for k, v in md.items() if v is not None}, 'sections': sections}
         old = keep.get(nid)
@@ -255,8 +255,8 @@ def build(prev):
     assert len({i['id'] for i in items}) == 78
     assert not any(re.search(r'\d', i['name']) for i in items), 'a card name carries a number'
     for n, (gid, name, cat, anchor, line) in enumerate(GROUPS):
-        items.append({'id': gid, 'name': name, 'sort_order': 78 + n, 'category': 'chapter', 'level': 2,
-                      'composite_of': [i['id'] for i in items if i.get('category') == cat],
+        items.append({'id': gid, 'name': name, 'sort_order': 78 + n, 'category': 'chapter',
+                      'parts': [i['id'] for i in items if i.get('category') == cat],
                       'relationship_type': 'emergence', 'metadata': {},
                       'sections': {'About': '*This site\'s note.* ' + line +
                                    ' [Read the chapter on the 1912 page](%s#%s).' % (PAGE, anchor)}})
@@ -295,7 +295,7 @@ def build(prev):
         'image_credit': 'No pictures yet: PlayfulProcess adds them over time.',
         'metadata': {'common_name': 'Book T', 'category': 'historical', 'year': 1912,
                      'year_label': 'c. 1888 · printed 1912'},
-        'items': items,
+        'nodes': items,
     }
     if prev:                                       # keep deck-level edits made after the first build
         for k in ('cover_image_url', 'is_published', 'image_credit'):

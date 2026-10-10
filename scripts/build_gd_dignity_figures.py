@@ -36,7 +36,7 @@ def load_text(path):
 BOOK_T_TEXT = load_text(BOOK_T)
 WAITE_TEXT = load_text(WAITE_III)
 with open(RWS, encoding="utf-8") as f:
-    RWS_ITEMS = {it["id"]: it for it in json.load(f)["items"]}
+    RWS_ITEMS = {it["id"]: it for it in json.load(f)["nodes"]}
 RWS_TEXT = norm(json.dumps({k: v.get("sections", {}) for k, v in RWS_ITEMS.items()}, ensure_ascii=False))
 
 

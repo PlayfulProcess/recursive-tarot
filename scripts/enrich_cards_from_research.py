@@ -81,7 +81,7 @@ def enrich(slug):
     if not (os.path.exists(dp) and os.path.exists(gp)):
         return None
     g = json.load(open(gp, encoding="utf-8"))
-    items = [it for it in g["items"] if not it.get("composite_of")]
+    items = [it for it in g["nodes"] if not it.get("parts")]
     by_num, by_name = {}, {}
     for it in items:
         n = to_int((it.get("metadata") or {}).get("number"))

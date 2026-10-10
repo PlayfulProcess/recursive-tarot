@@ -70,7 +70,7 @@ def correspondences(text, c):
 
 
 def apply(g, cards):
-    by_id = {it["id"]: it for it in g["items"]}
+    by_id = {it["id"]: it for it in g["nodes"]}
     for c in cards:
         it = by_id[c["id"]]
         old = it.get("sections", {})

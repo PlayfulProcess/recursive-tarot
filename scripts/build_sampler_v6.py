@@ -34,7 +34,7 @@ SKIP = {"all-decks-many-lenses", "test", "tree-of-tarot"}
 def eligible(items):
     out = []
     for it in items:
-        if it.get("composite_of") or it.get("category") in ("axis", "keyword-emergence"):
+        if it.get("parts") or it.get("category") in ("axis", "keyword-emergence"):
             continue
         u = it.get("image_url") or (it.get("metadata") or {}).get("image_url")
         if u:
@@ -57,7 +57,7 @@ def main():
     n = 0
     for slug in slugs:
         g = json.load(open(os.path.join(ROOT, "tarot", slug, "grammar.json"), encoding="utf-8-sig"))
-        cards = eligible(g.get("items", []))
+        cards = eligible(g.get("nodes", []))
         if not cards:
             print(f"  skip {slug}: no card images"); continue
         # group by (quality, host)
@@ -99,7 +99,7 @@ def main():
     # card backs — every historical back, cover-fit (borderless by design)
     bpath = os.path.join(ROOT, "print", "card-backs.json")
     if os.path.exists(bpath):
-        for k, b in enumerate(json.load(open(bpath, encoding="utf-8")).get("items", []), 1):
+        for k, b in enumerate(json.load(open(bpath, encoding="utf-8")).get("nodes", []), 1):
             u = b.get("image_url")
             if not u: continue
             try:

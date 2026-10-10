@@ -58,11 +58,10 @@
   ],
   "worldview": "historical",
   "is_published": true,
-  "items": [
+  "nodes": [
     {
       "id": "card-fool",
       "name": "0 — The Fool",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "the fool",
@@ -116,7 +115,6 @@
     {
       "id": "card-emperor",
       "name": "4 — The Emperor",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "the emperor",
@@ -170,7 +168,6 @@
     {
       "id": "card-pope",
       "name": "5 — The Pope",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "the pope",
@@ -224,7 +221,6 @@
     {
       "id": "card-lovers",
       "name": "6 — The Lovers",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "the lovers",
@@ -278,7 +274,6 @@
     {
       "id": "card-chariot",
       "name": "7 — The Chariot",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "the chariot",
@@ -332,7 +327,6 @@
     {
       "id": "card-justice",
       "name": "8 — Justice",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "justice",
@@ -386,7 +380,6 @@
     {
       "id": "card-hermit",
       "name": "9 — The Hermit (Time)",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "the hermit (time)",
@@ -440,7 +433,6 @@
     {
       "id": "card-strength",
       "name": "11 — Strength",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "strength",
@@ -494,7 +486,6 @@
     {
       "id": "card-hanged-man",
       "name": "12 — The Hanged Man",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "the hanged man",
@@ -548,7 +539,6 @@
     {
       "id": "card-death",
       "name": "13 — Death",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "death",
@@ -602,7 +592,6 @@
     {
       "id": "card-temperance",
       "name": "14 — Temperance",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "temperance",
@@ -656,7 +645,6 @@
     {
       "id": "card-tower",
       "name": "16 — The Tower (House of the Devil)",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "the tower (house of the devil)",
@@ -710,7 +698,6 @@
     {
       "id": "card-moon",
       "name": "18 — The Moon",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "the moon",
@@ -764,7 +751,6 @@
     {
       "id": "card-sun",
       "name": "19 — The Sun",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "the sun",
@@ -818,7 +804,6 @@
     {
       "id": "card-judgement",
       "name": "20 — Judgement",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "judgement",
@@ -872,7 +857,6 @@
     {
       "id": "card-world",
       "name": "21 — The World",
-      "level": 1,
       "category": "trump",
       "keywords": [
         "the world",
@@ -926,7 +910,6 @@
     {
       "id": "card-page-swords",
       "name": "Page of Swords",
-      "level": 1,
       "category": "court",
       "keywords": [
         "page of swords",
@@ -978,7 +961,6 @@
     {
       "id": "emg-surviving-trumps",
       "name": "The 16 Surviving Trumps",
-      "level": 2,
       "category": "emergence",
       "sections": {
         "Symbol": "The set represents the finest surviving example of luxury Italian hand-painted tarot from the quattrocento. The gold ground, courtly costumes, and refined figure style locate it within the same workshop tradition as the Visconti-Sforza deck.",
@@ -987,7 +969,7 @@
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/charles-vi-tarot/Death%20tarot%20charles6.jpeg",
       "sort_order": 17,
-      "composite_of": [
+      "parts": [
         "card-fool",
         "card-emperor",
         "card-pope",

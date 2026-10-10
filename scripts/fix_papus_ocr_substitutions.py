@@ -148,7 +148,7 @@ def apply(grammar, strict):
     """Apply every fix. With strict=True, each target must occur exactly once
     in its item (used for the write pass); with strict=False, a missing target
     is simply skipped (used by --check to test idempotency)."""
-    by_id = {it["id"]: it for it in grammar["items"]}
+    by_id = {it["id"]: it for it in grammar["nodes"]}
     applied, missing = [], []
     for item_id, old, new, reason in FIXES:
         it = by_id.get(item_id)
@@ -169,7 +169,7 @@ def apply(grammar, strict):
 
 
 def words(grammar):
-    return sum(len(it["sections"][SECTION].split()) for it in grammar["items"])
+    return sum(len(it["sections"][SECTION].split()) for it in grammar["nodes"])
 
 
 def write_log(applied):
@@ -218,12 +218,12 @@ def check():
     grammar = load()
     ok = True
     for item_id, old, _, _ in FIXES:
-        it = next((i for i in grammar["items"] if i["id"] == item_id), None)
+        it = next((i for i in grammar["nodes"] if i["id"] == item_id), None)
         if it and old in it["sections"][SECTION]:
             ok = False
             print(f"FAIL {item_id}: uncorrected OCR substitution {old!r}")
     if ok:
-        print(f"OK: {len(grammar['items'])} items — all {len(FIXES)} known OCR "
+        print(f"OK: {len(grammar['nodes'])} items — all {len(FIXES)} known OCR "
               f"character substitutions are repaired; {len(LEFT_ALONE)} "
               f"documented cases left alone by decision")
     return ok
@@ -254,8 +254,8 @@ def main():
 
     # Reverse-substitution proof: undoing every fix must reproduce the original
     # body character for character.
-    by_before = {i["id"]: i["sections"][SECTION] for i in before["items"]}
-    for it in grammar["items"]:
+    by_before = {i["id"]: i["sections"][SECTION] for i in before["nodes"]}
+    for it in grammar["nodes"]:
         body = it["sections"][SECTION]
         for item_id, old, new, _ in reversed(FIXES):
             if item_id == it["id"]:

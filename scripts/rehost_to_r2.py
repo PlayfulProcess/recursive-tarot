@@ -51,7 +51,7 @@ def main():
     g = json.load(open(full, encoding="utf-8"))
     slug = g.get("slug") or os.path.basename(os.path.dirname(full))
     changed = 0
-    for it in g["items"]:
+    for it in g["nodes"]:
         url = it.get("image_url")
         if not url or pub in url:
             continue  # no image, or already on R2

@@ -23,7 +23,7 @@
   "_generated": true,
   "_built_by": "scripts/course_to_grammar.py",
   "_source_mdx": "course/how-to-contribute.mdx",
-  "items": [
+  "nodes": [
     {
       "id": "lesson-01-introduction",
       "name": "Introduction",
@@ -84,7 +84,7 @@
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "If you're comfortable with a text field, you never need anything but a browser and a free GitHub account.\n\n1. In the table above, click **edit on GitHub** for your deck. GitHub opens the `grammar.json` in its **web editor**.\n2. Find the text and fix it. Grammars are just `items` with named `sections` (`Scene`, `Symbol`, `Research note`, `Tradition Note`…) — change the words, keep the quotes and commas.\n3. Scroll down, write a one-line note (\"corrected Death card date\"), and choose **\"Create a new branch and start a pull request.\"**\n4. **That's a pull request** — your proposed change, side by side with the original, for the maintainer to review and merge. No install, no command line.\n\n**Keep it honest** (the house rules): public-domain images only; facts in your own words (never paste copyrighted text); and respect the **game-vs-divination** line — most historical decks were *game* decks, so divinatory meaning is flagged as a later layer, not presented as original.\n\n---"
+        "Content": "If you're comfortable with a text field, you never need anything but a browser and a free GitHub account.\n\n1. In the table above, click **edit on GitHub** for your deck. GitHub opens the `grammar.json` in its **web editor**.\n2. Find the text and fix it. Grammars are just `nodes` with named `sections` (`Scene`, `Symbol`, `Research note`, `Tradition Note`…) — change the words, keep the quotes and commas.\n3. Scroll down, write a one-line note (\"corrected Death card date\"), and choose **\"Create a new branch and start a pull request.\"**\n4. **That's a pull request** — your proposed change, side by side with the original, for the maintainer to review and merge. No install, no command line.\n\n**Keep it honest** (the house rules): public-domain images only; facts in your own words (never paste copyrighted text); and respect the **game-vs-divination** line — most historical decks were *game* decks, so divinatory meaning is flagged as a later layer, not presented as original.\n\n---"
       }
     },
     {

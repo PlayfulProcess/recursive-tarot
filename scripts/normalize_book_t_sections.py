@@ -131,8 +131,8 @@ def main():
         grammar = json.load(fh)
 
     touched, failures, unknown_keys, reordered = 0, [], set(), 0
-    for item in grammar.get("items", []):
-        if item.get("level") != 1:
+    for item in grammar.get("nodes", []):
+        if item.get("parts"):
             continue
         sections = item.get("sections")
         if not isinstance(sections, dict):
@@ -147,7 +147,7 @@ def main():
             touched += 1
         item["sections"] = new
 
-    cards = sum(1 for i in grammar.get("items", []) if i.get("level") == 1)
+    cards = sum(1 for i in grammar.get("nodes", []) if not i.get("parts"))
     print(f"level-1 cards: {cards}")
     print(f"cards changed: {touched}  (reordered: {reordered})")
     if unknown_keys:

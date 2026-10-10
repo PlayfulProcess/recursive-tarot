@@ -68,7 +68,7 @@ PATH_RE = re.compile(r"(?<![\w-])([Pp]ath) (1[1-9]|2\d|3[0-2])(?![\w-])")
 def load_terms():
     g = json.load(open(GLOSSARY, encoding="utf-8"))
     terms, seen, errors = [], {}, []
-    for it in g["items"]:
+    for it in g["nodes"]:
         secs = it.get("sections") or {}
         if not secs.get("Entry") or not secs.get("Sources"):
             errors.append(f"glossary: '{it.get('id')}' needs an Entry and Sources section")
@@ -82,8 +82,8 @@ def load_terms():
     # Longest first, so "Tree of Life" wins over a shorter alias inside it.
     terms.sort(key=lambda t: -len(t[0]))
     tree_paths = {int(k): v for k, v in (g.get("metadata") or {}).get("tree_paths", {}).items()}
-    names = {it["id"]: (it["metadata"]["aliases"] or [it["name"]])[0] for it in g["items"]}
-    return terms, tree_paths, names, {it["id"] for it in g["items"]}, errors
+    names = {it["id"]: (it["metadata"]["aliases"] or [it["name"]])[0] for it in g["nodes"]}
+    return terms, tree_paths, names, {it["id"] for it in g["nodes"]}, errors
 
 
 def segments(text):
@@ -210,7 +210,7 @@ def on_tree_line(path, tree_paths, names):
 
 def link_deck(deck, terms, tree_paths, names):
     changed = 0
-    for it in deck["items"]:
+    for it in deck["nodes"]:
         secs = it.get("sections") or {}
         for key in EDITORIAL:
             v = secs.get(key)
@@ -262,7 +262,7 @@ def main():
         elif slug:
             # the generated course grammar must carry the same links as its source
             g = json.load(open(os.path.join(ROOT, "tarot", slug, "grammar.json"), encoding="utf-8"))
-            body = "\n".join((it.get("sections") or {}).get("Content", "") for it in g["items"])
+            body = "\n".join((it.get("sections") or {}).get("Content", "") for it in g["nodes"])
             for m in OURS.finditer(new):
                 if m.group(0) not in body:
                     pending.append(f"tarot/{slug}/grammar.json (rebuild from {mdx_id}.mdx)")

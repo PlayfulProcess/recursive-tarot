@@ -54,13 +54,12 @@
   ],
   "worldview": "historical",
   "is_published": true,
-  "items": [
+  "nodes": [
     {
       "id": "card-junon",
       "name": "Juno (in place of the Popess)",
       "sort_order": 0,
       "category": "trump",
-      "level": 1,
       "keywords": [
         "juno (in place of the popess)",
         "besancon",
@@ -98,7 +97,7 @@
         "trump_key": "high-priestess",
         "trump_number": 2,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-02-la-papesse",
+        "source_node_id": "major-02-la-papesse",
         "deck": "Tarot de Marseille"
       },
       "sections": {
@@ -114,7 +113,6 @@
       "name": "Jupiter (in place of the Pope)",
       "sort_order": 1,
       "category": "trump",
-      "level": 1,
       "keywords": [
         "jupiter (in place of the pope)",
         "besancon",
@@ -152,7 +150,7 @@
         "trump_key": "hierophant",
         "trump_number": 5,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-05-le-pape",
+        "source_node_id": "major-05-le-pape",
         "deck": "Tarot de Marseille"
       },
       "sections": {
@@ -168,7 +166,6 @@
       "name": "The Emperor (Der Herrscher)",
       "sort_order": 2,
       "category": "trump",
-      "level": 1,
       "keywords": [
         "the emperor (der herrscher)",
         "besancon",
@@ -206,7 +203,7 @@
         "trump_key": "emperor",
         "trump_number": 4,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-04-lempereur",
+        "source_node_id": "major-04-lempereur",
         "deck": "Tarot de Marseille"
       },
       "sections": {
@@ -222,7 +219,6 @@
       "name": "The Chariot",
       "sort_order": 3,
       "category": "trump",
-      "level": 1,
       "keywords": [
         "the chariot",
         "besancon",
@@ -260,7 +256,7 @@
         "trump_key": "chariot",
         "trump_number": 7,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-07-le-chariot",
+        "source_node_id": "major-07-le-chariot",
         "deck": "Tarot de Marseille"
       },
       "sections": {
@@ -276,7 +272,6 @@
       "name": "Strength (La Force)",
       "sort_order": 4,
       "category": "trump",
-      "level": 1,
       "keywords": [
         "strength (la force)",
         "besancon",
@@ -314,7 +309,7 @@
         "trump_key": "strength",
         "trump_number": 8,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-11-la-force",
+        "source_node_id": "major-11-la-force",
         "deck": "Tarot de Marseille"
       },
       "sections": {
@@ -330,7 +325,6 @@
       "name": "Temperance",
       "sort_order": 5,
       "category": "trump",
-      "level": 1,
       "keywords": [
         "temperance",
         "besancon",
@@ -368,7 +362,7 @@
         "trump_key": "temperance",
         "trump_number": 14,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-14-temperance",
+        "source_node_id": "major-14-temperance",
         "deck": "Tarot de Marseille"
       },
       "sections": {
@@ -384,7 +378,6 @@
       "name": "The Devil (Der Teufel)",
       "sort_order": 6,
       "category": "trump",
-      "level": 1,
       "keywords": [
         "the devil (der teufel)",
         "besancon",
@@ -422,7 +415,7 @@
         "trump_key": "devil",
         "trump_number": 15,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-15-le-diable",
+        "source_node_id": "major-15-le-diable",
         "deck": "Tarot de Marseille"
       },
       "sections": {
@@ -438,7 +431,6 @@
       "name": "The Tower (La Maison de Dieu)",
       "sort_order": 7,
       "category": "trump",
-      "level": 1,
       "keywords": [
         "the tower (la maison de dieu)",
         "besancon",
@@ -476,7 +468,7 @@
         "trump_key": "tower",
         "trump_number": 16,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-16-la-maison-dieu",
+        "source_node_id": "major-16-la-maison-dieu",
         "deck": "Tarot de Marseille"
       },
       "sections": {
@@ -492,7 +484,6 @@
       "name": "The World (Le Monde)",
       "sort_order": 8,
       "category": "trump",
-      "level": 1,
       "keywords": [
         "the world (le monde)",
         "besancon",
@@ -530,7 +521,7 @@
         "trump_key": "world",
         "trump_number": 21,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-21-le-monde",
+        "source_node_id": "major-21-le-monde",
         "deck": "Tarot de Marseille"
       },
       "sections": {
@@ -546,7 +537,6 @@
       "name": "Ace of Swords",
       "sort_order": 9,
       "category": "minor",
-      "level": 1,
       "keywords": [
         "ace of swords",
         "besancon",
@@ -586,7 +576,7 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-swords-ace.jpg"
         },
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "swords-ace",
+        "source_node_id": "swords-ace",
         "deck": "Tarot de Marseille",
         "minor_key": "ace-of-swords"
       },
@@ -603,7 +593,6 @@
       "name": "Two of Cups",
       "sort_order": 10,
       "category": "minor",
-      "level": 1,
       "keywords": [
         "two of cups",
         "besancon",
@@ -643,7 +632,7 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-cups-two.jpg"
         },
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "cups-02",
+        "source_node_id": "cups-02",
         "deck": "Tarot de Marseille",
         "minor_key": "two-of-cups"
       },
@@ -660,7 +649,6 @@
       "name": "Two of Batons",
       "sort_order": 11,
       "category": "minor",
-      "level": 1,
       "keywords": [
         "two of batons",
         "besancon",
@@ -700,7 +688,7 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-wands-two.jpg"
         },
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "batons-02",
+        "source_node_id": "batons-02",
         "deck": "Tarot de Marseille",
         "minor_key": "two-of-batons"
       },
@@ -717,7 +705,6 @@
       "name": "Three of Coins",
       "sort_order": 12,
       "category": "minor",
-      "level": 1,
       "keywords": [
         "three of coins",
         "besancon",
@@ -757,7 +744,7 @@
           "tgc_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/print/tarot-de-besancon/card-coins-three.jpg"
         },
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "coins-03",
+        "source_node_id": "coins-03",
         "deck": "Tarot de Marseille",
         "minor_key": "three-of-coins"
       },
@@ -774,8 +761,7 @@
       "name": "Juno & Jupiter — The Besançon Substitution",
       "sort_order": 13,
       "category": "emergence",
-      "level": 2,
-      "composite_of": [
+      "parts": [
         "card-junon",
         "card-jupiter"
       ],

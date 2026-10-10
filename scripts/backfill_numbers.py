@@ -161,11 +161,11 @@ def is_major_ish(metadata, category, has_suit):
 
 def _leaves(items):
     return [it for it in items
-            if not it.get("composite_of")
+            if not it.get("parts")
             and it.get("category") not in NON_LEAF_CATEGORIES]
 
 
-# Non-card leaves that are still real leaves (no composite_of) but were never
+# Non-card leaves that are still real leaves (no parts) but were never
 # candidates for a "card number" in the first place — course lessons and book
 # citations (id prefix), and extra/role cards that sit outside any deck's own
 # ranked sequence (Cary-Yale's virtues, tarocchino-arlecchino's Harlequin
@@ -182,7 +182,7 @@ def _out_of_scope(item_id, category, arcana):
 
 
 def process_grammar(slug, g, write):
-    items = g.get("items", [])
+    items = g.get("nodes", [])
     leaves = _leaves(items)
 
     before_missing = 0

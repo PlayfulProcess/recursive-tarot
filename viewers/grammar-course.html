@@ -139,9 +139,9 @@
   async function _getDeck(slug2){ if (!(slug2 in _deckCache)){ try { _deckCache[slug2] = await (await fetch('../tarot/' + slug2 + '/grammar.json')).json(); } catch(_){ _deckCache[slug2] = null; } } return _deckCache[slug2]; }
   function _resolveItem(dg, ref){
     ref = String(ref || '');
-    if (ref.indexOf('tk:') === 0) return (dg.items || []).find(i => (i.metadata || {}).trump_key === ref.slice(3));
-    if (ref.indexOf('item:') === 0) return (dg.items || []).find(i => i.id === ref.slice(5));
-    return (dg.items || []).find(i => i.image_url || (i.metadata || {}).image_url);
+    if (ref.indexOf('tk:') === 0) return (dg.nodes || []).find(i => (i.metadata || {}).trump_key === ref.slice(3));
+    if (ref.indexOf('item:') === 0) return (dg.nodes || []).find(i => i.id === ref.slice(5));
+    return (dg.nodes || []).find(i => i.image_url || (i.metadata || {}).image_url);
   }
   async function renderEmbeds(embeds){
     let h = '';
@@ -170,7 +170,7 @@
   const labelFor = (it, field) => (it.metadata || {})[field + '_label'] || (it.metadata || {})[field] || '—';
 
   function render(){
-    const items = (GRAMMAR.items || []).filter(it => (it.sections && Object.keys(it.sections).length) || (it.metadata && it.metadata.embeds));
+    const items = (GRAMMAR.nodes || []).filter(it => (it.sections && Object.keys(it.sections).length) || (it.metadata && it.metadata.embeds));
     $('content').innerHTML = ''; $('toc').innerHTML = '';
     const pendingEmbeds = [];
     let chapters;
@@ -225,7 +225,7 @@
       document.title = (GRAMMAR.name || 'Grammar') + ' · a course';
       $('ctitle').textContent = GRAMMAR.name || 'Grammar';
       $('cintro').innerHTML = richMd(GRAMMAR.description || '');
-      const fields = groupFields(GRAMMAR.items || []);
+      const fields = groupFields(GRAMMAR.nodes || []);
       if (fields.length){
         $('organize').style.display = '';
         $('grp').innerHTML = '<option value="">Read straight through</option>' +

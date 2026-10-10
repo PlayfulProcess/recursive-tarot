@@ -44,7 +44,7 @@ for deck, zname in DECKS.items():
         if n.lower().endswith(('.png', '.jpg', '.jpeg')) and 'back' not in n.lower():
             hers[n.split('/', 1)[-1]] = dhash(Image.open(io.BytesIO(zf.read(n))))
     g = json.load(open(os.path.join(REPO, 'tarot', deck, 'grammar.json'), encoding='utf-8'))
-    items = [it for it in g['items'] if it.get('image_url')]
+    items = [it for it in g['nodes'] if it.get('image_url')]
 
     def one(it):
         try:

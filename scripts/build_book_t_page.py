@@ -302,7 +302,7 @@ class Linker:
     def __init__(self, deck, glossary):
         self.terms = LG.load_terms()[0]
         self.heb = {}
-        for it in glossary['items']:
+        for it in glossary['nodes']:
             g = (it.get('metadata') or {}).get('glyph')
             if g:
                 self.heb[g] = it['id']
@@ -310,8 +310,8 @@ class Linker:
                           ('GBVRH', 'geburah'), ('ThPARTh', 'tiphareth'), ('NTzCh', 'netzach'),
                           ('HVD', 'hod'), ('YSVD', 'yesod'), ('MLKVTh', 'malkuth'), ('KThR', 'kether')):
             self.heb[tidy('HB:' + code)] = sid
-        self.gloss_names = {it['id']: it['name'] for it in glossary['items']}
-        self.cards = {it['id']: it for it in deck['items']}
+        self.gloss_names = {it['id']: it['name'] for it in glossary['nodes']}
+        self.cards = {it['id']: it for it in deck['nodes']}
 
     def passage(self):
         return Passage(self)

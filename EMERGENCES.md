@@ -12,7 +12,7 @@ Siblings: [`GRAMMAR_FORMAT.md`](GRAMMAR_FORMAT.md) (the field shapes) ·
 ## 1. The idea in one sentence
 
 An **emergence** is a node whose content is *a pattern over other nodes* — it lists
-the members it groups (`composite_of`) and says what that grouping *is* — but it
+the members it groups (`parts`) and says what that grouping *is* — but it
 holds **no leaf data of its own**. Cards are catalogued once, in their decks;
 everything else (suits, ranks, eras, orders, "the tree") is an emergence over them.
 
@@ -26,14 +26,14 @@ a whole axis — is the same shape:
   "id": "string",
   "name": "string",
   "sections": { "What it is": "…" },   // prose; on an emergence, what the pattern means
-  "composite_of": ["id", "id", …],     // the members it groups — ABSENT on a leaf
+  "parts": ["id", "id", …],     // the members it groups — ABSENT on a leaf
   "category": "axis | rank | lineage | …",
   "render_as": "pill-group | …",       // optional rendering hint (see MULTI_LENS_PLAN)
   "metadata": { … }
 }
 ```
 
-A **leaf** (a card) is just a node with no `composite_of`. An **emergence** is a node
+A **leaf** (a card) is just a node with no `parts`. An **emergence** is a node
 that has one. That's the whole type system. Because the shape is uniform:
 
 - the same viewer, the same "Group by" selector, and the same filter logic work at
@@ -68,7 +68,7 @@ cross-deck structure.)
 
 - **Generated** emergences come from a rule ("group every card by its era"). Cheap,
   always consistent, can't drift. The meta axes are all generated.
-- **Authored** emergences are hand-curated `composite_of` ("these twelve cards are a
+- **Authored** emergences are hand-curated `parts` ("these twelve cards are a
   spread"). Flexible, manual.
 
 Both are *the same node shape*. A generated view can be snapshotted into an authored
@@ -81,12 +81,12 @@ efficient *input*; emergences are the generated *output*.**
 
 - **Tag the leaves, cheaply.** Each card/deck carries lightweight keywords — `order`,
   `year`, `suit`, `rank`, `function`, and a *relational* `derives_from` (parent slug).
-  Tagging is far cheaper than authoring `composite_of` lists, and it's the natural
+  Tagging is far cheaper than authoring `parts` lists, and it's the natural
   input for **user-generated** content (folksonomy) — which is why recursive-eco
   should lean on it.
 - **Generate the emergences from the tags.** Every axis — By Order, By Age, By
   Function, By Deck, *and the genealogy DAG* — is computed by grouping (or
-  edge-building, for `derives_from`) over those tags. The `composite_of` you see in
+  edge-building, for `derives_from`) over those tags. The `parts` you see in
   the meta is the **materialized output**, never hand-authored. `build_meta_grammar.py`
   already works this way internally: it reads per-deck metadata and groups.
 - **The one discipline that makes it pay off:** render every tag-axis through a
@@ -131,7 +131,7 @@ The same spine applies, with one adaptation for a real backend:
 > **Normalize at the source, materialize at the edge.**
 
 - **Author normalized.** A leaf is a row/document; an emergence is a node that stores
-  `composite_of: [leaf_ids]` + its own `name`/`sections`/`lens` — **not** the leaf
+  `parts: [leaf_ids]` + its own `name`/`sections`/`lens` — **not** the leaf
   content. In Supabase this is a self-referencing node table resolved by a recursive
   CTE (or kept as id-referencing JSONB documents).
 - **Materialize for reads.** A static viewer can't cheaply resolve a graph across many

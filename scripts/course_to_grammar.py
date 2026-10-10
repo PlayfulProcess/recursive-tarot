@@ -48,7 +48,7 @@ def _expand_essay():
         mg = json.load(io.open(p, encoding="utf-8"))
     except Exception:
         return ""
-    e = next((i for i in mg.get("items", []) if i.get("id") == "essay-divination-question"), None)
+    e = next((i for i in mg.get("nodes", []) if i.get("id") == "essay-divination-question"), None)
     if not e:
         return ""
     return "\n\n".join("### " + k + "\n\n" + str(v) for k, v in (e.get("sections") or {}).items())
@@ -125,7 +125,7 @@ def convert(mdx_id, out_slug, name=None):
                      "source_mdx": "course/%s.mdx" % mdx_id},
         "_generated": True, "_built_by": "scripts/course_to_grammar.py",
         "_source_mdx": "course/%s.mdx" % mdx_id,
-        "items": items,
+        "nodes": items,
     }
     out_dir = os.path.join(ROOT, "tarot", out_slug)
     os.makedirs(out_dir, exist_ok=True)

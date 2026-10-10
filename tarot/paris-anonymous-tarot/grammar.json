@@ -60,11 +60,10 @@
     "year_label": "c. 1600–50"
   },
   "_source": "BnF / Gallica ark:/12148/btv1b105109624 — the work is public domain; the scan is reused under Gallica's conditions of use (non-commercial reuse free with credit; commercial reuse needs a BnF licence).",
-  "items": [
+  "nodes": [
     {
       "id": "trump-01",
       "name": "I · Le Bateleur",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c01.jpg",
       "metadata": {
@@ -81,7 +80,7 @@
         "trump_key": "magician",
         "trump_number": 1,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-01-le-bateleur",
+        "source_node_id": "major-01-le-bateleur",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f1.item"
       },
@@ -94,7 +93,6 @@
     {
       "id": "trump-02",
       "name": "II · La Papesse",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c02.jpg",
       "metadata": {
@@ -111,7 +109,7 @@
         "trump_key": "high-priestess",
         "trump_number": 2,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-02-la-papesse",
+        "source_node_id": "major-02-la-papesse",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f3.item"
       },
@@ -124,7 +122,6 @@
     {
       "id": "trump-03",
       "name": "III · L'Impératrice",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c03.jpg",
       "metadata": {
@@ -141,7 +138,7 @@
         "trump_key": "empress",
         "trump_number": 3,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-03-limperatrice",
+        "source_node_id": "major-03-limperatrice",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f5.item"
       },
@@ -154,7 +151,6 @@
     {
       "id": "trump-04",
       "name": "IIII · L'Empereur",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c04.jpg",
       "metadata": {
@@ -171,7 +167,7 @@
         "trump_key": "emperor",
         "trump_number": 4,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-04-lempereur",
+        "source_node_id": "major-04-lempereur",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f7.item"
       },
@@ -184,7 +180,6 @@
     {
       "id": "trump-05",
       "name": "V · Le Pape",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c05.jpg",
       "metadata": {
@@ -201,7 +196,7 @@
         "trump_key": "hierophant",
         "trump_number": 5,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-05-le-pape",
+        "source_node_id": "major-05-le-pape",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f9.item"
       },
@@ -214,7 +209,6 @@
     {
       "id": "trump-06",
       "name": "VI · L'Amoureux",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c06.jpg",
       "metadata": {
@@ -231,7 +225,7 @@
         "trump_key": "lovers",
         "trump_number": 6,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-06-lamoureux",
+        "source_node_id": "major-06-lamoureux",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f11.item"
       },
@@ -244,7 +238,6 @@
     {
       "id": "trump-07",
       "name": "VII · Le Chariot",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c07.jpg",
       "metadata": {
@@ -261,7 +254,7 @@
         "trump_key": "chariot",
         "trump_number": 7,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-07-le-chariot",
+        "source_node_id": "major-07-le-chariot",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f13.item"
       },
@@ -274,7 +267,6 @@
     {
       "id": "trump-08",
       "name": "VIII · La Justice",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c08.jpg",
       "metadata": {
@@ -291,7 +283,7 @@
         "trump_key": "justice",
         "trump_number": 11,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-08-la-justice",
+        "source_node_id": "major-08-la-justice",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f15.item"
       },
@@ -304,7 +296,6 @@
     {
       "id": "trump-09",
       "name": "VIIII · L'Hermite",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c09.jpg",
       "metadata": {
@@ -321,7 +312,7 @@
         "trump_key": "hermit",
         "trump_number": 9,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-09-lhermite",
+        "source_node_id": "major-09-lhermite",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f17.item"
       },
@@ -334,7 +325,6 @@
     {
       "id": "trump-10",
       "name": "X · La Roue de Fortune",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c10.jpg",
       "metadata": {
@@ -351,7 +341,7 @@
         "trump_key": "wheel-of-fortune",
         "trump_number": 10,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-10-la-roue",
+        "source_node_id": "major-10-la-roue",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f19.item"
       },
@@ -364,7 +354,6 @@
     {
       "id": "trump-11",
       "name": "XI · La Force",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c11.jpg",
       "metadata": {
@@ -381,7 +370,7 @@
         "trump_key": "strength",
         "trump_number": 8,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-11-la-force",
+        "source_node_id": "major-11-la-force",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f21.item"
       },
@@ -394,7 +383,6 @@
     {
       "id": "trump-12",
       "name": "XII · Le Pendu",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c12.jpg",
       "metadata": {
@@ -411,7 +399,7 @@
         "trump_key": "hanged-man",
         "trump_number": 12,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-12-le-pendu",
+        "source_node_id": "major-12-le-pendu",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f23.item"
       },
@@ -424,7 +412,6 @@
     {
       "id": "trump-13",
       "name": "XIII · La Mort",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c13.jpg",
       "metadata": {
@@ -441,7 +428,7 @@
         "trump_key": "death",
         "trump_number": 13,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-13-la-mort",
+        "source_node_id": "major-13-la-mort",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f25.item"
       },
@@ -454,7 +441,6 @@
     {
       "id": "trump-14",
       "name": "XIIII · Tempérance",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c14.jpg",
       "metadata": {
@@ -471,7 +457,7 @@
         "trump_key": "temperance",
         "trump_number": 14,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-14-temperance",
+        "source_node_id": "major-14-temperance",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f27.item"
       },
@@ -484,7 +470,6 @@
     {
       "id": "trump-15",
       "name": "XV · Le Diable",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c15.jpg",
       "metadata": {
@@ -501,7 +486,7 @@
         "trump_key": "devil",
         "trump_number": 15,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-15-le-diable",
+        "source_node_id": "major-15-le-diable",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f29.item"
       },
@@ -514,7 +499,6 @@
     {
       "id": "trump-16",
       "name": "XVI · La Maison-Dieu",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c16.jpg",
       "metadata": {
@@ -540,7 +524,6 @@
     {
       "id": "trump-17",
       "name": "XVII · L'Étoile",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c17.jpg",
       "metadata": {
@@ -557,7 +540,7 @@
         "trump_key": "star",
         "trump_number": 17,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-17-letoile",
+        "source_node_id": "major-17-letoile",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f33.item"
       },
@@ -570,7 +553,6 @@
     {
       "id": "trump-18",
       "name": "XVIII · La Lune",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c18.jpg",
       "metadata": {
@@ -587,7 +569,7 @@
         "trump_key": "moon",
         "trump_number": 18,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-18-la-lune",
+        "source_node_id": "major-18-la-lune",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f35.item"
       },
@@ -600,7 +582,6 @@
     {
       "id": "trump-19",
       "name": "XVIIII · Le Soleil",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c19.jpg",
       "metadata": {
@@ -617,7 +598,7 @@
         "trump_key": "sun",
         "trump_number": 19,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-19-le-soleil",
+        "source_node_id": "major-19-le-soleil",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f37.item"
       },
@@ -630,7 +611,6 @@
     {
       "id": "trump-20",
       "name": "XX · Le Jugement",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c20.jpg",
       "metadata": {
@@ -647,7 +627,7 @@
         "trump_key": "judgement",
         "trump_number": 20,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-20-le-jugement",
+        "source_node_id": "major-20-le-jugement",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f39.item"
       },
@@ -660,7 +640,6 @@
     {
       "id": "trump-21",
       "name": "XXI · Le Monde",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c21.jpg",
       "metadata": {
@@ -677,7 +656,7 @@
         "trump_key": "world",
         "trump_number": 21,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-21-le-monde",
+        "source_node_id": "major-21-le-monde",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f41.item"
       },
@@ -690,7 +669,6 @@
     {
       "id": "deniers-22",
       "name": "As de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c22.jpg",
       "metadata": {
@@ -715,7 +693,6 @@
     {
       "id": "deniers-23",
       "name": "Deux de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c23.jpg",
       "metadata": {
@@ -740,7 +717,6 @@
     {
       "id": "deniers-24",
       "name": "Trois de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c24.jpg",
       "metadata": {
@@ -765,7 +741,6 @@
     {
       "id": "deniers-25",
       "name": "Quatre de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c25.jpg",
       "metadata": {
@@ -790,7 +765,6 @@
     {
       "id": "deniers-26",
       "name": "Cinq de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c26.jpg",
       "metadata": {
@@ -815,7 +789,6 @@
     {
       "id": "deniers-27",
       "name": "Six de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c27.jpg",
       "metadata": {
@@ -840,7 +813,6 @@
     {
       "id": "deniers-28",
       "name": "Sept de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c28.jpg",
       "metadata": {
@@ -865,7 +837,6 @@
     {
       "id": "deniers-29",
       "name": "Huit de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c29.jpg",
       "metadata": {
@@ -890,7 +861,6 @@
     {
       "id": "deniers-30",
       "name": "Neuf de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c30.jpg",
       "metadata": {
@@ -915,7 +885,6 @@
     {
       "id": "deniers-31",
       "name": "Dix de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c31.jpg",
       "metadata": {
@@ -940,7 +909,6 @@
     {
       "id": "deniers-32",
       "name": "Valet de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c32.jpg",
       "metadata": {
@@ -965,7 +933,6 @@
     {
       "id": "deniers-33",
       "name": "Cavalier de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c33.jpg",
       "metadata": {
@@ -990,7 +957,6 @@
     {
       "id": "deniers-34",
       "name": "Reine de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c34.jpg",
       "metadata": {
@@ -1015,7 +981,6 @@
     {
       "id": "deniers-35",
       "name": "Roi de Deniers",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c35.jpg",
       "metadata": {
@@ -1040,10 +1005,9 @@
     {
       "id": "suit-deniers",
       "name": "Deniers · Coins",
-      "level": 3,
       "category": "axis",
       "render_as": "pill-group",
-      "composite_of": [
+      "parts": [
         "deniers-22",
         "deniers-23",
         "deniers-24",
@@ -1071,7 +1035,6 @@
     {
       "id": "coupes-36",
       "name": "As de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c36.jpg",
       "metadata": {
@@ -1096,7 +1059,6 @@
     {
       "id": "coupes-37",
       "name": "Deux de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c37.jpg",
       "metadata": {
@@ -1121,7 +1083,6 @@
     {
       "id": "coupes-38",
       "name": "Trois de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c38.jpg",
       "metadata": {
@@ -1146,7 +1107,6 @@
     {
       "id": "coupes-39",
       "name": "Quatre de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c39.jpg",
       "metadata": {
@@ -1171,7 +1131,6 @@
     {
       "id": "coupes-40",
       "name": "Cinq de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c40.jpg",
       "metadata": {
@@ -1196,7 +1155,6 @@
     {
       "id": "coupes-41",
       "name": "Six de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c41.jpg",
       "metadata": {
@@ -1221,7 +1179,6 @@
     {
       "id": "coupes-42",
       "name": "Sept de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c42.jpg",
       "metadata": {
@@ -1246,7 +1203,6 @@
     {
       "id": "coupes-43",
       "name": "Huit de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c43.jpg",
       "metadata": {
@@ -1271,7 +1227,6 @@
     {
       "id": "coupes-44",
       "name": "Neuf de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c44.jpg",
       "metadata": {
@@ -1296,7 +1251,6 @@
     {
       "id": "coupes-45",
       "name": "Dix de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c45.jpg",
       "metadata": {
@@ -1321,7 +1275,6 @@
     {
       "id": "coupes-46",
       "name": "Valet de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c46.jpg",
       "metadata": {
@@ -1346,7 +1299,6 @@
     {
       "id": "coupes-47",
       "name": "Cavalier de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c47.jpg",
       "metadata": {
@@ -1371,7 +1323,6 @@
     {
       "id": "coupes-48",
       "name": "Reine de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c48.jpg",
       "metadata": {
@@ -1396,7 +1347,6 @@
     {
       "id": "coupes-49",
       "name": "Roi de Coupes",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c49.jpg",
       "metadata": {
@@ -1421,10 +1371,9 @@
     {
       "id": "suit-coupes",
       "name": "Coupes · Cups",
-      "level": 3,
       "category": "axis",
       "render_as": "pill-group",
-      "composite_of": [
+      "parts": [
         "coupes-36",
         "coupes-37",
         "coupes-38",
@@ -1452,7 +1401,6 @@
     {
       "id": "batons-50",
       "name": "As de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c50.jpg",
       "metadata": {
@@ -1477,7 +1425,6 @@
     {
       "id": "batons-51",
       "name": "Deux de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c51.jpg",
       "metadata": {
@@ -1502,7 +1449,6 @@
     {
       "id": "batons-52",
       "name": "Trois de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c52.jpg",
       "metadata": {
@@ -1527,7 +1473,6 @@
     {
       "id": "batons-53",
       "name": "Quatre de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c53.jpg",
       "metadata": {
@@ -1552,7 +1497,6 @@
     {
       "id": "batons-54",
       "name": "Cinq de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c54.jpg",
       "metadata": {
@@ -1577,7 +1521,6 @@
     {
       "id": "batons-55",
       "name": "Six de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c55.jpg",
       "metadata": {
@@ -1602,7 +1545,6 @@
     {
       "id": "batons-56",
       "name": "Sept de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c56.jpg",
       "metadata": {
@@ -1627,7 +1569,6 @@
     {
       "id": "batons-57",
       "name": "Huit de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c57.jpg",
       "metadata": {
@@ -1652,7 +1593,6 @@
     {
       "id": "batons-58",
       "name": "Neuf de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c58.jpg",
       "metadata": {
@@ -1677,7 +1617,6 @@
     {
       "id": "batons-59",
       "name": "Dix de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c59.jpg",
       "metadata": {
@@ -1702,7 +1641,6 @@
     {
       "id": "batons-60",
       "name": "Valet de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c60.jpg",
       "metadata": {
@@ -1727,7 +1665,6 @@
     {
       "id": "batons-61",
       "name": "Cavalier de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c61.jpg",
       "metadata": {
@@ -1752,7 +1689,6 @@
     {
       "id": "batons-62",
       "name": "Reine de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c62.jpg",
       "metadata": {
@@ -1777,7 +1713,6 @@
     {
       "id": "batons-63",
       "name": "Roi de Bâtons",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c63.jpg",
       "metadata": {
@@ -1802,10 +1737,9 @@
     {
       "id": "suit-batons",
       "name": "Bâtons · Batons",
-      "level": 3,
       "category": "axis",
       "render_as": "pill-group",
-      "composite_of": [
+      "parts": [
         "batons-50",
         "batons-51",
         "batons-52",
@@ -1833,7 +1767,6 @@
     {
       "id": "epees-64",
       "name": "As de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c64.jpg",
       "metadata": {
@@ -1858,7 +1791,6 @@
     {
       "id": "epees-65",
       "name": "Deux de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c65.jpg",
       "metadata": {
@@ -1883,7 +1815,6 @@
     {
       "id": "epees-66",
       "name": "Trois de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c66.jpg",
       "metadata": {
@@ -1908,7 +1839,6 @@
     {
       "id": "epees-67",
       "name": "Quatre de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c67.jpg",
       "metadata": {
@@ -1933,7 +1863,6 @@
     {
       "id": "epees-68",
       "name": "Cinq de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c68.jpg",
       "metadata": {
@@ -1958,7 +1887,6 @@
     {
       "id": "epees-69",
       "name": "Six de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c69.jpg",
       "metadata": {
@@ -1983,7 +1911,6 @@
     {
       "id": "epees-70",
       "name": "Sept de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c70.jpg",
       "metadata": {
@@ -2008,7 +1935,6 @@
     {
       "id": "epees-71",
       "name": "Huit de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c71.jpg",
       "metadata": {
@@ -2033,7 +1959,6 @@
     {
       "id": "epees-72",
       "name": "Neuf de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c72.jpg",
       "metadata": {
@@ -2058,7 +1983,6 @@
     {
       "id": "epees-73",
       "name": "Dix de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c73.jpg",
       "metadata": {
@@ -2083,7 +2007,6 @@
     {
       "id": "epees-74",
       "name": "Valet de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c74.jpg",
       "metadata": {
@@ -2108,7 +2031,6 @@
     {
       "id": "epees-75",
       "name": "Cavalier de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c75.jpg",
       "metadata": {
@@ -2133,7 +2055,6 @@
     {
       "id": "epees-76",
       "name": "Reine de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c76.jpg",
       "metadata": {
@@ -2158,7 +2079,6 @@
     {
       "id": "epees-77",
       "name": "Roi de Épées",
-      "level": 1,
       "category": "suit-card",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c77.jpg",
       "metadata": {
@@ -2183,10 +2103,9 @@
     {
       "id": "suit-epees",
       "name": "Épées · Swords",
-      "level": 3,
       "category": "axis",
       "render_as": "pill-group",
-      "composite_of": [
+      "parts": [
         "epees-64",
         "epees-65",
         "epees-66",
@@ -2214,7 +2133,6 @@
     {
       "id": "trump-mat",
       "name": "Le Mat (The Fool)",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/paris-anonymous-tarot/images/c78.jpg",
       "metadata": {
@@ -2230,7 +2148,7 @@
         "trump_key": "fool",
         "trump_number": 0,
         "source_deck": "tarot-de-marseille-conver",
-        "source_item_id": "major-00-le-mat",
+        "source_node_id": "major-00-le-mat",
         "deck": "Tarot de Marseille",
         "image_source": "https://gallica.bnf.fr/ark:/12148/btv1b105109624/f155.item"
       },
@@ -2243,10 +2161,9 @@
     {
       "id": "axis-atouts",
       "name": "Les Atouts (22 Trumps)",
-      "level": 3,
       "category": "axis",
       "render_as": "pill-group",
-      "composite_of": [
+      "parts": [
         "trump-01",
         "trump-02",
         "trump-03",

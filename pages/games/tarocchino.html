@@ -227,7 +227,7 @@
     return (p.length>1 && /^[0-9ivxlc]+$/i.test(p[0].trim())) ? p.slice(1).join(' — ').trim() : p[0].trim(); };
   function buildDeck(g){
     const T=[], seen=new Set();
-    for(const i of g.items){ const k=(i.metadata||{}).trump_key; if(!k||!imgOf(i)||seen.has(k))continue;
+    for(const i of g.nodes){ const k=(i.metadata||{}).trump_key; if(!k||!imgOf(i)||seen.has(k))continue;
       if(k==='fool'){ seen.add(k); T.push({kind:'trump',tkey:'fool',matto:true,rank:null,trueNum:null,honour:true,img:imgOf(i),label:'Fool · Matto'}); }
       else if(k in AORDER){ seen.add(k);
         // trueNum: the DEALT DECK's own printed number (e.g. Marseille's Moon=18), when the deck
@@ -238,7 +238,7 @@
         T.push({kind:'trump',tkey:k,rank:AORDER[k],trueNum:(typeof n==='number'?n:null),honour:HONOUR.has(k),img:imgOf(i),label:trumpName(i.name)}); } }
     const WORDS=['ace','six','seven','eight','nine','ten','page','knight','queen','king'];
     const S=[], seen2=new Set();
-    for(const s of SUITS) for(const i of g.items){ const mk=(i.metadata||{}).minor_key; if(!mk||!imgOf(i)||!mk.endsWith('-of-'+s))continue;
+    for(const s of SUITS) for(const i of g.nodes){ const mk=(i.metadata||{}).minor_key; if(!mk||!imgOf(i)||!mk.endsWith('-of-'+s))continue;
       const w=mk.split('-of-')[0]; if(!WORDS.includes(w))continue; const id=s+':'+w; if(seen2.has(id))continue; seen2.add(id);
       S.push({kind:'suit',suit:s,word:w,court:COURTVAL[w]?w:null,rank:suitRank(s,w),honour:false,img:imgOf(i),label:cap(w)+' of '+cap(s)}); }
     return [...T,...S];

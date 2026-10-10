@@ -72,7 +72,7 @@ The sync only stays lossless if both sides agree on ownership. Three buckets:
 
 ### A. App-owned fields (the database is source of truth)
 The app's copy wins for these on a write-back:
-`items`, `name`, `description`, the AI personality prompt, publish state, `default_view`,
+`nodes`, `name`, `description`, the AI personality prompt, publish state, `default_view`,
 `open_to_community`, and the app's roundtrip URLs (`_recursive_eco_url`, `_recursive_eco_edit_url`,
 `_forked_from_url`, `_backup_repo_url`, `_detected_categories`).
 
@@ -86,7 +86,7 @@ app's snapshot doesn't contain them. A naïve write-back (replace the file with 
 - **`lineages` / `roots` / `shelves` / `worldview` / `print_readiness`** — the "many-lenses" /
   genealogy / print scaffolding (e.g. on `golden-dawn-book-t-tarot`).
 - **`provenance`**, the `_github_*` URLs, and `_enriched_from` / `_research`.
-- The **cross-link pills** on items (`source_deck` / `source_item_id` / `deck`) and **Research-note**
+- The **cross-link pills** on items (`source_deck` / `source_node_id` / `deck`) and **Research-note**
   sections with `[@citation]` keys (added by `enrich_cards_from_research.py` / `build_people_grammar.py`).
 
 ### C. Repo-owned / generated grammars (the repo is the *whole* source of truth)
@@ -153,7 +153,7 @@ truth; the app should *pull*, not push).
 ## 7. The cross-link pill (the one cross-grammar nav mechanism)
 
 The viewers render an "Open in [deck] →" pill when an item has `metadata.source_deck` +
-`source_item_id` + `deck`. This is the **only** cross-grammar link mechanism — used for meta→deck,
+`source_node_id` + `deck`. This is the **only** cross-grammar link mechanism — used for meta→deck,
 deck→people, deck→related. See `CLAUDE.md` ("The one cross-link pattern"). Don't invent another link
 field, and remember it's a §4B repo-only enrichment the sync must preserve.
 

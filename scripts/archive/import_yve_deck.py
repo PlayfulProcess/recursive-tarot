@@ -52,7 +52,7 @@ def classify(card):
 def main():
     src_file, slug = sys.argv[1], sys.argv[2]
     g = json.loads(open(src_file, encoding="utf-8").read())
-    src_items = g["items"]
+    src_items = g["nodes"]
     creator_link = "https://stolen-thyme.com/tarocchino-arlecchino/"
     cover = next((it.get("image_url") for it in src_items if it.get("image_url")), None)
 
@@ -130,7 +130,7 @@ def main():
                 "added cross-deck archetype mappings and genealogy links; the two unnumbered Significators "
                 "are represented as explicit items. No card meanings were altered.",
         },
-        "items": items,
+        "nodes": items,
     }
     import os
     d = f"tarot/{slug}"

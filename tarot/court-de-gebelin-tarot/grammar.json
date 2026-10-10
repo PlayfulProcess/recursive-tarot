@@ -59,13 +59,12 @@
   ],
   "worldview": "esoteric",
   "is_published": true,
-  "items": [
+  "nodes": [
     {
       "id": "atout-00",
       "name": "0 — The Fool (Le Mat)",
       "sort_order": 0,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "fool",
         "le mat",
@@ -116,7 +115,6 @@
       "name": "1 — The Magician (Le Bateleur)",
       "sort_order": 1,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "magician",
         "le bateleur",
@@ -167,7 +165,6 @@
       "name": "2 — The High Priestess (La Papesse)",
       "sort_order": 2,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "high priestess",
         "la papesse",
@@ -218,7 +215,6 @@
       "name": "3 — The Empress (L'Impératrice)",
       "sort_order": 3,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "empress",
         "l'impératrice",
@@ -269,7 +265,6 @@
       "name": "4 — The Emperor (L'Empereur)",
       "sort_order": 4,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "emperor",
         "l'empereur",
@@ -320,7 +315,6 @@
       "name": "5 — The Hierophant (Le Pape)",
       "sort_order": 5,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "hierophant",
         "le pape",
@@ -371,7 +365,6 @@
       "name": "6 — The Lovers (L'Amoureux)",
       "sort_order": 6,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "lovers",
         "l'amoureux",
@@ -422,7 +415,6 @@
       "name": "7 — The Chariot (Le Chariot)",
       "sort_order": 7,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "chariot",
         "le chariot",
@@ -473,7 +465,6 @@
       "name": "8 — Justice (La Justice)",
       "sort_order": 8,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "justice",
         "la justice",
@@ -524,7 +515,6 @@
       "name": "9 — The Hermit (L'Hermite)",
       "sort_order": 9,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "hermit",
         "l'hermite",
@@ -575,7 +565,6 @@
       "name": "10 — Wheel of Fortune (La Roue de Fortune)",
       "sort_order": 10,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "wheel of fortune",
         "la roue de fortune",
@@ -626,7 +615,6 @@
       "name": "11 — Strength (La Force)",
       "sort_order": 11,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "strength",
         "la force",
@@ -677,7 +665,6 @@
       "name": "12 — The Hanged Man (Le Pendu)",
       "sort_order": 12,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "hanged man",
         "le pendu",
@@ -728,7 +715,6 @@
       "name": "13 — Death (La Mort)",
       "sort_order": 13,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "death",
         "la mort",
@@ -779,7 +765,6 @@
       "name": "14 — Temperance (Tempérance)",
       "sort_order": 14,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "temperance",
         "tempérance",
@@ -830,7 +815,6 @@
       "name": "15 — The Devil (Le Diable)",
       "sort_order": 15,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "devil",
         "le diable",
@@ -881,7 +865,6 @@
       "name": "16 — The Tower (La Maison-Dieu)",
       "sort_order": 16,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "tower",
         "la maison-dieu",
@@ -932,7 +915,6 @@
       "name": "17 — The Star (L'Étoile)",
       "sort_order": 17,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "star",
         "l'étoile",
@@ -983,7 +965,6 @@
       "name": "18 — The Moon (La Lune)",
       "sort_order": 18,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "moon",
         "la lune",
@@ -1034,7 +1015,6 @@
       "name": "19 — The Sun (Le Soleil)",
       "sort_order": 19,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "sun",
         "le soleil",
@@ -1085,7 +1065,6 @@
       "name": "20 — Judgement (Le Jugement)",
       "sort_order": 20,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "judgement",
         "le jugement",
@@ -1136,7 +1115,6 @@
       "name": "21 — The World (Le Monde)",
       "sort_order": 21,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "world",
         "le monde",
@@ -1187,8 +1165,7 @@
       "name": "The 'Book of Thoth' — The Birth of Occult Tarot",
       "sort_order": 22,
       "category": "emergence",
-      "level": 2,
-      "composite_of": [
+      "parts": [
         "atout-00",
         "atout-01",
         "atout-02",

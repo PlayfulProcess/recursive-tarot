@@ -31,7 +31,7 @@ def main():
     if not os.path.exists(gpath):
         print(f"no grammar for '{slug}' at {gpath}"); return
     g = json.load(open(gpath, encoding="utf-8"))
-    cards = [i for i in g.get("items", []) if not i.get("composite_of")
+    cards = [i for i in g.get("nodes", []) if not i.get("parts")
              and i.get("category") not in ("axis", "keyword-emergence")]
     outdir = os.path.join(ROOT, "print", "decks", slug)
     os.makedirs(outdir, exist_ok=True)

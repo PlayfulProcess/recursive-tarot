@@ -33,11 +33,10 @@
     "year": 1400,
     "year_label": "c. 1400 (Topkapı c. 1500)"
   },
-  "items": [
+  "nodes": [
     {
       "id": "mamluk-overview",
       "name": "The Mamluk Pack — Kings & Deputies",
-      "level": 3,
       "category": "overview",
       "sort_order": 0,
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%201.jpg",
@@ -47,7 +46,7 @@
         "Provenance": "Found and published by L. A. Mayer (1939; monograph 1971). Held at the Topkapı Palace Museum, Istanbul.",
         "Symbol": "The Mamluk pack is the oldest surviving complete (or near-complete) set of playing cards. Its aniconic design — no human or animal figures — reflects Islamic artistic conventions, encoding rank and value through geometric and floral ornament alone."
       },
-      "composite_of": [
+      "parts": [
         "suit-cups",
         "suit-coins",
         "suit-swords",
@@ -58,7 +57,6 @@
     {
       "id": "suit-cups",
       "name": "Suit of Cups (ṭūmān)",
-      "level": 2,
       "category": "suit",
       "sort_order": 1,
       "sections": {
@@ -66,7 +64,7 @@
         "Symbol": "The cup (ṭūmān) suit in the Mamluk pack is the direct ancestor of the cups suit in European tarot and Italian playing cards. Its form — a rounded goblet — passed intact through Moorish Spain and Sicily into Christian Europe."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%202.jpg",
-      "composite_of": [
+      "parts": [
         "cups-king",
         "cups-deputy",
         "cups-pip"
@@ -75,7 +73,6 @@
     {
       "id": "suit-coins",
       "name": "Suit of Coins (darāhim)",
-      "level": 2,
       "category": "suit",
       "sort_order": 2,
       "sections": {
@@ -83,7 +80,7 @@
         "Symbol": "The coins (darāhim) suit directly prefigures the coins/pentacles suit of tarot. The coin symbol retained its circular form throughout its transmission into European card culture."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%203.jpg",
-      "composite_of": [
+      "parts": [
         "coins-king",
         "coins-deputy",
         "coins-pip"
@@ -92,7 +89,6 @@
     {
       "id": "suit-swords",
       "name": "Suit of Swords (suyūf)",
-      "level": 2,
       "category": "suit",
       "sort_order": 3,
       "sections": {
@@ -100,7 +96,7 @@
         "Symbol": "The swords (suyūf) represent military rank and martial honour in Mamluk culture. The suit passed into Europe as the swords suit, retaining the curved blade of Islamic weaponry before later Italian and Spanish versions straightened the design."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%204.jpg",
-      "composite_of": [
+      "parts": [
         "swords-king",
         "swords-deputy",
         "swords-pip"
@@ -109,7 +105,6 @@
     {
       "id": "suit-polo",
       "name": "Suit of Polo-sticks (jawkān)",
-      "level": 2,
       "category": "suit",
       "sort_order": 4,
       "sections": {
@@ -117,7 +112,7 @@
         "Symbol": "The polo-stick suit is the only suit that did not survive intact into European cards. When the deck passed to Europe via the Moors, jawkān was transformed into the wands/batons suit, the curved mallet head becoming a straight staff or club."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%205.jpg",
-      "composite_of": [
+      "parts": [
         "polo-king",
         "polo-deputy",
         "polo-pip"
@@ -126,7 +121,6 @@
     {
       "id": "court-structure",
       "name": "The Court — Malik & two Nā'ib (aniconic)",
-      "level": 2,
       "category": "court",
       "sort_order": 5,
       "sections": {
@@ -135,7 +129,7 @@
         "Symbol": "The three-rank Mamluk court (king + two deputies) likely evolved into the four-rank European court (king, queen, knight, page) through the addition of female figures during the passage into Christian Europe."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/mamluk-deck/Mamluk%20playing%20card%206.jpg",
-      "composite_of": [
+      "parts": [
         "cups-king",
         "coins-king",
         "swords-king",
@@ -145,7 +139,6 @@
     {
       "id": "cups-king",
       "name": "Malik al-ṭūmān — King of Cups",
-      "level": 1,
       "category": "card",
       "suit": "cups",
       "rank": "king",
@@ -170,7 +163,6 @@
     {
       "id": "cups-deputy",
       "name": "Nā'ib al-ṭūmān — Deputy of Cups",
-      "level": 1,
       "category": "card",
       "suit": "cups",
       "rank": "deputy",
@@ -192,7 +184,6 @@
     {
       "id": "cups-pip",
       "name": "Pip card — Cups (representative)",
-      "level": 1,
       "category": "card",
       "suit": "cups",
       "rank": "pip",
@@ -212,7 +203,6 @@
     {
       "id": "coins-king",
       "name": "Malik al-darāhim — King of Coins",
-      "level": 1,
       "category": "card",
       "suit": "coins",
       "rank": "king",
@@ -236,7 +226,6 @@
     {
       "id": "coins-deputy",
       "name": "Nā'ib al-darāhim — Deputy of Coins",
-      "level": 1,
       "category": "card",
       "suit": "coins",
       "rank": "deputy",
@@ -258,7 +247,6 @@
     {
       "id": "coins-pip",
       "name": "Pip card — Coins (representative)",
-      "level": 1,
       "category": "card",
       "suit": "coins",
       "rank": "pip",
@@ -278,7 +266,6 @@
     {
       "id": "swords-king",
       "name": "Malik al-suyūf — King of Swords",
-      "level": 1,
       "category": "card",
       "suit": "swords",
       "rank": "king",
@@ -302,7 +289,6 @@
     {
       "id": "swords-deputy",
       "name": "Nā'ib al-suyūf — Deputy of Swords",
-      "level": 1,
       "category": "card",
       "suit": "swords",
       "rank": "deputy",
@@ -324,7 +310,6 @@
     {
       "id": "swords-pip",
       "name": "Pip card — Swords (representative)",
-      "level": 1,
       "category": "card",
       "suit": "swords",
       "rank": "pip",
@@ -343,7 +328,6 @@
     {
       "id": "polo-king",
       "name": "Malik al-jawkān — King of Polo-sticks",
-      "level": 1,
       "category": "card",
       "suit": "polo",
       "rank": "king",
@@ -368,7 +352,6 @@
     {
       "id": "polo-deputy",
       "name": "Nā'ib al-jawkān — Deputy of Polo-sticks",
-      "level": 1,
       "category": "card",
       "suit": "polo",
       "rank": "deputy",
@@ -391,7 +374,6 @@
     {
       "id": "polo-pip",
       "name": "Pip card — Polo-sticks (representative)",
-      "level": 1,
       "category": "card",
       "suit": "polo",
       "rank": "pip",

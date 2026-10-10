@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Semantic regression check for the derived pivot axes on the built meta grammar.
 
-`check_all.py` is structural only (dangling composite_of, valid JSON, mojibake) — it
+`check_all.py` is structural only (dangling parts, valid JSON, mojibake) — it
 would happily pass a meta grammar whose `role` / `trump_number` / `rank` / `deck`
 fields have quietly rotted, exactly the way the old overloaded `number` field did
 before the Aug 7 2026 revamp (_research/TAROT-REVAMP-PLAN-2026-08-07.md Phase 1).
@@ -47,7 +47,7 @@ def main():
         return 1
 
     g = json.load(open(META_PATH, encoding="utf-8"))
-    items = g.get("items", [])
+    items = g.get("nodes", [])
     by_id = build_id_index(items)
     cards = [it for it in items if it.get("category") == "card"]
 

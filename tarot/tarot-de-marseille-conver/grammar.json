@@ -62,13 +62,12 @@
   ],
   "worldview": "traditional",
   "is_published": true,
-  "items": [
+  "nodes": [
     {
       "id": "major-00-le-mat",
       "name": "0 — The Fool",
       "sort_order": 0,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "fool",
         "le mat",
@@ -119,7 +118,6 @@
       "name": "1 — The Magician",
       "sort_order": 1,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "magician",
         "le bateleur",
@@ -170,7 +168,6 @@
       "name": "2 — The High Priestess",
       "sort_order": 2,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "high priestess",
         "la papesse",
@@ -221,7 +218,6 @@
       "name": "3 — The Empress",
       "sort_order": 3,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "empress",
         "l'impératrice",
@@ -272,7 +268,6 @@
       "name": "4 — The Emperor",
       "sort_order": 4,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "emperor",
         "l'empereur",
@@ -323,7 +318,6 @@
       "name": "5 — The Hierophant",
       "sort_order": 5,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "hierophant",
         "le pape",
@@ -374,7 +368,6 @@
       "name": "6 — The Lovers",
       "sort_order": 6,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "lovers",
         "l'amoureux",
@@ -425,7 +418,6 @@
       "name": "7 — The Chariot",
       "sort_order": 7,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "chariot",
         "le chariot",
@@ -476,7 +468,6 @@
       "name": "8 — Justice",
       "sort_order": 8,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "justice",
         "la justice",
@@ -527,7 +518,6 @@
       "name": "9 — The Hermit",
       "sort_order": 9,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "hermit",
         "l'hermite",
@@ -578,7 +568,6 @@
       "name": "10 — Wheel of Fortune",
       "sort_order": 10,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "wheel of fortune",
         "la roue de fortune",
@@ -629,7 +618,6 @@
       "name": "11 — Strength",
       "sort_order": 11,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "strength",
         "la force",
@@ -680,7 +668,6 @@
       "name": "12 — The Hanged Man",
       "sort_order": 12,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "hanged man",
         "le pendu",
@@ -731,7 +718,6 @@
       "name": "13 — Death",
       "sort_order": 13,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "death",
         "la mort",
@@ -783,7 +769,6 @@
       "name": "14 — Temperance",
       "sort_order": 14,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "temperance",
         "tempérance",
@@ -834,7 +819,6 @@
       "name": "15 — The Devil",
       "sort_order": 15,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "devil",
         "le diable",
@@ -885,7 +869,6 @@
       "name": "16 — The Tower",
       "sort_order": 16,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "tower",
         "la maison dieu",
@@ -936,7 +919,6 @@
       "name": "17 — The Star",
       "sort_order": 17,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "star",
         "l'étoile",
@@ -987,7 +969,6 @@
       "name": "18 — The Moon",
       "sort_order": 18,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "moon",
         "la lune",
@@ -1038,7 +1019,6 @@
       "name": "19 — The Sun",
       "sort_order": 19,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "sun",
         "le soleil",
@@ -1089,7 +1069,6 @@
       "name": "20 — Judgement",
       "sort_order": 20,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "judgement",
         "le jugement",
@@ -1140,7 +1119,6 @@
       "name": "21 — The World",
       "sort_order": 21,
       "category": "major-arcana",
-      "level": 1,
       "keywords": [
         "world",
         "le monde",
@@ -1191,7 +1169,6 @@
       "name": "Ace of Coins",
       "sort_order": 22,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1234,7 +1211,6 @@
       "name": "Two of Coins",
       "sort_order": 23,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1277,7 +1253,6 @@
       "name": "Three of Coins",
       "sort_order": 24,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1320,7 +1295,6 @@
       "name": "Four of Coins",
       "sort_order": 25,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1363,7 +1337,6 @@
       "name": "Five of Coins",
       "sort_order": 26,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1406,7 +1379,6 @@
       "name": "Six of Coins",
       "sort_order": 27,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1449,7 +1421,6 @@
       "name": "Seven of Coins",
       "sort_order": 28,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1492,7 +1463,6 @@
       "name": "Eight of Coins",
       "sort_order": 29,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1535,7 +1505,6 @@
       "name": "Nine of Coins",
       "sort_order": 30,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1578,7 +1547,6 @@
       "name": "Ten of Coins",
       "sort_order": 31,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1621,7 +1589,6 @@
       "name": "Page of Coins",
       "sort_order": 32,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1665,7 +1632,6 @@
       "name": "Knight of Coins",
       "sort_order": 33,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1709,7 +1675,6 @@
       "name": "Queen of Coins",
       "sort_order": 34,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1753,7 +1718,6 @@
       "name": "King of Coins",
       "sort_order": 35,
       "category": "suit-coins",
-      "level": 1,
       "keywords": [
         "coins",
         "earth",
@@ -1797,7 +1761,6 @@
       "name": "Ace of Cups",
       "sort_order": 36,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -1840,7 +1803,6 @@
       "name": "Two of Cups",
       "sort_order": 37,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -1883,7 +1845,6 @@
       "name": "Three of Cups",
       "sort_order": 38,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -1926,7 +1887,6 @@
       "name": "Four of Cups",
       "sort_order": 39,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -1969,7 +1929,6 @@
       "name": "Five of Cups",
       "sort_order": 40,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -2012,7 +1971,6 @@
       "name": "Six of Cups",
       "sort_order": 41,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -2055,7 +2013,6 @@
       "name": "Seven of Cups",
       "sort_order": 42,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -2098,7 +2055,6 @@
       "name": "Eight of Cups",
       "sort_order": 43,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -2141,7 +2097,6 @@
       "name": "Nine of Cups",
       "sort_order": 44,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -2184,7 +2139,6 @@
       "name": "Ten of Cups",
       "sort_order": 45,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -2227,7 +2181,6 @@
       "name": "Page of Cups",
       "sort_order": 46,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -2271,7 +2224,6 @@
       "name": "Knight of Cups",
       "sort_order": 47,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -2315,7 +2267,6 @@
       "name": "Queen of Cups",
       "sort_order": 48,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -2359,7 +2310,6 @@
       "name": "King of Cups",
       "sort_order": 49,
       "category": "suit-cups",
-      "level": 1,
       "keywords": [
         "cups",
         "water",
@@ -2403,7 +2353,6 @@
       "name": "Ace of Swords",
       "sort_order": 50,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -2458,7 +2407,6 @@
       "name": "Two of Swords",
       "sort_order": 51,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -2501,7 +2449,6 @@
       "name": "Three of Swords",
       "sort_order": 52,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -2544,7 +2491,6 @@
       "name": "Four of Swords",
       "sort_order": 53,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -2587,7 +2533,6 @@
       "name": "Five of Swords",
       "sort_order": 54,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -2630,7 +2575,6 @@
       "name": "Six of Swords",
       "sort_order": 55,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -2673,7 +2617,6 @@
       "name": "Seven of Swords",
       "sort_order": 56,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -2716,7 +2659,6 @@
       "name": "Eight of Swords",
       "sort_order": 57,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -2759,7 +2701,6 @@
       "name": "Nine of Swords",
       "sort_order": 58,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -2802,7 +2743,6 @@
       "name": "Ten of Swords",
       "sort_order": 59,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -2845,7 +2785,6 @@
       "name": "Page of Swords",
       "sort_order": 60,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -2889,7 +2828,6 @@
       "name": "Knight of Swords",
       "sort_order": 61,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -2933,7 +2871,6 @@
       "name": "Queen of Swords",
       "sort_order": 62,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -2977,7 +2914,6 @@
       "name": "King of Swords",
       "sort_order": 63,
       "category": "suit-swords",
-      "level": 1,
       "keywords": [
         "swords",
         "air",
@@ -3021,7 +2957,6 @@
       "name": "Ace of Batons",
       "sort_order": 64,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3076,7 +3011,6 @@
       "name": "Two of Batons",
       "sort_order": 65,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3119,7 +3053,6 @@
       "name": "Three of Batons",
       "sort_order": 66,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3162,7 +3095,6 @@
       "name": "Four of Batons",
       "sort_order": 67,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3205,7 +3137,6 @@
       "name": "Five of Batons",
       "sort_order": 68,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3248,7 +3179,6 @@
       "name": "Six of Batons",
       "sort_order": 69,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3291,7 +3221,6 @@
       "name": "Seven of Batons",
       "sort_order": 70,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3334,7 +3263,6 @@
       "name": "Eight of Batons",
       "sort_order": 71,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3377,7 +3305,6 @@
       "name": "Nine of Batons",
       "sort_order": 72,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3420,7 +3347,6 @@
       "name": "Ten of Batons",
       "sort_order": 73,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3463,7 +3389,6 @@
       "name": "Page of Batons",
       "sort_order": 74,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3507,7 +3432,6 @@
       "name": "Knight of Batons",
       "sort_order": 75,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3551,7 +3475,6 @@
       "name": "Queen of Batons",
       "sort_order": 76,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3595,7 +3518,6 @@
       "name": "King of Batons",
       "sort_order": 77,
       "category": "suit-batons",
-      "level": 1,
       "keywords": [
         "batons",
         "fire",
@@ -3639,8 +3561,7 @@
       "name": "The 22 Trumps — The Marseille Standard",
       "sort_order": 78,
       "category": "emergence",
-      "level": 2,
-      "composite_of": [
+      "parts": [
         "major-00-le-mat",
         "major-01-le-bateleur",
         "major-02-la-papesse",
@@ -3678,8 +3599,7 @@
       "name": "Suit of Coins (Deniers) — Earth",
       "sort_order": 79,
       "category": "emergence",
-      "level": 2,
-      "composite_of": [
+      "parts": [
         "coins-ace",
         "coins-02",
         "coins-03",
@@ -3709,8 +3629,7 @@
       "name": "Suit of Cups (Coupes) — Water",
       "sort_order": 80,
       "category": "emergence",
-      "level": 2,
-      "composite_of": [
+      "parts": [
         "cups-ace",
         "cups-02",
         "cups-03",
@@ -3740,8 +3659,7 @@
       "name": "Suit of Swords (Épées) — Air",
       "sort_order": 81,
       "category": "emergence",
-      "level": 2,
-      "composite_of": [
+      "parts": [
         "swords-ace",
         "swords-02",
         "swords-03",
@@ -3771,8 +3689,7 @@
       "name": "Suit of Batons (Bâtons) — Fire",
       "sort_order": 82,
       "category": "emergence",
-      "level": 2,
-      "composite_of": [
+      "parts": [
         "batons-ace",
         "batons-02",
         "batons-03",
@@ -3800,10 +3717,9 @@
     {
       "id": "kw-minor-arcana",
       "name": "Minor arcana",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-ace",
         "coins-02",
         "coins-03",
@@ -3859,10 +3775,9 @@
     {
       "id": "kw-major-arcana",
       "name": "Major arcana",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "major-00-le-mat",
         "major-01-le-bateleur",
         "major-02-la-papesse",
@@ -3900,10 +3815,9 @@
     {
       "id": "kw-marseille",
       "name": "Marseille",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "major-00-le-mat",
         "major-01-le-bateleur",
         "major-02-la-papesse",
@@ -3941,10 +3855,9 @@
     {
       "id": "kw-court-card",
       "name": "Court card",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-page",
         "coins-knight",
         "coins-queen",
@@ -3976,10 +3889,9 @@
     {
       "id": "kw-air",
       "name": "Air",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "swords-ace",
         "swords-02",
         "swords-03",
@@ -4009,10 +3921,9 @@
     {
       "id": "kw-batons",
       "name": "Batons",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "batons-ace",
         "batons-02",
         "batons-03",
@@ -4042,10 +3953,9 @@
     {
       "id": "kw-coins",
       "name": "Coins",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-ace",
         "coins-02",
         "coins-03",
@@ -4075,10 +3985,9 @@
     {
       "id": "kw-cups",
       "name": "Cups",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "cups-ace",
         "cups-02",
         "cups-03",
@@ -4108,10 +4017,9 @@
     {
       "id": "kw-earth",
       "name": "Earth",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-ace",
         "coins-02",
         "coins-03",
@@ -4141,10 +4049,9 @@
     {
       "id": "kw-fire",
       "name": "Fire",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "batons-ace",
         "batons-02",
         "batons-03",
@@ -4174,10 +4081,9 @@
     {
       "id": "kw-swords",
       "name": "Swords",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "swords-ace",
         "swords-02",
         "swords-03",
@@ -4207,10 +4113,9 @@
     {
       "id": "kw-water",
       "name": "Water",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "cups-ace",
         "cups-02",
         "cups-03",
@@ -4240,10 +4145,9 @@
     {
       "id": "kw-b-tons",
       "name": "Bâtons",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "batons-ace",
         "batons-02",
         "batons-03",
@@ -4269,10 +4173,9 @@
     {
       "id": "kw-coupes",
       "name": "Coupes",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "cups-ace",
         "cups-02",
         "cups-03",
@@ -4298,10 +4201,9 @@
     {
       "id": "kw-deniers",
       "name": "Deniers",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-ace",
         "coins-02",
         "coins-03",
@@ -4327,10 +4229,9 @@
     {
       "id": "kw-p-es",
       "name": "Épées",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "swords-ace",
         "swords-02",
         "swords-03",
@@ -4356,10 +4257,9 @@
     {
       "id": "kw-ace",
       "name": "Ace",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-ace",
         "cups-ace",
         "swords-ace",
@@ -4379,10 +4279,9 @@
     {
       "id": "kw-cavalier",
       "name": "Cavalier",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-knight",
         "cups-knight",
         "swords-knight",
@@ -4402,10 +4301,9 @@
     {
       "id": "kw-eight",
       "name": "Eight",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-08",
         "cups-08",
         "swords-08",
@@ -4425,10 +4323,9 @@
     {
       "id": "kw-five",
       "name": "Five",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-05",
         "cups-05",
         "swords-05",
@@ -4448,10 +4345,9 @@
     {
       "id": "kw-four",
       "name": "Four",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-04",
         "cups-04",
         "swords-04",
@@ -4471,10 +4367,9 @@
     {
       "id": "kw-king",
       "name": "King",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-king",
         "cups-king",
         "swords-king",
@@ -4494,10 +4389,9 @@
     {
       "id": "kw-knight",
       "name": "Knight",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-knight",
         "cups-knight",
         "swords-knight",
@@ -4517,10 +4411,9 @@
     {
       "id": "kw-nine",
       "name": "Nine",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-09",
         "cups-09",
         "swords-09",
@@ -4540,10 +4433,9 @@
     {
       "id": "kw-page",
       "name": "Page",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-page",
         "cups-page",
         "swords-page",
@@ -4563,10 +4455,9 @@
     {
       "id": "kw-queen",
       "name": "Queen",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-queen",
         "cups-queen",
         "swords-queen",
@@ -4586,10 +4477,9 @@
     {
       "id": "kw-reine",
       "name": "Reine",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-queen",
         "cups-queen",
         "swords-queen",
@@ -4609,10 +4499,9 @@
     {
       "id": "kw-roi",
       "name": "Roi",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-king",
         "cups-king",
         "swords-king",
@@ -4632,10 +4521,9 @@
     {
       "id": "kw-seven",
       "name": "Seven",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-07",
         "cups-07",
         "swords-07",
@@ -4655,10 +4543,9 @@
     {
       "id": "kw-six",
       "name": "Six",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-06",
         "cups-06",
         "swords-06",
@@ -4678,10 +4565,9 @@
     {
       "id": "kw-ten",
       "name": "Ten",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-10",
         "cups-10",
         "swords-10",
@@ -4701,10 +4587,9 @@
     {
       "id": "kw-three",
       "name": "Three",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-03",
         "cups-03",
         "swords-03",
@@ -4724,10 +4609,9 @@
     {
       "id": "kw-two",
       "name": "Two",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-02",
         "cups-02",
         "swords-02",
@@ -4747,10 +4631,9 @@
     {
       "id": "kw-valet",
       "name": "Valet",
-      "level": 2,
       "category": "keyword-emergence",
       "render_as": "pill",
-      "composite_of": [
+      "parts": [
         "coins-page",
         "cups-page",
         "swords-page",
@@ -4770,10 +4653,9 @@
     {
       "id": "axis-keyword",
       "name": "By Keyword",
-      "level": 3,
       "category": "axis",
       "render_as": "pill-group",
-      "composite_of": [
+      "parts": [
         "kw-minor-arcana",
         "kw-major-arcana",
         "kw-marseille",

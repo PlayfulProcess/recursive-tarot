@@ -383,7 +383,7 @@ def build(slug, grammar):
 
     stamped, unmapped = 0, []
     items = []
-    for it in g["items"]:
+    for it in g["nodes"]:
         it = dict(it)
         url = it.get("image_url")
         if url:
@@ -396,7 +396,7 @@ def build(slug, grammar):
                 it["metadata"] = md
                 stamped += 1
         items.append(it)
-    g["items"] = items
+    g["nodes"] = items
 
     return g, {"stamped": stamped, "unmapped": unmapped,
                "cover_mapped": cover_src is not None}
@@ -406,7 +406,7 @@ def all_source_urls():
     urls = set()
     for slug in DECKS:
         g = json.load(open(grammar_path(slug), encoding="utf-8"))
-        for u in [g.get("cover_image_url")] + [i.get("image_url") for i in g["items"]]:
+        for u in [g.get("cover_image_url")] + [i.get("image_url") for i in g["nodes"]]:
             s = source_for(slug, u)
             if s:
                 urls.add(s)
@@ -455,14 +455,14 @@ def run(write):
         # rewritten image_credit string.
         allowed = {"image_credit"} if DECKS[slug]["image_credit"] else set()
         for k, v in before.items():
-            if k == "items":
+            if k == "nodes":
                 continue
             if k in allowed:
                 continue
             if after.get(k) != v:
                 print(f"FAIL {slug}: pre-existing top-level '{k}' changed")
                 ok = False
-        for a, b in zip(before["items"], after["items"]):
+        for a, b in zip(before["nodes"], after["nodes"]):
             if a["id"] != b["id"]:
                 print(f"FAIL {slug}: item order changed")
                 ok = False
@@ -477,11 +477,11 @@ def run(write):
                 if (b.get("metadata") or {}).get(k) != v:
                     print(f"FAIL {slug}/{a['id']}: pre-existing metadata.{k} changed")
                     ok = False
-        if len(before["items"]) != len(after["items"]):
+        if len(before["nodes"]) != len(after["nodes"]):
             print(f"FAIL {slug}: item count changed")
             ok = False
 
-        n_img = sum(1 for i in before["items"] if i.get("image_url"))
+        n_img = sum(1 for i in before["nodes"] if i.get("image_url"))
         if stats["unmapped"]:
             for iid, url in stats["unmapped"]:
                 print(f"FAIL {slug}/{iid}: no recovered source for {url}")
@@ -510,7 +510,7 @@ def check():
             if key not in g:
                 print(f"FAIL {slug}: missing {key}")
                 ok = False
-        for it in g["items"]:
+        for it in g["nodes"]:
             if it.get("image_url") and not (it.get("metadata") or {}).get("image_source"):
                 print(f"FAIL {slug}/{it['id']}: image_url with no metadata.image_source")
                 ok = False
@@ -519,7 +519,7 @@ def check():
             print(f"FAIL {slug}: provenance is out of date — re-run without --check")
             ok = False
     if ok:
-        total = sum(sum(1 for i in json.load(open(grammar_path(s), encoding="utf-8"))["items"]
+        total = sum(sum(1 for i in json.load(open(grammar_path(s), encoding="utf-8"))["nodes"]
                         if i.get("image_url")) for s in DECKS)
         print(f"OK: {len(DECKS)} decks — _grammar_commons, _image_provenance and "
               f"cover_image_credit present; {total} item images all carry "

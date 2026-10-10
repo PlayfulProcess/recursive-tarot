@@ -64,11 +64,10 @@
     "year_label": "money cards, 14th–15th c."
   },
   "_source": "Wikimedia Commons (Skokloster Castle), public domain. Hotlinked with attribution.",
-  "items": [
+  "nodes": [
     {
       "id": "suit-cash",
       "name": "文錢 · Cash (Coins)",
-      "level": 1,
       "category": "suit",
       "sections": {
         "What it is": "The lowest money suit: single copper coins (wén). The coin is the ancestor of the European 'Coins/Pentacles' suit — the one suit that survived the long diffusion west more or less recognisably.",
@@ -78,7 +77,6 @@
     {
       "id": "suit-strings",
       "name": "索子 · Strings of Cash",
-      "level": 1,
       "category": "suit",
       "sections": {
         "What it is": "Strings or ropes (suǒ) on which coins were threaded — each string a bundle of one hundred cash. A denomination, not an abstract pip: the suits of this pack are literally units of money.",
@@ -89,7 +87,6 @@
     {
       "id": "suit-myriads",
       "name": "萬貫 · Myriads",
-      "level": 1,
       "category": "suit",
       "sections": {
         "What it is": "Ten-thousand-cash units (wàn). In many money-card sets this suit was illustrated with the 108 bandit-heroes of the novel *Water Margin* (水滸傳) — so 'Water Margin cards' (水滸牌) are a famous money-suited variety.",
@@ -99,7 +96,6 @@
     {
       "id": "suit-tens",
       "name": "十萬 · Tens of Myriads",
-      "level": 1,
       "category": "suit",
       "sections": {
         "What it is": "The top suit (the 'decade' / tens-of-myriads), carrying the honour cards. The four ascending money denominations — cash → strings → myriads → tens-of-myriads — are the whole structure of the game.",
@@ -110,10 +106,9 @@
     {
       "id": "axis-money-suits",
       "name": "The Four Money Suits",
-      "level": 3,
       "category": "axis",
       "render_as": "pill-group",
-      "composite_of": [
+      "parts": [
         "suit-cash",
         "suit-strings",
         "suit-myriads",
@@ -127,7 +122,6 @@
     {
       "id": "card-102351",
       "name": "Ma Diao card — Skokloster 102351",
-      "level": 1,
       "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102351.jpg",
       "metadata": {
         "collection": "Skokloster Castle, Sweden",
@@ -151,7 +145,6 @@
     {
       "id": "card-102352",
       "name": "Ma Diao card — Skokloster 102352",
-      "level": 1,
       "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102352.jpg",
       "metadata": {
         "collection": "Skokloster Castle, Sweden",
@@ -175,7 +168,6 @@
     {
       "id": "card-102353",
       "name": "Ma Diao card — Skokloster 102353",
-      "level": 1,
       "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102353.jpg",
       "metadata": {
         "collection": "Skokloster Castle, Sweden",
@@ -199,7 +191,6 @@
     {
       "id": "card-102354",
       "name": "Ma Diao card — Skokloster 102354",
-      "level": 1,
       "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102354.jpg",
       "metadata": {
         "collection": "Skokloster Castle, Sweden",
@@ -223,7 +214,6 @@
     {
       "id": "card-102355",
       "name": "Ma Diao card — Skokloster 102355",
-      "level": 1,
       "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102355.jpg",
       "metadata": {
         "collection": "Skokloster Castle, Sweden",
@@ -247,7 +237,6 @@
     {
       "id": "card-102356",
       "name": "Ma Diao card — Skokloster 102356",
-      "level": 1,
       "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102356.jpg",
       "metadata": {
         "collection": "Skokloster Castle, Sweden",
@@ -271,7 +260,6 @@
     {
       "id": "card-102357",
       "name": "Ma Diao card — Skokloster 102357",
-      "level": 1,
       "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102357.jpg",
       "metadata": {
         "collection": "Skokloster Castle, Sweden",
@@ -295,7 +283,6 @@
     {
       "id": "card-102358",
       "name": "Ma Diao card — Skokloster 102358",
-      "level": 1,
       "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102358.jpg",
       "metadata": {
         "collection": "Skokloster Castle, Sweden",
@@ -319,7 +306,6 @@
     {
       "id": "card-102359",
       "name": "Ma Diao card — Skokloster 102359",
-      "level": 1,
       "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102359.jpg",
       "metadata": {
         "collection": "Skokloster Castle, Sweden",
@@ -343,7 +329,6 @@
     {
       "id": "card-102360",
       "name": "Ma Diao card — Skokloster 102360",
-      "level": 1,
       "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102360.jpg",
       "metadata": {
         "collection": "Skokloster Castle, Sweden",
@@ -367,7 +352,6 @@
     {
       "id": "card-102361",
       "name": "Ma Diao card — Skokloster 102361",
-      "level": 1,
       "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/102361.jpg",
       "metadata": {
         "collection": "Skokloster Castle, Sweden",
@@ -391,7 +375,6 @@
     {
       "id": "card-sheet-13617",
       "name": "Ma Diao cards (sheet) — Skokloster 13617",
-      "level": 1,
       "image_url": "https://tarot.recursive.eco/tarot/madiao-money-cards/images/sheet-13617.jpg",
       "metadata": {
         "collection": "Skokloster Castle, Sweden",
@@ -415,10 +398,9 @@
     {
       "id": "skokloster-set",
       "name": "The Skokloster Surviving Set",
-      "level": 3,
       "category": "axis",
       "render_as": "pill-group",
-      "composite_of": [
+      "parts": [
         "card-102351",
         "card-102352",
         "card-102353",

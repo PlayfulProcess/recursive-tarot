@@ -45,11 +45,11 @@ items = []
 # The four money suits (descriptive system node)
 suit_ids = []
 for sid, nm, about in SUITS:
-    items.append({"id": sid, "name": nm, "level": 1, "category": "suit",
+    items.append({"id": sid, "name": nm, "category": "suit",
                   "sections": {"What it is": about}})
     suit_ids.append(sid)
-items.append({"id": "axis-money-suits", "name": "The Four Money Suits", "level": 3,
-              "category": "axis", "render_as": "pill-group", "composite_of": suit_ids,
+items.append({"id": "axis-money-suits", "name": "The Four Money Suits",
+              "category": "axis", "render_as": "pill-group", "parts": suit_ids,
               "sections": {"What it is": "Ma Diao is a *money-suited* pack: its four suits are ascending denominations of cash, not the cups/swords/coins/batons of the Mamluk and European line. This is the structural signature of the East-Asian card tradition."}})
 
 # The surviving cards
@@ -57,7 +57,7 @@ card_ids = []
 for inv, fname in CARDS:
     cid = "card-" + inv
     items.append({
-        "id": cid, "name": "Ma Diao card — Skokloster " + inv, "level": 1,
+        "id": cid, "name": "Ma Diao card — Skokloster " + inv,
         "image_url": fp(fname),
         "metadata": {"collection": "Skokloster Castle, Sweden", "inventory": inv,
                      "source": "Wikimedia Commons (public domain)"},
@@ -67,14 +67,14 @@ for inv, fname in CARDS:
 # the multi-card sheet
 items.append({
     "id": "card-sheet-" + SHEET[0], "name": "Ma Diao cards (sheet) — Skokloster " + SHEET[0],
-    "level": 1, "image_url": fp(SHEET[1]),
+    "image_url": fp(SHEET[1]),
     "metadata": {"collection": "Skokloster Castle, Sweden", "inventory": SHEET[0],
                  "source": "Wikimedia Commons (public domain)"},
     "sections": {"About": "Several Ma Diao cards together (catalogued as 'Mo Diao') from the same Skokloster holdings."},
 })
 card_ids.append("card-sheet-" + SHEET[0])
-items.append({"id": "skokloster-set", "name": "The Skokloster Surviving Set", "level": 3,
-              "category": "axis", "render_as": "pill-group", "composite_of": card_ids,
+items.append({"id": "skokloster-set", "name": "The Skokloster Surviving Set",
+              "category": "axis", "render_as": "pill-group", "parts": card_ids,
               "image_url": fp(CARDS[0][1]),
               "sections": {"What it is": "The twelve Ma Diao items that survive in Sweden at Skokloster Castle — a fragmentary but high-resolution, openly public-domain witness to a money-suited Chinese pack."}})
 
@@ -88,7 +88,7 @@ grammar = {
     "default_view": "cards",
     "metadata": {"year": 1600, "tradition": "Chinese money-suited cards", "branch": "ancestors"},
     "_source": "Wikimedia Commons (Skokloster Castle), public domain. Hotlinked with attribution.",
-    "items": items,
+    "nodes": items,
 }
 
 out = os.path.join(ROOT, "tarot", "madiao-money-cards")

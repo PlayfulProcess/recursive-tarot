@@ -107,7 +107,7 @@ def main():
 
     for slug in ['tarot-de-marseille-conver', 'oswald-wirth-tarot'] + ETTEILLA:
         p, g, raw, crlf = load(slug)
-        for it in g['items']:
+        for it in g['nodes']:
             s = it.get('sections') or {}
             if slug == 'tarot-de-marseille-conver':
                 if 'Reversed' in s:

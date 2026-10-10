@@ -52,7 +52,7 @@ def main():
     cp = os.path.join(ROOT, "print", "card-backs.json")
     data = json.load(open(cp, encoding="utf-8"))
     changed = 0
-    for b in data.get("items", []):
+    for b in data.get("nodes", []):
         url = b.get("image_url")
         if not url or PUBLIC in url:
             continue  # no image, or already on R2

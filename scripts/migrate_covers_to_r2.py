@@ -133,7 +133,7 @@ def migrate_deck(s3, bucket, slug, collection_map):
             print(f"   FAIL cover: {e}")
 
     # 2. Item-level image_url
-    for it in g.get("items", []):
+    for it in g.get("nodes", []):
         url = it.get("image_url", "")
         if not url or is_r2(url):
             continue
@@ -175,7 +175,7 @@ def main():
                 continue
             d = json.load(open(f, encoding="utf-8-sig"))
             has_item = any("Special:FilePath" in (i.get("image_url") or "")
-                           for i in d.get("items", []))
+                           for i in d.get("nodes", []))
             has_cover = "Special:FilePath" in (d.get("cover_image_url") or "")
             if has_item or has_cover:
                 slugs.append(slug)

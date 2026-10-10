@@ -71,7 +71,7 @@ class Fixer:
 
 
 def fix_cdg(f, slug, g):
-    for it in g['items']:
+    for it in g['nodes']:
         iid, s = it['id'], it.get('sections') or {}
         if iid in CDG_TEXT and CDG_READING in s:
             head, body = CDG_TEXT[iid]
@@ -87,7 +87,7 @@ def fix_cdg(f, slug, g):
 
 
 def fix_etteilla(f, slug, g):
-    for it in g['items']:
+    for it in g['nodes']:
         s = it.get('sections') or {}
         iid = it['id']
         m = re.fullmatch(r'(?:etteilla|oracle-dames)-(\d+)', iid)
@@ -132,7 +132,7 @@ def fix_etteilla(f, slug, g):
 
 
 def fix_elements(f, slug, g):
-    for it in g['items']:
+    for it in g['nodes']:
         s = it.get('sections') or {}
         for sec in list(s):
             v = s[sec]
@@ -159,7 +159,7 @@ def fix_elements(f, slug, g):
 
 
 def fix_misc(f, slug, g):
-    for it in g['items']:
+    for it in g['nodes']:
         s = it.get('sections') or {}
         iid = it['id']
         if slug == 'visconti-sforza-tarot' and iid == 'major-08-la-giustizia' and 'two swords' in s.get('Symbol', ''):

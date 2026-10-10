@@ -80,8 +80,8 @@ def main():
     gp = os.path.join(ROOT, "tarot", slug, "grammar.json")
     g = json.load(open(gp, encoding="utf-8"))
     stats = {"print": 0, "web": 0}
-    for it in g["items"]:
-        if it.get("composite_of") or it.get("category") in ("axis", "keyword-emergence"):
+    for it in g["nodes"]:
+        if it.get("parts") or it.get("category") in ("axis", "keyword-emergence"):
             continue
         url = it.get("image_url") or (it.get("metadata") or {}).get("image_url")
         if not url:

@@ -133,8 +133,8 @@
     return;
   }
   const PATHS = (gloss.metadata || {}).tree_paths;          // "22": ["geburah","tiphareth"]
-  const G = Object.fromEntries((gloss.items || []).map(it => [it.id, it]));
-  const items = deck.items || [];
+  const G = Object.fromEntries((gloss.nodes || []).map(it => [it.id, it]));
+  const items = deck.nodes || [];
   const byId = Object.fromEntries(items.map(it => [it.id, it]));
   const trumps = {};                                         // path -> trump info
   for (const it of items) {

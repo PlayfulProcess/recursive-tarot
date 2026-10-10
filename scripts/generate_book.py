@@ -102,13 +102,13 @@ SUIT_CANON = {"cups":"cups","coins":"coins","swords":"swords","batons":"batons",
 suit_idx = {}
 minor_idx = {}   # archetype (card:ace-of-wands) -> [ {slug,name,year,sections} ]  — cross-deck "same minor card"
 people = load(os.path.join(TAROT, "people-of-tarot", "grammar.json"))
-tree = {it["id"]: it for it in load(os.path.join(TAROT, "tree-of-tarot", "grammar.json"))["items"]}
+tree = {it["id"]: it for it in load(os.path.join(TAROT, "tree-of-tarot", "grammar.json"))["nodes"]}
 meta = load(os.path.join(TAROT, "all-decks-many-lenses", "grammar.json"))
-essay_item = next((i for i in meta["items"] if i["id"] == "essay-divination-question"), None)
+essay_item = next((i for i in meta["nodes"] if i["id"] == "essay-divination-question"), None)
 
 # people who MADE / commissioned each deck (metadata.made) — woven into each deck chapter
 makers_by_deck = {}
-for _p in people["items"]:
+for _p in people["nodes"]:
     if (_p.get("metadata") or {}).get("kind") == "person" or _p.get("category") == "person":
         for _slug in ((_p.get("metadata") or {}).get("made") or []):
             makers_by_deck.setdefault(_slug, []).append(_p)
@@ -124,13 +124,13 @@ for g in decks:
         continue
     g["_desc"] = dg.get("description")
     g["_sig"] = [(it.get("image_url") or (it.get("metadata") or {}).get("image_url"))
-                 for it in dg.get("items", [])
-                 if it.get("level", 1) == 1 and (it.get("image_url") or (it.get("metadata") or {}).get("image_url"))]
-    g["_coll"] = sorted({(it.get("metadata") or {}).get("collection") for it in dg.get("items", [])
+                 for it in dg.get("nodes", [])
+                 if not it.get("parts") and (it.get("image_url") or (it.get("metadata") or {}).get("image_url"))]
+    g["_coll"] = sorted({(it.get("metadata") or {}).get("collection") for it in dg.get("nodes", [])
                          if (it.get("metadata") or {}).get("collection")})
     g["_gh"] = dg.get("_github_url") or dg.get("_github_source_url")
     g["_credit"] = dg.get("image_credit")
-    for it in dg.get("items", []):
+    for it in dg.get("nodes", []):
         md = it.get("metadata") or {}
         img = it.get("image_url") or md.get("image_url")
         suit = md.get("suit")
@@ -239,7 +239,7 @@ def fig(which):
 def render_people():
     """Organised by ROLE (makers, patrons, occultists, scholars, institutions) — a
     different cut from the deck chapters, which already name each deck's own makers."""
-    items = {i["id"]: i for i in people["items"]}
+    items = {i["id"]: i for i in people["nodes"]}
     r3 = items.get("root-people-of-tarot")
     out = []
     if r3:
@@ -252,7 +252,7 @@ def render_people():
         wt = (grp.get("sections") or {}).get("What this groups")
         if wt:
             out.append(para(wt))
-        for cid in (grp.get("composite_of") or []):
+        for cid in (grp.get("parts") or []):
             p = items.get(cid)
             if not p:
                 continue

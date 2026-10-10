@@ -2,6 +2,22 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 10 2026 — branch `format-v2-nodes` (not pushed; goes live in the switch window): grammar format v2
+
+- **Every grammar file is format v2** (recursive.eco `docs/architecture/model-track/FORMAT-V2-NODES.md`):
+  `items` → `nodes`, `composite_of` → `parts`, `ref_document_id` / `ref_item_id` → `ref_grammar_id` /
+  `ref_node_id`, `item_type` → `node_type`, `category: "edition"` → `"selection"`, `metadata.source_item_id`
+  → `metadata.source_node_id`, and `level` is gone (depth is computed from `parts`). `_collection.json`'s
+  per-grammar count `items` is now `nodes`.
+- **Generators write v2** (`build_meta_grammar.py`, `build_people_grammar.py`, `build_book_t_deck.py`,
+  `course_to_grammar.py`, `build_contribute_grammar.py`, `refresh_collection.py` and the rest of `scripts/`,
+  archived one-shots renamed mechanically); a rebuild gives back the converted files.
+- **Checks:** `check_all.py` validates `parts`; the tree-of-tarot branch rule finds branches by depth from
+  `parts`; `validate-grammar.mjs` requires `nodes`.
+- **Viewers read v2 only** (cards, tree, explorer, genealogy, course, print, table, caster, sequence, games,
+  `reference-resolve.js`, `course-embeds.js`, `dimension-engine.js`); levels shown in the viewers are computed
+  from `parts`, so the meta grammar's badges now read its real depth (a rank group is L2, not L3).
+
 ## Oct 8 2026 — branch `sources/wirth-own-words` (PR, not merged; stacked on `due/oct8`): Wirth in his own words
 
 - **Wirth deck, 22 cards:** each card now quotes Wirth's *Le Tarot des imagiers du Moyen Âge* (Paris, 1927)

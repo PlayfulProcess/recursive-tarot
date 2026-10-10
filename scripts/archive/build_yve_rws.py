@@ -99,7 +99,7 @@ def build(cfg):
                 "note":cfg["attrib_note"]},
                 {"name":"PlayfulProcess","role":"compiled into this library as a recursive.eco grammar","link":"https://recursive.eco"}],
             "modifications":cfg["modifications"]},
-        "items":items}
+        "nodes":items}
     d=f"tarot/{cfg['slug']}"; os.makedirs(d,exist_ok=True)
     json.dump(out, open(f"{d}/grammar.json","w",encoding="utf-8"), ensure_ascii=False, indent=2)
     print(f"wrote {d}/grammar.json — {len(items)} cards, {matched} matched to her guidebook")

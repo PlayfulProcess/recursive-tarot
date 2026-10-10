@@ -16,7 +16,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TAROT = os.path.join(ROOT, "tarot")
 
 def real_imaged(items):
-    real = [i for i in items if not i.get("composite_of")
+    real = [i for i in items if not i.get("parts")
             and i.get("category") not in ("axis", "keyword-emergence")
             and (i.get("image_url") or (i.get("metadata") or {}).get("image_url"))]
     return sorted(real, key=lambda i: i.get("id", ""))
@@ -31,7 +31,7 @@ def main():
         if not os.path.exists(gpath):
             print(f"  !! {slug}: no grammar"); continue
         g = json.load(open(gpath, encoding="utf-8"))
-        cards = real_imaged(g.get("items", []))
+        cards = real_imaged(g.get("nodes", []))
         if len(cards) != len(verdicts):
             print(f"  !! {slug}: count mismatch (grammar {len(cards)} vs codes {len(verdicts)}) — SKIP")
             continue
@@ -44,7 +44,7 @@ def main():
             if c in "12": ready += 1
             if c == "2": bleed += 1
             total += 1
-        all_real = [i for i in g.get("items", []) if not i.get("composite_of")
+        all_real = [i for i in g.get("nodes", []) if not i.get("parts")
                     and i.get("category") not in ("axis", "keyword-emergence")]
         g["print_readiness"] = {
             "cards": len(all_real), "imaged": len(cards),

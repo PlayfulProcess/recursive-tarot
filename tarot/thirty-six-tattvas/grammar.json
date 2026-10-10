@@ -34,11 +34,10 @@
   ],
   "description": "The 36 tattvas of non-dual Shaiva Tantra — categories of experience through which consciousness knows itself. Not building blocks of a material universe but the structure of how awareness experiences its own self-expression.\n\nUnmeṣa (opening/expansion — consciousness expressing outward, like eyes opening) and nimeṣa (closing/contraction — consciousness limiting itself, like eyes closing) — emanation and contraction — are the pulse of the whole system. Spanda. The vibration by which awareness knows itself as alive. Cast a tattva and ask: am I expanding or contracting? Neither is wrong. Both are the dance.\n\nIMPORTANT: The chakra-element mappings used here are practice conventions, not fixed doctrine. In the tradition, chakras are prescriptive (you install elements into them for specific practices), not descriptive (they don't inherently 'have' elements). A 5-element practice uses 5 chakras; a 7-deity practice uses 7.\n\nThis deck is inspired by the Non-Dual Śaiva Tantra (Trika/Pratyabhijñā) tradition. It is grounded in Kṣemarāja's [Pratyabhijñāhṛdayam](https://archive.org/details/in.gov.ignca.40271) (trans. Jaideva Singh) and academic literature — [Alexis Sanderson](https://library.oapen.org/bitstream/id/00ead885-2d28-40d2-9bee-3b3dab331783/9789004432802.pdf), [Raffaele Torella](https://www.academia.edu/62632667/Nondualistic_%C5%9Aaivism_of_Kashmir), and the [IEP's Kashmiri Shaiva Philosophy entry](https://iep.utm.edu/kashmiri/) — rather than any single teacher's presentation.\n\nORACLE USAGE: You are not asking the cards what will happen or what you should do. You are asking: which aspect of my own consciousness is presenting itself for recognition right now? The card is a mirror, not a map. The near enemy of this practice is using it as a substitute for direct experience — drawing a card and thinking 'my problem is an illusion' instead of looking at what is actually happening. The Practice field on each card is the real work: a contemplative inquiry you do with your body and attention, not a concept you file away. Casting this oracle is āṇavopāya (a specific technique). Letting a single insight dissolve something is śāktopāya. If the whole structure falls away in a moment of recognition — that is śāmbhavopāya, which cannot be planned but can be received.\n\nA note on this grammar: it is a community offering and an object of study by PlayfulProcess — the founder of recursive.eco — who is not an authority on this tradition. It may well contain errors; corrections and collaborators are warmly welcomed.",
   "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1776051643579-zz0umln2mu.svg",
-  "items": [
+  "nodes": [
     {
       "id": "shakti-cit",
       "name": "Cit Shakti — The Power of Awareness",
-      "level": 1,
       "category": "shakti",
       "sort_order": 1,
       "keywords": [
@@ -71,7 +70,6 @@
     {
       "id": "shakti-ananda",
       "name": "Ānanda Shakti — The Power of Bliss",
-      "level": 1,
       "category": "shakti",
       "sort_order": 2,
       "keywords": [
@@ -97,7 +95,6 @@
     {
       "id": "shakti-iccha",
       "name": "Icchā Shakti — The Power of Will",
-      "level": 1,
       "category": "shakti",
       "sort_order": 3,
       "keywords": [
@@ -123,7 +120,6 @@
     {
       "id": "shakti-jnana",
       "name": "Jñāna Shakti — The Power of Knowing",
-      "level": 1,
       "category": "shakti",
       "sort_order": 4,
       "keywords": [
@@ -149,7 +145,6 @@
     {
       "id": "shakti-kriya",
       "name": "Kriyā Shakti — The Power of Action",
-      "level": 1,
       "category": "shakti",
       "sort_order": 5,
       "keywords": [
@@ -175,7 +170,6 @@
     {
       "id": "tattva-01",
       "name": "Shiva Tattva — Pure Awareness",
-      "level": 1,
       "category": "pure-tattva",
       "sort_order": 6,
       "keywords": [
@@ -213,7 +207,6 @@
     {
       "id": "tattva-02",
       "name": "Shakti Tattva — The Bliss of Existence",
-      "level": 1,
       "category": "pure-tattva",
       "sort_order": 7,
       "keywords": [
@@ -243,7 +236,6 @@
     {
       "id": "tattva-03",
       "name": "Sadāshiva Tattva — The Arising of Will",
-      "level": 1,
       "category": "pure-tattva",
       "sort_order": 8,
       "keywords": [
@@ -273,7 +265,6 @@
     {
       "id": "tattva-04",
       "name": "Īshvara Tattva — The Clarity of Knowing",
-      "level": 1,
       "category": "pure-tattva",
       "sort_order": 9,
       "keywords": [
@@ -303,7 +294,6 @@
     {
       "id": "tattva-05",
       "name": "Shuddha Vidyā — Pure Knowledge in Action",
-      "level": 1,
       "category": "pure-tattva",
       "sort_order": 10,
       "keywords": [
@@ -341,7 +331,6 @@
     {
       "id": "tattva-06",
       "name": "Māyā — The Great Forgetting",
-      "level": 1,
       "category": "covering",
       "sort_order": 11,
       "keywords": [
@@ -371,7 +360,6 @@
     {
       "id": "tattva-07",
       "name": "Kalā — Limited Agency",
-      "level": 1,
       "category": "covering",
       "sort_order": 12,
       "keywords": [
@@ -401,7 +389,6 @@
     {
       "id": "tattva-08",
       "name": "Vidyā — Limited Knowledge",
-      "level": 1,
       "category": "covering",
       "sort_order": 13,
       "keywords": [
@@ -431,7 +418,6 @@
     {
       "id": "tattva-09",
       "name": "Rāga — Attachment",
-      "level": 1,
       "category": "covering",
       "sort_order": 14,
       "keywords": [
@@ -461,7 +447,6 @@
     {
       "id": "tattva-10",
       "name": "Kāla — Time",
-      "level": 1,
       "category": "covering",
       "sort_order": 15,
       "keywords": [
@@ -491,7 +476,6 @@
     {
       "id": "tattva-11",
       "name": "Niyati — Causality",
-      "level": 1,
       "category": "covering",
       "sort_order": 16,
       "keywords": [
@@ -521,7 +505,6 @@
     {
       "id": "tattva-12",
       "name": "Purusha — The Limited Self",
-      "level": 1,
       "category": "covering",
       "sort_order": 17,
       "keywords": [
@@ -551,7 +534,6 @@
     {
       "id": "tattva-13",
       "name": "Prakriti — Primordial Nature",
-      "level": 1,
       "category": "material",
       "sort_order": 18,
       "keywords": [
@@ -580,7 +562,6 @@
     {
       "id": "tattva-14",
       "name": "Buddhi — Discernment",
-      "level": 1,
       "category": "inner-instrument",
       "sort_order": 19,
       "keywords": [
@@ -609,7 +590,6 @@
     {
       "id": "tattva-15",
       "name": "Ahamkāra — The I-Maker",
-      "level": 1,
       "category": "inner-instrument",
       "sort_order": 20,
       "keywords": [
@@ -638,7 +618,6 @@
     {
       "id": "tattva-16",
       "name": "Manas — Conceptual Mind",
-      "level": 1,
       "category": "inner-instrument",
       "sort_order": 21,
       "keywords": [
@@ -667,7 +646,6 @@
     {
       "id": "tattva-17",
       "name": "Shrotra — Hearing",
-      "level": 1,
       "category": "perception",
       "sort_order": 22,
       "keywords": [
@@ -697,7 +675,6 @@
     {
       "id": "tattva-18",
       "name": "Tvak — Touch",
-      "level": 1,
       "category": "perception",
       "sort_order": 23,
       "keywords": [
@@ -727,7 +704,6 @@
     {
       "id": "tattva-19",
       "name": "Chakshu — Sight",
-      "level": 1,
       "category": "perception",
       "sort_order": 24,
       "keywords": [
@@ -757,7 +733,6 @@
     {
       "id": "tattva-20",
       "name": "Rasanā — Taste",
-      "level": 1,
       "category": "perception",
       "sort_order": 25,
       "keywords": [
@@ -787,7 +762,6 @@
     {
       "id": "tattva-21",
       "name": "Ghrāna — Smell",
-      "level": 1,
       "category": "perception",
       "sort_order": 26,
       "keywords": [
@@ -817,7 +791,6 @@
     {
       "id": "tattva-22",
       "name": "Vāk — Speech",
-      "level": 1,
       "category": "action",
       "sort_order": 27,
       "keywords": [
@@ -848,7 +821,6 @@
     {
       "id": "tattva-23",
       "name": "Pāni — Grasping",
-      "level": 1,
       "category": "action",
       "sort_order": 28,
       "keywords": [
@@ -879,7 +851,6 @@
     {
       "id": "tattva-24",
       "name": "Pāda — Locomotion",
-      "level": 1,
       "category": "action",
       "sort_order": 29,
       "keywords": [
@@ -910,7 +881,6 @@
     {
       "id": "tattva-25",
       "name": "Pāyu — Elimination",
-      "level": 1,
       "category": "action",
       "sort_order": 30,
       "keywords": [
@@ -941,7 +911,6 @@
     {
       "id": "tattva-26",
       "name": "Upastha — Procreation",
-      "level": 1,
       "category": "action",
       "sort_order": 31,
       "keywords": [
@@ -972,7 +941,6 @@
     {
       "id": "tattva-27",
       "name": "Shabda Tanmātra — Subtle Sound",
-      "level": 1,
       "category": "subtle-element",
       "sort_order": 32,
       "keywords": [
@@ -1000,7 +968,6 @@
     {
       "id": "tattva-28",
       "name": "Sparsha Tanmātra — Subtle Touch",
-      "level": 1,
       "category": "subtle-element",
       "sort_order": 33,
       "keywords": [
@@ -1028,7 +995,6 @@
     {
       "id": "tattva-29",
       "name": "Rūpa Tanmātra — Subtle Form",
-      "level": 1,
       "category": "subtle-element",
       "sort_order": 34,
       "keywords": [
@@ -1056,7 +1022,6 @@
     {
       "id": "tattva-30",
       "name": "Rasa Tanmātra — Subtle Flavor",
-      "level": 1,
       "category": "subtle-element",
       "sort_order": 35,
       "keywords": [
@@ -1084,7 +1049,6 @@
     {
       "id": "tattva-31",
       "name": "Gandha Tanmātra — Subtle Scent",
-      "level": 1,
       "category": "subtle-element",
       "sort_order": 36,
       "keywords": [
@@ -1112,7 +1076,6 @@
     {
       "id": "tattva-32",
       "name": "Ākāsha — Space",
-      "level": 1,
       "category": "gross-element",
       "sort_order": 37,
       "keywords": [
@@ -1143,7 +1106,6 @@
     {
       "id": "tattva-33",
       "name": "Vāyu — Air",
-      "level": 1,
       "category": "gross-element",
       "sort_order": 38,
       "keywords": [
@@ -1174,7 +1136,6 @@
     {
       "id": "tattva-34",
       "name": "Tejas — Fire",
-      "level": 1,
       "category": "gross-element",
       "sort_order": 39,
       "keywords": [
@@ -1206,7 +1167,6 @@
     {
       "id": "tattva-35",
       "name": "Jala — Water",
-      "level": 1,
       "category": "gross-element",
       "sort_order": 40,
       "keywords": [
@@ -1245,7 +1205,6 @@
     {
       "id": "tattva-36",
       "name": "Prithvī — Earth",
-      "level": 1,
       "category": "gross-element",
       "sort_order": 41,
       "keywords": [
@@ -1276,7 +1235,6 @@
     {
       "id": "realm-pure",
       "name": "Shuddhādhvan — The Pure Universe",
-      "level": 2,
       "category": "realm",
       "sort_order": 42,
       "keywords": [
@@ -1293,7 +1251,7 @@
       "metadata": {
         "realm": "pure"
       },
-      "composite_of": [
+      "parts": [
         "tattva-01",
         "tattva-02",
         "tattva-03",
@@ -1305,7 +1263,6 @@
     {
       "id": "realm-coverings",
       "name": "The Kañcukas — Garments of Forgetting",
-      "level": 2,
       "category": "realm",
       "sort_order": 43,
       "keywords": [
@@ -1322,7 +1279,7 @@
       "metadata": {
         "realm": "covering"
       },
-      "composite_of": [
+      "parts": [
         "tattva-06",
         "tattva-07",
         "tattva-08",
@@ -1336,7 +1293,6 @@
     {
       "id": "realm-psyche",
       "name": "Antaḥkaraṇa — The Inner Instrument",
-      "level": 2,
       "category": "realm",
       "sort_order": 44,
       "keywords": [
@@ -1360,7 +1316,7 @@
           "note": "Yogin in meditation showing the nadis, chakras and the kundalini serpent. Chosen over the Gurmukhi Trika manuscript scan, which is a 131x1200 vertical strip and renders as a sliver at card proportions; that manuscript is kept for a page-level lineage illustration instead."
         }
       },
-      "composite_of": [
+      "parts": [
         "tattva-14",
         "tattva-15",
         "tattva-16"
@@ -1370,7 +1326,6 @@
     {
       "id": "realm-senses",
       "name": "The Ten Sense Powers",
-      "level": 2,
       "category": "realm",
       "sort_order": 45,
       "keywords": [
@@ -1387,7 +1342,7 @@
       "metadata": {
         "realm": "material"
       },
-      "composite_of": [
+      "parts": [
         "tattva-17",
         "tattva-18",
         "tattva-19",
@@ -1404,7 +1359,6 @@
     {
       "id": "realm-elements",
       "name": "Pañca Mahābhūta — The Great Elements",
-      "level": 2,
       "category": "realm",
       "sort_order": 46,
       "keywords": [
@@ -1421,7 +1375,7 @@
       "metadata": {
         "realm": "material"
       },
-      "composite_of": [
+      "parts": [
         "tattva-27",
         "tattva-28",
         "tattva-29",
@@ -1438,7 +1392,6 @@
     {
       "id": "concept-trinity",
       "name": "Shiva-Shakti-Nara — The Sacred Trinity",
-      "level": 1,
       "category": "concept",
       "sort_order": 47,
       "keywords": [
@@ -1469,7 +1422,6 @@
     {
       "id": "concept-spanda",
       "name": "Spanda — The Divine Pulsation",
-      "level": 1,
       "category": "concept",
       "sort_order": 48,
       "keywords": [
@@ -1501,7 +1453,6 @@
     {
       "id": "concept-pratyabhijna",
       "name": "Pratyabhijñā — Recognition",
-      "level": 1,
       "category": "concept",
       "sort_order": 49,
       "keywords": [
@@ -1523,7 +1474,6 @@
     {
       "id": "concept-svatantrya",
       "name": "Svātantrya — Absolute Freedom",
-      "level": 1,
       "category": "concept",
       "sort_order": 50,
       "keywords": [
@@ -1546,7 +1496,6 @@
     {
       "id": "concept-three-malas",
       "name": "The Three Malas — Impurities of Forgetting",
-      "level": 1,
       "category": "concept",
       "sort_order": 51,
       "keywords": [
@@ -1570,7 +1519,6 @@
     {
       "id": "concept-three-upayas",
       "name": "The Three Upāyas — Means of Practice",
-      "level": 1,
       "category": "concept",
       "sort_order": 52,
       "keywords": [
@@ -1597,7 +1545,6 @@
     {
       "id": "concept-anupaya",
       "name": "Anupāya — No-Means, Beyond Technique",
-      "level": 1,
       "category": "concept",
       "sort_order": 53,
       "keywords": [
@@ -1620,7 +1567,6 @@
     {
       "id": "concept-shadadhvan",
       "name": "Ṣaḍadhvan — The Six Paths",
-      "level": 1,
       "category": "concept",
       "sort_order": 54,
       "keywords": [
@@ -1647,7 +1593,6 @@
     {
       "id": "concept-samkhya-comparison",
       "name": "Why Thirty-Six, Not Twenty-Five",
-      "level": 1,
       "category": "concept",
       "sort_order": 55,
       "keywords": [
@@ -1672,7 +1617,6 @@
     {
       "id": "concept-tanmatra-accumulation",
       "name": "The Qualities That Accumulate — Why Earth Holds All Five",
-      "level": 1,
       "category": "concept",
       "sort_order": 56,
       "keywords": [

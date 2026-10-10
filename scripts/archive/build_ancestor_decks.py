@@ -65,8 +65,8 @@ for slug, d in DECKS.items():
       "default_view":"tree", "default_preview":"tree",
       "description": d["desc"] + FOOT,
       "metadata": {"ancestry": d["ancestry"], "tradition": d["tradition"]},
-      "items": [
-        {"id": iid, "name": nm, "level": 1, "category": "overview", "sort_order": i,
+      "nodes": [
+        {"id": iid, "name": nm, "category": "overview", "sort_order": i,
          **({"image_url": d["cover"]} if (i==0 and d["cover"]) else {}),
          "sections": {"What it is": txt}}
         for i,(iid,nm,txt) in enumerate(d["items"])

@@ -47,7 +47,7 @@
       '<div class="desc">' + RT.md(shorten(g.description, 900)) + '</div></div></div>';
 
     var cards = '<div class="cards">';
-    (g.items || []).forEach(function (it) {
+    (g.nodes || []).forEach(function (it) {
       cards += renderCard(it);
     });
     cards += '</div>';
@@ -60,7 +60,7 @@
   function renderCard(it) {
     var img = it.image_url
       ? '<div class="img" style="background-image:url(' + "'" + it.image_url.replace(/'/g,'%27') + "'" + ')"></div>'
-      : '<div class="img empty">' + (it.composite_of ? '— grouping —' : 'no image (card lost or not digitised)') + '</div>';
+      : '<div class="img empty">' + (it.parts ? '— grouping —' : 'no image (card lost or not digitised)') + '</div>';
     var secs = '';
     var s = it.sections || {};
     Object.keys(s).forEach(function (k) {

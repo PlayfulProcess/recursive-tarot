@@ -221,7 +221,7 @@ def deck_label(slug, g):
 
 
 def is_card(it):
-    return not it.get("composite_of") and it.get("category") not in (
+    return not it.get("parts") and it.get("category") not in (
         "axis", "keyword-emergence", "overview", "emergence")
 
 
@@ -303,7 +303,7 @@ def build():
         if slug in SKIP or slug.endswith("-course") or not os.path.exists(path):
             continue
         g = json.load(open(path, encoding="utf-8"))
-        items = [it for it in g.get("items", []) if is_card(it) and it.get("id")]
+        items = [it for it in g.get("nodes", []) if is_card(it) and it.get("id")]
         if not items:
             continue
         label = deck_label(slug, g)

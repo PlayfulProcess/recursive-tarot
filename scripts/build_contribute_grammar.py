@@ -125,7 +125,7 @@ def build():
         "provenance": "reference",
         "metadata": {"common_name": "How to Contribute", "category": "reference"},
         "_generated": True, "_built_by": "scripts/build_contribute_grammar.py",
-        "items": items,
+        "nodes": items,
     }
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump(grammar, io.open(OUT, "w", encoding="utf-8"), indent=2, ensure_ascii=False)

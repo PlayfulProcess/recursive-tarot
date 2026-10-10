@@ -145,7 +145,7 @@ function buildLaneFromField(){
 (async function init(){
   try{
     const r=await fetch(SRC); if(!r.ok) throw new Error('Could not load '+SRC+' ('+r.status+')');
-    const g=await r.json(); const items=g.items||[];
+    const g=await r.json(); const items=g.nodes||[];
     itemMap=Object.fromEntries(items.map(i=>[i.id,i]));
     decks=items.filter(i=>i.id.startsWith('deck-')).map(i=>{
       const md=i.metadata||{};

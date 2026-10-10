@@ -30,7 +30,11 @@ From the tarot hope-or-habit study (`recursive-eco/docs/future_plan/STUDY-tarot-
 
 ## Core architecture
 
-- Grammar files live in `tarot/<slug>/grammar.json`. Never hand-edit `tarot/all-decks-many-lenses/grammar.json` or `tarot/people-of-tarot/grammar.json` — both are generated.
+- Grammar files live in `tarot/<slug>/grammar.json`, in grammar format v2 (Oct 2026, recursive.eco
+  `docs/architecture/model-track/FORMAT-V2-NODES.md`): the array is `nodes`, a node's children are `parts`,
+  links are `ref_grammar_id` / `ref_node_id`, `node_type`, a named pick is `category: "selection"`, and there is
+  no stored `level` (depth is computed from `parts`). Generators, checks and viewers read and write only these names.
+- Never hand-edit `tarot/all-decks-many-lenses/grammar.json` or `tarot/people-of-tarot/grammar.json` — both are generated.
 - Always run `python scripts/check_all.py` before committing. Must end "all checks passed" with `dangling=0`.
 - After any grammar edit: `python scripts/build_meta_grammar.py` (rebuilds meta + people). Then check_all again.
 - **ONE branch: `main`. Site, app-sync and Pages all live there** (reconciled Jul 30 2026; verify with `gh api repos/PlayfulProcess/recursive-tarot/pages`):
@@ -55,7 +59,7 @@ The viewer renders a pill link automatically when an item has:
 {
   "metadata": {
     "source_deck": "<slug>",
-    "source_item_id": "<item-id>",
+    "source_node_id": "<node-id>",
     "deck": "<human label>"
   }
 }
@@ -63,8 +67,8 @@ The viewer renders a pill link automatically when an item has:
 The pill reads: **"Open in [deck] →"**. This is the ONLY cross-grammar navigation mechanism. Use it for everything — meta → deck, deck → people, deck → related grammar. Never add a new link field.
 
 Examples:
-- Meta grammar item → source deck: `source_deck: "visconti-sforza-tarot"`, `source_item_id: "major-00-il-matto"`, `deck: "Visconti-Sforza"`
-- Individual deck item → people: `source_deck: "people-of-tarot"`, `source_item_id: "person-bonifacio-bembo"`, `deck: "People & Institutions"`
+- Meta grammar item → source deck: `source_deck: "visconti-sforza-tarot"`, `source_node_id: "major-00-il-matto"`, `deck: "Visconti-Sforza"`
+- Individual deck item → people: `source_deck: "people-of-tarot"`, `source_node_id: "person-bonifacio-bembo"`, `deck: "People & Institutions"`
 
 The pill suppresses itself if the current page URL already contains `/<slug>/`, so it never shows a circular link.
 
@@ -72,7 +76,7 @@ The pill suppresses itself if the current page URL already contains `/<slug>/`, 
 
 - Source of truth: `research/people/*.md` dossiers. Edit those, then run `python scripts/build_people_grammar.py`.
 - Do NOT hand-edit `tarot/people-of-tarot/grammar.json`.
-- To link a deck item to a person: add `source_deck / source_item_id / deck` to that item's `metadata` (same pattern as above).
+- To link a deck item to a person: add `source_deck / source_node_id / deck` to that item's `metadata` (same pattern as above).
 
 ## Sections used across grammars
 
@@ -145,7 +149,7 @@ seed data.** To change a deck, edit its `grammar.json`. See `scripts/archive/REA
 
 ## Cross-grammar embeds — always framed
 
-An item that carries the `source_deck`/`source_item_id` cross-link (above) also gets the OTHER
+An item that carries the `source_deck`/`source_node_id` cross-link (above) also gets the OTHER
 grammar's content resolved into its detail view (`viewers/reference-resolve.js`). That embed is
 **always framed** — a bounded, collapsed `<details>` box that names the relationship ("Featured
 card from Golden Dawn Tarot", "About Pamela Colman Smith") and says whose content it is. Never

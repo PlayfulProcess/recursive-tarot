@@ -114,7 +114,7 @@
       : '<span class="noimg">☙</span>';
     const prov = g.provenance ? '<span class="pill ' + esc(g.provenance) + '">' + (g.provenance === 'record' ? 'Record' : 'Practice') + '</span>' : '';
     const year = g.year_label ? '<span class="pill">' + esc(g.year_label) + '</span>' : '';
-    const items = Number.isFinite(g.items) ? '<span class="pill">' + g.items + ' items</span>' : '';
+    const items = Number.isFinite(g.nodes) ? '<span class="pill">' + g.nodes + ' items</span>' : '';
     const title = esc(g.common_name || g.name);
     const sub = (g.common_name && g.name !== g.common_name) ? '<div class="sub">' + esc(g.name) + '</div>' : '';
     return '<article class="chan">' +

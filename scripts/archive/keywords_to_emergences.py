@@ -7,7 +7,7 @@ grammar's L1 base items, finds keywords shared by enough of them, and adds a
 
     axis-keyword            (render_as: "pill-group")   level 3
       └─ kw-<slug>          (render_as: "pill")         level 2
-           └─ composite_of: [base item ids with that keyword]
+           └─ parts: [base item ids with that keyword]
 
 Selective by design (per the Jun 2026 decision): promote keywords that are
 shared (count >= MIN) but NOT near-universal (count <= MAX_SHARE * N, so deck-name
@@ -27,10 +27,10 @@ def slug(s):
 
 def promote(path, MIN=3, MAX_SHARE=0.7):
     d = json.load(open(path, encoding='utf-8'))
-    items = d.get('items', [])
+    items = d.get('nodes', [])
     # idempotent: drop prior artifacts
     items = [i for i in items if not (str(i.get('id', '')).startswith('kw-') or i.get('id') == 'axis-keyword')]
-    base = [i for i in items if not i.get('composite_of')]   # L1 leaves only
+    base = [i for i in items if not i.get('parts')]   # L1 leaves only
     N = len(base)
     kwmap = defaultdict(list)
     for i in base:
@@ -47,10 +47,9 @@ def promote(path, MIN=3, MAX_SHARE=0.7):
         pill = {
             'id': 'kw-' + slug(k),
             'name': k[:1].upper() + k[1:],
-            'level': 2,
             'category': 'keyword-emergence',
             'render_as': 'pill',
-            'composite_of': ids,
+            'parts': ids,
             'metadata': {'emergence_kind': 'keyword', 'keyword': k, 'member_count': len(ids)},
             'sections': {'Description': f'Cards in this deck sharing the keyword “{k}” ({len(ids)}).'},
         }
@@ -62,17 +61,16 @@ def promote(path, MIN=3, MAX_SHARE=0.7):
         axis = {
             'id': 'axis-keyword',
             'name': 'By Keyword',
-            'level': 3,
             'category': 'axis',
             'render_as': 'pill-group',
-            'composite_of': [p['id'] for p in pills],
+            'parts': [p['id'] for p in pills],
             'sections': {'Description': 'Cross-cutting facets derived from shared keywords — the same card appears under every keyword it carries.'},
         }
         rep = next((p['image_url'] for p in pills if p.get('image_url')), None)
         if rep:
             axis['image_url'] = rep
         items.append(axis)
-    d['items'] = items
+    d['nodes'] = items
     json.dump(d, open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
     return N, cap, pills
 

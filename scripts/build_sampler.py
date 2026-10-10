@@ -28,8 +28,8 @@ HIGH_RES = {
 
 def first_card(slug):
     g = json.load(open(os.path.join(ROOT, "tarot", slug, "grammar.json"), encoding="utf-8"))
-    for it in g.get("items", []):
-        if it.get("composite_of") or it.get("category") in ("axis", "keyword-emergence"):
+    for it in g.get("nodes", []):
+        if it.get("parts") or it.get("category") in ("axis", "keyword-emergence"):
             continue
         u = it.get("image_url") or (it.get("metadata") or {}).get("image_url")
         if u:
@@ -60,7 +60,7 @@ def main():
     # card backs
     bpath = os.path.join(ROOT, "print", "card-backs.json")
     if os.path.exists(bpath):
-        for k, b in enumerate(json.load(open(bpath, encoding="utf-8")).get("items", []), 1):
+        for k, b in enumerate(json.load(open(bpath, encoding="utf-8")).get("nodes", []), 1):
             u = b.get("image_url")
             if not u: continue
             try:

@@ -146,7 +146,7 @@ def main():
     for di, slug in enumerate(DECKS):
         later = di > 0
         p, g, raw, crlf = load(slug)
-        for it in g['items'][:]:
+        for it in g['nodes'][:]:
             m = re.match(r'^(?:etteilla|oracle-dames)-(\d\d)$', it.get('id', ''))
             if not m:
                 continue

@@ -107,7 +107,7 @@ def setsec(slug, it, sec, new):
 
 # Anecdotes Tarot: accordions "Image Description" and "Interpretation"
 p, g, nl = load('anecdotes-tarot')
-for it in g['items']:
+for it in g['nodes']:
     k, page = pick('anecdotes-tarot/guidebook/', it['name'])
     if not page:
         unmatched.setdefault('anecdotes-tarot', []).append(it['name']); continue
@@ -121,7 +121,7 @@ save(p, g, nl)
 
 # Clown Town Tarot: text outside the accordion is the interpretation; "Image Description" is the card
 p, g, nl = load('clown-town-tarot')
-for it in g['items']:
+for it in g['nodes']:
     k, page = pick('clown-town-tarot/guidebook/', it['name'])
     if not page:
         unmatched.setdefault('clown-town-tarot', []).append(it['name']); continue
@@ -132,7 +132,7 @@ save(p, g, nl)
 
 # Tarocchino Arlecchino: headings; "Image Description" is the card; meanings under Upright / Reversed
 p, g, nl = load('tarocchino-arlecchino')
-for it in g['items']:
+for it in g['nodes']:
     k, page = pick('tarocchino-arlecchino/guidebook/', it['name'])
     if not page:
         unmatched.setdefault('tarocchino-arlecchino', []).append(it['name']); continue

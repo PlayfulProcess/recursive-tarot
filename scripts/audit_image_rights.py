@@ -136,13 +136,13 @@ def build():
         decks.append((os.path.basename(os.path.dirname(f)), g))
     wanted = []
     for _, g in decks:
-        for it in g.get('items', []):
+        for it in g.get('nodes', []):
             if it.get('image_url'):
                 wanted += [t for _, t in candidates(it)]
     answers = query(wanted)
     rows = []
     for slug, g in decks:
-        for it in g.get('items', []):
+        for it in g.get('nodes', []):
             if not it.get('image_url'):
                 continue
             row = {'deck': slug, 'provenance': g.get('provenance'), 'item': it.get('id'),

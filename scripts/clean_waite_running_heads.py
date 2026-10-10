@@ -138,7 +138,7 @@ def run(write):
     grammar = load()
     report, archive, changed, ok = [], [], 0, True
 
-    for it in grammar["items"]:
+    for it in grammar["nodes"]:
         secs = it.get("sections") or {}
         if SECTION not in secs:
             print(f"FAIL {it['id']}: no '{SECTION}' section")
@@ -209,7 +209,7 @@ def check():
     """Assert the deck is clean: no body opens with page furniture."""
     grammar = load()
     ok = True
-    for it in grammar["items"]:
+    for it in grammar["nodes"]:
         body = (it.get("sections") or {}).get(SECTION, "")
         _, removals = plan_item(body)
         if removals:
@@ -218,7 +218,7 @@ def check():
                 print(f"FAIL {it['id']}: still carries page furniture "
                       f"{frag!r} ({reason})")
     if ok:
-        print(f"OK: {len(grammar['items'])} items — no suit running head, no "
+        print(f"OK: {len(grammar['nodes'])} items — no suit running head, no "
               f"orphaned numeral, no garbled plate caption in any "
               f"'{SECTION}' body")
     return ok

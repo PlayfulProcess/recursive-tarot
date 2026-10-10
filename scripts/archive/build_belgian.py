@@ -91,12 +91,12 @@ ids = []
 for a, num, name, about in TRUMPS:
     cid = f"trump-{a:02d}"
     title = (f"{num} · {name}" if num else name)
-    items.append({"id": cid, "name": title, "level": 1, "category": "trump",
+    items.append({"id": cid, "name": title, "category": "trump",
                   "image_url": img(a), "metadata": {"number": num, "arcana": "major"},
                   "sections": {"About": about}})
     ids.append(cid)
-items.append({"id": "axis-atouts", "name": "Les Atouts (22 Trumps)", "level": 3, "category": "axis",
-              "render_as": "pill-group", "composite_of": ids, "image_url": img(5),
+items.append({"id": "axis-atouts", "name": "Les Atouts (22 Trumps)", "category": "axis",
+              "render_as": "pill-group", "parts": ids, "image_url": img(5),
               "sections": {"What it is": "The 22 trumps of the Flemish tarot — the Marseille sequence with the Captain and Bacchus swapped in for the Popess and the Pope."}})
 
 grammar = {
@@ -109,7 +109,7 @@ grammar = {
     "default_view": "cards",
     "metadata": {"year": 1780, "tradition": "Tarot de Marseille family (Flemish/Belgian)", "branch": "marseille", "order": "Eastern/Belgian"},
     "_source": "Wikimedia Commons 'Tarot Belgijski' (public domain, c. 1780).",
-    "items": items,
+    "nodes": items,
 }
 
 out = os.path.join(ROOT, "tarot", "belgian-tarot")

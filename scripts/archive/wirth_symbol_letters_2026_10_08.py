@@ -40,7 +40,7 @@ def main():
     check = "--check" in sys.argv
     before = GRAMMAR.read_text(encoding="utf-8")
     g = json.loads(before)
-    for it in g["items"]:
+    for it in g["nodes"]:
         if not it["id"].startswith("arcanum-"):
             continue
         s = it["sections"].get("Symbol")

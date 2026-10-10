@@ -185,7 +185,7 @@ async function loadDeck(slug){
   CURNAME=(g.metadata&&g.metadata.common_name)||(g.name||slug).split(/\s+[—–-]\s+/)[0]; CURSLUG=slug;
   // each trump keeps its REAL number (from its key — e.g. the Emperor is IV); take the six lowest
   // available, rank by that number (higher wins). Fall back to the deck's own number, then order.
-  let majors=g.items.filter(i=>isMajor(i.metadata||{})&&img(i))
+  let majors=g.nodes.filter(i=>isMajor(i.metadata||{})&&img(i))
     .map((i,idx)=>{const k=(i.metadata||{}).trump_key; let n=(k in CANON_NUM)?CANON_NUM[k]:(i.metadata||{}).number; if(n==null)n=idx; return {i,k,n};})
     .filter(m=>m.k!=='fool');
   majors.sort((a,b)=>a.n-b.n); majors=majors.slice(0,6);
@@ -193,10 +193,10 @@ async function loadDeck(slug){
     label:m.i.name.split(/\s+[—–-]\s+/)[0]}));
   // suit coverage → take the two best-stocked suits
   const cov={};
-  for(const i of g.items){ const mk=(i.metadata||{}).minor_key; if(!mk||!img(i))continue;
+  for(const i of g.nodes){ const mk=(i.metadata||{}).minor_key; if(!mk||!img(i))continue;
     const w=mk.split('-of-')[0], s=mk.split('-of-')[1]; if(PIP[w]||COURT[w]) (cov[s]=cov[s]||0,cov[s]++); }
   const suitsPick=Object.entries(cov).sort((a,b)=>b[1]-a[1]).slice(0,2).map(x=>x[0]);
-  const suit=s=>g.items.filter(i=>{const mk=(i.metadata||{}).minor_key;
+  const suit=s=>g.nodes.filter(i=>{const mk=(i.metadata||{}).minor_key;
       return mk&&mk.endsWith('-of-'+s)&&img(i)&&(PIP[mk.split('-of-')[0]]||COURT[mk.split('-of-')[0]]);})
     .map(i=>{const w=i.metadata.minor_key.split('-of-')[0];
       return {kind:s,rank:PIP[w]||COURT[w],img:img(i),label:cap(w)+' of '+SUITNAME[s]};});

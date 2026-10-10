@@ -26,7 +26,7 @@
     "bus-metaphor"
   ],
   "description": "A contemplative parts-work and decolonial cartography for noticing which voice is driving when you make a values-laden decision.\n\nRumi called a human being a guest house — each morning a new arrival, a joy, a grief, a meanness, and the work is not choosing who comes but meeting each one at the door, since even the sorrow that empties the house may be clearing it for something new (the “Guest House” passage of the Masnavi, Book V). This deck takes that hospitality literally and puts it on a bus: you are driving, the passengers arrive unbidden, and no one can be made to get off.\n\nEach passenger card has six layered sections, descending from the articulated voice toward the more-than-human web: Thoughts → Thinking → Perception → Sensing → Context → Mystery. You start where you always start — with what the passenger says — and the reading is a slow walk toward what was here before language got hold of it. Inspired by a passage in Vanessa Machado de Oliveira Andreotti's *Outgrowing Modernity* on the layered nature of awareness: what we articulate is a small fraction of what we think, what we think a fragment of what we perceive, and so on down toward the dynamic universe we are part of.\n\nFive tiers of passengers: familiar emotions from the Ekman–Keltner research lineage (Tier 1), parts-work passengers (Tier 2), Voice Dialogue inner selves (Tier 3), decolonial passengers carrying inherited material — modernity, ancestral patterns, the more-than-human web (Tier 4, inspired by *Hospicing Modernity* and the Gesturing Towards Decolonial Futures collective) — and, newest, three epistemic passengers about how anything reaches you as known at all: intuition, perception-as-prediction, and constructed emotion (Tier 5, in conversation with predictive processing, the theory of constructed emotion, and non-dual Śaiva tantra). The bus metaphor itself is long-standing in Acceptance & Commitment Therapy (Hayes, 1999).\n\n**The Four Mountains tier.** The deck's companion tier carries the Four Mountains — a Cree teaching of four life-stages from elder John Crier, shared with his permission through the Gesturing Towards Decolonial Futures collective (Vanessa Andreotti, with Cree knowledge keeper Cash Ahenakew) — paraphrased in the deck's own words and read best at its source: [decolonialfutures.net/portfolio/fourmountains](https://decolonialfutures.net/portfolio/fourmountains/). The parts-work framing of those cards is this deck's interpretive move, not the teaching itself; if John Crier or his community ask for revision or retirement, that request governs.\n\nLike every deck here: a mirror, not a command. The cards ask; you decide.",
-  "items": [
+  "nodes": [
     {
       "id": "joy",
       "name": "Joy",
@@ -966,7 +966,7 @@
         "About this tier": "The familiar Pixar/Inside Out emotions, drawn from the Ekman-Keltner research lineage. Culturally fluent — most users already know these archetypes intuitively. They make a low-friction intake layer for noticing what's moving.",
         "How to use it": "Start here if a familiar emotion is loud. Move to Tier 2 or 3 if 'who keeps making this feeling' becomes the more interesting question."
       },
-      "composite_of": [
+      "parts": [
         "joy",
         "sadness",
         "anger",
@@ -992,7 +992,7 @@
         "About this tier": "Generic parts-work passengers — Manager, Firefighter, Exile, Self-energy, Inner Critic. Common-language framing of insights from Internal Family Systems (Schwartz). 'IFS' is trademarked; this tier uses generic parts framing only.",
         "How to use it": "Use these when the emotional response feels structural — a part of you that always shows up under certain conditions, with a job and a history. If exile-level material arises, stop solo work and find a parts-work-trained therapist."
       },
-      "composite_of": [
+      "parts": [
         "manager",
         "firefighter",
         "exile",
@@ -1013,7 +1013,7 @@
         "About this tier": "Voice Dialogue passengers (Hal & Sidra Stone). Voice Dialogue is explicitly not trademarked. Pusher, Pleaser, Rule Maker, Vulnerable Self, Aware Ego — these are the inner selves most people meet first when they begin parts work.",
         "How to use it": "Use these when you can name the inner voice but not the emotion underneath. Voice Dialogue's gift is making the voices addressable."
       },
-      "composite_of": [
+      "parts": [
         "pusher",
         "pleaser",
         "rule-maker",
@@ -1034,7 +1034,7 @@
         "How to use it": "Use when the question is wider than individual psychology — when noticing patterns from bloodline, land, language, or system. These passengers point outward as much as inward. Each can be voiced; each carries material that is not only yours.",
         "Lineage": "Vanessa Andreotti & GTDF Collective. Source: decolonialfutures.net. Used here under CC-BY framing where applicable. Permission letter to GTDF pending."
       },
-      "composite_of": [
+      "parts": [
         "modernity-passenger",
         "denial-passenger",
         "ancestral-passenger",
@@ -1059,7 +1059,7 @@
         "How to use it (in study mode)": "Read with care. The Four Mountains is Indigenous teaching, not Western archetypes. Treat each Mountain as a life-stage on the developmental path, not as an interior passenger. The card-based interface here is a study tool, not a finalized public oracle. If John Crier or his community ask for these cards to be retired or revised, that is the operative authority.",
         "Original life-stages from John Crier": "Baby Mountain: infancy / early childhood — receiving unconditional regard, learning connection to the land. Warrior Mountain: adolescence / young adulthood — establishing boundaries, discovering one's unique gifts. Hunter/Provider Mountain: adulthood — using gifts to contribute to community, learning discernment. Elder Mountain: elderhood — guiding others through their rites of passage."
       },
-      "composite_of": [
+      "parts": [
         "baby-mountain",
         "warrior-mountain",
         "provider-mountain",
@@ -1080,7 +1080,7 @@
         "How to use it": "If one of these cards comes up in a spread, the deck is asking whether you can find this seat right now. Not whether you are this position (you aren't — it is a capacity, not a thing). Whether the seat is available, today, in this body. The seat is always there; sometimes the bus is too loud to find it.",
         "Note for the AI facilitator": "These three cards should not be voiced in the parts-work register. They are not passengers. They are positions from which to listen. If the AI is acting as facilitator (Voice Dialogue / IFS / parts-work style), do not speak as Self-Energy, the Aware Ego, or the Carriage Driver — those belong to the user."
       },
-      "composite_of": [
+      "parts": [
         "self-energy",
         "aware-ego",
         "carriage-driver"
@@ -1100,7 +1100,7 @@
         "How to use it": "Reach for this tier when the live question isn't 'what am I feeling' or 'which part is driving' but 'how do I know this is true' — when you notice you're certain and want to trace where the certainty came from before you act on it.",
         "Lineage": "Draws on three separate schools, each named as a tradition rather than a person, per this deck's naming rule: predictive processing / active inference (cognitive science — https://en.wikipedia.org/wiki/Predictive_coding), the Theory of Constructed Emotion (affective neuroscience — https://en.wikipedia.org/wiki/Theory_of_constructed_emotion), and the pratyabhijna ('recognition') teaching within non-dual Śaiva tantra (https://en.wikipedia.org/wiki/Kashmir_Shaivism). None of these is quoted directly; each is paraphrased in the deck's own words."
       },
-      "composite_of": [
+      "parts": [
         "the-intuition",
         "the-interface",
         "the-predictor"

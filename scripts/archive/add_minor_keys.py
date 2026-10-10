@@ -81,7 +81,7 @@ def main():
         slug = os.path.basename(os.path.dirname(gp))
         g = json.load(open(gp, encoding="utf-8"))
         added = 0
-        for it in g["items"]:
+        for it in g["nodes"]:
             md = it.get("metadata")
             if not md or not is_minor(md): continue
             cs = canon_suit(md, unmapped); cr = canon_rank(md, unmapped)
@@ -100,7 +100,7 @@ def main():
     for gp in files:
         slug = os.path.basename(os.path.dirname(gp))
         seen = collections.defaultdict(list)
-        for it in json.load(open(gp, encoding="utf-8"))["items"]:
+        for it in json.load(open(gp, encoding="utf-8"))["nodes"]:
             mk = (it.get("metadata") or {}).get("minor_key")
             if mk: seen[mk].append(it["id"])
         for mk, ids in seen.items():

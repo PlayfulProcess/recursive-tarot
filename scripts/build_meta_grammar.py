@@ -7,7 +7,7 @@ app feature — recursive.eco stays the simple renderer; the meta is a generated
 artifact produced here and rendered there. Re-run after editing decks/editorial.
 
 Output: tarot/all-decks-many-lenses/grammar.json (a self-contained grammar whose
-items are the cards + emergence nodes; composite_of carries the tree). Idempotent.
+items are the cards + emergence nodes; parts carries the tree). Idempotent.
 
 Structure (graceful — a card joins every axis it has data for):
   root-arcana  ->  Major Arcana (0-21 archetypes)  ->  cards (that major, all decks)
@@ -302,10 +302,10 @@ def build():
             print("  ! missing", slug); continue
         g = json.load(open(path, encoding="utf-8"))
         deck_meta[slug] = g.get("metadata") or {}
-        for ord_, it in enumerate(g.get("items", []), 1):
+        for ord_, it in enumerate(g.get("nodes", []), 1):
             # Only aggregate real L1 cards. Skip emergence/axis nodes (anything with
-            # composite_of, e.g. suit/keyword pills) so they don't leak in as bogus cards.
-            if it.get("composite_of") or it.get("category") in ("axis", "keyword-emergence", "overview"):
+            # parts, e.g. suit/keyword pills) so they don't leak in as bogus cards.
+            if it.get("parts") or it.get("category") in ("axis", "keyword-emergence", "overview"):
                 continue  # "overview" = the deck's cover/intro item, not a real card — don't leak it into the card tree
             m = it.get("metadata", {}) or {}
             name = it.get("name") or ""
@@ -396,7 +396,7 @@ def build():
     # L1 cards
     for c in cards:
         ed = c["ed"]
-        add({"id": c["cid"], "name": "%s — %s" % (c["name"], c["label"]), "level": 1, "category": "card",
+        add({"id": c["cid"], "name": "%s — %s" % (c["name"], c["label"]), "category": "card",
              "ref_preview": "study",
              "metadata": {k: v for k, v in {
                  # pivot_suit = the four minor suits + "Trumps" as a fifth (see the
@@ -408,7 +408,7 @@ def build():
                  "role": c["role"], "trump_number": c["trump_number"], "rank": c["pivot_rank"],
                  "order": c["order"], "function": c["function"],
                  "year": _year(ed["date"]) or _year(c["era"]),
-                 "source_deck": c["slug"], "source_item_id": c["src_item_id"],
+                 "source_deck": c["slug"], "source_node_id": c["src_item_id"],
                  "editorial": {"date": ed["date"], "maker": ed["maker"],
                                "patron": (None if ed["patron"] == "—" else ed["patron"]),
                                "context": ed["context"], "print": ed["print"], "orientation": ed["orientation"]},
@@ -427,9 +427,9 @@ def build():
     for slug, dk in DECKS.items():
         members = [c["cid"] for c in cards if c["slug"] == slug]
         if members:
-            add({"id": "deck-" + slug.replace("-",""), "name": dk["label"], "level": 2, "category": "deck",
+            add({"id": "deck-" + slug.replace("-",""), "name": dk["label"], "category": "deck",
                  "sections": {"What it is": "%s — %s. Every card in this deck." % (dk["label"], dk["ed"]["date"])},
-                 "composite_of": members})
+                 "parts": members})
     # By Age — one node per DISTINCT era label (id keyed on the full label, not
     # era_sort, so decks that share a sort bucket but differ in wording don't
     # collide into duplicate ids / duplicate pills). Ordered oldest-first by sort.
@@ -438,9 +438,9 @@ def build():
         slug = re.sub(r"[^a-z0-9]+", "-", ename.lower()).strip("-")
         return "era-%d-%s" % (es, slug)
     for es, ename in eras:
-        add({"id": era_id(es, ename), "name": ename, "level": 2, "category": "era",
+        add({"id": era_id(es, ename), "name": ename, "category": "era",
              "sections": {"What it is": "All cards from decks of this era: %s." % ename},
-             "composite_of": ids(lambda c, es=es, ename=ename: c["era_sort"] == es and c["era"] == ename)})
+             "parts": ids(lambda c, es=es, ename=ename: c["era_sort"] == es and c["era"] == ename)})
     # Within-suit ranks + suits + Minor
     suit_nodes = []
     for suit, so in sorted(SUIT_ORD.items(), key=lambda kv: kv[1]):
@@ -449,15 +449,15 @@ def build():
             members = ids(lambda c, suit=suit, r=r: c["suit"] == suit and c["rank"] == r)
             if members:
                 rid = "wsr-%s-%d" % (suit.lower(), r)
-                add({"id": rid, "name": "%s of %s (all decks)" % (RANK_NAMES[r], suit), "level": 3, "category": "rank",
+                add({"id": rid, "name": "%s of %s (all decks)" % (RANK_NAMES[r], suit), "category": "rank",
                      "sections": {"What it is": "The %s of %s across every deck." % (RANK_NAMES[r], suit)},
-                     "composite_of": members})
+                     "parts": members})
                 rank_nodes.append(rid)
         if rank_nodes:
             sid = "suit-" + suit.lower()
-            add({"id": sid, "name": suit, "level": 4, "category": "suit",
+            add({"id": sid, "name": suit, "category": "suit",
                  "sections": {"What it is": "The suit of %s (names normalized across traditions) — Ace through King across every deck." % suit},
-                 "composite_of": rank_nodes})
+                 "parts": rank_nodes})
             suit_nodes.append(sid)
     # Major archetypes + Major Arcana
     maj_nodes = []
@@ -469,17 +469,17 @@ def build():
             syn = TRUMP_SYNTHESIS.get(NUM_TO_KEY[n]) if n < len(NUM_TO_KEY) else None
             if syn:
                 secs["Across the decks"] = syn
-            add({"id": mid, "name": "%d — %s" % (n, MAJ_NAMES[n]), "level": 3, "category": "archetype",
-                 "sections": secs, "composite_of": members})
+            add({"id": mid, "name": "%d — %s" % (n, MAJ_NAMES[n]), "category": "archetype",
+                 "sections": secs, "parts": members})
             maj_nodes.append(mid)
     if maj_nodes:
-        add({"id": "arc-major", "name": "Major Arcana", "level": 4, "category": "arcana",
+        add({"id": "arc-major", "name": "Major Arcana", "category": "arcana",
              "sections": {"What it is": "The trumps, each composed of that archetype across every deck."},
-             "composite_of": maj_nodes})
+             "parts": maj_nodes})
     if suit_nodes:
-        add({"id": "arc-minor", "name": "Minor Arcana", "level": 5, "category": "arcana",
+        add({"id": "arc-minor", "name": "Minor Arcana", "category": "arcana",
              "sections": {"What it is": "The four suits, each composed of its ranks Ace–King across every deck."},
-             "composite_of": suit_nodes})
+             "parts": suit_nodes})
     # Cross-suit numerology
     xr_nodes = []
     for r in range(1, 15):
@@ -487,13 +487,13 @@ def build():
         if members:
             xid = "num-rank-%d" % r
             _plural = RANK_NAMES[r] + ("es" if RANK_NAMES[r][-1] in "sxz" else "s")
-            add({"id": xid, "name": _plural, "level": 3, "category": "rank-cross",
+            add({"id": xid, "name": _plural, "category": "rank-cross",
                  "sections": {"What it is": "Every %s across all four suits and every deck — cross-suit numerology." % RANK_NAMES[r]},
-                 "composite_of": members})
+                 "parts": members})
             xr_nodes.append(xid)
     # Historiography essay — the divination question, stated and weighed honestly.
     add({"id": "essay-divination-question", "name": "The Divination Question — and why the Inquisition doesn't explain the silence",
-         "level": 5, "category": "essay",
+         "category": "essay",
          "sections": {
             "The documented origin is a game": (
                 "Tarot appears in 1440s northern Italy (Milan, Ferrara, Bologna) as a trick-taking GAME: 21 "
@@ -533,22 +533,22 @@ def build():
 
     # Roots
     arc_children = [x for x in ("arc-major", "arc-minor") if any(i["id"] == x for i in items)]
-    add({"id": "root-arcana", "name": "The Tarot — by Arcana · Suit · Number", "level": 6, "category": "root",
+    add({"id": "root-arcana", "name": "The Tarot — by Arcana · Suit · Number", "category": "root",
          "sections": {"What it is": "The canonical tarot tree: Major Arcana by number, Minor Arcana → four suits → ranks Ace–King — every leaf gathered across all decks. See also the essay 'The Divination Question' for how this collection frames game-vs-divination."},
-         "composite_of": ["essay-divination-question"] + arc_children})
-    add({"id": "axis-deck", "name": "By Deck", "level": 4, "category": "axis",
+         "parts": ["essay-divination-question"] + arc_children})
+    add({"id": "axis-deck", "name": "By Deck", "category": "axis",
          "render_as": "pill-group", "lens": "genealogy",   # MULTI_LENS_PLAN §3: this axis renders as the descent DAG
          "sections": {"What it is": "Browse every card grouped by its source deck."},
-         "composite_of": ["deck-" + s.replace("-","") for s in DECKS if any(c["slug"] == s for c in cards)]})
-    add({"id": "axis-age", "name": "By Age", "level": 4, "category": "axis",
+         "parts": ["deck-" + s.replace("-","") for s in DECKS if any(c["slug"] == s for c in cards)]})
+    add({"id": "axis-age", "name": "By Age", "category": "axis",
          "render_as": "pill-group", "lens": "timeline",    # this axis renders as a year timeline
          "sections": {"What it is": "Decks grouped by era, oldest first."},
-         "composite_of": [era_id(es, ename) for es, ename in eras]})
+         "parts": [era_id(es, ename) for es, ename in eras]})
     if xr_nodes:
-        add({"id": "axis-number", "name": "By Rank", "level": 4, "category": "axis",
+        add({"id": "axis-number", "name": "By Rank", "category": "axis",
              "render_as": "pill-group", "lens": "pills",
              "sections": {"What it is": "Cross-suit numerology — every Ace, every Two … every King, gathered across all four suits and every deck. This is the *transpose* of 'The Tarot' tree: where that goes suit→rank (all the Coins together), this goes rank→suit (all the Aces together)."},
-             "composite_of": xr_nodes})
+             "parts": xr_nodes})
 
     # By Lineage — Dummett trump-order genealogy (STRUCTURAL: the real derivation branches).
     lin_nodes = []
@@ -556,14 +556,14 @@ def build():
         members = ids(lambda c, o=o: c["order"] == o)
         if members:
             lid = "lineage-" + o
-            add({"id": lid, "name": ORDER_LABEL[o], "level": 3, "category": "lineage",
+            add({"id": lid, "name": ORDER_LABEL[o], "category": "lineage",
                  "sections": {"What it is": "Decks of the %s, gathered across every card." % ORDER_LABEL[o]},
-                 "composite_of": members})
+                 "parts": members})
             lin_nodes.append(lid)
     if lin_nodes:
-        add({"id": "axis-lineage", "name": "By Order (A · B · C)", "level": 4, "category": "axis",
+        add({"id": "axis-lineage", "name": "By Order (A · B · C)", "category": "axis",
              "sections": {"What it is": "Michael Dummett's three trump-orders — A (Florence/Bologna), B (Ferrara), C (Milan→Marseille) — plus the post-1781 occult turn that left the C-order line. The orders are the closest thing to a 'family tree' the early decks have: which city's sequence a deck follows is its lineage."},
-             "composite_of": lin_nodes})
+             "parts": lin_nodes})
 
     # By Function — game / divination / esoteric (STRUCTURAL: documented historical use).
     fn_nodes = []
@@ -571,14 +571,14 @@ def build():
         members = ids(lambda c, fn=fn: c["function"] == fn)
         if members:
             fid = "function-" + fn
-            add({"id": fid, "name": FUNC_LABEL[fn], "level": 3, "category": "function",
+            add({"id": fid, "name": FUNC_LABEL[fn], "category": "function",
                  "sections": {"What it is": "Cards from decks whose documented use was: %s." % FUNC_LABEL[fn]},
-                 "composite_of": members})
+                 "parts": members})
             fn_nodes.append(fid)
     if fn_nodes:
-        add({"id": "axis-function", "name": "By Function", "level": 4, "category": "axis",
+        add({"id": "axis-function", "name": "By Function", "category": "axis",
              "sections": {"What it is": "Game vs divination vs esoteric — documented use, which only turns divinatory after 1781."},
-             "composite_of": fn_nodes})
+             "parts": fn_nodes})
 
     # render_as: the orthogonal axes become faceted filter pills in the viewer
     # (the tree keeps the arcana->suit->rank spine). Mirrors the Library HashtagFilter.
@@ -674,7 +674,7 @@ def build():
         "_generated": True, "_do_not_hand_edit": True, "_built_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "_built_by": "scripts/build_meta_grammar.py",
         "_decks": deck_summary,
-        "items": items,
+        "nodes": items,
     }
     # Emergence thumbnails: every composite node (deck / era / lineage / rank / axis)
     # inherits a representative image from a descendant card, so nothing renders blank.
@@ -686,12 +686,12 @@ def build():
         if not it: return None
         img = it.get("image_url") or (it.get("metadata") or {}).get("image_url")
         if img: return img
-        for cid in (it.get("composite_of") or []):
+        for cid in (it.get("parts") or []):
             r = first_img(cid, seen)
             if r: return r
         return None
     for it in items:
-        if it.get("composite_of") and not (it.get("image_url") or (it.get("metadata") or {}).get("image_url")):
+        if it.get("parts") and not (it.get("image_url") or (it.get("metadata") or {}).get("image_url")):
             img = first_img(it["id"], set())
             if img: it["image_url"] = img
 
@@ -714,8 +714,8 @@ def build():
     nminor = sum(1 for c in cards if c["suit"])
     nuncl = sum(1 for c in cards if c["major"] is None and not c["suit"])
     idset = {i["id"] for i in items}
-    dangling = [r for i in items for r in i.get("composite_of", []) if r not in idset]
-    print("decks=%d cards=%d (major=%d minor=%d unclassified=%d) items=%d dangling=%d" % (
+    dangling = [r for i in items for r in i.get("parts", []) if r not in idset]
+    print("decks=%d cards=%d (major=%d minor=%d unclassified=%d) nodes=%d dangling=%d" % (
         len(DECKS), ncards, nmajor, nminor, nuncl, len(items), len(dangling)))
     print("wrote", os.path.join(out_dir, "grammar.json"))
 

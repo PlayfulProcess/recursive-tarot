@@ -76,7 +76,7 @@
         <a class="img" href="../viewers/cards.html?src=${src}">${g.cover_image_url?`<img loading="lazy" src="${esc(g.cover_image_url)}" alt="${esc(name)}">`:''}</a>
         <div class="body">
           <h2>${esc(name)}</h2>
-          <div class="meta"><span class="badge ${full?'b-bleed':'b-border'}">${full?'full art':'bordered'}</span>${g.items||'?'} cards · ${esc(p.note||'')}</div>
+          <div class="meta"><span class="badge ${full?'b-bleed':'b-border'}">${full?'full art':'bordered'}</span>${g.nodes||'?'} cards · ${esc(p.note||'')}</div>
           <div class="row">
             <a class="btn buy ${live?'':'soon'}" href="${live?esc(p.product_url):'#'}" ${live?'target="_blank" rel="noopener"':''}>${live?'Buy printed ↗':'Coming soon (proofing)'}</a>
             <a class="btn ghost" href="${BOOKLET_URL[slug]||('print-viewer.html?src='+src+'&layout=booklet')}" title="Free companion booklet"><rt-icon name="book"></rt-icon> Booklet</a>

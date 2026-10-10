@@ -3,7 +3,7 @@
   1. Repo-relative research pointers (`research/.../x.md`) render as dead text / 404s.
      Convert them to real GitHub blob links so they resolve and open in a new tab.
   2. Items whose note says "(vs. its parent)" but carry no cross-link pill: add the
-     sanctioned source_deck/source_item_id/deck pill pointing at the Marseille card
+     sanctioned source_deck/source_node_id/deck pill pointing at the Marseille card
      the note explicitly compares to (resolved by trump_key, then archetype).
 Only the Marseille-comparison decks are touched for (2); every note in them names
 "the Marseille …" as the referent, so the link points at exactly what the text cites.
@@ -18,7 +18,7 @@ PARENT_DECKS = ["paris-anonymous-tarot", "tarot-de-besancon", "tarocchino-bologn
 # Marseille Conver: the parent the "vs. its parent" notes compare against.
 mc = json.load(open(os.path.join(TAROT, "tarot-de-marseille-conver", "grammar.json"), encoding="utf-8"))
 tk2id, arch2id = {}, {}
-for it in mc["items"]:
+for it in mc["nodes"]:
     md = it.get("metadata") or {}
     if md.get("trump_key"):
         tk2id[md["trump_key"]] = it["id"]
@@ -50,7 +50,7 @@ for f in glob.glob(os.path.join(TAROT, "*", "grammar.json")):
         nd = fix_research_links(g["description"])
         if nd != g["description"]:
             g["description"] = nd; changed = True; links_fixed += 1
-    for it in g.get("items", []):
+    for it in g.get("nodes", []):
         secs = it.get("sections") or {}
         for k, v in list(secs.items()):
             if isinstance(v, str) and "research/" in v and ".md" in v:
@@ -60,7 +60,7 @@ for f in glob.glob(os.path.join(TAROT, "*", "grammar.json")):
 
     # (2) parent pill — only the Marseille-comparison decks, only orphans
     if slug in PARENT_DECKS:
-        for it in g.get("items", []):
+        for it in g.get("nodes", []):
             md = it.get("metadata") or {}
             if md.get("source_deck"):
                 continue
@@ -71,7 +71,7 @@ for f in glob.glob(os.path.join(TAROT, "*", "grammar.json")):
                 unresolved.append("%s/%s" % (slug, it["id"]))
                 continue
             md["source_deck"] = "tarot-de-marseille-conver"
-            md["source_item_id"] = pid
+            md["source_node_id"] = pid
             md["deck"] = "Tarot de Marseille"
             it["metadata"] = md
             changed = True; pills_added += 1

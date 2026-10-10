@@ -45,7 +45,7 @@ def main():
     for g in decks:
         try: dg = json.load(open(os.path.join(T, g["slug"], "grammar.json")))
         except Exception: continue
-        for it in dg["items"]:
+        for it in dg["nodes"]:
             md = it.get("metadata") or {}
             if md.get("arcana") != "minor" and not md.get("suit") and "card:" not in str(md.get("archetype","")):
                 continue

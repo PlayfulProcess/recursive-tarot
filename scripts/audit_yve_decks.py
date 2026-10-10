@@ -106,7 +106,7 @@ out = {}
 for deck in DECKS:
     g = json.load(open(os.path.join(REPO, 'tarot', deck, 'grammar.json'), encoding='utf-8'))
     rows = []
-    for it in g['items']:
+    for it in g['nodes']:
         md = it.get('metadata') or {}
         ours = identity(' '.join(str(x) for x in (it.get('name'), md.get('italian_name'), md.get('traditional_name'), md.get('lenormand_number'), md.get('rank'), md.get('suit')) if x))
         for sec, val in (it.get('sections') or {}).items():

@@ -28,11 +28,10 @@
     "editorial"
   ],
   "description": "# Books Behind the Tarot\n\nA grammar of the **sources** behind the cards — the occult-revival classics, the foundational texts, and the modern scholarship — each with **our editorial reading**: where it's reliable and where it overreaches. The twin of *People & Institutions of Tarot*. We don't host anything: **public-domain** works link to a free full text; **in-copyright** works are cited and linked, never reproduced.\n",
-  "items": [
+  "nodes": [
     {
       "id": "book-agrippa-occult-philosophy",
       "name": "Three Books of Occult Philosophy — Heinrich Cornelius Agrippa (1531 (Eng. 1651))",
-      "level": 1,
       "category": "book",
       "sort_order": 0,
       "keywords": [
@@ -60,7 +59,6 @@
     {
       "id": "book-court-de-gebelin-monde-primitif",
       "name": "Le Monde Primitif, vol. VIII — Antoine Court de Gébelin (1781)",
-      "level": 1,
       "category": "book",
       "sort_order": 1,
       "keywords": [
@@ -75,7 +73,7 @@
         "url": "https://en.wikipedia.org/wiki/Antoine_Court_de_G%C3%A9belin",
         "image_credit": "Portrait via Wikimedia Commons (public domain)",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-court-de-gebelin",
+        "source_node_id": "person-court-de-gebelin",
         "deck": "People & Institutions"
       },
       "sections": {
@@ -90,7 +88,6 @@
     {
       "id": "book-etteilla-cartomancy",
       "name": "Etteilla's cartomancy works — Jean-Baptiste Alliette (Etteilla) (1780s–90s)",
-      "level": 1,
       "category": "book",
       "sort_order": 2,
       "keywords": [
@@ -105,7 +102,7 @@
         "url": "https://en.wikipedia.org/wiki/Etteilla",
         "image_credit": "Portrait via Wikimedia Commons (public domain)",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-etteilla",
+        "source_node_id": "person-etteilla",
         "deck": "People & Institutions"
       },
       "sections": {
@@ -120,7 +117,6 @@
     {
       "id": "book-levi-dogme-et-rituel",
       "name": "Dogme et Rituel de la Haute Magie — Éliphas Lévi (1854–56)",
-      "level": 1,
       "category": "book",
       "sort_order": 3,
       "keywords": [
@@ -136,7 +132,7 @@
         "fulltext_url": "https://sacred-texts.com/eso/tm/index.htm",
         "image_credit": "Portrait via Wikimedia Commons (public domain)",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-eliphas-levi",
+        "source_node_id": "person-eliphas-levi",
         "deck": "People & Institutions"
       },
       "sections": {
@@ -151,7 +147,6 @@
     {
       "id": "book-mathers-book-t",
       "name": "“Book T” — The Tarot (Golden Dawn) — S. L. MacGregor Mathers (Hermetic Order of the Golden Dawn) (c. 1888)",
-      "level": 1,
       "category": "book",
       "sort_order": 4,
       "keywords": [
@@ -166,7 +161,7 @@
         "url": "https://en.wikipedia.org/wiki/Hermetic_Order_of_the_Golden_Dawn",
         "image_credit": "Portrait via Wikimedia Commons (public domain)",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-macgregor-mathers",
+        "source_node_id": "person-macgregor-mathers",
         "deck": "People & Institutions"
       },
       "sections": {
@@ -181,7 +176,6 @@
     {
       "id": "book-papus-tarot-bohemians",
       "name": "Le Tarot des Bohémiens — Papus (Gérard Encausse) (1889)",
-      "level": 1,
       "category": "book",
       "sort_order": 5,
       "keywords": [
@@ -209,7 +203,6 @@
     {
       "id": "book-waite-pictorial-key",
       "name": "The Pictorial Key to the Tarot — Arthur Edward Waite (1911)",
-      "level": 1,
       "category": "book",
       "sort_order": 6,
       "keywords": [
@@ -225,7 +218,7 @@
         "fulltext_url": "https://sacred-texts.com/tarot/pkt/index.htm",
         "image_credit": "Portrait via Wikimedia Commons (public domain)",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-a-e-waite",
+        "source_node_id": "person-a-e-waite",
         "deck": "People & Institutions"
       },
       "sections": {
@@ -240,7 +233,6 @@
     {
       "id": "book-dummett-game-of-tarot",
       "name": "The Game of Tarot — Michael Dummett (1980)",
-      "level": 1,
       "category": "book",
       "sort_order": 7,
       "keywords": [
@@ -254,7 +246,7 @@
         "copyright": "in-copyright",
         "url": "https://en.wikipedia.org/wiki/Michael_Dummett",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-michael-dummett",
+        "source_node_id": "person-michael-dummett",
         "deck": "People & Institutions"
       },
       "sections": {
@@ -268,7 +260,6 @@
     {
       "id": "book-wicked-pack-of-cards",
       "name": "A Wicked Pack of Cards — Ronald Decker, Thierry Depaulis & Michael Dummett (1996)",
-      "level": 1,
       "category": "book",
       "sort_order": 8,
       "keywords": [
@@ -282,7 +273,7 @@
         "copyright": "in-copyright",
         "url": "https://en.wikipedia.org/wiki/Michael_Dummett",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-michael-dummett",
+        "source_node_id": "person-michael-dummett",
         "deck": "People & Institutions"
       },
       "sections": {
@@ -296,7 +287,6 @@
     {
       "id": "book-farley-cultural-history",
       "name": "A Cultural History of Tarot — Helen Farley (2009)",
-      "level": 1,
       "category": "book",
       "sort_order": 9,
       "keywords": [
@@ -324,7 +314,6 @@
     {
       "id": "book-crowley-book-of-thoth",
       "name": "The Book of Thoth — Aleister Crowley (1944)",
-      "level": 1,
       "category": "book",
       "sort_order": 10,
       "keywords": [
@@ -351,7 +340,6 @@
     {
       "id": "book-place-tarot-history",
       "name": "The Tarot: History, Symbolism, and Divination — Robert M. Place (2005)",
-      "level": 1,
       "category": "book",
       "sort_order": 11,
       "keywords": [
@@ -376,7 +364,6 @@
     {
       "id": "book-kaplan-encyclopedia",
       "name": "The Encyclopedia of Tarot (Vols I–IV) — Stuart R. Kaplan (1978–2005)",
-      "level": 1,
       "category": "book",
       "sort_order": 12,
       "keywords": [
@@ -389,7 +376,7 @@
         "kind": "scholarship",
         "copyright": "in-copyright",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-stuart-kaplan",
+        "source_node_id": "person-stuart-kaplan",
         "deck": "People & Institutions"
       },
       "sections": {
@@ -403,7 +390,6 @@
     {
       "id": "book-decker-dummett-occult-tarot",
       "name": "A History of the Occult Tarot — Ronald Decker & Michael Dummett (2002)",
-      "level": 1,
       "category": "book",
       "sort_order": 13,
       "keywords": [
@@ -417,7 +403,7 @@
         "copyright": "in-copyright",
         "url": "https://en.wikipedia.org/wiki/Michael_Dummett",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-michael-dummett",
+        "source_node_id": "person-michael-dummett",
         "deck": "People & Institutions"
       },
       "sections": {
@@ -431,7 +417,6 @@
     {
       "id": "book-dummett-mcleod-games",
       "name": "A History of Games Played with the Tarot Pack — Michael Dummett & John McLeod (2004)",
-      "level": 1,
       "category": "book",
       "sort_order": 14,
       "keywords": [
@@ -445,7 +430,7 @@
         "copyright": "in-copyright",
         "url": "https://en.wikipedia.org/wiki/Michael_Dummett",
         "source_deck": "people-of-tarot",
-        "source_item_id": "person-michael-dummett",
+        "source_node_id": "person-michael-dummett",
         "deck": "People & Institutions"
       },
       "sections": {
@@ -459,7 +444,6 @@
     {
       "id": "book-katz-goodwin-secrets-rws",
       "name": "Secrets of the Waite-Smith Tarot — Marcus Katz & Tali Goodwin (2015)",
-      "level": 1,
       "category": "book",
       "sort_order": 15,
       "keywords": [
@@ -483,7 +467,6 @@
     {
       "id": "book-hundley-library-esoterica",
       "name": "Tarot: The Library of Esoterica — Jessica Hundley (ed.) (2020)",
-      "level": 1,
       "category": "book",
       "sort_order": 16,
       "keywords": [
@@ -507,7 +490,6 @@
     {
       "id": "book-regardie-complete-gd",
       "name": "The Complete Golden Dawn System of Magic — Israel Regardie (1984)",
-      "level": 1,
       "category": "book",
       "sort_order": 17,
       "keywords": [
@@ -532,7 +514,6 @@
     {
       "id": "book-fauconnier-turner-way-we-think",
       "name": "The Way We Think: Conceptual Blending and the Mind's Hidden Complexities — Gilles Fauconnier & Mark Turner (2002)",
-      "level": 1,
       "category": "book",
       "sort_order": 18,
       "keywords": [
@@ -557,7 +538,6 @@
     {
       "id": "book-forer-personal-validation",
       "name": "The Fallacy of Personal Validation: A Classroom Demonstration of Gullibility — Bertram R. Forer (1949)",
-      "level": 1,
       "category": "book",
       "sort_order": 19,
       "keywords": [
@@ -581,7 +561,6 @@
     {
       "id": "book-rowland-cold-reading",
       "name": "The Full Facts Book of Cold Reading — Ian Rowland (1998)",
-      "level": 1,
       "category": "book",
       "sort_order": 20,
       "keywords": [
@@ -605,7 +584,6 @@
     {
       "id": "book-hyman-cold-reading",
       "name": "Cold Reading: How to Convince Strangers That You Know All About Them — Ray Hyman (1977)",
-      "level": 1,
       "category": "book",
       "sort_order": 21,
       "keywords": [
@@ -629,7 +607,6 @@
     {
       "id": "book-nichols-jung-and-tarot",
       "name": "Jung and Tarot: An Archetypal Journey — Sallie Nichols (1980)",
-      "level": 1,
       "category": "book",
       "sort_order": 22,
       "keywords": [
@@ -653,7 +630,6 @@
     {
       "id": "book-jung-synchronicity",
       "name": "Synchronicity: An Acausal Connecting Principle — C. G. Jung (1952)",
-      "level": 1,
       "category": "book",
       "sort_order": 23,
       "keywords": [
@@ -678,7 +654,6 @@
     {
       "id": "book-white-epston-narrative",
       "name": "Narrative Means to Therapeutic Ends — Michael White & David Epston (1990)",
-      "level": 1,
       "category": "book",
       "sort_order": 24,
       "keywords": [
@@ -702,7 +677,6 @@
     {
       "id": "lens-history",
       "name": "Lens — History & Games",
-      "level": 2,
       "category": "lens",
       "sort_order": 25,
       "keywords": [
@@ -721,7 +695,6 @@
     {
       "id": "lens-divination",
       "name": "Lens — Divination & the Occult Revival",
-      "level": 2,
       "category": "lens",
       "sort_order": 26,
       "keywords": [
@@ -740,7 +713,6 @@
     {
       "id": "lens-science",
       "name": "Lens — Science & Skepticism: why a reading seems to work",
-      "level": 2,
       "category": "lens",
       "sort_order": 27,
       "keywords": [
@@ -759,7 +731,6 @@
     {
       "id": "lens-psychology",
       "name": "Lens — Psychology & Meaning-Making",
-      "level": 2,
       "category": "lens",
       "sort_order": 28,
       "keywords": [
@@ -778,7 +749,6 @@
     {
       "id": "lens-mythology",
       "name": "Lens — Mythology & Symbol",
-      "level": 2,
       "category": "lens",
       "sort_order": 29,
       "keywords": [

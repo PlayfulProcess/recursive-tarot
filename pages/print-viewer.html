@@ -532,7 +532,7 @@
             t = t.replace(/\n/g, '<br>');
             return t;
         }
-        function getItems() { return printData ? (printData.items || printData.cards || printData.hexagrams || []) : []; }
+        function getItems() { return printData ? (printData.nodes || printData.cards || printData.hexagrams || []) : []; }
         function getGrammarName() { return (printData && printData.name) || 'Grammar'; }
 
         function getCardDims(cardSize) {
@@ -578,7 +578,7 @@
         }
 
         function filterItems(items) {
-            return items.filter(function(it) { return !it.composite_of || !it.composite_of.length; });
+            return items.filter(function(it) { return !it.parts || !it.parts.length; });
         }
 
         function pageDiv(cls, landscape) {
@@ -788,7 +788,7 @@
         async function buildBuyPanel() {
             var slug = (PRINT_SRC.match(/tarot\/([^\/]+)\/grammar/) || [])[1];
             if (!slug || slug === 'all-decks-many-lenses') return;
-            var cards = getItems().filter(function (it) { return (!it.composite_of || !it.composite_of.length) && it.category !== 'axis' && it.category !== 'keyword-emergence'; });
+            var cards = getItems().filter(function (it) { return (!it.parts || !it.parts.length) && it.category !== 'axis' && it.category !== 'keyword-emergence'; });
             var imaged = cards.filter(function (c) { return c.image_url || (c.metadata || {}).image_url; });
             var withP = cards.filter(function (c) { return c.metadata && c.metadata.print; });
             var ready = withP.filter(function (c) { return c.metadata.print.dpi_ready; }).length;
@@ -830,7 +830,7 @@
         async function populateBacks(deck) {
             var wrap = document.getElementById('buy-back-wrap'), sel = document.getElementById('buy-back');
             if (!sel) return;
-            try { var g = await (await fetch('../print/card-backs.json')).json(); BACKS = g.items || []; } catch (e) { return; }
+            try { var g = await (await fetch('../print/card-backs.json')).json(); BACKS = g.nodes || []; } catch (e) { return; }
             if (!BACKS.length) return;
             sel.innerHTML = BACKS.map(function (b) {
                 var u = b.image_url || (b.metadata || {}).image_url;

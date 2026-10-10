@@ -67,7 +67,7 @@ def main():
             "name": g.get("name"),
             "type": g.get("grammar_type"),
             "default_preview": g.get("default_preview"),
-            "items": len(g.get("items", [])),
+            "nodes": len(g.get("nodes", [])),
             "cover_image_url": g.get("cover_image_url"),
             "blurb": blurb_of(g),
         }

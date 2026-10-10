@@ -62,11 +62,10 @@
     "year_label": "c. 1450"
   },
   "_source": "Yale Beinecke / Cary Collection of Playing Cards (PLAYING CARDS GEN 966), open access. Credit: Yale University Library.",
-  "items": [
+  "nodes": [
     {
       "id": "card-01",
       "name": "King of Swords",
-      "level": 1,
       "category": "court",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c01.jpg",
       "metadata": {
@@ -92,7 +91,6 @@
     {
       "id": "card-03",
       "name": "Queen of Swords",
-      "level": 1,
       "category": "court",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c03.jpg",
       "metadata": {
@@ -118,7 +116,6 @@
     {
       "id": "card-05",
       "name": "Cavalier of Swords",
-      "level": 1,
       "category": "court",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c05.jpg",
       "metadata": {
@@ -144,7 +141,6 @@
     {
       "id": "card-07",
       "name": "King of Batons",
-      "level": 1,
       "category": "court",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c07.jpg",
       "metadata": {
@@ -170,7 +166,6 @@
     {
       "id": "card-09",
       "name": "Cavalier of Batons",
-      "level": 1,
       "category": "court",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c09.jpg",
       "metadata": {
@@ -196,7 +191,6 @@
     {
       "id": "card-11",
       "name": "Jack of Batons",
-      "level": 1,
       "category": "court",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c11.jpg",
       "metadata": {
@@ -222,7 +216,6 @@
     {
       "id": "card-13",
       "name": "King of Coins",
-      "level": 1,
       "category": "court",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c13.jpg",
       "metadata": {
@@ -248,7 +241,6 @@
     {
       "id": "card-15",
       "name": "Queen of Cups",
-      "level": 1,
       "category": "court",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c15.jpg",
       "metadata": {
@@ -274,7 +266,6 @@
     {
       "id": "card-17",
       "name": "Il Bagatto (The Magician)",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c17.jpg",
       "metadata": {
@@ -300,7 +291,6 @@
     {
       "id": "card-19",
       "name": "Il Papa (The Pope)",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c19.jpg",
       "metadata": {
@@ -326,7 +316,6 @@
     {
       "id": "card-21",
       "name": "Temperance",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c21.jpg",
       "metadata": {
@@ -352,7 +341,6 @@
     {
       "id": "card-23",
       "name": "The Star",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c23.jpg",
       "metadata": {
@@ -378,7 +366,6 @@
     {
       "id": "card-25",
       "name": "The Moon",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c25.jpg",
       "metadata": {
@@ -404,7 +391,6 @@
     {
       "id": "card-27",
       "name": "The Sun",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c27.jpg",
       "metadata": {
@@ -430,7 +416,6 @@
     {
       "id": "card-29",
       "name": "The World",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c29.jpg",
       "metadata": {
@@ -456,7 +441,6 @@
     {
       "id": "card-31",
       "name": "Il Matto (The Fool)",
-      "level": 1,
       "category": "trump",
       "image_url": "https://tarot.recursive.eco/tarot/este-tarot/images/c31.jpg",
       "metadata": {
@@ -482,10 +466,9 @@
     {
       "id": "axis-trumps",
       "name": "Surviving Trumps (8)",
-      "level": 3,
       "category": "axis",
       "render_as": "pill-group",
-      "composite_of": [
+      "parts": [
         "card-17",
         "card-19",
         "card-21",
@@ -507,10 +490,9 @@
     {
       "id": "axis-courts",
       "name": "Surviving Court Cards (8)",
-      "level": 3,
       "category": "axis",
       "render_as": "pill-group",
-      "composite_of": [
+      "parts": [
         "card-01",
         "card-03",
         "card-05",

@@ -79,7 +79,7 @@ def migrate():
             "branch": None if branch == "_meta" else branch,
             "is_meta": branch == "_meta",
             "default_preview": g.get("default_preview"),
-            "items": len(g.get("items", [])),
+            "nodes": len(g.get("nodes", [])),
             "cover_image_url": g.get("cover_image_url"),
             "blurb": blurb,
             "path": f"tarot/{slug}/grammar.json",
@@ -105,7 +105,7 @@ def migrate():
     json.dump(collection, open(os.path.join(OUT, "_collection.json"), "w", encoding="utf-8"),
               indent=2, ensure_ascii=False)
 
-    n_cards = sum(gi["items"] for gi in grammars_index)
+    n_cards = sum(gi["nodes"] for gi in grammars_index)
     print(f"Migrated {len(grammars_index)} grammars ({n_cards} items) into {OUT}")
     print(f"Wrote {os.path.join(OUT, '_collection.json')} with {len(branch_index)} branches")
 

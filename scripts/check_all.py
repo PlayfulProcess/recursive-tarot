@@ -4,8 +4,8 @@
   python3 scripts/check_all.py
 
 Checks:
-  1. every tarot/*/grammar.json is valid JSON with name + items[];
-  2. composite_of references resolve within each grammar (no dangling);
+  1. every tarot/*/grammar.json is valid JSON with name + nodes[];
+  2. parts references resolve within each grammar (no dangling);
   3. no mojibake — no UTF-8 text that was decoded as Latin-1/CP1252 anywhere;
   4. people dossiers (research/people/*.md) have the frontmatter the generator needs;
   5. rebuilds people + meta grammars and asserts the meta reports dangling=0,
@@ -57,15 +57,15 @@ for path in sorted(glob.glob(os.path.join(TAROT, "*", "grammar.json"))):
         continue
     if not g.get("name"):
         errors.append(f"{slug}: missing name")
-    items = g.get("items")
+    items = g.get("nodes")
     if not isinstance(items, list) or not items:
-        errors.append(f"{slug}: items[] missing/empty")
+        errors.append(f"{slug}: nodes[] missing/empty")
         continue
     ids = {it.get("id") for it in items}
     for it in items:
-        for c in it.get("composite_of", []) or []:
+        for c in it.get("parts", []) or []:
             if c not in ids:
-                errors.append(f"{slug}: dangling composite_of '{c}' in item '{it.get('id')}'")
+                errors.append(f"{slug}: dangling parts '{c}' in node '{it.get('id')}'")
 
 # 2b — the genealogy tree (tree-of-tarot): every deck node sits in exactly one branch,
 # that branch is the one its metadata.branch names, it has a numeric metadata.year,
@@ -73,12 +73,21 @@ for path in sorted(glob.glob(os.path.join(TAROT, "*", "grammar.json"))):
 # these (Oct 7 2026: three nodes outside every branch lost 8 lines of descent).
 TREE = os.path.join(TAROT, "tree-of-tarot", "grammar.json")
 if os.path.exists(TREE):
-    t_items = json.load(open(TREE, encoding="utf-8")).get("items", [])
+    t_items = json.load(open(TREE, encoding="utf-8")).get("nodes", [])
     t_ids = {it["id"] for it in t_items}
+    t_by_id = {it["id"]: it for it in t_items}
+
+    def node_depth(node, seen=()):
+        """Depth from parts: a node with no parts is 1, otherwise 1 + its deepest part."""
+        parts = node.get("parts") or []
+        if not parts or node["id"] in seen:
+            return 1
+        return max([1] + [1 + node_depth(t_by_id[c], seen + (node["id"],)) for c in parts if c in t_by_id])
+
     holder = {}
     for it in t_items:
-        if it.get("level") == 2:
-            for c in it.get("composite_of", []) or []:
+        if node_depth(it) == 2:        # a branch: its parts are the deck nodes
+            for c in it.get("parts", []) or []:
                 holder.setdefault(c, []).append(it["id"])
     for it in t_items:
         if not it["id"].startswith("deck-"):

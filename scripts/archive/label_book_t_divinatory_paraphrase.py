@@ -59,8 +59,8 @@ def main():
     missing_section = []
     word_count_failures = []
 
-    for item in grammar.get("items", []):
-        if item.get("level") != 1:
+    for item in grammar.get("nodes", []):
+        if item.get("parts"):
             continue
         cards += 1
         sections = item.get("sections")

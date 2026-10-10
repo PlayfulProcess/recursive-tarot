@@ -131,8 +131,8 @@ _DECK_CACHE = {}
 
 def deck_label_and_target(slug):
     """Short human label + a real item id to deep-link to, for a person->deck pill.
-    The pill needs a source_item_id that exists in the target grammar; we prefer the
-    first level-1 card, falling back to the first item. Label = name before the dash."""
+    The pill needs a source_node_id that exists in the target grammar; we prefer the
+    first card (a node with no parts), falling back to the first item. Label = name before the dash."""
     if slug in _DECK_CACHE:
         return _DECK_CACHE[slug]
     path = os.path.join(TAROT_DIR, slug, "grammar.json")
@@ -140,9 +140,9 @@ def deck_label_and_target(slug):
     try:
         g = json.load(open(path, encoding="utf-8"))
         label = re.split(r"\s[—–-]\s", g.get("name", slug))[0].strip() or slug
-        items = g.get("items", []) or []
+        items = g.get("nodes", []) or []
         for it in items:
-            if it.get("level") == 1 and it.get("id"):
+            if not it.get("parts") and it.get("id"):
                 target = it["id"]
                 break
         if not target and items:
@@ -157,25 +157,25 @@ def make_pill(fm, decks):
     """One cross-link pill per person, in priority order:
        1. book:  -> Books Behind the Tarot (a real book-* item)
        2. features_cards: -> the first specific card that features them
-       3. made:  -> the deck they made (first level-1 card as the landing item)
-    Returns the three pill keys (source_deck/source_item_id/deck) or {}."""
+       3. made:  -> the deck they made (its first card as the landing item)
+    Returns the three pill keys (source_deck/source_node_id/deck) or {}."""
     book = fm.get("book")
     if book:
         book_id = book if str(book).startswith("book-") else "book-" + str(book)
-        return {"source_deck": "books-of-tarot", "source_item_id": book_id,
+        return {"source_deck": "books-of-tarot", "source_node_id": book_id,
                 "deck": "Books Behind the Tarot"}
     feats = fm.get("features_cards") or []
     if feats and ":" in str(feats[0]):
         d, _, card = str(feats[0]).partition(":")
         if d in decks:
             label, _t = deck_label_and_target(d)
-            return {"source_deck": d, "source_item_id": card, "deck": label}
+            return {"source_deck": d, "source_node_id": card, "deck": label}
     made = fm.get("made") or []
     for slug in made:
         if slug in decks:
             label, target = deck_label_and_target(slug)
             if target:
-                return {"source_deck": slug, "source_item_id": target, "deck": label}
+                return {"source_deck": slug, "source_node_id": target, "deck": label}
     return {}
 
 
@@ -238,7 +238,6 @@ def build():
         item = {
             "id": leaf_id,
             "name": fm.get("title", fm["id"]),
-            "level": 1,
             "category": fm.get("type", "person"),
             "sort_order": sort_i,
             "keywords": [r for r in fm.get("roles", [])] + [fm.get("role_group")],
@@ -258,10 +257,9 @@ def build():
         items.append({
             "id": gid,
             "name": label,
-            "level": 2,
             "category": "role-group",
             "sort_order": 100 + gsort,
-            "composite_of": members,
+            "parts": members,
             "sections": {"What this groups": f"{len(members)} {label.lower()} catalogued in this collection."},
         })
         root_children.append(gid)
@@ -269,10 +267,9 @@ def build():
     items.append({
         "id": "root-people-of-tarot",
         "name": "The Hands Behind the Cards",
-        "level": 3,
         "category": "root",
         "sort_order": 999,
-        "composite_of": root_children,
+        "parts": root_children,
         "sections": {"What it is": "Every person and institution that made, paid for, reframed, printed, or catalogued the decks in this collection — generated from the research/people dossiers."},
     })
 
@@ -296,11 +293,11 @@ def build():
         "tags": ["people", "history", "tarot", "biography", "institutions"],
         "is_published": True,
         "bibliography": BIBLIOGRAPHY,
-        "items": items,
+        "nodes": items,
     }
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump(grammar, open(OUT, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
-    n_people = sum(1 for it in items if it.get("level") == 1)
+    n_people = sum(1 for it in items if not it.get("parts"))
     print(f"people={n_people} groups={len(root_children)} items={len(items)} -> {OUT}")
     for w in warnings:
         print("  WARN:", w)

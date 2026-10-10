@@ -21,7 +21,7 @@ difference:
 
 ## Shape
 
-A grammar object with an ordered `items[]`. Each item is one of two kinds.
+A grammar object with an ordered `nodes[]`. Each item is one of two kinds.
 
 ### Card item — a held title screen
 

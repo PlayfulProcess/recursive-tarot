@@ -86,7 +86,7 @@ const itemEnd=i=>perf(i).end_sec ?? (perf(i).start_sec||0)+ (perf(i).duration_se
 (async function(){
   try{
     G=await (await fetch(SRC)).json();
-    items=(G.items||[]).slice().sort((a,b)=>(perf(a).start_sec||0)-(perf(b).start_sec||0));
+    items=(G.nodes||[]).slice().sort((a,b)=>(perf(a).start_sec||0)-(perf(b).start_sec||0));
     if(!items.length) throw new Error('No items in this sequence grammar.');
     TOTAL=(G.metadata&&G.metadata.total_sec) || Math.max(...items.map(itemEnd));
     $('title').innerHTML=esc(G.name||'Performance')+' <span class="sub">— a performance</span>';

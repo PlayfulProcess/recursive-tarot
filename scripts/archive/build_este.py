@@ -35,15 +35,15 @@ for n, name, kind, suit, note in CARDS:
     cid = f"card-{n:02d}"
     meta = {"arcana": "major"} if kind == "trump" else {"suit": suit, "arcana": "minor"}
     meta["collection"] = "Beinecke Library, Yale (Cary Collection) — PLAYING CARDS GEN 966"
-    items.append({"id": cid, "name": name, "level": 1, "category": kind,
+    items.append({"id": cid, "name": name, "category": kind,
                   "image_url": img(n), "metadata": meta, "sections": {"About": note}})
     (trump_ids if kind == "trump" else court_ids).append(cid)
 
-items.append({"id": "axis-trumps", "name": "Surviving Trumps (8)", "level": 3, "category": "axis",
-              "render_as": "pill-group", "composite_of": trump_ids, "image_url": img(17),
+items.append({"id": "axis-trumps", "name": "Surviving Trumps (8)", "category": "axis",
+              "render_as": "pill-group", "parts": trump_ids, "image_url": img(17),
               "sections": {"What it is": "The eight trumps that survive — Bagatto, Pope, Temperance, Star, Moon, Sun, World and the Fool — out of an original sequence now mostly lost."}})
-items.append({"id": "axis-courts", "name": "Surviving Court Cards (8)", "level": 3, "category": "axis",
-              "render_as": "pill-group", "composite_of": court_ids, "image_url": img(1),
+items.append({"id": "axis-courts", "name": "Surviving Court Cards (8)", "category": "axis",
+              "render_as": "pill-group", "parts": court_ids, "image_url": img(1),
               "sections": {"What it is": "Eight court cards across the four Italian suits (Swords, Batons, Coins, Cups) — kings, queens, a cavalier and a jack."}})
 
 grammar = {
@@ -56,7 +56,7 @@ grammar = {
     "default_view": "cards",
     "metadata": {"year": 1450, "tradition": "Ferrarese hand-painted tarocchi", "branch": "roots", "order": "B"},
     "_source": "Yale Beinecke / Cary Collection of Playing Cards (PLAYING CARDS GEN 966), open access. Credit: Yale University Library.",
-    "items": items,
+    "nodes": items,
 }
 out = os.path.join(ROOT, "tarot", "este-tarot")
 json.dump(grammar, open(os.path.join(out, "grammar.json"), "w", encoding="utf-8"),

@@ -62,7 +62,6 @@ for n, (name, gloss) in enumerate(TRUMPS):
         'name': f'{n} — {name}',
         'sort_order': n,
         'category': 'major-arcana',
-        'level': 1,
         'keywords': ['sola busca','trionfi','renaissance','engraving','named figure','major', name.lower()],
         'image_url': img(n),
         'metadata': {'arcana': 'major', 'number': n, 'figure': name,
@@ -84,7 +83,6 @@ for disp, sid, elem, start in SUITS:
             'name': f'{rank} of {disp}',
             'sort_order': n,
             'category': f'suit-{sid}',
-            'level': 1,
             'keywords': ['sola busca','minor','scenic', 'court' if court else 'pip',
                          disp.lower(), elem, rkey,
                          f'suit:{sid}', f'rank:{rkey}', f'element:{elem}'],
@@ -141,10 +139,10 @@ deck = {
     'lineages': ['Andreotti'],
     'worldview': 'historical',
     'is_published': True,
-    'items': items,
+    'nodes': items,
 }
 
 import os
 os.makedirs('tarot/sola-busca-tarot', exist_ok=True)
 json.dump(deck, open('tarot/sola-busca-tarot/grammar.json','w',encoding='utf-8'), ensure_ascii=False, indent=2)
-print('wrote tarot/sola-busca-tarot/grammar.json with', len(items), 'items')
+print('wrote tarot/sola-busca-tarot/grammar.json with', len(items), 'nodes')
