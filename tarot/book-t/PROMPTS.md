@@ -24,13 +24,13 @@ Written Oct 10 2026 for PlayfulProcess's public deck [Book T: The Golden Dawn's 
 
 ## Redo first
 
-- **Lord of Harmonious Change** (`pentacles-02`): 1st (tied): Book T's single serpent in a figure eight is this card's whole symbol.
 - **Root of the Powers of Earth** (`pentacles-ace`): 1st: this Ace is the pattern for every pentacle in the suit.
 - **Lord of the Forces of Life** (`key-10-wheel-of-fate`): 2nd: the sphinx is the card's key figure.
 - **Spirit of the Mighty Waters** (`key-12-hanged-man`): 3rd: the posture is the card.
 - **Queen of the Thrones of Earth** (`pentacles-queen`): 4th: the crest and the split face are Book T's own marks for this card.
 - **Lord of Shortened Force** (`swords-08`): 5th, swords 4 to 10 as a set: every one gives each hand one sword. A reference image of the right layout (or a drawn layout) would help more than another prompt.
 - **Lord of Material Happiness** (`cups-09`): 6th, with cups-07, cups-08, cups-10: the counts.
+- **Lord of Harmonious Change** (`pentacles-02`): 7th: the tail-in-mouth is Book T's detail for this card.
 
 The other notes under each card are smaller misses (a count off by one or two, a crest in the wrong place).
 
@@ -1222,9 +1222,9 @@ The other notes under each card are smaller misses (a count off by one or two, a
 
 **Result:** [painting](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652669239-9h7fia8ql.png) · [SVG](https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653983713-sfcaxjivh7.svg)
 
-**Check:** Two serpents, each around one disc, instead of one serpent in a figure eight around both.
+**Check:** The serpent loops round both discs like an eight, but has a head at each end instead of holding its tail in its mouth; the hand holds the top, not the centre.
 
-**Redo:** 1st (tied): Book T's single serpent in a figure eight is this card's whole symbol.
+**Redo:** 7th: the tail-in-mouth is Book T's detail for this card.
 
 ### Lord of Material Works (Three of Pentacles)
 
