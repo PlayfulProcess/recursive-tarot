@@ -34,7 +34,7 @@
     "built_by": "scripts/build_book_t_deck.py"
   },
   "name": "Book T — The Golden Dawn's 78 Cards",
-  "description": "# Book T — the Golden Dawn's 78 cards\n\nBook T is the Golden Dawn's own book of the tarot, set down mainly by S. L. MacGregor Mathers\naround 1888 and kept for initiates. Crowley printed it in *The Equinox* I(8), London, 1912. It is\npublic domain.\n\nThis deck is Book T and only Book T: its order, its titles, its words. It is not the\nRider-Waite-Smith deck. Waite and Smith drew their pictures in 1909, from inside the same Order,\nand those pictures sit in a deck of their own,\n[Golden Dawn Tarot — Book T with Rider-Waite-Smith Imagery](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json).\n\n**The pictures will be added by PlayfulProcess over time.** Each card has an empty picture slot\nuntil then.\n\n## How the cards are set out\n\n- **Order.** Book T's own list of the 78 titles: the four Aces, the sixteen court cards, the\n  thirty-six small cards in the order of the decans (starting from Leo), then the twenty-two Keys.\n- **Number.** Each card shows its own number: a small card its pip, an Ace 1, a Key the number\n  Book T prints. The court cards have none. The Key numbers follow the 1912 printing, which\n  numbers Justice 8 and Fortitude 11, the reverse of the Rider-Waite-Smith deck; what each source\n  prints is set out in\n  [Strength and Justice: the numbering](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/synthesis/strength-justice-numbering.md).\n- **Name.** Each card is named by its Book T title: *Lord of Strife*, *Root of the Powers of\n  Fire*, *Daughter of the Lords of Truth: the Ruler of the Balance*.\n- **Court.** Knight, Queen, Prince, Princess. Book T's Knight rides a horse; its Prince drives a\n  chariot; its Princess stands.\n\nEvery card carries the 1912 text, word for word, with Crowley's notes in square brackets. The\nwhole book reads as one page at [Book T (1912)](https://tarot.recursive.eco/pages/book-t.html).\n\n*Source: Book T, as printed in* The Equinox *I(8), 1912, pp. 143-210, from the transcription at\nthe-equinox.org, checked against [the scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep).\nBuilt by `scripts/build_book_t_deck.py`.*\n",
+  "description": "# Book T — the Golden Dawn's 78 cards\n\nBook T is the Golden Dawn's own book of the tarot, set down mainly by S. L. MacGregor Mathers\naround 1888 and kept for initiates. Crowley printed it in *The Equinox* I(8), London, 1912. It is\npublic domain.\n\nThis deck is Book T and only Book T: its order, its titles, its words. It is not the\nRider-Waite-Smith deck. Waite and Smith drew their pictures in 1909, from inside the same Order,\nand those pictures sit in a deck of their own,\n[Golden Dawn Tarot — Book T with Rider-Waite-Smith Imagery](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json).\n\n**Pictures (Oct 10 2026).** Every card has a first picture, made for now and meant to be improved:\nan AI painting prompted from Book T's own words for that card, traced into line art, with the\ncard's name set as text under it. Book T describes no picture for the twenty-two Keys, so their\nprompts start from each Key's title. Each prompt, beside the Book T passage it comes from, is in\n[the prompts file](https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/book-t/PROMPTS.md).\n\n## How the cards are set out\n\n- **Order.** Book T's own list of the 78 titles: the four Aces, the sixteen court cards, the\n  thirty-six small cards in the order of the decans (starting from Leo), then the twenty-two Keys.\n- **Number.** Each card shows its own number: a small card its pip, an Ace 1, a Key the number\n  Book T prints. The court cards have none. The Key numbers follow the 1912 printing, which\n  numbers Justice 8 and Fortitude 11, the reverse of the Rider-Waite-Smith deck; what each source\n  prints is set out in\n  [Strength and Justice: the numbering](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/synthesis/strength-justice-numbering.md).\n- **Name.** Each card is named by its Book T title: *Lord of Strife*, *Root of the Powers of\n  Fire*, *Daughter of the Lords of Truth: the Ruler of the Balance*.\n- **Court.** Knight, Queen, Prince, Princess. Book T's Knight rides a horse; its Prince drives a\n  chariot; its Princess stands.\n\nEvery card carries the 1912 text, word for word, with Crowley's notes in square brackets. The\nwhole book reads as one page at [Book T (1912)](https://tarot.recursive.eco/pages/book-t.html).\n\n*Source: Book T, as printed in* The Equinox *I(8), 1912, pp. 143-210, from the transcription at\nthe-equinox.org, checked against [the scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep).\nBuilt by `scripts/build_book_t_deck.py`.*\n",
   "grammar_type": "tarot",
   "provenance": "record",
   "creator_name": "PlayfulProcess",
@@ -64,7 +64,7 @@
   "is_published": false,
   "_community_folder": "tarot",
   "_community_slug": "book-t",
-  "image_credit": "No pictures yet: PlayfulProcess adds them over time.",
+  "image_credit": "AI paintings prompted from Book T's own words, traced to line art by PlayfulProcess (Oct 2026); CC BY-SA 4.0. Prompts and sources: tarot/book-t/PROMPTS.md.",
   "metadata": {
     "common_name": "Book T",
     "category": "historical",
@@ -85,7 +85,7 @@
         "ace",
         "root"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653717359-qljeflz95ah.svg",
       "metadata": {
         "book_t_no": 1,
         "arcana": "minor",
@@ -99,7 +99,21 @@
         "card_name_1912": "Ace of Wands",
         "title": "The Root of the Powers of Fire",
         "archetype": "card:ace-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653717359-qljeflz95ah.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650958958-kzhu7487aam.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiating Angelic Hand, issuing from clouds, and grasping a heavy club, which has three branches in the colours, and with the sigils, of the scales. The Right-and Left-hand branches end respectively in three Flames, and the Centre one in four Flames: thus yielding Ten: the Number of the Sephiroth. Two-and-twenty leaping Flames, or Yodh, surround it, answering to the Paths; of these, three fall below the Right branch for Aleph, Men, and Shin, seven above the Central branch for the double letters; and between it and that of the Right twelve: six above and six below about the Left-hand branch. The whole is a great and flaming Torch. It symbolizes Force — strength, rush, vigour, energy, and it governs, according to its nature, various works and questions.\n\nIt implies Natural, as opposed to Invoked, Force.",
@@ -120,7 +134,7 @@
         "ace",
         "root"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653720303-bggx4mn0hws.svg",
       "metadata": {
         "book_t_no": 2,
         "arcana": "minor",
@@ -134,7 +148,21 @@
         "card_name_1912": "Ace of Cups",
         "title": "The Root of the Powers of Water",
         "archetype": "card:ace-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653720303-bggx4mn0hws.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650983447-t7ya7bi4mwq.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiant Angelic Hand, issuing from clouds, and supporting on the palm thereof a cup, resembling that of the Stolistes.\n\nFrom it rises a fountain of clear and glistening water: and sprays falling on all sides into clear calm water below, in which grow Lotuses and Water-lilies. The great Letter of the Supernal Mother is traced in the spray of the Fountain.\n\nIt symbolizes Fertility — productiveness, beauty, pleasure, happiness, etc.",
@@ -155,7 +183,7 @@
         "ace",
         "root"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653722934-xwtkqded6s.svg",
       "metadata": {
         "book_t_no": 3,
         "arcana": "minor",
@@ -169,7 +197,21 @@
         "card_name_1912": "Ace of Swords",
         "title": "The Root of the Powers of Air",
         "archetype": "card:ace-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653722934-xwtkqded6s.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651003941-64rakrwdnm.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiating Angelic Hand, issuing from clouds, and grasping the hilt of a sword, which supports a White Radiant Celestial Crown; from which depend, on the right, the olive branch of Peace; and on the left, the palm branch of suffering.\n\nSix Vaus fall from its point. It symbolizes \"Invoked,\" as contrasted with Natural Force: for it is the Invocation of the Sword. Raised upward, it invokes the Divine crown of Spiritual Brightness, but reversed it is the Invocation of Demonic Force; and becomes a fearfully evil symbol. It represents, therefore, very great power for good or evil, but invoked; and it also represents whirling Force, and strength through trouble. It is the affirmation of Justice upholding Divine Authority; and it may become the Sword of Wrath, Punishment, and Affliction.",
@@ -190,7 +232,7 @@
         "ace",
         "root"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653725573-jjy9tjdj7pb.svg",
       "metadata": {
         "book_t_no": 4,
         "arcana": "minor",
@@ -204,7 +246,21 @@
         "card_name_1912": "Ace of Pentacles",
         "title": "The Root of the Powers of Earth",
         "archetype": "card:ace-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653725573-jjy9tjdj7pb.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651031031-jlkquijd8nc.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiant Angelic Hand, holding a branch of a Rose Tree, whereon is a large Pentacle, formed of Five concentric circles. The Innermost Circle is white, charged with a red Greek Cross. From this White Centre, Twelve Rays, also white, issue: these terminate at the circumference, making the whole something like an Astrological figure of the Heavens.\n\nIt is surmounted by a small circle, above which is a large white Maltese Cross, and with two white wings.\n\nFour Crosses and two buds are shewn. The Hand issueth from the Clouds as in the other three cases.\n\nIt represents materiality in all senses, good and evil: and is, therefore, in a sense, illusionary: it shows material gain, labour, power, wealth, etc.",
@@ -225,7 +281,7 @@
         "knight",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653728954-c993fcz9apg.svg",
       "metadata": {
         "book_t_no": 5,
         "arcana": "minor",
@@ -238,7 +294,21 @@
         "rules": "21° Scorpio – 20° Sagittarius",
         "title": "The Lord of the Flame and Lightning: the King of the Spirits of Fire",
         "archetype": "card:knight-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653728954-c993fcz9apg.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651051938-pjfp6kk4wq.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nNote that the Kings are now called Knights, and the Princes are now called Kings. This is unfortunate, and leads to confusion; the Princes may be called Emperors without harm. Remember only that the horsed figures refer to the Yod of Tetragrammaton, the charioted figures to the Vau.\n\nA WINGED Warrior riding upon a black horse with flaming mane and tail: the horse itself is not winged. The rider wears a winged helmet (like the old Scandinavian and Gaulish helmet) with a Rayed Crown, a corslet of scale-mail and buskins of the same, and a flowing scarlet mantle. Above his helmet, upon his curass, and on the shoulder-pieces and buskins, he wears as a crest a winged black horse's head. He grasps a club with flaming ends, somewhat similar to that in the symbol of the Ace of Wands, but not so heavy, and also the sigil of his scale is shown; beneath the rushing feet of his steed are waving flames and fire. He is active — generous — fierce — sudden — impetuous.\n\nIf ill dignified, he is evil-minded — cruel — bigoted — brutal. He rules the celestial heavens from above the Twentieth Degree of Scorpio to the First Two Decans of Sagittarius: and this includes a part of the Constellation Hercules. (Hercules is always represented with a Club.)\n\nFire of Fire\n\nKing of the Salamanders.",
@@ -259,7 +329,7 @@
         "queen",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653731130-i6y7tz96mhh.svg",
       "metadata": {
         "book_t_no": 6,
         "arcana": "minor",
@@ -272,7 +342,21 @@
         "rules": "21° Pisces – 20° Aries",
         "title": "The Queen of the Thrones of Flame",
         "archetype": "card:queen-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653731130-i6y7tz96mhh.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651073337-7ubkvuiawtp.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA CROWNED queen with long red-golden hair, seated upon a Throne, with steady flames beneath. She wears a corslet and buskins of scale-mail, which latter her robe discloses. Her arms are almost bare. On cuirass and buskins are leopard's heads winged, and the same symbol surmounteth her crown. At her side is a couchant leopard on which her hands rest. She bears a long wand with a very heavy conical head. The face is beautiful and resolute.\n\nAdaptability, steady force applied to an object, steady rule, great attractive power, power of command, yet liked notwithstanding. Kind and generous when not opposed.\n\nIf ill dignified, obstinate, revengeful, domineering, tyrannical, and apt to turn against another without a cause.\n\nShe rules the heavens from above the last Decan of Pisces to above the 20 Degree of Aries: including thus a part of Andromeda.\n\nWater of Fire\n\nQueen of the Salamanders.",
@@ -293,7 +377,7 @@
         "prince",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653734174-20hnxi0imbi.svg",
       "metadata": {
         "book_t_no": 7,
         "arcana": "minor",
@@ -306,7 +390,21 @@
         "rules": "21° Cancer – 20° Leo",
         "title": "The Prince of the Chariot of Fire",
         "archetype": "card:king-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653734174-20hnxi0imbi.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651108265-eao2oqhzcru.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA KINGLY Figure with a golden, winged crown, seated on a chariot. He has large white wings. One wheel of his chariot is shewn. He wears corslet and buskins of scale armour decorated with a winged lion's head, which symbol also surmounts his crown. His chariot is drawn by a lion. His arms are bare, save for the shoulder-pieces of the corslet, and he bears a torch or fire-wand, somewhat similar to that of the Zelator Adeptus Minor. Beneath the chariot are flames, some waved, some salient.\n\nSwift, strong, hasty; rather violent, yet just and generous; noble and scorning meanness.\n\nIf ill dignified — cruel, intolerant, prejudiced and ill natured.\n\nHe rules the heavens from above the last Decan of Cancer to the second Decan of Leo; hence he includes most of Leo Minor.\n\nAir of Fire\n\nPrince and Emperor of Salamanders.",
@@ -327,7 +425,7 @@
         "princess",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653737433-9hh0p7g1mg.svg",
       "metadata": {
         "book_t_no": 8,
         "arcana": "minor",
@@ -340,7 +438,21 @@
         "rules": "one quadrant of the heavens around the North Pole (with the Ace)",
         "title": "The Princess of the Shining Flame: the Rose of the Palace of Fire",
         "archetype": "card:page-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653737433-9hh0p7g1mg.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653861364-bqn77szarn8.jpg",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting (Oct 8 pilot)",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA VERY strong and beautiful woman with flowing red-gold hair, attired like an Amazon. Her shoulders, arms, bosom and knees are bare. She wears a short kilt reaching to the knee. Round her waist is a broad belt of scale-mail; narrow at the sides; broader in front and back; and having a winged tiger's head in front. She wears a Corinthian-shaped helmet and crown with a long plume. It also is surmounted by a tiger's head, and the same symbol forms the buckle of her scale-mail buskins. A mantle lined with tiger's skin falls back from her shoulders. Her right hand rests on a small golden or brazen altar ornamented with ram's heads and with Flames of Fire leaping from it. Her left hand leans on a long and heavy club, swelling at the lower end, where the sigil is placed; and it has flames of fire leaping from it the whole way down; but the flames are ascending. This club or torch is much longer than that carried by the King or Queen. Beneath her firmly placed feet are leaping Flames of Fire.\n\nBrilliance, courage, beauty, force, sudden in anger or love, desire of power, enthusiasm, revenge.\n\nIf ill dignified, she is superficial, theatrical, cruel, unstable, domineering.\n\nShe rules the heavens over one quadrant of the portion around the North Pole.\n\nEarth of Fire\n\nPrincess and Empress of the Salamanders.\n\nThrone of the Ace of Wands.",
@@ -361,7 +473,7 @@
         "knight",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653787086-dt8z2vy5ofj.svg",
       "metadata": {
         "book_t_no": 9,
         "arcana": "minor",
@@ -374,7 +486,21 @@
         "rules": "21° Aquarius – 20° Pisces",
         "title": "The Lord of the Waves and the Waters: the King of the Hosts of the Sea",
         "archetype": "card:knight-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653787086-dt8z2vy5ofj.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651136521-xc2sihvfazq.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA BEAUTIFUL, winged, youthful Warrior with flying hair, riding upon a white horse, which latter is not winged. His general equipment is similar to that of the Knight of Wands, but upon his helmet, cuirass and buskins is a peacock with opened wings. He holds a cup in his hand, bearing the sigil of the scale. Beneath his horse's feet is the sea. From the cup issues a crab.\n\nGraceful, poetic, Venusian, indolent, but enthusiastic if roused.\n\nIll dignified, he is sensual, idle and untruthful.\n\nHe rules the heavens from above 20 Degree of Aquarius to 20 Degree of Pisces, thus including the greater part of Pegasus.\n\nFire of Water\n\nKing of Undines and Nymphs.",
@@ -395,7 +521,7 @@
         "queen",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653789371-pkl7kfcy41e.svg",
       "metadata": {
         "book_t_no": 10,
         "arcana": "minor",
@@ -408,7 +534,21 @@
         "rules": "21° Gemini – 20° Cancer",
         "title": "The Queen of the Thrones of the Waters",
         "archetype": "card:queen-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653789371-pkl7kfcy41e.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653855923-eiv7jy2iwu.jpg",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting (Oct 8 pilot)",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA VERY beautiful fair woman like a crowned Queen, seated upon a throne, beneath which is flowing water wherein Lotuses are seen. Her general dress is similar to that of the Queen of Wands, but upon her crown, cuirass and buskins is seen an Ibis with opened wings, and beside her is the same bird, whereon her hand rests. She holds a cup, wherefrom a crayfish issues. Her face is dreamy. She holds a lotus in the hand upon the Ibis.\n\nShe is imaginative, poetic, kind, yet not willing to take much trouble for another. Coquettish, good-natured and underneath a dreamy appearance. Imagination stronger than feeling. Very much affected by other influences, and therefore more dependent upon dignity than most symbols.\n\nShe rules from 20 Degree Gemini to 20 Degree Cancer.\n\nWater of Water\n\nQueen of Nymphs or Undines.",
@@ -429,7 +569,7 @@
         "prince",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653792080-mo0b2q30qgd.svg",
       "metadata": {
         "book_t_no": 11,
         "arcana": "minor",
@@ -442,7 +582,21 @@
         "rules": "21° Libra – 20° Scorpio",
         "title": "The Prince of the Chariot of the Waters",
         "archetype": "card:king-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653792080-mo0b2q30qgd.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651459247-ngttzhhl6yh.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WINGED Kingly Figure with winged crown seated in a chariot drawn by an eagle. On the wheel is the symbol of a scorpion. The eagle is borne as a crest on his crown, cuirass and buskins. General attire like King of Wands. Beneath his chariot is the calm and stagnant water of a lake. His armour resembles feathers more than scales. He holds in one hand a lotus, and in the other a cup, charged with the sigil of his scale. A serpent issues from the cup, and has its head tending down to the waters of the lake. He is subtle, violent, crafty and artistic; a fierce nature with calm exterior. Powerful for good or evil but more attracted by the evil if allied with apparent Power or Wisdom.\n\nIf ill dignified, he is intensely evil and merciless.\n\nHe rules from 20 Degree Libra to 20 Degree Scorpio.\n\nAir of Water\n\nPrince and Emperor of Nymphs or Undines.",
@@ -463,7 +617,7 @@
         "princess",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653794731-d0uoshtw1ou.svg",
       "metadata": {
         "book_t_no": 12,
         "arcana": "minor",
@@ -476,7 +630,21 @@
         "rules": "one quadrant of the heavens around the North Pole (with the Ace)",
         "title": "The Princess of the Waters: the Lotus of the Palace of the Floods",
         "archetype": "card:page-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653794731-d0uoshtw1ou.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651387668-ya0ugdny9i.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA BEAUTIFUL Amazon-like figure, softer in nature than the Princess of Wands. Her attire is similar. She stands on a sea with foaming spray. Away to her right a Dolphin. She wears as a crest a swan with opening wings. She bears in one hand a lotus, and in the other an open cup from which a turtle issues. Her mantle is lined with swansdown, and is of thin floating material.\n\nSweetness, poetry, gentleness and kindness. Imaginative, dreamy, at times indolent, yet courageous if roused.\n\nWhen ill dignified she is selfish and luxurious.\n\nShe rules a quadrant of the heavens around Kether.\n\nEarth of Water\n\nPrincess and Empress of the Nymphs or Undines\n\nThrone of the Ace of Cups.",
@@ -497,7 +665,7 @@
         "knight",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653797049-buatv9ixl5r.svg",
       "metadata": {
         "book_t_no": 13,
         "arcana": "minor",
@@ -510,7 +678,21 @@
         "rules": "21° Taurus – 20° Gemini",
         "title": "The Lord of the Wind and the Breezes: the King of the Spirits of Air",
         "archetype": "card:knight-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653797049-buatv9ixl5r.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653805335-7rrhiqfv0oa.jpg",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting (Oct 8 pilot)",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WINGED Warrior with crowned Winged Helmet, mounted upon a brown steed. His general equipment is as that of the Knight of Wands, but he wears as a crest a winged six-pointed star, similar to those represented on the heads of Castor and Pollux the Dioscuri, the twins Gemini (a part of which constellation is included in his rule). He holds a drawn sword with the sigil of his scale upon its pommel. Beneath his horse's feet are dark-driving stratus clouds.\n\nHe is active, clever, subtle, fierce, delicate, courageous, skilful, but inclined to domineer. Also to overvalue small things, unless well dignified.\n\nIf ill dignified, deceitful, tyrannical and crafty.\n\nRules from 20 Degree Taurus to 20 Degree Gemini.\n\nFire of Air\n\nKing of the Sylphs and Sylphides.",
@@ -531,7 +713,7 @@
         "queen",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653799333-scra7z6psop.svg",
       "metadata": {
         "book_t_no": 14,
         "arcana": "minor",
@@ -544,7 +726,21 @@
         "rules": "21° Virgo – 20° Libra",
         "title": "The Queen of the Thrones of Air",
         "archetype": "card:queen-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653799333-scra7z6psop.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651236733-rtnn2suhsw.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA GRACEFUL woman with wavy, curling hair, like a Queen seated upon a Throne and crowned. Beneath the Throne are grey cumulus clouds. Her general attire is as that of the Queen of Wands, but she wears as a crest a winged child's head. A drawn sword in one hand, and in the other a large, bearded, newly severed head of a man.\n\nIntensely perceptive, keen observation, subtle, quick and confident: often persevering, accurate in superficial things, graceful, fond of dancing and balancing.\n\nIf ill dignified, cruel, sly, deceitful, unreliable, though with a good exterior.\n\nRules from 20 Degree Virgo to 20 Degree Libra.\n\nWater of Air\n\nQueen of the Sylphs and Sylphides.",
@@ -565,7 +761,7 @@
         "prince",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653801407-019pz9s204ty.svg",
       "metadata": {
         "book_t_no": 15,
         "arcana": "minor",
@@ -578,7 +774,21 @@
         "rules": "21° Capricorn – 20° Aquarius",
         "title": "The Prince of the Chariot of the Winds",
         "archetype": "card:king-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653801407-019pz9s204ty.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651431826-cb7twlvb1ef.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WINGED King with Winged Crown, seated in a chariot drawn by Arch Fays, represented as winged youths very slightly dressed, with butterfly wings: heads encircled by a fillet with a pentagram thereon: and holding wands surmounted by pentagrams, the same butterfly wings on their feet and fillets. General equipment as the King of Wands: but he bears as a crest a winged angelic head with a pentagram on the brows. Beneath the chariot are grey nimbus clouds. His hair long and waving in serpentine whirls, and whorl figures compose the scales of his armour. A drawn sword in one hand; a sickle in the other. With the sword he rules, with the sickle he slays.\n\nFull of ideas and thoughts and designs, distrustful, suspicious, firm in friendship and enmity; careful, observant, slow, over-cautious, symbolizes Α and Ω; he slays as fast as he creates.\n\nIf ill dignified: harsh, malicious, plotting; obstinate, yet hesitating; unreliable.\n\nRules from 20 Degree Capricorn to 20 Degree Aquarius.\n\nAir of Air\n\nPrince and Emperor of the Sylphs and Sylphides.",
@@ -599,7 +809,7 @@
         "princess",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653803459-v8h8wgoq59l.svg",
       "metadata": {
         "book_t_no": 16,
         "arcana": "minor",
@@ -612,7 +822,21 @@
         "rules": "one quadrant of the heavens around the North Pole (with the Ace)",
         "title": "The Princess of the Rushing Winds: the Lotus of the Palace of Air",
         "archetype": "card:page-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653803459-v8h8wgoq59l.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651285392-kl1qhm0knjf.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nAN AMAZON figure with waving hair, slighter than the Rose of the Palace of Fire. Her attire is similar. The Feet seem springy, giving the idea of swiftness. Weight changing from one foot to another and body swinging around. She is a mixture of Minerva and Diana: her mantle resembles the AEgis of Minerva. She wears as a crest the head of the Medusa with serpent hair. She holds a sword in one hand; and the other rests upon a small silver altar with grey smoke (no fire) ascending from it. Beneath her feet are white clouds.\n\nWisdom, strength, acuteness; subtlety in material things: grace and dexterity.\n\nIf ill dignified, she is frivolous and cunning.\n\nShe rules a quadrant of the heavens around Kether.\n\nEarth of Air\n\nPrincess and Empress of the Sylphs and Sylphides.\n\nThrone of the Ace of Wands.",
@@ -633,7 +857,7 @@
         "knight",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653843664-lskpbqkbzy9.svg",
       "metadata": {
         "book_t_no": 17,
         "arcana": "minor",
@@ -646,7 +870,21 @@
         "rules": "21° Leo – 20° Virgo",
         "title": "The Lord of the Wide and Fertile Land: the King of the Spirits of Earth",
         "archetype": "card:knight-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653843664-lskpbqkbzy9.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651304852-dvf15zs1fj.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA DARK Winged Warrior with winged and crowned helmet: mounted on a light brown horse. Equipment as the Knight of Wands.\n\nThe winged head of a stag or antelope as a crest. Beneath the horse's feet is fertile land with ripened corn. In one hand he bears a sceptre surmounted by a hexagram: in the other a Pentacle like that of the Zelator Adeptus Minor.\n\nUnless very well dignified he is heavy, dull, and material. Laborious, clever, and patient in material matters.\n\nIf ill dignified, he is avaricious, grasping, dull, jealous; not very courageous, unless assisted by other symbols.\n\nRules from above 20 Degree of Leo to 20 Degree of Virgo.\n\nFire of Earth\n\nKing of Gnomes.",
@@ -667,7 +905,7 @@
         "queen",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653846939-m83v6hdz0lr.svg",
       "metadata": {
         "book_t_no": 18,
         "arcana": "minor",
@@ -680,7 +918,21 @@
         "rules": "21° Sagittarius – 20° Capricorn",
         "title": "The Queen of the Thrones of Earth",
         "archetype": "card:queen-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653846939-m83v6hdz0lr.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651328765-4r7123db1xo.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WOMAN of beautiful face with dark hair; seated upon a throne, beneath which is dark sandy earth. One side of her face is light, the other dark; and her symbolism is best represented in profile. Her attire is similar to that of the Queen of Wands: but she bears a winged goat's head as a crest. A goat is by her side. In one hand she bears a sceptre surmounted by a cube, and in the other an orb of gold.\n\nShe is impetuous, kind; timid, rather charming; great-hearted; intelligent, melancholy; truthful, yet of many moods.\n\nIf ill dignified she is undecided, capricious, changeable, foolish.\n\nShe rules from 20 Degree Sagittarius to 20 Degree Capricorn.\n\nWater of Earth\n\nThe Queen of Gnomes.",
@@ -701,7 +953,7 @@
         "prince",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653850314-jdvl7u1dplg.svg",
       "metadata": {
         "book_t_no": 19,
         "arcana": "minor",
@@ -714,7 +966,21 @@
         "rules": "21° Aries – 20° Taurus",
         "title": "The Prince of the Chariot of Earth",
         "archetype": "card:king-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653850314-jdvl7u1dplg.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653858010-2wvw2rtm5vo.jpg",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting (Oct 8 pilot)",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WINGED Kingly Figure seated in a chariot drawn by a bull. He bears as a crest the symbol of the head of the winged bull. Beneath the chariot is land, with many flowers. In the one hand he bears an orb of gold held downwards, and in the other a sceptre surmounted by an orb and cross.\n\nIncrease of matter. Increases good or evil, solidifies; practically applies things. Steady; reliable.\n\nIf ill dignified he is selfish, animal and material: stupid. In either case slow to anger, but furious if roused.\n\nRules from 20 Degree Aries to 20 Degree Taurus.\n\nAir of Earth\n\nPrince and Emperor of the Gnomes.",
@@ -735,7 +1001,7 @@
         "princess",
         "court card"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653852887-qgiquzs02ia.svg",
       "metadata": {
         "book_t_no": 20,
         "arcana": "minor",
@@ -748,7 +1014,21 @@
         "rules": "one quadrant of the heavens around the North Pole (with the Ace)",
         "title": "The Princess of the Echoing Hills: the Rose of the Palace of Earth",
         "archetype": "card:page-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653852887-qgiquzs02ia.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651410433-kh8ehkakf9.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA STRONG and beautiful Amazon figure with rich brown hair, standing on grass or flowers. A grove of trees near her. Her form suggests Hebe, Ceres, and Proserpine. She bears a winged ram's head as a crest: and wears a mantle of sheepskin. In one hand she carries a sceptre with a circular disk: in the other a Pentacle similar to that of the Ace of Pentacles.\n\nShe is generous, kind, diligent, benevolent, careful, courageous, persevering, pitiful.\n\nIf ill dignified she is wasteful and prodigal. She rules over one quadrant of the heavens around the North Pole of the Ecliptic.\n\nEarth of Earth\n\nPrincess and Empress of the Gnomes.\n\nThrone of the Ace of Pentacles.",
@@ -769,7 +1049,7 @@
         "saturn in leo",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653864480-w4fdpko1e6.svg",
       "metadata": {
         "book_t_no": 21,
         "arcana": "minor",
@@ -785,7 +1065,21 @@
         "card_name_1912": "Five of Wands",
         "title": "Lord of Strife",
         "archetype": "card:five-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653864480-w4fdpko1e6.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791653430674-wfokbjyx4l9.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTWO White Radiant Angelic Hands issuant per nubes dexter and sinister. They are clasped together in the grip of the First Order, \"i.e.\" the four fingers of each right hand crooked into each other, the thumbs meeting above; and they hold, at the same time, by their centres, five wands or torches which are similar unto the wands of a Zelator Adeptus Minor. One wand is upright in the middle; the others cross each other. Flames leap from the point of junction. Above the middle wand is the sign Saturn, and below is that of Leo: thus representing the Decante. Violent strife and boldness, rashness, cruelty, violence, lust, desire, prodigality and generosity; depending on whether the card is well or ill dignified.\n\nGeburah of י (Quarrelling and fighting).\n\nThis Decan hath its beginning from the Royal Star of Leo: and unto it are allotted the two great Angels of the Schemhamphorash והויה and יליאל.\n\n[The proper meaning of the small cards is to be found by making thorough meditation and harmony between these four symbols of each card. It will be seen that this is how the meanings have been done; but the advanced student can go beyond this rude working.]",
@@ -806,7 +1100,7 @@
         "jupiter in leo",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653866471-97r54kdo2t.svg",
       "metadata": {
         "book_t_no": 22,
         "arcana": "minor",
@@ -822,7 +1116,21 @@
         "card_name_1912": "Six of Wands",
         "title": "Lord of Victory",
         "archetype": "card:six-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653866471-97r54kdo2t.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791653518461-66pcehojws8.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTWO hands in grip as the last, holding six wands crossed three and three. Flames issue from the point of junction. Above and below are short wands with flames issuing, surmounted respectively by the symbols of Jupiter and Leo, representing the Decan.\n\nVictory after strife: Love: pleasure gained by labour: carefulness, sociability and avoiding of strife, yet victory therein: also insolence, and pride of riches and success, etc. The whole dependent on the dignity.\n\nTiphareth of י (Gain).\n\nHereunto are allotted the great Angels סיטאל and עלמיה of the Schemhamphorash.",
@@ -843,7 +1151,7 @@
         "mars in leo",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653868611-4mmxa51qkrj.svg",
       "metadata": {
         "book_t_no": 23,
         "arcana": "minor",
@@ -859,7 +1167,21 @@
         "card_name_1912": "Seven of Wands",
         "title": "Lord of Valour",
         "archetype": "card:seven-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653868611-4mmxa51qkrj.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651869944-x6ymoq5kwa.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTWO hands holding by grip six wands, three crossed. A third hand issuing from a cloud at the lower part of the card, holding an upright wand which passes between the others. Flames leap from the point of junction. Above and below the central wand are the symbols of Mars and Leo, representing the Decan.\n\nPossible victory, depending on the energy and courage exercised; valour; opposition, obstacles and difficulties, yet courage to meet them; quarrelling, ignorance, pretence, and wrangling, and threatening; also victory in small and unimportant things: and influence upon subordinates.\n\nNetzach of י (Opposition, yet courage).\n\nTherein rule the two great Angels מהשיה and ללהאל of the Schemhamphorash.",
@@ -880,7 +1202,7 @@
         "sun in virgo",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653914527-2yz49cx87s6.svg",
       "metadata": {
         "book_t_no": 24,
         "arcana": "minor",
@@ -896,7 +1218,21 @@
         "card_name_1912": "Eight of Pentacles",
         "title": "Lord of Prudence",
         "archetype": "card:eight-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653914527-2yz49cx87s6.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652854890-vsz05sjiix.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiating Angelic Hand, issuing from a cloud, and grasping a branch of a rose tree, with four white roses thereon, which touch only the four lowermost Pentacles. No rosebuds even, but only leaves, touch the four uppermost disks. All the Pentacles are similar to that of the Ace, but without the Maltese cross and wings. They are arranged like the geomantic figure Populus. Above and below them are the symbols Sun and Virgo for the Decan.\n\nOver-careful in small things at the expense of great: \"Penny wise and pound foolish\": gain of ready money in small sums; mean; avaricious; industrious; cultivation of land; hoarding, lacking in enterprise.\n\nHod of ה (Skill: prudence: cunning).\n\nTherein rule those mighty Angels אכאיה and כהתאל.",
@@ -917,7 +1253,7 @@
         "venus in virgo",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653918010-e3dc3nybed.svg",
       "metadata": {
         "book_t_no": 25,
         "arcana": "minor",
@@ -933,7 +1269,21 @@
         "card_name_1912": "Nine of Pentacles",
         "title": "Lord of Material Gain",
         "archetype": "card:nine-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653918010-e3dc3nybed.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652885899-73pn8qdicjh.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiating Angelic Hand, holding a rose branch with nine white roses, each of which touches a Pentacle. The Pentacles are arranged thus *(a figure of nine dots on the printed page)*: and there are rosebuds on the branches as well as flowers. Venus and Virgo above and below.\n\nComplete realization of material gain, good, riches; inheritance; covetous; treasuring of goods; and sometimes theft and knavery. The whole according to dignity.\n\nYesod of ה (Inheritance, much increase of goods).\n\nHerein those mighty Angels הזיאל and אלדיה have rule and dominion.",
@@ -954,7 +1304,7 @@
         "mercury in virgo",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653920681-rh7hw5mzvt.svg",
       "metadata": {
         "book_t_no": 26,
         "arcana": "minor",
@@ -970,7 +1320,21 @@
         "card_name_1912": "Ten of Pentacles",
         "title": "Lord of Wealth",
         "archetype": "card:ten-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653920681-rh7hw5mzvt.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791653317636-14mqfsbce0ph.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nAN Angelic Hand, holding by the lower extremity a branch whose roses touch all the Pentacles. No buds, however, are shewn. The symbols of Mercury and Virgo are above and below.\n\nThe Pentacles are thus arranged *(a figure on the printed page: ten pentacles in rows of 2, 1, 2, 2, 1, 2)*.\n\nCompletion of material gain and fortune; but nothing beyond: as it were, at the very pinnacle of success. Old age, slothfulness; great wealth, yet sometimes loss in part; heaviness; dullness of mind, yet clever and prosperous in money transactions.\n\nMalkuth of ה (Riches and wealth).\n\nHerein are לאויה and ההעיה set over this Decan as Angel Rulers.",
@@ -991,7 +1355,7 @@
         "moon in libra",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653922723-eb55cn6sfvf.svg",
       "metadata": {
         "book_t_no": 27,
         "arcana": "minor",
@@ -1007,7 +1371,21 @@
         "card_name_1912": "Two of Swords",
         "title": "Lord of Peace Restored",
         "archetype": "card:two-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653922723-eb55cn6sfvf.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791653400184-vop82hpec2a.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTwo crossed swords, like the air dagger of a Z.A.M., each held by a White Radiant Angelic Hand. Upon the point where the two cross is a rose of five petals, emitting white rays. At the top and bottom of the card are two small daggers, supporting respectively the symbol Moon thus, and Libra representing the Decanate.\n\nContradictory characters in the same nature, strength through suffering; pleasure after pain. Sacrifice and trouble, yet strength arising therefrom, symbolized by the position of the rose, as though the pain itself had brought forth beauty. Arrangement, peace restored; truce; truth and untruth; sorrow and sympathy. Aid to the weak; arrangement; justice, unselfishness; also a tendency to repetition of affronts on being pardoned; injury when meaning well; given to petitions; also a want of tact, and asking question of little moment; talkative.\n\nChokmah of ו. Quarrel made up, yet still some tension in relations: actions sometimes selfish, sometimes unselfish.\n\nHerein rule the Great Angels יזלאל and מנהאל.",
@@ -1028,7 +1406,7 @@
         "saturn in libra",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653926003-2lii173aw4y.svg",
       "metadata": {
         "book_t_no": 28,
         "arcana": "minor",
@@ -1044,7 +1422,21 @@
         "card_name_1912": "Three of Swords",
         "title": "Lord of Sorrow",
         "archetype": "card:three-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653926003-2lii173aw4y.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791653375363-et0z30fakwg.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTHREE White Radiating Angelic Hands, issuing from clouds, and holding three swords upright (as though the central sword had struck apart the two others, which were crossed in the preceding symbol): the central sword cuts asunder the rose of five petals, which in the previous symbol grew at the junction of the swords; its petals are falling, and no white rays issue from it.\n\nAbove and below the central sword are the symbols of Saturn and Libra.\n\nDisruption, interruption, separation, quarrelling; sowing of discord and strife, mischief-making, sorrow and tears; yet mirth in Platonic pleasures; singing, faithfulness in promises, honesty in money transactions, selfish and dissipated, yet sometimes generous: deceitful in words and repetitions; the whole according to dignity.\n\nBinah of ו (Unhappiness, sorrow, and tears).\n\nHerein rule the Great Angels הריאל and הקמיה as Lords of the Decan.",
@@ -1065,7 +1457,7 @@
         "jupiter in libra",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653929514-4yqs53cday8.svg",
       "metadata": {
         "book_t_no": 29,
         "arcana": "minor",
@@ -1081,7 +1473,21 @@
         "card_name_1912": "Four of Swords",
         "title": "Lord of Rest from Strife",
         "archetype": "card:four-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653929514-4yqs53cday8.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652433095-bsgwe66yt1j.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTWO White Radiating Angelic Hands, each holding two swords; which four cross in the centre. The rose of five petals with white radiations is reinstated on the point of their intersection. Above and below, on the points of two small daggers, are Jupiter and Libra, representing the Decanate.\n\nRest from sorrow; yet after and through it. Peace from and after war. Relaxation of anxiety. Quietness, rest, ease and plenty, yet after struggle. Goods of this life; abundance; modified by dignity as is usual.\n\nChesed of ו (Convalescence, recovery from sickness; change for the better).\n\nHerein do לאויה and כליאל bear rule.",
@@ -1102,7 +1508,7 @@
         "mars in scorpio",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653932340-1og6t1tdy8e.svg",
       "metadata": {
         "book_t_no": 30,
         "arcana": "minor",
@@ -1118,7 +1524,21 @@
         "card_name_1912": "Five of Cups",
         "title": "Lord of Loss in Pleasure",
         "archetype": "card:five-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653932340-1og6t1tdy8e.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791653261546-86tbw2dlu23.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiating Angelic Hand, holding lotuses or water-lilies, of which the flowers are falling right and left. Leaves only, and no buds, surmount them. These lotus stems ascend between the cups in the manner of a fountain, but no water flows therefrom; neither is there water in any of the cups, which are somewhat of the shape of the magical instrument of the Zelator Adeptus Minor.\n\nAbove and below are the symbols of Mars and Scorpio for the Decan.\n\nDeath, or end of pleasure: disappointment, sorrow and loss in those things from which pleasure is expected. Sadness, treachery, deceit; ill-will, detraction; charity and kindness ill requited; all kinds of anxieties and troubles from unsuspected and unexpected sources.\n\nGeburah of ה (Disappointment in love, marriage broken off, unkindness of a friend; loss of friendship).\n\nHerein rule לוויה and פהליה.",
@@ -1139,7 +1559,7 @@
         "sun in scorpio",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653935116-0w7wxlkh6ws.svg",
       "metadata": {
         "book_t_no": 31,
         "arcana": "minor",
@@ -1155,7 +1575,21 @@
         "card_name_1912": "Six of Cups",
         "title": "Lord of Pleasure",
         "archetype": "card:six-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653935116-0w7wxlkh6ws.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791653463177-0rig0mumndx.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nAN Angelic Hand, as before, holds a group of stems of water-lilies or lotuses, from which six flowers bend, one over each cup. From these flowers a white glistening water flows into the cups as from a fountain, but they are not yet full. Above and below are Sun and Scorpio referring to the Decan.\n\nCommencement of steady increase, gain and pleasure; but commencement only. Also affront, detection, knowledge, and in some instances contention and strife arising from unwarranted self-assertion and vanity. Sometimes thankless and presumptuous; sometimes amiable and patient. According to dignity as usual.\n\nTiphareth of ה (Beginning of wish, happiness, success, or enjoyment).\n\nTherein rule נלכאל and יייאל.",
@@ -1176,7 +1610,7 @@
         "venus in scorpio",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653937443-s7cipsxjgyp.svg",
       "metadata": {
         "book_t_no": 32,
         "arcana": "minor",
@@ -1192,7 +1626,21 @@
         "card_name_1912": "Seven of Cups",
         "title": "Lord of Illusionary Success",
         "archetype": "card:seven-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653937443-s7cipsxjgyp.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652192385-dljcfa6c0s.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTHE seven cups are arranged as two descending triangles above a point: a hand, as usual, holds lotus stems which arise from the central lower cup. The hand is above this cup and below the middle one. With the exception of the central lower cup, each is overhung by a lotus flower, but no water falls from these into any of the cups, which are all quite empty. Above and below are the symbols of the Decanate Venus and Scorpio.\n\nPossible victory, but neutralized by the supineness of the person: illusionary success, deception in the moment of apparent victory. Lying, error, promises unfulfilled. Drunkenness, wrath, vanity. Lust, fornication, violence against women, selfish dissipation, deception in love and friendship. Often success gained, but not followed up. Modified as usual by dignity.\n\nNetzach of ה (Lying, promises unfulfilled; illusion, deception, error; slight success at outset, not retained).\n\nHerein the Angels מלהאל and חהויה rule.",
@@ -1213,7 +1661,7 @@
         "mercury in sagittarius",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653940387-4utfx5c7ri.svg",
       "metadata": {
         "book_t_no": 33,
         "arcana": "minor",
@@ -1229,7 +1677,21 @@
         "card_name_1912": "Eight of Wands",
         "title": "Lord of Swiftness",
         "archetype": "card:eight-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653940387-4utfx5c7ri.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651893247-z3s3lv4gbqk.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nFOUR White Radiating Angelic Hands (two proceeding from each side) issuant from clouds; clasped in two pairs in the centre with the grip of the First Order. They hold eight wands, crossed four with four. Flames issue from the point of junction. Surmounting the small wands with flames issuing down them, and placed in the centre at the top and bottom of the card respectively, are the symbols of Mercury and Sagittarius for the Decan.\n\nToo much force applied too suddenly. Very rapid rush, but quickly passed and expended. Violent, but not lasting. Swiftness, rapidity, courage, boldness, confidence, freedom, warfare, violence; love of open air, field-sports, gardens and meadows. Generous, subtle, eloquent, yet somewhat untrustworthy; rapacious, insolent, oppressive. Theft and robbery. According to dignity.\n\nHod of י (Hasty communications and messages; swiftness).\n\nTherein rule the Angels נתהיה and האאיה.",
@@ -1250,7 +1712,7 @@
         "moon in sagittarius",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653976722-53pqpaorsfw.svg",
       "metadata": {
         "book_t_no": 34,
         "arcana": "minor",
@@ -1266,7 +1728,21 @@
         "card_name_1912": "Nine of Wands",
         "title": "Lord of Great Strength",
         "archetype": "card:nine-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653976722-53pqpaorsfw.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651915253-xc1xy3lcvgl.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nFOUR hands, as in the previous symbol, holding eight wands crossed four and four; but a fifth hand at the foot of the card holds another wand upright, which traverses the point of junction with the others: flames leap herefrom. Above and below are the symbols Moon and Sagittarius.\n\nTremendous and steady force that cannot be shaken. Herculean strength, yet sometimes scientifically applied. Great success, but with strife and energy. Victory, preceded by apprehension and fear. Health good, and recovery not in doubt. Generous, questioning and curious; fond of external appearances: intractable, obstinate.\n\nYesod of י (Strength, power, health, recovery from sickness).\n\nHerein rule the Angels ירתאל and שאהיה.",
@@ -1287,7 +1763,7 @@
         "saturn in sagittarius",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653979956-itvi66mseij.svg",
       "metadata": {
         "book_t_no": 35,
         "arcana": "minor",
@@ -1303,7 +1779,21 @@
         "card_name_1912": "Ten of Wands",
         "title": "Lord of Oppression",
         "archetype": "card:ten-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653979956-itvi66mseij.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651941565-4d989wscx2y.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nFOUR hands holding eight wands crossed as before. A fifth hand holding two wands upright, which traverses the junction of the others. Flames issuant. Saturn and Sagittarius.\n\nCruel and overbearing force and energy, but applied only to material and selfish ends. Sometimes shows failure in a matter, and the opposition too strong to be controlled; arising from the person's too great selfishness at the beginning. Ill-will, levity, lying, malice, slander, envy, obstinacy; swiftness in evil and deceit, if ill dignified. Also generosity, disinterestedness and self-sacrifice, when well dignified.\n\nMalkuth of ו (Cruelty, malice, revenge, injustice).\n\nTherein rule רייאל and אומאל.",
@@ -1324,7 +1814,7 @@
         "jupiter in capricorn",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653983713-sfcaxjivh7.svg",
       "metadata": {
         "book_t_no": 36,
         "arcana": "minor",
@@ -1340,7 +1830,21 @@
         "card_name_1912": "Two of Pentacles",
         "title": "Lord of Harmonious Change",
         "archetype": "card:two-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653983713-sfcaxjivh7.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652669239-9h7fia8ql.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTWO wheels, disks or pentacles, similar to that of the Ace. They are united by a green-and-gold serpent, bound about them like a figure of 8. It holds its tail in its mouth. A White Radiant Angelic Hand holds the centre of the whole. No roses enter into this card. Above and below are the symbols of Jupiter and Capricorn. It is a revolving symbol.\n\nThe harmony of change, alternation of gain and loss; weakness and strength; everchanging occupation; wandering, discontented with any fixed condition of things; now elated, then melancholy; industrious, yet unreliable; fortunate through prudence of management, yet sometimes unaccountably foolish; alternatively talkative and suspicious. Kind, yet wavering and inconsistent. Fortunate in journeying. Argumentative.\n\nChokmah of ה (Pleasant change, visit to friends).\n\nHerein the Angels לכבאל and ושריה have rule.",
@@ -1361,7 +1865,7 @@
         "mars in capricorn",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653986852-qdfst96unt.svg",
       "metadata": {
         "book_t_no": 37,
         "arcana": "minor",
@@ -1377,7 +1881,21 @@
         "card_name_1912": "Three of Pentacles",
         "title": "Lord of Material Works",
         "archetype": "card:three-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653986852-qdfst96unt.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791653340749-ubfyk7iukdk.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE-WINGED Angelic Hand, as before, holding a branch of a rose tree, of which two white rosebuds touch and surmount the topmost Pentacle. The Pentacles are arranged in an equilateral triangle. Above and below the symbols Mars and Capricorn.\n\nWorking and constructive force, building up, creation, erection; realization and increase of material things; gain in commercial transactions, rank; increase of substance, influence, cleverness in business, selfishness. Commencement of matters to be established later. Narrow and prejudiced. Keen in matters of gain; sometimes given to seeking after impossibilities.\n\nBinah of ה (Business, paid employment, commercial transaction).\n\nHerein are יחויה and להחיה Angelic Rulers.",
@@ -1398,7 +1916,7 @@
         "sun in capricorn",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653988947-z7i394ulpc.svg",
       "metadata": {
         "book_t_no": 38,
         "arcana": "minor",
@@ -1414,7 +1932,21 @@
         "card_name_1912": "Four of Pentacles",
         "title": "Lord of Earthly Power",
         "archetype": "card:four-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653988947-z7i394ulpc.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652732518-kt6fzcsn88.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA HAND holding a branch of a rose tree, but without flowers or buds, save that in the centre is one fully blown white rose. Pentacles are disposed as on the points of a square; a rose in its centre. Symbols Sun and Capricorn above and below to represent the Decan.\n\nAssured material gain: success, rank, dominion, earthy power, completed but leading to nothing beyond. Prejudicial, covetous, suspicious, careful and orderly, but discontented. Little enterprise or originality. According to dignity as usual.\n\nChesed of ה (Gain of money or influence: a present).\n\nHerein do כוקיה and מנדאל bear rule.",
@@ -1435,7 +1967,7 @@
         "venus in aquarius",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653991632-qc2jtfwnvx.svg",
       "metadata": {
         "book_t_no": 39,
         "arcana": "minor",
@@ -1451,7 +1983,21 @@
         "card_name_1912": "Five of Swords",
         "title": "Lord of Defeat",
         "archetype": "card:five-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653991632-qc2jtfwnvx.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652458230-dv4ffdpsfjf.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTWO Rayed Angelic Hands each holding two swords nearly upright, but falling apart of each other, right and left of the card. A third hand holds a sword upright in the centre as though it had disunited them. The petals of the rose, which in the four had been reinstated in the centre, are torn asunder and falling. Above and below are Venus and Aquarius for Decan.\n\nContest finished and decided against the person; failure, defeat, anxiety, trouble, poverty, avarice, grieving after gain, laborious, unresting; loss and vileness of nature; malicious, slanderous, lying, spiteful and tale-bearing. A busybody and separator of friends, hating to see peace and love between others. Cruel, yet cowardly, thankless and unreliable. Clever and quick in thought and speech. Feelings of pity easily roused, but unenduring.\n\nGeburah of ו (Defeat, loss, malice, spite, slander, evil-speaking).\n\nHerein the Angels אניאל and חעמיה bear rule.",
@@ -1472,7 +2018,7 @@
         "mercury in aquarius",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653994446-wthqcpa7wyh.svg",
       "metadata": {
         "book_t_no": 40,
         "arcana": "minor",
@@ -1488,7 +2034,21 @@
         "card_name_1912": "Six of Swords",
         "title": "Lord of Earned Success",
         "archetype": "card:six-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653994446-wthqcpa7wyh.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652483683-wc6ootltd5t.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTWO hands, as before, each holding two swords which cross in the centre. Rose re-established thereon. Mercury and Aquarius above and below, supported on the points of two short daggers or swords.\n\nSuccess after anxiety and trouble; self-esteem, beauty, conceit, but sometimes modesty therewith; dominance, patience, labour, etc.\n\nTiphareth of ו (Labour, work, journey by water).\n\nRuled by the Great Angels רהעאל and ייוהל.",
@@ -1509,7 +2069,7 @@
         "moon in aquarius",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653996966-ts21r9qr5j.svg",
       "metadata": {
         "book_t_no": 41,
         "arcana": "minor",
@@ -1525,7 +2085,21 @@
         "card_name_1912": "Seven of Swords",
         "title": "Lord of Unstable Effort",
         "archetype": "card:seven-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653996966-ts21r9qr5j.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652504984-inqgaonykp.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTWO Angelic Radiating Hands as before, each holding three swords. A third hand holds up a single sword in the centre. The points of all the swords \"just touch\" each other, the central sword not altogether dividing them.\n\nThe Rose of the previous symbols of this suit is held up by the same hand which holds the central sword: as if the victory were at its disposal. Symbols of Moon and Aquarius.\n\nPartial success. Yielding when victory is within grasp, as if the last reserves of strength were used up. Inclination to lose when on the point of gaining, through not continuing the effort. Love of abundance, fascinated by display, given to compliments, affronts and insolences, and to spy upon others. Inclined to betray confidences, not always intentionally. Rather vacillatory and unreliable.\n\nNetzach of ו (Journey by land: in character untrustworthy).\n\nHerein rule the Great Angels הההאל and מעכאל.",
@@ -1546,7 +2120,7 @@
         "saturn in pisces",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653999895-0t3y778eq01f.svg",
       "metadata": {
         "book_t_no": 42,
         "arcana": "minor",
@@ -1562,7 +2136,21 @@
         "card_name_1912": "Eight of Cups",
         "title": "Lord of Abandoned Success",
         "archetype": "card:eight-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653999895-0t3y778eq01f.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652219206-bd2rrof7mcv.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiating Angelic Hand, holding a group of stems of lotuses or water-lilies. There are only two flowers shown, which bend over the two central cups, pouring into them a white water which fills them and runs over into the three lowest, which later are not yet filled The three uppermost are quite empty. At the top and bottom of the card are symbols Saturn and Pisces.\n\nTemporary success, but without further results. Thing thrown aside as soon as gained. Not lasting, even in the matter in hand. Indolence in success. Journeying from place to place. Misery and repining without cause. Seeking after riches. Instability.\n\nHod of ה (Success abandoned; decline of interest).\n\nThe Angels ruling are ווליה and ילהיה.",
@@ -1583,7 +2171,7 @@
         "jupiter in pisces",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654003459-zvr07x7bzc.svg",
       "metadata": {
         "book_t_no": 43,
         "arcana": "minor",
@@ -1599,7 +2187,21 @@
         "card_name_1912": "Nine of Cups",
         "title": "Lord of Material Happiness",
         "archetype": "card:nine-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654003459-zvr07x7bzc.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791653290477-19px0wlex69.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiant Angelic Hand, issuing from a cloud holding lotus or water-lilies, one flower of which overhangs each cup; from it a white water pours. Cups are arranged in three rows of 3. Jupiter and Pisces above and below.\n\nComplete and perfect realization of pleasure and happiness, almost perfect; self-praise, vanity, conceit, much talking of self, yet kind and lovable, and may be self-denying therewith. High-minded, not easily satisfied with small and limited ideas. Apt to be maligned through too much self-assumption. A good and generous, but sometimes foolish nature.\n\nYesod of ה (Complete success, pleasure and happiness, wishes fulfilled).\n\nTherein rule the Angels סאליה and עריאל.",
@@ -1620,7 +2222,7 @@
         "mars in pisces",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654040658-idlx6ptv8jg.svg",
       "metadata": {
         "book_t_no": 44,
         "arcana": "minor",
@@ -1636,7 +2238,21 @@
         "card_name_1912": "Ten of Cups",
         "title": "Lord of Perfected Success",
         "archetype": "card:ten-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654040658-idlx6ptv8jg.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652255891-6x3jfoko3yo.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nHAND, as usual, holding bunch of water-lilies or lotuses, whose flowers pour a white water into all the cups, which \"all run over.\" The uppermost cup is held sideways by a hand, and pours water into the left-hand upper cup. A single lotus flower surmounts the top cup, and is the source of the water that fills it. Above and below the symbols Mars and Pisces.\n\nPermanent and lasting success and happiness, because inspired from above. Not so sensual as \"Lord of Material Happiness,\" yet almost more truly happy. Pleasure, dissipation, debauchery, quietness, peacemaking. Kindness, pity, generosity, wantonness, waste, etc., according to dignity.\n\nMalkuth of ה (Matter settled: complete good fortune).\n\nHerein the Great Angels עשליה and מיהאל rule.\n\n[This is not such a good card as stated. It represents boredom, and quarrelling arising therefrom; disgust springing from too great luxury. In particular it represents drug-habits, the sottish excess of pleasure and the revenge of nature.]",
@@ -1657,7 +2273,7 @@
         "mars in aries",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654043634-kbhqmnz95b.svg",
       "metadata": {
         "book_t_no": 45,
         "arcana": "minor",
@@ -1673,7 +2289,21 @@
         "card_name_1912": "Two of Wands",
         "title": "Lord of Dominion",
         "archetype": "card:two-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654043634-kbhqmnz95b.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651744508-g6q3or9hqj8.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiating Angelic hand, issuing from clouds, and grasping two crossed wands. Flames issue from the point of junction. On two small wands above and below, with flames of five issuing therefrom, are the symbols of Mars and Aries for the Decan.\n\nStrength, domination, harmony of rule and of justice. Boldness, courage, fierceness, shamelessness, revenge, resolution, generous, proud, sensitive, ambitious, refined, restless, turbulent, sagacious withal, yet unforgiving and obstinate.\n\nChokmah of י (Influence over others, authority, power, dominion).\n\nTherein the Angels והואל and דניאל bear rule.",
@@ -1694,7 +2324,7 @@
         "sun in aries",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654046690-ydtj4xlwckq.svg",
       "metadata": {
         "book_t_no": 46,
         "arcana": "minor",
@@ -1710,7 +2340,21 @@
         "card_name_1912": "Three of Wands",
         "title": "Lord of Established Strength",
         "archetype": "card:three-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654046690-ydtj4xlwckq.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651772686-5txag7ilam8.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiating Angelic Hand, as before, issuing from clouds and grasping three wands in the centre (two crossed, the third upright). Flames issue from the point of junction. Above and below are the symbols Sun and Aries.\n\nEstablished force, strength, realization of hope. Completion of labour. Success after struggle. Pride, nobility, wealth, power, conceit. Rude self-assumption and insolence. Generosity, obstinacy, etc.\n\nBinah of י (Pride, arrogance, self-assertion).\n\nHerein rule the Angels ההשיה and עממיה.\n\n[This card is much better than as described.]",
@@ -1731,7 +2375,7 @@
         "venus in aries",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654049322-gx5ynnlmddc.svg",
       "metadata": {
         "book_t_no": 47,
         "arcana": "minor",
@@ -1747,7 +2391,21 @@
         "card_name_1912": "Four of Wands",
         "title": "Lord of Perfected Work",
         "archetype": "card:four-of-wands",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654049322-gx5ynnlmddc.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791651798995-96va9fg0dgp.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTWO White Radiating Angelic Hands, as before, issuing from clouds right and left of the card and clasped in the centre with the grip of the First Order, holding four wands or torches crossed. Flames issue from the point of junction. Above and below are two small flaming wands, with the symbols of Venus and Aries representing the Decan.\n\nPerfection or completion of a thing built up with trouble and labour. Rest after labour, subtlety, cleverness, beauty, mirth, success in completion. Reasoning faculty, conclusions drawn from previous knowledge. Unreadiness, unreliable and unsteady through over-anxiety and hurriedness of action. Graceful in manner, at times insincere, etc.\n\nChesed of י (Settlement, arrangement, completion).\n\nHerein are ננאאל and ניתהל Angelic rulers.",
@@ -1768,7 +2426,7 @@
         "mercury in taurus",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654051977-5nctzb5c2yd.svg",
       "metadata": {
         "book_t_no": 48,
         "arcana": "minor",
@@ -1784,7 +2442,21 @@
         "card_name_1912": "Five of Pentacles",
         "title": "Lord of Material Trouble",
         "archetype": "card:five-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654051977-5nctzb5c2yd.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652760203-iljj0tcqd1g.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiant Angelic Hand issuing from clouds, and holding a branch of the white rose tree, but from which the roses are falling, and leaving no buds behind. Five Pentacles similar to the Ace. Above and below are Mercury and Taurus.\n\nLoss of money or position. Trouble about material things. Labour, toil, land cultivation; building, knowledge and acuteness of earthly things, poverty, carefulness, kindness; sometimes money regained after severe toil and labour. Unimaginative, harsh, stern, determined, obstinate.\n\nGeburah of ה (Loss of profession, loss of money, monetary anxiety).\n\nHerein the angels מבהיה and פניאל rule.",
@@ -1805,7 +2477,7 @@
         "moon in taurus",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654054552-yjxxu3g5zne.svg",
       "metadata": {
         "book_t_no": 49,
         "arcana": "minor",
@@ -1821,7 +2493,21 @@
         "card_name_1912": "Six of Pentacles",
         "title": "Lord of Material Success",
         "archetype": "card:six-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654054552-yjxxu3g5zne.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791653492047-gurfmxkxvxi.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiant Angelic Hand holding a rose branch with white roses and buds, each of which touches a Pentacle. Pentacles are arranged in two columns of three each *(a figure on the printed page: six pentacles in two columns of three)*. Above and below are the symbols Taurus and Moon of the Decan.\n\nSuccess and gain in material undertakings. Power, influence, rank, nobility, rule over the people. Fortunate, successful, liberal and just.\n\nIf ill dignified, may be purse-proud, insolent from excess, or prodigal.\n\nTiphareth of ה (Success in material things, prosperity in business).\n\nHerein rule the Angels נממיה and יילאל.",
@@ -1842,7 +2528,7 @@
         "saturn in taurus",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654056998-ulu86yx35xl.svg",
       "metadata": {
         "book_t_no": 50,
         "arcana": "minor",
@@ -1858,7 +2544,21 @@
         "card_name_1912": "Seven of Pentacles",
         "title": "Lord of Success Unfulfilled",
         "archetype": "card:seven-of-coins",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654056998-ulu86yx35xl.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652822226-m6yv2jvwey.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiating Angelic Hand issuing from a cloud, and holding a white rose branch. Seven Pentacles arranged like the geomantic figure Rubeus. There are only five buds, which overhang, but do not touch the five uppermost Pentacles. Above and below are the Decan symbols, Saturn and Taurus respectively.\n\nPromises of success unfulfilled. (Shewn, as it were, by the fact that the rosebuds do not come to anything.) Loss of apparently promising fortune. Hopes deceived and crushed. Disappointment, misery, slavery, necessity and baseness. A cultivator of land, and yet a loser thereby. Sometimes it denotes slight and isolated gains with no fruits resulting therefrom, and of no further account, though seeming to promise well.\n\nNetzach of ה (Unprofitable speculations and employments; little gain for much labour).\n\nTherein הרחאל and מצראל are ruling Angels.",
@@ -1879,7 +2579,7 @@
         "jupiter in gemini",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654059151-zdi8w0wg3z.svg",
       "metadata": {
         "book_t_no": 51,
         "arcana": "minor",
@@ -1895,7 +2595,21 @@
         "card_name_1912": "Eight of Swords",
         "title": "Lord of Shortened Force",
         "archetype": "card:eight-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654059151-zdi8w0wg3z.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652541194-upy0c4sdadh.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nFOUR White Radiant Angelic Hands issuing from clouds, each holding two swords, points upwards; all the points touch near the top of the card. Hands issue, two at each bottom angle of the card. The pose of the other sword symbols is re-established in the centre. Above and below are the Decan symbols Jupiter and Gemini.\n\nToo much force applied to small things: too much attention to detail at the expense of the principal and more important points. When ill dignified, these qualities produce malice, pettiness, and domineering characteristics. Patience in detail of study; great care in some things, counterbalanced by equal disorder in others. Impulsive; equally fond of giving or receiving money or presents; generous, clever, acute, selfish and without strong feeling of affection. Admires wisdom, yet applies it to small and unworthy objects.\n\nHod of ו (Narrow, restricted, petty, a prison).\n\nTherein rule the Angels ומבאל and יההאל.",
@@ -1916,7 +2630,7 @@
         "mars in gemini",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654061942-wkqrqf01ix.svg",
       "metadata": {
         "book_t_no": 52,
         "arcana": "minor",
@@ -1932,7 +2646,21 @@
         "card_name_1912": "Nine of Swords",
         "title": "Lord of Despair and Cruelty",
         "archetype": "card:nine-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654061942-wkqrqf01ix.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652572306-4v5v4yjjp0k.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nFOUR Hands, as in the preceding figure, hold eight swords nearly upright, but with the points falling away from each other. A fifth hand holds a ninth sword upright in the centre, as if it had struck them asunder. No rose at all is shewn, as if it were not merely cut asunder, but utterly destroyed. Above and below are the Decan symbols Mars and Gemini.\n\nDespair, cruelty, pitilessness, malice, suffering, want, loss, misery. Burden, oppression, labour, subtlety and craft, dishonesty, lying and slander.\n\nYet also obedience, faithfulness, patience, unselfishness, etc. According to dignity.\n\nYesod of ו (Illness, suffering, malice, cruelty, pain).\n\nTherein do ענואל and מחיאל bear rule.",
@@ -1953,7 +2681,7 @@
         "sun in gemini",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654064581-76aczx6bnc8.svg",
       "metadata": {
         "book_t_no": 53,
         "arcana": "minor",
@@ -1969,7 +2697,21 @@
         "card_name_1912": "Ten of Swords",
         "title": "Lord of Ruin",
         "archetype": "card:ten-of-swords",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654064581-76aczx6bnc8.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652603992-nt0ysycgdjj.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nFOUR hands holding eight swords, as in the preceding symbol; the points falling away from each other. Two hands hold two swords crossed in the centre, as though their junction had disunited the others. No rose, flower or bud, is shewn. Above and below are Sun and Gemini, representing the Decan.\n\nAlmost a worse symbol than the Nine of Swords. Undisciplined, warring force, complete disruption and failure. Ruin of all plans and projects. Disdain, insolence and impertinence, yet mirth and jollity therewith. A marplot, loving to overthrow the happiness of others; a repeater of things; given to much unprofitable speech, and of many words. Yet clever, eloquent, etc., according to dignity.\n\nMalkuth of ו (Ruin, death, defeat, disruption).\n\nHerein the Angels דמביה and מנקאל reign.",
@@ -1990,7 +2732,7 @@
         "venus in cancer",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654106298-g26g9re1bkc.svg",
       "metadata": {
         "book_t_no": 54,
         "arcana": "minor",
@@ -2006,7 +2748,21 @@
         "card_name_1912": "Two of Cups",
         "title": "Lord of Love",
         "archetype": "card:two-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654106298-g26g9re1bkc.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652063373-u5ndr43s99o.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiant Hand, issuant from the lower part of the card from a cloud, holds lotuses. A lotus flower rises above water, which occupies the lower part of the card rising above the hand. From this flower rises a stem, terminating near the top of the card in another lotus, from which flows a sparkling white water, as from a fountain. Crossed on the stem just beneath are two dolphins, Argent and Or, on to which the water falls, and from which it pours in full streams, like jets of gold and silver, into two cups; which in their turn overflow, flooding the lower part of the card. Venus and Cancer above and below.\n\nHarmony of masculine and feminine united. Harmony, pleasure, mirth, subtlety: but if ill dignified — folly, dissipation, waste, silly actions.\n\nChokmah of ה (Marriage, love, pleasure).\n\nTherein rule the Angels אועאל and חבויה.",
@@ -2027,7 +2783,7 @@
         "mercury in cancer",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654109301-noz4784wqx.svg",
       "metadata": {
         "book_t_no": 55,
         "arcana": "minor",
@@ -2043,7 +2799,21 @@
         "card_name_1912": "Three of Cups",
         "title": "Lord of Abundance",
         "archetype": "card:three-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654109301-noz4784wqx.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652091054-i5ctoozqv5m.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nA WHITE Radiating Hand, as before, holds a group of lotuses or water-lilies, from which two flowers rise on either side of, and overhanging the top cup; pouring into it the white water. Flowers in the same way pour white water into the lower cups. All the cups overflow; the topmost into the two others, and these upon the lower part of the card. Cups are arranged in an erect equilateral triangle. Mercury and Cancer above and below.\n\nAbundance, plenty, success, pleasure, sensuality, passive success, good luck and fortune; love, gladness, kindness, liberality.\n\nBinah of ה (Plenty, hospitality, eating and drinking, pleasure, dancing, new clothes, merriment).\n\nTherein the Angels ראהאל and יבמיה are lords.",
@@ -2064,7 +2834,7 @@
         "moon in cancer",
         "decan"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654112174-zt3k53356gk.svg",
       "metadata": {
         "book_t_no": 56,
         "arcana": "minor",
@@ -2080,7 +2850,21 @@
         "card_name_1912": "Four of Cups",
         "title": "Lord of Blended Pleasure",
         "archetype": "card:four-of-cups",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654112174-zt3k53356gk.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791652121779-ziw1xaczcos.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nFOUR cups: the two upper overflowing into the two lower, which do not overflow. An Angelic Hand grasps a branch of lotus, from which ascends a stem bearing one flower at the top of the card, from which the white water flows into the two upper cups. From the centre two leaves pass right and left, making, as it were, a cross between the four cups. Above and below are the symbols Moon and Cancer for the Decan.\n\nSuccess or pleasure approaching their end. A stationary period in happiness, which may, or may not, continue. It does not mean love and marriage so much as the previous symbol. It is too passive a symbol to represent perfectly complete happiness. Swiftness, hunting and pursuing. Acquisition by contention: injustice sometimes; some drawbacks to pleasure implied.\n\nChesed of ה (Receiving pleasure or kindness from others, but some discomfort therewith).\n\nTherein rule the great Angels הייאל and מומיה.",
@@ -2102,7 +2886,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654114949-jjsvjgyhtvs.svg",
       "metadata": {
         "book_t_no": 57,
         "arcana": "major",
@@ -2117,7 +2901,21 @@
         "attribution": "Air",
         "title": "The Spirit of Αἰθήρ",
         "archetype": "arcana:the-fool",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654114949-jjsvjgyhtvs.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650836504-7c4fhshb1qa.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nIF the question refers to spiritual matters, the Fool means idea, thought, spirituality, that which endeavours to transcend Earth. But if question is material, it means folly, stupidity, eccentricity, or even mania.",
@@ -2139,7 +2937,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654118134-dkqa091n6ob.svg",
       "metadata": {
         "book_t_no": 58,
         "arcana": "major",
@@ -2154,7 +2952,21 @@
         "attribution": "Mercury",
         "title": "The Magus of Power",
         "archetype": "arcana:the-magician",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654118134-dkqa091n6ob.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650076345-9t0qma9h6x.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nSkill, wisdom, adaptation, craft, cunning, or occult wisdom or power.",
@@ -2176,7 +2988,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654120271-vk8b9qedtyr.svg",
       "metadata": {
         "book_t_no": 59,
         "arcana": "major",
@@ -2191,7 +3003,21 @@
         "attribution": "Moon",
         "title": "The Priestess of the Silver Star",
         "archetype": "arcana:the-high-priestess",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654120271-vk8b9qedtyr.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650099417-l2n1owcee8l.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nChange, alternation, increase and decrease, fluctuation; whether for good or evil depends on the dignity.",
@@ -2213,7 +3039,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654123375-3uttg8872w4.svg",
       "metadata": {
         "book_t_no": 60,
         "arcana": "major",
@@ -2228,7 +3054,21 @@
         "attribution": "Venus",
         "title": "The Daughter of the Mighty Ones",
         "archetype": "arcana:the-empress",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654123375-3uttg8872w4.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650123348-hfje0wg43xu.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nBeauty, happiness, pleasure, success. But with very bad dignity it means luxury, dissipation.",
@@ -2250,7 +3090,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654125856-7ycapfjbtkx.svg",
       "metadata": {
         "book_t_no": 61,
         "arcana": "major",
@@ -2265,7 +3105,21 @@
         "attribution": "Aries",
         "title": "Son of the Morning, chief among the Mighty",
         "archetype": "arcana:the-emperor",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654125856-7ycapfjbtkx.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650149444-4yysczfva6i.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nWar, conquest, victory, strife, ambition.",
@@ -2287,7 +3141,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654128628-c9hbezysvq6.svg",
       "metadata": {
         "book_t_no": 62,
         "arcana": "major",
@@ -2302,7 +3156,21 @@
         "attribution": "Taurus",
         "title": "The Magus of the Eternal",
         "archetype": "arcana:the-hierophant",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654128628-c9hbezysvq6.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650170176-zrwxpmvb77.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nDivine wisdom, manifestation, explanation, teaching, occult force voluntarily invoked.",
@@ -2324,7 +3192,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654131503-wycaevw1w5.svg",
       "metadata": {
         "book_t_no": 63,
         "arcana": "major",
@@ -2339,7 +3207,21 @@
         "attribution": "Gemini",
         "title": "The Children of the Voice; the Oracles of the Mighty Gods",
         "archetype": "arcana:the-lovers",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654131503-wycaevw1w5.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650864645-yo47lsmqup.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nInspiration (passive, mediumistic), motive power, action.",
@@ -2361,7 +3243,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654172878-is9bjuk6ji.svg",
       "metadata": {
         "book_t_no": 64,
         "arcana": "major",
@@ -2376,7 +3258,21 @@
         "attribution": "Cancer",
         "title": "The Child of the Powers of the Waters; the Lord of the Triumph of Light",
         "archetype": "arcana:the-chariot",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654172878-is9bjuk6ji.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650249106-79x7qxiv6gt.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTriumph, victory, health (sometimes unstable).",
@@ -2398,7 +3294,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654175526-rqiwwmu2iw.svg",
       "metadata": {
         "book_t_no": 65,
         "arcana": "major",
@@ -2413,7 +3309,21 @@
         "attribution": "Leo",
         "title": "The Daughter of the Flaming Sword",
         "archetype": "arcana:strength",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654175526-rqiwwmu2iw.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650273106-4cuhdpuzdv3.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nCourage, strength, fortitude, power passing on to action. Obstinacy.",
@@ -2435,7 +3345,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654177404-zp7odpfd2gl.svg",
       "metadata": {
         "book_t_no": 66,
         "arcana": "major",
@@ -2450,7 +3360,21 @@
         "attribution": "Virgo",
         "title": "The Magus of the Voice of Power, the Prophet of the Eternal",
         "archetype": "arcana:the-hermit",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654177404-zp7odpfd2gl.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650296356-yeluvl98crr.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nWisdom from on high. Active divine inspiration. Sometimes \"unexpected current.\"",
@@ -2472,7 +3396,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654180131-9pectoja3l9.svg",
       "metadata": {
         "book_t_no": 67,
         "arcana": "major",
@@ -2487,7 +3411,21 @@
         "attribution": "Jupiter",
         "title": "The Lord of the Forces of Life",
         "archetype": "arcana:wheel-of-fortune",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654180131-9pectoja3l9.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650317027-p3o5e2cfc8.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nGood fortune, happiness (within bounds). Intoxication of success.",
@@ -2509,7 +3447,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654182521-hpkx4haqzva.svg",
       "metadata": {
         "book_t_no": 68,
         "arcana": "major",
@@ -2524,7 +3462,21 @@
         "attribution": "Libra",
         "title": "The Daughter of the Lords of Truth: the Ruler of the Balance",
         "archetype": "arcana:justice",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654182521-hpkx4haqzva.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650339666-6m1amjg4bgj.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nEternal justice. Strength and force, but arrested as in act of judgment. May mean law, trial, etc.",
@@ -2546,7 +3498,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654185112-gn0k24yj4s9.svg",
       "metadata": {
         "book_t_no": 69,
         "arcana": "major",
@@ -2561,7 +3513,21 @@
         "attribution": "Water",
         "title": "The Spirit of the Mighty Waters",
         "archetype": "arcana:the-hanged-man",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654185112-gn0k24yj4s9.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650360010-sr5tzmrja6.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nEnforced sacrifice, punishment, loss, fatal and not voluntary, suffering.",
@@ -2583,7 +3549,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654187448-qh3fid54y1e.svg",
       "metadata": {
         "book_t_no": 70,
         "arcana": "major",
@@ -2598,7 +3564,21 @@
         "attribution": "Scorpio",
         "title": "The Child of the Great Transformers: the Lord of the Gates of Death",
         "archetype": "arcana:death",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654187448-qh3fid54y1e.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650381558-ej2rhza22wq.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nTime, age, transformation, change involuntary (as opposed to 18, Pisces). Or death, destruction (only latter with special cards). [Specially, a sudden and quite unexpected change.]",
@@ -2620,7 +3600,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654189783-2j6dg0kdlvj.svg",
       "metadata": {
         "book_t_no": 71,
         "arcana": "major",
@@ -2635,7 +3615,21 @@
         "attribution": "Sagittarius",
         "title": "The Daughter of the Reconcilers: the Bringer-Forth of life",
         "archetype": "arcana:temperance",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654189783-2j6dg0kdlvj.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650432640-f6ujp6qkwwl.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nCombination of forces, realization, action (material effect, good or evil).",
@@ -2657,7 +3651,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654191951-505in95w0u9.svg",
       "metadata": {
         "book_t_no": 72,
         "arcana": "major",
@@ -2672,7 +3666,21 @@
         "attribution": "Capricorn",
         "title": "The Lord of the Gates of Matter: the Child of the Forces of Time",
         "archetype": "arcana:the-devil",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654191951-505in95w0u9.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650460506-a39t2cu4k6d.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nMateriality, material force, material temptation, obsession.",
@@ -2694,7 +3702,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654195076-b6p4xmgg22h.svg",
       "metadata": {
         "book_t_no": 73,
         "arcana": "major",
@@ -2709,7 +3717,21 @@
         "attribution": "Mars",
         "title": "The Lord of the Hosts of the Mighty",
         "archetype": "arcana:the-tower",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654195076-b6p4xmgg22h.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650486056-2p72bhf224f.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nAmbition, fighting, war, courage, or destruction, danger, fall, ruin.",
@@ -2731,7 +3753,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653649257-vje2q4uvcn.svg",
       "metadata": {
         "book_t_no": 74,
         "arcana": "major",
@@ -2746,7 +3768,21 @@
         "attribution": "Aquarius",
         "title": "The Daughter of the Firmament, the dweller between the Waters",
         "archetype": "arcana:the-star",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791653649257-vje2q4uvcn.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791649700154-qwkvwo63k69.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nHope, faith, unexpected help. Or dreaminess, deceived hope, etc.",
@@ -2768,7 +3804,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654224621-fmnl1ur03tp.svg",
       "metadata": {
         "book_t_no": 75,
         "arcana": "major",
@@ -2783,7 +3819,21 @@
         "attribution": "Pisces",
         "title": "The Ruler of Flux and Reflux: the Child of the Sons of the Mighty",
         "archetype": "arcana:the-moon",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654224621-fmnl1ur03tp.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650509913-1cft2sskybb.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nDissatisfaction, voluntary change. Error, lying, falsity, deception. This card is very sensitive to dignity.",
@@ -2804,7 +3854,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654226748-mzx33fg0tdm.svg",
       "metadata": {
         "book_t_no": 76,
         "arcana": "major",
@@ -2819,7 +3869,21 @@
         "attribution": "Sun",
         "title": "The Lord of the Fire of the World",
         "archetype": "arcana:the-sun",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654226748-mzx33fg0tdm.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650529996-xizbvbruo3s.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nGlory, gain, riches. With \"very\" evil cards it means arrogance, display, vanity.",
@@ -2841,7 +3905,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654229110-qu5kcf55of9.svg",
       "metadata": {
         "book_t_no": 77,
         "arcana": "major",
@@ -2856,7 +3920,21 @@
         "attribution": "Spirit and Fire",
         "title": "The Spirit of the Primal Fire",
         "archetype": "arcana:judgement",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654229110-qu5kcf55of9.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650551683-43qcc86phwr.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nFinal decision, judgment, sentence, determination of a matter without appeal, \"on its plane.\"",
@@ -2878,7 +3956,7 @@
         "key",
         "major arcana"
       ],
-      "image_url": "",
+      "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654231861-p5ifjshgc0i.svg",
       "metadata": {
         "book_t_no": 78,
         "arcana": "major",
@@ -2893,7 +3971,21 @@
         "attribution": "Earth and Saturn",
         "title": "The Great One of the Night of Time",
         "archetype": "arcana:the-world",
-        "illustrations": []
+        "illustrations": [
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1791654231861-p5ifjshgc0i.svg",
+            "artist": "PlayfulProcess (line art traced from the AI painting)",
+            "edition": "Book T deck, SVG",
+            "license": "CC-BY-SA-4.0",
+            "is_primary": true
+          },
+          {
+            "url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/flow-image-gen/1791650573659-8q4bx2ymq62.png",
+            "artist": "AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess",
+            "edition": "Book T deck, painting",
+            "license": "CC-BY-SA-4.0"
+          }
+        ]
       },
       "sections": {
         "Book T (1912)": "*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain (notes in square brackets are Crowley's)*\n\nThe matter itself. Synthesis, world, kingdom. Usually denotes actual subject of question, and therefore depends entirely on accompanying cards.",

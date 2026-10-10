@@ -2,6 +2,22 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 10 2026 — branch `book-t-images` (pushed, not merged): Book T deck, a first picture on all 78 cards
+
+- **Book T deck (`tarot/book-t`), 78 pictures:** each card's `image_url` is an SVG (line art + flat fills,
+  under 1 MB, the card's name and Book T title set as real text under the picture), traced from an AI
+  painting (`gemini-2.5-flash-image`) prompted from Book T's own words for that card. `metadata.illustrations`
+  holds both, the SVG (`is_primary`) and the painting, each with credit and licence (CC BY-SA 4.0, the deck's).
+  Temporary by design: PlayfulProcess improves them over time.
+- **`tarot/book-t/PROMPTS.md`:** per card, the Book T (1912) passage, the prompt written from it, what was left
+  out (the decan glyphs, set as caption text instead; Hebrew letters), the painting and SVG links, and a
+  "Redo first" list. For the Keys, Book T gives no picture: their prompts start from each Key's title.
+- **Four cards from the Oct 8 pilot** (Queen of Cups, Knight of Swords, Prince of Pentacles, Princess of
+  Wands) are its chosen paintings, re-traced with this deck's captions.
+- **`build_book_t_deck.py`:** the description and `image_credit` now say the pictures exist (a re-run keeps
+  every `image_url` and `metadata.illustrations`, as before). `search-index.json` rebuilt: the Book T cards now
+  carry their picture.
+
 ## Oct 10 2026 — branch `format-v2-nodes` (not pushed; goes live in the switch window): grammar format v2
 
 - **Every grammar file is format v2** (recursive.eco `docs/architecture/model-track/FORMAT-V2-NODES.md`):
