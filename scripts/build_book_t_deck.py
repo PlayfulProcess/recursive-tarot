@@ -24,9 +24,10 @@ research/sources/book-t-equinox-1912.txt with the reading page's corrections fro
   * Text: `Book T (1912)` verbatim; `In Book T's table` (the row of Book T's own table: name,
     title, letter, decan); `Correspondences`, the short attribution facts shared with the
     Golden Dawn deck (tarot/golden-dawn-book-t-tarot), which keeps the Rider-Waite-Smith pictures.
-  * Pictures: none. `image_url` is an empty slot that PlayfulProcess fills over time. A re-run
-    keeps every `image_url`, `metadata.illustrations`, and any section this script does not
-    write, so pictures and notes added later (by hand or by recursive.eco sync) survive.
+  * Pictures: PlayfulProcess's, not this script's (first set Oct 10 2026: SVG line art traced from
+    AI paintings, see tarot/book-t/PROMPTS.md). A re-run keeps every `image_url`,
+    `metadata.illustrations`, and any section this script does not write, so pictures and notes
+    added later (by hand or by recursive.eco sync) survive.
 """
 import argparse, copy, json, os, re, sys
 
@@ -64,8 +65,11 @@ Rider-Waite-Smith deck. Waite and Smith drew their pictures in 1909, from inside
 and those pictures sit in a deck of their own,
 [Golden Dawn Tarot — Book T with Rider-Waite-Smith Imagery](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json).
 
-**The pictures will be added by PlayfulProcess over time.** Each card has an empty picture slot
-until then.
+**Pictures (Oct 10 2026).** Every card has a first picture, made for now and meant to be improved:
+an AI painting prompted from Book T's own words for that card, traced into line art, with the
+card's name set as text under it. Book T describes no picture for the twenty-two Keys, so their
+prompts start from each Key's title. Each prompt, beside the Book T passage it comes from, is in
+[the prompts file](https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/book-t/PROMPTS.md).
 
 ## How the cards are set out
 
@@ -292,7 +296,7 @@ def build(prev):
         'is_published': False,
         '_community_folder': 'tarot',
         '_community_slug': 'book-t',
-        'image_credit': 'No pictures yet: PlayfulProcess adds them over time.',
+        'image_credit': "AI paintings prompted from Book T's own words, traced to line art by PlayfulProcess (Oct 2026); CC BY-SA 4.0. Prompts and sources: tarot/book-t/PROMPTS.md.",
         'metadata': {'common_name': 'Book T', 'category': 'historical', 'year': 1912,
                      'year_label': 'c. 1888 · printed 1912'},
         'nodes': items,
