@@ -1,0 +1,134 @@
+---
+id: book-t-community-deck
+title: "Book T: a Community Deck"
+description: "Book T's words are public domain. Its pictures can come from many hands. What you can add to the Book T deck, the rules it keeps, and how to send it."
+duration: 8
+author: PlayfulProcess
+date: 2026-10-10
+draft: true
+---
+
+<!--
+DRAFT (Oct 10 2026), for PlayfulProcess to edit. Not linked from the menu, not in course/, so no
+build step, search index or grammar sync reads it. To publish: move to course/book-t-community-deck.mdx,
+add it to COURSE_GROUPS in site-header.js, and decide the points marked PP below.
+
+hers:
+- "contribute to Book T as a community deck and they can add images? But I need to accept them."
+  (her message, Oct 10 2026): the frame of the whole lesson and the review section.
+- "leave the illustrations to be filled slowly by me as we work on them" (her message, Oct 8 2026,
+  quoted in scripts/build_book_t_deck.py): the opening's "a first picture, meant to be improved".
+Everything else is mine, built from tarot/book-t/PROMPTS.md and the deck's own rules.
+
+PP decisions (also inline):
+1. Open Book T to the community in the app (open_to_community is OFF today), or keep GitHub as the only door?
+2. Folder and file names for contributed pictures (proposed: tarot/book-t/plates/<style>--<card-id>.jpg).
+3. Can a contributed style ever become a card's main picture, or a deck of its own?
+4. Where translations go (proposed: one new section per card, "Book T (1912), <language>").
+5. A children's style: which cards, if any, stay out of it.
+-->
+
+# Book T: a Community Deck
+
+Book T is the Golden Dawn's own book of the tarot, printed in 1912 and now in the public domain. Anyone may use its words. The pictures in this deck are a first set, made for now and meant to be improved, and I would like some of the next ones to come from other hands.
+
+So this deck is open in one direction: you can add to it. A new picture for a card, a whole style, a correction, a translation. I review every contribution before it appears.
+
+## What you can add
+
+**A picture for one card.** Pick a card, read what Book T says about it, and draw or make that. Your picture appears beside the deck's own picture for that card, with your name.
+
+**A whole style.** A set of cards in one hand or one look: your linocuts of the four Aces, a Major Arcana in watercolour. Give the style a name, so the cards travel together.
+
+**A correction.** The pictures here were made with AI and then checked against Book T, card by card. Some still miss a detail: a count of swords, a crest, a hand. If a picture says something Book T doesn't, tell me which words it misses. The same goes for the text: if the transcription differs from the [1912 scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep), give the page.
+
+**A translation.** Every card carries Book T's passage in English. A translation into a language you read well lets someone else read the card in theirs.
+
+<!-- PP: where translations go. Proposed: a new section on the card named "Book T (1912), Português"
+(etc.). The build script keeps any section it does not write, so a translation survives a re-run. -->
+
+## The rules
+
+**Book T's words decide every symbol.** Draw what the passage says: the number of swords, the colour of the robe, which hand holds what. Where you add something Book T doesn't mention, keep it small. When you send your picture, quote the passage you drew from.
+
+The twenty-two Keys are the exception. Book T gives each Key a title and a meaning, and no picture. For a Key, quote the title and say where your picture comes from.
+
+**Leave lettering out of the picture.** No painted titles, numbers, Hebrew letters or planet signs. The deck sets each card's name as text under the picture, and painted letters come out garbled, especially from image models.
+
+**Hand-made and AI-made are both welcome. Say which.** If you used an image model, name it, and send the prompt. If you drew it, say with what: ink, gouache, linocut, a tablet.
+
+**Credit yourself.** Give the name you want printed under the picture.
+
+**CC BY-SA 4.0.** The deck is under this licence, so your picture will be too: anyone may reuse it, with your name, under the same licence. Send only what you have the right to give: your own drawing, or an image made from your own prompt. Not a trace of a modern deck.
+
+**Shape.** Portrait, about 2 by 3 (the deck's paintings are 832 by 1248 pixels). JPG, PNG or SVG, under 1 MB.
+
+## How to send it
+
+The way that works today is a pull request on GitHub, the website where this deck lives. You need a free GitHub account and nothing else. A pull request is public: your GitHub name shows on it.
+
+**Sending a picture (no code):**
+
+1. Find your card's id. Open the card in the [card browser](../viewers/cards.html?src=../tarot/book-t/grammar.json) or in [the deck's file](https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/book-t/grammar.json): the id is the short name like `swords-05` or `key-13-death`.
+2. Name your file `<your-style>--<card-id>.jpg`, for example `pond-linocut--cups-ace.jpg`.
+3. Open the [plates folder](https://github.com/PlayfulProcess/recursive-tarot/tree/main/tarot/book-t/plates), choose **Add file → Upload files**, and drop your picture in. GitHub makes your own copy of the project for you.
+4. Choose **Propose changes**, then **Create pull request**, and fill in the note below.
+
+<!-- PP: the plates folder does not exist yet. GitHub's upload page can't create a folder, so it
+needs a tarot/book-t/plates/README.md first (one paragraph pointing back here). Folder name is your call. -->
+
+```
+Card: cups-ace
+Book T's words I drew from: "A WHITE Radiating Angelic Hand, issuing from clouds..."
+Style: Pond linocut
+Made by: hand (linocut, printed and scanned)   or   AI (model name; prompt below)
+Credit as: Your Name
+I agree to share this under CC BY-SA 4.0: yes
+```
+
+5. I look at it. I may ask for a change. When I accept it, I add it to the card and it appears in the deck.
+
+**Doing the whole step yourself.** If you're comfortable editing a text file, add your picture to the card in the same pull request: open `tarot/book-t/grammar.json`, find your card's id, and add one entry to its `illustrations` list:
+
+```json
+{
+  "url": "https://tarot.recursive.eco/tarot/book-t/plates/pond-linocut--cups-ace.jpg",
+  "artist": "Your Name (linocut, by hand)",
+  "edition": "Pond linocut",
+  "license": "CC-BY-SA-4.0"
+}
+```
+
+Leave `is_primary` off: the deck's own picture stays the main one, and yours shows under it.
+
+<!-- PP: can a contributed style ever become the main picture, or a deck of its own (a "Book T, Pond
+linocut" edition)? The lesson says no for now. -->
+
+**Corrections and translations** go the same way, without a picture: edit the card's text in `tarot/book-t/grammar.json`, or open an issue saying which card, which words and which page. If GitHub is new to you, the [Ways to Contribute](course-viewer.html?course=how-to-contribute) course walks through it from the start.
+
+<!-- PP: the app path. Today Book T is closed to community edits in recursive.eco, so a signed-in
+stranger who presses Edit is offered a copy of their own. If you turn "open to community" on, a
+signed-in person's save becomes a pull request on this repo (Book T is bound to recursive-tarot),
+which you merge on GitHub; it does not land in the app's Pending Edits panel. The app editor has no
+control for adding a second picture: changing a card's image there replaces yours. So even with the
+door open, GitHub stays the way to send a picture; the app would suit corrections and translations.
+If you open it, add a short "In the app" paragraph here. -->
+
+## I review every contribution
+
+Nothing appears in the deck until I accept it. I read each picture against Book T's words, the same way I check my own. I may ask you to change a detail, and sometimes I'll say no: a no is about this deck, not about your picture, and the picture stays yours to use anywhere under its licence.
+
+## Ideas, if you want a place to start
+
+- **A hand-drawn Major Arcana.** Book T gives the Keys titles and no pictures, so the twenty-two Keys have the most room for a reading of your own.
+- **A style per element.** One person takes Fire, someone else Water. Four hands, one deck.
+- **Linocut or woodcut.** Book T's pictures are emblems: a hand from a cloud, a rose, a count of swords. They cut well.
+- **One card, many hands.** Pick a card the deck gets wrong, or one you love, and draw your version of it.
+- **A children's style.** Simple shapes, soft colour, the same symbols.
+
+<!-- PP: children's style: some cards (the Devil, Death, the Lord of Ruin) may not suit it. Your call
+whether to scope it to a set of cards or leave the idea out. -->
+
+- **A translation into a language you read.** A card at a time is enough.
+
+What would you draw first?
