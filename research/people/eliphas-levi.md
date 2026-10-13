@@ -33,8 +33,13 @@ pivot from the 18th-century salon theorists (Gébelin, Mellet) to the 1889 occul
 ## Life & context
 
 Constant was born in Paris on 8 February 1810, the **son of a shoemaker**. Educated for the
-Church, he entered the seminary of **Saint-Sulpice** (1832) to train for the Catholic
-priesthood but **left roughly a week before ordination**. A failed marriage and the death of a
+Church, he went from the junior seminary of Saint-Nicolas du Chardonnet to the seminary at Issy
+and then **Saint-Sulpice** (1832 in the web sources) to train for the Catholic priesthood. How far
+he got is told two ways: the web sources cited here say he **left roughly a week before
+ordination** [@web_levi_wp; @tarot_heritage]; Farley says he **was ordained sub-deacon in 1833**,
+taking the vow of celibacy, and then left the seminary, never to become a priest
+[@farley2009, pp. 111–112]. The two can both hold if the ordination he walked away from was to
+the priesthood, after the sub-diaconate; no source cited here says so. A failed marriage and the death of a
 young daughter preceded his turn to magic and mysticism; from the **1850s** he reinvented
 himself as the magus "Éliphas Lévi," the pen name being a **Hebraised rendering of "Alphonse
 Louis."** He gathered around him much of the occultist and Kabbalist milieu of mid-century Paris
