@@ -47,6 +47,14 @@ overlap with A. E. Waite that led to the tarot commission. Despite a productive 
 **in poverty at Bude, Cornwall, in 1951**, her effects auctioned to pay debts [@web_pcs_wp;
 @web_pcs_artnet].
 
+## Why
+
+Farley records the commission rather than Smith's own reasons. Waite chose her to carry out his
+designs, and she was paid a flat sum [@farley2009, p. 145]. The scenes on the numbered cards were
+made to fit Waite's divinatory meanings, and Farley thinks the pair likely took the idea from
+photographs of the 15th-century Sola Busca pack held at the British Museum
+[@farley2009, p. 145]. Her motives are not in that book, and this page does not guess at them.
+
 ## What they made / did
 
 - **Illustrated all 78 RWS cards (1909).** In 1909 Waite commissioned Smith to execute a complete

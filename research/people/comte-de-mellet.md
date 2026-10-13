@@ -43,6 +43,26 @@ Lucrèce de Fayolle, comte de Mellet, and the dates 1727–1804, rests on conver
 scholarship rather than a primary archival source seen here — but it is consistent across
 Decker–Depaulis–Dummett-derived accounts and Robert M. Place's research.)
 
+## Why
+
+Farley gives his ideas rather than his personal reasons; she calls him an otherwise unremarkable
+court noble and military commander [@farley2009, p. 104]. The ideas she traces:
+
+- **Gébelin's premise, with changes.** He agreed the pack was Egyptian and that the trumps should
+  be read from the highest number down, but held that only the trumps carried Egyptian lore, the
+  suits being added later [@farley2009, p. 104].
+- **A golden prehistory.** His three groups of seven trumps, as the Golden, Silver and Iron Ages
+  of humankind, show the same Enlightenment longing for a lost golden age
+  [@farley2009, p. 104]. Farley notes the scheme also matches the Hindu cycle of ages, and that
+  the period's habit of blending Christian, Hindu and classical sources likely fed it
+  [@farley2009, p. 105].
+- **Letters and numbers.** His "science of numbers" and the value of letters was probably a nod to
+  the Kabbalah, then very popular [@farley2009, p. 106].
+- **Divination.** Farley counts his essay as the first reference to divining with tarot, a
+  practice he attributed to the Egyptians without grounds [@farley2009, p. 106]. A Bolognese
+  sheet of c. 1750 giving card meanings belongs to a separate, independent line
+  [@farley2009, p. 95].
+
 ## What they made / did
 
 - **The essay *"Recherches sur les Tarots, et sur la Divination par les Cartes des Tarots"*

@@ -2,6 +2,22 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 13 2026 — branch `research/farley-motives` (pushed, not merged): why they did it, from Farley (2009)
+
+- **A "Why" section on ten people:** Court de Gébelin, the Comte de Mellet, Etteilla, Éliphas Lévi, Oswald
+  Wirth, Wynn Westcott, MacGregor Mathers, the Golden Dawn, A. E. Waite and Pamela Colman Smith. What moved
+  them, in the record's terms, with Farley's page on each point. `build_people_grammar.py` now pulls `## Why`
+  into the people grammar (after Who) and lists `farley2009` in its bibliography.
+- **Gébelin's motives, not a forgery charge:** a lost "primitive world", the Masonic Egyptomania, Hermetic
+  prestige, a game unknown in Paris, the honour of decoding it (Farley pp. 101–104). Farley gives it as his
+  belief without evidence, and the page says so.
+- **Game to oracle, dated:** 1770 piquet cartomancy, 1781 Gébelin and Mellet, 1782 the censors refuse
+  Etteilla's "Egyptian" tarot book, 1783–85 his tarot books, 1788 his deck (Farley pp. 106–111). On
+  Etteilla's page and in the Divination Question essay (meta grammar and the history course), which now also
+  dates the Bolognese sheet of c. 1750 (p. 95).
+- Where sources differ on intent (Westcott: Farley on the Cipher Manuscript, Decker et al. on the Sprengel
+  letters), the page says which says what. No quotation over 15 words.
+
 ## Oct 12 2026 — branch `history/check-against-farley-2009` (pushed, not merged): the history checked against Farley (2009)
 
 - **Farley read at last:** the history dossiers were checked claim by claim against Helen Farley, *A Cultural

@@ -45,6 +45,22 @@ concentration of late-Victorian talent — W. B. Yeats, Florence Farr, Aleister 
 Waite, Pamela Colman Smith — before it splintered after the **schism of 1900** into successor
 bodies (Alpha et Omega, Stella Matutina) [@decker1996; @decker2002].
 
+## Why
+
+Why the Order formed and why it wanted the tarot, in Farley's account:
+
+- **Against the age.** She describes the Order as a reaction against strict scientific rationalism
+  and against the shortcomings of conventional religion; people were drawn by its promise of
+  power and knowledge [@farley2009, p. 129].
+- **Egypt.** Victorian Britain stayed infatuated with Egypt even after hieroglyphs could be read;
+  for occultists it had "the double appeal of novelty and antiquity" [@farley2009, p. 122]. All
+  the Order's temples were dedicated to Egyptian gods [@farley2009, p. 131].
+- **The Celtic Revival.** Occultists also folded Celtic gods and spirits into their rites
+  [@farley2009, p. 123].
+- **Tarot as a working tool.** Members held that tarot could not only foretell the future but
+  influence it, which is why they had to be instructed in it and sworn to secrecy
+  [@farley2009, p. 135].
+
 ## What they made / did
 
 - **Book T (Liber T): The Tarot.** The Order's instructional paper on the cards, written

@@ -46,6 +46,32 @@ civilisation underlay all languages, myths and symbols. The tarot essay is one s
 volume 8 (1781), where the cards become, for him, one more relic of that lost golden age
 [@web_gebelin_wp; @decker1996].
 
+## Why
+
+What moved him, in Helen Farley's reading of the record:
+
+- **A lost first world.** His life's work, *Le Monde primitif* (nine volumes, 1773–82), rested on
+  an Enlightenment belief that humankind once shared one language, culture and religion, and that
+  modern civilisations are its degraded remnants. Myths, words and symbols were clues to that
+  golden age; the tarot became one more [@farley2009, p. 102].
+- **An Egyptian-minded milieu.** The Masonic world he moved in was steeped in Egyptomania: the
+  *Crata Repoa* (1778) told of an invented Egyptian initiation, and Cagliostro opened his
+  "Egyptian rite" in 1784 [@farley2009, p. 101]. France's passion for Egypt came before anyone
+  could read hieroglyphs, so his theory met little check from historical fact
+  [@farley2009, p. 104].
+- **Hermetic prestige.** In Catholic France the Hermetic texts kept their aura of Egyptian
+  antiquity long after Isaac Casaubon dated them late in 1614 [@farley2009, p. 104].
+- **A game that looked strange.** By 1700 tarot was no longer played in Paris, only in the east of
+  France, so its Renaissance pictures looked exotic there. He had not seen the cards since boyhood
+  when he came upon some ladies playing them [@farley2009, pp. 101–102].
+- **The honour of the key.** He reasoned that Egyptian priests had hidden their doctrine in a game
+  because no one would suspect a game, and that it took an adept to decode it: an honour he
+  claimed for himself [@farley2009, p. 103].
+
+Farley presents the Egyptian origin as his belief, a theory with no evidence behind it; she does
+not say he knew it to be false. Where this page calls the pedigree "invented", it means made up
+without evidence, not knowingly forged.
+
 ## What they made / did
 
 - **The tarot essay in *Le Monde primitif*, vol. 8 (1781).** Gébelin's *"Du Jeu des Tarots"*

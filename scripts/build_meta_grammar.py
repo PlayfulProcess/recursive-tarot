@@ -500,7 +500,8 @@ def build():
                 "'triumph' cards plus the Fool added to an ordinary four-suit deck so trumps beat the suits. "
                 "The earliest sources are account books, game treatises, tax/guild records and luxury commissions "
                 "— and the game never died (tarock/tarocchi is still played in continental Europe). For roughly "
-                "three centuries (c. 1440–1780) there is no surviving evidence that tarot was used for divination."),
+                "three centuries (c. 1440–1750) there is no surviving evidence that tarot was used for divination; "
+                "the earliest is a Bolognese sheet of c. 1750 giving meanings for 35 cards [@farley2009, p. 95]."),
             "The concealment hypothesis (stated fairly)": (
                 "A fair objection: the archive records what was safe to write down. Divination, sortilegio and "
                 "judicial astrology were spiritually suspect, and the Inquisition prosecuted superstition — so a "
@@ -518,6 +519,17 @@ def build():
                 "the devil's work, NOT as divination, the graver sin moralists were eager to catalog. And the 18th-c. "
                 "emergence reads as invention, not inheritance: Court de Gébelin presents the Egyptian 'Book of Thoth' "
                 "as a fresh discovery (and gets Egypt flatly wrong), while Etteilla carries his card-reading system over to the tarot."),
+            "From game to oracle, step by step": (
+                "In France the change can be dated almost year by year. 1770: Etteilla's first book tells fortunes "
+                "with an ordinary piquet pack, the first evidence of cartomancy in France [@farley2009, p. 106]. "
+                "1781: Court de Gébelin's *Le Monde primitif*, vol. 8, declares the tarot an Egyptian book, and the "
+                "Comte de Mellet's essay in the same volume proposes divining with it [@farley2009, pp. 102, 106]. "
+                "1782: Etteilla asks the royal censors' leave to print an 'Egyptian' reading of the 78 cards; it is "
+                "refused, no reason recorded [@farley2009, p. 107]. 1783–85: his four-part tarot book appears, still "
+                "titled as a way to entertain oneself with the cards [@farley2009, p. 107]. 1788: his own deck "
+                "[@farley2009, p. 109]. The later Grand Etteilla packs were renumbered for divination alone and could "
+                "no longer serve the game [@farley2009, p. 111]. Within about eighteen years a card reader with a "
+                "piquet pack had become the maker of a tarot built for fortunes."),
             "Conclusion": (
                 "So the honest claim is not 'only ever a game,' and not 'secretly always divinatory.' It is: tarot was "
                 "DESIGNED AND FIRST USED AS A GAME; divinatory meaning is a later (18th-century) overlay. Informal "
@@ -525,7 +537,8 @@ def build():
                 "not explain the silence, and the simpler reading fits the positive evidence better."),
             "Sources": (
                 "Michael Dummett, *The Game of Tarot* (1980); Ronald Decker, Thierry Depaulis & Michael Dummett, "
-                "*A Wicked Pack of Cards* (1996); Decker & Dummett, *A History of the Occult Tarot* (2002); Stuart "
+                "*A Wicked Pack of Cards* (1996); Decker & Dummett, *A History of the Occult Tarot* (2002); Helen Farley, "
+                "*A Cultural History of Tarot* (2009); Stuart "
                 "Kaplan, *The Encyclopedia of Tarot*; Andrea Vitali, *Le Tarot* essays (letarot.it); Lothar Teikemeier, "
                 "trionfi.com. Primary: the *Sermones de ludo cum aliis* ('Steele sermon'); Court de Gébelin, *Le Monde "
                 "Primitif* vol. VIII (1781, on Gallica/BnF); Lorenzo Spirito, *Libro delle Sorti* (1482).")

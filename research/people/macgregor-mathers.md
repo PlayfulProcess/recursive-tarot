@@ -42,6 +42,23 @@ Mathers** (the artist Mina Bergson, sister of the philosopher Henri Bergson), ru
 "Ahathôor" temple and its Paris-based successor, **Alpha et Omega**, after the 1900 schism
 [@decker1996; @decker2002].
 
+## Why
+
+What moved him, as Farley tells it:
+
+- **The persona.** Unlike Westcott, he took on the role and trappings of an occultist. A London
+  clerk's son, he was deep in occult study while still young, translating parts of Knorr von
+  Rosenroth's *Kabbala Denudata* and the *Key of Solomon* [@farley2009, p. 128].
+- **The Celtic Revival.** He wanted a proud Celtic heritage: Highland dress, the added name
+  "MacGregor", the clan motto "Royal is my race" [@farley2009, p. 128].
+- **Bringing the French tarot to England.** His 1888 book, the first on occult tarot published in
+  the United Kingdom, was sold with an imported pack and drew on Gébelin, Etteilla, Lévi, Paul
+  Christian and Vaillant [@farley2009, p. 129].
+- **Keeping the key.** Inside the Order he supplied most of the new material. Members believed
+  they alone could read tarot correctly and were bound to secrecy [@farley2009, p. 135]. When
+  Crowley set out to print the Order's rituals in *The Equinox*, Mathers went to court to stop him
+  [@farley2009, p. 138].
+
 ## What they made / did
 
 - **Book T (Liber T): The Tarot (c.1891).** The Order's confidential instructional paper on the

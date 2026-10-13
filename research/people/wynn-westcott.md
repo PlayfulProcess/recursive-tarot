@@ -39,6 +39,24 @@ connected to Kenneth Mackenzie and the Swedenborgian Rite; decoding their skelet
 on the Tree of Life and the tarot trumps) was the seed of the Golden Dawn [@web_westcott_wp;
 @decker1996; @farley2009, pp. 127, 130].
 
+## Why
+
+What moved him, as Farley tells it:
+
+- **A double life.** A doctor, deputy coroner from 1880 and later coroner, he was trained in the natural sciences
+  yet drawn to esoteric knowledge; in 1879 he took two years off to study the Hermetic sciences,
+  Kabbalah, alchemy and Rosicrucian lore [@farley2009, pp. 126–127].
+- **A reader of Lévi.** His Kabbalah studies (he translated the *Sefer Yetzirah*) made him ready
+  for Lévi, whose descriptions of the trumps inspired Westcott's own sketches of them in 1886
+  [@farley2009, pp. 127–128].
+- **The Order's papers: what the sources say about intent.** Farley thinks the Cipher Manuscript
+  was probably the work of Kenneth Mackenzie. She adds that from 1888 Westcott and Mathers were
+  convinced its attributions were right and Lévi's wrong, which makes it unlikely that either of
+  them wrote it [@farley2009, pp. 131, 134]. Her book does not discuss the Sprengel letters; the
+  forgery charge on this page comes from Decker, Depaulis and Dummett [@decker1996]. The sources
+  cover different documents: Farley reads the founders as believers in the manuscript, while
+  Decker and his co-authors hold that the letters authorising it were invented.
+
 ## What they made / did
 
 - **The Cipher Manuscripts and the founding warrant.** Westcott decoded the manuscripts and, on

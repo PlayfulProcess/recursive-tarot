@@ -46,6 +46,50 @@ machinery — spread, reversal, dictionary of meanings — that he would later c
 tarot itself [@web_etteilla_wp; @web_benebell_petit; @tarot_heritage; @farley2009, pp. 95, 106]. He died in Paris on
 12 December 1791.
 
+## Why
+
+Farley's account shows a tradesman who was already selling card-reading, and who took up the
+1781 theory within a year:
+
+- **A trade.** He was a seed seller and later a print seller (not a wigmaker, as occult tradition
+  long had it) [@farley2009, p. 106]. His 1770 book taught fortune-telling with an ordinary piquet
+  pack, eleven years before Gébelin's Egyptian tarot [@farley2009, p. 106].
+- **Standing.** He promoted himself as a "teacher of algebra", a claim with no basis in fact, and
+  an engraving of 1783 presents his method as drawn from his "algebraic entertainments"
+  [@farley2009, p. 107]. He also claimed to have
+  coined the word that became "cartomancy" [@farley2009, p. 107].
+- **Supply and demand.** Tarot packs were hard to get in Paris, so he bought them in bulk from
+  card-makers and resold them. He could not afford a pack of his own until 1788, when he formed
+  his society of interpreters of the "Book of Thoth" [@farley2009, p. 109].
+- **The new Egyptian story.** Gébelin's 1781 volume gave the tarot an Egyptian pedigree, and
+  Mellet's essay in it proposed reading the cards. Etteilla took up both and added his own
+  details: the pack designed by seventeen magi under Hermes Trismegistus, 171 years after the
+  Flood [@farley2009, p. 107]. Farley sees the period's creation myths and Egyptomania in his
+  deck [@farley2009, p. 109].
+
+### From game to oracle, step by step
+
+- **1770.** *Etteilla, ou manière de se récréer avec un jeu de cartes*: fortunes from a 32-card
+  piquet pack plus one card standing for the person consulting, each card with an upright and a
+  reversed meaning. Farley calls it the first evidence of cartomancy in France
+  [@farley2009, p. 106].
+- **c. 1772.** *Le zodiaque mystérieux, ou les oracles d'Etteilla*, a set of astrological
+  predictions [@farley2009, p. 106].
+- **1781.** Gébelin's *Le Monde primitif*, vol. 8, declares the tarot Egyptian; Mellet's essay in
+  the same volume proposes divining with it [@farley2009, pp. 102, 106].
+- **1782.** Etteilla submits *Cartonomanie Égyptienne*, an interpretation of "78 hieroglyphs" on
+  the cards called tarots, to the royal censors, the normal route to print. It is refused, and no
+  reason is recorded [@farley2009, p. 107]. This was a request for permission to publish, not a
+  registration.
+- **1783.** The third edition of his 1770 book, now with an engraving titled *Cartonomancie*
+  [@farley2009, pp. 106–107].
+- **1783–85.** *Manière de se récréer avec le jeu de cartes nommées tarots*, in four parts: the
+  tarot as an Egyptian book of hieroglyphs. Its title still sells it as a way to entertain
+  oneself [@farley2009, p. 107].
+- **1788.** His own deck, once his society gave him the means [@farley2009, p. 109]. The later
+  Grand Etteilla packs were made for divination alone; their renumbering left them useless for
+  the game [@farley2009, p. 111].
+
 ## What they made / did
 
 - **First cartomancy manual (1770)** — *Etteilla, ou manière de se récréer avec un jeu de

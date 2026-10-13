@@ -8,8 +8,8 @@ re-run this script. Idempotent.
 Dossier frontmatter fields used here (see research/SCHEMA.md):
   id, type(person|institution), title, summary, role_group, lifespan, roles[],
   made[](deck slugs), features_cards[], status, confidence
-Body sections pulled into the leaf: "At a glance", "The claim vs the record",
-"How they appear in this collection".
+Body sections pulled into the leaf: "At a glance" (-> Who), "Why" (what moved them,
+in the record's terms), "The claim vs the record", "How they appear in this collection".
 
 Run from repo root:  python3 scripts/build_people_grammar.py
 """
@@ -32,6 +32,7 @@ BIBLIOGRAPHY = [
     {"key": "depaulis1984", "author": "Thierry Depaulis", "title": "Tarot, jeu et magie", "year": 1984},
     {"key": "dummett1980", "author": "Michael Dummett", "title": "The Game of Tarot: From Ferrara to Salt Lake City", "year": 1980},
     {"key": "dummett2004", "author": "Michael Dummett and John McLeod", "title": "A History of Games Played with the Tarot Pack", "year": 2004},
+    {"key": "farley2009", "author": "Helen Farley", "title": "A Cultural History of Tarot: From Entertainment to Esotericism", "year": 2009, "note": "I.B. Tauris, London and New York; page numbers are the 2009 first edition's"},
     {"key": "levi1856", "author": "Éliphas Lévi", "title": "Dogme et rituel de la haute magie", "year": 1856},
     {"key": "moakley1966", "author": "Gertrude Moakley", "title": "The Tarot Cards Painted by Bonifacio Bembo for the Visconti-Sforza Family", "year": 1966},
     {"key": "pratesi_ferrara", "title": "pratesi_ferrara (source to confirm)"},
@@ -209,6 +210,9 @@ def build():
         glance = section(body, "At a glance")
         if glance:
             sections["Who"] = glance
+        why = section(body, "Why")
+        if why:
+            sections["Why"] = why
         claim = section(body, "The claim vs the record", "The claim vs. the record")
         if claim:
             sections["Claim vs the record"] = claim
