@@ -21,7 +21,7 @@ wikipedia: "https://en.wikipedia.org/wiki/William_Wynn_Westcott"
 
 ## At a glance
 
-**Dr. William Wynn Westcott** (17 December **1848** – 30 July **1925**) was a London coroner,
+**Dr. William Wynn Westcott** (17 December **1848** – 30 July **1925**; Farley prints the years [@farley2009, p. 126]) was a London coroner,
 Freemason and Rosicrucian who, with **Mathers** and **Woodman**, co-founded the Hermetic Order
 of the Golden Dawn in 1888. His distinctive contribution was documentary, not artistic: he
 brought the **Cipher Manuscripts** to light and decoded them, and produced the supposed
@@ -37,7 +37,7 @@ fringe-Masonry: **Supreme Magus of the Societas Rosicruciana in Anglia (S.R.I.A.
 of the Theosophical Society. The **Cipher Manuscripts** reached him around 1886 among papers
 connected to Kenneth Mackenzie and the Swedenborgian Rite; decoding their skeletal rituals (built
 on the Tree of Life and the tarot trumps) was the seed of the Golden Dawn [@web_westcott_wp;
-@decker1996].
+@decker1996; @farley2009, pp. 127, 130].
 
 ## What they made / did
 
@@ -83,7 +83,9 @@ with any card or deck.
 ## Open questions / corrections owed
 
 - Confirm the precise year the Cipher Manuscripts reached Westcott (1886 vs. 1887) and the chain
-  of custody (Mackenzie / Woodford) against Gilbert's archival work.
+  of custody (Mackenzie / Woodford) against Gilbert's archival work. Farley, following Gilbert:
+  Mackenzie died in July 1886 and Westcott obtained ritual documents from his widow; she thinks
+  Mackenzie probably created the manuscript [@farley2009, pp. 130-131].
 - Verify the "papers left in a cab" anecdote against a primary source rather than Order tradition.
 
 ## Sources

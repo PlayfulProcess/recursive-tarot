@@ -28,7 +28,7 @@ between Chinese money-suited cards and the European four-suit pack that became t
 Born 12 January 1895, died 6 April 1959. He studied Oriental and Islamic art at Vienna,
 Lausanne and Berlin, and served as rector of the Hebrew University of Jerusalem. A museum of
 Islamic art in Jerusalem (the L. A. Mayer Memorial Institute) is named for him. He examined
-the Topkapı cards around 1931 and first published them in 1939.
+the Topkapı cards around 1931 and first published them in 1939 [@farley2009, p. 13].
 
 ## What they made / did
 

@@ -34,8 +34,8 @@ Smith's [@web_pkt_wp; @decker2002; @waite1910].
 
 Waite was **born in Brooklyn, New York, in 1857**, the son of an American merchant-marine captain;
 after his father's death the family moved to England, where he was raised and lived the rest of his
-life [@web_pkt_wp]. A prolific writer and translator (he Englished **Éliphas Lévi** as
-*Transcendental Magic*), he joined the **Hermetic Order of the Golden Dawn** in 1891. After the
+life [@web_pkt_wp; @farley2009, p. 144]. A prolific writer and translator (he Englished **Éliphas Lévi** as
+*Transcendental Magic*), he joined the **Hermetic Order of the Golden Dawn** in 1891 [@farley2009, p. 144]. After the
 1900 schism he gravitated to the **Stella Matutina** strand and then founded his own more
 Christian-mystical, less ceremonial order (the Fellowship / Holy Order of the Golden Dawn), the
 milieu in which he conceived a tarot "with appeal to the world of art." He died at Bridge,
