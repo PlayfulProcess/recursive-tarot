@@ -41,6 +41,24 @@ Christian-mystical, less ceremonial order (the Fellowship / Holy Order of the Go
 milieu in which he conceived a tarot "with appeal to the world of art." He died at Bridge,
 Kent, in 1942 [@decker2002; @web_pkt_wp].
 
+## Why
+
+What moved him, as Farley tells it:
+
+- **A living.** Raised a Catholic, he earned his keep translating, writing and reviewing books on
+  the occult [@farley2009, p. 144].
+- **Mystical, not magical.** In 1903 he led the members who wanted the Golden Dawn read in a
+  mystical rather than an occult way. His rite dropped magical work for a Christian mysticism
+  aimed at union with God; he held that alchemy, Kabbalah, Freemasonry and Rosicrucianism all
+  pointed by a common route to spiritual illumination [@farley2009, p. 144].
+- **Why 1909.** Once Crowley had published the Order's secret attributions, Waite felt free to
+  issue his own deck without breaking his oath [@farley2009, p. 145].
+- **What the deck was for.** He read the trumps as a mystic initiation, the soul's descent into
+  matter and return [@farley2009, p. 147], and the scenes on the numbered cards were designed to
+  fit his divinatory meanings [@farley2009, p. 145]. In 1926 he wrote that the tarot holds
+  mystical rather than occult truths, and he came to doubt the Hebrew-letter correspondence
+  [@farley2009, p. 148].
+
 ## What they made / did
 
 - **Directed the Rider-Waite-Smith deck (1909).** Waite **commissioned and supervised** Pamela

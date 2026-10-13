@@ -33,12 +33,38 @@ pivot from the 18th-century salon theorists (Gébelin, Mellet) to the 1889 occul
 ## Life & context
 
 Constant was born in Paris on 8 February 1810, the **son of a shoemaker**. Educated for the
-Church, he entered the seminary of **Saint-Sulpice** (1832) to train for the Catholic
-priesthood but **left roughly a week before ordination**. A failed marriage and the death of a
+Church, he went from the junior seminary of Saint-Nicolas du Chardonnet to the seminary at Issy
+and then **Saint-Sulpice** (1832 in the web sources) to train for the Catholic priesthood. How far
+he got is told two ways: the web sources cited here say he **left roughly a week before
+ordination** [@web_levi_wp; @tarot_heritage]; Farley says he **was ordained sub-deacon in 1833**,
+taking the vow of celibacy, and then left the seminary, never to become a priest
+[@farley2009, pp. 111–112]. The two can both hold if the ordination he walked away from was to
+the priesthood, after the sub-diaconate; no source cited here says so. A failed marriage and the death of a
 young daughter preceded his turn to magic and mysticism; from the **1850s** he reinvented
 himself as the magus "Éliphas Lévi," the pen name being a **Hebraised rendering of "Alphonse
 Louis."** He gathered around him much of the occultist and Kabbalist milieu of mid-century Paris
 and died there on 31 May 1875 [@web_levi_wp; @tarot_heritage; @farley2009, pp. 111, 117].
+
+## Why
+
+What moved him, as Farley tells it:
+
+- **A late turn to the occult.** A seminarian who left before the priesthood, then a radical
+  writer jailed for his political work, he shows no sign of interest in the occult until 1852,
+  when he met Paul Christian, Józef Maria Hoëne-Wroński and others [@farley2009, pp. 111–112].
+- **One great synthesis.** He set out to fuse the major Western writers on magic into a single
+  world-view (Kabbalah, alchemy, Hermeticism, astrology, magnetism), and tarot became a core part
+  of it [@farley2009, pp. 112–113]. His teaching stayed close to conventional Christianity, so
+  followers did not have to give up their faith, which Farley counts as one reason it spread
+  [@farley2009, p. 112].
+- **Taking tarot back from the fortune-tellers.** He held cartomancers and their practice in
+  contempt. He granted that tarot was a perfect instrument of divination, but believed its real
+  worth was to carry the wisdom of the universe and to reach higher intelligences. Tying the
+  trumps to the Hebrew letters, and so to the Kabbalah, was his way to free tarot from the
+  cartomancers' influence [@farley2009, p. 113].
+- **Old authorities kept.** He took his letter correspondences from Athanasius Kircher's
+  *Oedipus Aegyptiacus* and stayed attached to them even after the decipherment of hieroglyphs
+  had discredited much of Kircher's Egypt [@farley2009, p. 114].
 
 ## What they made / did
 

@@ -38,6 +38,15 @@ a decade as de Guaita's **secretary, disciple and collaborator**. Both were memb
 **Ordre Kabbalistique de la Rose-Croix**, and Wirth was a committed **Freemason** whose later
 writing dwells on Masonic symbolism. He died on **9 March 1943** [@web_wirth_wp; @decker2002].
 
+## Why
+
+Farley says little of Wirth's own reasons; she places the deck as the fulfilment of Lévi's.
+Lévi described the trumps as he thought they should be but never made a deck; his dream of a
+"rectified" tarot waited until 1889, when Stanislas de Guaita, an admirer of Lévi and founder of
+the Ordre Kabbalistique de la Rose-Croix, encouraged Wirth to restore the 22 arcana "to their
+hieroglyphic purity" [@farley2009, p. 117]. Papus illustrated his book of the same year with
+Wirth's trumps [@farley2009, p. 118].
+
 ## What they made / did
 
 - **`oswald-wirth-tarot` — *Les 22 Arcanes du Tarot Kabbalistique* (1889).** Twenty-two
