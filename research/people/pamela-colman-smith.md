@@ -68,7 +68,7 @@ overlap with A. E. Waite that led to the tarot commission. Despite a productive 
   small one — instead of any share of copyright or royalties**, **no formal credit** on the deck or
   packaging, and was written out of its fame for most of a century while the publisher (Rider) and
   the scheme's author (Waite) were named. The collection's use of **Rider-Waite-*Smith*** is the
-  deliberate correction; her name belongs on the art [@web_pcs_wp; @web_pcs_artnet].
+  deliberate correction; her name belongs on the art [@web_pcs_wp; @web_pcs_artnet; @farley2009, p. 145].
 - **Precision on division of labour:** Waite set the symbolic programme; **Smith drew the cards**,
   and on the Minor Arcana she **invented** as much as she illustrated. The intuitive imagery a modern
   reader "reads" is largely Smith's design choice [@web_rws_wopc].

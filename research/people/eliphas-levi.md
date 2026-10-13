@@ -38,7 +38,7 @@ priesthood but **left roughly a week before ordination**. A failed marriage and 
 young daughter preceded his turn to magic and mysticism; from the **1850s** he reinvented
 himself as the magus "Éliphas Lévi," the pen name being a **Hebraised rendering of "Alphonse
 Louis."** He gathered around him much of the occultist and Kabbalist milieu of mid-century Paris
-and died there on 31 May 1875 [@web_levi_wp; @tarot_heritage].
+and died there on 31 May 1875 [@web_levi_wp; @tarot_heritage; @farley2009, pp. 111, 117].
 
 ## What they made / did
 
@@ -46,9 +46,11 @@ and died there on 31 May 1875 [@web_levi_wp; @tarot_heritage].
   Magic*).** Lévi's foundational work, published in two volumes — *Dogme* (1854) and *Rituel*
   (1856). It is the text in which tarot is fused with high magic [@levi1856; @web_levi_wp].
 - **The tarot–Hebrew–Kabbalah system.** Lévi assigned **each of the 22 trumps a Hebrew letter**
-  and located the cards on the Kabbalistic **Tree of Life**, treating the tarot as a complete
-  key to the Western esoteric tradition. This is the move the Comte de Mellet had only sketched
-  in 1781; Lévi made it a *system* [@decker2002; @tarot_heritage].
+  and tied the tarot to the Kabbalah, treating it as a complete key to the Western esoteric
+  tradition. This is the move the Comte de Mellet had only sketched in 1781; Lévi made it a
+  *system* [@decker2002; @tarot_heritage]. Aligning each trump with a *path* of the **Tree of
+  Life** was a later step: Farley credits it to the Golden Dawn, with Lévi first to tie the trumps
+  to the Hebrew letters [@farley2009, p. 132].
 - **The TARO/ROTA word-play.** Lévi linked *tarot* to the Latin **ROTA** ("wheel," as in *rota
   fortunae*) and the Tetragrammaton, noting that ROTA read cyclically yields TARO(T) — an
   etymological flourish that became gospel in esoteric circles (and which the *documentary*

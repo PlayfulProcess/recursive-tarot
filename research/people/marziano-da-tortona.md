@@ -61,7 +61,7 @@ a luxury object for the aristocratic intelligentsia.
   that is certainly the **earliest tarot programme we can attach to a named individual**.
   Whether it predates or influenced the standard triumph/trionfi sequence is unknown.
   Franco Pratesi has argued the Marziano deck was made **c. 1418–1425** on the basis of
-  manuscript dating [@pratesi_marziano]. Michael Dummett discusses it at length in
+  manuscript dating [@pratesi_marziano; @farley2009, p. 35]. Michael Dummett discusses it at length in
   *The Game of Tarot* as evidence for the early Milanese origin of tarot trumps
   [@dummett1980].
 - **The key uncertainty**: did the standard tarot trump hierarchy (Fool, Magician, Popess…

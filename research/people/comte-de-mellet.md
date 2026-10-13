@@ -24,7 +24,9 @@ in print (a) explicitly paired the **22 trumps-plus-Fool with the 22 letters of 
 alphabet**, (b) read the trumps in an **inverted order** (from the World down to the Fool) as
 the Three Ages of the World, and (c) described a concrete **divination method** — arguably the
 oldest published tarot *spread*. He is the quiet hinge between Gébelin's theory and Etteilla's
-practice [@decker1996; @web_place_mellet; @web_hrmtc_first].
+practice [@decker1996; @web_place_mellet; @web_hrmtc_first]. Not every historian gives him (a):
+Farley writes that the Hebrew link was "hinted at" by Gébelin and Mellet and that Lévi was "the
+first to specifically associate" the trumps with the Hebrew letters [@farley2009, pp. 113, 132].
 
 ## Life & context
 
@@ -34,7 +36,7 @@ and court career: musketeer; commander of the bodyguard corps of the **King of P
 the provinces of Maine and Perche**; lieutenant-general of the king's armies; and *maréchal de
 camp*. He died in 1804. He was an **amateur** student of antiquity and symbolism, not a
 professional scholar like Gébelin — which is part of why his contribution was long
-under-credited [@web_mellet_search; @web_place_mellet].
+under-credited [@web_mellet_search; @web_place_mellet; @farley2009, p. 104].
 
 (Confidence note: the identification of the anonymous "M. le C. de M." with Louis-Raphaël-
 Lucrèce de Fayolle, comte de Mellet, and the dates 1727–1804, rests on convergent secondary

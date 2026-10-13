@@ -38,7 +38,8 @@ trumps, which came into **William Wynn Westcott**'s hands around 1886–87. West
 coroner and Freemason, decoded them and produced a supposed authorising correspondence from a
 German Rosicrucian adept, **Anna Sprengel** — a pedigree later shown to be **fabricated**
 [@decker1996]. With this "warrant," Westcott, **Samuel Liddell MacGregor Mathers** and **William
-Robert Woodman** founded the **Isis-Urania Temple** on 1 March 1888. Mathers became the Order's
+Robert Woodman** founded the **Isis-Urania Temple** on 1 March 1888 (Farley dates the Order's
+coming into being to 20 March 1888 [@farley2009, p. 129]). Mathers became the Order's
 creative engine, writing most of the rituals and the tarot teaching. The Order drew a startling
 concentration of late-Victorian talent — W. B. Yeats, Florence Farr, Aleister Crowley, A. E.
 Waite, Pamela Colman Smith — before it splintered after the **schism of 1900** into successor

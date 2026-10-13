@@ -29,7 +29,7 @@ reading cards, the author of the first self-instruction manuals for it, and the 
 *method*, Etteilla industrialised both into a working practice, a printed deck, and a
 correspondence *school*. His system outlived him as a 19th-century commercial brand through two
 posthumous editions (Etteilla II and III) produced by his followers and later publishers
-[@decker1996; @tarot_heritage].
+[@decker1996; @tarot_heritage; @farley2009, p. 106].
 
 ## Life & context
 
@@ -43,7 +43,7 @@ un jeu de cartes* — "the first self-instruction book on cartomancy," teaching 
 **32-card piquet pack** (plus an added "Etteilla" card), already using laid-out *spreads* and
 **fixed upright/reversed meanings** for every card. This pre-tarot work established the
 machinery — spread, reversal, dictionary of meanings — that he would later carry onto the
-tarot itself [@web_etteilla_wp; @web_benebell_petit; @tarot_heritage]. He died in Paris on
+tarot itself [@web_etteilla_wp; @web_benebell_petit; @tarot_heritage; @farley2009, pp. 95, 106]. He died in Paris on
 12 December 1791.
 
 ## What they made / did
@@ -65,7 +65,7 @@ tarot itself [@web_etteilla_wp; @web_benebell_petit; @tarot_heritage]. He died i
   **"Julia Orsini,"** widely attributed to the Lille printer **Simon-François Blocquel**
   (1780–1863); it altered the titling and imagery of Etteilla's deck (confidence: high on the
   Blocquel attribution per multiple secondary sources; primary not personally inspected)
-  [@web_grand_etteilla; @web_druidcraft].
+  [@web_grand_etteilla; @web_druidcraft; @farley2009, p. 111].
 - **`etteilla-iii-oracle-des-dames` — Grand Etteilla III / *Grand jeu de l'Oracle des Dames*
   (c. 1865–70).** A later **posthumous** mass-market lithograph edition, first printed
   c. 1865 (G. Régamey), later by Lequart et Mignot (1872–1890) and ultimately **B. P.
@@ -74,7 +74,7 @@ tarot itself [@web_etteilla_wp; @web_benebell_petit; @tarot_heritage]. He died i
 - **The school: *Société des Interprètes du Livre de Thot* (founded 1788).** A network of
   French-speaking correspondents with Etteilla as "correspondent general," through which he
   disseminated his teaching — arguably the first organised body devoted to esoteric tarot
-  [@web_etteilla_wp; @decker1996]. His **successor M. d'Odoucet** continued the system after
+  [@web_etteilla_wp; @decker1996; @farley2009, p. 109]. His **successor M. d'Odoucet** continued the system after
   his death, publishing the three-volume *Science des signes* (1804–07), which expounds
   Etteilla's cartomancy in his style [@web_dodoucet; @decker1996].
 

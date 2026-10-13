@@ -2,6 +2,21 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 12 2026 — branch `history/check-against-farley-2009` (pushed, not merged): the history checked against Farley (2009)
+
+- **Farley read at last:** the history dossiers were checked claim by claim against Helen Farley, *A Cultural
+  History of Tarot* (I.B. Tauris, 2009), from a library copy. `farley2009` in the .bib now says read, with the
+  first edition's ISBN. Page numbers are that edition's.
+- **Qualified, with the page:** Court de Gébelin's Masonic initiation (Farley: 1776, *Les Amis Réunis*, p. 101,
+  against the page's 1771); the Golden Dawn's founding date (Farley: 20 March 1888, p. 129, against 1 March);
+  Lévi and the Tree of Life (Farley credits the trump-to-path alignment to the Golden Dawn, p. 132); Mellet as
+  first to pair trumps and Hebrew letters (Farley gives Lévi, pp. 113, 132); the Thoth deck (paintings published
+  as cards only in 1969, p. 142); tarot divination before 1781 (a Bolognese sheet of c. 1750, p. 95).
+- **Confirmed, citation added:** Etteilla's dates, 1770 manual, 1788 society and the 1838 Grand Etteilla II;
+  Mellet's identity and dates; Westcott's dates and coronership; Waite's birth and 1891 initiation; Smith's flat
+  fee; the Sola Busca photographs; Mayer 1939; Marziano before 1425; Lévi's dates; the Cipher Manuscript's custody.
+- No quotation over 15 words; the book's text stays in a private library.
+
 ## Oct 10 2026 — branch `book-t-images` (pushed, not merged): Book T deck, a first picture on all 78 cards
 
 - **Book T deck (`tarot/book-t`), 78 pictures:** each card's `image_url` is an SVG (line art + flat fills,

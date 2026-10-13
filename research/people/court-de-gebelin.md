@@ -35,7 +35,8 @@ Court de Gébelin was born c. 1725 (sources vary: 1719, 1724, 1725 or 1728; see 
 **Antoine Court** (1696–1760), the Huguenot minister celebrated as the "Restorer of
 Protestantism in France." The son trained and served as a **Protestant (Huguenot) pastor**,
 then retired from active ministry to literary and antiquarian pursuits in Paris, where he was
-**initiated as a Freemason (1771)** and moved in the lodge *Les Neuf Sœurs* — the Enlightenment
+**initiated as a Freemason** (1771 in search summaries; Farley gives 1776, in the lodge *Les Amis
+Réunis* [@farley2009, p. 101]) and moved in the lodge *Les Neuf Sœurs* — the Enlightenment
 circle that also drew Benjamin Franklin, a subscriber to his encyclopedia. He died in Paris in
 1784 [@web_gebelin_wp; @decker1996].
 
@@ -106,7 +107,8 @@ re-Egyptianised). He pairs naturally with the **comte-de-mellet** card as the tw
 ## Open questions / corrections owed
 
 - **His birth year is still open, narrowed on 2026-10-02.** Four dates circulate:
-  - **1719**: Dummett, as quoted by Sosteric [@dummett1980, p. 102, as quoted in @sosteric2014].
+  - **1719**: Dummett, as quoted by Sosteric [@dummett1980, p. 102, as quoted in @sosteric2014];
+    Farley prints "(1719–1784)" too [@farley2009, p. 101].
     Hard to square with his parents' marriage in 1722 [@web_lumieres_court] ○.
   - **February 1724, Geneva**: registered there, as a precaution, under the name "Antoine
     Corteiz" [@web_museeprotestant_gebelin] ○. If that register entry is his, it is the only
@@ -121,8 +123,10 @@ re-Egyptianised). He pairs naturally with the **comte-de-mellet** card as the tw
 - **His initiation as a Freemason: 1771, as this page says.** Search summaries report him
   initiated in 1771 at the lodge *Les Amis Réunis*, then joining *Les Neuf Sœurs*, which
   Lalande opened in 1776, and serving as its secretary from 1778 [@web_neufsoeurs_wp] ○.
-  Sosteric's 1776 [@sosteric2014] is probably the Neuf Sœurs date. The page's wording
-  ("initiated (1771) and moved in the lodge *Les Neuf Sœurs*") stands.
+  Farley (2009) puts 1776 at *Les Amis Réunis* itself: he "began his Freemasonic career in
+  the Lodge of Les Amis Réunis in 1776", lecturing on the Masonic degrees the next year
+  [@farley2009, p. 101]. So Sosteric's 1776 [@sosteric2014] may be the Amis Réunis date, not the
+  Neuf Sœurs one, and 1771 is contested: the page now gives both until a lodge register settles it.
 - Confirm the precise salon and the identity of "Mme la C. d'H." (commonly read as Mme
   Helvétius) from Decker–Depaulis–Dummett rather than tertiary sources.
 - Keep his essay and Mellet's appended essay clearly separated in the grammar (different
