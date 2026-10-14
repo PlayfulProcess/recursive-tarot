@@ -2,6 +2,25 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 13 2026 — the Ontoject study: the Trickster between every card, Reversed: hubris
+
+- **Slower:** the three animated cards loop about 1.8x slower (16 s, 18 s); the sequence morphs in 2 s and holds 3 s.
+- **The Trickster between every card:** in play it morphs into a wobbling, overdone copy of the card it follows,
+  then slips into the next. Motion off: a still Trickster frame. Stopping mid-Trickster returns to the card.
+- **Reversed: hubris:** her reversal rule, in her words, as a new section of the study, with her cards' own
+  lines (Balance; the Cosmic Topology reversals). A toggle on the animated page draws every glyph overdone.
+
+## Oct 13 2026 — study: The Ontoject, one life
+
+- **A study, `course/ontoject-one-life.mdx`:** the Ontoject deck's trumps read as the development of one being,
+  birth at XII–XIII, in the deck's own names and order; the poem the deck grew from, in full, and its film
+  (youtube.com/watch?v=VErR7QPHKnA); the Trickster from *The Path of the Ontoject*; and the Fool, the
+  Trickster and the Joker: the Fool as the unnumbered excuse card, the Joker from American euchre
+  (Farley 2009, pp. 8, 82, 113; Wintle, WOPC), zero from Court de Gébelin. Unchecked claims carry a visible
+  editorial note that links to Ways to Contribute. In the courses gallery.
+- **The animated page, `pages/studies/ontoject-one-life.html`:** three animated cards and the 22 trumps as
+  morphing glyphs, self-contained; light only, colours from `theme.css`, the card art keeping its own ochre.
+
 ## Oct 13 2026 — branch `research/farley-motives` (pushed, not merged): why they did it, from Farley (2009)
 
 - **A "Why" section on ten people:** Court de Gébelin, the Comte de Mellet, Etteilla, Éliphas Lévi, Oswald
