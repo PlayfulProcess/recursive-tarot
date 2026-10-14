@@ -21,6 +21,15 @@ Newest first. One bullet per shipped thing.
 - **Draw & reflect opens the assistant beside the page**, on the Tarot tab (I Ching or Astro for those
   grammars) with this deck, via `RecursiveAssistant.open({tab, deckId})`. Ctrl/Cmd-click, embeds, and
   decks with no app id keep the old path: the reading on recursive.eco in a new tab.
+## Oct 14 2026 — search: one page per card, a sitemap, robots.txt
+
+- **`card/<card>.html`** (78) and **`tarot-card-meanings.html`**, written by `scripts/build_card_pages.py`: each Rider-Waite-Smith card
+  with its text in the HTML (the viewers render it only in JavaScript, so search engines saw a page called "Cards"). Waite's 1911
+  words and, for the minors, his upright and reversed meanings; then Book T (1912) in its own section; Pamela Colman Smith's card as
+  a Commons thumbnail (330/500 px, not the 1.2 MB R2 original). Unique titles and descriptions, canonical, Open Graph, JSON-LD
+  (WebPage + Chapter of the Pictorial Key, BreadcrumbList; CollectionPage + ItemList on the list), previous/next.
+- **`sitemap.xml`** (96 URLs, `lastmod` from `data/sitemap-lastmod.json`) and **`robots.txt`**: new; both were 404.
+- `index.html`: canonical, og:image, Twitter card, WebSite JSON-LD, and a line linking the card meanings. check_all runs the build's `--check`.
 
 ## Oct 13 2026 — the Ontoject study: the Trickster between every card, Reversed: hubris
 
