@@ -63,6 +63,13 @@ footer code{overflow-wrap:anywhere}
 .info .num,.strip button{font-variant-numeric:lining-nums}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 html[data-motion="off"] .oj *{animation:none!important}
+.glyph.rev path{stroke-width:2.8;transform:scale(1.13) rotate(-4deg)}
+.glyph.rev .core{transform:scale(1.7)}
+.glyph.rev .halo{opacity:.34}
+html[data-motion="on"] .glyph.rev path{animation:oj-rev 3.4s ease-in-out infinite}
+@keyframes oj-rev{0%,100%{transform:scale(1.13) rotate(-4deg)}50%{transform:scale(1.2) rotate(3deg)}}
+@media (prefers-reduced-motion: reduce){.glyph.rev path{animation:none!important}}
+.info .rev-note{margin:8px 0 0;font-size:.88rem;color:var(--accent)}
 </style>
 </head>
 <body>
@@ -82,7 +89,7 @@ html[data-motion="off"] .oj *{animation:none!important}
 </header>
 
 <h2>Three cards</h2>
-<p class="sub">The zero, the middle, the end. Each loops in under ten seconds; with motion off they hold their key pose.</p>
+<p class="sub">The zero, the middle, the end. Each loops slowly, in under twenty seconds; with motion off they hold their key pose.</p>
 <div class="cards">
   <figure>
 <!--CARD fool-0.svg-->
@@ -108,18 +115,18 @@ svg:root{--oj-bg:#f3ead8;--oj-ink:#3a2a14;--oj-dim:#9c7638;--oj-light:#b0701a;--
 .oj-c0 .pn{opacity:0}
 .oj-c0 .light{transform-box:fill-box;transform-origin:center}
 .oj-c0 .stat{opacity:.35}
-/* animation: 9 s loop */
-.oj-c0 .zona{animation:oj-c0-zona 9s ease-in-out infinite both}
-.oj-c0 .egg{animation:oj-c0-egg 9s ease-in-out infinite both}
-.oj-c0 .sperm{animation:oj-c0-sperm 9s ease-in-out infinite both}
-.oj-c0 .w1{animation:oj-c0-wave 9s ease-out infinite both}
-.oj-c0 .w2{animation:oj-c0-wave 9s ease-out .55s infinite both}
-.oj-c0 .r1{animation:oj-c0-rip 9s ease-out infinite both}
-.oj-c0 .r2{animation:oj-c0-rip 9s ease-out .5s infinite both}
-.oj-c0 .pn1{animation:oj-c0-pn1 9s ease-in-out infinite both}
-.oj-c0 .pn2{animation:oj-c0-pn2 9s ease-in-out infinite both}
-.oj-c0 .light{animation:oj-c0-light 9s ease-in-out infinite both}
-.oj-c0 .stat{animation:oj-c0-hide 9s linear infinite both}
+/* animation: 16 s loop */
+.oj-c0 .zona{animation:oj-c0-zona 16s ease-in-out infinite both}
+.oj-c0 .egg{animation:oj-c0-egg 16s ease-in-out infinite both}
+.oj-c0 .sperm{animation:oj-c0-sperm 16s ease-in-out infinite both}
+.oj-c0 .w1{animation:oj-c0-wave 16s ease-out infinite both}
+.oj-c0 .w2{animation:oj-c0-wave 16s ease-out 1s infinite both}
+.oj-c0 .r1{animation:oj-c0-rip 16s ease-out infinite both}
+.oj-c0 .r2{animation:oj-c0-rip 16s ease-out .9s infinite both}
+.oj-c0 .pn1{animation:oj-c0-pn1 16s ease-in-out infinite both}
+.oj-c0 .pn2{animation:oj-c0-pn2 16s ease-in-out infinite both}
+.oj-c0 .light{animation:oj-c0-light 16s ease-in-out infinite both}
+.oj-c0 .stat{animation:oj-c0-hide 16s linear infinite both}
 @keyframes oj-c0-zona{0%,28%{stroke-opacity:.3;transform:scale(1)}40%{stroke-opacity:.95;transform:scale(1.035)}88%{stroke-opacity:.95;transform:scale(1.035)}100%{stroke-opacity:.3;transform:scale(1)}}
 @keyframes oj-c0-egg{0%,100%{transform:scale(1)}50%{transform:scale(1.012)}}
 @keyframes oj-c0-sperm{0%,6%{opacity:0;transform:translate(28px,-34px)}10%{opacity:1}22%{opacity:1;transform:translate(0,0)}27%,100%{opacity:0;transform:translate(0,0)}}
@@ -200,14 +207,14 @@ svg:root{--oj-bg:#f3ead8;--oj-ink:#3a2a14;--oj-dim:#9c7638;--oj-light:#b0701a;--
 .oj-c13 .lem{stroke-dasharray:100 100;stroke-dashoffset:0}
 .oj-c13 .runwrap{opacity:0}
 .oj-c13 .heart{transform-box:fill-box;transform-origin:center}
-/* animation: 10 s loop */
-.oj-c13 .womb{animation:oj-c13-womb 10s ease-in-out infinite both}
-.oj-c13 .fetus{animation:oj-c13-fetus 10s ease-in-out infinite both}
-.oj-c13 .plac{animation:oj-c13-plac 10s ease-in-out infinite both}
-.oj-c13 .lungs{animation:oj-c13-lungs 10s ease-in-out infinite both}
-.oj-c13 .lem{animation:oj-c13-lem 10s ease-in-out infinite both}
-.oj-c13 .rw2{animation:oj-c13-rw2 10s linear infinite both}
-.oj-c13 .run{animation:oj-c13-run 1.25s linear infinite}
+/* animation: 18 s loop */
+.oj-c13 .womb{animation:oj-c13-womb 18s ease-in-out infinite both}
+.oj-c13 .fetus{animation:oj-c13-fetus 18s ease-in-out infinite both}
+.oj-c13 .plac{animation:oj-c13-plac 18s ease-in-out infinite both}
+.oj-c13 .lungs{animation:oj-c13-lungs 18s ease-in-out infinite both}
+.oj-c13 .lem{animation:oj-c13-lem 18s ease-in-out infinite both}
+.oj-c13 .rw2{animation:oj-c13-rw2 18s linear infinite both}
+.oj-c13 .run{animation:oj-c13-run 2s linear infinite}
 .oj-c13 .heart{animation:oj-c13-beat .45s ease-in-out infinite alternate}
 @keyframes oj-c13-womb{0%{opacity:0;stroke-dashoffset:0}6%,30%{opacity:.8;stroke-dashoffset:0}46%{opacity:.5;stroke-dashoffset:100}47%,100%{opacity:0;stroke-dashoffset:100}}
 @keyframes oj-c13-fetus{0%{opacity:0}6%,30%{opacity:1}44%,100%{opacity:0}}
@@ -283,31 +290,31 @@ svg:root{--oj-bg:#f3ead8;--oj-ink:#3a2a14;--oj-dim:#9c7638;--oj-light:#b0701a;--
 .oj-c21 .ring{stroke-dasharray:100 100;stroke-dashoffset:0}
 .oj-c21 .dots{fill:none;stroke:var(--oj-light,#b0701a);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:.01 2.5;opacity:0;transform-box:view-box;transform-origin:70px 120px}
 .oj-c21 .seed{transform-box:fill-box;transform-origin:center}
-/* animation: 10 s loop; the spiral also turns slowly on its own 40 s clock */
-.oj-c21 .rot{animation:oj-c21-rot 40s linear infinite}
-.oj-c21 .sp{animation:oj-c21-sp 10s ease-in-out infinite both}
-.oj-c21 .ring{animation:oj-c21-ring 10s ease-in-out infinite both}
-.oj-c21 .dots{animation:oj-c21-dots 10s ease-in-out infinite both}
-.oj-c21 .seed{animation:oj-c21-seed 10s ease-in-out infinite both}
+/* animation: 18 s loop; the spiral also turns slowly on its own 72 s clock */
+.oj-c21 .rot{animation:oj-c21-rot 72s linear infinite}
+.oj-c21 .sp{animation:oj-c21-sp 18s ease-in-out infinite both}
+.oj-c21 .ring{animation:oj-c21-ring 18s ease-in-out infinite both}
+.oj-c21 .dots{animation:oj-c21-dots 18s ease-in-out infinite both}
+.oj-c21 .seed{animation:oj-c21-seed 18s ease-in-out infinite both}
 @keyframes oj-c21-rot{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
 @keyframes oj-c21-sp{0%{stroke-dashoffset:100;opacity:1}40%{stroke-dashoffset:0;opacity:1}70%{stroke-dashoffset:0;opacity:1}86%,100%{stroke-dashoffset:0;opacity:0}}
-.oj-c21 .b0{animation:oj-c21-b0 10s ease-in-out infinite both}
+.oj-c21 .b0{animation:oj-c21-b0 18s ease-in-out infinite both}
 @keyframes oj-c21-b0{0%,2.8%{opacity:0}5.8%,70%{opacity:1}86%,100%{opacity:0}}
-.oj-c21 .b1{animation:oj-c21-b1 10s ease-in-out infinite both}
+.oj-c21 .b1{animation:oj-c21-b1 18s ease-in-out infinite both}
 @keyframes oj-c21-b1{0%,4.9%{opacity:0}7.9%,70%{opacity:1}86%,100%{opacity:0}}
-.oj-c21 .b2{animation:oj-c21-b2 10s ease-in-out infinite both}
+.oj-c21 .b2{animation:oj-c21-b2 18s ease-in-out infinite both}
 @keyframes oj-c21-b2{0%,7.9%{opacity:0}10.9%,70%{opacity:1}86%,100%{opacity:0}}
-.oj-c21 .b3{animation:oj-c21-b3 10s ease-in-out infinite both}
+.oj-c21 .b3{animation:oj-c21-b3 18s ease-in-out infinite both}
 @keyframes oj-c21-b3{0%,11.7%{opacity:0}14.7%,70%{opacity:1}86%,100%{opacity:0}}
-.oj-c21 .b4{animation:oj-c21-b4 10s ease-in-out infinite both}
+.oj-c21 .b4{animation:oj-c21-b4 18s ease-in-out infinite both}
 @keyframes oj-c21-b4{0%,16.7%{opacity:0}19.7%,70%{opacity:1}86%,100%{opacity:0}}
-.oj-c21 .b5{animation:oj-c21-b5 10s ease-in-out infinite both}
+.oj-c21 .b5{animation:oj-c21-b5 18s ease-in-out infinite both}
 @keyframes oj-c21-b5{0%,22.7%{opacity:0}25.7%,70%{opacity:1}86%,100%{opacity:0}}
-.oj-c21 .b6{animation:oj-c21-b6 10s ease-in-out infinite both}
+.oj-c21 .b6{animation:oj-c21-b6 18s ease-in-out infinite both}
 @keyframes oj-c21-b6{0%,28.0%{opacity:0}31.0%,70%{opacity:1}86%,100%{opacity:0}}
-.oj-c21 .b7{animation:oj-c21-b7 10s ease-in-out infinite both}
+.oj-c21 .b7{animation:oj-c21-b7 18s ease-in-out infinite both}
 @keyframes oj-c21-b7{0%,33.3%{opacity:0}36.3%,70%{opacity:1}86%,100%{opacity:0}}
-.oj-c21 .b8{animation:oj-c21-b8 10s ease-in-out infinite both}
+.oj-c21 .b8{animation:oj-c21-b8 18s ease-in-out infinite both}
 @keyframes oj-c21-b8{0%,38.0%{opacity:0}41.0%,70%{opacity:1}86%,100%{opacity:0}}
 @keyframes oj-c21-ring{0%,38%{stroke-dashoffset:100;opacity:1;stroke-width:1.4}50%{stroke-dashoffset:0;stroke-width:1.4}56%{stroke-width:2.4}62%{stroke-width:1.4;opacity:1}72%,100%{stroke-dashoffset:0;opacity:0}}
 @keyframes oj-c21-dots{0%,60%{opacity:0;transform:scale(1) rotate(0deg)}69%{opacity:1;transform:scale(1) rotate(0deg)}80%{opacity:.9;transform:scale(.75) rotate(25deg)}95%,100%{opacity:0;transform:scale(.05) rotate(80deg)}}
@@ -353,7 +360,7 @@ svg:root{--oj-bg:#f3ead8;--oj-ink:#3a2a14;--oj-dim:#9c7638;--oj-light:#b0701a;--
 </div>
 
 <h2>The sequence</h2>
-<p class="sub">All 22, as simple glyphs morphing one into the next, so the arc can be felt. The Trickster has no number and can step in anywhere.</p>
+<p class="sub">All 22, as simple glyphs morphing one into the next, so the arc can be felt. In play, the Trickster steps in between every card: it copies the card, a little too much, and slips into the next. Turn on <i>Reversed</i> to see every card overdone.</p>
 <section class="seq" aria-label="Sequence of the 22 trumps">
   <div class="stagebox">
     <svg viewBox="-60 -60 120 120" class="glyph" role="img" aria-labelledby="gTitle">
@@ -368,12 +375,14 @@ svg:root{--oj-bg:#f3ead8;--oj-ink:#3a2a14;--oj-dim:#9c7638;--oj-light:#b0701a;--
     <div class="st" id="iStage"></div>
     <p class="line" id="iLine"></p>
     <p class="world" id="iWorld"></p>
+    <p class="rev-note" id="iRev" hidden>Reversed: hubris. In this deck every reversal is the card overdone, outside the middle way. The Trickster upright is equanimity; reversed, hubris.</p>
     <div class="acts" aria-hidden="true"><span data-act="0">water</span><span data-act="1">the crossing</span><span data-act="2">air</span></div>
     <div class="ctrl">
       <button type="button" id="prev" aria-label="Previous card">Prev</button>
       <button type="button" id="play" aria-pressed="false">Play</button>
       <button type="button" id="next" aria-label="Next card">Next</button>
       <button type="button" id="trick">Trickster</button>
+      <button type="button" id="revBtn" aria-pressed="false">Reversed: off</button>
       <label class="sr" for="range">Card number</label>
       <input type="range" id="range" min="0" max="21" value="0">
     </div>
@@ -489,10 +498,10 @@ function mix(a,b,t){var s=[],o=[];for(var i=0;i<4;i++){var pa=a.s[i],pb=b.s[i],q
   return {s:s,o:o,d:[a.d[0]+(b.d[0]-a.d[0])*t,a.d[1]+(b.d[1]-a.d[1])*t,a.d[2]+(b.d[2]-a.d[2])*t]};}
 function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
 
-var cur=shapes[0],idx=0,anim=null,timer=null,playing=false,MORPH=1100,HOLD=1700;
-function morphTo(target,done){if(anim)cancelAnimationFrame(anim);var from=cur;
+var cur=shapes[0],idx=0,anim=null,timer=null,playing=false,MORPH=2000,HOLD=3000,ENTER=1300,WOBBLE=2300,wob=null,tricking=false;
+function morphTo(target,done,dur){if(anim)cancelAnimationFrame(anim);var from=cur,D=dur||MORPH;
   if(motion==="off"){cur=target;draw(cur);if(done)done();return;}
-  var t0=null;function step(ts){if(t0===null)t0=ts;var t=Math.min(1,(ts-t0)/MORPH);cur=mix(from,target,ease(t));draw(cur);if(t<1)anim=requestAnimationFrame(step);else{anim=null;cur=target;if(done)done();}}
+  var t0=null;function step(ts){if(t0===null)t0=ts;var t=Math.min(1,(ts-t0)/D);cur=mix(from,target,ease(t));draw(cur);if(t<1)anim=requestAnimationFrame(step);else{anim=null;cur=target;if(done)done();}}
   anim=requestAnimationFrame(step);}
 
 var strip=document.getElementById("strip"),range=document.getElementById("range"),live=document.getElementById("live");
@@ -502,17 +511,37 @@ function label(c){document.getElementById("iNum").textContent=c.n;document.getEl
   [].forEach.call(document.querySelectorAll(".acts span"),function(s){s.classList.toggle("on",+s.getAttribute("data-act")===c.a);});
   if(!playing)live.textContent=c.n+", "+c.name+", "+c.st;}
 function go(i,done){idx=(i+C.length)%C.length;range.value=idx;[].forEach.call(strip.children,function(b,k){b.classList.toggle("on",k===idx);});label(C[idx]);morphTo(shapes[idx],done);}
-function tick(){go(idx+1,function(){if(playing)timer=setTimeout(tick,HOLD);});}
-function startPlay(){playing=true;var b=document.getElementById("play");b.textContent="Pause";b.setAttribute("aria-pressed","true");timer=setTimeout(tick,motion==="off"?2600:400);}
-function stopPlay(){playing=false;clearTimeout(timer);var b=document.getElementById("play");if(b){b.textContent="Play";b.setAttribute("aria-pressed","false");}}
+/* ---------- the Trickster between every card: it copies the card, overdoes it, slips into the next ---------- */
+function mimic(sh,t){var cx=sh.d[0],cy=sh.d[1],a=.14*Math.sin(t*2.1),ca=Math.cos(a),sa=Math.sin(a),hop=Math.abs(Math.sin(t*2.6)),s=[];
+  for(var i=0;i<4;i++){var q=[];for(var k=0;k<N;k++){var x=sh.s[i][k][0]-cx,y=sh.s[i][k][1]-cy,w=1.12+.07*Math.sin(k*.55+t*3.2+i*1.7),X=x*w*1.06,Y=y*w*.9;
+    q.push([cx+X*ca-Y*sa+2.2*Math.sin(k*.8+t*5.1),cy+X*sa+Y*ca+2.2*Math.cos(k*.65+t*4.3)-3*hop]);}s.push(q);}
+  return {s:s,o:sh.o.slice(),d:[cx+14*Math.sin(t*2.6),cy-8-12*hop,sh.d[2]*1.3]};}
+function labelTrick(c){document.getElementById("iNum").textContent=TRICK.n;document.getElementById("iName").textContent=TRICK.name;
+  document.getElementById("iStage").textContent="copying "+c.name+", a little too much";
+  document.getElementById("iLine").textContent="Play steps in between every card: it mimics the card before, overdoes it, and slips into the next.";
+  document.getElementById("iWorld").textContent=TRICK.w;document.getElementById("gTitle").textContent="The Trickster, mimicking "+c.name;
+  [].forEach.call(document.querySelectorAll(".acts span"),function(s){s.classList.remove("on");});}
+function trickMimic(next){var base=shapes[idx];tricking=true;labelTrick(C[idx]);
+  function done(){tricking=false;next();}
+  if(motion==="off"){cur=mimic(base,.6);draw(cur);timer=setTimeout(done,1800);return;}
+  morphTo(mimic(base,0),function(){if(!playing)return;var t0=null;
+    function step(ts){if(!playing){wob=null;return;}if(t0===null)t0=ts;var e=ts-t0;cur=mimic(base,e/1000);draw(cur);
+      if(e<WOBBLE)wob=requestAnimationFrame(step);else{wob=null;done();}}
+    wob=requestAnimationFrame(step);},ENTER);}
+function tick(){if(!playing)return;trickMimic(function(){if(!playing)return;go(idx+1,function(){if(playing)timer=setTimeout(tick,HOLD);});});}
+function startPlay(){playing=true;var b=document.getElementById("play");b.textContent="Pause";b.setAttribute("aria-pressed","true");timer=setTimeout(tick,motion==="off"?4000:HOLD);}
+function stopPlay(){playing=false;clearTimeout(timer);if(wob){cancelAnimationFrame(wob);wob=null;}if(tricking){tricking=false;go(idx);}var b=document.getElementById("play");if(b){b.textContent="Play";b.setAttribute("aria-pressed","false");}}
 document.getElementById("play").onclick=function(){playing?stopPlay():startPlay();};
 document.getElementById("prev").onclick=function(){stopPlay();go(idx-1);};
 document.getElementById("next").onclick=function(){stopPlay();go(idx+1);};
 range.oninput=function(){stopPlay();go(+range.value);};
 document.getElementById("trick").onclick=function(){stopPlay();label(TRICK);[].forEach.call(strip.children,function(b){b.classList.remove("on");});
-  morphTo(trickShape,function(){setTimeout(function(){go(idx);},motion==="off"?2200:1500);});};
+  morphTo(trickShape,function(){setTimeout(function(){go(idx);},motion==="off"?3600:2600);});};
 document.querySelector(".seq").addEventListener("keydown",function(e){if(e.target===range)return;if(e.key==="ArrowRight"){stopPlay();go(idx+1);}else if(e.key==="ArrowLeft"){stopPlay();go(idx-1);}});
 
+var revBtn=document.getElementById("revBtn"),glyphSvg=document.querySelector(".glyph"),revNote=document.getElementById("iRev");
+revBtn.onclick=function(){var on=!glyphSvg.classList.contains("rev");glyphSvg.classList.toggle("rev",on);revNote.hidden=!on;
+  revBtn.textContent="Reversed: "+(on?"hubris":"off");revBtn.setAttribute("aria-pressed",on?"true":"false");};
 applyMotion();go(0);draw(cur);
 if(motion==="on")startPlay();
 })();
