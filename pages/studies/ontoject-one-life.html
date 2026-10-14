@@ -92,14 +92,14 @@ html[data-motion="on"] .glyph.rev path{animation:oj-rev 3.4s ease-in-out infinit
     <span class="speed" role="group" aria-labelledby="speedLbl">
       <span class="lbl" id="speedLbl"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.2V8l2.6 1.6"/></svg>Speed</span>
       <button type="button" data-speed="0.25" aria-pressed="false" aria-label="0.25× speed">0.25×</button>
-      <button type="button" data-speed="0.5" aria-pressed="false" aria-label="0.5× speed">0.5×</button>
-      <button type="button" data-speed="1" aria-pressed="true" aria-label="1× speed, normal">1×</button>
+      <button type="button" data-speed="0.5" aria-pressed="true" aria-label="0.5× speed">0.5×</button>
+      <button type="button" data-speed="1" aria-pressed="false" aria-label="1× speed, normal">1×</button>
     </span>
   </div>
 </header>
 
 <h2>Three cards</h2>
-<p class="sub">The zero, the middle, the end. Each loops slowly, in under twenty seconds at 1×; <i>Speed</i> slows every animation on the page, and with motion off they hold their key pose.</p>
+<p class="sub">The zero, the middle, the end. Each loops slowly, in under twenty seconds at 1×, and starts at 0.5×; <i>Speed</i> changes every animation on the page, and with motion off they hold their key pose.</p>
 <div class="cards">
   <figure>
 <!--CARD fool-0.svg-->
@@ -422,7 +422,7 @@ function applyMotion(){root.setAttribute("data-motion",motion);motionBtn.textCon
 motionBtn.onclick=function(){motion=motion==="on"?"off":"on";store("oj-motion",motion);applyMotion();};
 /* one speed factor for every animation on the page: the CSS loops in the cards (via each animation's
    playbackRate) and the JS sequence (every duration below is divided by it) */
-var SPEEDS=[0.25,0.5,1],speed=parseFloat(store("oj-speed"));if(SPEEDS.indexOf(speed)<0)speed=1;
+var SPEEDS=[0.25,0.5,1],speed=parseFloat(store("oj-speed"));if(SPEEDS.indexOf(speed)<0)speed=0.5;
 function T(ms){return ms/speed;}
 function rateAll(){if(!document.getAnimations)return;document.getAnimations().forEach(function(a){a.playbackRate=speed;});}
 document.addEventListener("animationstart",rateAll,true);
@@ -477,7 +477,7 @@ var C=[
   g:function(){return {s:[line(-42,0,42,0),circle(-31,-11,10),circle(31,-11,10),poly([[0,1],[-7,12],[7,12]],true)],o:[1,.9,.9,.6],d:[0,0,2.4]};}},
  {n:"IX",name:"Silence",st:"Hearing",w:"The world: muffled sound.",l:"From around the sixth month: heartbeat, gut, a voice. Months of listening before any speaking.",a:0,
   g:function(){return {s:[spiral(12,0,1.5,12,2.5,-90),arc(12,0,24,150,210),arc(12,0,35,145,215)],o:[1,.7,.45],d:[12,0,1.8]};}},
- {n:"X",name:"Destiny",st:"Turning into the path",w:"The world: a narrowing passage.",l:"Head-down near term, then rotating through the pelvis: the body turns to fit the way out. What is given meets what is done with it.",a:0,
+ {n:"X",name:"Destiny",st:"Turning into the birth path",w:"The world: a narrowing passage.",l:"The body turns to fit the way out. What is given meets what is done with it.",a:0,
   g:function(){return {s:[chain([-26,-44],[[-26,0,-10,28,13,28]]),circle(22,28,9),arc(22,28,15,200,320)],o:[.8,1,.6],d:[22,28,2]};}},
  {n:"XI",name:"Strength",st:"Labour",w:"The world: contractions.",l:"Force that is not the baby's will: one body pressing, the other yielding.",a:0,
   g:function(){return {s:[ellipse(0,4,40,26),circle(0,4,11),lemH(0,-36,15,6)],o:[1,.9,.7],d:[0,4,2]};}},

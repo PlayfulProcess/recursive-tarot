@@ -2,6 +2,7 @@
 
 Newest first. One bullet per shipped thing.
 
+<<<<<<< HEAD
 ## Oct 14 2026 — search: one page per card, a sitemap, robots.txt
 
 - **`card/<card>.html`** (78) and **`tarot-card-meanings.html`**, written by `scripts/build_card_pages.py`: each Rider-Waite-Smith card
@@ -11,6 +12,27 @@ Newest first. One bullet per shipped thing.
   (WebPage + Chapter of the Pictorial Key, BreadcrumbList; CollectionPage + ItemList on the list), previous/next.
 - **`sitemap.xml`** (96 URLs, `lastmod` from `data/sitemap-lastmod.json`) and **`robots.txt`**: new; both were 404.
 - `index.html`: canonical, og:image, Twitter card, WebSite JSON-LD, and a line linking the card meanings. check_all runs the build's `--check`.
+=======
+## Oct 14 2026 — Cards: the Decks picker fixed, lean buttons, Draw & reflect in the assistant, a mic by the search
+
+- **Decks picker (`viewers/deck-picker.js`):** the black search bar was a dark-theme fill left behind;
+  every colour now comes from `theme.css`. The list scrolls (a flex child needed `min-height:0`), so
+  All / None / Load stay on screen. The picker sits under its button and scrolls with the page; it opens
+  above when there is no room below, re-places on resize, closes on Escape or a second click.
+- **Icons:** Decks shows the grammar glyph, not the assistant's sparkle (cards and Explorer). Draw &
+  reflect carries the sparkle. Both copied into `icons.js` from recursive.eco's `icons.tsx`
+  (`GrammarIcon`, `SparkleIcon`).
+- **Lean header buttons:** no purple, no boxes, recursive.eco's toolbar style. Draw & reflect keeps its
+  words in gold; Edit, Print and Report are icons with a tooltip and a screen-reader label.
+- **A mic beside the search** (`site-header.js`, every page), like YouTube's: speak, and the words wait in
+  the assistant's chat box, not sent (`RecursiveAssistant.ask`). Your browser's language first (pt-BR or
+  English). Without an assistant on the page the words become a search; a browser without speech
+  recognition (Firefox) shows no mic. Chrome and Edge transcribe through their maker's speech service.
+- **The card pop-up's buttons** (Cast, Edit, Copy) are gold too, no purple.
+- **Draw & reflect opens the assistant beside the page**, on the Tarot tab (I Ching or Astro for those
+  grammars) with this deck, via `RecursiveAssistant.open({tab, deckId})`. Ctrl/Cmd-click, embeds, and
+  decks with no app id keep the old path: the reading on recursive.eco in a new tab.
+>>>>>>> origin/main
 
 ## Oct 13 2026 — the Ontoject study: the Trickster between every card, Reversed: hubris
 
