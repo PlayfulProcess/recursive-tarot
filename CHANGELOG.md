@@ -2,7 +2,7 @@
 
 Newest first. One bullet per shipped thing.
 
-## Oct 14 2026 — Cards: the Decks picker fixed, lean header buttons, Draw & reflect in the assistant
+## Oct 14 2026 — Cards: the Decks picker fixed, lean buttons, Draw & reflect in the assistant, a mic by the search
 
 - **Decks picker (`viewers/deck-picker.js`):** the black search bar was a dark-theme fill left behind;
   every colour now comes from `theme.css`. The list scrolls (a flex child needed `min-height:0`), so
@@ -13,6 +13,11 @@ Newest first. One bullet per shipped thing.
   (`GrammarIcon`, `SparkleIcon`).
 - **Lean header buttons:** no purple, no boxes, recursive.eco's toolbar style. Draw & reflect keeps its
   words in gold; Edit, Print and Report are icons with a tooltip and a screen-reader label.
+- **A mic beside the search** (`site-header.js`, every page), like YouTube's: speak, and the words wait in
+  the assistant's chat box, not sent (`RecursiveAssistant.ask`). Your browser's language first (pt-BR or
+  English). Without an assistant on the page the words become a search; a browser without speech
+  recognition (Firefox) shows no mic. Chrome and Edge transcribe through their maker's speech service.
+- **The card pop-up's buttons** (Cast, Edit, Copy) are gold too, no purple.
 - **Draw & reflect opens the assistant beside the page**, on the Tarot tab (I Ching or Astro for those
   grammars) with this deck, via `RecursiveAssistant.open({tab, deckId})`. Ctrl/Cmd-click, embeds, and
   decks with no app id keep the old path: the reading on recursive.eco in a new tab.
