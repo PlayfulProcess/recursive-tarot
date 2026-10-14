@@ -105,6 +105,7 @@
   const QJ_SVG = (inner, size) => `<svg viewBox="0 0 24 24" width="${size || 18}" height="${size || 18}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${inner}</svg>`;
   const QJ_ICON = {
     search: '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>',
+    mic:    '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 10.5a6.5 6.5 0 0 0 13 0"/><path d="M12 17v4M8.5 21h7"/>',
     close:  '<path d="M6 6l12 12M18 6L6 18"/>',
     c:      '<rect x="6" y="3" width="12" height="18" rx="1.5"/><path d="M9.5 8h5M9.5 16h5"/>',
     d:      '<rect x="3" y="6" width="11" height="15" rx="1.5"/><path d="M8 6l3-1.5L20 9v11"/>',
@@ -292,6 +293,13 @@
             border-radius:4px; padding:0 3px; color:#8a8273; margin-right:4px; }
           .qj-field:focus-within .qj-kbd{ display:none; }
           .qj-close{ display:none; }
+          /* -- voice to the assistant: the mic beside the search (Oct 14 2026) -- */
+          .qj-mic{ display:inline-flex; flex-shrink:0; width:36px; height:36px; margin-left:6px; padding:0; border:0;
+            border-radius:50%; background:#f1ece1; color:#4a4439; cursor:pointer; align-items:center; justify-content:center; }
+          .qj-mic:hover, .qj-mic:focus-visible{ color:#9a7322; background:#ebe3d3; }
+          .qj-mic.on{ color:#fff; background:#9a7322; animation:qj-listen 1.4s ease-in-out infinite; }
+          @keyframes qj-listen{ 0%,100%{ box-shadow:0 0 0 0 rgba(154,115,34,.45); } 50%{ box-shadow:0 0 0 7px rgba(154,115,34,0); } }
+          @media (prefers-reduced-motion: reduce){ .qj-mic.on{ animation:none; } }
           .qj-panel{ position:fixed; z-index:70; box-sizing:border-box; width:min(460px, calc(100vw - 16px));
             max-height:min(72vh, 600px); overflow-y:auto; overscroll-behavior:contain;
             background:#fff; border:1px solid #d8d2c6; border-radius:10px; padding:6px;
@@ -315,6 +323,7 @@
           .qj-s svg{ flex-shrink:0; color:#9a7322; }
           @media (max-width:680px){
             .qj-open{ display:inline-flex; }
+            .qj-mic{ width:44px; height:44px; margin-left:0; background:none; }
             .qj{ display:none; }
             .qj.sheet{ display:flex; flex-direction:column; position:fixed; inset:0; z-index:100;
               background:#fbf9f3; padding:10px 16px 0; box-sizing:border-box; }
@@ -361,6 +370,7 @@
               <div class="qj-list" id="qj-list" role="listbox" aria-label="Search results"></div>
             </div>
           </div>
+          <button class="qj-mic" type="button" aria-pressed="false" aria-label="Speak to the assistant" title="Speak to the assistant">${QJ_SVG(QJ_ICON.mic, 18)}</button>
           <nav aria-label="Site sections">
             <span class="dd">
               <a class="tab dd-btn${active === 'home' ? ' active' : ''}" href="${PFX}index.html" title="Home" aria-haspopup="true" aria-expanded="false" aria-label="Home menu">${glyph('home', 'Home')}</a>
@@ -480,6 +490,7 @@
       });
 
       this.wireQuickJump(root);
+      this.wireVoice(root);
 
       // ONE row at every width: measure, and step down a level only while the row overflows.
       // Re-run when the bar or the nav changes size (window width, fonts, the Sign-in name
@@ -518,6 +529,80 @@
   // Quick-jump search box. Desktop: the field sits in the bar and a results panel drops
   // under it as you type. Phone (<=680px): a search icon opens a full-screen sheet.
   // Arrow keys move, Enter opens, Escape clears then closes; "/" or Ctrl/Cmd+K focuses it.
+  // Voice to the assistant (her ask, Oct 14 2026: "a microphone next to the search like the
+  // YouTube that renders voice to the assistant"). The browser's own speech recognition turns
+  // speech into text; the text is staged in the shared assistant's chat box with
+  // RecursiveAssistant.ask(), NOT sent: she reads it, edits it and taps Send (the launcher's
+  // ask() contract). Where the assistant is not mounted (embeds), the words go into the search.
+  // A browser without speech recognition (Firefox) shows no mic at all. In Chrome and Edge the
+  // browser sends the audio to its maker's speech service to be transcribed; the title says so.
+  SiteHeader.prototype.wireVoice = function (root) {
+    const mic = root.querySelector('.qj-mic');
+    const input = root.querySelector('.qj-input');
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!mic) return;
+    if (!SR) { mic.remove(); return; }
+    const idleTitle = 'Speak to the assistant (your browser turns speech into text, using its own speech service)';
+    mic.title = idleTitle;
+    const placeholder = input ? input.placeholder : '';
+    let rec = null;
+
+    const reset = () => {
+      mic.classList.remove('on');
+      mic.setAttribute('aria-pressed', 'false');
+      mic.title = idleTitle;
+      if (input) input.placeholder = placeholder;
+    };
+    const deliver = text => {
+      const assistantOn = window.RecursiveAssistant && document.documentElement.classList.contains('rec-assistant-on');
+      if (assistantOn && window.RecursiveAssistant.ask(text) !== false) return;
+      if (input) {   // no assistant on this page: the words become a search
+        input.value = text;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.focus();
+      }
+    };
+
+    mic.addEventListener('click', () => {
+      if (rec) { rec.stop(); return; }   // a second click ends the listening
+      rec = new SR();
+      // Her browser's language first (she speaks Portuguese and English), then the page's.
+      rec.lang = navigator.language || document.documentElement.lang || 'en-US';
+      rec.interimResults = true;
+      rec.continuous = false;
+      rec.maxAlternatives = 1;
+      let heard = '', failed = false;
+      rec.onresult = e => {
+        let interim = '';
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          const t = e.results[i][0].transcript;
+          if (e.results[i].isFinal) heard += t; else interim += t;
+        }
+        if (input) input.placeholder = (heard + interim).trim() || 'Listening…';
+      };
+      rec.onerror = e => {
+        if (e.error === 'not-allowed' || e.error === 'service-not-allowed') {
+          failed = true;   // keep the message up for a moment; onend must not wipe it
+          mic.classList.remove('on');
+          if (input) input.placeholder = 'Microphone blocked: allow it in the address bar';
+          setTimeout(reset, 4000);
+        }
+      };
+      rec.onend = () => {
+        const text = heard.trim();
+        rec = null;
+        if (failed) return;
+        reset();
+        if (text) deliver(text);
+      };
+      mic.classList.add('on');
+      mic.setAttribute('aria-pressed', 'true');
+      mic.title = 'Listening… click to stop';
+      if (input) input.placeholder = 'Listening…';
+      try { rec.start(); } catch (err) { rec = null; reset(); }
+    });
+  };
+
   SiteHeader.prototype.wireQuickJump = function (root) {
     const host = this;
     const qj = root.querySelector('.qj'), field = root.querySelector('.qj-field');

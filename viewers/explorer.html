@@ -152,7 +152,7 @@
 
 <div class="toolbar">
   <div class="title">Emergence Explorer <span class="sub">— drag fields to pivot the cards; every grouping is an emergence</span></div>
-  <button id="deckbtn" title="Pick one or many grammars">✦ Decks ▾</button>
+  <button id="deckbtn" title="Pick one or many grammars"><rt-icon name="grammar"></rt-icon> Decks ▾</button>
   <span class="spacer"></span>
   <button id="mode-cards" class="active"><rt-icon name="cards"></rt-icon> Cards</button>
   <button id="mode-counts">∑ Counts</button>
@@ -664,6 +664,13 @@ function selectedSlugs(){
   const d = new URLSearchParams(location.search).get('decks');
   return d ? d.split(',').filter(Boolean) : [];
 }
+// The Decks button: the grammar glyph (recursive.eco's GrammarIcon, icons.js) then its label,
+// set as text so a deck name is never parsed as HTML. Oct 14 2026: was a ✦, the assistant's mark.
+function setDeckBtn(label) {
+  const b = $('#deckbtn');
+  b.innerHTML = '<rt-icon name="grammar"></rt-icon> ';
+  b.append(label);
+}
 $('#deckbtn').onclick = () => {
   if (!collection) return;
   const sel = new Set(selectedSlugs());
@@ -749,7 +756,7 @@ async function boot(){
   const stash = (g, prefix) => { for (const it of (g.nodes||[])) secById[(prefix?prefix+':':'')+it.id] = it.sections || {}; };
   try{
     if (slugs.length && collection){
-      $('#deckbtn').textContent = `✦ Decks ▾ (${slugs.length})`;
+      setDeckBtn(`Decks ▾ (${slugs.length})`);
       const metas = Object.fromEntries(collection.grammars.map(g=>[g.slug,g]));
       const loads = slugs.map(async slug => {
         const g = await (await fetch(`${PFX}tarot/${slug}/grammar.json`)).json();
@@ -768,7 +775,7 @@ async function boot(){
       // single-grammar path (?src=) needs the deck-level year too, so century still
       // derives per-item (Phase 1: audit §5 "?src= single-deck loads never get century").
       records = flatten(g, { year: g.metadata?.year }, null);
-      if (srcParam) $('#deckbtn').textContent = '✦ ' + (g.name||'deck').split(' — ')[0].slice(0,22) + ' ▾';
+      if (srcParam) setDeckBtn((g.name||'deck').split(' — ')[0].slice(0,22) + ' ▾');
     }
   } catch(e){ $('#out').innerHTML = '<div id="hint">Could not load the grammar(s).</div>'; return; }
   // The meta grammar's items are pointer stubs (source_deck set, but no `branch` of their
