@@ -2,6 +2,17 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 13 2026 — study: The Ontoject, one life
+
+- **A study, `course/ontoject-one-life.mdx`:** the Ontoject deck's trumps read as the development of one being,
+  birth at XII–XIII, in the deck's own names and order; the poem the deck grew from, in full, and its film
+  (youtube.com/watch?v=VErR7QPHKnA); the Trickster from *The Path of the Ontoject*; and the Fool, the
+  Trickster and the Joker: the Fool as the unnumbered excuse card, the Joker from American euchre
+  (Farley 2009, pp. 8, 82, 113; Wintle, WOPC), zero from Court de Gébelin. Unchecked claims carry a visible
+  editorial note that links to Ways to Contribute. In the courses gallery.
+- **The animated page, `pages/studies/ontoject-one-life.html`:** three animated cards and the 22 trumps as
+  morphing glyphs, self-contained; light only, colours from `theme.css`, the card art keeping its own ochre.
+
 ## Oct 13 2026 — branch `research/farley-motives` (pushed, not merged): why they did it, from Farley (2009)
 
 - **A "Why" section on ten people:** Court de Gébelin, the Comte de Mellet, Etteilla, Éliphas Lévi, Oswald

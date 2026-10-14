@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../theme.css?v=3">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Ontoject, one life · The Recursive Tarot</title>
+<meta name="description" content="A study: the trumps of the Ontoject deck read as the development of one being, from before conception to return. Three animated cards and a 22-glyph sequence.">
+<link rel="icon" type="image/svg+xml" href="../../public/favicon.svg?v=2">
+<style>
+:root{
+  /* Card-art palette only (ochre on paper). Page colours come from theme.css. */
+  --mark:#9333ea;
+  --oj-bg:#f3ead8;--oj-ink:#3a2a14;--oj-dim:#9c7638;--oj-light:#b0701a;--oj-frame:#d6c39d;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:20px 16px 48px}
+header{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+header .mark{width:44px;height:44px;flex:none}
+header .mark path{stroke:var(--mark)}
+h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:normal;margin:0}
+h1{font-size:1.6rem;letter-spacing:.01em}
+h2{font-size:1.25rem;margin:36px 0 6px}
+.lede{color:var(--muted);margin:8px 0 0;max-width:62ch}
+.tools{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+button{font:inherit;font-size:.85rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sub{color:var(--muted);font-size:.9rem;margin:0 0 14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px}
+figure{margin:0;display:flex;flex-direction:column;align-items:center}
+figure svg{width:100%;max-width:250px;height:auto;display:block;border-radius:10px;box-shadow:0 1px 0 var(--line)}
+figcaption{max-width:250px;margin-top:10px}
+figcaption b{font-family:Georgia,serif;font-weight:normal;font-size:1.05rem}
+figcaption .stage{display:block;color:var(--accent);font-size:.85rem;margin:2px 0 4px}
+figcaption p{margin:0;color:var(--muted);font-size:.88rem}
+.seq{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+@media (max-width:700px){.seq{grid-template-columns:1fr}}
+.stagebox svg{width:100%;max-width:400px;height:auto;display:block;margin:0 auto;background:var(--oj-bg);border-radius:12px}
+.glyph path{fill:none;stroke:var(--oj-ink);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.glyph .core{fill:var(--oj-light)}
+.glyph .halo{fill:var(--oj-light);opacity:.16}
+.info .num{font-family:Georgia,serif;font-size:2.2rem;line-height:1;color:var(--accent)}
+.info .nm{font-family:Georgia,serif;font-size:1.35rem;margin:4px 0 2px}
+.info .st{color:var(--accent);font-size:.95rem}
+.info .world{color:var(--muted);font-size:.88rem;margin:8px 0 0}
+.info .line{margin:8px 0 0}
+.ctrl{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;align-items:center}
+.ctrl input[type=range]{flex:1 1 160px;accent-color:var(--accent)}
+.strip{display:flex;flex-wrap:wrap;gap:4px;margin-top:12px}
+.strip button{padding:3px 0;width:2.6em;font-family:Georgia,serif;font-size:.78rem;border-radius:6px}
+.strip button.on{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;font-size:.8rem;color:var(--muted)}
+.acts span{border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+.acts span.on{border-color:var(--accent);color:var(--accent)}
+footer{margin-top:40px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);padding-top:14px}
+footer a,.lede a{color:var(--accent)}
+footer code{overflow-wrap:anywhere}
+.info .num,.strip button{font-variant-numeric:lining-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+html[data-motion="off"] .oj *{animation:none!important}
+</style>
+</head>
+<body>
+<script src="../../site-header.js?v=52"></script>
+<site-header active=""></site-header>
+<div class="wrap">
+
+<header>
+  <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><path id="mark" d="" fill="none" stroke-width="5" stroke-linecap="round" opacity=".9"/></svg>
+  <div>
+    <h1>The Ontoject, one life</h1>
+    <p class="lede">The trumps of the Ontoject deck read as the development of one being, from before conception to return. One possible reading, made knowing it is made. The words are in <a href="../course-viewer.html?course=ontoject-one-life">the study</a>.</p>
+  </div>
+  <div class="tools" role="group" aria-label="Display">
+    <button id="motionBtn" type="button" aria-pressed="false">Motion: on</button>
+  </div>
+</header>
+
+<h2>Three cards</h2>
+<p class="sub">The zero, the middle, the end. Each loops in under ten seconds; with motion off they hold their key pose.</p>
+<div class="cards">
+  <figure>
+<!--CARD fool-0.svg-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 240" class="oj oj-c0" role="img" aria-labelledby="oj-c0-t oj-c0-d">
+<title id="oj-c0-t">0 · The Void: before conception, and fertilisation</title>
+<desc id="oj-c0-d">An egg at rest inside its shell. A sperm reaches its edge, a calcium wave crosses the egg from the point of entry, the shell hardens, two nuclei approach and meet, and a point of light appears at the centre before the egg rests again.</desc>
+<style>
+svg:root{--oj-bg:#f3ead8;--oj-ink:#3a2a14;--oj-dim:#9c7638;--oj-light:#b0701a;--oj-frame:#d6c39d}
+.oj-c0 .bg{fill:var(--oj-bg,#f3ead8)}
+.oj-c0 .frame{fill:none;stroke:var(--oj-frame,#d6c39d);stroke-width:1}
+.oj-c0 text{fill:var(--oj-dim,#9c7638);font-family:Georgia,'Times New Roman',serif;text-anchor:middle;font-variant-numeric:lining-nums}
+.oj-c0 .num{font-size:13px}
+.oj-c0 .name{font-size:7px;letter-spacing:2.2px}
+.oj-c0 .ln{fill:none;stroke:var(--oj-ink,#3a2a14);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.oj-c0 .dim{stroke:var(--oj-dim,#9c7638)}
+.oj-c0 .lightfill{fill:var(--oj-light,#b0701a);stroke:none}
+.oj-c0 .glow{fill:var(--oj-light,#b0701a);opacity:.16}
+.oj-c0 .lightln{fill:none;stroke:var(--oj-light,#b0701a);stroke-width:1}
+.oj-c0 .zona{stroke-dasharray:1 2.4;transform-box:fill-box;transform-origin:center;stroke-opacity:.95}
+.oj-c0 .egg{transform-box:fill-box;transform-origin:center}
+.oj-c0 .wave{vector-effect:non-scaling-stroke;transform-box:fill-box;transform-origin:center;opacity:0}
+.oj-c0 .sperm{opacity:0}
+.oj-c0 .pn{opacity:0}
+.oj-c0 .light{transform-box:fill-box;transform-origin:center}
+.oj-c0 .stat{opacity:.35}
+/* animation: 9 s loop */
+.oj-c0 .zona{animation:oj-c0-zona 9s ease-in-out infinite both}
+.oj-c0 .egg{animation:oj-c0-egg 9s ease-in-out infinite both}
+.oj-c0 .sperm{animation:oj-c0-sperm 9s ease-in-out infinite both}
+.oj-c0 .w1{animation:oj-c0-wave 9s ease-out infinite both}
+.oj-c0 .w2{animation:oj-c0-wave 9s ease-out .55s infinite both}
+.oj-c0 .r1{animation:oj-c0-rip 9s ease-out infinite both}
+.oj-c0 .r2{animation:oj-c0-rip 9s ease-out .5s infinite both}
+.oj-c0 .pn1{animation:oj-c0-pn1 9s ease-in-out infinite both}
+.oj-c0 .pn2{animation:oj-c0-pn2 9s ease-in-out infinite both}
+.oj-c0 .light{animation:oj-c0-light 9s ease-in-out infinite both}
+.oj-c0 .stat{animation:oj-c0-hide 9s linear infinite both}
+@keyframes oj-c0-zona{0%,28%{stroke-opacity:.3;transform:scale(1)}40%{stroke-opacity:.95;transform:scale(1.035)}88%{stroke-opacity:.95;transform:scale(1.035)}100%{stroke-opacity:.3;transform:scale(1)}}
+@keyframes oj-c0-egg{0%,100%{transform:scale(1)}50%{transform:scale(1.012)}}
+@keyframes oj-c0-sperm{0%,6%{opacity:0;transform:translate(28px,-34px)}10%{opacity:1}22%{opacity:1;transform:translate(0,0)}27%,100%{opacity:0;transform:translate(0,0)}}
+@keyframes oj-c0-wave{0%,24%{opacity:0;transform:scale(0)}25%{opacity:.9;transform:scale(1)}44%{opacity:0;transform:scale(74)}100%{opacity:0;transform:scale(74)}}
+@keyframes oj-c0-pn1{0%,40%{opacity:0;transform:translate(0,0)}47%{opacity:.95;transform:translate(0,0)}70%{opacity:.95;transform:translate(-10.8px,10.8px)}79%,100%{opacity:0;transform:translate(-14px,14px)}}
+@keyframes oj-c0-pn2{0%,42%{opacity:0;transform:translate(0,0)}49%{opacity:.95;transform:translate(0,0)}70%{opacity:.95;transform:translate(9.8px,-9.8px)}79%,100%{opacity:0;transform:translate(13px,-13px)}}
+@keyframes oj-c0-light{0%,73%{opacity:0;transform:scale(.2)}79%{opacity:1;transform:scale(1.2)}84%{opacity:1;transform:scale(1)}91%{opacity:1;transform:scale(1)}99%,100%{opacity:0;transform:scale(.6)}}
+@keyframes oj-c0-rip{0%,80%{opacity:0;transform:scale(1)}81%{opacity:.6;transform:scale(1)}97%,100%{opacity:0;transform:scale(30)}}
+@keyframes oj-c0-hide{0%,100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.oj-c0 *{animation:none!important}}
+</style>
+<defs><clipPath id="oj-c0-clip"><circle cx="70" cy="118" r="33.4"/></clipPath></defs>
+<rect class="bg" width="140" height="240" rx="7"/>
+<rect class="frame" x="4.5" y="4.5" width="131" height="231" rx="5"/>
+<text class="num" x="70" y="27">0</text>
+<text class="name" x="70" y="222">THE VOID</text>
+
+<!-- shell (zona pellucida) and the egg -->
+<circle class="ln dim zona" cx="70" cy="118" r="42"/>
+<circle class="ln egg" cx="70" cy="118" r="34"/>
+<!-- polar body, in the space between egg and shell -->
+<circle class="ln dim" cx="38.5" cy="134" r="2.6"/>
+
+<!-- the calcium wave, from the point of entry, kept inside the egg -->
+<g clip-path="url(#oj-c0-clip)">
+  <circle class="lightln wave w1" cx="91.9" cy="92" r="1"/>
+  <circle class="lightln wave w2" cx="91.9" cy="92" r="1"/>
+  <circle class="lightln wave r1" cx="70" cy="118" r="1"/>
+  <circle class="lightln wave r2" cx="70" cy="118" r="1"/>
+</g>
+
+<!-- a sperm arriving at the rim -->
+<g class="sperm">
+  <circle class="lightfill" cx="91.9" cy="92" r="1.8"/>
+  <path class="ln dim" d="M93 90.6 q4.5 -1.5 3.6 -4.6 t3.8 -4"/>
+</g>
+
+<!-- two pronuclei approaching -->
+<circle class="ln pn pn1" cx="84" cy="104" r="4.5"/>
+<circle class="ln pn pn2" cx="57" cy="131" r="4.5"/>
+
+<!-- still pose only: two faint rings of the first stirring -->
+<circle class="lightln stat" cx="70" cy="118" r="12"/>
+<circle class="lightln stat" cx="70" cy="118" r="22"/>
+
+<!-- the point of light -->
+<g class="light">
+  <circle class="glow" cx="70" cy="118" r="9"/>
+  <circle class="lightfill" cx="70" cy="118" r="2.6"/>
+</g>
+</svg>
+<!--/CARD-->
+    <figcaption><b>0 · The Void</b><span class="stage">before conception · fertilisation</span>
+      <p>The egg waits. A sperm reaches its edge, a calcium wave crosses the egg from that point, the shell hardens, two nuclei approach, and a light appears at the centre. The deck's two zeros, rest and first stirring, in one loop.</p></figcaption>
+  </figure>
+  <figure>
+<!--CARD death-xiii.svg-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 240" class="oj oj-c13" role="img" aria-labelledby="oj-c13-t oj-c13-d">
+<title id="oj-c13-t">XIII · Death: the first breath</title>
+<desc id="oj-c13-d">A curled body in the womb, its blood running in one loop out through the cord to the placenta. The womb opens, the placenta and its loop drift away, two lungs fill, and a figure-eight appears: two circulations, lungs and body, running through one heart.</desc>
+<style>
+svg:root{--oj-bg:#f3ead8;--oj-ink:#3a2a14;--oj-dim:#9c7638;--oj-light:#b0701a;--oj-frame:#d6c39d}
+.oj-c13 .bg{fill:var(--oj-bg,#f3ead8)}
+.oj-c13 .frame{fill:none;stroke:var(--oj-frame,#d6c39d);stroke-width:1}
+.oj-c13 text{fill:var(--oj-dim,#9c7638);font-family:Georgia,'Times New Roman',serif;text-anchor:middle;font-variant-numeric:lining-nums}
+.oj-c13 .num{font-size:13px}
+.oj-c13 .name{font-size:7px;letter-spacing:2.2px}
+.oj-c13 .ln{fill:none;stroke:var(--oj-ink,#3a2a14);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.oj-c13 .dim{stroke:var(--oj-dim,#9c7638)}
+.oj-c13 .lightfill{fill:var(--oj-light,#b0701a);stroke:none}
+.oj-c13 .glow{fill:var(--oj-light,#b0701a);opacity:.16}
+.oj-c13 .run{fill:none;stroke:var(--oj-light,#b0701a);stroke-width:2;stroke-linecap:round;stroke-dasharray:5 95}
+/* still pose = after the first breath, with the placenta as a ghost above */
+.oj-c13 .womb{stroke-dasharray:100 100;stroke-dashoffset:0;opacity:.15}
+.oj-c13 .fetus{opacity:0}
+.oj-c13 .plac{opacity:.18;transform:translate(0,-18px)}
+.oj-c13 .lungs{transform-box:view-box;transform-origin:70px 112px}
+.oj-c13 .lem{stroke-dasharray:100 100;stroke-dashoffset:0}
+.oj-c13 .runwrap{opacity:0}
+.oj-c13 .heart{transform-box:fill-box;transform-origin:center}
+/* animation: 10 s loop */
+.oj-c13 .womb{animation:oj-c13-womb 10s ease-in-out infinite both}
+.oj-c13 .fetus{animation:oj-c13-fetus 10s ease-in-out infinite both}
+.oj-c13 .plac{animation:oj-c13-plac 10s ease-in-out infinite both}
+.oj-c13 .lungs{animation:oj-c13-lungs 10s ease-in-out infinite both}
+.oj-c13 .lem{animation:oj-c13-lem 10s ease-in-out infinite both}
+.oj-c13 .rw2{animation:oj-c13-rw2 10s linear infinite both}
+.oj-c13 .run{animation:oj-c13-run 1.25s linear infinite}
+.oj-c13 .heart{animation:oj-c13-beat .45s ease-in-out infinite alternate}
+@keyframes oj-c13-womb{0%{opacity:0;stroke-dashoffset:0}6%,30%{opacity:.8;stroke-dashoffset:0}46%{opacity:.5;stroke-dashoffset:100}47%,100%{opacity:0;stroke-dashoffset:100}}
+@keyframes oj-c13-fetus{0%{opacity:0}6%,30%{opacity:1}44%,100%{opacity:0}}
+@keyframes oj-c13-plac{0%{opacity:0;transform:translate(0,0)}6%,32%{opacity:1;transform:translate(0,0)}52%{opacity:.18;transform:translate(0,-18px)}88%{opacity:.18;transform:translate(0,-18px)}96%,100%{opacity:0;transform:translate(0,-18px)}}
+@keyframes oj-c13-lungs{0%,42%{opacity:0;transform:scale(.3)}52%{opacity:1;transform:scale(1.07)}57%{transform:scale(1)}66%{transform:scale(1.04)}75%{transform:scale(1)}84%{transform:scale(1.04)}92%{opacity:1;transform:scale(1)}99%,100%{opacity:0;transform:scale(1)}}
+@keyframes oj-c13-lem{0%,50%{stroke-dashoffset:100;opacity:1}64%{stroke-dashoffset:0;opacity:1}92%{stroke-dashoffset:0;opacity:1}99%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes oj-c13-rw2{0%,62%{opacity:0}67%,91%{opacity:1}97%,100%{opacity:0}}
+@keyframes oj-c13-run{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@keyframes oj-c13-beat{from{transform:scale(1)}to{transform:scale(1.35)}}
+@media (prefers-reduced-motion: reduce){.oj-c13 *{animation:none!important}}
+</style>
+<rect class="bg" width="140" height="240" rx="7"/>
+<rect class="frame" x="4.5" y="4.5" width="131" height="231" rx="5"/>
+<text class="num" x="70" y="27">XIII</text>
+<text class="name" x="70" y="222">DEATH</text>
+
+<!-- the womb, opening downward -->
+<circle class="ln dim womb" cx="70" cy="122" r="52" pathLength="100" transform="rotate(90 70 122)"/>
+
+<!-- the curled body -->
+<g class="fetus">
+  <circle class="ln" cx="90" cy="104" r="8"/>
+  <path class="ln" d="M94 111 C 105 128 97 157 72 161 C 54 164 44 151 50 139"/>
+</g>
+
+<!-- placenta, villi and the single placental loop (blood out through the cord and back) -->
+<g class="plac">
+  <circle class="ln" cx="70" cy="62" r="9"/>
+  <path class="ln dim" d="M70 50 v-3 M78.5 53.5 l2.1 -2.1 M82 62 h3 M78.5 70.5 l2.1 2.1 M61.5 53.5 l-2.1 -2.1 M58 62 h-3 M61.5 70.5 l-2.1 2.1"/>
+  <path class="ln dim" pathLength="100" d="M70 122 C 58 104 58 84 64 70 A 7 7 0 0 1 76 70 C 82 84 82 104 70 122 Z"/>
+  <path class="run" pathLength="100" d="M70 122 C 58 104 58 84 64 70 A 7 7 0 0 1 76 70 C 82 84 82 104 70 122 Z"/>
+</g>
+
+<!-- two lungs filling -->
+<g class="lungs">
+  <path class="ln dim" d="M66 106 C 52 98 40 112 42 132 C 43 146 56 150 64 140 C 67 134 67 120 66 106 Z"/>
+  <path class="ln dim" d="M74 106 C 88 98 100 112 98 132 C 97 146 84 150 76 140 C 73 134 73 120 74 106 Z"/>
+</g>
+
+<!-- two circulations in series: lungs above, body below -->
+<path class="ln lem" pathLength="100" d="M70 122 C 92 112 96 92 70 92 C 44 92 48 112 70 122 C 100 136 100 186 70 186 C 40 186 40 136 70 122 Z"/>
+<g class="runwrap rw2">
+  <path class="run" pathLength="100" d="M70 122 C 92 112 96 92 70 92 C 44 92 48 112 70 122 C 100 136 100 186 70 186 C 40 186 40 136 70 122 Z"/>
+</g>
+
+<!-- the heart: it was beating before and goes on beating -->
+<g class="heart">
+  <circle class="glow" cx="70" cy="122" r="7"/>
+  <circle class="lightfill" cx="70" cy="122" r="2.6"/>
+</g>
+</svg>
+<!--/CARD-->
+    <figcaption><b>XIII · Death</b><span class="stage">the first breath</span>
+      <p>The womb opens; the placenta, grown from the embryo's own cells, drifts away. The lungs fill, and one placental loop becomes two circuits through one heart. Something dies so the breathing one can live.</p></figcaption>
+  </figure>
+  <figure>
+<!--CARD world-xxi.svg-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 240" class="oj oj-c21" role="img" aria-labelledby="oj-c21-t oj-c21-d">
+<title id="oj-c21-t">XXI · Harmony: return</title>
+<desc id="oj-c21-d">From a point of light a spiral unwinds outward, after the recursive.eco mark, and beings appear along it. It closes into a great circle; the circle loosens into scattered points that drift back toward the centre, where the point of light gathers again.</desc>
+<style>
+svg:root{--oj-bg:#f3ead8;--oj-ink:#3a2a14;--oj-dim:#9c7638;--oj-light:#b0701a;--oj-frame:#d6c39d}
+.oj-c21 .bg{fill:var(--oj-bg,#f3ead8)}
+.oj-c21 .frame{fill:none;stroke:var(--oj-frame,#d6c39d);stroke-width:1}
+.oj-c21 text{fill:var(--oj-dim,#9c7638);font-family:Georgia,'Times New Roman',serif;text-anchor:middle;font-variant-numeric:lining-nums}
+.oj-c21 .num{font-size:13px}
+.oj-c21 .name{font-size:7px;letter-spacing:2.2px}
+.oj-c21 .ln{fill:none;stroke:var(--oj-ink,#3a2a14);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.oj-c21 .lightfill{fill:var(--oj-light,#b0701a);stroke:none}
+.oj-c21 .glow{fill:var(--oj-light,#b0701a);opacity:.16}
+.oj-c21 .rot{transform-box:view-box;transform-origin:70px 120px}
+.oj-c21 .sp{stroke-dasharray:100 100;stroke-dashoffset:0}
+.oj-c21 .ring{stroke-dasharray:100 100;stroke-dashoffset:0}
+.oj-c21 .dots{fill:none;stroke:var(--oj-light,#b0701a);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:.01 2.5;opacity:0;transform-box:view-box;transform-origin:70px 120px}
+.oj-c21 .seed{transform-box:fill-box;transform-origin:center}
+/* animation: 10 s loop; the spiral also turns slowly on its own 40 s clock */
+.oj-c21 .rot{animation:oj-c21-rot 40s linear infinite}
+.oj-c21 .sp{animation:oj-c21-sp 10s ease-in-out infinite both}
+.oj-c21 .ring{animation:oj-c21-ring 10s ease-in-out infinite both}
+.oj-c21 .dots{animation:oj-c21-dots 10s ease-in-out infinite both}
+.oj-c21 .seed{animation:oj-c21-seed 10s ease-in-out infinite both}
+@keyframes oj-c21-rot{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
+@keyframes oj-c21-sp{0%{stroke-dashoffset:100;opacity:1}40%{stroke-dashoffset:0;opacity:1}70%{stroke-dashoffset:0;opacity:1}86%,100%{stroke-dashoffset:0;opacity:0}}
+.oj-c21 .b0{animation:oj-c21-b0 10s ease-in-out infinite both}
+@keyframes oj-c21-b0{0%,2.8%{opacity:0}5.8%,70%{opacity:1}86%,100%{opacity:0}}
+.oj-c21 .b1{animation:oj-c21-b1 10s ease-in-out infinite both}
+@keyframes oj-c21-b1{0%,4.9%{opacity:0}7.9%,70%{opacity:1}86%,100%{opacity:0}}
+.oj-c21 .b2{animation:oj-c21-b2 10s ease-in-out infinite both}
+@keyframes oj-c21-b2{0%,7.9%{opacity:0}10.9%,70%{opacity:1}86%,100%{opacity:0}}
+.oj-c21 .b3{animation:oj-c21-b3 10s ease-in-out infinite both}
+@keyframes oj-c21-b3{0%,11.7%{opacity:0}14.7%,70%{opacity:1}86%,100%{opacity:0}}
+.oj-c21 .b4{animation:oj-c21-b4 10s ease-in-out infinite both}
+@keyframes oj-c21-b4{0%,16.7%{opacity:0}19.7%,70%{opacity:1}86%,100%{opacity:0}}
+.oj-c21 .b5{animation:oj-c21-b5 10s ease-in-out infinite both}
+@keyframes oj-c21-b5{0%,22.7%{opacity:0}25.7%,70%{opacity:1}86%,100%{opacity:0}}
+.oj-c21 .b6{animation:oj-c21-b6 10s ease-in-out infinite both}
+@keyframes oj-c21-b6{0%,28.0%{opacity:0}31.0%,70%{opacity:1}86%,100%{opacity:0}}
+.oj-c21 .b7{animation:oj-c21-b7 10s ease-in-out infinite both}
+@keyframes oj-c21-b7{0%,33.3%{opacity:0}36.3%,70%{opacity:1}86%,100%{opacity:0}}
+.oj-c21 .b8{animation:oj-c21-b8 10s ease-in-out infinite both}
+@keyframes oj-c21-b8{0%,38.0%{opacity:0}41.0%,70%{opacity:1}86%,100%{opacity:0}}
+@keyframes oj-c21-ring{0%,38%{stroke-dashoffset:100;opacity:1;stroke-width:1.4}50%{stroke-dashoffset:0;stroke-width:1.4}56%{stroke-width:2.4}62%{stroke-width:1.4;opacity:1}72%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes oj-c21-dots{0%,60%{opacity:0;transform:scale(1) rotate(0deg)}69%{opacity:1;transform:scale(1) rotate(0deg)}80%{opacity:.9;transform:scale(.75) rotate(25deg)}95%,100%{opacity:0;transform:scale(.05) rotate(80deg)}}
+@keyframes oj-c21-seed{0%{opacity:1;transform:scale(1)}12%{opacity:.7;transform:scale(.9)}88%{opacity:.45;transform:scale(.8)}96%{opacity:1;transform:scale(1.35)}100%{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion: reduce){.oj-c21 *{animation:none!important}}
+</style>
+<rect class="bg" width="140" height="240" rx="7"/>
+<rect class="frame" x="4.5" y="4.5" width="131" height="231" rx="5"/>
+<text class="num" x="70" y="27">XXI</text>
+<text class="name" x="70" y="222">HARMONY</text>
+
+<g class="rot">
+  <!-- the spiral of the recursive.eco mark, unwinding outward -->
+  <path class="ln sp" pathLength="100" d="M70.5 120.0 L70.5 120.1 L70.5 120.1 L70.5 120.2 L70.5 120.3 L70.5 120.4 L70.5 120.4 L70.4 120.5 L70.4 120.6 L70.3 120.7 L70.2 120.7 L70.1 120.8 L70.1 120.8 L69.9 120.8 L69.8 120.9 L69.7 120.9 L69.6 120.9 L69.5 120.8 L69.3 120.8 L69.2 120.7 L69.1 120.6 L69.0 120.6 L68.9 120.4 L68.8 120.3 L68.7 120.2 L68.7 120.0 L68.6 119.8 L68.6 119.6 L68.6 119.4 L68.6 119.2 L68.7 119.0 L68.8 118.8 L68.9 118.7 L69.0 118.5 L69.2 118.3 L69.4 118.1 L69.6 118.0 L69.9 117.9 L70.1 117.8 L70.4 117.8 L70.7 117.7 L71.1 117.8 L71.4 117.8 L71.7 117.9 L72.0 118.1 L72.3 118.3 L72.6 118.5 L72.9 118.9 L73.1 119.2 L73.3 119.6 L73.5 120.0 L73.6 120.5 L73.7 120.9 L73.7 121.5 L73.6 122.0 L73.4 122.5 L73.2 123.0 L72.9 123.5 L72.6 124.0 L72.1 124.5 L71.6 124.9 L71.0 125.3 L70.3 125.6 L69.6 125.8 L68.9 125.9 L68.1 125.9 L67.2 125.9 L66.4 125.7 L65.5 125.4 L64.7 125.0 L63.9 124.4 L63.1 123.8 L62.4 123.0 L61.8 122.1 L61.2 121.1 L60.8 120.0 L60.5 118.8 L60.4 117.5 L60.4 116.2 L60.6 114.8 L61.0 113.5 L61.6 112.1 L62.3 110.7 L63.3 109.5 L64.5 108.3 L65.8 107.2 L67.4 106.2 L69.1 105.5 L71.0 104.9 L72.9 104.6 L75.0 104.5 L77.2 104.6 L79.5 105.1 L81.7 105.9 L83.9 107.0 L86.0 108.4 L88.0 110.1 L89.9 112.1 L91.5 114.5 L92.9 117.1 L94.0 120.0 L94.8 123.1 L95.1 126.5 L95.1 129.9 L94.5 133.5 L93.6 137.1 L92.0 140.7 L90.0 144.2 L87.5 147.6 L84.5 150.7 L80.9 153.6 L76.9 156.0 L72.4 158.0 L67.5 159.5 L62.3 160.4 L56.8 160.7 L51.1 160.2 L45.4 158.8 L40.7 155.4 L36.5 151.5 L32.8 147.0 L29.7 142.2 L27.2 136.9 L25.4 131.4 L24.4 125.8 L24.0 120.0 L24.4 114.2 L25.4 108.6 L27.2 103.1 L29.7 97.8 L32.8 93.0 L36.5 88.5 L40.7 84.6 L45.4 81.2 L50.4 78.4 L55.8 76.2 L61.4 74.8 L67.1 74.1 L72.9 74.1 L78.6 74.8 L84.2 76.2 L89.6 78.4 L94.6 81.2 L99.3 84.6 L103.5 88.5 L107.2 93.0 L110.3 97.8 L112.8 103.1 L114.6 108.6 L115.6 114.2 L116.0 120.0"/>
+  <!-- beings along the spiral, appearing as it reaches them, leaving together -->
+  <g>
+    <circle class="lightfill being b0" cx="63.9" cy="124.4" r="1.8"/>
+    <circle class="lightfill being b1" cx="64.5" cy="108.3" r="1.8"/>
+    <circle class="lightfill being b2" cx="88.0" cy="110.1" r="1.8"/>
+    <circle class="lightfill being b3" cx="92.0" cy="140.7" r="1.8"/>
+    <circle class="lightfill being b4" cx="56.8" cy="160.7" r="1.8"/>
+    <circle class="lightfill being b5" cx="24.4" cy="125.8" r="1.8"/>
+    <circle class="lightfill being b6" cx="40.7" cy="84.6" r="1.8"/>
+    <circle class="lightfill being b7" cx="84.2" cy="76.2" r="1.8"/>
+    <circle class="lightfill being b8" cx="112.8" cy="103.1" r="1.8"/>
+  </g>
+</g>
+
+<!-- the great circle, then the same circle loosened into points that drift home -->
+<circle class="ln ring" cx="70" cy="120" r="46" pathLength="100"/>
+<circle class="dots" cx="70" cy="120" r="46" pathLength="100"/>
+
+<!-- the point of light at the centre: seed and return -->
+<g class="seed">
+  <circle class="glow" cx="70" cy="120" r="7"/>
+  <circle class="lightfill" cx="70" cy="120" r="2.4"/>
+</g>
+</svg>
+<!--/CARD-->
+    <figcaption><b>XXI · Harmony</b><span class="stage">return</span>
+      <p>The spiral of the recursive.eco mark unwinds from a point of light, beings appear along it, it closes into a circle, the circle loosens into points that drift home, and the light gathers again.</p></figcaption>
+  </figure>
+</div>
+
+<h2>The sequence</h2>
+<p class="sub">All 22, as simple glyphs morphing one into the next, so the arc can be felt. The Trickster has no number and can step in anywhere.</p>
+<section class="seq" aria-label="Sequence of the 22 trumps">
+  <div class="stagebox">
+    <svg viewBox="-60 -60 120 120" class="glyph" role="img" aria-labelledby="gTitle">
+      <title id="gTitle">Glyph</title>
+      <path id="s0"/><path id="s1"/><path id="s2"/><path id="s3"/>
+      <circle id="halo" class="halo" r="7"/><circle id="core" class="core" r="2"/>
+    </svg>
+  </div>
+  <div class="info">
+    <div class="num" id="iNum">0</div>
+    <div class="nm" id="iName">The Void</div>
+    <div class="st" id="iStage"></div>
+    <p class="line" id="iLine"></p>
+    <p class="world" id="iWorld"></p>
+    <div class="acts" aria-hidden="true"><span data-act="0">water</span><span data-act="1">the crossing</span><span data-act="2">air</span></div>
+    <div class="ctrl">
+      <button type="button" id="prev" aria-label="Previous card">Prev</button>
+      <button type="button" id="play" aria-pressed="false">Play</button>
+      <button type="button" id="next" aria-label="Next card">Next</button>
+      <button type="button" id="trick">Trickster</button>
+      <label class="sr" for="range">Card number</label>
+      <input type="range" id="range" min="0" max="21" value="0">
+    </div>
+    <div class="strip" id="strip" role="group" aria-label="Jump to a card"></div>
+    <p class="sr" id="live" aria-live="polite"></p>
+  </div>
+</section>
+
+<footer>
+  A study, drafted 13 October 2026 with AI help, for PlayfulProcess to carve. The reading, the history of the Fool and the Joker,
+  and the sources (with what has and has not been checked) are in <a href="../course-viewer.html?course=ontoject-one-life">The Ontoject, one life</a>.
+  Card names follow the deck's own sequence (<a href="../../viewers/cards.html?src=../tarot/ontoject-illustrated/grammar.json">the Ontoject deck</a>).
+  Biology is used loosely; the card makers did not intend this reading. Spotted a mistake? <a href="../course-viewer.html?course=how-to-contribute">Help us fix it</a>.
+</footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* ---------- display settings (motion), remembered per viewer when storage allows ---------- */
+var root=document.documentElement;
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
+var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var motion=store("oj-motion")||(reduce?"off":"on");
+var motionBtn=document.getElementById("motionBtn");
+function applyMotion(){root.setAttribute("data-motion",motion);motionBtn.textContent="Motion: "+motion;motionBtn.setAttribute("aria-pressed",motion==="off"?"true":"false");if(motion==="off")stopPlay();}
+motionBtn.onclick=function(){motion=motion==="on"?"off":"on";store("oj-motion",motion);applyMotion();};
+
+/* ---------- the recursive.eco mark (downsampled from recursive-logo.svg) ---------- */
+var S=[0.5,0.0,0.52,0.07,0.52,0.13,0.52,0.21,0.51,0.28,0.49,0.36,0.46,0.43,0.42,0.5,0.36,0.57,0.3,0.64,0.23,0.7,0.14,0.75,0.05,0.79,-0.05,0.82,-0.16,0.84,-0.28,0.85,-0.39,0.84,-0.52,0.81,-0.64,0.77,-0.76,0.71,-0.87,0.63,-0.98,0.54,-1.08,0.43,-1.17,0.3,-1.25,0.16,-1.31,0.0,-1.35,-0.17,-1.37,-0.35,-1.37,-0.54,-1.34,-0.74,-1.28,-0.93,-1.2,-1.13,-1.09,-1.32,-0.95,-1.5,-0.79,-1.67,-0.59,-1.83,-0.37,-1.96,-0.13,-2.07,0.14,-2.15,0.42,-2.2,0.72,-2.22,1.03,-2.19,1.35,-2.13,1.67,-2.02,1.98,-1.86,2.29,-1.66,2.57,-1.42,2.84,-1.12,3.07,-0.79,3.27,-0.41,3.43,0.0,3.53,0.45,3.59,0.92,3.58,1.42,3.5,1.93,3.36,2.44,3.15,2.96,2.86,3.46,2.5,3.94,2.06,4.38,1.56,4.79,0.98,5.14,0.34,5.43,-0.35,5.64,-1.1,5.77,-1.89,5.81,-2.7,5.74,-3.53,5.57,-4.37,5.28,-5.19,4.88,-5.99,4.35,-6.74,3.71,-7.43,2.94,-8.05,2.07,-8.57,1.08,-8.97,0.0,-9.25,-1.17,-9.39,-2.41,-9.36,-3.71,-9.17,-5.04,-8.8,-6.39,-8.24,-7.74,-7.49,-9.05,-6.54,-10.31,-5.4,-11.48,-4.07,-12.54,-2.57,-13.46,-0.89,-14.21,0.93,-14.77,2.88,-15.11,4.94,-15.2,7.07,-15.03,9.25,-14.58,11.44,-13.82,13.59,-12.76,15.68,-11.39,17.65,-9.7,19.46,-7.7,21.07,-5.41,22.42,-2.83,23.49,0.0,24.22,3.06,24.57,6.31,24.51,9.71,24.01,13.2,23.04,16.74,21.57,20.26,19.6,23.7,17.13,26.99,14.14,30.05,10.67,32.83,6.72,35.24,2.34,37.21,-2.43,38.67,-7.55,39.55,-12.93,39.8,-18.52,39.35,-24.11,37.99,-28.68,34.67,-32.8,30.8,-36.41,26.45,-39.43,21.68,-41.84,16.57,-43.59,11.19,-44.65,5.64,-45.0,0.0,-44.65,-5.64,-43.59,-11.19,-41.84,-16.57,-39.43,-21.68,-36.41,-26.45,-32.8,-30.8,-28.68,-34.67,-24.11,-37.99,-19.16,-40.72,-13.91,-42.8,-8.43,-44.2,-2.83,-44.91,2.83,-44.91,8.43,-44.2,13.91,-42.8,19.16,-40.72,24.11,-37.99,28.68,-34.67,32.8,-30.8,36.41,-26.45,39.43,-21.68,41.84,-16.57,43.59,-11.19,44.65,-5.64,45.0,0.0];
+(function(){var d="M";for(var i=0;i<S.length;i+=2){d+=(i?" L":"")+(50+S[i]).toFixed(1)+" "+(50+S[i+1]).toFixed(1);}
+  for(var a=0;a<=360;a+=6){var r=a*Math.PI/180;d+=" L"+(50+45*Math.cos(r)).toFixed(1)+" "+(50+45*Math.sin(r)).toFixed(1);}
+  document.getElementById("mark").setAttribute("d",d);})();
+
+/* ---------- shape helpers; glyph space is -50..50, y down ---------- */
+var N=64,R=Math.PI/180;
+function circle(cx,cy,r,a0){a0=a0===undefined?-90:a0;var p=[];for(var i=0;i<=96;i++){var a=(a0+i*3.75)*R;p.push([cx+r*Math.cos(a),cy+r*Math.sin(a)]);}return p;}
+function ellipse(cx,cy,rx,ry){var p=[];for(var i=0;i<=96;i++){var a=(-90+i*3.75)*R;p.push([cx+rx*Math.cos(a),cy+ry*Math.sin(a)]);}return p;}
+function arc(cx,cy,r,a0,a1){var p=[];for(var i=0;i<=48;i++){var a=(a0+(a1-a0)*i/48)*R;p.push([cx+r*Math.cos(a),cy+r*Math.sin(a)]);}return p;}
+function line(x1,y1,x2,y2){return [[x1,y1],[x2,y2]];}
+function poly(pts,closed){return closed?pts.concat([pts[0]]):pts;}
+function chain(p0,segs){var p=[p0],c=p0;segs.forEach(function(s){for(var i=1;i<=24;i++){var t=i/24,u=1-t;p.push([u*u*u*c[0]+3*u*u*t*s[0]+3*u*t*t*s[2]+t*t*t*s[4],u*u*u*c[1]+3*u*u*t*s[1]+3*u*t*t*s[3]+t*t*t*s[5]]);}c=[s[4],s[5]];});return p;}
+function spiral(cx,cy,r0,r1,turns,a0){var p=[],n=140;for(var i=0;i<=n;i++){var t=i/n,a=(a0+t*turns*360)*R,r=r0+(r1-r0)*t;p.push([cx+r*Math.cos(a),cy+r*Math.sin(a)]);}return p;}
+function star(cx,cy,n,r1,r2){var p=[];for(var i=0;i<=2*n;i++){var a=(-90+i*180/n)*R,r=i%2?r2:r1;p.push([cx+r*Math.cos(a),cy+r*Math.sin(a)]);}return p;}
+function wave(x0,x1,y,amp,waves){var p=[];for(var i=0;i<=60;i++){var t=i/60;p.push([x0+(x1-x0)*t,y+amp*Math.sin(t*waves*2*Math.PI)]);}return p;}
+function zig(x,y0,y1,amp,n){var p=[];for(var i=0;i<=n;i++){p.push([x+(i%2?amp:-amp),y0+(y1-y0)*i/n]);}return p;}
+function lemH(cx,cy,w,h){var p=[];for(var i=0;i<=96;i++){var t=i/96*2*Math.PI;p.push([cx+w*Math.sin(t),cy+h*Math.sin(2*t)]);}return p;}
+function rot(pts,ox,oy,deg,dx,dy){var c=Math.cos(deg*R),s=Math.sin(deg*R);return pts.map(function(q){var x=q[0]-ox,y=q[1]-oy;return [ox+x*c-y*s+dx,oy+x*s+y*c+dy];});}
+function logo(k){var p=[];for(var i=0;i<S.length;i+=2)p.push([S[i]*k,S[i+1]*k]);return p;}
+function lungL(cx,cy){return chain([cx-4,cy-16],[[cx-18,cy-24,cx-30,cy-10,cx-28,cy+10],[cx-27,cy+24,cx-14,cy+28,cx-6,cy+18],[cx-3,cy+12,cx-3,cy-2,cx-4,cy-16]]);}
+function mirror(pts,cx){return pts.map(function(q){return [2*cx-q[0],q[1]];});}
+
+/* ---------- the 22 + the Trickster ---------- */
+var C=[
+ {n:"0",name:"The Void",st:"Before conception · fertilisation",w:"The world: another body, then the egg itself.",l:"The egg waits; a sperm arrives; a calcium wave crosses it; two half-sets of chromosomes approach.",a:0,
+  g:function(){return {s:[circle(0,0,34),circle(0,0,42)],o:[1,.45],d:[0,0,1.4]};}},
+ {n:"I",name:"Self-Realization",st:"The zygote",w:"The world: one cell.",l:"One cell carrying a genome that has never existed before. The card says “I am”; the biology says “one”.",a:0,
+  g:function(){return {s:[circle(0,0,34),circle(0,0,9)],o:[1,.8],d:[0,0,2.2]};}},
+ {n:"II",name:"Subject–Object Duality",st:"Cleavage · the blastocyst",w:"The world: a hollow ball.",l:"One becomes two, then many. The first fate split: an inner cluster that will be the body, an outer layer that will face the other as placenta.",a:0,
+  g:function(){return {s:[circle(0,0,34),circle(-14,0,13),circle(14,0,13)],o:[1,.9,.9],d:[0,0,1.6]};}},
+ {n:"III",name:"Time",st:"Implantation",w:"The world: the mother's body.",l:"The blastocyst attaches and announces itself. It enters someone else's calendar, one that began counting before it existed.",a:0,
+  g:function(){return {s:[circle(0,-6,20),circle(0,-14,7),wave(-46,46,16,3,2.5)],o:[1,.8,.7],d:[0,-14,2]};}},
+ {n:"IV",name:"Structures",st:"Gastrulation",w:"The world: a disc becoming a body.",l:"Three layers form and the body plan is laid down. Each layer's possible futures narrow: structure as enabling constraint.",a:0,
+  g:function(){return {s:[arc(0,-14,36,15,165),arc(0,-14,27,15,165),arc(0,-14,18,15,165)],o:[1,.8,.6],d:[0,-14,2]};}},
+ {n:"V",name:"Inspiration from Eternity",st:"The first heartbeat",w:"The world: a pulse.",l:"Heart cells begin to contract on their own. No nerve tells them to; the rhythm starts inside.",a:0,
+  g:function(){return {s:[line(-44,8,44,8),line(0,-44,0,1),circle(0,8,7)],o:[.7,1,1],d:[0,8,3]};}},
+ {n:"VI",name:"The Cross",st:"Neural tube · segments",w:"The world: an axis.",l:"A tube folds closed along the back; paired blocks are laid down on either side in rhythm. Spine and ribs to come.",a:0,
+  g:function(){return {s:[line(0,-44,0,44),line(-32,0,32,0),zig(0,-34,34,7,12)],o:[1,1,.5],d:[0,0,2]};}},
+ {n:"VII",name:"The Spiral",st:"Looping",w:"The world: a curl.",l:"The straight heart tube loops: the body's first plain left–right difference. The cross set in motion.",a:0,
+  g:function(){return {s:[spiral(0,0,0,38,2.25,-90)],o:[1],d:[0,0,2]};}},
+ {n:"VIII",name:"Balance",st:"The fetus moving",w:"The world: water.",l:"Organs in place, now growing. Movement long before anyone can feel it; the inner ear's balance organs take shape.",a:0,
+  g:function(){return {s:[line(-42,0,42,0),circle(-31,-11,10),circle(31,-11,10),poly([[0,1],[-7,12],[7,12]],true)],o:[1,.9,.9,.6],d:[0,0,2.4]};}},
+ {n:"IX",name:"Silence",st:"Hearing",w:"The world: muffled sound.",l:"From around the sixth month: heartbeat, gut, a voice. Months of listening before any speaking.",a:0,
+  g:function(){return {s:[spiral(12,0,1.5,12,2.5,-90),arc(12,0,24,150,210),arc(12,0,35,145,215)],o:[1,.7,.45],d:[12,0,1.8]};}},
+ {n:"X",name:"Destiny",st:"Turning into the path",w:"The world: a narrowing passage.",l:"Head-down near term, then rotating through the pelvis: the body turns to fit the way out. What is given meets what is done with it.",a:0,
+  g:function(){return {s:[chain([-26,-44],[[-26,0,-10,28,13,28]]),circle(22,28,9),arc(22,28,15,200,320)],o:[.8,1,.6],d:[22,28,2]};}},
+ {n:"XI",name:"Strength",st:"Labour",w:"The world: contractions.",l:"Force that is not the baby's will: one body pressing, the other yielding.",a:0,
+  g:function(){return {s:[ellipse(0,4,40,26),circle(0,4,11),lemH(0,-36,15,6)],o:[1,.9,.7],d:[0,4,2]};}},
+ {n:"XII",name:"Sacrifice",st:"Birth",w:"The world: air and light.",l:"Born head first, the Hanged Man's posture. Then the placenta, grown from the embryo's own cells, is let go.",a:1,
+  g:function(){return {s:[line(-26,-38,26,-38),line(0,-38,0,13),circle(0,23,10),circle(30,-24,6)],o:[1,.8,1,.35],d:[0,23,2]};}},
+ {n:"XIII",name:"Death",st:"The first breath",w:"The world: lungs.",l:"The lungs fill and the bypasses close. The placental circulation ends; two circuits, lungs and body, run through one heart.",a:1,
+  g:function(){var L=lungL(0,-10);return {s:[chain([0,-10],[[22,-20,26,-40,0,-40],[-26,-40,-22,-20,0,-10],[30,4,30,46,0,46],[-30,46,-30,4,0,-10]]),L,mirror(L,0)],o:[1,.55,.55],d:[0,-10,2.6]};}},
+ {n:"XIV",name:"Temperance",st:"Nursing · co-regulation",w:"The world: a caregiver's body.",l:"Milk poured from one body into another; heart rate and stress steadied by being held. Two vessels, one flow.",a:2,
+  g:function(){return {s:[circle(-22,-24,11),circle(22,24,11),chain([-13,-16],[[6,-10,-6,10,13,16]])],o:[.9,.9,1],d:[0,0,2]};}},
+ {n:"XV",name:"Facing Existential Threats",st:"Childhood meets death",w:"The world: a family, a street.",l:"Around five to seven, most children grasp that death is permanent and comes to everyone. A five-year-old asks whether you will die too.",a:2,
+  g:function(){return {s:[circle(0,-24,8),circle(20.8,12,8),circle(-20.8,12,8),circle(0,0,40)],o:[1,1,1,.3],d:[0,0,2]};}},
+ {n:"XVI",name:"Impermanence",st:"Adolescence",w:"The world: peers.",l:"Puberty remakes the body; the brain prunes what it does not use. The child's tower comes down; what survives becomes identity.",a:2,
+  g:function(){return {s:[poly([[-12,42],[-12,-4],[12,-16],[12,42]],true),rot(poly([[-12,-10],[12,-22],[12,-42],[-12,-42]],true),0,-26,14,9,-5)],o:[1,.85],d:[0,14,2]};}},
+ {n:"XVII",name:"The Star",st:"Young adulthood",w:"The world: a life of one's own.",l:"The courage to be oneself, as the deck's card says: vocation, choosing, being seen as a particular person.",a:2,
+  g:function(){return {s:[star(0,-6,8,32,12),line(-40,40,40,40)],o:[1,.5],d:[0,-6,3]};}},
+ {n:"XVIII",name:"The Moon",st:"The middle",w:"The world: the same world, stranger.",l:"Anxiety without an object; paths that looked clear go dim.",a:2,
+  g:function(){return {s:[arc(0,-8,30,60,300).concat(arc(10,-8,26.46,280.9,79.1)),wave(-44,44,38,3,3)],o:[1,.6],d:[28,-34,1.5]};}},
+ {n:"XIX",name:"The Sun",st:"Generativity",w:"The world: the next generation.",l:"The courage to be as a part: giving that renews itself, raising, teaching, making for those who come after.",a:2,
+  g:function(){return {s:[circle(0,0,15),star(0,0,16,31,21)],o:[1,.8],d:[0,0,2.6]};}},
+ {n:"XX",name:"Vitality",st:"Old age · dying",w:"The world: the edge.",l:"Being and nonbeing overlapping, the vesica: an old body holding more of both.",a:2,
+  g:function(){return {s:[circle(-13,0,26),circle(13,0,26)],o:[1,1],d:[0,0,3]};}},
+ {n:"XXI",name:"Harmony",st:"Return",w:"The world: everything.",l:"The body's matter goes back into soil and other lives; what was passed on keeps spiralling through others.",a:2,
+  g:function(){return {s:[logo(40/45),circle(0,0,44,0)],o:[1,.75],d:[0,0,2.4]};}}
+];
+var TRICK={n:"☆",name:"The Trickster",st:"Play, at any stage",w:"The world: any.",l:"A fetus kicking for no reason, a toddler's game, an adult's joke. No number, as the Fool once had none.",a:-1,
+  g:function(){return {s:[chain([-32,22],[[-20,-50,20,-50,32,22]]),circle(-34,29,6),circle(34,29,6)],o:[1,.8,.8],d:[0,-31,2.6]};}};
+
+/* ---------- resampling and morphing ---------- */
+function resample(pts){var L=[0],i;for(i=1;i<pts.length;i++)L.push(L[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]));
+  var T=L[L.length-1],out=[],j=0;if(!T){for(i=0;i<N;i++)out.push(pts[0].slice());return out;}
+  for(var k=0;k<N;k++){var s=T*k/(N-1);while(j<L.length-2&&L[j+1]<s)j++;var t=(s-L[j])/((L[j+1]-L[j])||1);out.push([pts[j][0]+(pts[j+1][0]-pts[j][0])*t,pts[j][1]+(pts[j+1][1]-pts[j][1])*t]);}return out;}
+function build(card){var g=card.g(),s=[],o=[];for(var i=0;i<4;i++){if(g.s[i]){s.push(resample(g.s[i]));o.push(g.o[i]);}else{var p=[];for(var k=0;k<N;k++)p.push([g.d[0],g.d[1]]);s.push(p);o.push(0);}}return {s:s,o:o,d:g.d};}
+var shapes=C.map(build),trickShape=build(TRICK);
+var els=[0,1,2,3].map(function(i){return document.getElementById("s"+i);}),core=document.getElementById("core"),halo=document.getElementById("halo");
+function draw(sh){for(var i=0;i<4;i++){var p=sh.s[i],d="M"+p[0][0].toFixed(2)+" "+p[0][1].toFixed(2);for(var k=1;k<N;k++)d+=" L"+p[k][0].toFixed(2)+" "+p[k][1].toFixed(2);els[i].setAttribute("d",d);els[i].style.opacity=sh.o[i];}
+  core.setAttribute("cx",sh.d[0]);core.setAttribute("cy",sh.d[1]);core.setAttribute("r",sh.d[2]);halo.setAttribute("cx",sh.d[0]);halo.setAttribute("cy",sh.d[1]);halo.setAttribute("r",sh.d[2]*3);}
+function mix(a,b,t){var s=[],o=[];for(var i=0;i<4;i++){var pa=a.s[i],pb=b.s[i],q=[];for(var k=0;k<N;k++)q.push([pa[k][0]+(pb[k][0]-pa[k][0])*t,pa[k][1]+(pb[k][1]-pa[k][1])*t]);s.push(q);o.push(a.o[i]+(b.o[i]-a.o[i])*t);}
+  return {s:s,o:o,d:[a.d[0]+(b.d[0]-a.d[0])*t,a.d[1]+(b.d[1]-a.d[1])*t,a.d[2]+(b.d[2]-a.d[2])*t]};}
+function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
+
+var cur=shapes[0],idx=0,anim=null,timer=null,playing=false,MORPH=1100,HOLD=1700;
+function morphTo(target,done){if(anim)cancelAnimationFrame(anim);var from=cur;
+  if(motion==="off"){cur=target;draw(cur);if(done)done();return;}
+  var t0=null;function step(ts){if(t0===null)t0=ts;var t=Math.min(1,(ts-t0)/MORPH);cur=mix(from,target,ease(t));draw(cur);if(t<1)anim=requestAnimationFrame(step);else{anim=null;cur=target;if(done)done();}}
+  anim=requestAnimationFrame(step);}
+
+var strip=document.getElementById("strip"),range=document.getElementById("range"),live=document.getElementById("live");
+C.forEach(function(c,i){var b=document.createElement("button");b.type="button";b.textContent=c.n;b.setAttribute("aria-label",c.n+", "+c.name);b.onclick=function(){stopPlay();go(i);};strip.appendChild(b);});
+function label(c){document.getElementById("iNum").textContent=c.n;document.getElementById("iName").textContent=c.name;document.getElementById("iStage").textContent=c.st;
+  document.getElementById("iLine").textContent=c.l;document.getElementById("iWorld").textContent=c.w;document.getElementById("gTitle").textContent=c.n+" · "+c.name+": "+c.st;
+  [].forEach.call(document.querySelectorAll(".acts span"),function(s){s.classList.toggle("on",+s.getAttribute("data-act")===c.a);});
+  if(!playing)live.textContent=c.n+", "+c.name+", "+c.st;}
+function go(i,done){idx=(i+C.length)%C.length;range.value=idx;[].forEach.call(strip.children,function(b,k){b.classList.toggle("on",k===idx);});label(C[idx]);morphTo(shapes[idx],done);}
+function tick(){go(idx+1,function(){if(playing)timer=setTimeout(tick,HOLD);});}
+function startPlay(){playing=true;var b=document.getElementById("play");b.textContent="Pause";b.setAttribute("aria-pressed","true");timer=setTimeout(tick,motion==="off"?2600:400);}
+function stopPlay(){playing=false;clearTimeout(timer);var b=document.getElementById("play");if(b){b.textContent="Play";b.setAttribute("aria-pressed","false");}}
+document.getElementById("play").onclick=function(){playing?stopPlay():startPlay();};
+document.getElementById("prev").onclick=function(){stopPlay();go(idx-1);};
+document.getElementById("next").onclick=function(){stopPlay();go(idx+1);};
+range.oninput=function(){stopPlay();go(+range.value);};
+document.getElementById("trick").onclick=function(){stopPlay();label(TRICK);[].forEach.call(strip.children,function(b){b.classList.remove("on");});
+  morphTo(trickShape,function(){setTimeout(function(){go(idx);},motion==="off"?2200:1500);});};
+document.querySelector(".seq").addEventListener("keydown",function(e){if(e.target===range)return;if(e.key==="ArrowRight"){stopPlay();go(idx+1);}else if(e.key==="ArrowLeft"){stopPlay();go(idx-1);}});
+
+applyMotion();go(0);draw(cur);
+if(motion==="on")startPlay();
+})();
+</script>
+</body>
+</html>
