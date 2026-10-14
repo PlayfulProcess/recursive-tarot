@@ -2,6 +2,21 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 14 2026 — Cards: the Decks picker fixed, lean header buttons, Draw & reflect in the assistant
+
+- **Decks picker (`viewers/deck-picker.js`):** the black search bar was a dark-theme fill left behind;
+  every colour now comes from `theme.css`. The list scrolls (a flex child needed `min-height:0`), so
+  All / None / Load stay on screen. The picker sits under its button and scrolls with the page; it opens
+  above when there is no room below, re-places on resize, closes on Escape or a second click.
+- **Icons:** Decks shows the grammar glyph, not the assistant's sparkle (cards and Explorer). Draw &
+  reflect carries the sparkle. Both copied into `icons.js` from recursive.eco's `icons.tsx`
+  (`GrammarIcon`, `SparkleIcon`).
+- **Lean header buttons:** no purple, no boxes, recursive.eco's toolbar style. Draw & reflect keeps its
+  words in gold; Edit, Print and Report are icons with a tooltip and a screen-reader label.
+- **Draw & reflect opens the assistant beside the page**, on the Tarot tab (I Ching or Astro for those
+  grammars) with this deck, via `RecursiveAssistant.open({tab, deckId})`. Ctrl/Cmd-click, embeds, and
+  decks with no app id keep the old path: the reading on recursive.eco in a new tab.
+
 ## Oct 13 2026 — the Ontoject study: the Trickster between every card, Reversed: hubris
 
 - **Slower:** the three animated cards loop about 1.8x slower (16 s, 18 s); the sequence morphs in 2 s and holds 3 s.
