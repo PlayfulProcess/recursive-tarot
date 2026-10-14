@@ -29,6 +29,10 @@ h2{font-size:1.25rem;margin:36px 0 6px}
 button{font:inherit;font-size:.85rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
 button:hover{border-color:var(--accent)}
 button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+.speed{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap}
+.speed .lbl{font-size:.85rem;color:var(--muted);display:inline-flex;align-items:center;gap:4px}
+.speed .lbl svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
+.speed button{padding:6px 10px;min-width:44px;font-variant-numeric:lining-nums}
 button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .sub{color:var(--muted);font-size:.9rem;margin:0 0 14px}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px}
@@ -85,11 +89,17 @@ html[data-motion="on"] .glyph.rev path{animation:oj-rev 3.4s ease-in-out infinit
   </div>
   <div class="tools" role="group" aria-label="Display">
     <button id="motionBtn" type="button" aria-pressed="false">Motion: on</button>
+    <span class="speed" role="group" aria-labelledby="speedLbl">
+      <span class="lbl" id="speedLbl"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.2V8l2.6 1.6"/></svg>Speed</span>
+      <button type="button" data-speed="0.25" aria-pressed="false" aria-label="0.25× speed">0.25×</button>
+      <button type="button" data-speed="0.5" aria-pressed="false" aria-label="0.5× speed">0.5×</button>
+      <button type="button" data-speed="1" aria-pressed="true" aria-label="1× speed, normal">1×</button>
+    </span>
   </div>
 </header>
 
 <h2>Three cards</h2>
-<p class="sub">The zero, the middle, the end. Each loops slowly, in under twenty seconds; with motion off they hold their key pose.</p>
+<p class="sub">The zero, the middle, the end. Each loops slowly, in under twenty seconds at 1×; <i>Speed</i> slows every animation on the page, and with motion off they hold their key pose.</p>
 <div class="cards">
   <figure>
 <!--CARD fool-0.svg-->
@@ -268,7 +278,7 @@ svg:root{--oj-bg:#f3ead8;--oj-ink:#3a2a14;--oj-dim:#9c7638;--oj-light:#b0701a;--
 </svg>
 <!--/CARD-->
     <figcaption><b>XIII · Death</b><span class="stage">the first breath</span>
-      <p>The womb opens; the placenta, grown from the embryo's own cells, drifts away. The lungs fill, and one placental loop becomes two circuits through one heart. Something dies so the breathing one can live.</p></figcaption>
+      <p>The womb opens; the cord is cut and the placenta, grown from the embryo's own cells, drifts away. The lungs fill, and one placental loop becomes two circuits through one heart. Something dies so the breathing one can live.</p></figcaption>
   </figure>
   <figure>
 <!--CARD world-xxi.svg-->
@@ -410,6 +420,16 @@ var motion=store("oj-motion")||(reduce?"off":"on");
 var motionBtn=document.getElementById("motionBtn");
 function applyMotion(){root.setAttribute("data-motion",motion);motionBtn.textContent="Motion: "+motion;motionBtn.setAttribute("aria-pressed",motion==="off"?"true":"false");if(motion==="off")stopPlay();}
 motionBtn.onclick=function(){motion=motion==="on"?"off":"on";store("oj-motion",motion);applyMotion();};
+/* one speed factor for every animation on the page: the CSS loops in the cards (via each animation's
+   playbackRate) and the JS sequence (every duration below is divided by it) */
+var SPEEDS=[0.25,0.5,1],speed=parseFloat(store("oj-speed"));if(SPEEDS.indexOf(speed)<0)speed=1;
+function T(ms){return ms/speed;}
+function rateAll(){if(!document.getAnimations)return;document.getAnimations().forEach(function(a){a.playbackRate=speed;});}
+document.addEventListener("animationstart",rateAll,true);
+var speedBtns=[].slice.call(document.querySelectorAll(".speed button"));
+function applySpeed(){speedBtns.forEach(function(b){b.setAttribute("aria-pressed",parseFloat(b.getAttribute("data-speed"))===speed?"true":"false");});rateAll();}
+speedBtns.forEach(function(b){b.onclick=function(){speed=parseFloat(b.getAttribute("data-speed"));store("oj-speed",String(speed));applySpeed();};});
+applySpeed();
 
 /* ---------- the recursive.eco mark (downsampled from recursive-logo.svg) ---------- */
 var S=[0.5,0.0,0.52,0.07,0.52,0.13,0.52,0.21,0.51,0.28,0.49,0.36,0.46,0.43,0.42,0.5,0.36,0.57,0.3,0.64,0.23,0.7,0.14,0.75,0.05,0.79,-0.05,0.82,-0.16,0.84,-0.28,0.85,-0.39,0.84,-0.52,0.81,-0.64,0.77,-0.76,0.71,-0.87,0.63,-0.98,0.54,-1.08,0.43,-1.17,0.3,-1.25,0.16,-1.31,0.0,-1.35,-0.17,-1.37,-0.35,-1.37,-0.54,-1.34,-0.74,-1.28,-0.93,-1.2,-1.13,-1.09,-1.32,-0.95,-1.5,-0.79,-1.67,-0.59,-1.83,-0.37,-1.96,-0.13,-2.07,0.14,-2.15,0.42,-2.2,0.72,-2.22,1.03,-2.19,1.35,-2.13,1.67,-2.02,1.98,-1.86,2.29,-1.66,2.57,-1.42,2.84,-1.12,3.07,-0.79,3.27,-0.41,3.43,0.0,3.53,0.45,3.59,0.92,3.58,1.42,3.5,1.93,3.36,2.44,3.15,2.96,2.86,3.46,2.5,3.94,2.06,4.38,1.56,4.79,0.98,5.14,0.34,5.43,-0.35,5.64,-1.1,5.77,-1.89,5.81,-2.7,5.74,-3.53,5.57,-4.37,5.28,-5.19,4.88,-5.99,4.35,-6.74,3.71,-7.43,2.94,-8.05,2.07,-8.57,1.08,-8.97,0.0,-9.25,-1.17,-9.39,-2.41,-9.36,-3.71,-9.17,-5.04,-8.8,-6.39,-8.24,-7.74,-7.49,-9.05,-6.54,-10.31,-5.4,-11.48,-4.07,-12.54,-2.57,-13.46,-0.89,-14.21,0.93,-14.77,2.88,-15.11,4.94,-15.2,7.07,-15.03,9.25,-14.58,11.44,-13.82,13.59,-12.76,15.68,-11.39,17.65,-9.7,19.46,-7.7,21.07,-5.41,22.42,-2.83,23.49,0.0,24.22,3.06,24.57,6.31,24.51,9.71,24.01,13.2,23.04,16.74,21.57,20.26,19.6,23.7,17.13,26.99,14.14,30.05,10.67,32.83,6.72,35.24,2.34,37.21,-2.43,38.67,-7.55,39.55,-12.93,39.8,-18.52,39.35,-24.11,37.99,-28.68,34.67,-32.8,30.8,-36.41,26.45,-39.43,21.68,-41.84,16.57,-43.59,11.19,-44.65,5.64,-45.0,0.0,-44.65,-5.64,-43.59,-11.19,-41.84,-16.57,-39.43,-21.68,-36.41,-26.45,-32.8,-30.8,-28.68,-34.67,-24.11,-37.99,-19.16,-40.72,-13.91,-42.8,-8.43,-44.2,-2.83,-44.91,2.83,-44.91,8.43,-44.2,13.91,-42.8,19.16,-40.72,24.11,-37.99,28.68,-34.67,32.8,-30.8,36.41,-26.45,39.43,-21.68,41.84,-16.57,43.59,-11.19,44.65,-5.64,45.0,0.0];
@@ -461,9 +481,9 @@ var C=[
   g:function(){return {s:[chain([-26,-44],[[-26,0,-10,28,13,28]]),circle(22,28,9),arc(22,28,15,200,320)],o:[.8,1,.6],d:[22,28,2]};}},
  {n:"XI",name:"Strength",st:"Labour",w:"The world: contractions.",l:"Force that is not the baby's will: one body pressing, the other yielding.",a:0,
   g:function(){return {s:[ellipse(0,4,40,26),circle(0,4,11),lemH(0,-36,15,6)],o:[1,.9,.7],d:[0,4,2]};}},
- {n:"XII",name:"Sacrifice",st:"Birth",w:"The world: air and light.",l:"Born head first, the Hanged Man's posture. Then the placenta, grown from the embryo's own cells, is let go.",a:1,
-  g:function(){return {s:[line(-26,-38,26,-38),line(0,-38,0,13),circle(0,23,10),circle(30,-24,6)],o:[1,.8,1,.35],d:[0,23,2]};}},
- {n:"XIII",name:"Death",st:"The first breath",w:"The world: lungs.",l:"The lungs fill and the bypasses close. The placental circulation ends; two circuits, lungs and body, run through one heart.",a:1,
+ {n:"XII",name:"Sacrifice",st:"Head down, on the cord",w:"The world: between two worlds.",l:"The Hanged Man's posture: head down, as if hung from the cord, its only line to the placenta. No breath yet; it hangs from what it is about to give up.",a:1,
+  g:function(){return {s:[ellipse(0,-42,13,6),chain([0,-36],[[-9,-29,8,-22,-1,-15],[-8,-10,-13,-8,-11,-3]]),chain([6,19],[[19,8,17,-15,3,-14],[-11,-13,-15,2,-8,14]]),circle(1,28,9)],o:[.8,.9,1,1],d:[1,28,2]};}},
+ {n:"XIII",name:"Death",st:"The first breath",w:"The world: lungs.",l:"The lungs fill and the cord is cut. The bypasses close and the placental circulation ends; two circuits, lungs and body, run through one heart.",a:1,
   g:function(){var L=lungL(0,-10);return {s:[chain([0,-10],[[22,-20,26,-40,0,-40],[-26,-40,-22,-20,0,-10],[30,4,30,46,0,46],[-30,46,-30,4,0,-10]]),L,mirror(L,0)],o:[1,.55,.55],d:[0,-10,2.6]};}},
  {n:"XIV",name:"Temperance",st:"Nursing · co-regulation",w:"The world: a caregiver's body.",l:"Milk poured from one body into another; heart rate and stress steadied by being held. Two vessels, one flow.",a:2,
   g:function(){return {s:[circle(-22,-24,11),circle(22,24,11),chain([-13,-16],[[6,-10,-6,10,13,16]])],o:[.9,.9,1],d:[0,0,2]};}},
@@ -499,7 +519,7 @@ function mix(a,b,t){var s=[],o=[];for(var i=0;i<4;i++){var pa=a.s[i],pb=b.s[i],q
 function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
 
 var cur=shapes[0],idx=0,anim=null,timer=null,playing=false,MORPH=2000,HOLD=3000,ENTER=1300,WOBBLE=2300,wob=null,tricking=false;
-function morphTo(target,done,dur){if(anim)cancelAnimationFrame(anim);var from=cur,D=dur||MORPH;
+function morphTo(target,done,dur){if(anim)cancelAnimationFrame(anim);var from=cur,D=T(dur||MORPH);
   if(motion==="off"){cur=target;draw(cur);if(done)done();return;}
   var t0=null;function step(ts){if(t0===null)t0=ts;var t=Math.min(1,(ts-t0)/D);cur=mix(from,target,ease(t));draw(cur);if(t<1)anim=requestAnimationFrame(step);else{anim=null;cur=target;if(done)done();}}
   anim=requestAnimationFrame(step);}
@@ -523,25 +543,25 @@ function labelTrick(c){document.getElementById("iNum").textContent=TRICK.n;docum
   [].forEach.call(document.querySelectorAll(".acts span"),function(s){s.classList.remove("on");});}
 function trickMimic(next){var base=shapes[idx];tricking=true;labelTrick(C[idx]);
   function done(){tricking=false;next();}
-  if(motion==="off"){cur=mimic(base,.6);draw(cur);timer=setTimeout(done,1800);return;}
+  if(motion==="off"){cur=mimic(base,.6);draw(cur);timer=setTimeout(done,T(1800));return;}
   morphTo(mimic(base,0),function(){if(!playing)return;var t0=null;
-    function step(ts){if(!playing){wob=null;return;}if(t0===null)t0=ts;var e=ts-t0;cur=mimic(base,e/1000);draw(cur);
+    function step(ts){if(!playing){wob=null;return;}if(t0===null)t0=ts;var e=(ts-t0)*speed;cur=mimic(base,e/1000);draw(cur);
       if(e<WOBBLE)wob=requestAnimationFrame(step);else{wob=null;done();}}
     wob=requestAnimationFrame(step);},ENTER);}
-function tick(){if(!playing)return;trickMimic(function(){if(!playing)return;go(idx+1,function(){if(playing)timer=setTimeout(tick,HOLD);});});}
-function startPlay(){playing=true;var b=document.getElementById("play");b.textContent="Pause";b.setAttribute("aria-pressed","true");timer=setTimeout(tick,motion==="off"?4000:HOLD);}
+function tick(){if(!playing)return;trickMimic(function(){if(!playing)return;go(idx+1,function(){if(playing)timer=setTimeout(tick,T(HOLD));});});}
+function startPlay(){playing=true;var b=document.getElementById("play");b.textContent="Pause";b.setAttribute("aria-pressed","true");timer=setTimeout(tick,T(motion==="off"?4000:HOLD));}
 function stopPlay(){playing=false;clearTimeout(timer);if(wob){cancelAnimationFrame(wob);wob=null;}if(tricking){tricking=false;go(idx);}var b=document.getElementById("play");if(b){b.textContent="Play";b.setAttribute("aria-pressed","false");}}
 document.getElementById("play").onclick=function(){playing?stopPlay():startPlay();};
 document.getElementById("prev").onclick=function(){stopPlay();go(idx-1);};
 document.getElementById("next").onclick=function(){stopPlay();go(idx+1);};
 range.oninput=function(){stopPlay();go(+range.value);};
 document.getElementById("trick").onclick=function(){stopPlay();label(TRICK);[].forEach.call(strip.children,function(b){b.classList.remove("on");});
-  morphTo(trickShape,function(){setTimeout(function(){go(idx);},motion==="off"?3600:2600);});};
+  morphTo(trickShape,function(){setTimeout(function(){go(idx);},T(motion==="off"?3600:2600));});};
 document.querySelector(".seq").addEventListener("keydown",function(e){if(e.target===range)return;if(e.key==="ArrowRight"){stopPlay();go(idx+1);}else if(e.key==="ArrowLeft"){stopPlay();go(idx-1);}});
 
 var revBtn=document.getElementById("revBtn"),glyphSvg=document.querySelector(".glyph"),revNote=document.getElementById("iRev");
 revBtn.onclick=function(){var on=!glyphSvg.classList.contains("rev");glyphSvg.classList.toggle("rev",on);revNote.hidden=!on;
-  revBtn.textContent="Reversed: "+(on?"hubris":"off");revBtn.setAttribute("aria-pressed",on?"true":"false");};
+  revBtn.textContent="Reversed: "+(on?"hubris":"off");revBtn.setAttribute("aria-pressed",on?"true":"false");rateAll();};
 applyMotion();go(0);draw(cur);
 if(motion==="on")startPlay();
 })();
