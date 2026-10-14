@@ -2,6 +2,14 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 13 2026 — the Ontoject study: the Trickster between every card, Reversed: hubris
+
+- **Slower:** the three animated cards loop about 1.8x slower (16 s, 18 s); the sequence morphs in 2 s and holds 3 s.
+- **The Trickster between every card:** in play it morphs into a wobbling, overdone copy of the card it follows,
+  then slips into the next. Motion off: a still Trickster frame. Stopping mid-Trickster returns to the card.
+- **Reversed: hubris:** her reversal rule, in her words, as a new section of the study, with her cards' own
+  lines (Balance; the Cosmic Topology reversals). A toggle on the animated page draws every glyph overdone.
+
 ## Oct 13 2026 — study: The Ontoject, one life
 
 - **A study, `course/ontoject-one-life.mdx`:** the Ontoject deck's trumps read as the development of one being,
