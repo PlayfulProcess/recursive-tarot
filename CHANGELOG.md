@@ -2,6 +2,18 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 15 2026 — Caster Studio: spreads saved as castings on recursive.eco (no more /api/spreads)
+
+- **Save to recursive.eco ↗** (`viewers/caster-studio.html`, beside Update spread): the spread on the board
+  becomes one of your castings on recursive.eco, a Private casting grammar written through its one grammar
+  save. The page hands the spread over in recursive.eco's `?importSpread=` link, in a new tab; a casting with
+  the same name is updated, not duplicated. (The paper-plane "Send to recursive.eco" was removed in Jul 2026
+  because the profile list it wrote into lost spreads; recursive.eco no longer writes there.)
+- **My spreads** in the dropdown are read from `GET /api/preferences` (your casting grammars), not
+  `/api/spreads`, which recursive.eco retires once this lands (one casting store, its D19).
+- **The light-model hint** reads `/api/preferences` only. A signed-out visitor gets the defaults there, so
+  the separate "you are not signed in" line is gone; the hint still shows when your saved model is a light one.
+
 ## Oct 14 2026 — Cards: the Decks picker fixed, lean buttons, Draw & reflect in the assistant, a mic by the search
 
 - **Decks picker (`viewers/deck-picker.js`):** the black search bar was a dark-theme fill left behind;
