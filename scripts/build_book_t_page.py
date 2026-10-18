@@ -39,6 +39,13 @@ GLOSSARY = os.path.join(ROOT, 'tarot', 'glossary-of-tarot', 'grammar.json')
 OUT = os.path.join(ROOT, 'pages', 'book-t.html')
 SCAN = 'https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep'
 CARD_HREF = '../viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json&item='
+# Book T's own deck (tarot/book-t, built by build_book_t_deck.py): its pictures beside the text
+# (PlayfulProcess, Oct 18 2026: "rendering our new images in book t and referencing the grammar
+# ... in the page of the book"; "people should be able to select ... RWS image or ours").
+BOOK_T_DECK = os.path.join(ROOT, 'tarot', 'book-t', 'grammar.json')
+BOOK_T_HREF = '../viewers/cards.html?src=../tarot/book-t/grammar.json&item='
+BOOK_T_ECO = 'https://recursive.eco/play?id=2000ad96-70c6-4aa4-a6fb-c22cce5e9cc7&pane=cards'
+BOOK_T_FILE = 'https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/book-t/grammar.json'
 COURSE = 'course-viewer.html?course=walking-the-golden-dawn-path'
 
 PG_A, PG_B = '\ue030', '\ue031'          # page marker: PG_A + "154" + PG_B
@@ -155,9 +162,11 @@ INTROS = {
               "*The Equinox* I(8), September 1912, pp. 143–210. This page gives all of it. "
               "Gold numbers in the margin are the printed pages. Notes in square brackets are "
               "Crowley's. Underlined words open the [glossary](glossary.html) or the card. The pictures "
-              "beside the cards are the Rider-Waite-Smith deck's; Book T's own deck, in its own order "
-              "and titles, is [Book T](../viewers/cards.html?src=../tarot/book-t/grammar.json), its "
-              "pictures still to come."),
+              "beside the cards are Book T's own deck, made for this site: line art traced from AI "
+              "paintings prompted from Book T's words (CC BY-SA). The switch at the top shows the "
+              "paintings, or the Rider-Waite-Smith deck (1909), instead. The deck, in Book T's order "
+              "and titles: [Book T](../viewers/cards.html?src=../tarot/book-t/grammar.json) · "
+              "[in recursive.eco](" + BOOK_T_ECO + ") · [its grammar file](" + BOOK_T_FILE + ")."),
     'titles': ("Every card has a title. The Aces are Roots. The court cards are a Lord, a Queen, "
                "a Prince and a Princess. Each small card is the Lord of something, set in one decan "
                "of the zodiac under one planet. The trumps are Keys, each with a Hebrew letter."),
@@ -498,9 +507,45 @@ def build():
     return page_html(body, toc, finder, cards)
 
 
+def load_book_t_pictures():
+    """The Book T deck's pictures, by the Golden Dawn deck's card id (each Book T card names its
+    place on this page in its "In Book T's table" section): line art first, then the painting."""
+    if not os.path.exists(BOOK_T_DECK):
+        return {}
+    out = {}
+    for n in json.load(open(BOOK_T_DECK, encoding='utf-8'))['nodes']:
+        m = re.search(r'book-t\.html#([\w-]+)', (n.get('sections') or {}).get("In Book T's table", ''))
+        if not m:
+            continue
+        ills = (n.get('metadata') or {}).get('illustrations') or []
+        line = next((i['url'] for i in ills if i.get('is_primary')), n.get('image_url') or '')
+        paint = next((i['url'] for i in ills if 'painting' in (i.get('edition') or '')), '')
+        if line:
+            out[m.group(1)] = {'id': n['id'], 'line': line, 'paint': paint or line}
+    return out
+
+
+BOOK_T_PICS = load_book_t_pictures()
+
+
 def thumb(it, cls='th', size=None):
-    return ('<img class="%s" src="%s" alt="%s" loading="lazy" decoding="async" width="300" height="520">'
-            % (cls, html.escape(it['image_url']), html.escape(it['name'])))
+    """A card's picture: Book T's own (line art) by default, the painting and the Rider-Waite-Smith
+    picture one tap away (the picture switch; data-pic-* carry the three)."""
+    rws = it['image_url']
+    bt = BOOK_T_PICS.get(it['id'])
+    if not bt:
+        return ('<img class="%s" src="%s" alt="%s" loading="lazy" decoding="async" width="300" height="520">'
+                % (cls, html.escape(rws), html.escape(it['name'])))
+    return ('<img class="%s" src="%s" alt="%s" loading="lazy" decoding="async" width="300" height="520" '
+            'data-pic-line="%s" data-pic-paint="%s" data-pic-rws="%s">'
+            % (cls, html.escape(bt['line']), html.escape(it['name']),
+               html.escape(bt['line']), html.escape(bt['paint']), html.escape(rws)))
+
+
+def side_href(ident):
+    """The picture opens the card in Book T's own deck (the Golden Dawn deck when it has none)."""
+    bt = BOOK_T_PICS.get(ident)
+    return (BOOK_T_HREF + bt['id']) if bt else (CARD_HREF + ident)
 
 
 def render_chapter(cid, cb, L, cards, decan_of, key_row, finder):
@@ -659,11 +704,11 @@ def render_card(cid, numeral, title, cname, ident, pre, body_blocks, L, cards, d
     head_pg = inline(pre, L) if pre else ''
     return ('<article class="ce" id="%s">\n<header class="ch">%s<span class="num">%s</span>'
             '<h3>%s</h3><p class="cname"><a href="%s%s">%s</a></p>%s</header>\n'
-            '<a class="side" href="%s%s" aria-label="Open %s in the Golden Dawn deck">%s'
+            '<a class="side" href="%s" aria-label="Open %s in the Book T deck">%s'
             '<span class="sl">Open in the deck</span></a>\n<div class="cbody">\n%s\n%s\n</div>\n</article>'
             % (ident, head_pg, numeral, html.escape(title), CARD_HREF, ident, html.escape(cname),
                ('<p class="chips">%s</p>' % ''.join(chips)) if chips else '',
-               CARD_HREF, ident, html.escape(it['name']), thumb(it), '\n'.join(paras), '\n'.join(foot)))
+               side_href(ident), html.escape(it['name']), thumb(it), '\n'.join(paras), '\n'.join(foot)))
 
 
 def render_key(n, text, L, cards, key_row):
@@ -691,10 +736,10 @@ def render_key(n, text, L, cards, key_row):
     h = inline(P.link(body), L)
     return ('<article class="ce key" id="%s">\n<header class="ch"><span class="num">%d</span>'
             '<h3><a href="%s%s">%s</a></h3><p class="cname">%s</p><p class="chips">%s</p></header>\n'
-            '<a class="side" href="%s%s" aria-label="Open %s in the Golden Dawn deck">%s'
+            '<a class="side" href="%s" aria-label="Open %s in the Book T deck">%s'
             '<span class="sl">Open in the deck</span></a>\n<div class="cbody">\n<p>%s</p>\n</div>\n</article>'
             % (ident, n, CARD_HREF, ident, html.escape(name), html.escape(title), ''.join(chips),
-               CARD_HREF, ident, html.escape(it['name']), thumb(it), h))
+               side_href(ident), html.escape(it['name']), thumb(it), h))
 
 
 TABLE_HEAD = {

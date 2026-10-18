@@ -32,6 +32,10 @@
   .btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:4px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);text-decoration:none;font:inherit;font-size:14px;cursor:pointer}
   .btn:hover{border-color:var(--gold);color:var(--gold)}
   .btn.primary{border-color:var(--gold);color:var(--gold);font-weight:600}
+  .pics{display:inline-flex;align-items:center;flex-wrap:wrap;gap:4px;min-height:44px;padding:4px 6px;border:1px solid var(--line);border-radius:10px;background:var(--surface);font-size:13px}
+  .pics .picl{color:var(--mut);padding:0 6px}
+  .pics button{min-height:34px;padding:2px 10px;border:1px solid transparent;border-radius:8px;background:none;color:var(--ink);font:inherit;cursor:pointer}
+  .pics button[aria-checked="true"]{border-color:var(--gold);color:var(--gold);font-weight:600}
   /* ---------- contents (sticky) ---------- */
   .toc{display:none}
   @media (min-width:1100px){
@@ -205,6 +209,12 @@
     <div class="btns">
       <a class="btn primary" href="#front">Start reading</a>
       <a class="btn" href="{{SCAN}}" target="_blank" rel="noopener">{{ICON_SCAN}} The 1912 scan</a>
+      <div class="pics" role="radiogroup" aria-label="The pictures beside the cards">
+        <span class="picl">Pictures</span>
+        <button type="button" role="radio" data-pics="line" aria-checked="true">Book T</button>
+        <button type="button" role="radio" data-pics="paint" aria-checked="false">Painting</button>
+        <button type="button" role="radio" data-pics="rws" aria-checked="false">Rider-Waite-Smith</button>
+      </div>
     </div>
   </div>
 
@@ -231,7 +241,7 @@
         <h2>About this text</h2>
         <p>Text: Book T as printed in <em>The Equinox</em> Vol. I No. 8 (London, September 1912), pp. 143–210, published by Aleister Crowley. Public domain. Transcription checked against <a href="{{SCAN}}" target="_blank" rel="noopener">the scan of the 1912 issue</a>; where they differed, the printed page was followed.</p>
         <p>Where the printed page sets astrological signs inside a sentence, the text here spells them out; the tables keep the signs. Hebrew is in Hebrew letters. The coloured frontispiece plate (p. 144) is not reproduced.</p>
-        <p>Everything set apart in dashed boxes, the chips under each card heading, the card pictures (Rider-Waite-Smith, 1909) and the links are this site's, not Book T's.</p>
+        <p>Everything set apart in dashed boxes, the chips under each card heading, the card pictures (Book T's deck, made for this site, CC BY-SA; or Rider-Waite-Smith, 1909) and the links are this site's, not Book T's. Book T describes no picture for the twenty-two Keys, so their pictures start from each Key's title.</p>
       </section>
     </div>
   </main>
@@ -260,6 +270,23 @@
     const t = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
     if (t) t.scrollIntoView({ block: 'start', behavior: 'instant' });
   });
+  // The picture switch (Oct 18 2026): Book T's own line art, its painting, or Rider-Waite-Smith.
+  // One choice for every picture on the page, remembered on this device.
+  const picBtns = [...document.querySelectorAll('[data-pics]')];
+  function showPics(kind) {
+    if (!['line', 'paint', 'rws'].includes(kind)) kind = 'line';
+    document.querySelectorAll('img[data-pic-line]').forEach(img => {
+      const src = img.getAttribute('data-pic-' + kind);
+      if (src && img.getAttribute('src') !== src) img.setAttribute('src', src);
+    });
+    picBtns.forEach(b => b.setAttribute('aria-checked', b.dataset.pics === kind ? 'true' : 'false'));
+    try { localStorage.setItem('bookt-pics', kind); } catch (e) {}
+  }
+  picBtns.forEach(b => b.addEventListener('click', () => showPics(b.dataset.pics)));
+  let savedPics = 'line';
+  try { savedPics = localStorage.getItem('bookt-pics') || 'line'; } catch (e) {}
+  if (savedPics !== 'line') showPics(savedPics);
+
   // The finder opens by default on wide screens only.
   try { if (window.matchMedia('(min-width:1100px)').matches) $('finder').open = true; } catch (e) {}
 

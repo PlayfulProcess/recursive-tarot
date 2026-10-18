@@ -88,6 +88,12 @@ prompts start from each Key's title. Each prompt, beside the Book T passage it c
 Every card carries the 1912 text, word for word, with Crowley's notes in square brackets. The
 whole book reads as one page at [Book T (1912)](https://tarot.recursive.eco/pages/book-t.html).
 
+**Beside Book T (Oct 18 2026).** Two other public-domain writers from the Order's line sit under
+it, each in a section of its own that names them: A. E. Waite, a member of the Golden Dawn, on
+every card (*The Pictorial Key to the Tarot*, 1911; he describes the Rider-Waite-Smith picture),
+and Paul Foster Case on each Key's Hebrew letter (*An Introduction to the Study of the Tarot*,
+1920). Book T's own words are always the first section.
+
 *Source: Book T, as printed in* The Equinox *I(8), 1912, pp. 143-210, from the transcription at
 the-equinox.org, checked against [the scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep).
 Built by `scripts/build_book_t_deck.py`.*
