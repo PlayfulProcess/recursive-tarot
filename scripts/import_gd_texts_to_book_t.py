@@ -18,6 +18,11 @@ its own section, each saying whose words they are and what they describe:
 Not here yet: Mathers, The Tarot (London, 1888). No scan was found from a source this script can
 cite (Oct 18 2026); it joins when one is in research/sources.
 
+The labels are long on purpose (Oct 18 2026): recursive.eco keeps a node's sections in a database
+object, which orders keys shortest first, and Play draws them in that order; at 27 and 38 characters
+these two sort after Book T's own three (13, 15, 17). Until the app keeps an order of its own
+(recursive-eco CLEANUP-FINDINGS-2026-10), a shorter label here would draw above Book T's words.
+
 Book T's own section is never touched; build_book_t_deck.py keeps sections it does not own.
 Idempotent. `--check` exits 1 if the grammar differs from what it would write.
 
@@ -34,8 +39,8 @@ BOOK_T = ROOT / "tarot" / "book-t" / "grammar.json"
 RWS = ROOT / "tarot" / "rider-waite-smith-pictorial-key" / "grammar.json"
 CASE = ROOT / "course" / "booklets" / "case-introduction-to-the-study-of-the-tarot-1920.mdx"
 
-WAITE_KEY = "Waite (1911)"
-CASE_KEY = "Case (1920)"
+WAITE_KEY = "Waite, Pictorial Key (1911)"
+CASE_KEY = "Case, Introduction to the Tarot (1920)"
 WAITE_HEAD = ("*A. E. Waite, a member of the Golden Dawn, in* The Pictorial Key to the Tarot *(London, 1911)"
               " · public domain · he describes the Rider-Waite-Smith picture of this card, not Book T's*")
 CASE_HEAD = ("*Paul Foster Case, in* An Introduction to the Study of the Tarot *(New York, 1920), Chapter III,"
