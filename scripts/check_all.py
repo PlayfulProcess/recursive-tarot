@@ -165,6 +165,14 @@ print(f"[build_book_t_deck.py] {out.splitlines()[0] if out else '(no output)'}")
 if r.returncode != 0:
     errors.append(f"build_book_t_deck.py --check failed:\n{out}")
 
+# 8b — the other Golden Dawn texts on Book T's cards (Waite 1911, Case 1920), from their sources here.
+r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "import_gd_texts_to_book_t.py"), "--check"],
+                   capture_output=True, text=True, cwd=ROOT, encoding="utf-8")
+out = (r.stdout + r.stderr).strip()
+print(f"[import_gd_texts_to_book_t.py] {out.splitlines()[0] if out else '(no output)'}")
+if r.returncode != 0:
+    errors.append(f"import_gd_texts_to_book_t.py --check failed:\n{out}")
+
 # 9 — card/*.html, tarot-card-meanings.html and sitemap.xml are generated from the Rider-Waite-Smith and
 # Golden Dawn decks (the search-engine pages, Oct 14 2026); a deck edit needs a re-run of the build.
 r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "build_card_pages.py"), "--check"],

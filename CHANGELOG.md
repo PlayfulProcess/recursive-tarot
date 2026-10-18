@@ -4,6 +4,14 @@ Newest first. One bullet per shipped thing.
 
 ## Oct 18 2026 — Book T (1912): Book T's own pictures beside the text, and a picture switch
 
+- **Other Golden Dawn texts on the Book T deck** (her words: "Let's add other pd golden dawn texts to book t"):
+  every card gets **Waite (1911)** (A. E. Waite, a member of the Order, *The Pictorial Key to the Tarot*; he
+  describes the Rider-Waite-Smith picture, and the section says so) and each Key gets **Case (1920)** (Paul
+  Foster Case's entry for its Hebrew letter, *An Introduction to the Study of the Tarot*, Chapter III, with the
+  booklet's caveat on Lamed and Nun). Book T's words stay first. Written by `scripts/import_gd_texts_to_book_t.py`
+  (idempotent, `--check` in check_all). Mathers' *The Tarot* (1888) is not in yet: no scan found from a source
+  we can cite.
+
 - **The 1912 page shows Book T's own deck** (`pages/book-t.html`, built by `scripts/build_book_t_page.py`):
   each card's picture is now the Book T deck's line art (tarot/book-t), with a **Pictures** switch at the top:
   Book T · Painting · Rider-Waite-Smith (her words: "people should be able to select ... RWS image or ours").
