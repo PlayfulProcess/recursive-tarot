@@ -2,6 +2,16 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 18 2026 — Book T (1912): Book T's own pictures beside the text, and a picture switch
+
+- **The 1912 page shows Book T's own deck** (`pages/book-t.html`, built by `scripts/build_book_t_page.py`):
+  each card's picture is now the Book T deck's line art (tarot/book-t), with a **Pictures** switch at the top:
+  Book T · Painting · Rider-Waite-Smith (her words: "people should be able to select ... RWS image or ours").
+  One choice for every picture on the page, remembered on the device. A picture opens the card in the Book T
+  deck. The first note links the deck three ways: the tarot viewer, recursive.eco, and its grammar file.
+- The pictures come from each Book T card's `metadata.illustrations` (line art first, then the painting),
+  matched by the anchor in its "In Book T's table" section.
+
 ## Oct 15 2026 — Caster Studio: spreads saved as castings on recursive.eco (no more /api/spreads)
 
 - **Save to recursive.eco ↗** (`viewers/caster-studio.html`, beside Update spread): the spread on the board
