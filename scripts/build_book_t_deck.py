@@ -94,6 +94,9 @@ every card (*The Pictorial Key to the Tarot*, 1911; he describes the Rider-Waite
 and Paul Foster Case on each Key's Hebrew letter (*An Introduction to the Study of the Tarot*,
 1920). Book T's own words are always the first section.
 
+**Where the pictures come from:** what survives of the Order's own cards, the published Golden
+Dawn decks, and their rights: [Sources: Book T](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/sources/grammar.json&item=sel-deck-book-t).
+
 *Source: Book T, as printed in* The Equinox *I(8), 1912, pp. 143-210, from the transcription at
 the-equinox.org, checked against [the scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep).
 Built by `scripts/build_book_t_deck.py`.*

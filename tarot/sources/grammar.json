@@ -1,0 +1,2731 @@
+{
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "url": "https://recursive.eco",
+        "date": "2026-10-20",
+        "note": "Image sources for the decks: holders, quality and rights (text only; the pictures belong to their holders)"
+      }
+    ]
+  },
+  "_generated": true,
+  "name": "Sources: Where the Deck Pictures Live",
+  "slug": "sources",
+  "grammar_type": "custom",
+  "provenance": "reference",
+  "creator_name": "PlayfulProcess",
+  "creator_link": "https://recursive.eco",
+  "default_view": "thumbnails",
+  "default_preview": "thumbnails",
+  "is_published": true,
+  "tags": [
+    "sources",
+    "rights",
+    "images",
+    "museums",
+    "reference"
+  ],
+  "description": "# Sources: where the deck pictures live, and their rights\n\nFor each deck on this site: the museums, libraries and sites that hold pictures of it, how sharp\nthose pictures are, and **what their rights allow**, in the holder's own words where they could be\nread. Each source also says plainly who holds the rights and what we may and may not do.\n\n**Three ways in.** Selections by **deck**, by **holder** (Yale, the BnF, the Morgan, Commons…) and\nby **rights** (free for any use · open licence · non-commercial only · permission needed · unclear ·\nin copyright). A source can sit in several.\n\n**Links only.** This grammar copies no pictures. A source shows an image only where its own\nstatement says public domain, CC0 or CC BY.\n\n**Not legal advice.** A Commons \"public domain\" tag is the uploader's claim about the work, not a\ngrant from whoever made the scan. Checked 2026-10-20.\n\nEvery card image shown today that is non-commercial-only, a scan of a modern reproduction, or of\nunclear origin is listed, card by card, with a free alternative where one is known, in\n[IMAGE-FLAGS.md](https://github.com/PlayfulProcess/recursive-tarot/blob/main/docs/rights/IMAGE-FLAGS.md).\n\n*Built by `scripts/build_sources_grammar.py` from `research/sources/image-sources.json`.*\n",
+  "metadata": {
+    "common_name": "Image Sources",
+    "category": "reference"
+  },
+  "nodes": [
+    {
+      "id": "src-equinox-1912-scan",
+      "name": "The Equinox I(8), 1912: Book T, the printed text (scan)",
+      "category": "source",
+      "sort_order": 0,
+      "keywords": [
+        "sources",
+        "internet-archive",
+        "free",
+        "book-t",
+        "golden-dawn-book-t-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "book-t",
+          "golden-dawn-book-t-tarot"
+        ],
+        "holder": "internet-archive",
+        "holder_name": "Internet Archive, IAPSOP collection (item IAPSOP-equinox_v1_n8_1912_Sep)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Nobody holds rights in the 1912 text; the scan carries no terms. We may quote, reprint and adapt Book T's words; this site does.",
+        "Holder": "Internet Archive, IAPSOP collection (item IAPSOP-equinox_v1_n8_1912_Sep)",
+        "What it holds": "The whole September 1912 issue, with Book T on pp. 143-210. Text only: Book T as printed has no card pictures.",
+        "Quality": "Page scans with OCR; good enough to check every word of the transcription (this site's Book T text was checked against it).",
+        "Rights as published": "The item's metadata carries no rights statement (checked Oct 20 2026 through archive.org/metadata). The work is public domain: printed 1912, Crowley died 1947, Mathers 1918.",
+        "Link": "[https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep)",
+        "Decks here": "[Book T](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/book-t/grammar.json), [Golden Dawn (Book T)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-book-t-transcriptions",
+      "name": "Book T transcriptions: the-equinox.org and sacred-texts",
+      "category": "source",
+      "sort_order": 1,
+      "keywords": [
+        "sources",
+        "web-references",
+        "free",
+        "book-t",
+        "golden-dawn-book-t-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "book-t",
+          "golden-dawn-book-t-tarot"
+        ],
+        "holder": "web-references",
+        "holder_name": "the-equinox.org (Equinox I(8) transcription); sacred-texts.com (Mathers, The Tarot, 1888)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "http://www.the-equinox.org/vol1/no8/eqi08016.html",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The words are free to use; the sites' retyping and markup are theirs, so we copy from the 1912 scan, not their pages.",
+        "Holder": "the-equinox.org (Equinox I(8) transcription); sacred-texts.com (Mathers, The Tarot, 1888)",
+        "What it holds": "Book T 1912 retyped (the base of this site's text), and Mathers' separate 1888 booklet The Tarot at https://sacred-texts.com/tarot/mathers/index.htm.",
+        "Quality": "Text only, no pictures. Retyped, so check doubtful words against the scan.",
+        "Rights as published": "The underlying texts are public domain (1888, 1912). The transcription sites' own terms were not checked for this entry.",
+        "Link": "[http://www.the-equinox.org/vol1/no8/eqi08016.html](http://www.the-equinox.org/vol1/no8/eqi08016.html)",
+        "Decks here": "[Book T](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/book-t/grammar.json), [Golden Dawn (Book T)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-gd-whare-ra-drawings",
+      "name": "Whare Ra trump line drawings (Hermetic Library)",
+      "category": "source",
+      "sort_order": 2,
+      "keywords": [
+        "sources",
+        "web-references",
+        "permission",
+        "book-t",
+        "golden-dawn-book-t-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "book-t",
+          "golden-dawn-book-t-tarot"
+        ],
+        "holder": "web-references",
+        "holder_name": "Hermetic Library, Golden Dawn Library Project; drawings courtesy of Pat Zalewski",
+        "rights_class": "permission",
+        "rights_label": "Permission needed to publish",
+        "url": "https://hermetic.com/gdlibrary/tarot/whare_ra/index",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Treat as held by Pat Zalewski and the Hermetic Library: link to them; reproducing the drawings needs their permission.",
+        "Holder": "Hermetic Library, Golden Dawn Library Project; drawings courtesy of Pat Zalewski",
+        "What it holds": "Black-and-white line drawings of the 22 trumps as kept at Whare Ra (New Zealand, 1912-1978), the longest-lived Golden Dawn temple. Minors listed as forthcoming.",
+        "Quality": "Web images of line drawings; seen in search summaries only (the site blocks automated reading).",
+        "Rights as published": "No statement could be read (site blocks automated reading). The drawings are presented as courtesy of Pat Zalewski.",
+        "Link": "[https://hermetic.com/gdlibrary/tarot/whare_ra/index](https://hermetic.com/gdlibrary/tarot/whare_ra/index)",
+        "Decks here": "[Book T](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/book-t/grammar.json), [Golden Dawn (Book T)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-gd-yorke-warburg",
+      "name": "Yorke Collection and the Thoth paintings (Warburg Institute)",
+      "category": "source",
+      "sort_order": 3,
+      "keywords": [
+        "sources",
+        "warburg",
+        "permission",
+        "book-t",
+        "golden-dawn-book-t-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "book-t",
+          "golden-dawn-book-t-tarot"
+        ],
+        "holder": "warburg",
+        "holder_name": "Warburg Institute Archive, University of London",
+        "rights_class": "permission",
+        "rights_label": "Permission needed to publish",
+        "url": "https://archive.warburg.sas.ac.uk/archive/archive-collections/the-yorke-collection",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The papers belong to the Warburg; Crowley's and Harris's work is still in copyright in the UK (Harris d. 1962). Ask the Warburg, and the rights holders, before any reproduction.",
+        "Holder": "Warburg Institute Archive, University of London",
+        "What it holds": "Gerald Yorke's collection of Crowley and Golden Dawn papers (Cypher manuscripts, Order documents; catalogues in two series, OS and NS), and Lady Frieda Harris's original Thoth paintings (1938-1943). Whether a manuscript Book T or a painted Order deck is among the papers was not confirmed.",
+        "Quality": "Originals, seen by appointment in the reading room; the catalogue lists are PDFs (e.g. https://warburg.sas.ac.uk/sites/default/files/Yorke%20Collection%20NS%201%20-%2049.pdf).",
+        "Rights as published": "The archive page says permission to view the manuscripts must be requested in advance. No image licence was found online.",
+        "Link": "[https://archive.warburg.sas.ac.uk/archive/archive-collections/the-yorke-collection](https://archive.warburg.sas.ac.uk/archive/archive-collections/the-yorke-collection)",
+        "Decks here": "[Book T](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/book-t/grammar.json), [Golden Dawn (Book T)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-gd-nli-yeats",
+      "name": "W. B. Yeats occult papers (National Library of Ireland)",
+      "category": "source",
+      "sort_order": 4,
+      "keywords": [
+        "sources",
+        "nli",
+        "permission",
+        "book-t",
+        "golden-dawn-book-t-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "book-t",
+          "golden-dawn-book-t-tarot"
+        ],
+        "holder": "nli",
+        "holder_name": "National Library of Ireland",
+        "rights_class": "permission",
+        "rights_label": "Permission needed to publish",
+        "url": "https://catalogue.nli.ie/Collection/vtls000185336",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Held by the NLI; Yeats's own papers are out of copyright (d. 1939), the library's images are under its terms. Ask the NLI.",
+        "Holder": "National Library of Ireland",
+        "What it holds": "Yeats's Golden Dawn papers, ca. 1890-1937, including astrological and tarot material. Whether a hand-painted deck is among them is unconfirmed; Kathleen Raine's Yeats, the Tarot and the Golden Dawn (1972) is the published study.",
+        "Quality": "Originals; catalogue only online (it blocks automated reading).",
+        "Rights as published": "No statement could be read (catalogue blocks automated reading).",
+        "Link": "[https://catalogue.nli.ie/Collection/vtls000185336](https://catalogue.nli.ie/Collection/vtls000185336)",
+        "Decks here": "[Book T](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/book-t/grammar.json), [Golden Dawn (Book T)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-gd-published-decks",
+      "name": "Published Golden Dawn decks (Wang, Dowson, the Ciceros, the Zalewskis) and the Thoth",
+      "category": "source",
+      "sort_order": 5,
+      "keywords": [
+        "sources",
+        "publishers",
+        "in-copyright",
+        "book-t",
+        "golden-dawn-book-t-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "book-t",
+          "golden-dawn-book-t-tarot"
+        ],
+        "holder": "publishers",
+        "holder_name": "U.S. Games Systems (Wang/Regardie 1977-78; Dowson's Hermetic Tarot 1980); Llewellyn (the Ciceros, 1991 and later); the Zalewskis' Magical Tarot of the Golden Dawn (2022); the Thoth (Crowley/Harris, O.T.O.)",
+        "rights_class": "in-copyright",
+        "rights_label": "In copyright: link and cite only",
+        "url": "https://www.steve-p.org/cards/GDaw.html",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Each publisher holds its deck. We may name, describe and link them; we may not copy their pictures.",
+        "Holder": "U.S. Games Systems (Wang/Regardie 1977-78; Dowson's Hermetic Tarot 1980); Llewellyn (the Ciceros, 1991 and later); the Zalewskis' Magical Tarot of the Golden Dawn (2022); the Thoth (Crowley/Harris, O.T.O.)",
+        "What it holds": "The modern decks painted from the Order's descriptions, several under Regardie's oversight. Steve P.'s pages compare them card by card; Nick Farrell's essay (https://www.jwmt.org/v2n17/farrell.html) argues the Order never had a deck of its own.",
+        "Quality": "Printed decks; reviews and comparison scans on reference sites.",
+        "Rights as published": "All are in copyright. No open licence found for any of them.",
+        "Link": "[https://www.steve-p.org/cards/GDaw.html](https://www.steve-p.org/cards/GDaw.html)",
+        "Decks here": "[Book T](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/book-t/grammar.json), [Golden Dawn (Book T)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-gd-court-cards-kuntz",
+      "name": "The Golden Dawn Court Cards (Küntz, ed., 1996)",
+      "category": "source",
+      "sort_order": 6,
+      "keywords": [
+        "sources",
+        "publishers",
+        "in-copyright",
+        "book-t",
+        "golden-dawn-book-t-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "book-t",
+          "golden-dawn-book-t-tarot"
+        ],
+        "holder": "publishers",
+        "holder_name": "Holmes Publishing Group (Golden Dawn Studies 5)",
+        "rights_class": "in-copyright",
+        "rights_label": "In copyright: link and cite only",
+        "url": "https://www.worldcat.org/search?q=Golden+Dawn+Court+Cards+Kuntz",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The book is Holmes's; the original drawings' owner is not named online. Cite and link only.",
+        "Holder": "Holmes Publishing Group (Golden Dawn Studies 5)",
+        "What it holds": "Line drawings of the court cards from W. Wynn Westcott's papers, credited to Westcott and/or Moina Mathers. The nearest thing to Order-made court pictures in print. Not seen here (listings only).",
+        "Quality": "Printed book.",
+        "Rights as published": "No statement read; the edition is in copyright. Whether the underlying drawings (before 1900, makers d. 1925 and 1928) are themselves free is a question of who owns the originals.",
+        "Link": "[https://www.worldcat.org/search?q=Golden+Dawn+Court+Cards+Kuntz](https://www.worldcat.org/search?q=Golden+Dawn+Court+Cards+Kuntz)",
+        "Decks here": "[Book T](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/book-t/grammar.json), [Golden Dawn (Book T)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-rws-commons-current",
+      "name": "Rider-Waite-Smith on Wikimedia Commons (the scans this site shows)",
+      "category": "source",
+      "sort_order": 7,
+      "keywords": [
+        "sources",
+        "commons",
+        "free",
+        "rider-waite-smith-pictorial-key",
+        "golden-dawn-book-t-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "rider-waite-smith-pictorial-key",
+          "golden-dawn-book-t-tarot"
+        ],
+        "holder": "commons",
+        "holder_name": "Wikimedia Commons, Category:Rider-Waite tarot deck (files credited to muzendo.jp)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://commons.wikimedia.org/wiki/Category:Rider-Waite_tarot_deck",
+        "checked": "2026-10-20",
+        "image_credit": "Pamela Colman Smith, 1909; Wikimedia Commons, public domain"
+      },
+      "sections": {
+        "Property rights": "Smith's 1909 pictures are free; RIDER-WAITE is a U.S. Games trademark for printed tarot cards, so keep that word off anything for sale.",
+        "Holder": "Wikimedia Commons, Category:Rider-Waite tarot deck (files credited to muzendo.jp)",
+        "What it holds": "All 78 cards, scanned from an early printing whose edition is not recorded.",
+        "Quality": "About 1,100 x 1,900 px per card.",
+        "Rights as published": "Each file page: \"Public domain\". The tag is the uploader's statement about the work (Smith's 1909 designs, public domain in the US, and in the UK/EU since 2022).",
+        "Link": "[https://commons.wikimedia.org/wiki/Category:Rider-Waite_tarot_deck](https://commons.wikimedia.org/wiki/Category:Rider-Waite_tarot_deck)",
+        "Decks here": "[Rider-Waite-Smith](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/rider-waite-smith-pictorial-key/grammar.json), [Golden Dawn (Book T)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      },
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/RWS_Tarot_00_Fool.jpg?width=600"
+    },
+    {
+      "id": "src-rws-commons-1909-roses-lilies",
+      "name": "The 1909 first printing ('Roses & Lilies' backs) on Wikimedia Commons",
+      "category": "source",
+      "sort_order": 8,
+      "keywords": [
+        "sources",
+        "commons",
+        "free",
+        "rider-waite-smith-pictorial-key",
+        "golden-dawn-book-t-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "rider-waite-smith-pictorial-key",
+          "golden-dawn-book-t-tarot"
+        ],
+        "holder": "commons",
+        "holder_name": "Wikimedia Commons, Category:Rider-Waite tarot deck (Roses & Lilies); 79 of 80 files credit a Japanese collector's blog (blog.goo.ne.jp/valet_de_coupe)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://commons.wikimedia.org/wiki/Category:Rider-Waite_tarot_deck_(Roses_%26_Lilies)",
+        "checked": "2026-10-20",
+        "image_credit": "Pamela Colman Smith, 1909 first printing; Wikimedia Commons, public domain"
+      },
+      "sections": {
+        "Property rights": "Free to use. The scans' owner is a private collector; credit the blog as Commons does.",
+        "Holder": "Wikimedia Commons, Category:Rider-Waite tarot deck (Roses & Lilies); 79 of 80 files credit a Japanese collector's blog (blog.goo.ne.jp/valet_de_coupe)",
+        "What it holds": "80 files: the 78 cards of the December 1909 first run, which had a roses-and-lilies back pattern, plus back and pack.",
+        "Quality": "812-860 px wide: smaller than the scans this site shows, but the right printing.",
+        "Rights as published": "Each of the 80 file pages: \"Public domain\" (checked through the Commons API, Oct 19 2026).",
+        "Link": "[https://commons.wikimedia.org/wiki/Category:Rider-Waite_tarot_deck_(Roses_%26_Lilies)](https://commons.wikimedia.org/wiki/Category:Rider-Waite_tarot_deck_(Roses_%26_Lilies))",
+        "Decks here": "[Rider-Waite-Smith](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/rider-waite-smith-pictorial-key/grammar.json), [Golden Dawn (Book T)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      },
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/RWS1909%20-%2000%20Fool.jpeg?width=600"
+    },
+    {
+      "id": "src-rws-commons-yale",
+      "name": "A Waite-Smith deck at Yale (10 cards on Commons)",
+      "category": "source",
+      "sort_order": 9,
+      "keywords": [
+        "sources",
+        "commons",
+        "free",
+        "rider-waite-smith-pictorial-key",
+        "golden-dawn-book-t-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "rider-waite-smith-pictorial-key",
+          "golden-dawn-book-t-tarot"
+        ],
+        "holder": "commons",
+        "holder_name": "Wikimedia Commons, Category:Rider-Waite tarot deck (Yale University)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://commons.wikimedia.org/wiki/Category:Rider-Waite_tarot_deck_(Yale_University)",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Free to use as far as Commons states; Yale's open-access policy would cover the scans if they came from Yale's own site.",
+        "Holder": "Wikimedia Commons, Category:Rider-Waite tarot deck (Yale University)",
+        "What it holds": "10 cards photographed from a Yale copy; which printing is not stated in the category.",
+        "Quality": "About 1,810-1,870 px wide: the sharpest Waite-Smith scans found, for ten cards.",
+        "Rights as published": "Commons file pages carry public-domain tags (licence not re-checked file by file for this entry).",
+        "Link": "[https://commons.wikimedia.org/wiki/Category:Rider-Waite_tarot_deck_(Yale_University)](https://commons.wikimedia.org/wiki/Category:Rider-Waite_tarot_deck_(Yale_University))",
+        "Decks here": "[Rider-Waite-Smith](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/rider-waite-smith-pictorial-key/grammar.json), [Golden Dawn (Book T)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-rws-wopc-editions",
+      "name": "The early editions compared (World of Playing Cards)",
+      "category": "source",
+      "sort_order": 10,
+      "keywords": [
+        "sources",
+        "web-references",
+        "permission",
+        "rider-waite-smith-pictorial-key",
+        "golden-dawn-book-t-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "rider-waite-smith-pictorial-key",
+          "golden-dawn-book-t-tarot"
+        ],
+        "holder": "web-references",
+        "holder_name": "The World of Playing Cards (wopc.co.uk); Pam-A and Pam-D images courtesy Kenji Ishimatsu",
+        "rights_class": "permission",
+        "rights_label": "Permission needed to publish",
+        "url": "https://wopc.co.uk/tarot/rider-waite/rider-waite-early-editions",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The photographs are the collector's: link to the page, don't copy them. Use it to identify which printing a free scan shows.",
+        "Holder": "The World of Playing Cards (wopc.co.uk); Pam-A and Pam-D images courtesy Kenji Ishimatsu",
+        "What it holds": "How to tell the 1909 first edition and the Pam-A (1910-c.1920), Pam-C, Pam-D and Pam-B printings apart: line, colour, lettering, thickness, box, book.",
+        "Quality": "Comparison images, web size.",
+        "Rights as published": "No image-use statement on the page; its only related line credits the images to Kenji Ishimatsu.",
+        "Link": "[https://wopc.co.uk/tarot/rider-waite/rider-waite-early-editions](https://wopc.co.uk/tarot/rider-waite/rider-waite-early-editions)",
+        "Decks here": "[Rider-Waite-Smith](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/rider-waite-smith-pictorial-key/grammar.json), [Golden Dawn (Book T)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-este-yale-iiif",
+      "name": "d'Este cards at Yale: full-resolution IIIF",
+      "category": "source",
+      "sort_order": 11,
+      "keywords": [
+        "sources",
+        "yale",
+        "free",
+        "este-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "este-tarot"
+        ],
+        "holder": "yale",
+        "holder_name": "Beinecke Rare Book & Manuscript Library, Yale: Cary Collection, PLAYING CARDS GEN 966 (record 33215685)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://collections.library.yale.edu/catalog/33215685",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Yale owns the cards; the 15th-century paintings are public domain and Yale's policy lets anyone use its open-access images for any purpose, with \"Yale University Library\" as provider. We may show, print and sell them; credit Yale.",
+        "Holder": "Beinecke Rare Book & Manuscript Library, Yale: Cary Collection, PLAYING CARDS GEN 966 (record 33215685)",
+        "What it holds": "All 16 surviving cards, fronts and backs (32 images). Yale's record: \"Imperfect: 16 cards only\", \"[1450?]\", 140 x 78 mm, hand coloured, embossing, \"Composition of deck unknown\". IIIF manifest: https://collections.library.yale.edu/manifests/33215685",
+        "Quality": "Full size 3,256 x 5,640 px per card (IIIF level 2; TIFF, JPG, PNG). This site shows 1,100 x 1,905 px: Yale's own files are about three times sharper in each direction.",
+        "Rights as published": "The record: \"The use of this image may be subject to the copyright law of the United States (Title 17, United States Code) or to site license or other rights management terms and conditions. The person using the image is liable for any infringement.\" Provider: \"Yale University Library\". Yale's open-access policy (guides.library.yale.edu/openaccess): \"Open access digital images may be used by anyone for any purpose.\" It covers works believed public domain; \"The policy does not apply to works protected by copyright, by privacy rights, or that are otherwise restricted.\"",
+        "Link": "[https://collections.library.yale.edu/catalog/33215685](https://collections.library.yale.edu/catalog/33215685)",
+        "Decks here": "[d'Este](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/este-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-este-references",
+      "name": "d'Este cards discussed: trionfi.com, Pollett, Into Mystery",
+      "category": "source",
+      "sort_order": 12,
+      "keywords": [
+        "sources",
+        "web-references",
+        "permission",
+        "este-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "este-tarot"
+        ],
+        "holder": "web-references",
+        "holder_name": "trionfi.com (16 d'Este cards); Andy Pollett, The Tarots of Ferrara; Into Mystery (Substack)",
+        "rights_class": "permission",
+        "rights_label": "Permission needed to publish",
+        "url": "https://intomystery.substack.com/p/identifying-the-figures-on-the-deste",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Their texts and layouts are theirs; the card pictures should come from Yale, not from them.",
+        "Holder": "trionfi.com (16 d'Este cards); Andy Pollett, The Tarots of Ferrara; Into Mystery (Substack)",
+        "What it holds": "Identifications and dating arguments: the Este arms on the court cards (Ercole I d'Este and Eleonora of Aragon, hence c. 1473 rather than c. 1450), the Star's figures. Also http://trionfi.com/0/j/d/16Este/ and https://l-pollett.tripod.com/cards84.htm.",
+        "Quality": "Web-size images taken from Yale or older photographs.",
+        "Rights as published": "No image licence on these pages (trionfi.com could not be opened, Oct 20 2026).",
+        "Link": "[https://intomystery.substack.com/p/identifying-the-figures-on-the-deste](https://intomystery.substack.com/p/identifying-the-figures-on-the-deste)",
+        "Decks here": "[d'Este](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/este-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-ferrara-rothschild-louvre",
+      "name": "Related: the Rothschild cards at the Louvre",
+      "category": "source",
+      "sort_order": 13,
+      "keywords": [
+        "sources",
+        "louvre",
+        "permission",
+        "este-tarot",
+        "charles-vi-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "este-tarot",
+          "charles-vi-tarot"
+        ],
+        "holder": "louvre",
+        "holder_name": "Musée du Louvre, Département des Arts graphiques, Collection Edmond de Rothschild",
+        "rights_class": "permission",
+        "rights_label": "Permission needed to publish",
+        "url": "https://www.louvre.fr/expositions-et-evenements/evenements-activites/les-cartes-du-tarot-enlumine-rothschild",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The photographs are GrandPalaisRmn's. Link only, unless the Louvre's terms say otherwise.",
+        "Holder": "Musée du Louvre, Département des Arts graphiques, Collection Edmond de Rothschild",
+        "What it holds": "A hand-painted 15th-century pack of about 31 cards (one more at Bassano del Grappa), sometimes discussed beside the Ferrarese cards; the Louvre's 2026 notice dates it Florence c. 1435-1440. Not the d'Este pack: listed here for comparison only.",
+        "Quality": "Louvre collections site images with a download button (collections.louvre.fr).",
+        "Rights as published": "Image caption: \"© GrandPalaisRmn (Musée du Louvre) / Tony Querrec\"; download requires \"I accept the Terms and conditions\".",
+        "Link": "[https://www.louvre.fr/expositions-et-evenements/evenements-activites/les-cartes-du-tarot-enlumine-rothschild](https://www.louvre.fr/expositions-et-evenements/evenements-activites/les-cartes-du-tarot-enlumine-rothschild)",
+        "Decks here": "[d'Este](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/este-tarot/grammar.json), ['Charles VI' (Ferrara)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/charles-vi-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-cary-yale-yale-iiif",
+      "name": "Cary-Yale (Visconti di Modrone) cards at Yale: IIIF",
+      "category": "source",
+      "sort_order": 14,
+      "keywords": [
+        "sources",
+        "yale",
+        "free",
+        "cary-yale-visconti-tarot",
+        "visconti-sforza-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "cary-yale-visconti-tarot",
+          "visconti-sforza-tarot"
+        ],
+        "holder": "yale",
+        "holder_name": "Beinecke, Cary Collection, PLAYING CARDS GEN 965 (record 33220491)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://collections.library.yale.edu/catalog/33220491",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "As for the d'Este cards: public-domain work, Yale's open-access images free for any use; credit Yale University Library.",
+        "Holder": "Beinecke, Cary Collection, PLAYING CARDS GEN 965 (record 33220491)",
+        "What it holds": "The 67 surviving cards, fronts and backs (134 images); Yale dates them \"[between 1442 and 1447]\".",
+        "Quality": "Full-resolution IIIF; Commons copies of the same cards range from 457 to 9,328 px wide, so check each card for the largest.",
+        "Rights as published": "Same record statement as the d'Este cards: \"The use of this image may be subject to the copyright law of the United States (Title 17, United States Code) or to site license or other rights management terms and conditions. The person using the image is liable for any infringement.\" Yale's open-access policy: \"Open access digital images may be used by anyone for any purpose.\"",
+        "Link": "[https://collections.library.yale.edu/catalog/33220491](https://collections.library.yale.edu/catalog/33220491)",
+        "Decks here": "[Cary-Yale Visconti](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/cary-yale-visconti-tarot/grammar.json), [Visconti-Sforza](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/visconti-sforza-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-cary-yale-commons",
+      "name": "Cary-Yale Visconti on Wikimedia Commons (the images this site shows)",
+      "category": "source",
+      "sort_order": 15,
+      "keywords": [
+        "sources",
+        "commons",
+        "free",
+        "cary-yale-visconti-tarot",
+        "visconti-sforza-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "cary-yale-visconti-tarot",
+          "visconti-sforza-tarot"
+        ],
+        "holder": "commons",
+        "holder_name": "Wikimedia Commons, Category:Cary-Yale Visconti Tarot (credit: Beinecke Rare Book & Manuscript Library)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://commons.wikimedia.org/wiki/Category:Cary-Yale_Visconti_Tarot",
+        "checked": "2026-10-20",
+        "image_credit": "Bonifacio Bembo workshop, c. 1442-47; Beinecke Library, Yale; Wikimedia Commons, public domain"
+      },
+      "sections": {
+        "Property rights": "Free to use; credit the Beinecke.",
+        "Holder": "Wikimedia Commons, Category:Cary-Yale Visconti Tarot (credit: Beinecke Rare Book & Manuscript Library)",
+        "What it holds": "The 67 cards as uploaded from Yale's images.",
+        "Quality": "Web size; Yale's IIIF is the better copy.",
+        "Rights as published": "File pages: \"Public domain\" (from the Oct 4 2026 ledger, docs/rights/IMAGE-LEDGER.md).",
+        "Link": "[https://commons.wikimedia.org/wiki/Category:Cary-Yale_Visconti_Tarot](https://commons.wikimedia.org/wiki/Category:Cary-Yale_Visconti_Tarot)",
+        "Decks here": "[Cary-Yale Visconti](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/cary-yale-visconti-tarot/grammar.json), [Visconti-Sforza](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/visconti-sforza-tarot/grammar.json)"
+      },
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cary-Yale%20Tarot%20deck%20-%20The%20Emperor.jpg?width=600"
+    },
+    {
+      "id": "src-visconti-morgan",
+      "name": "Visconti-Sforza cards at the Morgan (MS M.630)",
+      "category": "source",
+      "sort_order": 16,
+      "keywords": [
+        "sources",
+        "morgan",
+        "non-commercial",
+        "visconti-sforza-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "visconti-sforza-tarot"
+        ],
+        "holder": "morgan",
+        "holder_name": "The Morgan Library & Museum, New York, MS M.630.1-35 (purchased by J. Pierpont Morgan, 1911)",
+        "rights_class": "non-commercial",
+        "rights_label": "Free for non-commercial use only",
+        "url": "https://www.themorgan.org/manuscript/158525",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The Morgan holds its photographs. On this free site, unaltered and fully captioned, the downloads may be shown; anything for sale or cropped needs the Morgan.",
+        "Holder": "The Morgan Library & Museum, New York, MS M.630.1-35 (purchased by J. Pierpont Morgan, 1911)",
+        "What it holds": "35 of the deck's 74 surviving cards, each with its own page and a download button.",
+        "Quality": "Low-resolution downloads on the site; high resolution only through Imaging & Rights (photoservices@themorgan.org).",
+        "Rights as published": "From the Morgan's copyright notice (themorgan.org/node/7; the site blocks automated reading, so this is the wording a search engine shows): images may be downloaded for personal, educational or noncommercial use, and \"Images must remain unaltered; the accompanying description must include artist, author or composer, title, date, accession number and collection credit.\" Publication or commercial use needs the Morgan's written permission and fees.",
+        "Link": "[https://www.themorgan.org/manuscript/158525](https://www.themorgan.org/manuscript/158525)",
+        "Decks here": "[Visconti-Sforza](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/visconti-sforza-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-visconti-bergamo",
+      "name": "Visconti-Sforza cards in Bergamo (Accademia Carrara; Colleoni collection)",
+      "category": "source",
+      "sort_order": 17,
+      "keywords": [
+        "sources",
+        "carrara",
+        "permission",
+        "visconti-sforza-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "visconti-sforza-tarot"
+        ],
+        "holder": "carrara",
+        "holder_name": "Accademia Carrara (26 cards, Baglioni bequest 1900) and the private Colleoni collection (13 cards), Bergamo",
+        "rights_class": "permission",
+        "rights_label": "Permission needed to publish",
+        "url": "https://www.lacarrara.it/",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The Carrara and the Colleoni family own their cards. Italian heritage law can charge fees for commercial reproduction of works in public collections; ask the museum.",
+        "Holder": "Accademia Carrara (26 cards, Baglioni bequest 1900) and the private Colleoni collection (13 cards), Bergamo",
+        "What it holds": "The other 39 cards of the Morgan-Bergamo deck. The Carrara and the Morgan showed them together in 2026 (Tarocchi: le origini, le carte, la fortuna).",
+        "Quality": "No online collection images found. The National Gallery of Australia's exhibition pages show some Carrara cards (digital.nga.gov.au).",
+        "Rights as published": "No image statement found online (Oct 20 2026).",
+        "Link": "[https://www.lacarrara.it/](https://www.lacarrara.it/)",
+        "Decks here": "[Visconti-Sforza](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/visconti-sforza-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-visconti-commons-scans",
+      "name": "Visconti-Sforza on Wikimedia Commons (the images this site shows)",
+      "category": "source",
+      "sort_order": 18,
+      "keywords": [
+        "sources",
+        "commons",
+        "unclear",
+        "visconti-sforza-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "visconti-sforza-tarot"
+        ],
+        "holder": "commons",
+        "holder_name": "Wikimedia Commons, Category:Pierpont Morgan-Bergamo Visconti-Sforza Tarot",
+        "rights_class": "unclear",
+        "rights_label": "No rights statement found, or the scan's origin is unclear",
+        "url": "https://commons.wikimedia.org/wiki/Category:Pierpont_Morgan-Bergamo_Visconti-Sforza_Tarot",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The work is free. A flat copy of a facsimile adds no new copyright in the US or (since 2019) the EU, but these are a printer's colours, not Bembo's. Prefer the Morgan's own images for its 35 cards.",
+        "Holder": "Wikimedia Commons, Category:Pierpont Morgan-Bergamo Visconti-Sforza Tarot",
+        "What it holds": "87 card scans credited \"scanned by David Madore\" (the credit adds that they are scans of a facsimile printed by AGMüller in Switzerland) and 23 trumps credited \"Scanned from the Dal Negro reproduction: I Tarocchi dei Visconti\". So every Visconti-Sforza picture this site shows is a copy of a modern facsimile.",
+        "Quality": "About 360 x 720 px (Dal Negro) and 512 x 1,024 px (Madore): copies of printed facsimiles, not the cards.",
+        "Rights as published": "File pages: \"Public domain\" (the uploader's statement about the 15th-century work).",
+        "Link": "[https://commons.wikimedia.org/wiki/Category:Pierpont_Morgan-Bergamo_Visconti-Sforza_Tarot](https://commons.wikimedia.org/wiki/Category:Pierpont_Morgan-Bergamo_Visconti-Sforza_Tarot)",
+        "Decks here": "[Visconti-Sforza](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/visconti-sforza-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-visconti-commons-morgan-photos",
+      "name": "Visconti-Sforza cards photographed at the Morgan (Commons)",
+      "category": "source",
+      "sort_order": 19,
+      "keywords": [
+        "sources",
+        "commons",
+        "free",
+        "visconti-sforza-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "visconti-sforza-tarot"
+        ],
+        "holder": "commons",
+        "holder_name": "Wikimedia Commons: visitor photographs 'shot at the library' (Fool, Queen and King of Swords, Three of Swords, Seven of Coins, a mounted Queen); and the Popess (File:Bonifacio Bembo.jpg, credited to trionfi.com)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://commons.wikimedia.org/wiki/File:Visconti-Sforza,_The_Fool.jpg",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The photographers released them; free for any use. Too small for anything but a thumbnail or a colour check.",
+        "Holder": "Wikimedia Commons: visitor photographs 'shot at the library' (Fool, Queen and King of Swords, Three of Swords, Seven of Coins, a mounted Queen); and the Popess (File:Bonifacio Bembo.jpg, credited to trionfi.com)",
+        "What it holds": "Photographs of the real cards, not a facsimile, for six cards; one more (the Popess) copied from trionfi.com.",
+        "Quality": "Tiny: about 170-180 px wide (Popess 300 px).",
+        "Rights as published": "File pages: \"Own work\", \"Public domain\" (the Popess: \"Public domain\", credit trionfi.com).",
+        "Link": "[https://commons.wikimedia.org/wiki/File:Visconti-Sforza,_The_Fool.jpg](https://commons.wikimedia.org/wiki/File:Visconti-Sforza,_The_Fool.jpg)",
+        "Decks here": "[Visconti-Sforza](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/visconti-sforza-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-visconti-brera-brambilla",
+      "name": "Related: the Brambilla Visconti cards at Brera",
+      "category": "source",
+      "sort_order": 20,
+      "keywords": [
+        "sources",
+        "commons",
+        "unclear",
+        "visconti-sforza-tarot",
+        "cary-yale-visconti-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "visconti-sforza-tarot",
+          "cary-yale-visconti-tarot"
+        ],
+        "holder": "commons",
+        "holder_name": "Wikimedia Commons, Category:Visconti-Sforza tarot deck cards in the Pinacoteca di Brera",
+        "rights_class": "unclear",
+        "rights_label": "No rights statement found, or the scan's origin is unclear",
+        "url": "https://commons.wikimedia.org/wiki/Category:Visconti-Sforza_tarot_deck_cards_in_the_Pinacoteca_di_Brera",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The cards are state property at Brera; the Commons photographs carry their uploaders' statements.",
+        "Holder": "Wikimedia Commons, Category:Visconti-Sforza tarot deck cards in the Pinacoteca di Brera",
+        "What it holds": "The Brambilla deck, 48 cards bought by the Italian state in 1971 for Brera: a third Visconti pack, not shown on this site.",
+        "Quality": "As uploaded; not measured.",
+        "Rights as published": "Commons file pages' tags (not re-checked file by file for this entry).",
+        "Link": "[https://commons.wikimedia.org/wiki/Category:Visconti-Sforza_tarot_deck_cards_in_the_Pinacoteca_di_Brera](https://commons.wikimedia.org/wiki/Category:Visconti-Sforza_tarot_deck_cards_in_the_Pinacoteca_di_Brera)",
+        "Decks here": "[Visconti-Sforza](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/visconti-sforza-tarot/grammar.json), [Cary-Yale Visconti](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/cary-yale-visconti-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-charles-vi-bnf",
+      "name": "The 'Charles VI' cards at the BnF (Gallica)",
+      "category": "source",
+      "sort_order": 21,
+      "keywords": [
+        "sources",
+        "bnf",
+        "non-commercial",
+        "charles-vi-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "charles-vi-tarot"
+        ],
+        "holder": "bnf",
+        "holder_name": "Bibliothèque nationale de France, Estampes et photographie, RESERVE BOITE ECU-KH-24 (from Roger de Gaignières's collection)",
+        "rights_class": "non-commercial",
+        "rights_label": "Free for non-commercial use only",
+        "url": "https://commons.wikimedia.org/wiki/Category:Le_tarot_dit_de_Charles_VI",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The BnF owns the cards and charges for commercial use of its scans. Fine on this free site with the credit; a printed deck needs a BnF licence.",
+        "Holder": "Bibliothèque nationale de France, Estampes et photographie, RESERVE BOITE ECU-KH-24 (from Roger de Gaignières's collection)",
+        "What it holds": "The 17 surviving hand-painted cards; this site shows them via the BnF's online exhibition and Commons. The BnF catalogue record: https://catalogue.bnf.fr/ark:/12148/cb409180334 (Gallica ark not confirmed here).",
+        "Quality": "About 300 x 600 px on this site; Gallica's own viewer is sharper.",
+        "Rights as published": "Gallica's conditions of use, as printed on its documents: the credit \"Source gallica.bnf.fr / Bibliothèque nationale de France\" (or \"Source gallica.bnf.fr / BnF\") for free non-commercial reuse, and \"La réutilisation commerciale de ces contenus est payante et fait l'objet d'une licence.\" (Commercial reuse of these contents is paid and needs a licence.)",
+        "Link": "[https://commons.wikimedia.org/wiki/Category:Le_tarot_dit_de_Charles_VI](https://commons.wikimedia.org/wiki/Category:Le_tarot_dit_de_Charles_VI)",
+        "Decks here": "['Charles VI' (Ferrara)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/charles-vi-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-charles-vi-1844-lithographs",
+      "name": "The 'Charles VI' cards in colour lithograph, 1844 (Société des bibliophiles français)",
+      "category": "source",
+      "sort_order": 22,
+      "keywords": [
+        "sources",
+        "web-references",
+        "free",
+        "charles-vi-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "charles-vi-tarot"
+        ],
+        "holder": "web-references",
+        "holder_name": "Université de Liège, DONum digital library (copy of Jeux de cartes tarots et de cartes numérales du quatorzième au dix-huitième siècle, Paris, Crapelet, 1844)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://donum.uliege.be/handle/2268.1/15344",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The 1844 plates are public domain and Liège files the scan as public domain: the one free-for-any-use source found for all 17 cards. A copy of a copy: say so on the card.",
+        "Holder": "Université de Liège, DONum digital library (copy of Jeux de cartes tarots et de cartes numérales du quatorzième au dix-huitième siècle, Paris, Crapelet, 1844)",
+        "What it holds": "100 plates, opening with all seventeen 'Gringonneur' cards \"engraved in lithography, and carefully coloured by hand after the original drawings\" (Chatto, 1848, describing this book). A 19th-century copy of the cards, not a photograph of them.",
+        "Quality": "One open-access PDF of the whole book (50.5 MB); plate resolution not measured.",
+        "Rights as published": "The record sits in DONum's \"Public domain\" collection; the site's general line: \"Items in DONum are protected by copyright, with all rights reserved, unless otherwise indicated.\"",
+        "Link": "[https://donum.uliege.be/handle/2268.1/15344](https://donum.uliege.be/handle/2268.1/15344)",
+        "Decks here": "['Charles VI' (Ferrara)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/charles-vi-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-chatto-1848",
+      "name": "Chatto, Facts and Speculations on the Origin and History of Playing Cards (1848)",
+      "category": "source",
+      "sort_order": 23,
+      "keywords": [
+        "sources",
+        "internet-archive",
+        "free",
+        "charles-vi-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "charles-vi-tarot"
+        ],
+        "holder": "internet-archive",
+        "holder_name": "Internet Archive and Project Gutenberg (ebook 45584); Commons holds its plates as 'History of Playing Cards (1848) NN.png'",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://www.gutenberg.org/ebooks/45584",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Free for any use. Two cards only, in line, not colour.",
+        "Holder": "Internet Archive and Project Gutenberg (ebook 45584); Commons holds its plates as 'History of Playing Cards (1848) NN.png'",
+        "What it holds": "Black-and-white engravings of two 'Gringonneur' cards, La Justice and La Lune (p. 198), and a list of all seventeen.",
+        "Quality": "Book engravings; Commons plate files about 1,500 x 2,950 px.",
+        "Rights as published": "Internet Archive item factsandspeculat45584gut: possible-copyright-status \"NOT_IN_COPYRIGHT\"; Commons plate pages: \"Public domain\".",
+        "Link": "[https://www.gutenberg.org/ebooks/45584](https://www.gutenberg.org/ebooks/45584)",
+        "Decks here": "['Charles VI' (Ferrara)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/charles-vi-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-sola-busca-brera",
+      "name": "Sola Busca at the Pinacoteca di Brera (the only complete set)",
+      "category": "source",
+      "sort_order": 24,
+      "keywords": [
+        "sources",
+        "brera",
+        "permission",
+        "sola-busca-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "sola-busca-tarot"
+        ],
+        "holder": "brera",
+        "holder_name": "Pinacoteca di Brera, Milan (bought by the Italian Ministry of Culture in 2009)",
+        "rights_class": "permission",
+        "rights_label": "Permission needed to publish",
+        "url": "https://pinacotecabrera.org/en/?p=8057",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "State property. Italy's heritage code (art. 108) lets the state charge for commercial reproductions of works it holds; an Italian court applied it to a foreign puzzle maker in 2022. Ask Brera before any sale.",
+        "Holder": "Pinacoteca di Brera, Milan (bought by the Italian Ministry of Culture in 2009)",
+        "What it holds": "All 78 hand-coloured engraved cards, c. 1491, described by Brera as the oldest complete tarot deck.",
+        "Quality": "No high-resolution online set found; licensed facsimiles (e.g. Lo Scarabeo, under licence from Brera) exist.",
+        "Rights as published": "No image licence found on Brera's pages (Oct 20 2026).",
+        "Link": "[https://pinacotecabrera.org/en/?p=8057](https://pinacotecabrera.org/en/?p=8057)",
+        "Decks here": "[Sola Busca](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/sola-busca-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-sola-busca-british-museum",
+      "name": "Sola Busca impressions at the British Museum",
+      "category": "source",
+      "sort_order": 25,
+      "keywords": [
+        "sources",
+        "british-museum",
+        "non-commercial",
+        "sola-busca-tarot",
+        "mantegna-tarocchi"
+      ],
+      "metadata": {
+        "decks": [
+          "sola-busca-tarot",
+          "mantegna-tarocchi"
+        ],
+        "holder": "british-museum",
+        "holder_name": "British Museum, Prints and Drawings (e.g. Knight of Swords, 1845,0825.485: one of four Sola Busca prints there; the BM also holds Mantegna Tarocchi impressions)",
+        "rights_class": "non-commercial",
+        "rights_label": "Free for non-commercial use only",
+        "url": "https://www.britishmuseum.org/collection/object/P_1845-0825-485",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The BM licenses its photographs non-commercially. Usable here with the credit and share-alike; not in anything sold.",
+        "Holder": "British Museum, Prints and Drawings (e.g. Knight of Swords, 1845,0825.485: one of four Sola Busca prints there; the BM also holds Mantegna Tarocchi impressions)",
+        "What it holds": "Four uncoloured Sola Busca engravings, and impressions of the Mantegna Tarocchi.",
+        "Quality": "Large downloads from the collection site.",
+        "Rights as published": "BM image pages: \"Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)\", credit \"© The Trustees of the British Museum\"; commercial use through BM Images (sales@bmimages.com).",
+        "Link": "[https://www.britishmuseum.org/collection/object/P_1845-0825-485](https://www.britishmuseum.org/collection/object/P_1845-0825-485)",
+        "Decks here": "[Sola Busca](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/sola-busca-tarot/grammar.json), [Mantegna Tarocchi](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/mantegna-tarocchi/grammar.json)"
+      }
+    },
+    {
+      "id": "src-sola-busca-albertina",
+      "name": "Sola Busca impressions at the Albertina (Commons)",
+      "category": "source",
+      "sort_order": 26,
+      "keywords": [
+        "sources",
+        "commons",
+        "unclear",
+        "sola-busca-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "sola-busca-tarot"
+        ],
+        "holder": "commons",
+        "holder_name": "Wikimedia Commons, Category:Sola-Busca tarot cards in the Albertina",
+        "rights_class": "unclear",
+        "rights_label": "No rights statement found, or the scan's origin is unclear",
+        "url": "https://commons.wikimedia.org/wiki/Category:Sola-Busca_tarot_cards_in_the_Albertina",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Check each file's tag; the Albertina's own terms were not read.",
+        "Holder": "Wikimedia Commons, Category:Sola-Busca tarot cards in the Albertina",
+        "What it holds": "Albertina (Vienna) impressions of Sola Busca cards.",
+        "Quality": "Not measured.",
+        "Rights as published": "Commons file pages' tags (not re-checked file by file for this entry).",
+        "Link": "[https://commons.wikimedia.org/wiki/Category:Sola-Busca_tarot_cards_in_the_Albertina](https://commons.wikimedia.org/wiki/Category:Sola-Busca_tarot_cards_in_the_Albertina)",
+        "Decks here": "[Sola Busca](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/sola-busca-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-sola-busca-commons-current",
+      "name": "Sola Busca on Wikimedia Commons (the images this site shows)",
+      "category": "source",
+      "sort_order": 27,
+      "keywords": [
+        "sources",
+        "commons",
+        "unclear",
+        "sola-busca-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "sola-busca-tarot"
+        ],
+        "holder": "commons",
+        "holder_name": "Wikimedia Commons, Category:Sola-Busca tarot deck (files credited to waitesmith.org)",
+        "rights_class": "unclear",
+        "rights_label": "No rights statement found, or the scan's origin is unclear",
+        "url": "https://commons.wikimedia.org/wiki/Category:Sola-Busca_tarot_deck",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The 1491 work is free; the scans' source is a website, not Brera. Fine here; replace before any print.",
+        "Holder": "Wikimedia Commons, Category:Sola-Busca tarot deck (files credited to waitesmith.org)",
+        "What it holds": "All 78 cards, coloured.",
+        "Quality": "474 px wide; the scans' origin (which exemplar or facsimile) is not stated.",
+        "Rights as published": "File pages: \"Public domain\".",
+        "Link": "[https://commons.wikimedia.org/wiki/Category:Sola-Busca_tarot_deck](https://commons.wikimedia.org/wiki/Category:Sola-Busca_tarot_deck)",
+        "Decks here": "[Sola Busca](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/sola-busca-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-mantegna-cleveland",
+      "name": "Mantegna Tarocchi, Cleveland Museum of Art (E-series)",
+      "category": "source",
+      "sort_order": 28,
+      "keywords": [
+        "sources",
+        "cleveland",
+        "free",
+        "mantegna-tarocchi"
+      ],
+      "metadata": {
+        "decks": [
+          "mantegna-tarocchi"
+        ],
+        "holder": "cleveland",
+        "holder_name": "Cleveland Museum of Art, 1924.432.1-50",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://www.clevelandart.org/art/collection/search?search=tarocchi",
+        "checked": "2026-10-20",
+        "image_credit": "Master of the E-Series Tarocchi, c. 1465; Cleveland Museum of Art, CC0"
+      },
+      "sections": {
+        "Property rights": "CC0: no rights reserved. We may use, print and sell; a credit is courteous, not required.",
+        "Holder": "Cleveland Museum of Art, 1924.432.1-50",
+        "What it holds": "The 50 E-series engravings, c. 1465 (the images this site shows, via Commons).",
+        "Quality": "High-resolution open-access downloads.",
+        "Rights as published": "\"High-resolution images and data related to the CMA's collection are made available under a Creative Commons Zero (CC0) designation.\" (clevelandart.org/open-access)",
+        "Link": "[https://www.clevelandart.org/art/collection/search?search=tarocchi](https://www.clevelandart.org/art/collection/search?search=tarocchi)",
+        "Decks here": "[Mantegna Tarocchi](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/mantegna-tarocchi/grammar.json)"
+      },
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Master%20of%20the%20E-Series%20Tarocchi%20-%20The%20Beggar%20%28from%20the%20Tarocchi%2C%20series%20E-%20Conditions%20of%20Man%2C%201%29%20-%201924.432.1%20-%20Cleveland%20Museum%20of%20Art.jpg?width=600"
+    },
+    {
+      "id": "src-nga-open-access",
+      "name": "National Gallery of Art: the Rosenwald sheets (and Tarocchi impressions)",
+      "category": "source",
+      "sort_order": 29,
+      "keywords": [
+        "sources",
+        "nga",
+        "free",
+        "rosenwald-sheet",
+        "mantegna-tarocchi"
+      ],
+      "metadata": {
+        "decks": [
+          "rosenwald-sheet",
+          "mantegna-tarocchi"
+        ],
+        "holder": "nga",
+        "holder_name": "National Gallery of Art, Washington, Rosenwald Collection (tarot sheets 1951.16.7; object pages 41320 and 41321)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://www.nga.gov/collection/art-object-page.41321.html",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "If the object page offers the open-access download, CC0: free for any use. Check the download button on each sheet.",
+        "Holder": "National Gallery of Art, Washington, Rosenwald Collection (tarot sheets 1951.16.7; object pages 41320 and 41321)",
+        "What it holds": "Two uncut woodcut sheets, Florence (?) c. 1500: one with the trumps in the Florentine order, one with aces, courts and cups.",
+        "Quality": "Open-access downloads where the object page offers one (not confirmed for these sheets).",
+        "Rights as published": "NGA policy (nga.gov/imagepolicy, as a search summary shows it; the site blocks automated reading): images of works it believes public domain are free \"for any use, commercial or non-commercial, under Creative Commons Zero (CC0)\", with no need to ask.",
+        "Link": "[https://www.nga.gov/collection/art-object-page.41321.html](https://www.nga.gov/collection/art-object-page.41321.html)",
+        "Decks here": "[Rosenwald Sheet](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/rosenwald-sheet/grammar.json), [Mantegna Tarocchi](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/mantegna-tarocchi/grammar.json)"
+      }
+    },
+    {
+      "id": "src-cary-sheet-yale",
+      "name": "The Cary Sheet at Yale",
+      "category": "source",
+      "sort_order": 30,
+      "keywords": [
+        "sources",
+        "yale",
+        "free",
+        "cary-sheet"
+      ],
+      "metadata": {
+        "decks": [
+          "cary-sheet"
+        ],
+        "holder": "yale",
+        "holder_name": "Beinecke, Cary Collection, ITAsheet3S (record 11032228)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://collections.library.yale.edu/catalog/11032228",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Free for any use under Yale's open-access policy; credit Yale University Library.",
+        "Holder": "Beinecke, Cary Collection, ITAsheet3S (record 11032228)",
+        "What it holds": "\"Uncut sheet of 20 playing cards\", \"Ancestral to marseille tarot\". Yale dates it \"[1550?]\"; this site says c. 1500, after the tarot-history literature.",
+        "Quality": "Full-resolution IIIF.",
+        "Rights as published": "Same Yale record statement and open-access policy as the other Cary items.",
+        "Link": "[https://collections.library.yale.edu/catalog/11032228](https://collections.library.yale.edu/catalog/11032228)",
+        "Decks here": "[Cary Sheet](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/cary-sheet/grammar.json)"
+      }
+    },
+    {
+      "id": "src-minchiate-gallica",
+      "name": "Florentine Minchiate (Baragioli, c. 1860-90) on Gallica",
+      "category": "source",
+      "sort_order": 31,
+      "keywords": [
+        "sources",
+        "bnf",
+        "non-commercial",
+        "minchiate-florence-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "minchiate-florence-tarot"
+        ],
+        "holder": "bnf",
+        "holder_name": "Bibliothèque nationale de France, ark:/12148/btv1b105161123",
+        "rights_class": "non-commercial",
+        "rights_label": "Free for non-commercial use only",
+        "url": "https://gallica.bnf.fr/ark:/12148/btv1b105161123",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "BnF scans: free here with the credit, a licence for any sale.",
+        "Holder": "Bibliothèque nationale de France, ark:/12148/btv1b105161123",
+        "What it holds": "All 97 cards (the images this site shows, via Commons).",
+        "Quality": "Gallica's viewer at full size.",
+        "Rights as published": "Gallica's conditions: non-commercial reuse free with \"Source gallica.bnf.fr / Bibliothèque nationale de France\"; \"La réutilisation commerciale de ces contenus est payante et fait l'objet d'une licence.\"",
+        "Link": "[https://gallica.bnf.fr/ark:/12148/btv1b105161123](https://gallica.bnf.fr/ark:/12148/btv1b105161123)",
+        "Decks here": "[Minchiate](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/minchiate-florence-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-noblet-gallica",
+      "name": "Jean Noblet tarot (c. 1650) on Gallica",
+      "category": "source",
+      "sort_order": 32,
+      "keywords": [
+        "sources",
+        "bnf",
+        "non-commercial",
+        "noblet-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "noblet-tarot"
+        ],
+        "holder": "bnf",
+        "holder_name": "Bibliothèque nationale de France, ark:/12148/btv1b105109641",
+        "rights_class": "non-commercial",
+        "rights_label": "Free for non-commercial use only",
+        "url": "https://gallica.bnf.fr/ark:/12148/btv1b105109641",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "BnF scans: free here with the credit, a licence for any sale.",
+        "Holder": "Bibliothèque nationale de France, ark:/12148/btv1b105109641",
+        "What it holds": "The oldest near-complete Tarot de Marseille-type pack (Paris, c. 1650).",
+        "Quality": "Gallica's viewer at full size. Jean-Claude Flornoy's restored edition is a modern, in-copyright redrawing.",
+        "Rights as published": "Gallica's conditions, as above.",
+        "Link": "[https://gallica.bnf.fr/ark:/12148/btv1b105109641](https://gallica.bnf.fr/ark:/12148/btv1b105109641)",
+        "Decks here": "[Jean Noblet](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/noblet-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-vieville-gallica",
+      "name": "Jacques Viéville tarot (c. 1650) on Gallica",
+      "category": "source",
+      "sort_order": 33,
+      "keywords": [
+        "sources",
+        "bnf",
+        "non-commercial",
+        "vieville-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "vieville-tarot"
+        ],
+        "holder": "bnf",
+        "holder_name": "Bibliothèque nationale de France, ark:/12148/btv1b10510963k",
+        "rights_class": "non-commercial",
+        "rights_label": "Free for non-commercial use only",
+        "url": "https://gallica.bnf.fr/ark:/12148/btv1b10510963k",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "BnF scans: free here with the credit, a licence for any sale.",
+        "Holder": "Bibliothèque nationale de France, ark:/12148/btv1b10510963k",
+        "What it holds": "The whole pack, faces and backs (the images this site shows).",
+        "Quality": "Gallica's viewer at full size.",
+        "Rights as published": "Gallica's conditions, as above (https://gallica.bnf.fr/accueil/fr/html/conditions-dutilisation-de-gallica).",
+        "Link": "[https://gallica.bnf.fr/ark:/12148/btv1b10510963k](https://gallica.bnf.fr/ark:/12148/btv1b10510963k)",
+        "Decks here": "[Jacques Viéville](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/vieville-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-paris-gallica",
+      "name": "Tarot de Paris (early 17th c.) on Gallica",
+      "category": "source",
+      "sort_order": 34,
+      "keywords": [
+        "sources",
+        "bnf",
+        "non-commercial",
+        "paris-anonymous-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "paris-anonymous-tarot"
+        ],
+        "holder": "bnf",
+        "holder_name": "Bibliothèque nationale de France, RESERVE KH-34, ark:/12148/btv1b105109624",
+        "rights_class": "non-commercial",
+        "rights_label": "Free for non-commercial use only",
+        "url": "https://gallica.bnf.fr/ark:/12148/btv1b105109624",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "BnF scans: free here with the credit, a licence for any sale.",
+        "Holder": "Bibliothèque nationale de France, RESERVE KH-34, ark:/12148/btv1b105109624",
+        "What it holds": "The whole pack, faces and backs (the images this site shows).",
+        "Quality": "Gallica's viewer at full size.",
+        "Rights as published": "Gallica's conditions, as above.",
+        "Link": "[https://gallica.bnf.fr/ark:/12148/btv1b105109624](https://gallica.bnf.fr/ark:/12148/btv1b105109624)",
+        "Decks here": "[Tarot de Paris](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/paris-anonymous-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-conver-commons-twp",
+      "name": "Conver 1760 trumps, photographed by Tarot World Project (Commons)",
+      "category": "source",
+      "sort_order": 35,
+      "keywords": [
+        "sources",
+        "commons",
+        "open-licence",
+        "tarot-de-marseille-conver"
+      ],
+      "metadata": {
+        "decks": [
+          "tarot-de-marseille-conver"
+        ],
+        "holder": "commons",
+        "holder_name": "Wikimedia Commons, photographs by Tarot World Project of the 2020 Reality Publishing reprint (e.g. File:LE MAT Nicolas Conver Tarot 1760.jpg, 862 x 1,535 px)",
+        "rights_class": "open-licence",
+        "rights_label": "Open licence with conditions (credit, keep the licence)",
+        "url": "https://commons.wikimedia.org/wiki/File:LE_MAT_Nicolas_Conver_Tarot_1760.jpg",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The photographer licenses them CC BY-SA 4.0: credit and share alike, commercial use allowed. The 1760 design itself is free.",
+        "Holder": "Wikimedia Commons, photographs by Tarot World Project of the 2020 Reality Publishing reprint (e.g. File:LE MAT Nicolas Conver Tarot 1760.jpg, 862 x 1,535 px)",
+        "What it holds": "The 22 trumps and the aces (37 images on this site).",
+        "Quality": "Photographs of a modern reprint.",
+        "Rights as published": "File pages: \"CC BY-SA 4.0\", photographer Tarot World Project.",
+        "Link": "[https://commons.wikimedia.org/wiki/File:LE_MAT_Nicolas_Conver_Tarot_1760.jpg](https://commons.wikimedia.org/wiki/File:LE_MAT_Nicolas_Conver_Tarot_1760.jpg)",
+        "Decks here": "[Tarot de Marseille (Conver)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/tarot-de-marseille-conver/grammar.json)"
+      }
+    },
+    {
+      "id": "src-conver-gallica-lequart",
+      "name": "Conver pattern, Lequart re-edition (c. 1890) on Gallica",
+      "category": "source",
+      "sort_order": 36,
+      "keywords": [
+        "sources",
+        "bnf",
+        "non-commercial",
+        "tarot-de-marseille-conver"
+      ],
+      "metadata": {
+        "decks": [
+          "tarot-de-marseille-conver"
+        ],
+        "holder": "bnf",
+        "holder_name": "Bibliothèque nationale de France, ark:/12148/btv1b10539498w",
+        "rights_class": "non-commercial",
+        "rights_label": "Free for non-commercial use only",
+        "url": "https://gallica.bnf.fr/ark:/12148/btv1b10539498w",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "BnF scans: free here with the credit, a licence for any sale.",
+        "Holder": "Bibliothèque nationale de France, ark:/12148/btv1b10539498w",
+        "What it holds": "The pips and courts this site shows (81 images, via Commons).",
+        "Quality": "Gallica's viewer at full size.",
+        "Rights as published": "Gallica's conditions, as above.",
+        "Link": "[https://gallica.bnf.fr/ark:/12148/btv1b10539498w](https://gallica.bnf.fr/ark:/12148/btv1b10539498w)",
+        "Decks here": "[Tarot de Marseille (Conver)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/tarot-de-marseille-conver/grammar.json)"
+      }
+    },
+    {
+      "id": "src-wirth-gallica",
+      "name": "Oswald Wirth, Les 22 Arcanes du Tarot Kabbalistique (1889) on Gallica",
+      "category": "source",
+      "sort_order": 37,
+      "keywords": [
+        "sources",
+        "bnf",
+        "non-commercial",
+        "oswald-wirth-tarot",
+        "papus-tarot-des-bohemiens"
+      ],
+      "metadata": {
+        "decks": [
+          "oswald-wirth-tarot",
+          "papus-tarot-des-bohemiens"
+        ],
+        "holder": "bnf",
+        "holder_name": "Bibliothèque nationale de France, ark:/12148/bpt6k3112874 (via Commons)",
+        "rights_class": "non-commercial",
+        "rights_label": "Free for non-commercial use only",
+        "url": "https://gallica.bnf.fr/ark:/12148/bpt6k3112874",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "BnF scans: free here with the credit, a licence for any sale. Wirth died in 1943: his designs are public domain in the US, and in the EU since 2014.",
+        "Holder": "Bibliothèque nationale de France, ark:/12148/bpt6k3112874 (via Commons)",
+        "What it holds": "Wirth's 22 trumps of 1889 (the images this site shows; Papus used the same plates).",
+        "Quality": "Gallica's viewer at full size.",
+        "Rights as published": "Gallica's conditions, as above.",
+        "Link": "[https://gallica.bnf.fr/ark:/12148/bpt6k3112874](https://gallica.bnf.fr/ark:/12148/bpt6k3112874)",
+        "Decks here": "[Oswald Wirth](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/oswald-wirth-tarot/grammar.json), [Papus](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/papus-tarot-des-bohemiens/grammar.json)"
+      }
+    },
+    {
+      "id": "src-court-de-gebelin-ia",
+      "name": "Court de Gébelin, Le Monde primitif VIII (1781): the John Adams copy",
+      "category": "source",
+      "sort_order": 38,
+      "keywords": [
+        "sources",
+        "internet-archive",
+        "free",
+        "court-de-gebelin-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "court-de-gebelin-tarot"
+        ],
+        "holder": "internet-archive",
+        "holder_name": "Internet Archive, from the John Adams Library at the Boston Public Library (item mondeprimitifana08cour)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://archive.org/details/mondeprimitifana08cour",
+        "checked": "2026-10-20",
+        "image_credit": "Le Monde primitif VIII, 1781; Wikimedia Commons, public domain"
+      },
+      "sections": {
+        "Property rights": "Free for any use; credit the Boston Public Library copy. A named copy would strengthen the deck's thin provenance.",
+        "Holder": "Internet Archive, from the John Adams Library at the Boston Public Library (item mondeprimitifana08cour)",
+        "What it holds": "Volume VIII with the 1781 tarot plates (this site's images come via Commons; which library's copy those are is not named).",
+        "Quality": "Book scan, full pages.",
+        "Rights as published": "Item metadata: possible-copyright-status \"NOT_IN_COPYRIGHT\".",
+        "Link": "[https://archive.org/details/mondeprimitifana08cour](https://archive.org/details/mondeprimitifana08cour)",
+        "Decks here": "[Court de Gébelin](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/court-de-gebelin-tarot/grammar.json)"
+      },
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Court%20de%20G%C3%A9belin%20-%20Atout%2000.jpg?width=600"
+    },
+    {
+      "id": "src-etteilla-biu-sante",
+      "name": "Etteilla's Dictionnaire synonimique du livre de Thot (1791), BIU Santé copy",
+      "category": "source",
+      "sort_order": 39,
+      "keywords": [
+        "sources",
+        "internet-archive",
+        "open-licence",
+        "etteilla-i-livre-de-thot",
+        "etteilla-ii-egyptian",
+        "etteilla-iii-oracle-des-dames"
+      ],
+      "metadata": {
+        "decks": [
+          "etteilla-i-livre-de-thot",
+          "etteilla-ii-egyptian",
+          "etteilla-iii-oracle-des-dames"
+        ],
+        "holder": "internet-archive",
+        "holder_name": "Internet Archive, from the Bibliothèque interuniversitaire de santé, Paris (item BIUSante_55509)",
+        "rights_class": "open-licence",
+        "rights_label": "Open licence with conditions (credit, keep the licence)",
+        "url": "https://archive.org/details/BIUSante_55509",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Etalab's open licence: free reuse, commercial included, with the source credited (BIU Santé). The card images on this site still need their own source found.",
+        "Holder": "Internet Archive, from the Bibliothèque interuniversitaire de santé, Paris (item BIUSante_55509)",
+        "What it holds": "Etteilla's 1791 dictionary of card meanings; the three Etteilla decks link its pages. The decks' own card images are unrecorded (uploaded through recursive.eco, printing unknown).",
+        "Quality": "Book scan.",
+        "Rights as published": "Item rights: \"Licence ouverte / Open licence Etalab\".",
+        "Link": "[https://archive.org/details/BIUSante_55509](https://archive.org/details/BIUSante_55509)",
+        "Decks here": "[Etteilla I](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/etteilla-i-livre-de-thot/grammar.json), [Etteilla II](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/etteilla-ii-egyptian/grammar.json), [Etteilla III](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/etteilla-iii-oracle-des-dames/grammar.json)"
+      }
+    },
+    {
+      "id": "src-tarocchino-pagat",
+      "name": "Tarocchino Bolognese on pagat.com (the images this site shows)",
+      "category": "source",
+      "sort_order": 40,
+      "keywords": [
+        "sources",
+        "web-references",
+        "permission",
+        "tarocchino-bologna"
+      ],
+      "metadata": {
+        "decks": [
+          "tarocchino-bologna"
+        ],
+        "holder": "web-references",
+        "holder_name": "pagat.com, © John McLeod",
+        "rights_class": "permission",
+        "rights_label": "Permission needed to publish",
+        "url": "https://www.pagat.com/tarot/ottocento.html",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The site is John McLeod's. Ask him, or replace these with Commons scans.",
+        "Holder": "pagat.com, © John McLeod",
+        "What it holds": "77 small card images of the 19th-century Bolognese pattern.",
+        "Quality": "About 100 px wide GIFs.",
+        "Rights as published": "No image licence stated on the site (from the Oct 4 2026 audit).",
+        "Link": "[https://www.pagat.com/tarot/ottocento.html](https://www.pagat.com/tarot/ottocento.html)",
+        "Decks here": "[Tarocchino di Bologna](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/tarocchino-bologna/grammar.json)"
+      }
+    },
+    {
+      "id": "src-besancon-belgian-commons",
+      "name": "Besançon / Swiss 1JJ and Belgian (Vandenborre) packs on Commons",
+      "category": "source",
+      "sort_order": 41,
+      "keywords": [
+        "sources",
+        "commons",
+        "unclear",
+        "tarot-de-besancon",
+        "belgian-tarot"
+      ],
+      "metadata": {
+        "decks": [
+          "tarot-de-besancon",
+          "belgian-tarot"
+        ],
+        "holder": "commons",
+        "holder_name": "Wikimedia Commons (1JJ files credited to Pinterest, ezomania.ru and 'self-scanned'; the Tarot Belgijski set credited to a.trionfi.eu)",
+        "rights_class": "unclear",
+        "rights_label": "No rights statement found, or the scan's origin is unclear",
+        "url": "https://commons.wikimedia.org/wiki/Category:Tarot_de_Besan%C3%A7on",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The 18th-19th-century designs are free; the scans' origins are thin. Replace with a museum copy when one turns up.",
+        "Holder": "Wikimedia Commons (1JJ files credited to Pinterest, ezomania.ru and 'self-scanned'; the Tarot Belgijski set credited to a.trionfi.eu)",
+        "What it holds": "The 14 Besançon/1JJ and 23 Belgian cards this site shows.",
+        "Quality": "Mixed, web size.",
+        "Rights as published": "File pages: \"Public domain\".",
+        "Link": "[https://commons.wikimedia.org/wiki/Category:Tarot_de_Besan%C3%A7on](https://commons.wikimedia.org/wiki/Category:Tarot_de_Besan%C3%A7on)",
+        "Decks here": "[Tarot de Besançon](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/tarot-de-besancon/grammar.json), [Belgian (Vandenborre)](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/belgian-tarot/grammar.json)"
+      }
+    },
+    {
+      "id": "src-madiao-skokloster",
+      "name": "Ma Diao money cards, Skokloster Castle",
+      "category": "source",
+      "sort_order": 42,
+      "keywords": [
+        "sources",
+        "skokloster",
+        "free",
+        "madiao-money-cards"
+      ],
+      "metadata": {
+        "decks": [
+          "madiao-money-cards"
+        ],
+        "holder": "skokloster",
+        "holder_name": "Skokloster Castle (Swedish state collections), via Wikimedia Commons",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://commons.wikimedia.org/wiki/File:Kinesiskt_spelkort_till_Ma_Diao_-_Skoklosters_slott_-_102351.tif",
+        "checked": "2026-10-20",
+        "image_credit": "Skokloster Castle, LSH 102351; Wikimedia Commons, public domain"
+      },
+      "sections": {
+        "Property rights": "Free for any use; credit Skokloster.",
+        "Holder": "Skokloster Castle (Swedish state collections), via Wikimedia Commons",
+        "What it holds": "Chinese money-suited cards (inventory LSH 102351 and others).",
+        "Quality": "TIFF scans, about 1,000 x 1,250 px.",
+        "Rights as published": "File pages: \"Public domain\" (museum scans).",
+        "Link": "[https://commons.wikimedia.org/wiki/File:Kinesiskt_spelkort_till_Ma_Diao_-_Skoklosters_slott_-_102351.tif](https://commons.wikimedia.org/wiki/File:Kinesiskt_spelkort_till_Ma_Diao_-_Skoklosters_slott_-_102351.tif)",
+        "Decks here": "[Ma Diao](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/madiao-money-cards/grammar.json)"
+      },
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kinesiskt_spelkort_till_Ma_Diao_-_Skoklosters_slott_-_102351.tif?width=600"
+    },
+    {
+      "id": "src-mamluk-topkapi",
+      "name": "Mamluk cards, Topkapı Palace Museum",
+      "category": "source",
+      "sort_order": 43,
+      "keywords": [
+        "sources",
+        "topkapi",
+        "unclear",
+        "mamluk-deck"
+      ],
+      "metadata": {
+        "decks": [
+          "mamluk-deck"
+        ],
+        "holder": "topkapi",
+        "holder_name": "Topkapı Palace Museum, Istanbul",
+        "rights_class": "unclear",
+        "rights_label": "No rights statement found, or the scan's origin is unclear",
+        "url": "https://commons.wikimedia.org/w/index.php?search=Mamluk+playing+cards",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "The museum owns the cards; the photographs' makers are not named. Fine to show the old work; find a credited photograph before print.",
+        "Holder": "Topkapı Palace Museum, Istanbul",
+        "What it holds": "The near-complete Mamluk pack (c. 1500). This site's images come from Commons files with no credit line.",
+        "Quality": "Web size.",
+        "Rights as published": "No online collection or rights statement found for the museum.",
+        "Link": "[https://commons.wikimedia.org/w/index.php?search=Mamluk+playing+cards](https://commons.wikimedia.org/w/index.php?search=Mamluk+playing+cards)",
+        "Decks here": "[Mamluk](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/mamluk-deck/grammar.json)"
+      }
+    },
+    {
+      "id": "src-ganjifa-lacma",
+      "name": "Ganjifa cards, LACMA",
+      "category": "source",
+      "sort_order": 44,
+      "keywords": [
+        "sources",
+        "lacma",
+        "free",
+        "ganjifa"
+      ],
+      "metadata": {
+        "decks": [
+          "ganjifa"
+        ],
+        "holder": "lacma",
+        "holder_name": "Los Angeles County Museum of Art (collections.lacma.org)",
+        "rights_class": "free",
+        "rights_label": "Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+        "url": "https://collections.lacma.org/",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Public-domain work, museum image; credit LACMA.",
+        "Holder": "Los Angeles County Museum of Art (collections.lacma.org)",
+        "What it holds": "The ganjifa image this site shows.",
+        "Quality": "LACMA's download size.",
+        "Rights as published": "LACMA's own terms were not re-read for this entry; the Commons file it came through is tagged public domain.",
+        "Link": "[https://collections.lacma.org/](https://collections.lacma.org/)",
+        "Decks here": "[Ganjifa](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/ganjifa/grammar.json)"
+      }
+    },
+    {
+      "id": "src-yve-lepkowski",
+      "name": "Yve Lepkowski's decks (stolen-thyme.com)",
+      "category": "source",
+      "sort_order": 45,
+      "keywords": [
+        "sources",
+        "artists",
+        "open-licence",
+        "anecdotes-tarot",
+        "arlecchinos-augmented-arcana",
+        "clown-town-tarot",
+        "petit-lenormand",
+        "tarocchino-arlecchino"
+      ],
+      "metadata": {
+        "decks": [
+          "anecdotes-tarot",
+          "arlecchinos-augmented-arcana",
+          "clown-town-tarot",
+          "petit-lenormand",
+          "tarocchino-arlecchino"
+        ],
+        "holder": "artists",
+        "holder_name": "Yve Lepkowski, stolen-thyme.com (Downloads page)",
+        "rights_class": "open-licence",
+        "rights_label": "Open licence with conditions (credit, keep the licence)",
+        "url": "https://stolen-thyme.com/downloads/",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Yve holds the copyright and licenses it CC BY-SA 4.0: credit and link her, name the licence, list changes, share alike.",
+        "Holder": "Yve Lepkowski, stolen-thyme.com (Downloads page)",
+        "What it holds": "Her five decks and guidebooks, as files to download.",
+        "Quality": "Her own files.",
+        "Rights as published": "Her Downloads page, \"Terms of Use\": CC BY-SA 4.0 (evidence: research/yve-lepkowski/LICENSE-EVIDENCE.md).",
+        "Link": "[https://stolen-thyme.com/downloads/](https://stolen-thyme.com/downloads/)",
+        "Decks here": "[Anecdotes](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/anecdotes-tarot/grammar.json), [Arlecchino's Augmented Arcana](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/arlecchinos-augmented-arcana/grammar.json), [Clown Town](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/clown-town-tarot/grammar.json), [Petit Lenormand](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/petit-lenormand/grammar.json), [Tarocchino Arlecchino](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/tarocchino-arlecchino/grammar.json)"
+      }
+    },
+    {
+      "id": "src-playfulprocess-own",
+      "name": "PlayfulProcess's own pictures (Book T deck, Ontoject, Bus Passengers, 36 Tattvas)",
+      "category": "source",
+      "sort_order": 46,
+      "keywords": [
+        "sources",
+        "artists",
+        "open-licence",
+        "book-t",
+        "ontoject-illustrated",
+        "bus-passengers",
+        "thirty-six-tattvas"
+      ],
+      "metadata": {
+        "decks": [
+          "book-t",
+          "ontoject-illustrated",
+          "bus-passengers",
+          "thirty-six-tattvas"
+        ],
+        "holder": "artists",
+        "holder_name": "PlayfulProcess (this site)",
+        "rights_class": "open-licence",
+        "rights_label": "Open licence with conditions (credit, keep the licence)",
+        "url": "https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/book-t/PROMPTS.md",
+        "checked": "2026-10-20"
+      },
+      "sections": {
+        "Property rights": "Hers, offered CC BY-SA 4.0 where the grammar says so. The AI paintings may have thin copyright of their own; the licence still states her terms.",
+        "Holder": "PlayfulProcess (this site)",
+        "What it holds": "The Book T deck's line art, AI paintings, composites and iconography, drawn from Book T's own words (prompts in PROMPTS.md); and her other decks.",
+        "Quality": "SVG line art and painted PNGs, stored on recursive.eco's image store.",
+        "Rights as published": "The Book T deck: CC BY-SA 4.0 (its grammar's _grammar_commons).",
+        "Link": "[https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/book-t/PROMPTS.md](https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/book-t/PROMPTS.md)",
+        "Decks here": "[Book T](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/book-t/grammar.json), [The Ontoject](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/ontoject-illustrated/grammar.json), [Bus Passengers](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/bus-passengers/grammar.json), [36 Tattvas](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/thirty-six-tattvas/grammar.json)"
+      }
+    },
+    {
+      "id": "sel-deck-book-t",
+      "name": "Deck: Book T",
+      "category": "selection",
+      "parts": [
+        "src-equinox-1912-scan",
+        "src-book-t-transcriptions",
+        "src-gd-whare-ra-drawings",
+        "src-gd-yorke-warburg",
+        "src-gd-nli-yeats",
+        "src-gd-published-decks",
+        "src-gd-court-cards-kuntz",
+        "src-playfulprocess-own"
+      ],
+      "sections": {
+        "About": "Where pictures of **Book T** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/book-t/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-book-t",
+        "selection_kind": "deck",
+        "deck_slug": "book-t"
+      },
+      "sort_order": 47
+    },
+    {
+      "id": "sel-deck-golden-dawn-book-t-tarot",
+      "name": "Deck: Golden Dawn (Book T)",
+      "category": "selection",
+      "parts": [
+        "src-equinox-1912-scan",
+        "src-book-t-transcriptions",
+        "src-gd-whare-ra-drawings",
+        "src-gd-yorke-warburg",
+        "src-gd-nli-yeats",
+        "src-gd-published-decks",
+        "src-gd-court-cards-kuntz",
+        "src-rws-commons-current",
+        "src-rws-commons-1909-roses-lilies",
+        "src-rws-commons-yale",
+        "src-rws-wopc-editions"
+      ],
+      "sections": {
+        "About": "Where pictures of **Golden Dawn (Book T)** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-golden-dawn-book-t-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "golden-dawn-book-t-tarot"
+      },
+      "sort_order": 48
+    },
+    {
+      "id": "sel-deck-rider-waite-smith-pictorial-key",
+      "name": "Deck: Rider-Waite-Smith",
+      "category": "selection",
+      "parts": [
+        "src-rws-commons-current",
+        "src-rws-commons-1909-roses-lilies",
+        "src-rws-commons-yale",
+        "src-rws-wopc-editions"
+      ],
+      "sections": {
+        "About": "Where pictures of **Rider-Waite-Smith** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/rider-waite-smith-pictorial-key/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-rider-waite-smith-pictorial-key",
+        "selection_kind": "deck",
+        "deck_slug": "rider-waite-smith-pictorial-key"
+      },
+      "sort_order": 49
+    },
+    {
+      "id": "sel-deck-este-tarot",
+      "name": "Deck: d'Este",
+      "category": "selection",
+      "parts": [
+        "src-este-yale-iiif",
+        "src-este-references",
+        "src-ferrara-rothschild-louvre"
+      ],
+      "sections": {
+        "About": "Where pictures of **d'Este** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/este-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-este-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "este-tarot"
+      },
+      "sort_order": 50
+    },
+    {
+      "id": "sel-deck-charles-vi-tarot",
+      "name": "Deck: 'Charles VI' (Ferrara)",
+      "category": "selection",
+      "parts": [
+        "src-ferrara-rothschild-louvre",
+        "src-charles-vi-bnf",
+        "src-charles-vi-1844-lithographs",
+        "src-chatto-1848"
+      ],
+      "sections": {
+        "About": "Where pictures of **'Charles VI' (Ferrara)** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/charles-vi-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-charles-vi-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "charles-vi-tarot"
+      },
+      "sort_order": 51
+    },
+    {
+      "id": "sel-deck-cary-yale-visconti-tarot",
+      "name": "Deck: Cary-Yale Visconti",
+      "category": "selection",
+      "parts": [
+        "src-cary-yale-yale-iiif",
+        "src-cary-yale-commons",
+        "src-visconti-brera-brambilla"
+      ],
+      "sections": {
+        "About": "Where pictures of **Cary-Yale Visconti** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/cary-yale-visconti-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-cary-yale-visconti-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "cary-yale-visconti-tarot"
+      },
+      "sort_order": 52
+    },
+    {
+      "id": "sel-deck-visconti-sforza-tarot",
+      "name": "Deck: Visconti-Sforza",
+      "category": "selection",
+      "parts": [
+        "src-cary-yale-yale-iiif",
+        "src-cary-yale-commons",
+        "src-visconti-morgan",
+        "src-visconti-bergamo",
+        "src-visconti-commons-scans",
+        "src-visconti-commons-morgan-photos",
+        "src-visconti-brera-brambilla"
+      ],
+      "sections": {
+        "About": "Where pictures of **Visconti-Sforza** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/visconti-sforza-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-visconti-sforza-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "visconti-sforza-tarot"
+      },
+      "sort_order": 53
+    },
+    {
+      "id": "sel-deck-sola-busca-tarot",
+      "name": "Deck: Sola Busca",
+      "category": "selection",
+      "parts": [
+        "src-sola-busca-brera",
+        "src-sola-busca-british-museum",
+        "src-sola-busca-albertina",
+        "src-sola-busca-commons-current"
+      ],
+      "sections": {
+        "About": "Where pictures of **Sola Busca** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/sola-busca-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-sola-busca-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "sola-busca-tarot"
+      },
+      "sort_order": 54
+    },
+    {
+      "id": "sel-deck-mantegna-tarocchi",
+      "name": "Deck: Mantegna Tarocchi",
+      "category": "selection",
+      "parts": [
+        "src-sola-busca-british-museum",
+        "src-mantegna-cleveland",
+        "src-nga-open-access"
+      ],
+      "sections": {
+        "About": "Where pictures of **Mantegna Tarocchi** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/mantegna-tarocchi/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-mantegna-tarocchi",
+        "selection_kind": "deck",
+        "deck_slug": "mantegna-tarocchi"
+      },
+      "sort_order": 55
+    },
+    {
+      "id": "sel-deck-rosenwald-sheet",
+      "name": "Deck: Rosenwald Sheet",
+      "category": "selection",
+      "parts": [
+        "src-nga-open-access"
+      ],
+      "sections": {
+        "About": "Where pictures of **Rosenwald Sheet** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/rosenwald-sheet/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-rosenwald-sheet",
+        "selection_kind": "deck",
+        "deck_slug": "rosenwald-sheet"
+      },
+      "sort_order": 56
+    },
+    {
+      "id": "sel-deck-cary-sheet",
+      "name": "Deck: Cary Sheet",
+      "category": "selection",
+      "parts": [
+        "src-cary-sheet-yale"
+      ],
+      "sections": {
+        "About": "Where pictures of **Cary Sheet** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/cary-sheet/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-cary-sheet",
+        "selection_kind": "deck",
+        "deck_slug": "cary-sheet"
+      },
+      "sort_order": 57
+    },
+    {
+      "id": "sel-deck-minchiate-florence-tarot",
+      "name": "Deck: Minchiate",
+      "category": "selection",
+      "parts": [
+        "src-minchiate-gallica"
+      ],
+      "sections": {
+        "About": "Where pictures of **Minchiate** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/minchiate-florence-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-minchiate-florence-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "minchiate-florence-tarot"
+      },
+      "sort_order": 58
+    },
+    {
+      "id": "sel-deck-noblet-tarot",
+      "name": "Deck: Jean Noblet",
+      "category": "selection",
+      "parts": [
+        "src-noblet-gallica"
+      ],
+      "sections": {
+        "About": "Where pictures of **Jean Noblet** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/noblet-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-noblet-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "noblet-tarot"
+      },
+      "sort_order": 59
+    },
+    {
+      "id": "sel-deck-vieville-tarot",
+      "name": "Deck: Jacques Viéville",
+      "category": "selection",
+      "parts": [
+        "src-vieville-gallica"
+      ],
+      "sections": {
+        "About": "Where pictures of **Jacques Viéville** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/vieville-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-vieville-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "vieville-tarot"
+      },
+      "sort_order": 60
+    },
+    {
+      "id": "sel-deck-paris-anonymous-tarot",
+      "name": "Deck: Tarot de Paris",
+      "category": "selection",
+      "parts": [
+        "src-paris-gallica"
+      ],
+      "sections": {
+        "About": "Where pictures of **Tarot de Paris** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/paris-anonymous-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-paris-anonymous-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "paris-anonymous-tarot"
+      },
+      "sort_order": 61
+    },
+    {
+      "id": "sel-deck-tarot-de-marseille-conver",
+      "name": "Deck: Tarot de Marseille (Conver)",
+      "category": "selection",
+      "parts": [
+        "src-conver-commons-twp",
+        "src-conver-gallica-lequart"
+      ],
+      "sections": {
+        "About": "Where pictures of **Tarot de Marseille (Conver)** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/tarot-de-marseille-conver/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-tarot-de-marseille-conver",
+        "selection_kind": "deck",
+        "deck_slug": "tarot-de-marseille-conver"
+      },
+      "sort_order": 62
+    },
+    {
+      "id": "sel-deck-oswald-wirth-tarot",
+      "name": "Deck: Oswald Wirth",
+      "category": "selection",
+      "parts": [
+        "src-wirth-gallica"
+      ],
+      "sections": {
+        "About": "Where pictures of **Oswald Wirth** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/oswald-wirth-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-oswald-wirth-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "oswald-wirth-tarot"
+      },
+      "sort_order": 63
+    },
+    {
+      "id": "sel-deck-papus-tarot-des-bohemiens",
+      "name": "Deck: Papus",
+      "category": "selection",
+      "parts": [
+        "src-wirth-gallica"
+      ],
+      "sections": {
+        "About": "Where pictures of **Papus** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/papus-tarot-des-bohemiens/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-papus-tarot-des-bohemiens",
+        "selection_kind": "deck",
+        "deck_slug": "papus-tarot-des-bohemiens"
+      },
+      "sort_order": 64
+    },
+    {
+      "id": "sel-deck-court-de-gebelin-tarot",
+      "name": "Deck: Court de Gébelin",
+      "category": "selection",
+      "parts": [
+        "src-court-de-gebelin-ia"
+      ],
+      "sections": {
+        "About": "Where pictures of **Court de Gébelin** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/court-de-gebelin-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-court-de-gebelin-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "court-de-gebelin-tarot"
+      },
+      "sort_order": 65
+    },
+    {
+      "id": "sel-deck-etteilla-i-livre-de-thot",
+      "name": "Deck: Etteilla I",
+      "category": "selection",
+      "parts": [
+        "src-etteilla-biu-sante"
+      ],
+      "sections": {
+        "About": "Where pictures of **Etteilla I** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/etteilla-i-livre-de-thot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-etteilla-i-livre-de-thot",
+        "selection_kind": "deck",
+        "deck_slug": "etteilla-i-livre-de-thot"
+      },
+      "sort_order": 66
+    },
+    {
+      "id": "sel-deck-etteilla-ii-egyptian",
+      "name": "Deck: Etteilla II",
+      "category": "selection",
+      "parts": [
+        "src-etteilla-biu-sante"
+      ],
+      "sections": {
+        "About": "Where pictures of **Etteilla II** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/etteilla-ii-egyptian/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-etteilla-ii-egyptian",
+        "selection_kind": "deck",
+        "deck_slug": "etteilla-ii-egyptian"
+      },
+      "sort_order": 67
+    },
+    {
+      "id": "sel-deck-etteilla-iii-oracle-des-dames",
+      "name": "Deck: Etteilla III",
+      "category": "selection",
+      "parts": [
+        "src-etteilla-biu-sante"
+      ],
+      "sections": {
+        "About": "Where pictures of **Etteilla III** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/etteilla-iii-oracle-des-dames/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-etteilla-iii-oracle-des-dames",
+        "selection_kind": "deck",
+        "deck_slug": "etteilla-iii-oracle-des-dames"
+      },
+      "sort_order": 68
+    },
+    {
+      "id": "sel-deck-tarocchino-bologna",
+      "name": "Deck: Tarocchino di Bologna",
+      "category": "selection",
+      "parts": [
+        "src-tarocchino-pagat"
+      ],
+      "sections": {
+        "About": "Where pictures of **Tarocchino di Bologna** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/tarocchino-bologna/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-tarocchino-bologna",
+        "selection_kind": "deck",
+        "deck_slug": "tarocchino-bologna"
+      },
+      "sort_order": 69
+    },
+    {
+      "id": "sel-deck-tarot-de-besancon",
+      "name": "Deck: Tarot de Besançon",
+      "category": "selection",
+      "parts": [
+        "src-besancon-belgian-commons"
+      ],
+      "sections": {
+        "About": "Where pictures of **Tarot de Besançon** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/tarot-de-besancon/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-tarot-de-besancon",
+        "selection_kind": "deck",
+        "deck_slug": "tarot-de-besancon"
+      },
+      "sort_order": 70
+    },
+    {
+      "id": "sel-deck-belgian-tarot",
+      "name": "Deck: Belgian (Vandenborre)",
+      "category": "selection",
+      "parts": [
+        "src-besancon-belgian-commons"
+      ],
+      "sections": {
+        "About": "Where pictures of **Belgian (Vandenborre)** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/belgian-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-belgian-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "belgian-tarot"
+      },
+      "sort_order": 71
+    },
+    {
+      "id": "sel-deck-madiao-money-cards",
+      "name": "Deck: Ma Diao",
+      "category": "selection",
+      "parts": [
+        "src-madiao-skokloster"
+      ],
+      "sections": {
+        "About": "Where pictures of **Ma Diao** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/madiao-money-cards/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-madiao-money-cards",
+        "selection_kind": "deck",
+        "deck_slug": "madiao-money-cards"
+      },
+      "sort_order": 72
+    },
+    {
+      "id": "sel-deck-mamluk-deck",
+      "name": "Deck: Mamluk",
+      "category": "selection",
+      "parts": [
+        "src-mamluk-topkapi"
+      ],
+      "sections": {
+        "About": "Where pictures of **Mamluk** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/mamluk-deck/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-mamluk-deck",
+        "selection_kind": "deck",
+        "deck_slug": "mamluk-deck"
+      },
+      "sort_order": 73
+    },
+    {
+      "id": "sel-deck-ganjifa",
+      "name": "Deck: Ganjifa",
+      "category": "selection",
+      "parts": [
+        "src-ganjifa-lacma"
+      ],
+      "sections": {
+        "About": "Where pictures of **Ganjifa** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/ganjifa/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-ganjifa",
+        "selection_kind": "deck",
+        "deck_slug": "ganjifa"
+      },
+      "sort_order": 74
+    },
+    {
+      "id": "sel-deck-anecdotes-tarot",
+      "name": "Deck: Anecdotes",
+      "category": "selection",
+      "parts": [
+        "src-yve-lepkowski"
+      ],
+      "sections": {
+        "About": "Where pictures of **Anecdotes** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/anecdotes-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-anecdotes-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "anecdotes-tarot"
+      },
+      "sort_order": 75
+    },
+    {
+      "id": "sel-deck-arlecchinos-augmented-arcana",
+      "name": "Deck: Arlecchino's Augmented Arcana",
+      "category": "selection",
+      "parts": [
+        "src-yve-lepkowski"
+      ],
+      "sections": {
+        "About": "Where pictures of **Arlecchino's Augmented Arcana** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/arlecchinos-augmented-arcana/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-arlecchinos-augmented-arcana",
+        "selection_kind": "deck",
+        "deck_slug": "arlecchinos-augmented-arcana"
+      },
+      "sort_order": 76
+    },
+    {
+      "id": "sel-deck-clown-town-tarot",
+      "name": "Deck: Clown Town",
+      "category": "selection",
+      "parts": [
+        "src-yve-lepkowski"
+      ],
+      "sections": {
+        "About": "Where pictures of **Clown Town** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/clown-town-tarot/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-clown-town-tarot",
+        "selection_kind": "deck",
+        "deck_slug": "clown-town-tarot"
+      },
+      "sort_order": 77
+    },
+    {
+      "id": "sel-deck-petit-lenormand",
+      "name": "Deck: Petit Lenormand",
+      "category": "selection",
+      "parts": [
+        "src-yve-lepkowski"
+      ],
+      "sections": {
+        "About": "Where pictures of **Petit Lenormand** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/petit-lenormand/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-petit-lenormand",
+        "selection_kind": "deck",
+        "deck_slug": "petit-lenormand"
+      },
+      "sort_order": 78
+    },
+    {
+      "id": "sel-deck-tarocchino-arlecchino",
+      "name": "Deck: Tarocchino Arlecchino",
+      "category": "selection",
+      "parts": [
+        "src-yve-lepkowski"
+      ],
+      "sections": {
+        "About": "Where pictures of **Tarocchino Arlecchino** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/tarocchino-arlecchino/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-tarocchino-arlecchino",
+        "selection_kind": "deck",
+        "deck_slug": "tarocchino-arlecchino"
+      },
+      "sort_order": 79
+    },
+    {
+      "id": "sel-deck-ontoject-illustrated",
+      "name": "Deck: The Ontoject",
+      "category": "selection",
+      "parts": [
+        "src-playfulprocess-own"
+      ],
+      "sections": {
+        "About": "Where pictures of **The Ontoject** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/ontoject-illustrated/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-ontoject-illustrated",
+        "selection_kind": "deck",
+        "deck_slug": "ontoject-illustrated"
+      },
+      "sort_order": 80
+    },
+    {
+      "id": "sel-deck-bus-passengers",
+      "name": "Deck: Bus Passengers",
+      "category": "selection",
+      "parts": [
+        "src-playfulprocess-own"
+      ],
+      "sections": {
+        "About": "Where pictures of **Bus Passengers** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/bus-passengers/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-bus-passengers",
+        "selection_kind": "deck",
+        "deck_slug": "bus-passengers"
+      },
+      "sort_order": 81
+    },
+    {
+      "id": "sel-deck-thirty-six-tattvas",
+      "name": "Deck: 36 Tattvas",
+      "category": "selection",
+      "parts": [
+        "src-playfulprocess-own"
+      ],
+      "sections": {
+        "About": "Where pictures of **36 Tattvas** can be found, who holds them, how sharp they are, and what their rights allow. [Open the deck](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/thirty-six-tattvas/grammar.json)."
+      },
+      "metadata": {
+        "slug": "deck-thirty-six-tattvas",
+        "selection_kind": "deck",
+        "deck_slug": "thirty-six-tattvas"
+      },
+      "sort_order": 82
+    },
+    {
+      "id": "sel-holder-yale",
+      "name": "Holder: Yale University Library (Beinecke, Cary Collection)",
+      "category": "selection",
+      "parts": [
+        "src-este-yale-iiif",
+        "src-cary-yale-yale-iiif",
+        "src-cary-sheet-yale"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Yale University Library (Beinecke, Cary Collection)**."
+      },
+      "metadata": {
+        "slug": "holder-yale",
+        "selection_kind": "holder"
+      },
+      "sort_order": 83
+    },
+    {
+      "id": "sel-holder-bnf",
+      "name": "Holder: Bibliothèque nationale de France (Gallica)",
+      "category": "selection",
+      "parts": [
+        "src-charles-vi-bnf",
+        "src-minchiate-gallica",
+        "src-noblet-gallica",
+        "src-vieville-gallica",
+        "src-paris-gallica",
+        "src-conver-gallica-lequart",
+        "src-wirth-gallica"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Bibliothèque nationale de France (Gallica)**."
+      },
+      "metadata": {
+        "slug": "holder-bnf",
+        "selection_kind": "holder"
+      },
+      "sort_order": 84
+    },
+    {
+      "id": "sel-holder-morgan",
+      "name": "Holder: The Morgan Library & Museum, New York",
+      "category": "selection",
+      "parts": [
+        "src-visconti-morgan"
+      ],
+      "sections": {
+        "About": "Every source held or published by **The Morgan Library & Museum, New York**."
+      },
+      "metadata": {
+        "slug": "holder-morgan",
+        "selection_kind": "holder"
+      },
+      "sort_order": 85
+    },
+    {
+      "id": "sel-holder-carrara",
+      "name": "Holder: Accademia Carrara and the Colleoni collection, Bergamo",
+      "category": "selection",
+      "parts": [
+        "src-visconti-bergamo"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Accademia Carrara and the Colleoni collection, Bergamo**."
+      },
+      "metadata": {
+        "slug": "holder-carrara",
+        "selection_kind": "holder"
+      },
+      "sort_order": 86
+    },
+    {
+      "id": "sel-holder-brera",
+      "name": "Holder: Pinacoteca di Brera, Milan",
+      "category": "selection",
+      "parts": [
+        "src-sola-busca-brera"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Pinacoteca di Brera, Milan**."
+      },
+      "metadata": {
+        "slug": "holder-brera",
+        "selection_kind": "holder"
+      },
+      "sort_order": 87
+    },
+    {
+      "id": "sel-holder-british-museum",
+      "name": "Holder: British Museum, London",
+      "category": "selection",
+      "parts": [
+        "src-sola-busca-british-museum"
+      ],
+      "sections": {
+        "About": "Every source held or published by **British Museum, London**."
+      },
+      "metadata": {
+        "slug": "holder-british-museum",
+        "selection_kind": "holder"
+      },
+      "sort_order": 88
+    },
+    {
+      "id": "sel-holder-nga",
+      "name": "Holder: National Gallery of Art, Washington",
+      "category": "selection",
+      "parts": [
+        "src-nga-open-access"
+      ],
+      "sections": {
+        "About": "Every source held or published by **National Gallery of Art, Washington**."
+      },
+      "metadata": {
+        "slug": "holder-nga",
+        "selection_kind": "holder"
+      },
+      "sort_order": 89
+    },
+    {
+      "id": "sel-holder-cleveland",
+      "name": "Holder: Cleveland Museum of Art",
+      "category": "selection",
+      "parts": [
+        "src-mantegna-cleveland"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Cleveland Museum of Art**."
+      },
+      "metadata": {
+        "slug": "holder-cleveland",
+        "selection_kind": "holder"
+      },
+      "sort_order": 90
+    },
+    {
+      "id": "sel-holder-louvre",
+      "name": "Holder: Musée du Louvre, Paris",
+      "category": "selection",
+      "parts": [
+        "src-ferrara-rothschild-louvre"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Musée du Louvre, Paris**."
+      },
+      "metadata": {
+        "slug": "holder-louvre",
+        "selection_kind": "holder"
+      },
+      "sort_order": 91
+    },
+    {
+      "id": "sel-holder-warburg",
+      "name": "Holder: Warburg Institute, London",
+      "category": "selection",
+      "parts": [
+        "src-gd-yorke-warburg"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Warburg Institute, London**."
+      },
+      "metadata": {
+        "slug": "holder-warburg",
+        "selection_kind": "holder"
+      },
+      "sort_order": 92
+    },
+    {
+      "id": "sel-holder-nli",
+      "name": "Holder: National Library of Ireland",
+      "category": "selection",
+      "parts": [
+        "src-gd-nli-yeats"
+      ],
+      "sections": {
+        "About": "Every source held or published by **National Library of Ireland**."
+      },
+      "metadata": {
+        "slug": "holder-nli",
+        "selection_kind": "holder"
+      },
+      "sort_order": 93
+    },
+    {
+      "id": "sel-holder-commons",
+      "name": "Holder: Wikimedia Commons",
+      "category": "selection",
+      "parts": [
+        "src-rws-commons-current",
+        "src-rws-commons-1909-roses-lilies",
+        "src-rws-commons-yale",
+        "src-cary-yale-commons",
+        "src-visconti-commons-scans",
+        "src-visconti-commons-morgan-photos",
+        "src-visconti-brera-brambilla",
+        "src-sola-busca-albertina",
+        "src-sola-busca-commons-current",
+        "src-conver-commons-twp",
+        "src-besancon-belgian-commons"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Wikimedia Commons**."
+      },
+      "metadata": {
+        "slug": "holder-commons",
+        "selection_kind": "holder"
+      },
+      "sort_order": 94
+    },
+    {
+      "id": "sel-holder-internet-archive",
+      "name": "Holder: Internet Archive",
+      "category": "selection",
+      "parts": [
+        "src-equinox-1912-scan",
+        "src-chatto-1848",
+        "src-court-de-gebelin-ia",
+        "src-etteilla-biu-sante"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Internet Archive**."
+      },
+      "metadata": {
+        "slug": "holder-internet-archive",
+        "selection_kind": "holder"
+      },
+      "sort_order": 95
+    },
+    {
+      "id": "sel-holder-web-references",
+      "name": "Holder: Reference websites and transcriptions",
+      "category": "selection",
+      "parts": [
+        "src-book-t-transcriptions",
+        "src-gd-whare-ra-drawings",
+        "src-rws-wopc-editions",
+        "src-este-references",
+        "src-charles-vi-1844-lithographs",
+        "src-tarocchino-pagat"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Reference websites and transcriptions**."
+      },
+      "metadata": {
+        "slug": "holder-web-references",
+        "selection_kind": "holder"
+      },
+      "sort_order": 96
+    },
+    {
+      "id": "sel-holder-publishers",
+      "name": "Holder: Publishers of modern decks and books",
+      "category": "selection",
+      "parts": [
+        "src-gd-published-decks",
+        "src-gd-court-cards-kuntz"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Publishers of modern decks and books**."
+      },
+      "metadata": {
+        "slug": "holder-publishers",
+        "selection_kind": "holder"
+      },
+      "sort_order": 97
+    },
+    {
+      "id": "sel-holder-lacma",
+      "name": "Holder: Los Angeles County Museum of Art",
+      "category": "selection",
+      "parts": [
+        "src-ganjifa-lacma"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Los Angeles County Museum of Art**."
+      },
+      "metadata": {
+        "slug": "holder-lacma",
+        "selection_kind": "holder"
+      },
+      "sort_order": 98
+    },
+    {
+      "id": "sel-holder-skokloster",
+      "name": "Holder: Skokloster Castle, Sweden",
+      "category": "selection",
+      "parts": [
+        "src-madiao-skokloster"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Skokloster Castle, Sweden**."
+      },
+      "metadata": {
+        "slug": "holder-skokloster",
+        "selection_kind": "holder"
+      },
+      "sort_order": 99
+    },
+    {
+      "id": "sel-holder-topkapi",
+      "name": "Holder: Topkapı Palace Museum, Istanbul",
+      "category": "selection",
+      "parts": [
+        "src-mamluk-topkapi"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Topkapı Palace Museum, Istanbul**."
+      },
+      "metadata": {
+        "slug": "holder-topkapi",
+        "selection_kind": "holder"
+      },
+      "sort_order": 100
+    },
+    {
+      "id": "sel-holder-artists",
+      "name": "Holder: Living artists (licensed by them)",
+      "category": "selection",
+      "parts": [
+        "src-yve-lepkowski",
+        "src-playfulprocess-own"
+      ],
+      "sections": {
+        "About": "Every source held or published by **Living artists (licensed by them)**."
+      },
+      "metadata": {
+        "slug": "holder-artists",
+        "selection_kind": "holder"
+      },
+      "sort_order": 101
+    },
+    {
+      "id": "sel-rights-free",
+      "name": "Rights: Free for any use, as the holder states (public domain, CC0, or an open-access policy)",
+      "category": "selection",
+      "parts": [
+        "src-equinox-1912-scan",
+        "src-book-t-transcriptions",
+        "src-rws-commons-current",
+        "src-rws-commons-1909-roses-lilies",
+        "src-rws-commons-yale",
+        "src-este-yale-iiif",
+        "src-cary-yale-yale-iiif",
+        "src-cary-yale-commons",
+        "src-visconti-commons-morgan-photos",
+        "src-charles-vi-1844-lithographs",
+        "src-chatto-1848",
+        "src-mantegna-cleveland",
+        "src-nga-open-access",
+        "src-cary-sheet-yale",
+        "src-court-de-gebelin-ia",
+        "src-madiao-skokloster",
+        "src-ganjifa-lacma"
+      ],
+      "sections": {
+        "About": "Sources whose rights, as their holders publish them, come to: **Free for any use, as the holder states (public domain, CC0, or an open-access policy)**."
+      },
+      "metadata": {
+        "slug": "rights-free",
+        "selection_kind": "rights"
+      },
+      "sort_order": 102
+    },
+    {
+      "id": "sel-rights-open-licence",
+      "name": "Rights: Open licence with conditions (credit, keep the licence)",
+      "category": "selection",
+      "parts": [
+        "src-conver-commons-twp",
+        "src-etteilla-biu-sante",
+        "src-yve-lepkowski",
+        "src-playfulprocess-own"
+      ],
+      "sections": {
+        "About": "Sources whose rights, as their holders publish them, come to: **Open licence with conditions (credit, keep the licence)**."
+      },
+      "metadata": {
+        "slug": "rights-open-licence",
+        "selection_kind": "rights"
+      },
+      "sort_order": 103
+    },
+    {
+      "id": "sel-rights-non-commercial",
+      "name": "Rights: Free for non-commercial use only",
+      "category": "selection",
+      "parts": [
+        "src-visconti-morgan",
+        "src-charles-vi-bnf",
+        "src-sola-busca-british-museum",
+        "src-minchiate-gallica",
+        "src-noblet-gallica",
+        "src-vieville-gallica",
+        "src-paris-gallica",
+        "src-conver-gallica-lequart",
+        "src-wirth-gallica"
+      ],
+      "sections": {
+        "About": "Sources whose rights, as their holders publish them, come to: **Free for non-commercial use only**."
+      },
+      "metadata": {
+        "slug": "rights-non-commercial",
+        "selection_kind": "rights"
+      },
+      "sort_order": 104
+    },
+    {
+      "id": "sel-rights-permission",
+      "name": "Rights: Permission needed to publish",
+      "category": "selection",
+      "parts": [
+        "src-gd-whare-ra-drawings",
+        "src-gd-yorke-warburg",
+        "src-gd-nli-yeats",
+        "src-rws-wopc-editions",
+        "src-este-references",
+        "src-ferrara-rothschild-louvre",
+        "src-visconti-bergamo",
+        "src-sola-busca-brera",
+        "src-tarocchino-pagat"
+      ],
+      "sections": {
+        "About": "Sources whose rights, as their holders publish them, come to: **Permission needed to publish**."
+      },
+      "metadata": {
+        "slug": "rights-permission",
+        "selection_kind": "rights"
+      },
+      "sort_order": 105
+    },
+    {
+      "id": "sel-rights-unclear",
+      "name": "Rights: No rights statement found, or the scan's origin is unclear",
+      "category": "selection",
+      "parts": [
+        "src-visconti-commons-scans",
+        "src-visconti-brera-brambilla",
+        "src-sola-busca-albertina",
+        "src-sola-busca-commons-current",
+        "src-besancon-belgian-commons",
+        "src-mamluk-topkapi"
+      ],
+      "sections": {
+        "About": "Sources whose rights, as their holders publish them, come to: **No rights statement found, or the scan's origin is unclear**."
+      },
+      "metadata": {
+        "slug": "rights-unclear",
+        "selection_kind": "rights"
+      },
+      "sort_order": 106
+    },
+    {
+      "id": "sel-rights-in-copyright",
+      "name": "Rights: In copyright: link and cite only",
+      "category": "selection",
+      "parts": [
+        "src-gd-published-decks",
+        "src-gd-court-cards-kuntz"
+      ],
+      "sections": {
+        "About": "Sources whose rights, as their holders publish them, come to: **In copyright: link and cite only**."
+      },
+      "metadata": {
+        "slug": "rights-in-copyright",
+        "selection_kind": "rights"
+      },
+      "sort_order": 107
+    }
+  ]
+}
