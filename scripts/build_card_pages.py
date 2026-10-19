@@ -27,7 +27,8 @@ only recursive-eco.json and tarot/*/grammar.json) never sees them:
   deck/<slug>.html, deck/index.html                           one per historical deck grammar
   spreads.html                                                Waite's own Celtic Cross + trump meanings
 Images on deck pages follow docs/rights/image-ledger.json card by card: only an image the ledger
-records as a Commons public-domain/CC0 or CC BY-SA file is shown, never a BnF/Gallica scan
+records as a Commons public-domain/CC0 or CC BY-SA file, or as the holder's own open-access
+scan (holder-open-access: the d'Este cards from Yale), is shown, never a BnF/Gallica scan
 (non-commercial only), an image recorded elsewhere or unrecorded, nor the Visconti-Sforza cards
 scanned from the Dal Negro reproduction; a withheld card links to its holder. Waite's trump meanings
 and Celtic Cross come from research/sources/waite-pictorial-key-part-iii.md (Part III, 1911, PD).
@@ -433,12 +434,21 @@ ECO_PUBLIC_EXTRA = {"book-t"}
 # Rider-Waite-Smith deck (card/ + tarot-card-meanings.html).
 DECK_SKIP = {BT_DECK, WAITE}
 SHOWN_CLASSES = {"commons-pd-tag", "commons-cc-by-sa-4.0"}
+HOLDER_OA = "holder-open-access"  # the holder's own scan under its open-access policy (Yale, Oct 19 2026)
+
+
+def holder_of(r):
+    """The holding institution a Commons row's credit names, credited as the holder asks."""
+    credit = (r.get("credit") or "")
+    if "Beinecke" in credit or "yale.edu" in credit:
+        return "Beinecke Rare Book & Manuscript Library, Yale University"
+    m = re.search(r"clevelandart\.org/art/([\d.]+)", credit) or re.search(r"(\d{4}\.\d+\.\d+) - Cleveland Museum of Art", r.get("commons_title") or "")
+    if m or "Cleveland Museum of Art" in credit:
+        return "The Cleveland Museum of Art" + (f", {m.group(1)}" if m else "")
+    return ""
 WITHHELD_DECKS = {  # deck -> why, and where the cards are instead (the holder)
     "charles-vi-tarot": ("BnF scans, free for non-commercial reuse only",
                          "Bibliothèque nationale de France", "http://expositions.bnf.fr/renais/arret/3/index.htm"),
-    "este-tarot": ("Yale's terms for these scans are not yet confirmed",
-                   "Beinecke Library, Yale (PLAYING CARDS GEN 966)",
-                   "https://collections.library.yale.edu/catalog?search_field=all_fields&q=PLAYING+CARDS+GEN+966"),
 }
 HOLDERS = {  # deck -> (holder, URL) for a card withheld card by card
     "visconti-sforza-tarot": ("The Morgan Library & Museum (MS M.630)", "https://www.themorgan.org/manuscript/158525"),
@@ -785,11 +795,15 @@ def deck_images(slug, nodes, ledger):
         if slug in WITHHELD_DECKS:
             why, hname, hurl = WITHHELD_DECKS[slug]
             out[n["id"]] = ("off", hname, hurl, why)
+        elif r and r["class"] == HOLDER_OA and r["image_url"] == url and (r.get("source") or "").endswith("/info.json"):
+            thumb = r["source"][:-len("info.json")] + "full/250,/0/default.jpg"  # IIIF: the holder's own thumbnail
+            out[n["id"]] = ("show", thumb, f"{r['holder']} · open access · {r.get('record') or r['source']}")
         elif r and r["class"] in SHOWN_CLASSES and r["image_url"] == url and r.get("commons_title") and "dal negro" not in credit.lower():
             fn = r["commons_title"].split(":", 1)[1]
-            lic = "CC BY-SA 4.0" if r["class"].startswith("commons-cc-by-sa") else "public domain"
+            lic = "CC BY-SA 4.0" if r["class"].startswith("commons-cc-by-sa") else ("CC0" if r.get("license") == "CC0" else "public domain")
+            who = " · ".join(x for x in [(r.get('artist') or '').strip() or 'Unknown', holder_of(r)] if x)
             out[n["id"]] = ("show", commons_thumb("https://commons.wikimedia.org/wiki/Special:FilePath/" + fn, 250),
-                            f"{(r.get('artist') or '').strip() or 'Unknown'} · {lic} · https://commons.wikimedia.org/wiki/{urllib.parse.quote(r['commons_title'].replace(' ', '_'))}")
+                            f"{who} · {lic} · https://commons.wikimedia.org/wiki/{urllib.parse.quote(r['commons_title'].replace(' ', '_'))}")
         else:
             if r and "dal negro" in credit.lower():
                 why = "scanned from the Dal Negro reproduction, a modern edition"

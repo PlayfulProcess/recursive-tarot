@@ -8,9 +8,10 @@
     "date": "c. 1450 (a 1470s date is also argued — see the deck dossier)",
     "source": "Beinecke Rare Book & Manuscript Library, Yale — Cary Collection of Playing Cards, PLAYING CARDS GEN 966",
     "file_page": "https://collections.library.yale.edu/iiif/2/33215714/info.json",
-    "license": "Open access (as stated by Yale University Library)",
+    "license": "Open access (Yale University Library open-access policy, any use)",
     "pd_basis": "15th-century object, long out of copyright; Yale publishes the digitisation as open access",
-    "verified": "2026-08-02"
+    "verified": "2026-10-19",
+    "source_record": "https://collections.library.yale.edu/catalog/33215685"
   },
   "description": "# d'Este (Estensi) Tarocchi\n\n## At a glance\n\nAmong the **oldest surviving tarot of all** — sixteen hand-painted cards made in **Ferrara around 1450**, in the orbit of the ruling **House of Este**, contemporaries of the Milanese Visconti decks but from the *other* great early tarot court. Only **16 cards survive** (8 trumps + 8 court cards) of what was once a full pack; they are held in the **Cary Collection of Playing Cards at Yale's Beinecke Library** (PLAYING CARDS GEN 966) and shown here from Yale's open-access high-resolution scans.\n\n## Why it matters — the B-order home\n\nFerrara is the home of the **B-order** trump sequence (the Eastern branch in Dummett's A/B/C scheme). Where Milan's Visconti decks head the **C-order** line that became the Tarot de Marseille, the d'Este cards are a rare, luxurious witness to Ferrara's parallel tradition — proof that tarot's invention was not a single Milanese event but a courtly fashion shared across northern Italy in the 1440s–50s.\n\n## What survives\n\n- **8 trumps:** Il Bagatto (the Magician), Il Papa (the Pope), Temperance, the Star, the Moon, the Sun, the World, and Il Matto (the Fool).\n- **8 court cards:** kings, queens, a cavalier and a jack across Swords, Batons, Coins and Cups.\n- Card identifications are **Yale's own catalogue labels** — not guessed from iconography. The cards are unnumbered (as 15th-century hand-painted trumps were).\n\n## Game, not divination\n\nLike the Visconti decks, this is a **luxury court game** object — *trionfi*, three centuries before any divinatory use. No cartomantic meaning is native to it.\n\n## Provenance & evidence\n\nBeinecke Rare Book & Manuscript Library, Yale — Cary Collection (Mary Flagler Cary, 1967); PLAYING CARDS GEN 966; cards 140 × 78 mm; completely digitized, open access (credit: Yale University Library). Dating ('c. 1450') and the Ferrarese/Este attribution follow the standard scholarship but, as with all the early hand-painted decks, remain debated.\n\n## Sources\n\nYale Beinecke / Cary Collection catalogue; Michael Dummett, *The Game of Tarot* (1980); Thierry Depaulis on the Ferrarese decks.\n\n**RESEARCH NOTE (2026-06-13).** Dating is disputed: c. 1450 (used here) vs c. 1470s (Pollett). The deck's original composition is unknown. See [research/decks/este-tarot.md](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/decks/este-tarot.md).\n\n**Where the pictures come from:** who holds this deck's pictures, how sharp they are and what their rights allow: [Sources: d'Este](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/sources/grammar.json&item=sel-deck-este-tarot).\n",
   "grammar_type": "tarot",
@@ -41,13 +42,16 @@
   "_image_provenance": {
     "schema_version": "1.0",
     "holding_institution": "Beinecke Rare Book & Manuscript Library, Yale University — Cary Collection of Playing Cards, PLAYING CARDS GEN 966",
-    "archive": "Yale University Library open-access IIIF",
-    "license": "Open access (as stated by Yale University Library)",
+    "archive": "Yale University Library open-access IIIF (full size, unaltered)",
+    "license": "Open access: Yale University Policy on Open Access to Digital Representations of Works in the Public Domain (2011), https://lux.collections.yale.edu/content/open-access-policy-2011 : images of public-domain works \"may be used by anyone for any purpose\"",
     "pd_basis": "A 15th-century hand-painted object, long out of copyright; Yale publishes the digitisation as open access (credit: Yale University Library).",
-    "verified": "2026-08-02",
+    "verified": "2026-10-19",
     "per_item_field": "metadata.image_source",
     "mapping_rule": "images/cNN.jpg is Yale IIIF image 33215685 + NN, the offset recovered from scripts/prebake_deck_r2.py high_res_url().",
-    "unknown": "Yale's own human-readable catalogue-record URL for this object is not recorded in this repo — only the IIIF image endpoints the images were fetched from. The per-item source below is therefore the IIIF image description, not a catalogue page."
+    "credit_as_asked": "Yale asks users to attribute the work as the holding library specifies, without suggestion of endorsement; the IIIF manifest names the provider as \"Yale University Library\".",
+    "catalogue_record": "https://collections.library.yale.edu/catalog/33215685",
+    "manifest": "https://collections.library.yale.edu/manifests/33215685",
+    "resolution": "Yale full size, about 3,200 x 5,650 px per card (fronts), downloaded byte-for-byte from the IIIF full/full endpoint on 2026-10-19; replaced 1,100 x 1,905 px copies."
   },
   "default_view": "cards",
   "metadata": {
@@ -517,7 +521,7 @@
     "cards": "research/cards/este-tarot.md",
     "bibliography": "research/bibliography.bib"
   },
-  "image_credit": "Beinecke Rare Book & Manuscript Library, Yale University (Cary Collection, PLAYING CARDS GEN 966)",
+  "image_credit": "Beinecke Rare Book & Manuscript Library, Yale University (Cary Collection of Playing Cards, PLAYING CARDS GEN 966). Images: Yale University Library, open access, full size.",
   "is_published": true,
   "open_to_community": true,
   "_recursive_eco_url": "https://flow.recursive.eco/g/7af567b3-3bf7-4047-b199-c8758dd2c9e8?view=reading",
