@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-54 -54 108 108" width="108" height="108">
+<title>pentacle: Book T's pentacle, five concentric circles, the innermost white with a red Greek cross, twelve white rays</title>
+<!-- Book T (Ace of Pentacles): "a large Pentacle, formed of Five concentric circles. The Innermost Circle is white,
+     charged with a red Greek Cross. From this White Centre, Twelve Rays, also white, issue: these terminate at the
+     circumference". Origin: the centre; radius 50. currentColor is the circles' gold. -->
+<g id="part" data-color="#e8c766">
+  <g stroke="#6b4e12" stroke-width="2.5">
+    <circle r="50" fill="currentColor"/>
+    <circle r="41" fill="#d6a640"/>
+    <circle r="32" fill="currentColor"/>
+    <circle r="23" fill="#d6a640"/>
+    <circle r="14" fill="#ffffff"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="3.5" stroke-linecap="round">
+    <line x1="0" y1="-15" x2="0" y2="-49"/><line x1="7.5" y1="-13" x2="24.5" y2="-42.4"/><line x1="13" y1="-7.5" x2="42.4" y2="-24.5"/>
+    <line x1="15" y1="0" x2="49" y2="0"/><line x1="13" y1="7.5" x2="42.4" y2="24.5"/><line x1="7.5" y1="13" x2="24.5" y2="42.4"/>
+    <line x1="0" y1="15" x2="0" y2="49"/><line x1="-7.5" y1="13" x2="-24.5" y2="42.4"/><line x1="-13" y1="7.5" x2="-42.4" y2="24.5"/>
+    <line x1="-15" y1="0" x2="-49" y2="0"/><line x1="-13" y1="-7.5" x2="-42.4" y2="-24.5"/><line x1="-7.5" y1="-13" x2="-24.5" y2="-42.4"/>
+  </g>
+  <path d="M-3 -10 H3 V-3 H10 V3 H3 V10 H-3 V3 H-10 V-3 H-3 Z" fill="#c0281c"/>
+</g>
+</svg>

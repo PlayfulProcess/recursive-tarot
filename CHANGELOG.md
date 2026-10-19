@@ -2,6 +2,31 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 20 2026 — Book T's full imagery: a fourth picture set, everything Book T's text describes
+
+Her words: "go through the whole deck and render a full imagery in this style as an alternative to current rendering."
+
+- **The parts** (`tarot/book-t/parts/`, 118 SVGs): the white radiating angelic hand issuing from clouds (grasping, and
+  open-palmed), the two hands clasped in the grip of the First Order, the suit symbols (wand, small flaming wand, sword,
+  dagger, cup empty/full/running over, Book T's pentacle with its white centre, red Greek cross and twelve rays), roses,
+  buds, petals, lotuses, flames, waters, lands, clouds, the court figures (rider, seated, standing; crowns, helmets,
+  wings, mantles, thrones, chariot), their beasts and crests, and the Keys' figures and things. Drawn for this site as
+  hand-written SVG (no font, icon or image copied), CC BY-SA 4.0; the README lists them.
+- **A spec per card** (`tarot/book-t/full-imagery/compositions.json`): the Book T sentence it follows and its layers
+  (parts, glyphs, stems and streams). Where the text is thin or ambiguous the spec carries a `note` saying what was
+  chosen. The Keys: Book T gives them meanings only, so they are drawn from the Key's title and its traditional figure,
+  as symbols, with no faces.
+- **The composer** (`scripts/build_book_t_full_imagery.py`, `--check` in check_all): writes
+  `tarot/book-t/full-imagery/<id>.svg` (78, in the iconography's frame and caption) and one `metadata.illustrations`
+  entry per card, `edition: "Book T deck, full imagery"`. `--png DIR` renders PNGs and two contact sheets.
+- **The 1912 page's Pictures switch** has a fifth button, **Full imagery** (`build_book_t_page.py`, the template).
+- Both picture-set generators now replace their own illustration entry in place, so neither reorders the other's.
+- **Iconography fix (a playtest found it)**: the courts printed "21° Taurus" where Book T says "20 Degree Taurus". The
+  degrees under the ruled signs now come from Book T's own sentence (`text_degree` in
+  `build_book_t_iconography.py`: "20 Degree X", "the Twentieth Degree", "the last Decan", "the second Decan" are all the
+  20th degree); all twelve Knights, Queens and Princes print 20° and 20°. The deck's `metadata.rules` still says "21°"
+  (from `build_book_t_deck.py`, read as "above 20"), and the static pages show that string.
+
 ## Oct 19 2026 — Book T's iconography: a third picture set, glyphs placed where Book T places them
 
 Her words: "the lord of strife has iconography like this: Above the middle wand is the sign Saturn, and below

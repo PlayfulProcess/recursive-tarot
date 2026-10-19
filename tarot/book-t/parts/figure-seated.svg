@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-70 -150 140 210" width="140" height="210">
+<title>figure-seated: a crowned figure seated upon a throne, in corslet and robe, drawn as a symbol (no face)</title>
+<!-- Origin: the seat. The head's centre is at (0,-118); the hands at (-46,-40) and (46,-40); the feet at y=+48.
+     currentColor is the robe; the corslet of scale-mail is gold. Throne, hair, crown and held things are parts of their own. -->
+<g id="part" data-color="#b3261e">
+  <g fill="none" stroke-linecap="round">
+    <path d="M-22 -96 L-40 -60 L-46 -40 M22 -96 L40 -60 L46 -40" stroke="#7a5a44" stroke-width="13"/>
+    <path d="M-22 -96 L-40 -60 L-46 -40 M22 -96 L40 -60 L46 -40" stroke="#ecc9a4" stroke-width="8"/>
+  </g>
+  <g stroke="#7a5a44" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M-30 -36 L-40 44 L40 44 L30 -36 Z" fill="currentColor"/>
+    <path d="M-24 -100 C-12 -106 12 -106 24 -100 L22 -34 L-22 -34 Z" fill="#c9a24a"/>
+    <path d="M-18 -86 Q0 -80 18 -86 M-19 -72 Q0 -66 19 -72 M-20 -58 Q0 -52 20 -58 M-21 -44 Q0 -38 21 -44" fill="none" stroke="#8a6a1e" stroke-width="1.5"/>
+    <path d="M-16 44 L-22 54 L-8 54 L-6 44 M16 44 L22 54 L8 54 L6 44" fill="#c9a24a"/>
+    <rect x="-5" y="-110" width="10" height="10" fill="#ecc9a4"/>
+    <circle cx="0" cy="-118" r="15" fill="#ecc9a4"/>
+    <circle cx="-46" cy="-40" r="6" fill="#ecc9a4"/><circle cx="46" cy="-40" r="6" fill="#ecc9a4"/>
+  </g>
+</g>
+</svg>

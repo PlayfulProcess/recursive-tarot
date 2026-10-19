@@ -272,6 +272,21 @@ def tetragrammaton(node):
     return SUIT_LETTER.get(node['metadata'].get('suit'), '')
 
 
+def text_degree(node, sign):
+    """The degree Book T's own sentence gives where a court card's rule begins or ends in `sign`
+    ("Rules from 20 Degree Taurus to 20 Degree Gemini"). Book T counts every bound from the 20th degree:
+    "the Twentieth Degree of Scorpio", "the last Decan of Pisces", "the First Two Decans of Sagittarius"
+    and "the second Decan of Leo" all end or begin there. (The metadata's "21°" reads "from above 20"
+    as the next degree; the pictures print the text's number.)"""
+    t = book_t_text(node)
+    m = re.search(r'(\d+) Degree (?:of )?%s' % sign, t)
+    if m:
+        return m.group(1)
+    if re.search(r'(Twentieth Degree|last Decan|First Two Decans|second Decan) of %s' % sign, t, re.I):
+        return '20'
+    raise SystemExit('%s: no degree for %s in the Book T text' % (node['id'], sign))
+
+
 # ── a card ──────────────────────────────────────────────────────────────────────────────────────
 
 def frame(color):
@@ -367,14 +382,15 @@ def card_svg(node):
             parts.append(centre(suit, 1, ''))
             rm = re.match(r'\s*(\d+)\D+?([A-Z][a-z]+)\s*\W+\s*(\d+)\D+?([A-Z][a-z]+)', m.get('rules', ''))
             if rm:
-                d1, s1, d2, s2 = rm.groups()
+                _, s1, _, s2 = rm.groups()
+                d1, d2 = text_degree(node, s1), text_degree(node, s2)
                 parts.append(glyph(s1, CX - 80, 770, 96, color_of(s1)))
                 parts.append(glyph(s2, CX + 80, 770, 96, color_of(s2)))
                 parts.append(corner_text(CX - 80, 838, '%s°' % d1, 20))
                 parts.append(corner_text(CX + 80, 838, '%s°' % d2, 20))
                 parts.append('<path d="M%s 770 L%s 770 M%s 762 L%s 770 L%s 778" fill="none" stroke="%s" stroke-width="3" stroke-linecap="round"/>'
                              % (f(CX - 18), f(CX + 18), f(CX + 10), f(CX + 18), f(CX + 10), MUTED))
-                desc.append('%s; rules %s.' % (m['element_in_element'], m['rules']))
+                desc.append('%s; rules from %s° %s to %s° %s, as Book T counts.' % (m['element_in_element'], d1, s1, d2, s2))
             else:
                 # The Princesses rule a quadrant of the heavens around the North Pole.
                 parts.append('<g fill="none" stroke="%s" stroke-width="3"><path d="M%s 820 L%s 720 A100 100 0 0 1 %s 820 Z" fill="%s" fill-opacity=".12"/>'
@@ -394,8 +410,14 @@ def card_svg(node):
 
 def with_illustration(node):
     m = node['metadata']
-    ills = [i for i in (m.get('illustrations') or []) if i.get('edition') != EDITION]
-    ills.append({'url': URL % node['id'], 'artist': ARTIST, 'edition': EDITION, 'license': 'CC-BY-SA-4.0'})
+    entry = {'url': URL % node['id'], 'artist': ARTIST, 'edition': EDITION, 'license': 'CC-BY-SA-4.0'}
+    ills = list(m.get('illustrations') or [])
+    at = [k for k, i in enumerate(ills) if i.get('edition') == EDITION]
+    if at:  # replace in place, so the other picture sets' generators keep their order too
+        ills[at[0]] = entry
+        ills = [i for k, i in enumerate(ills) if k not in at[1:]]
+    else:
+        ills.append(entry)
     m['illustrations'] = ills
 
 

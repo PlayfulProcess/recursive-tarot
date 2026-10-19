@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-120 -140 180 190" width="180" height="190">
+<title>rider: a warrior seated on a horse, in corslet of scale-mail and buskins, with a flowing mantle, drawn as a symbol (no face)</title>
+<!-- Origin: the saddle (the horse part's origin). The head's centre is at (0,-112); the forward hand at (48,-70);
+     the back of the shoulders at (-8,-90), where the wings go. currentColor is the mantle. -->
+<g id="part" data-color="#b3261e">
+  <path d="M-12 -94 C-50 -98 -92 -82 -114 -48 C-94 -52 -74 -44 -60 -34 C-44 -40 -26 -40 -12 -40 Z" fill="currentColor" stroke="#4a1a14" stroke-width="2.5" stroke-linejoin="round"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 -32 L28 -8 L26 40" stroke="#5a4426" stroke-width="17"/>
+    <path d="M0 -32 L28 -8 L26 40" stroke="#c9a24a" stroke-width="12"/>
+    <path d="M10 -88 L46 -70" stroke="#7a5a44" stroke-width="13"/>
+    <path d="M10 -88 L46 -70" stroke="#ecc9a4" stroke-width="8"/>
+  </g>
+  <g stroke="#5a4426" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M-16 -36 L-14 -96 C-6 -102 8 -102 16 -96 L18 -36 Z" fill="#c9a24a"/>
+    <path d="M-13 -84 Q1 -78 15 -84 M-14 -70 Q1 -64 16 -70 M-14 -56 Q1 -50 17 -56" fill="none" stroke="#8a6a1e" stroke-width="1.5"/>
+    <rect x="-5" y="-106" width="10" height="10" fill="#ecc9a4"/>
+    <circle cx="0" cy="-112" r="14" fill="#ecc9a4"/>
+    <circle cx="48" cy="-70" r="6" fill="#ecc9a4"/>
+    <path d="M18 40 L36 40 L34 46 L18 46 Z" fill="#c9a24a"/>
+  </g>
+</g>
+</svg>

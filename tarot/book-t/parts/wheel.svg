@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-120 -120 240 240" width="240" height="240">
+<title>wheel: a wheel of eight spokes</title>
+<!-- Origin: the hub; radius 110. currentColor is the wheel. -->
+<g id="part" data-color="#c9a24a">
+  <circle r="110" fill="none" stroke="#5a3a1c" stroke-width="18"/><circle r="110" fill="none" stroke="currentColor" stroke-width="12"/>
+  <circle r="80" fill="none" stroke="#5a3a1c" stroke-width="3"/>
+  <g stroke="#5a3a1c" stroke-width="8" stroke-linecap="round"><path d="M0 -104 V104 M-104 0 H104 M-73 -73 L73 73 M73 -73 L-73 73"/></g>
+  <g stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M0 -104 V104 M-104 0 H104 M-73 -73 L73 73 M73 -73 L-73 73"/></g>
+  <circle r="20" fill="currentColor" stroke="#5a3a1c" stroke-width="3"/>
+</g>
+</svg>

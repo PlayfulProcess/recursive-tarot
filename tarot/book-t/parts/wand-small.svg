@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -26 60 104" width="60" height="104">
+<title>wand-small: a small wand with five flames issuing from it, supporting a symbol on its head</title>
+<!-- Book T: "On two small wands above and below, with flames of five issuing therefrom, are the symbols".
+     Origin: the wand's head, where the symbol rests; the wand runs down 72. Rotate 180 for the one below. -->
+<g id="part" data-color="#e8742a">
+  <rect x="-5" y="2" width="10" height="72" rx="5" fill="#c9a36a" stroke="#5a3a1c" stroke-width="2.5"/>
+  <g fill="currentColor" stroke="#b0361f" stroke-width="1.8" stroke-linejoin="round">
+    <path d="M-4 8 C-18 6 -24 -4 -26 -12 C-16 -10 -8 -4 -4 8 Z"/>
+    <path d="M4 8 C18 6 24 -4 26 -12 C16 -10 8 -4 4 8 Z"/>
+    <path d="M-4 18 C-18 18 -24 10 -28 4 C-18 4 -10 8 -4 18 Z"/>
+    <path d="M4 18 C18 18 24 10 28 4 C18 4 10 8 4 18 Z"/>
+    <path d="M-4 30 C-16 32 -22 26 -26 20 C-16 20 -8 24 -4 30 Z"/>
+  </g>
+</g>
+</svg>

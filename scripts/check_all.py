@@ -182,6 +182,16 @@ print(f"[build_book_t_iconography.py] {out.splitlines()[0] if out else '(no outp
 if r.returncode != 0:
     errors.append(f"build_book_t_iconography.py --check failed:\n{out}")
 
+# 8d — Book T's full imagery (the fourth picture set): tarot/book-t/full-imagery/*.svg and each card's
+# "Book T deck, full imagery" illustration, composed from tarot/book-t/parts/ + glyphs/ by the specs in
+# tarot/book-t/full-imagery/compositions.json.
+r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "build_book_t_full_imagery.py"), "--check"],
+                   capture_output=True, text=True, cwd=ROOT, encoding="utf-8")
+out = (r.stdout + r.stderr).strip()
+print(f"[build_book_t_full_imagery.py] {out.splitlines()[0] if out else '(no output)'}")
+if r.returncode != 0:
+    errors.append(f"build_book_t_full_imagery.py --check failed:\n{out}")
+
 # 9 — card/*.html, tarot-card-meanings.html and sitemap.xml are generated from the Rider-Waite-Smith and
 # Golden Dawn decks (the search-engine pages, Oct 14 2026); a deck edit needs a re-run of the build.
 r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "build_card_pages.py"), "--check"],
