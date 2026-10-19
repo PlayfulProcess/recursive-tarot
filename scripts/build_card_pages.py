@@ -422,6 +422,7 @@ ECO_IDS = "tarot/_eco_ids.json"
 LEDGER = "docs/rights/image-ledger.json"
 WAITE_III = "research/sources/waite-pictorial-key-part-iii.md"
 PLAY = "https://recursive.eco/play?id="
+CAST = "https://recursive.eco/process?cast="  # the Cast link the site uses (viewers/cards.html, PR #85)
 GITHUB = "https://github.com/PlayfulProcess/recursive-tarot/blob/main/"
 DRAFT = "<!-- DRAFT copy for PlayfulProcess: new wording, not taken from a grammar. -->"
 # recursive.eco ids confirmed public with the MCP on Oct 20 2026 that are missing from _eco_ids.json's
@@ -653,6 +654,8 @@ def build_book_t(files):
                 continue
             parts.append(f'<h2>{esc(key)}</h2><div class="prose">{md_paras(sec[key])}</div>')
         play = (f'<a class="btn" href="{PLAY}{eco}&amp;node={esc(n["id"])}">Play it on recursive.eco</a>' if eco else "")
+        cast = (f'<a class="btn primary" href="{CAST}{eco}">Draw &amp; reflect</a>' if eco else
+                f'<a class="btn primary" href="../viewers/caster-studio.html?src=../tarot/{BOOKT}/grammar.json">Draw &amp; reflect</a>')
         prev_n, next_n = cards[i - 1], cards[(i + 1) % 78]
         body = f"""{crumbs([("The Recursive Tarot", "../index.html"), ("Book T", "index.html"), (n['name'], None)])}
 <article>
@@ -665,7 +668,7 @@ def build_book_t(files):
 <p class="src">{esc(label(n))} · <i>{esc(m.get('title', ''))}</i></p>
 <p class="creed">{esc(CREED.split(" These")[0])}</p>
 <div class="actions">
-<a class="btn primary" href="../viewers/caster-studio.html?src=../tarot/{BOOKT}/grammar.json">Draw &amp; reflect</a>
+{cast}
 {play}
 <a class="btn" href="../viewers/cards.html?src=../tarot/{BT_DECK}/grammar.json&amp;item={esc(n['id'])}">Open in the card viewer</a>
 </div>
@@ -866,8 +869,9 @@ def build_decks(files):
             else:
                 items.append(f'<li><a href="{link}">{esc(n["name"])}</a></li>')
         eco = ids.get(slug) if slug in public else None
-        actions = [f'<a class="btn primary" href="../viewers/caster-studio.html?src=../tarot/{slug}/grammar.json">Draw &amp; reflect</a>'
-                   if castable.get(slug, 0) >= 3 else "",
+        actions = [f'<a class="btn primary" href="{CAST}{eco}">Draw &amp; reflect</a>' if eco and g.get("grammar_type") == "tarot" else
+                   (f'<a class="btn primary" href="../viewers/caster-studio.html?src=../tarot/{slug}/grammar.json">Draw &amp; reflect</a>'
+                    if castable.get(slug, 0) >= 3 else ""),
                    f'<a class="btn" href="{PLAY}{eco}&amp;pane=cards">Play it on recursive.eco</a>' if eco else "",
                    f'<a class="btn" href="{viewer}">Open in the card viewer</a>']
         attrib = "".join(
