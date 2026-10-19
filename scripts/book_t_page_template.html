@@ -213,6 +213,7 @@
         <span class="picl">Pictures</span>
         <button type="button" role="radio" data-pics="line" aria-checked="true">Book T</button>
         <button type="button" role="radio" data-pics="paint" aria-checked="false">Painting</button>
+        <button type="button" role="radio" data-pics="icon" aria-checked="false">Iconography</button>
         <button type="button" role="radio" data-pics="rws" aria-checked="false">Rider-Waite-Smith</button>
       </div>
     </div>
@@ -270,11 +271,12 @@
     const t = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
     if (t) t.scrollIntoView({ block: 'start', behavior: 'instant' });
   });
-  // The picture switch (Oct 18 2026): Book T's own line art, its painting, or Rider-Waite-Smith.
+  // The picture switch (Oct 18 2026): Book T's own line art, its painting, its iconography (Oct 19:
+  // the glyphs composed by scripts/build_book_t_iconography.py), or Rider-Waite-Smith.
   // One choice for every picture on the page, remembered on this device.
   const picBtns = [...document.querySelectorAll('[data-pics]')];
   function showPics(kind) {
-    if (!['line', 'paint', 'rws'].includes(kind)) kind = 'line';
+    if (!['line', 'paint', 'icon', 'rws'].includes(kind)) kind = 'line';
     document.querySelectorAll('img[data-pic-line]').forEach(img => {
       const src = img.getAttribute('data-pic-' + kind);
       if (src && img.getAttribute('src') !== src) img.setAttribute('src', src);
