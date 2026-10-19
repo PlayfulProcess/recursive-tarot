@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-70 -64 140 120" width="140" height="120">
+<title>cup-overflow: a full cup running over on both sides</title>
+<!-- Origin: the cup's centre (its foot rests at y=46). currentColor is the gold. -->
+<g id="part" data-color="#e2bd4f">
+  <g stroke="#6b4e12" stroke-width="3" stroke-linejoin="round" fill="currentColor">
+    <path d="M-38 -46 L38 -46 C38 -10 22 6 0 6 C-22 6 -38 -10 -38 -46 Z"/>
+    <path d="M-5 6 L-5 30 L5 30 L5 6"/>
+    <path d="M-26 46 C-26 34 -12 30 0 30 C12 30 26 34 26 46 Z"/>
+  </g>
+  <ellipse cx="0" cy="-47" rx="40" ry="8" fill="#7fb2e0" stroke="#3f7fbf" stroke-width="2.5"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M-38 -48 C-50 -40 -54 -10 -56 30 M38 -48 C50 -40 54 -10 56 30" stroke="#3f7fbf" stroke-width="8"/>
+    <path d="M-38 -48 C-50 -40 -54 -10 -56 30 M38 -48 C50 -40 54 -10 56 30" stroke="#ffffff" stroke-width="4"/>
+  </g>
+  <g fill="#ffffff" stroke="#3f7fbf" stroke-width="1.5"><circle cx="-56" cy="40" r="3"/><circle cx="56" cy="40" r="3"/><circle cx="-50" cy="48" r="2.5"/><circle cx="50" cy="48" r="2.5"/></g>
+</g>
+</svg>

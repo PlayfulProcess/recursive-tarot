@@ -35,6 +35,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 import import_book_t_1912 as IB  # noqa: E402
 import build_book_t_page as BP  # noqa: E402
+import build_book_t_iconography as ICO  # noqa: E402  (text_degree: the degree Book T's own sentence gives)
 
 OUT = os.path.join(ROOT, 'tarot', 'book-t', 'grammar.json')
 GD = os.path.join(ROOT, 'tarot', 'golden-dawn-book-t-tarot', 'grammar.json')
@@ -179,6 +180,29 @@ def no_the(s):
     return s[:1].upper() + s[1:]
 
 
+def court_rules(gid, body, rules):
+    """The court's rule ("20° Scorpio – 20° Sagittarius") with each bound's degree as Book T's own
+    sentence gives it (every bound at the 20th degree), not the Golden Dawn deck's "21°" reading of
+    "from above 20". The signs come from the Golden Dawn deck's `rules`."""
+    m = re.match(r'\s*\d+°\s*([A-Z][a-z]+)\s*([–-])\s*\d+°\s*([A-Z][a-z]+)\s*$', rules or '')
+    if not m:  # the Princesses rule a quadrant of the heavens, no degrees
+        return rules
+    node = {'id': gid, 'sections': {'Book T (1912)': body}}
+    a, dash, b = m.groups()
+    return '%s° %s %s %s° %s' % (ICO.text_degree(node, a), a, dash, ICO.text_degree(node, b), b)
+
+
+def with_rule_degrees(text, rules):
+    """The Golden Dawn deck's Correspondences line, "Rules 21° [Scorpio](...) – 20° [Sagittarius](...)",
+    with the two degrees of this deck's `rules` (Book T's own 20°)."""
+    m = re.match(r'(\d+)° \S+ \S (\d+)°', rules or '')
+    if not m or not text.startswith('Rules '):
+        return text
+    degs = iter(m.groups())
+    head, sep, rest = text.partition('. ')
+    return re.sub(r'\d+°', lambda _: next(degs) + '°', head, count=2) + sep + rest
+
+
 def build(prev):
     text = corrected_text()
     words = IB.parse(text)                      # verbatim card texts, keyed by the GD deck's ids
@@ -225,7 +249,8 @@ def build(prev):
             card = '%s of %s' % (rank, SUIT_NAME[suit])
             c1912 = '%s of %s' % (r['rank'], SUIT_NAME[suit])
             md.update(arcana='minor', suit=SUIT_NAME[suit], element=ELEMENT[suit], rank=rank, court=True,
-                      card_name_1912=c1912, element_in_element=gm.get('element_in_element'), rules=gm.get('rules'))
+                      card_name_1912=c1912, element_in_element=gm.get('element_in_element'),
+                      rules=court_rules(gid, body, gm.get('rules')))
             row = "No. %d of Book T's 78 titles · **%s**" % (no, card)
             if c1912 != card:
                 row += " (the 1912 list calls it the %s)" % c1912
@@ -251,7 +276,7 @@ def build(prev):
         sections = {
             'Book T (1912)': IB.HEADER + '\n\n' + body,
             "In Book T's table": row,
-            'Correspondences': g['sections']['Correspondences'],
+            'Correspondences': with_rule_degrees(g['sections']['Correspondences'], md.get('rules')),
         }
         item = {'id': nid, 'name': title, 'sort_order': no - 1, 'category': category,
                 'keywords': [k for k in dict.fromkeys(kw) if k], 'image_url': '',

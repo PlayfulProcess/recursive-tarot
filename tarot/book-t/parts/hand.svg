@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-80 -70 160 250" width="160" height="250">
+<title>hand: a white radiating angelic hand issuing from clouds, grasping</title>
+<!-- Origin: the centre of the fist. A staff held upright passes through it; the arm runs down to its cloud.
+     Rotate the part with the thing it holds. currentColor fills the cloud. -->
+<g id="part" data-color="#eef1f6">
+  <g stroke="#e0b440" stroke-width="3" stroke-linecap="round">
+    <line x1="0" y1="-36" x2="0" y2="-60"/><line x1="15" y1="-33" x2="25" y2="-55"/><line x1="-15" y1="-33" x2="-25" y2="-55"/>
+    <line x1="28" y1="-23" x2="45" y2="-38"/><line x1="-28" y1="-23" x2="-45" y2="-38"/>
+    <line x1="35" y1="-9" x2="57" y2="-15"/><line x1="-35" y1="-9" x2="-57" y2="-15"/>
+    <line x1="36" y1="7" x2="58" y2="11"/><line x1="-36" y1="7" x2="-58" y2="11"/>
+    <line x1="31" y1="24" x2="48" y2="36"/><line x1="-31" y1="24" x2="-48" y2="36"/>
+  </g>
+  <g fill="#ffffff" stroke="#7d8aa3" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M-14 12 C-15 50 -17 85 -19 125 L19 125 C17 85 15 50 14 12 Z"/>
+    <rect x="-22" y="-22" width="30" height="44" rx="11"/>
+    <rect x="-7" y="-22" width="29" height="11" rx="5.5"/>
+    <rect x="-7" y="-11" width="30" height="11" rx="5.5"/>
+    <rect x="-7" y="0" width="29" height="11" rx="5.5"/>
+    <rect x="-7" y="11" width="26" height="11" rx="5.5"/>
+    <path d="M-20 -12 C-26 -26 -10 -32 -2 -24 C3 -19 -2 -13 -9 -12 Z"/>
+  </g>
+  <g fill="none" stroke="#9aa6b8" stroke-width="6">
+    <circle cx="-34" cy="138" r="24"/><circle cx="-6" cy="126" r="28"/><circle cx="24" cy="130" r="26"/>
+    <circle cx="44" cy="148" r="18"/><circle cx="-18" cy="156" r="20"/><circle cx="14" cy="158" r="20"/>
+  </g>
+  <g fill="currentColor">
+    <circle cx="-34" cy="138" r="24"/><circle cx="-6" cy="126" r="28"/><circle cx="24" cy="130" r="26"/>
+    <circle cx="44" cy="148" r="18"/><circle cx="-18" cy="156" r="20"/><circle cx="14" cy="158" r="20"/>
+  </g>
+</g>
+</svg>

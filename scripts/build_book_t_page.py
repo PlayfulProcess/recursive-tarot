@@ -165,7 +165,9 @@ INTROS = {
               "beside the cards are Book T's own deck, made for this site: line art traced from AI "
               "paintings prompted from Book T's words (CC BY-SA). The switch at the top shows the "
               "paintings, the iconography (the planet, sign, element and Hebrew letter glyphs "
-              "placed where Book T places them, drawn for this site), or the Rider-Waite-Smith "
+              "placed where Book T places them, drawn for this site), the full imagery (everything "
+              "Book T describes, the hands, clouds, roses, beasts and figures, drawn for this site "
+              "in the same style), or the Rider-Waite-Smith "
               "deck (1909), instead. The deck, in Book T's order "
               "and titles: [Book T](../viewers/cards.html?src=../tarot/book-t/grammar.json) · "
               "[in recursive.eco](" + BOOK_T_ECO + ") · [its grammar file](" + BOOK_T_FILE + ")."),
@@ -511,7 +513,8 @@ def build():
 
 def load_book_t_pictures():
     """The Book T deck's pictures, by the Golden Dawn deck's card id (each Book T card names its
-    place on this page in its "In Book T's table" section): line art first, then the painting and the iconography."""
+    place on this page in its "In Book T's table" section): line art first, then the painting, the iconography
+    and the full imagery."""
     if not os.path.exists(BOOK_T_DECK):
         return {}
     out = {}
@@ -523,8 +526,10 @@ def load_book_t_pictures():
         line = next((i['url'] for i in ills if i.get('is_primary')), n.get('image_url') or '')
         paint = next((i['url'] for i in ills if 'painting' in (i.get('edition') or '')), '')
         icon = next((i['url'] for i in ills if (i.get('edition') or '').endswith('iconography')), '')
+        full = next((i['url'] for i in ills if (i.get('edition') or '').endswith('full imagery')), '')
         if line:
-            out[m.group(1)] = {'id': n['id'], 'line': line, 'paint': paint or line, 'icon': icon or line}
+            out[m.group(1)] = {'id': n['id'], 'line': line, 'paint': paint or line, 'icon': icon or line,
+                                'full': full or line}
     return out
 
 
@@ -532,17 +537,18 @@ BOOK_T_PICS = load_book_t_pictures()
 
 
 def thumb(it, cls='th', size=None):
-    """A card's picture: Book T's own (line art) by default, the painting, the iconography and the
-    Rider-Waite-Smith picture one tap away (the picture switch; data-pic-* carry the four)."""
+    """A card's picture: Book T's own (line art) by default, the painting, the iconography, the full
+    imagery and the Rider-Waite-Smith picture one tap away (the picture switch; data-pic-* carry the five)."""
     rws = it['image_url']
     bt = BOOK_T_PICS.get(it['id'])
     if not bt:
         return ('<img class="%s" src="%s" alt="%s" loading="lazy" decoding="async" width="300" height="520">'
                 % (cls, html.escape(rws), html.escape(it['name'])))
     return ('<img class="%s" src="%s" alt="%s" loading="lazy" decoding="async" width="300" height="520" '
-            'data-pic-line="%s" data-pic-paint="%s" data-pic-icon="%s" data-pic-rws="%s">'
+            'data-pic-line="%s" data-pic-paint="%s" data-pic-icon="%s" data-pic-full="%s" data-pic-rws="%s">'
             % (cls, html.escape(bt['line']), html.escape(it['name']),
-               html.escape(bt['line']), html.escape(bt['paint']), html.escape(bt['icon']), html.escape(rws)))
+               html.escape(bt['line']), html.escape(bt['paint']), html.escape(bt['icon']), html.escape(bt['full']),
+               html.escape(rws)))
 
 
 def side_href(ident):

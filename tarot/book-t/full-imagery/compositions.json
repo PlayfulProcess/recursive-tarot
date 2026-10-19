@@ -1,0 +1,1145 @@
+{
+  "wands-ace": {
+    "follows": "A WHITE Radiating Angelic Hand, issuing from clouds, and grasping a heavy club, which has three branches in the colours, and with the sigils, of the scales. The Right-and Left-hand branches end respectively in three Flames, and the Centre one in four Flames: thus yielding Ten: the Number of the Sephiroth. Two-and-twenty leaping Flames, or Yodh, surround it, answering to the Paths; of these, three fall below the Right branch for Aleph, Men, and Shin, seven above the Central branch for the double letters; and between it and that of the Right twelve: six above and six below about the Left-hand branch. The whole is a great and flaming Torch.",
+    "layers": [
+      {"part": "flame", "at": [[392, 448], [418, 476], [380, 486], [230, 262], [255, 238], [280, 222], [305, 238], [330, 262], [245, 286], [315, 286], [98, 300], [128, 282], [158, 296], [110, 336], [140, 322], [86, 352], [104, 452], [134, 444], [164, 456], [116, 488], [146, 482], [92, 494]], "s": 0.55},
+      {"part": "club", "at": [280, 690], "s": 1.25},
+      {"part": "hand", "at": [280, 690], "s": 1.25}
+    ],
+    "note": "Book T places the twenty-two Yods ambiguously ('and between it and that of the Right twelve: six above and six below about the Left-hand branch'): drawn as three below the right branch, seven above the centre, twelve about the left branch. The branches' 'colours ... of the scales' are shown as a red, a blue and a yellow collar, each with a small sigil mark."
+  },
+  "cups-ace": {
+    "follows": "A WHITE Radiant Angelic Hand, issuing from clouds, and supporting on the palm thereof a cup, resembling that of the Stolistes. From it rises a fountain of clear and glistening water: and sprays falling on all sides into clear calm water below, in which grow Lotuses and Water-lilies. The great Letter of the Supernal Mother is traced in the spray of the Fountain.",
+    "layers": [
+      {"part": "water-calm", "at": [280, 700]},
+      {"part": "fountain", "at": [280, 400], "s": 1.3},
+      {"part": "hand-palm", "at": [280, 520], "s": 1.1},
+      {"part": "cup-full", "at": [280, 469], "s": 1.1},
+      {"glyph": "heh", "at": [280, 250], "size": 70, "color": "#1d5c9c"},
+      {"part": "lily-pad", "at": [[130, 724], [420, 730], [290, 760], [500, 770]]},
+      {"part": "lotus", "at": [[80, 702], [180, 706], [380, 704], [470, 702]], "s": 1.15}
+    ]
+  },
+  "swords-ace": {
+    "follows": "A WHITE Radiating Angelic Hand, issuing from clouds, and grasping the hilt of a sword, which supports a White Radiant Celestial Crown; from which depend, on the right, the olive branch of Peace; and on the left, the palm branch of suffering. Six Vaus fall from its point.",
+    "layers": [
+      {"part": "palm-branch", "at": [236, 352], "s": 1.1},
+      {"part": "olive-branch", "at": [324, 352], "s": 1.1},
+      {"part": "sword", "at": [280, 700], "s": 1.2},
+      {"part": "crown-radiant", "at": [280, 368], "s": 1.25},
+      {"glyph": "vau", "at": [[212, 520], [348, 520], [200, 590], [360, 590], [214, 660], [346, 660]], "size": 34, "color": "#8f7110"},
+      {"part": "hand", "at": [280, 700], "s": 1.1}
+    ],
+    "note": "Book T hangs the olive branch 'on the right' and the palm 'on the left' without saying whose right: drawn on the viewer's right and left. The Vaus fall from the point, here on either side of the blade below the crown."
+  },
+  "pentacles-ace": {
+    "follows": "A WHITE Radiant Angelic Hand, holding a branch of a Rose Tree, whereon is a large Pentacle, formed of Five concentric circles. The Innermost Circle is white, charged with a red Greek Cross. From this White Centre, Twelve Rays, also white, issue: these terminate at the circumference, making the whole something like an Astrological figure of the Heavens. It is surmounted by a small circle, above which is a large white Maltese Cross, and with two white wings. Four Crosses and two buds are shewn. The Hand issueth from the Clouds as in the other three cases.",
+    "layers": [
+      {"curve": "branch", "paths": [[280, 700, 274, 610.0, 280, 550], [280, 636, 228.0, 632, 176, 590], [280, 636, 332.0, 632, 384, 590], [280, 690, 238.0, 686, 196, 660], [280, 690, 322.0, 686, 364, 660], [280, 566, 215.0, 562, 150, 520], [280, 566, 345.0, 562, 410, 520]]},
+      {"curve": "branch", "paths": [[280, 700, 270, 610.0, 280, 520]]},
+      {"part": "leaf", "at": [[230, 620], [330, 620], [236, 680], [324, 680]], "rot": [-60, 60, -70, 70], "s": 1.0},
+      {"part": "rose", "at": [[176, 590], [384, 590], [196, 660], [364, 660]], "s": 1.0},
+      {"part": "rosebud", "at": [[150, 520], [410, 520]], "rot": [-20, 20], "s": 1.3},
+      {"part": "maltese-wings", "at": [280, 314], "s": 1.3},
+      {"part": "pentacle", "at": [280, 410], "s": 2.0},
+      {"part": "hand", "at": [280, 700], "s": 1.0}
+    ],
+    "note": "Book T: 'Four Crosses and two buds are shewn.' Read as four roses and two buds on the rose branch (the Maltese cross is already above the pentacle)."
+  },
+  "wands-knight": {
+    "follows": "Note that the Kings are now called Knights, and the Princes are now called Kings. This is unfortunate, and leads to confusion; the Princes may be called Emperors without harm. Remember only that the horsed figures refer to the Yod of Tetragrammaton, the charioted figures to the Vau. A WINGED Warrior riding upon a black horse with flaming mane and tail: the horse itself is not winged. The rider wears a winged helmet (like the old Scandinavian and Gaulish helmet) with a Rayed Crown, a corslet of scale-mail and buskins of the same, and a flowing scarlet mantle. Above his helmet, upon his curass, and on the shoulder-pieces and buskins, he wears as a crest a winged black horse's head. He grasps a club with flaming ends, somewhat similar to that in the symbol of the Ace of Wands, but not so heavy, and also the sigil of his scale is shown; beneath the rushing feet of his steed are waving flames and fire.",
+    "layers": [
+      {"part": "flames-ground", "at": [280, 790], "s": 0.95},
+      {"part": "wings", "at": [281.2, 463.2], "s": 0.75},
+      {"part": "horse", "at": [290, 560], "s": 1.1, "color": "#2b2420"},
+      {"part": "rider", "at": [290, 560], "s": 1.1, "color": "#b3261e"},
+      {"part": "helmet-winged", "at": [290.0, 436.8], "s": 1.1},
+      {"part": "crest-wings", "at": [290.0, 388.8], "s": 1.0},
+      {"part": "head-horse", "at": [290.0, 388.8], "s": 1.0},
+      {"part": "crest-wings", "at": [291.1, 487.4], "s": 0.6},
+      {"part": "head-horse", "at": [291.1, 487.4], "s": 0.6},
+      {"part": "wand", "at": [342.8, 483.0], "rot": 24, "s": 0.75},
+      {"part": "flame", "at": [298.8, 583.0], "rot": 204, "s": 0.8},
+      {"part": "flame", "at": [[367.0, 522.6], [378.0, 500.6], [391.2, 480.8], [404.4, 463.2]], "rot": [-30, -20, -10, 0], "s": 0.8},
+      {"part": "flame", "at": [[180.0, 566.6], [160.2, 588.6], [153.6, 615.0]], "rot": [-80, -100, -120], "s": 0.9},
+      {"glyph": "rule1", "at": [90, 190], "size": 50},
+      {"glyph": "rule2", "at": [470, 190], "size": 50}
+    ],
+    "note": "The club 'with flaming ends' is drawn as the deck's wand with a flame at each end. Book T sets the winged black horse's head above the helmet, on the cuirass, shoulder-pieces and buskins: drawn above the helmet and on the cuirass."
+  },
+  "wands-queen": {
+    "follows": "A CROWNED queen with long red-golden hair, seated upon a Throne, with steady flames beneath. She wears a corslet and buskins of scale-mail, which latter her robe discloses. Her arms are almost bare. On cuirass and buskins are leopard's heads winged, and the same symbol surmounteth her crown. At her side is a couchant leopard on which her hands rest. She bears a long wand with a very heavy conical head.",
+    "layers": [
+      {"part": "flames-ground", "at": [280, 745], "s": 0.95},
+      {"part": "throne", "at": [280, 575], "s": 1.5},
+      {"part": "hair-long", "at": [280, 398], "s": 1.5},
+      {"part": "leopard", "at": [172, 548], "s": 1.15},
+      {"part": "figure-seated", "at": [280, 575], "s": 1.5, "color": "#b3261e"},
+      {"part": "crown", "at": [280, 382], "s": 1.3},
+      {"part": "crest-wings", "at": [280, 342], "s": 1.0},
+      {"part": "head-leopard", "at": [280, 342], "s": 1.0},
+      {"part": "crest-wings", "at": [280, 456], "s": 0.7},
+      {"part": "head-leopard", "at": [280, 456], "s": 0.7},
+      {"part": "head-leopard", "at": [[256, 650], [304, 650]], "s": 0.45},
+      {"part": "wand-heavy", "at": [349, 520], "s": 1.05},
+      {"glyph": "rule1", "at": [90, 190], "size": 50},
+      {"glyph": "rule2", "at": [470, 190], "size": 50}
+    ]
+  },
+  "wands-prince": {
+    "follows": "A KINGLY Figure with a golden, winged crown, seated on a chariot. He has large white wings. One wheel of his chariot is shewn. He wears corslet and buskins of scale armour decorated with a winged lion's head, which symbol also surmounts his crown. His chariot is drawn by a lion. His arms are bare, save for the shoulder-pieces of the corslet, and he bears a torch or fire-wand, somewhat similar to that of the Zelator Adeptus Minor. Beneath the chariot are flames, some waved, some salient.",
+    "layers": [
+      {"part": "flames-ground", "at": [280, 776], "s": 0.95},
+      {"part": "wings", "at": [200, 474.6], "s": 1.05},
+      {"part": "figure-seated", "at": [200, 585], "s": 1.15, "color": "#b3261e"},
+      {"part": "crest-wings", "at": [200.0, 429.3], "s": 0.8},
+      {"part": "crown", "at": [200.0, 435.3], "s": 1.15},
+      {"part": "crest-wings", "at": [200.0, 391.3], "s": 1.0},
+      {"part": "head-lion", "at": [200.0, 391.3], "s": 1.0},
+      {"part": "head-lion", "at": [200.0, 493.0], "s": 0.55},
+      {"part": "wand", "at": [252.9, 539.0], "rot": 14, "s": 0.62},
+      {"part": "chariot", "at": [200, 585], "s": 1.15},
+      {"part": "lion", "at": [440, 654], "s": 0.95},
+      {"glyph": "rule1", "at": [90, 190], "size": 50},
+      {"glyph": "rule2", "at": [470, 190], "size": 50}
+    ],
+    "note": "His torch or fire-wand is drawn as the deck's flaming wand."
+  },
+  "wands-princess": {
+    "follows": "A VERY strong and beautiful woman with flowing red-gold hair, attired like an Amazon. Her shoulders, arms, bosom and knees are bare. She wears a short kilt reaching to the knee. Round her waist is a broad belt of scale-mail; narrow at the sides; broader in front and back; and having a winged tiger's head in front. She wears a Corinthian-shaped helmet and crown with a long plume. It also is surmounted by a tiger's head, and the same symbol forms the buckle of her scale-mail buskins. A mantle lined with tiger's skin falls back from her shoulders. Her right hand rests on a small golden or brazen altar ornamented with ram's heads and with Flames of Fire leaping from it. Her left hand leans on a long and heavy club, swelling at the lower end, where the sigil is placed; and it has flames of fire leaping from it the whole way down; but the flames are ascending. This club or torch is much longer than that carried by the King or Queen. Beneath her firmly placed feet are leaping Flames of Fire.",
+    "layers": [
+      {"part": "flames-ground", "at": [280, 800], "s": 0.95},
+      {"part": "mantle-tiger", "at": [280.0, 420.2], "s": 1.6, "color": "#7a2a24"},
+      {"part": "hair-long", "at": [280.0, 385.0], "s": 1.6, "color": "#c0642a"},
+      {"part": "figure", "at": [280, 705], "s": 1.6, "color": "#b3261e"},
+      {"part": "helmet-corinthian", "at": [280.0, 385.0], "s": 1.6},
+      {"part": "crest-wings", "at": [280.0, 323.0], "s": 1.0},
+      {"part": "head-tiger", "at": [280.0, 323.0], "s": 1.0},
+      {"part": "altar", "at": [184.0, 521.0], "s": 0.9},
+      {"part": "flame-burst", "at": [184.0, 519.0], "s": 0.8},
+      {"part": "club-heavy", "at": [364.0, 543.0], "s": 1.0},
+      {"part": "crest-wings", "at": [280.0, 506.6], "s": 0.7},
+      {"part": "head-tiger", "at": [280.0, 506.6], "s": 0.7},
+      {"glyph": "sub", "at": [90, 190], "size": 46},
+      {"glyph": "of", "at": [470, 190], "size": 46}
+    ],
+    "note": "Book T's belt with 'a winged tiger's head in front' is drawn as the winged tiger's head at her waist; the altar's ram's heads as two curled horns."
+  },
+  "cups-knight": {
+    "follows": "A BEAUTIFUL, winged, youthful Warrior with flying hair, riding upon a white horse, which latter is not winged. His general equipment is similar to that of the Knight of Wands, but upon his helmet, cuirass and buskins is a peacock with opened wings. He holds a cup in his hand, bearing the sigil of the scale. Beneath his horse's feet is the sea. From the cup issues a crab.",
+    "layers": [
+      {"part": "waves", "at": [280, 690]},
+      {"part": "hair-long", "at": [290.0, 436.8], "s": 0.9, "color": "#d8a84a"},
+      {"part": "wings", "at": [281.2, 463.2], "s": 0.75},
+      {"part": "horse", "at": [290, 560], "s": 1.1, "color": "#f3efe6"},
+      {"part": "rider", "at": [290, 560], "s": 1.1, "color": "#1d5c9c"},
+      {"part": "helmet-winged", "at": [290.0, 436.8], "s": 1.1},
+      {"part": "peacock", "at": [290.0, 388.8], "s": 1.0},
+      {"part": "peacock", "at": [291.1, 487.4], "s": 0.6},
+      {"part": "cup", "at": [346.8, 457.0], "s": 0.55},
+      {"part": "crab", "at": [346.8, 419.0], "s": 0.9},
+      {"glyph": "rule1", "at": [90, 190], "size": 50},
+      {"glyph": "rule2", "at": [470, 190], "size": 50}
+    ],
+    "note": "Book T gives no colour for his mantle: drawn blue, the colour of Water."
+  },
+  "cups-queen": {
+    "follows": "A VERY beautiful fair woman like a crowned Queen, seated upon a throne, beneath which is flowing water wherein Lotuses are seen. Her general dress is similar to that of the Queen of Wands, but upon her crown, cuirass and buskins is seen an Ibis with opened wings, and beside her is the same bird, whereon her hand rests. She holds a cup, wherefrom a crayfish issues. Her face is dreamy. She holds a lotus in the hand upon the Ibis.",
+    "layers": [
+      {"part": "water-calm", "at": [280, 680]},
+      {"part": "throne", "at": [280, 575], "s": 1.5},
+      {"part": "hair-long", "at": [280.0, 398.0], "s": 1.5, "color": "#e8c66a"},
+      {"part": "ibis", "at": [150, 566], "s": 1.15},
+      {"part": "lotus", "at": [[90, 700], [180, 712], [390, 708], [470, 700]], "s": 1.0},
+      {"part": "lily-pad", "at": [[140, 740], [430, 744]]},
+      {"part": "figure-seated", "at": [280, 575], "s": 1.5, "color": "#1d5c9c"},
+      {"part": "crown", "at": [280.0, 382.0], "s": 1.3},
+      {"part": "crest-wings", "at": [280.0, 342.0], "s": 0.25},
+      {"part": "ibis", "at": [280.0, 342.0], "s": 0.25},
+      {"part": "crest-wings", "at": [280.0, 455.0], "s": 0.175},
+      {"part": "ibis", "at": [280.0, 455.0], "s": 0.175},
+      {"part": "ibis", "at": [256.0, 650.0], "s": 0.1},
+      {"part": "ibis", "at": [304.0, 650.0], "s": 0.1},
+      {"part": "lotus", "at": [211.0, 513.0], "s": 0.8},
+      {"part": "cup", "at": [349.0, 491.0], "s": 0.5},
+      {"part": "crayfish", "at": [349.0, 451.0], "s": 0.8},
+      {"glyph": "rule1", "at": [90, 190], "size": 50},
+      {"glyph": "rule2", "at": [470, 190], "size": 50}
+    ],
+    "note": "The crest 'Ibis with opened wings' is drawn small over a pair of crest wings."
+  },
+  "cups-prince": {
+    "follows": "A WINGED Kingly Figure with winged crown seated in a chariot drawn by an eagle. On the wheel is the symbol of a scorpion. The eagle is borne as a crest on his crown, cuirass and buskins. General attire like King of Wands. Beneath his chariot is the calm and stagnant water of a lake. His armour resembles feathers more than scales. He holds in one hand a lotus, and in the other a cup, charged with the sigil of his scale. A serpent issues from the cup, and has its head tending down to the waters of the lake.",
+    "layers": [
+      {"part": "water-calm", "at": [280, 704], "color": "#7fa9c9"},
+      {"part": "wings", "at": [200, 474.6], "s": 1.05},
+      {"part": "figure-seated", "at": [200, 585], "s": 1.15, "color": "#1d5c9c"},
+      {"part": "crest-wings", "at": [200.0, 429.3], "s": 0.8},
+      {"part": "crown", "at": [200.0, 435.3], "s": 1.15},
+      {"part": "crest-wings", "at": [200.0, 391.3], "s": 0.25},
+      {"part": "eagle", "at": [200.0, 391.3], "s": 0.25},
+      {"part": "eagle", "at": [200.0, 493.0], "s": 0.138},
+      {"part": "lotus", "at": [147.1, 539.0], "s": 0.8},
+      {"part": "cup", "at": [256.9, 513.0], "s": 0.58},
+      {"part": "serpent", "at": [298.9, 551.0], "rot": 110, "s": 0.8},
+      {"part": "chariot", "at": [200, 585], "s": 1.15},
+      {"part": "eagle", "at": [446, 600], "s": 0.85},
+      {"part": "lotus", "at": [147.1, 539.0], "s": 0.9},
+      {"glyph": "Scorpio", "at": [200.0, 658.6], "size": 40, "color": "#5a3a1c"},
+      {"glyph": "rule1", "at": [90, 190], "size": 50},
+      {"glyph": "rule2", "at": [470, 190], "size": 50}
+    ],
+    "note": "The eagle crest is drawn small, as on the crown; 'his armour resembles feathers' is left to the plain corslet."
+  },
+  "cups-princess": {
+    "follows": "A BEAUTIFUL Amazon-like figure, softer in nature than the Princess of Wands. Her attire is similar. She stands on a sea with foaming spray. Away to her right a Dolphin. She wears as a crest a swan with opening wings. She bears in one hand a lotus, and in the other an open cup from which a turtle issues. Her mantle is lined with swansdown, and is of thin floating material.",
+    "layers": [
+      {"part": "waves", "at": [280, 705]},
+      {"part": "mantle", "at": [280.0, 420.2], "s": 1.6, "color": "#f6f3ee"},
+      {"part": "hair-long", "at": [280.0, 385.0], "s": 1.6, "color": "#d8a84a"},
+      {"part": "figure", "at": [280, 705], "s": 1.6, "color": "#1d5c9c"},
+      {"part": "crown", "at": [280.0, 367.0], "s": 1.3},
+      {"part": "crest-wings", "at": [280.0, 323.0], "s": 1.0},
+      {"part": "swan", "at": [280.0, 323.0], "s": 1.0},
+      {"part": "lotus", "at": [200.0, 509.0], "s": 0.9},
+      {"part": "cup", "at": [360.0, 489.0], "s": 0.5},
+      {"part": "turtle", "at": [360.0, 447.0], "s": 0.9},
+      {"part": "dolphin", "at": [112, 668], "rot": -20, "s": 0.85},
+      {"glyph": "sub", "at": [90, 190], "size": 46},
+      {"glyph": "of", "at": [470, 190], "size": 46}
+    ],
+    "note": "'Away to her right a Dolphin': her right, the viewer's left. Her crest is drawn as the swan with opening wings."
+  },
+  "swords-knight": {
+    "follows": "A WINGED Warrior with crowned Winged Helmet, mounted upon a brown steed. His general equipment is as that of the Knight of Wands, but he wears as a crest a winged six-pointed star, similar to those represented on the heads of Castor and Pollux the Dioscuri, the twins Gemini (a part of which constellation is included in his rule). He holds a drawn sword with the sigil of his scale upon its pommel. Beneath his horse's feet are dark-driving stratus clouds.",
+    "layers": [
+      {"part": "cloud-bank", "at": [280, 700], "color": "#6f7686"},
+      {"part": "wings", "at": [281.2, 463.2], "s": 0.75},
+      {"part": "horse", "at": [290, 560], "s": 1.1, "color": "#8a5a3a"},
+      {"part": "rider", "at": [290, 560], "s": 1.1, "color": "#8f7110"},
+      {"part": "helmet-winged", "at": [290.0, 436.8], "s": 1.1},
+      {"part": "crest-wings", "at": [290.0, 388.8], "s": 1.0},
+      {"part": "star6", "at": [290.0, 388.8], "s": 1.0},
+      {"part": "crest-wings", "at": [291.1, 487.4], "s": 0.6},
+      {"part": "star6", "at": [291.1, 487.4], "s": 0.6},
+      {"part": "sword", "at": [342.8, 483.0], "rot": 30, "s": 0.7},
+      {"glyph": "rule1", "at": [90, 190], "size": 50},
+      {"glyph": "rule2", "at": [470, 190], "size": 50}
+    ],
+    "note": "Book T gives no colour for his mantle: drawn in the yellow of Air."
+  },
+  "swords-queen": {
+    "follows": "A GRACEFUL woman with wavy, curling hair, like a Queen seated upon a Throne and crowned. Beneath the Throne are grey cumulus clouds. Her general attire is as that of the Queen of Wands, but she wears as a crest a winged child's head. A drawn sword in one hand, and in the other a large, bearded, newly severed head of a man.",
+    "layers": [
+      {"part": "cloud-bank", "at": [280, 680], "color": "#c9ced8"},
+      {"part": "throne", "at": [280, 575], "s": 1.5},
+      {"part": "hair-long", "at": [280.0, 398.0], "s": 1.5, "color": "#8a5a2a"},
+      {"part": "figure-seated", "at": [280, 575], "s": 1.5, "color": "#8f7110"},
+      {"part": "crown", "at": [280.0, 382.0], "s": 1.3},
+      {"part": "crest-wings", "at": [280.0, 342.0], "s": 1.0},
+      {"part": "head-child", "at": [280.0, 342.0], "s": 1.0},
+      {"part": "crest-wings", "at": [280.0, 455.0], "s": 0.7},
+      {"part": "head-child", "at": [280.0, 455.0], "s": 0.7},
+      {"part": "head-child", "at": [256.0, 650.0], "s": 0.4},
+      {"part": "head-child", "at": [304.0, 650.0], "s": 0.4},
+      {"part": "sword", "at": [349.0, 515.0], "s": 0.62},
+      {"part": "head-severed", "at": [211.0, 537.0], "s": 1.1},
+      {"glyph": "rule1", "at": [90, 190], "size": 50},
+      {"glyph": "rule2", "at": [470, 190], "size": 50}
+    ],
+    "note": "The severed head is drawn as a symbol, bearded, without a face."
+  },
+  "swords-prince": {
+    "follows": "A WINGED King with Winged Crown, seated in a chariot drawn by Arch Fays, represented as winged youths very slightly dressed, with butterfly wings: heads encircled by a fillet with a pentagram thereon: and holding wands surmounted by pentagrams, the same butterfly wings on their feet and fillets. General equipment as the King of Wands: but he bears as a crest a winged angelic head with a pentagram on the brows. Beneath the chariot are grey nimbus clouds. His hair long and waving in serpentine whirls, and whorl figures compose the scales of his armour. A drawn sword in one hand; a sickle in the other. With the sword he rules, with the sickle he slays.",
+    "layers": [
+      {"part": "cloud-bank", "at": [280, 704], "color": "#a9afbb"},
+      {"part": "wings", "at": [200, 474.6], "s": 1.05},
+      {"part": "hair-long", "at": [200.0, 449.3], "s": 1.15, "color": "#8a6a3a"},
+      {"part": "figure-seated", "at": [200, 585], "s": 1.15, "color": "#8f7110"},
+      {"part": "crest-wings", "at": [200.0, 429.3], "s": 0.8},
+      {"part": "crown", "at": [200.0, 435.3], "s": 1.15},
+      {"part": "crest-wings", "at": [200.0, 391.3], "s": 1.0},
+      {"part": "head-angel", "at": [200.0, 391.3], "s": 1.0},
+      {"part": "head-angel", "at": [200.0, 493.0], "s": 0.55},
+      {"part": "sword", "at": [252.9, 539.0], "s": 0.62},
+      {"part": "sickle", "at": [147.1, 539.0], "rot": -20, "flip": true, "s": 0.8},
+      {"part": "chariot", "at": [200, 585], "s": 1.15},
+      {"part": "butterfly-wings", "at": [[392, 602], [462, 596]], "s": 0.9},
+      {"part": "figure", "at": [[392, 702], [462, 696]], "s": 0.55, "color": "#8fb8e0"},
+      {"part": "pentagram", "at": [[392, 586], [462, 580]], "s": 0.32},
+      {"part": "rod", "at": [[420, 610], [490, 604]], "s": 0.45},
+      {"part": "pentagram", "at": [[420, 568], [490, 562]], "s": 0.55},
+      {"glyph": "rule1", "at": [90, 190], "size": 50},
+      {"glyph": "rule2", "at": [470, 190], "size": 50}
+    ],
+    "note": "The Arch Fays are drawn as two small winged youths with butterfly wings, a pentagram on the brow and a wand surmounted by a pentagram; no faces."
+  },
+  "swords-princess": {
+    "follows": "AN AMAZON figure with waving hair, slighter than the Rose of the Palace of Fire. Her attire is similar. The Feet seem springy, giving the idea of swiftness. Weight changing from one foot to another and body swinging around. She is a mixture of Minerva and Diana: her mantle resembles the AEgis of Minerva. She wears as a crest the head of the Medusa with serpent hair. She holds a sword in one hand; and the other rests upon a small silver altar with grey smoke (no fire) ascending from it. Beneath her feet are white clouds.",
+    "layers": [
+      {"part": "cloud-bank", "at": [280, 700]},
+      {"part": "mantle", "at": [280.0, 420.2], "s": 1.6, "color": "#9aa0aa"},
+      {"part": "hair-long", "at": [280.0, 385.0], "s": 1.6, "color": "#8a6a3a"},
+      {"part": "figure", "at": [280, 705], "s": 1.6, "color": "#8f7110"},
+      {"part": "crown", "at": [280.0, 367.0], "s": 1.3},
+      {"part": "crest-wings", "at": [280.0, 323.0], "s": 1.0},
+      {"part": "head-medusa", "at": [280.0, 323.0], "s": 1.0},
+      {"part": "sword", "at": [360.0, 513.0], "s": 0.7},
+      {"part": "altar", "at": [184.0, 521.0], "s": 0.9, "color": "#c9ccd3"},
+      {"part": "smoke", "at": [184.0, 517.0], "s": 0.8},
+      {"glyph": "sub", "at": [90, 190], "size": 46},
+      {"glyph": "of", "at": [470, 190], "size": 46}
+    ],
+    "note": "Her mantle 'resembles the AEgis of Minerva': drawn as a grey mantle."
+  },
+  "pentacles-knight": {
+    "follows": "A DARK Winged Warrior with winged and crowned helmet: mounted on a light brown horse. Equipment as the Knight of Wands. The winged head of a stag or antelope as a crest. Beneath the horse's feet is fertile land with ripened corn. In one hand he bears a sceptre surmounted by a hexagram: in the other a Pentacle like that of the Zelator Adeptus Minor.",
+    "layers": [
+      {"part": "corn", "at": [280, 712]},
+      {"part": "wings", "at": [281.2, 463.2], "s": 0.75},
+      {"part": "horse", "at": [290, 560], "s": 1.1, "color": "#b08a5a"},
+      {"part": "rider", "at": [290, 560], "s": 1.1, "color": "#3f6b2a"},
+      {"part": "helmet-winged", "at": [290.0, 436.8], "s": 1.1},
+      {"part": "crest-wings", "at": [290.0, 388.8], "s": 1.0},
+      {"part": "head-stag", "at": [290.0, 388.8], "s": 1.0},
+      {"part": "crest-wings", "at": [291.1, 487.4], "s": 0.6},
+      {"part": "head-stag", "at": [291.1, 487.4], "s": 0.6},
+      {"part": "rod", "at": [364.8, 443.0], "rot": 24, "s": 0.7},
+      {"part": "hexagram", "at": [388.8, 389.0], "s": 1.0},
+      {"part": "pentacle", "at": [252.6, 500.6], "s": 0.42},
+      {"glyph": "rule1", "at": [90, 190], "size": 50},
+      {"glyph": "rule2", "at": [470, 190], "size": 50}
+    ],
+    "note": "Book T gives no colour for his mantle: drawn green, the colour of Earth. The pentacle, in his other hand, is shewn at his side."
+  },
+  "pentacles-queen": {
+    "follows": "A WOMAN of beautiful face with dark hair; seated upon a throne, beneath which is dark sandy earth. One side of her face is light, the other dark; and her symbolism is best represented in profile. Her attire is similar to that of the Queen of Wands: but she bears a winged goat's head as a crest. A goat is by her side. In one hand she bears a sceptre surmounted by a cube, and in the other an orb of gold.",
+    "layers": [
+      {"part": "ground", "at": [280, 690], "color": "#6a5034"},
+      {"part": "throne", "at": [280, 575], "s": 1.5},
+      {"part": "hair-long", "at": [280.0, 398.0], "s": 1.5, "color": "#2a1a10"},
+      {"part": "goat", "at": [118, 620], "s": 0.9},
+      {"part": "figure-seated", "at": [280, 575], "s": 1.5, "color": "#3f6b2a"},
+      {"part": "head-profile", "at": [280.0, 398.0], "s": 1.5, "color": "#2a1a10"},
+      {"part": "crown", "at": [280.0, 382.0], "s": 1.3},
+      {"part": "crest-wings", "at": [280.0, 342.0], "s": 1.0},
+      {"part": "head-goat", "at": [280.0, 342.0], "s": 1.0},
+      {"part": "crest-wings", "at": [280.0, 455.0], "s": 0.7},
+      {"part": "head-goat", "at": [280.0, 455.0], "s": 0.7},
+      {"part": "head-goat", "at": [256.0, 650.0], "s": 0.4},
+      {"part": "head-goat", "at": [304.0, 650.0], "s": 0.4},
+      {"part": "rod", "at": [349.0, 475.0], "s": 0.75},
+      {"part": "cube", "at": [349.0, 409.0], "s": 1.0},
+      {"part": "orb", "at": [211.0, 511.0], "s": 0.9},
+      {"glyph": "rule1", "at": [90, 190], "size": 50},
+      {"glyph": "rule2", "at": [470, 190], "size": 50}
+    ],
+    "note": "'Her symbolism is best represented in profile': her head is drawn half light, half dark, without a face."
+  },
+  "pentacles-prince": {
+    "follows": "A WINGED Kingly Figure seated in a chariot drawn by a bull. He bears as a crest the symbol of the head of the winged bull. Beneath the chariot is land, with many flowers. In the one hand he bears an orb of gold held downwards, and in the other a sceptre surmounted by an orb and cross.",
+    "layers": [
+      {"part": "flowers", "at": [280, 706]},
+      {"part": "wings", "at": [200, 474.6], "s": 1.05},
+      {"part": "figure-seated", "at": [200, 585], "s": 1.15, "color": "#3f6b2a"},
+      {"part": "crest-wings", "at": [200.0, 429.3], "s": 0.8},
+      {"part": "crown", "at": [200.0, 435.3], "s": 1.15},
+      {"part": "crest-wings", "at": [200.0, 391.3], "s": 1.0},
+      {"part": "head-bull", "at": [200.0, 391.3], "s": 1.0},
+      {"part": "head-bull", "at": [200.0, 493.0], "s": 0.55},
+      {"part": "orb", "at": [147.1, 553.0], "s": 0.85},
+      {"part": "rod", "at": [252.9, 499.0], "s": 0.6},
+      {"part": "orb-cross", "at": [252.9, 441.0], "s": 0.9},
+      {"part": "chariot", "at": [200, 585], "s": 1.15},
+      {"part": "bull", "at": [442, 655], "s": 0.9},
+      {"glyph": "rule1", "at": [90, 190], "size": 50},
+      {"glyph": "rule2", "at": [470, 190], "size": 50}
+    ],
+    "note": "The orb 'held downwards' hangs below his hand."
+  },
+  "pentacles-princess": {
+    "follows": "A STRONG and beautiful Amazon figure with rich brown hair, standing on grass or flowers. A grove of trees near her. Her form suggests Hebe, Ceres, and Proserpine. She bears a winged ram's head as a crest: and wears a mantle of sheepskin. In one hand she carries a sceptre with a circular disk: in the other a Pentacle similar to that of the Ace of Pentacles.",
+    "layers": [
+      {"part": "flowers", "at": [280, 705]},
+      {"part": "grove", "at": [96, 712], "s": 0.75},
+      {"part": "mantle", "at": [280.0, 420.2], "s": 1.6, "color": "#efe6d0"},
+      {"part": "hair-long", "at": [280.0, 385.0], "s": 1.6, "color": "#7a4a22"},
+      {"part": "figure", "at": [280, 705], "s": 1.6, "color": "#3f6b2a"},
+      {"part": "crown", "at": [280.0, 367.0], "s": 1.3},
+      {"part": "crest-wings", "at": [280.0, 323.0], "s": 1.0},
+      {"part": "head-ram", "at": [280.0, 323.0], "s": 1.0},
+      {"part": "rod", "at": [200.0, 473.0], "s": 0.75},
+      {"part": "disk", "at": [200.0, 407.0], "s": 1.1},
+      {"part": "maltese-wings", "at": [360.0, 457.0], "s": 0.4},
+      {"part": "pentacle", "at": [360.0, 493.0], "s": 0.75},
+      {"glyph": "sub", "at": [90, 190], "size": 46},
+      {"glyph": "of", "at": [470, 190], "size": 46}
+    ],
+    "note": "'Standing on grass or flowers': drawn as land with flowers; her mantle of sheepskin in cream."
+  },
+  "wands-05": {
+    "follows": "TWO White Radiant Angelic Hands issuant per nubes dexter and sinister. They are clasped together in the grip of the First Order ... and they hold, at the same time, by their centres, five wands or torches ... One wand is upright in the middle; the others cross each other. Flames leap from the point of junction. Above the middle wand is the sign Saturn, and below is that of Leo",
+    "layers": [
+      {"part": "wand", "at": [280, 470], "rot": [-44, -22, 22, 44, 0]},
+      {"part": "flame-burst", "at": [280, 446], "s": 1.2},
+      {"part": "grip", "at": [280, 470]},
+      {"glyph": "above", "at": [280, 150], "size": 100},
+      {"glyph": "below", "at": [280, 760], "size": 100}
+    ]
+  },
+  "wands-06": {
+    "follows": "TWO hands in grip as the last, holding six wands crossed three and three. Flames issue from the point of junction. Above and below are short wands with flames issuing, surmounted respectively by the symbols of Jupiter and Leo, representing the Decan.",
+    "layers": [
+      {"part": "wand", "at": [280, 470], "rot": [-16, -34, -52, 16, 34, 52], "s": 1},
+      {"part": "flame-burst", "at": [280, 446], "s": 1.2},
+      {"part": "grip", "at": [280, 470]},
+      {"part": "wand-small", "at": [[280, 201.0], [280, 724.0]], "rot": [0, 180]},
+      {"glyph": "above", "at": [280, 150], "size": 90},
+      {"glyph": "below", "at": [280, 775], "size": 90}
+    ]
+  },
+  "wands-07": {
+    "follows": "TWO hands holding by grip six wands, three crossed. A third hand issuing from a cloud at the lower part of the card, holding an upright wand which passes between the others. Flames leap from the point of junction. Above and below the central wand are the symbols of Mars and Leo, representing the Decan.",
+    "layers": [
+      {"part": "wand", "at": [280, 450], "rot": [-20, -38, -56, 20, 38, 56], "s": 1},
+      {"part": "wand", "at": [280, 470], "s": 1.05},
+      {"part": "flame-burst", "at": [280, 424], "s": 1.2},
+      {"part": "grip", "at": [280, 450]},
+      {"part": "hand", "at": [280, 618], "s": 0.75},
+      {"glyph": "above", "at": [280, 140], "size": 90},
+      {"glyph": "below", "at": [280, 790], "size": 64}
+    ]
+  },
+  "pentacles-08": {
+    "follows": "A WHITE Radiating Angelic Hand, issuing from a cloud, and grasping a branch of a rose tree, with four white roses thereon, which touch only the four lowermost Pentacles. No rosebuds even, but only leaves, touch the four uppermost disks. All the Pentacles are similar to that of the Ace, but without the Maltese cross and wings. They are arranged like the geomantic figure Populus. Above and below them are the symbols Sun and Virgo for the Decan.",
+    "layers": [
+      {"curve": "branch", "paths": [[280, 735, 274, 495.0, 280, 285], [280, 301, 259.0, 297, 238.0, 255], [280, 301, 301.0, 297, 322.0, 255], [280, 431, 259.0, 427, 238.0, 385], [280, 431, 301.0, 427, 322.0, 385], [280, 561, 259.0, 557, 238.0, 515], [280, 561, 301.0, 557, 322.0, 515], [280, 691, 259.0, 687, 238.0, 645], [280, 691, 301.0, 687, 322.0, 645]]},
+      {"curve": "branch", "paths": [[280, 735, 270, 495.0, 280, 255]]},
+      {"part": "pentacle", "at": [[185, 255], [375, 255], [185, 385], [375, 385], [185, 515], [375, 515], [185, 645], [375, 645]], "s": 0.9},
+      {"part": "leaf", "at": [[238.0, 255], [322.0, 255], [238.0, 385], [322.0, 385]], "rot": [-90, 90, -90, 90], "s": 1.1},
+      {"part": "rose", "at": [[238.0, 515], [322.0, 515], [238.0, 645], [322.0, 645]], "s": 0.85},
+      {"part": "hand", "at": [280, 735], "s": 0.85},
+      {"glyph": "above", "at": [280, 130], "size": 70},
+      {"glyph": "below", "at": [280, 800], "size": 46}
+    ]
+  },
+  "pentacles-09": {
+    "follows": "A WHITE Radiating Angelic Hand, holding a rose branch with nine white roses, each of which touches a Pentacle. The Pentacles are arranged thus *(a figure of nine dots on the printed page)*: and there are rosebuds on the branches as well as flowers. Venus and Virgo above and below.",
+    "layers": [
+      {"curve": "branch", "paths": [[280, 720, 274, 497.5, 280, 305], [280, 321, 237.0, 317, 194, 275], [280, 321, 323.0, 317, 366, 275], [280, 466, 237.0, 462, 194, 420], [280, 466, 323.0, 462, 366, 420], [280, 611, 237.0, 607, 194, 565], [280, 611, 323.0, 607, 366, 565]]},
+      {"part": "pentacle", "at": [[160, 275], [280, 275], [400, 275], [160, 420], [280, 420], [400, 420], [160, 565], [280, 565], [400, 565]], "s": 0.75},
+      {"part": "rose", "at": [[194, 275], [280, 319], [366, 275], [194, 420], [280, 464], [366, 420], [194, 565], [280, 609], [366, 565]], "s": 0.75},
+      {"part": "rosebud", "at": [[220, 350], [340, 350], [220, 495], [340, 495]], "rot": [-30, 30, -30, 30], "s": 1.1},
+      {"part": "hand", "at": [280, 720], "s": 0.85},
+      {"glyph": "above", "at": [280, 130], "size": 76},
+      {"glyph": "below", "at": [280, 800], "size": 46}
+    ],
+    "note": "The 1912 printing gives the nine pentacles' arrangement as a figure the transcription does not carry: drawn as three rows of three."
+  },
+  "pentacles-10": {
+    "follows": "AN Angelic Hand, holding by the lower extremity a branch whose roses touch all the Pentacles. No buds, however, are shewn. The symbols of Mercury and Virgo are above and below. The Pentacles are thus arranged *(a figure on the printed page:",
+    "layers": [
+      {"curve": "branch", "paths": [[280, 740, 274, 472.5, 280, 235], [280, 251, 255.0, 247, 230, 205], [280, 251, 305.0, 247, 330, 205], [280, 354, 293.0, 350, 306, 308], [280, 421, 255.0, 417, 230, 375], [280, 421, 305.0, 417, 330, 375], [280, 506, 255.0, 502, 230, 460], [280, 506, 305.0, 502, 330, 460], [280, 609, 293.0, 605, 306, 563], [280, 676, 255.0, 672, 230, 630], [280, 676, 305.0, 672, 330, 630]]},
+      {"part": "pentacle", "at": [[190, 205], [370, 205], [280, 290], [190, 375], [370, 375], [190, 460], [370, 460], [280, 545], [190, 630], [370, 630]], "s": 0.68},
+      {"part": "rose", "at": [[230, 205], [330, 205], [306, 308], [230, 375], [330, 375], [230, 460], [330, 460], [306, 563], [230, 630], [330, 630]], "s": 0.7},
+      {"part": "hand", "at": [280, 740], "s": 0.8},
+      {"glyph": "above", "at": [280, 110], "size": 60},
+      {"glyph": "below", "at": [280, 805], "size": 44}
+    ]
+  },
+  "swords-02": {
+    "follows": "Two crossed swords, like the air dagger of a Z.A.M., each held by a White Radiant Angelic Hand. Upon the point where the two cross is a rose of five petals, emitting white rays. At the top and bottom of the card are two small daggers, supporting respectively the symbol Moon thus, and Libra representing the Decanate.",
+    "layers": [
+      {"part": "sword", "at": [[150, 700], [410, 700]], "rot": [29.0, -29.0], "s": 1.3},
+      {"part": "hand", "at": [[150, 700], [410, 700]], "rot": [29.0, -29.0], "s": 0.95},
+      {"part": "rose-rayed", "at": [280, 465]},
+      {"part": "dagger", "at": [[280, 200.0], [280, 730.0]], "rot": [0, 180]},
+      {"glyph": "above", "at": [280, 150], "size": 84},
+      {"glyph": "below", "at": [280, 780], "size": 84}
+    ]
+  },
+  "swords-03": {
+    "follows": "THREE White Radiating Angelic Hands, issuing from clouds, and holding three swords upright (as though the central sword had struck apart the two others, which were crossed in the preceding symbol): the central sword cuts asunder the rose of five petals, which in the previous symbol grew at the junction of the swords; its petals are falling, and no white rays issue from it. Above and below the central sword are the symbols of Saturn and Libra.",
+    "layers": [
+      {"part": "rose", "at": [280, 455], "s": 1.3},
+      {"part": "sword", "at": [[170, 700], [390, 700]], "rot": [-6, 6], "s": 1.3},
+      {"part": "hand", "at": [[170, 700], [390, 700]], "rot": [-6, 6], "s": 0.95},
+      {"part": "petal", "at": [[246, 500], [318, 520], [258, 565], [304, 600], [240, 625]], "rot": [20, -40, 70, 10, -60]},
+      {"part": "sword", "at": [[280, 660]], "rot": [0], "s": 1.25},
+      {"part": "hand", "at": [[280, 660]], "rot": [0], "s": 0.85},
+      {"glyph": "above", "at": [280, 130], "size": 90},
+      {"glyph": "below", "at": [280, 795], "size": 56}
+    ]
+  },
+  "swords-04": {
+    "follows": "TWO White Radiating Angelic Hands, each holding two swords; which four cross in the centre. The rose of five petals with white radiations is reinstated on the point of their intersection. Above and below, on the points of two small daggers, are Jupiter and Libra, representing the Decanate.",
+    "layers": [
+      {"part": "sword", "at": [[150, 705], [150, 705], [410, 705], [410, 705]], "rot": [29.5, 25.5, -29.5, -25.5], "s": 1.3},
+      {"part": "hand", "at": [[150, 705], [410, 705]], "rot": [27.7, -27.7], "s": 0.95},
+      {"part": "rose-rayed", "at": [280, 455]},
+      {"part": "dagger", "at": [[280, 200.0], [280, 730.0]], "rot": [0, 180]},
+      {"glyph": "above", "at": [280, 150], "size": 84},
+      {"glyph": "below", "at": [280, 780], "size": 84}
+    ]
+  },
+  "cups-05": {
+    "follows": "A WHITE Radiating Angelic Hand, holding lotuses or water-lilies, of which the flowers are falling right and left. Leaves only, and no buds, surmount them. These lotus stems ascend between the cups in the manner of a fountain, but no water flows therefrom; neither is there water in any of the cups, which are somewhat of the shape of the magical instrument of the Zelator Adeptus Minor. Above and below are the symbols of Mars and Scorpio for the Decan.",
+    "layers": [
+      {"curve": "stem", "paths": [[280, 700, 210.0, 455.0, 200, 210], [280, 700, 350.0, 455.0, 360, 210], [280, 700, 175.0, 560.0, 130, 420], [280, 700, 385.0, 560.0, 430, 420], [280, 700, 280.0, 515.0, 280, 330]]},
+      {"part": "leaf", "at": [[200, 210], [360, 210], [280, 330]], "rot": [-20, 20, 0], "s": 1.2},
+      {"part": "lotus", "at": [[130, 420], [430, 420]], "rot": [-130, 130]},
+      {"part": "lotus", "at": [[90, 520], [470, 520]], "rot": [-170, 170], "s": 0.9},
+      {"part": "petal", "at": [[110, 470], [455, 470], [80, 600], [480, 610]], "rot": [20, -30, 60, -10]},
+      {"part": "cup", "at": [[175, 290], [385, 290], [280, 450], [175, 600], [385, 600]]},
+      {"part": "hand", "at": [280, 700], "s": 0.8},
+      {"glyph": "above", "at": [280, 120], "size": 80},
+      {"glyph": "below", "at": [280, 795], "size": 56}
+    ]
+  },
+  "cups-06": {
+    "follows": "AN Angelic Hand, as before, holds a group of stems of water-lilies or lotuses, from which six flowers bend, one over each cup. From these flowers a white glistening water flows into the cups as from a fountain, but they are not yet full. Above and below are Sun and Scorpio referring to the Decan.",
+    "layers": [
+      {"curve": "stem", "paths": [[280, 712, 220.0, 453.9, 180, 195.8], [280, 712, 340.0, 453.9, 380, 195.8], [280, 712, 220.0, 531.4, 180, 350.8], [280, 712, 340.0, 531.4, 380, 350.8], [280, 712, 220.0, 608.9, 180, 505.8], [280, 712, 340.0, 608.9, 380, 505.8]]},
+      {"curve": "stream", "paths": [[180, 226.0, 180, 234.0, 180, 258], [380, 226.0, 380, 234.0, 380, 258], [180, 381.0, 180, 389.0, 180, 413], [380, 381.0, 380, 389.0, 380, 413], [180, 536.0, 180, 544.0, 180, 568], [380, 536.0, 380, 544.0, 380, 568]]},
+      {"part": "lotus", "at": [[180, 195.8], [380, 195.8], [180, 350.8], [380, 350.8], [180, 505.8], [380, 505.8]], "rot": 180, "s": 0.7},
+      {"part": "cup", "at": [[180, 300], [380, 300], [180, 455], [380, 455], [180, 610], [380, 610]]},
+      {"part": "hand", "at": [280, 712], "s": 0.75},
+      {"glyph": "above", "at": [280, 140], "size": 80},
+      {"glyph": "below", "at": [280, 795], "size": 56}
+    ]
+  },
+  "cups-07": {
+    "follows": "THE seven cups are arranged as two descending triangles above a point: a hand, as usual, holds lotus stems which arise from the central lower cup. The hand is above this cup and below the middle one. With the exception of the central lower cup, each is overhung by a lotus flower, but no water falls from these into any of the cups, which are all quite empty. Above and below are the symbols of the Decanate Venus and Scorpio.",
+    "layers": [
+      {"curve": "stem", "paths": [[280, 660, 207.5, 417.2, 175, 174.4], [280, 660, 352.5, 417.2, 385, 174.4], [280, 660, 280.0, 457.2, 280, 254.4], [280, 660, 207.5, 502.2, 175, 344.4], [280, 660, 352.5, 502.2, 385, 344.4], [280, 660, 280.0, 542.2, 280, 424.4]]},
+      {"part": "lotus", "at": [[175, 174.4], [385, 174.4], [280, 254.4], [175, 344.4], [385, 344.4], [280, 424.4]], "rot": 180, "s": 0.6},
+      {"part": "cup", "at": [[175, 260], [385, 260], [280, 340], [175, 430], [385, 430], [280, 510], [280, 690]]},
+      {"part": "hand", "at": [280, 600], "rot": 90, "s": 0.75},
+      {"glyph": "above", "at": [280, 110], "size": 64},
+      {"glyph": "below", "at": [280, 795], "size": 56}
+    ]
+  },
+  "wands-08": {
+    "follows": "FOUR White Radiating Angelic Hands (two proceeding from each side) issuant from clouds; clasped in two pairs in the centre with the grip of the First Order. They hold eight wands, crossed four with four. Flames issue from the point of junction. Surmounting the small wands with flames issuing down them, and placed in the centre at the top and bottom of the card respectively, are the symbols of Mercury and Sagittarius for the Decan.",
+    "layers": [
+      {"part": "wand", "at": [280, 470], "rot": [-14, -30, -46, -62, 14, 30, 46, 62], "s": 1},
+      {"part": "flame-burst", "at": [280, 432], "s": 1.2},
+      {"part": "grip", "at": [280, 452], "rot": 8},
+      {"part": "grip", "at": [280, 488], "rot": -8},
+      {"part": "wand-small", "at": [[280, 201.0], [280, 724.0]], "rot": [0, 180]},
+      {"glyph": "above", "at": [280, 150], "size": 90},
+      {"glyph": "below", "at": [280, 775], "size": 90}
+    ]
+  },
+  "wands-09": {
+    "follows": "FOUR hands, as in the previous symbol, holding eight wands crossed four and four; but a fifth hand at the foot of the card holds another wand upright, which traverses the point of junction with the others: flames leap herefrom. Above and below are the symbols Moon and Sagittarius.",
+    "layers": [
+      {"part": "wand", "at": [280, 470], "rot": [-14, -30, -46, -62, 14, 30, 46, 62], "s": 1},
+      {"part": "wand", "at": [280, 470], "s": 1.05},
+      {"part": "flame-burst", "at": [280, 432], "s": 1.2},
+      {"part": "grip", "at": [280, 452], "rot": 8},
+      {"part": "grip", "at": [280, 488], "rot": -8},
+      {"part": "hand", "at": [280, 628], "s": 0.75},
+      {"glyph": "above", "at": [280, 140], "size": 90},
+      {"glyph": "below", "at": [280, 790], "size": 64}
+    ]
+  },
+  "wands-10": {
+    "follows": "FOUR hands holding eight wands crossed as before. A fifth hand holding two wands upright, which traverses the junction of the others. Flames issuant. Saturn and Sagittarius.",
+    "layers": [
+      {"part": "wand", "at": [280, 470], "rot": [-14, -30, -46, -62, 14, 30, 46, 62], "s": 1},
+      {"part": "wand", "at": [[270, 470], [290, 470]], "s": 1.05},
+      {"part": "flame-burst", "at": [280, 432], "s": 1.2},
+      {"part": "grip", "at": [280, 452], "rot": 8},
+      {"part": "grip", "at": [280, 488], "rot": -8},
+      {"part": "hand", "at": [280, 628], "s": 0.75},
+      {"glyph": "above", "at": [280, 140], "size": 90},
+      {"glyph": "below", "at": [280, 790], "size": 64}
+    ]
+  },
+  "pentacles-02": {
+    "follows": "TWO wheels, disks or pentacles, similar to that of the Ace. They are united by a green-and-gold serpent, bound about them like a figure of 8. It holds its tail in its mouth. A White Radiant Angelic Hand holds the centre of the whole. No roses enter into this card. Above and below are the symbols of Jupiter and Capricorn. It is a revolving symbol.",
+    "layers": [
+      {"part": "pentacle", "at": [[280, 365], [280, 555]], "s": 1.2},
+      {"part": "serpent-8", "at": [280, 460]},
+      {"part": "hand", "at": [280, 460], "rot": 90},
+      {"glyph": "above", "at": [280, 160], "size": 90},
+      {"glyph": "below", "at": [280, 760], "size": 90}
+    ]
+  },
+  "pentacles-03": {
+    "follows": "A WHITE-WINGED Angelic Hand, as before, holding a branch of a rose tree, of which two white rosebuds touch and surmount the topmost Pentacle. The Pentacles are arranged in an equilateral triangle. Above and below the symbols Mars and Capricorn.",
+    "layers": [
+      {"curve": "branch", "paths": [[280, 520, 274, 391.0, 280, 292], [280, 308, 266.0, 304, 252, 262], [280, 308, 294.0, 304, 308, 262]]},
+      {"curve": "branch", "paths": [[280, 715, 270, 617.5, 280, 520]]},
+      {"part": "leaf", "at": [[270, 600], [292, 640], [266, 560]], "rot": [-60, 60, -40]},
+      {"part": "pentacle", "at": [[280, 330], [178, 505], [382, 505]], "s": 1.25},
+      {"part": "rosebud", "at": [[252, 262], [308, 262]], "rot": [-15, 15], "s": 1.3},
+      {"part": "crest-wings", "at": [280, 745], "s": 1.2},
+      {"part": "hand", "at": [280, 715], "s": 0.95},
+      {"glyph": "above", "at": [280, 130], "size": 80},
+      {"glyph": "below", "at": [280, 790], "size": 56}
+    ]
+  },
+  "pentacles-04": {
+    "follows": "A HAND holding a branch of a rose tree, but without flowers or buds, save that in the centre is one fully blown white rose. Pentacles are disposed as on the points of a square; a rose in its centre. Symbols Sun and Capricorn above and below to represent the Decan.",
+    "layers": [
+      {"curve": "branch", "paths": [[280, 715, 270, 585.0, 280, 455]]},
+      {"part": "leaf", "at": [[270, 600], [292, 640], [266, 540], [292, 500]], "rot": [-60, 60, -50, 50]},
+      {"part": "pentacle", "at": [[180, 350], [380, 350], [180, 560], [380, 560]], "s": 1.3},
+      {"part": "rose", "at": [280, 455], "s": 1.5},
+      {"part": "hand", "at": [280, 715], "s": 0.95},
+      {"glyph": "above", "at": [280, 140], "size": 90},
+      {"glyph": "below", "at": [280, 790], "size": 56}
+    ]
+  },
+  "swords-05": {
+    "follows": "TWO Rayed Angelic Hands each holding two swords nearly upright, but falling apart of each other, right and left of the card. A third hand holds a sword upright in the centre as though it had disunited them. The petals of the rose, which in the four had been reinstated in the centre, are torn asunder and falling. Above and below are Venus and Aquarius for Decan.",
+    "layers": [
+      {"part": "sword", "at": [[176, 705], [176, 705], [384, 705], [384, 705]], "rot": [-6, -18, 6, 18], "s": 1.3},
+      {"part": "hand", "at": [[176, 705], [384, 705]], "rot": [-12, 12], "s": 0.95},
+      {"part": "petal", "at": [[226, 440], [334, 420], [210, 520], [350, 505], [236, 590], [326, 600], [280, 360]], "rot": [10, -30, 60, -70, 20, 45, -15]},
+      {"part": "sword", "at": [[280, 665]], "rot": [0], "s": 1.25},
+      {"part": "hand", "at": [[280, 665]], "rot": [0], "s": 0.85},
+      {"glyph": "above", "at": [280, 130], "size": 90},
+      {"glyph": "below", "at": [280, 795], "size": 56}
+    ]
+  },
+  "swords-06": {
+    "follows": "TWO hands, as before, each holding two swords which cross in the centre. Rose re-established thereon. Mercury and Aquarius above and below, supported on the points of two short daggers or swords.",
+    "layers": [
+      {"part": "sword", "at": [[150, 705], [150, 705], [410, 705], [410, 705]], "rot": [29.5, 25.5, -29.5, -25.5], "s": 1.3},
+      {"part": "hand", "at": [[150, 705], [410, 705]], "rot": [27.7, -27.7], "s": 0.95},
+      {"part": "rose", "at": [280, 455], "s": 1.5},
+      {"part": "dagger", "at": [[280, 200.0], [280, 730.0]], "rot": [0, 180]},
+      {"glyph": "above", "at": [280, 150], "size": 84},
+      {"glyph": "below", "at": [280, 780], "size": 84}
+    ]
+  },
+  "swords-07": {
+    "follows": "TWO Angelic Radiating Hands as before, each holding three swords. A third hand holds up a single sword in the centre. The points of all the swords \"just touch\" each other, the central sword not altogether dividing them. The Rose of the previous symbols of this suit is held up by the same hand which holds the central sword: as if the victory were at its disposal. Symbols of Moon and Aquarius.",
+    "layers": [
+      {"part": "sword", "at": [[132, 705], [150, 710], [168, 715], [428, 705], [410, 710], [392, 715]], "rot": [20.3, 17.5, 14.7, -20.3, -17.5, -14.7], "s": 1.32},
+      {"part": "hand", "at": [[150, 710], [410, 710]], "rot": [17.7, -17.7], "s": 0.95},
+      {"part": "sword", "at": [280, 690], "s": 1.27},
+      {"part": "rose", "at": [320, 676], "s": 1.0},
+      {"part": "hand", "at": [280, 690], "s": 0.85},
+      {"glyph": "above", "at": [280, 140], "size": 90},
+      {"glyph": "below", "at": [280, 800], "size": 50}
+    ]
+  },
+  "cups-08": {
+    "follows": "A WHITE Radiating Angelic Hand, holding a group of stems of lotuses or water-lilies. There are only two flowers shown, which bend over the two central cups, pouring into them a white water which fills them and runs over into the three lowest, which later are not yet filled The three uppermost are quite empty. At the top and bottom of the card are symbols Saturn and Pisces.",
+    "layers": [
+      {"curve": "stem", "paths": [[280, 730, 235.0, 528.8, 210, 327.5], [280, 730, 325.0, 528.8, 350, 327.5]]},
+      {"curve": "stream", "paths": [[210, 360.0, 210, 368.0, 210, 388], [350, 360.0, 350, 368.0, 350, 388]]},
+      {"curve": "stream", "paths": [[170, 452, 160, 480, 160, 562], [250, 452, 270, 490, 278, 562], [390, 452, 400, 480, 400, 562]]},
+      {"part": "lotus", "at": [[210, 327.5], [350, 327.5]], "rot": 180, "s": 0.75},
+      {"part": "cup", "at": [[160, 240], [280, 240], [400, 240], [160, 610], [280, 610], [400, 610]]},
+      {"part": "cup-overflow", "at": [[210, 430], [350, 430]]},
+      {"part": "hand", "at": [280, 730], "s": 0.72},
+      {"glyph": "above", "at": [280, 125], "size": 76},
+      {"glyph": "below", "at": [280, 800], "size": 52}
+    ]
+  },
+  "cups-09": {
+    "follows": "A WHITE Radiant Angelic Hand, issuing from a cloud holding lotus or water-lilies, one flower of which overhangs each cup; from it a white water pours. Cups are arranged in three rows of 3. Jupiter and Pisces above and below.",
+    "layers": [
+      {"curve": "stem", "paths": [[280, 735, 212.0, 467.6, 160, 200.3], [280, 735, 280.0, 467.6, 280, 200.3], [280, 735, 348.0, 467.6, 400, 200.3], [280, 735, 212.0, 547.6, 160, 360.3], [280, 735, 280.0, 547.6, 280, 360.3], [280, 735, 348.0, 547.6, 400, 360.3], [280, 735, 212.0, 627.6, 160, 520.3], [280, 735, 280.0, 627.6, 280, 520.3], [280, 735, 348.0, 627.6, 400, 520.3]]},
+      {"curve": "stream", "paths": [[160, 223.6, 160, 231.6, 160, 247.6], [280, 223.6, 280, 231.6, 280, 247.6], [400, 223.6, 400, 231.6, 400, 247.6], [160, 383.6, 160, 391.6, 160, 407.6], [280, 383.6, 280, 391.6, 280, 407.6], [400, 383.6, 400, 391.6, 400, 407.6], [160, 543.6, 160, 551.6, 160, 567.6], [280, 543.6, 280, 551.6, 280, 567.6], [400, 543.6, 400, 551.6, 400, 567.6]]},
+      {"part": "lotus", "at": [[160, 200.3], [280, 200.3], [400, 200.3], [160, 360.3], [280, 360.3], [400, 360.3], [160, 520.3], [280, 520.3], [400, 520.3]], "rot": 180, "s": 0.55},
+      {"part": "cup-full", "at": [[160, 285], [280, 285], [400, 285], [160, 445], [280, 445], [400, 445], [160, 605], [280, 605], [400, 605]], "s": 0.9},
+      {"part": "hand", "at": [280, 735], "s": 0.7},
+      {"glyph": "above", "at": [280, 120], "size": 70},
+      {"glyph": "below", "at": [280, 805], "size": 48}
+    ]
+  },
+  "cups-10": {
+    "follows": "HAND, as usual, holding bunch of water-lilies or lotuses, whose flowers pour a white water into all the cups, which \"all run over.\" The uppermost cup is held sideways by a hand, and pours water into the left-hand upper cup. A single lotus flower surmounts the top cup, and is the source of the water that fills it. Above and below the symbols Mars and Pisces.",
+    "layers": [
+      {"curve": "stem", "paths": [[280, 745, 212.0, 514.5, 160, 283.9], [280, 745, 280.0, 514.5, 280, 283.9], [280, 745, 348.0, 514.5, 400, 283.9], [280, 745, 212.0, 584.5, 160, 423.9], [280, 745, 280.0, 584.5, 280, 423.9], [280, 745, 348.0, 584.5, 400, 423.9], [280, 745, 212.0, 654.5, 160, 563.9], [280, 745, 280.0, 654.5, 280, 563.9], [280, 745, 348.0, 654.5, 400, 563.9]]},
+      {"curve": "stream", "paths": [[160, 304.9, 160, 312.9, 160, 324.9], [280, 304.9, 280, 312.9, 280, 324.9], [400, 304.9, 400, 312.9, 400, 324.9], [160, 444.9, 160, 452.9, 160, 464.9], [280, 444.9, 280, 452.9, 280, 464.9], [400, 444.9, 400, 452.9, 400, 464.9], [160, 584.9, 160, 592.9, 160, 604.9], [280, 584.9, 280, 592.9, 280, 604.9], [400, 584.9, 400, 592.9, 400, 604.9]]},
+      {"curve": "stream", "paths": [[263, 154, 263, 160, 263, 206], [258, 230, 196, 236, 166, 304]]},
+      {"part": "lotus", "at": [[160, 283.9], [280, 283.9], [400, 283.9], [160, 423.9], [280, 423.9], [400, 423.9], [160, 563.9], [280, 563.9], [400, 563.9]], "rot": 180, "s": 0.5},
+      {"part": "lotus", "at": [263, 122], "rot": 180, "s": 0.7},
+      {"part": "cup-overflow", "at": [[160, 360], [280, 360], [400, 360], [160, 500], [280, 500], [400, 500], [160, 640], [280, 640], [400, 640]], "s": 0.85},
+      {"part": "cup-full", "at": [300, 232], "rot": -62, "s": 0.9},
+      {"part": "hand", "at": [354, 248], "rot": -110, "s": 0.7},
+      {"part": "hand", "at": [280, 745], "s": 0.66},
+      {"glyph": "above", "at": [110, 140], "size": 60},
+      {"glyph": "below", "at": [280, 805], "size": 46}
+    ],
+    "note": "Book T does not say where the top cup and its lotus stand or how the other nine are arranged: drawn as one cup above, held sideways, and nine in three rows; Mars is set at the upper left to leave the top for the lotus."
+  },
+  "wands-02": {
+    "follows": "A WHITE Radiating Angelic hand, issuing from clouds, and grasping two crossed wands. Flames issue from the point of junction. On two small wands above and below, with flames of five issuing therefrom, are the symbols of Mars and Aries for the Decan.",
+    "layers": [
+      {"part": "wand", "at": [280, 470], "rot": [-32, 32], "s": 1},
+      {"part": "flame-burst", "at": [280, 446]},
+      {"part": "hand", "at": [280, 470], "s": 0.85},
+      {"part": "wand-small", "at": [[280, 201.0], [280, 724.0]], "rot": [0, 180]},
+      {"glyph": "above", "at": [280, 150], "size": 90},
+      {"glyph": "below", "at": [280, 775], "size": 90}
+    ]
+  },
+  "wands-03": {
+    "follows": "A WHITE Radiating Angelic Hand, as before, issuing from clouds and grasping three wands in the centre (two crossed, the third upright). Flames issue from the point of junction. Above and below are the symbols Sun and Aries.",
+    "layers": [
+      {"part": "wand", "at": [280, 470], "rot": [-32, 32, 0], "s": 1},
+      {"part": "flame-burst", "at": [280, 446]},
+      {"part": "hand", "at": [280, 470], "s": 0.85},
+      {"glyph": "above", "at": [280, 150], "size": 100},
+      {"glyph": "below", "at": [280, 770], "size": 100}
+    ]
+  },
+  "wands-04": {
+    "follows": "TWO White Radiating Angelic Hands, as before, issuing from clouds right and left of the card and clasped in the centre with the grip of the First Order, holding four wands or torches crossed. Flames issue from the point of junction. Above and below are two small flaming wands, with the symbols of Venus and Aries representing the Decan.",
+    "layers": [
+      {"part": "wand", "at": [280, 470], "rot": [-22, 22, -46, 46], "s": 1},
+      {"part": "flame-burst", "at": [280, 446], "s": 1.2},
+      {"part": "grip", "at": [280, 470]},
+      {"part": "wand-small", "at": [[280, 201.0], [280, 724.0]], "rot": [0, 180]},
+      {"glyph": "above", "at": [280, 150], "size": 90},
+      {"glyph": "below", "at": [280, 775], "size": 90}
+    ]
+  },
+  "pentacles-05": {
+    "follows": "A WHITE Radiant Angelic Hand issuing from clouds, and holding a branch of the white rose tree, but from which the roses are falling, and leaving no buds behind. Five Pentacles similar to the Ace. Above and below are Mercury and Taurus.",
+    "layers": [
+      {"curve": "branch", "paths": [[280, 700, 274, 540.0, 280, 410], [280, 586, 255.0, 582, 230, 540], [280, 586, 305.0, 582, 330, 540], [280, 426, 258.0, 422, 236, 380], [280, 426, 302.0, 422, 324, 380]]},
+      {"curve": "branch", "paths": [[280, 715, 270, 547.5, 280, 380]]},
+      {"part": "pentacle", "at": [[175, 320], [385, 320], [280, 460], [175, 600], [385, 600]], "s": 1.1},
+      {"part": "rose", "at": [[110, 450], [452, 470], [214, 690], [350, 700]], "s": 0.9, "opacity": 0.95},
+      {"part": "petal", "at": [[120, 520], [440, 540], [100, 640], [462, 400], [208, 240], [352, 250]], "rot": [20, -40, 70, 10, -60, 30]},
+      {"part": "hand", "at": [280, 700], "s": 0.95},
+      {"glyph": "above", "at": [280, 140], "size": 90},
+      {"glyph": "below", "at": [280, 795], "size": 52}
+    ],
+    "note": "Book T does not give the five pentacles' arrangement: drawn as a quincunx."
+  },
+  "pentacles-06": {
+    "follows": "A WHITE Radiant Angelic Hand holding a rose branch with white roses and buds, each of which touches a Pentacle. Pentacles are arranged in two columns of three each *(a figure on the printed page: six pentacles in two columns of three)*. Above and below are the symbols Taurus and Moon of the Decan.",
+    "layers": [
+      {"curve": "branch", "paths": [[280, 700, 274, 500.0, 280, 330], [280, 346, 261.5, 342, 243.0, 300], [280, 346, 298.5, 342, 317.0, 300], [280, 496, 261.5, 492, 243.0, 450], [280, 496, 298.5, 492, 317.0, 450], [280, 646, 261.5, 642, 243.0, 600], [280, 646, 298.5, 642, 317.0, 600]]},
+      {"curve": "branch", "paths": [[280, 700, 270, 500.0, 280, 300]]},
+      {"part": "pentacle", "at": [[185, 300], [375, 300], [185, 450], [375, 450], [185, 600], [375, 600]], "s": 1.0},
+      {"part": "rose", "at": [[243.0, 300], [317.0, 450], [243.0, 600]], "s": 0.9},
+      {"part": "rosebud", "at": [[317.0, 300], [243.0, 450], [317.0, 600]], "rot": [40, -40, 40], "s": 1.2},
+      {"part": "hand", "at": [280, 700], "s": 0.95},
+      {"glyph": "above", "at": [280, 150], "size": 90},
+      {"glyph": "below", "at": [280, 795], "size": 52}
+    ]
+  },
+  "pentacles-07": {
+    "follows": "A WHITE Radiating Angelic Hand issuing from a cloud, and holding a white rose branch. Seven Pentacles arranged like the geomantic figure Rubeus. There are only five buds, which overhang, but do not touch the five uppermost Pentacles. Above and below are the Decan symbols, Saturn and Taurus respectively.",
+    "layers": [
+      {"curve": "branch", "paths": [[280, 600, 274, 400.0, 280, 230], [280, 246, 251.0, 242, 222, 200], [280, 246, 309.0, 242, 338, 200], [280, 376, 271.0, 372, 262, 330], [280, 496, 251.0, 492, 222, 450], [280, 496, 309.0, 492, 338, 450]]},
+      {"curve": "branch", "paths": [[280, 720, 270, 585.0, 280, 450]]},
+      {"part": "pentacle", "at": [[180, 270], [380, 270], [280, 400], [180, 520], [380, 520], [180, 640], [380, 640]], "s": 0.95},
+      {"part": "rosebud", "at": [[222, 200], [338, 200], [268, 326], [222, 450], [338, 450]], "rot": [-150, 150, 180, -150, 150], "s": 1.2},
+      {"part": "hand", "at": [280, 720], "s": 0.9},
+      {"glyph": "above", "at": [280, 120], "size": 64},
+      {"glyph": "below", "at": [280, 800], "size": 48}
+    ],
+    "note": "Rubeus is drawn as Book T's geomancy draws it: two, one, two, two."
+  },
+  "swords-08": {
+    "follows": "FOUR White Radiant Angelic Hands issuing from clouds, each holding two swords, points upwards; all the points touch near the top of the card. Hands issue, two at each bottom angle of the card. The pose of the other sword symbols is re-established in the centre. Above and below are the Decan symbols Jupiter and Gemini.",
+    "layers": [
+      {"part": "rose", "at": [280, 540], "s": 1.2},
+      {"part": "sword", "at": [[140, 650], [160, 650], [420, 650], [400, 650]], "rot": [23.6, 20.6, -23.6, -20.6], "s": 1.2},
+      {"part": "sword", "at": [[195, 700], [215, 700], [365, 700], [345, 700]], "rot": [13.0, 10.3, -13.0, -10.3], "s": 1.4},
+      {"part": "hand", "at": [[150, 650], [410, 650], [205, 700], [355, 700]], "rot": [22.1, -22.1, 11.6, -11.6], "s": 0.9},
+      {"glyph": "above", "at": [280, 140], "size": 90},
+      {"glyph": "below", "at": [280, 800], "size": 50}
+    ],
+    "note": "Book T: 'The pose of the other sword symbols is re-established in the centre.' Read as the rose of the earlier sword cards, set in the centre."
+  },
+  "swords-09": {
+    "follows": "FOUR Hands, as in the preceding figure, hold eight swords nearly upright, but with the points falling away from each other. A fifth hand holds a ninth sword upright in the centre, as if it had struck them asunder. No rose at all is shewn, as if it were not merely cut asunder, but utterly destroyed. Above and below are the Decan symbols Mars and Gemini.",
+    "layers": [
+      {"part": "sword", "at": [[135, 735], [135, 735], [200, 785], [200, 785], [425, 735], [425, 735], [360, 785], [360, 785]], "rot": [-17, -9, -6, 2, 17, 9, 6, -2], "s": 1.25},
+      {"part": "hand", "at": [[135, 735], [200, 785], [425, 735], [360, 785]], "rot": [-13, -2, 13, 2], "s": 0.9},
+      {"part": "sword", "at": [[280, 680]], "rot": [0], "s": 1.3},
+      {"part": "hand", "at": [[280, 680]], "rot": [0], "s": 0.85},
+      {"glyph": "above", "at": [280, 130], "size": 90},
+      {"glyph": "below", "at": [280, 800], "size": 50}
+    ]
+  },
+  "swords-10": {
+    "follows": "FOUR hands holding eight swords, as in the preceding symbol [nearly upright, hands issuing two at each bottom angle of the card]; the points falling away from each other. Two hands hold two swords crossed in the centre, as though their junction had disunited the others. No rose, flower or bud, is shewn. Above and below are Sun and Gemini",
+    "layers": [
+      {"part": "sword", "at": [[135, 735], [135, 735], [200, 785], [200, 785], [425, 735], [425, 735], [360, 785], [360, 785]], "rot": [-17, -9, -6, 2, 17, 9, 6, -2], "s": 1.25},
+      {"part": "hand", "at": [[135, 735], [200, 785], [425, 735], [360, 785]], "rot": [-13, -2, 13, 2], "s": 0.9},
+      {"part": "sword", "at": [[160, 600], [400, 600]], "rot": [38, -38], "s": 1.3},
+      {"part": "hand", "at": [[160, 600], [400, 600]], "rot": [38, -38], "s": 0.9},
+      {"glyph": "above", "at": [280, 130], "size": 90},
+      {"glyph": "below", "at": [280, 790], "size": 64}
+    ]
+  },
+  "cups-02": {
+    "follows": "A WHITE Radiant Hand, issuant from the lower part of the card from a cloud, holds lotuses. A lotus flower rises above water, which occupies the lower part of the card rising above the hand. From this flower rises a stem, terminating near the top of the card in another lotus, from which flows a sparkling white water, as from a fountain. Crossed on the stem just beneath are two dolphins, Argent and Or, on to which the water falls, and from which it pours in full streams, like jets of gold and silver, into two cups; which in their turn overflow, flooding the lower part of the card. Venus and Cancer above and below.",
+    "layers": [
+      {"part": "water-calm", "at": [280, 690]},
+      {"curve": "stem", "paths": [[280, 690, 276, 470, 280, 262]]},
+      {"part": "fountain", "at": [280, 228], "s": 0.45},
+      {"part": "lotus", "at": [280, 262], "s": 1.3},
+      {"curve": "stream-gold", "paths": [[262, 352, 200, 360, 172, 440]]},
+      {"curve": "stream", "paths": [[298, 352, 360, 360, 388, 440]]},
+      {"part": "dolphin", "at": [280, 330], "rot": 30, "color": "#c9ccd3"},
+      {"part": "dolphin", "at": [280, 330], "rot": 150, "s": 1.0, "color": "#e2bd4f"},
+      {"part": "cup-overflow", "at": [[170, 500], [390, 500]]},
+      {"curve": "stream", "paths": [[114, 530, 108, 610, 110, 690], [446, 530, 452, 610, 450, 690]]},
+      {"part": "lotus", "at": [280, 650], "s": 1.2},
+      {"part": "hand", "at": [280, 690], "s": 0.8},
+      {"glyph": "above", "at": [280, 110], "size": 70},
+      {"glyph": "below", "at": [280, 790], "size": 60}
+    ]
+  },
+  "cups-03": {
+    "follows": "A WHITE Radiating Hand, as before, holds a group of lotuses or water-lilies, from which two flowers rise on either side of, and overhanging the top cup; pouring into it the white water. Flowers in the same way pour white water into the lower cups. All the cups overflow; the topmost into the two others, and these upon the lower part of the card. Cups are arranged in an erect equilateral triangle. Mercury and Cancer above and below.",
+    "layers": [
+      {"part": "water-calm", "at": [280, 720], "s": 1.0},
+      {"curve": "stem", "paths": [[280, 610, 214.0, 423.0, 228, 236], [280, 610, 346.0, 423.0, 332, 236], [280, 610, 156.0, 509.0, 112, 408], [280, 610, 404.0, 509.0, 448, 408]]},
+      {"curve": "stream", "paths": [[222, 262, 230, 270, 248, 282], [338, 262, 330, 270, 312, 282], [118, 434, 130, 440, 146, 452], [442, 434, 430, 440, 414, 452], [228, 290, 200, 330, 182, 452], [332, 290, 360, 330, 378, 452], [130, 520, 116, 620, 118, 720], [430, 520, 444, 620, 442, 720]]},
+      {"part": "lotus", "at": [[228, 236], [332, 236], [112, 408], [448, 408]], "rot": [150, -150, 150, -150]},
+      {"part": "cup-overflow", "at": [[280, 330], [175, 500], [385, 500]]},
+      {"part": "hand", "at": [280, 610], "s": 0.75},
+      {"glyph": "above", "at": [280, 120], "size": 80},
+      {"glyph": "below", "at": [280, 790], "size": 60}
+    ]
+  },
+  "cups-04": {
+    "follows": "FOUR cups: the two upper overflowing into the two lower, which do not overflow. An Angelic Hand grasps a branch of lotus, from which ascends a stem bearing one flower at the top of the card, from which the white water flows into the two upper cups. From the centre two leaves pass right and left, making, as it were, a cross between the four cups. Above and below are the symbols Moon and Cancer for the Decan.",
+    "layers": [
+      {"curve": "stem", "paths": [[280, 700, 276, 470, 280, 252]]},
+      {"part": "leaf", "at": [[280, 470], [280, 470]], "rot": [-90, 90], "s": 1.8},
+      {"curve": "stream", "paths": [[268, 222, 210, 220, 192, 322], [292, 222, 350, 220, 368, 322], [148, 390, 140, 450, 150, 506], [412, 390, 420, 450, 410, 506]]},
+      {"part": "lotus", "at": [280, 252], "s": 1.3},
+      {"part": "cup-overflow", "at": [[190, 380], [370, 380]]},
+      {"part": "cup-full", "at": [[190, 570], [370, 570]]},
+      {"part": "hand", "at": [280, 700], "s": 0.8},
+      {"glyph": "above", "at": [280, 120], "size": 80},
+      {"glyph": "below", "at": [280, 795], "size": 56}
+    ]
+  },
+  "key-00-foolish-man": {
+    "follows": "IF the question refers to spiritual matters, the Fool means idea, thought, spirituality, that which endeavours to transcend Earth. But if question is material, it means folly, stupidity, eccentricity, or even mania.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): a traveller stepping out with a staff and a bag, a small dog at his heels; Air, the Key's element.",
+    "layers": [
+      {"part": "cloud", "at": [[130, 300], [420, 250]], "opacity": 0.9},
+      {"part": "ground", "at": [280, 730]},
+      {"part": "figure", "at": [250, 730], "s": 1.3, "color": "#c0281c"},
+      {"part": "bag", "at": [315.0, 574.0], "s": 1.2},
+      {"part": "staff", "at": [185.0, 605.2], "rot": -8, "s": 0.8},
+      {"part": "dog", "at": [420, 704], "s": 0.9},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-01-magician": {
+    "follows": "Skill, wisdom, adaptation, craft, cunning, or occult wisdom or power.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): the Magus at his table with the four weapons: his wand raised, the cup, sword and pentacle before him; Mercury.",
+    "layers": [
+      {"part": "ground", "at": [280, 760]},
+      {"part": "figure", "at": [280, 700], "s": 1.35, "color": "#c0281c"},
+      {"part": "wand", "at": [347.5, 470.5], "s": 0.45},
+      {"part": "table", "at": [280, 640], "s": 1.2},
+      {"part": "cup", "at": [196, 617], "s": 0.5},
+      {"part": "sword", "at": [300, 628], "rot": 90, "s": 0.32},
+      {"part": "pentacle", "at": [372, 620], "s": 0.36},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-02-high-priestess": {
+    "follows": "Change, alternation, increase and decrease, fluctuation; whether for good or evil depends on the dignity.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): the Priestess enthroned between the black and the white pillars, the crescent on her head and the silver star above; the Moon.",
+    "layers": [
+      {"part": "water-calm", "at": [280, 722], "s": 1.0},
+      {"part": "pillar", "at": [[100, 724], [460, 724]], "s": 1.5, "color": "#2a2a30"},
+      {"part": "pillar", "at": [460, 724], "s": 1.5, "color": "#f3efe6"},
+      {"part": "throne", "at": [280, 640], "s": 1.45},
+      {"part": "figure-seated", "at": [280, 640], "s": 1.45, "color": "#1d5c9c"},
+      {"part": "hood", "at": [280.0, 468.9], "s": 1.45, "color": "#f3efe6"},
+      {"part": "moon-crescent", "at": [280.0, 410.9], "rot": -90, "s": 0.55, "color": "#9fb4d6"},
+      {"part": "star", "at": [280, 300], "s": 2.6, "color": "#e6ebf2"},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-03-empress": {
+    "follows": "Beauty, happiness, pleasure, success. But with very bad dignity it means luxury, dissipation.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): the Empress enthroned and crowned with stars, holding a sceptre, her shield of Venus beside her, ripe wheat at her feet.",
+    "layers": [
+      {"part": "flowers", "at": [280, 722]},
+      {"part": "throne", "at": [280, 640], "s": 1.45},
+      {"part": "hair-long", "at": [280.0, 468.9], "s": 1.45, "color": "#d8a84a"},
+      {"part": "figure-seated", "at": [280, 640], "s": 1.45, "color": "#2f7d3a"},
+      {"part": "crown", "at": [280.0, 448.6], "s": 1.1},
+      {"part": "star", "at": [[246, 400], [280, 388], [314, 400]], "s": 0.7},
+      {"part": "rod", "at": [346.7, 524.0], "s": 0.6},
+      {"part": "orb-cross", "at": [346.7, 437.0], "s": 0.9},
+      {"glyph": "Venus", "at": [125, 600], "size": 100, "color": "#2f7d3a"},
+      {"part": "wheat", "at": [[90, 745], [470, 745]], "s": 1.1},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-04-emperor": {
+    "follows": "War, conquest, victory, strife, ambition.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): the Emperor enthroned among rams' heads, crowned, with sceptre and orb; Aries.",
+    "layers": [
+      {"part": "ground", "at": [280, 722], "color": "#8a7a6a"},
+      {"part": "throne", "at": [280, 640], "s": 1.45, "color": "#8a6a3a"},
+      {"part": "head-ram", "at": [[204.6, 416.7], [355.4, 416.7], [204.6, 611.0], [355.4, 611.0]], "s": 1.3},
+      {"part": "figure-seated", "at": [280, 640], "s": 1.45, "color": "#b3261e"},
+      {"part": "crown", "at": [280.0, 448.6], "s": 1.2},
+      {"part": "rod", "at": [346.7, 524.0], "s": 0.6},
+      {"part": "orb-cross", "at": [346.7, 437.0], "s": 0.9},
+      {"part": "orb", "at": [213.3, 573.3], "s": 0.9},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-05-hierophant": {
+    "follows": "Divine wisdom, manifestation, explanation, teaching, occult force voluntarily invoked.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): the Hierophant enthroned between two pillars, crowned, holding the staff of the triple cross, bulls' heads at his throne; Taurus.",
+    "layers": [
+      {"part": "ground", "at": [280, 722], "color": "#9a8a72"},
+      {"part": "pillar", "at": [[100, 724], [460, 724]], "s": 1.5, "color": "#9aa0aa"},
+      {"part": "throne", "at": [280, 640], "s": 1.45},
+      {"part": "head-bull", "at": [[204.6, 416.7], [355.4, 416.7]], "s": 1.2},
+      {"part": "figure-seated", "at": [280, 640], "s": 1.45, "color": "#b3261e"},
+      {"part": "crown", "at": [280.0, 448.6], "s": 1.2},
+      {"part": "cross-triple", "at": [213.3, 553.0], "s": 0.85},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-06-lovers": {
+    "follows": "Inspiration (passive, mediumistic), motive power, action.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): two figures beneath a radiant light, the Voice; Gemini, the Twins.",
+    "layers": [
+      {"part": "ground", "at": [280, 750]},
+      {"part": "sun-rayed", "at": [280, 250], "s": 0.75, "color": "#ffd84a"},
+      {"part": "figure", "at": [185, 750], "s": 1.15, "color": "#b3261e"},
+      {"part": "hair-long", "at": [375, 520], "s": 1.15, "color": "#d8a84a"},
+      {"part": "figure", "at": [375, 750], "s": 1.15, "color": "#1d5c9c"},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-07-chariot": {
+    "follows": "Triumph, victory, health (sometimes unstable).",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): a crowned and armoured figure in a chariot drawn by a black and a white horse, over the Waters; Cancer.",
+    "layers": [
+      {"part": "water-calm", "at": [280, 712]},
+      {"part": "figure-seated", "at": [190, 600], "s": 1.15, "color": "#1d5c9c"},
+      {"part": "crown", "at": [190.0, 448.2], "s": 1.1},
+      {"part": "chariot", "at": [190, 600], "s": 1.15},
+      {"part": "horse", "at": [400, 610], "s": 0.62, "color": "#2b2420"},
+      {"part": "horse", "at": [440, 640], "s": 0.62, "color": "#f3efe6"},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-11-fortitude": {
+    "follows": "Courage, strength, fortitude, power passing on to action. Obstinacy.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): a woman who masters the lion, her hand upon its head; Leo.",
+    "layers": [
+      {"part": "ground", "at": [280, 750]},
+      {"part": "hair-long", "at": [360, 500], "s": 1.3, "color": "#d8a84a"},
+      {"part": "figure", "at": [360, 760], "s": 1.3, "color": "#f3efe6"},
+      {"part": "crown", "at": [360, 482], "s": 1.0, "color": "#5e8a3a"},
+      {"part": "lion", "at": [215, 655], "s": 1.3},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-09-hermit": {
+    "follows": "Wisdom from on high. Active divine inspiration. Sometimes \"unexpected current.\"",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): a hooded wanderer with a lantern and a staff; Virgo.",
+    "layers": [
+      {"part": "ground", "at": [280, 740], "color": "#9a8a72"},
+      {"part": "figure", "at": [250, 740], "s": 1.4, "color": "#6b5d4a"},
+      {"part": "hood", "at": [250.0, 460.0], "s": 1.4},
+      {"part": "lantern", "at": [320.0, 572.0], "s": 1.3},
+      {"part": "staff", "at": [180.0, 600.0], "s": 0.85},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-10-wheel-of-fate": {
+    "follows": "Good fortune, happiness (within bounds). Intoxication of success.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): the wheel of eight spokes turning among clouds; Jupiter.",
+    "layers": [
+      {"part": "cloud", "at": [[110, 680], [450, 690], [130, 300], [440, 290]], "s": 1.0},
+      {"part": "wheel", "at": [280, 480], "s": 1.35},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-08-justice": {
+    "follows": "Eternal justice. Strength and force, but arrested as in act of judgment. May mean law, trial, etc.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): Justice enthroned between two pillars, the sword upright in one hand, the balances in the other; Libra.",
+    "layers": [
+      {"part": "ground", "at": [280, 722], "color": "#9a8a72"},
+      {"part": "pillar", "at": [[100, 724], [460, 724]], "s": 1.5, "color": "#9aa0aa"},
+      {"part": "throne", "at": [280, 640], "s": 1.45},
+      {"part": "figure-seated", "at": [280, 640], "s": 1.45, "color": "#b3261e"},
+      {"part": "crown", "at": [280.0, 448.6], "s": 1.2},
+      {"part": "sword", "at": [346.7, 582.0], "s": 0.6},
+      {"part": "scales", "at": [213.3, 582.0], "s": 0.9},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-12-hanged-man": {
+    "follows": "Enforced sacrifice, punishment, loss, fatal and not voluntary, suffering.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): a figure hanging head downward from a gallows shaped like a Tau, over the Mighty Waters; Water.",
+    "layers": [
+      {"part": "water-calm", "at": [280, 712]},
+      {"part": "tau", "at": [280, 760], "s": 1.0},
+      {"curve": "branch", "paths": [[280, 398, 282, 404, 280, 412]]},
+      {"part": "figure", "at": [280, 410], "s": 1.1, "color": "#1d5c9c", "rot": 180},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-13-death": {
+    "follows": "Time, age, transformation, change involuntary (as opposed to 18, Pisces). Or death, destruction (only latter with special cards). [Specially, a sudden and quite unexpected change.]",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): a cloaked figure with the scythe, a fallen crown at its feet; Scorpio.",
+    "layers": [
+      {"part": "ground", "at": [280, 740], "color": "#7a6a5a"},
+      {"part": "figure", "at": [300, 740], "s": 1.4, "color": "#2a2420"},
+      {"part": "hood", "at": [300.0, 460.0], "s": 1.4, "color": "#2a2420"},
+      {"part": "scythe", "at": [230.0, 572.0], "rot": -8, "s": 1.05},
+      {"part": "crown", "at": [440, 742], "rot": 160, "s": 1.2},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-14-temperance": {
+    "follows": "Combination of forces, realization, action (material effect, good or evil).",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): a winged figure pouring from one vessel into the other, one foot on land and one in the water; Sagittarius.",
+    "layers": [
+      {"part": "ground", "at": [130, 745], "s": 0.6},
+      {"part": "water-calm", "at": [420, 745], "s": 0.6},
+      {"part": "wings", "at": [280.0, 516.2], "s": 1.0},
+      {"part": "figure", "at": [280, 745], "s": 1.3, "color": "#1d5c9c"},
+      {"curve": "stream", "paths": [[221.0, 576.0, 280, 560, 345.0, 596.0]]},
+      {"part": "vessel", "at": [[215.0, 568.2], [345.0, 599.4]], "rot": [60, 0], "s": 0.8},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-15-devil": {
+    "follows": "Materiality, material force, material temptation, obsession.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): a horned and winged figure standing on a cubical altar, an inverted torch in its hand, two small figures chained below; Capricorn.",
+    "layers": [
+      {"part": "ground", "at": [280, 750], "color": "#6a5a4a"},
+      {"part": "wings", "at": [280.0, 428.8], "s": 1.0, "color": "#5a5058"},
+      {"part": "cube-altar", "at": [280, 640], "s": 1.1},
+      {"part": "figure", "at": [280, 640], "s": 1.2, "color": "#4a4048"},
+      {"part": "horns", "at": [280.0, 400.0], "s": 1.4},
+      {"part": "wand", "at": [340.0, 592.0], "rot": 180, "s": 0.4},
+      {"curve": "chain", "paths": [[240, 700, 200, 690, 160, 650], [320, 700, 360, 690, 400, 650]]},
+      {"part": "figure", "at": [[160, 770], [400, 770]], "s": 0.6, "color": "#c9a07a"},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-16-blasted-tower": {
+    "follows": "Ambition, fighting, war, courage, or destruction, danger, fall, ruin.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): the tower struck by the lightning flash, its crown falling, fire at its windows, two figures falling; Mars.",
+    "layers": [
+      {"part": "ground", "at": [280, 770]},
+      {"part": "tower", "at": [280, 770], "s": 1.25},
+      {"part": "flame", "at": [[252, 466], [308, 466], [280, 566]], "s": 0.9},
+      {"part": "crown", "at": [350, 330], "rot": 30, "s": 1.8},
+      {"part": "lightning", "at": [190, 110], "rot": -22, "s": 1.1},
+      {"part": "figure", "at": [[150, 480], [430, 580]], "rot": [205, 150], "s": 0.55, "color": "#5b3f8c"},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-17-star": {
+    "follows": "Hope, faith, unexpected help. Or dreaminess, deceived hope, etc.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): the great star of eight points and seven lesser stars; a figure pours water from two vessels, onto the land and into the pool; Aquarius.",
+    "layers": [
+      {"part": "star8", "at": [290, 260], "s": 1.15},
+      {"part": "star", "at": [[150, 330], [170, 300], [430, 290], [470, 400], [90, 410], [380, 160], [200, 160]], "s": 1.0},
+      {"part": "ground", "at": [150, 745], "s": 0.7},
+      {"part": "water-calm", "at": [410, 730], "s": 0.6},
+      {"part": "hair-long", "at": [240.0, 505.0], "s": 1.2, "color": "#d8a84a"},
+      {"part": "figure", "at": [240, 745], "s": 1.2, "color": "#f3efe6"},
+      {"curve": "stream", "paths": [[308.0, 611.0, 380, 620, 400, 735], [172.0, 611.0, 130, 640, 110, 742]]},
+      {"part": "vessel", "at": [[300.0, 601.0], [180.0, 601.0]], "rot": [70, -70], "s": 0.75},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-18-moon": {
+    "follows": "Dissatisfaction, voluntary change. Error, lying, falsity, deception. This card is very sensitive to dignity.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): the moon shedding drops, two towers and two dogs by the path, and the crayfish rising from the pool; Pisces.",
+    "layers": [
+      {"part": "moon-crescent", "at": [280, 190], "s": 1.0, "color": "#c9d6ea"},
+      {"part": "drop", "at": [[220, 290], [340, 290], [250, 340], [310, 340], [280, 390], [200, 370], [360, 370]], "s": 1.0},
+      {"part": "ground", "at": [280, 640], "color": "#8a9a6a"},
+      {"part": "tower", "at": [[95, 650], [465, 650]], "s": 0.5},
+      {"part": "path-road", "at": [280, 770], "s": 0.55},
+      {"part": "dog", "at": [190, 660], "s": 0.8},
+      {"part": "dog", "at": [370, 660], "s": 0.8, "flip": true, "color": "#7a6a5a"},
+      {"part": "water-calm", "at": [280, 740], "s": 1.0},
+      {"part": "crayfish", "at": [280, 730], "s": 1.3},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-19-sun": {
+    "follows": "Glory, gain, riches. With \"very\" evil cards it means arrogance, display, vanity.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): the sun in his glory over two children before a wall; the Sun.",
+    "layers": [
+      {"part": "sun-rayed", "at": [280, 250], "s": 1.0},
+      {"part": "drop", "at": [[150, 400], [410, 400], [190, 440], [370, 440]], "s": 1.0},
+      {"part": "wall", "at": [280, 600], "s": 1.0},
+      {"part": "flowers", "at": [280, 740]},
+      {"part": "figure", "at": [[215, 760], [345, 760]], "s": 0.75, "color": "#f3c6d6"},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [470, 150], "size": 70}
+    ]
+  },
+  "key-20-judgment": {
+    "follows": "Final decision, judgment, sentence, determination of a matter without appeal, \"on its plane.\"",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): an angel in the clouds sounding the trumpet, and figures rising from the tomb; Spirit and Fire.",
+    "layers": [
+      {"part": "wings", "at": [290, 300], "s": 1.0},
+      {"part": "figure", "at": [290, 430], "s": 0.7, "color": "#b3261e"},
+      {"part": "cloud", "at": [[290, 380], [200, 400], [380, 400]], "s": 1.1},
+      {"part": "trumpet", "at": [300, 300], "rot": 15, "s": 0.95},
+      {"part": "ground", "at": [280, 760], "color": "#8a9a6a"},
+      {"part": "figure", "at": [[220, 700], [280, 690], [340, 700]], "s": 0.8, "color": "#c9a07a"},
+      {"part": "tomb", "at": [280, 660], "s": 1.6},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [430, 150], "size": 56},
+      {"glyph": "attr2", "at": [490, 150], "size": 56}
+    ]
+  },
+  "key-21-universe": {
+    "follows": "The matter itself. Synthesis, world, kingdom. Usually denotes actual subject of question, and therefore depends entirely on accompanying cards.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): a figure within the elliptical wreath, and the four Kerubim at the corners (man, eagle, bull, lion); Earth and Saturn.",
+    "layers": [
+      {"part": "wreath", "at": [280, 470], "s": 1.0},
+      {"part": "hair-long", "at": [280, 437], "s": 0.9, "color": "#d8a84a"},
+      {"part": "figure", "at": [280, 617], "s": 0.9, "color": "#5b3f8c"},
+      {"part": "head-angel", "at": [100, 260], "s": 2.0},
+      {"part": "eagle", "at": [460, 270], "s": 0.4},
+      {"part": "head-bull", "at": [100, 720], "s": 2.0},
+      {"part": "head-lion", "at": [460, 720], "s": 2.0},
+      {"glyph": "letter", "at": [90, 150], "size": 64},
+      {"glyph": "attr1", "at": [430, 150], "size": 56},
+      {"glyph": "attr2", "at": [490, 150], "size": 56}
+    ]
+  }
+}

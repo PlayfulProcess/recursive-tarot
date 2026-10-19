@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-70 -230 140 240" width="140" height="240">
+<title>figure: a standing figure in a short tunic, drawn as a symbol (no face)</title>
+<!-- Origin: between the feet. The head's centre is at (0,-200); the hands at (-50,-120) and (50,-120);
+     the shoulders at y=-178. currentColor is the tunic. Hair, crown, mantle and what the hands hold are parts of their own. -->
+<g id="part" data-color="#b3261e">
+  <g fill="none" stroke-linecap="round" stroke="#7a5a44">
+    <path d="M-10 -96 L-13 -4 M10 -96 L13 -4" stroke-width="15"/>
+    <path d="M-22 -174 L-50 -120 M22 -174 L50 -120" stroke-width="13"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke="#ecc9a4">
+    <path d="M-10 -96 L-13 -4 M10 -96 L13 -4" stroke-width="10"/>
+    <path d="M-22 -174 L-50 -120 M22 -174 L50 -120" stroke-width="8"/>
+  </g>
+  <g stroke="#7a5a44" stroke-width="2.5" stroke-linejoin="round">
+    <ellipse cx="-15" cy="-2" rx="11" ry="5" fill="#8a5a2a"/><ellipse cx="15" cy="-2" rx="11" ry="5" fill="#8a5a2a"/>
+    <path d="M-24 -180 C-12 -186 12 -186 24 -180 L30 -96 C10 -90 -10 -90 -30 -96 Z" fill="currentColor"/>
+    <path d="M-25 -130 L25 -130 L26 -116 L-26 -116 Z" fill="#c9a24a"/>
+    <rect x="-5" y="-190" width="10" height="10" fill="#ecc9a4"/>
+    <circle cx="0" cy="-200" r="15" fill="#ecc9a4"/>
+    <circle cx="-50" cy="-120" r="6" fill="#ecc9a4"/><circle cx="50" cy="-120" r="6" fill="#ecc9a4"/>
+  </g>
+</g>
+</svg>
