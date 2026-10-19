@@ -191,6 +191,15 @@ print(f"[build_card_pages.py] {out.splitlines()[-1] if out else '(no output)'}")
 if r.returncode != 0:
     errors.append(f"build_card_pages.py --check failed:\n{out}")
 
+# 10 — tarot/sources/grammar.json, docs/rights/IMAGE-FLAGS.md and each deck's "Where the pictures come
+# from" line are generated from research/sources/image-sources.json (Oct 20 2026).
+r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "build_sources_grammar.py"), "--check"],
+                   capture_output=True, text=True, cwd=ROOT, encoding="utf-8")
+out = (r.stdout + r.stderr).strip()
+print(f"[build_sources_grammar.py] {out.splitlines()[-1] if out else '(no output)'}")
+if r.returncode != 0:
+    errors.append(f"build_sources_grammar.py --check failed:\n{out}")
+
 for w in warnings:
     print("WARN:", w)
 if errors:
