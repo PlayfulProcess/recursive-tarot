@@ -2,6 +2,31 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 19 2026 — Book T's iconography: a third picture set, glyphs placed where Book T places them
+
+Her words: "the lord of strife has iconography like this: Above the middle wand is the sign Saturn, and below
+is that of Leo ... That are not rendered in the cards ... render an iconography as elements that goes into each
+card, like astro signs and Hebrew letters in SVG and ... a composition in SVG as composed node."
+
+- **The glyphs** (`tarot/book-t/glyphs/`, 46 SVGs): the seven planets, the twelve signs, the four elements and
+  Spirit, the twenty-two Hebrew letters. Drawn for this site as plain SVG strokes (no font or icon set copied),
+  CC BY-SA 4.0 like the deck; its README records this.
+- **The composer** (`scripts/build_book_t_iconography.py`, `--check` in check_all): reads each card's own
+  metadata and Book T's sentence for it, and writes `tarot/book-t/iconography/<card id>.svg` (78, about 6 KB
+  each). The 36 small cards: the decan's planet above the central symbol and its sign below, in the order Book T
+  names them (the Six of Pentacles names Taurus first, so Taurus is above), on small daggers or flaming wands
+  where Book T says so; the suit's symbols counted as Book T counts them (the Ten of Swords: eight with the points
+  falling away and two crossed in the centre); the corner letter is the one Book T gives the card ("Geburah of
+  י"). The Keys: the Hebrew letter in the centre, its attribution above, the Path below. The Aces: the element
+  above, the letter of the Name below. The courts: the element of the element above, the signs they rule below
+  (the Princesses: the quadrant round the Pole).
+- **The third picture set**: each card's `metadata.illustrations` gains one entry, `edition: "Book T deck,
+  iconography"`, at `https://tarot.recursive.eco/tarot/book-t/iconography/<id>.svg`. recursive.eco's Play
+  offers it in its Pictures choice with no app change (a set most pictured nodes carry). The 1912 page's
+  Pictures switch has a fourth button, **Iconography** (`build_book_t_page.py`, the template).
+- Not drawn: the hands and clouds Book T describes (left to the painted pictures), and the Keys' scenes (Book T
+  gives none). The look waits for her eye.
+
 ## Oct 18 2026 — Book T (1912): Book T's own pictures beside the text, and a picture switch
 
 - **Other Golden Dawn texts on the Book T deck** (her words: "Let's add other pd golden dawn texts to book t"):
