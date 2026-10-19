@@ -462,6 +462,14 @@ const $ = id => document.getElementById(id);
 
   (meta._decks || []).forEach(d => { deckLabels[d.slug] = d.label; });
   leaves = (meta.nodes || []).filter(i => !i.parts && i.metadata && i.metadata.source_deck && i.metadata.arcana);
+  // The Golden Dawn's deck is Book T's own grammar (tarot/book-t), read directly: its titles, its
+  // numbers, its pictures, its 1912 text. The meta grammar's older Golden Dawn entry carried
+  // Rider-Waite names and pictures; it is swapped out here (in All Decks too) for Book T's cards.
+  const bookT = await loadBookTLeaves();
+  if (bookT.length) {
+    leaves = leaves.filter(c => c.metadata.source_deck !== OLD_GD).concat(bookT);
+    deckLabels[BOOK_T] = BOOK_T_LABEL;
+  }
   leaves.forEach(c => { (byDeck[c.metadata.source_deck] ||= []).push(c); });
 
   // Deck dropdown — All Decks first, then each deck (>=3 castable) in chronological order.
@@ -471,7 +479,10 @@ const $ = id => document.getElementById(id);
   const _yr = d => { const m = String(d.date || d.era || '').match(/\d{4}/); return m ? +m[0] : 9999; };
   [...(meta._decks || [])]
     .sort((a,b) => (a.era_sort ?? 99) - (b.era_sort ?? 99) || _yr(a) - _yr(b) || (a.label||'').localeCompare(b.label||''))
-    .forEach(d => { const n = (byDeck[d.slug]||[]).length; if (n < 3) return;
+    .forEach(d => {
+      // The old Golden Dawn entry's place in the list now holds Book T's own deck.
+      if (d.slug === OLD_GD && byDeck[BOOK_T]) d = { slug: BOOK_T, label: BOOK_T_LABEL, date: d.date };
+      const n = (byDeck[d.slug]||[]).length; if (n < 3) return;
       const o = document.createElement('option'); o.value = d.slug;
       o.textContent = `${d.label} · ${d.date || d.era || ''} (${n})`; dsel.appendChild(o); });
 
@@ -479,7 +490,9 @@ const $ = id => document.getElementById(id);
   // the grammar.json the visitor was just looking at, so the deck context isn't silently dropped.
   // This page has no separate ?deck= param — resolve ?src= to a deck option above by matching the
   // slug embedded in the standard ../tarot/<slug>/grammar.json src path.
-  const srcParam = new URLSearchParams(location.search).get('src') || '';
+  let srcParam = new URLSearchParams(location.search).get('src') || '';
+  // Old links to the Golden Dawn deck open Book T's own deck.
+  if (srcParam.includes('/' + OLD_GD + '/')) srcParam = '../tarot/' + BOOK_T + '/grammar.json';
   if (srcParam) {
     const srcOpt = [...dsel.options].find(o => o.value && o.value !== ALL && srcParam.includes('/' + o.value + '/'));
     if (srcOpt) dsel.value = srcOpt.value;
@@ -558,9 +571,27 @@ const $ = id => document.getElementById(id);
   try { ecoIds = await (await fetch('../tarot/_eco_ids.json')).json(); } catch(_){ ecoIds = { ids:{} }; }
 })();
 
+// ── Book T (the Golden Dawn's deck), read from its own grammar ──
+const BOOK_T = 'book-t', OLD_GD = 'golden-dawn-book-t-tarot', BOOK_T_LABEL = 'Book T (Golden Dawn)';
+// Decks with no reversed meanings are always drawn upright (the app's deckHasReversals: false).
+// Book T reads a card by its dignity among its neighbours, never by turning it over.
+const NO_REVERSALS = new Set([BOOK_T, OLD_GD]);
+const deckHasReversals = slug => !NO_REVERSALS.has(slug);
+async function loadBookTLeaves(){
+  let g; try { g = await (await fetch('../tarot/' + BOOK_T + '/grammar.json')).json(); } catch(_) { return []; }
+  return (g.nodes || []).filter(n => !n.parts && n.metadata && n.metadata.arcana).map(n => {
+    const m = n.metadata, printed = m.card_name_1912;
+    const tag = m.arcana === 'major' ? [printed, m.key_number != null ? 'Key ' + m.key_number : null].filter(Boolean).join(', ') : printed;
+    return { id: n.id, name: tag ? `${n.name} (${tag})` : n.name, image_url: n.image_url || null,
+      metadata: { deck: BOOK_T_LABEL, arcana: m.arcana, number: m.number ?? null, suit: m.suit || null,
+                  source_deck: BOOK_T, source_node_id: n.id } };
+  });
+}
+
 function currentPool(){ const v = $('deck').value; return v === ALL ? leaves : (byDeck[v] || []); }
 function updateDeckMeta(){ const v = $('deck').value;
-  $('deckmeta').textContent = v === ALL ? 'One card may come from each of several centuries — only the meta can do this.' : `${(byDeck[v]||[]).length} castable cards in this deck.`; }
+  $('deckmeta').textContent = v === ALL ? 'One card may come from each of several centuries — only the meta can do this.'
+    : `${(byDeck[v]||[]).length} castable cards in this deck.` + (deckHasReversals(v) ? '' : ' Book T has no reversed meanings, so its cards are always drawn upright.'); }
 
 // ── the working spread's identity ──
 // NAME and DESCRIPTION are separate. The name goes in the always-visible #spreadName field (and
@@ -936,7 +967,7 @@ function cast(){
   const revProb = (parseInt($('revProb').value,10) || 0) / 100;
   positions.forEach((p, i) => { const c = cards[i], m = c.metadata||{};
     p.card = { name:c.name, deck:(m.deck||deckLabels[m.source_deck]||''), arcana:m.arcana||null, number:(m.number??null),
-      reversed: Math.random() < revProb, image_url:c.image_url||null,
+      reversed: deckHasReversals(m.source_deck) && Math.random() < revProb, image_url:c.image_url||null,
       source_deck:m.source_deck||null, source_node_id:m.source_node_id||null,
       // The meta card's OWN content (its "Origin" provenance blurb etc.) — carried through so
       // openCardDetail can render it additively alongside the resolved source deck content.
