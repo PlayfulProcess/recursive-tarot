@@ -16,7 +16,6 @@ The sources behind each alternative are in the `sources` grammar
 |---|---|---|---|
 | `belgian-tarot` | 23 | weak provenance | A museum copy of a Vandenborre pack (none found yet). |
 | `charles-vi-tarot` | 18 | non-commercial only | The 1844 hand-coloured lithographs (Société des bibliophiles français; Liège DONum copy, filed public domain) for all 17; Chatto 1848 engravings for Justice and the Moon. Both are copies, not photographs. No free photograph of the cards found. |
-| `este-tarot` | 18 | lower resolution than the holder's | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
 | `etteilla-i-livre-de-thot` | 94 | unrecorded | Find the printing first; the BIU Santé 1791 dictionary (Etalab open licence) is a text source, not the cards. |
 | `etteilla-ii-egyptian` | 94 | unrecorded | Find the printing first. |
 | `etteilla-iii-oracle-des-dames` | 94 | unrecorded | Find the printing first. |
@@ -84,29 +83,6 @@ The sources behind each alternative are in the `sources` grammar
 | 21 — The World (`card-world`) | non-commercial only | BnF scan: free here with the Gallica credit, a licence for any sale. | The 1844 hand-coloured lithographs (Société des bibliophiles français; Liège DONum copy, filed public domain) for all 17; Chatto 1848 engravings for Justice and the Moon. Both are copies, not photographs. No free photograph of the cards found. |
 | Page of Swords (`card-page-swords`) | non-commercial only | BnF scan: free here with the Gallica credit, a licence for any sale. | The 1844 hand-coloured lithographs (Société des bibliophiles français; Liège DONum copy, filed public domain) for all 17; Chatto 1848 engravings for Justice and the Moon. Both are copies, not photographs. No free photograph of the cards found. |
 | The 16 Surviving Trumps (`emg-surviving-trumps`) | non-commercial only | BnF scan: free here with the Gallica credit, a licence for any sale. | The 1844 hand-coloured lithographs (Société des bibliophiles français; Liège DONum copy, filed public domain) for all 17; Chatto 1848 engravings for Justice and the Moon. Both are copies, not photographs. No free photograph of the cards found. |
-
-## `este-tarot` (18)
-
-| Card | Flag | Note | Free alternative |
-|---|---|---|---|
-| King of Swords (`card-01`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| Queen of Swords (`card-03`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| Cavalier of Swords (`card-05`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| King of Batons (`card-07`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| Cavalier of Batons (`card-09`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| Jack of Batons (`card-11`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| King of Coins (`card-13`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| Queen of Cups (`card-15`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| Il Bagatto (The Magician) (`card-17`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| Il Papa (The Pope) (`card-19`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| Temperance (`card-21`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| The Star (`card-23`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| The Moon (`card-25`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| The Sun (`card-27`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| The World (`card-29`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| Il Matto (The Fool) (`card-31`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| Surviving Trumps (8) (`axis-trumps`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
-| Surviving Court Cards (8) (`axis-courts`) | lower resolution than the holder's | Yale's file is about three times sharper; rights are fine. | Same source, sharper: Yale's IIIF full size (3,256 x 5,640 px) is free for any use under Yale's open-access policy. |
 
 ## `etteilla-i-livre-de-thot` (94)
 

@@ -41,6 +41,17 @@ LEDGER = os.path.join(OUT_DIR, 'image-ledger.json')
 SUMMARY = os.path.join(OUT_DIR, 'IMAGE-LEDGER.md')
 API = 'https://commons.wikimedia.org/w/api.php'
 UA = 'recursive-tarot-rights-audit/1.0 (https://github.com/PlayfulProcess/recursive-tarot)'
+# Holders that publish their own scans under an open-access policy, checked on the holder's own
+# site (Oct 19 2026). An image whose metadata.image_source starts with the prefix is recorded as
+# `holder-open-access` with the holder's terms, instead of `recorded-elsewhere`.
+HOLDER_OPEN_ACCESS = {
+    'https://collections.library.yale.edu/iiif/2/': {
+        'license': 'Yale open access: public-domain work, "may be used by anyone for any purpose"',
+        'holder': 'Beinecke Rare Book & Manuscript Library, Yale University',
+        'credit': 'Beinecke Rare Book & Manuscript Library, Yale University; image: Yale University Library, open access',
+        'policy': 'https://lux.collections.yale.edu/content/open-access-policy-2011',
+    },
+}
 
 
 def commons_title(url):
@@ -164,6 +175,11 @@ def build():
             if row['status'] != 'commons' and isinstance(md.get('image_source'), str) and md['image_source'].startswith('http'):
                 row['status'] = 'recorded-elsewhere'
                 row['credit'] = md['image_source']
+                oa = next((v for k, v in HOLDER_OPEN_ACCESS.items() if md['image_source'].startswith(k)), None)
+                if oa:
+                    row.update(status='holder-open-access', license=oa['license'], credit=oa['credit'],
+                               holder=oa['holder'], policy=oa['policy'], source=md['image_source'],
+                               record=(g.get('_image_provenance') or {}).get('catalogue_record'))
             row['class'] = classify(row)
             rows.append(row)
     return rows
@@ -183,12 +199,13 @@ def summarize(rows, checked):
         'domain; that is the uploader\'s claim about the work, not a grant from whoever made the',
         'scan) · **BnF scan** (the Commons credit points at Gallica/BnF: free only for',
         'non-commercial reuse) · **CC BY-SA** (a photographer\'s licence: credit and share-alike) ·',
-        '**elsewhere** (`image_source` names a non-Commons upstream, e.g. Yale IIIF or Gallica) ·',
+        '**holder OA** (a scan published by the holder itself, under its open-access policy for public-domain works) ·',
+        '**elsewhere** (`image_source` names a non-Commons upstream whose terms are not recorded) ·',
         '**not on Commons** (a file name that Commons does not know) · **unrecorded** (nothing in the',
         'repo says where the image came from).',
         '',
-        '| Deck | provenance | images | Commons PD tag | BnF scan | CC BY-SA | other licence | elsewhere | not on Commons | unrecorded | top credit lines |',
-        '|---|---|---|---|---|---|---|---|---|---|---|',
+        '| Deck | provenance | images | Commons PD tag | BnF scan | CC BY-SA | other licence | holder OA | elsewhere | not on Commons | unrecorded | top credit lines |',
+        '|---|---|---|---|---|---|---|---|---|---|---|---|',
     ]
     for slug in sorted(by):
         rs = by[slug]
@@ -199,7 +216,7 @@ def summarize(rows, checked):
         credits = Counter(re.sub(r'https?://([^/\s]+).*', r'\1', r['credit'] or '')[:60] for r in rs if r['credit'])
         top = '; '.join(f'{k} ×{v}' for k, v in credits.most_common(3)) or '—'
         lines.append(f"| `{slug}` | {rs[0]['provenance']} | {len(rs)} | {c['commons-pd-tag']} | "
-                     f"{c['commons-pd-tag/bnf-scan']} | {bysa} | {other} | {c['recorded-elsewhere']} | "
+                     f"{c['commons-pd-tag/bnf-scan']} | {bysa} | {other} | {c['holder-open-access']} | {c['recorded-elsewhere']} | "
                      f"{c['not-on-commons']} | {c['unrecorded']} | {top.replace('|', '/')} |")
     lines.append('')
     return '\n'.join(lines)

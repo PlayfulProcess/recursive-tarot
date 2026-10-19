@@ -196,7 +196,7 @@ def flag_of(r):
         return ("modern reproduction", "Scanned by David Madore from the AGMüller facsimile (per the Commons credit).")
     if "bnf-scan" in cls or deck in ("vieville-tarot", "paris-anonymous-tarot"):
         return ("non-commercial only", "BnF scan: free here with the Gallica credit, a licence for any sale.")
-    if deck == "este-tarot":
+    if deck == "este-tarot" and cls != "holder-open-access":  # Yale full size since Oct 19 2026
         return ("lower resolution than the holder's", "Yale's file is about three times sharper; rights are fine.")
     if deck == "sola-busca-tarot":
         return ("unclear scan source", "From waitesmith.org at 474 px; which exemplar is not stated.")
