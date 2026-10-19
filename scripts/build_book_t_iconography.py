@@ -276,8 +276,8 @@ def text_degree(node, sign):
     """The degree Book T's own sentence gives where a court card's rule begins or ends in `sign`
     ("Rules from 20 Degree Taurus to 20 Degree Gemini"). Book T counts every bound from the 20th degree:
     "the Twentieth Degree of Scorpio", "the last Decan of Pisces", "the First Two Decans of Sagittarius"
-    and "the second Decan of Leo" all end or begin there. (The metadata's "21°" reads "from above 20"
-    as the next degree; the pictures print the text's number.)"""
+    and "the second Decan of Leo" all end or begin there. (The Golden Dawn deck's "21°" reads "from above 20"
+    as the next degree; the pictures and build_book_t_deck.py print the text's number.)"""
     t = book_t_text(node)
     m = re.search(r'(\d+) Degree (?:of )?%s' % sign, t)
     if m:

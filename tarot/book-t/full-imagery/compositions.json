@@ -149,7 +149,7 @@
       {"part": "water-calm", "at": [280, 680]},
       {"part": "throne", "at": [280, 575], "s": 1.5},
       {"part": "hair-long", "at": [280.0, 398.0], "s": 1.5, "color": "#e8c66a"},
-      {"part": "ibis", "at": [122, 606], "s": 0.9},
+      {"part": "ibis", "at": [150, 566], "s": 1.15},
       {"part": "lotus", "at": [[90, 700], [180, 712], [390, 708], [470, 700]], "s": 1.0},
       {"part": "lily-pad", "at": [[140, 740], [430, 744]]},
       {"part": "figure-seated", "at": [280, 575], "s": 1.5, "color": "#1d5c9c"},
@@ -619,7 +619,7 @@
   "swords-07": {
     "follows": "TWO Angelic Radiating Hands as before, each holding three swords. A third hand holds up a single sword in the centre. The points of all the swords \"just touch\" each other, the central sword not altogether dividing them. The Rose of the previous symbols of this suit is held up by the same hand which holds the central sword: as if the victory were at its disposal. Symbols of Moon and Aquarius.",
     "layers": [
-      {"part": "sword", "at": [[150, 710], [150, 710], [150, 710], [410, 710], [410, 710], [410, 710]], "rot": [17.7, 18.2, 16.5, -17.7, -18.2, -16.5], "s": 1.3},
+      {"part": "sword", "at": [[132, 705], [150, 710], [168, 715], [428, 705], [410, 710], [392, 715]], "rot": [20.3, 17.5, 14.7, -20.3, -17.5, -14.7], "s": 1.32},
       {"part": "hand", "at": [[150, 710], [410, 710]], "rot": [17.7, -17.7], "s": 0.95},
       {"part": "sword", "at": [280, 690], "s": 1.27},
       {"part": "rose", "at": [320, 676], "s": 1.0},
@@ -747,8 +747,8 @@
     "follows": "FOUR White Radiant Angelic Hands issuing from clouds, each holding two swords, points upwards; all the points touch near the top of the card. Hands issue, two at each bottom angle of the card. The pose of the other sword symbols is re-established in the centre. Above and below are the Decan symbols Jupiter and Gemini.",
     "layers": [
       {"part": "rose", "at": [280, 540], "s": 1.2},
-      {"part": "sword", "at": [[150, 650], [150, 650], [410, 650], [410, 650]], "rot": [22.1, 22.4, -22.1, -22.4], "s": 1.2},
-      {"part": "sword", "at": [[205, 700], [205, 700], [355, 700], [355, 700]], "rot": [11.6, 12.0, -11.6, -12.0], "s": 1.4},
+      {"part": "sword", "at": [[140, 650], [160, 650], [420, 650], [400, 650]], "rot": [23.6, 20.6, -23.6, -20.6], "s": 1.2},
+      {"part": "sword", "at": [[195, 700], [215, 700], [365, 700], [345, 700]], "rot": [13.0, 10.3, -13.0, -10.3], "s": 1.4},
       {"part": "hand", "at": [[150, 650], [410, 650], [205, 700], [355, 700]], "rot": [22.1, -22.1, 11.6, -11.6], "s": 0.9},
       {"glyph": "above", "at": [280, 140], "size": 90},
       {"glyph": "below", "at": [280, 800], "size": 50}
@@ -946,7 +946,7 @@
   },
   "key-11-fortitude": {
     "follows": "Courage, strength, fortitude, power passing on to action. Obstinacy.",
-    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): a woman who closes the lion's jaws with her hands; Leo.",
+    "note": "Book T gives the Keys their meanings only, no picture. Drawn from the Key's title and the figure the tradition gives it, as a symbol (no faces): a woman who masters the lion, her hand upon its head; Leo.",
     "layers": [
       {"part": "ground", "at": [280, 750]},
       {"part": "hair-long", "at": [360, 500], "s": 1.3, "color": "#d8a84a"},
