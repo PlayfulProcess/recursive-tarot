@@ -2,6 +2,23 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 20 2026 — Book T's linocut: a fifth picture set, the full imagery printed as a relief print
+
+Her words: "I think the images are overall a bit ugly and childlike so I would ... try to make a new version focusing on
+making them pretty. Maybe linocut style."
+
+- **The print** (`scripts/build_book_t_linocut.py`, `--check` in check_all): the same compositions as the full imagery
+  (`tarot/book-t/full-imagery/compositions.json`), so the linocut shows the same hands, counts, glyphs and placements
+  Book T gives, printed in black on warm paper with one ink per card (Fire vermilion, Water deep blue, Air ochre, Earth
+  olive, the Keys gold); a carved arch with cut spandrels, a dog-tooth border, a black cartouche with the title left
+  standing in paper; gouge patterns, the soft edge of a pulled print and the paper's grain as SVG filters.
+- **The blocks** (`tarot/book-t/parts-linocut/`, CC BY-SA 4.0, README): the hand from clouds and the clasped hands,
+  scroll clouds, wands, swords, cups, Book T's pentacle, roses, lotuses, flames, waters, land, the figures (a carved
+  mask with closed eyes, not a blank), thrones, crowns, the tower, the lightning, horses, riders, wings, chariot, lion,
+  leopard, mantles. Parts without a block print from the full imagery's part, pulled into the print's inks.
+- `tarot/book-t/linocut/<id>.svg` (78) and `edition: "Book T deck, linocut"` on each card; the 1912 page's Pictures
+  switch has a sixth button, **Linocut**; the static Book T pages list it.
+
 ## Oct 20 2026 — Book T's full imagery: a fourth picture set, everything Book T's text describes
 
 Her words: "go through the whole deck and render a full imagery in this style as an alternative to current rendering."
