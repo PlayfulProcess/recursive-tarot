@@ -75,7 +75,7 @@
     <h1>The <span class="gold">Channels</span></h1>
     <p class="tag">Every grammar in this commons — the decks, the sources, the courses, the spreads — as a collection.
       Read any of them here, or open the living collection on recursive.eco, where you can fork, edit, and cast.</p>
-    <a class="channel-cta" href="https://flow.recursive.eco/library/channels/recursive-tarot" target="_blank" rel="noopener">
+    <a class="channel-cta" href="https://recursive.eco/explore?repository=recursive-tarot" target="_blank" rel="noopener">
       <img src="../public/recursive-logo.svg" alt="" onerror="this.remove()">
       Open this collection in recursive.eco ↗
     </a>
@@ -91,8 +91,8 @@
     collection: '../tarot/_collection.json',
     ecoIds:     '../tarot/_eco_ids.json',
     readerUrl:  slug => '../viewers/cards.html?src=' + encodeURIComponent('../tarot/' + slug + '/grammar.json'),
-    appChannel: 'https://flow.recursive.eco/library/channels/recursive-tarot',
-    appDeckUrl: uuid => 'https://flow.recursive.eco/g/' + uuid + '?view=reading',
+    appChannel: 'https://recursive.eco/explore?repository=recursive-tarot',
+    appDeckUrl: uuid => 'https://recursive.eco/play?id=' + uuid,
   };
   // --------------------------------------------------------------------
 
