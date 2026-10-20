@@ -21,7 +21,8 @@
   .page{max-width:1240px;margin:0 auto;padding:18px 16px 90px;display:grid;grid-template-columns:1fr;gap:0 28px}
   @media (min-width:1100px){.page{grid-template-columns:230px minmax(0,1fr)}}
   .hero{grid-column:1/-1;display:grid;grid-template-columns:1fr;gap:14px;align-items:end;margin:4px 0 14px}
-  @media (min-width:760px){.hero{grid-template-columns:1fr auto}}
+  /* One column at every width (Oct 20 2026): with a two-column hero the buttons column, now holding the
+     six-button Pictures switch, took its full width and squeezed the title into a narrow column. */
   .kick{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
   h1{font-family:var(--serif-display);font-size:clamp(28px,4.4vw,42px);line-height:1.08;margin:.2em 0 .15em;font-weight:500}
   .sub{color:var(--mut);font-size:15px;line-height:1.5;margin:0;max-width:62ch}
