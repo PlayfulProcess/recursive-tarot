@@ -201,6 +201,15 @@ print(f"[build_book_t_linocut.py] {out.splitlines()[0] if out else '(no output)'
 if r.returncode != 0:
     errors.append("build_book_t_linocut.py --check failed:\n" + out)
 
+# 8f — Book T's painting framed by its symbols (the sixth picture set): tarot/book-t/painted-symbols/*.svg,
+# each painting (embedded) with the iconography's glyphs in a gold frame. Offline: reuses the embedded painting.
+r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "build_book_t_painted_symbols.py"), "--check"],
+                   capture_output=True, text=True, cwd=ROOT, encoding="utf-8")
+out = (r.stdout + r.stderr).strip()
+print(f"[build_book_t_painted_symbols.py] {out.splitlines()[0] if out else '(no output)'}")
+if r.returncode != 0:
+    errors.append("build_book_t_painted_symbols.py --check failed:\n" + out)
+
 # 9 — card/*.html, tarot-card-meanings.html and sitemap.xml are generated from the Rider-Waite-Smith and
 # Golden Dawn decks (the search-engine pages, Oct 14 2026); a deck edit needs a re-run of the build.
 r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "build_card_pages.py"), "--check"],
