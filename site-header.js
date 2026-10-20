@@ -62,9 +62,9 @@
   // [key, label, href] — split by level
   const CARD_VIEWS = [
     ['explorer', 'Explorer', PFX + 'viewers/explorer.html'],
-    ['cards',    'Cards',    PFX + 'viewers/cards.html'],
+    ['cards',    'Cards',    PFX + 'archive/cards.html'],
     ['lenses',   'Lenses', PFX + 'viewers/prototypes/lenses.html'],
-    ['tree',     'Tree',     PFX + 'viewers/tree-viewer.html'],
+    ['tree',     'Tree',     PFX + 'archive/tree-viewer.html'],
     ['table',    'Card Table', PFX + 'viewers/table.html'],
   ];
   const GRAMMAR_VIEWS = [
@@ -88,7 +88,7 @@
     [PFX + 'pages/games/trionfi.html',    'Trionfi'],
     [PFX + 'viewers/caster-studio.html',  'Spread Caster — build · cast · send'],
     [PFX + 'viewers/table.html',          'Card Table — less · keep · more'],
-    [PFX + 'viewers/cards.html?src=../tarot/bus-passengers/grammar.json', 'Bus Passengers — who’s driving?'],
+    [PFX + 'archive/cards.html?src=../tarot/bus-passengers/grammar.json', 'Bus Passengers — who’s driving?'],
     ['https://flow.recursive.eco/',   'Oracle ↗', true],
     [PFX + 'pages/play.html',             'All games & readings →'],
   ];
@@ -402,6 +402,7 @@
                 ${CARD_VIEWS.map(menuItem).join('')}
                 <span class="dd-cap">Across the collection</span>
                 ${GRAMMAR_VIEWS.map(menuItem).join('')}
+                <a href="${PFX}archive/index.html"${location.pathname.includes('/archive/') ? ' aria-current="page"' : ''} style="border-top:1px solid #d8d2c6;margin-top:4px;padding-top:9px">Archive: the older views, and how to build your own →</a>
               </span>
             </span>
             <span class="dd">
