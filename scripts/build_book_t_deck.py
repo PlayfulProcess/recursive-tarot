@@ -80,9 +80,10 @@ Rider-Waite-Smith deck. Waite and Smith drew their pictures in 1909, from inside
 and those pictures sit in a deck of their own,
 [Golden Dawn Tarot — Book T with Rider-Waite-Smith Imagery](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json).
 
-**Pictures (Oct 10 2026).** Every card has a first picture, made for now and meant to be improved:
-an AI painting prompted from Book T's own words for that card, traced into line art, with the
-card's name set as text under it. Book T describes no picture for the twenty-two Keys, so their
+**Pictures (Oct 21 2026).** Every card is painted, with its Golden Dawn symbols (element, sign or
+planet, Hebrew letter) drawn on the card and its name set as text under it. Each painting was
+prompted from Book T's own words for that card; the earlier line art, iconography and linocut sets
+stay under the sidebar's Selections → Pictures. Book T describes no picture for the twenty-two Keys, so their
 prompts start from each Key's title. Each prompt, beside the Book T passage it comes from, is in
 [the prompts file](https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/book-t/PROMPTS.md).
 
