@@ -430,7 +430,7 @@ DRAFT = "<!-- DRAFT copy for PlayfulProcess: new wording, not taken from a gramm
 # recursive.eco ids confirmed public with the MCP on Oct 20 2026 that are missing from _eco_ids.json's
 # (June) _public_now list. The four one-card overview grammars (cary-sheet, rosenwald-sheet,
 # noblet-tarot, ganjifa) were private then, so their pages carry no Play link.
-ECO_PUBLIC_EXTRA = {"book-t"}
+ECO_PUBLIC_EXTRA = set()  # book-t joined _public_now on Oct 21 2026
 # Decks with their own static pages already, so no deck page: Book T (book-t/) and the
 # Rider-Waite-Smith deck (card/ + tarot-card-meanings.html).
 DECK_SKIP = {BT_DECK, WAITE}
