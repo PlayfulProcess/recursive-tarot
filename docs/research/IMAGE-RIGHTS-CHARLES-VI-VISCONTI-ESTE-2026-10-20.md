@@ -4,6 +4,8 @@ PlayfulProcess asked (Oct 20): for the pictures that are non-commercial only or 
 reproductions, find a free source per card; where there is none, set out the choices. **Nothing
 here changes which images the decks show.** She decides from these tables.
 
+**Decided and done, Oct 20 2026 (her yes):** Charles VI now shows the 1844 lithographs from the Liège copy (rights confirmed on DONum's record, dc.rights "publicDomain", and on the PDF's cover, "Accès ouvert - Domaine public"), each card linked to its Gallica original. **Correction:** the Liège copy holds the book's *line* suite ("lithographiée au trait", plates 2-18, PDF pages 46-78), not the hand-coloured one, so the pictures are uncoloured. Visconti-Sforza shows no pictures; each card links to its holder (`metadata.holder_url`): the Morgan's page per card (M.630.1-35, read from ica.themorgan.org), the Accademia Carrara's catalogue page per card (26, lacarrara.it/opera/...), and the Colleoni 13 named without a link (private, no online page).
+
 Checked Oct 19-20 2026 by Claude. Not legal advice. The sources are also nodes in the `sources`
 grammar ([Charles VI](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/sources/grammar.json&item=sel-deck-charles-vi-tarot) ·
 [Visconti-Sforza](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/sources/grammar.json&item=sel-deck-visconti-sforza-tarot) ·

@@ -4514,6 +4514,16 @@
                     </a>`;
             }
 
+            // Where the card itself is (Oct 20 2026): metadata.holder (+ holder_url) names the
+            // institution that holds the original. Visconti-Sforza shows no pictures and sends
+            // the reader there; Charles VI shows the 1844 lithographs and links each original.
+            if (srcMeta.holder) {
+                const holderLabel = srcMeta.holder_url
+                    ? `<a href="${escapeHtml(srcMeta.holder_url)}" target="_blank" rel="noopener nofollow" style="color:var(--grammar-accent);font-weight:600;">See the card itself: ${escapeHtml(srcMeta.holder)} &#8599;</a>`
+                    : `Held by ${escapeHtml(srcMeta.holder)}`;
+                bodyHtml += `<div style="margin:0.25rem 0 0.85rem;font-size:0.85rem;">${holderLabel}${srcMeta.image_note ? `<div style="color:var(--muted);margin-top:0.25rem;">Picture: ${escapeHtml(srcMeta.image_note)}</div>` : ''}</div>`;
+            }
+
             // Action buttons (minimal, at top)
             // Get grammar ID from URL for view links
             const urlParams = new URLSearchParams(window.location.search);

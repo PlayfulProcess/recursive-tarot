@@ -28,7 +28,8 @@ only recursive-eco.json and tarot/*/grammar.json) never sees them:
   spreads.html                                                Waite's own Celtic Cross + trump meanings
 Images on deck pages follow docs/rights/image-ledger.json card by card: only an image the ledger
 records as a Commons public-domain/CC0 or CC BY-SA file, or as the holder's own open-access
-scan (holder-open-access: the d'Este cards from Yale), is shown, never a BnF/Gallica scan
+scan (holder-open-access: the d'Este cards from Yale), or as a public-domain copy filed public domain by its
+holder (public-domain: the Charles VI cards as the 1844 lithographs, each linked to its original), is shown, never a BnF/Gallica scan
 (non-commercial only), an image recorded elsewhere or unrecorded, nor the Visconti-Sforza cards
 scanned from the Dal Negro reproduction; a withheld card links to its holder. Waite's trump meanings
 and Celtic Cross come from research/sources/waite-pictorial-key-part-iii.md (Part III, 1911, PD).
@@ -435,6 +436,7 @@ ECO_PUBLIC_EXTRA = {"book-t"}
 DECK_SKIP = {BT_DECK, WAITE}
 SHOWN_CLASSES = {"commons-pd-tag", "commons-cc-by-sa-4.0"}
 HOLDER_OA = "holder-open-access"  # the holder's own scan under its open-access policy (Yale, Oct 19 2026)
+PD_COPY = "public-domain"  # a public-domain copy of the card filed PD by its holder (the 1844 lithographs, Oct 20 2026)
 
 
 def holder_of(r):
@@ -446,10 +448,8 @@ def holder_of(r):
     if m or "Cleveland Museum of Art" in credit:
         return "The Cleveland Museum of Art" + (f", {m.group(1)}" if m else "")
     return ""
-WITHHELD_DECKS = {  # deck -> why, and where the cards are instead (the holder)
-    "charles-vi-tarot": ("BnF scans, free for non-commercial reuse only",
-                         "Bibliothèque nationale de France", "http://expositions.bnf.fr/renais/arret/3/index.htm"),
-}
+WITHHELD_DECKS = {  # deck -> why, and where the cards are instead (the holder). Charles VI left Oct 20 2026
+}                   # (its BnF scans became the 1844 lithographs, each card linking to its BnF original).
 HOLDERS = {  # deck -> (holder, URL) for a card withheld card by card
     "visconti-sforza-tarot": ("The Morgan Library & Museum (MS M.630)", "https://www.themorgan.org/manuscript/158525"),
     "rosenwald-sheet": ("National Gallery of Art, Washington", "https://www.nga.gov/"),
@@ -782,19 +782,27 @@ BOOK_T_1912 = {
 
 # ── Historical decks: one page each, from the deck's grammar ────────────────────────────────
 def deck_images(slug, nodes, ledger):
-    """node id -> ('show', thumb, credit) or ('off', holder_name, holder_url, why)."""
+    """node id -> ('show', thumb, credit[, original_url, original_name]) or ('off', holder_name, holder_url, why).
+
+    A node with no picture but a metadata.holder_url (Visconti-Sforza since Oct 20 2026) links to its holder."""
     rows = {r["item"]: r for r in ledger if r["deck"] == slug}
     out = {}
     for n in nodes:
         r = rows.get(n["id"])
         url = n.get("image_url") or ""
+        md = n.get("metadata") or {}
         if not url:
+            if md.get("holder"):
+                out[n["id"]] = ("off", md["holder"], md.get("holder_url") or "", "no picture here: see the note above the cards")
             continue
         credit = ((r or {}).get("credit") or "")
         holder = HOLDERS.get(slug)
         if slug in WITHHELD_DECKS:
             why, hname, hurl = WITHHELD_DECKS[slug]
             out[n["id"]] = ("off", hname, hurl, why)
+        elif r and r["class"] == PD_COPY and r["image_url"] == url:
+            out[n["id"]] = ("show", url, f"{r['artist']} · public domain · {r['source']}",
+                            md.get("holder_url") or "", "the card itself at the BnF" if "bnf.fr" in (md.get("holder_url") or "") else "the card itself")
         elif r and r["class"] == HOLDER_OA and r["image_url"] == url and (r.get("source") or "").endswith("/info.json"):
             thumb = r["source"][:-len("info.json")] + "full/250,/0/default.jpg"  # IIIF: the holder's own thumbnail
             out[n["id"]] = ("show", thumb, f"{r['holder']} · open access · {r.get('record') or r['source']}")
@@ -876,9 +884,11 @@ def build_decks(files):
             v = imgs.get(n["id"])
             link = f'{viewer}&amp;item={esc(n["id"])}'
             if v and v[0] == "show":
-                items.append(f'<li><a href="{link}" title="{esc(v[2])}"><img src="{esc(v[1])}" alt="{esc(n["name"])}" loading="lazy" width="250" height="416">{esc(n["name"])}</a></li>')
+                orig = f'<a href="{esc(v[3])}" rel="nofollow" style="display:block;font-size:11px;color:var(--muted);margin-top:2px">{esc(v[4])}</a>' if len(v) > 3 and v[3] else ""
+                items.append(f'<li><a href="{link}" title="{esc(v[2])}"><img src="{esc(v[1])}" alt="{esc(n["name"])}" loading="lazy" width="250" height="416">{esc(n["name"])}</a>{orig}</li>')
             elif v:
-                h = f'<a href="{esc(v[2])}" rel="nofollow">see it at {esc(v[1])}</a>' if v[2] else "no image shown here"
+                h = (f'<a href="{esc(v[2])}" rel="nofollow">see it at {esc(v[1])}</a>' if v[2] else
+                     (f'held by {esc(v[1])}' if v[1] != "the holder" else "no image shown here"))
                 items.append(f'<li><span class="off">{h}</span><a href="{link}">{esc(n["name"])}</a></li>')
             else:
                 items.append(f'<li><a href="{link}">{esc(n["name"])}</a></li>')
@@ -892,7 +902,11 @@ def build_decks(files):
             f'<li>{esc(a.get("name", ""))}{(" (" + esc(a["date"]) + ")") if a.get("date") else ""}{(": " + inline_md(a["note"])) if a.get("note") else ""}</li>'
             for a in (g.get("_grammar_commons") or {}).get("attribution", []))
         img_note = ""
-        if off:
+        # A deck whose pictures are copies of the cards, or that shows none, says so above the cards (Oct 20 2026).
+        if any(r["deck"] == slug and r["class"] == PD_COPY for r in ledger) or any(
+                (n.get("metadata") or {}).get("holder") and not n.get("image_url") for n in cards):
+            img_note = f'<p class="src">{inline_md(g.get("image_credit") or "")}</p>'
+        elif off:
             reasons = "; ".join(sorted({imgs[k][3] for k in off}))
             img_note = DRAFT + (f'<p class="src">{len(off)} of {len(off) + len(shown)} card images are not shown on this page ({esc(reasons)}). '
                         f'Each card links to where its holder shows it; the card viewer and recursive.eco still open the deck.</p>')

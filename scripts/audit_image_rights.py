@@ -52,6 +52,18 @@ HOLDER_OPEN_ACCESS = {
         'policy': 'https://lux.collections.yale.edu/content/open-access-policy-2011',
     },
 }
+# Public-domain copies whose holder files them as public domain, checked on the holder's own page and in
+# the file itself (Oct 20 2026). An image whose metadata.image_source starts with the prefix is recorded as
+# `public-domain` with this credit, before any Commons lookup (its file name means nothing on Commons).
+PUBLIC_DOMAIN_SOURCES = {
+    'https://hdl.handle.net/2268.1/15344': {
+        'license': 'Public domain (DONum dc.rights "publicDomain"; PDF cover: "Accès ouvert - Domaine public")',
+        'holder': 'Université de Liège, Réseau des Bibliothèques (DONum), XIX.052.005',
+        'credit': 'Jeux de cartes tarots et de cartes numérales (Société des bibliophiles français, Paris, 1844), '
+                  'lithograph after the card; copy: Université de Liège (DONum), public domain',
+        'artist': 'Société des bibliophiles français, 1844 (lithograph after the card)',
+    },
+}
 
 
 def commons_title(url):
@@ -159,6 +171,15 @@ def build():
             row = {'deck': slug, 'provenance': g.get('provenance'), 'item': it.get('id'),
                    'name': it.get('name'), 'image_url': it['image_url'], 'via': None,
                    'status': 'unrecorded', 'commons_title': None, 'license': None, 'credit': None, 'artist': None}
+            md = it.get('metadata') or {}
+            pd = next((v for k, v in PUBLIC_DOMAIN_SOURCES.items() if str(md.get('image_source') or '').startswith(k)), None)
+            if pd:
+                row.update(status='public-domain', via='image_source', license=pd['license'], credit=pd['credit'],
+                           artist=pd['artist'], holder=pd['holder'], source=md['image_source'],
+                           original=md.get('holder_url'))
+                row['class'] = 'public-domain'
+                rows.append(row)
+                continue
             cands = candidates(it)
             for via, t in cands:
                 a = answers.get(t)
@@ -199,13 +220,14 @@ def summarize(rows, checked):
         'domain; that is the uploader\'s claim about the work, not a grant from whoever made the',
         'scan) · **BnF scan** (the Commons credit points at Gallica/BnF: free only for',
         'non-commercial reuse) · **CC BY-SA** (a photographer\'s licence: credit and share-alike) ·',
+        '**PD copy** (a public-domain copy filed public domain by its holder, e.g. the 1844 lithographs) ·',
         '**holder OA** (a scan published by the holder itself, under its open-access policy for public-domain works) ·',
         '**elsewhere** (`image_source` names a non-Commons upstream whose terms are not recorded) ·',
         '**not on Commons** (a file name that Commons does not know) · **unrecorded** (nothing in the',
         'repo says where the image came from).',
         '',
-        '| Deck | provenance | images | Commons PD tag | BnF scan | CC BY-SA | other licence | holder OA | elsewhere | not on Commons | unrecorded | top credit lines |',
-        '|---|---|---|---|---|---|---|---|---|---|---|---|',
+        '| Deck | provenance | images | Commons PD tag | BnF scan | CC BY-SA | other licence | PD copy | holder OA | elsewhere | not on Commons | unrecorded | top credit lines |',
+        '|---|---|---|---|---|---|---|---|---|---|---|---|---|',
     ]
     for slug in sorted(by):
         rs = by[slug]
@@ -216,7 +238,7 @@ def summarize(rows, checked):
         credits = Counter(re.sub(r'https?://([^/\s]+).*', r'\1', r['credit'] or '')[:60] for r in rs if r['credit'])
         top = '; '.join(f'{k} ×{v}' for k, v in credits.most_common(3)) or '—'
         lines.append(f"| `{slug}` | {rs[0]['provenance']} | {len(rs)} | {c['commons-pd-tag']} | "
-                     f"{c['commons-pd-tag/bnf-scan']} | {bysa} | {other} | {c['holder-open-access']} | {c['recorded-elsewhere']} | "
+                     f"{c['commons-pd-tag/bnf-scan']} | {bysa} | {other} | {c['public-domain']} | {c['holder-open-access']} | {c['recorded-elsewhere']} | "
                      f"{c['not-on-commons']} | {c['unrecorded']} | {top.replace('|', '/')} |")
     lines.append('')
     return '\n'.join(lines)
