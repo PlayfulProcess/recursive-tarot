@@ -217,6 +217,7 @@
         <button type="button" role="radio" data-pics="icon" aria-checked="false">Iconography</button>
         <button type="button" role="radio" data-pics="full" aria-checked="false">Full imagery</button>
         <button type="button" role="radio" data-pics="lino" aria-checked="false">Linocut</button>
+        <button type="button" role="radio" data-pics="psym" aria-checked="false">Painted + symbols</button>
         <button type="button" role="radio" data-pics="rws" aria-checked="false">Rider-Waite-Smith</button>
       </div>
     </div>
@@ -277,11 +278,12 @@
   // The picture switch (Oct 18 2026): Book T's own line art, its painting, its iconography (Oct 19:
   // the glyphs composed by scripts/build_book_t_iconography.py), its full imagery (Oct 20: everything Book T
   // describes, composed by scripts/build_book_t_full_imagery.py), its linocut (the same, printed as a relief
-  // print by scripts/build_book_t_linocut.py), or Rider-Waite-Smith.
+  // print by scripts/build_book_t_linocut.py), the painting framed by its symbols (Oct 20: the glyphs in gold
+  // round the painting, by scripts/build_book_t_painted_symbols.py), or Rider-Waite-Smith.
   // One choice for every picture on the page, remembered on this device.
   const picBtns = [...document.querySelectorAll('[data-pics]')];
   function showPics(kind) {
-    if (!['line', 'paint', 'icon', 'full', 'lino', 'rws'].includes(kind)) kind = 'line';
+    if (!['line', 'paint', 'icon', 'full', 'lino', 'psym', 'rws'].includes(kind)) kind = 'line';
     document.querySelectorAll('img[data-pic-line]').forEach(img => {
       const src = img.getAttribute('data-pic-' + kind);
       if (src && img.getAttribute('src') !== src) img.setAttribute('src', src);
