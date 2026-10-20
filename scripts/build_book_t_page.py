@@ -524,7 +524,9 @@ def load_book_t_pictures():
         if not m:
             continue
         ills = (n.get('metadata') or {}).get('illustrations') or []
-        line = next((i['url'] for i in ills if i.get('is_primary')), n.get('image_url') or '')
+        # line art: the 'Book T deck, SVG' set (the primary picture until Oct 21 2026, when the painting
+        # framed by its symbols became the official one and the page's default)
+        line = next((i['url'] for i in ills if i.get('edition') == 'Book T deck, SVG'), '')
         paint = next((i['url'] for i in ills if 'painting' in (i.get('edition') or '')), '')
         icon = next((i['url'] for i in ills if (i.get('edition') or '').endswith('iconography')), '')
         full = next((i['url'] for i in ills if (i.get('edition') or '').endswith('full imagery')), '')
@@ -541,7 +543,7 @@ BOOK_T_PICS = load_book_t_pictures()
 
 
 def thumb(it, cls='th', size=None):
-    """A card's picture: Book T's own (line art) by default, the painting, the iconography, the full
+    """A card's picture: the official one (the painting framed by its symbols) by default, the line art, the painting, the iconography, the full
     imagery and the Rider-Waite-Smith picture one tap away (the picture switch; data-pic-* carry the five)."""
     rws = it['image_url']
     bt = BOOK_T_PICS.get(it['id'])
@@ -550,7 +552,7 @@ def thumb(it, cls='th', size=None):
                 % (cls, html.escape(rws), html.escape(it['name'])))
     return ('<img class="%s" src="%s" alt="%s" loading="lazy" decoding="async" width="300" height="520" '
             'data-pic-line="%s" data-pic-paint="%s" data-pic-icon="%s" data-pic-full="%s" data-pic-lino="%s" data-pic-psym="%s" data-pic-rws="%s">'
-            % (cls, html.escape(bt['line']), html.escape(it['name']),
+            % (cls, html.escape(bt['psym']), html.escape(it['name']),
                html.escape(bt['line']), html.escape(bt['paint']), html.escape(bt['icon']), html.escape(bt['full']), html.escape(bt['lino']), html.escape(bt['psym']),
                html.escape(rws)))
 
