@@ -41,7 +41,9 @@ OUT = os.path.join(ROOT, 'tarot', 'book-t', 'grammar.json')
 GD = os.path.join(ROOT, 'tarot', 'golden-dawn-book-t-tarot', 'grammar.json')
 SITE = 'https://tarot.recursive.eco'
 PAGE = SITE + '/pages/book-t.html'
-OWNED = ('Book T (1912)', "In Book T's table", 'Correspondences')
+ILL = 'If ill dignified'
+OWNED = ('Book T (1912)', ILL, "In Book T's table", 'Correspondences')
+ILL_HEADER = "*Book T (1912): its words for the card when it falls ill dignified, set apart from its text*"
 
 # The transcription's key names, where the 1912 scan reads otherwise (p.151).
 KEY_NAME_FIX = {'The Hanged': 'The Hanged Man', 'The Judgement': 'The Judgment'}
@@ -50,6 +52,18 @@ WORD = {1: 'Ace', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five', 6: 'Six', 7: 'Seve
 RANK_1912 = {'Knight': 'Knight', 'Queen': 'Queen', 'King': 'Prince', 'Knave': 'Princess'}
 GD_RANK_ID = {'Knight': 'knight', 'Queen': 'queen', 'King': 'king', 'Knave': 'page'}
 ELEMENT = {'wands': 'Fire', 'cups': 'Water', 'swords': 'Air', 'pentacles': 'Earth'}
+# A Key's element, for reading by elemental dignity: its attribution's element. The three elemental Keys
+# take their element; a sign Key its sign's triplicity; a planet Key the planet's elemental temperament in
+# the old astrology (Saturn cold and dry, Earth; Jupiter warm and moist, Air; Mars and the Sun hot and dry,
+# Fire; Venus and the Moon cold and moist, Water; Mercury, Air). The planet table is our choice, the same
+# one the linocut's inks use (build_book_t_linocut.py ELEMENT_OF); the tradition varies. Judgment ("Spirit
+# and Fire") reads as Fire, the Universe ("Earth and Saturn") as Earth.
+KEY_ELEMENT_OF = {'Saturn': 'Earth', 'Jupiter': 'Air', 'Mars': 'Fire', 'Sun': 'Fire', 'Venus': 'Water',
+                  'Mercury': 'Air', 'Moon': 'Water', 'Aries': 'Fire', 'Leo': 'Fire', 'Sagittarius': 'Fire',
+                  'Taurus': 'Earth', 'Virgo': 'Earth', 'Capricorn': 'Earth', 'Gemini': 'Air', 'Libra': 'Air',
+                  'Aquarius': 'Air', 'Cancer': 'Water', 'Scorpio': 'Water', 'Pisces': 'Water',
+                  'Fire': 'Fire', 'Water': 'Water', 'Air': 'Air', 'Earth': 'Earth'}
+PLANETS = ('Saturn', 'Jupiter', 'Mars', 'Sun', 'Venus', 'Mercury', 'Moon')
 SUIT_NAME = {'wands': 'Wands', 'cups': 'Cups', 'swords': 'Swords', 'pentacles': 'Pentacles'}
 DOTS_MD = {BP.DOTS10: '*(a figure on the printed page: ten pentacles in rows of 2, 1, 2, 2, 1, 2)*',
            BP.DOTS6: '*(a figure on the printed page: six pentacles in two columns of three)*',
@@ -94,6 +108,21 @@ it, each in a section of its own that names them: A. E. Waite, a member of the G
 every card (*The Pictorial Key to the Tarot*, 1911; he describes the Rider-Waite-Smith picture),
 and Paul Foster Case on each Key's Hebrew letter (*An Introduction to the Study of the Tarot*,
 1920). Book T's own words are always the first section.
+
+**Reading by the elements (Oct 20 2026).** Book T has no reversed cards. In the Golden Dawn's
+way of reading, a card's meaning turns on its dignity, and its dignity on the cards beside it: the
+same element strengthens it, a friendly one (Fire with Air, Water with Earth) dignifies it well, a
+contrary one (Fire with Water, Air with Earth) leaves it ill dignified, and any other pairing is
+neutral. Each card carries its element (`metadata.element`). A small card or an Ace has its suit's:
+Wands Fire, Cups Water, Swords Air, Pentacles Earth. A court card is an element of an element (the
+Queen of Wands is Water of Fire, kept as `element_in_element`); its suit's element, the second
+word, is the one the neighbour rule reads, so the Queen of Wands reads as Fire. A Key has its
+attribution's element: the three elemental Keys their own (the Fool Air, the Hanged Man Water,
+Judgment Fire), a sign Key its sign's triplicity, and a planet Key the planet's temperament in the
+old astrology: Saturn Earth, Jupiter Air, Mars and the Sun Fire, Venus and the Moon Water, Mercury
+Air. That planet table is our choice; the tradition varies. Where Book T gives a card's meaning
+when ill dignified, those words stand in a section of their own, *If ill dignified*, so a reading
+can show them first.
 
 **Where the pictures come from:** what survives of the Order's own cards, the published Golden
 Dawn decks, and their rights: [Sources: Book T](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/sources/grammar.json&item=sel-deck-book-t).
@@ -180,6 +209,60 @@ def no_the(s):
     return s[:1].upper() + s[1:]
 
 
+SENT_RE = re.compile(r'[^.!?]*(?:[.!?]+["\')\]]*\s*|$)')
+ILL_START = re.compile(r'\s*(?:(?:If|When)\s+)?ill\s+dignified\b', re.I)
+ILL_CLAUSE = re.compile(r'[:;,]?\s*but if ill dignified\b', re.I)
+
+
+def split_ill(body):
+    """Book T's ill-dignified words, set apart from the card's text in a section of their own.
+
+    A sentence that opens "If ill dignified", "When ill dignified" or "Ill dignified" moves whole, and so
+    does a sentence that closes on "if ill dignified." (the Ten of Wands). Where the turn comes inside a
+    sentence ("Harmony, pleasure, mirth, subtlety: but if ill dignified ...", the Two of Cups), the
+    sentence is cut there and each half marked with an ellipsis. Book T's words are not otherwise
+    changed. Returns (the text without them, [the passages set apart])."""
+    out, ill = [], []
+    for para in body.split('\n\n'):
+        keep, moved = [], False
+        for m in SENT_RE.finditer(para):
+            sent = m.group(0)
+            if not sent.strip():
+                keep.append(sent)
+                continue
+            low = sent.lower().strip()
+            if ILL_START.match(sent) or low.endswith('if ill dignified.'):
+                ill.append(sent.strip())
+                moved = True
+            elif 'if ill dignified' in low and ILL_CLAUSE.search(sent):
+                c = ILL_CLAUSE.search(sent)
+                keep.append(sent[:c.start()].rstrip() + ' …' + (' ' if sent != sent.rstrip() else ''))
+                ill.append('… ' + sent[c.start():].lstrip(':;, ').strip())
+                moved = True
+            else:
+                keep.append(sent)
+        if not moved:
+            out.append(para)
+        elif ''.join(keep).strip():
+            out.append(''.join(keep).strip())
+    assert not any('if ill dignified' in p.lower() for p in out), out
+    return '\n\n'.join(out), ill
+
+
+def key_element(attribution):
+    """(element, basis) of a Key from its attribution ("Aries", "Mercury", "Spirit and Fire")."""
+    for a in re.split(r'\band\b', attribution):
+        a = a.strip()
+        e = KEY_ELEMENT_OF.get(a)
+        if e:
+            if a in PLANETS:
+                return e, 'planet %s (our choice, the tradition varies)' % a
+            if a in ('Fire', 'Water', 'Air', 'Earth'):
+                return e, 'elemental Key'
+            return e, 'sign %s' % a
+    raise SystemExit('no element for the attribution %r' % attribution)
+
+
 def court_rules(gid, body, rules):
     """The court's rule ("20° Scorpio – 20° Sagittarius") with each bound's degree as Book T's own
     sentence gives it (every bound at the 20th degree), not the Golden Dawn deck's "21°" reading of
@@ -227,6 +310,7 @@ def build(prev):
                       trump_key=gm.get('trump_key'), card_name_1912=card,
                       hebrew_letter=gm.get('hebrew_letter'), hebrew_translit=gm.get('hebrew_translit'),
                       tree_path=gm.get('tree_path'), attribution=r['attribution'])
+            md['element'], md['element_basis'] = key_element(r['attribution'])
             assert r['attribution'].lower().startswith(re.sub(r'^the ', '', (gm.get('attribution') or '').lower())[:4]) \
                 or r['key'] in (20, 21), (no, r['attribution'], gm.get('attribution'))
             row = ('No. %d of Book T\'s 78 titles · **%s**, Key %d · letter %s %s · %s'
@@ -273,11 +357,14 @@ def build(prev):
         md['illustrations'] = []
         row += '\n\n[Read it on the 1912 page](%s#%s)' % (PAGE, gid)
         nid = new_id(r)
-        sections = {
-            'Book T (1912)': IB.HEADER + '\n\n' + body,
+        text_body, ill = split_ill(body)
+        sections = {'Book T (1912)': IB.HEADER + '\n\n' + text_body}
+        if ill:
+            sections[ILL] = ILL_HEADER + '\n\n' + '\n\n'.join(ill)
+        sections.update({
             "In Book T's table": row,
             'Correspondences': with_rule_degrees(g['sections']['Correspondences'], md.get('rules')),
-        }
+        })
         item = {'id': nid, 'name': title, 'sort_order': no - 1, 'category': category,
                 'keywords': [k for k in dict.fromkeys(kw) if k], 'image_url': '',
                 'metadata': {k: v for k, v in md.items() if v is not None}, 'sections': sections}
@@ -291,6 +378,7 @@ def build(prev):
                     item['sections'][k] = v
         items.append(item)
     assert len({i['id'] for i in items}) == 78
+    assert all(i['metadata'].get('element') in ('Fire', 'Water', 'Air', 'Earth') for i in items), 'a card lacks an element'
     assert not any(re.search(r'\d', i['name']) for i in items), 'a card name carries a number'
     for n, (gid, name, cat, anchor, line) in enumerate(GROUPS):
         items.append({'id': gid, 'name': name, 'sort_order': 78 + n, 'category': 'chapter',
@@ -332,7 +420,10 @@ def build(prev):
         '_community_slug': 'book-t',
         'image_credit': "AI paintings prompted from Book T's own words, traced to line art by PlayfulProcess (Oct 2026); CC BY-SA 4.0. Prompts and sources: tarot/book-t/PROMPTS.md.",
         'metadata': {'common_name': 'Book T', 'category': 'historical', 'year': 1912,
-                     'year_label': 'c. 1888 · printed 1912'},
+                     'year_label': 'c. 1888 · printed 1912',
+                     # How a reading reads this deck (Oct 20 2026): no reversals; each card's dignity
+                     # comes from the elements of the cards beside it. recursive.eco reads this key.
+                     'reading_rule': 'elemental-dignities'},
         'nodes': items,
     }
     if prev:                                       # keep deck-level edits made after the first build
