@@ -39,7 +39,43 @@ PIC_TOP, PIC_BOTTOM = 40, 812
 
 PAPER = '#f2e8d2'
 BLACK = '#1c1915'
-INK = {'Fire': '#b8371f', 'Water': '#1f4a78', 'Air': '#b88a22', 'Earth': '#56632a', 'Keys': '#a87c22'}
+INK = {'Fire': '#b8371f', 'Water': '#1f4a78', 'Air': '#b88a22', 'Earth': '#56632a', 'Gold': '#a87c22'}
+
+# Pass 2 (Oct 20 2026): the elements keep their own ink wherever they appear, so water reads blue on any card,
+# fire red and land olive; a card's figures and things print in the card's ink.
+FIXED_INK = {'water-calm': 'Water', 'waves': 'Water', 'fountain': 'Water', 'lily-pad': 'Water', 'pool': 'Water',
+             'ground': 'Earth', 'corn': 'Earth', 'flowers': 'Earth', 'grove': 'Earth',
+             'flame': 'Fire', 'flame-burst': 'Fire', 'flames-ground': 'Fire'}
+# On the Keys: gold for crowns, stars, lights and the instruments; the Key's own element for everything else.
+GOLD_PARTS = {'crown', 'crown-radiant', 'star', 'star8', 'sun-rayed', 'orb', 'orb-cross', 'rod', 'cross-triple',
+              'scales', 'vessel', 'trumpet', 'lantern', 'cube', 'hexagram', 'pentagram', 'disk', 'lightning', 'wheel'}
+# A Key's second ink is its attribution's element: a sign's triplicity, or a planet's elemental temperament in the
+# old astrology (Saturn cold and dry, Earth; Jupiter warm and moist, Air; Mars and the Sun hot and dry, Fire; Venus
+# and the Moon cold and moist, Water; Mercury, Air). Spirit has none, so Judgment takes its Fire.
+ELEMENT_OF = {'Saturn': 'Earth', 'Jupiter': 'Air', 'Mars': 'Fire', 'Sun': 'Fire', 'Venus': 'Water', 'Mercury': 'Air',
+              'Moon': 'Water', 'Aries': 'Fire', 'Leo': 'Fire', 'Sagittarius': 'Fire', 'Taurus': 'Earth', 'Virgo': 'Earth',
+              'Capricorn': 'Earth', 'Gemini': 'Air', 'Libra': 'Air', 'Aquarius': 'Air', 'Cancer': 'Water',
+              'Scorpio': 'Water', 'Pisces': 'Water', 'Fire': 'Fire', 'Water': 'Water', 'Air': 'Air', 'Earth': 'Earth'}
+
+
+def card_ink(node):
+    """The card's ink name: its suit's element, or for a Key its attribution's element."""
+    m = node['metadata']
+    if node['category'] != 'keys':
+        return m['element']
+    for a in re.split(r'\band\b', m['attribution']):
+        e = ELEMENT_OF.get(a.strip())
+        if e:
+            return e
+    return 'Gold'
+
+
+def part_ink(name, card, is_key):
+    if name in FIXED_INK:
+        return FIXED_INK[name]
+    if is_key and name in GOLD_PARTS:
+        return 'Gold'
+    return card
 
 
 # ── colour: every colour of a part becomes paper, ink or black ──────────────────────────────────
@@ -111,19 +147,22 @@ def block(name):
 
 # ── layers ──────────────────────────────────────────────────────────────────────────────────────
 
-def layer_part(L, defs, ink):
+def layer_part(L, defs, card, is_key):
     name = L['part']
     body, default, carved = block(name)
     col = L.get('color', default)
-    key = 'p-%s-%s' % (name, hashlib.md5(col.encode()).hexdigest()[:5])
+    iname = part_ink(name, card, is_key)
+    ink = INK[iname]
+    key = 'p-%s-%s-%s' % (name, iname, hashlib.md5(col.encode()).hexdigest()[:5])
     if key not in defs:
         if carved:
-            # a carved block: 'currentColor' is the card's ink unless the spec asks for black or paper
+            # a carved block: 'currentColor' is the part's ink unless the spec asks for black or paper
             t = tone(col) if col.startswith('#') else 'ink'
             c = {'black': BLACK, 'paper': PAPER}.get(t, ink)
-            defs[key] = '<g id="%s" style="color:%s">%s</g>' % (key, c, body)
+            g = '<g id="%s" style="color:%s">%s</g>' % (key, c, body)
         else:
-            defs[key] = '<g id="%s">%s</g>' % (key, pull(body, col))
+            g = '<g id="%s">%s</g>' % (key, pull(body, col))
+        defs[key] = g.replace('url(#gouge)', 'url(#gouge-%s)' % iname).replace('url(#tint)', 'url(#tint-%s)' % iname)
     pts = fi.points(L['at'])
     rots = L.get('rot', 0)
     rots = rots if isinstance(rots, list) else [rots]
@@ -159,7 +198,7 @@ def layer_glyph(L, node, ink):
 
 CURVE = {
     'stem': (BLACK, 6, None, 0), 'branch': (BLACK, 7, None, 0),
-    'stream': (BLACK, 8, PAPER, 4), 'stream-gold': (BLACK, 8, 'INK', 4),
+    'stream': (INK['Water'], 8, PAPER, 4), 'stream-gold': (BLACK, 8, 'INK', 4),
     'smoke': (BLACK, 11, PAPER, 7), 'chain': (BLACK, 4, None, 0), 'bolt': (BLACK, 9, 'INK', 5),
 }
 
@@ -184,13 +223,15 @@ def layer_curve(L, ink):
 
 def defs_common(ink):
     """Patterns for the gouge and the tint, the paper grain, and the print's soft edges."""
-    return (
-        # solid ink, cut with fine parallel gouge lines (the cutter's stroke, 45 degrees)
-        '<pattern id="gouge" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">'
+    per_ink = ''.join(
+        # solid ink, cut with fine parallel gouge lines (the cutter's stroke)
+        '<pattern id="gouge-%s" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">'
         '<rect width="9" height="9" fill="%s"/><path d="M0 4.5 H9" stroke="%s" stroke-width="1.1" opacity=".55"/></pattern>'
         # a light tone: paper, with short ink cuts
-        '<pattern id="tint" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">'
+        '<pattern id="tint-%s" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">'
         '<rect width="10" height="10" fill="%s"/><path d="M0 5 H10" stroke="%s" stroke-width="2.2"/></pattern>'
+        % (n, c, PAPER, n, PAPER, c) for n, c in INK.items())
+    return per_ink + (
         # shading on a white thing: paper with fine black cuts
         '<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">'
         '<rect width="6" height="6" fill="%s"/><path d="M0 3 H6" stroke="%s" stroke-width="1.3"/></pattern>'
@@ -202,7 +243,7 @@ def defs_common(ink):
         '<filter id="grain" x="0" y="0" width="100%%" height="100%%">'
         '<feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="3"/>'
         '<feColorMatrix values="0 0 0 0 .95  0 0 0 0 .91  0 0 0 0 .82  0 0 0 -6 3.1"/></filter>'
-        % (ink, PAPER, PAPER, ink, PAPER, BLACK))
+        % (PAPER, BLACK))
 
 
 def chatter(seed, ink):
@@ -275,16 +316,20 @@ def border(ink, sub, name):
 def card_svg(node, spec):
     m = node['metadata']
     cat = node['category']
-    ink = INK['Keys'] if cat == 'keys' else INK[m['element']]
+    cname = card_ink(node)
+    ink = INK[cname]
+    is_key = cat == 'keys'
     _, top, sub = fi.chrome(node)
     defs, body = {}, []
-    for L in spec['layers']:
+    # the linocut may set a card out on its own (bigger figures, their own poses), from its 'linocut' layers;
+    # the elements, counts and placements stay the composition's
+    for L in (spec.get('linocut') or {}).get('layers') or spec['layers']:
         if 'part' in L:
-            body.append(layer_part(L, defs, ink))
-        elif 'glyph' in L and cat == 'keys' and L['glyph'] == 'letter':
+            body.append(layer_part(L, defs, cname, is_key))
+        elif 'glyph' in L and is_key and L['glyph'] == 'letter':
             continue  # the Key's letter is cut in its corner roundel
         elif 'glyph' in L:
-            body.append(layer_glyph(L, node, ink))
+            body.append(layer_glyph(L, node, INK['Gold'] if is_key else ink))
         elif 'curve' in L:
             body.append(layer_curve(L, ink))
     # the corner marks of the iconography, in black; a Key carries its number and its letter

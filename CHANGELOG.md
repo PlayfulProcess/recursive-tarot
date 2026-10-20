@@ -2,6 +2,25 @@
 
 Newest first. One bullet per shipped thing.
 
+## Oct 20 2026 — Book T's linocut, second pass
+
+Her "ok" to the proposed second pass.
+
+- **Two inks on the Keys**: gold for crowns, stars, lights and instruments, and the Key's own element for everything
+  else (a sign's triplicity, or a planet's elemental temperament: Saturn Earth, Jupiter Air, Mars and Sun Fire, Venus
+  and Moon Water, Mercury Air; Judgment takes its Fire). **The elements keep their ink on every card**: water prints
+  blue, fire red, land olive, wherever they appear.
+- **Bigger Key figures in poses of their own**, set out in each Key's `linocut` layers in `compositions.json` (the
+  full imagery ignores them; the elements stay the composition's): new carved poses `figure-walk` (a profile),
+  `figure-kneel` and `figure-hang` (the Hanged Man, one leg crossed behind); the Fool, Hermit, Death, Lovers and the
+  Universe walk, the Star kneels and pours, the risen in Judgment kneel.
+- **Carved**: pillar, wheel, wreath, the great and small stars, sun, moon, dog, tomb, Tau, wall, path, scythe, vessel,
+  table, cube altar, lantern, a pool; the eagle, bull, goat and ibis; the horse, stag, goat, bull, lion, ram and angel
+  heads (crests and the Kerubim). 78 blocks in all.
+- **A lighter ground**: paper cut with long olive strokes and grass ticks, instead of solid black.
+- **Ten of Cups**: the uppermost cup now lies on its side with its mouth to the left, held at its foot by the hand,
+  pouring into the left-hand upper cup, its lotus above the mouth (both the full imagery and the linocut).
+
 ## Oct 20 2026 — Book T's linocut: a fifth picture set, the full imagery printed as a relief print
 
 Her words: "I think the images are overall a bit ugly and childlike so I would ... try to make a new version focusing on
