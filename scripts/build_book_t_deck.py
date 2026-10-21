@@ -122,8 +122,8 @@ attribution's element: the three elemental Keys their own (the Fool Air, the Han
 Judgment Fire), a sign Key its sign's triplicity, and a planet Key the planet's temperament in the
 old astrology: Saturn Earth, Jupiter Air, Mars and the Sun Fire, Venus and the Moon Water, Mercury
 Air. That planet table is our choice; the tradition varies. Where Book T gives a card's meaning
-when ill dignified, those words stand in a section of their own, *If ill dignified*, so a reading
-can show them first.
+when ill dignified, those words stand in a section of their own, *If ill dignified*. How a card
+comes ill dignified, in Book T's own words: [Dignities](https://tarot.recursive.eco/pages/glossary.html#dignities).
 
 **Where the pictures come from:** what survives of the Order's own cards, the published Golden
 Dawn decks, and their rights: [Sources: Book T](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/sources/grammar.json&item=sel-deck-book-t).
