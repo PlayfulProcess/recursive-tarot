@@ -87,6 +87,13 @@ stay under the sidebar's Selections → Pictures. Book T describes no picture fo
 prompts start from each Key's title. Each prompt, beside the Book T passage it comes from, is in
 [the prompts file](https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/book-t/PROMPTS.md).
 
+**Decks painted from Book T.** Book T describes the cards in words; the printed Golden Dawn decks are
+later painters' readings of it, listed on [one page](https://tarot.recursive.eco/pages/golden-dawn-decks.html).
+The first complete one, Robert Wang's *Golden Dawn Tarot* (1977–78), was painted under Israel
+Regardie's direction. Wang later called his own figures "badly drawn, strange little wooden
+figures" and turned to a Jungian deck instead (his autobiography, *Expelled from Nursery School*,
+2011, p. 20, [archived PDF](https://web.archive.org/web/2016/http://robertwangart.com/Expelled%20From%20Nursery%20School.pdf)).
+
 ## How the cards are set out
 
 - **Order.** Book T's own list of the 78 titles: the four Aces, the sixteen court cards, the
