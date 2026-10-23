@@ -27,12 +27,12 @@ Three traditions, one test: the source doesn't settle it; the course and the fru
 
 ## The spread
 
-Seven cards. The road runs left to right and stops at the End. Above its start hangs the name the voice claims (2); above its end hang the fruits (7), what the road bears. Under the middle, where the walking is felt, lies sponge or stone (6).
+Seven cards in three rows (PlayfulProcess's arrangement, 22 Oct 2026, evened out). The top row is what arrives: the voice (1) and the name it claims (2). The middle row is the road it asks you to walk: beginning, middle, end (3, 4, 5). The bottom row is what it does: how it touches you (6) and what it bears (7).
 
 ```
-   [2]                         [7]
-   [1] → [3] → [4] ──────────→ [5]
-                [6]
+        [1]       [2]
+   [3] → [4] → [5]
+        [6]       [7]
 ```
 
 | | Position | Ask |
