@@ -91,7 +91,7 @@
   let cat, col;
   try {
     [cat, col] = await Promise.all([
-      fetch('../course/_courses.json').then(r => r.json()),
+      fetch('../course/_courses.json', { cache: 'no-cache' }).then(r => r.json()),
       fetch('../tarot/_collection.json').then(r => r.json()).catch(() => ({ grammars: [] })),
     ]);
   } catch (e) {
