@@ -106,12 +106,12 @@
     [PFX + 'index.html',        'Home'],
     [PFX + 'pages/about.html',  'About'],
   ];
-  // Courses — grouped into three topics; each is a course-viewer ?course=… (deep-linkable with #section).
+  // Courses — each opens in recursive.eco Play, Continuous (the map of all of them: courses-play.js).
   const COURSE_GROUPS = [
     ['Start here', [
-      ['history-of-tarot',                'The History of Tarot'],
-      ['how-tarot-works',                 'How the Cards Can Work'],
-      ['how-to-contribute',               'Ways to Contribute'],
+      ['https://recursive.eco/play?id=4f954864-6889-4bf7-8b2e-64e313066444&pane=continuous', 'The History of Tarot'],
+      ['https://recursive.eco/play?id=f824e706-af68-4cf9-98ad-2977b69e1e4e&pane=continuous', 'How the Cards Can Work'],
+      ['https://recursive.eco/play?id=368974ce-0718-4e9a-9351-bce7b2c053e4&pane=continuous', 'Ways to Contribute'],
     ]],
   ];
   // The other groups of the all-courses gallery (course/_courses.json → pages/courses.html#<id>).
@@ -152,7 +152,7 @@
   const ICO_PATH = '<path d="M12 4l8.5 15.5H3.5z"/>';
   // Golden Dawn group inside the Courses menu: [file under pages/ or course id, label, glyph]
   const GD_MENU = [
-    [PFX + 'pages/course-viewer.html?course=walking-the-golden-dawn-path', 'The course: the Map and the Walk', ICO_PATH, 'walking-the-golden-dawn-path'],
+    ['https://recursive.eco/play?id=9befd48e-5c83-48aa-abb2-d865beb06c19&pane=continuous', 'The course: the Map and the Walk', ICO_PATH, 'walking-the-golden-dawn-path'],
     [PFX + 'pages/tree-of-life.html', 'The Tree of Life map', ICO_TREE, 'tree-of-life.html'],
     [PFX + 'pages/glossary.html',     'Glossary',             ICO_GLOSS, 'glossary.html'],
     [PFX + 'pages/book-t.html',       'Book T (1912), to read', ICO_BOOK, 'book-t.html'],
@@ -419,7 +419,7 @@
             <span class="dd">
               <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}" role="button" tabindex="0" title="Courses" aria-haspopup="true" aria-expanded="false" aria-label="Courses menu">${glyph('course', 'Courses')}</a>
               <span class="dd-menu">
-                ${COURSE_GROUPS.map(([cap, items]) => `<span class="dd-cap">${cap}</span>` + items.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')).join('')}
+                ${COURSE_GROUPS.map(([cap, items]) => `<span class="dd-cap">${cap}</span>` + items.map(([href, label]) => `<a href="${href}">${label}</a>`).join('')).join('')}
                 <span class="dd-cap">All courses, by topic</span>
                 ${COURSE_TOPICS.map(([id, label]) => `<a href="${PFX}pages/courses.html#${id}">${label} →</a>`).join('')}
                 <span class="dd-cap">The Golden Dawn, to explore</span>
