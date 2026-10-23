@@ -1,8 +1,8 @@
 <!-- hers: "there is no way of telling which part of the invisible talking to us is speaking truth or not" and "most people take it for granted that if it comes from the invisible world, it is something special and should be obeyed" (chat, 22 Oct 2026, typos tidied); "relate to the card; never obey it" (viewers/voices.json, shared_intention). Everything else is joining text, the sources' own words, and the position lines. -->
 
-# Test the Spirits — a discernment spread (DRAFT, for PlayfulProcess to read)
+# Test the Spirits — a discernment spread
 
-Status: draft. The spread is also added to `viewers/spreads.json` on the branch, so it can be tried in the Caster before it is kept, changed or dropped.
+In the Caster as "Test the Spirits" (`viewers/spreads.json`).
 
 There is no way of telling which of the invisible voices that speak to us is telling the truth. Most people take it for granted that if a message comes from the invisible world, it is something special and should be obeyed. Three old traditions answer with the same move: don't ask where a voice comes from. Ask where it leads, and what it grows.
 
@@ -48,12 +48,11 @@ Seven cards. Lay them left to right, as a road, with two cards above it.
 
 **The decision stays yours.** The spread can show the shape of a road; it can't walk it, and it can't tell you who is speaking.
 
-## Open questions for you
+## Choices made (22 Oct 2026, left to Claude by PlayfulProcess)
 
-- Seven cards, or five (drop 2 and 6)? Five fits one row on a phone.
-- Is "Test the Spirits" (1 John 4:1, "try the spirits whether they are of God") the right name for a deck that also serves non-Christian readers? Another option: "By Their Fruits".
-- Keep it a spread in the Caster only, or also give it a short course page beside *Intention Setting*?
-- Should the Buddhist and Christian sources each also get a voice line in `viewers/voices.json`, or stay sources of this one spread?
+- **Seven cards.** The Celtic Cross has ten and fits the board; card 2 (the authority) and card 6 (sponge or stone) carry the Kalama and Ignatius tests, so they stay.
+- **The name stays "Test the Spirits"** (1 John 4:1, "try the spirits whether they are of God"). It names the source honestly; the Kalama Sutta in the description keeps it open to readers of other paths.
+- **A spread only**, in the Caster's list. No course page and no new voice for now: the lightest form first.
 
 ## Sources
 
