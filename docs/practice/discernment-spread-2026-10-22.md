@@ -42,7 +42,7 @@ Seven cards in three rows (PlayfulProcess's arrangement, 22 Oct 2026, evened out
 | 3 | **Beginning** | How the voice first came: what it offered, what it promised. |
 | 4 | **Middle** | Where following it takes you once the first glow fades. |
 | 5 | **End** | Where the road comes out. Ignatius: is it as good as where it started, or less good than what you had meant to do? |
-| 6 | **Sponge or stone** | How it touches you: soft, quiet, like water into a sponge; or sharp and noisy, like water on stone. |
+| 6 | **Texture** | How it touches you: soft, quiet, like water into a sponge; or sharp and noisy, like water on stone. |
 | 7 | **Fruits** | What it would grow in you and around you. Love, joy, peace, patience, gentleness? Or harm, to you or to others? |
 
 **If the reading itself leaves you in desolation, change nothing today.** Keep the resolution you held yesterday, and come back to the question later.
@@ -51,7 +51,7 @@ Seven cards in three rows (PlayfulProcess's arrangement, 22 Oct 2026, evened out
 
 ## Choices made (22 Oct 2026, left to Claude by PlayfulProcess)
 
-- **Seven cards.** The Celtic Cross has ten and fits the board; card 2 (the authority) and card 6 (sponge or stone) carry the Kalama and Ignatius tests, so they stay.
+- **Seven cards.** The Celtic Cross has ten and fits the board; card 2 (the authority) and card 6 (texture) carry the Kalama and Ignatius tests, so they stay.
 - **The name stays "Test the Spirits"** (1 John 4:1, "try the spirits whether they are of God"). It names the source honestly; the Kalama Sutta in the description keeps it open to readers of other paths.
 - **A spread only**, in the Caster's list. No course page and no new voice for now: the lightest form first.
 

@@ -57,10 +57,19 @@
   .spreadmeta { color:var(--muted); font-size:12px; }
 
   /* the board — positions placed by x/y fraction */
-  .board { position:relative; width:100%; aspect-ratio:16/13; margin-top:20px; border:1px solid var(--line);
+  .board { position:relative; width:100%; aspect-ratio:16/11; margin-top:20px; border:1px solid var(--line);
     border-radius:16px; overflow:hidden; background:radial-gradient(circle at 50% 45%, #ffffff 0%, #f1ece1 100%);
     box-shadow:inset 0 0 60px rgba(60,45,20,.05); touch-action:none; }
   @media (max-width:640px){ .board { aspect-ratio:3/4; } }
+  /* Grid (Oct 23 2026): lines every 5% of the board; positions snap to them while it is on. */
+  .board.grid { background:
+      linear-gradient(to right, rgba(154,115,34,.13) 1px, transparent 1px) 0 0/5% 5%,
+      linear-gradient(to bottom, rgba(154,115,34,.13) 1px, transparent 1px) 0 0/5% 5%,
+      radial-gradient(circle at 50% 45%, #ffffff 0%, #f1ece1 100%); }
+  /* Arrange tools above the board: grid, align, distribute (the PowerPoint set). */
+  .boardtools { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-top:14px; }
+  .boardtools .btsep { width:1px; height:22px; background:var(--line); margin:0 4px; }
+  .boardtools .bthint { font-size:12px; color:var(--muted); margin-left:4px; }
   .slot { position:absolute; transform:translate(-50%,-50%); width:var(--cw); cursor:grab; user-select:none; touch-action:none; }
   .slot.dragging { cursor:grabbing; opacity:.92; z-index:10; }
   /* Position text is NEVER truncated — the whole label and the whole meaning stay readable.
@@ -178,7 +187,17 @@
      recursive.eco — moved out of the icon toolbar so each control exists in exactly one place), then the
      ⓘ tips toggle. Wraps gracefully at 375px — the divider hides rather than orphaning onto its
      own line. */
-  .actionbar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:14px; }
+  /* Sticky under the site header, so the buttons stay in reach while the board scrolls (Oct 23 2026). */
+  .actionbar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:14px;
+    position:sticky; top:60px; z-index:20; background:var(--bg); padding:8px 0; }
+  button.saved { background:#e9efe3; color:#3f6b3a; }
+  .intention > summary { cursor:pointer; list-style:none; display:flex; align-items:baseline; gap:8px; }
+  .intention > summary::-webkit-details-marker { display:none; }
+  .intention > summary h2 { margin:0; }
+  .intention > summary .sumhint { font-size:12.5px; color:var(--muted); font-style:italic; }
+  .intention > summary::after { content:'▾'; color:var(--muted); font-size:12px; }
+  .intention[open] > summary { margin-bottom:8px; }
+  .intention[open] > summary::after { content:'▴'; }
   .actionbar .abarsep { width:1px; align-self:stretch; background:var(--line); margin:0 2px; }
   @media (max-width:480px){ .actionbar .abarsep { display:none; } }
   /* Helper prose — collapsed behind the ⓘ toggle by default (was always-visible prose in the
@@ -263,14 +282,14 @@
     <button id="modelHintX" type="button" aria-label="Dismiss">✕</button>
   </div>
 
-  <div class="intention" id="intention" style="display:none">
-    <h2 id="intentionTitle">Before you cast</h2>
+  <details class="intention" id="intention" style="display:none">
+    <summary><h2 id="intentionTitle">Before you cast</h2><span class="sumhint">the intention, and the reading voices</span></summary>
     <p class="creed" id="intentionCreed"></p>
     <ul class="principles" id="intentionPrinciples"></ul>
     <p id="intentionNote" style="margin:8px 0 0;font-size:11.5px;color:#6b6457;font-style:italic;line-height:1.5"></p>
     <div class="voices" id="voices" aria-label="Reading orientations — tap one to hear how it reads"></div>
     <div class="voice-detail" id="voiceDetail"></div>
-  </div>
+  </details>
 
   <div class="controls">
     <!-- Title + toolbar on one line, the same shape as the recursive.eco Create editor: the name of
@@ -334,17 +353,17 @@
 
   <div class="actionbar">
     <button id="cast" disabled>Cast</button>
-    <button id="clearCasting" class="ghost">Clear casting</button>
-    <button id="clearAll" class="ghost">Clear all</button>
+    <button id="clearCasting" type="button" class="iconbtn" title="Clear casting: take the cards off, keep the layout" aria-label="Clear casting"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M5.6 13.4l7-7a2 2 0 0 1 2.8 0l2.2 2.2a2 2 0 0 1 0 2.8l-7 7H8.4l-2.8-2.8a1.5 1.5 0 0 1 0-2.2z"/></svg></button>
+    <button id="clearAll" type="button" class="iconbtn" title="Clear all: remove the cards and the layout" aria-label="Clear all"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg></button>
     <button id="reshuffle" class="ghost" style="display:none">Re-cast</button>
     <!-- Re-casting stays allowed, but never silent (Sep 26 2026, tarot hope-or-habit study): from the
          second draw on, the count for this browser session shows beside Cast. Kept in sessionStorage
          only; nothing is sent anywhere and the count is used for nothing else. -->
     <span id="castCount" aria-live="polite" style="font-size:12px;color:var(--mut);align-self:center;"></span>
     <span class="abarsep" aria-hidden="true"></span>
-    <button type="button" id="addPos" class="ghost">+ Add position</button>
-    <button type="button" id="saveLocal" class="ghost" style="display:none" title="Keep this spread, with its layout, in this browser. It appears under Saved in this browser in the spread list.">Save</button>
-    <button type="button" id="saveToEco" class="ghost" style="display:none" title="Opens recursive.eco in a new tab: the spread is saved to your My Spreads there (Private; one with the same name is updated) and opened in Cast.">Cast in recursive.eco ↗</button>
+    <button type="button" id="addPos" class="iconbtn" title="Add position" aria-label="Add position"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></button>
+    <button type="button" id="saveLocal" class="ghost" style="display:none" title="Keep this spread, layout and all, in this browser. Nothing is saved until you click.">Save</button>
+    <button type="button" id="saveToEco" class="ghost" style="display:none" title="Opens recursive.eco in a new tab: the spread is saved to your My Spreads there (Private; one with the same name is updated) and opened in Cast."><span class="ecoicon"></span> Cast in recursive.eco ↗</button>
     <button type="button" class="iconbtn" id="helpToggle" title="Show tips" aria-label="Show tips" aria-expanded="false" aria-controls="helperPanel">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
     </button>
@@ -352,6 +371,14 @@
   <div id="helperPanel" class="helperpanel" hidden>
     <p>Drag positions on the board to arrange them; edit labels &amp; meanings in the list below. <strong>Cast</strong> draws a card into every position; <strong>Clear casting</strong> keeps the layout while <strong>Clear all</strong> wipes it too. <strong>Add position</strong> builds the spread; <strong>Save</strong> keeps it, layout and all, in this browser; <strong>Cast in recursive.eco</strong> also saves it to your My Spreads there; the icons beside the spread name download or upload a spread file.</p>
     <p>An automatically laid-out spread has no meaningful geometry — drag any card on the board to arrange it. <strong>Shift-click</strong> to select several positions and move them together; hold <strong>Ctrl</strong> (⌘) while dragging to copy them.</p>
+  </div>
+  <div class="boardtools" id="boardTools" aria-label="Arrange the positions">
+    <button type="button" class="iconbtn" id="gridToggle" aria-pressed="false" title="Grid: show lines and snap positions to them" aria-label="Grid"><span class="gridicon"></span></button>
+    <span class="btsep" aria-hidden="true"></span>
+    <button type="button" class="iconbtn" data-align="left" title="Align left" aria-label="Align left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v18"/><rect x="7" y="6" width="11" height="4" rx="1"/><rect x="7" y="14" width="7" height="4" rx="1"/></svg></button><button type="button" class="iconbtn" data-align="center" title="Align centre" aria-label="Align centre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><rect x="6" y="6" width="12" height="4" rx="1"/><rect x="8" y="14" width="8" height="4" rx="1"/></svg></button><button type="button" class="iconbtn" data-align="right" title="Align right" aria-label="Align right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 3v18"/><rect x="6" y="6" width="11" height="4" rx="1"/><rect x="10" y="14" width="7" height="4" rx="1"/></svg></button><button type="button" class="iconbtn" data-align="top" title="Align top" aria-label="Align top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18"/><rect x="6" y="7" width="4" height="11" rx="1"/><rect x="14" y="7" width="4" height="7" rx="1"/></svg></button><button type="button" class="iconbtn" data-align="middle" title="Align middle" aria-label="Align middle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><rect x="6" y="6" width="4" height="12" rx="1"/><rect x="14" y="8" width="4" height="8" rx="1"/></svg></button><button type="button" class="iconbtn" data-align="bottom" title="Align bottom" aria-label="Align bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><rect x="6" y="6" width="4" height="11" rx="1"/><rect x="14" y="10" width="4" height="7" rx="1"/></svg></button>
+    <span class="btsep" aria-hidden="true"></span>
+    <button type="button" class="iconbtn" data-dist="h" title="Distribute horizontally: even gaps from left to right" aria-label="Distribute horizontally"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v18M20 3v18"/><rect x="9" y="8" width="6" height="8" rx="1"/></svg></button><button type="button" class="iconbtn" data-dist="v" title="Distribute vertically: even gaps from top to bottom" aria-label="Distribute vertically"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18M3 20h18"/><rect x="8" y="9" width="8" height="6" rx="1"/></svg></button>
+    <span class="bthint" id="btHint">Shift-click positions to pick some; with none picked, these arrange all. Ctrl+Z undoes.</span>
   </div>
   <div id="board" class="board"></div>
   <div id="hovprev"><img alt=""></div>
@@ -544,6 +571,8 @@ const $ = id => document.getElementById(id);
   $('exportSpread').addEventListener('click', exportSpread);
   $('importFile').addEventListener('change', onImport);
   $('saveLocal').addEventListener('click', saveSpreadLocal);
+  $('spreadName').addEventListener('input', updateSaveState);
+  setupArrangeTools();
   $('saveToEco').addEventListener('click', saveSpreadToEco);
   // The spread NAME is a first-class, always-visible field: typing in it renames the working spread
   // everywhere it is written (contract, export filename, cast JSON, the dropdown's Custom entry).
@@ -634,7 +663,7 @@ function setSpread(id){
     setSpreadIdentity(my.name || 'My spread', '');
     $('reshuffle').style.display = 'none';
     $('export').classList.remove('on');
-    renderBoard(); renderCustomList();
+    renderBoard(); renderCustomList(); markSaved();
     return;
   }
   const custom = id === 'custom';
@@ -651,7 +680,7 @@ function setSpread(id){
   }
   $('reshuffle').style.display = 'none';
   $('export').classList.remove('on');
-  renderBoard(); renderCustomList();
+  renderBoard(); renderCustomList(); markSaved();
 }
 
 // ── aggregate headers (axes) ──
@@ -833,6 +862,71 @@ function isBuiltinPreset(){ return curSpreadId !== 'custom' && !!spreadsById[cur
 function updateSaveAffordances(){
   const has = positions.length > 0;
   ['saveLocal','saveToEco'].forEach(id => { const el = $(id); if (el) el.style.display = has ? 'inline-flex' : 'none'; });
+  updateSaveState();
+}
+// The Save button says where you stand, like the Save in recursive.eco's editor: gold "Save" when the
+// spread on the board differs from the last saved (or loaded) one, green "Saved ✓" when a spread saved
+// in this browser is unchanged. Nothing is ever saved by itself: only a click writes.
+let baseSig = '';
+function spreadSig(){ try { return JSON.stringify(buildSpreadObj()); } catch(_){ return ''; } }
+function markSaved(){ baseSig = spreadSig(); updateSaveState(); }
+function updateSaveState(){
+  const b = $('saveLocal'); if (!b) return;
+  const dirty = positions.length > 0 && spreadSig() !== baseSig;
+  const local = String(curSpreadId).startsWith('local:');
+  b.classList.toggle('ghost', !dirty);
+  b.classList.toggle('saved', !dirty && local);
+  b.textContent = dirty ? 'Save' : (local ? 'Saved ✓' : 'Save');
+  b.title = dirty ? 'Unsaved changes. Save keeps this spread, layout and all, in this browser.'
+    : (local ? 'Saved in this browser. Changes stay unsaved until you click Save.'
+             : 'Keep this spread, layout and all, in this browser. Nothing is saved until you click.');
+}
+
+// ── arrange: grid · align · distribute (Oct 23 2026, the PowerPoint set) ──
+// They act on the picked positions (shift-click); with none picked, on all of them. With ONE picked,
+// align moves it against the board. Distribute needs three or more. Ctrl+Z undoes the last arrange.
+const GRID_STEP = 0.05;
+let gridOn = false, arrangeUndo = null;
+function snapTo(v){ return Math.min(1, Math.max(0, Math.round(v / GRID_STEP) * GRID_STEP)); }
+const r3 = v => Math.round(v * 1000) / 1000;
+function setGrid(on){
+  gridOn = !!on;
+  try { localStorage.setItem('rt-caster-grid', gridOn ? '1' : ''); } catch(_){}
+  $('board').classList.toggle('grid', gridOn);
+  const t = $('gridToggle'); t.classList.toggle('primary', gridOn); t.setAttribute('aria-pressed', String(gridOn));
+}
+function arrangeGroup(){ const picked = positions.filter(p => selected.has(p.id)); return picked.length ? picked : positions.slice(); }
+function rememberForUndo(group){ arrangeUndo = group.map(p => ({ p, x:p.x, y:p.y })); }
+function undoArrange(){ if (!arrangeUndo) return; arrangeUndo.forEach(u => { u.p.x = u.x; u.p.y = u.y; }); arrangeUndo = null; afterArrange(); }
+function afterArrange(){ renderBoard(); syncJson(); }
+function alignPositions(how){
+  const g = arrangeGroup(); if (!g.length) return;
+  rememberForUndo(g);
+  const xs = g.map(p => p.x), ys = g.map(p => p.y), one = g.length === 1;
+  const v = { left:  one ? 0.1  : Math.min(...xs), center: one ? 0.5 : (Math.min(...xs) + Math.max(...xs)) / 2, right:  one ? 0.9  : Math.max(...xs),
+              top:   one ? 0.15 : Math.min(...ys), middle: one ? 0.5 : (Math.min(...ys) + Math.max(...ys)) / 2, bottom: one ? 0.85 : Math.max(...ys) }[how];
+  g.forEach(p => { if (how === 'left' || how === 'center' || how === 'right') p.x = r3(v); else p.y = r3(v); });
+  afterArrange();
+}
+function distributePositions(axis){
+  const g = arrangeGroup(); if (g.length < 3) return;
+  rememberForUndo(g);
+  const k = axis === 'h' ? 'x' : 'y';
+  const sorted = g.slice().sort((a, b) => a[k] - b[k]);
+  const lo = sorted[0][k], hi = sorted[sorted.length - 1][k], step = (hi - lo) / (sorted.length - 1);
+  sorted.forEach((p, i) => { p[k] = r3(lo + step * i); });
+  afterArrange();
+}
+function setupArrangeTools(){
+  const gi = document.querySelector('#gridToggle .gridicon');
+  if (gi) gi.innerHTML = window.rtIcon ? window.rtIcon('grid', 16) : '#';
+  const ei = document.querySelector('#saveToEco .ecoicon');
+  if (ei && window.rtIcon) ei.innerHTML = window.rtIcon('spiral', 15);
+  $('gridToggle').addEventListener('click', () => setGrid(!gridOn));
+  document.querySelectorAll('#boardTools [data-align]').forEach(b => b.addEventListener('click', () => alignPositions(b.dataset.align)));
+  document.querySelectorAll('#boardTools [data-dist]').forEach(b => b.addEventListener('click', () => distributePositions(b.dataset.dist)));
+  let saved = ''; try { saved = localStorage.getItem('rt-caster-grid') || ''; } catch(_){}
+  setGrid(saved === '1');
 }
 
 function renderBoard(){
@@ -873,6 +967,7 @@ function toggleSelect(p){
 function onBoardKey(e){
   if (/^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName)||'')) return;
   if (e.key === 'Escape') { clearSelection(); return; }
+  if ((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z') && arrangeUndo) { e.preventDefault(); undoArrange(); return; }
   if ((e.key === 'Delete' || e.key === 'Backspace') && selected.size) {
     e.preventDefault();
     positions = positions.filter(p => !selected.has(p.id));
@@ -892,7 +987,8 @@ function attachSlot(slot, p, i){
   slot.addEventListener('pointermove', ev => { if(!dragging) return;
     if (Math.abs(ev.clientX-sx)>4 || Math.abs(ev.clientY-sy)>4) moved=true;
     const r = $('board').getBoundingClientRect();
-    const dx = (ev.clientX-sx)/r.width, dy = (ev.clientY-sy)/r.height;
+    let dx = (ev.clientX-sx)/r.width, dy = (ev.clientY-sy)/r.height;
+    if (gridOn) { const a = start[0]; dx = snapTo(a.x + dx) - a.x; dy = snapTo(a.y + dy) - a.y; }   // the grabbed one lands on a line; the group keeps its shape
     start.forEach(s => {
       s.q.x = Math.min(1,Math.max(0, s.x + dx)); s.q.y = Math.min(1,Math.max(0, s.y + dy));
       const el = slotEl(s.q.id); if (el) { el.style.left=(s.q.x*100)+'%'; el.style.top=(s.q.y*100)+'%'; }
@@ -1001,7 +1097,7 @@ function buildCast(){
     cards: positions.map((p,i) => Object.assign({ position:p.label, prompt:p.meaning }, p.card || {})),
   };
 }
-function syncJson(){ lastCast = buildCast(); const json = JSON.stringify(lastCast, null, 2);
+function syncJson(){ setTimeout(updateSaveState, 0); lastCast = buildCast(); const json = JSON.stringify(lastCast, null, 2);
   $('json').value = json;
   $('journalLink').href = FLOW + '/?d=' + b64urlEncode(json);
   updateContributeLink(); }
@@ -1239,8 +1335,7 @@ function saveSpreadLocal(){
   renderLocalSpreads();
   curSpreadId = 'local:' + entry.id; $('spread').value = curSpreadId; setCustomMode(false);
   setSpreadIdentity(name, entry.description || '');
-  renderBoard(); renderCustomList(); syncJson();
-  flash($('saveLocal'), 'Saved in this browser');
+  renderBoard(); renderCustomList(); syncJson(); markSaved();
 }
 
 // ── receive a spread — ONE loader, two entry points (?spread= URL + eco-spread postMessage) ──
