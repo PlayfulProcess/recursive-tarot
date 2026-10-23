@@ -1,0 +1,715 @@
+{
+  "_github_url": "https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/jhanas-draft/grammar.json",
+  "_github_source_url": "https://raw.githubusercontent.com/PlayfulProcess/recursive-tarot/main/tarot/jhanas-draft/grammar.json",
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "Bhikkhu Sujato (translator), SuttaCentral",
+        "date": "2018–",
+        "note": "Pali discourse quotations, CC0"
+      },
+      {
+        "name": "Jhourney",
+        "date": "2026",
+        "note": "Inspiration for the seven practice cards; nothing quoted"
+      },
+      {
+        "name": "Wikimedia Commons artists and museums",
+        "date": "various",
+        "note": "Pictures, PD / CC0 / CC BY, named on each card"
+      },
+      {
+        "name": "PlayfulProcess",
+        "date": "2026",
+        "note": "Draft deck: practice cards and questions"
+      }
+    ]
+  },
+  "name": "The Jhanas (draft) — absorption, its hindrances, and ways in",
+  "description": "# The Jhanas (draft)\n\nA deck for practising absorption meditation (jhana): seven ways in, the five hindrances that block it, the four\nabsorptions, and the four formless dimensions beyond them. The canonical cards quote the Pali discourses in Bhikkhu\nSujato's translations (CC0, SuttaCentral): the absorptions and their similes from MN 119, the formless dimensions\nfrom MN 26, the hindrances and their similes from MN 39, the black plum tree from MN 36, and the Discourse on Love,\nSnp 1.8.\n\n**Ways in.** The seven practice cards are written for this deck after the approach Jhourney teaches (play rather\nthan striving, allowing, an openhearted feeling, the window of tolerance, recursive self-acceptance). They quote\nnothing from Jhourney's own retreat instructions, which are © Jhourney, Inc. They are not a substitute for a teacher\nor a retreat; if a practice takes you out of your window of tolerance, stop and steady yourself first.\n\n**Pictures.** Paintings, prints and objects from Wikimedia Commons, public domain, CC0 or CC BY 4.0 (the Wellcome\nCollection's ploughing-festival print), each named on its card. They are pictures of the similes and themes, not of\nthe states.\n\nThe deck's rule holds here as everywhere: relate to the card; never obey it.\n\n**Draft, 23 October 2026.** Not yet listed on the site; for PlayfulProcess to read and change.",
+  "grammar_type": "tarot",
+  "provenance": "living",
+  "creator_name": "PlayfulProcess",
+  "creator_link": "https://recursive.eco",
+  "cover_image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/jhana3.jpg",
+  "tags": [
+    "jhana",
+    "meditation",
+    "buddhism",
+    "pali-canon",
+    "samadhi",
+    "draft",
+    "practice"
+  ],
+  "is_published": false,
+  "default_view": "cards",
+  "_community_folder": "tarot",
+  "_community_slug": "jhanas-draft",
+  "metadata": {
+    "category": "contemporary",
+    "status": "draft",
+    "common_name": "The Jhanas (draft)"
+  },
+  "nodes": [
+    {
+      "id": "roseapple",
+      "name": "The black plum tree",
+      "sort_order": 0,
+      "category": "Ways in",
+      "keywords": [
+        "jhana",
+        "ways in"
+      ],
+      "metadata": {
+        "group": "Ways in",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/roseapple.jpg",
+            "scene": "The black plum tree",
+            "artist": "Unknown",
+            "artist_dates": "",
+            "edition": "Wikimedia Commons",
+            "license": "CC BY 4.0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:The_ploughing_ceremony_with_the_baby_Bodhisatta_mediating_Wellcome_L0026532.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:The_ploughing_ceremony_with_the_baby_Bodhisatta_mediating_Wellcome_L0026532.jpg"
+      },
+      "sections": {
+        "In the old words": "\"I recall sitting in the cool shade of a black plum tree while my father the Sakyan was off working. Quite secluded from sensual pleasures, secluded from unskillful qualities, I entered and remained in the first absorption … Why am I afraid of that pleasure?\"\n\nMN 36, Bhikkhu Sujato's translation, CC0 (SuttaCentral).",
+        "What it points to": "After years of harsh austerities, the Buddha remembers a childhood afternoon when absorption came by itself, and asks why he fears that pleasure. The path turns on a pleasure allowed, not one forced.",
+        "To reflect": "What ease have you been refusing?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 36, the Longer Discourse with Saccaka](https://suttacentral.net/mn36/en/sujato)",
+        "Picture": "Unknown artist. [The ploughing ceremony with the baby Bodhisatta mediating Wellcome L0026532.jpg](https://commons.wikimedia.org/wiki/File:The_ploughing_ceremony_with_the_baby_Bodhisatta_mediating_Wellcome_L0026532.jpg), Wikimedia Commons, CC BY 4.0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/roseapple.jpg"
+    },
+    {
+      "id": "metta",
+      "name": "An openhearted feeling",
+      "sort_order": 1,
+      "category": "Ways in",
+      "keywords": [
+        "jhana",
+        "ways in"
+      ],
+      "metadata": {
+        "group": "Ways in",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/metta.jpg",
+            "scene": "An openhearted feeling",
+            "artist": "Mary Cassatt",
+            "artist_dates": "circa 1905",
+            "edition": "Wikimedia Commons",
+            "license": "CC0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Mary_Cassatt,_Mother_and_Child,_c._1905,_NGA_46573.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Mary_Cassatt,_Mother_and_Child,_c._1905,_NGA_46573.jpg"
+      },
+      "sections": {
+        "In the old words": "\"Even as a mother would protect with her life her child, her only child, so too for all creatures unfold a boundless heart.\"\n\nSnp 1.8, the Discourse on Love, Bhikkhu Sujato's translation, CC0 (SuttaCentral).",
+        "What it points to": "A common way in: begin with a small warm feeling (a smile, a happy memory, \"may you be happy\") and rest your attention on it, refreshing it gently when it fades, so that it can grow by itself.",
+        "To reflect": "Where is there already a little warmth?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Snp 1.8, the Discourse on Love](https://suttacentral.net/snp1.8/en/sujato)",
+        "Picture": "Mary Cassatt, circa 1905. [Mary Cassatt, Mother and Child, c. 1905, NGA 46573.jpg](https://commons.wikimedia.org/wiki/File:Mary_Cassatt,_Mother_and_Child,_c._1905,_NGA_46573.jpg), Wikimedia Commons, CC0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/metta.jpg"
+    },
+    {
+      "id": "play",
+      "name": "Play, not striving",
+      "sort_order": 2,
+      "category": "Ways in",
+      "keywords": [
+        "jhana",
+        "ways in"
+      ],
+      "metadata": {
+        "group": "Ways in",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/play.jpg",
+            "scene": "Play, not striving",
+            "artist": "Thomas Eakins",
+            "artist_dates": "1876",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Eakins,_Baby_at_Play_1876.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Eakins,_Baby_at_Play_1876.jpg"
+      },
+      "sections": {
+        "What it points to": "You cannot grab for absorption and get it. A goal held as a test you might fail tightens everything; the same goal held as a game loosens it. Changing how you hold the goal may be the first practice.",
+        "To reflect": "How would this go if it were a game?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Picture": "Thomas Eakins, 1876. [Eakins, Baby at Play 1876.jpg](https://commons.wikimedia.org/wiki/File:Eakins,_Baby_at_Play_1876.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/play.jpg"
+    },
+    {
+      "id": "allowing",
+      "name": "The rain and how you meet it",
+      "sort_order": 3,
+      "category": "Ways in",
+      "keywords": [
+        "jhana",
+        "ways in"
+      ],
+      "metadata": {
+        "group": "Ways in",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/allowing.jpg",
+            "scene": "The rain and how you meet it",
+            "artist": "thesandiegomuseumofartcollection",
+            "artist_dates": "2007-05-13 11:25:34",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Sudden_Shower_over_Shin-Ohashi_Bridge_and_Atake_(5758870781).jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Sudden_Shower_over_Shin-Ohashi_Bridge_and_Atake_(5758870781).jpg"
+      },
+      "sections": {
+        "What it points to": "Every experience has two sides: what is there, and how you meet it. Rain on your head bothers you less once you let it fall. Absorption is a change in the meeting more than in the thing met; trying to make a pleasant feeling bigger is a way of resisting it.",
+        "To reflect": "What are you meeting right now, and how?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Picture": "thesandiegomuseumofartcollection, 2007-05-13 11:25:34. [Sudden Shower over Shin-Ohashi Bridge and Atake (5758870781).jpg](https://commons.wikimedia.org/wiki/File:Sudden_Shower_over_Shin-Ohashi_Bridge_and_Atake_(5758870781).jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/allowing.jpg"
+    },
+    {
+      "id": "window",
+      "name": "The window of tolerance",
+      "sort_order": 4,
+      "category": "Ways in",
+      "keywords": [
+        "jhana",
+        "ways in"
+      ],
+      "metadata": {
+        "group": "Ways in",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/window.jpg",
+            "scene": "The window of tolerance",
+            "artist": "Katsushika Hokusai",
+            "artist_dates": "circa 1830",
+            "edition": "Wikimedia Commons",
+            "license": "CC0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:The_Suspension_Bridge_on_the_Border_of_Hida_and_Etch%C5%AB_Provinces_(Hietsu_no_sakai_tsuribashi),_from_the_series_Remarkable_Views_of_Bridges_in_Various_Provinces_(Shokoku_meiky%C5%8D_kiran)_MET_DP141245.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:The_Suspension_Bridge_on_the_Border_of_Hida_and_Etch%C5%AB_Provinces_(Hietsu_no_sakai_tsuribashi),_from_the_series_Remarkable_Views_of_Bridges_in_Various_Provinces_(Shokoku_meiky%C5%8D_kiran)_MET_DP141245.jpg"
+      },
+      "sections": {
+        "What it points to": "Each nervous system has a range in which it can feel and learn: alert but not overwhelmed, calm but not numb. The term is Daniel Siegel's. Too much (racing, panic) asks for less: shorter sits, eyes open, attention wider and outside the body. Too little (numb, far away) asks for more: movement, company, words. Practice inside the window first; resting is part of it, not a step back.",
+        "To reflect": "Too much, too little, or about right?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Window of tolerance, Wikipedia](https://en.wikipedia.org/wiki/Window_of_tolerance)",
+        "Picture": "Katsushika Hokusai, circa 1830. [The Suspension Bridge on the Border of Hida and Etchū Provinces (Hietsu no sakai tsuribashi), from the series Remarkable Views of Bridges in Various Provinces (Shokoku meikyō kiran) MET DP141245.jpg](https://commons.wikimedia.org/wiki/File:The_Suspension_Bridge_on_the_Border_of_Hida_and_Etch%C5%AB_Provinces_(Hietsu_no_sakai_tsuribashi),_from_the_series_Remarkable_Views_of_Bridges_in_Various_Provinces_(Shokoku_meiky%C5%8D_kiran)_MET_DP141245.jpg), Wikimedia Commons, CC0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/window.jpg"
+    },
+    {
+      "id": "recursive",
+      "name": "Accepting the not-accepting",
+      "sort_order": 5,
+      "category": "Ways in",
+      "keywords": [
+        "jhana",
+        "ways in"
+      ],
+      "metadata": {
+        "group": "Ways in",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/recursive.jpg",
+            "scene": "Accepting the not-accepting",
+            "artist": "Alf van Beem",
+            "artist_dates": "2013-12-15 12:23:42",
+            "edition": "Wikimedia Commons",
+            "license": "CC0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Droste_Cacao_-_Pastilles_blikje_van_250_gram,_foto_1.JPG"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Droste_Cacao_-_Pastilles_blikje_van_250_gram,_foto_1.JPG"
+      },
+      "sections": {
+        "What it points to": "Can't accept a feeling? Accept that you can't. Resisting that too? Accept the resisting. Each layer met kindly loosens the one beneath, like the Droste tin that holds a picture of itself. Jhourney calls this recursive self-acceptance.",
+        "To reflect": "What is the next layer to welcome?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Picture": "Alf van Beem, 2013-12-15 12:23:42. [Droste Cacao - Pastilles blikje van 250 gram, foto 1.JPG](https://commons.wikimedia.org/wiki/File:Droste_Cacao_-_Pastilles_blikje_van_250_gram,_foto_1.JPG), Wikimedia Commons, CC0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/recursive.jpg"
+    },
+    {
+      "id": "collected",
+      "name": "Collected and at ease",
+      "sort_order": 6,
+      "category": "Ways in",
+      "keywords": [
+        "jhana",
+        "ways in"
+      ],
+      "metadata": {
+        "group": "Ways in",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/collected.jpg",
+            "scene": "Collected and at ease",
+            "artist": "anonymous",
+            "artist_dates": "0300",
+            "edition": "Wikimedia Commons",
+            "license": "CC0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Afghanistan,_Gandhara,_Hadda,_late_Kushan_Period_-_Seated_Buddha_-_1967.39_-_Cleveland_Museum_of_Art.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Afghanistan,_Gandhara,_Hadda,_late_Kushan_Period_-_Seated_Buddha_-_1967.39_-_Cleveland_Museum_of_Art.jpg"
+      },
+      "sections": {
+        "What it points to": "Two skills that grow together: collectedness, being gathered on one thing as you can be lost in music; and ease, meeting whatever comes, distraction included, without a fight. Picture your many parts both pointing one way and trusting each other.",
+        "To reflect": "Which is missing now, the gathering or the ease?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Picture": "anonymous, 0300. [Afghanistan, Gandhara, Hadda, late Kushan Period - Seated Buddha - 1967.39 - Cleveland Museum of Art.jpg](https://commons.wikimedia.org/wiki/File:Afghanistan,_Gandhara,_Hadda,_late_Kushan_Period_-_Seated_Buddha_-_1967.39_-_Cleveland_Museum_of_Art.jpg), Wikimedia Commons, CC0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/collected.jpg"
+    },
+    {
+      "id": "debt",
+      "name": "Covetousness for the world · like a debt",
+      "sort_order": 7,
+      "category": "The five hindrances",
+      "keywords": [
+        "jhana",
+        "the five hindrances"
+      ],
+      "metadata": {
+        "group": "The five hindrances",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/debt.jpg",
+            "scene": "Covetousness for the world · like a debt",
+            "artist": "Quinten Metsys",
+            "artist_dates": "1514",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Massysm_Quentin_%E2%80%94_The_Moneylender_and_his_Wife_%E2%80%94_1514.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Massysm_Quentin_%E2%80%94_The_Moneylender_and_his_Wife_%E2%80%94_1514.jpg"
+      },
+      "sections": {
+        "In the old words": "\"Suppose a man who has gotten into debt were to apply himself to work, and his efforts proved successful. He would pay off the original loan and have enough left over to support his partner.\"\n\nMN 39, Bhikkhu Sujato's translation, CC0 (SuttaCentral). The sutta likens the five hindrances, in turn, to a debt, a disease, a prison, slavery and a desert crossing, and their giving up to freedom from debt, good health, release, emancipation and sanctuary.",
+        "To reflect": "What are you still paying for?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 39, the Longer Discourse at Assapura](https://suttacentral.net/mn39/en/sujato)",
+        "Picture": "Quinten Metsys, 1514. [Massysm Quentin — The Moneylender and his Wife — 1514.jpg](https://commons.wikimedia.org/wiki/File:Massysm_Quentin_%E2%80%94_The_Moneylender_and_his_Wife_%E2%80%94_1514.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/debt.jpg"
+    },
+    {
+      "id": "sick",
+      "name": "Ill will and malevolence · like a disease",
+      "sort_order": 8,
+      "category": "The five hindrances",
+      "keywords": [
+        "jhana",
+        "the five hindrances"
+      ],
+      "metadata": {
+        "group": "The five hindrances",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/sick.jpg",
+            "scene": "Ill will and malevolence · like a disease",
+            "artist": "Helene Schjerfbeck",
+            "artist_dates": "1888 ; 2016-06-13 11:25",
+            "edition": "Wikimedia Commons",
+            "license": "CC0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Helene_Schjerfbeck_(1862-1946)-_The_Convalescent_-_Toipilas_-_Konvalescenten_(32721924996).jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Helene_Schjerfbeck_(1862-1946)-_The_Convalescent_-_Toipilas_-_Konvalescenten_(32721924996).jpg"
+      },
+      "sections": {
+        "In the old words": "\"Suppose a person was sick, suffering, gravely ill. They'd lose their appetite and get physically weak. But after some time they'd recover from that illness, and regain their appetite and their strength.\"\n\nMN 39, Bhikkhu Sujato's translation, CC0 (SuttaCentral). The sutta likens the five hindrances, in turn, to a debt, a disease, a prison, slavery and a desert crossing, and their giving up to freedom from debt, good health, release, emancipation and sanctuary.",
+        "To reflect": "Whom are you holding against yourself?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 39, the Longer Discourse at Assapura](https://suttacentral.net/mn39/en/sujato)",
+        "Picture": "Helene Schjerfbeck, 1888 ; 2016-06-13 11:25. [Helene Schjerfbeck (1862-1946)- The Convalescent - Toipilas - Konvalescenten (32721924996).jpg](https://commons.wikimedia.org/wiki/File:Helene_Schjerfbeck_(1862-1946)-_The_Convalescent_-_Toipilas_-_Konvalescenten_(32721924996).jpg), Wikimedia Commons, CC0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/sick.jpg"
+    },
+    {
+      "id": "prison",
+      "name": "Dullness and drowsiness · like a prison",
+      "sort_order": 9,
+      "category": "The five hindrances",
+      "keywords": [
+        "jhana",
+        "the five hindrances"
+      ],
+      "metadata": {
+        "group": "The five hindrances",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/prison.jpg",
+            "scene": "Dullness and drowsiness · like a prison",
+            "artist": "Giovanni Battista Piranesi",
+            "artist_dates": "between 1749 and 1750",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Piranesi_-_Carceri_d%27Invenzione_-_WGA17843.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Piranesi_-_Carceri_d%27Invenzione_-_WGA17843.jpg"
+      },
+      "sections": {
+        "In the old words": "\"Suppose a person was imprisoned in a jail. But after some time they were released from jail, safe and sound, with no loss of wealth.\"\n\nMN 39, Bhikkhu Sujato's translation, CC0 (SuttaCentral). The sutta likens the five hindrances, in turn, to a debt, a disease, a prison, slavery and a desert crossing, and their giving up to freedom from debt, good health, release, emancipation and sanctuary.",
+        "To reflect": "What would let a little light in?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 39, the Longer Discourse at Assapura](https://suttacentral.net/mn39/en/sujato)",
+        "Picture": "Giovanni Battista Piranesi, between 1749 and 1750. [Giovanni Battista Piranesi - Carceri d'Invenzione - WGA17843.jpg](https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Piranesi_-_Carceri_d%27Invenzione_-_WGA17843.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/prison.jpg"
+    },
+    {
+      "id": "servitude",
+      "name": "Restlessness and remorse · like slavery",
+      "sort_order": 10,
+      "category": "The five hindrances",
+      "keywords": [
+        "jhana",
+        "the five hindrances"
+      ],
+      "metadata": {
+        "group": "The five hindrances",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/servitude.jpg",
+            "scene": "Restlessness and remorse · like slavery",
+            "artist": "Martin Drolling",
+            "artist_dates": "1700s",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:A_young_woman_setting_a_bird_free_from_a_cage_at_an_open_window.png"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:A_young_woman_setting_a_bird_free_from_a_cage_at_an_open_window.png"
+      },
+      "sections": {
+        "In the old words": "\"Suppose a person was a bondservant. They would not be their own master, but indentured to another, unable to go where they wish. But after some time they'd be freed from servitude.\"\n\nMN 39, Bhikkhu Sujato's translation, CC0 (SuttaCentral). The sutta likens the five hindrances, in turn, to a debt, a disease, a prison, slavery and a desert crossing, and their giving up to freedom from debt, good health, release, emancipation and sanctuary.",
+        "To reflect": "What keeps you running?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 39, the Longer Discourse at Assapura](https://suttacentral.net/mn39/en/sujato)",
+        "Picture": "Martin Drolling, 1700s. [A young woman setting a bird free from a cage at an open window.png](https://commons.wikimedia.org/wiki/File:A_young_woman_setting_a_bird_free_from_a_cage_at_an_open_window.png), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/servitude.jpg"
+    },
+    {
+      "id": "desert",
+      "name": "Doubt · like a desert crossing",
+      "sort_order": 11,
+      "category": "The five hindrances",
+      "keywords": [
+        "jhana",
+        "the five hindrances"
+      ],
+      "metadata": {
+        "group": "The five hindrances",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/desert.jpg",
+            "scene": "Doubt · like a desert crossing",
+            "artist": "Jean-Léon Gérôme",
+            "artist_dates": "1870",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Riders_Crossing_The_Desert_(1870)_HQ.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Riders_Crossing_The_Desert_(1870)_HQ.jpg"
+      },
+      "sections": {
+        "In the old words": "\"Suppose there was a person with wealth and property who was traveling along a desert road. But after some time they crossed over the desert, safe and sound, with no loss of wealth.\"\n\nMN 39, Bhikkhu Sujato's translation, CC0 (SuttaCentral). The sutta likens the five hindrances, in turn, to a debt, a disease, a prison, slavery and a desert crossing, and their giving up to freedom from debt, good health, release, emancipation and sanctuary.",
+        "To reflect": "What would you try if you stopped deciding first?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 39, the Longer Discourse at Assapura](https://suttacentral.net/mn39/en/sujato)",
+        "Picture": "Jean-Léon Gérôme, 1870. [Jean-Léon Gérôme - Riders Crossing The Desert (1870) HQ.jpg](https://commons.wikimedia.org/wiki/File:Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Riders_Crossing_The_Desert_(1870)_HQ.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/desert.jpg"
+    },
+    {
+      "id": "jhana1",
+      "name": "The first absorption · bath powder",
+      "sort_order": 12,
+      "category": "The four absorptions",
+      "keywords": [
+        "jhana",
+        "the four absorptions"
+      ],
+      "metadata": {
+        "group": "The four absorptions",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/jhana1.jpg",
+            "scene": "The first absorption · bath powder",
+            "artist": "Unknown",
+            "artist_dates": "-1550",
+            "edition": "Wikimedia Commons",
+            "license": "CC0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Romania,_possibly_Cirna,_Middle_Bronze_Age_-_Large_Bowl_-_1993.229_-_Cleveland_Museum_of_Art.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Romania,_possibly_Cirna,_Middle_Bronze_Age_-_Large_Bowl_-_1993.229_-_Cleveland_Museum_of_Art.jpg"
+      },
+      "sections": {
+        "In the old words": "\"Furthermore, a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected.\"\n\n\"It's like when a deft bathroom attendant or their apprentice pours bath powder into a bronze dish, sprinkling it little by little with water. They knead it until the ball of bath powder is soaked and saturated with moisture, spread through inside and out; yet no moisture oozes out.\"\n\nMN 119, Bhikkhu Sujato's translation, CC0 (SuttaCentral).",
+        "To reflect": "What is soaking through you?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 119, Mindfulness of the Body](https://suttacentral.net/mn119/en/sujato)",
+        "Picture": "Unknown artist, -1550. [Romania, possibly Cirna, Middle Bronze Age - Large Bowl - 1993.229 - Cleveland Museum of Art.jpg](https://commons.wikimedia.org/wiki/File:Romania,_possibly_Cirna,_Middle_Bronze_Age_-_Large_Bowl_-_1993.229_-_Cleveland_Museum_of_Art.jpg), Wikimedia Commons, CC0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/jhana1.jpg"
+    },
+    {
+      "id": "jhana2",
+      "name": "The second absorption · a lake fed by a spring",
+      "sort_order": 13,
+      "category": "The four absorptions",
+      "keywords": [
+        "jhana",
+        "the four absorptions"
+      ],
+      "metadata": {
+        "group": "The four absorptions",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/jhana2.jpg",
+            "scene": "The second absorption · a lake fed by a spring",
+            "artist": "Thomas Cole",
+            "artist_dates": "1844",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Cole_Thomas_American_Lake_Scene_1844.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Cole_Thomas_American_Lake_Scene_1844.jpg"
+      },
+      "sections": {
+        "In the old words": "\"Furthermore, as the placing of the mind and keeping it connected are stilled, a mendicant enters and remains in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one.\"\n\n\"It's like a deep lake fed by spring water. There's no inlet to the east, west, north, or south … But the stream of cool water welling up in the lake drenches, steeps, fills, and spreads throughout the lake.\"\n\nMN 119, Bhikkhu Sujato's translation, CC0 (SuttaCentral).",
+        "To reflect": "What wells up when you stop reaching?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 119, Mindfulness of the Body](https://suttacentral.net/mn119/en/sujato)",
+        "Picture": "Thomas Cole, 1844. [Cole Thomas American Lake Scene 1844.jpg](https://commons.wikimedia.org/wiki/File:Cole_Thomas_American_Lake_Scene_1844.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/jhana2.jpg"
+    },
+    {
+      "id": "jhana3",
+      "name": "The third absorption · lotuses under water",
+      "sort_order": 14,
+      "category": "The four absorptions",
+      "keywords": [
+        "jhana",
+        "the four absorptions"
+      ],
+      "metadata": {
+        "group": "The four absorptions",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/jhana3.jpg",
+            "scene": "The third absorption · lotuses under water",
+            "artist": "Claude Monet",
+            "artist_dates": "1915",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Claude_Monet_-_Seerosen.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Claude_Monet_-_Seerosen.jpg"
+      },
+      "sections": {
+        "In the old words": "\"Furthermore, with the fading away of rapture, a mendicant enters and remains in the third absorption. They meditate with equanimity, mindful and aware.\"\n\n\"It's like a pool with blue water lilies, or pink or white lotuses. Some of them sprout and grow in the water without rising above it, thriving underwater. From the tip to the root they're drenched, steeped, filled, and soaked with cool water.\"\n\nMN 119, Bhikkhu Sujato's translation, CC0 (SuttaCentral).",
+        "To reflect": "What grows in you without coming up for air?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 119, Mindfulness of the Body](https://suttacentral.net/mn119/en/sujato)",
+        "Picture": "Claude Monet, 1915. [Claude Monet - Seerosen.jpg](https://commons.wikimedia.org/wiki/File:Claude_Monet_-_Seerosen.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/jhana3.jpg"
+    },
+    {
+      "id": "jhana4",
+      "name": "The fourth absorption · white cloth",
+      "sort_order": 15,
+      "category": "The four absorptions",
+      "keywords": [
+        "jhana",
+        "the four absorptions"
+      ],
+      "metadata": {
+        "group": "The four absorptions",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/jhana4.jpg",
+            "scene": "The fourth absorption · white cloth",
+            "artist": "James McNeill Whistler",
+            "artist_dates": "1862",
+            "edition": "Wikimedia Commons",
+            "license": "CC0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:James_McNeill_Whistler,_Symphony_in_White,_No._1_-_The_White_Girl,_1862,_NGA_12198.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:James_McNeill_Whistler,_Symphony_in_White,_No._1_-_The_White_Girl,_1862,_NGA_12198.jpg"
+      },
+      "sections": {
+        "In the old words": "\"Furthermore, giving up pleasure and pain, and ending former happiness and sadness, a mendicant enters and remains in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness.\"\n\n\"It's like someone sitting wrapped from head to foot with white cloth. There's no part of the body that's not spread over with white cloth.\"\n\nMN 119, Bhikkhu Sujato's translation, CC0 (SuttaCentral).",
+        "To reflect": "What would it be like to want nothing from this moment?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 119, Mindfulness of the Body](https://suttacentral.net/mn119/en/sujato)",
+        "Picture": "James McNeill Whistler, 1862. [James McNeill Whistler, Symphony in White, No. 1 - The White Girl, 1862, NGA 12198.jpg](https://commons.wikimedia.org/wiki/File:James_McNeill_Whistler,_Symphony_in_White,_No._1_-_The_White_Girl,_1862,_NGA_12198.jpg), Wikimedia Commons, CC0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/jhana4.jpg"
+    },
+    {
+      "id": "space",
+      "name": "Infinite space",
+      "sort_order": 16,
+      "category": "The formless dimensions",
+      "keywords": [
+        "jhana",
+        "the formless dimensions"
+      ],
+      "metadata": {
+        "group": "The formless dimensions",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/space.jpg",
+            "scene": "Infinite space",
+            "artist": "NASA and the European Space Agency.",
+            "artist_dates": "between 3 September 2003 and 16 January ",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Hubble_ultra_deep_field.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Hubble_ultra_deep_field.jpg"
+      },
+      "sections": {
+        "In the old words": "\"Furthermore, a mendicant, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that 'space is infinite', enters and remains in the dimension of infinite space.\"\n\nMN 26, Bhikkhu Sujato's translation, CC0 (SuttaCentral).",
+        "To reflect": "How much room is there?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 26, The Noble Search](https://suttacentral.net/mn26/en/sujato)",
+        "Picture": "NASA and the European Space Agency., between 3 September 2003 and 16 January . [Hubble ultra deep field.jpg](https://commons.wikimedia.org/wiki/File:Hubble_ultra_deep_field.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/space.jpg"
+    },
+    {
+      "id": "consciousness",
+      "name": "Infinite consciousness",
+      "sort_order": 17,
+      "category": "The formless dimensions",
+      "keywords": [
+        "jhana",
+        "the formless dimensions"
+      ],
+      "metadata": {
+        "group": "The formless dimensions",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/consciousness.jpg",
+            "scene": "Infinite consciousness",
+            "artist": "Vincent van Gogh",
+            "artist_dates": "1889",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
+      },
+      "sections": {
+        "In the old words": "\"Furthermore, a mendicant, going totally beyond the dimension of infinite space, aware that 'consciousness is infinite', enters and remains in the dimension of infinite consciousness.\"\n\nMN 26, Bhikkhu Sujato's translation, CC0 (SuttaCentral).",
+        "To reflect": "What is knowing all of this?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 26, The Noble Search](https://suttacentral.net/mn26/en/sujato)",
+        "Picture": "Vincent van Gogh, 1889. [Van Gogh - Starry Night - Google Art Project.jpg](https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/consciousness.jpg"
+    },
+    {
+      "id": "nothingness",
+      "name": "Nothingness",
+      "sort_order": 18,
+      "category": "The formless dimensions",
+      "keywords": [
+        "jhana",
+        "the formless dimensions"
+      ],
+      "metadata": {
+        "group": "The formless dimensions",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/nothingness.jpg",
+            "scene": "Nothingness",
+            "artist": "Hasegawa Tōhaku",
+            "artist_dates": "16th century",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Hasegawa_Tohaku_-_Pine_Trees_(Sh%C5%8Drin-zu_by%C5%8Dbu)_-_left_hand_screen.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Hasegawa_Tohaku_-_Pine_Trees_(Sh%C5%8Drin-zu_by%C5%8Dbu)_-_left_hand_screen.jpg"
+      },
+      "sections": {
+        "In the old words": "\"Furthermore, a mendicant, going totally beyond the dimension of infinite consciousness, aware that 'there is nothing at all', enters and remains in the dimension of nothingness.\"\n\nMN 26, Bhikkhu Sujato's translation, CC0 (SuttaCentral).",
+        "To reflect": "What is left when nothing is needed?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 26, The Noble Search](https://suttacentral.net/mn26/en/sujato)",
+        "Picture": "Hasegawa Tōhaku, 16th century. [Hasegawa Tohaku - Pine Trees (Shōrin-zu byōbu) - left hand screen.jpg](https://commons.wikimedia.org/wiki/File:Hasegawa_Tohaku_-_Pine_Trees_(Sh%C5%8Drin-zu_by%C5%8Dbu)_-_left_hand_screen.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/nothingness.jpg"
+    },
+    {
+      "id": "neither",
+      "name": "Neither perception nor non-perception",
+      "sort_order": 19,
+      "category": "The formless dimensions",
+      "keywords": [
+        "jhana",
+        "the formless dimensions"
+      ],
+      "metadata": {
+        "group": "The formless dimensions",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/neither.jpg",
+            "scene": "Neither perception nor non-perception",
+            "artist": "Mu Qi",
+            "artist_dates": "13th century; Late Song Dynasty and earl",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:%E5%85%AD%E6%9F%BF%E5%9B%BE.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:%E5%85%AD%E6%9F%BF%E5%9B%BE.jpg"
+      },
+      "sections": {
+        "In the old words": "\"Furthermore, a mendicant, going totally beyond the dimension of nothingness, enters and remains in the dimension of neither perception nor non-perception.\"\n\nMN 26, Bhikkhu Sujato's translation, CC0 (SuttaCentral).",
+        "To reflect": "Can you rest where words stop?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [MN 26, The Noble Search](https://suttacentral.net/mn26/en/sujato)",
+        "Picture": "Mu Qi, 13th century; Late Song Dynasty and earl. [六柿图.jpg](https://commons.wikimedia.org/wiki/File:%E5%85%AD%E6%9F%BF%E5%9B%BE.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/jhanas-draft/images/neither.jpg"
+    }
+  ]
+}

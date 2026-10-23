@@ -304,6 +304,8 @@ def build():
         if slug in SKIP or slug.endswith("-course") or not os.path.exists(path):
             continue
         g = json.load(open(path, encoding="utf-8"))
+        if (g.get("metadata") or {}).get("status") == "draft":   # drafts stay out of search until listed (Oct 23 2026)
+            continue
         items = [it for it in g.get("nodes", []) if is_card(it) and it.get("id")]
         if not items:
             continue
