@@ -31,6 +31,9 @@ repo says where the image came from).
 | `etteilla-iii-oracle-des-dames` | record | 94 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 94 | — |
 | `ganjifa` | record | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Image: collections.lacma.org ×1 |
 | `golden-dawn-book-t-tarot` | record | 104 | 104 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | muzendo.jp ×104 |
+| `greek-pantheon-draft` | living | 20 | 16 | 0 | 1 | 3 | 0 | 0 | 0 | 0 | 0 | Own work ×6; Jastrow (2006) ×2; [1] ×2 |
+| `hindu-pantheon-draft` | living | 21 | 19 | 0 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | www.columbia.edu ×3; www.coolmags.net ×2; www.archerindia.com ×2 |
+| `jhanas-draft` | living | 20 | 19 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | This file was donated to Wikimedia Commons as part of a proj ×3; clevelandart.org ×2; wellcomeimages.org ×1 |
 | `madiao-money-cards` | record | 13 | 13 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | LSH 102351 (sm_dig14230) ×2; LSH 102352 (sm_dig14231) ×1; LSH 102353 (sm_dig14232) ×1 |
 | `mamluk-deck` | record | 18 | 18 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
 | `mantegna-tarocchi` | record | 64 | 50 | 0 | 0 | 0 | 0 | 0 | 0 | 14 | 0 | clevelandart.org ×49; Cleveland Museum of Art ×1 |
