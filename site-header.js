@@ -65,7 +65,6 @@
     ['cards',    'Cards',    PFX + 'archive/cards.html'],
     ['lenses',   'Lenses', PFX + 'viewers/prototypes/lenses.html'],
     ['tree',     'Tree',     PFX + 'archive/tree-viewer.html'],
-    ['table',    'Card Table', PFX + 'viewers/table.html'],
   ];
   const GRAMMAR_VIEWS = [
     ['treeoflife', 'Tree of Tarot', PFX + 'viewers/genealogy-tree.html'],
@@ -81,16 +80,19 @@
     ['github', 'GitHub',  'https://github.com/PlayfulProcess/recursive-tarot', 't-github', true],
   ];
   const GITHUB_URL = 'https://github.com/PlayfulProcess/recursive-tarot';
-  // Play — a dropdown of the games + readings (the pill itself links to the Play hub).
-  const PLAY_MENU = [
-    [PFX + 'pages/games/tarocchino.html', 'Tarocchino di Bologna'],
-    [PFX + 'pages/games/madiao.html',     'Ma Diao 馬吊'],
-    [PFX + 'pages/games/trionfi.html',    'Trionfi'],
-    [PFX + 'viewers/caster-studio.html',  'Spread Caster — build · cast · send'],
-    [PFX + 'viewers/table.html',          'Card Table — less · keep · more'],
-    [PFX + 'archive/cards.html?src=../tarot/bus-passengers/grammar.json', 'Bus Passengers — who’s driving?'],
-    ['https://flow.recursive.eco/',   'Oracle ↗', true],
-    [PFX + 'pages/play.html',             'All games & readings →'],
+  // Play — a dropdown of readings, then the old games (the pill itself links to the Play hub).
+  // Tools only: decks live in Views and on the home page, not here (Oct 23 2026).
+  const PLAY_GROUPS = [
+    ['Read the cards', [
+      [PFX + 'viewers/caster-studio.html',  'Spread Caster — build · cast · save'],
+      [PFX + 'viewers/table.html',          'Card Table — less · keep · more'],
+      ['https://recursive.eco/',            'Oracle on recursive.eco ↗', true],
+    ]],
+    ['Play the old games', [
+      [PFX + 'pages/games/trionfi.html',    'Trionfi — the first tarot game'],
+      [PFX + 'pages/games/tarocchino.html', 'Tarocchino — still played in Bologna'],
+      [PFX + 'pages/games/madiao.html',     'Ma Diao 馬吊 — an early Chinese card game'],
+    ]],
   ];
   // Home — a dropdown that uncollapses to About (the pill itself links to the homepage).
   const HOME_MENU = [
@@ -418,7 +420,8 @@
             <span class="dd">
               <a class="tab t-caster dd-btn${active === 'play' ? ' active' : ''}" href="${PFX}pages/play.html" title="Play" aria-haspopup="true" aria-expanded="false" aria-label="Play menu">${glyph('play', 'Play')}</a>
               <span class="dd-menu">
-                ${PLAY_MENU.map(([href, label, ext]) => `<a href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`).join('')}
+                ${PLAY_GROUPS.map(([cap, items]) => `<span class="dd-cap">${cap}</span>` + items.map(([href, label, ext]) => `<a href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`).join('')).join('')}
+                <a href="${PFX}pages/play.html" style="border-top:1px solid #d8d2c6;margin-top:4px;padding-top:9px">All games &amp; readings →</a>
               </span>
             </span>
             ${TOOLS.map(tab).join('')}
