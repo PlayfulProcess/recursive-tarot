@@ -1,5 +1,5 @@
 {
-  "_note": "Catalog for the all-courses gallery (pages/courses.html). One entry per course shown in the gallery. `deck` resolves that deck's cover_image_url from tarot/_collection.json at render time (so thumbnails follow the deck art); `thumb` is a direct image path when a deck cover isn't the right image. Keep the id/title in step with COURSE_GROUPS in site-header.js (the dropdown menu) — this file is the gallery's data, that array is the menu's.",
+  "_note": "Catalog for the all-courses gallery (pages/courses.html). One entry per course shown in the gallery. `deck` resolves that deck's cover_image_url from tarot/_collection.json at render time (so thumbnails follow the deck art); `thumb` is a direct image path when a deck cover isn't the right image. Keep the id/title in step with COURSE_GROUPS in site-header.js (the dropdown menu) — this file is the gallery's data, that array is the menu's. An entry may carry `href` (a page other than a course, e.g. a spread in the Caster) and `go` (its link label). Research chapters open in the course viewer as id \"../research/<file>\".",
   "groups": [
     {
       "name": "Start here",
@@ -14,12 +14,34 @@
       "courses": [
         { "id": "reading-the-cards", "title": "Reading the Cards", "blurb": "The full anthology — why read at all, setting the intention, and the ecosystem of voices to read through.", "deck": "golden-dawn-book-t-tarot" },
         { "id": "intention-setting", "title": "Intention Setting", "blurb": "Why still read tarot after it disappointed you — not as a fate, but as a gate — and the lenses to read through.", "deck": "oswald-wirth-tarot" },
-        { "id": "walking-the-golden-dawn-path", "title": "The Golden Dawn — the Map and the Walk", "blurb": "The most influential reading system the cards ever wore — Book T, the decans, the Rider-Waite-Smith deck that grew from it — and the pathworking practice that goes with it: each trump a gate you choose to walk through. Not prophecy.", "deck": "golden-dawn-book-t-tarot" },
         { "id": "the-order-of-the-trumps", "title": "The Order of the Trumps", "blurb": "Who set the order of the twenty-two trumps, and what it meant: three Italian orders, a preacher's list, the 1781 reversal, and why the Golden Dawn moved Strength and Justice.", "deck": "tarocchino-bologna" },
         { "id": "same-card-every-deck", "title": "Same Card, Every Deck", "blurb": "(Draft) Five centuries of the same twenty-two pictures in one comparable grid — a hands-on course in telling correlation from copying, and copying from a shared ancestor. Two sections live; six more on the way.", "deck": "sola-busca-tarot" },
         { "id": "your-card-table", "title": "Your Card Table", "blurb": "(Draft) Areas of your life down the side, less · keep · more across the top, one card in each cell. Then sit with it and decide. A practice, a notation, and a table to try.", "deck": "golden-dawn-book-t-tarot" },
         { "id": "ontoject-one-life", "title": "The Ontoject, One Life", "blurb": "(Study) The trumps of the Ontoject deck read as one life, from before conception to return, with the poem the deck grew from, an animated page, and why the Fool was never the Joker.", "deck": "ontoject-illustrated" },
-        { "id": "tarot-and-fiction", "title": "Tarot as a Source of Fiction", "blurb": "A publisher asked Calvino for a few pages about a fifteenth-century deck; he came back with a novel built out of the cards, then confessed exactly where he cheated. The writer, the commission, the machine — and how to run it yourself.", "deck": "visconti-sforza-tarot" }
+        { "id": "tarot-and-fiction", "title": "Tarot as a Source of Fiction", "blurb": "A publisher asked Calvino for a few pages about a fifteenth-century deck; he came back with a novel built out of the cards, then confessed exactly where he cheated. The writer, the commission, the machine — and how to run it yourself.", "deck": "visconti-sforza-tarot" },
+        { "id": "tarot-and-the-crack", "title": "Tarot & the Crack", "blurb": "From wanting one perfect system to explain the cosmos, to living with the crack that is always there. Why PlayfulProcess still shuffles the cards.", "deck": "anecdotes-tarot" }
+      ]
+    },
+    {
+      "name": "The Golden Dawn",
+      "courses": [
+        { "id": "walking-the-golden-dawn-path", "title": "The Golden Dawn — the Map and the Walk", "blurb": "The most influential reading system the cards ever wore — Book T, the decans, the Rider-Waite-Smith deck that grew from it — and the pathworking practice that goes with it: each trump a gate you choose to walk through. Not prophecy.", "deck": "golden-dawn-book-t-tarot" },
+        { "id": "golden-dawn-where-the-cards-went", "title": "Where the Cards Went", "blurb": "The Order wrote its tarot down but never printed a deck. From hand-copied cards to Wang, Dowson, the Ciceros and Thoth.", "deck": "rider-waite-smith-pictorial-key" },
+        { "id": "golden-dawn-dignities-not-reversals", "title": "Dignities, not Reversals", "blurb": "Book T reads a card by its neighbours and has no rule for a card upside down.", "deck": "papus-tarot-des-bohemiens" },
+        { "id": "../research/12-golden-dawn-book-t", "title": "The Golden Dawn: the Research Chapter", "blurb": "The founding and its forged pedigree, Book T, the schism of 1900, and who was in it.", "deck": "charles-vi-tarot" },
+        { "id": "../research/12b-crowley-thoth", "title": "Crowley & Harris: the Thoth Tarot", "blurb": "Why the name Thoth, what Crowley said he was doing, and what changed from Book T.", "deck": "etteilla-ii-egyptian" }
+      ]
+    },
+    {
+      "name": "The reading voices",
+      "courses": [
+        { "id": "kant-and-the-tarot", "title": "How Could Kant Read the Tarot?", "blurb": "Kant and tarot-as-divination were exact contemporaries. A reading from reason and duty.", "deck": "noblet-tarot" },
+        { "id": "marsha-linehan-reads-the-tarot", "title": "How Could DBT Read the Tarot?", "blurb": "Dialectical Behavior Therapy at the card table: accept what is, and change it.", "deck": "vieville-tarot" },
+        { "id": "jung-reads-the-tarot", "title": "Jung Reads the Tarot", "blurb": "Not your future but your unlived life: the shadow, the archetype, the figure waiting to be made conscious.", "deck": "minchiate-florence-tarot" },
+        { "id": "non-dual-tantra-reads-the-tarot", "title": "The Non-Dual Tantra Lens", "blurb": "The card as play of consciousness greeting itself; a hard card is a move in a game you co-author.", "deck": "thirty-six-tattvas" },
+        { "id": "post-activism-reads-the-tarot", "title": "The Post-Activism Lens", "blurb": "The card as a sanctuary where the stuck and the unspeakable can be hosted, not fixed.", "deck": "clown-town-tarot" },
+        { "id": "hospicing-modernity-reads-the-tarot", "title": "The Hospicing-Modernity Lens", "blurb": "Staying with what is dying and what is being born, without rushing to hope.", "deck": "belgian-tarot" },
+        { "id": "morality-is-an-ecosystem", "title": "Morality Is an Ecosystem", "blurb": "Why no single voice owns the meaning of a card: morality grows between many, like an ecosystem.", "deck": "paris-anonymous-tarot" }
       ]
     },
     {
@@ -28,6 +50,14 @@
         { "id": "why-a-reading-feels-personal", "title": "Why a Reading Feels So Personal", "blurb": "The chill is real; its explanation is documented psychology, not hidden knowledge. A deep dive into the evidence.", "deck": "etteilla-i-livre-de-thot" },
         { "id": "what-a-reading-can-do", "title": "What a Reading Can Do", "blurb": "Four non-magical mechanisms with real evidence — projection, re-narration, productive randomness, ritual — and the stance that unlocks them.", "deck": "court-de-gebelin-tarot" },
         { "id": "tarot-today", "title": "Tarot Today", "blurb": "A living question: why a card game is having a cultural moment, read against the data.", "deck": "petit-lenormand" }
+      ]
+    },
+    {
+      "name": "Lots, games and play",
+      "courses": [
+        { "id": "divination-traditions", "title": "How Humans Have Cast Lots", "blurb": "Yarrow stalks, oracle bones, the Pythia, rune-staves: structured randomness long before tarot.", "deck": "madiao-money-cards" },
+        { "id": "games-of-the-tarot", "title": "Games of the Tarot", "blurb": "A player's companion to the card game tarot was for its first three centuries.", "deck": "tarot-de-besancon" },
+        { "id": "test-the-spirits", "href": "../viewers/caster-studio.html?spread=test-the-spirits", "title": "Spread: Test the Spirits", "blurb": "Seven cards to test a voice by where it leads and what it grows. After Ignatius, Matthew 7 and the Kalama Sutta.", "deck": "mantegna-tarocchi", "go": "Lay the cards →" }
       ]
     },
     {
