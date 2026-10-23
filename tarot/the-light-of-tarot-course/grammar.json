@@ -13,16 +13,21 @@
   "description": "This essay has been folded into How the Cards Can Work. Its argument — Tolkien's sub-creation and Recovery, and 'the light of the tarot is in the eyes of the beholder' — lives there now, in the closing section 'Sub-creation — why the pictures are enough'.",
   "grammar_type": "custom",
   "creator_name": "PlayfulProcess",
-  "default_view": "course",
+  "default_view": "play",
+  "reading_mode_default": "continuous",
   "provenance": "reference",
+  "tags": [
+    "tarot",
+    "course"
+  ],
+  "import_visibility": "private",
   "metadata": {
     "common_name": "The Light of Tarot",
-    "category": "reference",
-    "source_mdx": "course/the-light-of-tarot.mdx"
+    "category": "course"
   },
-  "_generated": true,
-  "_built_by": "scripts/course_to_grammar.py",
-  "_source_mdx": "course/the-light-of-tarot.mdx",
+  "_generated": false,
+  "_built_by": "Converted once from course/the-light-of-tarot.mdx on 2026-10-23; this file is the source now (edit it, or the grammar in recursive.eco).",
+  "_source_mdx": "course/the-light-of-tarot.mdx (retired; in the repository's history)",
   "nodes": [
     {
       "id": "lesson-01-introduction",
@@ -30,7 +35,7 @@
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "*This essay has been folded into **[How the Cards Can Work](course-viewer.html?course=how-tarot-works)** — see its closing section, \"Sub-creation — why the pictures are enough,\" for Tolkien's sub-creation and Recovery, and for the closing thought that the light of the tarot is in the eyes of the beholder.*\n\nKept here only so old links still resolve."
+        "Content": "*This essay has been folded into **[How the Cards Can Work](https://tarot.recursive.eco/pages/course-viewer.html?course=how-tarot-works)** — see its closing section, \"Sub-creation — why the pictures are enough,\" for Tolkien's sub-creation and Recovery, and for the closing thought that the light of the tarot is in the eyes of the beholder.*\n\nKept here only so old links still resolve."
       }
     }
   ]

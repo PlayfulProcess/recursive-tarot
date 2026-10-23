@@ -301,7 +301,7 @@ def build():
         if os.path.basename(os.path.dirname(p)) not in DECKS)
     for slug in order:
         path = os.path.join(TAROT, slug, "grammar.json")
-        if slug in SKIP or slug.endswith("-course") or not os.path.exists(path):
+        if slug in SKIP or slug.endswith(("-course", "-booklet")) or not os.path.exists(path):
             continue
         g = json.load(open(path, encoding="utf-8"))
         if (g.get("metadata") or {}).get("status") == "draft":   # drafts stay out of search until listed (Oct 23 2026)

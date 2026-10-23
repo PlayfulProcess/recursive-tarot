@@ -13,16 +13,22 @@
   "description": "",
   "grammar_type": "custom",
   "creator_name": "PlayfulProcess",
-  "default_view": "course",
+  "default_view": "play",
+  "reading_mode_default": "continuous",
   "provenance": "reference",
+  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-besancon-cover.jpg",
+  "tags": [
+    "tarot",
+    "course",
+    "lots-games-and-play"
+  ],
   "metadata": {
     "common_name": "Games of the Tarot — A Player's Companion",
-    "category": "reference",
-    "source_mdx": "course/games-of-the-tarot.mdx"
+    "category": "course"
   },
-  "_generated": true,
-  "_built_by": "scripts/course_to_grammar.py",
-  "_source_mdx": "course/games-of-the-tarot.mdx",
+  "_generated": false,
+  "_built_by": "Converted once from course/games-of-the-tarot.mdx on 2026-10-23; this file is the source now (edit it, or the grammar in recursive.eco).",
+  "_source_mdx": "course/games-of-the-tarot.mdx (retired; in the repository's history)",
   "nodes": [
     {
       "id": "lesson-01-introduction",
@@ -111,7 +117,7 @@
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "*This course is a frame, not a finish.* These rules are written in our own words from the historical record — which means there are gaps to close and living variants to honour.\n\n- Where do our simplified rules diverge from the fullest historical/tournament versions (the *cricche*/*sequenze* bonuses, the Matto exchange)?\n- Which moves are securely documented, and which are reconstruction?\n- How do the living player communities actually deal these today, region by region?\n\n**A research prompt to paste into Claude:**\n\n> Compare our browser implementations of historical tarot games (Tarocchino di Bologna, Trionfi, Ma Diao) against the fullest scholarly and player-community rule sets (Dummett, the IPCS, pagat.com/McLeod). Identify every simplification we made, flag which rules are securely documented vs reconstructed, and propose the smallest faithful additions.\n\nFound a source, a correction, or a counter-argument? **[Here's how to contribute](course-viewer.html?course=how-to-contribute)** — edit the JSON or open a pull request. The loop closes when the people who use this library help tend it.\n\n*CC BY-SA 4.0 · PlayfulProcess · part of recursive.eco*"
+        "Content": "*This course is a frame, not a finish.* These rules are written in our own words from the historical record — which means there are gaps to close and living variants to honour.\n\n- Where do our simplified rules diverge from the fullest historical/tournament versions (the *cricche*/*sequenze* bonuses, the Matto exchange)?\n- Which moves are securely documented, and which are reconstruction?\n- How do the living player communities actually deal these today, region by region?\n\n**A research prompt to paste into Claude:**\n\n> Compare our browser implementations of historical tarot games (Tarocchino di Bologna, Trionfi, Ma Diao) against the fullest scholarly and player-community rule sets (Dummett, the IPCS, pagat.com/McLeod). Identify every simplification we made, flag which rules are securely documented vs reconstructed, and propose the smallest faithful additions.\n\nFound a source, a correction, or a counter-argument? **[Here's how to contribute](https://tarot.recursive.eco/pages/course-viewer.html?course=how-to-contribute)** — edit the JSON or open a pull request. The loop closes when the people who use this library help tend it.\n\n*CC BY-SA 4.0 · PlayfulProcess · part of recursive.eco*"
       }
     }
   ]

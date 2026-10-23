@@ -13,16 +13,22 @@
   "description": "The deep dive for contributors who want the powerful path: what GitHub and git actually are, how to run Claude Code on your own machine, the session habits that make sure no work is ever lost, and how to keep private context private while contributing to the public commons.",
   "grammar_type": "custom",
   "creator_name": "PlayfulProcess",
-  "default_view": "course",
+  "default_view": "play",
+  "reading_mode_default": "continuous",
   "provenance": "reference",
+  "cover_image_url": "https://tarot.recursive.eco/pages/courses/images/shot-course.png",
+  "tags": [
+    "tarot",
+    "course",
+    "build-with-us"
+  ],
   "metadata": {
     "common_name": "Working with Claude Desktop",
-    "category": "reference",
-    "source_mdx": "course/working-with-claude-desktop.mdx"
+    "category": "course"
   },
-  "_generated": true,
-  "_built_by": "scripts/course_to_grammar.py",
-  "_source_mdx": "course/working-with-claude-desktop.mdx",
+  "_generated": false,
+  "_built_by": "Converted once from course/working-with-claude-desktop.mdx on 2026-10-23; this file is the source now (edit it, or the grammar in recursive.eco).",
+  "_source_mdx": "course/working-with-claude-desktop.mdx (retired; in the repository's history)",
   "nodes": [
     {
       "id": "lesson-01-introduction",
@@ -30,7 +36,7 @@
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "[Ways to Contribute](course-viewer.html?course=how-to-contribute) lays out the rungs, and it's worth saying plainly where this page sits: **claude.ai in the browser is the easiest version**, and for most contributions it is genuinely enough. Claude Desktop and Claude Code are the more advanced, more powerful version — Claude working directly on files on your own machine, able to read the whole repo, edit many files at once, preview the site locally, and push the result back. This page is the deep dive for when you're ready for that step. Nothing here assumes you've used a terminal before."
+        "Content": "[Ways to Contribute](https://tarot.recursive.eco/pages/course-viewer.html?course=how-to-contribute) lays out the rungs, and it's worth saying plainly where this page sits: **claude.ai in the browser is the easiest version**, and for most contributions it is genuinely enough. Claude Desktop and Claude Code are the more advanced, more powerful version — Claude working directly on files on your own machine, able to read the whole repo, edit many files at once, preview the site locally, and push the result back. This page is the deep dive for when you're ready for that step. Nothing here assumes you've used a terminal before."
       }
     },
     {
@@ -120,7 +126,7 @@
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "Don't start with any of this. Start with the smallest real thing that bothers you — a wrong date, a clumsy sentence, a missing source — and fix it on whichever rung of [Ways to Contribute](course-viewer.html?course=how-to-contribute) feels easy today. The desktop setup on this page will still be here when a one-line fix stops being enough. The commons grows one small correction at a time, and it does not care which rung the correction came from."
+        "Content": "Don't start with any of this. Start with the smallest real thing that bothers you — a wrong date, a clumsy sentence, a missing source — and fix it on whichever rung of [Ways to Contribute](https://tarot.recursive.eco/pages/course-viewer.html?course=how-to-contribute) feels easy today. The desktop setup on this page will still be here when a one-line fix stops being enough. The commons grows one small correction at a time, and it does not care which rung the correction came from."
       }
     }
   ]
