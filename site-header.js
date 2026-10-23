@@ -52,6 +52,12 @@
 
   // Shared-identity widget (reads the .recursive.eco session cookie; L1 of the
   // integration ladder). Loaded once; renders as <recursive-auth> in the bar.
+  // The tab icon: many pages never linked one and showed an empty tab (Oct 23 2026).
+  if (!document.querySelector('link[rel~="icon"]')) {
+    const ic = document.createElement('link');
+    ic.rel = 'icon'; ic.type = 'image/svg+xml'; ic.href = PFX + 'public/favicon.svg?v=2';
+    document.head.appendChild(ic);
+  }
   if (!document.querySelector('script[data-recursive-auth]')) {
     const s = document.createElement('script');
     s.src = PFX + 'auth-widget.js?v=2';
