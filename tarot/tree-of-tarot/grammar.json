@@ -381,14 +381,18 @@
           "deck-marseille-conver"
         ],
         "when": "Piedmont, 19th c.→",
-        "year": 1850
+        "year": 1850,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-20",
+        "deck": "Tarocco Piemontese"
       },
       "sections": {
         "What it is": "The Piedmontese playing pattern, a later Italian descendant of the Marseille type.",
         "Where & when": "Piedmont, 19th c.→",
         "Lineage": "C-order, the living Italian game pattern.",
-        "In this library": "🔨 Planned."
-      }
+        "In this library": "✅ Built in this library (tarot/tarocco-piemontese): all 78 cards of the Solesio pack, Turin 1865 (BnF)."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-01.jpg"
     },
     {
       "id": "deck-lombardy",
