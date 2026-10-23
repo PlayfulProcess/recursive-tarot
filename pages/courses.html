@@ -33,12 +33,15 @@
   .group{margin:46px 0 0}
   .group:first-child{margin-top:40px}
   .glabel{display:flex;align-items:baseline;gap:12px;margin:0 0 16px}
+  .glabel::before{content:'';flex:1;height:1px;background:var(--line);align-self:center}
   .glabel h2{font-family:var(--serif-display);font-weight:600;font-size:clamp(19px,3vw,23px);
     margin:0;color:var(--ink);white-space:nowrap}
   .glabel::after{content:'';flex:1;height:1px;background:var(--line);align-self:center}
 
   /* ── course cards: same hover-lift + contained-art idiom as the homepage's tiles ── */
-  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+  /* rows centre, so a short last row (or a one-card group) sits in the middle, not hard left */
+  .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+  .cards > .ccard{flex:0 1 260px;min-width:220px}
   .ccard{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line-soft);
     border-radius:12px;overflow:hidden;text-decoration:none;color:var(--ink);
     transition:transform .15s,box-shadow .15s,border-color .15s}
@@ -110,13 +113,13 @@
       const draftMatch = /^\(draft\)\s*/i.exec(c.blurb || '');
       const badge = draftMatch ? '<span class="badge">Draft</span>' : '';
       const blurb = draftMatch ? c.blurb.slice(draftMatch[0].length) : c.blurb;
-      return `<a class="ccard" href="course-viewer.html?course=${esc(c.id)}">
+      return `<a class="ccard" href="${esc(c.href || `course-viewer.html?course=${c.id}`)}">
         <div class="cover">${cover}</div>
         <div class="body">
           ${badge}
           <h3>${esc(c.title)}</h3>
           <p class="blurb">${esc(blurb)}</p>
-          <span class="go">Read →</span>
+          <span class="go">${esc(c.go || 'Read →')}</span>
         </div>
       </a>`;
     }).join('');

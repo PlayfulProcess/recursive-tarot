@@ -499,7 +499,7 @@ const $ = id => document.getElementById(id);
   }
 
   // Spread dropdown — from spreads.json, plus Custom.
-  let sdoc; try { sdoc = await (await fetch('spreads.json')).json(); } catch(e){ sdoc = { spreads: [] }; }
+  let sdoc; try { sdoc = await (await fetch('spreads.json', { cache: 'no-cache' })).json(); } catch(e){ sdoc = { spreads: [] }; }
   const ssel = $('spread'); ssel.innerHTML = '';
   (sdoc.spreads || []).forEach(s => { spreadsById[s.id] = s;
     const o = document.createElement('option'); o.value = s.id; o.textContent = s.name; ssel.appendChild(o); });
