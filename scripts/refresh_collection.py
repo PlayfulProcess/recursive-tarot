@@ -40,6 +40,7 @@ YEARS = {
     "etteilla-i-livre-de-thot":      (1789, "1788–89"),
     "etteilla-ii-egyptian":          (1838, "c. 1838"),
     "etteilla-iii-oracle-des-dames": (1865, "c. 1865"),
+    "tarocco-piemontese":            (1865, "1865"),
     "oswald-wirth-tarot":            (1889, "1889"),
     "papus-tarot-des-bohemiens":     (1889, "1889"),
     "book-t":                        (1912, "c. 1888 · printed 1912"),

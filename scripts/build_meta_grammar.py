@@ -85,6 +85,10 @@ DECKS = {
         ed=dict(date="18th c.→ (pattern settled early 19th c.)", maker="Sicilian cardmakers; Modiano prints it today", patron="—",
                 context="The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil", print="Woodcut, later chromolithograph",
                 orientation="Game (still played)")),
+ "tarocco-piemontese":         dict(label="Tarocco Piemontese (Solesio)", era="1865 · Turin", era_sort=3,
+        ed=dict(date="1865 (pattern from c. 1735)", maker="F. F. Solesio, Turin", patron="—",
+                context="The Marseille pattern made reversible; the tarot most played in northern Italy", print="Printed, double-ended",
+                orientation="Game (still played)")),
  "tarot-de-marseille-conver":  dict(label="Tarot de Marseille (Conver)", era="1760 · Tarot de Marseille", era_sort=3,
         ed=dict(date="1760", maker="Nicolas Conver, master cardmaker, Marseille", patron="Commercial cardmaking trade",
                 context="The canonical Marseille woodblock pattern; later the occult era's reference image", print="Woodcut with stencil colouring",
@@ -181,6 +185,7 @@ CLASS = {
  "minchiate-florence-tarot":      dict(order="A", function="game"),
  "tarocchino-bologna":            dict(order="A", function="game"),
  "tarocco-siciliano":             dict(order="A", function="game"),   # Oct 23 2026: A-order offshoot (tree-of-tarot)
+ "tarocco-piemontese":            dict(order="C", function="game"),   # Oct 23 2026: Marseille-derived (tree-of-tarot, C branch)
  "tarot-de-marseille-conver":     dict(order="C", function="game"),
  "tarot-de-besancon":             dict(order="C", function="game"),
  "court-de-gebelin-tarot":        dict(order="occult", function="origin-myth"),

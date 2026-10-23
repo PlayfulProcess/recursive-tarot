@@ -46,6 +46,7 @@ repo says where the image came from).
 | `sola-busca-tarot` | record | 108 | 108 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | waitesmith.org ×108 |
 | `tarocchino-arlecchino` | living | 64 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 62 | — |
 | `tarocchino-bologna` | record | 83 | 0 | 0 | 6 | 0 | 0 | 0 | 0 | 77 | 0 | Own work ×6 |
+| `tarocco-piemontese` | record | 78 | 0 | 78 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | gallica.bnf.fr ×78 |
 | `tarocco-siciliano` | record | 6 | 5 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | steve-p.org ×5; Own work ×1 |
 | `tarot-de-besancon` | record | 14 | 14 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | s-media-cache-ak0.pinimg.com ×6; Self-scanned ×2; ezomania.ru ×2 |
 | `tarot-de-marseille-conver` | record | 118 | 0 | 81 | 37 | 0 | 0 | 0 | 0 | 0 | 0 | gallica.bnf.fr ×81; Own work ×37 |
