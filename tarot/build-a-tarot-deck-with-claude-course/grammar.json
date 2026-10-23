@@ -13,16 +13,21 @@
   "description": "",
   "grammar_type": "custom",
   "creator_name": "PlayfulProcess",
-  "default_view": "course",
+  "default_view": "play",
+  "reading_mode_default": "continuous",
   "provenance": "reference",
+  "tags": [
+    "tarot",
+    "course"
+  ],
+  "import_visibility": "private",
   "metadata": {
     "common_name": "Contribute to the Commons",
-    "category": "reference",
-    "source_mdx": "course/build-a-tarot-deck-with-claude.mdx"
+    "category": "course"
   },
-  "_generated": true,
-  "_built_by": "scripts/course_to_grammar.py",
-  "_source_mdx": "course/build-a-tarot-deck-with-claude.mdx",
+  "_generated": false,
+  "_built_by": "Converted once from course/build-a-tarot-deck-with-claude.mdx on 2026-10-23; this file is the source now (edit it, or the grammar in recursive.eco).",
+  "_source_mdx": "course/build-a-tarot-deck-with-claude.mdx (retired; in the repository's history)",
   "nodes": [
     {
       "id": "lesson-01-introduction",
@@ -30,7 +35,7 @@
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "The contributor's guide is now one course: **[Ways to Contribute](course-viewer.html?course=how-to-contribute)** — every way to add to the open library, from a one-click in-app edit to the full recursive.eco MCP, in one place."
+        "Content": "The contributor's guide is now one course: **[Ways to Contribute](https://tarot.recursive.eco/pages/course-viewer.html?course=how-to-contribute)** — every way to add to the open library, from a one-click in-app edit to the full recursive.eco MCP, in one place."
       }
     }
   ]
