@@ -50,7 +50,7 @@ This repo is the open half; **recursive.eco** is the private app. They share the
 and pass grammars across GitHub. Full reference: **[docs/RECURSIVE-ECO-INTEGRATION.md](docs/RECURSIVE-ECO-INTEGRATION.md)**. The essentials:
 - The app **reads from `main`** (`raw.githubusercontent.com/PlayfulProcess/recursive-tarot/main/tarot/<slug>/grammar.json`) and **writes back to `main`** via `app/recursive-eco` sync PRs ("Resolve all drifts"). Since Jul 30 2026 `main` is *both* the app's source of truth and the live static site (see above), so one landing serves both. Work on a feature branch and merge to `main`, reconciling (never discarding) the App's write-backs that land there.
 - **Slug ↔ app UUID:** `tarot/_eco_ids.json`.
-- Sync **must not drop repo-only fields** (`_grammar_commons` licence — on *all* grammars — `_image_usage`, `lineages`, cross-link pills, Research notes) and **must skip `_generated: true` grammars** (meta, people, contribute, the course). The doc has the full ownership model + the merge-onto-repo write-back fix.
+- Sync **must not drop repo-only fields** (`_grammar_commons` licence — on *all* grammars — `_image_usage`, `lineages`, cross-link pills, Research notes) and **must skip `_generated: true` grammars** (meta, people). The courses are not generated since Oct 23 2026: each is a grammar in `tarot/<id>-course/` (and `tarot/how-to-contribute`), read in recursive.eco Play, Continuous; the site links there through `courses-play.js`, and `pages/course-viewer.html` only forwards old links. The doc has the full ownership model + the merge-onto-repo write-back fix.
 
 ## The one cross-link pattern (DO NOT INVENT ANOTHER)
 
@@ -119,8 +119,9 @@ most of the library. (Prefer the Star / courts / Empress over yet another Viscon
 ## Course images — one home, one convention
 
 Course figures/screenshots live in **`pages/courses/images/`** — the single canonical location.
-In an MDX course, author them as `images/<name>.ext` (e.g. `![caption](images/01-library.png)`);
-the course-viewer rewrites `images/` → `courses/images/` at render time. Don't scatter course
+A course grammar links them by full address, `https://tarot.recursive.eco/pages/courses/images/<name>.ext`
+(Play is another site, so a relative path does not reach them); a diagram goes beside its grammar,
+`tarot/<slug>-course/diagrams/`. Don't scatter course
 images elsewhere (the old `course/img/` folder was consolidated here Jun 23 2026). Card art still
 comes from R2 (see the Image pattern above); this folder is only for course-authored figures.
 

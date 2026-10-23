@@ -130,8 +130,14 @@ meta-grammar uses the platform's *reference-item* structure (see `GRAMMAR_FORMAT
   (`build_tarot_collection.py`, `stamp_canonical_repo.py`, the per-deck `build_*.py`) have
   moved to `scripts/archive/` and must not be re-run; see `scripts/archive/README.md`.
   What's still live in `scripts/`: `check_all.py` (the gate), `build_meta_grammar.py` +
-  `build_people_grammar.py` (regenerate the two `_generated` grammars), `course_to_grammar.py`,
+  `build_people_grammar.py` (regenerate the two `_generated` grammars),
   `refresh_collection.py`, and the print/proofing pipeline.
+- **Courses:** each course is a grammar too, `tarot/<id>-course/grammar.json` (and
+  `tarot/how-to-contribute`), read in recursive.eco Play's Continuous view; the site links there
+  (the map is `courses-play.js`). Edit the grammar in the app or the file. The old course viewer and
+  its `.mdx` sources retired on Oct 23 2026; `pages/course-viewer.html` only forwards old links. The
+  `.mdx` files still in `course/` are the printed books' chapters (`course/books/`,
+  `scripts/generate_book.py`), no longer the site's.
 - **Provenance:** the original per-deck generators (`generate_<deck>.py`), build logs,
   and the master history/roadmap docs live in the source repo,
   **recursive.eco-schemas** — see below.

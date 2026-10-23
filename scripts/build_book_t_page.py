@@ -46,7 +46,7 @@ BOOK_T_DECK = os.path.join(ROOT, 'tarot', 'book-t', 'grammar.json')
 BOOK_T_HREF = '../viewers/cards.html?src=../tarot/book-t/grammar.json&item='
 BOOK_T_ECO = 'https://recursive.eco/play?id=2000ad96-70c6-4aa4-a6fb-c22cce5e9cc7&pane=cards'
 BOOK_T_FILE = 'https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/book-t/grammar.json'
-COURSE = 'course-viewer.html?course=walking-the-golden-dawn-path'
+COURSE = 'https://recursive.eco/play?id=9befd48e-5c83-48aa-abb2-d865beb06c19&pane=continuous'
 
 PG_A, PG_B = '\ue030', '\ue031'          # page marker: PG_A + "154" + PG_B
 NOTE_A, NOTE_B = '\ue010', '\ue011'      # Crowley's [ ... ]

@@ -423,7 +423,8 @@ def build(prev):
         'roots': ['western-esoteric', 'mysticism'],
         'shelves': ['wonder', 'mirror'],
         'worldview': 'esoteric',
-        'is_published': False,
+        # Private on its first import into recursive.eco (is_published retired Oct 23 2026).
+        'import_visibility': 'private',
         '_community_folder': 'tarot',
         '_community_slug': 'book-t',
         'image_credit': "AI paintings prompted from Book T's own words, traced to line art by PlayfulProcess (Oct 2026); CC BY-SA 4.0. Prompts and sources: tarot/book-t/PROMPTS.md.",
@@ -435,11 +436,11 @@ def build(prev):
         'nodes': items,
     }
     if prev:                                       # keep deck-level edits made after the first build
-        for k in ('cover_image_url', 'is_published', 'image_credit'):
+        for k in ('cover_image_url', 'image_credit'):
             if k in prev and prev[k] != g[k] and prev[k] not in ('', None):
                 g[k] = prev[k]
         for k, v in prev.items():
-            if k not in g:
+            if k not in g and k != 'is_published':   # retired: import_visibility says it
                 g[k] = v
     return g
 

@@ -36,10 +36,11 @@
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
 const params=new URLSearchParams(location.search);
-// The course now lives in the richer course-viewer (TOC sidebar). Bare course.html
-// (the old course page) forwards there; ?src=… still renders arbitrary MDX (research).
-if(!params.get('src')){ location.replace('course-viewer.html'); }
-const SRC=params.get('src')||'../course/build-a-tarot-deck-with-claude.mdx';
+// Renders one markdown file: a research chapter or a booklet (?src=…). The courses
+// themselves are grammars read in recursive.eco since Oct 23 2026; a bare course.html
+// goes to the course list.
+if(!params.get('src')){ location.replace('courses.html'); }
+const SRC=params.get('src')||'';
 (async function(){
   const art=document.getElementById('article');
   try{

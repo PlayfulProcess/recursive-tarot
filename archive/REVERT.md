@@ -7,7 +7,7 @@ that forwards to the archive with its query and `#hash` kept, so every old link 
 |---|---|---|
 | Cards | `archive/cards.html` | `viewers/cards.html` |
 | Tree | `archive/tree-viewer.html` | `viewers/tree-viewer.html` |
-| Course | `archive/grammar-course.html` | `viewers/grammar-course.html` |
+| Course | retired Oct 23 2026 (deleted; restore from the history before that pull request) | none: courses read in recursive.eco Play |
 | One deck | `archive/deck.html` | `deck.html` |
 
 ## Undo all of it
