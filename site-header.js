@@ -62,9 +62,10 @@
   // [key, label, href] — split by level
   const CARD_VIEWS = [
     ['explorer', 'Explorer', PFX + 'viewers/explorer.html'],
-    ['cards',    'Cards',    PFX + 'archive/cards.html'],
+    // Cards and Tree open the all-decks grammar in recursive.eco's Play (Oct 23 2026); the old pages are in the archive.
+    ['cards',    'Cards ↗',  'https://recursive.eco/play?id=b03937bf-92be-414b-bd23-a85fe9be39eb&pane=cards', '', true],
     ['lenses',   'Lenses', PFX + 'viewers/prototypes/lenses.html'],
-    ['tree',     'Tree',     PFX + 'archive/tree-viewer.html'],
+    ['tree',     'Tree ↗',   'https://recursive.eco/play?id=b03937bf-92be-414b-bd23-a85fe9be39eb&pane=tree', '', true],
   ];
   const GRAMMAR_VIEWS = [
     ['treeoflife', 'Tree of Tarot', PFX + 'viewers/genealogy-tree.html'],
@@ -106,14 +107,16 @@
       ['how-tarot-works',                 'How the Cards Can Work'],
       ['how-to-contribute',               'Ways to Contribute'],
     ]],
-    ['More', [
-      ['reading-the-cards',               'Reading the Cards'],
-      ['tarot-today',                     'Tarot Today'],
-      ['why-a-reading-feels-personal',    'Why a Reading Feels So Personal'],
-      ['what-a-reading-can-do',           'What a Reading Can Do'],
-      ['your-card-table',                 'Your Card Table'],
-      ['working-with-claude-desktop',     'Working with Claude Desktop'],
-    ]],
+  ];
+  // The other groups of the all-courses gallery (course/_courses.json → pages/courses.html#<id>).
+  // Keep in step with that file's group names.
+  const COURSE_TOPICS = [
+    ['read-more-deeply',     'Read more deeply'],
+    ['the-golden-dawn',      'The Golden Dawn'],
+    ['the-reading-voices',   'The reading voices'],
+    ['the-honest-questions', 'The honest questions'],
+    ['lots-games-and-play',  'Lots, games and play'],
+    ['build-with-us',        'Build with us'],
   ];
 
   // Quick-jump search (Oct 2026): the box in the bar, its results, and the phone sheet.
@@ -411,10 +414,11 @@
               <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}" role="button" tabindex="0" title="Courses" aria-haspopup="true" aria-expanded="false" aria-label="Courses menu">${glyph('course', 'Courses')}</a>
               <span class="dd-menu">
                 ${COURSE_GROUPS.map(([cap, items]) => `<span class="dd-cap">${cap}</span>` + items.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')).join('')}
-                <span class="dd-cap">The Golden Dawn</span>
+                <span class="dd-cap">All courses, by topic</span>
+                ${COURSE_TOPICS.map(([id, label]) => `<a href="${PFX}pages/courses.html#${id}">${label} →</a>`).join('')}
+                <span class="dd-cap">The Golden Dawn, to explore</span>
                 ${GD_MENU.map(([href, label, svg, k]) => `<a class="mi${hereGD(k) ? ' on' : ''}" href="${href}"${hereGD(k) ? ' aria-current="page"' : ''}>${NAV_SVG(svg, 18)}${label}</a>`).join('')}
-                <a href="${PFX}pages/courses.html" style="border-top:1px solid #d8d2c6;margin-top:4px;padding-top:9px">All courses (gallery) →</a>
-                <a href="${PFX}pages/sources.html">The sources — people &amp; books →</a>
+                <a href="${PFX}pages/sources.html" style="border-top:1px solid #d8d2c6;margin-top:4px;padding-top:9px">The sources — people &amp; books →</a>
               </span>
             </span>
             <span class="dd">

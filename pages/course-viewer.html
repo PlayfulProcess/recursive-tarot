@@ -1703,7 +1703,7 @@
             if (document.querySelector('.course-qr-chip')) return; // already painted
             const courseUrl = window.location.href
                 .replace('://dev.recursive.eco', '://recursive.eco')
-                .replace('://dev.flow.recursive.eco', '://flow.recursive.eco');
+                .replace('://dev.flow.recursive.eco', '://recursive.eco');
             // A small "open on phone" chip with a tiny QR thumbnail. Clicking pops the
             // scannable QR (the lightbox). Lives in the hero pill row, not a big block.
             const btn = document.createElement('button');
@@ -1741,7 +1741,7 @@
                 // QR payload is normalized.
                 const qrUrl = url
                   .replace('://dev.recursive.eco', '://recursive.eco')
-                  .replace('://dev.flow.recursive.eco', '://flow.recursive.eco');
+                  .replace('://dev.flow.recursive.eco', '://recursive.eco');
                 const wrap = document.createElement('span');
                 wrap.className = 'qr-code-inline';
                 wrap.setAttribute('role', 'button');
