@@ -32,6 +32,7 @@ YEARS = {
     "noblet-tarot":                  (1650, "c. 1650"),
     "vieville-tarot":                (1650, "c. 1650"),
     "tarocchino-bologna":            (1660, "17th c."),
+    "tarocco-siciliano":             (1750, "18th c.→"),
     "tarot-de-marseille-conver":     (1760, "1760"),
     "court-de-gebelin-tarot":        (1781, "1781"),
     "belgian-tarot":                 (1780, "c. 1780"),

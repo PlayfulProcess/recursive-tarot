@@ -18,7 +18,7 @@
   "provenance": "reference",
   "_generated": true,
   "_do_not_hand_edit": true,
-  "_built_at": "2026-10-23T04:07:32.011326+00:00",
+  "_built_at": "2026-10-23T04:17:14.118802+00:00",
   "_built_by": "scripts/build_meta_grammar.py",
   "_decks": [
     {
@@ -98,6 +98,22 @@
       "order": "A",
       "function": "game",
       "count": 62,
+      "ancestry": "tarot",
+      "tier": "A"
+    },
+    {
+      "slug": "tarocco-siciliano",
+      "label": "Tarocco Siciliano",
+      "common_name": "Tarocco Siciliano",
+      "node_id": "deck-taroccosiciliano",
+      "category": "historical",
+      "year": 1750,
+      "era": "18th c.→ · Sicily",
+      "era_sort": 3,
+      "date": "18th c.→ (pattern settled early 19th c.)",
+      "order": "A",
+      "function": "game",
+      "count": 22,
       "ancestry": "tarot",
       "tier": "A"
     },
@@ -11144,6 +11160,745 @@
         "Find the meaning": "From Tarocchino di Bologna. Open the source deck for this card's full interpretation."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-batons-re.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-1",
+      "name": "The Fugitive (the Fool) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 0,
+        "role": "trump",
+        "trump_number": 0,
+        "rank": 0,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-fujutu",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-fujutu.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-2",
+      "name": "Miseria (Destitution) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 0,
+        "rank": 0,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-miseria",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-miseria.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-3",
+      "name": "1 — Bagotti (The Mountebank) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 1,
+        "rank": 1,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-bagatto",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-4",
+      "name": "2 — The Empress — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 3,
+        "role": "trump",
+        "trump_number": 3,
+        "rank": 3,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-imperatrice",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-5",
+      "name": "3 — The Emperor — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 4,
+        "role": "trump",
+        "trump_number": 4,
+        "rank": 4,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-imperatore",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-6",
+      "name": "4 — Costanza (Constancy) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 4,
+        "rank": 4,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-costanza",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-costanza.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-7",
+      "name": "5 — Temperance — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 14,
+        "role": "trump",
+        "trump_number": 14,
+        "rank": 14,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-temperanza",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-8",
+      "name": "6 — Fortitude — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 8,
+        "role": "trump",
+        "trump_number": 8,
+        "rank": 8,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-forza",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-9",
+      "name": "7 — Justice — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 11,
+        "role": "trump",
+        "trump_number": 11,
+        "rank": 11,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-giustizia",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-10",
+      "name": "8 — Love — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 8,
+        "rank": 8,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-amore",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-11",
+      "name": "9 — The Chariot — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 7,
+        "role": "trump",
+        "trump_number": 7,
+        "rank": 7,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-carro",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-12",
+      "name": "10 — The Wheel — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 10,
+        "rank": 10,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-ruota",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-13",
+      "name": "11 — The Hanged Man — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 12,
+        "role": "trump",
+        "trump_number": 12,
+        "rank": 12,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-impiccato",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-14",
+      "name": "12 — Time — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 12,
+        "rank": 12,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-tempo",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-15",
+      "name": "13 — Death — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 13,
+        "role": "trump",
+        "trump_number": 13,
+        "rank": 13,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-morte",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-16",
+      "name": "14 — Vascello (The Ship) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 14,
+        "rank": 14,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-vascello",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-vascello.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-17",
+      "name": "15 — Torre (The Tower) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 16,
+        "role": "trump",
+        "trump_number": 16,
+        "rank": 16,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-torre",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-18",
+      "name": "16 — Stella (The Star) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 17,
+        "role": "trump",
+        "trump_number": 17,
+        "rank": 17,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-stella",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-19",
+      "name": "17 — Luna (The Moon) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 18,
+        "role": "trump",
+        "trump_number": 18,
+        "rank": 18,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-luna",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-luna.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-20",
+      "name": "18 — Sole (The Sun) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 19,
+        "role": "trump",
+        "trump_number": 19,
+        "rank": 19,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-sole",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-21",
+      "name": "19 — Atlante (Atlas, the Globe) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 19,
+        "rank": 19,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-atlante",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-22",
+      "name": "20 — Giove (Jove) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 20,
+        "rank": 20,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-giove",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-giove.jpg",
       "sort_order": 0
     },
     {
@@ -48084,6 +48839,40 @@
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-trump-matto.jpg"
     },
     {
+      "id": "deck-taroccosiciliano",
+      "name": "Tarocco Siciliano",
+      "category": "deck",
+      "sections": {
+        "What it is": "Tarocco Siciliano — 18th c.→ (pattern settled early 19th c.). Every card in this deck."
+      },
+      "parts": [
+        "card-taroccosiciliano-1",
+        "card-taroccosiciliano-2",
+        "card-taroccosiciliano-3",
+        "card-taroccosiciliano-4",
+        "card-taroccosiciliano-5",
+        "card-taroccosiciliano-6",
+        "card-taroccosiciliano-7",
+        "card-taroccosiciliano-8",
+        "card-taroccosiciliano-9",
+        "card-taroccosiciliano-10",
+        "card-taroccosiciliano-11",
+        "card-taroccosiciliano-12",
+        "card-taroccosiciliano-13",
+        "card-taroccosiciliano-14",
+        "card-taroccosiciliano-15",
+        "card-taroccosiciliano-16",
+        "card-taroccosiciliano-17",
+        "card-taroccosiciliano-18",
+        "card-taroccosiciliano-19",
+        "card-taroccosiciliano-20",
+        "card-taroccosiciliano-21",
+        "card-taroccosiciliano-22"
+      ],
+      "emergence_kind": "structural",
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-fujutu.jpg"
+    },
+    {
       "id": "deck-tarotdemarseilleconver",
       "name": "Tarot de Marseille (Conver)",
       "category": "deck",
@@ -50154,6 +50943,40 @@
       ],
       "emergence_kind": "structural",
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/LE%20MAT%20Nicolas%20Conver%20Tarot%201760.jpg"
+    },
+    {
+      "id": "era-3-18th-c-sicily",
+      "name": "18th c.→ · Sicily",
+      "category": "era",
+      "sections": {
+        "What it is": "All cards from decks of this era: 18th c.→ · Sicily."
+      },
+      "parts": [
+        "card-taroccosiciliano-1",
+        "card-taroccosiciliano-10",
+        "card-taroccosiciliano-11",
+        "card-taroccosiciliano-12",
+        "card-taroccosiciliano-13",
+        "card-taroccosiciliano-14",
+        "card-taroccosiciliano-15",
+        "card-taroccosiciliano-16",
+        "card-taroccosiciliano-17",
+        "card-taroccosiciliano-18",
+        "card-taroccosiciliano-19",
+        "card-taroccosiciliano-2",
+        "card-taroccosiciliano-20",
+        "card-taroccosiciliano-21",
+        "card-taroccosiciliano-22",
+        "card-taroccosiciliano-3",
+        "card-taroccosiciliano-4",
+        "card-taroccosiciliano-5",
+        "card-taroccosiciliano-6",
+        "card-taroccosiciliano-7",
+        "card-taroccosiciliano-8",
+        "card-taroccosiciliano-9"
+      ],
+      "emergence_kind": "structural",
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-fujutu.jpg"
     },
     {
       "id": "era-3-18th-19th-c-besan-on",
@@ -52699,6 +53522,7 @@
         "card-solabuscatarot-1",
         "card-tarocchinoarlecchino-62",
         "card-tarocchinobologna-1",
+        "card-taroccosiciliano-1",
         "card-tarotdemarseilleconver-1",
         "card-vievilletarot-82",
         "card-viscontisforzatarot-1"
@@ -52796,6 +53620,7 @@
         "card-riderwaitesmithpictorialkey-4",
         "card-solabuscatarot-4",
         "card-tarocchinoarlecchino-3",
+        "card-taroccosiciliano-4",
         "card-tarotdemarseilleconver-4",
         "card-vievilletarot-3",
         "card-viscontisforzatarot-4"
@@ -52830,6 +53655,7 @@
         "card-riderwaitesmithpictorialkey-5",
         "card-solabuscatarot-5",
         "card-tarocchinoarlecchino-4",
+        "card-taroccosiciliano-5",
         "card-tarotdebesancon-2",
         "card-tarotdebesancon-3",
         "card-tarotdemarseilleconver-5",
@@ -52928,6 +53754,7 @@
         "card-solabuscatarot-8",
         "card-tarocchinoarlecchino-7",
         "card-tarocchinobologna-8",
+        "card-taroccosiciliano-11",
         "card-tarotdebesancon-4",
         "card-tarotdemarseilleconver-8",
         "card-vievilletarot-8",
@@ -52966,6 +53793,7 @@
         "card-solabuscatarot-9",
         "card-tarocchinoarlecchino-10",
         "card-tarocchinobologna-11",
+        "card-taroccosiciliano-8",
         "card-tarotdebesancon-5",
         "card-tarotdemarseilleconver-12",
         "card-vievilletarot-9",
@@ -53063,6 +53891,7 @@
         "card-solabuscatarot-12",
         "card-tarocchinoarlecchino-9",
         "card-tarocchinobologna-10",
+        "card-taroccosiciliano-9",
         "card-tarotdemarseilleconver-9",
         "card-vievilletarot-7",
         "card-viscontisforzatarot-9"
@@ -53096,6 +53925,7 @@
         "card-solabuscatarot-13",
         "card-tarocchinoarlecchino-13",
         "card-tarocchinobologna-14",
+        "card-taroccosiciliano-13",
         "card-tarotdemarseilleconver-13",
         "card-vievilletarot-12",
         "card-viscontisforzatarot-13"
@@ -53133,6 +53963,7 @@
         "card-solabuscatarot-14",
         "card-tarocchinoarlecchino-14",
         "card-tarocchinobologna-15",
+        "card-taroccosiciliano-15",
         "card-tarotdemarseilleconver-14",
         "card-vievilletarot-13",
         "card-viscontisforzatarot-14"
@@ -53167,6 +53998,7 @@
         "card-solabuscatarot-15",
         "card-tarocchinoarlecchino-8",
         "card-tarocchinobologna-9",
+        "card-taroccosiciliano-7",
         "card-tarotdebesancon-6",
         "card-tarotdemarseilleconver-15",
         "card-vievilletarot-14",
@@ -53231,6 +54063,7 @@
         "card-solabuscatarot-17",
         "card-tarocchinoarlecchino-16",
         "card-tarocchinobologna-17",
+        "card-taroccosiciliano-17",
         "card-tarotdebesancon-8",
         "card-tarotdemarseilleconver-17",
         "card-vievilletarot-16",
@@ -53262,6 +54095,7 @@
         "card-solabuscatarot-18",
         "card-tarocchinoarlecchino-17",
         "card-tarocchinobologna-18",
+        "card-taroccosiciliano-18",
         "card-tarotdemarseilleconver-18",
         "card-vievilletarot-17",
         "card-viscontisforzatarot-18"
@@ -53293,6 +54127,7 @@
         "card-solabuscatarot-19",
         "card-tarocchinoarlecchino-18",
         "card-tarocchinobologna-19",
+        "card-taroccosiciliano-19",
         "card-tarotdemarseilleconver-19",
         "card-vievilletarot-18",
         "card-viscontisforzatarot-19"
@@ -53327,6 +54162,7 @@
         "card-solabuscatarot-20",
         "card-tarocchinoarlecchino-19",
         "card-tarocchinobologna-20",
+        "card-taroccosiciliano-20",
         "card-tarotdemarseilleconver-20",
         "card-vievilletarot-19",
         "card-viscontisforzatarot-20"
@@ -54503,6 +55339,7 @@
         "deck-charlesvitarot",
         "deck-minchiateflorencetarot",
         "deck-tarocchinobologna",
+        "deck-taroccosiciliano",
         "deck-tarotdemarseilleconver",
         "deck-tarotdebesancon",
         "deck-courtdegebelintarot",
@@ -54542,6 +55379,7 @@
         "era-2-17th-c-paris-belgian-line-ancestor",
         "era-2-17th-c-paris-its-own-pattern",
         "era-3-1760-tarot-de-marseille",
+        "era-3-18th-c-sicily",
         "era-3-18th-19th-c-besan-on",
         "era-3-c-1780-belgian-line",
         "era-4-1781-the-occult-turn",
@@ -54749,7 +55587,29 @@
         "card-tarocchinobologna-62",
         "card-tarocchinobologna-7",
         "card-tarocchinobologna-8",
-        "card-tarocchinobologna-9"
+        "card-tarocchinobologna-9",
+        "card-taroccosiciliano-1",
+        "card-taroccosiciliano-10",
+        "card-taroccosiciliano-11",
+        "card-taroccosiciliano-12",
+        "card-taroccosiciliano-13",
+        "card-taroccosiciliano-14",
+        "card-taroccosiciliano-15",
+        "card-taroccosiciliano-16",
+        "card-taroccosiciliano-17",
+        "card-taroccosiciliano-18",
+        "card-taroccosiciliano-19",
+        "card-taroccosiciliano-2",
+        "card-taroccosiciliano-20",
+        "card-taroccosiciliano-21",
+        "card-taroccosiciliano-22",
+        "card-taroccosiciliano-3",
+        "card-taroccosiciliano-4",
+        "card-taroccosiciliano-5",
+        "card-taroccosiciliano-6",
+        "card-taroccosiciliano-7",
+        "card-taroccosiciliano-8",
+        "card-taroccosiciliano-9"
       ],
       "emergence_kind": "structural",
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/minchiate-florence-tarot/Minchiate%20card%20deck%20-%20Florence%20-%201860-1890%20-%20Trumps%20-%20Il%20Matto%20-.jpg"
@@ -56156,6 +57016,28 @@
         "card-tarocchinobologna-7",
         "card-tarocchinobologna-8",
         "card-tarocchinobologna-9",
+        "card-taroccosiciliano-1",
+        "card-taroccosiciliano-10",
+        "card-taroccosiciliano-11",
+        "card-taroccosiciliano-12",
+        "card-taroccosiciliano-13",
+        "card-taroccosiciliano-14",
+        "card-taroccosiciliano-15",
+        "card-taroccosiciliano-16",
+        "card-taroccosiciliano-17",
+        "card-taroccosiciliano-18",
+        "card-taroccosiciliano-19",
+        "card-taroccosiciliano-2",
+        "card-taroccosiciliano-20",
+        "card-taroccosiciliano-21",
+        "card-taroccosiciliano-22",
+        "card-taroccosiciliano-3",
+        "card-taroccosiciliano-4",
+        "card-taroccosiciliano-5",
+        "card-taroccosiciliano-6",
+        "card-taroccosiciliano-7",
+        "card-taroccosiciliano-8",
+        "card-taroccosiciliano-9",
         "card-tarotdebesancon-1",
         "card-tarotdebesancon-10",
         "card-tarotdebesancon-11",
