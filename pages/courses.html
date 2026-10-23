@@ -32,6 +32,7 @@
   /* ── group sections, labelled the way the homepage labels its galleries ── */
   .group{margin:46px 0 0}
   .group:first-child{margin-top:40px}
+  .group{scroll-margin-top:80px}
   .glabel{display:flex;align-items:baseline;gap:12px;margin:0 0 16px}
   .glabel::before{content:'';flex:1;height:1px;background:var(--line);align-self:center}
   .glabel h2{font-family:var(--serif-display);font-weight:600;font-size:clamp(19px,3vw,23px);
@@ -123,8 +124,11 @@
         </div>
       </a>`;
     }).join('');
-    return `<section class="group"><div class="glabel"><h2>${esc(group.name)}</h2></div><div class="cards">${cards}</div></section>`;
+    // id = the group name as a slug, so the Courses menu can link to a topic (#the-golden-dawn).
+    const gid = group.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    return `<section class="group" id="${gid}"><div class="glabel"><h2>${esc(group.name)}</h2></div><div class="cards">${cards}</div></section>`;
   }).join('');
+  if (location.hash) { const t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
 })();
 </script>
 
