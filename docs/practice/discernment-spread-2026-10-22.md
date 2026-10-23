@@ -27,11 +27,12 @@ Three traditions, one test: the source doesn't settle it; the course and the fru
 
 ## The spread
 
-Seven cards. Lay them left to right, as a road, with two cards above it.
+Seven cards. The road runs left to right and stops at the End. Above its start hangs the name the voice claims (2); above its end hang the fruits (7), what the road bears. Under the middle, where the walking is felt, lies sponge or stone (6).
 
 ```
-   [2]                      [6]
-   [1]   [3] → [4] → [5]          [7]
+   [2]                         [7]
+   [1] → [3] → [4] ──────────→ [5]
+                [6]
 ```
 
 | | Position | Ask |
