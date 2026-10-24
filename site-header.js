@@ -772,3 +772,17 @@
 
   customElements.define('site-header', SiteHeader);
 })();
+
+// Links into recursive.eco open in a new tab (Oct 24 2026, her report: the courses opened in the
+// same tab, so the reader lost the tarot site). One rule for every page that loads this header,
+// including links drawn later (course cards, quick-jump): set on the click, before the browser follows it.
+document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+  if (!a || a.target) return;
+  var host;
+  try { host = new URL(a.href, location.href).hostname; } catch (_) { return; }
+  if (host === 'recursive.eco' || /\.recursive\.eco$/.test(host) && host !== location.hostname) {
+    a.target = '_blank';
+    a.rel = 'noopener';
+  }
+}, true);
