@@ -42,8 +42,7 @@ R2 = "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/
 
 # Grammars that are not decks of cards to jump to. The *-course grammars are generated
 # from course/*.mdx, which this index reads directly (and links to the course viewer).
-SKIP = {"all-decks-many-lenses", "how-to-contribute", "tree-of-tarot",
-        "build-a-tarot-deck-with-claude-course"}
+SKIP = {"all-decks-many-lenses", "how-to-contribute", "tree-of-tarot"}
 SOURCES = {"people-of-tarot": "p", "books-of-tarot": "b"}   # kind per sources grammar
 
 # Names the same trump carries in decks this site does not hold (Thoth, older English).
