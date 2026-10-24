@@ -114,8 +114,8 @@ whole book reads as one page at [Book T (1912)](https://tarot.recursive.eco/page
 **Beside Book T (Oct 18 2026).** Two other public-domain writers from the Order's line sit under
 it, each in a section of its own that names them: A. E. Waite, a member of the Golden Dawn, on
 every card (*The Pictorial Key to the Tarot*, 1911; he describes the Rider-Waite-Smith picture),
-and Paul Foster Case on each Key's Hebrew letter (*An Introduction to the Study of the Tarot*,
-1920). Book T's own words are always the first section.
+and Paul Foster Case on each Key's Hebrew letter ([*An Introduction to the Study of the Tarot*,
+1920](https://recursive.eco/play?id=2b99b34f-7c83-411b-9430-2a7376bb8134&pane=continuous), the whole booklet). Book T's own words are always the first section.
 
 **Reading by the elements (Oct 20 2026).** Book T has no reversed cards. In the Golden Dawn's
 way of reading, a card's meaning turns on its dignity, and its dignity on the cards beside it: the

@@ -28,7 +28,8 @@ window.COURSE_PLAY = {
   "what-a-reading-can-do": "6f7b419b-e740-45b1-ba82-728dc79b0317",
   "why-a-reading-feels-personal": "2db347d9-00ca-483f-bd09-10f762efe859",
   "working-with-claude-desktop": "afc14912-a8d1-4040-b451-022841784a55",
-  "how-to-contribute": "368974ce-0718-4e9a-9351-bce7b2c053e4"
+  "how-to-contribute": "368974ce-0718-4e9a-9351-bce7b2c053e4",
+  "tarot-today": "b01ca894-12c2-47f6-956e-a67e2441ddd5"
 };
 window.coursePlayUrl = function (id, node) {
   var g = window.COURSE_PLAY[id];

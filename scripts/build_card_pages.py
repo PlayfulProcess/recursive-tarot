@@ -695,7 +695,7 @@ def build_book_t(files):
 <a href="index.html">All 78</a>
 <a href="{fname(next_n)}" rel="next">{esc(next_n['name'])} →</a>
 </nav>
-<p class="fine">Text: Book T (1912), Waite (1911) and Case (1920), public domain. Pictures and arrangement CC-BY-SA-4.0 (PlayfulProcess).
+<p class="fine">Text: Book T (1912), Waite (1911) and <a href="https://recursive.eco/play?id=2b99b34f-7c83-411b-9430-2a7376bb8134&pane=continuous">Case (1920)</a>, public domain. Pictures and arrangement CC-BY-SA-4.0 (PlayfulProcess).
 Data: <a href="{GITHUB}tarot/{BT_DECK}/grammar.json">tarot/{BT_DECK}/grammar.json</a>.</p>"""
         ld = [{
             "@context": "https://schema.org", "@type": "WebPage", "name": title, "description": desc, "url": url,
