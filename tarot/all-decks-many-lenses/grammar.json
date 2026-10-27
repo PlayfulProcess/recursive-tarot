@@ -18,7 +18,7 @@
   "provenance": "reference",
   "_generated": true,
   "_do_not_hand_edit": true,
-  "_built_at": "2026-10-20T05:22:37.111998+00:00",
+  "_built_at": "2026-10-24T05:04:20.627169+00:00",
   "_built_by": "scripts/build_meta_grammar.py",
   "_decks": [
     {
@@ -100,6 +100,38 @@
       "count": 62,
       "ancestry": "tarot",
       "tier": "A"
+    },
+    {
+      "slug": "tarocco-siciliano",
+      "label": "Tarocco Siciliano",
+      "common_name": "Tarocco Siciliano",
+      "node_id": "deck-taroccosiciliano",
+      "category": "historical",
+      "year": 1750,
+      "era": "18th c.→ · Sicily",
+      "era_sort": 3,
+      "date": "18th c.→ (pattern settled early 19th c.)",
+      "order": "A",
+      "function": "game",
+      "count": 22,
+      "ancestry": "tarot",
+      "tier": "A"
+    },
+    {
+      "slug": "tarocco-piemontese",
+      "label": "Tarocco Piemontese",
+      "common_name": "Tarocco Piemontese",
+      "node_id": "deck-taroccopiemontese",
+      "category": "historical",
+      "year": 1865,
+      "era": "1865 · Turin",
+      "era_sort": 3,
+      "date": "1865 (pattern from c. 1735)",
+      "order": "C",
+      "function": "game",
+      "count": 78,
+      "ancestry": "tarot",
+      "tier": "C"
     },
     {
       "slug": "tarot-de-marseille-conver",
@@ -11144,6 +11176,3337 @@
         "Find the meaning": "From Tarocchino di Bologna. Open the source deck for this card's full interpretation."
       },
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-batons-re.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-1",
+      "name": "The Fugitive (the Fool) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 0,
+        "role": "trump",
+        "trump_number": 0,
+        "rank": 0,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-fujutu",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-fujutu.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-2",
+      "name": "Miseria (Destitution) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 0,
+        "rank": 0,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-miseria",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-miseria.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-3",
+      "name": "1 — Bagotti (The Mountebank) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 1,
+        "rank": 1,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-bagatto",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-4",
+      "name": "2 — The Empress — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 3,
+        "role": "trump",
+        "trump_number": 3,
+        "rank": 3,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-imperatrice",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-5",
+      "name": "3 — The Emperor — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 4,
+        "role": "trump",
+        "trump_number": 4,
+        "rank": 4,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-imperatore",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-6",
+      "name": "4 — Costanza (Constancy) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 4,
+        "rank": 4,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-costanza",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-costanza.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-7",
+      "name": "5 — Temperance — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 14,
+        "role": "trump",
+        "trump_number": 14,
+        "rank": 14,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-temperanza",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-8",
+      "name": "6 — Fortitude — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 8,
+        "role": "trump",
+        "trump_number": 8,
+        "rank": 8,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-forza",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-9",
+      "name": "7 — Justice — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 11,
+        "role": "trump",
+        "trump_number": 11,
+        "rank": 11,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-giustizia",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-10",
+      "name": "8 — Love — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 8,
+        "rank": 8,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-amore",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-11",
+      "name": "9 — The Chariot — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 7,
+        "role": "trump",
+        "trump_number": 7,
+        "rank": 7,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-carro",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-12",
+      "name": "10 — The Wheel — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 10,
+        "rank": 10,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-ruota",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-13",
+      "name": "11 — The Hanged Man — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 12,
+        "role": "trump",
+        "trump_number": 12,
+        "rank": 12,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-impiccato",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-14",
+      "name": "12 — Time — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 12,
+        "rank": 12,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-tempo",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-15",
+      "name": "13 — Death — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 13,
+        "role": "trump",
+        "trump_number": 13,
+        "rank": 13,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-morte",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-16",
+      "name": "14 — Vascello (The Ship) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 14,
+        "rank": 14,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-vascello",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-vascello.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-17",
+      "name": "15 — Torre (The Tower) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 16,
+        "role": "trump",
+        "trump_number": 16,
+        "rank": 16,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-torre",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-18",
+      "name": "16 — Stella (The Star) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 17,
+        "role": "trump",
+        "trump_number": 17,
+        "rank": 17,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-stella",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-19",
+      "name": "17 — Luna (The Moon) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 18,
+        "role": "trump",
+        "trump_number": 18,
+        "rank": 18,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-luna",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-luna.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-20",
+      "name": "18 — Sole (The Sun) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 19,
+        "role": "trump",
+        "trump_number": 19,
+        "rank": 19,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-sole",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-21",
+      "name": "19 — Atlante (Atlas, the Globe) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 19,
+        "rank": 19,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-atlante",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": null,
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccosiciliano-22",
+      "name": "20 — Giove (Jove) — Tarocco Siciliano",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Siciliano",
+        "arcana": "trump",
+        "suit": "Trumps",
+        "role": "trump",
+        "trump_number": 20,
+        "rank": 20,
+        "order": "A",
+        "function": "game",
+        "year": 1750,
+        "source_deck": "tarocco-siciliano",
+        "source_node_id": "trump-giove",
+        "editorial": {
+          "date": "18th c.→ (pattern settled early 19th c.)",
+          "maker": "Sicilian cardmakers; Modiano prints it today",
+          "patron": null,
+          "context": "The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil",
+          "print": "Woodcut, later chromolithograph",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Siciliano · 18th c.→ (pattern settled early 19th c.) · Sicilian cardmakers; Modiano prints it today. The 63-card Sicilian game pack: Miseria, Constancy, the Ship, Atlas, Jupiter; no Devil. Print: Woodcut, later chromolithograph. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Siciliano. Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-giove.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-1",
+      "name": "The Fool — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 0,
+        "role": "trump",
+        "trump_number": 0,
+        "rank": 0,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-00",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-00.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-2",
+      "name": "1 — The Magician — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 1,
+        "role": "trump",
+        "trump_number": 1,
+        "rank": 1,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-01",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-01.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-3",
+      "name": "2 — The Popess — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 2,
+        "role": "trump",
+        "trump_number": 2,
+        "rank": 2,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-02",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-02.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-4",
+      "name": "3 — The Empress — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 3,
+        "role": "trump",
+        "trump_number": 3,
+        "rank": 3,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-03",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-03.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-5",
+      "name": "4 — The Emperor — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 4,
+        "role": "trump",
+        "trump_number": 4,
+        "rank": 4,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-04",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-04.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-6",
+      "name": "5 — The Pope — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 5,
+        "role": "trump",
+        "trump_number": 5,
+        "rank": 5,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-05",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-05.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-7",
+      "name": "6 — The Lovers — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 6,
+        "role": "trump",
+        "trump_number": 6,
+        "rank": 6,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-06",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-06.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-8",
+      "name": "7 — The Chariot — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 7,
+        "role": "trump",
+        "trump_number": 7,
+        "rank": 7,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-07",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-07.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-9",
+      "name": "8 — Justice — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 11,
+        "role": "trump",
+        "trump_number": 11,
+        "rank": 11,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-08",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-08.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-10",
+      "name": "9 — The Hermit — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 9,
+        "role": "trump",
+        "trump_number": 9,
+        "rank": 9,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-09",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-09.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-11",
+      "name": "10 — Wheel of Fortune — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 10,
+        "role": "trump",
+        "trump_number": 10,
+        "rank": 10,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-10",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-10.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-12",
+      "name": "11 — Strength — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 8,
+        "role": "trump",
+        "trump_number": 8,
+        "rank": 8,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-11",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-11.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-13",
+      "name": "12 — The Hanged Man — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 12,
+        "role": "trump",
+        "trump_number": 12,
+        "rank": 12,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-12",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-12.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-14",
+      "name": "13 — Death — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 13,
+        "role": "trump",
+        "trump_number": 13,
+        "rank": 13,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-13",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-13.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-15",
+      "name": "14 — Temperance — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 14,
+        "role": "trump",
+        "trump_number": 14,
+        "rank": 14,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-14",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-14.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-16",
+      "name": "15 — The Devil — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 15,
+        "role": "trump",
+        "trump_number": 15,
+        "rank": 15,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-15",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-15.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-17",
+      "name": "16 — The Tower — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 16,
+        "role": "trump",
+        "trump_number": 16,
+        "rank": 16,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-16",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-16.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-18",
+      "name": "17 — The Star — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 17,
+        "role": "trump",
+        "trump_number": 17,
+        "rank": 17,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-17",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-17.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-19",
+      "name": "18 — The Moon — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 18,
+        "role": "trump",
+        "trump_number": 18,
+        "rank": 18,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-18",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-18.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-20",
+      "name": "19 — The Sun — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 19,
+        "role": "trump",
+        "trump_number": 19,
+        "rank": 19,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-19",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-19.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-21",
+      "name": "20 — Judgement — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 20,
+        "role": "trump",
+        "trump_number": 20,
+        "rank": 20,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-20",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-20.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-22",
+      "name": "21 — The World — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "major",
+        "suit": "Trumps",
+        "number": 21,
+        "role": "trump",
+        "trump_number": 21,
+        "rank": 21,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "trump-21",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-21.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-23",
+      "name": "Ace of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "number": 1,
+        "role": "pip",
+        "rank": 1,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-01",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-01.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-24",
+      "name": "Two of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "number": 2,
+        "role": "pip",
+        "rank": 2,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-02",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-02.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-25",
+      "name": "Three of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "number": 3,
+        "role": "pip",
+        "rank": 3,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-03",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-03.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-26",
+      "name": "Four of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "number": 4,
+        "role": "pip",
+        "rank": 4,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-04",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-04.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-27",
+      "name": "Five of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "number": 5,
+        "role": "pip",
+        "rank": 5,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-05",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-05.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-28",
+      "name": "Six of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "number": 6,
+        "role": "pip",
+        "rank": 6,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-06",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-06.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-29",
+      "name": "Seven of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "number": 7,
+        "role": "pip",
+        "rank": 7,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-07",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-07.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-30",
+      "name": "Eight of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "number": 8,
+        "role": "pip",
+        "rank": 8,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-08",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-08.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-31",
+      "name": "Nine of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "number": 9,
+        "role": "pip",
+        "rank": 9,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-09",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-09.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-32",
+      "name": "Ten of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "number": 10,
+        "role": "pip",
+        "rank": 10,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-10",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-10.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-33",
+      "name": "Jack of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "role": "court",
+        "rank": 11,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-11",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-11.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-34",
+      "name": "Knight of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "number": 12,
+        "role": "court",
+        "rank": 12,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-12",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-12.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-35",
+      "name": "Queen of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "number": 13,
+        "role": "court",
+        "rank": 13,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-13",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-13.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-36",
+      "name": "King of Batons — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Wands",
+        "number": 14,
+        "role": "court",
+        "rank": 14,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "batons-14",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/batons-14.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-37",
+      "name": "Ace of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "number": 1,
+        "role": "pip",
+        "rank": 1,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-01",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-01.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-38",
+      "name": "Two of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "number": 2,
+        "role": "pip",
+        "rank": 2,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-02",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-02.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-39",
+      "name": "Three of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "number": 3,
+        "role": "pip",
+        "rank": 3,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-03",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-03.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-40",
+      "name": "Four of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "number": 4,
+        "role": "pip",
+        "rank": 4,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-04",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-04.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-41",
+      "name": "Five of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "number": 5,
+        "role": "pip",
+        "rank": 5,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-05",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-05.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-42",
+      "name": "Six of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "number": 6,
+        "role": "pip",
+        "rank": 6,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-06",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-06.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-43",
+      "name": "Seven of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "number": 7,
+        "role": "pip",
+        "rank": 7,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-07",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-07.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-44",
+      "name": "Eight of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "number": 8,
+        "role": "pip",
+        "rank": 8,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-08",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-08.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-45",
+      "name": "Nine of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "number": 9,
+        "role": "pip",
+        "rank": 9,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-09",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-09.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-46",
+      "name": "Ten of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "number": 10,
+        "role": "pip",
+        "rank": 10,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-10",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-10.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-47",
+      "name": "Jack of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "role": "court",
+        "rank": 11,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-11",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-11.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-48",
+      "name": "Knight of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "number": 12,
+        "role": "court",
+        "rank": 12,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-12",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-12.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-49",
+      "name": "Queen of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "number": 13,
+        "role": "court",
+        "rank": 13,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-13",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-13.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-50",
+      "name": "King of Cups — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Cups",
+        "number": 14,
+        "role": "court",
+        "rank": 14,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "cups-14",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/cups-14.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-51",
+      "name": "Ace of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "number": 1,
+        "role": "pip",
+        "rank": 1,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-01",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-01.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-52",
+      "name": "Two of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "number": 2,
+        "role": "pip",
+        "rank": 2,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-02",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-02.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-53",
+      "name": "Three of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "number": 3,
+        "role": "pip",
+        "rank": 3,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-03",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-03.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-54",
+      "name": "Four of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "number": 4,
+        "role": "pip",
+        "rank": 4,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-04",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-04.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-55",
+      "name": "Five of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "number": 5,
+        "role": "pip",
+        "rank": 5,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-05",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-05.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-56",
+      "name": "Six of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "number": 6,
+        "role": "pip",
+        "rank": 6,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-06",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-06.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-57",
+      "name": "Seven of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "number": 7,
+        "role": "pip",
+        "rank": 7,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-07",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-07.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-58",
+      "name": "Eight of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "number": 8,
+        "role": "pip",
+        "rank": 8,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-08",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-08.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-59",
+      "name": "Nine of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "number": 9,
+        "role": "pip",
+        "rank": 9,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-09",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-09.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-60",
+      "name": "Ten of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "number": 10,
+        "role": "pip",
+        "rank": 10,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-10",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-10.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-61",
+      "name": "Jack of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "role": "court",
+        "rank": 11,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-11",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-11.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-62",
+      "name": "Knight of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "number": 12,
+        "role": "court",
+        "rank": 12,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-12",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-12.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-63",
+      "name": "Queen of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "number": 13,
+        "role": "court",
+        "rank": 13,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-13",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-13.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-64",
+      "name": "King of Swords — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Swords",
+        "number": 14,
+        "role": "court",
+        "rank": 14,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "swords-14",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/swords-14.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-65",
+      "name": "Ace of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "number": 1,
+        "role": "pip",
+        "rank": 1,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-01",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-01.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-66",
+      "name": "Two of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "number": 2,
+        "role": "pip",
+        "rank": 2,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-02",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-02.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-67",
+      "name": "Three of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "number": 3,
+        "role": "pip",
+        "rank": 3,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-03",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-03.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-68",
+      "name": "Four of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "number": 4,
+        "role": "pip",
+        "rank": 4,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-04",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-04.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-69",
+      "name": "Five of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "number": 5,
+        "role": "pip",
+        "rank": 5,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-05",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-05.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-70",
+      "name": "Six of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "number": 6,
+        "role": "pip",
+        "rank": 6,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-06",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-06.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-71",
+      "name": "Seven of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "number": 7,
+        "role": "pip",
+        "rank": 7,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-07",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-07.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-72",
+      "name": "Eight of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "number": 8,
+        "role": "pip",
+        "rank": 8,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-08",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-08.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-73",
+      "name": "Nine of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "number": 9,
+        "role": "pip",
+        "rank": 9,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-09",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-09.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-74",
+      "name": "Ten of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "number": 10,
+        "role": "pip",
+        "rank": 10,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-10",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-10.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-75",
+      "name": "Jack of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "role": "court",
+        "rank": 11,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-11",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-11.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-76",
+      "name": "Knight of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "number": 12,
+        "role": "court",
+        "rank": 12,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-12",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-12.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-77",
+      "name": "Queen of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "number": 13,
+        "role": "court",
+        "rank": 13,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-13",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-13.jpg",
+      "sort_order": 0
+    },
+    {
+      "id": "card-taroccopiemontese-78",
+      "name": "King of Coins — Tarocco Piemontese (Solesio)",
+      "category": "card",
+      "ref_preview": "study",
+      "metadata": {
+        "deck": "Tarocco Piemontese (Solesio)",
+        "arcana": "minor",
+        "suit": "Coins",
+        "number": 14,
+        "role": "court",
+        "rank": 14,
+        "order": "C",
+        "function": "game",
+        "year": 1865,
+        "source_deck": "tarocco-piemontese",
+        "source_node_id": "coins-14",
+        "editorial": {
+          "date": "1865 (pattern from c. 1735)",
+          "maker": "F. F. Solesio, Turin",
+          "patron": null,
+          "context": "The Marseille pattern made reversible; the tarot most played in northern Italy",
+          "print": "Printed, double-ended",
+          "orientation": "Game (still played)"
+        }
+      },
+      "sections": {
+        "Origin": "Tarocco Piemontese (Solesio) · 1865 (pattern from c. 1735) · F. F. Solesio, Turin. The Marseille pattern made reversible; the tarot most played in northern Italy. Print: Printed, double-ended. Made for: Game (still played).",
+        "Find the meaning": "From Tarocco Piemontese (Solesio). Open the source deck for this card's full interpretation."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/coins-14.jpg",
       "sort_order": 0
     },
     {
@@ -48084,6 +51447,130 @@
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarocchino-bologna-trump-matto.jpg"
     },
     {
+      "id": "deck-taroccosiciliano",
+      "name": "Tarocco Siciliano",
+      "category": "deck",
+      "sections": {
+        "What it is": "Tarocco Siciliano — 18th c.→ (pattern settled early 19th c.). Every card in this deck."
+      },
+      "parts": [
+        "card-taroccosiciliano-1",
+        "card-taroccosiciliano-2",
+        "card-taroccosiciliano-3",
+        "card-taroccosiciliano-4",
+        "card-taroccosiciliano-5",
+        "card-taroccosiciliano-6",
+        "card-taroccosiciliano-7",
+        "card-taroccosiciliano-8",
+        "card-taroccosiciliano-9",
+        "card-taroccosiciliano-10",
+        "card-taroccosiciliano-11",
+        "card-taroccosiciliano-12",
+        "card-taroccosiciliano-13",
+        "card-taroccosiciliano-14",
+        "card-taroccosiciliano-15",
+        "card-taroccosiciliano-16",
+        "card-taroccosiciliano-17",
+        "card-taroccosiciliano-18",
+        "card-taroccosiciliano-19",
+        "card-taroccosiciliano-20",
+        "card-taroccosiciliano-21",
+        "card-taroccosiciliano-22"
+      ],
+      "emergence_kind": "structural",
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-fujutu.jpg"
+    },
+    {
+      "id": "deck-taroccopiemontese",
+      "name": "Tarocco Piemontese (Solesio)",
+      "category": "deck",
+      "sections": {
+        "What it is": "Tarocco Piemontese (Solesio) — 1865 (pattern from c. 1735). Every card in this deck."
+      },
+      "parts": [
+        "card-taroccopiemontese-1",
+        "card-taroccopiemontese-2",
+        "card-taroccopiemontese-3",
+        "card-taroccopiemontese-4",
+        "card-taroccopiemontese-5",
+        "card-taroccopiemontese-6",
+        "card-taroccopiemontese-7",
+        "card-taroccopiemontese-8",
+        "card-taroccopiemontese-9",
+        "card-taroccopiemontese-10",
+        "card-taroccopiemontese-11",
+        "card-taroccopiemontese-12",
+        "card-taroccopiemontese-13",
+        "card-taroccopiemontese-14",
+        "card-taroccopiemontese-15",
+        "card-taroccopiemontese-16",
+        "card-taroccopiemontese-17",
+        "card-taroccopiemontese-18",
+        "card-taroccopiemontese-19",
+        "card-taroccopiemontese-20",
+        "card-taroccopiemontese-21",
+        "card-taroccopiemontese-22",
+        "card-taroccopiemontese-23",
+        "card-taroccopiemontese-24",
+        "card-taroccopiemontese-25",
+        "card-taroccopiemontese-26",
+        "card-taroccopiemontese-27",
+        "card-taroccopiemontese-28",
+        "card-taroccopiemontese-29",
+        "card-taroccopiemontese-30",
+        "card-taroccopiemontese-31",
+        "card-taroccopiemontese-32",
+        "card-taroccopiemontese-33",
+        "card-taroccopiemontese-34",
+        "card-taroccopiemontese-35",
+        "card-taroccopiemontese-36",
+        "card-taroccopiemontese-37",
+        "card-taroccopiemontese-38",
+        "card-taroccopiemontese-39",
+        "card-taroccopiemontese-40",
+        "card-taroccopiemontese-41",
+        "card-taroccopiemontese-42",
+        "card-taroccopiemontese-43",
+        "card-taroccopiemontese-44",
+        "card-taroccopiemontese-45",
+        "card-taroccopiemontese-46",
+        "card-taroccopiemontese-47",
+        "card-taroccopiemontese-48",
+        "card-taroccopiemontese-49",
+        "card-taroccopiemontese-50",
+        "card-taroccopiemontese-51",
+        "card-taroccopiemontese-52",
+        "card-taroccopiemontese-53",
+        "card-taroccopiemontese-54",
+        "card-taroccopiemontese-55",
+        "card-taroccopiemontese-56",
+        "card-taroccopiemontese-57",
+        "card-taroccopiemontese-58",
+        "card-taroccopiemontese-59",
+        "card-taroccopiemontese-60",
+        "card-taroccopiemontese-61",
+        "card-taroccopiemontese-62",
+        "card-taroccopiemontese-63",
+        "card-taroccopiemontese-64",
+        "card-taroccopiemontese-65",
+        "card-taroccopiemontese-66",
+        "card-taroccopiemontese-67",
+        "card-taroccopiemontese-68",
+        "card-taroccopiemontese-69",
+        "card-taroccopiemontese-70",
+        "card-taroccopiemontese-71",
+        "card-taroccopiemontese-72",
+        "card-taroccopiemontese-73",
+        "card-taroccopiemontese-74",
+        "card-taroccopiemontese-75",
+        "card-taroccopiemontese-76",
+        "card-taroccopiemontese-77",
+        "card-taroccopiemontese-78"
+      ],
+      "emergence_kind": "structural",
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-00.jpg"
+    },
+    {
       "id": "deck-tarotdemarseilleconver",
       "name": "Tarot de Marseille (Conver)",
       "category": "deck",
@@ -50156,6 +53643,130 @@
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/tarot-de-marseille-conver/LE%20MAT%20Nicolas%20Conver%20Tarot%201760.jpg"
     },
     {
+      "id": "era-3-1865-turin",
+      "name": "1865 · Turin",
+      "category": "era",
+      "sections": {
+        "What it is": "All cards from decks of this era: 1865 · Turin."
+      },
+      "parts": [
+        "card-taroccopiemontese-1",
+        "card-taroccopiemontese-10",
+        "card-taroccopiemontese-11",
+        "card-taroccopiemontese-12",
+        "card-taroccopiemontese-13",
+        "card-taroccopiemontese-14",
+        "card-taroccopiemontese-15",
+        "card-taroccopiemontese-16",
+        "card-taroccopiemontese-17",
+        "card-taroccopiemontese-18",
+        "card-taroccopiemontese-19",
+        "card-taroccopiemontese-2",
+        "card-taroccopiemontese-20",
+        "card-taroccopiemontese-21",
+        "card-taroccopiemontese-22",
+        "card-taroccopiemontese-23",
+        "card-taroccopiemontese-24",
+        "card-taroccopiemontese-25",
+        "card-taroccopiemontese-26",
+        "card-taroccopiemontese-27",
+        "card-taroccopiemontese-28",
+        "card-taroccopiemontese-29",
+        "card-taroccopiemontese-3",
+        "card-taroccopiemontese-30",
+        "card-taroccopiemontese-31",
+        "card-taroccopiemontese-32",
+        "card-taroccopiemontese-33",
+        "card-taroccopiemontese-34",
+        "card-taroccopiemontese-35",
+        "card-taroccopiemontese-36",
+        "card-taroccopiemontese-37",
+        "card-taroccopiemontese-38",
+        "card-taroccopiemontese-39",
+        "card-taroccopiemontese-4",
+        "card-taroccopiemontese-40",
+        "card-taroccopiemontese-41",
+        "card-taroccopiemontese-42",
+        "card-taroccopiemontese-43",
+        "card-taroccopiemontese-44",
+        "card-taroccopiemontese-45",
+        "card-taroccopiemontese-46",
+        "card-taroccopiemontese-47",
+        "card-taroccopiemontese-48",
+        "card-taroccopiemontese-49",
+        "card-taroccopiemontese-5",
+        "card-taroccopiemontese-50",
+        "card-taroccopiemontese-51",
+        "card-taroccopiemontese-52",
+        "card-taroccopiemontese-53",
+        "card-taroccopiemontese-54",
+        "card-taroccopiemontese-55",
+        "card-taroccopiemontese-56",
+        "card-taroccopiemontese-57",
+        "card-taroccopiemontese-58",
+        "card-taroccopiemontese-59",
+        "card-taroccopiemontese-6",
+        "card-taroccopiemontese-60",
+        "card-taroccopiemontese-61",
+        "card-taroccopiemontese-62",
+        "card-taroccopiemontese-63",
+        "card-taroccopiemontese-64",
+        "card-taroccopiemontese-65",
+        "card-taroccopiemontese-66",
+        "card-taroccopiemontese-67",
+        "card-taroccopiemontese-68",
+        "card-taroccopiemontese-69",
+        "card-taroccopiemontese-7",
+        "card-taroccopiemontese-70",
+        "card-taroccopiemontese-71",
+        "card-taroccopiemontese-72",
+        "card-taroccopiemontese-73",
+        "card-taroccopiemontese-74",
+        "card-taroccopiemontese-75",
+        "card-taroccopiemontese-76",
+        "card-taroccopiemontese-77",
+        "card-taroccopiemontese-78",
+        "card-taroccopiemontese-8",
+        "card-taroccopiemontese-9"
+      ],
+      "emergence_kind": "structural",
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-piemontese/images/trump-00.jpg"
+    },
+    {
+      "id": "era-3-18th-c-sicily",
+      "name": "18th c.→ · Sicily",
+      "category": "era",
+      "sections": {
+        "What it is": "All cards from decks of this era: 18th c.→ · Sicily."
+      },
+      "parts": [
+        "card-taroccosiciliano-1",
+        "card-taroccosiciliano-10",
+        "card-taroccosiciliano-11",
+        "card-taroccosiciliano-12",
+        "card-taroccosiciliano-13",
+        "card-taroccosiciliano-14",
+        "card-taroccosiciliano-15",
+        "card-taroccosiciliano-16",
+        "card-taroccosiciliano-17",
+        "card-taroccosiciliano-18",
+        "card-taroccosiciliano-19",
+        "card-taroccosiciliano-2",
+        "card-taroccosiciliano-20",
+        "card-taroccosiciliano-21",
+        "card-taroccosiciliano-22",
+        "card-taroccosiciliano-3",
+        "card-taroccosiciliano-4",
+        "card-taroccosiciliano-5",
+        "card-taroccosiciliano-6",
+        "card-taroccosiciliano-7",
+        "card-taroccosiciliano-8",
+        "card-taroccosiciliano-9"
+      ],
+      "emergence_kind": "structural",
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-fujutu.jpg"
+    },
+    {
       "id": "era-3-18th-19th-c-besan-on",
       "name": "18th–19th c · Besançon",
       "category": "era",
@@ -51079,6 +54690,7 @@
         "card-solabuscatarot-51",
         "card-tarocchinoarlecchino-26",
         "card-tarocchinobologna-53",
+        "card-taroccopiemontese-23",
         "card-tarotdemarseilleconver-65",
         "card-viscontisforzatarot-65"
       ],
@@ -51104,6 +54716,7 @@
         "card-minchiateflorencetarot-43",
         "card-riderwaitesmithpictorialkey-24",
         "card-solabuscatarot-52",
+        "card-taroccopiemontese-24",
         "card-tarotdebesancon-12",
         "card-tarotdemarseilleconver-66",
         "card-viscontisforzatarot-66"
@@ -51130,6 +54743,7 @@
         "card-minchiateflorencetarot-44",
         "card-riderwaitesmithpictorialkey-25",
         "card-solabuscatarot-53",
+        "card-taroccopiemontese-25",
         "card-tarotdemarseilleconver-67",
         "card-viscontisforzatarot-67"
       ],
@@ -51155,6 +54769,7 @@
         "card-minchiateflorencetarot-45",
         "card-riderwaitesmithpictorialkey-26",
         "card-solabuscatarot-54",
+        "card-taroccopiemontese-26",
         "card-tarotdemarseilleconver-68",
         "card-viscontisforzatarot-68"
       ],
@@ -51180,6 +54795,7 @@
         "card-minchiateflorencetarot-46",
         "card-riderwaitesmithpictorialkey-27",
         "card-solabuscatarot-55",
+        "card-taroccopiemontese-27",
         "card-tarotdemarseilleconver-69",
         "card-viscontisforzatarot-69"
       ],
@@ -51208,6 +54824,7 @@
         "card-solabuscatarot-56",
         "card-tarocchinoarlecchino-31",
         "card-tarocchinobologna-54",
+        "card-taroccopiemontese-28",
         "card-tarotdemarseilleconver-70",
         "card-vievilletarot-60",
         "card-viscontisforzatarot-70"
@@ -51236,6 +54853,7 @@
         "card-solabuscatarot-57",
         "card-tarocchinoarlecchino-30",
         "card-tarocchinobologna-55",
+        "card-taroccopiemontese-29",
         "card-tarotdemarseilleconver-71",
         "card-viscontisforzatarot-71"
       ],
@@ -51263,6 +54881,7 @@
         "card-solabuscatarot-58",
         "card-tarocchinoarlecchino-29",
         "card-tarocchinobologna-56",
+        "card-taroccopiemontese-30",
         "card-tarotdemarseilleconver-72",
         "card-viscontisforzatarot-72"
       ],
@@ -51290,6 +54909,7 @@
         "card-solabuscatarot-59",
         "card-tarocchinoarlecchino-28",
         "card-tarocchinobologna-57",
+        "card-taroccopiemontese-31",
         "card-tarotdemarseilleconver-73",
         "card-viscontisforzatarot-73"
       ],
@@ -51317,6 +54937,7 @@
         "card-solabuscatarot-60",
         "card-tarocchinoarlecchino-27",
         "card-tarocchinobologna-58",
+        "card-taroccopiemontese-32",
         "card-tarotdemarseilleconver-74",
         "card-viscontisforzatarot-74"
       ],
@@ -51371,6 +54992,7 @@
         "card-solabuscatarot-62",
         "card-tarocchinoarlecchino-24",
         "card-tarocchinobologna-60",
+        "card-taroccopiemontese-34",
         "card-tarotdemarseilleconver-76",
         "card-viscontisforzatarot-76"
       ],
@@ -51399,6 +55021,7 @@
         "card-solabuscatarot-63",
         "card-tarocchinoarlecchino-23",
         "card-tarocchinobologna-61",
+        "card-taroccopiemontese-35",
         "card-tarotdemarseilleconver-77",
         "card-vievilletarot-53",
         "card-viscontisforzatarot-77"
@@ -51428,6 +55051,7 @@
         "card-solabuscatarot-64",
         "card-tarocchinoarlecchino-22",
         "card-tarocchinobologna-62",
+        "card-taroccopiemontese-36",
         "card-tarotdemarseilleconver-78",
         "card-vievilletarot-52",
         "card-viscontisforzatarot-78"
@@ -51482,6 +55106,7 @@
         "card-solabuscatarot-23",
         "card-tarocchinoarlecchino-36",
         "card-tarocchinobologna-33",
+        "card-taroccopiemontese-37",
         "card-tarotdemarseilleconver-37",
         "card-viscontisforzatarot-37"
       ],
@@ -51507,6 +55132,7 @@
         "card-minchiateflorencetarot-71",
         "card-riderwaitesmithpictorialkey-38",
         "card-solabuscatarot-24",
+        "card-taroccopiemontese-38",
         "card-tarotdebesancon-11",
         "card-tarotdemarseilleconver-38",
         "card-viscontisforzatarot-38"
@@ -51533,6 +55159,7 @@
         "card-minchiateflorencetarot-72",
         "card-riderwaitesmithpictorialkey-39",
         "card-solabuscatarot-25",
+        "card-taroccopiemontese-39",
         "card-tarotdemarseilleconver-39",
         "card-viscontisforzatarot-39"
       ],
@@ -51558,6 +55185,7 @@
         "card-minchiateflorencetarot-73",
         "card-riderwaitesmithpictorialkey-40",
         "card-solabuscatarot-26",
+        "card-taroccopiemontese-40",
         "card-tarotdemarseilleconver-40",
         "card-viscontisforzatarot-40"
       ],
@@ -51583,6 +55211,7 @@
         "card-minchiateflorencetarot-74",
         "card-riderwaitesmithpictorialkey-41",
         "card-solabuscatarot-27",
+        "card-taroccopiemontese-41",
         "card-tarotdemarseilleconver-41",
         "card-viscontisforzatarot-41"
       ],
@@ -51611,6 +55240,7 @@
         "card-solabuscatarot-28",
         "card-tarocchinoarlecchino-41",
         "card-tarocchinobologna-34",
+        "card-taroccopiemontese-42",
         "card-tarotdemarseilleconver-42",
         "card-vievilletarot-75",
         "card-viscontisforzatarot-42"
@@ -51639,6 +55269,7 @@
         "card-solabuscatarot-29",
         "card-tarocchinoarlecchino-40",
         "card-tarocchinobologna-35",
+        "card-taroccopiemontese-43",
         "card-tarotdemarseilleconver-43",
         "card-viscontisforzatarot-43"
       ],
@@ -51666,6 +55297,7 @@
         "card-solabuscatarot-30",
         "card-tarocchinoarlecchino-39",
         "card-tarocchinobologna-36",
+        "card-taroccopiemontese-44",
         "card-tarotdemarseilleconver-44",
         "card-viscontisforzatarot-44"
       ],
@@ -51693,6 +55325,7 @@
         "card-solabuscatarot-31",
         "card-tarocchinoarlecchino-38",
         "card-tarocchinobologna-37",
+        "card-taroccopiemontese-45",
         "card-tarotdemarseilleconver-45",
         "card-viscontisforzatarot-45"
       ],
@@ -51720,6 +55353,7 @@
         "card-solabuscatarot-32",
         "card-tarocchinoarlecchino-37",
         "card-tarocchinobologna-38",
+        "card-taroccopiemontese-46",
         "card-tarotdemarseilleconver-46",
         "card-viscontisforzatarot-46"
       ],
@@ -51775,6 +55409,7 @@
         "card-solabuscatarot-34",
         "card-tarocchinoarlecchino-34",
         "card-tarocchinobologna-40",
+        "card-taroccopiemontese-48",
         "card-tarotdemarseilleconver-48",
         "card-viscontisforzatarot-48"
       ],
@@ -51803,6 +55438,7 @@
         "card-solabuscatarot-35",
         "card-tarocchinoarlecchino-33",
         "card-tarocchinobologna-41",
+        "card-taroccopiemontese-49",
         "card-tarotdemarseilleconver-49",
         "card-vievilletarot-68",
         "card-viscontisforzatarot-49"
@@ -51832,6 +55468,7 @@
         "card-solabuscatarot-36",
         "card-tarocchinoarlecchino-32",
         "card-tarocchinobologna-42",
+        "card-taroccopiemontese-50",
         "card-tarotdemarseilleconver-50",
         "card-vievilletarot-67",
         "card-viscontisforzatarot-50"
@@ -51886,6 +55523,7 @@
         "card-solabuscatarot-65",
         "card-tarocchinoarlecchino-46",
         "card-tarocchinobologna-43",
+        "card-taroccopiemontese-51",
         "card-tarotdebesancon-10",
         "card-tarotdemarseilleconver-51",
         "card-viscontisforzatarot-51"
@@ -51912,6 +55550,7 @@
         "card-minchiateflorencetarot-85",
         "card-riderwaitesmithpictorialkey-52",
         "card-solabuscatarot-66",
+        "card-taroccopiemontese-52",
         "card-tarotdemarseilleconver-52",
         "card-viscontisforzatarot-52"
       ],
@@ -51937,6 +55576,7 @@
         "card-minchiateflorencetarot-86",
         "card-riderwaitesmithpictorialkey-53",
         "card-solabuscatarot-67",
+        "card-taroccopiemontese-53",
         "card-tarotdemarseilleconver-53",
         "card-viscontisforzatarot-53"
       ],
@@ -51962,6 +55602,7 @@
         "card-minchiateflorencetarot-87",
         "card-riderwaitesmithpictorialkey-54",
         "card-solabuscatarot-68",
+        "card-taroccopiemontese-54",
         "card-tarotdemarseilleconver-54",
         "card-viscontisforzatarot-54"
       ],
@@ -51987,6 +55628,7 @@
         "card-minchiateflorencetarot-88",
         "card-riderwaitesmithpictorialkey-55",
         "card-solabuscatarot-69",
+        "card-taroccopiemontese-55",
         "card-tarotdemarseilleconver-55",
         "card-viscontisforzatarot-55"
       ],
@@ -52015,6 +55657,7 @@
         "card-solabuscatarot-70",
         "card-tarocchinoarlecchino-51",
         "card-tarocchinobologna-44",
+        "card-taroccopiemontese-56",
         "card-tarotdemarseilleconver-56",
         "card-vievilletarot-30",
         "card-viscontisforzatarot-56"
@@ -52043,6 +55686,7 @@
         "card-solabuscatarot-71",
         "card-tarocchinoarlecchino-50",
         "card-tarocchinobologna-45",
+        "card-taroccopiemontese-57",
         "card-tarotdemarseilleconver-57",
         "card-viscontisforzatarot-57"
       ],
@@ -52070,6 +55714,7 @@
         "card-solabuscatarot-72",
         "card-tarocchinoarlecchino-49",
         "card-tarocchinobologna-46",
+        "card-taroccopiemontese-58",
         "card-tarotdemarseilleconver-58",
         "card-viscontisforzatarot-58"
       ],
@@ -52097,6 +55742,7 @@
         "card-solabuscatarot-73",
         "card-tarocchinoarlecchino-48",
         "card-tarocchinobologna-47",
+        "card-taroccopiemontese-59",
         "card-tarotdemarseilleconver-59",
         "card-viscontisforzatarot-59"
       ],
@@ -52124,6 +55770,7 @@
         "card-solabuscatarot-74",
         "card-tarocchinoarlecchino-47",
         "card-tarocchinobologna-48",
+        "card-taroccopiemontese-60",
         "card-tarotdemarseilleconver-60",
         "card-viscontisforzatarot-60"
       ],
@@ -52177,6 +55824,7 @@
         "card-solabuscatarot-76",
         "card-tarocchinoarlecchino-44",
         "card-tarocchinobologna-50",
+        "card-taroccopiemontese-62",
         "card-tarotdemarseilleconver-62",
         "card-viscontisforzatarot-62"
       ],
@@ -52206,6 +55854,7 @@
         "card-solabuscatarot-77",
         "card-tarocchinoarlecchino-43",
         "card-tarocchinobologna-51",
+        "card-taroccopiemontese-63",
         "card-tarotdemarseilleconver-63",
         "card-vievilletarot-23",
         "card-viscontisforzatarot-63"
@@ -52236,6 +55885,7 @@
         "card-solabuscatarot-78",
         "card-tarocchinoarlecchino-42",
         "card-tarocchinobologna-52",
+        "card-taroccopiemontese-64",
         "card-tarotdemarseilleconver-64",
         "card-vievilletarot-22",
         "card-viscontisforzatarot-64"
@@ -52290,6 +55940,7 @@
         "card-solabuscatarot-37",
         "card-tarocchinoarlecchino-56",
         "card-tarocchinobologna-23",
+        "card-taroccopiemontese-65",
         "card-tarotdemarseilleconver-23",
         "card-viscontisforzatarot-23"
       ],
@@ -52315,6 +55966,7 @@
         "card-minchiateflorencetarot-57",
         "card-riderwaitesmithpictorialkey-66",
         "card-solabuscatarot-38",
+        "card-taroccopiemontese-66",
         "card-tarotdemarseilleconver-24",
         "card-viscontisforzatarot-24"
       ],
@@ -52339,6 +55991,7 @@
         "card-minchiateflorencetarot-58",
         "card-riderwaitesmithpictorialkey-67",
         "card-solabuscatarot-39",
+        "card-taroccopiemontese-67",
         "card-tarotdebesancon-13",
         "card-tarotdemarseilleconver-25",
         "card-viscontisforzatarot-25"
@@ -52365,6 +56018,7 @@
         "card-minchiateflorencetarot-59",
         "card-riderwaitesmithpictorialkey-68",
         "card-solabuscatarot-40",
+        "card-taroccopiemontese-68",
         "card-tarotdemarseilleconver-26",
         "card-viscontisforzatarot-26"
       ],
@@ -52390,6 +56044,7 @@
         "card-minchiateflorencetarot-60",
         "card-riderwaitesmithpictorialkey-69",
         "card-solabuscatarot-41",
+        "card-taroccopiemontese-69",
         "card-tarotdemarseilleconver-27",
         "card-viscontisforzatarot-27"
       ],
@@ -52418,6 +56073,7 @@
         "card-solabuscatarot-42",
         "card-tarocchinoarlecchino-61",
         "card-tarocchinobologna-24",
+        "card-taroccopiemontese-70",
         "card-tarotdemarseilleconver-28",
         "card-vievilletarot-45",
         "card-viscontisforzatarot-28"
@@ -52446,6 +56102,7 @@
         "card-solabuscatarot-43",
         "card-tarocchinoarlecchino-60",
         "card-tarocchinobologna-25",
+        "card-taroccopiemontese-71",
         "card-tarotdemarseilleconver-29",
         "card-viscontisforzatarot-29"
       ],
@@ -52473,6 +56130,7 @@
         "card-solabuscatarot-44",
         "card-tarocchinoarlecchino-59",
         "card-tarocchinobologna-26",
+        "card-taroccopiemontese-72",
         "card-tarotdemarseilleconver-30",
         "card-viscontisforzatarot-30"
       ],
@@ -52500,6 +56158,7 @@
         "card-solabuscatarot-45",
         "card-tarocchinoarlecchino-58",
         "card-tarocchinobologna-27",
+        "card-taroccopiemontese-73",
         "card-tarotdemarseilleconver-31",
         "card-viscontisforzatarot-31"
       ],
@@ -52527,6 +56186,7 @@
         "card-solabuscatarot-46",
         "card-tarocchinoarlecchino-57",
         "card-tarocchinobologna-28",
+        "card-taroccopiemontese-74",
         "card-tarotdemarseilleconver-32",
         "card-viscontisforzatarot-32"
       ],
@@ -52581,6 +56241,7 @@
         "card-solabuscatarot-48",
         "card-tarocchinoarlecchino-54",
         "card-tarocchinobologna-30",
+        "card-taroccopiemontese-76",
         "card-tarotdemarseilleconver-34",
         "card-viscontisforzatarot-34"
       ],
@@ -52609,6 +56270,7 @@
         "card-solabuscatarot-49",
         "card-tarocchinoarlecchino-53",
         "card-tarocchinobologna-31",
+        "card-taroccopiemontese-77",
         "card-tarotdemarseilleconver-35",
         "card-vievilletarot-38",
         "card-viscontisforzatarot-35"
@@ -52639,6 +56301,7 @@
         "card-solabuscatarot-50",
         "card-tarocchinoarlecchino-52",
         "card-tarocchinobologna-32",
+        "card-taroccopiemontese-78",
         "card-tarotdemarseilleconver-36",
         "card-vievilletarot-37",
         "card-viscontisforzatarot-36"
@@ -52699,6 +56362,8 @@
         "card-solabuscatarot-1",
         "card-tarocchinoarlecchino-62",
         "card-tarocchinobologna-1",
+        "card-taroccopiemontese-1",
+        "card-taroccosiciliano-1",
         "card-tarotdemarseilleconver-1",
         "card-vievilletarot-82",
         "card-viscontisforzatarot-1"
@@ -52735,6 +56400,7 @@
         "card-solabuscatarot-2",
         "card-tarocchinoarlecchino-1",
         "card-tarocchinobologna-2",
+        "card-taroccopiemontese-2",
         "card-tarotdemarseilleconver-2",
         "card-vievilletarot-1",
         "card-viscontisforzatarot-2"
@@ -52764,6 +56430,7 @@
         "card-riderwaitesmithpictorialkey-3",
         "card-solabuscatarot-3",
         "card-tarocchinoarlecchino-2",
+        "card-taroccopiemontese-3",
         "card-tarotdebesancon-1",
         "card-tarotdemarseilleconver-3",
         "card-vievilletarot-2",
@@ -52796,6 +56463,8 @@
         "card-riderwaitesmithpictorialkey-4",
         "card-solabuscatarot-4",
         "card-tarocchinoarlecchino-3",
+        "card-taroccopiemontese-4",
+        "card-taroccosiciliano-4",
         "card-tarotdemarseilleconver-4",
         "card-vievilletarot-3",
         "card-viscontisforzatarot-4"
@@ -52830,6 +56499,8 @@
         "card-riderwaitesmithpictorialkey-5",
         "card-solabuscatarot-5",
         "card-tarocchinoarlecchino-4",
+        "card-taroccopiemontese-5",
+        "card-taroccosiciliano-5",
         "card-tarotdebesancon-2",
         "card-tarotdebesancon-3",
         "card-tarotdemarseilleconver-5",
@@ -52863,6 +56534,7 @@
         "card-riderwaitesmithpictorialkey-6",
         "card-solabuscatarot-6",
         "card-tarocchinoarlecchino-5",
+        "card-taroccopiemontese-6",
         "card-tarotdemarseilleconver-6",
         "card-vievilletarot-5",
         "card-viscontisforzatarot-6"
@@ -52894,6 +56566,7 @@
         "card-riderwaitesmithpictorialkey-7",
         "card-solabuscatarot-7",
         "card-tarocchinoarlecchino-6",
+        "card-taroccopiemontese-7",
         "card-tarotdemarseilleconver-7",
         "card-vievilletarot-6",
         "card-viscontisforzatarot-7"
@@ -52928,6 +56601,8 @@
         "card-solabuscatarot-8",
         "card-tarocchinoarlecchino-7",
         "card-tarocchinobologna-8",
+        "card-taroccopiemontese-8",
+        "card-taroccosiciliano-11",
         "card-tarotdebesancon-4",
         "card-tarotdemarseilleconver-8",
         "card-vievilletarot-8",
@@ -52966,6 +56641,8 @@
         "card-solabuscatarot-9",
         "card-tarocchinoarlecchino-10",
         "card-tarocchinobologna-11",
+        "card-taroccopiemontese-12",
+        "card-taroccosiciliano-8",
         "card-tarotdebesancon-5",
         "card-tarotdemarseilleconver-12",
         "card-vievilletarot-9",
@@ -52998,6 +56675,7 @@
         "card-riderwaitesmithpictorialkey-10",
         "card-solabuscatarot-10",
         "card-tarocchinoarlecchino-12",
+        "card-taroccopiemontese-10",
         "card-tarotdemarseilleconver-10",
         "card-vievilletarot-11",
         "card-viscontisforzatarot-10"
@@ -53030,6 +56708,7 @@
         "card-solabuscatarot-11",
         "card-tarocchinoarlecchino-11",
         "card-tarocchinobologna-12",
+        "card-taroccopiemontese-11",
         "card-tarotdemarseilleconver-11",
         "card-vievilletarot-10",
         "card-viscontisforzatarot-11"
@@ -53063,6 +56742,8 @@
         "card-solabuscatarot-12",
         "card-tarocchinoarlecchino-9",
         "card-tarocchinobologna-10",
+        "card-taroccopiemontese-9",
+        "card-taroccosiciliano-9",
         "card-tarotdemarseilleconver-9",
         "card-vievilletarot-7",
         "card-viscontisforzatarot-9"
@@ -53096,6 +56777,8 @@
         "card-solabuscatarot-13",
         "card-tarocchinoarlecchino-13",
         "card-tarocchinobologna-14",
+        "card-taroccopiemontese-13",
+        "card-taroccosiciliano-13",
         "card-tarotdemarseilleconver-13",
         "card-vievilletarot-12",
         "card-viscontisforzatarot-13"
@@ -53133,6 +56816,8 @@
         "card-solabuscatarot-14",
         "card-tarocchinoarlecchino-14",
         "card-tarocchinobologna-15",
+        "card-taroccopiemontese-14",
+        "card-taroccosiciliano-15",
         "card-tarotdemarseilleconver-14",
         "card-vievilletarot-13",
         "card-viscontisforzatarot-14"
@@ -53167,6 +56852,8 @@
         "card-solabuscatarot-15",
         "card-tarocchinoarlecchino-8",
         "card-tarocchinobologna-9",
+        "card-taroccopiemontese-15",
+        "card-taroccosiciliano-7",
         "card-tarotdebesancon-6",
         "card-tarotdemarseilleconver-15",
         "card-vievilletarot-14",
@@ -53202,6 +56889,7 @@
         "card-solabuscatarot-16",
         "card-tarocchinoarlecchino-15",
         "card-tarocchinobologna-16",
+        "card-taroccopiemontese-16",
         "card-tarotdebesancon-7",
         "card-tarotdemarseilleconver-16",
         "card-vievilletarot-15",
@@ -53231,6 +56919,8 @@
         "card-solabuscatarot-17",
         "card-tarocchinoarlecchino-16",
         "card-tarocchinobologna-17",
+        "card-taroccopiemontese-17",
+        "card-taroccosiciliano-17",
         "card-tarotdebesancon-8",
         "card-tarotdemarseilleconver-17",
         "card-vievilletarot-16",
@@ -53262,6 +56952,8 @@
         "card-solabuscatarot-18",
         "card-tarocchinoarlecchino-17",
         "card-tarocchinobologna-18",
+        "card-taroccopiemontese-18",
+        "card-taroccosiciliano-18",
         "card-tarotdemarseilleconver-18",
         "card-vievilletarot-17",
         "card-viscontisforzatarot-18"
@@ -53293,6 +56985,8 @@
         "card-solabuscatarot-19",
         "card-tarocchinoarlecchino-18",
         "card-tarocchinobologna-19",
+        "card-taroccopiemontese-19",
+        "card-taroccosiciliano-19",
         "card-tarotdemarseilleconver-19",
         "card-vievilletarot-18",
         "card-viscontisforzatarot-19"
@@ -53327,6 +57021,8 @@
         "card-solabuscatarot-20",
         "card-tarocchinoarlecchino-19",
         "card-tarocchinobologna-20",
+        "card-taroccopiemontese-20",
+        "card-taroccosiciliano-20",
         "card-tarotdemarseilleconver-20",
         "card-vievilletarot-19",
         "card-viscontisforzatarot-20"
@@ -53361,6 +57057,7 @@
         "card-solabuscatarot-21",
         "card-tarocchinoarlecchino-21",
         "card-tarocchinobologna-22",
+        "card-taroccopiemontese-21",
         "card-tarotdemarseilleconver-21",
         "card-vievilletarot-20",
         "card-viscontisforzatarot-21"
@@ -53396,6 +57093,7 @@
         "card-solabuscatarot-22",
         "card-tarocchinoarlecchino-20",
         "card-tarocchinobologna-21",
+        "card-taroccopiemontese-22",
         "card-tarotdebesancon-9",
         "card-tarotdemarseilleconver-22",
         "card-vievilletarot-21",
@@ -53514,6 +57212,10 @@
         "card-tarocchinobologna-33",
         "card-tarocchinobologna-43",
         "card-tarocchinobologna-53",
+        "card-taroccopiemontese-23",
+        "card-taroccopiemontese-37",
+        "card-taroccopiemontese-51",
+        "card-taroccopiemontese-65",
         "card-tarotdebesancon-10",
         "card-tarotdemarseilleconver-23",
         "card-tarotdemarseilleconver-37",
@@ -53579,6 +57281,10 @@
         "card-solabuscatarot-38",
         "card-solabuscatarot-52",
         "card-solabuscatarot-66",
+        "card-taroccopiemontese-24",
+        "card-taroccopiemontese-38",
+        "card-taroccopiemontese-52",
+        "card-taroccopiemontese-66",
         "card-tarotdebesancon-11",
         "card-tarotdebesancon-12",
         "card-tarotdemarseilleconver-24",
@@ -53644,6 +57350,10 @@
         "card-solabuscatarot-39",
         "card-solabuscatarot-53",
         "card-solabuscatarot-67",
+        "card-taroccopiemontese-25",
+        "card-taroccopiemontese-39",
+        "card-taroccopiemontese-53",
+        "card-taroccopiemontese-67",
         "card-tarotdebesancon-13",
         "card-tarotdemarseilleconver-25",
         "card-tarotdemarseilleconver-39",
@@ -53709,6 +57419,10 @@
         "card-solabuscatarot-40",
         "card-solabuscatarot-54",
         "card-solabuscatarot-68",
+        "card-taroccopiemontese-26",
+        "card-taroccopiemontese-40",
+        "card-taroccopiemontese-54",
+        "card-taroccopiemontese-68",
         "card-tarotdemarseilleconver-26",
         "card-tarotdemarseilleconver-40",
         "card-tarotdemarseilleconver-54",
@@ -53773,6 +57487,10 @@
         "card-solabuscatarot-41",
         "card-solabuscatarot-55",
         "card-solabuscatarot-69",
+        "card-taroccopiemontese-27",
+        "card-taroccopiemontese-41",
+        "card-taroccopiemontese-55",
+        "card-taroccopiemontese-69",
         "card-tarotdemarseilleconver-27",
         "card-tarotdemarseilleconver-41",
         "card-tarotdemarseilleconver-55",
@@ -53849,6 +57567,10 @@
         "card-tarocchinobologna-34",
         "card-tarocchinobologna-44",
         "card-tarocchinobologna-54",
+        "card-taroccopiemontese-28",
+        "card-taroccopiemontese-42",
+        "card-taroccopiemontese-56",
+        "card-taroccopiemontese-70",
         "card-tarotdemarseilleconver-28",
         "card-tarotdemarseilleconver-42",
         "card-tarotdemarseilleconver-56",
@@ -53925,6 +57647,10 @@
         "card-tarocchinobologna-35",
         "card-tarocchinobologna-45",
         "card-tarocchinobologna-55",
+        "card-taroccopiemontese-29",
+        "card-taroccopiemontese-43",
+        "card-taroccopiemontese-57",
+        "card-taroccopiemontese-71",
         "card-tarotdemarseilleconver-29",
         "card-tarotdemarseilleconver-43",
         "card-tarotdemarseilleconver-57",
@@ -53997,6 +57723,10 @@
         "card-tarocchinobologna-36",
         "card-tarocchinobologna-46",
         "card-tarocchinobologna-56",
+        "card-taroccopiemontese-30",
+        "card-taroccopiemontese-44",
+        "card-taroccopiemontese-58",
+        "card-taroccopiemontese-72",
         "card-tarotdemarseilleconver-30",
         "card-tarotdemarseilleconver-44",
         "card-tarotdemarseilleconver-58",
@@ -54069,6 +57799,10 @@
         "card-tarocchinobologna-37",
         "card-tarocchinobologna-47",
         "card-tarocchinobologna-57",
+        "card-taroccopiemontese-31",
+        "card-taroccopiemontese-45",
+        "card-taroccopiemontese-59",
+        "card-taroccopiemontese-73",
         "card-tarotdemarseilleconver-31",
         "card-tarotdemarseilleconver-45",
         "card-tarotdemarseilleconver-59",
@@ -54141,6 +57875,10 @@
         "card-tarocchinobologna-38",
         "card-tarocchinobologna-48",
         "card-tarocchinobologna-58",
+        "card-taroccopiemontese-32",
+        "card-taroccopiemontese-46",
+        "card-taroccopiemontese-60",
+        "card-taroccopiemontese-74",
         "card-tarotdemarseilleconver-32",
         "card-tarotdemarseilleconver-46",
         "card-tarotdemarseilleconver-60",
@@ -54285,6 +58023,10 @@
         "card-tarocchinobologna-40",
         "card-tarocchinobologna-50",
         "card-tarocchinobologna-60",
+        "card-taroccopiemontese-34",
+        "card-taroccopiemontese-48",
+        "card-taroccopiemontese-62",
+        "card-taroccopiemontese-76",
         "card-tarotdemarseilleconver-34",
         "card-tarotdemarseilleconver-48",
         "card-tarotdemarseilleconver-62",
@@ -54362,6 +58104,10 @@
         "card-tarocchinobologna-41",
         "card-tarocchinobologna-51",
         "card-tarocchinobologna-61",
+        "card-taroccopiemontese-35",
+        "card-taroccopiemontese-49",
+        "card-taroccopiemontese-63",
+        "card-taroccopiemontese-77",
         "card-tarotdemarseilleconver-35",
         "card-tarotdemarseilleconver-49",
         "card-tarotdemarseilleconver-63",
@@ -54444,6 +58190,10 @@
         "card-tarocchinobologna-42",
         "card-tarocchinobologna-52",
         "card-tarocchinobologna-62",
+        "card-taroccopiemontese-36",
+        "card-taroccopiemontese-50",
+        "card-taroccopiemontese-64",
+        "card-taroccopiemontese-78",
         "card-tarotdemarseilleconver-36",
         "card-tarotdemarseilleconver-50",
         "card-tarotdemarseilleconver-64",
@@ -54503,6 +58253,8 @@
         "deck-charlesvitarot",
         "deck-minchiateflorencetarot",
         "deck-tarocchinobologna",
+        "deck-taroccosiciliano",
+        "deck-taroccopiemontese",
         "deck-tarotdemarseilleconver",
         "deck-tarotdebesancon",
         "deck-courtdegebelintarot",
@@ -54542,6 +58294,8 @@
         "era-2-17th-c-paris-belgian-line-ancestor",
         "era-2-17th-c-paris-its-own-pattern",
         "era-3-1760-tarot-de-marseille",
+        "era-3-1865-turin",
+        "era-3-18th-c-sicily",
         "era-3-18th-19th-c-besan-on",
         "era-3-c-1780-belgian-line",
         "era-4-1781-the-occult-turn",
@@ -54749,7 +58503,29 @@
         "card-tarocchinobologna-62",
         "card-tarocchinobologna-7",
         "card-tarocchinobologna-8",
-        "card-tarocchinobologna-9"
+        "card-tarocchinobologna-9",
+        "card-taroccosiciliano-1",
+        "card-taroccosiciliano-10",
+        "card-taroccosiciliano-11",
+        "card-taroccosiciliano-12",
+        "card-taroccosiciliano-13",
+        "card-taroccosiciliano-14",
+        "card-taroccosiciliano-15",
+        "card-taroccosiciliano-16",
+        "card-taroccosiciliano-17",
+        "card-taroccosiciliano-18",
+        "card-taroccosiciliano-19",
+        "card-taroccosiciliano-2",
+        "card-taroccosiciliano-20",
+        "card-taroccosiciliano-21",
+        "card-taroccosiciliano-22",
+        "card-taroccosiciliano-3",
+        "card-taroccosiciliano-4",
+        "card-taroccosiciliano-5",
+        "card-taroccosiciliano-6",
+        "card-taroccosiciliano-7",
+        "card-taroccosiciliano-8",
+        "card-taroccosiciliano-9"
       ],
       "emergence_kind": "structural",
       "image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/minchiate-florence-tarot/Minchiate%20card%20deck%20-%20Florence%20-%201860-1890%20-%20Trumps%20-%20Il%20Matto%20-.jpg"
@@ -54974,6 +58750,84 @@
         "card-parisanonymoustarot-80",
         "card-parisanonymoustarot-82",
         "card-parisanonymoustarot-9",
+        "card-taroccopiemontese-1",
+        "card-taroccopiemontese-10",
+        "card-taroccopiemontese-11",
+        "card-taroccopiemontese-12",
+        "card-taroccopiemontese-13",
+        "card-taroccopiemontese-14",
+        "card-taroccopiemontese-15",
+        "card-taroccopiemontese-16",
+        "card-taroccopiemontese-17",
+        "card-taroccopiemontese-18",
+        "card-taroccopiemontese-19",
+        "card-taroccopiemontese-2",
+        "card-taroccopiemontese-20",
+        "card-taroccopiemontese-21",
+        "card-taroccopiemontese-22",
+        "card-taroccopiemontese-23",
+        "card-taroccopiemontese-24",
+        "card-taroccopiemontese-25",
+        "card-taroccopiemontese-26",
+        "card-taroccopiemontese-27",
+        "card-taroccopiemontese-28",
+        "card-taroccopiemontese-29",
+        "card-taroccopiemontese-3",
+        "card-taroccopiemontese-30",
+        "card-taroccopiemontese-31",
+        "card-taroccopiemontese-32",
+        "card-taroccopiemontese-33",
+        "card-taroccopiemontese-34",
+        "card-taroccopiemontese-35",
+        "card-taroccopiemontese-36",
+        "card-taroccopiemontese-37",
+        "card-taroccopiemontese-38",
+        "card-taroccopiemontese-39",
+        "card-taroccopiemontese-4",
+        "card-taroccopiemontese-40",
+        "card-taroccopiemontese-41",
+        "card-taroccopiemontese-42",
+        "card-taroccopiemontese-43",
+        "card-taroccopiemontese-44",
+        "card-taroccopiemontese-45",
+        "card-taroccopiemontese-46",
+        "card-taroccopiemontese-47",
+        "card-taroccopiemontese-48",
+        "card-taroccopiemontese-49",
+        "card-taroccopiemontese-5",
+        "card-taroccopiemontese-50",
+        "card-taroccopiemontese-51",
+        "card-taroccopiemontese-52",
+        "card-taroccopiemontese-53",
+        "card-taroccopiemontese-54",
+        "card-taroccopiemontese-55",
+        "card-taroccopiemontese-56",
+        "card-taroccopiemontese-57",
+        "card-taroccopiemontese-58",
+        "card-taroccopiemontese-59",
+        "card-taroccopiemontese-6",
+        "card-taroccopiemontese-60",
+        "card-taroccopiemontese-61",
+        "card-taroccopiemontese-62",
+        "card-taroccopiemontese-63",
+        "card-taroccopiemontese-64",
+        "card-taroccopiemontese-65",
+        "card-taroccopiemontese-66",
+        "card-taroccopiemontese-67",
+        "card-taroccopiemontese-68",
+        "card-taroccopiemontese-69",
+        "card-taroccopiemontese-7",
+        "card-taroccopiemontese-70",
+        "card-taroccopiemontese-71",
+        "card-taroccopiemontese-72",
+        "card-taroccopiemontese-73",
+        "card-taroccopiemontese-74",
+        "card-taroccopiemontese-75",
+        "card-taroccopiemontese-76",
+        "card-taroccopiemontese-77",
+        "card-taroccopiemontese-78",
+        "card-taroccopiemontese-8",
+        "card-taroccopiemontese-9",
         "card-tarotdebesancon-1",
         "card-tarotdebesancon-10",
         "card-tarotdebesancon-11",
@@ -56156,6 +60010,106 @@
         "card-tarocchinobologna-7",
         "card-tarocchinobologna-8",
         "card-tarocchinobologna-9",
+        "card-taroccopiemontese-1",
+        "card-taroccopiemontese-10",
+        "card-taroccopiemontese-11",
+        "card-taroccopiemontese-12",
+        "card-taroccopiemontese-13",
+        "card-taroccopiemontese-14",
+        "card-taroccopiemontese-15",
+        "card-taroccopiemontese-16",
+        "card-taroccopiemontese-17",
+        "card-taroccopiemontese-18",
+        "card-taroccopiemontese-19",
+        "card-taroccopiemontese-2",
+        "card-taroccopiemontese-20",
+        "card-taroccopiemontese-21",
+        "card-taroccopiemontese-22",
+        "card-taroccopiemontese-23",
+        "card-taroccopiemontese-24",
+        "card-taroccopiemontese-25",
+        "card-taroccopiemontese-26",
+        "card-taroccopiemontese-27",
+        "card-taroccopiemontese-28",
+        "card-taroccopiemontese-29",
+        "card-taroccopiemontese-3",
+        "card-taroccopiemontese-30",
+        "card-taroccopiemontese-31",
+        "card-taroccopiemontese-32",
+        "card-taroccopiemontese-33",
+        "card-taroccopiemontese-34",
+        "card-taroccopiemontese-35",
+        "card-taroccopiemontese-36",
+        "card-taroccopiemontese-37",
+        "card-taroccopiemontese-38",
+        "card-taroccopiemontese-39",
+        "card-taroccopiemontese-4",
+        "card-taroccopiemontese-40",
+        "card-taroccopiemontese-41",
+        "card-taroccopiemontese-42",
+        "card-taroccopiemontese-43",
+        "card-taroccopiemontese-44",
+        "card-taroccopiemontese-45",
+        "card-taroccopiemontese-46",
+        "card-taroccopiemontese-47",
+        "card-taroccopiemontese-48",
+        "card-taroccopiemontese-49",
+        "card-taroccopiemontese-5",
+        "card-taroccopiemontese-50",
+        "card-taroccopiemontese-51",
+        "card-taroccopiemontese-52",
+        "card-taroccopiemontese-53",
+        "card-taroccopiemontese-54",
+        "card-taroccopiemontese-55",
+        "card-taroccopiemontese-56",
+        "card-taroccopiemontese-57",
+        "card-taroccopiemontese-58",
+        "card-taroccopiemontese-59",
+        "card-taroccopiemontese-6",
+        "card-taroccopiemontese-60",
+        "card-taroccopiemontese-61",
+        "card-taroccopiemontese-62",
+        "card-taroccopiemontese-63",
+        "card-taroccopiemontese-64",
+        "card-taroccopiemontese-65",
+        "card-taroccopiemontese-66",
+        "card-taroccopiemontese-67",
+        "card-taroccopiemontese-68",
+        "card-taroccopiemontese-69",
+        "card-taroccopiemontese-7",
+        "card-taroccopiemontese-70",
+        "card-taroccopiemontese-71",
+        "card-taroccopiemontese-72",
+        "card-taroccopiemontese-73",
+        "card-taroccopiemontese-74",
+        "card-taroccopiemontese-75",
+        "card-taroccopiemontese-76",
+        "card-taroccopiemontese-77",
+        "card-taroccopiemontese-78",
+        "card-taroccopiemontese-8",
+        "card-taroccopiemontese-9",
+        "card-taroccosiciliano-1",
+        "card-taroccosiciliano-10",
+        "card-taroccosiciliano-11",
+        "card-taroccosiciliano-12",
+        "card-taroccosiciliano-13",
+        "card-taroccosiciliano-14",
+        "card-taroccosiciliano-15",
+        "card-taroccosiciliano-16",
+        "card-taroccosiciliano-17",
+        "card-taroccosiciliano-18",
+        "card-taroccosiciliano-19",
+        "card-taroccosiciliano-2",
+        "card-taroccosiciliano-20",
+        "card-taroccosiciliano-21",
+        "card-taroccosiciliano-22",
+        "card-taroccosiciliano-3",
+        "card-taroccosiciliano-4",
+        "card-taroccosiciliano-5",
+        "card-taroccosiciliano-6",
+        "card-taroccosiciliano-7",
+        "card-taroccosiciliano-8",
+        "card-taroccosiciliano-9",
         "card-tarotdebesancon-1",
         "card-tarotdebesancon-10",
         "card-tarotdebesancon-11",

@@ -1,0 +1,77 @@
+{
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "note": "Course written as markdown, converted to a grammar once (Oct 2026)."
+      }
+    ]
+  },
+  "name": "Your Card Table",
+  "description": "A practice for sorting your life with the cards: areas down the side, less · keep · more across the top, one card in each cell. Then you sit with it and decide. The practice, the notation in five minutes, and a table to try.",
+  "grammar_type": "custom",
+  "creator_name": "PlayfulProcess",
+  "default_view": "play",
+  "reading_mode_default": "continuous",
+  "provenance": "reference",
+  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/golden-dawn-book-t-tarot-cover.jpg",
+  "tags": [
+    "tarot",
+    "course",
+    "read-more-deeply"
+  ],
+  "import_visibility": "private",
+  "metadata": {
+    "common_name": "Your Card Table",
+    "category": "course"
+  },
+  "nodes": [
+    {
+      "id": "lesson-01-introduction",
+      "name": "Introduction",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "This is a practice I use to set priorities. It is the most ordinary thing on this site: a table, a deck, and an hour. I share it because it has changed how I relate to the cards. Here they don't tell me what will happen. They sit in a grid I drew, and I decide what to do with each square."
+      }
+    },
+    {
+      "id": "lesson-02-the-practice",
+      "name": "The practice",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "Draw a table. Down the side, the **areas** of your life you want to look at: projects, practices, relationships, whatever is asking for attention. Across the top, three columns: **do less · keep · do more**. Shuffle, and lay one card in each cell. Sometimes two.\n\nThen sit with it. The first thing I look at is where the **major arcana** fall, because those are the cards the tradition treats as the big movements. Then I go row by row. A card under *keep* in an area where I have been restless can read as a nudge to stay the course a little longer. A card under *do more* can surprise me. I don't look for the \"best\" card. I look for the one that feels **needed**, and I circle it. Those circled cards are the message of the table.\n\nUnder the table I sometimes write a line or two (\"cards = possibilities\") and, now and then, a short row from another deck or oracle beside the tarot.\n\nThe table is mine. The cards land in it; I decide. That is the whole creed of this site in one practice: [relate to the card, never obey it](https://recursive.eco/play?id=f824e706-af68-4cf9-98ad-2977b69e1e4e&pane=continuous)."
+      }
+    },
+    {
+      "id": "lesson-03-the-notation-in-five-minutes",
+      "name": "The notation, in five minutes",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "To write a table down, or to type one, I use a short code for each card:\n\n- **Major arcana** are Roman numerals: `0` (the Fool) to `XXI` (the World). `XVIII` is the Moon.\n- **Minor arcana** are rank + suit. Ranks: `A` (or `1`), `2` to `10`, `P` page, `Kn` knight, `Q` queen, `K` king. Suits: `W` wands, `C` cups, `S` swords, `P` pentacles. So `4C` is the Four of Cups, `KnP` the Knight of Pentacles, `PP` the Page of Pentacles.\n- An arrow **down**, `↓`, after a card means it fell reversed: `7C↓`. (`r` works too.) Upright needs no mark.\n- **Parentheses** mean circled, the card carrying the message: `(XVIII)`.\n- Two cards in one cell: a space between them, `8C 3P`.\n\nBy hand I draw the suits as small pictures: a leaf for wands, a heart for cups, a sword with its cross-guard for swords, a pentagram for pentacles. A hand-drawn sword can look like a `+`, so the page reads `+` as swords too.\n\nA whole table is one line per area, cells separated by `|`:\n\n```\ncolumns: less | keep | more\n\nWork      | 4C      | 3W      | (XVIII)\nHealth    | 7C↓     | 8C 3P   | QS\nWriting   | (XVII)  | AS      | 6W\nFamily    | KnP     | (VIII)  | IV\n\n> cards = possibilities\n```\n\nThese rows are made up. A real table names real people and projects, so mine stay private."
+      }
+    },
+    {
+      "id": "lesson-04-try-it",
+      "name": "Try it",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "The **[Card Table](https://tarot.recursive.eco/viewers/table.html)** page does all of this in the browser:\n\n- Add, rename or remove areas and columns, then **Lay the table**: one card falls into each empty cell from the deck you choose. Or type the cards yourself, from a reading you laid on the floor.\n- Majors get a gold frame, circled cards a ring, reversed cards turn upside down.\n- Tap a card to read what its deck says about it (the reversed reading first, when it fell reversed), circle it, turn it, and write **My note**.\n- **Show codes** puts each card's code under it while you learn the notation. Untick it when you know them.\n- Your table stays in your browser. Export it as a text file to keep it, or **as a grammar**: each card becomes an item carrying where it fell, your note and its deck's reading, grouped by area, by column and by the circled message. recursive.eco can import that file (Create, then Import JSON), and it arrives as your own private draft.\n\nThe codes are also a way to hand a table to an assistant: written this way, a table can be read, compared with last month's, or kept, without anyone having to guess which card is which. That part lives in recursive.eco, and it is still being built."
+      }
+    },
+    {
+      "id": "lesson-05-what-it-is-not",
+      "name": "What it is not",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "It is not a forecast. The cards don't know which project will succeed. What the table does is what the [other courses here](https://recursive.eco/play?id=6f7b419b-e740-45b1-ba82-728dc79b0317&pane=continuous) describe: it puts a random picture next to a part of your life and asks you to say what you see. You may find a new angle, or you may find you already knew. Either way, the decision was yours before the cards fell, and it is yours after."
+      }
+    }
+  ]
+}

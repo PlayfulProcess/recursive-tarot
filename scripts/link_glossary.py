@@ -27,18 +27,17 @@ Re-running first removes every link this script made (any link to the glossary o
 the "On the Tree" line, then adds them again, so a change to the glossary propagates. Do not hand-add
 links to those two pages in these files: they will be normalised on the next run.
 
-Files: tarot/golden-dawn-book-t-tarot/grammar.json, course/walking-the-golden-dawn-path.mdx (then
-its generated grammar is rebuilt with scripts/course_to_grammar.py), and
-course/golden-dawn-dignities-not-reversals.mdx.
+Files: tarot/golden-dawn-book-t-tarot/grammar.json and the Golden Dawn course grammars in COURSES
+(each lesson's Content; since Oct 23 2026 a course is a grammar, read in recursive.eco Play).
 """
-import argparse, json, os, re, subprocess, sys
+import argparse, json, os, re, sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 GLOSSARY = os.path.join(ROOT, "tarot", "glossary-of-tarot", "grammar.json")
 DECK = os.path.join(ROOT, "tarot", "golden-dawn-book-t-tarot", "grammar.json")
-COURSES = [  # (mdx id, generated grammar slug or None, grammar name)
-    ("walking-the-golden-dawn-path", "walking-the-golden-dawn-path-course", "The Golden Dawn — the Map and the Walk"),
-    ("golden-dawn-dignities-not-reversals", None, None),
+COURSES = [  # course grammars, tarot/<slug>/grammar.json (each lesson's Content is linked)
+    "walking-the-golden-dawn-path-course",
+    "golden-dawn-dignities-not-reversals-course",
 ]
 EDITORIAL = ("Correspondences", "Astrological attribution (Book T)", "About the Keys", "About the Decans",
              "About this Suit", "How to Use")
@@ -164,13 +163,13 @@ def link_prose(text, terms):
     return "\n".join(out)
 
 
-def link_mdx(text, terms):
-    """Link a course: a new section at every heading; skip frontmatter, quotes, HTML blocks."""
+def link_mdx(text, terms, frontmatter=True):
+    """Link a course text: a new section at every heading; skip frontmatter, quotes, HTML blocks."""
     text = unlink(text)
     lines, out = text.split("\n"), []
     sec, in_fm, in_html, in_code = Section(terms), False, False, False
     for n, line in enumerate(lines):
-        if n == 0 and line.strip() == "---":
+        if frontmatter and n == 0 and line.strip() == "---":
             in_fm = True
             out.append(line)
             continue
@@ -246,27 +245,23 @@ def main():
         if not args.check:
             open(DECK, "w", encoding="utf-8", newline="\n").write(out)
 
-    for mdx_id, slug, name in COURSES:
-        p = os.path.join(ROOT, "course", mdx_id + ".mdx")
-        src = open(p, encoding="utf-8").read()
-        new = link_mdx(src, terms)
-        if new != src:
-            pending.append(os.path.relpath(p, ROOT))
+    for slug in COURSES:
+        p = os.path.join(ROOT, "tarot", slug, "grammar.json")
+        g = json.load(open(p, encoding="utf-8"))
+        n = 0
+        for it in g["nodes"]:
+            secs = it.get("sections") or {}
+            v = secs.get("Content")
+            if isinstance(v, str):
+                new = link_mdx(v, terms, frontmatter=False)
+                if new != v:
+                    secs["Content"] = new
+                    n += 1
+        if n:
+            pending.append(f"tarot/{slug}/grammar.json ({n} lessons)")
             if not args.check:
-                open(p, "w", encoding="utf-8", newline="\n").write(new)
-        if slug and not args.check:
-            r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "course_to_grammar.py"), mdx_id, slug, name],
-                               capture_output=True, text=True, cwd=ROOT)
-            if r.returncode:
-                errors.append(f"course_to_grammar {mdx_id} failed: {r.stderr.strip()[-300:]}")
-        elif slug:
-            # the generated course grammar must carry the same links as its source
-            g = json.load(open(os.path.join(ROOT, "tarot", slug, "grammar.json"), encoding="utf-8"))
-            body = "\n".join((it.get("sections") or {}).get("Content", "") for it in g["nodes"])
-            for m in OURS.finditer(new):
-                if m.group(0) not in body:
-                    pending.append(f"tarot/{slug}/grammar.json (rebuild from {mdx_id}.mdx)")
-                    break
+                with open(p, "w", encoding="utf-8", newline="\n") as f:
+                    f.write(json.dumps(g, ensure_ascii=False, indent=2) + "\n")
 
     for e in errors:
         print("ERROR:", e)

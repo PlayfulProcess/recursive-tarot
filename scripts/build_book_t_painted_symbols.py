@@ -30,7 +30,8 @@ render the best of our worlds in SVG?"
 * Output: `tarot/book-t/painted-symbols/<card id>.svg`, served at
   https://tarot.recursive.eco/tarot/book-t/painted-symbols/<card id>.svg, and one entry per card in
   `metadata.illustrations` with `edition: "Book T deck, painted with its symbols"` (the 1912 page's
-  Pictures switch: **Painted + symbols**).
+  Pictures switch: **Painted + symbols**). Since Oct 21 2026 this is Book T's OFFICIAL picture: the entry
+  is first, `is_primary`, and the node's `image_url` (see with_illustration).
 """
 import argparse, base64, colorsys, io, json, os, re, subprocess, sys
 from html import escape
@@ -282,16 +283,17 @@ def card_svg(node, url, data, top, bot):
 # ── the grammar ─────────────────────────────────────────────────────────────────────────────────
 
 def with_illustration(node):
+    """The official picture (her words, Oct 21 2026: "let's make these cards the official ones"): this
+    set's entry goes first in `metadata.illustrations`, carries `is_primary`, and is the node's
+    `image_url`. The other sets stay in the list, in their order, one tap away."""
     m = node['metadata']
-    entry = {'url': URL % node['id'], 'artist': ARTIST, 'edition': EDITION, 'license': 'CC-BY-SA-4.0'}
-    ills = list(m.get('illustrations') or [])
-    at = [k for k, i in enumerate(ills) if i.get('edition') == EDITION]
-    if at:
-        ills[at[0]] = entry
-        ills = [i for k, i in enumerate(ills) if k not in at[1:]]
-    else:
-        ills.append(entry)
-    m['illustrations'] = ills
+    entry = {'url': URL % node['id'], 'artist': ARTIST, 'edition': EDITION, 'license': 'CC-BY-SA-4.0',
+             'is_primary': True}
+    ills = [dict(i) for i in (m.get('illustrations') or []) if i.get('edition') != EDITION]
+    for i in ills:
+        i.pop('is_primary', None)
+    m['illustrations'] = [entry] + ills
+    node['image_url'] = entry['url']
 
 
 def render_pngs(ids, out_dir):

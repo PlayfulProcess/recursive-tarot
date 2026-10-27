@@ -69,6 +69,21 @@ Newcomers don't know the scaffolding. Add sections that explain:
 
 ---
 
+## Later — Courses in recursive.eco's Play, continuous *(logged Oct 23 2026, PlayfulProcess)*
+Her words: "If courses are grammars already, I would render them in Play continuous, if not, log in future plans."
+Where it stands: the 23 courses are grammars in this repo (`tarot/*-course/grammar.json`, generated from
+`course/*.mdx`), but they carry `_generated: true`, so the app sync skips them and none is in recursive.eco
+(checked Oct 23 2026 with the MCP `list_grammars`). To do it:
+1. Decide whether the app may import generated grammars one way (repo → app only, never written back), or
+   publish each course once with `import_grammars` and re-sync on change.
+2. Make each one public, add its id to `tarot/_eco_ids.json`, and point the course links (header menu,
+   `pages/courses.html`, `course-viewer.html`) at `https://recursive.eco/play?id=<id>&pane=continuous`,
+   keeping `course-viewer.html` as the fallback, the way `viewers/to-eco.js` does for decks.
+3. Check that the course-viewer's embeds (cards, Caster spreads, videos) survive in Play; any that don't
+   stay on the tarot site.
+
+---
+
 ## Cross-cutting (already shipped)
 - Chronological deck dropdowns (cards + caster). · Deck-aware "Get a Reading" (`?src=` → `_eco_ids` →
   `?deckId=`). · Real auth detection (`window.recursiveAuth`, the `.recursive.eco` session).

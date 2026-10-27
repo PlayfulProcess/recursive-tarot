@@ -118,13 +118,11 @@ MDX) and `viewers/grammar-course.html` / `cards.html` (from the grammar).
 
 | Slug | Items | App-synced |
 |---|---:|:--:|
-| `build-a-tarot-deck-with-claude-course` | 1 | no |
 | `divination-traditions-course` | 12 | no |
 | `games-of-the-tarot-course` | 10 | no |
 | `history-of-tarot-course` | 17 | no |
 | `hospicing-modernity-reads-the-tarot-course` | 6 | no |
 | `how-tarot-works-course` | 8 | no |
-| `how-the-golden-dawn-read-the-tarot-course` | 1 | no |  ← stub; merged into `walking-the-golden-dawn-path` (Jul 30 2026)
 | `how-to-contribute` | 14 | **yes** |
 | `intention-setting-course` | 12 | no |
 | `jung-reads-the-tarot-course` | 8 | no |
@@ -136,15 +134,14 @@ MDX) and `viewers/grammar-course.html` / `cards.html` (from the grammar).
 | `reading-the-cards-course` | 13 | no |
 | `tarot-and-the-crack-course` | 13 | no |
 | `tarot-today-course` | 11 | no |
-| `the-light-of-tarot-course` | 1 | no |
 | `walking-the-golden-dawn-path-course` | 10 | no |
 | `what-a-reading-can-do-course` | 7 | no |
 | `why-a-reading-feels-personal-course` | 8 | no |
 | `working-with-claude-desktop-course` | 11 | no |
 
-Two courses carry only **1 item** — `build-a-tarot-deck-with-claude-course` and
-`the-light-of-tarot-course`. Their MDX has no lesson splits, so the whole course renders as a
-single lesson. Worth checking whether that's intended.
+The three one-item stubs (`build-a-tarot-deck-with-claude-course`, `how-the-golden-dawn-read-the-tarot-course`,
+`the-light-of-tarot-course`) were removed Oct 24 2026; PlayfulProcess deleted them in recursive.eco. Their
+content lives in Ways to Contribute, The Golden Dawn: the Map and the Walk, and How the Cards Can Work.
 
 ---
 

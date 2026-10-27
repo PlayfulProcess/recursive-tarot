@@ -213,12 +213,12 @@
       <a class="btn" href="golden-dawn-path.html" title="The Tree of Life in motion: each path lights and its Key comes forward"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M13 2L6 13h5l-2 9 8-12h-5z" fill="currentColor"/></svg> The path, animated</a>
       <div class="pics" role="radiogroup" aria-label="The pictures beside the cards">
         <span class="picl">Pictures</span>
-        <button type="button" role="radio" data-pics="line" aria-checked="true">Book T</button>
+        <button type="button" role="radio" data-pics="psym" aria-checked="true">Painted + symbols</button>
+        <button type="button" role="radio" data-pics="line" aria-checked="false">Line art</button>
         <button type="button" role="radio" data-pics="paint" aria-checked="false">Painting</button>
         <button type="button" role="radio" data-pics="icon" aria-checked="false">Iconography</button>
         <button type="button" role="radio" data-pics="full" aria-checked="false">Full imagery</button>
         <button type="button" role="radio" data-pics="lino" aria-checked="false">Linocut</button>
-        <button type="button" role="radio" data-pics="psym" aria-checked="false">Painted + symbols</button>
         <button type="button" role="radio" data-pics="rws" aria-checked="false">Rider-Waite-Smith</button>
       </div>
     </div>
@@ -281,10 +281,11 @@
   // describes, composed by scripts/build_book_t_full_imagery.py), its linocut (the same, printed as a relief
   // print by scripts/build_book_t_linocut.py), the painting framed by its symbols (Oct 20: the glyphs in gold
   // round the painting, by scripts/build_book_t_painted_symbols.py), or Rider-Waite-Smith.
-  // One choice for every picture on the page, remembered on this device.
+  // One choice for every picture on the page, remembered on this device. Since Oct 21 2026 the default
+  // is the painting framed by its symbols, Book T's official picture.
   const picBtns = [...document.querySelectorAll('[data-pics]')];
   function showPics(kind) {
-    if (!['line', 'paint', 'icon', 'full', 'lino', 'psym', 'rws'].includes(kind)) kind = 'line';
+    if (!['line', 'paint', 'icon', 'full', 'lino', 'psym', 'rws'].includes(kind)) kind = 'psym';
     document.querySelectorAll('img[data-pic-line]').forEach(img => {
       const src = img.getAttribute('data-pic-' + kind);
       if (src && img.getAttribute('src') !== src) img.setAttribute('src', src);
@@ -293,9 +294,9 @@
     try { localStorage.setItem('bookt-pics', kind); } catch (e) {}
   }
   picBtns.forEach(b => b.addEventListener('click', () => showPics(b.dataset.pics)));
-  let savedPics = 'line';
-  try { savedPics = localStorage.getItem('bookt-pics') || 'line'; } catch (e) {}
-  if (savedPics !== 'line') showPics(savedPics);
+  let savedPics = 'psym';
+  try { savedPics = localStorage.getItem('bookt-pics') || 'psym'; } catch (e) {}
+  if (savedPics !== 'psym') showPics(savedPics);
 
   // The finder opens by default on wide screens only.
   try { if (window.matchMedia('(min-width:1100px)').matches) $('finder').open = true; } catch (e) {}

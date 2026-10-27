@@ -13,16 +13,22 @@
   "description": "A reading stance for urgent times: the card is not a problem to solve or a fortune to extract, but a sanctuary where the monstrous, the stuck, and the unspeakable can be hosted rather than mastered.",
   "grammar_type": "custom",
   "creator_name": "PlayfulProcess",
-  "default_view": "course",
+  "default_view": "play",
+  "reading_mode_default": "continuous",
   "provenance": "reference",
+  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1782185341070-v4uns7duyd.png",
+  "tags": [
+    "tarot",
+    "course",
+    "the-reading-voices"
+  ],
   "metadata": {
     "common_name": "The Post-Activism Lens",
-    "category": "reference",
-    "source_mdx": "course/post-activism-reads-the-tarot.mdx"
+    "category": "course"
   },
-  "_generated": true,
-  "_built_by": "scripts/course_to_grammar.py",
-  "_source_mdx": "course/post-activism-reads-the-tarot.mdx",
+  "_generated": false,
+  "_built_by": "Converted once from course/post-activism-reads-the-tarot.mdx on 2026-10-23; this file is the source now (edit it, or the grammar in recursive.eco).",
+  "_source_mdx": "course/post-activism-reads-the-tarot.mdx (retired; in the repository's history)",
   "nodes": [
     {
       "id": "lesson-01-introduction",
@@ -30,7 +36,7 @@
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "> *\"The times are urgent; let us slow down.\"*\n>\n> — **Bayo Akomolafe**, a refrain from his post-activist teaching\n\nA note before we begin, because it is a matter of conscience: this lens is *inspired by* the work of Bayo Akomolafe, a living Yoruba teacher and poet. It is a faithful interpretation, not a transcription. These are not his words, this is not his deck, and he has never heard of it. He has not blessed it and could not, because part of what he teaches is a suspicion of the very gesture of mastery that would put his name on a tool and call it finished. So read this as one student's attempt to let a way of paying attention pass through a tarot card — and hold even that loosely.\n\nThis is a voice in a series, and like the others it begins where [How the Cards Can Work](course-viewer.html?course=how-tarot-works) leaves off: the card is not telling your future. It is a surface that catches something already moving in you. Most of the voices in this series want to help you *use* that — to decide, to integrate, to act. This one is more suspicious of use. It wonders whether the rush to use, to fix, to resolve, is itself part of what is breaking us."
+        "Content": "> *\"The times are urgent; let us slow down.\"*\n>\n> — **Bayo Akomolafe**, a refrain from his post-activist teaching\n\nA note before we begin, because it is a matter of conscience: this lens is *inspired by* the work of Bayo Akomolafe, a living Yoruba teacher and poet. It is a faithful interpretation, not a transcription. These are not his words, this is not his deck, and he has never heard of it. He has not blessed it and could not, because part of what he teaches is a suspicion of the very gesture of mastery that would put his name on a tool and call it finished. So read this as one student's attempt to let a way of paying attention pass through a tarot card — and hold even that loosely.\n\nThis is a voice in a series, and like the others it begins where [How the Cards Can Work](https://recursive.eco/play?id=f824e706-af68-4cf9-98ad-2977b69e1e4e&pane=continuous) leaves off: the card is not telling your future. It is a surface that catches something already moving in you. Most of the voices in this series want to help you *use* that — to decide, to integrate, to act. This one is more suspicious of use. It wonders whether the rush to use, to fix, to resolve, is itself part of what is breaking us."
       }
     },
     {
@@ -57,7 +63,7 @@
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "This series already has a companion piece, [Tarot & the Crack](course-viewer.html?course=tarot-and-the-crack), and it is no accident the two rhyme. The crack — the place where things don't add up, where your reading breaks down, where the card refuses to mean anything tidy — is not a flaw in the reading. It is the reading. *The crack is where the new gets in.*\n\nThe cult of solutions teaches us that an unresolved thing is a failure. Post-activism teaches the opposite: that closure is often where thought goes to die, and that the genuinely new — the response you couldn't have planned, the move that isn't on any existing map — only arrives through the fracture, never through the smooth surface of a problem well-managed. So when a card cracks you open and you feel the old urge to seal it back up with an interpretation, resist. Stay in the draft. Let the cold air in. That discomfort is not the absence of an answer; it may be the only doorway an answer of a different order could ever use.\n\nPost-activism is, at root, an *inquiry, not an answer* — a way of asking better questions rather than a vending machine for solutions. The card is the same. It is not a fortune to extract or a problem to solve. It is an invitation to stay."
+        "Content": "This series already has a companion piece, [Tarot & the Crack](https://recursive.eco/play?id=d2852625-7fb8-4583-96c7-041753703e4f&pane=continuous), and it is no accident the two rhyme. The crack — the place where things don't add up, where your reading breaks down, where the card refuses to mean anything tidy — is not a flaw in the reading. It is the reading. *The crack is where the new gets in.*\n\nThe cult of solutions teaches us that an unresolved thing is a failure. Post-activism teaches the opposite: that closure is often where thought goes to die, and that the genuinely new — the response you couldn't have planned, the move that isn't on any existing map — only arrives through the fracture, never through the smooth surface of a problem well-managed. So when a card cracks you open and you feel the old urge to seal it back up with an interpretation, resist. Stay in the draft. Let the cold air in. That discomfort is not the absence of an answer; it may be the only doorway an answer of a different order could ever use.\n\nPost-activism is, at root, an *inquiry, not an answer* — a way of asking better questions rather than a vending machine for solutions. The card is the same. It is not a fortune to extract or a problem to solve. It is an invitation to stay."
       }
     },
     {
@@ -75,7 +81,7 @@
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "This lens will frustrate you if you came for an answer, and that is partly the point — it is here to argue with the part of you that wants the cards to be efficient. But it is not the law. It sits beside the others — the philosopher's rigor, the clinician's wise mind in [How Could DBT Read the Tarot?](course-viewer.html?course=marsha-linehan-reads-the-tarot), the intention you set in [Intention Setting](course-viewer.html?course=intention-setting) before you ever drew. None of them rules. Together they make an ecosystem of conscience, and you are the one who chooses which voice to trust on a given night.\n\nSo go to the [Caster](../viewers/caster.html), draw, and instead of asking what it means, ask whether you can bear to leave it open a little longer. The times are urgent. That is exactly why we slow down."
+        "Content": "This lens will frustrate you if you came for an answer, and that is partly the point — it is here to argue with the part of you that wants the cards to be efficient. But it is not the law. It sits beside the others — the philosopher's rigor, the clinician's wise mind in [How Could DBT Read the Tarot?](https://recursive.eco/play?id=ba765c72-7f75-40c0-8b80-f37d8fa7fad6&pane=continuous), the intention you set in [Intention Setting](https://recursive.eco/play?id=f08856eb-7fa6-40d4-818a-ee5f520fb30b&pane=continuous) before you ever drew. None of them rules. Together they make an ecosystem of conscience, and you are the one who chooses which voice to trust on a given night.\n\nSo go to the [Caster](https://tarot.recursive.eco/viewers/caster.html), draw, and instead of asking what it means, ask whether you can bear to leave it open a little longer. The times are urgent. That is exactly why we slow down."
       }
     }
   ]

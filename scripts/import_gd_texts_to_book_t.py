@@ -45,7 +45,7 @@ WAITE_HEAD = ("*A. E. Waite, a member of the Golden Dawn, in* The Pictorial Key 
               " · public domain · he describes the Rider-Waite-Smith picture of this card, not Book T's*")
 CASE_HEAD = ("*Paul Foster Case, in* An Introduction to the Study of the Tarot *(New York, 1920), Chapter III,"
              " on the letter %s · public domain in the US · "
-             "[the whole booklet](https://tarot.recursive.eco/pages/course-viewer.html?course=booklets/case-introduction-to-the-study-of-the-tarot-1920)*")
+             "[the whole booklet](https://recursive.eco/play?id=2b99b34f-7c83-411b-9430-2a7376bb8134&pane=continuous)*")
 CASE_CAVEAT = ("*(A later editor changed the direction Case gave this letter in 1920; see the booklet's note"
                " before quoting it.)*")
 # Book T's transliteration → Case's heading.

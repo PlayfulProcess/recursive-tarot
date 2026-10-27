@@ -1,0 +1,744 @@
+{
+  "_github_url": "https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/hindu-pantheon-draft/grammar.json",
+  "_github_source_url": "https://raw.githubusercontent.com/PlayfulProcess/recursive-tarot/main/tarot/hindu-pantheon-draft/grammar.json",
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "Raja Ravi Varma and the Ravi Varma Press",
+        "date": "1890s–1910s",
+        "note": "Pictures, public domain, via Wikimedia Commons"
+      },
+      {
+        "name": "Paper Jewels; Wellcome Collection",
+        "date": "c. 1905",
+        "note": "Two pictures, CC BY 4.0"
+      },
+      {
+        "name": "PlayfulProcess",
+        "date": "2026",
+        "note": "Draft deck: summaries and questions"
+      }
+    ]
+  },
+  "name": "Hindu Pantheon (draft) — in Ravi Varma's prints",
+  "description": "# Hindu Pantheon (draft)\n\nTwenty-one gods and goddesses, each in a public-domain print or painting by Raja Ravi Varma (1848–1906) or the\nRavi Varma Press, which from 1894 brought printed gods into homes across India. Each card says who the figure is,\nin short, and asks one question.\n\n**A living tradition.** These are gods people worship today. A student from outside the tradition made this deck,\nfor reflection; the \"Read more\" links lead to fuller accounts, and the tradition's own teachers and texts are where\nto learn. The questions are written for this deck. The deck's\nrule holds here as everywhere: relate to the card; never obey it.\n\n**Pictures.** Wikimedia Commons, public domain (Ravi Varma died in 1906; the Press prints are early 20th-century),\nexcept Parvati as Gajagauri (Paper Jewels, CC BY 4.0) and Savitri and Yama (Wellcome Collection, CC BY 4.0). Each\ncard names its file.\n\n**Draft, 23 October 2026.** Not yet listed on the site; for PlayfulProcess to read and change.",
+  "grammar_type": "tarot",
+  "provenance": "living",
+  "creator_name": "PlayfulProcess",
+  "creator_link": "https://recursive.eco",
+  "cover_image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/ganesha.jpg",
+  "tags": [
+    "hindu",
+    "pantheon",
+    "deities",
+    "ravi-varma",
+    "draft",
+    "reflection"
+  ],
+  "import_visibility": "link",
+  "default_view": "cards",
+  "_community_folder": "tarot",
+  "_community_slug": "hindu-pantheon-draft",
+  "metadata": {
+    "category": "contemporary",
+    "status": "draft",
+    "common_name": "Hindu Pantheon (draft)"
+  },
+  "nodes": [
+    {
+      "id": "ganesha",
+      "name": "Ganesha · the remover of obstacles",
+      "sort_order": 0,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "ganesha"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/ganesha.jpg",
+            "scene": "Ganesha · the remover of obstacles",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "circa 1910",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Ganapati1.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Ganapati1.jpg"
+      },
+      "sections": {
+        "Who": "The elephant-headed son of Shiva and Parvati, lord of beginnings, honoured first before any rite or undertaking. He rides a mouse. In this print he sits enthroned between two women, often named Riddhi and Siddhi, prosperity and accomplishment.",
+        "To reflect": "What is beginning, and what stands at its door?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Ganesha, Wikipedia](https://en.wikipedia.org/wiki/Ganesha)",
+        "Picture": "Raja Ravi Varma, circa 1910. [Ganapati1.jpg](https://commons.wikimedia.org/wiki/File:Ganapati1.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/ganesha.jpg"
+    },
+    {
+      "id": "saraswati",
+      "name": "Saraswati · knowledge and the arts",
+      "sort_order": 1,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "saraswati"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/saraswati.jpg",
+            "scene": "Saraswati · knowledge and the arts",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "1896",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Goddess_Saraswati_by_Raja_Ravi_Varma,_1896.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Goddess_Saraswati_by_Raja_Ravi_Varma,_1896.jpg"
+      },
+      "sections": {
+        "Who": "Goddess of knowledge, music, speech and learning, and once of a river. She plays the veena, dresses in white, and is shown with a swan or, as here, a peacock beside the water.",
+        "To reflect": "What wants to be learned, or given a voice?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Saraswati, Wikipedia](https://en.wikipedia.org/wiki/Saraswati)",
+        "Picture": "Raja Ravi Varma, 1896. [Goddess Saraswati by Raja Ravi Varma, 1896.jpg](https://commons.wikimedia.org/wiki/File:Goddess_Saraswati_by_Raja_Ravi_Varma,_1896.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/saraswati.jpg"
+    },
+    {
+      "id": "lakshmi",
+      "name": "Lakshmi · fortune",
+      "sort_order": 2,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "lakshmi"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/lakshmi.jpg",
+            "scene": "Lakshmi · fortune",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "1896",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Goddess_Lakshmi,_1896.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Goddess_Lakshmi,_1896.jpg"
+      },
+      "sections": {
+        "Who": "Goddess of wealth, fortune and beauty, the consort of Vishnu. She stands on a lotus holding lotuses; coins fall from her hand, and an elephant waits at the water.",
+        "To reflect": "What abundance is already here?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Lakshmi, Wikipedia](https://en.wikipedia.org/wiki/Lakshmi)",
+        "Picture": "Raja Ravi Varma, 1896. [Raja Ravi Varma, Goddess Lakshmi, 1896.jpg](https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Goddess_Lakshmi,_1896.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/lakshmi.jpg"
+    },
+    {
+      "id": "parvati",
+      "name": "Parvati · the mountain's daughter",
+      "sort_order": 3,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "parvati"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/parvati.jpg",
+            "scene": "Parvati · the mountain's daughter",
+            "artist": "Paper Jewels",
+            "artist_dates": "circa 1905",
+            "edition": "Wikimedia Commons",
+            "license": "CC BY 4.0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Gajagauri-2.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Gajagauri-2.jpg"
+      },
+      "sections": {
+        "Who": "Daughter of Himavat, the Himalaya, wife of Shiva and mother of Ganesha and Kartikeya: the gentle form of the goddess whose fierce forms include Durga and Kali. This print shows her as Gajagauri, Gauri bathed by elephants on a lotus.",
+        "To reflect": "What devotion in you is patient?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Parvati, Wikipedia](https://en.wikipedia.org/wiki/Parvati)",
+        "Picture": "Paper Jewels, circa 1905. [Gajagauri-2.jpg](https://commons.wikimedia.org/wiki/File:Gajagauri-2.jpg), Wikimedia Commons, CC BY 4.0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/parvati.jpg"
+    },
+    {
+      "id": "durga",
+      "name": "Durga · the invincible",
+      "sort_order": 4,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "durga"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/durga.jpg",
+            "scene": "Durga · the invincible",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Durga_by_Raja_Ravi_Varma.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Durga_by_Raja_Ravi_Varma.jpg"
+      },
+      "sections": {
+        "Who": "The warrior goddess who defeats the buffalo demon Mahishasura when the gods cannot; she rides a lion or a tiger. Her festival is Navaratri, and Durga Puja in Bengal.",
+        "To reflect": "What needs protecting, and with what strength?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Durga, Wikipedia](https://en.wikipedia.org/wiki/Durga)",
+        "Picture": "Raja Ravi Varma. [Durga by Raja Ravi Varma.jpg](https://commons.wikimedia.org/wiki/File:Durga_by_Raja_Ravi_Varma.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/durga.jpg"
+    },
+    {
+      "id": "kali",
+      "name": "Kali · time",
+      "sort_order": 5,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "kali"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/kali.jpg",
+            "scene": "Kali · time",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "circa 1910",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Kali_by_Raja_Ravi_Varma.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Kali_by_Raja_Ravi_Varma.jpg"
+      },
+      "sections": {
+        "Who": "The dark, fierce goddess, garlanded with heads, tongue out, one foot on Shiva. Her name is tied to time (kala); in Shakta devotion she is also the Mother.",
+        "To reflect": "What is ending, and can you look at it?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Kali, Wikipedia](https://en.wikipedia.org/wiki/Kali)",
+        "Picture": "Raja Ravi Varma, circa 1910. [Kali by Raja Ravi Varma.jpg](https://commons.wikimedia.org/wiki/File:Kali_by_Raja_Ravi_Varma.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/kali.jpg"
+    },
+    {
+      "id": "shiva",
+      "name": "Shiva · the ascetic of Kailash",
+      "sort_order": 6,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "shiva"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/shiva.jpg",
+            "scene": "Shiva · the ascetic of Kailash",
+            "artist": "Raja Ravi Varma (1848-1906)",
+            "artist_dates": "2017-06-11 19:25:07",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:An_Oleograph_of_Shiva,_Parvati_and_Nandi_by_Raja_Ravi_Varma.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:An_Oleograph_of_Shiva,_Parvati_and_Nandi_by_Raja_Ravi_Varma.jpg"
+      },
+      "sections": {
+        "Who": "One of the three great gods, who dissolves what has run its course. He holds the trident, wears the crescent moon and the Ganga in his hair, and rides the bull Nandi; here with Parvati and Nandi on the mountain.",
+        "To reflect": "What would stillness dissolve?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Shiva, Wikipedia](https://en.wikipedia.org/wiki/Shiva)",
+        "Picture": "Raja Ravi Varma (1848-1906), 2017-06-11 19:25:07. [An Oleograph of Shiva, Parvati and Nandi by Raja Ravi Varma.jpg](https://commons.wikimedia.org/wiki/File:An_Oleograph_of_Shiva,_Parvati_and_Nandi_by_Raja_Ravi_Varma.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/shiva.jpg"
+    },
+    {
+      "id": "vishnu",
+      "name": "Vishnu · the preserver",
+      "sort_order": 7,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "vishnu"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/vishnu.jpg",
+            "scene": "Vishnu · the preserver",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "Unknown date",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Seshanarayana_(Oleographic_print).jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Seshanarayana_(Oleographic_print).jpg"
+      },
+      "sections": {
+        "Who": "The god who keeps the world in order and descends as his avatars when dharma declines. Here he sits under the hoods of the serpent Shesha, with his consorts, on the cosmic waters.",
+        "To reflect": "What needs keeping steady?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Vishnu, Wikipedia](https://en.wikipedia.org/wiki/Vishnu)",
+        "Picture": "Raja Ravi Varma. [Raja Ravi Varma, Seshanarayana (Oleographic print).jpg](https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Seshanarayana_(Oleographic_print).jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/vishnu.jpg"
+    },
+    {
+      "id": "brahma",
+      "name": "Brahma · the creator",
+      "sort_order": 8,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "brahma"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/brahma.jpg",
+            "scene": "Brahma · the creator",
+            "artist": "Unknown authorUnknown author",
+            "artist_dates": "1910s",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Brahma_in_the_center_Devaloka_a_religious_print_from_the_Ravi_Varma_Press,1910%27s.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Brahma_in_the_center_Devaloka_a_religious_print_from_the_Ravi_Varma_Press,1910%27s.jpg"
+      },
+      "sections": {
+        "Who": "The four-headed creator, born from a lotus that grows from Vishnu's navel. Few temples are his; the best known is at Pushkar. This Ravi Varma Press print sets him among the gods of heaven.",
+        "To reflect": "What are you making?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Brahma, Wikipedia](https://en.wikipedia.org/wiki/Brahma)",
+        "Picture": "Unknown authorUnknown author, 1910s. [Brahma in the center Devaloka a religious print from the Ravi Varma Press,1910's.jpg](https://commons.wikimedia.org/wiki/File:Brahma_in_the_center_Devaloka_a_religious_print_from_the_Ravi_Varma_Press,1910%27s.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/brahma.jpg"
+    },
+    {
+      "id": "krishna",
+      "name": "Krishna · the child of Vrindavan",
+      "sort_order": 9,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "krishna"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/krishna.jpg",
+            "scene": "Krishna · the child of Vrindavan",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "1901",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Yasodha_and_Krishna_(1901).jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Yasodha_and_Krishna_(1901).jpg"
+      },
+      "sections": {
+        "Who": "The eighth avatar of Vishnu: the mischievous child raised by Yashoda among cowherds, the flute player, and the teacher of the Bhagavad Gita on the battlefield. Here, a child in his mother's arms.",
+        "To reflect": "Where is play in what you love?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Krishna, Wikipedia](https://en.wikipedia.org/wiki/Krishna)",
+        "Picture": "Raja Ravi Varma, 1901. [Raja Ravi Varma, Yasodha and Krishna (1901).jpg](https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Yasodha_and_Krishna_(1901).jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/krishna.jpg"
+    },
+    {
+      "id": "radha",
+      "name": "Radha · longing",
+      "sort_order": 10,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "radha"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/radha.jpg",
+            "scene": "Radha · longing",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "Unknown date",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Radha_Waiting_for_Krishna.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Radha_Waiting_for_Krishna.jpg"
+      },
+      "sections": {
+        "Who": "Krishna's beloved, the figure of devotion (bhakti) as love and longing, sung in poems like the Gita Govinda. Here she waits.",
+        "To reflect": "What are you waiting for?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Radha, Wikipedia](https://en.wikipedia.org/wiki/Radha)",
+        "Picture": "Raja Ravi Varma. [Raja Ravi Varma, Radha Waiting for Krishna.jpg](https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Radha_Waiting_for_Krishna.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/radha.jpg"
+    },
+    {
+      "id": "rama",
+      "name": "Rama · the kept word",
+      "sort_order": 11,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "rama"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/rama.jpg",
+            "scene": "Rama · the kept word",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "Unknown date",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Ravi_Varma-Rama-breaking-bow.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Ravi_Varma-Rama-breaking-bow.jpg"
+      },
+      "sections": {
+        "Who": "The seventh avatar of Vishnu and prince of Ayodhya, hero of the Ramayana. Here he breaks Shiva's great bow, the test set for any suitor of Sita.",
+        "To reflect": "What promise do you keep?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Rama, Wikipedia](https://en.wikipedia.org/wiki/Rama)",
+        "Picture": "Raja Ravi Varma. [Ravi Varma-Rama-breaking-bow.jpg](https://commons.wikimedia.org/wiki/File:Ravi_Varma-Rama-breaking-bow.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/rama.jpg"
+    },
+    {
+      "id": "sita",
+      "name": "Sita · the earth's daughter",
+      "sort_order": 12,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "sita"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/sita.jpg",
+            "scene": "Sita · the earth's daughter",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "Unknown date",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Sita_taken_by_Goddess_Earth.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Sita_taken_by_Goddess_Earth.jpg"
+      },
+      "sections": {
+        "Who": "Rama's wife, found as a child in a furrow of the earth. At the end of her story, doubted once again, she asks the Earth her mother to take her back, and the ground opens.",
+        "To reflect": "Where do you belong?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Sita, Wikipedia](https://en.wikipedia.org/wiki/Sita)",
+        "Picture": "Raja Ravi Varma. [Raja Ravi Varma, Sita taken by Goddess Earth.jpg](https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Sita_taken_by_Goddess_Earth.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/sita.jpg"
+    },
+    {
+      "id": "hanuman",
+      "name": "Hanuman · the devoted",
+      "sort_order": 13,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "hanuman"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/hanuman.jpg",
+            "scene": "Hanuman · the devoted",
+            "artist": "Unknown",
+            "artist_dates": "1910",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Hanuman_fetches_the_herb-bearing_mountain,_in_a_print_from_the_Ravi_Varma_Press,_1910%27s.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Hanuman_fetches_the_herb-bearing_mountain,_in_a_print_from_the_Ravi_Varma_Press,_1910%27s.jpg"
+      },
+      "sections": {
+        "Who": "The monkey god, Rama's devotee. When Lakshmana lies wounded, Hanuman flies to the Himalaya for a healing herb and, not knowing which, carries back the whole mountain.",
+        "To reflect": "What would you carry for someone?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Hanuman, Wikipedia](https://en.wikipedia.org/wiki/Hanuman)",
+        "Picture": "Unknown artist, 1910. [Hanuman fetches the herb-bearing mountain, in a print from the Ravi Varma Press, 1910's.jpg](https://commons.wikimedia.org/wiki/File:Hanuman_fetches_the_herb-bearing_mountain,_in_a_print_from_the_Ravi_Varma_Press,_1910%27s.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/hanuman.jpg"
+    },
+    {
+      "id": "narasimha",
+      "name": "Narasimha · the man-lion",
+      "sort_order": 14,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "narasimha"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/narasimha.jpg",
+            "scene": "Narasimha · the man-lion",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "1930",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Narasimha_by_Raja_Ravi_Varma.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Narasimha_by_Raja_Ravi_Varma.jpg"
+      },
+      "sections": {
+        "Who": "The man-lion avatar of Vishnu. The king Hiranyakashipu could be killed by neither man nor beast, by day nor night, indoors nor out; Narasimha kills him at dusk on a threshold to protect the boy Prahlada.",
+        "To reflect": "What protection finds the way between the rules?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Narasimha, Wikipedia](https://en.wikipedia.org/wiki/Narasimha)",
+        "Picture": "Raja Ravi Varma, 1930. [Narasimha by Raja Ravi Varma.jpg](https://commons.wikimedia.org/wiki/File:Narasimha_by_Raja_Ravi_Varma.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/narasimha.jpg"
+    },
+    {
+      "id": "kartikeya",
+      "name": "Kartikeya · Murugan",
+      "sort_order": 15,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "kartikeya"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/kartikeya.jpg",
+            "scene": "Kartikeya · Murugan",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "Unknown date",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Murugan_by_Raja_Ravi_Varma.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Murugan_by_Raja_Ravi_Varma.jpg"
+      },
+      "sections": {
+        "Who": "Son of Shiva and Parvati, the young god of war, also called Skanda and Murugan, much loved in Tamil Nadu. Six-faced, he rides a peacock and carries the spear (vel); here with his consorts Valli and Devasena.",
+        "To reflect": "What courage is young in you?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Kartikeya, Wikipedia](https://en.wikipedia.org/wiki/Kartikeya)",
+        "Picture": "Raja Ravi Varma. [Murugan by Raja Ravi Varma.jpg](https://commons.wikimedia.org/wiki/File:Murugan_by_Raja_Ravi_Varma.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/kartikeya.jpg"
+    },
+    {
+      "id": "ganga",
+      "name": "Ganga · the descent",
+      "sort_order": 16,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "ganga"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/ganga.jpg",
+            "scene": "Ganga · the descent",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "circa 1910",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Ravi_Varma-Descent_of_Ganga.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Ravi_Varma-Descent_of_Ganga.jpg"
+      },
+      "sections": {
+        "Who": "The river goddess. At King Bhagiratha's prayer she falls from heaven, and Shiva catches her in his matted hair so that her fall does not break the earth.",
+        "To reflect": "What force needs a place to land?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Ganga in Hinduism, Wikipedia](https://en.wikipedia.org/wiki/Ganga_in_Hinduism)",
+        "Picture": "Raja Ravi Varma, circa 1910. [Ravi Varma-Descent of Ganga.jpg](https://commons.wikimedia.org/wiki/File:Ravi_Varma-Descent_of_Ganga.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/ganga.jpg"
+    },
+    {
+      "id": "surya",
+      "name": "Surya · the sun",
+      "sort_order": 17,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "surya"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/surya.jpg",
+            "scene": "Surya · the sun",
+            "artist": "Ravi Varma Press",
+            "artist_dates": "Unknown date",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Surya_Narayana.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Surya_Narayana.jpg"
+      },
+      "sections": {
+        "Who": "The sun god, crossing the sky in a chariot drawn by seven horses, driven by Aruna, the dawn.",
+        "To reflect": "What do you see clearly in daylight?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Surya, Wikipedia](https://en.wikipedia.org/wiki/Surya)",
+        "Picture": "Ravi Varma Press. [Surya Narayana.jpg](https://commons.wikimedia.org/wiki/File:Surya_Narayana.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/surya.jpg"
+    },
+    {
+      "id": "yama",
+      "name": "Yama · death and dharma",
+      "sort_order": 18,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "yama"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/yama.jpg",
+            "scene": "Yama · death and dharma",
+            "artist": "Unknown",
+            "artist_dates": "",
+            "edition": "Wikimedia Commons",
+            "license": "CC BY 4.0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Savitr%C4%AB_pleading_with_Yama_for_her_husband,_Satya_Wellcome_V0045106.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Savitr%C4%AB_pleading_with_Yama_for_her_husband,_Satya_Wellcome_V0045106.jpg"
+      },
+      "sections": {
+        "Who": "The god of death, lord of the departed and of righteousness. In the Mahabharata Savitri follows him as he carries off her husband Satyavan, and wins back his life by her wisdom and steadfastness.",
+        "To reflect": "What would you ask of an ending?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Savitri and Satyavan, Wikipedia](https://en.wikipedia.org/wiki/Savitri_and_Satyavan)",
+        "Picture": "Unknown artist. [Savitrī pleading with Yama for her husband, Satya Wellcome V0045106.jpg](https://commons.wikimedia.org/wiki/File:Savitr%C4%AB_pleading_with_Yama_for_her_husband,_Satya_Wellcome_V0045106.jpg), Wikimedia Commons, CC BY 4.0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/yama.jpg"
+    },
+    {
+      "id": "annapurna",
+      "name": "Annapurna · the one who feeds",
+      "sort_order": 19,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "annapurna"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/annapurna.jpg",
+            "scene": "Annapurna · the one who feeds",
+            "artist": "Ravi Varma Press",
+            "artist_dates": "Unknown date",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Goddess_Annapurna_1.jpeg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Goddess_Annapurna_1.jpeg"
+      },
+      "sections": {
+        "Who": "The goddess of food and nourishment, a form of Parvati. At Kashi (Varanasi) she gives alms to Shiva, who comes to her with a begging bowl, as in this print.",
+        "To reflect": "Who feeds you, and whom do you feed?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Annapurna (goddess), Wikipedia](https://en.wikipedia.org/wiki/Annapurna_%28goddess%29)",
+        "Picture": "Ravi Varma Press. [Goddess Annapurna 1.jpeg](https://commons.wikimedia.org/wiki/File:Goddess_Annapurna_1.jpeg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/annapurna.jpg"
+    },
+    {
+      "id": "dattatreya",
+      "name": "Dattatreya · the teachers",
+      "sort_order": 20,
+      "category": "card",
+      "keywords": [
+        "hindu",
+        "deity",
+        "dattatreya"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/dattatreya.jpg",
+            "scene": "Dattatreya · the teachers",
+            "artist": "Raja Ravi Varma",
+            "artist_dates": "1890[1]",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Ravi_Varma-Dattatreya.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Ravi_Varma-Dattatreya.jpg"
+      },
+      "sections": {
+        "Who": "A god in whom Brahma, Vishnu and Shiva are joined, three-headed, with a cow and four dogs. A wandering ascetic, he is honoured as a guru; one story tells of his twenty-four teachers, the earth, the wind, the bee and more.",
+        "To reflect": "Who are your teachers?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Dattatreya, Wikipedia](https://en.wikipedia.org/wiki/Dattatreya)",
+        "Picture": "Raja Ravi Varma, 1890[1]. [Ravi Varma-Dattatreya.jpg](https://commons.wikimedia.org/wiki/File:Ravi_Varma-Dattatreya.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/hindu-pantheon-draft/images/dattatreya.jpg"
+    }
+  ]
+}

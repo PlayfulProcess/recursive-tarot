@@ -1,0 +1,732 @@
+{
+  "_github_url": "https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/greek-pantheon-draft/grammar.json",
+  "_github_source_url": "https://raw.githubusercontent.com/PlayfulProcess/recursive-tarot/main/tarot/greek-pantheon-draft/grammar.json",
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "Hugh G. Evelyn-White (translator)",
+        "date": "1914",
+        "note": "Homeric Hymns and Theogony quotations, public domain"
+      },
+      {
+        "name": "Wikimedia Commons photographers and museums",
+        "date": "various",
+        "note": "Pictures, PD / CC0 / CC BY / CC BY-SA, named on each card"
+      },
+      {
+        "name": "PlayfulProcess",
+        "date": "2026",
+        "note": "Draft deck: summaries and questions"
+      }
+    ]
+  },
+  "name": "Greek Pantheon (draft) — the gods in the Homeric Hymns",
+  "description": "# Greek Pantheon (draft)\n\nTwenty figures of the Greek gods: the twelve of Olympus, Hades and Persephone, and the older or wilder powers, Earth,\nHecate, Pan, Prometheus and Eros. Each card says who the figure is, gives a line about them from the Homeric Hymns or\nHesiod in Evelyn-White's public-domain translation (1914), and asks one question.\n\n**Pictures.** Ancient statues and vases, and a few 18th- and 19th-century paintings, from Wikimedia Commons: public\ndomain, CC0, or CC BY / BY-SA (Marie-Lan Nguyen, Livioandronico2013 and others). Each card names its file.\n\nThe questions are written for this deck. The deck's rule holds here as everywhere: relate to the card; never obey it.\n\n**Draft, 23 October 2026.** Not yet listed on the site; for PlayfulProcess to read and change.",
+  "grammar_type": "tarot",
+  "provenance": "living",
+  "creator_name": "PlayfulProcess",
+  "creator_link": "https://recursive.eco",
+  "cover_image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/zeus.jpg",
+  "tags": [
+    "greek",
+    "pantheon",
+    "mythology",
+    "homeric-hymns",
+    "hesiod",
+    "draft",
+    "reflection"
+  ],
+  "import_visibility": "link",
+  "default_view": "cards",
+  "_community_folder": "tarot",
+  "_community_slug": "greek-pantheon-draft",
+  "metadata": {
+    "category": "contemporary",
+    "status": "draft",
+    "common_name": "Greek Pantheon (draft)"
+  },
+  "nodes": [
+    {
+      "id": "zeus",
+      "name": "Zeus · the sky",
+      "sort_order": 0,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "zeus"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/zeus.jpg",
+            "scene": "Zeus · the sky",
+            "artist": "Unknown artistUnknown artist",
+            "artist_dates": "",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Zeus_Otricoli_Pio-Clementino_Inv257.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Zeus_Otricoli_Pio-Clementino_Inv257.jpg"
+      },
+      "sections": {
+        "Who": "King of the gods, lord of the sky and the thunderbolt, who took the rule from his father Cronos. This marble head, found at Otricoli, shows him bearded and calm.",
+        "In the old words": "\"I will sing of Zeus, chiefest among the gods and greatest, all-seeing, the lord of all, the fulfiller who whispers words of wisdom to Themis as she sits leaning towards him.\"\n\nHomeric Hymn 23, To the Son of Cronos, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What would you rule, and what would you leave to counsel?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Zeus, Wikipedia](https://en.wikipedia.org/wiki/Zeus)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Unknown artistUnknown artist. [Zeus Otricoli Pio-Clementino Inv257.jpg](https://commons.wikimedia.org/wiki/File:Zeus_Otricoli_Pio-Clementino_Inv257.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/zeus.jpg"
+    },
+    {
+      "id": "hera",
+      "name": "Hera · the queen",
+      "sort_order": 1,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "hera"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/hera.jpg",
+            "scene": "Hera · the queen",
+            "artist": "Marie-Lan Nguyen",
+            "artist_dates": "2006",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Hera_Campana_Louvre_Ma2283.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Hera_Campana_Louvre_Ma2283.jpg"
+      },
+      "sections": {
+        "Who": "Queen of the gods, sister and wife of Zeus, guardian of marriage and of women's lives.",
+        "In the old words": "\"I sing of golden-throned Hera whom Rhea bare. Queen of the immortals is she, surpassing all in beauty.\"\n\nHomeric Hymn 12, To Hera, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What bond do you honour, and what does it ask of you?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Hera, Wikipedia](https://en.wikipedia.org/wiki/Hera)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Marie-Lan Nguyen, 2006. [Hera Campana Louvre Ma2283.jpg](https://commons.wikimedia.org/wiki/File:Hera_Campana_Louvre_Ma2283.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/hera.jpg"
+    },
+    {
+      "id": "poseidon",
+      "name": "Poseidon · the sea",
+      "sort_order": 2,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "poseidon"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/poseidon.jpg",
+            "scene": "Poseidon · the sea",
+            "artist": "Jebulon",
+            "artist_dates": "2015-05-20 15:54:46",
+            "edition": "Wikimedia Commons",
+            "license": "CC0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Bronze_Zeus_or_Poseidon_NAMA_X_15161_Athens_Greece.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Bronze_Zeus_or_Poseidon_NAMA_X_15161_Athens_Greece.jpg"
+      },
+      "sections": {
+        "Who": "God of the sea, of earthquakes and of horses. This bronze, raised from the sea off Cape Artemision, is Zeus or Poseidon: the weapon he threw is lost.",
+        "In the old words": "\"A two-fold office the gods allotted you, O Shaker of the Earth, to be a tamer of horses and a saviour of ships!\"\n\nHomeric Hymn 22, To Poseidon, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What depth moves under the surface?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Poseidon, Wikipedia](https://en.wikipedia.org/wiki/Poseidon)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Jebulon, 2015-05-20 15:54:46. [Bronze Zeus or Poseidon NAMA X 15161 Athens Greece.jpg](https://commons.wikimedia.org/wiki/File:Bronze_Zeus_or_Poseidon_NAMA_X_15161_Athens_Greece.jpg), Wikimedia Commons, CC0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/poseidon.jpg"
+    },
+    {
+      "id": "demeter",
+      "name": "Demeter · the grain",
+      "sort_order": 3,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "demeter"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/demeter.jpg",
+            "scene": "Demeter · the grain",
+            "artist": "Evelyn De Morgan",
+            "artist_dates": "circa 1906",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Evelyn_de_Morgan_-_Demeter_Mourning_for_Persephone,_1906.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Evelyn_de_Morgan_-_Demeter_Mourning_for_Persephone,_1906.jpg"
+      },
+      "sections": {
+        "Who": "Goddess of grain and harvest. When her daughter Persephone was carried off, she searched the earth, and nothing grew until she found her. Evelyn De Morgan paints her mourning.",
+        "In the old words": "\"I begin to sing of rich-haired Demeter, awful goddess, of her and of her daughter lovely Persephone.\"\n\nHomeric Hymn 13, To Demeter, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What have you lost, and what stops growing while you look for it?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Demeter, Wikipedia](https://en.wikipedia.org/wiki/Demeter)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Evelyn De Morgan, circa 1906. [Evelyn de Morgan - Demeter Mourning for Persephone, 1906.jpg](https://commons.wikimedia.org/wiki/File:Evelyn_de_Morgan_-_Demeter_Mourning_for_Persephone,_1906.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/demeter.jpg"
+    },
+    {
+      "id": "athena",
+      "name": "Athena · the city's mind",
+      "sort_order": 4,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "athena"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/athena.jpg",
+            "scene": "Athena · the city's mind",
+            "artist": "Daderot",
+            "artist_dates": "2019-04-06 03:52:50",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Athena_Giustiniani_-_Braccio_Nuovo,_Museo_Chiaramonti_-_Vatican_Museums_-_DSC00910.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Athena_Giustiniani_-_Braccio_Nuovo,_Museo_Chiaramonti_-_Vatican_Museums_-_DSC00910.jpg"
+      },
+      "sections": {
+        "Who": "Goddess of wisdom, craft and the defence of cities, born fully armed from the head of Zeus. The Athena Giustiniani carries her spear and her serpent.",
+        "In the old words": "\"I begin to sing of Pallas Athene, the glorious goddess, bright-eyed, inventive, unbending of heart, pure virgin, saviour of cities.\"\n\nHomeric Hymn 28, To Athena, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What would a clear plan look like?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Athena, Wikipedia](https://en.wikipedia.org/wiki/Athena)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Daderot, 2019-04-06 03:52:50. [Athena Giustiniani - Braccio Nuovo, Museo Chiaramonti - Vatican Museums - DSC00910.jpg](https://commons.wikimedia.org/wiki/File:Athena_Giustiniani_-_Braccio_Nuovo,_Museo_Chiaramonti_-_Vatican_Museums_-_DSC00910.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/athena.jpg"
+    },
+    {
+      "id": "apollo",
+      "name": "Apollo · light and song",
+      "sort_order": 5,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "apollo"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/apollo.jpg",
+            "scene": "Apollo · light and song",
+            "artist": "Livioandronico2013",
+            "artist_dates": "2014-10-26 14:28:23",
+            "edition": "Wikimedia Commons",
+            "license": "CC BY-SA 4.0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Apollo_of_the_Belvedere.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Apollo_of_the_Belvedere.jpg"
+      },
+      "sections": {
+        "Who": "God of the lyre, of prophecy at Delphi, of healing and of the bow; twin of Artemis.",
+        "In the old words": "\"Phoebus, of you even the swan sings with clear voice to the beating of his wings.\"\n\nHomeric Hymn 21, To Apollo, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What wants to be said clearly, or sung?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Apollo, Wikipedia](https://en.wikipedia.org/wiki/Apollo)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Livioandronico2013, 2014-10-26 14:28:23. [Apollo of the Belvedere.jpg](https://commons.wikimedia.org/wiki/File:Apollo_of_the_Belvedere.jpg), Wikimedia Commons, CC BY-SA 4.0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/apollo.jpg"
+    },
+    {
+      "id": "artemis",
+      "name": "Artemis · the wild",
+      "sort_order": 6,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "artemis"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/artemis.jpg",
+            "scene": "Artemis · the wild",
+            "artist": "Shonagon",
+            "artist_dates": "2021-11-03",
+            "edition": "Wikimedia Commons",
+            "license": "CC0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Diane_de_Versailles_-_Mus%C3%A9e_du_Louvre_AGER_Ma_589.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Diane_de_Versailles_-_Mus%C3%A9e_du_Louvre_AGER_Ma_589.jpg"
+      },
+      "sections": {
+        "Who": "Goddess of the hunt, of wild places and of young animals; twin of Apollo. The Diana of Versailles reaches for an arrow, a deer at her side.",
+        "In the old words": "\"Over the shadowy hills and windy peaks she draws her golden bow, rejoicing in the chase.\"\n\nHomeric Hymn 27, To Artemis, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "Where are you most yourself, away from others?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Artemis, Wikipedia](https://en.wikipedia.org/wiki/Artemis)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Shonagon, 2021-11-03. [Diane de Versailles - Musée du Louvre AGER Ma 589.jpg](https://commons.wikimedia.org/wiki/File:Diane_de_Versailles_-_Mus%C3%A9e_du_Louvre_AGER_Ma_589.jpg), Wikimedia Commons, CC0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/artemis.jpg"
+    },
+    {
+      "id": "ares",
+      "name": "Ares · war",
+      "sort_order": 7,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "ares"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/ares.jpg",
+            "scene": "Ares · war",
+            "artist": "Unknown",
+            "artist_dates": "",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Ares_Ludovisi_Altemps_Inv8602_n2.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Ares_Ludovisi_Altemps_Inv8602_n2.jpg"
+      },
+      "sections": {
+        "Who": "God of war in its rage. The Ludovisi Ares sits at rest, hands around his knee, a small Eros at his feet.",
+        "In the old words": "\"Ares, exceeding in strength, chariot-rider, golden-helmed, doughty in heart, shield-bearer, Saviour of cities.\"\n\nHomeric Hymn 8, To Ares, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What is your anger defending?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Ares, Wikipedia](https://en.wikipedia.org/wiki/Ares)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Unknown artist. [Ares Ludovisi Altemps Inv8602 n2.jpg](https://commons.wikimedia.org/wiki/File:Ares_Ludovisi_Altemps_Inv8602_n2.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/ares.jpg"
+    },
+    {
+      "id": "aphrodite",
+      "name": "Aphrodite · desire",
+      "sort_order": 8,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "aphrodite"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/aphrodite.jpg",
+            "scene": "Aphrodite · desire",
+            "artist": "Unknown artistUnknown artist",
+            "artist_dates": "",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Venus_de_Milo_Louvre_Ma399_n4.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Venus_de_Milo_Louvre_Ma399_n4.jpg"
+      },
+      "sections": {
+        "Who": "Goddess of love, beauty and desire, born of the sea foam off Cyprus.",
+        "In the old words": "\"She gives kindly gifts to men: smiles are ever on her lovely face, and lovely is the brightness that plays over it.\"\n\nHomeric Hymn 10, To Aphrodite, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What do you love, and how does it change you?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Aphrodite, Wikipedia](https://en.wikipedia.org/wiki/Aphrodite)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Unknown artistUnknown artist. [Venus de Milo Louvre Ma399 n4.jpg](https://commons.wikimedia.org/wiki/File:Venus_de_Milo_Louvre_Ma399_n4.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/aphrodite.jpg"
+    },
+    {
+      "id": "hephaestus",
+      "name": "Hephaestus · the forge",
+      "sort_order": 9,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "hephaestus"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/hephaestus.jpg",
+            "scene": "Hephaestus · the forge",
+            "artist": "Pompeo Batoni",
+            "artist_dates": "1750",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Pompeo_Batoni,-_Vulcan_in_his_Forge,1750.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Pompeo_Batoni,-_Vulcan_in_his_Forge,1750.jpg"
+      },
+      "sections": {
+        "Who": "The smith of the gods, lame from his fall from Olympus, maker of armour, thrones and the first woman, Pandora. Batoni paints him at his anvil.",
+        "In the old words": "\"With bright-eyed Athene he taught men glorious gifts throughout the world,—men who before used to dwell in caves in the mountains like wild beasts.\"\n\nHomeric Hymn 20, To Hephaestus, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What are you making with your hands?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Hephaestus, Wikipedia](https://en.wikipedia.org/wiki/Hephaestus)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Pompeo Batoni, 1750. [Pompeo Batoni,- Vulcan in his Forge,1750.jpg](https://commons.wikimedia.org/wiki/File:Pompeo_Batoni,-_Vulcan_in_his_Forge,1750.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/hephaestus.jpg"
+    },
+    {
+      "id": "hermes",
+      "name": "Hermes · the messenger",
+      "sort_order": 10,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "hermes"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/hermes.jpg",
+            "scene": "Hermes · the messenger",
+            "artist": "Unknown",
+            "artist_dates": "",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Hermes_Ingenui_Pio-Clementino_Inv544.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Hermes_Ingenui_Pio-Clementino_Inv544.jpg"
+      },
+      "sections": {
+        "Who": "Messenger of the gods, guide of travellers and of the dead, god of luck, trade and thieves; he stole Apollo's cattle on the day he was born.",
+        "In the old words": "\"Muse, sing of Hermes, the son of Zeus and Maia, lord of Cyllene and Arcadia rich in flocks, the luck-bringing messenger of the immortals.\"\n\nHomeric Hymn 4, To Hermes, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What message is crossing a threshold?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Hermes, Wikipedia](https://en.wikipedia.org/wiki/Hermes)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Unknown artist. [Hermes Ingenui Pio-Clementino Inv544.jpg](https://commons.wikimedia.org/wiki/File:Hermes_Ingenui_Pio-Clementino_Inv544.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/hermes.jpg"
+    },
+    {
+      "id": "dionysus",
+      "name": "Dionysus · the vine",
+      "sort_order": 11,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "dionysus"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/dionysus.jpg",
+            "scene": "Dionysus · the vine",
+            "artist": "Exekias",
+            "artist_dates": "circa 530 BC",
+            "edition": "Wikimedia Commons",
+            "license": "CC BY 2.5",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Exekias_Dionysos_Staatliche_Antikensammlungen_2044.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Exekias_Dionysos_Staatliche_Antikensammlungen_2044.jpg"
+      },
+      "sections": {
+        "Who": "God of wine, ecstasy and the theatre. Pirates seized him; he filled their ship with vines and turned them into dolphins, as on Exekias's cup.",
+        "In the old words": "\"I will tell of Dionysus, the son of glorious Semele, how he appeared on a jutting headland by the shore of the fruitless sea, seeming like a stripling in the first flush of manhood.\"\n\nHomeric Hymn 7, To Dionysus, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What would you let loose?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Dionysus, Wikipedia](https://en.wikipedia.org/wiki/Dionysus)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Exekias, circa 530 BC. [Exekias Dionysos Staatliche Antikensammlungen 2044.jpg](https://commons.wikimedia.org/wiki/File:Exekias_Dionysos_Staatliche_Antikensammlungen_2044.jpg), Wikimedia Commons, CC BY 2.5."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/dionysus.jpg"
+    },
+    {
+      "id": "hestia",
+      "name": "Hestia · the hearth",
+      "sort_order": 12,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "hestia"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/hestia.jpg",
+            "scene": "Hestia · the hearth",
+            "artist": "anonymous",
+            "artist_dates": "Roman, second century CE. Original; c.46",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Hestia_Giustiniani.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Hestia_Giustiniani.jpg"
+      },
+      "sections": {
+        "Who": "Goddess of the hearth and its fire, the first to be offered to at any feast. She has few stories; she stays home.",
+        "In the old words": "\"For without you mortals hold no banquet,—where one does not duly pour sweet wine in offering to Hestia both first and last.\"\n\nHomeric Hymn 29, To Hestia, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What keeps your home warm?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Hestia, Wikipedia](https://en.wikipedia.org/wiki/Hestia)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "anonymous, Roman, second century CE. Original; c.46. [Hestia Giustiniani.jpg](https://commons.wikimedia.org/wiki/File:Hestia_Giustiniani.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/hestia.jpg"
+    },
+    {
+      "id": "hades",
+      "name": "Hades · the hidden one",
+      "sort_order": 13,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "hades"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/hades.jpg",
+            "scene": "Hades · the hidden one",
+            "artist": "Template:Peintre Codrus",
+            "artist_dates": "",
+            "edition": "Wikimedia Commons",
+            "license": "CC BY 2.5",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Persephone_Hades_BM_Vase_E82_(cropped).jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Persephone_Hades_BM_Vase_E82_(cropped).jpg"
+      },
+      "sections": {
+        "Who": "Lord of the dead and the underworld, brother of Zeus; he took Persephone as his queen. On this cup he reclines beside her.",
+        "In the old words": "\"The wide-pathed earth yawned there in the plain of Nysa, and the lord, Host of Many, with his immortal horses sprang out upon her.\"\n\nHomeric Hymn 2, To Demeter, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What lies under what you show?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Hades, Wikipedia](https://en.wikipedia.org/wiki/Hades)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Template:Peintre Codrus. [Persephone Hades BM Vase E82 (cropped).jpg](https://commons.wikimedia.org/wiki/File:Persephone_Hades_BM_Vase_E82_(cropped).jpg), Wikimedia Commons, CC BY 2.5."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/hades.jpg"
+    },
+    {
+      "id": "persephone",
+      "name": "Persephone · the return",
+      "sort_order": 14,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "persephone"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/persephone.jpg",
+            "scene": "Persephone · the return",
+            "artist": "Frederic Leighton",
+            "artist_dates": "1891",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Frederic_Leighton_-_The_Return_of_Persephone_(1891).jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Frederic_Leighton_-_The_Return_of_Persephone_(1891).jpg"
+      },
+      "sections": {
+        "Who": "Daughter of Demeter, queen of the underworld. Having eaten there, she must spend part of each year below, and returns with the spring. Leighton paints Hermes bringing her back to her mother.",
+        "In the old words": "\"But when the earth shall bloom with the fragrant flowers of spring in every kind, then from the realm of darkness and gloom thou shalt come up once more.\"\n\nHomeric Hymn 2, To Demeter, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What is coming back to you?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Persephone, Wikipedia](https://en.wikipedia.org/wiki/Persephone)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Frederic Leighton, 1891. [Frederic Leighton - The Return of Persephone (1891).jpg](https://commons.wikimedia.org/wiki/File:Frederic_Leighton_-_The_Return_of_Persephone_(1891).jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/persephone.jpg"
+    },
+    {
+      "id": "gaia",
+      "name": "Gaia · the earth",
+      "sort_order": 15,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "gaia"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/gaia.jpg",
+            "scene": "Gaia · the earth",
+            "artist": "Hermonax",
+            "artist_dates": "",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Birth_Erikhthonios_Staatliche_Antikensammlungen_2413.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Birth_Erikhthonios_Staatliche_Antikensammlungen_2413.jpg"
+      },
+      "sections": {
+        "Who": "Earth, mother of all, the first being after Chaos, who bore the sky. On this vase she rises from the ground to hand the child Erichthonius to Athena.",
+        "In the old words": "\"I will sing of well-founded Earth, mother of all, eldest of all beings. She feeds all creatures that are in the world.\"\n\nHomeric Hymn 30, To Earth the Mother of All, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What holds you up?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Gaia, Wikipedia](https://en.wikipedia.org/wiki/Gaia)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Hermonax. [Birth Erikhthonios Staatliche Antikensammlungen 2413.jpg](https://commons.wikimedia.org/wiki/File:Birth_Erikhthonios_Staatliche_Antikensammlungen_2413.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/gaia.jpg"
+    },
+    {
+      "id": "hecate",
+      "name": "Hecate · the crossroads",
+      "sort_order": 16,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "hecate"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/hecate.jpg",
+            "scene": "Hecate · the crossroads",
+            "artist": "Unknown artistUnknown artist",
+            "artist_dates": "",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Hecate_Chiaramonti_Inv1922.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Hecate_Chiaramonti_Inv1922.jpg"
+      },
+      "sections": {
+        "Who": "Goddess of crossroads, torches, night and magic; triple-formed, as in this statue.",
+        "In the old words": "\"And she conceived and bare Hecate whom Zeus the son of Cronos honoured above all.\"\n\nHesiod, Theogony 411, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "Which way at this crossing?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Hecate, Wikipedia](https://en.wikipedia.org/wiki/Hecate)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Unknown artistUnknown artist. [Hecate Chiaramonti Inv1922.jpg](https://commons.wikimedia.org/wiki/File:Hecate_Chiaramonti_Inv1922.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/hecate.jpg"
+    },
+    {
+      "id": "pan",
+      "name": "Pan · the wild music",
+      "sort_order": 17,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "pan"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/pan.jpg",
+            "scene": "Pan · the wild music",
+            "artist": "Poliphilo",
+            "artist_dates": "2025-07-08 02:43:01",
+            "edition": "Wikimedia Commons",
+            "license": "CC0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Pan_and_Daphnis_(or_Olympos)_Petworth_House.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Pan_and_Daphnis_(or_Olympos)_Petworth_House.jpg"
+      },
+      "sections": {
+        "Who": "The goat-footed god of shepherds, flocks and the wild, and of the pipes; here teaching a young shepherd to play.",
+        "In the old words": "\"Muse, tell me about Pan, the dear son of Hermes, with his goat's feet and two horns—a lover of merry noise.\"\n\nHomeric Hymn 19, To Pan, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What part of you is still wild?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Pan (god), Wikipedia](https://en.wikipedia.org/wiki/Pan_%28god%29)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Poliphilo, 2025-07-08 02:43:01. [Pan and Daphnis (or Olympos) Petworth House.jpg](https://commons.wikimedia.org/wiki/File:Pan_and_Daphnis_(or_Olympos)_Petworth_House.jpg), Wikimedia Commons, CC0."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/pan.jpg"
+    },
+    {
+      "id": "prometheus",
+      "name": "Prometheus · fire",
+      "sort_order": 18,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "prometheus"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/prometheus.jpg",
+            "scene": "Prometheus · fire",
+            "artist": "Heinrich Füger",
+            "artist_dates": "1790 or circa 1817",
+            "edition": "Wikimedia Commons",
+            "license": "Public domain",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Heinrich_fueger_1817_prometheus_brings_fire_to_mankind.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Heinrich_fueger_1817_prometheus_brings_fire_to_mankind.jpg"
+      },
+      "sections": {
+        "Who": "The Titan who stole fire from Zeus for humankind and was punished for it. Füger paints him carrying the torch down to the first people.",
+        "In the old words": "\"But the noble son of Iapetus outwitted him and stole the far-seen gleam of unwearying fire in a hollow fennel stalk.\"\n\nHesiod, Theogony 565, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What would you bring to others, at a cost?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Prometheus, Wikipedia](https://en.wikipedia.org/wiki/Prometheus)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Heinrich Füger, 1790 or circa 1817. [Heinrich fueger 1817 prometheus brings fire to mankind.jpg](https://commons.wikimedia.org/wiki/File:Heinrich_fueger_1817_prometheus_brings_fire_to_mankind.jpg), Wikimedia Commons, Public domain."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/prometheus.jpg"
+    },
+    {
+      "id": "eros",
+      "name": "Eros · love",
+      "sort_order": 19,
+      "category": "card",
+      "keywords": [
+        "greek",
+        "god",
+        "eros"
+      ],
+      "metadata": {
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/eros.jpg",
+            "scene": "Eros · love",
+            "artist": "Marie-Lan Nguyen",
+            "artist_dates": "2009",
+            "edition": "Wikimedia Commons",
+            "license": "CC BY 2.5",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Eros_bow_Musei_Capitolini_MC410.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Eros_bow_Musei_Capitolini_MC410.jpg"
+      },
+      "sections": {
+        "Who": "Love, one of the first beings in Hesiod, later the winged child of Aphrodite. This Roman copy of Lysippos shows him stringing his bow.",
+        "In the old words": "\"And Eros (Love), fairest among the deathless gods, who unnerves the limbs and overcomes the mind and wise counsels of all gods and all men within them.\"\n\nHesiod, Theogony 120, in Hugh G. Evelyn-White, trans., *Hesiod, the Homeric Hymns, and Homerica* (1914), public domain.",
+        "To reflect": "What draws you, against your plans?\n\n*Question written for this deck; relate to it, never obey it.*",
+        "Read more": "- [Eros, Wikipedia](https://en.wikipedia.org/wiki/Eros)\n- [The Homeric Hymns and Hesiod, Project Gutenberg](https://www.gutenberg.org/ebooks/348)",
+        "Picture": "Marie-Lan Nguyen, 2009. [Eros bow Musei Capitolini MC410.jpg](https://commons.wikimedia.org/wiki/File:Eros_bow_Musei_Capitolini_MC410.jpg), Wikimedia Commons, CC BY 2.5."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/greek-pantheon-draft/images/eros.jpg"
+    }
+  ]
+}

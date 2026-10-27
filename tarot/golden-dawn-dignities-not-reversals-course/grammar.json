@@ -1,0 +1,112 @@
+{
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "note": "Course written as markdown, converted to a grammar once (Oct 2026)."
+      }
+    ]
+  },
+  "name": "Dignities, not reversals: how the Golden Dawn read the cards",
+  "description": "A chapter of The Golden Dawn — the Map and the Walk. Book T reads a card by the cards on either side of it, its dignity, and has no rule for a card that lands upside down. The reversed meanings came through the books printed for the public. In the sources' own words, with four diagrams.",
+  "grammar_type": "custom",
+  "creator_name": "PlayfulProcess",
+  "default_view": "play",
+  "reading_mode_default": "continuous",
+  "provenance": "reference",
+  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/oswald-wirth-tarot/01%20Le%20Bateleur%2C%20Oswald%20Wirth%20Tarot%20Deck%201889%20BnF.jpg",
+  "tags": [
+    "tarot",
+    "course",
+    "the-golden-dawn"
+  ],
+  "metadata": {
+    "common_name": "Dignities, not reversals: how the Golden Dawn read the cards",
+    "category": "course"
+  },
+  "nodes": [
+    {
+      "id": "lesson-01-introduction",
+      "name": "Introduction",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "*A chapter of [The Golden Dawn — the Map and the Walk](https://recursive.eco/play?id=9befd48e-5c83-48aa-abb2-d865beb06c19&pane=continuous). Words in quotation marks are the sources' own, each with where it is found. Lines marked **ed.** are joins and captions written for this course; they are not claims from a source. The diagrams are drawn by `scripts/build_gd_dignity_figures.py` from the quoted text.*"
+      }
+    },
+    {
+      "id": "lesson-02-a-book-not-a-deck",
+      "name": "A book, not a deck",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "The Order never published a deck: members hand-copied their cards from Mathers' specimen, inside the lodge ([the Golden Dawn dossier](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/people/golden-dawn.md), after Decker, Depaulis & Dummett, *A Wicked Pack of Cards*, 1996, and *A History of the Occult Tarot*, 2002).\n\nWhat the Order wrote down was a text. *[Book T](https://tarot.recursive.eco/pages/glossary.html#book-t)* was first printed in *The Equinox*, vol. I no. 8 (London, September 1912), pp. 143–210, as \"A Description of the Cards of the Tarot, with their Attributions; including a Method of Divination by their Use\" ([transcription in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt), checked against [the 1912 scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep)).\n\n**ed.** Book T's method never asks whether a card lies upright. The word \"reversed\" appears once in the 1912 text, about the sword drawn on the Ace of Swords: \"Raised upward, it invokes the Divine crown of Spiritual Brightness, but reversed it is the Invocation of Demonic Force\" (Book T, Ace of Swords)."
+      }
+    },
+    {
+      "id": "lesson-03-the-rule-in-book-t-s-words",
+      "name": "The rule, in Book T's words",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "The whole section, from [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t), \"Of the Dignities\":\n\n> A CARD is strong or weak, well dignified or ill dignified, according to the cards next to it on either side.\n>\n> Cards of the same suit on either side strengthen it greatly, for good or evil according to their nature.\n>\n> Cards of opposite natures on either side weaken it greatly, for either good or evil.\n>\n> Swords are inimical to Pentacles.\n>\n> Wands are inimical to Cups.\n>\n> Swords are friendly with Cups and Wands.\n>\n> Wands are friendly with Swords and Pentacles.\n>\n> If a card fall between two other which are mutually contrary, it is not much affected by either.\n\nThe suits carry the elements: \"The Ace of Wands is called the Root of the Powers of Fire\", and the Aces of Cups, Swords and Pentacles are the Roots of the Powers of [Water](https://tarot.recursive.eco/pages/glossary.html#water), [Air](https://tarot.recursive.eco/pages/glossary.html#air) and [Earth](https://tarot.recursive.eco/pages/glossary.html#earth) (Book T, \"The Titles of the Symbols\", 1–4).\n\n![Book T's elemental dignities: Fire (Wands) and Water (Cups) are inimical, Air (Swords) and Earth (Pentacles) are inimical; Air is friendly with Fire and Water, Fire with Earth; the 1912 text does not name Water with Earth.](https://tarot.recursive.eco/tarot/golden-dawn-dignities-not-reversals-course/diagrams/1.svg)\n\n*Figure 1. ed. Book T’s rule of [dignities](https://tarot.recursive.eco/pages/glossary.html#dignities) as a wheel. Opposite elements face each other across the circle and weaken a card between them; neighbours round the rim are friendly. The 1912 text names every pair but Cups with Pentacles, left dotted.*\n\nWhere Book T gives a card's darker meaning, it gives it as a dignity. Of the card the 1912 printing calls the King of Swords: \"If ill dignified: harsh, malicious, plotting; obstinate, yet hesitating; unreliable.\" **ed.** The phrase \"ill dignified\" occurs 21 times in the 1912 text."
+      }
+    },
+    {
+      "id": "lesson-04-counting-the-table",
+      "name": "Counting the table",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "[Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) also reads the whole spread by what it holds most of (Book T, the general rules after \"Brief Meaning of Twenty-Two Keys\"):\n\n| A majority of | Book T |\n|---|---|\n| Wands | \"Energy, opposition, quarrel.\" |\n| Cups | \"Pleasure, merriment.\" |\n| Swords | \"Trouble, sadness, sickness, death.\" |\n| Pentacles | \"Business, money, possessions.\" |\n| Keys (trumps) | \"Strong forces beyond the Querent's control.\" |\n| Court cards | \"Society, meetings of many persons.\" |\n| Aces | \"Strength generally. Aces are always strong cards.\" |\n\nThe same rules say who the court cards are: \"Princes and Queens shew almost always actual men and women connected with the matter. But the Kings (Knights) sometime represent coming or going of a matter, according as they face. The Princesses shew opinions, thoughts, ideas, either in harmony with or opposed to, the subject.\""
+      }
+    },
+    {
+      "id": "lesson-05-four-royal-figures",
+      "name": "Four royal figures",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "Book T's court has four ranks, each told apart by how it is carried ([Book T](https://tarot.recursive.eco/pages/glossary.html#book-t), \"The Sixteen Court, or Royal Cards\"):\n\n- **Kings**: \"Figures mounted on steeds\", the Yodh forces of the Name.\n- **Queens**: \"seated upon Thrones\", the He.\n- **Princes**: \"Figures seated in Chariots, and thus borne forward\", the [Vau](https://tarot.recursive.eco/pages/glossary.html#vau).\n- **Princesses**: \"figures of Amazons, standing firmly of themselves: neither riding upon Horses, nor seated upon Thrones, nor borne in Chariots\", the He final.\n\nThe 1912 printing files them under the ordinary pack's names, and says so: \"Note that the Kings are now called Knights, and the Princes are now called Kings. This is unfortunate, and leads to confusion\" (Book T, Knight of Wands). So its King of Swords is \"The Prince of the Chariot of the Winds\" (\"The Titles of the Symbols\", 15).\n\nWaite's courts in 1909 are King, Queen, Knight and Page. Of the Swords: the King \"sits in judgment\", the Queen's sword-hilt \"rests on an arm of her royal chair\", the Knight \"is riding in full course\", and the Page is \"in the act of swift walking\" (*The Pictorial Key to the Tarot*, the Swords).\n\n![Book T's four court figures beside the Rider-Waite-Smith Swords courts: mounted King printed as Knight; enthroned Queen; Prince in a chariot printed as King, where Waite's King sits on a throne; standing Princess printed as Knave, Waite's Page.](https://tarot.recursive.eco/tarot/golden-dawn-dignities-not-reversals-course/diagrams/2.svg)\n\n*Figure 2. ed. The four court figures of Book T beside Waite and Smith’s Swords. Rows follow the 1912 printing’s own names. The card both call King of Swords is a different figure in each: a Prince in a chariot, a King on a throne. Card images: Rider–Waite–Smith, 1909.*"
+      }
+    },
+    {
+      "id": "lesson-06-the-deck-two-members-made",
+      "name": "The deck two members made",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "The Rider–Waite–Smith deck was published by William Rider & Son in 1909, devised by A. E. Waite, who joined the Golden Dawn in 1891, and drawn by Pamela Colman Smith, who joined in 1901 ([Waite dossier](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/people/a-e-waite.md); [Smith dossier](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/people/pamela-colman-smith.md)).\n\nBook T's table of the keys sets Fortitude ([Leo](https://tarot.recursive.eco/pages/glossary.html#leo), the letter [Teth](https://tarot.recursive.eco/pages/glossary.html#teth)) before Justice ([Libra](https://tarot.recursive.eco/pages/glossary.html#libra), [Lamed](https://tarot.recursive.eco/pages/glossary.html#lamed)), the order of the [paths](https://tarot.recursive.eco/pages/glossary.html#path), though the 1912 printing still numbers them 11 and 8 ([Book T](https://tarot.recursive.eco/pages/glossary.html#book-t), \"The Twenty-Two Keys of the Book\"). Waite numbered Strength 8 and Justice 11: \"For reasons which satisfy myself, this card has been interchanged with that of justice, which is usually numbered eight. As the variation carries nothing with it which will signify to the reader, there is no cause for explanation\" (*Pictorial Key*, Strength).\n\nSmith drew a scene on every small card. Waite on those pictures: \"the pictures are like doors which open into unexpected chambers, or like a turn in the open road with a wide prospect beyond\" (*Pictorial Key*, Part III §1)."
+      }
+    },
+    {
+      "id": "lesson-07-two-layers-reversals-outside-dignities-i",
+      "name": "Two layers: reversals outside, dignities inside",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "**The public books.** Mathers' booklet *The Tarot: Its Occult Signification, Use in Fortune-Telling, and Method of Play* (London, 1888) tells the buyer: \"To prepare the pack for Fortune-telling, write at the top of each card its number and signification when in its proper position, and at the bottom its meaning when reversed\", and \"R. means Reversed\" ([Mathers 1888, end of \"Symbolism of Each of the Keys\"](https://sacred-texts.com/tarot/mathers/mtar02.htm)). The same booklet names \"Court de Gébelin, Levi, and Etteilla\" as \"The great exponents of the Tarot\" ([its introduction](https://sacred-texts.com/tarot/mathers/mtar01.htm)). Etteilla's manuals had printed upright and reversed meanings since his piquet-pack book of 1770, and his tarot deck of 1788–89 printed both on the cards ([Etteilla dossier](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/people/etteilla.md), secondary sources). Waite wrote that the 1888 booklet \"was designed to accompany a set of Tarot cards\" and called it \"a mere sketch\" (*Pictorial Key*, bibliography).\n\nWaite's own *Pictorial Key* (1910; the 1911 printing is transcribed here) gives a \"Reversed\" meaning card by card, while writing that \"The allocation of a fortune-telling aspect to these cards is the story of a prolonged impertinence\" (Part III §3).\n\n**The inner text.** [Book T](https://tarot.recursive.eco/pages/glossary.html#book-t) reads by neighbours. **ed.** Waite comes close to the same idea when he writes that all meanings are \"reduced, accentuated or subject to modification and sometimes almost reversal by their place in a sequence\" (Part III §4), and of the Knight of Swords that its meaning of death comes \"only in its proximity to other cards of fatality\".\n\n| King of Swords | |\n|---|---|\n| Waite, 1911, for the public | \"Reversed : Cruelty, perversity, barbarity, perfidy, evil intention.\" |\n| Book T, the Order's text, printed 1912 | \"If ill dignified: harsh, malicious, plotting; obstinate, yet hesitating; unreliable.\" |\n\n**ed.** The same man stands on both sides: the 1888 booklet is Mathers', and Book T was written chiefly by him ([Golden Dawn dossier](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/decks/golden-dawn-book-t-tarot.md), after Decker, Depaulis & Dummett). Read side by side, the sources put reversed meanings in the books printed for the public, and [dignities](https://tarot.recursive.eco/pages/glossary.html#dignities) in the Order's own text.\n\n![Timeline, 1781 to 1912: reversals in the printed, public books; dignities inside the Order until Book T was printed in 1912 (narrow layout).](https://tarot.recursive.eco/tarot/golden-dawn-dignities-not-reversals-course/diagrams/3.svg)\n\n*Figure 3. ed. Two layers, 1781 to 1912. On one side, the books printed for anyone, with reversed meanings; on the other, the Order’s text, read by dignity, which reached print in 1912. An upside-down R marks a book that gives reversed meanings; three linked cards mark reading by neighbours.*"
+      }
+    },
+    {
+      "id": "lesson-08-a-worked-example-a-reading-oct-2026",
+      "name": "A worked example: a reading, Oct 2026",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "**ed.** Eight cards, laid as an issue, three pairs and a body. Read with Book T's tools, in four steps.\n\n1. **Elements of the suits** ([Book T](https://tarot.recursive.eco/pages/glossary.html#book-t), \"The Titles of the Symbols\"): the King of Swords is [Air](https://tarot.recursive.eco/pages/glossary.html#air); the Ace of Pentacles is [Earth](https://tarot.recursive.eco/pages/glossary.html#earth).\n2. **Attributions of the keys** (Book T, \"The Twenty-Two Keys of the Book\"): the Hierophant is [Taurus](https://tarot.recursive.eco/pages/glossary.html#taurus), the Tower [Mars](https://tarot.recursive.eco/pages/glossary.html#mars), the Magician [Mercury](https://tarot.recursive.eco/pages/glossary.html#mercury), the Chariot [Cancer](https://tarot.recursive.eco/pages/glossary.html#cancer), the Emperor [Aries](https://tarot.recursive.eco/pages/glossary.html#aries), the Devil [Capricorn](https://tarot.recursive.eco/pages/glossary.html#capricorn).\n3. **ed. Our step, not Book T's.** Book T's rule names suits only. Here a key is given the element of its sign (Taurus and Capricorn Earth, Cancer [Water](https://tarot.recursive.eco/pages/glossary.html#water), Aries [Fire](https://tarot.recursive.eco/pages/glossary.html#fire)); the two planets get none, so for the Tower and the Magician the rule stays silent. Book T reads a card against the cards \"on either side\" in a row; here each card is read against its partner in the pair.\n4. **Counting:** six of the eight cards are keys. Book T: \"A Majority of Keys: Strong forces beyond the Querent's control.\" And: \"Aces are always strong cards.\"\n\n![A reading, Oct 2026, with the dignity drawn inside each pair (narrow layout).](https://tarot.recursive.eco/tarot/golden-dawn-dignities-not-reversals-course/diagrams/4.svg)\n\n*Figure 4. ed. A reading, Oct 2026. The line inside each pair is Book T’s [dignity](https://tarot.recursive.eco/pages/glossary.html#dignities): green for the same element, red dashes for opposite natures, dotted where the rule is silent. The tiles count what the spread holds most of.*\n\nBook T's brief words for the six keys (Book T, \"Brief Meaning of Twenty-Two Keys\"):\n\n| Key | Book T |\n|---|---|\n| 1 The Magician | \"Skill, wisdom, adaptation, craft, cunning, or occult wisdom or power.\" |\n| 4 The Emperor | \"War, conquest, victory, strife, ambition.\" |\n| 5 The Hierophant | \"Divine wisdom, manifestation, explanation, teaching, occult force voluntarily invoked.\" |\n| 7 The Chariot | \"Triumph, victory, health (sometimes unstable).\" |\n| 15 The Devil | \"Materiality, material force, material temptation, obsession.\" |\n| 16 The Tower | \"Ambition, fighting, war, courage, or destruction, danger, fall, ruin.\" |\n\nA bracketed note is printed under the table: \"This table is very unsatisfactory. Each card must be most carefully meditated, taking all its correspondences, and a clear idea formed.\""
+      }
+    },
+    {
+      "id": "lesson-09-sources",
+      "name": "Sources",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "- *[Book T](https://tarot.recursive.eco/pages/glossary.html#book-t)*, in *The Equinox* I(8), London, September 1912, pp. 143–210. Public domain. [Transcription](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/book-t-equinox-1912.txt) · [1912 scan](https://archive.org/details/IAPSOP-equinox_v1_n8_1912_Sep) · [the-equinox.org](http://www.the-equinox.org/vol1/no8/eqi08016.html).\n- A. E. Waite, *The Pictorial Key to the Tarot*, London: Rider, 1910 (1911 printing). Public domain. [Internet Archive](https://archive.org/details/pictorialkeytota00arth) · [the card texts](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/rider-waite-smith-pictorial-key/grammar.json) · [Part III in this repo](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/sources/waite-pictorial-key-part-iii.md).\n- S. L. MacGregor Mathers, *The Tarot: Its Occult Signification, Use in Fortune-Telling, and Method of Play*, London, 1888. Public domain. [sacred-texts.com](https://sacred-texts.com/tarot/mathers/index.htm).\n- Dossiers in this repo, with their own citations: [the Golden Dawn](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/people/golden-dawn.md), [Waite](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/people/a-e-waite.md), [Smith](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/people/pamela-colman-smith.md), [Etteilla](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/people/etteilla.md), [Court de Gébelin's 1781 plates](https://github.com/PlayfulProcess/recursive-tarot/blob/main/research/decks/court-de-gebelin-tarot.md).\n- Card images: the Rider–Waite–Smith deck, 1909, from Wikimedia Commons (public domain in the US), as in [the deck's grammar](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/rider-waite-smith-pictorial-key/grammar.json)."
+      }
+    }
+  ]
+}

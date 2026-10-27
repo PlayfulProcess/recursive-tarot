@@ -20,9 +20,9 @@ What goes in (zero AI, plain data; the browser does the matching — see quick-j
     page on it (viewers/prototypes/lenses.html?card=justice), so "Justice" also
     offers Justice in all decks side by side;
   * the people and books of the sources wing;
-  * every course (course/*.mdx) and every ## / ### heading in it, with the card
-    and deck words its section mentions, linking to course-viewer.html#<anchor>
-    (the anchor is computed exactly as the course viewer computes it);
+  * every Published course (tarot/<id>-course/grammar.json and tarot/how-to-contribute)
+    and every lesson in it, with the card and deck words the lesson mentions, linking to
+    the course in recursive.eco Play (the lesson as &node=<id>);
   * a short list of site pages (Play, Caster, Timeline …).
 
 The same file can be read by any tool, including the recursive.eco assistant
@@ -32,7 +32,6 @@ import glob, json, os, re, sys, unicodedata
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 TAROT = os.path.join(ROOT, "tarot")
-COURSE = os.path.join(ROOT, "course")
 OUT = os.path.join(ROOT, "search-index.json")
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -43,8 +42,7 @@ R2 = "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/
 
 # Grammars that are not decks of cards to jump to. The *-course grammars are generated
 # from course/*.mdx, which this index reads directly (and links to the course viewer).
-SKIP = {"all-decks-many-lenses", "how-to-contribute", "tree-of-tarot",
-        "build-a-tarot-deck-with-claude-course"}
+SKIP = {"all-decks-many-lenses", "how-to-contribute", "tree-of-tarot"}
 SOURCES = {"people-of-tarot": "p", "books-of-tarot": "b"}   # kind per sources grammar
 
 # Names the same trump carries in decks this site does not hold (Thoth, older English).
@@ -84,8 +82,9 @@ PAGES = [
     ("Spread Caster — build, cast, send", "viewers/caster-studio.html", "caster spread reading"),
     ("Card Table — less, keep, more", "viewers/table.html", "card table"),
     ("Explorer — every card, every deck", "viewers/explorer.html", "explorer views"),
-    ("Cards — the card view", "viewers/cards.html", "cards view"),
-    ("Tree view", "viewers/tree-viewer.html", "tree view"),
+    ("Cards — the card view", "viewers/cards.html", "cards view recursive.eco"),
+    ("Tree view", "viewers/tree-viewer.html", "tree view recursive.eco"),
+    ("Archive — the older views, and how to build your own", "archive/index.html", "archive old views build your own repo"),
     ("Tree of Tarot — the genealogy ring", "viewers/genealogy-tree.html", "tree of tarot genealogy ring"),
     ("Timeline", "viewers/timeline.html", "timeline history dates"),
     ("Genealogy", "genealogy.html", "genealogy family"),
@@ -225,10 +224,7 @@ def is_card(it):
         "axis", "keyword-emergence", "overview", "emergence")
 
 
-# ── course headings: the anchor is computed exactly as pages/course-viewer.html does ──
-FM_RE = re.compile(r"^﻿?---\r?\n([\s\S]*?)\r?\n---")
-
-
+# ── course lesson titles: plain text from markdown ──
 def md_text(s):
     s = re.sub(r"!\[([^\]]*)\]\([^)]*\)", r"\1", s)
     s = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", s)
@@ -237,57 +233,6 @@ def md_text(s):
     for a, b in (("&amp;", "&"), ("&lt;", "<"), ("&gt;", ">"), ("&quot;", '"'), ("&#39;", "'"), ("&nbsp;", " ")):
         s = s.replace(a, b)
     return s.strip()
-
-
-def js_slug(text):
-    # JS: text.toLowerCase().replace(/[^\w]+/g,'-').replace(/^-|-$/g,'')   (\w is ASCII)
-    return re.sub(r"^-|-$", "", re.sub(r"[^A-Za-z0-9_]+", "-", text.lower()))
-
-
-def parse_course(path):
-    raw = open(path, encoding="utf-8").read()
-    meta, body = {}, raw
-    m = FM_RE.match(raw)
-    if m:
-        body = raw[m.end():]
-        for line in m.group(1).splitlines():
-            k, _, v = line.partition(":")
-            if v:
-                meta[k.strip()] = v.strip().strip("\"'")
-    heads, in_code = [], False
-    lines = body.splitlines()
-    for i, line in enumerate(lines):
-        if line.lstrip().startswith("```"):
-            in_code = not in_code
-            continue
-        if in_code:
-            continue
-        hm = re.match(r"^(#{1,3})\s+(.+?)\s*#*\s*$", line)
-        if hm:
-            heads.append((len(hm.group(1)), md_text(hm.group(2)), i))
-    title = meta.get("title") or next((t for lvl, t, _ in heads if lvl == 1), os.path.basename(path)[:-4])
-    # ids: the viewer assigns all h2 ids first, then all h3 ids, de-duplicating with -2, -3 …
-    used, ids = set(), {}
-
-    def uniq(base):
-        base = base or "section"
-        i, n = base, 1
-        while i in used:
-            n += 1
-            i = "%s-%d" % (base, n)
-        used.add(i)
-        return i
-    for lvl in (2, 3):
-        for idx, (l, t, _) in enumerate(heads):
-            if l == lvl:
-                ids[idx] = uniq(js_slug(t))
-    sections = []
-    for idx, (l, t, ln) in enumerate(heads):
-        if l not in (2, 3):
-            continue
-        nxt = next((h[2] for h in heads[idx + 1:] if h[0] <= l), len(lines))
-        sections.append((l, t, ids[idx], "\n".join(lines[ln + 1:nxt])))
-    return title, meta.get("description", ""), sections
 
 
 def build():
@@ -300,9 +245,11 @@ def build():
         if os.path.basename(os.path.dirname(p)) not in DECKS)
     for slug in order:
         path = os.path.join(TAROT, slug, "grammar.json")
-        if slug in SKIP or slug.endswith("-course") or not os.path.exists(path):
+        if slug in SKIP or slug.endswith(("-course", "-booklet")) or not os.path.exists(path):
             continue
         g = json.load(open(path, encoding="utf-8"))
+        if (g.get("metadata") or {}).get("status") == "draft":   # drafts stay out of search until listed (Oct 23 2026)
+            continue
         items = [it for it in g.get("nodes", []) if is_card(it) and it.get("id")]
         if not items:
             continue
@@ -369,19 +316,29 @@ def build():
                   "reversals", "dignities", "court", "courts", "trumps", "pips", "spread"])
     vocab -= STOP
 
-    # courses + their ## / ### headings
+    # courses + their lessons. A course is a grammar read in recursive.eco Play (Oct 23 2026):
+    # the Published ones (no "import_visibility": "private"), each lesson a node.
     courses = []
-    for path in sorted(glob.glob(os.path.join(COURSE, "*.mdx"))):
-        cid = os.path.basename(path)[:-4]
-        title, desc, sections = parse_course(path)
+    eco = json.load(open(os.path.join(TAROT, "_eco_ids.json"), encoding="utf-8")).get("ids", {})
+    paths = sorted(glob.glob(os.path.join(TAROT, "*-course", "grammar.json"))) + [os.path.join(TAROT, "how-to-contribute", "grammar.json")]
+    for path in paths:
+        slug = os.path.basename(os.path.dirname(path))
+        g = json.load(open(path, encoding="utf-8"))
+        if g.get("import_visibility") == "private" or not eco.get(slug):
+            continue
         ci = len(courses)
-        courses.append({"id": cid, "t": title})
-        entries.append({"k": "o", "t": title, "c": ci,
-                        "a": " ".join(w for w in words(desc) if w in vocab)})
-        for lvl, text, anchor, body in sections:
+        courses.append({"id": slug[:-7] if slug.endswith("-course") else slug, "t": g.get("name", slug),
+                        "u": "https://recursive.eco/play?id=%s&pane=continuous" % eco[slug]})
+        entries.append({"k": "o", "t": g.get("name", slug), "c": ci,
+                        "a": " ".join(w for w in words(g.get("description", "")) if w in vocab)})
+        for node in g.get("nodes", []):
+            text = md_text(node.get("name", ""))
+            if not node.get("id") or text == "Introduction":
+                continue
+            body = " ".join(str(v) for v in (node.get("sections") or {}).values())
             bw = set(norm(body).split())
             x = " ".join(sorted(w for w in bw & vocab if w not in set(words(text))))
-            e = {"k": "h", "t": text, "c": ci, "h": anchor}
+            e = {"k": "h", "t": text, "c": ci, "h": node["id"]}
             if x:
                 e["x"] = x
             entries.append(e)

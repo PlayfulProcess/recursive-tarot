@@ -80,11 +80,19 @@ Rider-Waite-Smith deck. Waite and Smith drew their pictures in 1909, from inside
 and those pictures sit in a deck of their own,
 [Golden Dawn Tarot — Book T with Rider-Waite-Smith Imagery](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json).
 
-**Pictures (Oct 10 2026).** Every card has a first picture, made for now and meant to be improved:
-an AI painting prompted from Book T's own words for that card, traced into line art, with the
-card's name set as text under it. Book T describes no picture for the twenty-two Keys, so their
+**Pictures (Oct 21 2026).** Every card is painted, with its Golden Dawn symbols (element, sign or
+planet, Hebrew letter) drawn on the card and its name set as text under it. Each painting was
+prompted from Book T's own words for that card; the earlier line art, iconography and linocut sets
+stay under the sidebar's Selections → Pictures. Book T describes no picture for the twenty-two Keys, so their
 prompts start from each Key's title. Each prompt, beside the Book T passage it comes from, is in
 [the prompts file](https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/book-t/PROMPTS.md).
+
+**Decks painted from Book T.** Book T describes the cards in words; the printed Golden Dawn decks are
+later painters' readings of it, listed on [one page](https://tarot.recursive.eco/pages/golden-dawn-decks.html).
+The first complete one, Robert Wang's *Golden Dawn Tarot* (1977–78), was painted under Israel
+Regardie's direction. Wang later called his own figures "badly drawn, strange little wooden
+figures" and turned to a Jungian deck instead (his autobiography, *Expelled from Nursery School*,
+2011, p. 20, [archived PDF](https://web.archive.org/web/2016/http://robertwangart.com/Expelled%20From%20Nursery%20School.pdf)).
 
 ## How the cards are set out
 
@@ -106,8 +114,8 @@ whole book reads as one page at [Book T (1912)](https://tarot.recursive.eco/page
 **Beside Book T (Oct 18 2026).** Two other public-domain writers from the Order's line sit under
 it, each in a section of its own that names them: A. E. Waite, a member of the Golden Dawn, on
 every card (*The Pictorial Key to the Tarot*, 1911; he describes the Rider-Waite-Smith picture),
-and Paul Foster Case on each Key's Hebrew letter (*An Introduction to the Study of the Tarot*,
-1920). Book T's own words are always the first section.
+and Paul Foster Case on each Key's Hebrew letter ([*An Introduction to the Study of the Tarot*,
+1920](https://recursive.eco/play?id=2b99b34f-7c83-411b-9430-2a7376bb8134&pane=continuous), the whole booklet). Book T's own words are always the first section.
 
 **Reading by the elements (Oct 20 2026).** Book T has no reversed cards. In the Golden Dawn's
 way of reading, a card's meaning turns on its dignity, and its dignity on the cards beside it: the
@@ -121,8 +129,8 @@ attribution's element: the three elemental Keys their own (the Fool Air, the Han
 Judgment Fire), a sign Key its sign's triplicity, and a planet Key the planet's temperament in the
 old astrology: Saturn Earth, Jupiter Air, Mars and the Sun Fire, Venus and the Moon Water, Mercury
 Air. That planet table is our choice; the tradition varies. Where Book T gives a card's meaning
-when ill dignified, those words stand in a section of their own, *If ill dignified*, so a reading
-can show them first.
+when ill dignified, those words stand in a section of their own, *If ill dignified*. How a card
+comes ill dignified, in Book T's own words: [Dignities](https://tarot.recursive.eco/pages/glossary.html#dignities).
 
 **Where the pictures come from:** what survives of the Order's own cards, the published Golden
 Dawn decks, and their rights: [Sources: Book T](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/sources/grammar.json&item=sel-deck-book-t).
@@ -415,7 +423,8 @@ def build(prev):
         'roots': ['western-esoteric', 'mysticism'],
         'shelves': ['wonder', 'mirror'],
         'worldview': 'esoteric',
-        'is_published': False,
+        # Private on its first import into recursive.eco (is_published retired Oct 23 2026).
+        'import_visibility': 'private',
         '_community_folder': 'tarot',
         '_community_slug': 'book-t',
         'image_credit': "AI paintings prompted from Book T's own words, traced to line art by PlayfulProcess (Oct 2026); CC BY-SA 4.0. Prompts and sources: tarot/book-t/PROMPTS.md.",
@@ -427,11 +436,11 @@ def build(prev):
         'nodes': items,
     }
     if prev:                                       # keep deck-level edits made after the first build
-        for k in ('cover_image_url', 'is_published', 'image_credit'):
+        for k in ('cover_image_url', 'image_credit'):
             if k in prev and prev[k] != g[k] and prev[k] not in ('', None):
                 g[k] = prev[k]
         for k, v in prev.items():
-            if k not in g:
+            if k not in g and k != 'is_published':   # retired: import_visibility says it
                 g[k] = v
     return g
 

@@ -1,0 +1,126 @@
+{
+  "_github_url": "https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/decks-still-missing/grammar.json",
+  "_github_source_url": "https://raw.githubusercontent.com/PlayfulProcess/recursive-tarot/main/tarot/decks-still-missing/grammar.json",
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "PlayfulProcess",
+        "date": "2026",
+        "note": "Summaries and links"
+      },
+      {
+        "name": "Wikipedia; World of Playing Cards; Tarot Heritage; Victoria and Albert Museum; Learning the Tarot",
+        "date": "read 2026-10-23",
+        "note": "Facts, paraphrased"
+      }
+    ]
+  },
+  "name": "Decks still missing — Brera-Brambilla, Gumppenberg, Soprafino",
+  "description": "# Decks still missing\n\nThree decks the Tree of Tarot places in the history that this library can't build yet, because no open pictures of\nthem were found. Each card says what the deck is, the best open picture found (only the Brambilla has one), and\nwhere to see more.\n\n**About the pictures.** Wikimedia Commons and the Met's open access were searched on 23 October 2026. The museums\nthat hold these packs show them online under non-commercial terms, so they are linked, not copied. Anyone with an\nold pack can help: photograph each card, offer the photos under CC BY-SA, and the deck can join the library.",
+  "grammar_type": "custom",
+  "provenance": "reference",
+  "creator_name": "PlayfulProcess",
+  "creator_link": "https://recursive.eco",
+  "cover_image_url": "https://tarot.recursive.eco/tarot/decks-still-missing/images/brambilla-queen-of-staves.jpg",
+  "tags": [
+    "tarot",
+    "history",
+    "missing",
+    "sources"
+  ],
+  "is_published": true,
+  "default_view": "cards",
+  "_community_folder": "tarot",
+  "_community_slug": "decks-still-missing",
+  "metadata": {
+    "common_name": "Decks still missing",
+    "category": "reference"
+  },
+  "nodes": [
+    {
+      "id": "brera-brambilla",
+      "name": "Brera-Brambilla Visconti-Sforza (Milan, 1463?)",
+      "category": "deck",
+      "image_url": "https://tarot.recursive.eco/tarot/decks-still-missing/images/brambilla-queen-of-staves.jpg",
+      "metadata": {
+        "year": 1463,
+        "branch": "roots",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/decks-still-missing/images/brambilla-queen-of-staves.jpg",
+            "scene": "Queen of Staves",
+            "artist": "Bonifacio Bembo (attributed)",
+            "artist_dates": "c. 1463",
+            "edition": "Brera-Brambilla deck, Pinacoteca di Brera, via Wikimedia Commons",
+            "license": "Public domain (PD-old, as filed on Commons)",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Queen_of_Staves-BBVS_Deck.jpg"
+          }
+        ],
+        "source_deck": "tree-of-tarot",
+        "source_node_id": "deck-brera-brambilla",
+        "deck": "Tree of Tarot"
+      },
+      "sections": {
+        "What it is": "A hand-painted Milanese deck named after Giovanni Brambilla, who bought the cards in Venice in 1900; the Pinacoteca di Brera in Milan has held it since 1971. It is thought to be the pack Francesco Sforza commissioned from Bonifacio Bembo in 1463. Forty-eight cards survive, only two of them trumps: the Emperor and the Wheel of Fortune. Face cards have a gold ground, pip cards a silver one [@web_wp_visconti_sforza].",
+        "Best open picture": "The Queen of Staves, filed on Wikimedia Commons as public domain with the Pinacoteca di Brera as its source. A few other cards are on Commons, but small (120 px) or scanned from a 2007 book, in a category that mixes them with other Visconti-Sforza cards, so they are left out.",
+        "Where to see more": "- [Visconti–Sforza Tarot, Wikipedia: the Brera–Brambilla section](https://en.wikipedia.org/wiki/Visconti%E2%80%93Sforza_Tarot#Brera%E2%80%93Brambilla)\n- [Pinacoteca di Brera](https://pinacotecabrera.org/) (the holder)\n- [The Queen of Staves on Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Queen_of_Staves-BBVS_Deck.jpg)",
+        "Note": "Too few open pictures to build the deck: one card of 48. The Brera's own images would be needed."
+      },
+      "sort_order": 0,
+      "keywords": [
+        "tarot",
+        "history",
+        "missing deck"
+      ]
+    },
+    {
+      "id": "gumppenberg-lombardy",
+      "name": "Gumppenberg's neoclassical tarot, \"Ancient Tarot of Lombardy\" (Milan, c. 1810)",
+      "category": "deck",
+      "metadata": {
+        "year": 1810,
+        "branch": "branch-c",
+        "source_deck": "tree-of-tarot",
+        "source_node_id": "deck-lombardy",
+        "deck": "Tree of Tarot"
+      },
+      "sections": {
+        "What it is": "An engraved, hand-coloured tarot in the neoclassical style, printed in Milan around 1810 for Ferdinand Gumppenberg, a Bavarian-trained printer who settled in Milan in 1809; his name is on the ace of cups. Its batons and swords are drawn apart on the pip cards, in the Spanish manner. Lo Scarabeo reprints it today as the \"Ancient Tarot of Lombardy\" [@web_wopc_gumppenberg; @web_learntarot_lombardy].",
+        "Best open picture": "**No open pictures yet.** Wikimedia Commons and the Met's open access have no pictures of this deck (checked 23 Oct 2026). The museums that hold packs show them under non-commercial terms, so they are linked here, not copied. A new photograph of an old pack, offered under CC BY-SA, would let the deck be built.",
+        "Where to see more": "- [Gumppenberg of Milan, World of Playing Cards](https://www.wopc.co.uk/italy/gumppenberg/)\n- [Ancient Tarot of Lombardy, Learning the Tarot (Joan Bunning)](https://learntarot.com/lmdesc.htm)\n- [Gumppenberg, Tarot Heritage](https://tarot-heritage.com/tag/gumppenberg/)"
+      },
+      "sort_order": 1,
+      "keywords": [
+        "tarot",
+        "history",
+        "missing deck"
+      ]
+    },
+    {
+      "id": "soprafino",
+      "name": "Soprafino, engraved by Carlo Della Rocca (Milan, c. 1835)",
+      "category": "deck",
+      "metadata": {
+        "year": 1835,
+        "branch": "branch-c",
+        "source_deck": "tree-of-tarot",
+        "source_node_id": "deck-soprafino",
+        "deck": "Tree of Tarot"
+      },
+      "sections": {
+        "What it is": "The \"super-fine\" tarot (tarocchi soprafini): copper plates engraved by Carlo Della Rocca (Dellarocca) for the Milanese printer Ferdinand Gumppenberg, around 1835. Its designs were copied by many 19th-century cardmakers, and after Gumppenberg's death Teodoro Dotti, who had worked for him, kept printing from the plates. Dates vary between sources, from about 1830 to 1840 [@web_tarot_heritage_soprafino; @web_vam_soprafino].",
+        "Best open picture": "**No open pictures yet.** Wikimedia Commons and the Met's open access have no pictures of this deck (checked 23 Oct 2026). The museums that hold packs show them under non-commercial terms, so they are linked here, not copied. A new photograph of an old pack, offered under CC BY-SA, would let the deck be built. The Victoria and Albert Museum shows several cards from a Dotti printing.",
+        "Where to see more": "- [The Soprafino deck of Carlo Dellarocca, Tarot Heritage](https://tarot-heritage.com/2011/10/26/the-soprafino-deck-of-carlo-dellarocca/)\n- [Soprafino, nineteenth-century tarot in Milan, Tarot Heritage](https://tarot-heritage.com/2025/10/13/soprafino-nineteenth-century-tarot-in-milan/)\n- [A Soprafino card at the Victoria and Albert Museum](https://collections.vam.ac.uk/item/O657451/)\n- [Ferdinand Gumppenberg, World of Playing Cards](https://www.wopc.co.uk/explore/manufacturer/gumppenberg/)"
+      },
+      "sort_order": 2,
+      "keywords": [
+        "tarot",
+        "history",
+        "missing deck"
+      ]
+    }
+  ]
+}

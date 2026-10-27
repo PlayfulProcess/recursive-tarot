@@ -32,13 +32,17 @@
   /* ── group sections, labelled the way the homepage labels its galleries ── */
   .group{margin:46px 0 0}
   .group:first-child{margin-top:40px}
+  .group{scroll-margin-top:80px}
   .glabel{display:flex;align-items:baseline;gap:12px;margin:0 0 16px}
+  .glabel::before{content:'';flex:1;height:1px;background:var(--line);align-self:center}
   .glabel h2{font-family:var(--serif-display);font-weight:600;font-size:clamp(19px,3vw,23px);
     margin:0;color:var(--ink);white-space:nowrap}
   .glabel::after{content:'';flex:1;height:1px;background:var(--line);align-self:center}
 
   /* ── course cards: same hover-lift + contained-art idiom as the homepage's tiles ── */
-  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+  /* rows centre, so a short last row (or a one-card group) sits in the middle, not hard left */
+  .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+  .cards > .ccard{flex:0 1 260px;min-width:220px}
   .ccard{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line-soft);
     border-radius:12px;overflow:hidden;text-decoration:none;color:var(--ink);
     transition:transform .15s,box-shadow .15s,border-color .15s}
@@ -69,6 +73,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"The Recursive Tarot","item":"https://tarot.recursive.eco/"},{"@type":"ListItem","position":2,"name":"All Courses","item":"https://tarot.recursive.eco/pages/courses.html"}]}</script>
 </head>
 <body>
+<script src="../courses-play.js"></script>
 <script src="../site-header.js?v=52"></script>
 <site-header active="course"></site-header>
 
@@ -88,7 +93,7 @@
   let cat, col;
   try {
     [cat, col] = await Promise.all([
-      fetch('../course/_courses.json').then(r => r.json()),
+      fetch('../course/_courses.json', { cache: 'no-cache' }).then(r => r.json()),
       fetch('../tarot/_collection.json').then(r => r.json()).catch(() => ({ grammars: [] })),
     ]);
   } catch (e) {
@@ -100,6 +105,11 @@
 
   root.innerHTML = (cat.groups || []).map(group => {
     const cards = (group.courses || []).map(c => {
+      // A course opens in recursive.eco Play (courses-play.js); a research chapter in course.html.
+      // A course still Private in recursive.eco has no address yet, so it is not shown.
+      const href = c.href || window.coursePlayUrl(c.id)
+        || (c.id.startsWith('../research/') ? 'course.html?src=' + encodeURIComponent(c.id + '.mdx') : '');
+      if (!href) return '';
       const img = c.thumb || coverBySlug[c.deck] || '';
       const cover = img
         ? `<img loading="lazy" src="${esc(img)}" alt="">`
@@ -110,18 +120,21 @@
       const draftMatch = /^\(draft\)\s*/i.exec(c.blurb || '');
       const badge = draftMatch ? '<span class="badge">Draft</span>' : '';
       const blurb = draftMatch ? c.blurb.slice(draftMatch[0].length) : c.blurb;
-      return `<a class="ccard" href="course-viewer.html?course=${esc(c.id)}">
+      return `<a class="ccard" href="${esc(href)}">
         <div class="cover">${cover}</div>
         <div class="body">
           ${badge}
           <h3>${esc(c.title)}</h3>
           <p class="blurb">${esc(blurb)}</p>
-          <span class="go">Read →</span>
+          <span class="go">${esc(c.go || 'Read →')}</span>
         </div>
       </a>`;
     }).join('');
-    return `<section class="group"><div class="glabel"><h2>${esc(group.name)}</h2></div><div class="cards">${cards}</div></section>`;
+    // id = the group name as a slug, so the Courses menu can link to a topic (#the-golden-dawn).
+    const gid = group.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    return `<section class="group" id="${gid}"><div class="glabel"><h2>${esc(group.name)}</h2></div><div class="cards">${cards}</div></section>`;
   }).join('');
+  if (location.hash) { const t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
 })();
 </script>
 

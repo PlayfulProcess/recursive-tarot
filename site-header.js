@@ -52,6 +52,12 @@
 
   // Shared-identity widget (reads the .recursive.eco session cookie; L1 of the
   // integration ladder). Loaded once; renders as <recursive-auth> in the bar.
+  // The tab icon: many pages never linked one and showed an empty tab (Oct 23 2026).
+  if (!document.querySelector('link[rel~="icon"]')) {
+    const ic = document.createElement('link');
+    ic.rel = 'icon'; ic.type = 'image/svg+xml'; ic.href = PFX + 'public/favicon.svg?v=2';
+    document.head.appendChild(ic);
+  }
   if (!document.querySelector('script[data-recursive-auth]')) {
     const s = document.createElement('script');
     s.src = PFX + 'auth-widget.js?v=2';
@@ -62,10 +68,10 @@
   // [key, label, href] — split by level
   const CARD_VIEWS = [
     ['explorer', 'Explorer', PFX + 'viewers/explorer.html'],
-    ['cards',    'Cards',    PFX + 'viewers/cards.html'],
+    // Cards and Tree open the all-decks grammar in recursive.eco's Play (Oct 23 2026); the old pages are in the archive.
+    ['cards',    'Cards ↗',  'https://recursive.eco/play?id=b03937bf-92be-414b-bd23-a85fe9be39eb&pane=cards', '', true],
     ['lenses',   'Lenses', PFX + 'viewers/prototypes/lenses.html'],
-    ['tree',     'Tree',     PFX + 'viewers/tree-viewer.html'],
-    ['table',    'Card Table', PFX + 'viewers/table.html'],
+    ['tree',     'Tree ↗',   'https://recursive.eco/play?id=b03937bf-92be-414b-bd23-a85fe9be39eb&pane=tree', '', true],
   ];
   const GRAMMAR_VIEWS = [
     ['treeoflife', 'Tree of Tarot', PFX + 'viewers/genealogy-tree.html'],
@@ -81,37 +87,42 @@
     ['github', 'GitHub',  'https://github.com/PlayfulProcess/recursive-tarot', 't-github', true],
   ];
   const GITHUB_URL = 'https://github.com/PlayfulProcess/recursive-tarot';
-  // Play — a dropdown of the games + readings (the pill itself links to the Play hub).
-  const PLAY_MENU = [
-    [PFX + 'pages/games/tarocchino.html', 'Tarocchino di Bologna'],
-    [PFX + 'pages/games/madiao.html',     'Ma Diao 馬吊'],
-    [PFX + 'pages/games/trionfi.html',    'Trionfi'],
-    [PFX + 'viewers/caster-studio.html',  'Spread Caster — build · cast · send'],
-    [PFX + 'viewers/table.html',          'Card Table — less · keep · more'],
-    [PFX + 'viewers/cards.html?src=../tarot/bus-passengers/grammar.json', 'Bus Passengers — who’s driving?'],
-    ['https://flow.recursive.eco/',   'Oracle ↗', true],
-    [PFX + 'pages/play.html',             'All games & readings →'],
+  // Play — a dropdown of readings, then the old games (the pill itself links to the Play hub).
+  // Tools only: decks live in Views and on the home page, not here (Oct 23 2026).
+  const PLAY_GROUPS = [
+    ['Read the cards', [
+      [PFX + 'viewers/caster-studio.html',  'Spread Caster — build · cast · save'],
+      [PFX + 'viewers/table.html',          'Card Table — less · keep · more'],
+      ['https://recursive.eco/',            'Oracle on recursive.eco ↗', true],
+    ]],
+    ['Play the old games', [
+      [PFX + 'pages/games/trionfi.html',    'Trionfi — the first tarot game'],
+      [PFX + 'pages/games/tarocchino.html', 'Tarocchino — still played in Bologna'],
+      [PFX + 'pages/games/madiao.html',     'Ma Diao 馬吊 — an early Chinese card game'],
+    ]],
   ];
   // Home — a dropdown that uncollapses to About (the pill itself links to the homepage).
   const HOME_MENU = [
     [PFX + 'index.html',        'Home'],
     [PFX + 'pages/about.html',  'About'],
   ];
-  // Courses — grouped into three topics; each is a course-viewer ?course=… (deep-linkable with #section).
+  // Courses — each opens in recursive.eco Play, Continuous (the map of all of them: courses-play.js).
   const COURSE_GROUPS = [
     ['Start here', [
-      ['history-of-tarot',                'The History of Tarot'],
-      ['how-tarot-works',                 'How the Cards Can Work'],
-      ['how-to-contribute',               'Ways to Contribute'],
+      ['https://recursive.eco/play?id=4f954864-6889-4bf7-8b2e-64e313066444&pane=continuous', 'The History of Tarot'],
+      ['https://recursive.eco/play?id=f824e706-af68-4cf9-98ad-2977b69e1e4e&pane=continuous', 'How the Cards Can Work'],
+      ['https://recursive.eco/play?id=368974ce-0718-4e9a-9351-bce7b2c053e4&pane=continuous', 'Ways to Contribute'],
     ]],
-    ['More', [
-      ['reading-the-cards',               'Reading the Cards'],
-      ['tarot-today',                     'Tarot Today'],
-      ['why-a-reading-feels-personal',    'Why a Reading Feels So Personal'],
-      ['what-a-reading-can-do',           'What a Reading Can Do'],
-      ['your-card-table',                 'Your Card Table'],
-      ['working-with-claude-desktop',     'Working with Claude Desktop'],
-    ]],
+  ];
+  // The other groups of the all-courses gallery (course/_courses.json → pages/courses.html#<id>).
+  // Keep in step with that file's group names.
+  const COURSE_TOPICS = [
+    ['read-more-deeply',     'Read more deeply'],
+    ['the-golden-dawn',      'The Golden Dawn'],
+    ['the-reading-voices',   'The reading voices'],
+    ['the-honest-questions', 'The honest questions'],
+    ['lots-games-and-play',  'Lots, games and play'],
+    ['build-with-us',        'Build with us'],
   ];
 
   // Quick-jump search (Oct 2026): the box in the bar, its results, and the phone sheet.
@@ -141,7 +152,7 @@
   const ICO_PATH = '<path d="M12 4l8.5 15.5H3.5z"/>';
   // Golden Dawn group inside the Courses menu: [file under pages/ or course id, label, glyph]
   const GD_MENU = [
-    [PFX + 'pages/course-viewer.html?course=walking-the-golden-dawn-path', 'The course: the Map and the Walk', ICO_PATH, 'walking-the-golden-dawn-path'],
+    ['https://recursive.eco/play?id=9befd48e-5c83-48aa-abb2-d865beb06c19&pane=continuous', 'The course: the Map and the Walk', ICO_PATH, 'walking-the-golden-dawn-path'],
     [PFX + 'pages/tree-of-life.html', 'The Tree of Life map', ICO_TREE, 'tree-of-life.html'],
     [PFX + 'pages/glossary.html',     'Glossary',             ICO_GLOSS, 'glossary.html'],
     [PFX + 'pages/book-t.html',       'Book T (1912), to read', ICO_BOOK, 'book-t.html'],
@@ -402,22 +413,25 @@
                 ${CARD_VIEWS.map(menuItem).join('')}
                 <span class="dd-cap">Across the collection</span>
                 ${GRAMMAR_VIEWS.map(menuItem).join('')}
+                <a href="${PFX}archive/index.html"${location.pathname.includes('/archive/') ? ' aria-current="page"' : ''} style="border-top:1px solid #d8d2c6;margin-top:4px;padding-top:9px">Archive: the older views, and how to build your own →</a>
               </span>
             </span>
             <span class="dd">
               <a class="tab t-course dd-btn${active === 'course' ? ' active' : ''}" role="button" tabindex="0" title="Courses" aria-haspopup="true" aria-expanded="false" aria-label="Courses menu">${glyph('course', 'Courses')}</a>
               <span class="dd-menu">
-                ${COURSE_GROUPS.map(([cap, items]) => `<span class="dd-cap">${cap}</span>` + items.map(([id, label]) => `<a href="${PFX}pages/course-viewer.html?course=${id}">${label}</a>`).join('')).join('')}
-                <span class="dd-cap">The Golden Dawn</span>
+                ${COURSE_GROUPS.map(([cap, items]) => `<span class="dd-cap">${cap}</span>` + items.map(([href, label]) => `<a href="${href}">${label}</a>`).join('')).join('')}
+                <span class="dd-cap">All courses, by topic</span>
+                ${COURSE_TOPICS.map(([id, label]) => `<a href="${PFX}pages/courses.html#${id}">${label} →</a>`).join('')}
+                <span class="dd-cap">The Golden Dawn, to explore</span>
                 ${GD_MENU.map(([href, label, svg, k]) => `<a class="mi${hereGD(k) ? ' on' : ''}" href="${href}"${hereGD(k) ? ' aria-current="page"' : ''}>${NAV_SVG(svg, 18)}${label}</a>`).join('')}
-                <a href="${PFX}pages/courses.html" style="border-top:1px solid #d8d2c6;margin-top:4px;padding-top:9px">All courses (gallery) →</a>
-                <a href="${PFX}pages/sources.html">The sources — people &amp; books →</a>
+                <a href="${PFX}pages/sources.html" style="border-top:1px solid #d8d2c6;margin-top:4px;padding-top:9px">The sources — people &amp; books →</a>
               </span>
             </span>
             <span class="dd">
               <a class="tab t-caster dd-btn${active === 'play' ? ' active' : ''}" href="${PFX}pages/play.html" title="Play" aria-haspopup="true" aria-expanded="false" aria-label="Play menu">${glyph('play', 'Play')}</a>
               <span class="dd-menu">
-                ${PLAY_MENU.map(([href, label, ext]) => `<a href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`).join('')}
+                ${PLAY_GROUPS.map(([cap, items]) => `<span class="dd-cap">${cap}</span>` + items.map(([href, label, ext]) => `<a href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`).join('')).join('')}
+                <a href="${PFX}pages/play.html" style="border-top:1px solid #d8d2c6;margin-top:4px;padding-top:9px">All games &amp; readings →</a>
               </span>
             </span>
             ${TOOLS.map(tab).join('')}
@@ -758,3 +772,17 @@
 
   customElements.define('site-header', SiteHeader);
 })();
+
+// Links into recursive.eco open in a new tab (Oct 24 2026, her report: the courses opened in the
+// same tab, so the reader lost the tarot site). One rule for every page that loads this header,
+// including links drawn later (course cards, quick-jump): set on the click, before the browser follows it.
+document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+  if (!a || a.target) return;
+  var host;
+  try { host = new URL(a.href, location.href).hostname; } catch (_) { return; }
+  if (host === 'recursive.eco' || /\.recursive\.eco$/.test(host) && host !== location.hostname) {
+    a.target = '_blank';
+    a.rel = 'noopener';
+  }
+}, true);

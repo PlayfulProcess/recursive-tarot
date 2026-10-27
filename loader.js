@@ -23,10 +23,13 @@
     return null;
   }
 
-  // The viewer pages live at the repo root, alongside the tarot/ data folder,
-  // so a repo-relative path is used as-is.
+  // A repo-relative path (tarot/<slug>/grammar.json) is resolved against this script's own
+  // address, which sits at the repo root beside tarot/. So a page anywhere in the site
+  // (deck.html moved to archive/ on Oct 20 2026) loads the same ?file= as before.
+  var ROOT = (document.currentScript && document.currentScript.src) || location.href;
   function rel(p) {
-    return p;
+    if (/^https?:\/\//i.test(p)) return p;
+    return new URL(p, ROOT).href;
   }
 
   function collectionUrl() {

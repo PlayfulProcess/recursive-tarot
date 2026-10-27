@@ -25,7 +25,7 @@
       "tarot/sources/grammar.json",
       "tarot/glossary-of-tarot/grammar.json"
     ],
-    "_exclude_note": "all-decks/tree/people/books/sources/glossary are generated meta or reference apparatus (provenance:reference), not castable decks. Only public, complete deck grammars are imported as channel members; drafts/stubs are skipped on import.",
+    "_exclude_note": "What the sync does (Oct 23 2026): recursive.eco does not read this exclude list. On a push to main, a new tarot/<slug>/grammar.json is imported; it starts Published (this repository is Published) unless its file says \"import_visibility\": \"private\" (only you) or \"link\" (anyone with the link, not in Explore or search), read on that first import only. A file with \"_generated\": true or \"_source_of_truth\" is never imported unless the id_map already maps it, and the aggregates whose slug starts all-decks, tree-of, people-of or books-of are never fetched. A file already mapped in the id_map updates its grammar, never its visibility.",
     "id_map": "tarot/_eco_ids.json"
   },
   "maintainers": ["pp@playfulprocess.com"],
