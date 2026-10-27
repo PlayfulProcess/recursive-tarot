@@ -30,7 +30,7 @@ These stayed put because something calls them or they're safe to re-run:
 | `build_contribute_grammar.py` | Regenerated the old `_generated` contribute grammar. (`course_to_grammar.py` and `build_reading_course.py` were deleted Oct 23 2026: the courses are grammars now, edited directly) |
 | `enrich_cards_from_research.py`, `refresh_collection.py`, `audit_image_usage.py`, `apply_theme.py` | Idempotent, add-only or re-derive-only |
 | `normalize_book_t_sections.py` | Idempotent; `--check` mode asserts the Book T sections are still token-for-token intact |
-| `tgc_card.py`, `build_sampler.py`, `build_sampler_v6.py`, `prebake_deck_r2.py`, `detect_flood_bg.py`, `resize_for_tgc.py`, `download_deck_images.py`, `tgc_upload_deck.py`, `generate_book.py`, `rehost_to_r2.py`, `migrate_covers_to_r2.py`, `stamp_print_metadata.py` | The print / proofing pipeline documented in `print/PROOFING-PROTOCOL.md` and `print/HOW-TO-PRINT.md`. **`tgc_card.py` is a shared library** imported by four of them — they only resolve because they sit in the same directory, so they move together or not at all |
+| `tgc_card.py`, `build_sampler.py`, `build_sampler_v6.py`, `prebake_deck_r2.py`, `detect_flood_bg.py`, `resize_for_tgc.py`, `download_deck_images.py`, `tgc_upload_deck.py`, `rehost_to_r2.py`, `migrate_covers_to_r2.py`, `stamp_print_metadata.py` | The print / proofing pipeline documented in `print/PROOFING-PROTOCOL.md` and `print/HOW-TO-PRINT.md`. **`tgc_card.py` is a shared library** imported by four of them — they only resolve because they sit in the same directory, so they move together or not at all |
 
 ## What's in here
 

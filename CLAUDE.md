@@ -125,6 +125,10 @@ A course grammar links them by full address, `https://tarot.recursive.eco/pages/
 images elsewhere (the old `course/img/` folder was consolidated here Jun 23 2026). Card art still
 comes from R2 (see the Image pattern above); this folder is only for course-authored figures.
 
+## Printed books
+
+The printed books live in book-repo ([PlayfulProcess/recursive-books](https://github.com/PlayfulProcess/recursive-books)) since Oct 27 2026; this repo has no book pipeline (`course/books/` and `scripts/generate_book.py` were deleted). `print/book/figures/` stays: the history course links its two plates.
+
 ## Scripts cheat-sheet
 
 | Script | What it does |
