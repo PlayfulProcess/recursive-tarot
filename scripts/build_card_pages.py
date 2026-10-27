@@ -154,7 +154,7 @@ def split_waite(text):
 def bookt_meaning(sec):
     """Book T's own text minus its italic provenance line."""
     lines = [b for b in re.split(r"\n\s*\n", sec or "") if b.strip()]
-    if lines and lines[0].strip().startswith("*Book T in its own words"):
+    if lines and lines[0].strip().startswith(("*Book T in its own words", "*Book T, 1912")):
         lines = lines[1:]
     return "\n\n".join(lines).strip()
 

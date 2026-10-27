@@ -33,8 +33,7 @@ SRC = os.path.join(ROOT, 'research', 'sources', 'book-t-equinox-1912.txt')
 DECK = os.path.join(ROOT, 'tarot', 'golden-dawn-book-t-tarot', 'grammar.json')
 ARCHIVE = os.path.join(ROOT, 'tarot', '_archive', 'golden-dawn-editorial-2026-10-05.json')
 SECTION = 'Book T (1912)'
-HEADER = ('*Book T in its own words · as printed in* The Equinox *I(8), 1912 · public domain '
-          '(notes in square brackets are Crowley\'s)*')
+HEADER = "*Book T, 1912 · [the original](https://tarot.recursive.eco/pages/book-t.html), public domain; [square brackets] are Crowley's*"
 MOVED = ('Divinatory Meaning', 'Reversed / Ill-Dignified', 'Symbol')
 AFTER = ('Golden Dawn Rank', 'Golden Dawn Title')
 
