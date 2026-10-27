@@ -65,6 +65,25 @@ PlayfulProcess said "ok" to redoing the seven weakest cards of the first run. Sa
 
 The other notes under each card are smaller misses (a count off by one or two, a crest in the wrong place).
 
+## Repaint, round 2 (Oct 27 2026)
+
+PlayfulProcess: "Repaint the 14 Book T cards: ok", the fourteen mismatches of [the painted check](../../docs/research/BOOK-T-PAINTED-CHECK-2026-10-21.md) (its section "Oct 27 repaint" has each card's before and after, the attempt kept and what is still off). Same style line as above, then the card. Painted with `generate_node_image`, `set: false`, models Nano Banana 2.1 and Nano Banana Pro (gemini-2.5-flash-image, the first run's, is being retired); the last attempts passed the card's full-imagery layout, or a correctly counted new painting, as the reference picture. The kept prompts (after the style line):
+
+- **Ace of Wands**: a white radiant angelic hand from clouds at the bottom grasps a heavy wooden club held upright; above the fist it divides into three branches rising upward; the left and right branches each end in three flames, the centre branch in four. Exactly twenty-two small flame-drops (Yods), as in the diagram: seven in an arch above the centre branch, twelve to the left (six high, six lower), three to the right below the right branch. *(Six Yods then copied above the left branch by `scripts/fix_book_t_repaint_2026_10_27.py`.)*
+- **Knight of Pentacles**: the first prompt, with the sceptre "topped by a hexagram: a six-pointed star made of two interlaced triangles" and in the other hand "a round disc divided by a cross into four quarters coloured citrine, olive, russet and black, with a white hexagram at its centre".
+- **Four of Wands**: two white radiant hands from clouds at the left and right edges clasp in a firm grip at the centre, holding exactly four long wands crossed as a broad X, two slanting each way; flames burst from the crossing; one short flaming wand across the top centre and one across the bottom centre.
+- **Six of Wands**: as the Four, with exactly six wands, three parallel wands slanting each way, like two fans of three.
+- **Seven of Wands**: with the new Six as reference: keep its two clasped hands and six crossed wands; no short wands; a third white hand from a cloud at the bottom centre holds a seventh wand upright through the crossing.
+- **Eight of Wands**: eight long wands crossed as a big X, a fan of four leaning left and a fan of four leaning right (four tips on each side at the top); four hands from the side clouds clasp in two handshakes, one pair above the other; a short flaming wand at top and bottom centre. *(No attempt gave four and four; the kept painting has three and three.)*
+- **Nine of Wands**: nine wands in all: eight crossed, a fan of four each way, held by four hands from the side clouds; a fifth hand from a cloud at the bottom centre holds the ninth upright through the crossing.
+- **Ten of Wands**: with the new Nine as reference: keep its eight crossed wands; the fifth hand holds two upright wands side by side. *(The painting came back with one; the second copied beside it by script.)*
+- **Three of Pentacles**: exactly three golden discs in an upright equilateral triangle; a white-winged angelic hand from a cloud at the bottom holds a rose branch that climbs between the lower two to the top disc, where two closed white rosebuds touch it and rise above it; a smooth plain ground.
+- **Seven of Pentacles**: with the full-imagery layout as reference: seven discs in the rows two, one, two, two (Rubeus); a radiant hand from a cloud holds the branch; exactly five closed buds hanging just above the five upper discs, not touching them; no open roses.
+- **Eight of Pentacles**: exactly eight discs with a five-pointed star at the centre, in two columns of four; a radiant hand from a cloud grasps a rose branch up the middle; four open white roses touch the four lowest discs, only leaves the upper four.
+- **Nine of Pentacles**: with the full-imagery layout as reference: nine discs in three full rows of three; nine open white roses, one touching each disc; a few rosebuds; a radiant hand at the bottom.
+- **Ten of Pentacles**: with the full-imagery layout as reference: ten discs in rows of two, one, two, two, one, two; a white angelic hand holds a long rose branch by its lower end; its open white roses touch the discs; no buds.
+- **Three of Cups**: exactly three golden cups in an upright equilateral triangle; a white radiant hand rising from the water holds a bunch of lotus stems; two lotus flowers bend over the top cup pouring white water into it, others into the two lower cups; all three overflow onto the water.
+
 ## The twenty-two Keys
 
 ### Spirit of Αἰθήρ (The Foolish Man)
