@@ -44,7 +44,7 @@ DECK = ico.DECK
 OUT = os.path.join(ROOT, 'tarot', 'book-t', 'painted-symbols')
 URL = 'https://tarot.recursive.eco/tarot/book-t/painted-symbols/%s.svg'
 EDITION = 'Book T deck, painted with its symbols'
-ARTIST = ("AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess, framed by "
+ARTIST = ("AI painting (%s) from Book T's words, prompt by PlayfulProcess, framed by "
           "the deck's glyphs (drawn for this site) in Book T's order, composed by script "
           "(scripts/build_book_t_painted_symbols.py)")
 f = ico.f
@@ -62,12 +62,23 @@ EMBED_W = 600  # the embedded painting's width in pixels
 
 # ── the painting ────────────────────────────────────────────────────────────────────────────────
 
-def painting_url(node):
+def painting_entry(node):
     for i in (node['metadata'].get('illustrations') or []):
         e = i.get('edition') or ''
         if e != EDITION and ('painting' in e or 'composite' in e):
-            return i['url']
+            return i
     raise SystemExit('%s: no painting among its illustrations' % node['id'])
+
+
+def painting_url(node):
+    return painting_entry(node)['url']
+
+
+def painter(node):
+    """The model that painted the card, as its painting's credit names it (the Oct 27 2026 repaint used
+    newer Gemini models than the first run's gemini-2.5-flash-image)."""
+    m = re.search(r'AI painting \(([^)]+)\)', painting_entry(node).get('artist') or '')
+    return m.group(1) if m else 'gemini-2.5-flash-image'
 
 
 def fetch(url):
@@ -287,7 +298,7 @@ def with_illustration(node):
     set's entry goes first in `metadata.illustrations`, carries `is_primary`, and is the node's
     `image_url`. The other sets stay in the list, in their order, one tap away."""
     m = node['metadata']
-    entry = {'url': URL % node['id'], 'artist': ARTIST, 'edition': EDITION, 'license': 'CC-BY-SA-4.0',
+    entry = {'url': URL % node['id'], 'artist': ARTIST % painter(node), 'edition': EDITION, 'license': 'CC-BY-SA-4.0',
              'is_primary': True}
     ills = [dict(i) for i in (m.get('illustrations') or []) if i.get('edition') != EDITION]
     for i in ills:
