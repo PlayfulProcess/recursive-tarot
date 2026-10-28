@@ -30,7 +30,7 @@ import argparse, html, json, os, re, sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-from import_book_t_1912 import tidy, BOOK_T_TO_DECK, MAJORS, SUITS, RANKS  # noqa: E402
+from import_book_t_1912 import tidy, BOOK_T_TO_DECK, MAJORS, SUITS, RANKS, STRAY, SITE_MARKS, apply_site_marks  # noqa: E402
 import link_glossary as LG  # noqa: E402
 
 SRC = os.path.join(ROOT, 'research', 'sources', 'book-t-equinox-1912.txt')
@@ -52,6 +52,7 @@ PG_A, PG_B = '\ue030', '\ue031'          # page marker: PG_A + "154" + PG_B
 NOTE_A, NOTE_B = '\ue010', '\ue011'      # Crowley's [ ... ]
 CIPHER = '\ue020'
 DOTS10, DOTS6, DOTS9 = '\ue021', '\ue022', '\ue023'   # the little pentacle figures on pp. 180, 181, 197
+MOON = '\ue026'                         # the Moon's sign on p.181 (import_book_t_1912.SITE_MARKS)
 SIC = '\ue024%d\ue025'                   # a "sic" note of this site's, by number (SICS)
 
 # ── Corrections to the transcription, checked against the scan (page in the comment) ──────────
@@ -92,21 +93,13 @@ FIXES = [
     ('Or in Taurus Cancer Libra Sagittarius Aquarius two Swords: 1 of each of the others.',
      'Or in Libra Sagittarius Aquarius Taurus Cancer two wands' + SIC % 2 + ': 1 each of the other suits.'),  # p.175
     ('beginning of the Decanates is', 'beginning of the Decantes is'),                 # p.176, as printed
-    ('symbol  thus, and Libra','symbol Moon thus, and Libra'),                       # p.181 (a crescent)
     ('Chokmah of Vau.', 'Chokmah of HB:V.'),                                          # p.182
 ]
 # "sic" notes: the printed page differs from Book T's own table; shown as this site's note.
 SICS = {1: 'sic: the table above gives Aquarius', 2: 'sic: the table above gives two Swords'}
-# The two pentacle diagrams, which the transcription draws with asterisks over several lines.
-DIAGRAMS = [
-    (r'thus arranged \n\n \* \*\n\n \*\n\n \* \*\n\n \* \*\n\n \*\n\n \* \*\n',
-     'thus arranged ' + DOTS10 + '.\n'),                                              # p.181
-    (r'three each \* \* \n\n\* \*\n\n\* \*\n\n\* \*\n\n\. Above',
-     'three each ' + DOTS6 + '. Above'),                                               # p.197
-    (r'arranged thus (\* ){9}:', 'arranged thus ' + DOTS9 + ':'),                        # p.180
-]
-# Marks the transcription left behind: a stray ">" after a word, a page reference "172}".
-STRAY = [(re.compile(r'(?<=\S)>(?=[\s.,;:]|$)', re.M), ''), (re.compile(r'^\d{3}\}\s*$', re.M), '')]
+# The glyph and the pentacle figures where the page has no words: import_book_t_1912.SITE_MARKS
+# (the Golden Dawn deck and the Book T deck write this site's words there, "[site: ...]").
+PLACEHOLDER = {'moon': MOON, 'dots10': DOTS10, 'dots6': DOTS6, 'dots9': DOTS9}
 
 # Where each printed page begins (pp. 145-210), as a pattern found in order in the source.
 # p.143 is the title page; p.144 is the coloured plate of the frontispiece (not reproduced).
@@ -230,10 +223,7 @@ def load_source():
         if a not in text:
             raise SystemExit('FIXES: %r not found in the source' % a)
         text = text.replace(a, b)
-    for pat, rep in DIAGRAMS:
-        text, n = re.subn(pat, rep, text)
-        if n != 1:
-            raise SystemExit('DIAGRAMS: %r matched %d times' % (pat, n))
+    text = apply_site_marks(text, PLACEHOLDER)
     for pat, rep in STRAY:
         text = pat.sub(rep, text)
     text = re.sub(r'\nWEH NOTE:.*?\n\n', '\n\n', text, flags=re.S)   # the transcriber's note
@@ -398,6 +388,7 @@ def esc_text(s):
     s = s.replace(DOTS6, dots([2, 2, 2], 'six pentacles in two columns of three'))
     s = s.replace(DOTS9, '<span class="ed" title="A small figure of nine dots on the printed page, not redrawn here">'
                          '&#8249;figure of nine&#8250;</span>')
+    s = s.replace(MOON, '<span class="ed" title="The sign of the Moon on the printed page">&#8249;Moon&#8250;</span>')
     s = s.replace(CIPHER,'<span class="ed" title="Three letters in a cipher script, not reproduced here">'
                           '&#8249;3 cipher letters&#8250;</span>')
     s = PG_RE.sub(lambda m: '<span class="pg" id="p%s" data-p="%s" aria-label="page %s"></span>'

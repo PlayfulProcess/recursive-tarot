@@ -65,9 +65,9 @@ KEY_ELEMENT_OF = {'Saturn': 'Earth', 'Jupiter': 'Air', 'Mars': 'Fire', 'Sun': 'F
                   'Fire': 'Fire', 'Water': 'Water', 'Air': 'Air', 'Earth': 'Earth'}
 PLANETS = ('Saturn', 'Jupiter', 'Mars', 'Sun', 'Venus', 'Mercury', 'Moon')
 SUIT_NAME = {'wands': 'Wands', 'cups': 'Cups', 'swords': 'Swords', 'pentacles': 'Pentacles'}
-DOTS_MD = {BP.DOTS10: '*(a figure on the printed page: ten pentacles in rows of 2, 1, 2, 2, 1, 2)*',
-           BP.DOTS6: '*(a figure on the printed page: six pentacles in two columns of three)*',
-           BP.DOTS9: '*(a figure of nine dots on the printed page)*'}
+# The page's placeholders for a glyph or figure → this site's words, marked "[site: ...]" (the same
+# words the Golden Dawn deck carries: import_book_t_1912.SITE_MARKS).
+DOTS_MD = {ph: IB.site_note(k) for k, ph in BP.PLACEHOLDER.items()}
 
 DESCRIPTION = """# Book T — the Golden Dawn's 78 cards
 
@@ -122,9 +122,12 @@ and Paul Foster Case on each Key's Hebrew letter ([*An Introduction to the Study
 
 **Reading by the elements (Oct 20 2026).** Book T has no reversed cards. In the Golden Dawn's
 way of reading, a card's meaning turns on its dignity, and its dignity on the cards beside it: the
-same element strengthens it, a friendly one (Fire with Air, Water with Earth) dignifies it well, a
-contrary one (Fire with Water, Air with Earth) leaves it ill dignified, and any other pairing is
-neutral. Each card carries its element (`metadata.element`). A small card or an Ace has its suit's:
+same element strengthens it; Book T names the other pairs by their suits: "Swords are inimical to
+Pentacles. Wands are inimical to Cups. Swords are friendly with Cups and Wands. Wands are friendly
+with Swords and Pentacles." So the enemies are Air and Earth, Fire and Water; Air is friendly with
+Water and with Fire, Fire with Air and with Earth; Book T does not pair Water with Earth either way.
+"If a card fall between two other which are mutually contrary, it is not much affected by either."
+Each card carries its element (`metadata.element`). A small card or an Ace has its suit's:
 Wands Fire, Cups Water, Swords Air, Pentacles Earth. A court card is an element of an element (the
 Queen of Wands is Water of Fire, kept as `element_in_element`); its suit's element, the second
 word, is the one the neighbour rule reads, so the Queen of Wands reads as Fire. A Key has its
@@ -299,7 +302,7 @@ def with_rule_degrees(text, rules):
 
 def build(prev):
     text = corrected_text()
-    words = IB.parse(text)                      # verbatim card texts, keyed by the GD deck's ids
+    words = IB.parse(text, raw=False)                      # verbatim card texts, keyed by the GD deck's ids
     rows = titles(text)
     gd = {it['id']: it for it in json.load(open(GD, encoding='utf-8'))['nodes']}
     keep = {it['id']: it for it in (prev or {}).get('nodes', [])}
