@@ -102,6 +102,18 @@ No backend. Lights up product-by-product.
 - [ ] Builder: delete TGC_PASSWORD line from env-local.txt after testing; consider
       rotating the password
 
+## Book T deck on TGC (Oct 28 2026)
+
+The game `C07782A2-645A-11F1-87B8-CDFD42BF08F6` (once "Golden Dawn Tarot — Recursive Tarot") is now
+**"Book T: The Golden Dawn's Own Cards"** and holds one deck, `B755CF42-D2E3-11F1-BBED-F8EC8DFE9D6C`:
+the 78 painted-with-symbols cards in Book T's order + a colophon + a QR card to the deck in recursive.eco
+Play (80 faces = 8 sheets) and a half-turn-symmetric back. Built by `scripts/build_book_t_tgc.py`
+(colophon, QR card and back kept in `print/book-t-proof/`); the old RWS "Golden Dawn Tarot (API)" deck
+(27B3B844…, never proofed) was deleted from the game. Not proofed, not ordered, not published.
+Her steps: Proof All (faces + back) at https://www.thegamecrafter.com/make/games/C07782A2-645A-11F1-87B8-CDFD42BF08F6,
+order ONE copy, inspect it, Publish. The older "Book T (draft)" game (`C7E013D6…`, line-art faces, booklet,
+tuck box; recursive-eco/docs/games/book-t/PRINT-BOOK-T.md) is separate and untouched.
+
 ## ⛔ PUBLISH GATE: must buy a proof copy first (June 30 2026)
 
 **TGC will NOT let you publish a game until you have purchased a copy of it.**

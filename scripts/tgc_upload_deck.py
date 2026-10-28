@@ -101,7 +101,8 @@ def main():
             f = call("POST", "/file", params={
                 "session_id": sid, "folder_id": folder_id,
                 "name": os.path.basename(path)},
-                files={"file": (os.path.basename(path), fh, "image/jpeg")})
+                files={"file": (os.path.basename(path), fh,
+                                 "image/png" if path.lower().endswith(".png") else "image/jpeg")})
         return f["id"]
 
     if a.back:
