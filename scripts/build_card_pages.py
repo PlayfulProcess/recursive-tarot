@@ -301,7 +301,7 @@ def build():
                     parts.append(f'<h3>{esc(key)}</h3><div class="prose">{md_paras(b[key])}</div>')
             bt_html = (f'<h2 id="book-t">In the Golden Dawn\'s Book T (1912)</h2>{"".join(parts)}'
                        '<p class="src">Book T as printed in <cite>The Equinox</cite> I(8), 1912, public domain (notes in square brackets are '
-                       'Crowley\'s). The correspondences are this site\'s compilation from Book T. '
+                       'Crowley\'s; ‹ › marks a note of ours). The correspondences are this site\'s compilation from Book T. '
                        f'<a href="../viewers/cards.html?src=../tarot/{BOOKT}/grammar.json&amp;item={esc(c["book_t"]["id"])}">Open it in the Golden Dawn deck</a>.</p>')
         prev_c, next_c = cards[idx - 1], cards[(idx + 1) % 78]
         body = f"""<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">The Recursive Tarot</a> › <a href="../{HUB}">Tarot card meanings</a> › {esc(c['name'])}</nav>
@@ -686,7 +686,7 @@ def build_book_t(files):
 </div>
 <h2 id="book-t">Book T (1912)</h2>
 <div class="prose">{md_paras(bt)}</div>
-<p class="src">Book T as printed in <cite>The Equinox</cite> I(8), 1912, public domain (notes in square brackets are Crowley's).</p>
+<p class="src">Book T as printed in <cite>The Equinox</cite> I(8), 1912, public domain (notes in square brackets are Crowley's; ‹ › marks a note of ours).</p>
 {''.join(parts)}
 {('<h2 id="pictures">Picture sets</h2><ul class="sets">' + sets + '</ul>') if sets else ''}
 </article>
