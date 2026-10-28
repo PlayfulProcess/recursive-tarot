@@ -65,7 +65,7 @@ KEY_ELEMENT_OF = {'Saturn': 'Earth', 'Jupiter': 'Air', 'Mars': 'Fire', 'Sun': 'F
                   'Fire': 'Fire', 'Water': 'Water', 'Air': 'Air', 'Earth': 'Earth'}
 PLANETS = ('Saturn', 'Jupiter', 'Mars', 'Sun', 'Venus', 'Mercury', 'Moon')
 SUIT_NAME = {'wands': 'Wands', 'cups': 'Cups', 'swords': 'Swords', 'pentacles': 'Pentacles'}
-# The page's placeholders for a glyph or figure → this site's words, marked "[site: ...]" (the same
+# The page's placeholders for a glyph or figure → this site's words, marked "‹...›" (the same
 # words the Golden Dawn deck carries: import_book_t_1912.SITE_MARKS).
 DOTS_MD = {ph: IB.site_note(k) for k, ph in BP.PLACEHOLDER.items()}
 
@@ -108,7 +108,7 @@ figures" and turned to a Jungian deck instead (his autobiography, *Expelled from
 - **Court.** Knight, Queen, Prince, Princess. Book T's Knight rides a horse; its Prince drives a
   chariot; its Princess stands.
 
-Every card carries the 1912 text, word for word, with Crowley's notes in square brackets. The
+Every card carries the 1912 text, word for word, with Crowley's notes in square brackets; ‹ › marks a note of ours. The
 whole book reads as one page at [Book T (1912)](https://tarot.recursive.eco/pages/book-t.html).
 
 Watch the path walked: [the Golden Dawn Path](https://tarot.recursive.eco/pages/golden-dawn-path.html) lights the Tree of Life step by

@@ -57,6 +57,9 @@ GOLD = '#d8b25c'
 GOLD_LIGHT = '#f3d78a'
 CREAM = '#f5ead0'
 SERIF = "Georgia, 'Times New Roman', serif"
+# Georgia has no polytonic Greek (the breathing in Key 0's Αἰθήρ), so a line with Greek in it is set in
+# serifs that have it, before the generic fallback (which some renderers fill with a sans-serif).
+GREEK_SERIF = "'Palatino Linotype', 'Book Antiqua', Palatino, 'Times New Roman', 'Noto Serif', 'DejaVu Serif', Georgia, serif"
 EMBED_W = 600  # the embedded painting's width in pixels
 
 
@@ -155,9 +158,14 @@ def rule(y, x0, x1):
             % (f(x0), f(y), f(x1), f(y), GOLD, d(x0), d(x1)))
 
 
+def has_greek(s):
+    """Greek and Greek Extended (polytonic) letters."""
+    return any(0x370 <= ord(ch) <= 0x3ff or 0x1f00 <= ord(ch) <= 0x1fff for ch in s)
+
+
 def text(x, y, s, size, color=CREAM, italic=False, anchor='middle', spacing=0):
     return ('<text x="%s" y="%s" font-size="%s" text-anchor="%s" fill="%s" font-family="%s"%s%s filter="url(#sh)">%s</text>'
-            % (f(x), f(y), f(size), anchor, color, SERIF, ' font-style="italic"' if italic else '',
+            % (f(x), f(y), f(size), anchor, color, GREEK_SERIF if has_greek(s) else SERIF, ' font-style="italic"' if italic else '',
                (' letter-spacing="%s"' % spacing) if spacing else '', escape(s)))
 
 

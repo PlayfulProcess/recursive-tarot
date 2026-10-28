@@ -232,3 +232,41 @@ The one mismatch was wands-08 (6 wands), fixed above; wands-09 and pentacles-10 
 To look at before print, not a Book T issue: key-15-devil (two fully nude chained figures), and the Foolish Man's band title, which falls back to a sans-serif font for Αἰθήρ.
 
 If she wants all of these: the free script retouches (wands-knight, swords-knight, wands-02, wands-10 uprights and seam, swords-02, swords-03 caption, swords-07, pentacles-05, key-11, key-12, key-19, cups-ace clouds, pentacles-prince cross) cost nothing; the repaints listed come to roughly **$5-12** at Pro prices.
+
+## Round 4 (Oct 28 2026)
+
+PlayfulProcess, on the list above: "do that for me", to make the deck right before it is printed and sold. Every "free by script" leftover and every listed repaint, plus the four optional ones (Queen of Swords' crown, Three of Wands' grip, Temperance's water, the Ace of Cups' Heh); the "leave" group left as it was (Ace of Wands' sigils, Ace of Pentacles' crosses, Five of Wands' grip).
+
+**How.** As in rounds 2 and 3: recursive.eco MCP `generate_node_image` on deck `2000ad96`, `set: false`, the card's own painting as the reference picture and a prompt that names the one change ("Repaint the reference picture ... One change: ..."); Nano Banana 2.1 first, Nano Banana Pro where it stayed wrong. 27 pictures, **$6.82** of recursive.eco credit (16 at $0.15, 11 at $0.40; one Pro call lost its reference to a mistyped URL). Where a script could do it, nothing was painted: `scripts/fix_book_t_repaint_round4_2026_10_28.py` fills a stray mark from the painting's own ground, moves a symbol by copying the painting's own strokes, re-lays a disc by rotation, and draws only Book T's own letter (the deck's Vav glyph) where Book T asks for it. Each card was checked on zoomed crops against its Book T sentence; the prompts are in `tarot/book-t/PROMPTS.md`, "Round 4".
+
+| card | before | now | how |
+|---|---|---|---|
+| cups-ace | hand from no cloud; no Heh | a white rayed hand from a cloud; the spray traces a large ה (a bar with its long right leg falling, a short left leg apart) | Pro, attempt 3 |
+| swords-ace | 8 gold drops and 5 dots; no Vavs | six gold Vavs fall beside the blade, three each side; drops and dots gone | script on the old painting (a Pro repaint drew mixed letters) |
+| wands-knight | horse-head crest only on the cuirass | the winged black horse's head above the helmet, on the cuirass and the shoulder | 2.1, attempt 1 |
+| cups-knight | the rider had no wings | the rider winged (blue-green and gold), a peacock crest on his helmet; the horse unwinged | 2.1, attempt 1 |
+| cups-prince | the eagle rode in the chariot; serpent's head up | the eagle flies ahead, harnessed, drawing the chariot; his raised cup's serpent bends its head down to the water; one pair of arms | attempt 5 (2.1, Pro, Pro, 2.1, Pro): 2-4 kept the eagle in the boat or added a third arm |
+| swords-knight | the winged hexagram floated above him; no crown | the winged six-pointed star stands on his crowned helmet | 2.1, attempt 1 |
+| swords-queen | no crown | a gold crown under the winged child's head | 2.1, attempt 1 |
+| swords-prince | 8-point stars; fays beside the chariot | five-pointed stars on the wands, the fillets and the crest; the fays harnessed to the chariot by gold traces | 2.1, attempt 1 (the crest's star sits just above the angel's brow) |
+| swords-princess | Medusa on her breast; a floating dish | Medusa's head as the crest of her helmet; her hand on a small silver altar with grey smoke, no fire | 2.1, attempt 1 |
+| pentacles-prince | orb held up, with a cross | a plain gold orb held downward; the sceptre keeps its orb and cross | 2.1, attempt 1 |
+| pentacles-princess | an eight-point star disc | the Ace's pentacle: concentric rings, white centre with a red cross, twelve white rays to the rim | 2.1 (it drew sixteen rays), then the disc re-laid to twelve by script |
+| swords-02 | stray blade fragment top right | gone | script |
+| swords-03 | "LORD OF SORROW" painted in the clouds | gone | script (the side swords' tilt and the uncut rose are as before) |
+| swords-07 | the rose floated beside the central sword | the rose on the fist of the hand that holds the central sword | script |
+| cups-06 | top cups shared a flower; extra flowers; flesh hand | six lotuses, one hanging over each cup, a white stream into each; a white rayed hand from a cloud | Pro, attempt 3 |
+| wands-02 | 7 flames on each small wand; no cloud | five flames on each small wand; a rayed hand from a cloud | 2.1 (five above, seven below), then the lower seven set back as five by script |
+| wands-03 | grip at the upright's top; tip flames; tiled floor | the hand grasps the three wands at the crossing, flames there only, plain ground | 2.1, attempt 1 |
+| wands-10 | uprights stopped at the lower hands; a seam; lower hands gripped | 8 wands crossed 4 with 4, both pairs of hands clasped, two uprights running through the crossing, held together by the fifth hand | Pro, attempt 2 (attempt 1 merged the uprights below the hands) |
+| pentacles-05 | four roses still on the branch | the branch bare, every rose falling | 2.1, attempt 1 |
+| key-11-fortitude | the blade ran into her flower crown | the blade ends in a point above the crown | script |
+| key-12-hanged-man | the rope ran on down the leg | the rope ends at the ankle knot | script |
+| key-14-temperance | water fell from the cups' bases | one stream pours from the raised gold cup into the silver cup | 2.1, attempt 1 |
+| key-19-sun | painted "FE" monogram | gone | script |
+
+**Before print, not a Book T issue.** Key 15 keeps the site's painting. A print version, the two chained figures in dark red loincloths and otherwise unchanged (2.1, attempt 1), is its own entry in the card's `metadata.illustrations`, `edition: "Book T deck, painting — print version"`, after the site's painting (so the painted set still frames the site's one). Key 0's band title now sets Αἰθήρ in a serif with polytonic Greek (`GREEK_SERIF` in `scripts/build_book_t_painted_symbols.py`: Palatino Linotype, Book Antiqua, Times New Roman, Noto Serif ...), not Georgia, which falls back to a sans-serif for it.
+
+**Where the pictures are.** Each new painting is the card's `"Book T deck, painting"` entry (swords-07: `"Book T deck, composite"`); the one it replaces stays, as `"... before the Oct 28 2026 repaint (round 4)"` (wands-10: `"painting of the Oct 27 2026 repaint, round 2 (replaced in round 4)"`). The traced `"Book T deck, SVG"` line art still follows the first paintings.
+
+**Still not right, small.** swords-03: the side swords tilt and the rose is whole, not cut (no repaint asked). cups-prince: his cup arm is raised high behind the crown. swords-prince: the crest's star sits above the angel's brow rather than on it. swords-ace: the olive is on the right, but palm leaves show behind it too. key-12: where the bent leg crosses, its outline jogs by a pixel or two. As before, this is a machine reading of the pictures, for her eye.

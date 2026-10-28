@@ -98,7 +98,7 @@ FIXES = [
 # "sic" notes: the printed page differs from Book T's own table; shown as this site's note.
 SICS = {1: 'sic: the table above gives Aquarius', 2: 'sic: the table above gives two Swords'}
 # The glyph and the pentacle figures where the page has no words: import_book_t_1912.SITE_MARKS
-# (the Golden Dawn deck and the Book T deck write this site's words there, "[site: ...]").
+# (the Golden Dawn deck and the Book T deck write this site's words there, "‹...›").
 PLACEHOLDER = {'moon': MOON, 'dots10': DOTS10, 'dots6': DOTS6, 'dots9': DOTS9}
 
 # Where each printed page begins (pp. 145-210), as a pattern found in order in the source.
@@ -154,7 +154,7 @@ INTROS = {
     'front': ("Book T is the Golden Dawn's own book of the 78 cards. Crowley printed it in "
               "*The Equinox* I(8), September 1912, pp. 143–210. This page gives all of it. "
               "Gold numbers in the margin are the printed pages. Notes in square brackets are "
-              "Crowley's. Underlined words open the [glossary](glossary.html) or the card. The pictures "
+              "Crowley's; ‹ › marks a note of ours. Underlined words open the [glossary](glossary.html) or the card. The pictures "
               "beside the cards are Book T's own deck, made for this site: line art traced from AI "
               "paintings prompted from Book T's words (CC BY-SA). The switch at the top shows the "
               "paintings, the iconography (the planet, sign, element and Hebrew letter glyphs "

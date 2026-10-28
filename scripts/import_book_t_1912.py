@@ -24,7 +24,7 @@ Text handling: line wraps are joined; "---" becomes a dash; lines that only draw
 letters; the transcription's stray ">" after a word and "172}" page marks are dropped; where
 the printed page has a glyph or a small figure instead of words (the Moon's sign on the Two of
 Swords, the pentacle figures on the Six, Nine and Ten of Pentacles), this site's words stand in
-"[site: ...]", the same on the Book T deck (`SITE_MARKS`). Nothing else is changed. Idempotent; `--check` writes nothing and fails if the grammar
+"‹...›", the same on the Book T deck (`SITE_MARKS`). Nothing else is changed. Idempotent; `--check` writes nothing and fails if the grammar
 differs from what the source gives. `--verify-scan` compares every card's text with the OCR of
 the 1912 scan (archive.org IAPSOP-equinox_v1_n8_1912_Sep, file *_djvu.txt) and prints how much of
 it the scan confirms.
@@ -36,10 +36,10 @@ SRC = os.path.join(ROOT, 'research', 'sources', 'book-t-equinox-1912.txt')
 DECK = os.path.join(ROOT, 'tarot', 'golden-dawn-book-t-tarot', 'grammar.json')
 ARCHIVE = os.path.join(ROOT, 'tarot', '_archive', 'golden-dawn-editorial-2026-10-05.json')
 SECTION = 'Book T (1912)'
-HEADER = "*Book T, 1912 · [the original](https://tarot.recursive.eco/pages/book-t.html), public domain; [square brackets] are Crowley's*"
+HEADER = "*Book T, 1912 · [the original](https://tarot.recursive.eco/pages/book-t.html), public domain; [square brackets] are Crowley's; ‹ › marks a note of ours*"
 
 # Where the printed page has a glyph or a figure, not words, this site's words stand in, marked
-# "[site: ...]" so they never read as Book T's (or as Crowley's square-bracket notes). Patterns are
+# "‹...›" so they never read as Book T's; square brackets are only ever Crowley's notes. Patterns are
 # on the transcription; build_book_t_page.py swaps in its own placeholders (page in the comment).
 SITE_NOTES = {
     'moon': 'Moon',
@@ -58,7 +58,7 @@ STRAY = [(re.compile(r'(?<=\S)>(?=[\s.,;:]|$)', re.M), ''), (re.compile(r'^\d{3}
 
 
 def site_note(key):
-    return '[site: %s]' % SITE_NOTES[key]
+    return '‹%s›' % SITE_NOTES[key]
 
 
 def apply_site_marks(text, fill):
