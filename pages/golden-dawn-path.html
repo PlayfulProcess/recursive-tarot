@@ -53,11 +53,43 @@
   .scrub output{font-size:13px;color:var(--mut);min-width:4.5em;text-align:right}
   .src{font-size:12.5px;color:var(--mut);line-height:1.55;margin-top:14px;max-width:90ch}
   a{color:var(--gold)}
+  /* the tree is clickable: a sphere, a path's letter, or the path line itself */
+  #film [data-seph],#film [data-path]{cursor:pointer}
+  #film .hit{stroke:transparent;stroke-width:26;pointer-events:stroke}
+  #film [tabindex]:focus{outline:none}
+  #film [tabindex]:focus-visible circle{stroke:var(--ink);stroke-width:5}
+  .sd.picked,.bd.picked{stroke:var(--ink);stroke-width:4;stroke-dasharray:6 4}
+  /* what the step means */
+  .detail{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px 18px}
+  .detail .step{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin:0}
+  .detail h2{font-family:var(--serif-display);font-size:22px;margin:.15em 0 .5em}
+  .detail .grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media (min-width:860px){.detail .grid.two{grid-template-columns:1.25fr 1fr}}
+  .blk{border:1px solid var(--line-soft);border-radius:12px;padding:12px 14px;background:var(--bg)}
+  .blk .kick{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin:0 0 4px}
+  .blk h3{font-family:var(--serif-display);font-size:19px;margin:0 0 .3em}
+  .blk h3 .en{font-family:var(--sans);font-size:14px;color:var(--mut);font-weight:400}
+  .blk p,.blk dd,.blk blockquote{font-size:14.5px;line-height:1.55}
+  .blk .sub{color:var(--mut);margin:0 0 .4em;font-style:italic}
+  .keyrow{display:flex;gap:12px;align-items:flex-start}
+  .keyrow img{width:92px;height:auto;aspect-ratio:9/16.5;object-fit:contain;background:var(--panel2);border-radius:6px;flex:none}
+  .facts{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:0}
+  .facts dt{color:var(--mut);font-size:13px;padding-top:2px}
+  .facts dd{margin:0}
+  .he{font-size:20px;margin-right:4px}
+  .blk blockquote{margin:10px 0 2px;padding:0 0 0 12px;border-left:3px solid var(--gold);font-family:var(--serif-body);font-style:italic}
+  .blk .cite{font-size:12.5px;color:var(--mut);margin:2px 0 8px}
+  .blk .note{font-style:italic;color:var(--mut)}
+  .blk .links{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:8px}
+  .blk .links a,.blk .links button{display:inline-flex;align-items:center;min-height:36px;padding:0 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font:inherit;font-size:13.5px;text-decoration:none;cursor:pointer}
+  .blk .links a:hover,.blk .links button:hover{border-color:var(--gold)}
+  .blk .links a:focus-visible,.blk .links button:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
   /* ?frame=N / ?t=x: the film alone, for capture */
   body.export site-header,body.export site-footer,body.export .head,body.export .ctl,body.export .src,body.export .oracle-ribbon{display:none!important}
   body.export>:not(.wrap):not(script){display:none!important}
   body.export .wrap{max-width:none;padding:0}
   body.export .stage{border:0;border-radius:0}
+  body.export .detail{display:none!important}
 </style>
 </head>
 <body>
@@ -67,10 +99,10 @@
 <div class="wrap">
   <div class="head">
     <h1>The Golden Dawn Path</h1>
-    <p class="lede">The Tree of Life in motion. Down: the Lightning Flash, Kether to Malkuth. Up: the Path of the Serpent, the 22 paths from 32 to 11. Each path lights and its Key comes forward with Book T's own words.</p>
+    <p class="lede">The Tree of Life in motion. Down: the Lightning Flash, Kether to Malkuth. Up: the Path of the Serpent, the 22 paths from 32 to 11. Each path lights and its Key comes forward with Book T's own words. Tap a sphere or a path to read what it holds.</p>
   </div>
   <div class="stage">
-    <svg id="film" role="img" aria-label="The Tree of Life, animated"><text x="40" y="60" font-size="24" fill="currentColor">Loading the Tree…</text></svg>
+    <svg id="film" role="group" aria-label="The Tree of Life, animated: tap a sphere or a path to read what it holds"><text x="40" y="60" font-size="24" fill="currentColor">Loading the Tree…</text></svg>
     <div class="ctl" id="ctl">
       <div class="grp">
         <button type="button" id="back" aria-label="Previous step"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14M19 5L9 12l10 7z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button>
@@ -89,14 +121,17 @@
       <div class="scrub"><input type="range" id="scrub" min="0" max="1000" value="0" aria-label="Position in the journey"><output id="count">1 / 22</output></div>
     </div>
   </div>
+  <section class="detail" id="detail" role="region" aria-label="What this step means"></section>
   <p class="src">Which Key sits on which path, its Hebrew letter, attribution, title, and the two sephiroth each path joins: Book T's own deck on this site (<a href="../viewers/cards.html?src=../tarot/book-t/grammar.json">tarot/book-t</a>), from <a href="book-t.html">Book T as printed in <em>The Equinox</em> I(8), 1912</a>. The quoted line is the first sentence of Book T's text for that Key (Crowley's bracketed notes left out). Cards: the deck's paintings with its symbols. Letters: the deck's glyphs, drawn for this site. Static map: <a href="tree-of-life.html">Tree of Life</a>.
+  Below the film: each sphere's entry from <a href="glossary.html">the glossary</a> (its sources listed there), the Key's letter and its meaning from the deck's correspondences, and, for the four gates it walks, a line from the course <em>The Golden Dawn — the Map and the Walk</em>, read in recursive.eco.
   Recording a movie: <code>scripts/record_golden_dawn_path.mjs</code> (one still per step with <code>?frame=N&amp;embed=1</code>).</p>
 </div>
 
 <script src="gd-tree.js?v=1"></script>
+<script src="../courses-play.js"></script>
 <script>
 (function () {
-  const { SEPH, BY } = window.GDTree;
+  const { SEPH, BY, md } = window.GDTree;
   const NS = 'http://www.w3.org/2000/svg';
   const DECK_SRC = '../tarot/book-t/grammar.json';
   const GLYPHS = '../tarot/book-t/glyphs/';
@@ -118,6 +153,16 @@
     if (s.length > 190) s = s.slice(0, 186).replace(/\s+\S*$/, '') + '…';
     return s;
   }
+  // the first n sentences of a markdown passage as plain text (links kept as their words), at most max characters
+  function sentences(text, n, max, keepEm) {
+    const s = String(text || '').replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/\[[^\]]*\]/g, '').replace(keepEm ? /\*\*/g : /\*+/g, '').replace(/\s+/g, ' ').trim();
+    // a sentence ends at . ! ? before a capital (so "…can stand? — never…" stays one sentence)
+    const all = s.split(/(?<=[.!?]["”’)*]*)\s+(?=[A-Z“"‘(])/);
+    let out = '';
+    for (const x of all.slice(0, n)) { const next = (out + ' ' + x.trim()).trim(); if (out && next.length > max) break; out = next; }
+    if (out.length > max) out = out.slice(0, max - 4).replace(/\s+\S*$/, '') + '…';
+    return out;
+  }
   function glyphIds(attr) {
     return String(attr || '').split(/\s+and\s+/).map(w => w.trim().toLowerCase()).map(w =>
       ['air','water','fire','earth','spirit'].includes(w) ? 'element-' + w :
@@ -138,11 +183,14 @@
       if (!a || !b) continue;
       const ill = (m.illustrations || []).find(i => /painted with its symbols/i.test(i.edition || ''));
       const bt = ((n.sections || {})['Book T (1912)'] || '').split('\n\n').slice(1).join(' ');
+      const lm = cor.match(/\(\[\w+\]\([^)]*\), '([^']+)'\)/);          // (Lamed, 'ox-goad')
+      const at = ((n.sections || {})["In Book T's table"] || '').match(/\]\((https:\/\/tarot\.recursive\.eco\/pages\/book-t\.html#[^)\s]+)\)/);
       PATHS[m.tree_path] = [a.id, b.id];
       KEYS[m.tree_path] = {
         id: n.id, path: m.tree_path, key: m.key_number, name1912: m.card_name_1912,
         title: m.title || n.name, letter: m.hebrew_letter, translit: m.hebrew_translit,
         attr: m.attribution, img: ill ? localUrl(ill.url) : '', line: firstSentence(bt),
+        quote: sentences(bt, 2, 240), letterMeaning: lm ? lm[1] : '', page1912: at ? localUrl(at[1]).replace(/^\.\.\/pages\//, '') : 'book-t.html',
         glyph: 'hebrew-' + String(m.hebrew_translit || '').toLowerCase(), attrGlyphs: glyphIds(m.attribution),
       };
     }
@@ -151,6 +199,76 @@
     for (const [p, ab] of Object.entries(PATHS)) if ((ab[0] === a && ab[1] === b) || (ab[0] === b && ab[1] === a)) return Number(p);
     return null;
   }
+
+  /* ---------- what a step means: the glossary and the Golden Dawn course, read live ---------- */
+  const GLOSS_SRC = '../tarot/glossary-of-tarot/grammar.json';
+  const COURSE_ID = 'walking-the-golden-dawn-path';
+  const COURSE_SRC = '../tarot/walking-the-golden-dawn-path-course/grammar.json';
+  const GL = {};                                  // glossary node id -> node
+  const COURSE = { name: 'The Golden Dawn — the Map and the Walk', gates: {}, pathNode: null, sephNode: null };
+  function readGlossary(g) { for (const n of (g && g.nodes) || []) GL[n.id] = n; }
+  function readCourse(g) {
+    const nodes = (g && g.nodes) || [];
+    if (g && g.name) COURSE.name = g.name;
+    // a "### gate" heading whose block links tree-of-life.html?path=NN is that path's walk
+    for (const n of nodes) {
+      for (const block of String((n.sections || {}).Content || '').split(/\n(?=### )/)) {
+        const h = block.match(/^### (.+)/), p = block.match(/tree-of-life\.html\?path=(\d+)/);
+        if (!h || !p || COURSE.gates[+p[1]]) continue;
+        const prose = block.split(/\n{2,}/).slice(1).filter(x => x.trim() && !/^\*\*/.test(x.trim()));
+        COURSE.gates[+p[1]] = { node: n.id, lesson: n.name, heading: h[1].trim(), line: sentences(prose[0], 2, 260, true) };
+      }
+    }
+    // a path with no gate of its own: the chapter on every card's address; a sphere: the Tree, for a first reader
+    COURSE.pathNode = nodes.find(n => n.id === 'lesson-05-every-card-has-an-address') || null;
+    COURSE.sephNode = nodes.find(n => n.id === 'lesson-04-the-tree-for-a-first-reader') || null;
+  }
+  const playUrl = node => (window.coursePlayUrl && window.coursePlayUrl(COURSE_ID, node)) || '';
+  const out = (href, text) => href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(text)}</a>` : '';
+
+  function sephBlock(id, kick, note) {
+    const s = BY[id], e = GL[id];
+    const entry = e ? md(String((e.sections || {}).Entry || '').split('\n\n')[0], 'golden-dawn-path.html') : '';
+    const cn = COURSE.sephNode;
+    return `<section class="blk"><p class="kick">${esc(kick)}</p>
+      <h3>${s.n} · ${esc(s.name)} <span class="en">${esc(s.en)}</span></h3>
+      ${note ? `<p class="note">${esc(note)}</p>` : ''}
+      ${entry}${entry ? `<p class="cite">From this site's glossary (its sources: Mathers, <em>The Kabbalah Unveiled</em>, 1887; Book T, 1912)</p>` : ''}
+      <div class="links">${out('glossary.html#' + id, 'Glossary: ' + s.name)}${out('tree-of-life.html?sephirah=' + id, 'On the map')}${cn ? out(playUrl(cn.id), 'In the course: ' + cn.name) : ''}</div></section>`;
+  }
+  function keyBlock(p, kick) {
+    const k = KEYS[p], [a, b] = PATHS[p], gate = COURSE.gates[p], cn = gate ? { id: gate.node, name: gate.lesson } : COURSE.pathNode;
+    return `<section class="blk"><p class="kick">${esc(kick || `Path ${p} · joins ${BY[a].name} and ${BY[b].name}`)}</p>
+      <div class="keyrow">${k.img ? `<img src="${esc(k.img)}" alt="${esc(k.name1912)}, Book T's deck" loading="lazy">` : ''}
+        <div><h3>Key ${esc(k.key)} · ${esc(k.name1912)}</h3><p class="sub">${esc(k.title)}</p>
+        <dl class="facts"><dt>Path</dt><dd>${p}</dd>
+          <dt>Letter</dt><dd><span class="he" lang="he">${esc(k.letter)}</span>${esc(k.translit)}${k.letterMeaning ? `, ‘${esc(k.letterMeaning)}’` : ''}</dd>
+          <dt>Attribution</dt><dd>${esc(k.attr)}</dd></dl></div></div>
+      ${k.quote ? `<blockquote>“${esc(k.quote)}”</blockquote><p class="cite">Book T, <em>The Equinox</em> I(8), 1912 · ${out(k.page1912, 'on the 1912 page')}</p>` : ''}
+      ${gate ? `<blockquote>${esc(gate.line).replace(/\*([^*]+)\*/g, '<em>$1</em>')}</blockquote><p class="cite">${esc(COURSE.name)}, “${esc(gate.heading)}”</p>` : ''}
+      <div class="links">${out('../book-t/' + k.id + '.html', 'The card')}${out('glossary.html#' + String(k.translit).toLowerCase(), 'Glossary: ' + k.translit)}${cn ? out(playUrl(cn.id), 'In the course: ' + cn.name) : ''}${out('tree-of-life.html?path=' + p, 'On the map')}</div></section>`;
+  }
+  const journeyName = () => mode === 'descent' ? 'The Lightning Flash' : 'The Path of the Serpent';
+  function stepPanel(i) {
+    const s = steps[i], from = s.from ? BY[s.from] : null, to = BY[s.to];
+    let o = `<p class="step">Step ${i + 1} of ${steps.length} · ${journeyName()}</p><h2>${from ? esc(from.name) + ' → ' : ''}${esc(to.name)}</h2>`;
+    if (s.kind === 'key') o += `<div class="grid two">${keyBlock(s.path, `The way: path ${s.path}, from ${from.name} to ${to.name}`)}${sephBlock(s.to, 'Reached')}</div>`;
+    else o += `<div class="grid">${sephBlock(s.to, from ? 'Reached' : 'Where it begins', from ? `No path joins ${from.name} and ${to.name}: the flash leaps across.` : 'The flash begins at the Crown.')}</div>`;
+    return o;
+  }
+  function pathPanel(p) {
+    const [a, b] = PATHS[p];
+    return `<p class="step">Path ${p}</p><h2>${esc(BY[a].name)} — ${esc(BY[b].name)}</h2>
+      <div class="grid">${keyBlock(p)}<section class="blk"><p class="kick">The two spheres it joins</p><div class="links">${[a, b].map(id => `<button type="button" data-pick-seph="${id}">${BY[id].n} · ${esc(BY[id].name)}</button>`).join('')}</div></section></div>`;
+  }
+  function sephPanel(id) {
+    const touching = Object.keys(PATHS).map(Number).sort((x, y) => x - y).filter(p => PATHS[p].includes(id));
+    return `<p class="step">Sephirah ${BY[id].n}</p><h2>${esc(BY[id].name)}</h2>
+      <div class="grid">${sephBlock(id, 'The sphere')}<section class="blk"><p class="kick">Paths from here</p><div class="links">${touching.map(p => `<button type="button" data-pick-path="${p}"><span class="he" lang="he">${esc(KEYS[p].letter)}</span>${p} · ${esc(KEYS[p].name1912)}</button>`).join('')}</div></section></div>`;
+  }
+  const detail = document.getElementById('detail');
+  let panelStep = -1, picked = null;               // picked: {kind:'path'|'seph', id}
+  function showPanel(html) { detail.innerHTML = html; detail.querySelectorAll('a[href]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; }); }
 
   /* ---------- the two journeys ---------- */
   function buildSteps(mode) {
@@ -239,15 +357,21 @@
       const cls = s.path ? 'ov' : 'flash';
       o += `<line id="ov${i}" class="${cls}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke-width="${s.path ? 8 : 5}" stroke-dasharray="${len}" stroke-dashoffset="${len}" data-len="${len}"${s.path ? '' : ' stroke-linecap="round"'}/>`;
     });
+    // wide invisible lines, so a tap anywhere on a path opens it
+    for (const [p, ab] of Object.entries(PATHS)) {
+      const a = P(ab[0]), b = P(ab[1]);
+      o += `<line class="hit" data-path="${p}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}"/>`;
+    }
     // badges: the Hebrew letter on each path
     for (const [p, ab] of Object.entries(PATHS)) {
       const a = P(ab[0]), b = P(ab[1]), k = Number(p) === 25 ? .4 : .5;
       const x = lerp(a.x, b.x, k), y = lerp(a.y, b.y, k), key = KEYS[p];
-      o += `<g id="b${p}"><title>Path ${p}: ${esc(key.letter)} ${esc(key.translit)}</title><circle class="bd" cx="${x}" cy="${y}" r="${T.br}"/>${useGlyph(key.glyph, x, y, T.br * 1.3, 'gl')}</g>`;
+      const label = `Path ${p}: ${key.letter} ${key.translit}, Key ${key.key} ${key.name1912}, ${key.attr}; joins ${BY[ab[0]].name} and ${BY[ab[1]].name}`;
+      o += `<g id="b${p}" data-path="${p}" tabindex="0" role="button" aria-label="${esc(label)}"><title>${esc(label)}</title><circle class="bd" cx="${x}" cy="${y}" r="${T.br}"/>${useGlyph(key.glyph, x, y, T.br * 1.3, 'gl')}</g>`;
     }
     for (const s of SEPH) {
       const c = P(s.id);
-      o += `<g id="s-${s.id}"><circle class="sd" cx="${c.x}" cy="${c.y}" r="${T.r}"/>
+      o += `<g id="s-${s.id}" data-seph="${s.id}" tabindex="0" role="button" aria-label="${esc(`${s.n}. ${s.name}, ${s.en}`)}"><title>${esc(`${s.n}. ${s.name} (${s.en})`)}</title><circle class="sd" cx="${c.x}" cy="${c.y}" r="${T.r}"/>
         <text class="sn n" x="${c.x}" y="${c.y - T.r * .2}" font-size="${T.r * .42}">${s.n}</text>
         <text class="sn" x="${c.x}" y="${c.y + T.r * .38}" font-size="${T.r * .38}" font-weight="600">${esc(s.name)}</text></g>`;
     }
@@ -330,6 +454,7 @@
       const g = document.getElementById('b' + p); if (!g) continue;
       const on = s.path === Number(p) && f > .22;
       g.querySelector('circle').classList.toggle('on', on);
+      g.querySelector('circle').classList.toggle('picked', !!picked && picked.kind === 'path' && picked.id === Number(p));
       const u = g.querySelector('use'); if (u) u.classList.toggle('on', on);
     }
     // sephiroth: seen, here
@@ -341,6 +466,7 @@
       const here = sp.id === s.to && (f > .28 || !s.from);
       c.classList.toggle('here', here);
       c.classList.toggle('seen', !here && seen.has(sp.id));
+      c.classList.toggle('picked', !!picked && picked.kind === 'seph' && picked.id === sp.id);
     }
     // the walker
     const w = document.getElementById('walker');
@@ -372,6 +498,28 @@
     const sc2 = document.getElementById('scrub');
     if (sc2 && document.activeElement !== sc2) sc2.value = Math.round(t / steps.length * 1000);
     const cnt = document.getElementById('count'); if (cnt) cnt.textContent = `${i + 1} / ${steps.length}`;
+    // what the step means, below the film (a pick holds until the step changes)
+    if (panelStep !== i && !exportMode) { panelStep = i; picked = null; showPanel(stepPanel(i)); }
+  }
+
+  /* ---------- a tap on the tree: a path jumps to its step (if this journey walks it), a sphere opens its panel ---------- */
+  function pick(kind, id, scroll) {
+    setPlaying(false);
+    if (kind === 'path') {
+      id = Number(id);
+      if (!PATHS[id]) return;
+      const idx = steps.findIndex(s => s.path === id);
+      panelStep = -1;
+      if (idx >= 0) render(idx + HOLD_F);           // the step's own panel: the Key and the sphere it reaches
+      else { render(t); panelStep = Math.floor(t); showPanel(pathPanel(id)); }
+    } else {
+      if (!BY[id]) return;
+      panelStep = Math.floor(t);
+      showPanel(sephPanel(id));
+    }
+    picked = { kind, id };
+    render(t);
+    if (scroll && matchMedia('(max-width: 899px)').matches) detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   function badgePoint(p) {
     const ab = PATHS[p], a = P(ab[0]), b = P(ab[1]), k = Number(p) === 25 ? .4 : .5;
@@ -397,16 +545,20 @@
     if (on) requestAnimationFrame(tick);
   }
   function setMode(m) {
-    mode = m; steps = buildSteps(mode); t = 0; setPlaying(false);
+    mode = m; steps = buildSteps(mode); t = 0; setPlaying(false); panelStep = -1; picked = null;
     document.querySelectorAll('.modes button').forEach(b => b.setAttribute('aria-checked', String(b.dataset.mode === mode)));
-    const u = new URL(location.href); u.searchParams.set('mode', mode); history.replaceState(null, '', u);
+    const u = new URL(location.href); u.searchParams.set('mode', mode); u.searchParams.delete('path'); u.searchParams.delete('sephirah'); history.replaceState(null, '', u);
     draw();
   }
 
   /* ---------- start ---------- */
   const ready = (async () => {
-    try { readDeck(await fetch(DECK_SRC).then(r => r.json())); }
+    const json = u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); });
+    const [deck, gloss, course] = await Promise.allSettled([json(DECK_SRC), json(GLOSS_SRC), json(COURSE_SRC)]);
+    try { if (deck.status !== 'fulfilled') throw deck.reason; readDeck(deck.value); }
     catch (e) { svg.innerHTML = '<text x="40" y="60" font-size="24">The Tree could not load its data.</text>'; throw e; }
+    if (gloss.status === 'fulfilled') readGlossary(gloss.value);      // without these the panel shows the deck's facts only
+    if (course.status === 'fulfilled') readCourse(course.value);
     const ids = new Set();
     Object.values(KEYS).forEach(k => { ids.add(k.glyph); k.attrGlyphs.forEach(g => ids.add(g)); });
     await Promise.all([...ids].map(loadGlyph));
@@ -417,6 +569,8 @@
     if (q.has('frame')) t = clamp(Number(q.get('frame')) || 0, 0, steps.length - 1) + HOLD_F;
     if (q.has('t')) t = Number(q.get('t')) || 0;
     draw();
+    if (!exportMode && PATHS[+q.get('path')]) pick('path', q.get('path'));
+    else if (!exportMode && BY[q.get('sephirah')]) pick('seph', q.get('sephirah'));
     // wait for the card pictures, so a capture never catches a blank slot
     await Promise.all(Object.values(KEYS).map(k => new Promise(res => { const im = new Image(); im.onload = im.onerror = res; im.src = k.img; })));
     document.body.dataset.ready = '1';
@@ -437,8 +591,26 @@
   const sp = document.getElementById('speed');
   sp.value = String(speed); sp.onchange = () => { speed = Number(sp.value) || 1; };
   document.getElementById('scrub').oninput = e => { setPlaying(false); render(e.target.value / 1000 * steps.length); };
+  svg.addEventListener('click', e => {
+    const s = e.target.closest('[data-seph]'), p = e.target.closest('[data-path]');
+    if (s) pick('seph', s.dataset.seph, true); else if (p) pick('path', p.dataset.path, true);
+  });
+  detail.addEventListener('click', e => {
+    const b = e.target.closest('[data-pick-path],[data-pick-seph]');
+    if (!b) return;
+    if (b.dataset.pickPath) pick('path', b.dataset.pickPath); else pick('seph', b.dataset.pickSeph);
+    const el = svg.querySelector(b.dataset.pickPath ? '#b' + b.dataset.pickPath : '#s-' + b.dataset.pickSeph);
+    if (el) el.focus({ preventScroll: true });
+  });
   document.addEventListener('keydown', e => {
     if (e.target.closest && e.target.closest('input,select,textarea')) return;
+    const node = e.target.closest && e.target.closest('#film [data-seph], #film [data-path]');
+    if (node && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      node.dataset.seph ? pick('seph', node.dataset.seph) : pick('path', node.dataset.path);
+      return;
+    }
+    if (e.target.closest && e.target.closest('#detail button, #detail a')) return;
     if (e.key === ' ') { e.preventDefault(); document.getElementById('play').click(); }
     else if (e.key === 'ArrowRight') document.getElementById('fwd').click();
     else if (e.key === 'ArrowLeft') document.getElementById('back').click();

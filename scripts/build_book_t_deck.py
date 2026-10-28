@@ -111,6 +111,9 @@ figures" and turned to a Jungian deck instead (his autobiography, *Expelled from
 Every card carries the 1912 text, word for word, with Crowley's notes in square brackets. The
 whole book reads as one page at [Book T (1912)](https://tarot.recursive.eco/pages/book-t.html).
 
+Watch the path walked: [the Golden Dawn Path](https://tarot.recursive.eco/pages/golden-dawn-path.html) lights the Tree of Life step by
+step, down the Lightning Flash and up the Path of the Serpent, each Key on its path with its words here.
+
 **Beside Book T (Oct 18 2026).** Two other public-domain writers from the Order's line sit under
 it, each in a section of its own that names them: A. E. Waite, a member of the Golden Dawn, on
 every card (*The Pictorial Key to the Tarot*, 1911; he describes the Rider-Waite-Smith picture),

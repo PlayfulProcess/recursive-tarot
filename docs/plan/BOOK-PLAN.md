@@ -1,5 +1,7 @@
 # The Recursive Tarot — Book Plan
 
+> **Oct 27 2026:** the printed books now live in book-repo ([PlayfulProcess/recursive-books](https://github.com/PlayfulProcess/recursive-books)); this repo's book pipeline (`course/books/`, `scripts/generate_book.py`) was deleted. This plan is kept as history.
+
 *A web-first "course" that doubles as a printable book: an introduction to tarot
 across all the decks, then card by card. Built from the grammars we already have,
 rendered with the live viewers inline, and made to print cleanly — not a separate
