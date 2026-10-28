@@ -7,7 +7,7 @@ matches words against a small static index.
 | Piece | What it is |
 |---|---|
 | `search-index.json` | **Generated. Never hand-edit.** About 2,200 rows: every card of every deck, one row per deck, one "across every deck" row per trump and minor card, the people and books of the sources, every course and every `##`/`###` heading in it, and a few site pages. ~430 KB, ~70 KB gzipped; fetched on first use only. |
-| `scripts/build_search_index.py` | Builds it from `tarot/<slug>/grammar.json` and `course/*.mdx`. `--check` exits 1 if the committed file is stale. |
+| `scripts/build_search_index.py` | Builds it from `tarot/<slug>/grammar.json` (the courses too: `tarot/<id>-course`). `--check` exits 1 if the committed file is stale. |
 | `quick-jump.js` | The ranking engine (browser and Node). Loaded by the header on first use. |
 | `site-header.js` | The box, the results panel (desktop) and the full-width sheet (phone, behind the search icon). |
 
@@ -15,8 +15,7 @@ matches words against a small static index.
 
 - `python scripts/check_all.py` rebuilds it (with people + meta), so every commit that follows the
   repo rule carries a fresh index.
-- `.github/workflows/build-meta.yml` rebuilds it on every push to `main` that touches `tarot/**` or
-  `course/*.mdx`, and commits it with the meta grammar. This covers the recursive.eco sync PRs too.
+- `.github/workflows/build-meta.yml` rebuilds it on every push to `main` that touches `tarot/**`, and commits it with the meta grammar. This covers the recursive.eco sync PRs too.
 
 ## Where results open
 
