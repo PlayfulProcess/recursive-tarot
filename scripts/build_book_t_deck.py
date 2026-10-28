@@ -43,6 +43,34 @@ SITE = 'https://tarot.recursive.eco'
 PAGE = SITE + '/pages/book-t.html'
 ILL = 'If ill dignified'
 OWNED = ('Book T (1912)', ILL, "In Book T's table", 'Correspondences')
+# Her Oct 28 2026 word: the card shows Book T's words only; Crowley's notes ("[...]") and our notes
+# ("‹...›", where the printed page has a glyph or a figure) leave the cards and are listed once, in the
+# deck's description, so a reader and the assistant still know of them.
+HEADER = "*Book T, 1912 · [the original](https://tarot.recursive.eco/pages/book-t.html), public domain*"
+NOTE_RE = re.compile(r'\s*(\[(?:[A-Z][^\]]*)\](?!\()|‹[^›]*›)')
+
+
+def take_notes(card, text, notes):
+    """The text without its notes; each note is added to `notes` as (card, kind, note)."""
+    def cut(m):
+        n = m.group(1)
+        notes.append((card, 'Crowley' if n.startswith('[') else 'ours', n[1:-1]))
+        return ''
+    return re.sub(r' +([.,;:])', r'\1', NOTE_RE.sub(cut, text))
+
+
+def notes_md(notes):
+    rows = []
+    for card, kind, n in notes:
+        if kind == 'Crowley':
+            rows.append('- **%s**: Crowley\'s note, "%s"' % (card, n))
+        else:
+            fig = n.split(': ', 1)[1] if ': ' in n else None
+            rows.append('- **%s**: the printed page has %s here' % (card, 'a figure, %s,' % fig if fig else 'the %s glyph' % n))
+    return ('\n\n**Notes on the text.** Left off the cards above, so each card reads as Book T printed it:\n\n'
+            + '\n'.join(rows) + '\n')
+
+
 ILL_HEADER = "*Book T (1912): its words for the card when it falls ill dignified, set apart from its text*"
 
 # The transcription's key names, where the 1912 scan reads otherwise (p.151).
@@ -108,7 +136,9 @@ figures" and turned to a Jungian deck instead (his autobiography, *Expelled from
 - **Court.** Knight, Queen, Prince, Princess. Book T's Knight rides a horse; its Prince drives a
   chariot; its Princess stands.
 
-Every card carries the 1912 text, word for word, with Crowley's notes in square brackets; ‹ › marks a note of ours. The
+Every card carries the 1912 text, word for word. Crowley's few notes, and the places where the
+printed page has a glyph or a figure instead of words, are kept off the cards and listed under
+*Notes on the text* at the end of this description. The
 whole book reads as one page at [Book T (1912)](https://tarot.recursive.eco/pages/book-t.html).
 
 Watch the path walked: [the Golden Dawn Path](https://tarot.recursive.eco/pages/golden-dawn-path.html) lights the Tree of Life step by
@@ -306,7 +336,7 @@ def build(prev):
     rows = titles(text)
     gd = {it['id']: it for it in json.load(open(GD, encoding='utf-8'))['nodes']}
     keep = {it['id']: it for it in (prev or {}).get('nodes', [])}
-    items = []
+    items, notes = [], []
     for no in range(1, 79):
         r, gid = rows[no], gd_id(rows[no])
         g = gd[gid]
@@ -372,7 +402,9 @@ def build(prev):
         row += '\n\n[Read it on the 1912 page](%s#%s)' % (PAGE, gid)
         nid = new_id(r)
         text_body, ill = split_ill(body)
-        sections = {'Book T (1912)': IB.HEADER + '\n\n' + text_body}
+        text_body = take_notes(title, text_body, notes)
+        ill = [take_notes(title, x, notes) for x in ill]
+        sections = {'Book T (1912)': HEADER + '\n\n' + text_body}
         if ill:
             sections[ILL] = ILL_HEADER + '\n\n' + '\n\n'.join(ill)
         sections.update({
@@ -418,7 +450,7 @@ def build(prev):
                     'section': 'Book T (1912)', 'rule': 'one source per deck — see GRAMMAR_FORMAT.md',
                     'built_by': 'scripts/build_book_t_deck.py'},
         'name': 'Book T — The Golden Dawn\'s 78 Cards',
-        'description': DESCRIPTION,
+        'description': DESCRIPTION.rstrip('\n') + notes_md(notes),
         'grammar_type': 'tarot',
         'provenance': 'record',
         'creator_name': 'PlayfulProcess',
