@@ -35,7 +35,7 @@ RWS numbers (this deck uses the RWS pictures) [@web_gd_swap; @web_mysticsym_swap
 
 ## Major Arcana (22 trumps)
 
-## 0 — The Fool (*The Spirit of Æther*)
+## 0 — The Fool (*The Spirit of Αἰθήρ*)
 - **Depicts:** A youth at a cliff-edge, white rose and wallet, small dog at his heels — innocence stepping into the abyss [@waite1910].
 - **Correspondences:** Hebrew **א Aleph** ('ox'), path 11; attribution **Air** (a "mother letter" elemental trump) [@web_cunliffe_correspondences].
 - **Means (upright / reversed):** Boundless potential, beginnings, holy folly / recklessness, a leap taken in ignorance.
@@ -67,7 +67,7 @@ RWS numbers (this deck uses the RWS pictures) [@web_gd_swap; @web_mysticsym_swap
 - **Sources:** [@waite1910], [@web_cunliffe_correspondences]
 - **Confidence:** high
 
-## 4 — The Emperor (*Sun of the Morning, Chief among the Mighty*)
+## 4 — The Emperor (*Son of the Morning, chief among the Mighty*)
 - **Depicts:** Armoured king on a ram-headed throne, ankh-sceptre, barren mountains [@waite1910].
 - **Correspondences:** Hebrew **ה Heh** ('window'), path 15; attribution **Aries** [@web_cunliffe_correspondences].
 - **Means:** Sovereign order, structure, the law-giving reason / tyranny, rigidity, domination.
@@ -75,7 +75,7 @@ RWS numbers (this deck uses the RWS pictures) [@web_gd_swap; @web_mysticsym_swap
 - **Sources:** [@waite1910], [@web_cunliffe_correspondences]
 - **Confidence:** high
 
-## 5 — The Hierophant (*The Magus of the Eternal Gods*)
+## 5 — The Hierophant (*The Magus of the Eternal*)
 - **Depicts:** Triple-crowned pontiff between pillars, two acolytes, crossed keys [@waite1910].
 - **Correspondences:** Hebrew **ו Vau** ('nail'), path 16; attribution **Taurus** [@web_cunliffe_correspondences].
 - **Means:** Revelation through tradition, the teacher-bridge / dogma, hollow orthodoxy.
@@ -83,7 +83,7 @@ RWS numbers (this deck uses the RWS pictures) [@web_gd_swap; @web_mysticsym_swap
 - **Sources:** [@waite1910], [@web_cunliffe_correspondences]
 - **Confidence:** high
 
-## 6 — The Lovers (*The Children of the Voice; the Oracle of the Mighty Gods*)
+## 6 — The Lovers (*The Children of the Voice; the Oracles of the Mighty Gods*)
 - **Depicts:** Man and woman beneath an angel, tree of flame and tree of knowledge [@waite1910].
 - **Correspondences:** Hebrew **ז Zain** ('sword'), path 17; attribution **Gemini** [@web_cunliffe_correspondences].
 - **Means:** Union, analysis leading to synthesis, the moral choice / indecision, weak union, temptation.
@@ -139,7 +139,7 @@ RWS numbers (this deck uses the RWS pictures) [@web_gd_swap; @web_mysticsym_swap
 - **Sources:** [@waite1910], [@web_cunliffe_correspondences]
 - **Confidence:** high
 
-## 13 — Death (*The Child of the Great Transformers; Lord of the Gate of Death*)
+## 13 — Death (*The Child of the Great Transformers: the Lord of the Gates of Death*)
 - **Depicts:** A skeletal rider in black armour with a black banner of the white rose; a fallen king, a bishop, a child [@waite1910].
 - **Correspondences:** Hebrew **נ Nun** ('fish'), path 24; attribution **Scorpio** [@web_cunliffe_correspondences].
 - **Means:** Transformation, the necessary dissolution clearing the ground / stagnation, fear of change.

@@ -42,7 +42,10 @@ CASE = ROOT / "course" / "booklets" / "case-introduction-to-the-study-of-the-tar
 WAITE_KEY = "Waite, Pictorial Key (1911)"
 CASE_KEY = "Case, Introduction to the Tarot (1920)"
 WAITE_HEAD = ("*A. E. Waite, a member of the Golden Dawn, in* The Pictorial Key to the Tarot *(London, 1911)"
-              " · public domain · he describes the Rider-Waite-Smith picture of this card, not Book T's*")
+              " · public domain · he describes the Rider-Waite-Smith picture of this card%s, not Book T's."
+              " Reversed meanings are Waite's; Book T has none (it reads a card as ill dignified instead).*")
+# Book T's Prince and Princess are Waite's King and Page: the header names Waite's card.
+WAITE_CARD = {"Prince": " (Waite's King)", "Princess": " (Waite's Page)"}
 CASE_HEAD = ("*Paul Foster Case, in* An Introduction to the Study of the Tarot *(New York, 1920), Chapter III,"
              " on the letter %s · public domain in the US · "
              "[the whole booklet](https://recursive.eco/play?id=2b99b34f-7c83-411b-9430-2a7376bb8134&pane=continuous)*")
@@ -86,7 +89,7 @@ def build():
         w = rws.get(arche)
         body = waite_text(w) if w else ""
         if body:
-            secs[WAITE_KEY] = WAITE_HEAD + "\n\n" + body
+            secs[WAITE_KEY] = (WAITE_HEAD % WAITE_CARD.get(meta.get("rank"), "")) +"\n\n" + body
         else:
             missing.append(("waite", n["id"]))
         letter = meta.get("hebrew_translit")

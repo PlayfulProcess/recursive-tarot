@@ -242,7 +242,7 @@ def decan_sentence(node):
     Saturn, and below is that of Leo")."""
     m = node['metadata']
     body = book_t_text(node).split('\n\n', 1)[-1]
-    for s in re.split(r'(?<=[.:])\s+', body):
+    for s in re.split(r'(?<=[.:])(?<!site:)\s+', body):
         if re.search(r'\b%s\b' % m['planet'], s) and re.search(r'\b%s\b' % m['sign'], s):
             return s.strip()
     return ''
