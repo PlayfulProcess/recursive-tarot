@@ -245,6 +245,11 @@ def decan_sentence(node):
     for s in re.split(r'(?<=[.:])(?<!site:)\s+', body):
         if re.search(r'\b%s\b' % m['planet'], s) and re.search(r'\b%s\b' % m['sign'], s):
             return s.strip()
+    # Where the printed page draws the planet's glyph instead of its name ("the symbol thus, and
+    # Libra", the Two of Swords), the sentence names only the sign and "the symbol".
+    for s in re.split(r'(?<=[.:])(?<!site:)\s+', body):
+        if re.search(r'\b%s\b' % m['sign'], s) and 'symbol' in s:
+            return s.strip()
     return ''
 
 
@@ -253,7 +258,8 @@ def decan_order(node):
     m = node['metadata']
     s = decan_sentence(node)
     above, below = m['planet'], m['sign']
-    if s and s.find(m['sign']) < s.find(m['planet']):
+    planet_at = s.find(m['planet']) if m['planet'] in s else s.find('symbol')
+    if s and s.find(m['sign']) < planet_at:
         above, below = below, above
     low = s.lower()
     kind = ''
