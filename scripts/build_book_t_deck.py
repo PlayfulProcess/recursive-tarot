@@ -42,7 +42,23 @@ GD = os.path.join(ROOT, 'tarot', 'golden-dawn-book-t-tarot', 'grammar.json')
 SITE = 'https://tarot.recursive.eco'
 PAGE = SITE + '/pages/book-t.html'
 ILL = 'If ill dignified'
-OWNED = ('Book T (1912)', ILL, "In Book T's table", 'Correspondences')
+# Her Oct 28 2026 word: each card shows its Rider-Waite-Smith counterpart, linked to that card in the
+# RWS deck on recursive.eco, with Pamela Colman Smith's picture (1909, public domain). The RWS deck and
+# the GD deck share card ids; Book T's own 1912 list pairs its Prince with the King and its Princess with
+# the Knave, and its Key numbers 8 and 11 with Justice and Strength, which gd_id already follows.
+RWS = os.path.join(ROOT, 'tarot', 'rider-waite-smith-pictorial-key', 'grammar.json')
+RWS_APP_ID = '48b91a88-13ad-4e7f-934c-ab01d125fc8a'
+RWS_SECTION = 'Rider-Waite-Smith (1909)'
+OWNED = ('Book T (1912)', ILL, "In Book T's table", 'Correspondences', RWS_SECTION)
+
+
+def rws_section(node):
+    """The RWS card beside a Book T card: a link to it in the RWS deck, and its picture (linked too)."""
+    name = re.sub(r'^\d+ — ', '', node['name'])
+    url = 'https://recursive.eco/play?id=%s&mode=cards&node=%s' % (RWS_APP_ID, node['id'])
+    line = "Waite and Smith's card for it: [%s](%s), drawn by Pamela Colman Smith, 1909 (public domain)." % (name, url)
+    img = node.get('image_url') or ''
+    return line + ('\n\n[![%s, Rider-Waite-Smith](%s)](%s)' % (name, img, url) if img else '')
 # Her Oct 28 2026 word: the card shows Book T's words only; Crowley's notes ("[...]") and our notes
 # ("‹...›", where the printed page has a glyph or a figure) leave the cards and are listed once, in the
 # deck's description, so a reader and the assistant still know of them.
@@ -335,6 +351,7 @@ def build(prev):
     words = IB.parse(text, raw=False)                      # verbatim card texts, keyed by the GD deck's ids
     rows = titles(text)
     gd = {it['id']: it for it in json.load(open(GD, encoding='utf-8'))['nodes']}
+    rws = {it['id']: it for it in json.load(open(RWS, encoding='utf-8'))['nodes']}
     keep = {it['id']: it for it in (prev or {}).get('nodes', [])}
     items, notes = [], []
     for no in range(1, 79):
@@ -410,6 +427,7 @@ def build(prev):
         sections.update({
             "In Book T's table": row,
             'Correspondences': with_rule_degrees(g['sections']['Correspondences'], md.get('rules')),
+            RWS_SECTION: rws_section(rws[gid]),
         })
         item = {'id': nid, 'name': title, 'sort_order': no - 1, 'category': category,
                 'keywords': [k for k in dict.fromkeys(kw) if k], 'image_url': '',
