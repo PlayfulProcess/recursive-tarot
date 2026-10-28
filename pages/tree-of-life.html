@@ -109,7 +109,7 @@
 
 <div class="wrap">
   <h1>The Tree of Life</h1>
-  <p class="lede">The Golden Dawn's map: ten spheres, twenty-two paths, a trump on every path. Tap a path or a sphere.</p>
+  <p class="lede">The Golden Dawn's map: ten spheres, twenty-two paths, a trump on every path. Tap a path or a sphere, or <a href="golden-dawn-path.html">watch the path walked</a>.</p>
   <div class="layout">
     <div class="stage">
       <svg class="tree" id="tree" viewBox="-118 -34 236 620" role="group" aria-label="The Tree of Life: ten sephiroth joined by twenty-two paths"></svg>
@@ -252,6 +252,7 @@
       <div class="links">
         <a class="primary" href="${CARD(t.id)}">Open the card</a>
         ${inReading ? '' : `<button type="button" class="primary" data-set='${esc(JSON.stringify({ cards: nextCards, path: p }))}'>Add to my reading</button>`}
+        <a href="golden-dawn-path.html?path=${p}">Watch the path walked</a>
         <a href="glossary.html#path">${mini({ paths: PATHS, path: p, w: 12 })} Path</a>
         ${gl('tree-of-life', 'Tree of Life')}
       </div>`;
@@ -266,7 +267,7 @@
       <h3 class="k3">Paths</h3>
       <div class="links">${touching.map(p => `<button type="button" data-set='${esc(JSON.stringify({ path: p }))}'><span class="bigl" lang="he" style="font-size:20px">${esc(trumps[p].letter)}</span>${p} · ${esc(trumps[p].name)}</button>`).join('')}</div>
       ${small.length ? `<h3 class="k3">In Book T, the small cards here</h3><div class="sep-cards">${small.map(it => `<a href="${CARD(it.id)}"><img src="${esc(it.image_url)}" alt="" loading="lazy">${esc(cleanName(it.name))}</a>`).join('')}</div>` : ''}
-      <div class="links"><a href="glossary.html#${id}">Glossary: ${esc(s.name)}</a></div>`;
+      <div class="links"><a href="glossary.html#${id}">Glossary: ${esc(s.name)}</a> <a href="golden-dawn-path.html?sephirah=${id}">Watch the path walked</a></div>`;
   }
   function readingPanel(st, drawn) {
     const rows = drawn.map((r, i) => {

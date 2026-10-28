@@ -135,9 +135,11 @@ meta-grammar uses the platform's *reference-item* structure (see `GRAMMAR_FORMAT
 - **Courses:** each course is a grammar too, `tarot/<id>-course/grammar.json` (and
   `tarot/how-to-contribute`), read in recursive.eco Play's Continuous view; the site links there
   (the map is `courses-play.js`). Edit the grammar in the app or the file. The old course viewer and
-  its `.mdx` sources retired on Oct 23 2026; `pages/course-viewer.html` only forwards old links. The
-  `.mdx` files still in `course/` are the printed books' chapters (`course/books/`,
-  `scripts/generate_book.py`), no longer the site's.
+  its `.mdx` sources retired on Oct 23 2026; `pages/course-viewer.html` only forwards old links.
+  `course/` keeps only the booklets and `golden-dawn-dignities-not-reversals.mdx` (which
+  `scripts/build_gd_dignity_figures.py` draws into).
+- **Printed books** now live in book-repo ([PlayfulProcess/recursive-books](https://github.com/PlayfulProcess/recursive-books));
+  this repo's book projects (`course/books/`, `scripts/generate_book.py`) were deleted on Oct 27 2026.
 - **Provenance:** the original per-deck generators (`generate_<deck>.py`), build logs,
   and the master history/roadmap docs live in the source repo,
   **recursive.eco-schemas** — see below.
