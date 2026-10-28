@@ -177,3 +177,58 @@ PlayfulProcess: "Repaint the 14 Book T cards: ok". The fourteen mismatches above
 | cups-03 | 4 cups, hand holds a cup | 3 cups in an erect triangle; the hand holds the lotus stems; two lotuses pour white water into the top cup, others into the lower two; all three overflow onto the water | attempt 1 (2.1) |
 
 **Still not right:** wands-08 (6 crossed wands where Book T has 8). Minor, left as they are: wands-09's four hands grip rather than clasp; pentacles-10's roses touch about seven of the ten pentacles; the Ace of Wands' branches carry no scale sigils (image models garble sigils; the first run left them out too). Like the first check, this count is a machine reading of the pictures, for her eye.
+
+## Oct 27 review, round 3
+
+PlayfulProcess: "Please fix this: the Eight of Wands (3+3 crossed wands instead of 4+4) ... and the small leftovers [...]. Fix that locally together with potentially some new batch reviews of the latest version on remote."
+
+**The three fixes.** Same tool as round 2 (`generate_node_image`, deck `2000ad96`, `set: false`), Nano Banana Pro only; 5 pictures, **$2.01** of recursive.eco credit. The corrections by script are in `scripts/fix_book_t_repaint_round3_2026_10_27.py` (it fetches its sources and rebuilds both script pictures; checked to reproduce them pixel for pixel).
+
+| card | before (round 2) | now | how |
+|---|---|---|---|
+| wands-08 | 6 crossed wands (3 and 3) | **8 wands crossed 4 with 4** (four tips at each corner, counted on the image), four hands from clouds clasped in two pairs, flames at the crossing, one short flaming wand at top and at bottom centre | A Pro repaint with the old painting as reference and a count-first prompt changed nothing (still 3 and 3). So a script swept the painting's own outer wand along a parallel line outside each fan (behind the hands, flames and other wands), giving 4 and 4; that composite was then the reference of a second Pro painting, which kept the eight and cleaned the seams. The Pro painting is the kept picture; the composite is on the CDN (`grammars/1793142297354-tpzipu9n5sf.png`) |
+| wands-09 | the four side hands grip the wands, not each other | the four hands clasped in two pairs (the new Eight's hands); 8 crossed wands, 4 and 4; a fifth hand from a cloud at the foot holds the 9th upright through the crossing; flames there | Pro with the new Eight as reference; attempt 1 lost the lower halves of the two outer wands (3 ends at each lower corner), attempt 2 kept all eight (4 ends at each corner) |
+| pentacles-10 | the roses touch some of the ten discs | **a white rose touching each of the 10 discs**, rows 2, 1, 2, 2, 1, 2, the hand holding the branch low, no buds | Pro with the old painting as reference: roses at eight discs; then two of its own roses, floating by the two central discs, moved onto their rims by script, the ground filled from the painted green around |
+
+The replaced round-2 paintings stay in each card's `metadata.illustrations` as `"Book T deck, painting of the Oct 27 2026 repaint, round 2 (replaced in round 3)"`.
+
+**The review.** All 78 painted+symbols cards as they were on `origin/main` (6fc5598, after round 2), rendered by the script's own renderer and read against each card's Book T (1912) block, as on Oct 21: four machine readers (aces and courts; two groups of decans; Keys), every count made twice on zoomed crops. A machine reading, for her eye.
+
+| ok | minor | mismatch |
+|---|---|---|
+| 49 | 28 | 1 |
+
+The one mismatch was wands-08 (6 wands), fixed above; wands-09 and pentacles-10 were two of the minors, fixed above. So after this round: **0 mismatch**, 26 minor, 52 ok. Every band (planet, sign, letter, element, degrees, Path) agrees with the text on all 78. Since Oct 21: wands-ace and pentacles-knight went from mismatch to minor and ok; wands-04, -06, -07, pentacles-03, -07, -08, -09 and cups-03 now fit Book T.
+
+**Cards that are not ok** (one line each; a new painting is $0.15 a try with Nano Banana 2.1 or $0.40 with Pro, usually 2 or 3 tries; a script retouch costs nothing):
+
+- wands-ace: no scale sigils on the branches (known gap; image models garble sigils).
+- cups-ace: the hand does not issue from clouds; no Heh in the spray. Clouds by script; the Heh needs a repaint (~$0.40-1.20).
+- swords-ace: 8 drops fall from the crown, where Book T has six Vaus from the point; palm on both sides. Repaint (~$0.40-1.20), or leave.
+- pentacles-ace: one Maltese cross where Book T names four crosses; centre cross pattée, not Greek. Low priority.
+- wands-knight (new since Oct 21): the winged black horse-head crest only on the cuirass, not above the helmet, shoulders or buskins. Script: copy the cuirass's own horse head (free).
+- cups-knight: the rider has no wings of his own. Repaint (~$0.40-1.20).
+- cups-prince: the eagle rides in the chariot rather than drawing it; serpent's head up, not toward the water. Repaint (~$0.40-1.20).
+- swords-knight (new since Oct 21): the winged hexagram crest floats above him, not on the helmet; no crown. Script for the crest (free).
+- swords-queen: no crown under the crest. Repaint (~$0.40), or leave.
+- swords-prince: pentagrams drawn as 8-point stars; the fays sit beside the chariot. Repaint (~$0.40-1.20).
+- swords-princess: Medusa worn on the breast, not as a crest; the altar is a floating dish. Repaint (~$0.40-1.20).
+- pentacles-prince: orb held up, not downward, and given a cross. Cross out by script; the downward orb needs a repaint (~$0.40).
+- pentacles-princess: her pentacle is not like the Ace's (closest of the minors to a mismatch). Repaint with the Ace's disc as reference (~$0.40-0.80).
+- wands-05: an ordinary handshake, not the First Order grip. Repaint; probably leave.
+- wands-10: the two uprights stop at the lower hands, below the crossing; the script-copied second upright shows a pale seam; the lower pair of hands grips rather than clasps. Uprights and seam by script (free); clasped hands as the new Nine has them by Pro repaint with the Nine as reference (~$0.40-0.80). The band's Vav (Book T's "Malkuth of ו") still wants the 1912 scan.
+- swords-02: a layered rose, not five petals; a stray blade fragment top right. Fragment by script (free).
+- swords-03: side swords tilt; the rose is whole, not cut; "LORD OF SORROW" painted in the picture. Caption out by script (free); the rest a repaint (~$0.40-1.20).
+- cups-06: the two top cups share one flower; extra flowers; flesh-toned hand. Repaint (~$0.40-0.80).
+- swords-07: the rose floats beside the central sword, not held by its hand. Script: move the rose onto the hand (free).
+- wands-02: the small wands carry 7 flames, Book T five; the hand has no cloud. Flames by script (free).
+- wands-03: the hand grips the upright's top, not the centre; tiled floor. Repaint, optional (~$0.40).
+- pentacles-05: four roses still on the branch, where Book T has all falling. Script: move them among the falling ones (free).
+- key-11-fortitude: the hanging sword's blade ends in her flower crown. Script: lift the sword (free).
+- key-12-hanged-man: the rope runs on down the leg past the ankle knot. Script (free); low priority.
+- key-14-temperance: water falls from the cups' bases. Repaint (~$0.40), or leave (Book T describes no picture).
+- key-19-sun: the painted "FE" monogram is still in the lower right corner. Script: cover it with the hedge beside it (free).
+
+To look at before print, not a Book T issue: key-15-devil (two fully nude chained figures), and the Foolish Man's band title, which falls back to a sans-serif font for Αἰθήρ.
+
+If she wants all of these: the free script retouches (wands-knight, swords-knight, wands-02, wands-10 uprights and seam, swords-02, swords-03 caption, swords-07, pentacles-05, key-11, key-12, key-19, cups-ace clouds, pentacles-prince cross) cost nothing; the repaints listed come to roughly **$5-12** at Pro prices.
