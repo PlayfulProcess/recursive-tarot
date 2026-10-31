@@ -61,11 +61,10 @@
         if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){msg.style.color='#c0473b';msg.textContent='Please enter a valid email.';return;}
         var btn=f.querySelector('button'); btn.disabled=true; btn.textContent='Signing up…'; msg.textContent='';
         try{
-          var r=await fetch(SUPA+'/rest/v1/newsletter_subscribers',{method:'POST',
-            headers:{'apikey':ANON,'Authorization':'Bearer '+ANON,'Content-Type':'application/json','Prefer':'return=minimal'},
-            body:JSON.stringify({email:email,subscribed_from:'recursive-tarot',subscribed:true})});
+          var r=await fetch('https://recursive.eco/api/newsletter/subscribe',{method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({email:email,channel:'recursive-tarot'})});
           if(r.ok){msg.style.color='#3f7a5c';msg.textContent='✓ Welcome to the recursive public!';f.querySelector('#rtf-email').value='';}
-          else if(r.status===409){msg.style.color='#3f7a5c';msg.textContent='✓ You\'re already signed up!';}
           else{throw new Error('status '+r.status);}
         }catch(err){msg.style.color='#c0473b';msg.innerHTML='Something went wrong — or sign up at <a href="https://recursive.eco" target="_blank" rel="noopener" style="color:var(--gold)">recursive.eco</a>.';}
         finally{btn.disabled=false; btn.textContent='Sign up';}
