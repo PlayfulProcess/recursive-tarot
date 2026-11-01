@@ -424,7 +424,7 @@ ECO_IDS = "tarot/_eco_ids.json"
 LEDGER = "docs/rights/image-ledger.json"
 WAITE_III = "research/sources/waite-pictorial-key-part-iii.md"
 PLAY = "https://recursive.eco/play?id="
-CAST = "https://recursive.eco/process?cast="  # the Cast link the site uses (viewers/cards.html, PR #85)
+CAST = "https://recursive.eco/cast/"  # the Cast link the site uses (viewers/cards.html, PR #85)
 GITHUB = "https://github.com/PlayfulProcess/recursive-tarot/blob/main/"
 DRAFT = "<!-- DRAFT copy for PlayfulProcess: new wording, not taken from a grammar. -->"
 # recursive.eco ids confirmed public with the MCP on Oct 20 2026 that are missing from _eco_ids.json's
