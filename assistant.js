@@ -47,7 +47,7 @@
   var srcGrammarId = ''; // filled in below if the ?src= slug resolves to a known app UUID
   if (srcSlug) {
     var _segs = location.pathname.split('/').filter(Boolean);
-    var _PFX = '../'.repeat(Math.max(0, _segs.length - 1)); // same depth formula as site-footer.js's PFX
+    var _PFX = '../'.repeat(location.pathname.endsWith('/') ? _segs.length : Math.max(0, _segs.length - 1)); // same depth formula as site-footer.js's PFX (a folder address counts its last segment)
     fetch(_PFX + 'tarot/_eco_ids.json').then(function (r) { return r.json(); }).then(function (j) {
       srcGrammarId = (j && j.ids && j.ids[srcSlug]) || '';
     }).catch(function () { /* offline / 404 — page_title fallback below still names the slug */ });

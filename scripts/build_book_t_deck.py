@@ -52,6 +52,93 @@ RWS_SECTION = 'Rider-Waite-Smith (1909)'
 OWNED = ('Book T (1912)', ILL, "In Book T's table", 'Correspondences', RWS_SECTION)
 
 
+
+# The printed booklet's opening (Nov 10 2026): how to read with this deck. Book T's rule is quoted
+# from the 1912 text as the deck description quotes it; the rest is this site's own plain guidance.
+# The credits card's words (the Oct 28 2026 colophon card's, print/book-t-proof/colophon-900x1500.png).
+PRINT_CREDITS = """The Golden Dawn's own cards.
+
+The text: Book T, the Golden Dawn's tarot manuscript, as printed in The Equinox I(8), 1912. Public domain.
+
+The paintings: AI-assisted, painted from Book T's own words; prompts by PlayfulProcess.
+
+The frames: glyphs of planets, signs, elements and Hebrew letters drawn for this deck, set where Book T places them.
+
+The order: Book T's own: four Aces, sixteen courts, thirty-six small cards from Leo, twenty-two Keys. No reversals.
+
+Prompts, glyphs and design: PlayfulProcess. Licensed CC BY-SA 4.0: share and adapt with credit, under the same licence."""
+
+BOOKLET_FRONT = """These are Book T's 78 cards in the Golden Dawn's own order: four Aces, sixteen court cards, thirty-six small cards from Leo, twenty-two Keys. Each is painted from Book T's words and framed with the symbols Book T places on it. The words for each card in this booklet are Book T's own, as printed in The Equinox in 1912.
+
+Read to know yourself, not to surrender yourself. A card starts a conversation with what is already alive in you, so hold what you find loosely, author its meaning yourself, and keep the choice your own. Relate to the card; never obey it.
+
+Three cards. Shuffle, hold your question if you have one, and lay three cards left to right. The first is Structures: the patterns or beliefs under the situation. The second is Process: how things are unfolding now. The third is Possibilities: resources or views to consider.
+
+Book T has no reversed cards. A card's meaning turns on its dignity, and its dignity on the cards beside it. The same element strengthens it. Book T names the other pairs by their suits: "Swords are inimical to Pentacles. Wands are inimical to Cups. Swords are friendly with Cups and Wands. Wands are friendly with Swords and Pentacles." And "if a card fall between two other which are mutually contrary, it is not much affected by either." Where a card's words say "if ill dignified", read that side when its neighbours oppose it.
+
+Look at the painting before you read the words. Ask what you recognise in it, what you resist, and what you would choose.
+
+Scan the code on the cover to read your own cards with a photo and the recursive.eco assistant, to lay three cards on screen when your deck is not with you, or to read the whole of Book T: tarot.recursive.eco/printed"""
+
+
+# ── The printed booklet's words (Nov 10 2026) ───────────────────────────────────────────────────────
+# TGC's tarot booklet holds 40 pages; Book T's whole text for 78 cards needs about 52. The card shows
+# its picture, so the booklet keeps each card's MEANING in Book T's own words and leaves out the
+# passages that describe the picture: Keys whole; Aces their "It implies / symbolizes" lines; the
+# small cards what follows the line naming their decan's planet and sign; court cards their
+# "He is / She is" sentences and their element and title lines. Angel names and Hebrew letters are
+# left out (the print font may lack them); a bracketed gloss beside a letter is kept. Then the
+# card's "If ill dignified" words. Stored as metadata.print_booklet; recursive.eco's print tool
+# prefers it to a section for the booklet. The whole text stays on the card and online.
+HEB = re.compile(r'[֐-׿]')
+def paras(t):
+    ps = [p.strip() for p in re.split(r'\n\s*\n', t) if p.strip()]
+    return [p for p in ps if not p.startswith('*Book T, 1912')]
+def caps_start(p):
+    ws = re.sub(r'^[^A-Za-z]+', '', p).split(' ')[:2]
+    return any(len(w) >= 2 and w.isupper() for w in ws)
+def sentences(p):
+    return [s.strip() for s in re.split(r'(?<=[.!?])\s+(?=[A-Z])', p) if s.strip()]
+def _brief(node):
+    t = node['sections']['Book T (1912)']
+    ps = paras(t)
+    nid = node['id']
+    out = []
+    if nid.startswith('key-'):
+        out = ps
+    elif nid.endswith('-ace'):
+        out = [p for p in ps if re.match(r'^It (implies|symboli[sz]es|represents|shows|signifies|is the)', p) and 'surmounted' not in p] or ps[-1:]
+    elif any(nid.endswith(s) for s in ('-knight', '-queen', '-prince', '-princess')):
+        for p in ps:
+            if p.startswith('Note that the Kings'): continue
+            if caps_start(p):
+                out += [s for s in sentences(p) if re.match(r'^(He|She|They) (is|are)\b|^(If|When|Unless)\b', s)]
+            elif re.match(r'^(He|She|They) (is|are)\b|^(If|When|Unless)\b|^(Fire|Water|Air|Earth) of (Fire|Water|Air|Earth)|^(The )?(King|Queen|Prince|Princess|Emperor|Empress)\b', p):
+                out.append(p)
+    else:
+        MARK = re.compile(r'(Saturn|Jupiter|Mars|Sun|Venus|Mercury|Moon)\b[^.]{0,40}\b(Aries|Taurus|Gemini|Cancer|Leo|Virgo|Libra|Scorpio|Sagittarius|Capricorn|Aquarius|Pisces)|(Aries|Taurus|Gemini|Cancer|Leo|Virgo|Libra|Scorpio|Sagittarius|Capricorn|Aquarius|Pisces)\b[^.]{0,40}\b(Saturn|Jupiter|Mars|Sun|Venus|Mercury|Moon)\b|representing the Decan')
+        idx = max([i for i, p in enumerate(ps) if MARK.search(p) and not p.startswith(('This Decan', 'Herein'))] or [0])
+        sents = sentences(ps[idx])
+        k = max([j for j, x in enumerate(sents) if MARK.search(x)] or [-1])
+        head = ' '.join(sents[k + 1:])
+        out = ([head] if head else []) + ps[idx + 1:]
+    kept = []
+    for p in out:
+        if p.startswith(('Herein rule', 'This Decan', 'Herein')) or p.endswith('thus arranged.'): continue
+        if HEB.search(p):
+            m = re.search(r'\(([^)]+)\)', p)
+            if m: kept.append(m.group(1).strip().rstrip('.') + '.')
+            continue
+        kept.append(p)
+    out = kept
+    return '\n\n'.join(out)
+
+def booklet_meaning(nid, sections):
+    text = _brief({'id': nid, 'sections': sections})
+    ill = sections.get(ILL, '')
+    ill = '\n\n'.join(p.strip() for p in re.split(r'\n\s*\n', ill) if p.strip() and not p.strip().startswith('*'))
+    return (text + ('\n\n' + ill if ill else '')).strip()
+
 def rws_section(node):
     """The RWS card beside a Book T card: a link to it in the RWS deck, and its picture (linked too)."""
     name = re.sub(r'^\d+ — ', '', node['name'])
@@ -424,6 +511,7 @@ def build(prev):
         sections = {'Book T (1912)': HEADER + '\n\n' + text_body}
         if ill:
             sections[ILL] = ILL_HEADER + '\n\n' + '\n\n'.join(ill)
+        md['print_booklet'] = booklet_meaning(nid, sections)
         sections.update({
             "In Book T's table": row,
             'Correspondences': with_rule_degrees(g['sections']['Correspondences'], md.get('rules')),
@@ -488,7 +576,16 @@ def build(prev):
                      'year_label': 'c. 1888 · printed 1912',
                      # How a reading reads this deck (Oct 20 2026): no reversals; each card's dignity
                      # comes from the elements of the cards beside it. recursive.eco reads this key.
-                     'reading_rule': 'elemental-dignities'},
+                     'reading_rule': 'elemental-dignities',
+                     # The printed deck (Nov 10 2026, her ask: "a booklet with how to interpret and a QR
+                     # code"). recursive.eco's print tool reads metadata.print: the QR goes on the
+                     # credits card, the booklet cover and the tuck box; booklet_front opens the booklet.
+                     'print': {
+                         'qr': {'image': 'https://tarot.recursive.eco/print/book-t/qr-printed.png',
+                                'caption': 'Read your cards with a photo, or learn more: tarot.recursive.eco/printed'},
+                         'booklet_front': BOOKLET_FRONT,
+                         'credits': PRINT_CREDITS,
+                     }},
         'nodes': items,
     }
     if prev:                                       # keep deck-level edits made after the first build

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../theme.css?v=3">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Book T deck · The Recursive Tarot</title>
+<meta name="description" content="For the printed Book T deck: read your own cards with a photo, lay three on screen, or learn more about Book T.">
+<link rel="icon" type="image/svg+xml" href="../public/favicon.svg?v=2">
+<link rel="stylesheet" href="../style.css?v=5">
+<link rel="canonical" href="https://tarot.recursive.eco/printed/">
+<style>
+  main.wrap{max-width:720px;padding:0 16px 40px}
+  .intro{text-align:center;padding:28px 0 6px}
+  .intro .sub{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a6414;margin:0 0 10px}
+  .intro h1{font-family:var(--serif-display);font-weight:600;font-size:clamp(30px,6vw,44px);line-height:1.08;margin:0;color:var(--ink)}
+  .creed{font-family:var(--serif-body);font-style:italic;font-size:clamp(16px,2.4vw,18px);line-height:1.6;color:var(--ink-soft);margin:16px auto 0;max-width:60ch}
+  .door{background:var(--surface);border:1px solid var(--line-soft);border-radius:10px;padding:18px 18px 20px;margin:22px 0 0}
+  .door h2{font-family:var(--serif-display);font-weight:600;font-size:22px;color:var(--ink);margin:0 0 8px}
+  .door p,.door li{font-family:var(--serif-body);font-size:16px;line-height:1.6;color:var(--ink-soft)}
+  .door ol{margin:8px 0 14px;padding-left:22px}
+  .door p{margin:0 0 12px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid var(--gold);background:var(--gold);color:#fff;font:600 16px var(--sans);cursor:pointer;text-decoration:none}
+  .btn:hover{filter:brightness(1.07)}
+  .btn:focus-visible,.links a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+  .links{list-style:none;padding:0;margin:4px 0 0}
+  .links li{margin:0}
+  .links a{color:var(--gold);display:inline-block;min-height:44px;line-height:44px;font-family:var(--sans);font-size:15px}
+  .note{font-family:var(--sans);font-size:13px;color:var(--mut);margin:10px 0 0}
+</style>
+</head>
+<body data-assistant-context="tarot">
+<script src="../site-header.js?v=52"></script>
+<site-header active=""></site-header>
+
+<main class="wrap">
+  <section class="intro">
+    <p class="sub">The printed deck</p>
+    <h1>Your Book T deck</h1>
+    <p class="creed" id="creed"></p>
+  </section>
+
+  <section class="door" aria-labelledby="d1">
+    <h2 id="d1">Read your own cards</h2>
+    <ol>
+      <li>Shuffle, hold your question if you have one, and lay three cards left to right: <em>Structures</em>, <em>Process</em>, <em>Possibilities</em>.</li>
+      <li>Open the assistant below and tap the paperclip to take a photo of the three cards.</li>
+      <li>Send it. The assistant reads the cards it sees with Book T's own words, and asks you what they stir.</li>
+    </ol>
+    <button class="btn" id="photo" type="button">Open the assistant</button>
+    <p class="note" id="note" role="status"></p>
+  </section>
+
+  <section class="door" aria-labelledby="d2">
+    <h2 id="d2">No deck with you?</h2>
+    <p>Lay three cards on screen, then talk about them.</p>
+    <a class="btn" href="../pages/read.html">Lay three cards here</a>
+  </section>
+
+  <section class="door" aria-labelledby="d3">
+    <h2 id="d3">Learn more</h2>
+    <ul class="links">
+      <li><a href="../pages/book-t.html">Book T, the whole 1912 text</a></li>
+      <li><a href="../book-t/index.html">Every card, with its words</a></li>
+      <li><a href="../pages/golden-dawn-path.html">The Golden Dawn path on the Tree of Life</a></li>
+      <li><a href="../viewers/caster-studio.html">More spreads and decks</a></li>
+    </ul>
+  </section>
+</main>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  fetch('../viewers/voices.json').then(function (r) { return r.json(); }).then(function (v) {
+    var c = v && v.shared_intention && v.shared_intention.creed; if (c) $('creed').textContent = c;
+  }).catch(function () {});
+  var ASK = 'Here is a photo of three cards from my printed Book T deck, laid left to right as Structures, Process and Possibilities. Please name the cards you see and read them with Book T\'s own words.';
+  function iframe() { return document.querySelector('.rec-assistant-shell iframe'); }
+  function whenReady(cb, tries) {
+    var f = iframe();
+    if (f) return cb(f);
+    if ((tries || 0) > 40) return cb(null);
+    setTimeout(function () { whenReady(cb, (tries || 0) + 1); }, 250);
+  }
+  $('photo').addEventListener('click', function () {
+    whenReady(function (ifr) {
+      var RA = window.RecursiveAssistant;
+      if (!ifr || !RA || typeof RA.open !== 'function') {
+        $('note').textContent = 'The assistant is not ready yet. Tap the star button at the bottom of the page to open it.';
+        return;
+      }
+      RA.open();
+      var origin;
+      try { origin = new URL(ifr.src).origin; } catch (e) { origin = RA.flowBaseUrl && RA.flowBaseUrl(); }
+      // Staged, not sent: the words wait in the box until the photo is added.
+      var msg = { type: 'recursive-eco:ask', id: 'printed-deck', text: ASK, send: false };
+      var acked = false;
+      var onAck = function (e) { if (e.origin === origin && e.data && e.data.type === 'recursive-eco:ask-ack' && e.data.id === 'printed-deck') { acked = true; window.removeEventListener('message', onAck); } };
+      window.addEventListener('message', onAck);
+      var send = function () { try { ifr.contentWindow.postMessage(msg, origin); } catch (e) {} };
+      send(); setTimeout(function () { if (!acked) send(); }, 1500);
+      $('note').textContent = 'Now tap the paperclip in the assistant and take the photo.';
+    });
+  });
+})();
+</script>
+<script src="../assistant.js" defer></script>
+<script src="../site-footer.js?v=1"></script>
+<site-footer base="../"></site-footer>
+</body>
+</html>

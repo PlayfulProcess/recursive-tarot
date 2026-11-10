@@ -81,7 +81,7 @@
         // (root, /pages/, /pages/games/, /viewers/, /viewers/prototypes/ …) without relying
         // on this element's own `base` attribute (which some pages omit or could mistype).
         var _segs = location.pathname.split('/').filter(Boolean);
-        var PFX = '../'.repeat(Math.max(0, _segs.length - 1));
+        var PFX = '../'.repeat(location.pathname.endsWith('/') ? _segs.length : Math.max(0, _segs.length - 1));
         var showRibbon = function () {
           if (window.OracleRibbon) window.OracleRibbon.show(anchor, { gated: false });
         };

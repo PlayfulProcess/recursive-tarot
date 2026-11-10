@@ -25,7 +25,8 @@
   // Path back to the repo root — depth-aware so it works at any nesting
   // (root, /viewers/, /pages/, AND /viewers/prototypes/, /pages/book/ …).
   const _segs = location.pathname.split('/').filter(Boolean);
-  const PFX = '../'.repeat(Math.max(0, _segs.length - 1));
+  // A folder address (/printed/, /book-t/) is one level deeper than its last segment suggests (Nov 10 2026).
+  const PFX = '../'.repeat(location.pathname.endsWith('/') ? _segs.length : Math.max(0, _segs.length - 1));
 
   // The assistant star on every page that carries this header (Oct 20 2026, Lane C):
   // a page that does not load assistant.js itself gets it here, once. assistant.js
