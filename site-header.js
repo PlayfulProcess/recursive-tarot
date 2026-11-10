@@ -92,6 +92,7 @@
   // Tools only: decks live in Views and on the home page, not here (Oct 23 2026).
   const PLAY_GROUPS = [
     ['Read the cards', [
+      [PFX + 'pages/read.html',             'Quick reading'],
       [PFX + 'viewers/caster-studio.html',  'Spread Caster — build · cast · save'],
       [PFX + 'viewers/table.html',          'Card Table — less · keep · more'],
       ['https://recursive.eco/',            'Oracle on recursive.eco ↗', true],

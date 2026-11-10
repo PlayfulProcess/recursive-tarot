@@ -4,8 +4,8 @@
 <link rel="stylesheet" href="../theme.css?v=3">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lay three cards · The Recursive Tarot</title>
-<meta name="description" content="One spread, one deck, one button: lay three Book T cards, then talk about them.">
+<title>Cast three cards · The Recursive Tarot</title>
+<meta name="description" content="One spread, one deck, one button: cast three Book T cards, then talk about them.">
 <link rel="icon" type="image/svg+xml" href="../public/favicon.svg?v=2">
 <link rel="stylesheet" href="../style.css?v=5">
 <link rel="canonical" href="https://tarot.recursive.eco/pages/read.html">
@@ -25,7 +25,7 @@
   .btn:focus-visible,.card-btn:focus-visible,.ask textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
   #reading[hidden]{display:none}
   .row{display:grid;grid-template-columns:1fr;gap:28px;margin:30px auto 0;justify-items:center}
-  .slot{width:100%;max-width:300px;text-align:center}
+  .slot{width:100%;max-width:300px;min-width:0;text-align:center}
   .pos{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8a6414;margin:0 0 4px}
   .posmean{font-family:var(--serif-body);font-size:13.5px;line-height:1.45;color:var(--mut);margin:0 0 10px;min-height:0}
   .card-btn{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--thumb-bg);cursor:pointer;box-shadow:var(--shadow-card)}
@@ -39,10 +39,19 @@
   .text a{color:var(--gold)}
   .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin:30px 0 0}
   #castCount{font-family:var(--sans);font-size:12px;color:var(--mut)}
-  .more{text-align:center;margin:34px 0 0;font-family:var(--sans);font-size:14px}
-  .more a{color:var(--gold);display:inline-block;min-height:44px;line-height:44px}
+  .more{margin:34px 0 0}
+  .chip{min-height:44px;margin:0 4px 6px;padding:0 14px;border-radius:999px;border:1px solid var(--chipline);background:var(--chip);color:var(--ink-soft);font:500 12px var(--sans);letter-spacing:.06em;text-transform:none;cursor:pointer;max-width:100%}
+  .chip:hover{border-color:var(--gold);color:var(--ink)}
+  .chip:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+  .chip::after{content:" \25BE";color:var(--gold)}
+  .pick{display:flex;flex-direction:column;gap:6px}
+  .pick-item{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);text-align:left;cursor:pointer;font-family:var(--sans)}
+  .pick-item:hover,.pick-item.on{border-color:var(--gold);background:var(--chip)}
+  .pick-item:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+  .pick-name{font-size:15px;font-weight:600}.pick-sub{font-size:12.5px;color:var(--mut)}
+  .row.many{grid-template-columns:repeat(2,1fr);gap:20px}.row.c1{max-width:300px}
   .note{text-align:center;font-family:var(--sans);font-size:13px;color:var(--mut);margin:12px 0 0}
-  @media (min-width:760px){ .row{grid-template-columns:repeat(3,1fr);align-items:start;gap:26px} .slot{max-width:none} }
+  @media (min-width:760px){ .row{align-items:start;gap:26px} .row.c2{grid-template-columns:repeat(2,1fr)} .row.c3{grid-template-columns:repeat(3,1fr)} .row.c4,.row.many{grid-template-columns:repeat(4,1fr)} .row.c1{grid-template-columns:1fr} .slot{max-width:none} }
 </style>
 </head>
 <body data-assistant-context="tarot">
@@ -51,13 +60,13 @@
 
 <main class="wrap">
   <section class="intro">
-    <p class="sub">Three cards · Book T</p>
-    <h1>Lay three cards</h1>
+    <p class="sub"><button type="button" class="chip" id="chipSpread" aria-haspopup="dialog" title="Choose a spread">Structures · Process · Possibilities</button><button type="button" class="chip" id="chipDeck" aria-haspopup="dialog" title="Choose a deck">Book T (Golden Dawn)</button></p>
+    <h1 id="h1">Cast three cards</h1>
     <p class="creed" id="creed"></p>
     <div class="ask">
       <label for="q">A question, if you have one (optional)</label>
       <textarea id="q" maxlength="400" placeholder="What are you sitting with?"></textarea>
-      <button class="btn" id="lay" type="button">Lay the cards</button>
+      <button class="btn" id="cast" type="button">Cast the cards</button>
     </div>
   </section>
 
@@ -65,16 +74,20 @@
     <div class="row" id="row"></div>
     <div class="actions">
       <button class="btn" id="talk" type="button">Talk about it</button>
-      <button class="btn quiet" id="again" type="button">Lay again</button>
+      <button class="btn quiet" id="again" type="button">Cast again</button>
       <span id="castCount"></span>
     </div>
     <p class="note" id="note" role="status"></p>
   </section>
 
-  <p class="more"><a href="../viewers/caster-studio.html">More options</a></p>
+  <div class="more" id="actions2"></div>
 </main>
 
-<script src="read.js?v=1"></script>
+<script src="../viewers/reference-resolve.js"></script>
+<script src="../viewers/dialog.js"></script>
+<script src="../viewers/card-detail.js"></script>
+<script src="../viewers/reading-actions.js"></script>
+<script src="read.js?v=2"></script>
 <script src="../assistant.js" defer></script>
 <script src="../site-footer.js?v=1"></script>
 <site-footer base="../"></site-footer>
