@@ -26,6 +26,7 @@
     '.ra-btn.ra-primary{background:var(--gold,#9a7322);border-color:var(--gold,#9a7322);color:#fff;font-weight:600;font-size:16px;min-height:48px;padding:0 24px}' +
     '.ra-btn.ra-primary:hover{filter:brightness(1.07);color:#fff}' +
     '.ra-p{font-family:var(--serif-body,Georgia,serif);font-size:16px;line-height:1.6;color:var(--ink-soft,#4a4439);margin:0 0 12px}' +
+    '.ra-link{display:inline-block;min-height:44px;margin:6px 0 0;padding:0;background:none;border:0;color:var(--gold,#8a6414);font:500 14px var(--sans,system-ui);text-decoration:underline;cursor:pointer}' +
     '.ra-small{font-family:var(--sans,system-ui);font-size:12.5px;line-height:1.5;color:var(--mut,#6b6457);margin:10px 0 0}' +
     '.ra-slot{margin:14px 0 0;padding:10px 12px;border:1px dashed var(--line,#d8d2c6);border-radius:8px;font-family:var(--sans,system-ui);font-size:13px;color:var(--mut,#6b6457)}' +
     '.ra-slot:empty{display:none}';
@@ -56,10 +57,19 @@
   }
 
   // Staged ask with the photo button; older launchers fall back to staging the text only.
-  function askWithPhoto(text, note) {
+  // Nov 10 2026: with `image` (a photo this page took itself), the photo arrives attached to the
+  // words; the assistant acks `image: true`. No such ack (an older assistant): the note asks her
+  // to add the photo with the paperclip.
+  function askWithPhoto(text, note, image) {
     whenAssistant(function (RA) {
       if (!RA) { if (note) note('The assistant is not ready. Tap the star button at the bottom of the page.'); return; }
-      if (typeof RA.ask === 'function') { RA.ask(text, { photo: true }); return; }
+      if (image) {
+        var took = false;
+        var onAck = function (e) { if (e.data && e.data.type === 'recursive-eco:ask-ack' && e.data.image === true) { took = true; window.removeEventListener('message', onAck); if (note) note('Your photo and your words are in the assistant. Tap Send when you are ready.'); } };
+        window.addEventListener('message', onAck);
+        setTimeout(function () { window.removeEventListener('message', onAck); if (!took && note) note('Your words are ready in the assistant. Tap the paperclip there to add your photo.'); }, 4000);
+      }
+      if (typeof RA.ask === 'function') { RA.ask(text, image ? { photo: true, image: image } : { photo: true }); return; }
       RA.open();
       var ifr = document.querySelector('.rec-assistant-shell iframe'), origin;
       try { origin = new URL(ifr.src).origin; } catch (e) { origin = RA.flowBaseUrl && RA.flowBaseUrl(); }
@@ -67,6 +77,21 @@
       var send = function () { try { ifr.contentWindow.postMessage(msg, origin); } catch (e) {} };
       send(); setTimeout(send, 1500);
     });
+  }
+
+  // A phone photo shrunk to 1600 px on its long side, as a JPEG data: URL (the assistant's limit is 8 MB).
+  function shrinkPhoto(file, done) {
+    var url = URL.createObjectURL(file), img = new Image();
+    img.onload = function () {
+      var k = Math.min(1, 1600 / Math.max(img.naturalWidth, img.naturalHeight));
+      var c = document.createElement('canvas');
+      c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      URL.revokeObjectURL(url);
+      try { done(c.toDataURL('image/jpeg', 0.85)); } catch (e) { done(null); }
+    };
+    img.onerror = function () { URL.revokeObjectURL(url); done(null); };
+    img.src = url;
   }
 
   function openPicturePopup(o) {
@@ -81,16 +106,32 @@
     } else {
       b.appendChild(el('p', 'ra-p', 'This needs a physical deck. Cast the cards on a table, take a photo in the assistant, and it reads the cards it sees.'));
     }
-    var go = el('button', 'ra-btn ra-primary', 'Take a picture in the assistant'); go.type = 'button';
+    // Nov 10 2026 (her ask: open the camera on the tap). A page cannot open the camera inside the
+    // assistant, so the camera opens HERE (one tap), and the photo goes to the assistant attached.
+    var go = el('button', 'ra-btn ra-primary', 'Take a picture'); go.type = 'button';
+    var cam = document.createElement('input');
+    cam.type = 'file'; cam.accept = 'image/*'; cam.setAttribute('capture', 'environment'); cam.hidden = true;
     var note = el('p', 'ra-small'); note.setAttribute('role', 'status');
-    go.addEventListener('click', function () {
-      var text = 'Here is a photo of the cards I cast from my ' + deck + ' deck, in the spread ' + spread +
-        (pos.length ? ' (positions left to right: ' + pos.join(', ') + ')' : '') + '. Please name the cards you see and read them.';
-      askWithPhoto(text, function (m) { note.textContent = m; });
-      note.textContent = 'The assistant is open with your words ready. Tap the paperclip if no camera button appears.';
+    var text = 'Here is a photo of the cards I cast from my ' + deck + ' deck, in the spread ' + spread +
+      (pos.length ? ' (positions left to right: ' + pos.join(', ') + ')' : '') + '. Please name the cards you see and read them.';
+    go.addEventListener('click', function () { cam.click(); });
+    cam.addEventListener('change', function () {
+      var f = cam.files && cam.files[0]; cam.value = '';
+      if (!f) return;
+      note.textContent = 'Getting your photo ready…';
+      shrinkPhoto(f, function (dataUrl) {
+        if (!dataUrl) { note.textContent = 'That photo could not be read. Try again, or add it in the assistant with the paperclip.'; return; }
+        askWithPhoto(text, function (m) { note.textContent = m; }, dataUrl);
+      });
     });
-    b.appendChild(go);
-    b.appendChild(el('p', 'ra-small', 'Tap the paperclip if no camera button appears.'));
+    var inside = el('button', 'ra-link', 'Or take it inside the assistant'); inside.type = 'button';
+    inside.addEventListener('click', function () {
+      askWithPhoto(text, function (m) { note.textContent = m; });
+      note.textContent = 'The assistant is open with your words ready. Tap the paperclip there, then Take photo.';
+    });
+    b.appendChild(go); b.appendChild(cam);
+    b.appendChild(inside);
+    b.appendChild(el('p', 'ra-small', 'You need to be signed in to recursive.eco to send a photo.'));
     b.appendChild(note);
     // Reserved: a "Buy this deck" link goes here later (the owner adds buy links; see print-products.json).
     var slot = el('div', 'ra-slot'); slot.id = 'ra-buy-slot'; slot.setAttribute('data-slot', 'buy-this-deck');
