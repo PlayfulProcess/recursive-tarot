@@ -202,6 +202,8 @@ DOTS_MD = {ph: IB.site_note(k) for k, ph in BP.PLACEHOLDER.items()}
 
 DESCRIPTION = """# Book T — the Golden Dawn's 78 cards
 
+**What this is:** the 78 tarot cards as the Golden Dawn's Book T (about 1888) describes them, each card in Book T's own words. **The pictures are new:** painted in October 2026 with an AI image model, each from Book T's words for that card, not from any old deck.
+
 Book T is the Golden Dawn's own book of the tarot, set down mainly by S. L. MacGregor Mathers
 around 1888 and kept for initiates. Crowley printed it in *The Equinox* I(8), London, 1912. It is
 public domain.
