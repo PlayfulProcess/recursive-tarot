@@ -61,10 +61,10 @@
     var d = SiteDialog.open({ title: o.name || '', className: 'sd-wide' });
     var b = d.body;
     var style = 'display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap';
-    b.innerHTML = '<div class="cd-top" style="' + style + '"></div><div class="cd-text" style="font-family:var(--serif-body,Georgia,serif);font-size:15.5px;line-height:1.65;color:var(--ink-soft,#4a4439);margin-top:14px"><p style="color:var(--mut,#6b6457)">Loading…</p></div>';
+    b.innerHTML = '<div class="cd-top" style="' + style + '"></div><div class="cd-text" style="font-family:var(--serif-body,Georgia,serif);font-size:17px;line-height:1.65;color:var(--ink-soft,#4a4439);margin-top:14px"><p style="color:var(--mut,#6b6457)">Loading…</p></div>';
     var top = b.querySelector('.cd-top'), txt = b.querySelector('.cd-text');
-    var meta = '<div style="flex:1 1 200px;min-width:0;font-family:var(--sans,system-ui);font-size:13px;color:var(--mut,#6b6457)">' +
-      (o.position ? '<div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8a6414">' + esc(o.position) + '</div>' : '') +
+    var meta = '<div style="flex:1 1 200px;min-width:0;font-family:var(--sans,system-ui);font-size:14.5px;color:var(--mut,#6b6457)">' +
+      (o.position ? '<div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8a6414">' + esc(o.position) + '</div>' : '') +
       '<div>' + esc(o.deckLabel || '') + '</div><div class="cd-links" style="margin-top:8px"></div></div>';
     var img = o.image ? '<img src="' + esc(localSrc(o.image)) + '" alt="' + esc(o.name || '') + '" style="flex:0 0 auto;width:min(200px,45%);height:auto;max-height:50vh;object-fit:contain;background:var(--thumb-bg,#faf8f3);border:1px solid var(--line,#d8d2c6);border-radius:8px">' : '';
     top.innerHTML = img + meta;
@@ -72,9 +72,9 @@
     load(o.deckSlug, o.nodeId).then(function (r) {
       if (r.status !== 'ok') { txt.innerHTML = '<p>The card’s text would not load.</p>'; return null; }
       var it = r.item, s = it.sections || {}, keys = sectionKeys(s, o.deckSlug), h = '';
-      if (it.keywords && it.keywords.length) h += '<p style="font-family:var(--sans,system-ui);font-size:12.5px;color:var(--mut,#6b6457)">' + it.keywords.map(esc).join(' · ') + '</p>';
+      if (it.keywords && it.keywords.length) h += '<p style="font-family:var(--sans,system-ui);font-size:14px;color:var(--mut,#6b6457)">' + it.keywords.map(esc).join(' · ') + '</p>';
       keys.forEach(function (k, i) {
-        h += '<h3 style="font-family:var(--sans,system-ui);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a6414;margin:' + (i ? '18px' : '0') + ' 0 4px">' + esc(String(k).replace(/_/g, ' ')) + '</h3>' + md(s[k]);
+        h += '<h3 style="font-family:var(--sans,system-ui);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8a6414;margin:' + (i ? '18px' : '0') + ' 0 4px">' + esc(String(k).replace(/_/g, ' ')) + '</h3>' + md(s[k]);
       });
       txt.innerHTML = h || '<p>This deck has no text for the card yet.</p>';
       return pageFor(o.deckSlug, it);
