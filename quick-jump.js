@@ -49,7 +49,6 @@
     var deckWords = decks.map(function (d) { return split(d.w || d.n); });
     var courseWords = courses.map(function (c) { return split(c.t); });
     var cardsUrl = prefix + 'viewers/cards.html?src=../tarot/';
-    var courseUrl = prefix + 'pages/course-viewer.html?course=';
     var rows = (data.entries || []).map(function (e, n) {
       var deck = e.d != null ? decks[e.d] : null;
       var course = e.c != null ? courses[e.c] : null;
@@ -68,11 +67,11 @@
           sub = 'Every deck, side by side · ' + e.n + ' decks';
           break;
         case 'o':
-          href = courseUrl + course.id;
+          href = course.u;   // the course in recursive.eco Play (search-index.json)
           sub = 'Course';
           break;
         case 'h':
-          href = courseUrl + course.id + '#' + encodeURIComponent(e.h);
+          href = course.u + '&node=' + encodeURIComponent(e.h);
           sub = course.t;
           break;
         default:

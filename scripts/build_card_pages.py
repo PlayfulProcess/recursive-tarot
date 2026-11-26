@@ -154,7 +154,7 @@ def split_waite(text):
 def bookt_meaning(sec):
     """Book T's own text minus its italic provenance line."""
     lines = [b for b in re.split(r"\n\s*\n", sec or "") if b.strip()]
-    if lines and lines[0].strip().startswith("*Book T in its own words"):
+    if lines and lines[0].strip().startswith(("*Book T in its own words", "*Book T, 1912")):
         lines = lines[1:]
     return "\n\n".join(lines).strip()
 
@@ -301,7 +301,7 @@ def build():
                     parts.append(f'<h3>{esc(key)}</h3><div class="prose">{md_paras(b[key])}</div>')
             bt_html = (f'<h2 id="book-t">In the Golden Dawn\'s Book T (1912)</h2>{"".join(parts)}'
                        '<p class="src">Book T as printed in <cite>The Equinox</cite> I(8), 1912, public domain (notes in square brackets are '
-                       'Crowley\'s). The correspondences are this site\'s compilation from Book T. '
+                       'Crowley\'s; ‹ › marks a note of ours). The correspondences are this site\'s compilation from Book T. '
                        f'<a href="../viewers/cards.html?src=../tarot/{BOOKT}/grammar.json&amp;item={esc(c["book_t"]["id"])}">Open it in the Golden Dawn deck</a>.</p>')
         prev_c, next_c = cards[idx - 1], cards[(idx + 1) % 78]
         body = f"""<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">The Recursive Tarot</a> › <a href="../{HUB}">Tarot card meanings</a> › {esc(c['name'])}</nav>
@@ -424,13 +424,13 @@ ECO_IDS = "tarot/_eco_ids.json"
 LEDGER = "docs/rights/image-ledger.json"
 WAITE_III = "research/sources/waite-pictorial-key-part-iii.md"
 PLAY = "https://recursive.eco/play?id="
-CAST = "https://recursive.eco/process?cast="  # the Cast link the site uses (viewers/cards.html, PR #85)
+CAST = "https://recursive.eco/cast/"  # the Cast link the site uses (viewers/cards.html, PR #85)
 GITHUB = "https://github.com/PlayfulProcess/recursive-tarot/blob/main/"
 DRAFT = "<!-- DRAFT copy for PlayfulProcess: new wording, not taken from a grammar. -->"
 # recursive.eco ids confirmed public with the MCP on Oct 20 2026 that are missing from _eco_ids.json's
 # (June) _public_now list. The four one-card overview grammars (cary-sheet, rosenwald-sheet,
 # noblet-tarot, ganjifa) were private then, so their pages carry no Play link.
-ECO_PUBLIC_EXTRA = {"book-t"}
+ECO_PUBLIC_EXTRA = set()  # book-t joined _public_now on Oct 21 2026
 # Decks with their own static pages already, so no deck page: Book T (book-t/) and the
 # Rider-Waite-Smith deck (card/ + tarot-card-meanings.html).
 DECK_SKIP = {BT_DECK, WAITE}
@@ -686,7 +686,7 @@ def build_book_t(files):
 </div>
 <h2 id="book-t">Book T (1912)</h2>
 <div class="prose">{md_paras(bt)}</div>
-<p class="src">Book T as printed in <cite>The Equinox</cite> I(8), 1912, public domain (notes in square brackets are Crowley's).</p>
+<p class="src">Book T as printed in <cite>The Equinox</cite> I(8), 1912, public domain (notes in square brackets are Crowley's; ‹ › marks a note of ours).</p>
 {''.join(parts)}
 {('<h2 id="pictures">Picture sets</h2><ul class="sets">' + sets + '</ul>') if sets else ''}
 </article>
@@ -695,7 +695,7 @@ def build_book_t(files):
 <a href="index.html">All 78</a>
 <a href="{fname(next_n)}" rel="next">{esc(next_n['name'])} →</a>
 </nav>
-<p class="fine">Text: Book T (1912), Waite (1911) and Case (1920), public domain. Pictures and arrangement CC-BY-SA-4.0 (PlayfulProcess).
+<p class="fine">Text: Book T (1912), Waite (1911) and <a href="https://recursive.eco/play?id=2b99b34f-7c83-411b-9430-2a7376bb8134&pane=continuous">Case (1920)</a>, public domain. Pictures and arrangement CC-BY-SA-4.0 (PlayfulProcess).
 Data: <a href="{GITHUB}tarot/{BT_DECK}/grammar.json">tarot/{BT_DECK}/grammar.json</a>.</p>"""
         ld = [{
             "@context": "https://schema.org", "@type": "WebPage", "name": title, "description": desc, "url": url,

@@ -30,7 +30,7 @@ import argparse, html, json, os, re, sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-from import_book_t_1912 import tidy, BOOK_T_TO_DECK, MAJORS, SUITS, RANKS  # noqa: E402
+from import_book_t_1912 import tidy, BOOK_T_TO_DECK, MAJORS, SUITS, RANKS, STRAY, SITE_MARKS, apply_site_marks  # noqa: E402
 import link_glossary as LG  # noqa: E402
 
 SRC = os.path.join(ROOT, 'research', 'sources', 'book-t-equinox-1912.txt')
@@ -46,12 +46,13 @@ BOOK_T_DECK = os.path.join(ROOT, 'tarot', 'book-t', 'grammar.json')
 BOOK_T_HREF = '../viewers/cards.html?src=../tarot/book-t/grammar.json&item='
 BOOK_T_ECO = 'https://recursive.eco/play?id=2000ad96-70c6-4aa4-a6fb-c22cce5e9cc7&pane=cards'
 BOOK_T_FILE = 'https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/book-t/grammar.json'
-COURSE = 'course-viewer.html?course=walking-the-golden-dawn-path'
+COURSE = 'https://recursive.eco/play?id=9befd48e-5c83-48aa-abb2-d865beb06c19&pane=continuous'
 
 PG_A, PG_B = '\ue030', '\ue031'          # page marker: PG_A + "154" + PG_B
 NOTE_A, NOTE_B = '\ue010', '\ue011'      # Crowley's [ ... ]
 CIPHER = '\ue020'
 DOTS10, DOTS6, DOTS9 = '\ue021', '\ue022', '\ue023'   # the little pentacle figures on pp. 180, 181, 197
+MOON = '\ue026'                         # the Moon's sign on p.181 (import_book_t_1912.SITE_MARKS)
 SIC = '\ue024%d\ue025'                   # a "sic" note of this site's, by number (SICS)
 
 # ── Corrections to the transcription, checked against the scan (page in the comment) ──────────
@@ -92,21 +93,13 @@ FIXES = [
     ('Or in Taurus Cancer Libra Sagittarius Aquarius two Swords: 1 of each of the others.',
      'Or in Libra Sagittarius Aquarius Taurus Cancer two wands' + SIC % 2 + ': 1 each of the other suits.'),  # p.175
     ('beginning of the Decanates is', 'beginning of the Decantes is'),                 # p.176, as printed
-    ('symbol  thus, and Libra','symbol Moon thus, and Libra'),                       # p.181 (a crescent)
     ('Chokmah of Vau.', 'Chokmah of HB:V.'),                                          # p.182
 ]
 # "sic" notes: the printed page differs from Book T's own table; shown as this site's note.
 SICS = {1: 'sic: the table above gives Aquarius', 2: 'sic: the table above gives two Swords'}
-# The two pentacle diagrams, which the transcription draws with asterisks over several lines.
-DIAGRAMS = [
-    (r'thus arranged \n\n \* \*\n\n \*\n\n \* \*\n\n \* \*\n\n \*\n\n \* \*\n',
-     'thus arranged ' + DOTS10 + '.\n'),                                              # p.181
-    (r'three each \* \* \n\n\* \*\n\n\* \*\n\n\* \*\n\n\. Above',
-     'three each ' + DOTS6 + '. Above'),                                               # p.197
-    (r'arranged thus (\* ){9}:', 'arranged thus ' + DOTS9 + ':'),                        # p.180
-]
-# Marks the transcription left behind: a stray ">" after a word, a page reference "172}".
-STRAY = [(re.compile(r'(?<=\S)>(?=[\s.,;:]|$)', re.M), ''), (re.compile(r'^\d{3}\}\s*$', re.M), '')]
+# The glyph and the pentacle figures where the page has no words: import_book_t_1912.SITE_MARKS
+# (the Golden Dawn deck and the Book T deck write this site's words there, "‹...›").
+PLACEHOLDER = {'moon': MOON, 'dots10': DOTS10, 'dots6': DOTS6, 'dots9': DOTS9}
 
 # Where each printed page begins (pp. 145-210), as a pattern found in order in the source.
 # p.143 is the title page; p.144 is the coloured plate of the frontispiece (not reproduced).
@@ -161,7 +154,7 @@ INTROS = {
     'front': ("Book T is the Golden Dawn's own book of the 78 cards. Crowley printed it in "
               "*The Equinox* I(8), September 1912, pp. 143–210. This page gives all of it. "
               "Gold numbers in the margin are the printed pages. Notes in square brackets are "
-              "Crowley's. Underlined words open the [glossary](glossary.html) or the card. The pictures "
+              "Crowley's; ‹ › marks a note of ours. Underlined words open the [glossary](glossary.html) or the card. The pictures "
               "beside the cards are Book T's own deck, made for this site: line art traced from AI "
               "paintings prompted from Book T's words (CC BY-SA). The switch at the top shows the "
               "paintings, the iconography (the planet, sign, element and Hebrew letter glyphs "
@@ -230,10 +223,7 @@ def load_source():
         if a not in text:
             raise SystemExit('FIXES: %r not found in the source' % a)
         text = text.replace(a, b)
-    for pat, rep in DIAGRAMS:
-        text, n = re.subn(pat, rep, text)
-        if n != 1:
-            raise SystemExit('DIAGRAMS: %r matched %d times' % (pat, n))
+    text = apply_site_marks(text, PLACEHOLDER)
     for pat, rep in STRAY:
         text = pat.sub(rep, text)
     text = re.sub(r'\nWEH NOTE:.*?\n\n', '\n\n', text, flags=re.S)   # the transcriber's note
@@ -398,6 +388,7 @@ def esc_text(s):
     s = s.replace(DOTS6, dots([2, 2, 2], 'six pentacles in two columns of three'))
     s = s.replace(DOTS9, '<span class="ed" title="A small figure of nine dots on the printed page, not redrawn here">'
                          '&#8249;figure of nine&#8250;</span>')
+    s = s.replace(MOON, '<span class="ed" title="The sign of the Moon on the printed page">&#8249;Moon&#8250;</span>')
     s = s.replace(CIPHER,'<span class="ed" title="Three letters in a cipher script, not reproduced here">'
                           '&#8249;3 cipher letters&#8250;</span>')
     s = PG_RE.sub(lambda m: '<span class="pg" id="p%s" data-p="%s" aria-label="page %s"></span>'
@@ -524,7 +515,9 @@ def load_book_t_pictures():
         if not m:
             continue
         ills = (n.get('metadata') or {}).get('illustrations') or []
-        line = next((i['url'] for i in ills if i.get('is_primary')), n.get('image_url') or '')
+        # line art: the 'Book T deck, SVG' set (the primary picture until Oct 21 2026, when the painting
+        # framed by its symbols became the official one and the page's default)
+        line = next((i['url'] for i in ills if i.get('edition') == 'Book T deck, SVG'), '')
         paint = next((i['url'] for i in ills if 'painting' in (i.get('edition') or '')), '')
         icon = next((i['url'] for i in ills if (i.get('edition') or '').endswith('iconography')), '')
         full = next((i['url'] for i in ills if (i.get('edition') or '').endswith('full imagery')), '')
@@ -541,7 +534,7 @@ BOOK_T_PICS = load_book_t_pictures()
 
 
 def thumb(it, cls='th', size=None):
-    """A card's picture: Book T's own (line art) by default, the painting, the iconography, the full
+    """A card's picture: the official one (the painting framed by its symbols) by default, the line art, the painting, the iconography, the full
     imagery and the Rider-Waite-Smith picture one tap away (the picture switch; data-pic-* carry the five)."""
     rws = it['image_url']
     bt = BOOK_T_PICS.get(it['id'])
@@ -550,7 +543,7 @@ def thumb(it, cls='th', size=None):
                 % (cls, html.escape(rws), html.escape(it['name'])))
     return ('<img class="%s" src="%s" alt="%s" loading="lazy" decoding="async" width="300" height="520" '
             'data-pic-line="%s" data-pic-paint="%s" data-pic-icon="%s" data-pic-full="%s" data-pic-lino="%s" data-pic-psym="%s" data-pic-rws="%s">'
-            % (cls, html.escape(bt['line']), html.escape(it['name']),
+            % (cls, html.escape(bt['psym']), html.escape(it['name']),
                html.escape(bt['line']), html.escape(bt['paint']), html.escape(bt['icon']), html.escape(bt['full']), html.escape(bt['lino']), html.escape(bt['psym']),
                html.escape(rws)))
 

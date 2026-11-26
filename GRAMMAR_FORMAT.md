@@ -31,7 +31,7 @@ A grammar is a single JSON object:
   "tags": ["string"],                  // OPTIONAL — search/filter tags
   "creator_name": "string",            // OPTIONAL — your name or handle
   "creator_link": "string",            // OPTIONAL — your website or profile
-  "is_published": false,               // OPTIONAL — false for drafts
+  "import_visibility": "private",      // OPTIONAL — how it starts in recursive.eco: "private" | "link" (see below)
   "nodes": [ /* node objects */ ]   // REQUIRED — see "Node shape" below
 
   // Optional library-placement fields (see CLAUDE.md "Monad Fields"):
@@ -45,6 +45,33 @@ A grammar is a single JSON object:
   // "_section_roles": { "My Section Name": "affirmation" }
 }
 ```
+
+### Private, Link or Published — `import_visibility`
+
+A grammar in this repository reaches recursive.eco through the repository's sync: a new
+`tarot/<slug>/grammar.json` on `main` is imported on the next push. It arrives in one of the app's
+three states:
+
+| State | Who sees it | In the file |
+|---|---|---|
+| **Private** | only you | `"import_visibility": "private"` |
+| **Link** | anyone with the link; not in Explore or search | `"import_visibility": "link"` |
+| **Published** | everyone: in Explore and search | no field (the repository is Published) |
+
+The field is read **once, when the grammar is first imported**. After that the state is changed in
+the app (the visibility chip), never by the file: a later edit to the file does not publish or hide
+it. A draft deck uses `"link"` to be shareable before it is listed, or `"private"` to stay yours.
+(`is_published` was the old name for this; the app never read it, and it is retired.)
+
+### A course is a grammar
+
+A course is a grammar like any other: one node per lesson, each with one `Content` section in
+Markdown (images, links, tables), read top to bottom in recursive.eco Play's **Continuous** view.
+Set `"default_view": "play"` and `"reading_mode_default": "continuous"`. A video is its own node
+with `metadata.youtube_url` (it plays when tapped); a diagram is an image file in the course's
+folder (`tarot/<slug>/diagrams/`), linked by its full `https://tarot.recursive.eco/…` address.
+Raw HTML (iframes, `<svg>`, `<style>`) does not render there. The site's courses live in
+`tarot/<id>-course/` and the site links to them through `courses-play.js`.
 
 **There is NO top-level `emergences` array.** Level-1 base items AND
 level-2+ composite items ALL live inside `nodes[]`. Composite items
@@ -568,7 +595,6 @@ Each item that has a YouTube clip should have BOTH
   "description": "Just one card.",
   "grammar_type": "tarot",
   "tags": ["tarot"],
-  "is_published": false,
   "nodes": [
     {
       "id": "major-00-fool",
@@ -593,7 +619,6 @@ Each item that has a YouTube clip should have BOTH
   "description": "Curated video study.",
   "grammar_type": "sequence",
   "tags": ["dharma", "study"],
-  "is_published": false,
   "nodes": [
     {
       "id": "clip-01",

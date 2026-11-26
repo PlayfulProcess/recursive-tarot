@@ -44,7 +44,7 @@ projects) and, for the card lookups, a free recursive.eco account.
 **4. Connect recursive.eco** (once per account, not per Project).
 1. In claude.ai, open **Customize**, then **Connectors**.
 2. Click **+ Add**, then **Add custom connector**.
-3. Name it *recursive.eco* and paste the address `https://flow.recursive.eco/api/mcp`. Click
+3. Name it *recursive.eco* and paste the address `https://recursive.eco/api/mcp`. Click
    **Continue**.
 4. Sign in to recursive.eco when it asks, and press **Approve**. There is no token to copy.
 
@@ -89,7 +89,7 @@ draws the card names only.
 ## Links that need no setup
 
 - Each card's page on recursive.eco, with its Connections to the same card in other decks:
-  `https://flow.recursive.eco/g/<deck id>?item=<item id>`.
+  `https://recursive.eco/g/<deck id>?node=<node id>`.
 - The site's [Card Table](../viewers/table.html) draws a typed table of cards from a link
   (`?t=`, see READER.md, "Lay the grid"); its **Copy link** button makes the same kind of link.
 - The [Spread Caster](../viewers/caster-studio.html) loads a spread file from a link

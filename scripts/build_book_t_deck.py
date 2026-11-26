@@ -42,7 +42,138 @@ GD = os.path.join(ROOT, 'tarot', 'golden-dawn-book-t-tarot', 'grammar.json')
 SITE = 'https://tarot.recursive.eco'
 PAGE = SITE + '/pages/book-t.html'
 ILL = 'If ill dignified'
-OWNED = ('Book T (1912)', ILL, "In Book T's table", 'Correspondences')
+# Her Oct 28 2026 word: each card shows its Rider-Waite-Smith counterpart, linked to that card in the
+# RWS deck on recursive.eco, with Pamela Colman Smith's picture (1909, public domain). The RWS deck and
+# the GD deck share card ids; Book T's own 1912 list pairs its Prince with the King and its Princess with
+# the Knave, and its Key numbers 8 and 11 with Justice and Strength, which gd_id already follows.
+RWS = os.path.join(ROOT, 'tarot', 'rider-waite-smith-pictorial-key', 'grammar.json')
+RWS_APP_ID = '48b91a88-13ad-4e7f-934c-ab01d125fc8a'
+RWS_SECTION = 'Rider-Waite-Smith (1909)'
+OWNED = ('Book T (1912)', ILL, "In Book T's table", 'Correspondences', RWS_SECTION)
+
+
+
+# The printed booklet's opening (Nov 10 2026): how to read with this deck. Book T's rule is quoted
+# from the 1912 text as the deck description quotes it; the rest is this site's own plain guidance.
+# The credits card's words (the Oct 28 2026 colophon card's, print/book-t-proof/colophon-900x1500.png).
+PRINT_CREDITS = """The Golden Dawn's own cards.
+
+The text: Book T, the Golden Dawn's tarot manuscript, as printed in The Equinox I(8), 1912. Public domain.
+
+The paintings: AI-assisted, painted from Book T's own words; prompts by PlayfulProcess.
+
+The frames: glyphs of planets, signs, elements and Hebrew letters drawn for this deck, set where Book T places them.
+
+The order: Book T's own: four Aces, sixteen courts, thirty-six small cards from Leo, twenty-two Keys. No reversals.
+
+Prompts, glyphs and design: PlayfulProcess. Licensed CC BY-SA 4.0: share and adapt with credit, under the same licence."""
+
+BOOKLET_FRONT = """These are Book T's 78 cards in the Golden Dawn's own order: four Aces, sixteen court cards, thirty-six small cards from Leo, twenty-two Keys. Each is painted from Book T's words and framed with the symbols Book T places on it. The words for each card in this booklet are Book T's own, as printed in The Equinox in 1912.
+
+Read to know yourself, not to surrender yourself. A card starts a conversation with what is already alive in you, so hold what you find loosely, author its meaning yourself, and keep the choice your own. Relate to the card; never obey it.
+
+Three cards. Shuffle, hold your question if you have one, and lay three cards left to right. The first is Structures: the patterns or beliefs under the situation. The second is Process: how things are unfolding now. The third is Possibilities: resources or views to consider.
+
+Book T has no reversed cards. A card's meaning turns on its dignity, and its dignity on the cards beside it. The same element strengthens it. Book T names the other pairs by their suits: "Swords are inimical to Pentacles. Wands are inimical to Cups. Swords are friendly with Cups and Wands. Wands are friendly with Swords and Pentacles." And "if a card fall between two other which are mutually contrary, it is not much affected by either." Where a card's words say "if ill dignified", read that side when its neighbours oppose it.
+
+Look at the painting before you read the words. Ask what you recognise in it, what you resist, and what you would choose.
+
+Scan the code on the cover to read your own cards with a photo and the recursive.eco assistant, to lay three cards on screen when your deck is not with you, or to read the whole of Book T: tarot.recursive.eco/printed"""
+
+
+# ── The printed booklet's words (Nov 10 2026) ───────────────────────────────────────────────────────
+# TGC's tarot booklet holds 40 pages; Book T's whole text for 78 cards needs about 52. The card shows
+# its picture, so the booklet keeps each card's MEANING in Book T's own words and leaves out the
+# passages that describe the picture: Keys whole; Aces their "It implies / symbolizes" lines; the
+# small cards what follows the line naming their decan's planet and sign; court cards their
+# "He is / She is" sentences and their element and title lines. Angel names and Hebrew letters are
+# left out (the print font may lack them); a bracketed gloss beside a letter is kept. Then the
+# card's "If ill dignified" words. Stored as metadata.print_booklet; recursive.eco's print tool
+# prefers it to a section for the booklet. The whole text stays on the card and online.
+HEB = re.compile(r'[֐-׿]')
+def paras(t):
+    ps = [p.strip() for p in re.split(r'\n\s*\n', t) if p.strip()]
+    return [p for p in ps if not p.startswith('*Book T, 1912')]
+def caps_start(p):
+    ws = re.sub(r'^[^A-Za-z]+', '', p).split(' ')[:2]
+    return any(len(w) >= 2 and w.isupper() for w in ws)
+def sentences(p):
+    return [s.strip() for s in re.split(r'(?<=[.!?])\s+(?=[A-Z])', p) if s.strip()]
+def _brief(node):
+    t = node['sections']['Book T (1912)']
+    ps = paras(t)
+    nid = node['id']
+    out = []
+    if nid.startswith('key-'):
+        out = ps
+    elif nid.endswith('-ace'):
+        out = [p for p in ps if re.match(r'^It (implies|symboli[sz]es|represents|shows|signifies|is the)', p) and 'surmounted' not in p] or ps[-1:]
+    elif any(nid.endswith(s) for s in ('-knight', '-queen', '-prince', '-princess')):
+        for p in ps:
+            if p.startswith('Note that the Kings'): continue
+            if caps_start(p):
+                out += [s for s in sentences(p) if re.match(r'^(He|She|They) (is|are)\b|^(If|When|Unless)\b', s)]
+            elif re.match(r'^(He|She|They) (is|are)\b|^(If|When|Unless)\b|^(Fire|Water|Air|Earth) of (Fire|Water|Air|Earth)|^(The )?(King|Queen|Prince|Princess|Emperor|Empress)\b', p):
+                out.append(p)
+    else:
+        MARK = re.compile(r'(Saturn|Jupiter|Mars|Sun|Venus|Mercury|Moon)\b[^.]{0,40}\b(Aries|Taurus|Gemini|Cancer|Leo|Virgo|Libra|Scorpio|Sagittarius|Capricorn|Aquarius|Pisces)|(Aries|Taurus|Gemini|Cancer|Leo|Virgo|Libra|Scorpio|Sagittarius|Capricorn|Aquarius|Pisces)\b[^.]{0,40}\b(Saturn|Jupiter|Mars|Sun|Venus|Mercury|Moon)\b|representing the Decan')
+        idx = max([i for i, p in enumerate(ps) if MARK.search(p) and not p.startswith(('This Decan', 'Herein'))] or [0])
+        sents = sentences(ps[idx])
+        k = max([j for j, x in enumerate(sents) if MARK.search(x)] or [-1])
+        head = ' '.join(sents[k + 1:])
+        out = ([head] if head else []) + ps[idx + 1:]
+    kept = []
+    for p in out:
+        if p.startswith(('Herein rule', 'This Decan', 'Herein')) or p.endswith('thus arranged.'): continue
+        if HEB.search(p):
+            m = re.search(r'\(([^)]+)\)', p)
+            if m: kept.append(m.group(1).strip().rstrip('.') + '.')
+            continue
+        kept.append(p)
+    out = kept
+    return '\n\n'.join(out)
+
+def booklet_meaning(nid, sections):
+    text = _brief({'id': nid, 'sections': sections})
+    ill = sections.get(ILL, '')
+    ill = '\n\n'.join(p.strip() for p in re.split(r'\n\s*\n', ill) if p.strip() and not p.strip().startswith('*'))
+    return (text + ('\n\n' + ill if ill else '')).strip()
+
+def rws_section(node):
+    """The RWS card beside a Book T card: a link to it in the RWS deck, and its picture (linked too)."""
+    name = re.sub(r'^\d+ — ', '', node['name'])
+    url = 'https://recursive.eco/play?id=%s&mode=cards&node=%s' % (RWS_APP_ID, node['id'])
+    line = "Waite and Smith's card for it: [%s](%s), drawn by Pamela Colman Smith, 1909 (public domain)." % (name, url)
+    img = node.get('image_url') or ''
+    return line + ('\n\n[![%s, Rider-Waite-Smith](%s)](%s)' % (name, img, url) if img else '')
+# Her Oct 28 2026 word: the card shows Book T's words only; Crowley's notes ("[...]") and our notes
+# ("‹...›", where the printed page has a glyph or a figure) leave the cards and are listed once, in the
+# deck's description, so a reader and the assistant still know of them.
+HEADER = "*Book T, 1912 · [the original](https://tarot.recursive.eco/pages/book-t.html), public domain*"
+NOTE_RE = re.compile(r'\s*(\[(?:[A-Z][^\]]*)\](?!\()|‹[^›]*›)')
+
+
+def take_notes(card, text, notes):
+    """The text without its notes; each note is added to `notes` as (card, kind, note)."""
+    def cut(m):
+        n = m.group(1)
+        notes.append((card, 'Crowley' if n.startswith('[') else 'ours', n[1:-1]))
+        return ''
+    return re.sub(r' +([.,;:])', r'\1', NOTE_RE.sub(cut, text))
+
+
+def notes_md(notes):
+    rows = []
+    for card, kind, n in notes:
+        if kind == 'Crowley':
+            rows.append('- **%s**: Crowley\'s note, "%s"' % (card, n))
+        else:
+            fig = n.split(': ', 1)[1] if ': ' in n else None
+            rows.append('- **%s**: the printed page has %s here' % (card, 'a figure, %s,' % fig if fig else 'the %s glyph' % n))
+    return ('\n\n**Notes on the text.** Left off the cards above, so each card reads as Book T printed it:\n\n'
+            + '\n'.join(rows) + '\n')
+
+
 ILL_HEADER = "*Book T (1912): its words for the card when it falls ill dignified, set apart from its text*"
 
 # The transcription's key names, where the 1912 scan reads otherwise (p.151).
@@ -65,11 +196,13 @@ KEY_ELEMENT_OF = {'Saturn': 'Earth', 'Jupiter': 'Air', 'Mars': 'Fire', 'Sun': 'F
                   'Fire': 'Fire', 'Water': 'Water', 'Air': 'Air', 'Earth': 'Earth'}
 PLANETS = ('Saturn', 'Jupiter', 'Mars', 'Sun', 'Venus', 'Mercury', 'Moon')
 SUIT_NAME = {'wands': 'Wands', 'cups': 'Cups', 'swords': 'Swords', 'pentacles': 'Pentacles'}
-DOTS_MD = {BP.DOTS10: '*(a figure on the printed page: ten pentacles in rows of 2, 1, 2, 2, 1, 2)*',
-           BP.DOTS6: '*(a figure on the printed page: six pentacles in two columns of three)*',
-           BP.DOTS9: '*(a figure of nine dots on the printed page)*'}
+# The page's placeholders for a glyph or figure → this site's words, marked "‹...›" (the same
+# words the Golden Dawn deck carries: import_book_t_1912.SITE_MARKS).
+DOTS_MD = {ph: IB.site_note(k) for k, ph in BP.PLACEHOLDER.items()}
 
 DESCRIPTION = """# Book T — the Golden Dawn's 78 cards
+
+**What this is:** the 78 tarot cards as the Golden Dawn's Book T (about 1888) describes them, each card in Book T's own words. **The pictures are new:** painted in October 2026 with an AI image model, each from Book T's words for that card, not from any old deck.
 
 Book T is the Golden Dawn's own book of the tarot, set down mainly by S. L. MacGregor Mathers
 around 1888 and kept for initiates. Crowley printed it in *The Equinox* I(8), London, 1912. It is
@@ -80,11 +213,19 @@ Rider-Waite-Smith deck. Waite and Smith drew their pictures in 1909, from inside
 and those pictures sit in a deck of their own,
 [Golden Dawn Tarot — Book T with Rider-Waite-Smith Imagery](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/golden-dawn-book-t-tarot/grammar.json).
 
-**Pictures (Oct 10 2026).** Every card has a first picture, made for now and meant to be improved:
-an AI painting prompted from Book T's own words for that card, traced into line art, with the
-card's name set as text under it. Book T describes no picture for the twenty-two Keys, so their
+**Pictures (Oct 21 2026).** Every card is painted, with its Golden Dawn symbols (element, sign or
+planet, Hebrew letter) drawn on the card and its name set as text under it. Each painting was
+prompted from Book T's own words for that card; the earlier line art, iconography and linocut sets
+stay under the sidebar's Selections → Pictures. Book T describes no picture for the twenty-two Keys, so their
 prompts start from each Key's title. Each prompt, beside the Book T passage it comes from, is in
 [the prompts file](https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/book-t/PROMPTS.md).
+
+**Decks painted from Book T.** Book T describes the cards in words; the printed Golden Dawn decks are
+later painters' readings of it, listed on [one page](https://tarot.recursive.eco/pages/golden-dawn-decks.html).
+The first complete one, Robert Wang's *Golden Dawn Tarot* (1977–78), was painted under Israel
+Regardie's direction. Wang later called his own figures "badly drawn, strange little wooden
+figures" and turned to a Jungian deck instead (his autobiography, *Expelled from Nursery School*,
+2011, p. 20, [archived PDF](https://web.archive.org/web/2016/http://robertwangart.com/Expelled%20From%20Nursery%20School.pdf)).
 
 ## How the cards are set out
 
@@ -100,20 +241,28 @@ prompts start from each Key's title. Each prompt, beside the Book T passage it c
 - **Court.** Knight, Queen, Prince, Princess. Book T's Knight rides a horse; its Prince drives a
   chariot; its Princess stands.
 
-Every card carries the 1912 text, word for word, with Crowley's notes in square brackets. The
+Every card carries the 1912 text, word for word. Crowley's few notes, and the places where the
+printed page has a glyph or a figure instead of words, are kept off the cards and listed under
+*Notes on the text* at the end of this description. The
 whole book reads as one page at [Book T (1912)](https://tarot.recursive.eco/pages/book-t.html).
+
+Watch the path walked: [the Golden Dawn Path](https://tarot.recursive.eco/pages/golden-dawn-path.html) lights the Tree of Life step by
+step, down the Lightning Flash and up the Path of the Serpent, each Key on its path with its words here.
 
 **Beside Book T (Oct 18 2026).** Two other public-domain writers from the Order's line sit under
 it, each in a section of its own that names them: A. E. Waite, a member of the Golden Dawn, on
 every card (*The Pictorial Key to the Tarot*, 1911; he describes the Rider-Waite-Smith picture),
-and Paul Foster Case on each Key's Hebrew letter (*An Introduction to the Study of the Tarot*,
-1920). Book T's own words are always the first section.
+and Paul Foster Case on each Key's Hebrew letter ([*An Introduction to the Study of the Tarot*,
+1920](https://recursive.eco/play?id=2b99b34f-7c83-411b-9430-2a7376bb8134&pane=continuous), the whole booklet). Book T's own words are always the first section.
 
 **Reading by the elements (Oct 20 2026).** Book T has no reversed cards. In the Golden Dawn's
 way of reading, a card's meaning turns on its dignity, and its dignity on the cards beside it: the
-same element strengthens it, a friendly one (Fire with Air, Water with Earth) dignifies it well, a
-contrary one (Fire with Water, Air with Earth) leaves it ill dignified, and any other pairing is
-neutral. Each card carries its element (`metadata.element`). A small card or an Ace has its suit's:
+same element strengthens it; Book T names the other pairs by their suits: "Swords are inimical to
+Pentacles. Wands are inimical to Cups. Swords are friendly with Cups and Wands. Wands are friendly
+with Swords and Pentacles." So the enemies are Air and Earth, Fire and Water; Air is friendly with
+Water and with Fire, Fire with Air and with Earth; Book T does not pair Water with Earth either way.
+"If a card fall between two other which are mutually contrary, it is not much affected by either."
+Each card carries its element (`metadata.element`). A small card or an Ace has its suit's:
 Wands Fire, Cups Water, Swords Air, Pentacles Earth. A court card is an element of an element (the
 Queen of Wands is Water of Fire, kept as `element_in_element`); its suit's element, the second
 word, is the one the neighbour rule reads, so the Queen of Wands reads as Fire. A Key has its
@@ -121,8 +270,8 @@ attribution's element: the three elemental Keys their own (the Fool Air, the Han
 Judgment Fire), a sign Key its sign's triplicity, and a planet Key the planet's temperament in the
 old astrology: Saturn Earth, Jupiter Air, Mars and the Sun Fire, Venus and the Moon Water, Mercury
 Air. That planet table is our choice; the tradition varies. Where Book T gives a card's meaning
-when ill dignified, those words stand in a section of their own, *If ill dignified*, so a reading
-can show them first.
+when ill dignified, those words stand in a section of their own, *If ill dignified*. How a card
+comes ill dignified, in Book T's own words: [Dignities](https://tarot.recursive.eco/pages/glossary.html#dignities).
 
 **Where the pictures come from:** what survives of the Order's own cards, the published Golden
 Dawn decks, and their rights: [Sources: Book T](https://tarot.recursive.eco/viewers/cards.html?src=../tarot/sources/grammar.json&item=sel-deck-book-t).
@@ -288,11 +437,12 @@ def with_rule_degrees(text, rules):
 
 def build(prev):
     text = corrected_text()
-    words = IB.parse(text)                      # verbatim card texts, keyed by the GD deck's ids
+    words = IB.parse(text, raw=False)                      # verbatim card texts, keyed by the GD deck's ids
     rows = titles(text)
     gd = {it['id']: it for it in json.load(open(GD, encoding='utf-8'))['nodes']}
+    rws = {it['id']: it for it in json.load(open(RWS, encoding='utf-8'))['nodes']}
     keep = {it['id']: it for it in (prev or {}).get('nodes', [])}
-    items = []
+    items, notes = [], []
     for no in range(1, 79):
         r, gid = rows[no], gd_id(rows[no])
         g = gd[gid]
@@ -358,12 +508,16 @@ def build(prev):
         row += '\n\n[Read it on the 1912 page](%s#%s)' % (PAGE, gid)
         nid = new_id(r)
         text_body, ill = split_ill(body)
-        sections = {'Book T (1912)': IB.HEADER + '\n\n' + text_body}
+        text_body = take_notes(title, text_body, notes)
+        ill = [take_notes(title, x, notes) for x in ill]
+        sections = {'Book T (1912)': HEADER + '\n\n' + text_body}
         if ill:
             sections[ILL] = ILL_HEADER + '\n\n' + '\n\n'.join(ill)
+        md['print_booklet'] = booklet_meaning(nid, sections)
         sections.update({
             "In Book T's table": row,
             'Correspondences': with_rule_degrees(g['sections']['Correspondences'], md.get('rules')),
+            RWS_SECTION: rws_section(rws[gid]),
         })
         item = {'id': nid, 'name': title, 'sort_order': no - 1, 'category': category,
                 'keywords': [k for k in dict.fromkeys(kw) if k], 'image_url': '',
@@ -404,7 +558,7 @@ def build(prev):
                     'section': 'Book T (1912)', 'rule': 'one source per deck — see GRAMMAR_FORMAT.md',
                     'built_by': 'scripts/build_book_t_deck.py'},
         'name': 'Book T — The Golden Dawn\'s 78 Cards',
-        'description': DESCRIPTION,
+        'description': DESCRIPTION.rstrip('\n') + notes_md(notes),
         'grammar_type': 'tarot',
         'provenance': 'record',
         'creator_name': 'PlayfulProcess',
@@ -415,7 +569,8 @@ def build(prev):
         'roots': ['western-esoteric', 'mysticism'],
         'shelves': ['wonder', 'mirror'],
         'worldview': 'esoteric',
-        'is_published': False,
+        # Private on its first import into recursive.eco (is_published retired Oct 23 2026).
+        'import_visibility': 'private',
         '_community_folder': 'tarot',
         '_community_slug': 'book-t',
         'image_credit': "AI paintings prompted from Book T's own words, traced to line art by PlayfulProcess (Oct 2026); CC BY-SA 4.0. Prompts and sources: tarot/book-t/PROMPTS.md.",
@@ -423,15 +578,24 @@ def build(prev):
                      'year_label': 'c. 1888 · printed 1912',
                      # How a reading reads this deck (Oct 20 2026): no reversals; each card's dignity
                      # comes from the elements of the cards beside it. recursive.eco reads this key.
-                     'reading_rule': 'elemental-dignities'},
+                     'reading_rule': 'elemental-dignities',
+                     # The printed deck (Nov 10 2026, her ask: "a booklet with how to interpret and a QR
+                     # code"). recursive.eco's print tool reads metadata.print: the QR goes on the
+                     # credits card, the booklet cover and the tuck box; booklet_front opens the booklet.
+                     'print': {
+                         'qr': {'image': 'https://tarot.recursive.eco/print/book-t/qr-printed.png',
+                                'caption': 'Read your cards with a photo, or learn more: tarot.recursive.eco/printed'},
+                         'booklet_front': BOOKLET_FRONT,
+                         'credits': PRINT_CREDITS,
+                     }},
         'nodes': items,
     }
     if prev:                                       # keep deck-level edits made after the first build
-        for k in ('cover_image_url', 'is_published', 'image_credit'):
+        for k in ('cover_image_url', 'image_credit'):
             if k in prev and prev[k] != g[k] and prev[k] not in ('', None):
                 g[k] = prev[k]
         for k, v in prev.items():
-            if k not in g:
+            if k not in g and k != 'is_published':   # retired: import_visibility says it
                 g[k] = v
     return g
 

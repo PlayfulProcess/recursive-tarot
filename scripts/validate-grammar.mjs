@@ -9,13 +9,18 @@
  *   1. valid JSON;
  *   2. required fields present (name: non-empty string, nodes: array);
  *   3. NO top-level field present on the base branch is missing in the PR head
- *      — the silent-overwrite guard (the Visconti-Sforza bug). New files skip (3).
+ *      — the silent-overwrite guard (the Visconti-Sforza bug). New files skip (3);
+ *      a field in RETIRED (the format dropped it) may go.
  * Exits non-zero on any failure so the PR check goes red.
  */
 import { execSync } from 'node:child_process';
 import { readFileSync, existsSync } from 'node:fs';
 
 const baseRef = process.argv[2] || 'origin/main';
+
+// Fields the format retired: removing one is the point, not a silent overwrite.
+// is_published (Oct 23 2026): the app never read it; `import_visibility` says Private / Link.
+const RETIRED = new Set(['is_published']);
 
 function sh(cmd) {
   return execSync(cmd, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
@@ -62,7 +67,7 @@ for (const file of changed) {
   let base = null;
   try { base = JSON.parse(sh(`git show ${baseRef}:${file}`)); } catch { /* new file → no base */ }
   if (base && typeof base === 'object') {
-    const dropped = Object.keys(base).filter(k => !(k in head));
+    const dropped = Object.keys(base).filter(k => !(k in head) && !RETIRED.has(k));
     if (dropped.length) {
       errors.push(`${file}: would DROP top-level field(s) present on base: ${dropped.join(', ')} — merge onto the existing file instead of replacing it`);
     }

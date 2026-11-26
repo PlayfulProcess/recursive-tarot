@@ -45,9 +45,8 @@ What gets written:
   * `metadata.image_source` on every item that has an `image_url` — that
     item's own upstream file page or folio page. Exact, per card.
 
-`image_credit` stays a **string**: `viewers/course-embeds.js` and
-`pages/course-viewer.html` both read it as one (`(dg && dg.image_credit) ||
-…`), and `GRAMMAR_FORMAT.md` says deck-level credit is stated once,
+`image_credit` stays a **string**: the old course galleries read it as one
+(both retired Oct 23 2026), and `GRAMMAR_FORMAT.md` says deck-level credit is stated once,
 factually. Only `belgian-tarot`'s is rewritten, because "Reproductions in the
 public domain (Vandenborre / Belgian type)" names no archive at all.
 

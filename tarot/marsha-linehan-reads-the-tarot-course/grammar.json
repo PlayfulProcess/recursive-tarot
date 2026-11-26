@@ -13,16 +13,22 @@
   "description": "The second voice in the series. Where Kant casts from pure reason and duty, DBT — Dialectical Behavior Therapy, inspired by Marsha Linehan, who built it out of surviving her own anguish — casts from wise mind: the synthesis of reason and emotion, the dialectic of acceptance and change. A way to pick up the cards that Kant's austerity leaves out.",
   "grammar_type": "custom",
   "creator_name": "PlayfulProcess",
-  "default_view": "course",
+  "default_view": "play",
+  "reading_mode_default": "continuous",
   "provenance": "reference",
+  "cover_image_url": "https://tarot.recursive.eco/tarot/vieville-tarot/images/c21.jpg",
+  "tags": [
+    "tarot",
+    "course",
+    "the-reading-voices"
+  ],
   "metadata": {
     "common_name": "How Could DBT Read the Tarot?",
-    "category": "reference",
-    "source_mdx": "course/marsha-linehan-reads-the-tarot.mdx"
+    "category": "course"
   },
-  "_generated": true,
-  "_built_by": "scripts/course_to_grammar.py",
-  "_source_mdx": "course/marsha-linehan-reads-the-tarot.mdx",
+  "_generated": false,
+  "_built_by": "Converted once from course/marsha-linehan-reads-the-tarot.mdx on 2026-10-23; this file is the source now (edit it, or the grammar in recursive.eco).",
+  "_source_mdx": "course/marsha-linehan-reads-the-tarot.mdx (retired; in the repository's history)",
   "nodes": [
     {
       "id": "lesson-01-introduction",
@@ -30,7 +36,7 @@
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "> *\"I was in hell. And I made a vow: when I get out, I'm going to come back and get others out of here.\"*\n>\n> — **Marsha Linehan**, recalling the locked ward where, as a young woman, she was one of the most disturbed patients — and out of which she would build a therapy that has kept countless people alive\n\nThis is the second voice in a series, and it is here to argue with the first. In [How Could Kant Read the Tarot?](course-viewer.html?course=kant-and-the-tarot) we asked the philosopher of pure reason what it means to act on the cards, and got a austere, bracing answer: act from duty, never surrender your autonomy, hold the deck as a gate and never as a fate. It is true, and it is cold. Kant splits reason from emotion and crowns reason; he legislates morality from a realm above the body. The course ended by admitting that the splitting is exactly where its author steps off.\n\nSo here is the counterweight — and not an abstract one. Marsha Linehan revealed in 2011 what her colleagues had never known: the treatment she invented, **Dialectical Behavior Therapy**, came out of her *own* survival. As a teenager she was institutionalised, misdiagnosed, given electroconvulsive therapy and isolation, and recorded as one of the most self-destructive patients on the ward. What pulled her through was not a technique but a vow to come back for others — and what she built when she came back is a way of being a person that does not split reason from feeling, or acceptance from change. This lens is inspired by that work; it is my reading of DBT, not her words and not her endorsement. It is, I think, a truer way to pick up a deck of cards. Read the [history course](course-viewer.html?course=history-of-tarot) first if you have not; this one assumes the cards are a gate, and asks how a *whole* person holds it."
+        "Content": "> *\"I was in hell. And I made a vow: when I get out, I'm going to come back and get others out of here.\"*\n>\n> — **Marsha Linehan**, recalling the locked ward where, as a young woman, she was one of the most disturbed patients — and out of which she would build a therapy that has kept countless people alive\n\nThis is the second voice in a series, and it is here to argue with the first. In [A Kantian View on Reading the Tarot](https://recursive.eco/play?id=f3ae903c-bbce-4dcd-b773-746edf7c09cd&pane=continuous) we asked the philosopher of pure reason what it means to act on the cards, and got a austere, bracing answer: act from duty, never surrender your autonomy, hold the deck as a gate and never as a fate. It is true, and it is cold. Kant splits reason from emotion and crowns reason; he legislates morality from a realm above the body. The course ended by admitting that the splitting is exactly where its author steps off.\n\nSo here is the counterweight — and not an abstract one. Marsha Linehan revealed in 2011 what her colleagues had never known: the treatment she invented, **Dialectical Behavior Therapy**, came out of her *own* survival. As a teenager she was institutionalised, misdiagnosed, given electroconvulsive therapy and isolation, and recorded as one of the most self-destructive patients on the ward. What pulled her through was not a technique but a vow to come back for others — and what she built when she came back is a way of being a person that does not split reason from feeling, or acceptance from change. This lens is inspired by that work; it is my reading of DBT, not her words and not her endorsement. It is, I think, a truer way to pick up a deck of cards. Read the [history course](https://recursive.eco/play?id=4f954864-6889-4bf7-8b2e-64e313066444&pane=continuous) first if you have not; this one assumes the cards are a gate, and asks how a *whole* person holds it."
       }
     },
     {
@@ -39,7 +45,19 @@
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "Linehan draws three circles. **Reasonable mind** is the part that thinks in facts, logic, plans — Kant would recognise it instantly; it is nearly all he trusts. **Emotion mind** is the part that decides and judges from how it feels — the part Kant treats as mere inclination, to be overruled. And where the two overlap she draws a third: **wise mind**, *\"that part of each person that can know and experience truth… It is almost always quiet. It has a certain peace.\"* It is not reason winning over emotion. It is the two held together until something deeper than either speaks.\n\n<div style=\"position:relative;width:100%;padding-bottom:56.25%;margin:1.6rem 0;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;background:#0a0712\">\n  <iframe src=\"https://www.youtube-nocookie.com/embed/X_BmPxd0Eiw\" title=\"Dr. Marsha Linehan Teaches Wise Mind\" loading=\"lazy\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;border:0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n</div>\n\n*Marsha Linehan teaching wise mind — [the source, in her own voice](https://www.youtube.com/watch?v=X_BmPxd0Eiw).*\n\nThis is the whole quarrel with Kant in one diagram. He would have you read a card with reasonable mind alone, on guard against the feeling it stirs. Linehan would have you notice the feeling *and* the facts, and wait for the quiet third thing. When a card lands and something in your chest moves — that is data, not noise. Wise mind is where you read from."
+        "Content": "Linehan draws three circles. **Reasonable mind** is the part that thinks in facts, logic, plans — Kant would recognise it instantly; it is nearly all he trusts. **Emotion mind** is the part that decides and judges from how it feels — the part Kant treats as mere inclination, to be overruled. And where the two overlap she draws a third: **wise mind**, *\"that part of each person that can know and experience truth… It is almost always quiet. It has a certain peace.\"* It is not reason winning over emotion. It is the two held together until something deeper than either speaks."
+      }
+    },
+    {
+      "id": "lesson-02-wise-mind-the-synthesis-kant-split-video",
+      "name": "Wise mind — the synthesis Kant split — video",
+      "category": "lesson",
+      "keywords": [],
+      "metadata": {
+        "youtube_url": "https://www.youtube.com/watch?v=X_BmPxd0Eiw"
+      },
+      "sections": {
+        "Content": "*Video: Dr. Marsha Linehan Teaches Wise Mind*\n\n*Marsha Linehan teaching wise mind — [the source, in her own voice](https://www.youtube.com/watch?v=X_BmPxd0Eiw).*\n\nThis is the whole quarrel with Kant in one diagram. He would have you read a card with reasonable mind alone, on guard against the feeling it stirs. Linehan would have you notice the feeling *and* the facts, and wait for the quiet third thing. When a card lands and something in your chest moves — that is data, not noise. Wise mind is where you read from."
       }
     },
     {

@@ -1,0 +1,712 @@
+{
+  "_github_url": "https://github.com/PlayfulProcess/recursive-tarot/blob/main/tarot/tarocco-siciliano/grammar.json",
+  "_github_source_url": "https://raw.githubusercontent.com/PlayfulProcess/recursive-tarot/main/tarot/tarocco-siciliano/grammar.json",
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": [
+      {
+        "name": "Sicilian card-making tradition",
+        "date": "17th c. onward",
+        "note": "The Tarocco Siciliano pattern (63 cards)"
+      },
+      {
+        "name": "Wikipedia, \"Tarocco Siciliano\"",
+        "date": "revision 1381039644, read 2026-10-23",
+        "note": "Trump order, names and notes (CC BY-SA 4.0), paraphrased"
+      },
+      {
+        "name": "pagat.com (John McLeod)",
+        "date": "documentary",
+        "note": "Composition of the pack, history, card values"
+      },
+      {
+        "name": "Wikimedia Commons",
+        "date": "1966 / 2016 / 2021",
+        "note": "Modiano scans (filed PD-old-70); photographs by Countakeshi and Riccardo ricceri (CC BY-SA 4.0)"
+      },
+      {
+        "name": "PlayfulProcess",
+        "date": "2026",
+        "note": "Grammar architecture and summaries"
+      }
+    ]
+  },
+  "name": "Tarocco Siciliano — the Sicilian Tarot",
+  "description": "# Tarocco Siciliano\n\n## At a glance\n\nThe tarot pack of Sicily, still used for the game of Sicilian tarocchi. It has 63 cards: twenty numbered trumps,\nthe Miseria below them, the Fool (the Fugitive), and four suits in which only the cards from 5 to 10 and the four\ncourts remain, with a 4 kept in coins [@web_pagat_sicilian]. A 64th card, the ace of coins, was added in the\n19th century to carry the tax stamp [@web_pagat_sicilian].\n\n## Where it comes from\n\nTarot reached Sicily in the mid-17th century, probably from Rome, as the 97-card Gallerini (the Minchiate) and a\n78-card tarocchi; by the 1780s the pack was being shortened, and the 63-card pack became the standard\n[@web_pagat_sicilian]. Several trumps borrow their pictures from the Minchiate [@web_wp_tarocco_siciliano].\n\n## What is its own\n\n- **Trumps found nowhere else:** Miseria, a chained beggar below trump 1; Constancy (4) with her flag; the Ship (14);\n  Atlas with the globe (19); Jupiter as the highest trump (20). There is no Devil [@web_wp_tarocco_siciliano].\n- **Names lost:** players call trumps 2 to 15 by number; only the old names of 4, 14 and 15 are known\n  [@web_wp_tarocco_siciliano].\n- **Women knaves:** the lowest court in each suit is a maid, so the pack has two ranks of women\n  [@web_wp_tarocco_siciliano].\n- **Portuguese suits:** knobbly clubs and straight swords that cross, the last tarot with this form of the Latin suits\n  [@web_wp_tarocco_siciliano].\n\n## In this library\n\nThe 21 trumps (twenty numbered, and the Miseria) and the Fool, with pictures where an open one exists. The 41 suit cards are still to be added.\n\n## Where the pictures come from\n\nFive trumps (Miseria, Constancy, Ship, Moon, Jupiter) are scans of a 1966 Modiano pack, filed on Wikimedia Commons as\npublic domain (PD-old-70); the pattern itself settled in the early 19th century. A printed pack from 1966 is a weak\ncase for public domain, so these are listed among the flagged images. The Fool and the cover are photographs by\nWikimedia users under CC BY-SA 4.0 (Riccardo ricceri; Countakeshi). The other trumps have no open picture yet.",
+  "grammar_type": "tarot",
+  "provenance": "record",
+  "creator_name": "PlayfulProcess",
+  "creator_link": "https://recursive.eco",
+  "cover_image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/cover.jpg",
+  "image_credit": "Cover: \"Tarocco Siciliano.png\" by Countakeshi, Wikimedia Commons, CC BY-SA 4.0. Card pictures: see each card.",
+  "tags": [
+    "tarot",
+    "tarocco-siciliano",
+    "sicily",
+    "a-order",
+    "63-cards",
+    "history",
+    "game",
+    "tarocchi"
+  ],
+  "roots": [
+    "renaissance"
+  ],
+  "shelves": [
+    "wonder",
+    "mirror"
+  ],
+  "worldview": "historical",
+  "is_published": true,
+  "open_to_community": true,
+  "default_view": "cards",
+  "_community_folder": "tarot",
+  "_community_slug": "tarocco-siciliano",
+  "metadata": {
+    "common_name": "Tarocco Siciliano",
+    "category": "historical",
+    "year": 1750,
+    "year_label": "18th c.→",
+    "order": "A (offshoot)",
+    "tradition": "Sicilian tarocchi"
+  },
+  "nodes": [
+    {
+      "id": "trump-fujutu",
+      "name": "The Fugitive (the Fool)",
+      "sort_order": 0,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:the-fool"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 0,
+        "number": 0,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "italian_name": "Il Fuggitivo (lu Fujutu)",
+        "archetype": "arcana:the-fool",
+        "trump_key": "fool",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-fujutu.jpg",
+            "scene": "The Fugitive (the Fool)",
+            "artist": "Riccardo ricceri (photograph)",
+            "artist_dates": "2021",
+            "edition": "Photograph of the Fool, own work on Wikimedia Commons",
+            "license": "CC BY-SA 4.0",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Fujutu1.jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Fujutu1.jpg"
+      },
+      "sections": {
+        "Card": "Unnumbered and unlabelled. In play it cannot lead a trick unless it is the last trick [@web_wp_tarocco_siciliano]; it is worth 10 points [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-fujutu.jpg"
+    },
+    {
+      "id": "trump-miseria",
+      "name": "Miseria (Destitution)",
+      "sort_order": 1,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 0,
+        "number": null,
+        "mapping_confidence": "none",
+        "status": "pattern in use",
+        "italian_name": "Miseria",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-miseria.jpg",
+            "scene": "Miseria (Destitution)",
+            "artist": "Modiano, Trieste (printer)",
+            "artist_dates": "1966 printing of the 19th-century pattern",
+            "edition": "Modiano pack (1966), scan on Wikimedia Commons",
+            "license": "Public domain (as filed on Wikimedia Commons, PD-old-70)",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Miseria_(Tarocco_Siciliano).jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Miseria_(Tarocco_Siciliano).jpg"
+      },
+      "sections": {
+        "Card": "A chained beggar. It ranks below trump 1 and counts for little [@web_wp_tarocco_siciliano]. Wikipedia reads it as standing where other packs have the Pope [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-miseria.jpg"
+    },
+    {
+      "id": "trump-bagatto",
+      "name": "1 — Bagotti (The Mountebank)",
+      "sort_order": 2,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:the-magician"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 1,
+        "number": 1,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "italian_name": "Bagotti / Picciotti",
+        "archetype": "arcana:the-magician",
+        "trump_key": "magician"
+      },
+      "sections": {
+        "Card": "Trump 1. With trump 20 and the Fugitive it is worth 10 points [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-imperatrice",
+      "name": "2 — The Empress",
+      "sort_order": 3,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:the-empress"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 2,
+        "number": 2,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "archetype": "arcana:the-empress",
+        "trump_key": "empress"
+      },
+      "sections": {
+        "Card": "Trump 2. Players call trumps 2 to 15 by number [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-imperatore",
+      "name": "3 — The Emperor",
+      "sort_order": 4,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:the-emperor"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 3,
+        "number": 3,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "archetype": "arcana:the-emperor",
+        "trump_key": "emperor"
+      },
+      "sections": {
+        "Card": "Trump 3.\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-costanza",
+      "name": "4 — Costanza (Constancy)",
+      "sort_order": 5,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 4,
+        "number": 4,
+        "mapping_confidence": "none",
+        "status": "pattern in use",
+        "italian_name": "Costanza",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-costanza.jpg",
+            "scene": "4 — Costanza (Constancy)",
+            "artist": "Modiano, Trieste (printer)",
+            "artist_dates": "1966 printing of the 19th-century pattern",
+            "edition": "Modiano pack (1966), scan on Wikimedia Commons",
+            "license": "Public domain (as filed on Wikimedia Commons, PD-old-70)",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:%D0%A1onstancy_(Tarocco_Siciliano).jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:%D0%A1onstancy_(Tarocco_Siciliano).jpg"
+      },
+      "sections": {
+        "Card": "Unique to this pack: a figure flying a flag, which once carried a caption. Wikipedia reads it as a fourth virtue beside the three that follow, in the place of the Popess [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-costanza.jpg"
+    },
+    {
+      "id": "trump-temperanza",
+      "name": "5 — Temperance",
+      "sort_order": 6,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:temperance"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 5,
+        "number": 5,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "archetype": "arcana:temperance",
+        "trump_key": "temperance"
+      },
+      "sections": {
+        "Card": "Trump 5, the first of the three virtues, which sit together as in other Italian packs [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-forza",
+      "name": "6 — Fortitude",
+      "sort_order": 7,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:strength"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 6,
+        "number": 6,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "archetype": "arcana:strength",
+        "trump_key": "strength"
+      },
+      "sections": {
+        "Card": "Trump 6.\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-giustizia",
+      "name": "7 — Justice",
+      "sort_order": 8,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:justice"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 7,
+        "number": 7,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "archetype": "arcana:justice",
+        "trump_key": "justice"
+      },
+      "sections": {
+        "Card": "Trump 7.\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-amore",
+      "name": "8 — Love",
+      "sort_order": 9,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:the-lovers"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 8,
+        "number": 8,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "archetype": "arcana:the-lovers",
+        "trump_key": "lovers"
+      },
+      "sections": {
+        "Card": "Trump 8.\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-carro",
+      "name": "9 — The Chariot",
+      "sort_order": 10,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:the-chariot"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 9,
+        "number": 9,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "archetype": "arcana:the-chariot",
+        "trump_key": "chariot"
+      },
+      "sections": {
+        "Card": "Trump 9. Chariot and Wheel sit side by side, as in the Minchiate [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-ruota",
+      "name": "10 — The Wheel",
+      "sort_order": 11,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:wheel-of-fortune"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 10,
+        "number": 10,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "archetype": "arcana:wheel-of-fortune",
+        "trump_key": "wheel-of-fortune"
+      },
+      "sections": {
+        "Card": "Trump 10.\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-impiccato",
+      "name": "11 — The Hanged Man",
+      "sort_order": 12,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:the-hanged-man"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 11,
+        "number": 11,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "archetype": "arcana:the-hanged-man",
+        "trump_key": "hanged-man"
+      },
+      "sections": {
+        "Card": "Trump 11. Hanged by the neck, not by the foot as in other packs [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-tempo",
+      "name": "12 — Time",
+      "sort_order": 13,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:the-hermit"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 12,
+        "number": 12,
+        "mapping_confidence": "loose",
+        "status": "pattern in use",
+        "archetype": "arcana:the-hermit",
+        "trump_key": "hermit"
+      },
+      "sections": {
+        "Card": "Trump 12, called Time as in the Minchiate [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-morte",
+      "name": "13 — Death",
+      "sort_order": 14,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:death"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 13,
+        "number": 13,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "archetype": "arcana:death",
+        "trump_key": "death"
+      },
+      "sections": {
+        "Card": "Trump 13. Death rides a horse, as in Italian packs other than the Piemontese [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-vascello",
+      "name": "14 — Vascello (The Ship)",
+      "sort_order": 15,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 14,
+        "number": 14,
+        "mapping_confidence": "none",
+        "status": "pattern in use",
+        "italian_name": "Vascello",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-vascello.jpg",
+            "scene": "14 — Vascello (The Ship)",
+            "artist": "Modiano, Trieste (printer)",
+            "artist_dates": "1966 printing of the 19th-century pattern",
+            "edition": "Modiano pack (1966), scan on Wikimedia Commons",
+            "license": "Public domain (as filed on Wikimedia Commons, PD-old-70)",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Ship_(Vascello).jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Ship_(Vascello).jpg"
+      },
+      "sections": {
+        "Card": "Trump 14, one of three trumps whose old names are known. Its picture comes from the Minchiate's trump XXI [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-vascello.jpg"
+    },
+    {
+      "id": "trump-torre",
+      "name": "15 — Torre (The Tower)",
+      "sort_order": 16,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:the-tower"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 15,
+        "number": 15,
+        "mapping_confidence": "loose",
+        "status": "pattern in use",
+        "italian_name": "Torre",
+        "archetype": "arcana:the-tower",
+        "trump_key": "tower"
+      },
+      "sections": {
+        "Card": "Trump 15. The tower stands whole, drawn as a lighthouse; no lightning strikes it [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-stella",
+      "name": "16 — Stella (The Star)",
+      "sort_order": 17,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:the-star"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 16,
+        "number": 16,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "italian_name": "Stella",
+        "archetype": "arcana:the-star",
+        "trump_key": "star"
+      },
+      "sections": {
+        "Card": "Trump 16: a horseman under a star, as in the Minchiate. Trumps 16 to 19 are the arie, worth 5 points each [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-luna",
+      "name": "17 — Luna (The Moon)",
+      "sort_order": 18,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:the-moon"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 17,
+        "number": 17,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "italian_name": "Luna",
+        "archetype": "arcana:the-moon",
+        "trump_key": "moon",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-luna.jpg",
+            "scene": "17 — Luna (The Moon)",
+            "artist": "Modiano, Trieste (printer)",
+            "artist_dates": "1966 printing of the 19th-century pattern",
+            "edition": "Modiano pack (1966), scan on Wikimedia Commons",
+            "license": "Public domain (as filed on Wikimedia Commons, PD-old-70)",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Moon_(Luna).jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Moon_(Luna).jpg"
+      },
+      "sections": {
+        "Card": "Trump 17: a couple under the Moon [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-luna.jpg"
+    },
+    {
+      "id": "trump-sole",
+      "name": "18 — Sole (The Sun)",
+      "sort_order": 19,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:the-sun"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 18,
+        "number": 18,
+        "mapping_confidence": "exact",
+        "status": "pattern in use",
+        "italian_name": "Sole",
+        "archetype": "arcana:the-sun",
+        "trump_key": "sun"
+      },
+      "sections": {
+        "Card": "Trump 18: two men fighting under the Sun [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-atlante",
+      "name": "19 — Atlante (Atlas, the Globe)",
+      "sort_order": 20,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:the-world"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 19,
+        "number": 19,
+        "mapping_confidence": "loose",
+        "status": "pattern in use",
+        "italian_name": "Atlante / Palla",
+        "archetype": "arcana:the-world",
+        "trump_key": "world"
+      },
+      "sections": {
+        "Card": "Trump 19: Atlas holding up the globe [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      }
+    },
+    {
+      "id": "trump-giove",
+      "name": "20 — Giove (Jove)",
+      "sort_order": 21,
+      "category": "trump",
+      "keywords": [
+        "tarocco siciliano",
+        "sicily",
+        "trump",
+        "arcana:judgement"
+      ],
+      "metadata": {
+        "arcana": "trump",
+        "trump_number": 20,
+        "number": 20,
+        "mapping_confidence": "loose",
+        "status": "pattern in use",
+        "italian_name": "Giove",
+        "archetype": "arcana:judgement",
+        "trump_key": "judgement",
+        "illustrations": [
+          {
+            "url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-giove.jpg",
+            "scene": "20 — Giove (Jove)",
+            "artist": "Modiano, Trieste (printer)",
+            "artist_dates": "1966 printing of the 19th-century pattern",
+            "edition": "Modiano pack (1966), scan on Wikimedia Commons",
+            "license": "Public domain (as filed on Wikimedia Commons, PD-old-70)",
+            "is_primary": true,
+            "source": "https://commons.wikimedia.org/wiki/File:Jupiter_(Giove).jpg"
+          }
+        ],
+        "image_source": "https://commons.wikimedia.org/wiki/File:Jupiter_(Giove).jpg"
+      },
+      "sections": {
+        "Card": "Trump 20, the highest, worth 10 points. Jupiter stands where other packs have the angel of Judgement [@web_wp_tarocco_siciliano].\n\n*Sources:* [@web_wp_tarocco_siciliano], [@web_pagat_sicilian].",
+        "Tradition Note": "A game card. The Tarocco Siciliano is still played in Sicily as a point-trick game; the notes here are about the pack and its play, not about divination."
+      },
+      "image_url": "https://tarot.recursive.eco/tarot/tarocco-siciliano/images/trump-giove.jpg"
+    }
+  ]
+}

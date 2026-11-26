@@ -23,7 +23,7 @@
   const SUPABASE_URL = 'https://xtviwcznhbrsvkitepvm.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh0dml3Y3puaGJyc3ZraXRlcHZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1NDA1MDMsImV4cCI6MjA4MzExNjUwM30.eBXM6NTe3Sz3SfdtI0pTHQyJzd6PXJl5ZvpNg7yFSII';
   const TREE = 'https://recursive.eco';
-  const FLOW = 'https://flow.recursive.eco';
+  const FLOW = 'https://recursive.eco';
   // Sign-in deep link: opens the tree's auth modal in a NEW TAB (so work on the
   // fruit is never lost) and tells it where the visitor came from, so after
   // sign-in the tree can offer "return to the tarot site".

@@ -22,7 +22,6 @@ on:
     branches: [main]
     paths:
       - 'tarot/**'
-      - 'course/*.mdx'
       - 'scripts/build_meta_grammar.py'
       - 'scripts/build_search_index.py'
   workflow_dispatch:
@@ -44,7 +43,7 @@ jobs:
         run: python scripts/build_meta_grammar.py
 
       # The header's quick-jump search reads search-index.json (cards, decks, chapters).
-      # Rebuilt from the same grammars + course/*.mdx so it never goes stale; see
+      # Rebuilt from the same grammars (decks and courses) so it never goes stale; see
       # docs/QUICK-JUMP-SEARCH.md. Runs after the meta build (it reads the deck table).
       - name: Rebuild search index
         run: python scripts/build_search_index.py

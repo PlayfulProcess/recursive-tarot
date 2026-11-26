@@ -30,7 +30,8 @@ render the best of our worlds in SVG?"
 * Output: `tarot/book-t/painted-symbols/<card id>.svg`, served at
   https://tarot.recursive.eco/tarot/book-t/painted-symbols/<card id>.svg, and one entry per card in
   `metadata.illustrations` with `edition: "Book T deck, painted with its symbols"` (the 1912 page's
-  Pictures switch: **Painted + symbols**).
+  Pictures switch: **Painted + symbols**). Since Oct 21 2026 this is Book T's OFFICIAL picture: the entry
+  is first, `is_primary`, and the node's `image_url` (see with_illustration).
 """
 import argparse, base64, colorsys, io, json, os, re, subprocess, sys
 from html import escape
@@ -43,7 +44,7 @@ DECK = ico.DECK
 OUT = os.path.join(ROOT, 'tarot', 'book-t', 'painted-symbols')
 URL = 'https://tarot.recursive.eco/tarot/book-t/painted-symbols/%s.svg'
 EDITION = 'Book T deck, painted with its symbols'
-ARTIST = ("AI painting (gemini-2.5-flash-image) from Book T's words, prompt by PlayfulProcess, framed by "
+ARTIST = ("AI painting (%s) from Book T's words, prompt by PlayfulProcess, framed by "
           "the deck's glyphs (drawn for this site) in Book T's order, composed by script "
           "(scripts/build_book_t_painted_symbols.py)")
 f = ico.f
@@ -56,17 +57,31 @@ GOLD = '#d8b25c'
 GOLD_LIGHT = '#f3d78a'
 CREAM = '#f5ead0'
 SERIF = "Georgia, 'Times New Roman', serif"
+# Georgia has no polytonic Greek (the breathing in Key 0's Αἰθήρ), so a line with Greek in it is set in
+# serifs that have it, before the generic fallback (which some renderers fill with a sans-serif).
+GREEK_SERIF = "'Palatino Linotype', 'Book Antiqua', Palatino, 'Times New Roman', 'Noto Serif', 'DejaVu Serif', Georgia, serif"
 EMBED_W = 600  # the embedded painting's width in pixels
 
 
 # ── the painting ────────────────────────────────────────────────────────────────────────────────
 
-def painting_url(node):
+def painting_entry(node):
     for i in (node['metadata'].get('illustrations') or []):
         e = i.get('edition') or ''
         if e != EDITION and ('painting' in e or 'composite' in e):
-            return i['url']
+            return i
     raise SystemExit('%s: no painting among its illustrations' % node['id'])
+
+
+def painting_url(node):
+    return painting_entry(node)['url']
+
+
+def painter(node):
+    """The model that painted the card, as its painting's credit names it (the Oct 27 2026 repaint used
+    newer Gemini models than the first run's gemini-2.5-flash-image)."""
+    m = re.search(r'AI painting \(([^)]+)\)', painting_entry(node).get('artist') or '')
+    return m.group(1) if m else 'gemini-2.5-flash-image'
 
 
 def fetch(url):
@@ -143,9 +158,14 @@ def rule(y, x0, x1):
             % (f(x0), f(y), f(x1), f(y), GOLD, d(x0), d(x1)))
 
 
+def has_greek(s):
+    """Greek and Greek Extended (polytonic) letters."""
+    return any(0x370 <= ord(ch) <= 0x3ff or 0x1f00 <= ord(ch) <= 0x1fff for ch in s)
+
+
 def text(x, y, s, size, color=CREAM, italic=False, anchor='middle', spacing=0):
     return ('<text x="%s" y="%s" font-size="%s" text-anchor="%s" fill="%s" font-family="%s"%s%s filter="url(#sh)">%s</text>'
-            % (f(x), f(y), f(size), anchor, color, SERIF, ' font-style="italic"' if italic else '',
+            % (f(x), f(y), f(size), anchor, color, GREEK_SERIF if has_greek(s) else SERIF, ' font-style="italic"' if italic else '',
                (' letter-spacing="%s"' % spacing) if spacing else '', escape(s)))
 
 
@@ -282,16 +302,17 @@ def card_svg(node, url, data, top, bot):
 # ── the grammar ─────────────────────────────────────────────────────────────────────────────────
 
 def with_illustration(node):
+    """The official picture (her words, Oct 21 2026: "let's make these cards the official ones"): this
+    set's entry goes first in `metadata.illustrations`, carries `is_primary`, and is the node's
+    `image_url`. The other sets stay in the list, in their order, one tap away."""
     m = node['metadata']
-    entry = {'url': URL % node['id'], 'artist': ARTIST, 'edition': EDITION, 'license': 'CC-BY-SA-4.0'}
-    ills = list(m.get('illustrations') or [])
-    at = [k for k, i in enumerate(ills) if i.get('edition') == EDITION]
-    if at:
-        ills[at[0]] = entry
-        ills = [i for k, i in enumerate(ills) if k not in at[1:]]
-    else:
-        ills.append(entry)
-    m['illustrations'] = ills
+    entry = {'url': URL % node['id'], 'artist': ARTIST % painter(node), 'edition': EDITION, 'license': 'CC-BY-SA-4.0',
+             'is_primary': True}
+    ills = [dict(i) for i in (m.get('illustrations') or []) if i.get('edition') != EDITION]
+    for i in ills:
+        i.pop('is_primary', None)
+    m['illustrations'] = [entry] + ills
+    node['image_url'] = entry['url']
 
 
 def render_pngs(ids, out_dir):

@@ -13,16 +13,22 @@
   "description": "A personal confession, and a trajectory — from wanting one perfect system to explain the whole cosmos, to learning to live and dialogue with the crack that is always there. PlayfulProcess on why she still shuffles the cards.",
   "grammar_type": "custom",
   "creator_name": "PlayfulProcess",
-  "default_view": "course",
+  "default_view": "play",
+  "reading_mode_default": "continuous",
   "provenance": "reference",
+  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammars/1771283355890-yvbykf0u7q.png",
+  "tags": [
+    "tarot",
+    "course",
+    "read-more-deeply"
+  ],
   "metadata": {
     "common_name": "Tarot & the Crack",
-    "category": "reference",
-    "source_mdx": "course/tarot-and-the-crack.mdx"
+    "category": "course"
   },
-  "_generated": true,
-  "_built_by": "scripts/course_to_grammar.py",
-  "_source_mdx": "course/tarot-and-the-crack.mdx",
+  "_generated": false,
+  "_built_by": "Converted once from course/tarot-and-the-crack.mdx on 2026-10-23; this file is the source now (edit it, or the grammar in recursive.eco).",
+  "_source_mdx": "course/tarot-and-the-crack.mdx (retired; in the repository's history)",
   "nodes": [
     {
       "id": "lesson-01-introduction",
@@ -30,7 +36,7 @@
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "*A confession, and a trajectory. I came to the cards wanting a key that would unlock the whole cosmos. I am leaving that wish behind — and keeping the cards. This is the story of why.*\n\nI should say at the start that I am not a fortune-teller, and this is not a course in how to predict your future. It is something more personal: an account of what tarot has actually been *for* me, across the years — and how the reason I shuffle today is almost the opposite of the reason I first picked up a deck.\n\nThe companion history on this site, [The History of Tarot](course-viewer.html?course=history-of-tarot), lays out the evidence: these cards began as a Renaissance card game, and the divination was poured in much later. That history is true, and it matters. But this is the other half — the *first-person* half. What do you do with a set of symbols once you know they were never holy to begin with?"
+        "Content": "*A confession, and a trajectory. I came to the cards wanting a key that would unlock the whole cosmos. I am leaving that wish behind — and keeping the cards. This is the story of why.*\n\nI should say at the start that I am not a fortune-teller, and this is not a course in how to predict your future. It is something more personal: an account of what tarot has actually been *for* me, across the years — and how the reason I shuffle today is almost the opposite of the reason I first picked up a deck.\n\nThe companion history on this site, [The History of Tarot](https://recursive.eco/play?id=4f954864-6889-4bf7-8b2e-64e313066444&pane=continuous), lays out the evidence: these cards began as a Renaissance card game, and the divination was poured in much later. That history is true, and it matters. But this is the other half — the *first-person* half. What do you do with a set of symbols once you know they were never holy to begin with?"
       }
     },
     {

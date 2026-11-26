@@ -13,16 +13,22 @@
   "description": "The psychologist of the unconscious turns over a card and finds not your future but your unlived life — the shadow, the archetype, the figure waiting to be made conscious. A reading is active imagination with a painted door.",
   "grammar_type": "custom",
   "creator_name": "PlayfulProcess",
-  "default_view": "course",
+  "default_view": "play",
+  "reading_mode_default": "continuous",
   "provenance": "reference",
+  "cover_image_url": "https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/minchiate-florence-tarot-cover.jpg",
+  "tags": [
+    "tarot",
+    "course",
+    "the-reading-voices"
+  ],
   "metadata": {
     "common_name": "Jung Reads the Tarot",
-    "category": "reference",
-    "source_mdx": "course/jung-reads-the-tarot.mdx"
+    "category": "course"
   },
-  "_generated": true,
-  "_built_by": "scripts/course_to_grammar.py",
-  "_source_mdx": "course/jung-reads-the-tarot.mdx",
+  "_generated": false,
+  "_built_by": "Converted once from course/jung-reads-the-tarot.mdx on 2026-10-23; this file is the source now (edit it, or the grammar in recursive.eco).",
+  "_source_mdx": "course/jung-reads-the-tarot.mdx (retired; in the repository's history)",
   "nodes": [
     {
       "id": "lesson-01-introduction",
@@ -30,7 +36,7 @@
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "> *\"Who looks outside, dreams; who looks inside, awakes.\"*\n>\n> — **C. G. Jung**, who spent a lifetime arguing that the gods had not died but fallen into the unconscious, where they wait, costumed as symptoms and symbols, for someone willing to look\n\nThis is the voice of the depths, and it comes late in the series on purpose. In [How the Cards Can Work](course-viewer.html?course=how-tarot-works) we made the honest case that a deck is a randomizer pointed at the psyche — a machine for surprising yourself. In [How Could Kant Read the Tarot?](course-viewer.html?course=kant-and-the-tarot) the philosopher refused to let any card legislate for him; the card prompts, the will decides. Jung agrees that the card is no oracle of fate, but he wants to go somewhere Kant would not: *down*. For Jung the image on the card is not a riddle for reason to solve but a face from the unconscious, and the only honest response is to meet it. So read this as a gate — not onto the world, but into the part of you that has not yet been lived."
+        "Content": "> *\"Who looks outside, dreams; who looks inside, awakes.\"*\n>\n> — **C. G. Jung**, who spent a lifetime arguing that the gods had not died but fallen into the unconscious, where they wait, costumed as symptoms and symbols, for someone willing to look\n\nThis is the voice of the depths, and it comes late in the series on purpose. In [How the Cards Can Work](https://recursive.eco/play?id=f824e706-af68-4cf9-98ad-2977b69e1e4e&pane=continuous) we made the honest case that a deck is a randomizer pointed at the psyche — a machine for surprising yourself. In [A Kantian View on Reading the Tarot](https://recursive.eco/play?id=f3ae903c-bbce-4dcd-b773-746edf7c09cd&pane=continuous) the philosopher refused to let any card legislate for him; the card prompts, the will decides. Jung agrees that the card is no oracle of fate, but he wants to go somewhere Kant would not: *down*. For Jung the image on the card is not a riddle for reason to solve but a face from the unconscious, and the only honest response is to meet it. So read this as a gate — not onto the world, but into the part of you that has not yet been lived."
       }
     },
     {
@@ -88,12 +94,21 @@
       }
     },
     {
-      "id": "lesson-08-one-voice-among-many",
+      "id": "lesson-08-a-deck-made-for-the-consulting-room",
+      "name": "A deck made for the consulting room",
+      "category": "lesson",
+      "keywords": [],
+      "sections": {
+        "Content": "One painter took this lens literally. Robert Wang, who had painted a Golden Dawn deck under Israel Regardie, turned to Jung and painted the *Jungian Tarot* in oils over many years, consulting analysts at the Jung Institutes in New York and Zurich. He meant it, he wrote, \"as a projective device\" for Jungian therapy, \"certainly not for telling fortunes\", and held that such pictures are only as good as the therapist who uses them ([*Expelled from Nursery School*, 2011, p. 24](https://web.archive.org/web/2016/http://robertwangart.com/Expelled%20From%20Nursery%20School.pdf)). The deck itself is in copyright and not shown here."
+      }
+    },
+    {
+      "id": "lesson-09-one-voice-among-many",
       "name": "One voice among many",
       "category": "lesson",
       "keywords": [],
       "sections": {
-        "Content": "Jung will not tell you your fate, and he will not let you off the hook either. His gift to this series is depth — the reminder that a card can reach the parts of you that argument cannot, and that the figures pressing up from the dark are asking to be integrated, not feared. But the depths are not the law. Set them beside Kant's stubborn autonomy, beside the plain mechanics of [How the Cards Can Work](course-viewer.html?course=how-tarot-works), beside the care you bring to [Intention Setting](course-viewer.html?course=intention-setting). No single voice owns the meaning of the card; the meaning is made between them, in you — an ecosystem of conscience where each reader counsels and none commands. When you're ready, take up the [Caster](../viewers/caster.html), turn one card, and ask it — gently, honestly — what in you wants to be lived."
+        "Content": "Jung will not tell you your fate, and he will not let you off the hook either. His gift to this series is depth — the reminder that a card can reach the parts of you that argument cannot, and that the figures pressing up from the dark are asking to be integrated, not feared. But the depths are not the law. Set them beside Kant's stubborn autonomy, beside the plain mechanics of [How the Cards Can Work](https://recursive.eco/play?id=f824e706-af68-4cf9-98ad-2977b69e1e4e&pane=continuous), beside the care you bring to [Intention Setting](https://recursive.eco/play?id=f08856eb-7fa6-40d4-818a-ee5f520fb30b&pane=continuous). No single voice owns the meaning of the card; the meaning is made between them, in you — an ecosystem of conscience where each reader counsels and none commands. When you're ready, take up the [Caster](https://tarot.recursive.eco/viewers/caster.html), turn one card, and ask it — gently, honestly — what in you wants to be lived."
       }
     }
   ]

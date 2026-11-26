@@ -166,6 +166,8 @@ unclear origin is listed, card by card, with a free alternative where one is kno
 ALT = {
     "charles-vi-tarot": "The 1844 hand-coloured lithographs (Société des bibliophiles français; Liège DONum copy, filed public domain) for all 17; Chatto 1848 engravings for Justice and the Moon. Both are copies, not photographs. No free photograph of the cards found.",
     "minchiate-florence-tarot": "None found free for commercial use; fine here with the Gallica credit.",
+    "tarocco-piemontese": "None found free for commercial use: a new photograph of an out-of-copyright Piedmontese pack would be.",
+    "tarocco-siciliano": "Photographs of a current pack under CC BY-SA (Countakeshi, Riccardo ricceri, Wikimedia Commons). A new photograph of each card would replace the 1966 Modiano scans.",
     "oswald-wirth-tarot": "None found free for commercial use; fine here with the Gallica credit.",
     "papus-tarot-des-bohemiens": "None found free for commercial use; fine here with the Gallica credit.",
     "noblet-tarot": "None: the BnF holds the only pack.",
@@ -202,6 +204,10 @@ def flag_of(r):
         return ("unclear scan source", "From waitesmith.org at 474 px; which exemplar is not stated.")
     if deck == "tarocchino-bologna" and "pagat" in (r.get("image_url") or "") + credit:
         return ("no licence", "Copied from pagat.com (© John McLeod), no image licence.")
+    if deck == "tarocco-piemontese":
+        return ("non-commercial only", "BnF scan (Gallica, via Commons): free here with the BnF credit, a licence for any sale.")
+    if deck == "tarocco-siciliano" and "fujutu" not in (r.get("image_url") or "").lower():
+        return ("weak provenance", "A 1966 Modiano pack, filed on Commons as PD-old-70 from steve-p.org; a pack printed that recently is a weak case.")
     if deck in ("tarot-de-besancon", "belgian-tarot", "mamluk-deck"):
         return ("weak provenance", "Public-domain work; the scan's origin is thin (" + (credit[:60] or "no credit") + ").")
     if cls == "unrecorded":
