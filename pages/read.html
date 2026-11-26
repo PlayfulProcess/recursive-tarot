@@ -20,6 +20,7 @@
   .ask textarea{width:100%;box-sizing:border-box;min-height:64px;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:16px/1.5 var(--serif-body);resize:vertical}
   .btn{min-height:48px;padding:0 24px;border-radius:999px;border:1px solid var(--gold);background:var(--gold);color:#fff;font:600 16px var(--sans);cursor:pointer}
   .btn:hover{filter:brightness(1.07)}
+  .btn .ai-mark{vertical-align:-3px;margin-right:6px}
   .btn.quiet{background:transparent;color:var(--ink-soft);border-color:var(--line);font-weight:500;font-size:14px}
   .btn.quiet:hover{border-color:var(--gold);color:var(--ink)}
   .btn:focus-visible,.card-btn:focus-visible,.ask textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
@@ -73,7 +74,7 @@
   <section id="reading" hidden aria-live="polite">
     <div class="row" id="row"></div>
     <div class="actions">
-      <button class="btn" id="talk" type="button">Talk about it</button>
+      <button class="btn" id="talk" type="button" title="Talk with the recursive.eco AI assistant"><svg class="ai-mark" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l1.4 5.1L18.5 11l-5.1 1.5L12 17l-1.4-4.5L5.5 11l5.1-1.9z"/></svg>Talk about it</button>
       <button class="btn quiet" id="again" type="button">Cast again</button>
       <span id="castCount"></span>
     </div>
