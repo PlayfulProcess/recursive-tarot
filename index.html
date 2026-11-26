@@ -71,6 +71,28 @@
   .way h3{font-family:var(--serif-display);font-weight:600;font-size:22px;margin:0 0 6px;color:var(--ink)}
   .way p{font-family:var(--serif-body);font-size:15px;line-height:1.55;color:var(--ink-soft);margin:0}
   /* The Spread Caster, featured under the three doors (Oct 23 2026). */
+  /* The "New here?" cast box (Nov 26 2026): the hero's matted frame, a three-card spread, the gold button. */
+  .cast-cta{display:flex;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;max-width:720px;margin:6px auto 34px;
+    padding:26px 30px;background:linear-gradient(180deg,var(--surface),#fbf7ee);border:1px solid var(--line-soft);border-radius:14px;
+    box-shadow:inset 0 0 0 6px #fff,inset 0 0 0 7px var(--line-soft),0 22px 44px -34px rgba(60,45,20,.55)}
+  .cast-fan{position:relative;display:block;flex:0 0 auto;width:190px;height:170px}
+  .cast-fan img{position:absolute;top:8px;left:50%;height:150px;width:auto;margin-left:-42px;background:#fff;padding:4px;
+    border:1px solid var(--line);border-radius:4px;box-shadow:0 10px 20px -14px rgba(60,45,20,.6);transition:transform .25s ease}
+  .cast-fan img:nth-child(1){transform:translateX(-52px) rotate(-11deg)}
+  .cast-fan img:nth-child(2){transform:translateY(-6px);z-index:1}
+  .cast-fan img:nth-child(3){transform:translateX(52px) rotate(11deg)}
+  .cast-cta:hover .cast-fan img:nth-child(1){transform:translateX(-62px) rotate(-15deg)}
+  .cast-cta:hover .cast-fan img:nth-child(2){transform:translateY(-12px)}
+  .cast-cta:hover .cast-fan img:nth-child(3){transform:translateX(62px) rotate(15deg)}
+  .cast-text{flex:1 1 260px;min-width:0;text-align:left}
+  .cast-kicker{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 4px}
+  .cast-text h2{font-family:var(--serif-display);font-weight:600;font-size:26px;line-height:1.15;margin:0 0 8px;color:var(--ink)}
+  .cast-text p{font-family:var(--serif-body);font-size:16px;line-height:1.55;color:var(--ink-soft);margin:0 0 16px}
+  .cast-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 26px;border-radius:999px;background:var(--gold);color:#fff;
+    font:600 16px var(--sans);text-decoration:none;box-shadow:0 8px 18px -10px rgba(120,85,20,.8);transition:transform .15s,box-shadow .15s}
+  .cast-btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(120,85,20,.9)}
+  @media (max-width:560px){.cast-cta{padding:22px 18px;gap:18px;text-align:center}.cast-text{text-align:center}}
+  @media (prefers-reduced-motion:reduce){.cast-fan img,.cast-btn{transition:none}}
   .caster-feature{display:flex;align-items:center;gap:26px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line-soft);
     border-radius:10px;padding:20px 24px;margin:18px 0 8px}
   .caster-feature svg{flex:0 0 auto;max-width:100%;height:auto}
@@ -210,12 +232,19 @@
     </div>
   </section>
 
-  <section class="cast-cta" aria-labelledby="castCtaH" style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;max-width:620px;margin:0 auto 26px;padding:16px 18px;background:var(--surface);border:1px solid var(--line-soft);border-radius:12px">
-    <img src="tarot/book-t/painted-symbols/key-00-foolish-man.svg" alt="" width="84" height="150" style="height:150px;width:auto;max-width:35%;object-fit:contain;background:var(--thumb-bg);border:1px solid var(--line);border-radius:6px">
-    <div style="flex:1 1 220px;min-width:0;text-align:left">
-      <h2 id="castCtaH" style="font-family:var(--serif-display);font-weight:600;font-size:22px;margin:0 0 6px;color:var(--ink)">New here?</h2>
-      <p style="font-family:var(--serif-body);font-size:16px;line-height:1.55;color:var(--ink-soft);margin:0 0 12px">Cast three cards and talk about them. One spread, one deck, one button.</p>
-      <a href="pages/read.html" style="display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;background:var(--gold);color:#fff;font:600 16px var(--sans);text-decoration:none">Cast three cards</a>
+  <!-- Nov 26 2026 (her note: "the button/window/frame of the cast your cards … to be prettier"):
+       a small spread of three painted Book T cards in the hero's matted frame, and the one button. -->
+  <section class="cast-cta" aria-labelledby="castCtaH">
+    <a class="cast-fan" href="pages/read.html" aria-hidden="true" tabindex="-1">
+      <img src="tarot/book-t/painted-symbols/key-00-foolish-man.svg" alt="" width="84" height="150">
+      <img src="tarot/book-t/painted-symbols/key-17-star.svg" alt="" width="84" height="150">
+      <img src="tarot/book-t/painted-symbols/key-21-universe.svg" alt="" width="84" height="150">
+    </a>
+    <div class="cast-text">
+      <div class="cast-kicker">New here?</div>
+      <h2 id="castCtaH">Cast three cards</h2>
+      <p>Draw three cards from Book T, one each for structures, process and possibilities, and talk them over. One spread, one deck, one button.</p>
+      <a class="cast-btn" href="pages/read.html">Cast three cards <span aria-hidden="true">&rarr;</span></a>
     </div>
   </section>
 
