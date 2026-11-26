@@ -81,11 +81,47 @@
     } else {
       b.appendChild(el('p', 'ra-p', 'This needs a physical deck. Cast the cards on a table, take a photo in the assistant, and it reads the cards it sees.'));
     }
+    // Nov 26 2026 (her ask): the spread on the table may not be the page's. Pick one of the
+    // Spread Caster's spreads, or "my own spread": the assistant then asks for its positions and
+    // offers to save it as a spread.
+    var OWN = '__own__';
+    var pick = el('label', 'ra-small', 'The spread on your table');
+    pick.style.display = 'block'; pick.style.margin = '0 0 4px';
+    var sel = document.createElement('select'); sel.className = 'ra-btn'; sel.style.width = '100%'; sel.style.textAlign = 'left';
+    sel.setAttribute('aria-label', 'The spread on your table');
+    var cur = document.createElement('option'); cur.value = ''; cur.textContent = spread + (pos.length ? ' (' + pos.length + (pos.length === 1 ? ' card)' : ' cards)') : ''); sel.appendChild(cur);
+    var own = document.createElement('option'); own.value = OWN; own.textContent = 'My own spread: I will describe it'; sel.appendChild(own);
+    var others = [];
+    fetch(ROOT + 'viewers/spreads.json').then(function (r) { return r.json(); }).then(function (j) {
+      others = (j.spreads || []).filter(function (s) { return s && s.name && s.name !== spread && Array.isArray(s.positions); });
+      others.forEach(function (s, i) {
+        var o2 = document.createElement('option'); o2.value = String(i);
+        o2.textContent = s.name + ' (' + s.positions.length + (s.positions.length === 1 ? ' card)' : ' cards)');
+        sel.insertBefore(o2, own);
+      });
+    }).catch(function () {});
+    var hint = el('p', 'ra-small'); hint.style.margin = '6px 0 14px';
+    function showHint() {
+      if (sel.value === OWN) { hint.textContent = 'The assistant will ask what each position means, read your cards, and can save your spread for next time.'; return; }
+      var s = sel.value === '' ? null : others[+sel.value];
+      var p2 = s ? s.positions.map(function (p) { return typeof p === 'string' ? p : p.label; }) : pos;
+      hint.textContent = p2.length ? 'Left to right: ' + p2.join(', ') + '.' : '';
+    }
+    sel.addEventListener('change', showHint);
+    b.appendChild(pick); b.appendChild(sel); b.appendChild(hint); showHint();
     var go = el('button', 'ra-btn ra-primary', 'Take a picture in the assistant'); go.type = 'button';
     var note = el('p', 'ra-small'); note.setAttribute('role', 'status');
     go.addEventListener('click', function () {
-      var text = 'Here is a photo of the cards I cast from my ' + deck + ' deck, in the spread ' + spread +
-        (pos.length ? ' (positions left to right: ' + pos.join(', ') + ')' : '') + '. Please name the cards you see and read them.';
+      var text;
+      if (sel.value === OWN) {
+        text = 'Here is a photo of the cards I cast from my ' + deck + ' deck, in a spread of my own. Before you read them, ask me what each position means, left to right. Then name the cards you see and read them, and offer to save my spread as a new spread so I can use it again.';
+      } else {
+        var s = sel.value === '' ? null : others[+sel.value];
+        var sName = s ? s.name : spread;
+        var sPos = s ? s.positions.map(function (p) { return typeof p === 'string' ? p : p.label; }) : pos;
+        text = 'Here is a photo of the cards I cast from my ' + deck + ' deck, in the spread ' + sName +
+          (sPos.length ? ' (positions left to right: ' + sPos.join(', ') + ')' : '') + '. Please name the cards you see and read them.';
+      }
       askWithPhoto(text, function (m) { note.textContent = m; });
       note.textContent = 'The assistant is open with your words ready. Tap the paperclip if no camera button appears.';
     });
