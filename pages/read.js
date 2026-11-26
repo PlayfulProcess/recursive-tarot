@@ -176,10 +176,13 @@
       var qn = $('q').value.trim(), dl = labelOf(deckSlug);
       lastReading = {
         v: 1, spread: spread.name, question: qn || null,
+        // Nov 26 2026: the deck's recursive.eco id and each card's node, so the reading in the
+        // assistant's Tarot tab opens each card with its own text and links.
+        deck_id: ecoIds[deckSlug] || null,
         positions: drawn.map(function (c, i) {
           var p = spread.positions[i];
           return { n: i + 1, label: p.label, meaning: p.meaning || '',
-            card: { name: c.name, deck: dl, reversed: false, arcana: c.arcana || null, number: c.number, image_url: c.image || null } };
+            card: { name: c.name, deck: dl, reversed: false, arcana: c.arcana || null, number: c.number, image_url: c.image || null, node_id: c.nodeId || null } };
         }),
         cast_at: new Date().toISOString(),
         source: 'https://tarot.recursive.eco/pages/read.html'
