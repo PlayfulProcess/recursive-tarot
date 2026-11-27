@@ -184,6 +184,82 @@ def title_lines(name):
     return [name], ''
 
 
+# ── the ring: the card's place in Book T's order and its part of the sky ───────────────────────
+
+# Her design (Nov 27 2026): the back's ring as a small mark after the italic line; the number is the
+# card's place in Book T's own order (1-78); the inner circle is the zodiac with 0° Leo at the top
+# (Book T starts the small cards at Leo), clockwise, and only the card's part of the sky is lit: a
+# decan for the small cards, a court lord's 30° (20° of one sign to 20° of the next), an Ace's or a
+# Princess's quarter, a Key's sign, its planet's signs, or its element's signs.
+SIGNS = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces']
+PLANET_SIGNS = {'Sun': ['Leo'], 'Moon': ['Cancer'], 'Mercury': ['Gemini', 'Virgo'], 'Venus': ['Taurus', 'Libra'],
+                'Mars': ['Aries', 'Scorpio'], 'Jupiter': ['Sagittarius', 'Pisces'], 'Saturn': ['Capricorn', 'Aquarius']}
+ELEMENT_SIGNS = {'Fire': ['Aries', 'Leo', 'Sagittarius'], 'Water': ['Cancer', 'Scorpio', 'Pisces'],
+                 'Air': ['Gemini', 'Libra', 'Aquarius'], 'Earth': ['Taurus', 'Virgo', 'Capricorn']}
+QUADRANT_FROM = {'Wands': 'Cancer', 'Cups': 'Libra', 'Swords': 'Capricorn', 'Pentacles': 'Aries'}
+ORDER = {}  # card id -> its place in Book T's order (1-78), set in main()
+RING_R = 12  # the ring's radius on the 560-wide card
+
+
+def lon(sign, deg=0):
+    return SIGNS.index(sign) * 30 + deg
+
+
+def sky_arcs(node):
+    """The card's part of the sky as (start, end) longitudes (0 = 0° Aries)."""
+    m, cat = node['metadata'], node['category']
+    if cat == 'aces' or (cat == 'courts' and m.get('rank') == 'Princess'):
+        a = lon(QUADRANT_FROM[m['suit']])
+        return [(a, a + 90)]
+    if cat == 'courts':
+        rm = re.match(r'\s*(\d+)\D+?([A-Z][a-z]+)\s*\W+\s*(\d+)\D+?([A-Z][a-z]+)', m.get('rules', ''))
+        return [(lon(rm.group(2), int(rm.group(1))), lon(rm.group(4), int(rm.group(3))))]
+    if cat == 'decans':
+        a = 120 + 10 * (ORDER[node['id']] - 21)  # the small cards run from 0° Leo, ten degrees each
+        return [(a, a + 10)]
+    signs = []
+    for part in re.split(r'\s+and\s+', m.get('attribution', '')):
+        part = part.strip()
+        signs += [part] if part in SIGNS else PLANET_SIGNS.get(part, ELEMENT_SIGNS.get(part, []))
+    return [(lon(x), lon(x) + 30) for x in dict.fromkeys(signs)]
+
+
+def arc_path(cx, cy, r, a0, a1):
+    """An SVG arc from longitude a0 to a1, clockwise, 0° Leo at the top."""
+    import math
+    span = (a1 - a0) % 360 or 360
+    def pt(L):
+        t = math.radians(((L - 120) % 360) - 90)
+        return cx + r * math.cos(t), cy + r * math.sin(t)
+    (x0, y0), (x1, y1) = pt(a0), pt(a0 + min(span, 359.9))
+    return 'M%s %s A%s %s 0 %d 1 %s %s' % (f(x0), f(y0), f(r), f(r), 1 if span > 180 else 0, f(x1), f(y1))
+
+
+def ring_mark(node, cx, cy, r=RING_R):
+    n = ORDER[node['id']]
+    ri = r * 0.74
+    arcs = ''.join('<path d="%s" fill="none" stroke="%s" stroke-width="1.7" stroke-linecap="round"/>'
+                   % (arc_path(cx, cy, ri, a0, a1), GOLD) for a0, a1 in sky_arcs(node))
+    return ('<g class="ring" filter="url(#sh)"><circle cx="%s" cy="%s" r="%s" fill="none" stroke="%s" stroke-width="1.2"/>'
+            '<circle cx="%s" cy="%s" r="%s" fill="none" stroke="%s" stroke-width=".6" opacity=".45"/>%s'
+            '<text x="%s" y="%s" font-size="%s" text-anchor="middle" fill="%s" font-family="%s">%d</text></g>'
+            % (f(cx), f(cy), f(r), GOLD, f(cx), f(cy), f(ri), GOLD, arcs,
+               f(cx), f(cy + r * 0.3), f(r * (0.85 if n < 10 else 0.7)), GOLD_LIGHT, SERIF, n))
+
+
+def text_width(s, size, italic=True, spacing=0.0):
+    """About how wide a line is (DejaVu Serif's metrics, the print's font), for placing the ring after it."""
+    try:
+        from PIL import ImageFont
+        here = os.path.dirname(os.path.abspath(__file__))
+        for p in (os.path.join(here, 'fonts', 'DejaVuSerif-Italic.ttf'),):
+            if os.path.exists(p):
+                return ImageFont.truetype(p, 100).getlength(s) * size / 100 + spacing * len(s)
+    except Exception:
+        pass
+    return 0.52 * size * len(s) + spacing * len(s)
+
+
 # ── a card ──────────────────────────────────────────────────────────────────────────────────────
 
 TOP_Y = 62       # the top band's centre line
@@ -273,7 +349,15 @@ def card_svg(node, url, data, top, bot):
                text(CX, 983, second, fit(second, tw, 17), CREAM, True))
     else:
         cap = text(CX, 968, lines[0], fit(lines[0], tw, 29))
-    cap += text(CX, 1004 if second else 996, sub, fit(sub, tw, 15), GOLD_LIGHT, True, spacing=.3)
+    # The italic line and the ring after it, centred as one (Nov 27 2026); the line is anchored at its
+    # end, so a renderer with narrower letters only leaves a little more room on the left.
+    sy = 1004 if second else 996
+    ss = fit(sub, tw - 2 * RING_R - 10, 15)
+    total = text_width(sub, ss, spacing=.3) + 8 + 2 * RING_R
+    x_end = CX - total / 2 + text_width(sub, ss, spacing=.3)
+    cap += text(x_end, sy, sub, ss, GOLD_LIGHT, True, 'end', spacing=.3)
+    cap += ring_mark(node, x_end + 8 + RING_R, sy - ss * 0.33)
+    desc.append('Its ring: number %d in Book T\'s order, with its part of the zodiac lit.' % ORDER[node['id']])
     title = '%s: %s (Book T deck, painted with its symbols)' % (node['name'], sub)
     head = (
         '<defs>'
@@ -351,6 +435,7 @@ def main():
     cards = [n for n in g['nodes'] if n.get('category') in ('aces', 'courts', 'decans', 'keys')]
     if len(cards) != 78:
         raise SystemExit('expected 78 cards, found %d' % len(cards))
+    ORDER.update({n['id']: i + 1 for i, n in enumerate(cards)})
     stale, done = [], []
     if not a.check:
         os.makedirs(OUT, exist_ok=True)
