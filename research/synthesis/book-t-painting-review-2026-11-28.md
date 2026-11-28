@@ -116,3 +116,25 @@ Every Key carries its title's image and its sign: the Fool on the cliff edge in 
 The other eight minor departures (Ace of Swords, Knight of Wands, Princess of Wands, Prince of Cups, Princess of Cups, Prince of Swords, Princess of Swords, Eight of Pentacles) are not worth the credits before the print; they can wait for a later round. A note on the Ace of Wands' left and right: Book T's "right" can mean the card's own right (the viewer's left). The painting puts the twelve yods at the viewer's left and the three at the viewer's right; whichever reading she prefers, the corrected prompt above keeps the count and can be mirrored.
 
 Read-only review: no painting, grammar node or image was changed.
+
+## Round 5: all thirteen redone and checked again (Nov 28 2026)
+
+PlayfulProcess: "All that you find could be improved should be redone and reverified". All 13 cards above, the minor ones included. Each new picture was checked on zoomed crops against its Book T sentence before it went in; prompts in `tarot/book-t/PROMPTS.md`, "Round 5"; script steps in `scripts/fix_book_t_repaint_round5_2026_11_28.py` (checked to reproduce its three pictures pixel for pixel). 14 pictures, **$2.60** of recursive.eco credit. The replaced paintings stay in each card's `metadata.illustrations` as "... painting before the Nov 28 2026 repaint (round 5)".
+
+| Card | Now | How | Checked |
+|---|---|---|---|
+| Ace of Wands | three flames on the left branch, four on the centre, three on the right; the 22 yods as before (6 + 6 left, 7 above, 3 right) | Pro on the old painting kept one flame per branch; so one flame tongue painted alone, set 3 / 4 / 3 by script, then that composite repainted clean by Pro | flames counted on a crop: 3, 4, 3 |
+| Queen of Wands | plain green ground under the fire; the ink border intact | script: the pseudo-letters filled with the green | no marks left on a crop of the bottom band |
+| Ace of Swords | six Vavs (the deck's glyph) around and above the point | 2.1 moved the letters above the point but drew them as Yods; the round-4 Vavs copied into their places by script, three pale dots filled | six Vavs, no dots |
+| Knight of Wands | the club burns at both ends | 2.1, attempt 1 | ok |
+| Princess of Wands | a gold crown round her helmet under the tiger crest | 2.1, attempt 1 | ok |
+| Queen of Cups | the ibis stands at the throne, her lotus hand on its back | 2.1, attempt 1 | ok |
+| Prince of Cups | a scorpion on the wheel; the serpent hangs from the cup down to the lake | 2.1, attempt 1 | ok |
+| Princess of Cups | the dolphin away to her right (the viewer's left) | 2.1, attempt 1 (the picture mirrored) | ok |
+| Prince of Swords | pentagrams on the fays' wands and fillets and on the crest; butterfly wings at the fays' ankles | 2.1, attempt 1 | wings at the ankles seen on a crop |
+| Princess of Swords | a goatskin aegis with a Gorgon clasp in place of the red cloak | 2.1, attempt 1 | ok |
+| Queen of Pentacles | her face lit in front and in shadow behind, in profile; the brown patch gone | 2.1, attempt 1 | ok |
+| Eight of Pentacles | eight disks like the Ace's (rings, white centre, twelve white rays), no star | 2.1, attempt 1 | twelve rays counted on a crop |
+| Three of Swords | the central sword has cut the rose in two; the halves fly apart, petals fall | 2.1, attempt 1 | ok |
+
+**Small things still there** (none a Book T count or symbol): the Princess of Cups now holds the turtle cup and the lotus in the other hands (Book T says only "in one hand ... in the other"); the Queen of Pentacles' shadow side is blue-brown; the Three of Swords' hands keep their wings from the earlier painting. As before, this is a machine reading of the pictures, for her eye.
