@@ -60,7 +60,7 @@ SERIF = "Georgia, 'Times New Roman', serif"
 # Georgia has no polytonic Greek (the breathing in Key 0's Αἰθήρ), so a line with Greek in it is set in
 # serifs that have it, before the generic fallback (which some renderers fill with a sans-serif).
 GREEK_SERIF = "'Palatino Linotype', 'Book Antiqua', Palatino, 'Times New Roman', 'Noto Serif', 'DejaVu Serif', Georgia, serif"
-EMBED_W = 600  # the embedded painting's width in pixels
+EMBED_W = 848  # the embedded painting's width in pixels: the paintings' own width, so nothing is scaled down (Nov 28 2026; 600 before)
 
 
 # ── the painting ────────────────────────────────────────────────────────────────────────────────
@@ -114,9 +114,10 @@ def embed(url):
     # a strip just inside each edge, past any border the painting drew round itself
     top = band_colour(im.crop((w // 12, h // 16, w - w // 12, h // 5)))
     bot = band_colour(im.crop((w // 12, h - h // 5, w - w // 12, h - h // 16)))
-    im = im.resize((EMBED_W, round(h * EMBED_W / w)), Image.LANCZOS)
+    if w > EMBED_W:
+        im = im.resize((EMBED_W, round(h * EMBED_W / w)), Image.LANCZOS)
     buf = io.BytesIO()
-    im.save(buf, 'JPEG', quality=80, optimize=True, progressive=True)
+    im.save(buf, 'JPEG', quality=88, optimize=True, progressive=True)
     return 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode('ascii'), top, bot
 
 
@@ -127,7 +128,8 @@ def reuse(path, url):
     s = open(path, encoding='utf-8').read()
     m = re.search(r'data-painting="([^"]*)" data-top="(#[0-9a-f]{6})" data-bottom="(#[0-9a-f]{6})"', s)
     d = re.search(r'href="(data:image/jpeg;base64,[^"]+)"', s)
-    if m and d and m.group(1) == escape(url):
+    e = re.search(r'data-embed="(\d+)"', s)
+    if m and d and m.group(1) == escape(url) and e and int(e.group(1)) == EMBED_W:
         return d.group(1), m.group(2), m.group(3)
     return None
 
@@ -253,6 +255,28 @@ def ring_mark(node, cx, cy, r=RING_R, line=GOLD, num=GOLD_LIGHT, shadow=True, w=
 RINGS = os.path.join(ROOT, 'tarot', 'book-t', 'rings')
 RING_URL = 'https://tarot.recursive.eco/tarot/book-t/rings/%s.svg'
 RING_INK = '#3d5588'
+
+
+def wheel_svg():
+    """The zodiac as the rings draw it, large, with the signs: 0° Leo at the top, clockwise."""
+    import math
+    c, r = 300, 270
+    ri = r * 0.74
+    parts = ['<circle cx="%d" cy="%d" r="%d" fill="none" stroke="%s" stroke-width="6"/>' % (c, c, r, RING_INK),
+             '<circle cx="%d" cy="%d" r="%s" fill="none" stroke="%s" stroke-width="2" opacity=".5"/>' % (c, c, f(ri), RING_INK)]
+    for k, sign in enumerate(SIGNS):
+        t = math.radians(((k * 30 - 120) % 360) - 90)
+        parts.append('<line x1="%s" y1="%s" x2="%s" y2="%s" stroke="%s" stroke-width="2" opacity=".6"/>'
+                     % (f(c + ri * 0.86 * math.cos(t)), f(c + ri * 0.86 * math.sin(t)), f(c + r * math.cos(t)), f(c + r * math.sin(t)), RING_INK))
+        m = math.radians(((k * 30 + 15 - 120) % 360) - 90)
+        parts.append(ico.glyph(sign, c + (ri + r) / 2 * math.cos(m), c + (ri + r) / 2 * math.sin(m), 34, RING_INK))
+    # the sun's way round: a small arrow inside, clockwise from the top
+    parts.append('<path d="%s" fill="none" stroke="%s" stroke-width="3" stroke-linecap="round"/>' % (arc_path(c, c, ri * 0.62, 120, 170), RING_INK))
+    t = math.radians(50 - 90)
+    ax, ay = c + ri * 0.62 * math.cos(t), c + ri * 0.62 * math.sin(t)
+    parts.append('<circle cx="%s" cy="%s" r="5" fill="%s"/>' % (f(ax), f(ay), RING_INK))
+    return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img">'
+            '<title>The zodiac as the rings draw it: Leo at the top, the signs clockwise</title>%s</svg>\n' % ''.join(parts))
 
 
 def ring_icon_svg(node):
@@ -389,11 +413,11 @@ def card_svg(node, url, data, top, bot):
            data, f(PX), f(PY), f(PW), f(PH), f(PX), f(PY), f(PW), f(PH), GOLD,
            f(PX - 5), f(PY - 5), f(PW + 10), f(PH + 10), GOLD))
     return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" role="img" aria-labelledby="t d" '
-            'data-painting="%s" data-top="%s" data-bottom="%s">\n'
+            'data-painting="%s" data-top="%s" data-bottom="%s" data-embed="%d">\n'
             '<title id="t">%s</title>\n<desc id="d">%s The painting: %s (AI painting from Book T\'s words, prompt by PlayfulProcess, CC BY-SA 4.0). '
             'Glyphs drawn for recursive-tarot (CC BY-SA 4.0); composed by scripts/build_book_t_painted_symbols.py.</desc>\n'
             '%s\n%s\n%s\n</svg>\n'
-            % (W, H, W, H, escape(url), top, bot, escape(title), escape(' '.join(desc)), escape(url),
+            % (W, H, W, H, escape(url), top, bot, EMBED_W, escape(title), escape(' '.join(desc)), escape(url),
                head, '\n'.join(parts), cap))
 
 
@@ -475,9 +499,15 @@ def main():
     if not only:
         for n in cards:
             with_illustration(n)
-        # the booklet's ring icons, one per card
+        # the booklet's ring icons, one per card, and the wheel that explains them
         if not a.check:
             os.makedirs(RINGS, exist_ok=True)
+        wp = os.path.join(RINGS, 'wheel.svg')
+        if (open(wp, encoding='utf-8').read() if os.path.exists(wp) else None) != wheel_svg():
+            stale.append('rings/wheel')
+            if not a.check:
+                with open(wp, 'w', encoding='utf-8', newline='\n') as fh:
+                    fh.write(wheel_svg())
         for n in cards:
             rp = os.path.join(RINGS, n['id'] + '.svg')
             want = ring_icon_svg(n)
