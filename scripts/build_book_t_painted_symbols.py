@@ -235,16 +235,30 @@ def arc_path(cx, cy, r, a0, a1):
     return 'M%s %s A%s %s 0 %d 1 %s %s' % (f(x0), f(y0), f(r), f(r), 1 if span > 180 else 0, f(x1), f(y1))
 
 
-def ring_mark(node, cx, cy, r=RING_R):
+def ring_mark(node, cx, cy, r=RING_R, line=GOLD, num=GOLD_LIGHT, shadow=True, w=1.0):
     n = ORDER[node['id']]
     ri = r * 0.74
-    arcs = ''.join('<path d="%s" fill="none" stroke="%s" stroke-width="1.7" stroke-linecap="round"/>'
-                   % (arc_path(cx, cy, ri, a0, a1), GOLD) for a0, a1 in sky_arcs(node))
-    return ('<g class="ring" filter="url(#sh)"><circle cx="%s" cy="%s" r="%s" fill="none" stroke="%s" stroke-width="1.2"/>'
-            '<circle cx="%s" cy="%s" r="%s" fill="none" stroke="%s" stroke-width=".6" opacity=".45"/>%s'
+    arcs = ''.join('<path d="%s" fill="none" stroke="%s" stroke-width="%s" stroke-linecap="round"/>'
+                   % (arc_path(cx, cy, ri, a0, a1), line, f(1.7 * w)) for a0, a1 in sky_arcs(node))
+    return ('<g class="ring"%s><circle cx="%s" cy="%s" r="%s" fill="none" stroke="%s" stroke-width="%s"/>'
+            '<circle cx="%s" cy="%s" r="%s" fill="none" stroke="%s" stroke-width="%s" opacity=".45"/>%s'
             '<text x="%s" y="%s" font-size="%s" text-anchor="middle" fill="%s" font-family="%s">%d</text></g>'
-            % (f(cx), f(cy), f(r), GOLD, f(cx), f(cy), f(ri), GOLD, arcs,
-               f(cx), f(cy + r * 0.3), f(r * (0.85 if n < 10 else 0.7)), GOLD_LIGHT, SERIF, n))
+            % (' filter="url(#sh)"' if shadow else '', f(cx), f(cy), f(r), line, f(1.2 * w), f(cx), f(cy), f(ri), line, '.6' if w == 1 else f(0.6 * w), arcs,
+               f(cx), f(cy + r * 0.3), f(r * (0.85 if n < 10 else 0.7)), num, SERIF, n))
+
+
+# The ring on its own, for the printed booklet (Nov 27 2026, her ask: "a sort of thumbnail ... so that
+# other booklets can have their own"): a booklet entry names it as its `icon` in metadata.print.booklet,
+# and the print draws any icon beside the title; nothing about rings lives in the app.
+RINGS = os.path.join(ROOT, 'tarot', 'book-t', 'rings')
+RING_URL = 'https://tarot.recursive.eco/tarot/book-t/rings/%s.svg'
+RING_INK = '#3d5588'
+
+
+def ring_icon_svg(node):
+    return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img">'
+            '<title>%d · %s</title>%s</svg>\n'
+            % (ORDER[node['id']], escape(node['name']), ring_mark(node, 50, 50, 44, RING_INK, RING_INK, False, 3.0)))
 
 
 def text_width(s, size, italic=True, spacing=0.0):
@@ -461,6 +475,18 @@ def main():
     if not only:
         for n in cards:
             with_illustration(n)
+        # the booklet's ring icons, one per card
+        if not a.check:
+            os.makedirs(RINGS, exist_ok=True)
+        for n in cards:
+            rp = os.path.join(RINGS, n['id'] + '.svg')
+            want = ring_icon_svg(n)
+            have = open(rp, encoding='utf-8').read() if os.path.exists(rp) else None
+            if have != want:
+                stale.append('rings/' + n['id'])
+                if not a.check:
+                    with open(rp, 'w', encoding='utf-8', newline='\n') as fh:
+                        fh.write(want)
     out_json = json.dumps(g, ensure_ascii=False, indent=2) + '\n'
     grammar_stale = not only and out_json != cur_json
     if a.check:
