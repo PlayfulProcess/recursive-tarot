@@ -114,6 +114,24 @@ PlayfulProcess: "do that for me" (the leftovers of the round-3 review, before pr
 - **Temperance** (2.1): "she holds the gold cup high in one hand and the silver cup low in the other, and a single stream of water pours in an arc from the LIP of the upper gold cup into the MOUTH of the lower silver cup."
 - **The Devil, print version** (2.1; the site keeps its painting): "each of the two chained figures now wears a simple knee-length wrapped loincloth of the same dark red cloth, tied at the waist and covering the hips and thighs." Stored as `"Book T deck, painting — print version"`.
 
+## Round 5 (Nov 28 2026)
+
+PlayfulProcess, after the Nov 28 review of all 78 paintings ([the review](../../research/synthesis/book-t-painting-review-2026-11-28.md)): "All that you find could be improved should be redone and reverified". The card's own painting as reference picture, `set: false`, each prompt "Repaint the reference picture exactly as it is: ... One change: ..."; Nano Banana 2.1 unless noted. 14 pictures, $2.60 of recursive.eco credit. Script steps: `scripts/fix_book_t_repaint_round5_2026_11_28.py`.
+
+- **Ace of Wands** (composite, then Pro): Pro on the old painting kept one flame per branch. One flame tongue was painted alone ("a single upright flame tongue, one slender teardrop-shaped flame with ONE pointed tip ... alone on a plain, flat, empty pale cream ground"), the big flames were cleared by script and the tongue set 3 / 4 / 3 on the tips; Pro then repainted that composite clean: "Keep the flames on the branch tips exactly as they are in the reference: three separate slim flames fanned on the left branch tip, four ... on the centre branch tip, three ... on the right branch tip, ten flames in all, each a single pointed tongue with its own ink outline. Clean away the grey ghost outlines, dark specks and smudges ..."
+- **Ace of Swords** (2.1, then script): "the six gold letter-shapes fall from the sword's point: they hang in the bright sky above the tip of the blade, three on each side of the point". The model's marks read as Yods, so the round-4 painting's six Vavs were copied into their places by script.
+- **Queen of Wands** (script only): the painted pseudo-letters filled with the green ground.
+- **Knight of Wands**: "the club he holds aloft burns at BOTH ends: a flame at its top end and a second flame at its lower end below his fist."
+- **Princess of Wands**: "a small gold crown with points encircles the helmet just above its brow, under the tiger crest."
+- **Queen of Cups**: "A tall white ibis stands close beside the throne at her right side, its back level with the arm of the throne, and her other hand rests on the ibis's back, holding a pink lotus flower in that same hand."
+- **Prince of Cups**: "on the chariot's wheel is a clear black scorpion with raised curled stinger tail and two pincers. The green serpent comes out of the cup in his raised hand and hangs down over the cup's rim, its body falling toward the lake and its head pointing down at the water."
+- **Princess of Cups**: "Repaint the reference picture as a mirror image: ... the leaping dolphin is in the sea on the viewer's LEFT side of the picture, which is her own right."
+- **Prince of Swords**: "every small gold star becomes a gold PENTAGRAM ... on top of each youth's wand, on each youth's headband, and on the brow of the small winged angel's head that is his crest. Each youth also has small butterfly wings at his ankles."
+- **Princess of Swords**: "her mantle is Minerva's Aegis: a short goatskin cape over her shoulders and breast, edged with small coiling serpents along its border and fastened at the chest by a small round Gorgon's head".
+- **Queen of Pentacles**: "Her face is divided down the middle: the front half of her face, from brow to chin, is lit pale and clear, and the back half toward her ear and jaw lies in deep blue-brown shadow ... Remove the brown rectangular patch on her cheek."
+- **Eight of Pentacles**: "each of the eight gold disks is drawn as concentric gold rings with a small white centre and twelve thin white rays running from the centre out to the rim, like an astrological wheel; no star, no cross on them."
+- **Three of Swords**: "the central sword's blade has split a red five-petalled rose into two halves that fly apart to the left and right of the blade; red petals scatter and fall around them. The rose has no stem and no leaves, and no rays come from it."
+
 ## The twenty-two Keys
 
 ### Spirit of Αἰθήρ (The Foolish Man)
